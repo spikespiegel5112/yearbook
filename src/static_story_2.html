@@ -8,13 +8,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.0-重置密码-安全验证</title>
+	<title>忆尔-毕业纪念册</title>
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/account.css" type="text/css" media="all">
-	<!-- endbuild -->
-	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/staticize.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -39,44 +37,42 @@
 		</div>
 	</div>
 	<div class="cm_header_shadow"></div>
-	<!-- main -->
-	<div class="reset_password_container">
-		<div class="reset_password">
-			<a href="javascript:void (0);" class="close">×</a>
-			<ul class="bread_nav">
-				<li class="cm_fl cm_ml_5"><a href="book_manage_interaction.html">找回密码</a></li>
-			</ul>
-			<div class="reset_nav">
-				<ul class="nav">
-					<li class="gray_arrow">
-						<div>1</div>确认账号</li>
-					<li class="current special_bg">
-						<div>2</div>安全验证</li>
-					<li>
-						<div>3</div>重置密码</li>
+	<div class='ybarticle_container'>
+		<div class='ybarticle_wrapper'>
+			<div class='ybarticle_crumbs_wrapper'>
+				<ul>
+					<li><a href="javascript:;">首页</a><span>&gt</span></li>
+					<li>高中毕业册</li>
 				</ul>
 			</div>
-			<ul class="mobile_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">手机验证：</li>
-				<li class="">您绑定的手机号码是：<span>138****0000</span></li>
-			</ul>
-			<ul class="mail_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">邮箱验证：</li>
-				<li class="">您绑定的邮箱是：<span>sunshine@sina.com.cn</span></li>
-			</ul>
-			<div class="form_group inline">
-				<form name="" method="" action="">
-					<input type="text" value="" placeholder="请输入验证码">
-				</form>
-				<div class="send_identifying_code btn">发送验证码</div>
+			<div class='ybarticle_main_wrapper'>
+				<h3 class='ybarticle_title_item'>高中毕业册</h3>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/index/story2-1.jpg">
+				</div>
+				<div class='ybarticle_article_item'>
+					<p>
+						高中三年，有笑有泪，承载了太多回忆和青春，无论如何得记录下来。
+					</p>
+					<p>
+						忆尔这个平台非常棒，有别于传统毕业册、同学录，既可以展示照片，又可以和其他同学们互动，非常与众不同。
+					</p>
+					<p>
+						这么一本新颖的毕业册，发挥空间很大，不仅有自己想展示的内容、信息、照片，还有同学们相互的评论，还有各种有趣的投票、记忆深刻的活动报道等等，内容非常丰富多彩，这么一本册子，所有同学都能参与进来，互相间的了解也加深不少。
+					</p>
+					<p>
+						最关键的是，对于懒癌患者，在忆尔上制作太方便啦，各种漂亮模板供选择，各个有趣表情供使用，一步一步so easy。最后的成品也非常满意，册子很有质感很漂亮，外貌党妥妥接受。
+					</p>
+				</div>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/index/story2-2.jpg">
+				</div>
+				<div class='ybarticle_article_item text_cen'>
+					<p>
+						<a href="javascript:;">点击预览模板详情</a>
+					</p>
+				</div>
 			</div>
-			<a href="reset_password_step3.html">
-				<div class="next btn">下一步</div>
-			</a>
-			<div class="gray_line"></div>
-			<div class="change_method">*点此切换至<a href="javascript:void (0);" class="go_mail_check">邮箱验证</a></div>
 		</div>
 	</div>
 	<!--底部-->
@@ -105,21 +101,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script>
-	//切换验证方式
-	$('.go_mail_check').click(function() {
-		if ($(this).text() === '邮箱验证') {
-			$('.mobile_check').hide();
-			$('.mail_check').show();
-			$(this).text('手机验证');
-		} else {
-			$('.mobile_check').show();
-			$('.mail_check').hide();
-			$(this).text('邮箱验证');
-		}
-	});
-	</script>
 </body>
-
-</html>

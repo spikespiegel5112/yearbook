@@ -457,13 +457,15 @@
 				unitPrice = ''
 			options = $.extend({
 				unitprice: '',
-				subtotal: ''
+				subtotal: '',
+				onchange: function() {}
 			}, options);
 			$(this).each(function() {
 				var $this = $(this),
 					counterEl = $this.find('input');
-				$this.find('input').html('0');
+				counterEl.html('0');
 				$this.find('a').click(function() {
+					fireOnchange(counterEl)
 					switch ($(this).index()) {
 						case 0:
 							counter--;
@@ -473,12 +475,14 @@
 							counterEl.val(counter);
 							getter();
 							setter();
+							options.onchange();
 							break;
 						case 2:
 							counter++;
 							counterEl.val(counter);
 							getter();
 							setter();
+							options.onchange();
 							break;
 					}
 				});
@@ -498,6 +502,7 @@
 							counter = counterEl.val();
 							getter();
 							setter();
+							fireOnchange(counterEl);
 							break;
 					}
 				})
@@ -511,6 +516,10 @@
 			function setter() {
 				var result = unitPrice * counter;
 				$(options.subtotal).html(parseFloat(result).toFixed(2));
+			}
+
+			function fireOnchange(_this) {
+				_this.trigger('onchange');
 			}
 		}
 	});

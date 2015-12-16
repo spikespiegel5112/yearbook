@@ -8,13 +8,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.0-重置密码-安全验证</title>
+	<title>忆尔3.0-忆尔百科</title>
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/account.css" type="text/css" media="all">
-	<!-- endbuild -->
-	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/staticize.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -39,44 +37,41 @@
 		</div>
 	</div>
 	<div class="cm_header_shadow"></div>
-	<!-- main -->
-	<div class="reset_password_container">
-		<div class="reset_password">
-			<a href="javascript:void (0);" class="close">×</a>
-			<ul class="bread_nav">
-				<li class="cm_fl cm_ml_5"><a href="book_manage_interaction.html">找回密码</a></li>
-			</ul>
-			<div class="reset_nav">
-				<ul class="nav">
-					<li class="gray_arrow">
-						<div>1</div>确认账号</li>
-					<li class="current special_bg">
-						<div>2</div>安全验证</li>
-					<li>
-						<div>3</div>重置密码</li>
+	<div class='ybarticle_container'>
+		<div class='ybarticle_wrapper'>
+			<div class='ybarticle_crumbs_wrapper'>
+				<ul>
+					<li><a href="javascript:;">首页</a><span>&gt</span></li>
+					<li><a href="javascript:;">忆尔百科</a><span>&gt</span></li>
+					<li><a href="javascript:;">如何使用忆尔优惠券？</a></li>
 				</ul>
 			</div>
-			<ul class="mobile_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">手机验证：</li>
-				<li class="">您绑定的手机号码是：<span>138****0000</span></li>
-			</ul>
-			<ul class="mail_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">邮箱验证：</li>
-				<li class="">您绑定的邮箱是：<span>sunshine@sina.com.cn</span></li>
-			</ul>
-			<div class="form_group inline">
-				<form name="" method="" action="">
-					<input type="text" value="" placeholder="请输入验证码">
-				</form>
-				<div class="send_identifying_code btn">发送验证码</div>
+			<div class='ybarticle_main_wrapper'>
+				<h3 class='ybarticle_title_item'>如何使用忆尔优惠券？</h3>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/encyclopedia/encyclopedia_illustration_7.jpg">
+				</div>
+				<div class='ybarticle_article_item'>
+					<p>
+						我们会不定期推出优惠回馈活动，赠送出一定金额的优惠券，目前用户可以通过关注‘忆尔’公众号（微信号yearbookcom）并在推送消息处领取优惠券，这样您的账户中就会有4个优惠券（满50减10、满100减20、满200减40、满500减100）生成。
+					</p>
+					<p>
+						编辑好书册提交下单后，跳转至“订单详情”页面，在“使用优惠券”处选择“可用优惠券”或“手动输入代码”，即可获得相应优惠。
+					</p>
+					<p>
+						需要注意的是，在同一笔订单中，只能使用一张优惠券。
+					</p>
+					<p>
+						另外对于量大的批量制作，可以有定制化的优惠策略，用户可以联系客服确认优惠。
+					</p>
+				</div>
+				<div class='ybarticle_articleguide_wrapper'>
+					<ul>
+						<li class='prev'><label>上一篇：</label><a href="javascript:;">没有了</a></li>
+						<li class='next'><label>下一篇：</label><a href="javascript:;">教你如何给宝宝拍照做照片书</a></li>
+					</ul>
+				</div>
 			</div>
-			<a href="reset_password_step3.html">
-				<div class="next btn">下一步</div>
-			</a>
-			<div class="gray_line"></div>
-			<div class="change_method">*点此切换至<a href="javascript:void (0);" class="go_mail_check">邮箱验证</a></div>
 		</div>
 	</div>
 	<!--底部-->
@@ -105,21 +100,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script>
-	//切换验证方式
-	$('.go_mail_check').click(function() {
-		if ($(this).text() === '邮箱验证') {
-			$('.mobile_check').hide();
-			$('.mail_check').show();
-			$(this).text('手机验证');
-		} else {
-			$('.mobile_check').show();
-			$('.mail_check').hide();
-			$(this).text('邮箱验证');
-		}
-	});
-	</script>
 </body>
-
-</html>

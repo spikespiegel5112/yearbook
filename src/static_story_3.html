@@ -8,13 +8,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.0-重置密码-安全验证</title>
+	<title>忆尔-聚会纪念册</title>
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/account.css" type="text/css" media="all">
-	<!-- endbuild -->
-	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/staticize.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -39,44 +37,45 @@
 		</div>
 	</div>
 	<div class="cm_header_shadow"></div>
-	<!-- main -->
-	<div class="reset_password_container">
-		<div class="reset_password">
-			<a href="javascript:void (0);" class="close">×</a>
-			<ul class="bread_nav">
-				<li class="cm_fl cm_ml_5"><a href="book_manage_interaction.html">找回密码</a></li>
-			</ul>
-			<div class="reset_nav">
-				<ul class="nav">
-					<li class="gray_arrow">
-						<div>1</div>确认账号</li>
-					<li class="current special_bg">
-						<div>2</div>安全验证</li>
-					<li>
-						<div>3</div>重置密码</li>
+	<div class='ybarticle_container'>
+		<div class='ybarticle_wrapper'>
+			<div class='ybarticle_crumbs_wrapper'>
+				<ul>
+					<li><a href="javascript:;">首页</a><span>&gt</span></li>
+					<li>聚会纪念册</li>
 				</ul>
 			</div>
-			<ul class="mobile_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">手机验证：</li>
-				<li class="">您绑定的手机号码是：<span>138****0000</span></li>
-			</ul>
-			<ul class="mail_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">邮箱验证：</li>
-				<li class="">您绑定的邮箱是：<span>sunshine@sina.com.cn</span></li>
-			</ul>
-			<div class="form_group inline">
-				<form name="" method="" action="">
-					<input type="text" value="" placeholder="请输入验证码">
-				</form>
-				<div class="send_identifying_code btn">发送验证码</div>
+			<div class='ybarticle_main_wrapper'>
+				<h3 class='ybarticle_title_item'>聚会纪念册</h3>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/index/story3-1.jpg">
+				</div>
+				<div class='ybarticle_article_item'>
+					<p>
+						时光荏苒，转眼毕业十年了，在班长及大家齐心协力下促成了此次的喜相逢。
+					</p>
+					<p>
+						除了线下的聚会活动，班长还弄了个非常高大上的玩意——聚会纪念册，这个册子线上平台制作然后寄到我们手上。
+					</p>
+					<p>
+						纪念册的制作，有点类似于照片书，但是功能强大好多，也非常方便。班长新建书册完了之后，发出“邀请卡”，我们这些聚会参与人填写“邀请卡”上的简单信息，就完成了个人页面上的数据收集，同时也加入了书册。
+					</p>
+					<p>
+						除去个人页面，我们还可以共同撰写聚会采摘、活动记录等各种其他板块，汇编成一本内容、记忆满满的纪念册。
+					</p>
+					<p>
+						没错，就是这么方便，就是那么灵！
+					</p>
+				</div>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/index/story3-2.jpg">
+				</div>
+				<div class='ybarticle_article_item text_cen'>
+					<p>
+						<a href="javascript:;">点击预览模板详情</a>
+					</p>
+				</div>
 			</div>
-			<a href="reset_password_step3.html">
-				<div class="next btn">下一步</div>
-			</a>
-			<div class="gray_line"></div>
-			<div class="change_method">*点此切换至<a href="javascript:void (0);" class="go_mail_check">邮箱验证</a></div>
 		</div>
 	</div>
 	<!--底部-->
@@ -105,21 +104,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script>
-	//切换验证方式
-	$('.go_mail_check').click(function() {
-		if ($(this).text() === '邮箱验证') {
-			$('.mobile_check').hide();
-			$('.mail_check').show();
-			$(this).text('手机验证');
-		} else {
-			$('.mobile_check').show();
-			$('.mail_check').hide();
-			$(this).text('邮箱验证');
-		}
-	});
-	</script>
 </body>
-
-</html>

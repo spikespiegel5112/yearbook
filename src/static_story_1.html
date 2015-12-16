@@ -8,13 +8,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.0-重置密码-安全验证</title>
+	<title>忆尔-亲子纪念册故事</title>
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/account.css" type="text/css" media="all">
-	<!-- endbuild -->
-	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/staticize.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -39,44 +37,45 @@
 		</div>
 	</div>
 	<div class="cm_header_shadow"></div>
-	<!-- main -->
-	<div class="reset_password_container">
-		<div class="reset_password">
-			<a href="javascript:void (0);" class="close">×</a>
-			<ul class="bread_nav">
-				<li class="cm_fl cm_ml_5"><a href="book_manage_interaction.html">找回密码</a></li>
-			</ul>
-			<div class="reset_nav">
-				<ul class="nav">
-					<li class="gray_arrow">
-						<div>1</div>确认账号</li>
-					<li class="current special_bg">
-						<div>2</div>安全验证</li>
-					<li>
-						<div>3</div>重置密码</li>
+	<div class='ybarticle_container'>
+		<div class='ybarticle_wrapper'>
+			<div class='ybarticle_crumbs_wrapper'>
+				<ul>
+					<li><a href="javascript:;">首页</a><span>&gt</span></li>
+					<li>亲子纪念册</li>
 				</ul>
 			</div>
-			<ul class="mobile_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">手机验证：</li>
-				<li class="">您绑定的手机号码是：<span>138****0000</span></li>
-			</ul>
-			<ul class="mail_check">
-				<li>为了您的帐号安全请完成身份验证</li>
-				<li class="method">邮箱验证：</li>
-				<li class="">您绑定的邮箱是：<span>sunshine@sina.com.cn</span></li>
-			</ul>
-			<div class="form_group inline">
-				<form name="" method="" action="">
-					<input type="text" value="" placeholder="请输入验证码">
-				</form>
-				<div class="send_identifying_code btn">发送验证码</div>
+			<div class='ybarticle_main_wrapper'>
+				<h3 class='ybarticle_title_item'>亲子纪念册故事</h3>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/index/story1-1.jpg">
+				</div>
+				<div class='ybarticle_article_item'>
+					<p>
+						从呱呱落地到学爬学走到独立上学，孩子的每个瞬间、时间都值得记住，记录她的成长点滴也记录为人父母的心情感慨。
+					</p>
+					<p>
+						爸爸为宝宝拍了很多照片，各个月龄段的模样，百天、周岁生日纪念的，各地旅游的，等等等等，数量庞大但杂乱。
+					</p>
+					<p>
+						在忆尔上制作亲子纪念册，可以按宝宝的成长过程编排册子，这样把我们照片能进行有序整理，能明显看到宝宝各个时期的成长变化，又可以着重突出特别的时刻——生日、旅行等。
+					</p>
+					<p>
+						做了本纪念册，既记录了宝宝的成长，又把抚养过程回忆了遍，还把照片有效整理了，真是一举多得。
+					</p>
+					<p>
+						拿到册子的时候，真是倍感温馨，点点滴滴都浓缩在册子上了，亲朋好友来家做客时也方便给他们翻阅。将来等孩子长大，这些都是她不记得的记忆。
+					</p>
+				</div>
+				<div class='ybarticle_ilustri_wrapper'>
+					<img src="img/index/story1-2.jpg">
+				</div>
+				<div class='ybarticle_article_item text_cen'>
+					<p>
+						<a href="javascript:;">点击预览模板详情</a>
+					</p>
+				</div>
 			</div>
-			<a href="reset_password_step3.html">
-				<div class="next btn">下一步</div>
-			</a>
-			<div class="gray_line"></div>
-			<div class="change_method">*点此切换至<a href="javascript:void (0);" class="go_mail_check">邮箱验证</a></div>
 		</div>
 	</div>
 	<!--底部-->
@@ -105,21 +104,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script>
-	//切换验证方式
-	$('.go_mail_check').click(function() {
-		if ($(this).text() === '邮箱验证') {
-			$('.mobile_check').hide();
-			$('.mail_check').show();
-			$(this).text('手机验证');
-		} else {
-			$('.mobile_check').show();
-			$('.mail_check').hide();
-			$(this).text('邮箱验证');
-		}
-	});
-	</script>
 </body>
-
-</html>

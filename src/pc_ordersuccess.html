@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-个人中心-我的书架</title>
+	<link rel="stylesheet" href="assets/css/font-awesome.css">
+	<link rel="stylesheet" href="assets/css/green.css">
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/personalcenter.css">
+	<!-- endbuild -->
+</head>
+
+<body>
+	<!--头部导航-->
+	<div class="cm_header_nav">
+		<div class="logo">
+			<a href="index.html"><img src="img/logo.png"></a>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="autographbook.html">纪念册</a></li>
+				<li><a href="pc_mybookshelf.html" class="active">个人中心</a></li>
+				<li><a href="javascript:;">使用指南</a></li>
+			</ul>
+		</div>
+		<div class="nav_login">
+			<ul>
+				<li><a href="login.html">登陆</a></li>
+				<li><a href="registe.html">注册</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cm_header_shadow"></div>
+	<!--主内容区域-->
+	<div class="main_content_container personal_center_main">
+		<!--左侧内容 开始-->
+		<div class="left_content_container">
+			<div class="personal_list_box">
+				<ul>
+					<li>
+						<a href="pc_personInfo.html">
+							<div class="personal_info">
+								<div class="personal_head"><img src="img/personal_center/personal_head.png" alt="头像"></div>
+								<h5>李四</h5>
+								<span>1995年10月4日</span>
+							</div>
+						</a>
+					</li>
+					<li class="active"><span class="myBookshelf_icon"></span><a href="pc_mybookshelf.html">我的书架</a></li>
+					<li><span class="myMessage_icon"></span><a href="pc_myMessage.html">我的消息</a></li>
+					<li><span class="ybWallet_icon"></span><a href="pc_wallet.html">忆尔钱包</a></li>
+					<li><span class="account_security_icon"></span><a href="pc_security.html">账户安全</a></li>
+					<li><span class="feedback_icon"></span><a href="pc_feedback.html">意见反馈</a></li>
+					<li><span class="order_icon"></span><a href="pc_my_order.html">我的订单</a></li>
+				</ul>
+			</div>
+			<div class="personal_content_box">
+				<ul class="top-gradation">
+					<li><a href="pc_security.html">订单列表</a></li>
+					<li class="current"><a href="pc_security_changePassword.html">&gt;付款成功</a></li>
+				</ul>
+				<div class="hr">
+					<div class="green"></div>
+					<div class="gray"></div>
+				</div>
+				<div class='opd_successprompt_wrapper'>
+					<h2>付款成功！</h2>
+					<p>
+						您的订单已经生效，我们即刻为您开始制作
+						<br> 一本精致的纪念册需要耐心的打磨，请给我们5天时间！
+					</p>
+					<span></span>
+				</div>
+				<div class='opd_successbind_wrapper'>
+					<p>温馨提示：绑定手机或微信，可随时接收订单的处理状态及发货信息</p>
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<span class='icon-mobile-phone'></span>
+								<label>立即绑定手机</label>
+							</a>
+						</li>
+						<li>
+							<a class='opd_wechatdrcode_item' href="img/qrcode_for_gh_344.jpg">
+								<span class='icon-comments'></span>
+								<label>立即绑定微信</label>
+							</a>
+						</li>
+					</ul>
+					<a class='opd_revieworderlist_item' href="javascript:;">
+						<span class='icon-file-alt'></span>
+						<label>查看订单</label>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--左侧内容 结束-->
+		<!--右侧内容 开始-->
+		<div class="right_content_container">
+			<a href="javascript:;">书市</a>
+			<a href="autographbook.html" class="more">更多…</a>
+			<div class="hr">
+				<div class="green"></div>
+				<div class="gray"></div>
+			</div>
+			<div class="more_books_container max">
+				<div class="hd">
+					<a class="prev"></a>
+				</div>
+				<div class="bd">
+					<ul class="book_carousel picList">
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/cartoon001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="漫画风格">漫画风格</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect002.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/cartoon001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="漫画风格">漫画风格</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect002.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="hd">
+					<a class="next"></a>
+				</div>
+			</div>
+		</div>
+		<!--右侧内容 结束-->
+	</div>
+	<!--底部-->
+	<div class="footer">
+		<div class="footer_info">
+			<a href="javascript:;"><img src="img/yb_logo.png"></a>
+			<div class="footer_title">
+				<div>忆尔-在线DIY纪念册平台</div>
+				<p>专业在线制作电子书册平台</p>
+				<p>DIY出独一无二的青春纪念册</p>
+			</div>
+		</div>
+		<div class="footer_list">
+			<div class="ft_nav">
+				<a href="javascript:;">客服电话 400 0610 127</a>
+				<a href="javascript:;">客服QQ</a>
+				<a href="javascript:;">客服邮箱</a>
+				<a href="javascript:;">关于我们</a>
+			</div>
+			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+			<div class="ft_shares">
+				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+				<a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+			</div>
+		</div>
+	</div>
+	<!--输入邀请码加入弹出-->
+	<div id="modal_con" class="input_invitation_code">
+		<form class='creatalbum_window_form hidden'>
+			<h4>小伙伴们都在这里了，快来加入吧！</h4>
+			<div class="heads">
+				<img src="img/personal_center/partner_heads.png">
+			</div>
+			<div>
+				<label>邀请码：</label>
+				<input class="form-control" type='text' />
+			</div>
+			<p class="tip">提示:凭邀请码加入指定书册后，您可以与小伙伴们一起制作书册，记录那些属于你们的美好回忆！</p>
+		</form>
+	</div>
+	<!--编辑删除书册弹出确认-->
+	<div id="modal_con_del_book">
+		<form class='creatalbum_window_form hidden'>
+			<div>
+				<label>确认要删除此书册</label>
+			</div>
+		</form>
+	</div>
+	<!--我要下单 书册预览 -->
+	<div id="preview_book_container" class="place_order_container">
+		<div class="reset_nav order_nav">
+			<ul class="nav">
+				<li class="current special_bg">
+					<div>1</div>书册预览</li>
+				<li class="gray_bg">
+					<div>2</div>订单确认</li>
+				<li>
+					<div>3</div>完成下单</li>
+			</ul>
+		</div>
+		<div class="preview_book">
+			<div class="swiper-container gallery-top">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/1.jpg"><img src="img/pages/6.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/2.jpg"><img src="img/pages/3.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/4.jpg"><img src="img/pages/5.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/1.jpg"><img src="img/pages/6.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/2.jpg"><img src="img/pages/3.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/4.jpg"><img src="img/pages/5.jpg">
+						</div>
+					</div>
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next swiper-button-black"></div>
+				<div class="swiper-button-prev swiper-button-black"></div>
+			</div>
+			<div class="swiper-container gallery-thumbs">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/1.jpg"><img src="img/pages/6.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/2.jpg"><img src="img/pages/3.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/4.jpg"><img src="img/pages/5.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/1.jpg"><img src="img/pages/6.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/2.jpg"><img src="img/pages/3.jpg">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_container">
+							<img src="img/pages/4.jpg"><img src="img/pages/5.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="hr"></div>
+			</div>
+		</div>
+		<div class="confirm_next">
+			<p class="tip">提示：请点击下一步确认订单信息</p>
+			<div class="next"><a href="javascript:void (0);" class="yb_book_btn">下一步</a></div>
+		</div>
+	</div>
+	<!--我要下单 订单确认-->
+	<div id="firm_order" class="place_order_container">
+		<div class="reset_nav order_nav">
+			<ul class="nav">
+				<li class="gray_arrow">
+					<div>1</div>书册预览</li>
+				<li class="current special_bg">
+					<div>2</div>订单确认</li>
+				<li>
+					<div>3</div>完成下单</li>
+			</ul>
+		</div>
+		<div class="order_con pages">
+			<a href="javascript:;">书册页面</a>
+			<div class="hr">
+				<div class="green"></div>
+				<div class="gray"></div>
+			</div>
+			<ul class="pages_list">
+				<li class="caption">
+					<ul>
+						<li>名称</li>
+						<li>数量</li>
+						<li>单价</li>
+						<li>单位</li>
+						<li>总计</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>个人页面</li>
+						<li>1</li>
+						<li>￥<span>0.90</span></li>
+						<li>页</li>
+						<li>￥<span>0.90</span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="order_con accessories">
+			<a href="javascript:;">书册配件</a>
+			<div class="hr">
+				<div class="green"></div>
+				<div class="gray"></div>
+			</div>
+			<ul class="pages_list">
+				<li class="caption">
+					<ul>
+						<li>名称</li>
+						<li>包装选择</li>
+						<li>单价</li>
+						<li>单位</li>
+						<li>总计</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>封皮</li>
+						<li>
+							<select>
+								<option>精装(人造革)</option>
+								<option>精装(硬)</option>
+								<option>平装(软)</option>
+							</select>
+						</li>
+						<li>￥<span>45.00</span></li>
+						<li>页</li>
+						<li>￥<span>45.00</span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="order_con size">
+			<a href="javascript:;">纪念册尺寸</a>
+			<div class="hr">
+				<div class="green"></div>
+				<div class="gray"></div>
+			</div>
+			<ul class="pages_list">
+				<li class="caption">
+					<ul>
+						<li>名称</li>
+						<li>选择规格</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>纪念册尺寸</li>
+						<li>
+							<select>
+								<option>A5(145mm * 210mm)</option>
+								<option>A4(175mm * 248mm)(基础价格*1.8)</option>
+							</select>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="book_unit_price">
+			<p>每本书应支付￥<span>45.90</span></p>
+		</div>
+		<div class="sum_money">
+			<div class="num">
+				<label>印刷数量
+					<input type="text" class="form-control" placeholder="1"> * <span>45.90</span></label>
+			</div>
+			<div class="money">
+				<p>总金额<span>￥<b>45.90</b></span></p>
+			</div>
+		</div>
+		<div class="confirm_next">
+			<p class="tip">提示：请点击‘确认下单’完成下单</p>
+			<div class="next"><a href="pc_my_order_details.html" class="yb_book_btn">确认下单</a></div>
+		</div>
+	</div>
+	<!--我要下单 完成下单-->
+	<!--导航页 结束-->
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
+	<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.1.js'></script>
+	<script type="text/javascript" src='assets/js/icheck.js'></script>
+	<script type="text/javascript" src='assets/js/swiper.jquery.min.js'></script>
+	<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+	<script>
+		/*
+		 * 引导页
+		 * */
+		/* 显示遮罩层 */
+		function showOverlay() {
+			/*$("#overlay").height(pageHeight());*/
+			$("#overlay").width(pageWidth());
+			$("#overlay").fadeTo(200, 0.5);
+		}
+
+		/* 隐藏覆盖层 */
+		function hideOverlay() {
+			$("#overlay").fadeOut();
+		}
+
+		/* 当前页面高度 */
+		/*function pageHeight() {
+			return document.body.scrollHeight;
+		}*/
+
+		/* 当前页面宽度 */
+		function pageWidth() {
+			return document.body.scrollWidth;
+		}
+
+		function showPageGuide() {
+			showOverlay();
+			$('.start_btn').click(function() {
+				$('.guide_container').fadeOut();
+				hideOverlay();
+			});
+			$(window).resize(function() {
+				showPageGuide();
+			});
+		}
+		/*
+		 * 删除书册显示隐藏
+		 */
+		function showDel_btn() {
+			var flag = 1;
+			$(".editBook_btn").click(function() {
+				if (flag == 1) {
+					//执行方法;
+					$('.book_figure .del_btn').removeClass("hidden");
+					$(this).addClass('active');
+					flag = 0;
+				} else {
+					//执行方法;
+					$('.book_figure .del_btn').addClass("hidden");
+					$(this).removeClass('active');
+					flag = 1;
+				}
+			})
+		}
+
+		/*时间选择*/
+		$('.filter_time_line li').click(function() {
+			$(this).addClass('current').siblings().removeClass('current');
+		});
+		/*
+		 * 弹出输入邀请码层
+		 */
+		function joinBycode() {
+			$('.joinBycode_btn').on('click', function() {
+				$('#modal_con').children().removeClass("hidden");
+				art.dialog({
+					title: '输入书册邀请码',
+					lock: true,
+					content: document.getElementById('modal_con'),
+					okValue: '确 定',
+					ok: function() {
+						$('#modal_con').children('.creatalbum_window_form').addClass("hidden");
+					},
+					cancelValue: '取消',
+					cancel: function() {
+						$('#modal_con').children('.creatalbum_window_form').addClass("hidden");
+					},
+				});
+			});
+		}
+		/*
+		 * 弹出删除确认层
+		 */
+		function del_book() {
+			$('.del_btn').on('click', function() {
+				$('#modal_con_del_book').children().removeClass("hidden");
+				art.dialog({
+					title: '删除',
+					lock: true,
+					content: document.getElementById('modal_con_del_book'),
+					okValue: '确 定',
+					ok: function() {
+						$('#modal_con_del_book').children('.creatalbum_window_form').addClass("hidden");
+					},
+					cancelValue: '取消',
+					cancel: function() {
+						$('#modal_con_del_book').children('.creatalbum_window_form').addClass("hidden");
+					},
+				});
+			});
+		}
+
+		//右侧书市上下翻页
+		jQuery(".more_books_container").slide({
+			titCell: ".hd ul",
+			mainCell: ".bd ul",
+			autoPlay: false,
+			effect: "top",
+			vis: 3,
+			pnLoop: false,
+			autoPage: true
+		});
+
+		//渲染控件样式
+		function changeButtonCss() {
+			$("input[type=radio],input[type=checkbox]").iCheck({
+				checkboxClass: 'icheckbox_minimal-green',
+				radioClass: 'iradio_minimal-green',
+				increaseArea: '20%'
+			});
+		}
+
+		/*弹出我要下单*/
+		function placeOrder() {
+			$('.place_order').click(function() {
+				//第一步：弹出书册预览
+				art.dialog({
+					id: 'preview_book_container',
+					title: '我要下单',
+					lock: true,
+					content: document.getElementById('preview_book_container')
+				});
+				//书册预览slide
+				$('.gallery-top .swiper-wrapper .swiper-slide').eq(2).addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').prev().addClass('swiper-slide-prev').next().addClass('swiper-slide-prev');
+				var galleryTop = new Swiper('.gallery-top', {
+					nextButton: '.swiper-button-next',
+					prevButton: '.swiper-button-prev',
+					spaceBetween: 10
+				});
+				var galleryThumbs = new Swiper('.gallery-thumbs', {
+					/*spaceBetween: 10,*/
+					centeredSlides: true,
+					slidesPerView: 'auto',
+					touchRatio: 0.2,
+					slideToClickedSlide: true
+				});
+				galleryTop.params.control = galleryThumbs;
+				galleryThumbs.params.control = galleryTop;
+
+				//第二步：确认订单
+				$('.confirm_next .next').click(function() {
+					art.dialog.list['preview_book_container'].content(document.getElementById('firm_order'));
+				});
+			});
+		}
+
+		function drcodePopup() {
+			$('.opd_wechatdrcode_item').fancybox();
+		}
+
+
+		$(document).ready(function() {
+			joinBycode();
+			del_book();
+			showDel_btn();
+			changeButtonCss();
+			placeOrder();
+			drcodePopup();
+		});
+	</script>
+</body>
+
+</html>

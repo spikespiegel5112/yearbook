@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-个人中心-忆尔钱包</title>
+	<link rel="stylesheet" href="assets/css/font-awesome.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui-datepicker.min.css">
+	<link rel="stylesheet" href="assets/css/cangas.datepicker.css">
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/personalcenter.css">
+
+	<!-- endbuild -->
+</head>
+
+<body>
+	<!--头部导航-->
+	<div class="cm_header_nav">
+		<div class="logo">
+			<a href="index.html"><img src="img/logo.png"></a>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="autographbook.html">纪念册</a></li>
+				<li><a href="pc_mybookshelf.html" class="active">个人中心</a></li>
+				<li><a href="javascript:;">使用指南</a></li>
+			</ul>
+		</div>
+		<div class="nav_login">
+			<ul>
+				<li><a href="login.html">登陆</a></li>
+				<li><a href="registe.html">注册</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cm_header_shadow"></div>
+	<!--主内容区域-->
+	<div class="main_content_container personal_center_main">
+		<!--左侧内容 开始-->
+		<div class="left_content_container">
+			<div class="personal_list_box">
+				<ul>
+					<li>
+						<a href="pc_personInfo.html">
+							<div class="personal_info">
+								<div class="personal_head"><img src="img/personal_center/personal_head.png" alt="头像"></div>
+								<h5>李四</h5>
+								<span>1995年10月4日</span>
+							</div>
+						</a>
+					</li>
+					<li><span class="myBookshelf_icon"></span><a href="pc_mybookshelf.html">我的书架</a></li>
+					<li><span class="myMessage_icon"></span><a href="pc_myMessage.html">我的消息</a></li>
+					<li class="active"><span class="ybWallet_icon"></span><a href="pc_wallet.html">忆尔钱包</a></li>
+					<li><span class="account_security_icon"></span><a href="pc_security.html">账户安全</a></li>
+					<li><span class="feedback_icon"></span><a href="pc_feedback.html">意见反馈</a></li>
+					<li><span class="order_icon"></span><a href="pc_my_order.html">我的订单</a></li>
+				</ul>
+			</div>
+			<div class="personal_content_box">
+				<a href="javascript:;">忆尔钱包</a>
+				<div class="hr">
+					<div class="green"></div>
+					<div class="gray"></div>
+				</div>
+				<div class="user_name">
+					<h2>尊敬的<span>admin</span>，下午好！</h2></div>
+				<div class="balance">
+					<div class="available_balance">
+						<h4>当前可用余额</h4>
+						<span>1000.00</span>元
+						<a href="pc_wallet_recharge.html">
+							<button type="button" class="btn recharge">充值</button>
+						</a>
+					</div>
+					<div class="vertical_line"></div>
+					<div class="conversion">
+						<input class="form-control" type="text" value="" placeholder="请输入优惠券兑换码">
+						<button type="button" class="btn exchange">兑换优惠券</button>
+					</div>
+				</div>
+				<div class="transaction_detail">
+					<div class="title">
+						<h4>交易明细</h4></div>
+					<div class="query_date">
+						<label>起止日期</label>
+						<input id="start_date" class="form-control" type="text" value="" placeholder="" onchange="setMinEndDate();"> —
+						<input id="end_date" class="form-control" type="text" value="" placeholder="">
+						<button type="button" class="btn query">查询</button>
+					</div>
+					<div class="detail_list">
+						<ul>
+							<li class="caption">
+								<ul>
+									<li>日期</li>
+									<li class="abstract">摘要</li>
+									<li>明细</li>
+									<li>收入</li>
+									<li>支出</li>
+									<li>可用余额</li>
+									<li>总余额</li>
+								</ul>
+							</li>
+							<li class="list">
+								<ul>
+									<li>2015-06-01 19:40</li>
+									<li class="abstract">支付订单（850793146972）</li>
+									<li>充值</li>
+									<li>100</li>
+									<li>0</li>
+									<li>100</li>
+									<li>100</li>
+								</ul>
+							</li>
+							<li class="list"></li>
+							<li class="list"></li>
+							<li class="list"></li>
+						</ul>
+						<nav class="">
+							<ul class="pagination">
+								<li class="home">
+									<a href="javascript:void (0);">
+										<span>首页</span>
+									</a>
+								</li>
+								<li class="prev">
+									<a href="javascript:void (0);">
+										<span>上一页</span>
+									</a>
+								</li>
+								<li class="cur"><a href="javascript:void (0);"><span>1</span>/<span>66</span></a></li>
+								<li class="next">
+									<a href="javascript:void (0);">
+										<span>下一页</span>
+									</a>
+								</li>
+								<li class="end">
+									<a href="javascript:void (0);">
+										<span>尾页</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="coin_certificate">
+					<div class="coupon_slidebox">
+						<div class="hd">
+							<ul>
+								<li>未使用的券</li>
+								<li>已使用的券</li>
+							</ul>
+						</div>
+						<div class="bd">
+							<ul class="coupon_list">
+								<li class="caption">
+									<ul>
+										<li>优惠券编号</li>
+										<li>优惠内容</li>
+										<li>截止日期</li>
+										<li>来源</li>
+										<li>备注</li>
+									</ul>
+								</li>
+								<li class="list">
+									<ul>
+										<li>F963RQLFDMBNY569</li>
+										<li>面额50元订满500可使用</li>
+										<li>2015.08.30</li>
+										<li>优惠券兑换码</li>
+										<li>无</li>
+									</ul>
+								</li>
+								<li class="list">
+									<ul>
+										<li>F963RQLFDMBNY569</li>
+										<li>面额50元订满500可使用</li>
+										<li>2015.08.30</li>
+										<li>优惠券兑换码</li>
+										<li>无</li>
+									</ul>
+								</li>
+								<li class="list"></li>
+								<li class="list"></li>
+								<li class="list"></li>
+							</ul>
+							<ul class="coupon_list used">
+								<li class="caption">
+									<ul>
+										<li>优惠券编号</li>
+										<li>优惠内容</li>
+										<li>截止日期</li>
+										<li>来源</li>
+										<li>备注</li>
+									</ul>
+								</li>
+								<li class="list">
+									<ul>
+										<li>F963RQLFDMBNY569</li>
+										<li>面额50元订满500可使用</li>
+										<li>2015.08.30</li>
+										<li>优惠券兑换码</li>
+										<li>无</li>
+									</ul>
+								</li>
+								<li class="list"></li>
+								<li class="list"></li>
+								<li class="list"></li>
+								<li class="list"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--左侧内容 结束-->
+		<!--右侧内容 开始-->
+		<div class="right_content_container">
+			<a href="javascript:;">书市</a>
+			<a href="autographbook.html" class="more">更多…</a>
+			<div class="hr">
+				<div class="green"></div>
+				<div class="gray"></div>
+			</div>
+			<div class="more_books_container max">
+				<div class="hd">
+					<a class="prev"></a>
+				</div>
+				<div class="bd">
+					<ul class="book_carousel picList">
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/cartoon001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="漫画风格">漫画风格</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect002.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/cartoon001.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="漫画风格">漫画风格</div>
+							</a>
+						</li>
+						<li class="item">
+							<a class="more_books_list max" href="book_manage_preview.html">
+								<img class="book_thum_img" src="img/personal_center/recollect002.png">
+								<div class="edit_icon">
+									<span class="icon-eye-open"></span>
+									<span class="icon_book"></span>
+									<span class="icon-trash"></span>
+								</div>
+								<div class="book_name" title="青春记忆">青春记忆</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="hd">
+					<a class="next"></a>
+				</div>
+			</div>
+		</div>
+		<!--右侧内容 结束-->
+	</div>
+	<!--底部-->
+	<div class="footer">
+		<div class="footer_info">
+			<a href="javascript:;"><img src="img/yb_logo.png"></a>
+			<div class="footer_title">
+				<div>忆尔-在线DIY纪念册平台</div>
+				<p>专业在线制作电子书册平台</p>
+				<p>DIY出独一无二的青春纪念册</p>
+			</div>
+		</div>
+		<div class="footer_list">
+			<div class="ft_nav">
+				<a href="javascript:;">客服电话 400 0610 127</a>
+				<a href="javascript:;">客服QQ</a>
+				<a href="javascript:;">客服邮箱</a>
+				<a href="javascript:;">关于我们</a>
+			</div>
+			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+			<div class="ft_shares">
+				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+				<a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.1.js'></script>
+	<script type="text/javascript" src='assets/js/jquery-ui-datepicker.min.js'></script>
+	<script>
+		//右侧书市上下翻页
+		jQuery(".more_books_container").slide({
+			titCell: ".hd ul",
+			mainCell: ".bd ul",
+			autoPlay: false,
+			effect: "top",
+			vis: 3,
+			pnLoop: false,
+			autoPage: true
+		});
+		jQuery(".coupon_slidebox").slide({
+			trigger: "click"
+		}); //优惠券TAB选项卡
+
+		$('#start_date,#end_date').datepicker({
+			showOtherMonths: true,
+			dateFormat: 'yy-mm-dd',
+			changeYear: true,
+			changeMonth: true,
+			yearRange: "1979:2025",
+			maxDate: null,
+			minDate: null,
+			selectOtherMonths: true,
+			showButtonPanel: false
+		}).datepicker('widget').wrap('<div class="ll-skin-cangas"/>');
+
+		$.datepicker.regional['zh-CN'] = {
+			closeText: '关闭',
+			prevText: '&#x3c;上月',
+			nextText: '下月&#x3e;',
+			currentText: '今天',
+			monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+				'七月', '八月', '九月', '十月', '十一月', '十二月'
+			],
+			monthNamesShort: ['一', '二', '三', '四', '五', '六',
+				'七', '八', '九', '十', '十一', '十二'
+			],
+			dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+			dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+			dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+			weekHeader: '周',
+			dateFormat: 'yy-mm-dd',
+			firstDay: 1,
+			isRTL: false,
+			showMonthAfterYear: true,
+			yearSuffix: '年'
+		};
+		$.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+
+		//设置查询截止最小日期
+		function setMinEndDate() {
+			var minEndDayStr = $('#start_date').val().split('-');
+			var year = minEndDayStr[0],
+				month = minEndDayStr[1],
+				day = minEndDayStr[2];
+			$('#end_date').datepicker("option", "minDate", new Date(year, month - 1, day));
+		}
+	</script>
+</body>
+
+</html>

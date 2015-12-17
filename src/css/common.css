@@ -2756,63 +2756,101 @@ xww add
 .server_online_main_im .open_im:hover div{
 	background: #70ca5d url(../img/qqserver/open_im.png) no-repeat -27px 0;
 }
-/*~~~~~~~~~~iCheckiCheckiCheckiCheckiCheckiCheckiCheckiCheckiCheckiCheck~~~~~~~~~~*/
-/* iCheck plugin Minimal skin, green
------------------------------------ */
-.icheckbox_minimal-green,
-.iradio_minimal-green {
-    display: inline-block;
-    *display: inline;
-    vertical-align: middle;
-    margin: 0;
-    padding: 0;
-    width: 18px;
-    height: 18px;
-    background: url(../img/personal_center/green.png) no-repeat;
-    border: none;
-    cursor: pointer;
+/*~~~~~~~~~~agb_banner_wrapper~~~~~~~~~~*/
+.agb_banner_wrapper {
+	width: 100%;
+	height: 320px;
+	position: relative;
+	overflow: hidden;
+	min-width: 1260px;/*NEWYB 905*/
+}
+.agb_banner_wrapper p {
+	/*padding: 50px 0 0 0;*/
+	padding: 18px 0 22px 0;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	position: relative;
+	z-index: 1;
+}
+.agb_banner_wrapper p b {
+	font-size: 1.2em;
+}
+.agb_banner_wrapper a {
+	position: relative;
+	z-index: 1;
+}
+.agb_banner_wrapper .sentence_2 {
+	opacity: 0.8;
+	font-size: 17px;
+}
+.agb_banner_wrapper .customize {
+	display: block;
+	margin: 25px auto;
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	background: #94a520;
+}
+.agb_bannermenu_wrapper{
+	margin: 0 auto;
+	padding: 0 110px;
+	width: 540px;
+	height: 47px;
+	background: rgba(255,255,255,0.8);
+	position: relative;
+	z-index: 1;
+}
+.agb_bannermenu_wrapper li{
+	float: left;
+	padding: 10px 15px;
+	margin: 0 30px;
 }
 
-.icheckbox_minimal-green {
-    background-position: 0 0;
+.agb_bannermenu_wrapper li a{
+	color: #77706d;
+	font-size: 18px;
 }
-    .icheckbox_minimal-green.hover {
-        background-position: -20px 0;
-    }
-    .icheckbox_minimal-green.checked {
-        background-position: -40px 0;
-    }
-    .icheckbox_minimal-green.disabled {
-        background-position: -60px 0;
-        cursor: default;
-    }
-    .icheckbox_minimal-green.checked.disabled {
-        background-position: -80px 0;
-    }
-
-.iradio_minimal-green {
-    background-position: -100px 0;
+.agb_bannermenu_wrapper .active{
+	color: #d95151;
+	border-bottom: 3px solid #d95151;
 }
-    .iradio_minimal-green.hover {
-        background-position: -120px 0;
-    }
-    .iradio_minimal-green.checked {
-        background-position: -140px 0;
-    }
-    .iradio_minimal-green.disabled {
-        background-position: -160px 0;
-        cursor: default;
-    }
-    .iradio_minimal-green.checked.disabled {
-        background-position: -180px 0;
-    }
+.agb_bannermenu_wrapper .active a{
+	color: #d95151;
+}
+.agb_bannermain_wrapper{
+	width: 100%;
+	padding: 50px 0 0 0;
+	position: absolute;
+	top: 0;
+}
 
-/* HiDPI support */
-@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    .icheckbox_minimal-green,
-    .iradio_minimal-green {
-        background-image: url(../img/personal_center/green@2x.png);
-        -webkit-background-size: 200px 20px;
-        background-size: 200px 20px;
-    }
+
+.agb_bannermain_wrapper li, .agb_bannermain_wrapper li img{
+	display: block;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+.agb_bannermain_wrapper li{
+	padding: 90px 0 0 0;
+	width: 100%;
+}
+.agb_bannermain_wrapper .active{
+	z-index: 0;
+}
+.agb_banner_mask {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+}
+.agb_banner_mask:after {
+	content: '';
+	display: block;
+	clear: both;
 }

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-赠言墙</title>
+
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/ia.css" type="text/css" media="all">
+	<!-- endbuild -->
+	<link rel="stylesheet" type="text/css" href="assets/css/chosen.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+</head>
+
+<body>
+	<!--头部导航-->
+	<div class='ybnav_wrapper'>
+		<div class='headerlogo_item'>
+			<img src="img/logo.png" width='226' height='42'>
+		</div>
+		<div class='ybnav_nav_wrapper'>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="autographbook.html">模板库</a></li>
+				<li><a href="personal_center.html">个人中心</a></li>
+				<li><a href="use_guide.html">使用指南</a></li>
+			</ul>
+		</div>
+		<div class='ybnav_userinfo_wrapper'>
+			<ul>
+				<li class='ybnav_avatar_item'>
+					<a href="javascript:;"><img src='img/user_img1.jpg' width='25' height='25'></a>
+				</li>
+				<li class='ybnav_username_item'><a href="javascript:;">HI,admin</a></li>
+				<li class='ybnav_message_item'>
+					<a href="javascript:;"></a>
+				</li>
+				<li class='ybnav_logout_item'>
+					<a href="javascript:;"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--banner-->
+	<div class='ybbanner_wrapper'>
+		<div class='ybbanner_bookinfo_wrapper'>
+			<a href="book_preview_new.html">
+				<img class='ybbanner_bookcover_item' src="img/cover_css.jpg" width='80' height='120'>
+			</a>
+			<div class='ybbanner_bookinfo_item'>
+				<div class='ybbanner_bititle_item'>
+					<h6>十五个字符十五个字符十五个字符十五个字符</h6>
+					<a class="ybbanner_titleedit_item" href="javascript:;"><span class="icon-edit"></span></a>
+				</div>
+				<div class='ybbanner_biinfo_item'>
+					<label>班级名：</label>
+					<p>XXXXXXXXXXXX</p>
+				</div>
+				<div class='ybbanner_biinfo_item'>
+					<label>学校名：</label>
+					<p>学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校</p>
+				</div>
+			</div>
+		</div>
+		<div class='bannerslider_wrapper'>
+			<a class='bs_arrowbtn_left' href="javascript:;"></a>
+			<div class='bannerslider_inner'>
+				<ul>
+					<li class='bookspace'>
+						<a class='active' href="book_manage_index.html">
+							<span></span>
+							<p>书册空间</p>
+						</a>
+					</li>
+					<li class='chaptermaker'>
+						<a class='active' href="book_manage_preview.html">
+							<span></span>
+							<p>编辑制作</p>
+						</a>
+					</li>
+					<li class='interaction'>
+						<a class='active' href="book_manage_interaction.html">
+							<span></span>
+							<p>书册互动</p>
+						</a>
+					</li>
+					<li class='bookmanagement'>
+						<a class='active' href="bookmanagement_main.html">
+							<span></span>
+							<p>相册管理</p>
+						</a>
+					</li>
+					<li class='friendmanagement'>
+						<a class='active' href="book_manage_friend.html">
+							<span></span>
+							<p>小伙伴管理</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a class='bs_arrowbtn_right' href="javascript:;"></a>
+		</div>
+		<div class='ybbanner_shortcut_wrapper'>
+			<ul>
+				<li class='print'><a href="javascript:;"><span class='icon-print'></span>提交下单</a></li>
+
+				<li class='share'><a href="javascript:;"><span class='icon-share'></span>分享预览</a></li>
+				<li class='invite'><a href="javascript:;"><span class='icon-bullhorn'></span>邀请卡</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="ia_list_main">
+		<div class="ia_list_con ia_topic_con">
+			<div class="module_title_item">
+				<h5>
+				<ul class="bread_nav">
+					<li class="cm_fl cm_ml_5"><a href="book_manage_interaction.html">互动</a></li>
+					<li class="cm_fl cm_ml_5">赠言墙</li>
+				</ul>
+			</h5>
+				<div class="dash">
+					<div class="dash_92c153"></div>
+				</div>
+			</div>
+			<div class="leavewall_con">
+				<textarea id="leavewall_con_text" name="" rows="6" placeholder="随便说点什么吧!"></textarea>
+				<div class="operate">
+					<div class='lw_choosefriend_wrapper'>
+						<p class="cm_fl">@</p>
+						<select class='lw_choosefriendlist_wrapper' data-placeholder="选择小伙伴……">
+							<option></option>
+							<option>张三</option>
+							<option>李四</option>
+							<option>王五</option>
+							<option>aaa</option>
+							<option>bbb</option>
+							<option>ccc</option>
+							<option>ddd</option>
+							<option>eee</option>
+							<option>fff</option>
+							<option>ggg</option>
+						</select>
+					</div>
+					<div class="cm_fl lw_btn">
+						<a href="javascript:void(0);" class="yb_book_btn">发表赠言</a>
+					</div>
+				</div>
+			</div>
+			<!-- 输入区域 end -->
+			<div class="slideTxtBox">
+				<div class="hd">
+					<ul>
+						<li class='on'>全部赠言<span class="badge">9</span></li>
+					</ul>
+				</div>
+				<div class="bd">
+					<ul>
+						<div id="container" class="leavewall_con">
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到;而是因为我们失去了信心，有些事情才显得难以做到;而是因为我们失去了信心，有些事情才显得难以做到</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+							<div class="item">
+								<div class="user_head">
+									<img src="img/user_img4.jpg">
+								</div>
+								<div class="user_message">
+									<div class="message_info">
+										<h4>张三</h4>
+										<p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+										<p class="txt_r">来自 李四</p>
+									</div>
+									<div class="message_btn">
+										<ul>
+											<li class="m_b_li1">
+												<a href="javascript:void(0);" class="icon-envelope cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">回赠</a>
+											</li>
+											<li class="m_b_li2">
+												<a href="javascript:void(0);" class="icon-remove-sign cm_fl"></a>
+												<a href="javascript:void(0);" class="cm_fl cm_ml_5">删除</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item_arrow"></div>
+							</div>
+							<!-- item end -->
+						</div>
+						<div class='all_loadmore'>
+							<a href="javascript:;">加载更多<span></span></a>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<!-- 赠言墙 end -->
+		</div>
+	</div>
+	<!--底部-->
+	<div class="footer">
+		<div class="footer_info">
+			<a href="javascript:void(0);"><img src="img/yb_logo.png"></a>
+			<div class="footer_title">
+				<div>忆尔-在线DIY纪念册平台</div>
+				<p>专业在线制作电子书册平台</p>
+				<p>DIY出独一无二的青春纪念册</p>
+			</div>
+		</div>
+		<div class="footer_list">
+			<div class="ft_nav">
+				<a href="javascript:void(0);">客服电话 400 0610 127</a>
+				<a href="javascript:void(0);">客服QQ</a>
+				<a href="javascript:void(0);">客服邮箱</a>
+				<a href="javascript:void(0);">关于我们</a>
+			</div>
+			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+			<div class="ft_shares">
+				<a href="javascript:void(0);" class="x83"><img src="img/hy_83x30.png"></a>
+				<a href="javascript:void(0);"><img src="img/footer_wb_btn.png"></a>
+				<a href="javascript:void(0);"><img src="img/footer_qq_btn.png"></a>
+				<a href="javascript:void(0);"><img src="img/footer_wx_btn.png"></a>
+			</div>
+		</div>
+	</div>
+	<div class='bannertitleedit_wrapper hidden'>
+		<ul>
+			<li>
+				<label>相册名称：</label>
+				<input type='text'>
+			</li>
+			<li>
+				<label>班级名称：</label>
+				<input type='text'>
+			</li>
+			<li>
+				<label>学校名称：</label>
+				<input type='text'>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript" src='assets/js/jquery.masonry.min.js'></script>
+	<script type="text/javascript" src='assets/js/chosen.jquery.min.js'></script>
+	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
+	<!-- build:js js/all.js -->
+	<script type="text/javascript" src="js/base.js"></script>
+	<!-- endbuild -->
+	<script>
+		//点击选择小伙伴打开弹窗列表
+		/*function showFriendList() {
+			$('.lw_choosefriend_item').click(function() {
+				if ($('.lw_choosefriendlist_wrapper').is(":hidden")) {
+					$('.lw_choosefriendlist_wrapper').stop().fadeIn();
+				} else {
+					$('.lw_choosefriendlist_wrapper').stop().fadeOut();
+				}
+			});
+			$('.ia_list_con').click(function(e) {
+				if ($(e.target).find('.lw_choosefriendlist_wrapper').length != 0) {
+					$('.lw_choosefriendlist_wrapper').fadeOut();
+				}
+			});
+			$('.lw_choosefriendlist_wrapper ul li a').click(function() {
+				var thisText = $(this).text();
+				$('.lw_choosefriendlist_wrapper').hide();
+				$('.lw_choosefriend_item').html(thisText + '<span class="icon-angle-down"></span>');
+			});
+		}*/
+
+		//编辑banner标题名称
+		function editBannerTitle() {
+			$('.banner_titleedit_item').click(function() {
+				art.dialog({
+					title: '编辑相册名称',
+					lock: true,
+					content: document.querySelector('.bannertitleedit_wrapper'),
+					okValue: '确 定',
+					ok: function() {},
+					cancelValue: '取消',
+					cancel: function() {},
+				});
+			});
+		}
+
+		$(function() {
+			//chosen插件多选,点击选择小伙伴打开弹窗列表
+			$(".lw_choosefriendlist_wrapper").chosen({
+				no_results_text: '没有找到这个小伙伴：',
+				width: '200px'
+			});
+			editBannerTitle();
+			//瀑布流插件
+			$('#container').masonry({
+				// options  
+				itemSelector: '.item',
+				columnWidth: 240
+			});
+
+		});
+	</script>
+</body>
+
+</html>

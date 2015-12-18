@@ -465,7 +465,6 @@
 					counterEl = $this.find('input');
 				counterEl.html('0');
 				$this.find('a').click(function() {
-					fireOnchange(counterEl)
 					switch ($(this).index()) {
 						case 0:
 							counter--;
@@ -485,6 +484,7 @@
 							options.onchange();
 							break;
 					}
+					fireOnchange(counterEl)
 				});
 
 				counterEl.bind('keydown keyup', function(e) {
@@ -502,6 +502,7 @@
 							counter = counterEl.val();
 							getter();
 							setter();
+							options.onchange();
 							fireOnchange(counterEl);
 							break;
 					}

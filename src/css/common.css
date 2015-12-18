@@ -1,5 +1,6 @@
-/*公共类*/
+@charset "utf-8";
 
+/*公共类*/
 body {
 	font-family: Microsoft YaHei, Verdana, sans-serif, '宋体'!important;
 }
@@ -230,7 +231,17 @@ input{
 	position: absolute;
 	bottom: 0;
 }
-
+.bg_f3efe6 {
+	background: #f3efe6;
+}
+.bg_f5f5f5 {
+	background: #f5f5f5;
+}
+.dash_92c153 {
+	width: 20%;
+	height: 1px;
+	background: #92c153;
+}
 /*页面头部*/
 
 .cm_header_nav {
@@ -320,6 +331,70 @@ input{
 	overflow-text: ellipsis;
 }
 
+/*v3.5 tpl list style*/
+.cm_header_nav .nav ul li.photos{
+	position: relative;
+	padding-bottom: 10px;
+}
+.cm_header_nav .nav ul li.photos i{
+	margin: 0 10px;
+}
+.cm_header_nav .style_list{
+	display: none;
+	position: absolute;
+	top: 35px;
+	z-index: 1;
+	width: 125px;
+	font-size: 14px!important;
+	color: #999;
+	background: rgba(255,255,242550,.6);
+	border: 1px solid #c6c6c6;
+	text-align: center;
+}
+.cm_header_nav .nav ul li.photos:hover .style_list{
+	display: block;
+}
+.cm_header_nav .style_list::before{
+	content: " ";
+	position: absolute;
+	top: -10px;
+	left: 58px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #c6c6c6;
+}
+.cm_header_nav .style_list li:first-child::before{
+	content: " ";
+	position: absolute;
+	top: -9px;
+	left: 58px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+}
+.cm_header_nav .style_list li{
+	display: block;
+	float: none !important;
+	margin: 0!important;
+	padding: 0!important;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.cm_header_nav .style_list li a{
+	color: #666;
+	display: block;
+}
+.cm_header_nav .style_list li.active a,
+.cm_header_nav .style_list li:hover a{
+	color: #6ba72b;
+	background: rgba(255,255,255,1);
+	text-decoration: none;
+}
 /* 时间显示 */
 
 .cm_date_show {
@@ -2853,4 +2928,104 @@ xww add
 	content: '';
 	display: block;
 	clear: both;
+}
+
+/*~~~~~~~~~~翻页组件（用在钱包和章节制作页面）~~~~~~~~~~*/
+nav .pagination{
+	width: 36%;
+	height: auto;
+	margin: 10px auto;
+}
+nav .pagination li{
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #ddd;
+	padding: 0 6px;
+	font-size: 12px;
+	font-weight: bold;
+}
+nav .pagination li a,
+nav .pagination li a:hover,
+nav .pagination li a:active{
+	color: #999;
+	border: none;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+/*~~~~~~~~~~留言框一样的item组件（章节制作页面）~~~~~~~~~~*/
+
+.item .user_head {
+	width: 27px;
+	height: 27px;
+	background-color: blue;
+	float: left;
+	width: 27px;
+	height: 27px;
+}
+.item .user_head img {
+	width: 27px;
+	height: 27px;
+}
+.item .user_message {
+	width: 180px;
+	overflow: hidden;
+	background-color: #f6f6f6;
+	float: right;
+	font-size: 12px;
+	color: #666;
+}
+.item .user_message .message_info {
+	padding: 10px;
+	width: 167px;
+	box-sizing: border-box;
+}
+.item .user_message .message_info h4 {
+	margin-bottom: 5px;
+	color: #000;
+}
+.item .user_message .message_info p {
+	margin-bottom: 5px;
+	width: 100%;
+}
+.item .user_message .message_info p.txt_r {
+	text-align: right;
+}
+.item .user_message .message_btn {
+	width: 100%;
+	height: 30px;
+	background-color: #e8e8e8;
+}
+.item .user_message .message_btn ul li.m_b_li1 {
+	float: left;
+	/*background:url('../img/mail_btn.png') no-repeat 0 3px;
+	padding-left:20px;*/
+	
+	cursor: pointer;
+	margin: 7px 0 0 35px;
+}
+.item .user_message .message_btn ul li.m_b_li1 .icon-envelope {
+	margin-top: 2px;
+}
+.item .user_message .message_btn ul li.m_b_li2 {
+	float: left;
+	/*background:url('../img/delete_btn.png') no-repeat 0 1px;
+	padding-left:15px;*/
+	
+	cursor: pointer;
+	margin: 7px 0 0 30px;
+}
+.item .user_message .message_btn ul li.m_b_li2 .icon-remove-sign {
+	margin-top: 3px;
+}
+.item .user_message .message_btn ul li a {
+	color: #666;
+}
+.item .item_arrow {
+	width: 7px;
+	height: 10px;
+	background: url('../img/leavewall_arrow.png') no-repeat;
+	float: right;
+	margin-top: 9px;
 }

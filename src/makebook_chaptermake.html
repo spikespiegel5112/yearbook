@@ -11,9 +11,7 @@
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/bookedit.css" type="text/css" media="all">
-	<!-- <link rel="stylesheet" href="css/book_chaptermake_new.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/wallet_and_order.css" type="text/css" media="all"> -->
+	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
@@ -893,6 +891,12 @@
 							<span class="submit"></span>
 							<div>提交书页</div>
 						</a>
+						<div class='ybcommon_queryicon_item'>
+							<!--<span class='icon-question-sign'></span>-->
+							<div>
+								<p>拖动改变页面顺序，或者双击页码编辑页码后保存修改结果</p>
+							</div>
+						</div>
 					</div>
 					<div class="edit_wrap cm_fr">
 						<div class="page_state">
@@ -1370,14 +1374,14 @@
 				</div>
 				<div class="fold_box">
 					<!--修改刷新部分 位置样式变动-->
-					<div class="filter_tool">
+					<div class="filter_tool hidden">
 						<label>
 							<input type="checkbox" name="">
 							隐藏使用过的照片
 						</label>
 						<span class="cm_fr cm_cp"><i class="icon-random"></i>换一批</span>
 					</div>
-					<div class="main ">
+					<div class="main hidden">
 						<ul class="right1_ul">
 							<li class="cm_fl">
 								<div class="delete">
@@ -1420,7 +1424,7 @@
 					<!--<div class="cm_cp down"><i class=" icon-arrow-down"></i>点击查看剩余10个照片</div>
 					<div class="cm_cp up hidden"><i class=" icon-arrow-up"></i>收起</div>-->
 					<!--改为分页-->
-					<div class="tpl_pagination clear">
+					<div class="tpl_pagination clear hidden">
 						<ul>
 							<li class="prev cm_fl">
 								<a href="javascript:void (0);">
@@ -1436,7 +1440,7 @@
 						</ul>
 					</div>
 					<!--未上传照片-->
-					<div class="empty_con hidden">
+					<div class="empty_con ">
 						<img src="img/bierde_16.png">
 						<p>还没有上传过照片</p>
 						<p>点击<a class="uploadIL" href="javascript:;">这里</a>上传照片</p>
@@ -2227,15 +2231,139 @@
 	<!--11.13 add 添加照片-->
 	<div id="uploadIL" class="auto_layout_container hidden">
 		<div class="photo_box">
-			<div class="empty">
+			<div class="empty hidden">
 				<img src="img/bierde_16.png">
 				<p class="tip">目前没有任何照片，还需添加100张照片</p>
 				<a class="btn active" href="javascript:;">点击选择照片</a>
 			</div>
+			<!--结构同一键成书页面的上传中-->
+			<div class="choose_img_con">
+				<div class="img_con">
+					<div class="uploading cm_fl"><!--完成上传添加class:finished .to_upload hidden-->
+						<div class="item new_up">
+							<div class="title">
+								<span class="cm_fl">已经上传的照片</span>
+								<i class="icon-angle-down cm_fl"></i>
+								<!--<p class="cm_fl">上传了<span>X</span>张照片</p>
+								<label class="cm_fr"><input type="checkbox" name="all">全选</label>-->
+							</div>
+							<ul class="photo_list">
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo02.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo03.jpg" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo04.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo04.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo04.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo04.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+								<li>
+									<a class="" href="javascript:;">
+										<img src="img/album/ablum_photo04.png" class="cm_cp">
+										<span></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="to_upload cm_fr">
+						<div class="item">
+							<div class="title">
+								<p class="cm_fl">等待上传的照片(<span>30</span>)</p>
+							</div>
+							<ul class="photo_list">
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<!--正在上传的 添加class:uploading-->
+									<div class="load_per uploading">上传<span>50%</span></div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per uploading">上传<span>20%</span></div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per">等待中</div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per">等待中</div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per">等待中</div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per">等待中</div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per">等待中</div>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="img/album/ablum_photo01.png" class="cm_cp">
+									</a>
+									<div class="load_per">等待中</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="tips">
-				<p>已经上传了 <span>0</span> 张照片，<i>已经入册</i> <span>0</span> 张。</p>
+				<p>已经上传了 <span>0</span> 张照片。<!--，<i>已经入册</i> <span>0</span> 张--></p>
 				<a class="btn" href="javascript:;">完成添加</a>
-				<!--<a class="btn active" href="javascript:;">继续添加</a> 上传照片后显示-->
+				<a class="btn active" href="javascript:;">继续添加</a>
 			</div>
 		</div>
 	</div>
@@ -3029,7 +3157,20 @@
 			});
 		}
 		
+		/*
+		* 照片上传中遮罩进度
+		* */
+		function uploadImgProgress(){
+			$('.load_per.uploading').each(function(){
+				var upPercent = $(this).find('span').text();
+				var shadeHeight = 125 * (1 - parseFloat(upPercent)/100);
+				$(this).height(shadeHeight);
+				$('.load_per.uploading:last').parent().next().find('.load_per').addClass('waiting');
+				$('.load_per.waiting').text('等待上传');
+			})
+		}
 	(function($) {
+		uploadImgProgress();
 		scrollFixed();
 		pagemake_right_flod();
 		pagemake_right_btn();

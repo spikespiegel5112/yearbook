@@ -1,3 +1,5 @@
+/*~~~~~~~~~~makebook_pagemake.html~~~~~~~~~~*/
+
 .pagemake_right .up {
 	font-size: 12px;
 	color: #b8b8b8;
@@ -15,9 +17,6 @@
 	font-size: 14px;
 	clear: both;
 }
-
-
-/*chaptermake nav shadow*/
 
 .mark_nav::before {
 	content: " ";
@@ -119,9 +118,6 @@
 	overflow: visible;
 }
 
-
-/*3.4 add mark_nav style*/
-
 .mark_nav .nav_left {
 	padding: 0 10px 0 20px;
 	width: 12.5%;
@@ -171,7 +167,6 @@
 .mark_nav .nav_mid ul li.on a {
 	color: #a8d361;
 	background-color: transparent;
-	/*text-decoration: underline;*/
 	border-bottom: 1px solid #a8d361;
 }
 
@@ -303,9 +298,6 @@
 .pagemake_right .pagemake_wrap.over_vis {
 	padding: 0 10px;
 }
-
-
-/*3.4 add mark_nav*/
 
 .pagemake_right .filter {
 	font-size: 14px;
@@ -547,7 +539,6 @@
 .pagemake_middle .caption .edit_wrap a span {
 	display: block;
 	float: none;
-	/*margin-left: 4px;*/
 	padding-left: 32px;
 	width: 35px;
 	height: 35px;
@@ -688,9 +679,6 @@
 	color: #E26143;
 }
 
-
-/*11.9 add tpl bg*/
-
 .pagemake_middle .main .tpl.cover,
 .pagemake_middle .main .tpl.back_cover {
 	position: relative;
@@ -825,22 +813,11 @@
 	margin-left: 10px;
 }
 
-
-/*.pagemake_right {
-	width: 17%;
-	height: 1280px;
-	float: right;
-	background-color: #fff;
-	border-left: 1px solid #d7d7d7;
-}*/
-
 .template_wrap {
 	width: 19%!important;
-	/*NEWYB-591 bookconfig .pagemake_right width 19%*/
 }
 
 .pagemake_right .right1_ul {
-	/*overflow: hidden;*/
 	width: 99%;
 	margin: 0 auto;
 	display: inline-table;
@@ -1432,9 +1409,6 @@
 	font-size: 16px;
 }
 
-
-/*swh add 7.22*/
-
 .chaptermake_left_ul li {
 	position: relative;
 }
@@ -1469,9 +1443,6 @@
 	text-align: center;
 }
 
-
-/*xx add btn hover css 7.23*/
-
 .page_config:hover {
 	background: #e7b54b !important
 }
@@ -1479,9 +1450,6 @@
 .page_config:active {
 	color: #a97913 !important;
 }
-
-
-/*7.24 swh add foldSidebar arrow*/
 
 #hide_left,
 #hide_right {
@@ -1498,17 +1466,6 @@
 #hide_right {
 	float: right;
 }
-
-
-/*#hide_left img,
-#hide_right img{
-	display: none;
-}
-#hide_left:hover img,
-#hide_right:hover img {
-	display: block;
-}*/
-
 
 /*xx modify ia_chaptermake_add.html 7.24*/
 
@@ -2995,6 +2952,7 @@
 	font-weight: bold;
 }
 
+
 /*~~~~~autolayout~~~~~*/
 
 .al_head {
@@ -3758,9 +3716,7 @@
 .create_main .next_btn a {
 	display: block;
 	margin: 20px auto;
-	/*NEWYB 797*/
 	width: 9em;
-	/*padding:8px;*/
 	background: #89c539;
 	font-size: 16px;
 	color: #fff;
@@ -3782,10 +3738,9 @@
 }
 
 
-/*form page css*/
+/*~~~~~~~~~~makebook_step_2.html~~~~~~~~~~*/
 
 .create_form {
-	/*	height:470px; */
 	overflow: hidden;
 }
 
@@ -3834,8 +3789,7 @@
 	background: url('../img/autographbook/img_sprite_wbl_00000.png') no-repeat -94px -46px;
 }
 
-
-/*done page css*/
+/*~~~~~~~~~~makebook_step_3.html~~~~~~~~~~*/
 
 .create_main .done_content {
 	width: 785px;
@@ -3869,7 +3823,7 @@
 }
 
 .create_main .done_content .share_btn ul li {
-	float: Left;
+	float: left;
 	margin: 0 10px;
 }
 
@@ -3877,638 +3831,8 @@
 	background-color: #e7b54b
 }
 
-
-/*8.27 swh add*/
-
 .create_main .done_content .share_btn a {
 	width: 46px;
 	height: 44px;
 	display: block;
-}
-
-
-/*9.24 add invitation card style*/
-
-.invitation_main_container {
-	background: #fff url('../img/index_GB.jpg') center fixed;
-	min-width: 1260px;
-	padding: 70px 0;
-	min-height: 650px;
-}
-
-.invitation_card_table {
-	width: 850px;
-	margin: 0 auto;
-}
-
-.invitation_card_table .card_top {
-	width: 100%;
-	height: 70px;
-	background: transparent url("../img/invitation_card/invitation_card_bg_top.png") no-repeat center center;
-}
-
-.invitation_card_table .card_middle {
-	width: 100%;
-	height: auto;
-	font-size: 14px;
-	color: #666;
-	background: transparent url("../img/invitation_card/invitation_card_bg_middle.png") repeat-y center center;
-}
-
-.invitation_card_table .card_bottom {
-	width: 100%;
-	height: 90px;
-	background: transparent url("../img/invitation_card/invitation_card_bg_bottom.png") no-repeat center center;
-}
-
-.invitation_card_table .card_top h2 {
-	float: left;
-	margin: 25px 0 0;
-	width: 50%;
-	font-size: 24px;
-	color: #e05f5f;
-	text-align: center;
-}
-
-.card_middle .mid_left,
-.card_middle .mid_right {
-	display: inline-block;
-	margin: 0 0 10px 0;
-	padding: 0 20px 0 35px;
-	width: 49%;
-	box-sizing: border-box;
-	vertical-align: top;
-}
-
-.card_middle .border_bottom_dashed {
-	border-bottom: 1px dashed #afafb1;
-}
-
-.card_middle .mid_left > form > div {
-	padding: 10px 0 0;
-}
-
-.mid_left form div p {
-	height: 30px;
-	line-height: 30px;
-}
-
-.mid_left form > div > label {
-	margin: 0 15px;
-	height: 40px;
-	line-height: 40px;
-}
-
-.mid_left form .basic_info label {
-	display: inline-block;
-	margin: 0 0 0 5px;
-	width: 80px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-.mid_left form .basic_info label.user_defined {
-	width: 95px!important;
-	display: block;
-	height: 30px;
-}
-
-.mid_left form > div > label > div {
-	margin-right: 5px;
-}
-
-.mid_left .input_group {
-	margin: 10px 0 30px;
-}
-
-.mid_left .input_group input {
-	display: inline-block;
-	padding: 12px 10px 11px !important;
-	width: 233px;
-	max-width: none !important;
-	border: 1px solid #ccc;
-	box-shadow: inset 0 1px 3px #ddd;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	border-radius: 2px !important;
-	resize: none;
-	font-size: 14px;
-}
-
-.mid_left .basic_info .input_group input {
-	margin-left: 5px;
-	width: 320px;
-}
-
-.mid_left .icon-plus-sign,
-.mid_left .icon-minus-sign {
-	position: relative;
-	top: 3px;
-	left: 8px;
-	font-size: 22px;
-	color: #8cd419;
-	cursor: pointer;
-}
-
-.mid_right p {
-	padding: 10px 0;
-	line-height: 30px;
-}
-
-.mid_right .share_container,
-.pop_share_container .share_container {
-	margin: 10px 0;
-	text-align: center;
-}
-
-.mid_right .share_container .share_btn li,
-.pop_share_container .share_container .share_btn li {
-	display: inline-block;
-	margin: 0 8px;
-	cursor: pointer;
-}
-
-.mid_right .share_container p,
-.pop_share_container .share_container p {
-	height: 50px;
-	line-height: 50px;
-}
-
-.card_bottom > div {
-	width: 50%;
-	float: left;
-	text-align: center;
-	/*margin: 10px 0;*/
-}
-
-.card_bottom .set_finish button,
-.card_bottom .enter_book_space a {
-	margin: 0 auto;
-	padding: 0;
-	width: 320px;
-	height: 45px;
-	line-height: 45px;
-	font-size: 22px;
-	color: #fff;
-	background-color: #5fba5d;
-	border-radius: 6px;
-	border: none;
-	box-shadow: 0 2px 0 #529650;
-	box-sizing: border-box;
-}
-
-.card_bottom .enter_book_space a,
-.pop_share_container .btn_group .enter_book_space {
-	display: inline-block;
-	background-color: #f2bb44;
-	box-shadow: 0 2px 0 #c0973d;
-}
-
-.card_bottom .set_finish button:hover,
-.pop_share_container .btn_group .share_to:hover {
-	background-color: #529650;
-}
-
-.card_bottom .set_finish button:focus,
-.card_bottom .set_finish button:active {
-	outline: none;
-}
-
-.card_bottom .enter_book_space a:hover,
-.pop_share_container .btn_group .enter_book_space:hover {
-	background-color: #c0973d;
-}
-
-.pop_share_container {
-	position: relative;
-	width: 500px;
-	text-align: center;
-}
-
-.pop_share_container .share_container p {
-	margin: 15px 0;
-}
-
-.pop_share_container .btn_group a {
-	display: inline-block;
-	margin: 20px 10px;
-	width: 140px;
-	height: 35px;
-	line-height: 35px;
-	font-size: 18px;
-	color: #fff;
-	background-color: #5fba5d;
-	border-radius: 4px;
-	border: none;
-	box-shadow: 0 2px 0 #529650;
-	box-sizing: border-box;
-}
-
-
-/*NEWYB 803 fill invitation card */
-
-.invitation_card_banner {
-	width: 100%;
-	height: 220px;
-	background: url('../img/bookcreate_banner.jpg') center bottom no-repeat;
-}
-
-.invitation_card_banner .wrapper {
-	position: relative;
-	width: 600px;
-	margin: 0 auto;
-	padding: 40px 0 0;
-	color: #fff;
-}
-
-.invitation_card_banner .wrapper::before,
-.invitation_card_banner .wrapper::after {
-	position: absolute;
-	bottom: 0;
-	display: block;
-	content: " ";
-	width: 50%;
-	height: 8px;
-	background-color: #cbcbcb;
-}
-
-.invitation_card_banner .wrapper::before {
-	background-color: #9dbdde;
-}
-
-.invitation_card_banner .wrapper::after {
-	left: 50%;
-}
-
-.invitation_card_banner .wrapper ul {
-	position: relative;
-	width: 100%;
-}
-
-.invitation_card_banner .wrapper ul::before,
-.invitation_card_banner .wrapper ul::after {
-	position: absolute;
-	top: 52px;
-	content: " ";
-	width: 18px;
-	height: 18px;
-	background-color: #cbcbcb;
-	border-radius: 100%;
-}
-
-.invitation_card_banner .wrapper ul::before {
-	left: -2px;
-	background-color: #9dbdde;
-}
-
-.invitation_card_banner .wrapper ul::after {
-	right: -2px;
-}
-
-.invitation_card_banner .wrapper li {
-	position: relative;
-	display: inline-block;
-	width: 33%;
-	height: 65px;
-	text-align: center;
-	font-size: 18px;
-}
-
-.invitation_card_banner .wrapper li:last-child {
-	width: 32%;
-}
-
-.invitation_card_banner .wrapper li::after {
-	position: absolute;
-	left: 50%;
-	top: 46px;
-	margin-left: -15px;
-	;
-	content: " ";
-	width: 28px;
-	height: 28px;
-	background-color: #cbcbcb;
-	border-radius: 100%;
-	z-index: 1;
-}
-
-.invitation_card_banner .wrapper li.join_book::after {
-	content: '+';
-	background-color: #fff;
-	color: #9dbdde;
-	line-height: 24px;
-	font-size: 24px;
-}
-
-.invitation_card_banner .wrapper li.fill_card::after {
-	background-color: #fff;
-}
-
-.invitation_card_banner .wrapper li.fill_card .icon-file-alt {
-	position: relative;
-	left: -23%;
-	top: 46px;
-	z-index: 2;
-	color: #9dbdde;
-	font-size: 16px;
-}
-
-.invitation_card_fill_container {
-	background: #fff url('../img/index_GB.jpg') center fixed;
-	min-height: 650px;
-}
-
-.invitation_card_fill {
-	position: relative;
-	top: -80px;
-	margin: 0 auto;
-	width: 610px;
-	font-size: 14px;
-	color: #666;
-}
-
-.invitation_card_fill::before {
-	display: block;
-	content: " ";
-	width: 100%;
-	height: 40px;
-	background: url("../img/invitation_card/user_card_bg_top.png") no-repeat -2px 0;
-}
-
-.invitation_card_fill::after {
-	display: block;
-	content: " ";
-	width: 100%;
-	height: 50px;
-	background: url("../img/invitation_card/user_card_bg_bottom.png") no-repeat -2px 0;
-}
-
-.invitation_card_fill .invitation_card_form {
-	padding: 0 35px 20px;
-	background: url("../img/invitation_card/user_card_bg_mid.png") repeat-y -2px 0;
-}
-
-.invitation_card_fill .invitation_card_form h2 {
-	margin-bottom: 10px;
-	font-size: 24px;
-	color: #e05f5f;
-	text-align: center;
-	line-height: 45px;
-}
-
-.invitation_card_fill .invitation_card_form > p {
-	line-height: 1.8em;
-	text-indent: 2em;
-}
-
-.invitation_card_fill .invitation_card_form .part {
-	margin: 10px 0;
-	text-align: center;
-	overflow: hidden;
-	position: relative;
-}
-
-.invitation_card_fill .invitation_card_form .part label.error {
-	display: block;
-	text-align: left;
-	padding-left: 165px;
-	margin-top: -20px;
-}
-
-.invitation_card_fill .invitation_card_form .part label.invitation_img_error {
-	margin: 10px 0;
-	padding-left: 0;
-	width: 100%;
-	text-align: center;
-	position: relative;
-	top: 150px;
-}
-
-.invitation_card_fill .invitation_card_form .part h4 {
-	position: relative;
-	font-size: 18px;
-	text-align: center;
-	line-height: 40px;
-}
-
-.invitation_card_fill .invitation_card_form .part h4::before,
-.invitation_card_fill .invitation_card_form .part h4::after {
-	position: absolute;
-	top: 0;
-	display: block;
-	content: "- - - - - - - - - - - - - - - -";
-	width: 100%;
-	height: 0;
-	color: #afafb1;
-	text-align: left;
-}
-
-.invitation_card_fill .invitation_card_form .part h4::after {
-	text-align: right;
-}
-
-.invitation_card_fill .invitation_card_form .part label.input_group {
-	display: block;
-	margin: 10px 0 30px;
-	padding-left: 60px;
-	height: 40px;
-	line-height: 40px;
-	text-align: left;
-}
-
-.invitation_card_fill .invitation_card_form .part label span {
-	display: inline-block;
-	width: 100px;
-	text-align: right;
-}
-
-.invitation_card_fill .invitation_card_form .part label span b {
-	color: #ff0000;
-	margin-right: 2px;
-}
-
-.invitation_card_fill .invitation_card_form .part label input {
-	display: inline-block;
-	padding: 12px 10px 11px !important;
-	width: 290px;
-	max-width: none !important;
-	border: 1px solid #ccc;
-	box-shadow: inset 0 1px 3px #ddd;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	border-radius: 2px !important;
-	resize: none;
-	font-size: 14px;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box {
-	width: 100%;
-	min-height: 135px;
-	text-align: left;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box > img {
-	display: block;
-	margin: 0 auto;
-	padding-top: 15px;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box .img_list li {
-	position: relative;
-	display: inline-block;
-	width: 130px;
-	height: 130px;
-	box-sizing: border-box;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box .img_list li img {
-	width: 130px;
-	height: 130px;
-	border: 1px solid #ccc;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box .img_list li .delete_icon {
-	display: none;
-	position: absolute;
-	bottom: 0;
-	margin: 0 1px;
-	padding: 5px 8px;
-	width: 100%;
-	height: 25px;
-	line-height: 15px;
-	color: #fff;
-	background: rgba(0, 0, 0, .4);
-	text-align: right;
-	box-sizing: border-box;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box .img_list li:hover .delete_icon {
-	display: block;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box .img_list li .delete_icon span {
-	font-size: 18px;
-	cursor: pointer;
-}
-
-.invitation_card_fill .invitation_card_form .part .upload_img_box .img_list li .delete_icon span:hover {
-	color: #55da68;
-}
-
-.invitation_card_fill .invitation_card_form .part a.choose_img {
-	display: block;
-	margin: 15px auto;
-	width: 130px;
-	height: 35px;
-	line-height: 35px;
-	text-align: center;
-	color: #fff;
-	background-color: #55da68;
-	border-radius: 4px;
-}
-
-.invitation_card_fill .invitation_card_form .part a.choose_img:hover {
-	background-color: #e7b54b;
-}
-
-.invitation_card_fill .invitation_card_form .part p.tips span {
-	color: #ff5858;
-}
-
-.invitation_card_fill .invitation_card_form .part .topic_box .topic {
-	text-align: left;
-	text-indent: 0;
-	margin: 10px 0;
-}
-
-.invitation_card_fill .invitation_card_form .part .topic_box .topic span {
-	color: #5cbf6a;
-}
-
-.invitation_card_form .part .topic_box .topic_reply {
-	margin-bottom: 10px;
-	text-align: left;
-}
-
-.invitation_card_form .part .topic_box .topic_reply li {
-	overflow: hidden;
-	position: relative;
-	min-height: 40px;
-	margin-bottom: 10px;
-}
-
-.invitation_card_form .part .topic_box .topic_reply .head {
-	float: left;
-	top: 0;
-	margin-right: 10px;
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-}
-
-.invitation_card_form .part .topic_box .topic_reply span b {
-	font-weight: normal;
-	color: #5cbf6a;
-}
-
-.invitation_card_form .part .topic_box .topic_reply .reply {
-	float: left;
-	width: 90%;
-	position: relative;
-	top: 0;
-	padding-top: 10px;
-}
-
-.invitation_card_form .part .topic_box .topic_reply .reply p {
-	word-break: break-all;
-	display: inline;
-	line-height: 1.5em;
-	text-indent: 0;
-}
-
-.invitation_card_fill .invitation_card_form .part textarea {
-	display: block;
-	margin: 20px 0 10px;
-	padding: 12px 10px 11px !important;
-	width: 100%;
-	height: 60px;
-	max-width: none !important;
-	border: 1px solid #ccc;
-	box-shadow: inset 0 1px 3px #ddd;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	border-radius: 2px !important;
-	resize: none;
-	font-size: 14px;
-	color: #666;
-}
-
-.invitation_card_fill .invitation_card_form .part .publish {
-	float: right;
-}
-
-.invitation_card_form .fill_finish {
-	display: block;
-	margin: 10px auto 0;
-	padding: 0;
-	width: 320px;
-	height: 45px;
-	line-height: 45px;
-	text-align: center;
-	font-size: 22px;
-	color: #fff;
-	background-color: #5fba5d;
-	border-radius: 6px;
-	border: none;
-	box-shadow: 0 2px 0 #529650;
-	box-sizing: border-box;
-}
-
-.invitation_card_form .fill_finish:hover {
-	background-color: #e7b54b;
-	box-shadow: 0 2px 0 #c0973d;
 }

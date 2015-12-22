@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*~~~~~~~~~~makebook_pagemake.html~~~~~~~~~~*/
 
 .pagemake_right .up {
@@ -936,8 +937,6 @@
 }
 
 .pagemake_right .pagemake_message {
-	/*overflow: hidden;*/
-	/*display: inline-table;*/
 	display: block;
 	clear: both;
 }
@@ -1011,9 +1010,6 @@
 	width: 100%;
 	background-color: #fff;
 	margin-top: 12px;
-	/*padding-bottom:5px;*/
-	/*overflow:hidden;*/
-	/*display: inline-table;*/
 	display: none;
 }
 
@@ -1096,7 +1092,6 @@
 	display: block;
 	margin: 20px auto;
 	width: 12em;
-	/*padding: 8px;*/
 	background: #ecac3c;
 	font-size: 16px;
 	color: #fff;
@@ -1166,8 +1161,6 @@
 .chaptermake_middle_con2 .main .item ul li.active img,
 .chaptermake_middle_con2 .main .item ul li:hover img {
 	border: 2px solid #89c539;
-	/*width: 120px;
-	height: 160px;*/
 }
 
 .chaptermake_middle_con2 .main .item ul li.h7 {
@@ -1185,7 +1178,6 @@
 }
 
 .chaptermake_tpl ul {
-	/*overflow:hidden;*/
 	margin-left: 0px;
 	min-width: 236px;
 }
@@ -1467,79 +1459,6 @@
 	float: right;
 }
 
-/*xx modify ia_chaptermake_add.html 7.24*/
-
-.picScroll-left {
-	width: 80%;
-	overflow: hidden;
-	position: relative;
-	margin: 0 auto;
-}
-
-.picScroll-left .hd {
-	overflow: hidden;
-	height: 20px;
-	padding: 0 10px;
-}
-
-.picScroll-left .hd .prev {
-	position: absolute;
-	top: 80px;
-	left: 10px;
-	z-index: 999;
-	cursor: pointer;
-	width: 17px;
-	height: 23px;
-	background: url('../img/prev_btn.png') no-repeat;
-}
-
-.picScroll-left .hd .next {
-	position: absolute;
-	top: 80px;
-	right: 10px;
-	z-index: 999;
-	cursor: pointer;
-	width: 17px;
-	height: 23px;
-	background: url('../img/next_btn.png') no-repeat;
-}
-
-.picScroll-left .bd {
-	padding: 10px;
-}
-
-.picScroll-left .bd ul {
-	overflow: hidden;
-	zoom: 1;
-}
-
-.picScroll-left .bd ul li {
-	margin: 0 8px;
-	float: left;
-	_display: inline;
-	overflow: hidden;
-}
-
-.picScroll-left .bd ul li .pic {
-	width: 109px;
-	height: 133px;
-	background: url('../img/chaptermark_tpl_bg.png') no-repeat;
-	padding: 1px 0 0 1px;
-}
-
-.picScroll-left .bd ul li .pic img {
-	width: 104px;
-	height: 131px;
-}
-
-.picScroll-left .bd ul li .pic a:hover img {
-	border-color: #999;
-}
-
-.picScroll-left .bd ul li .title {
-	line-height: 24px;
-}
-
 .tempWrap {
 	margin: 0 auto;
 }
@@ -1622,7 +1541,7 @@
 }
 
 
-/*xx modify ia_chaptermake.html 7.24*/
+/*~~~~~~~~~~chaptermake_middle_con2~~~~~~~~~~*/
 
 .pagemake_wrap .caption .icon-exclamation-sign,
 .icon-question-sign {
@@ -1727,6 +1646,80 @@
 	font-size: 12px;
 }
 
+
+/*~~~~~~~~~~picScroll~~~~~~~~~~*/
+
+.picScroll-left {
+	width: 80%;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+.picScroll-left .hd {
+	overflow: hidden;
+	height: 20px;
+	padding: 0 10px;
+}
+
+.picScroll-left .hd .prev {
+	position: absolute;
+	top: 80px;
+	left: 10px;
+	z-index: 999;
+	cursor: pointer;
+	width: 17px;
+	height: 23px;
+	background: url('../img/prev_btn.png') no-repeat;
+}
+
+.picScroll-left .hd .next {
+	position: absolute;
+	top: 80px;
+	right: 10px;
+	z-index: 999;
+	cursor: pointer;
+	width: 17px;
+	height: 23px;
+	background: url('../img/next_btn.png') no-repeat;
+}
+
+.picScroll-left .bd {
+	padding: 10px;
+}
+
+.picScroll-left .bd ul {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.picScroll-left .bd ul li {
+	margin: 0 8px;
+	float: left;
+	_display: inline;
+	overflow: hidden;
+}
+
+.picScroll-left .bd ul li .pic {
+	width: 109px;
+	height: 133px;
+	background: url('../img/chaptermark_tpl_bg.png') no-repeat;
+	padding: 1px 0 0 1px;
+}
+
+.picScroll-left .bd ul li .pic img {
+	width: 104px;
+	height: 131px;
+}
+
+.picScroll-left .bd ul li .pic a:hover img {
+	border-color: #999;
+}
+
+.picScroll-left .bd ul li .title {
+	line-height: 24px;
+}
+
 .chaptermake_tpl ul li .photo div.cover {
 	z-index: 999;
 }
@@ -1814,7 +1807,7 @@
 }
 
 
-/*~~~~~ 7.27 xx add ia_pagemake css ~~~~~*/
+/*~~~~~ pagemake_left ~~~~~*/
 
 .pagemake_left .picScroll-top {
 	margin: 10px auto 0;
@@ -1832,7 +1825,6 @@
 .pagemake_left .picScroll-top .bd ul li {
 	display: inline-block;
 	width: 48%;
-	/*margin: 0 5px 5px;*/
 	text-align: center;
 	zoom: 1;
 	border-bottom: 1px dashed #ddd;
@@ -1909,65 +1901,7 @@
 	border-radius: 2px;
 }
 
-
-/*.main .page_state {
-	font-size: 14px;
-	color: #666;
-	margin-top: 32px;
-}
-
-.main .page_state ul li {
-	line-height: 23px;
-	margin-right: 10px;
-	position: relative;
-}
-
-.main .page_state ul li i.icon-warning-sign {
-	margin-right: 5px;
-	color: #FFD700;
-}
-
-.main .page_state ul li i.icon-ok-circle {
-	margin-right: 5px;
-	color: #749b36;
-}
-
-.main .page_state ul li .state .arrow {
-	width: 12px;
-	height: 10px;
-	background: url('../img/pagemake_state_arrow.png') no-repeat;
-	position: absolute;
-	right: 6px;
-	top: 21px;
-	z-index: 999;
-}
-
-.main .page_state ul li .state .state_con {
-	position: absolute;
-	top: 30px;
-	left: -115px;
-	border: 1px solid #ccc;
-	background-color: #fff;
-	width: 140px;
-	text-align: center;
-	z-index: 998;
-}
-
-.main .page_state ul li .state .state_con ul li {
-	height: 30px;
-	line-height: 30px;
-}
-
-.main .page_state ul li .state .state_con ul li i {
-	margin: 0 5px;
-}
-
-.main .page_state ul li .state .state_con ul li span {
-	color: #E26143;
-}*/
-
 .main nav ul.pagination {
-	/*width:160px;*/
 	text-align: center;
 }
 
@@ -2019,9 +1953,6 @@
 .main i.icon-angle-right:hover {
 	color: #e7b54b;
 }
-
-
-/*~~~~~ 7.28 xx add ia_chaptermake advanced_filter css ~~~~~*/
 
 .filter .advanced_filter {
 	width: 33%;
@@ -2136,7 +2067,6 @@
 	color: #999;
 	margin: 10px 0;
 	clear: both;
-	/*NEWYB-742*/
 }
 
 .tpl_num_tips span {
@@ -2177,7 +2107,6 @@
 }
 
 .pagemake_right .pagemake_wrap .filter_tool {
-	/*display: block;*/
 	margin: 0;
 	padding: 0 10px;
 	width: 100%;
@@ -2315,9 +2244,6 @@
 	color: #666;
 }
 
-
-/*8.10 swh add �½�״̬ͼ��*/
-
 .chaptermake_left_ul li .chapter_status {
 	display: block;
 	position: absolute;
@@ -2348,9 +2274,6 @@
 	color: #d6413d;
 }
 
-
-/*8.11 swh add double page icon*/
-
 .double_page {
 	position: absolute;
 	left: 5px;
@@ -2363,16 +2286,10 @@
 	z-index: 2;
 }
 
-
-/*8.21 swh add chapter icon plus*/
-
 .pagemake_wrap .caption .icon-plus {
 	margin-right: 10px;
 	line-height: 20px;
 }
-
-
-/*10.16 swh add 3.4 book resource info*/
 
 .book_resource_info {
 	margin: 0;
@@ -2419,7 +2336,6 @@
 
 .book_resource_info .info button div,
 .book_resource_info .info .btn div {
-	/*position: relative;*/
 	margin: 0 5px;
 	padding-top: 10px;
 }
@@ -2467,11 +2383,6 @@
 .book_resource_info .info .incomplete_tips:hover .page_list {
 	display: block;
 }
-
-
-/*.book_resource_info .info .icon-warning-sign:hover .page_list {
-	display: block;
-}*/
 
 .book_resource_info .info .page_list ul {
 	padding: 0 10px;
@@ -2537,7 +2448,7 @@
 }
 
 
-/*10.16 add auto layout style*/
+/*~~~~~~~~~~makebook_autolayout.html~~~~~~~~~~*/
 
 .auto_layout_container {
 	position: relative;
@@ -2969,17 +2880,6 @@
 	z-index: 1;
 }
 
-
-/*.al_head h3{
-	float: left;
-	line-height: 75px;
-	font-size: 18px;
-	max-width: 800px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}*/
-
 .al_head .yblogo {
 	float: left;
 	line-height: 75px;
@@ -3031,7 +2931,6 @@
 
 .auto_edit_nav {
 	position: relative;
-	/*top: 75px;*/
 	left: 0;
 	padding: 0 15px 0 15px;
 	width: 100%;
@@ -3045,7 +2944,6 @@
 	;
 	border-bottom: 1px solid #e6e6e6;
 	;
-	/*box-shadow: 0 0 5px #aaa;*/
 	clear: both;
 }
 
@@ -3053,21 +2951,6 @@
 	width: 12.5%;
 	border-right: 1px dotted #ddd;
 }
-
-
-/*.auto_edit_nav .nav_left li{
-	display: inline-block;
-	font-size: 12px;
-	line-height: 44px;
-	color: #666;
-}
-.auto_edit_nav .nav_left li a{
-	font-size: 12px;
-	color: #333;
-}
-.auto_edit_nav .nav_left li a:hover{
-	color: #81d42f;
-}*/
 
 .auto_edit_nav .nav_left h4 {
 	font-size: 14px;
@@ -3122,11 +3005,9 @@
 
 .auto_edit_main {
 	position: relative;
-	/* top: 119px;*/
 	left: 0;
 	width: 100%;
 	min-width: 1280px;
-	/*min-height: 800px;*/
 	background-color: #fff;
 	overflow: hidden;
 	clear: both;
@@ -3145,7 +3026,6 @@
 	box-sizing: border-box;
 	background-color: #f6f6f6;
 	border-left: 1px solid #ddd;
-	/*box-shadow: 0 0 5px #aaa;*/
 }
 
 .auto_edit_main .main_right .resource_info div {
@@ -3207,10 +3087,8 @@
 }
 
 .auto_edit_main .main_left {
-	/*width: 81%;*/
 	width: 100%;
 	float: left;
-	/*min-height: 800px;*/
 	border-right: 1px solid #eeeff2;
 	box-sizing: border-box;
 	overflow-x: hidden;
@@ -3218,7 +3096,6 @@
 }
 
 .auto_edit_main .main_left .empty {
-	/*padding: 80px 19% 80px 100px;*/
 	padding: 70px 0 0;
 	text-align: center;
 }
@@ -3228,17 +3105,13 @@
 	margin: 0;
 	padding: 0;
 	width: 420px;
-	/*height: 290px;*/
 	font-size: 12px;
 	text-align: center;
-	/*background-color: #f9f9f9;
-	border: 1px solid #eee;*/
 	box-sizing: border-box;
 	float: none!important;
 }
 
 .auto_edit_main .main_left .empty > div:first-child {
-	/*margin-right: 80px;*/
 	margin-right: 100px;
 }
 
@@ -3273,8 +3146,6 @@
 	width: 125px;
 	height: 35px;
 	line-height: 35px;
-	/*background: url('../img/book_pagemark_nav_bg.png') repeat-x;*/
-	/*border: 1px solid #ccc;*/
 	box-sizing: border-box;
 	font-size: 18px;
 	color: #7bb125;
@@ -3289,14 +3160,6 @@
 	border-radius: 100%;
 	background: url("../img/bookmanagement/next_icon.jpg") no-repeat 0;
 }
-
-
-/*.auto_edit_main .main_left .empty > div .upload{
-	color: #557ba4;
-}
-.auto_edit_main .main_left .empty > div .enter_space{
-	color: #fb6f73;
-}*/
 
 .auto_edit_main .main_left .empty > div a:hover,
 .auto_edit_main .main_left .empty > div a:active {
@@ -3314,7 +3177,6 @@
 	left: 0;
 	float: left;
 	padding: 20px 0 20px 60px;
-	/*width: 15%;*/
 	width: 12.5%;
 	color: #666;
 	box-sizing: border-box;
@@ -3394,7 +3256,6 @@
 	float: right;
 	margin-bottom: 68px;
 	padding: 14px 19% 14px 14%;
-	/*width: 85%;*/
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -3745,9 +3606,7 @@
 }
 
 .create_form .form_main {
-	/*width:370px;*/
 	overflow: hidden;
-	/*margin:0 auto;*/
 	width: 530px;
 	margin: 0 0 0 30%;
 }
@@ -3768,7 +3627,6 @@
 
 .create_form .form_main ul li input {
 	padding: 12px 10px 11px !important;
-	/*width: 280px;*/
 	max-width: none !important;
 	display: inline-block;
 	border: 1px solid #ccc;
@@ -3788,6 +3646,7 @@
 	height: 30px;
 	background: url('../img/autographbook/img_sprite_wbl_00000.png') no-repeat -94px -46px;
 }
+
 
 /*~~~~~~~~~~makebook_step_3.html~~~~~~~~~~*/
 

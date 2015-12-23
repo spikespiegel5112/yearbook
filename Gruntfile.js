@@ -75,7 +75,8 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>css/ia.css',
                     '<%= meta.srcPath %>css/makebook.css',
                     '<%= meta.srcPath %>css/staticize.css',
-                    '<%= meta.srcPath %>css/tplshowcase.css'
+                    '<%= meta.srcPath %>css/tplshowcase.css',
+                    '<%= meta.srcPath %>css/pc.css'
                 ],
                 dest: '<%= meta.distPath %>css/all.css'
             }

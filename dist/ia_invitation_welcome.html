@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <title>忆尔3.0-受邀加入</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+<!--头部导航-->
+<div class="cm_header_nav">
+    <div class="logo"><a href="index.html"><img src="img/logo.png"></a></div>
+    <div class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="booklist_photo.html">照片书</a></li>
+            <li><a href="booklist_ia.html">互动册</a></li>
+            <li><a href="personal_center.html" class="active">个人中心</a></li>
+            <li><a href="static_instruction_entrance.html">使用指南</a></li>
+        </ul>
+    </div>
+    <div class="nav_login">
+        <ul>
+            <li><a href="access_login.html">登录</a></li>
+            <li><a href="access_register.html">注册</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cm_header_shadow"></div>
+<!--主内容区域-->
+<div class="main_content_container invited_to_join_container">
+   <div class="invited_to_join">
+       <div class="class_info">
+           <h4>&#12298;幸福年鉴&#12299;</h4>
+           <span>北大附中高三五班</span>
+       </div>
+       <a href="makebook_chaptermake.html" class="join_now"><img src="img/join_now_yellow.png"></a>
+       <div class="partner_heads">
+           <div class="head head1">
+               <img src="img/partner_head01.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head2">
+               <img src="img/partner_head02.png" width="70" height="70">
+               <span>小伙伴007小伙伴007</span>
+           </div>
+           <div class="head head3">
+               <img src="img/partner_head03.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head4">
+               <img src="img/partner_head04.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head5">
+               <img src="img/partner_head05.png" width="70" height="70">
+               <span>小伙伴007小伙伴007</span>
+           </div>
+           <div class="head head6">
+               <img src="img/partner_head06.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head7">
+               <img src="img/partner_head01.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head8">
+               <img src="img/partner_head02.png" width="70" height="70">
+               <span>小伙伴007小伙伴007</span>
+           </div>
+           <div class="head head9">
+               <img src="img/partner_head03.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head10">
+               <img src="img/partner_head04.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head11">
+               <img src="img/partner_head05.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+           <div class="head head12">
+               <img src="img/partner_head06.png" width="70" height="70">
+               <span>小伙伴007</span>
+           </div>
+       </div>
+       <div class="book_cover">
+           <img src="img/chaptermark_tpl_img.jpg">
+       </div>
+   </div>
+</div>
+<!--底部-->
+<div class="footer">
+	<div class="footer_info">
+		<a href="javascript:;"><img src="img/yb_logo.png"></a>
+		<div class="footer_title">
+			<div>忆尔-在线DIY纪念册平台</div>
+			<p>专业在线制作电子书册平台</p>
+			<p>DIY出独一无二的青春纪念册</p>
+		</div>
+	</div>
+	<div class="footer_list">
+		<div class="ft_nav">
+		    <a href="javascript:;">客服电话 400 0610 127</a>
+		    <a href="javascript:;">客服QQ</a>
+		    <a href="javascript:;">客服邮箱</a>
+		    <a href="javascript:;">关于我们</a>
+		</div>
+		<p class="ft_copyright">苏ICP备11087253号-2  \  © 2014 无锡众志和达数据计算股份有限公司</p>
+		<div class="ft_shares">
+			<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+			<a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+			<a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+			<a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+         </div>
+	</div>
+</div>
+<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+<script>
+    $(function(){
+        //显示完整名字
+        $(".head span").hover(function(){
+            $('<div id="nameTip"><div class="triangle" /></div></div>')
+                    .insertAfter(this)
+                    .prepend($(this).text());
+            $("#nameTip").css({"display":"block"});
+        },function(){
+            $("#nameTip").remove();
+        });
+
+        //立即加入放大
+        setInterval(function(){
+            $('.join_now').find('img').animate({'width':'110%','height':'110%'},1000)
+                    .animate({'width':'100%','height':'100%'},1000);
+        },3000)
+
+    });
+</script>
+</body>
+</html>

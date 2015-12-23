@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-404页</title>
+	<link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body class="login_body">
+	<div>
+		<!--头部导航-->
+		<div class="cm_header_nav">
+			<div class="logo">
+				<a href="index.html"><img src="img/logo.png"></a>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="booklist_photo.html">照片书</a></li>
+				<li><a href="booklist_ia.html">互动册</a></li>
+					<li><a href="pc_mybookshelf.html">个人中心</a></li>
+					<li><a href="static_instruction_entrance.html">使用指南</a></li>
+				</ul>
+			</div>
+			<div class="nav_login">
+				<ul>
+					<li><a href="access_login.html" class="active">登录</a></li>
+					<li><a href="access_register.html">注册</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="cm_header_shadow"></div>
+		<!--404-->
+		<div class="error_con">
+			<h3><span>ERROR</span></h3>
+			<div class="error_main">
+				<div class="error_right"></div>
+				<div class="error_middle"></div>
+				<div class="error_left">
+					<h6>对不起!您要访问的页面不存在!</h6>
+					<p>您要查看的网址可能已被删除或暂时不可用</p>
+					<p>点击一下链接继续访问网站:</p>
+					<p><a href="javascript:;">>>返回上一页面</a></p>
+					<p><a href="index.html">>>返回首页</a></p>
+				</div>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="footer login_footer">
+			<div class="footer_info">
+				<a href="javascript:;"><img src="img/yb_logo.png"></a>
+				<div class="footer_title">
+					<div>忆尔-在线DIY纪念册平台</div>
+					<p>专业在线制作电子书册平台</p>
+					<p>DIY出独一无二的青春纪念册</p>
+				</div>
+			</div>
+			<div class="footer_list">
+				<div class="ft_nav">
+					<a href="javascript:;">客服电话 400 0610 127</a>
+					<a href="javascript:;">客服QQ</a>
+					<a href="javascript:;">客服邮箱</a>
+					<a href="javascript:;">关于我们</a>
+				</div>
+				<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 <a href="help_center_company_profile.html">无锡众志和达数据计算股份有限公司</a></p>
+				<div class="ft_shares">
+					<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+					<a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+					<a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+					<a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script src="js/all.js"></script>
+	<script>
+	/*$(function(){
+	  var body_heigit = $(document).height();
+	  $('.login_body').height(body_heigit);
+	});
+	$(window).resize(function(){
+	  var body_heigit = $(document).height();
+	  $('.login_body').height(body_heigit);
+	});*/
+	$(document).ready(function() {
+		$('.error_con').footerAlignBottom();
+	})
+	</script>
+</body>
+
+</html>

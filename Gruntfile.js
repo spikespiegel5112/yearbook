@@ -1,8 +1,3 @@
-/*!
- * sure-yb-page 's Gruntfile
- */
-
-/* jshint node: true */
 module.exports = function(grunt) {
     'use strict';
 
@@ -71,43 +66,19 @@ module.exports = function(grunt) {
                     banner: '<%= banner %>'
                 },
                 src: [
-                    '<%= meta.srcPath %>css/autographbook.css',
-                    '<%= meta.srcPath %>css/book__chaptermake.css',
-                    '<%= meta.srcPath %>css/book_details.css',
-                    '<%= meta.srcPath %>css/book_manage_view_album.css',
-                    '<%= meta.srcPath %>css/book_preview.css',
-                    '<%= meta.srcPath %>css/bookcreate.css',
-                    '<%= meta.srcPath %>css/bookmanage.css',
-                    '<%= meta.srcPath %>css/bookmanagement.css',
+                    '<%= meta.srcPath %>css/reset.css',
                     '<%= meta.srcPath %>css/common.css',
                     '<%= meta.srcPath %>css/index.css',
-                    '<%= meta.srcPath %>css/invited_to_join.css',
-                    '<%= meta.srcPath %>css/login.css',
-                    '<%= meta.srcPath %>css/pagemake.css',
-                    '<%= meta.srcPath %>css/personal_center.css',
-                    '<%= meta.srcPath %>css/reset.css',
-                    '<%= meta.srcPath %>css/reset_password.css',
-                    '<%= meta.srcPath %>css/user_protocol.css',
-                    '<%= meta.srcPath %>css/wallet_and_order.css',
-                    '<%= meta.srcPath %>css/help_center.css',
-                    '<%= meta.srcPath %>css/use_guide.css',
-                    '<%= meta.srcPath %>css/use_guide3.6.css',
-                    '<%= meta.srcPath %>css/bookpreview_new.css',
-                    '<%= meta.srcPath %>css/book_chaptermake_new.css',
+                    '<%= meta.srcPath %>css/access.css',
+                    '<%= meta.srcPath %>css/booklist.css',
+                    '<%= meta.srcPath %>css/bookpreview.css',
+                    '<%= meta.srcPath %>css/ia.css',
+                    '<%= meta.srcPath %>css/makebook.css',
+                    '<%= meta.srcPath %>css/staticize.css',
+                    '<%= meta.srcPath %>css/tplshowcase.css'
                 ],
                 dest: '<%= meta.distPath %>css/all.css'
-            },
-            js_yb: {
-                options: {
-                    banner: '<%= banner %>'
-                },
-                src: [
-                    '<%= meta.srcPath %>js/yearbook/*.js',
-                    '<%= meta.srcPath %>js/yearbook/api/*.js',
-                    '<%= meta.srcPath %>js/yearbook/page/*.js'
-                ],
-                dest: '<%= meta.distPath %>js/all_yb.js'
-            },
+            }
         },
 
         copy: {
@@ -220,22 +191,13 @@ module.exports = function(grunt) {
         scope: 'devDependencies'
     });
     require('time-grunt')(grunt);
-    // Default task(s).
     grunt.registerTask('cleanAll', ['clean']);
     grunt.registerTask('dist-css', ['cssmin', 'clean:sourceMap']);
     grunt.registerTask('dist-js', ['concat', 'uglify']);
     grunt.registerTask('dist', ['clean:all', 'useminPrepare', 'dist-js', 'dist-css', 'copy', 'usemin']);
     grunt.registerTask('build', ['dist']);
     grunt.registerTask('default', ['dist']);
-
     grunt.registerTask('server', ['dist','watch']);
-
-
-
-    // Version numbering task.
-    // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
-    // This can be overzealous, so its changes should always be manually reviewed!
-    grunt.registerTask('change-version-number', 'sed');
 
     grunt.event.on('watch', function(action, filepath, target) {
         grunt.log.writeln(target + ': ' + filepath + ' has ' + action);

@@ -300,6 +300,7 @@
 	padding: 0 10px;
 }
 
+/*3.4 add mark_nav*/
 .pagemake_right .filter {
 	font-size: 14px;
 	color: #666;
@@ -327,10 +328,9 @@
 }
 
 .pagemake_right .filter dl dd ul li {
-	margin: /*10px*/
-	0;
-	cursor: pointer;
-	padding: 5px 0;
+    margin: /*10px*/ 0;
+    cursor: pointer;
+    padding: 5px 0;
 }
 
 .pagemake_right .filter dl dd ul li:hover {
@@ -398,93 +398,100 @@
 	vertical-align: middle;
 }
 
-.pagemake_wrap .caption a span.page {
-	background: url("../img/icon_open_book_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption a span.page,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.page {
+    background: url("../img/icon_open_book_gray.png") no-repeat center;
+    background-size: cover;
 }
 
 .pagemake_wrap .caption a.active span.page,
-.pagemake_wrap .caption a:hover span.page {
-	background: url("../img/icon_open_book_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap:hover a span.page {
+    background: url("../img/icon_open_book_white.png") no-repeat center;
+    background-size: cover;
 }
 
 .pagemake_wrap .caption .slide_btns a.active span.page,
 .pagemake_wrap .caption .slide_btns a:hover span.page {
-	background: url("../img/icon_open_book_green.png") no-repeat center;
-	background-size: cover;
+    background: url("../img/icon_open_book_green.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a span.chapter {
-	background: url("../img/icon_layer_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption a span.chapter ,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.chapter {
+    background: url("../img/icon_layer_gray.png") no-repeat center;
+    background-size: cover;
 }
 
 .pagemake_wrap .caption a.active span.chapter,
-.pagemake_wrap .caption a:hover span.chapter {
-	background: url("../img/icon_layer_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap:hover a span.chapter {
+    background: url("../img/icon_layer_white.png") no-repeat center;
+    background-size: cover;
 }
 
 .pagemake_wrap .caption .slide_btns a.active span.chapter,
 .pagemake_wrap .caption .slide_btns a:hover span.chapter {
-	background: url("../img/icon_layer_green.png") no-repeat center;
-	background-size: cover;
+    background: url("../img/icon_layer_green.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a span.tpl {
-	background: url("../img/icon_tpl_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a span.tpl ,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.tpl {
+    background: url("../img/icon_tpl_gray.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a.active span.tpl,
-.pagemake_wrap .caption a:hover span.tpl {
-	background: url("../img/icon_tpl_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a.active span.tpl,
+.pagemake_wrap .caption .btn_wrap:hover a span.tpl {
+    background: url("../img/icon_tpl_white.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a span.sample {
-	background: url("../img/icon_sample_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a span.sample ,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.sample {
+    background: url("../img/icon_sample_gray.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a.active span.sample,
-.pagemake_wrap .caption a:hover span.sample {
-	background: url("../img/icon_sample_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a.active span.sample,
+.pagemake_wrap .caption .btn_wrap:hover a span.sample {
+    background: url("../img/icon_sample_white.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a span.editor {
-	background: url("../img/icon_editor_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a span.editor ,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.editor {
+    background: url("../img/icon_editor_gray.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a.active span.editor,
-.pagemake_wrap .caption a:hover span.editor {
-	background: url("../img/icon_editor_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a.active span.editor,
+.pagemake_wrap .caption .btn_wrap:hover a span.editor {
+    background: url("../img/icon_editor_white.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a span.save {
-	background: url("../img/icon_save_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a span.save ,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.save {
+    background: url("../img/icon_save_gray.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a.active span.save,
-.pagemake_wrap .caption a:hover span.save {
-	background: url("../img/icon_save_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a.active span.save,
+.pagemake_wrap .caption .btn_wrap:hover a span.save {
+    background: url("../img/icon_save_white.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a span.submit {
-	background: url("../img/icon_print_gray.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a span.submit ,
+.pagemake_wrap .caption .btn_wrap:hover a.disable span.submit {
+    background: url("../img/icon_print_gray.png") no-repeat center;
+    background-size: cover;
 }
 
-.pagemake_wrap .caption a.active span.submit,
-.pagemake_wrap .caption a:hover span.submit {
-	background: url("../img/icon_print_white.png") no-repeat center;
-	background-size: cover;
+.pagemake_wrap .caption .btn_wrap a.active span.submit,
+.pagemake_wrap .caption .btn_wrap:hover a span.submit {
+    background: url("../img/icon_print_white.png") no-repeat center;
+    background-size: cover;
 }
 
 .pagemake_middle .caption {
@@ -512,9 +519,10 @@
 }
 
 .pagemake_middle .caption .edit_wrap a {
-	display: inline-block;
-	/*width: 55px;*/
-	margin: 0;
+    position: relative;
+    display: inline-block;
+    /*width: 55px;*/
+    margin: 0;
 	color: #666;
 	font-size: 12px;
 	text-align: center;
@@ -537,6 +545,44 @@
 	color: #fff;
 }
 
+/*12.18 swh add NEWYB 1209*/
+.pagemake_middle .caption .edit_wrap .btn_wrap{
+    position: relative;
+    display: inline-block;
+}
+
+.pagemake_middle .caption .edit_wrap .btn_wrap:hover a{
+    color: #fff;
+    background: #e7b54b;
+}
+
+.pagemake_middle .caption .edit_wrap .btn_wrap:hover a span{
+    color: #fff;
+}
+
+.pagemake_middle .caption .edit_wrap .btn_wrap:hover a.disable span{
+    color: #a4a4a4;
+}
+
+.pagemake_middle .caption .edit_wrap .ybcommon_queryicon_item{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55px;
+    height: 0;
+    cursor: default;
+}
+
+.pagemake_middle .caption .edit_wrap .btn_wrap:hover .ybcommon_queryicon_item{
+    display: block;
+}
+
+.pagemake_middle .caption .edit_wrap .btn_wrap:hover .ybcommon_queryicon_item div{
+    display: block!important;
+    top: 63px;
+    left: -89px;
+}
 .pagemake_middle .caption .edit_wrap a span {
 	display: block;
 	float: none;
@@ -640,7 +686,6 @@
 
 .pagemake_middle .caption .edit_wrap .page_state .icon-ok-circle {
 	color: #749b36;
-	;
 	font-size: 16px;
 }
 
@@ -1647,8 +1692,11 @@
 }
 
 
-/*~~~~~~~~~~picScroll~~~~~~~~~~*/
 
+/*~~~~~~~~~~picScroll~~~~~~~~~~*/
+.picScroll-top .bd ul li a:focus{
+	outline: none;
+}
 .picScroll-left {
 	width: 80%;
 	overflow: hidden;
@@ -1661,7 +1709,26 @@
 	height: 20px;
 	padding: 0 10px;
 }
-
+.picScroll-top .hd .prevPage {
+	display: block;
+	width: 23px;
+	height: 17px;
+	margin: 15px auto;
+	overflow: hidden;
+	z-index: 9999;
+	cursor: pointer;
+	background: url('../img/prev_btn2.png') no-repeat;
+}
+.picScroll-top .hd .nextPage {
+	display: block;
+	width: 23px;
+	height: 17px;
+	margin: 15px auto;
+	overflow: hidden;
+	z-index: 9999;
+	cursor: pointer;
+	background: url('../img/next_btn2.png') no-repeat;
+}
 .picScroll-left .hd .prev {
 	position: absolute;
 	top: 80px;
@@ -2206,6 +2273,19 @@
 	height: 80px;
 }
 
+.pagemake_wrap .caption span{
+    float: right;
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    color: #333;
+}
+.pagemake_wrap .caption .fold_btn{
+    font-size: 24px;
+}
+.pagemake_wrap .caption span:hover{
+	color: #b9dc5f;
+}
 #modal_changetpl_con > .hd {
 	font-size: 14px;
 }
@@ -2448,6 +2528,65 @@
 }
 
 
+/*12.23 swh add computePrice*/
+.compute_price_container .product_info{
+    position: relative;
+    border-bottom: 1px solid #dadada;
+}
+.compute_price_container .product_info > div{
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    clear: both;
+    overflow: visible;
+}
+.compute_price_container .product_info dt,
+.compute_price_container .product_info dd{
+    float: left;
+    font-size: 12px;
+    line-height: 25px;
+    color: #666;
+}
+.compute_price_container .product_info dd{
+    margin: 0 5px;
+}
+.compute_price_container .product_info dd > div{
+    position: relative;
+    margin: 0;
+    width: 115px;
+    height: 25px;
+    font-size: 12px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.compute_price_container .product_info dd.selected > div{
+    color: #333;
+}
+.compute_price_container .product_info dd .icon {
+    display: none;
+    position: absolute;
+    border-left: 17px solid transparent;
+    border-bottom: 14px solid #e22929;
+    right: 0;
+    bottom: 0;
+}
+.compute_price_container .product_info dd.selected .icon {
+    display: block;
+}
+.compute_price_container .product_info dd .icon i {
+    position: absolute;
+    color: #fff;
+    right: -1px;
+    top: 4px;
+    font-size: 12px;
+}
+.compute_price_container .product_info .price dd span{
+    font-size: 18px;
+    font-weight: bold;
+    color: #e22929;
+}
 /*~~~~~~~~~~makebook_autolayout.html~~~~~~~~~~*/
 
 .auto_layout_container {

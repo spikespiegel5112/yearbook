@@ -3404,7 +3404,7 @@
 	width: 49%;
 }
 
-.main_left .choose_img_con .to_upload .title p {
+.choose_img_con .to_upload .title p {
 	font-size: 16px;
 }
 
@@ -3413,12 +3413,6 @@
 	float: none;
 	margin: 0 0 10px;
 	width: 100%;
-}
-
-.choose_img_con .img_con .item.new_up,
-.choose_img_con .img_con .to_upload {
-	border: 1px solid #e2e2e2;
-	border-top: 0;
 }
 
 .choose_img_con .img_con .title {
@@ -3455,6 +3449,7 @@
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	background-color: #fff;
 }
 
 .choose_img_con .img_con .photo_list li {
@@ -3466,11 +3461,28 @@
 	height: 125px;
 }
 
-.choose_img_con .to_upload .photo_list li .load_per {
-	margin: 5px 0 0;
-	font-size: 12px;
-	color: #333;
-	text-align: center;
+.choose_img_con .to_upload .photo_list li{
+    position: relative;
+    vertical-align: top;
+    height: 140px;
+}
+.choose_img_con .to_upload .photo_list li .load_per{
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+    text-align: center;
+}
+.load_per.uploading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    line-height: 125px!important;
+    color: #fff!important;
+    background: rgba(0,0,0,.6);
+
 }
 
 .choose_img_con .img_con .photo_list li a {
@@ -3833,4 +3845,48 @@
 	width: 46px;
 	height: 44px;
 	display: block;
+}
+
+
+.choose_img_con .img_con .item.new_up,
+.choose_img_con .img_con .to_upload .item{
+    border: 1px solid #e2e2e2;
+    border-top: 0;
+}
+
+#uploadIL .choose_img_con .img_con .photo_list{
+    max-height: 320px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.choose_img_con .img_con .uploading,
+.choose_img_con .img_con .to_upload{
+    width: 49%;
+}
+.auto_layout_container{
+    position: relative;
+    width: 855px;
+    font-size: 14px;
+    color: #666;
+}
+.auto_layout_container .photo_box .tips{
+    padding: 10px 0 0;
+    border-top: 1px solid #dadada;
+    overflow: hidden;
+    clear: both;
+}
+
+.auto_layout_container .photo_box .tips p{
+    float: left;
+    line-height: 35px;
+}
+
+.auto_layout_container .photo_box .tips p i{
+    color: #00b7ee;
+    font-style: normal;
+}
+
+.auto_layout_container .photo_box .tips .btn{
+    float: right;
+    margin: 0 0 0 15px;
 }

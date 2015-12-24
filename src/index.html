@@ -12,15 +12,24 @@
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
+	<link type="text/css" rel="stylesheet" id="fb_css" media="screen" href="http://f3.baidu.com/feedback/css/fb_flat_0.3.css">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/index.css" type="text/css" media="all">
 	<!-- endbuild -->
 
+	<style>
+		html #hm_t_undefined .hm-t-feedback-trigger {position: fixed;display: block;right: 0;top: 50%;margin-top: 160px;border-top:1px solid #ddd;border-bottom-left-radius: 4px;z-index: 99998;cursor: pointer;width: 40px;height: 37px!important;text-align: center;text-decoration: none;white-space: normal;font-size: 14px;line-height: 17px;padding-top: 3px;color: #fff;background: #70ca5d;_position: absolute;_top: expression(eval(document.documentElement.scrollTop+(document.documentElement.clientHeight||document.body.clientHeight)-this.offsetHeight-2));}
+	</style>
 </head>
 
 <body>
+	<div class="yb_notice">
+	    <p>
+	        <span>【2016元旦、春节放假通知】</span>12月31日-1月3日，2月5日-2月14日期间，忆尔将暂停纪念册制作与发货，在线订单照常接受。有问题可用手机拨打客服热线400-0610-127，给您带来的不便，请多包涵！
+	    </p>
+	</div>
 	<!--头部导航-->
 	<div class="cm_header_nav">
 		<div class="logo">
@@ -70,8 +79,8 @@
             <li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
+		<div class="cm_header_shadow"></div>
 	</div>
-	<div class="cm_header_shadow"></div>
 	<!--banner-->
 	<div class="yb_banner">
 		<div class="banner_slide">
@@ -538,23 +547,81 @@
 						<a href="access_loginandbind.html"></a>
 					</li>
 					<li class='wechat'>
-						<a href="access_loginandbind.html"></a>
+						<a href="javascript:;"></a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
+
+	<div class='globalhint_wrapper mobile_pc_switch'>
+		<div class='globalhint_inner_wrapper'>
+			<div class='globalhint_mainarticle_item'>
+				是否切换至<span>忆尔移动端</span>
+			</div>
+			<div class='globalhint_sidearticle_item'>
+				(点击关闭按钮隐藏提示)
+			</div>
+			<a class='globalhint_close_btn' href="javascript:;">+</a>
+		</div>
+	</div>
+
+	<!--10.10 add QQ online server-->
+	<div class="server_online_main_im" id="server_online_main_im">
+		<div id="open_im" class="open_im">
+			<div></div>
+		</div>
+		<div class="im_main" id="im_main">
+			<div id="close_im" class="close_im"><a href="javascript:void(0);" title="点击关闭">&nbsp;</a></div>
+			<a href="javascript:;" class="im_qq qq_a" title="在线QQ客服">
+				<div class="qq_container"></div>
+				<div class="qq_hover_c"><img class="img_qq" src="img/qqserver/qq.png"></div>
+				<span> QQ在线咨询</span>
+			</a>
+			<div class="im_tel">
+				<ul>
+					<li>
+						<h4>咨询热线</h4>
+						<div class="tel_num">400-0610-127</div>
+					</li>
+					<li>
+						<h4>忆尔用户交流群</h4>
+						<div class="qq_num"><a href="javascript:;">497164827</a></div>
+					</li>
+					<li>
+						<h4><a href="help_center_story.html">帮助中心</a></h4>
+					</li>
+				</ul>
+			</div>
+			<div class="im_footer">
+				<div class="weixing_container">
+					<div class="weixing_show">
+						<img class="weixing_ma" src="img/qqserver/footer_wx.png">
+						<div class="weixing_txt">微信扫一扫<br>关注忆尔</div>
+						<div class="weixing_arrow"></div>
+						<div class="weixing_arrow_big"></div>
+					</div>
+				</div>
+				<div class="go_top"><a href="javascript:;" title="返回顶部"></a></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<div id="hm_t_undefined" class="hm-t-container"><div class="hm-t-feedback-trigger hm-t-unfold-button hm-t-unfold-button-txt" title="反馈建议" style="bottom: 2px; font-size: 14px; line-height: 17px; padding-top: 3px; height: 37px;">反馈建议</div></div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
+	<!-- endbuild -->
 	<script>
 	$(document).ready(function() {
 		switchBookCategory();
 		swiperInit();
 		icheck();
+		$.globalhint();//全局提示框，用来提示更换浏览器，提示切换移动端oc端
+		qqServer();
 		$('.nav_login a:eq(0)').loginPopupDialog();
 		$(".bask_book_slide").slide({
 			mainCell: ".bd ul",
@@ -622,6 +689,38 @@
 				increaseArea: '20%'
 		})
 	}
+
+	/*
+	 *QQ online server
+	 * */
+	function qqServer(){
+		$('#close_im').bind('click',function(){
+			$('#server_online_main_im').css("height","0");
+			$('#im_main').hide();
+			$('#open_im').show();
+		});
+		$('#open_im').bind('click',function(e){
+			$('#server_online_main_im').css("height","250");
+			$('#im_main').show();
+			$(this).hide();
+		});
+		$('.go_top').bind('click',function(){
+			$(window).scrollTop(0);
+		});
+		$(".weixing_container").bind('mouseenter',function(){
+			$('.weixing_show').show();
+		});
+		$(".weixing_container").bind('mouseleave',function(){
+			$('.weixing_show').hide();
+		});
+	}
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?6c2a4a4a16555081b9d43efce54baa21";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
 	</script>
 </body>
 

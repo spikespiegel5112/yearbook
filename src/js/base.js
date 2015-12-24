@@ -524,7 +524,14 @@
 			}
 		}
 	});
-
+	
+	$.extend({
+		globalhint:function(){
+			$('.globalhint_close_btn').click(function() {
+				$('.globalhint_wrapper').fadeOut('fast');
+			});
+		}
+	})
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);
 	$('.hide_title').init_title();
 

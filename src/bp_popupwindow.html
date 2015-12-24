@@ -23,6 +23,7 @@
 		</div>
 		<div class="flipbook-viewport">
 			<div class='flipbook_wrapper' pagecount='19'>
+				<a class='flipbook_prevpage_btn' href="javascript:;"></a>
 				<div class='flipbook'>
 					<div depth="5" class="hard" style="background-image:url('img/pages/1.jpg');">
 						<div>
@@ -99,15 +100,18 @@
 							</div>
 						</div>
 					</div>
-					<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')">
-					</div>
+					<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')"></div>
 				</div>
+				<a class='flipbook_nextpage_btn' href="javascript:;"></a>
 			</div>
 		</div>
 	</div>
 	<!--底部-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src='assets/js/modernizr.2.5.3.min.js'></script>
+	<!-- build:js js/all.js -->
+	<script type="text/javascript" src='js/check_os.js'></script>
+	<!-- endbuild -->
 	<script type="text/javascript">
 	function loadApp() {
 		//这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
@@ -197,10 +201,12 @@
 						$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
 					}
 					updateDepth(book, page);
+					disableControls(page);
 				},
 				turned: function(e, page, view) {
 					var book = $(this);
 					updateDepth(book);
+					disableControls(page);
 					book.turn('center');
 				},
 				start: function(e, pageObj) {},
@@ -216,35 +222,32 @@
 			}
 		});
 
-		flipbook.addClass('animated');
+		
+			flipbook.addClass('animated');
 
-		// Events for the next button
-
-		$('.flipbook_nextpage_btn').bind($.mouseEvents.over, function() {
-			$(this).addClass('next-button-hover');
-		}).bind($.mouseEvents.out, function() {
-			$(this).removeClass('next-button-hover');
-		}).bind($.mouseEvents.down, function() {
-			$(this).addClass('next-button-down');
-		}).bind($.mouseEvents.up, function() {
-			$(this).removeClass('next-button-down');
-		}).click(function() {
-			flipbook.turn('next');
-		});
-
-		// Events for the next button
-
-		$('.flipbook_prevpage_btn').bind($.mouseEvents.over, function() {
-			$(this).addClass('previous-button-hover');
-		}).bind($.mouseEvents.out, function() {
-			$(this).removeClass('previous-button-hover');
-		}).bind($.mouseEvents.down, function() {
-			$(this).addClass('previous-button-down');
-		}).bind($.mouseEvents.up, function() {
-			$(this).removeClass('previous-button-down');
-		}).click(function() {
-			flipbook.turn('previous');
-		});
+			if (!$.os.mobile) {
+				$('.flipbook_nextpage_btn').bind($.mouseEvents.down, function() {
+					$(this).addClass('next-button-down');
+				}).bind($.mouseEvents.up, function() {
+					$(this).removeClass('next-button-down');
+				}).click(function() {
+					flipbook.turn('next');
+				});
+				$('.flipbook_prevpage_btn').bind($.mouseEvents.down, function() {
+					$(this).addClass('previous-button-down');
+				}).bind($.mouseEvents.up, function() {
+					$(this).removeClass('previous-button-down');
+				}).click(function() {
+					flipbook.turn('previous');
+				});
+			} else {
+				$('.flipbook_nextpage_btn').on('touchend', function() {
+					flipbook.turn('next');
+				});
+				$('.flipbook_prevpage_btn').on('touchend', function() {
+					flipbook.turn('previous');
+				});
+			}
 
 		function bookLength() {
 			var length = $('.flipbook_wrapper').attr('pagecount');
@@ -321,6 +324,35 @@
 				$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
 					width: 0,
 					'z-index': 1
+				});
+			}
+		}
+		function disableControls(page) {
+			$('.flipbook_nextpage_btn').css({
+				'background-color': 'rgba(0,0,0,0.1)',
+				'background-position': '-40px 280px'
+			});
+			$('.flipbook_prevpage_btn').css({
+				'background-color': 'rgba(0,0,0,0.1)',
+				'background-position': '0 280px'
+			})
+			if (page == 1) {
+				$('.flipbook_prevpage_btn').hide();
+				$('.flipbook_nextpage_btn').show().css({
+					right: 164,
+				});
+			} else if (page == $('.flipbook').turn('pages')) {
+				var length = $('.flipbook .page-wrapper').length;
+				$('.flipbook_prevpage_btn').show().css({
+					left: 180
+				});
+				$('.flipbook_nextpage_btn').hide();
+			} else {
+				$('.flipbook_prevpage_btn').show().css({
+					left: '-26px'
+				});
+				$('.flipbook_nextpage_btn').show().css({
+					right: '-39px'
 				});
 			}
 		}

@@ -175,7 +175,6 @@
 	background-image: url(../img/previewpage/bookpreview_arrows.png);
 	background-repeat: no-repeat;
 	background-color: rgba(255, 255, 255, 0.4);
-	/*	opacity: 0;*/
 	position: absolute;
 	top: 0;
 	z-index: 1;
@@ -218,12 +217,12 @@
 .flipbook-viewport .hard>div>div>div{
 	margin: 0;
 }
-.flipbook-viewport .secondcover>div {
+.flipbook-viewport .secondcover>div>div {
 	margin: 0;
 	position: absolute;
 	right: 0;
 }
-.flipbook-viewport .thirdcover>div {
+.flipbook-viewport .thirdcover>div>div {
 	margin: 0;
 	position: absolute;
 	left: 0;

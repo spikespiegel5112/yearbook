@@ -142,7 +142,7 @@
 		<div class='ybbanner_shortcut_wrapper'>
 			<ul>
 				<li class='print'><a href="javascript:;"><span class='icon-print'></span>提交下单</a></li>
-
+				<li class='price'><a href="javascript:;"><span class='icon-money'></span>计算价格</a></li>
 				<li class='share'><a href="javascript:;"><span class='icon-share'></span>分享预览</a></li>
 				<li class='invite'><a href="javascript:;"><span class='icon-bullhorn'></span>邀请卡</a></li>
 			</ul>
@@ -642,36 +642,60 @@
 				<!--.pagemake_wrap下caption 内容修改-->
 				<div class="caption">
 					<div class="edit_wrap">
-						<a class="add_chapter_btn" href="javascript:;">
-							<span class="chapter">+</span>
-							<div>添加章节</div>
-						</a>
-						<a class="delete_chapter_btn" href="javascript:;">
-							<span class="chapter">-</span>
-							<div>删除章节</div>
-						</a>
+						<div class="btn_wrap">
+							<a class="add_chapter_btn" href="javascript:;">
+								<span class="chapter">+</span>
+								<div>添加章节</div>
+							</a>
+							<div class='ybcommon_queryicon_item'>
+								<div>
+									<p>添加章节</p>
+								</div>
+							</div>
+						</div>
+						<div class="btn_wrap">
+							<a class="delete_chapter_btn" href="javascript:;">
+								<span class="chapter">-</span>
+								<div>删除章节</div>
+							</a>
+							<div class='ybcommon_queryicon_item'>
+								<div>
+									<p>删除章节</p>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="edit_wrap">
-						<a class="add_page_btn" href="javascript:;">
-							<span class="page">+</span>
-							<div>添加页面</div>
-						</a>
-						<a class="delete_page_btn" href="javascript:;">
-							<span class="page">-</span>
-							<div>删除页面</div>
-						</a>
-						<a href="javascript:;" class="disable savePn" title="拖动改变页面顺序，或者双击页码编辑页码后保存修改结果 ">
-							<span class="save"></span>
-							<div>保存页码</div>
-						</a>
-						<a class="editor_btn" href="javascript:;" style=" display: none; ">
-							<span class="editor"></span>
-							<div>分配编辑者</div>
-						</a>
-						<a href="javascript:;" class="editPage active" title="编辑页面">
-							<span class="page">E</span>
-							<div>编辑页面</div>
-						</a>
+						<div class="btn_wrap">
+							<a class="add_page_btn" href="javascript:;">
+								<span class="page">+</span>
+								<div>添加页面</div>
+							</a>
+						</div>
+						<div class="btn_wrap">
+							<a class="delete_page_btn" href="javascript:;">
+								<span class="page">-</span>
+								<div>删除页面</div>
+							</a>
+						</div>
+						<div class="btn_wrap">
+							<a href="javascript:;" class="disable savePn" title="拖动改变页面顺序，或者双击页码编辑页码后保存修改结果 ">
+								<span class="save"></span>
+								<div>保存页码</div>
+							</a>
+						</div>
+						<div class="btn_wrap">
+							<a class="editor_btn" href="javascript:;" style=" display: none; ">
+								<span class="editor"></span>
+								<div>分配编辑者</div>
+							</a>
+						</div>
+						<div class="btn_wrap">
+							<a href="javascript:;" class="editPage active" title="编辑页面">
+								<span class="page">E</span>
+								<div>编辑页面</div>
+							</a>
+						</div>
 					</div>
 					<div class="edit_wrap">
 						<div class="chapter_state">
@@ -866,32 +890,47 @@
 				<!--替换原有标题-->
 				<div class="caption for_page">
 					<div class="edit_wrap">
-						<a class="change_tpl_btn" href="javascript:;">
-							<span class="tpl"></span>
-							<div>更换模板</div>
-						</a>
-						<a class="view_sample_btn" href="javascript:;">
-							<span class="sample"></span>
-							<div>参考示例</div>
-						</a>
-						<a class="editor_btn" href="javascript:;">
-							<span class="editor"></span>
-							<div>分配编辑者</div>
-						</a>
+						<div class="btn_wrap">
+							<a class="change_tpl_btn" href="javascript:;">
+								<span class="tpl"></span>
+								<div>更换模板</div>
+							</a>
+						</div>
+						<div class="btn_wrap">
+							<a class="view_sample_btn" href="javascript:;">
+								<span class="sample"></span>
+								<div>参考示例</div>
+							</a>
+						</div>
+						<div class="btn_wrap">
+							<a class="editor_btn" href="javascript:;">
+								<span class="editor"></span>
+								<div>分配编辑者</div>
+							</a>
+						</div>
 					</div>
 					<div class="edit_wrap">
-						<a class="save_page_btn disable" title="拖动改变页面顺序，或者双击页码编辑页码后保存修改结果" href="javascript:;">
-							<span class="save"></span>
-							<div>保存书页</div>
-						</a>
-						<a class="submit_page_btn" href="javascript:;">
-							<span class="submit"></span>
-							<div>提交书页</div>
-						</a>
-						<div class='ybcommon_queryicon_item'>
-							<!--<span class='icon-question-sign'></span>-->
-							<div>
-								<p>拖动改变页面顺序，或者双击页码编辑页码后保存修改结果</p>
+						<div class="btn_wrap">
+							<a class="save_page_btn disable" title="拖动改变页面顺序，或者双击页码编辑页码后保存修改结果" href="javascript:;">
+								<span class="save"></span>
+								<div>保存书页</div>
+							</a>
+							<div class='ybcommon_queryicon_item'>
+								<!--<span class='icon-question-sign'></span>-->
+								<div>
+									<p>拖动改变页面顺序，或者双击页码编辑页码后保存修改结果</p>
+								</div>
+							</div>
+						</div>
+						<div class="btn_wrap">
+							<a class="submit_page_btn" href="javascript:;">
+								<span class="submit"></span>
+								<div>提交书页</div>
+							</a>
+							<div class='ybcommon_queryicon_item'>
+								<div>
+									<p>提交书页</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -2412,6 +2451,78 @@
 			<span>显示名称：</span><input type="text" placeholder="" value="">
 		</label>
 	</div>
+
+	<!--12.23 swh add 价格计算-->
+	<div class="compute_price_container hidden">
+		<div class="product_info">
+			<div class="page_num">
+				<dl>
+					<dt>页&nbsp;&nbsp;&nbsp;数：</dt>
+					<dd class="cm_border_none"><span>10</span>页</dd>
+				</dl>
+			</div>
+			<div class="cover">
+				<dl>
+					<dt>封&nbsp;&nbsp;&nbsp;面：</dt>
+					<dd class="selected" data='书册采用包装为胶装覆膜'>
+						<div>
+							<span>平装（软面）</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+					<dd>
+						<div>
+							<span>精装（硬壳）</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+					<dd>
+						<div>
+							<span>蝴蝶装（硬壳）</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="size">
+				<dl>
+					<dt>尺&nbsp;&nbsp;&nbsp;寸：</dt>
+					<dd class="selected">
+						<div>
+							<span>别致小装</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+					<dd>
+						<div>
+							<span>气派大装</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="num">
+				<dl>
+					<dt>数&nbsp;&nbsp;&nbsp;量：</dt>
+					<dd>
+						<ul class='ybcommon_counter_item'>
+							<a href="javascript:;">-</a>
+							<input type='text' value='0'>
+							<a href="javascript:;">+</a>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div class="price">
+				<dl>
+					<dt>价&nbsp;&nbsp;&nbsp;格：</dt>
+					<dd>
+						<span>￥508.00</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
     <!-- html end-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
@@ -3164,7 +3275,37 @@
 				$('.load_per.waiting').text('等待上传');
 			})
 		}
+
+		/*
+		* compute price
+		* */
+		function computePrice(){
+			$('.ybbanner_shortcut_wrapper .price').click(function(){
+				art.dialog({
+					title: '价格计算器',
+					lock: true,
+					content: document.querySelector('.compute_price_container'),
+					okVal:'知道了',
+					ok: function() {}
+				});
+				$('.product_info .cover dd').click(function() {
+					var $this=$(this),
+							thisEl=$('.product_info .cover dd');
+					thisEl.removeClass('selected');
+					$this.addClass('selected');
+				});
+				$('.product_info .size dd').click(function() {
+					var $this=$(this),
+							thisEl=$('.product_info .size dd');
+					thisEl.removeClass('selected');
+					$this.addClass('selected');
+				});
+			})
+		}
+		
 	(function($) {
+		$('.ybcommon_counter_item').priceCalculator();
+		computePrice();
 		uploadImgProgress();
 		scrollFixed();
 		pagemake_right_flod();

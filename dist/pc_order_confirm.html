@@ -157,6 +157,7 @@
 							<option>满400减80</option>
 							<option>满500减100</option>
 							<option>满5000减1000</option>
+							<option>一二三四五六七八九十一二三四五</option>
 						</select>
 						<a class='common_btn' href="javascript:;">我要兑换优惠券</a>
 					</div>
@@ -327,15 +328,24 @@
 			<div><a href="static_hc_company_profile.html">北京众志和达数据计算有限公司</a></div>
 		</div>
 	</div>
+	<!--当书册页数为奇数时，弹窗提示-->
+	<div class="book_oddpage_tips hidden">
+		<p>目前书册总页数为奇数页，为保证印刷质量，
+			<br>请添加或删除书页至<span>偶数页</span>再提交订单！</p>
+	</div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
 	<script type="text/javascript" src="js/base.js"></script>
 	<script type="text/javascript">
 	$(function() {
 		orderConfirm();
 		$('.ybcommon_counter_item').priceCalculator({
 			unitprice: '.opd_unitprice_item',
-			subtotal: '.opd_summaraize_item label, .opd_mercprice_item span'
+			subtotal: '.opd_summaraize_item label, .opd_mercprice_item span',
+			onchange:function(){
+				console.log('wtf');
+			}
 		});
 		// $('.ybcommon_counter_item').priceCalculator();
 		serialNumber();
@@ -404,8 +414,18 @@
 					break;
 			}
 		})
-		$('.opd_sketch_item select, .opd_coupon_wrapper select').chosen({
-			disable_search_threshold: 15
+		// $('.opd_sketch_item select, .opd_coupon_wrapper select').chosen({
+		// 	disable_search_threshold: 15
+		// });
+		art.dialog({
+			title: '提示',
+			lock : true,
+			icon: 'warning',
+			content: document.querySelector('.book_oddpage_tips'),
+			okVal: '继续提交',
+			ok: function () {},
+			cancelVal: '返回制作',
+			cancel: function () {}
 		});
 	}
 

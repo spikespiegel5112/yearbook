@@ -384,3 +384,150 @@
 .message_list > li.read > h4{
     background: none;
 }
+/*my wallet*/
+.wallet_wrapper .balance{
+    width: 95%;
+    height: 50px;
+    /* line-height: 40px; */
+    font-size: 20px;
+    /* padding: 6px 12px; */
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 10px auto 20px;
+    position: relative;
+}
+
+.wallet_wrapper .balance p{
+    line-height: 50px;
+}
+
+.wallet_wrapper .balance p span{
+    font-size: 24px;
+    color: #fc6b52;
+}
+
+.wallet_wrapper .balance a{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.wallet_wrapper .balance a:hover{
+    color: #e7b54b;
+}
+
+.coupon_switcher{
+    margin: 10px auto;
+    width: 80%;
+    overflow: hidden;
+    font-size: 18px;
+}
+.coupon_switcher li{
+    float: left;
+    /*width: 49%;*/
+    width: 33%;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    background: #f6f6f6;
+    color: #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    box-sizing: border-box;
+}
+.coupon_switcher li:first-child{
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.coupon_switcher li:last-child{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.coupon_switcher li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #acdb6f;
+}
+.coupon_switcher li .active{
+    background: #fff;
+    color: #fc6b52;
+}
+
+.coupon_list{
+    display: none;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.coupon_list li{
+    position: relative;
+    width:100%;
+    height: 50px;
+    margin: 15px auto;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: url("../img/m/wallet/coupon_bg.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_name{
+    position: absolute;
+    left: 4%;
+    top: 5px;
+}
+
+.coupon_list li .coupon_name p{
+    margin: 0;
+}
+
+.coupon_list li .coupon_name p:last-child{
+    font-size: 12px;/*NEWYB-988*/
+    line-height: 1.8em;
+}
+
+.coupon_list li .coupon_name p span{
+    font-size: 12px;
+}
+
+.coupon_list li .coupon_money{
+    float: right;
+    width: 110px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    margin-right: -2px;
+}
+
+.coupon_list li .coupon_money span{
+    font-size: 20px;
+    display: block;
+    padding-top: 5px;
+}
+
+.coupon_list li .coupon_money.coupon_10{
+    background: url("../img/m/wallet/coupon_10.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_money.coupon_20{
+    background: url("../img/m/wallet/coupon_20.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_money.coupon_50{
+    background: url("../img/m/wallet/coupon_50.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_money.coupon_failed{
+    background: url("../img/m/wallet/coupon_failed.png") no-repeat;
+    background-size: cover;
+}

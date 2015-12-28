@@ -398,6 +398,25 @@ label.error {
     padding-right: .4em;
 }
 
+/*通用按钮*/
+.common_btn{
+    margin: 0 5px;
+    padding: 5px 10px;
+    background: -webkit-linear-gradient(top,#fff,#eee);
+    background: -moz-linear-gradient(top,#fff,#eee);
+    background: -ms-linear-gradient(top,#fff,#eee);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #000;
+    text-decoration: none;
+}
+.common_btn:active{
+    background: -webkit-linear-gradient(top,#eee,#fff);
+    background: -moz-linear-gradient(top,#eee,#fff);
+    background: -ms-linear-gradient(top,#eee,#fff);
+    color: #555;
+}
+
 /*common head*/
 .ybwechatheader_wrapper{
     width: 100%;
@@ -584,4 +603,193 @@ label.error {
 }
 .empty_item p a{
     color: #71a033;
+}
+/*footer nav*/
+.footer_nav{
+    position: fixed;
+    bottom: 0;
+    padding: 5px 0;
+    width: 100%;
+    color: #666;
+    background-color: #fff;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.footer_nav ul li{
+    float: left;
+    padding: 5px 0;
+    width: 20%;
+    text-align: center;
+}
+
+.footer_nav ul li a{
+    color: #666;
+    font-size: 12px;
+}
+
+.footer_nav ul li.active{
+    color: #fff;
+    background-color: #9ad44d;
+    border-radius: 4px;
+}
+
+.footer_nav ul li.active a{
+    color: #fff;
+}
+
+.footer_nav ul li p{
+    margin: 0;
+}
+
+.footer_nav ul li span{
+    display: block;
+    margin: 0 auto 3px;
+    width: 25px;
+    height: 25px;
+}
+
+.footer_nav ul li span.home{
+    background: url("../img/m/wallet/icon_home_gray.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li.active span.home{
+    background: url("../img/m/wallet/icon_home_white.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li span.msg{
+    background: url("../img/m/wallet/icon_msg_gray.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li.active span.msg{
+    background: url("../img/m/wallet/icon_msg_white.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li span.find{
+    background: url("../img/m/wallet/icon_find_gray.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li.active span.find{
+    background: url("../img/m/wallet/icon_find_white.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li span.new{
+    background: url("../img/m/wallet/icon_new_gray.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li.active span.new{
+    background: url("../img/m/wallet/icon_new_white.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li span.bookshelf{
+    background: url("../img/m/wallet/icon_bookshelf_gray.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li.active span.bookshelf{
+    background: url("../img/m/wallet/icon_bookshelf_white.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li span.my{
+    background: url("../img/m/wallet/icon_my_gray.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_nav ul li.active span.my{
+    background: url("../img/m/wallet/icon_my_white.png") no-repeat center;
+    background-size: cover;
+}
+
+/*add pop new style*/
+.open_new_container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: #f6f6f6;
+}
+
+.open_new_container.fadeIn{
+    animation-duration: .3s;
+    -webkit-animation-duration: .3s;
+}
+
+.open_new_container.fadeOut{
+    animation-duration: .3s;
+    -webkit-animation-duration: .3s;
+    animation-delay: .1s;
+    -webkit-animation-delay: .1s;
+}
+
+.open_new_container .close_btn{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    text-align: center;
+    opacity: 1;
+}
+
+.open_new_container .close_btn a{
+    font-size: 36px;
+    color: #9ad44d;
+}
+
+.new_option{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.new_option.slideInUp{
+    animation-duration: .2s;
+    -webkit-animation-duration: .2s;
+    animation-delay: .1s;
+    -webkit-animation-delay: .1s;
+}
+
+.new_option.slideOutDown{
+    animation-duration: .2s;
+    -webkit-animation-duration: .2s;
+}
+
+.new_option ul {
+    margin: 0;
+    padding: 0;
+}
+
+.new_option ul li{
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    width: 80px;
+    text-align: center;
+}
+
+.new_option ul li a img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    vertical-align: baseline;
+}
+
+.new_option ul li a p{
+    margin: 0;
+    color: #828282;
 }

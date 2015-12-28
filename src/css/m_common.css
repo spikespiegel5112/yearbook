@@ -164,6 +164,7 @@ label.error {
     background: #9ad44d;
     color: #fff;
     text-align: center;
+    box-sizing: content-box;
 }
 .input_btn_item[disable='disable']{
     background: #d1d1d1;
@@ -171,6 +172,16 @@ label.error {
 .input_btn_item:active{
     background: #90CC3D;
     color: #76b522;
+}
+.finishandenter_btn{
+    display: block;
+    margin: 20px auto;
+    width: 225px;
+    height: 35px;
+    line-height: 35px;
+    background: #89c539;
+    color: #fff;
+    text-align: center;
 }
 .form_label_item{
     float: left;

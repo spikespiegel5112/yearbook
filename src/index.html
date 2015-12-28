@@ -29,6 +29,7 @@
 	    <p>
 	        <span>【2016元旦、春节放假通知】</span>12月31日-1月3日，2月5日-2月14日期间，忆尔将暂停纪念册制作与发货，在线订单照常接受。有问题可用手机拨打客服热线400-0610-127，给您带来的不便，请多包涵！
 	    </p>
+		<a class="close" href="javascript:;"><i class="icon-remove-circle"></i></a>
 	</div>
 	<!--头部导航-->
 	<div class="cm_header_nav">
@@ -622,6 +623,7 @@
 		icheck();
 		$.globalhint();//全局提示框，用来提示更换浏览器，提示切换移动端oc端
 		qqServer();
+		CloseYbNotice();
 		$('.nav_login a:eq(0)').loginPopupDialog();
 		$(".bask_book_slide").slide({
 			mainCell: ".bd ul",
@@ -634,6 +636,16 @@
 			trigger: "click"
 		});
 	});
+
+	/*
+	 * 关闭忆尔提示
+	 * */
+	function CloseYbNotice(){
+		$('.yb_notice').fadeIn();
+		$('.yb_notice .close').on('click',function(){
+			$('.yb_notice').fadeOut();
+		})
+	}
 
 	/*书册类型变化 hover显示相应步骤*/
 	function switchBookCategory() {

@@ -1,5 +1,4 @@
 @charset "utf-8";
-/*~~~~~~~~~~usercenter~~~~~~~~~~*/
 /*personal main*/
 .userinfo_wrapper {
     width: 100%;
@@ -41,95 +40,107 @@
     line-height: 40px;
 }
 
-.userinfo_wrapper .rightarrow_item{
+.userinfo_wrapper .rightarrow_item {
     height: 6em;
     line-height: 6em;
     color: #9e9e9e;
 }
 
-.usercenter_tools_wrapper{
+.usercenter_tools_wrapper {
     margin: 0 0 3em 0;
 }
 
-.usercenter_tools_wrapper>ul>li{
+.usercenter_tools_wrapper > ul > li {
     font-size: 14px;
     height: 40px;
     background: #fff;
     border: 1px solid #ddd;
 }
 
-.usercenter_tools_wrapper>ul>li:hover{
+.usercenter_tools_wrapper > ul > li:hover {
     background: #d1d1d1;
 }
 
-.usercenter_tools_wrapper>ul>li:first-child{
+.usercenter_tools_wrapper > ul > li:first-child {
     margin: 1em 0;
 }
 
-.usercenter_tools_wrapper ul li a{
+.usercenter_tools_wrapper ul li a {
     display: block;
     width: 100%;
     height: 100%;
     line-height: 40px;
     color: #000;
 }
-.usercenter_tools_wrapper ul li a>span{
+
+.usercenter_tools_wrapper ul li a > span {
     float: left;
     margin: 5px 10px;
     width: 30px;
     height: 30px;
-    /*background-image: url(../img/m/img_sprite_00000.png);*/
 }
-.usercenter_tools_wrapper ul li a>span img{
+
+.usercenter_tools_wrapper ul li a > span img {
     width: 30px;
     height: 30px;
     vertical-align: baseline;
 }
 
-.userbindicon_wrapper{
+.userbindicon_wrapper {
     float: right;
     margin: 10px 0 0 0;
     height: 20px;
 }
-.userbindicon_wrapper li{
+
+.userbindicon_wrapper li {
     float: left;
     margin: 0 1px;
     width: 20px;
     height: 20px;
     position: relative;
 }
-.userbindicon_wrapper img{
+
+.userbindicon_wrapper img {
     position: absolute;
     top: 0;
 }
-.userbindicon_wrapper li span{
+
+.userbindicon_wrapper li span {
     display: block;
     width: 100%;
     height: 100%;
     background-image: url(../img/m/icon-bind.png);
     background-size: 40px 140px;
 }
-.userbindicon_wrapper .phone_icon{
+
+.userbindicon_wrapper .phone_icon {
     background-position: 0 -2px;
 }
-.userbindicon_wrapper .email_icon{
+
+.userbindicon_wrapper .email_icon {
     background-position: 0 -25px;
 }
-.userbindicon_wrapper .qq_icon{
+
+.userbindicon_wrapper .qq_icon {
     background-position: 0 -48px;
 }
-.userbindicon_wrapper .renren_icon{
+
+.userbindicon_wrapper .renren_icon {
     background-position: 0 -72px;
 }
-.userbindicon_wrapper .weibo_icon{
+
+.userbindicon_wrapper .weibo_icon {
     background-position: 0 -95px;
 }
-.userbindicon_wrapper .wechat_icon{
+
+.userbindicon_wrapper .wechat_icon {
     background-position: 0 -119px;
 }
-.userbindicon_wrapper .active{
-    background-position-x:-60px;
+
+.userbindicon_wrapper .active {
+    background-position-x: -60px;
 }
+
 /*personal info*/
 .user-info-list li {
     border-left: none;
@@ -137,7 +148,6 @@
     border-radius: 0;
     box-sizing: content-box;
 }
-
 
 .user-header {
     width: 100%;
@@ -294,4 +304,27 @@
 
 .user_info_warning {
     margin: 1em;
+}
+/*feedback*/
+.feedback-reply {
+    padding: 1em;
+}
+
+.feedback-reply ul li {
+    border-left: solid #05a51e;
+}
+
+.feedback-reply .feedback-reply-system {
+    border-left: solid #006ce5;
+}
+
+.feedback-reply .feedback-content {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feedback-reply .feedback-date {
+    font-size: 0.6em;
+    color: #BEBEBE;
 }

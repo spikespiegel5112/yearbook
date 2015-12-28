@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+.yb-error {
+	width: 100%;
+	text-align: center;
+	margin: 2em auto;
+}
+
+.yb-error img {
+	width: 50%;
+}
+
+.yb-error p {
+	font-size: 1.5em;
+	margin: 7px 0 0;
+}
+
+.yb-error p.yb-error-sub {
+	font-size: 1em;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.yb-error a.error-return, .yb-error a.error-btn {
+	display: block;
+	width: 30%;
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+	color: #fff;
+	background-color: #007ce5;
+	margin: 2em auto;
+	border-radius: 4px;
+}
+
+.yb-error a.error-btn {
+	margin-left: .3em;
+}
+
+.yb-error a.error-return:hover, .yb-error a.error-btn:hover, .yb-error a.error-return:focus, .yb-error a.error-btn:focus {
+	color: black;
+	background-color: #c3c3c3;
+}
+
+.yb-error a.error-return span, .yb-error a.error-btn span {
+	margin-right: .5em;
+	-moz-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	transform: scaleX(-1);
+	/*filter: fliph; /!*IE*!/*/
+	/*transform:rotate(270deg);*/
+}
+
+.yb-error .yb-500-btn {
+	margin: 0 18%;
+	width: 100%;
+}
+/**/
+.login-index {
+	background: url("../img/m/yb-bg.jpg") no-repeat;
+	height: 100%;
+	position: relative;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	min-height: 100%;
+}
+
+.logo {
+	background: url("../img/m/img_sprite_00000.png") no-repeat;
+	width: 235px;
+	height: 50px;
+	margin: 4em auto;
+}
+
+.login-register {
+	margin: 2em auto;
+}
+
+.login-register a:hover {
+	color: #0888e6;
+}
+
+.login-red, .login-find-ps {
+	color: #fff;
+}
+
+.login-find-ps {
+	float: right;
+}
+
+.third-login {
+	text-align: center;
+	margin: 2em auto;
+}
+
+.login-info {
+	color: #fff;
+}
+
+.third-login ul {
+	margin: 0 auto;
+}
+
+.third-login p {
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+
+.third-login ul li {
+	margin: 0 auto;
+	padding: 0;
+}
+
+.third-login ul li a {
+	display: block;
+	width: 4.25em;
+	height: 2.25em;
+	color: #fff;
+	line-height: 2.5em;
+}
+
+.third-login ul li a:hover {
+	color: #fff;
+}
+
+.third-login .btn {
+	padding: 1px;
+}
+
+.btn-weibo {
+	background-color: #ff5555;
+}
+
+.btn-renren {
+	background-color: #448aca;
+}
+
+.btn-qq {
+	background-color: #7ecef4
+}
+
+.btn-wechat {
+	background-color: #50a000;
+}
+
+.sns {
+	background: url("../img/m/icon-sns.png") no-repeat;
+	width: 25px;
+	height: 26px;
+	float: left;
+	margin: 7px 0 0 2px
+}
+
+.sns.weibo {
+	background-position: 0 0;
+}
+
+.sns.renren {
+	background-position: 0 -23px;
+}
+
+.sns.qq {
+	background-position: 0 -48px;
+}
+
+.sns.wechat {
+	background-position: 0 -75px;
+}

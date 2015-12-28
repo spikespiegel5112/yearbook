@@ -583,6 +583,72 @@ label.error {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     box-sizing: content-box;
 }
+/*账号验证*/
+
+.container.set-code {
+    text-align: center;
+    padding: 0;
+}
+
+.set-code a {
+    padding: 0 1.3em;
+}
+
+.set-code label {
+    float: left;
+    line-height: 2em;
+    width: 100%;
+}
+
+.set-code .user_account{
+    width: 76px;
+    float: none;
+    display: inline-block;
+}
+
+/*.set-code form {
+	margin: 2em;
+}*/
+
+.set-code .send-code-buttons {
+    margin: 2em;
+}
+
+.set-code .send-code-input {
+    float: none;
+    width: 7.5em;
+    margin: 0 0 0 .5em;
+    display: inline-block;
+}
+
+.set-code .fp-set-code-info p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.send-code {
+    margin: 2em 0;
+}
+
+.send-code p{
+    margin-bottom: 10px;
+    font-size: 0.875em;
+    text-align: center;
+}
+
+/*unbind resetpassword*/
+.change-ps p {
+    color: #C7C7C7;
+    font-size: 0.75em;
+    padding: 0 .8em;
+}
+.change-ps-ok {
+    width: 100%;
+    margin: 10em auto;
+    text-align: center;
+}
 
 /*empty list*/
 .empty_item{

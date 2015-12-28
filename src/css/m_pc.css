@@ -305,6 +305,219 @@
 .user_info_warning {
     margin: 1em;
 }
+/*bind*/
+.user-center-bind .list-group .list-group-item, .user-center-tool .list-group .list-group-item {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.user-center-bind .list-group .list-group-item span{
+    font-size: .875em;
+}
+
+.user-center-bind li:hover, .user-center-tool li:hover {
+    background-color: #C3C3C8;
+}
+
+.user-center-bind li:hover a, .user-center-tool li:hover a {
+    color: #fff;
+}
+
+.user-center-bind li:hover span {
+    color: #fff;
+}
+
+.user-center-bind a {
+    color: #3c3c3c;
+    display: block;
+    font-size: .875em;
+}
+.bind {
+    background: url("../img/m/icon-bind.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 2px;
+    background-size: 40px 140px;
+}
+
+.bind.active {
+    background-position-x: -20px;
+}
+
+.photo-icon {
+    background-position: 0 -2px;
+}
+
+.email-icon {
+    background-position: 0 -25px;
+}
+
+.qq-icon {
+    background-position: 0 -48px;
+}
+
+.renren-icon {
+    background-position: 0 -72px;
+}
+
+.weibo-icon {
+    background-position: 0 -95px;
+}
+
+.wechat-icon {
+    background-position: 0 -120px;
+}
+
+
+
+.set-username.form-group {
+    margin: 2em;
+}
+
+.set-username p,
+.change-ps-ok p{
+    margin-bottom: 10px;
+}
+
+
+
+.bindsetcode_wrapper .container, .bindsetcode_wrapper .container-fluid {
+    padding: 0;
+}
+
+.bindsetcode_wrapper .set-code form {
+    margin: 0;
+}
+
+.bindsetcode_wrapper .set-username {
+    margin: 2em 0;
+}
+
+.bindsetcode_wrapper .set-code label {
+    margin: 1em 0;
+}
+
+.container.set-code {
+    text-align: center;
+    padding: 0;
+}
+
+.set-code a {
+    padding: 0 1.3em;
+}
+
+.set-code label {
+    float: left;
+    line-height: 2em;
+    width: 100%;
+}
+
+.set-code .user_account{
+    width: 76px;
+    float: none;
+    display: inline-block;
+}
+
+/*.set-code form {
+	margin: 2em;
+}*/
+
+.set-code .send-code-buttons {
+    margin: 2em;
+}
+
+.set-code .send-code-input {
+    float: none;
+    width: 7.5em;
+    margin: 0 0 0 .5em;
+    display: inline-block;
+}
+
+.set-code .fp-set-code-info p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.send-code {
+    margin: 2em 0;
+}
+
+.send-code p{
+    margin-bottom: 10px;
+    font-size: 0.875em;
+    text-align: center;
+}
+.change-email {
+    margin: 2em;
+}
+
+.change-email p{
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/*unbind*/
+.change-ps p {
+    color: #C7C7C7;
+    font-size: 0.75em;
+    padding: 0 .8em;
+}
+.change-ps-ok {
+    width: 100%;
+    margin: 10em auto;
+    text-align: center;
+}
+/*find password*/
+.choose-way > div {
+    border: 1px solid #3c3c3c;
+    margin: 1em;
+    padding: 1em;
+    -moz-border-radius: 1em;
+    /* Gecko browsers */
+
+    -webkit-border-radius: 1em;
+    /* Webkit browsers */
+
+    border-radius: 1em;
+    /* W3C syntax */
+}
+
+.choose-way > div.not-support {
+    border-color: #D4D4D4;
+}
+
+.choose-way > div.not-support a {
+    color: #D4D4D4;
+}
+
+.choose-way > div.support a {
+    color: #3c3c3c;
+}
+
+.choose-way p{
+    margin-bottom: 10px;
+    font-size: 0.875em;
+}
+
+.choose-way img{
+    vertical-align: baseline;
+}
+
+.change-ps .id_code {
+    width: 35%;
+    float: left;
+}
+
+.id_code_img {
+    float: left;
+    margin: 0 1em;
+    width: 5em;
+    height: 2em;
+}
 /*feedback*/
 .feedback-reply {
     padding: 1em;

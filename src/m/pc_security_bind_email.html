@@ -7,11 +7,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <title>解除手机绑定</title>
-
+    <title>邮箱验证</title>
     <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
     <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/m_access.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_pc.css" type="text/css"/>
 
     <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
     <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
@@ -21,16 +20,22 @@
 
 <div class='ybwechatheader_wrapper'>
     <a class='left_btn back_btn' href='javascript:;'></a>
-    <p>解除手机绑定</p>
+    <p>邮箱验证</p>
 </div>
 
 <div class="container-fluid">
-    <div class="container set-code">
-        <div class="set-username">
-            <p class="text-left">手机号<span class="text-red">138****1111</span>(已绑定)</p>
-            <p class="text-left">当前手机已绑定,如果换手机请输入新手机号重新绑定。</p>
-            <a href="bind_by_phone.html" class="btn-full button button-rounded button-highlight">解除绑定</a>
-        </div>
+    <div class="container fix-userinfo">
+
+        <form role="form">
+            <div class="form-group set-username">
+                <label for="email">输入邮箱地址:</label>
+                <input type="email" class="form-control" id="email" placeholder="请输入邮箱地址">
+            </div>
+
+            <!--<button type="submit" class="button button-glow button-rounded button-highlight">下一步</button>-->
+            <a href="bind_set_code.html" class="btn-full button  button-rounded button-highlight">下一步</a>
+        </form>
+
     </div>
 </div>
 

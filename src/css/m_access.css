@@ -187,3 +187,55 @@
 	width: 100%;
 	display: block;
 }
+/*bind*/
+.user-center-bind .list-group .list-group-item, .user-center-tool .list-group .list-group-item {
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+}
+
+.user-center-bind .list-group .list-group-item span{
+	font-size: .875em;
+}
+
+.user-center-bind a {
+	color: #3c3c3c;
+	display: block;
+	font-size: .875em;
+}
+.bind {
+	background: url("../img/m/icon-bind.png") no-repeat;
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin: 2px;
+	background-size: 40px 140px;
+}
+
+.bind.active {
+	background-position-x: -20px;
+}
+
+.photo-icon {
+	background-position: 0 -2px;
+}
+
+.email-icon {
+	background-position: 0 -25px;
+}
+
+.qq-icon {
+	background-position: 0 -48px;
+}
+
+.renren-icon {
+	background-position: 0 -72px;
+}
+
+.weibo-icon {
+	background-position: 0 -95px;
+}
+
+.wechat-icon {
+	background-position: 0 -120px;
+}

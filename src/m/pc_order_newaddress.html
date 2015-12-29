@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-新建收货地址</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+
+    <link href="../assets/css/mobiscroll/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobiscroll/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobiscroll/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobiscroll/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobiscroll/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg_f6f6f6">
+<div class='main_container order_management'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href="javascript:;"></a>
+        <p>新建收货地址</p>
+    </div>
+    <div class="address_manage">
+        <div class="new_address">
+            <ul>
+                <li>
+                    <label>收货人：</label>
+                    <input type="text">
+                    <label class="error">请填写收货人</label>
+                </li>
+                <li>
+                    <label>手机号码：</label>
+                    <input type="text">
+                </li>
+                <li>
+                    <a id="user_origin_city">
+                        <label>所在地区：</label>
+                        <input type="text">
+                    </a>
+                </li>
+                <li>
+                    <label>详细地址：</label>
+                    <input type="text">
+                </li>
+            </ul>
+        </div>
+        <div class="btn_wrapper">
+            <a class="save" href="javascript:;">保存并使用</a>
+        </div>
+    </div>
+</div>
+<!--放置在main_container外-->
+<div class="ft_pc">
+    <i class="icon-desktop"></i><a href="#">切换至电脑版</a>
+</div>
+<div style="display: none;">
+    <ul id="user_origin_city_choose">
+        <li>北京
+            <ul>
+                <li>海淀
+                    <ul>
+                        <li>XX</li>
+                        <li>XX</li>
+                        <li>XX</li>
+                    </ul>
+                </li>
+                <li>海淀2
+                    <ul>
+                        <li>OO</li>
+                        <li>OO</li>
+                        <li>OO</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>江苏
+            <ul>
+                <li>无锡
+                    <ul>
+                        <li>滨湖区</li>
+                        <li>新区</li>
+                        <li>市区</li>
+                    </ul>
+                </li>
+                <li>无锡
+                    <ul>
+                        <li>滨湖区</li>
+                        <li>新区</li>
+                        <li>市区</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul id="user_sex_choose">
+        <li>男</li>
+        <li>女</li>
+    </ul>
+    <input type="text" id="user_birth_day_choose" value="2015年04月22日"/>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+
+<script src="../assets/js/mobiscroll/mobiscroll.core.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.frame.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.scroller.js"></script>
+
+<script src="../assets/js/mobiscroll/mobiscroll.util.datetime.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.datetimebase.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.datetime.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.select.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.listbase.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.image.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.treelist.js"></script>
+
+<script src="../assets/js/mobiscroll/i18n/mobiscroll.i18n.zh.js"></script>
+<script type="text/javascript">
+    $('#user_origin_city_choose').mobiscroll().treelist({
+        theme: $.mobiscroll.defaults.theme,
+        mode: "scroller",
+        display: "bottom",
+        lang: "zh",
+        labels: ['省', '市', '区'],
+        showLabel : true,
+        headerText: "选择所在地"
+    });
+
+    $('#user_origin_city').click(function(){
+        $('#user_origin_city_choose').mobiscroll('show');
+        return false;
+    });
+
+    $(document).ready(function(){
+        mobileToPcSwitch();
+    });
+    /*
+     * mobile to pc switch
+     * */
+    function mobileToPcSwitch(){
+        var conHeight = $('.main_container').height(),
+                minHeight = $(window).height()-39;
+        if($('.main_container').hasClass('has_footer_nav')){
+            $('.main_container').removeClass('has_footer_nav');
+            $('.ft_pc').addClass('has_footer_nav');
+            minHeight = minHeight - 70;
+        }
+        if(conHeight < minHeight){
+            $('.main_container').css('min-height',minHeight);
+        }
+        $(window).resize(function(){
+            mobileToPcSwitch();
+        })
+    }
+</script>
+</body>
+
+</html>

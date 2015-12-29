@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/*~~~~~~~~~~interactivebooklist_wrapper~~~~~~~~~~*/
+.choosetype_wrapper{
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    /*border-bottom: 1px solid #ddd;*/
+    position: relative;
+}
+
+.choosetype_wrapper ul{
+    margin: 0 auto;
+    width: 100%;
+    background-color: #fff;
+}
+
+.choosetype_wrapper ul li{
+    float: left;
+    padding: 5px 0;
+    width: 25%;
+    height: 100px;
+}
+.choosetype_wrapper ul li span{
+    display: block;
+    margin: 10px auto 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #c0c0c0;
+    /*background-image:url(../img/m/img_sprite_00000.png);*/
+    text-align: center;
+    line-height: 60px;
+}
+.choosetype_wrapper ul li span img{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+.choosetype_wrapper ul li .active{
+    background: #afde70;
+}
+.choosetype_wrapper a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.choosetype_wrapper ul li label{
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
+    color: #888;
+    font-weight: normal;
+}
+.choosetype_wrapper span{
+    background-position-y: -88px;
+}
+.choosetype_wrapper .active span{
+    background-color: #afde70;
+}
+.choosetype_wrapper .active label{
+    color: #8fc04e;
+}
+/*.choosetype_wrapper .graduate span{
+	background-position-x: 3px;
+}
+.choosetype_wrapper .entertaining span{
+	background-position-x: -39px;
+}
+.choosetype_wrapper .painting span{
+	background-position-x: -88px;
+}
+.choosetype_wrapper .almanac span{
+	background-position-x: -145px;
+}*/
+
+.booklist_wrapper .choosetype_wrapper {
+    margin: 0 0 23px 0;
+    overflow: hidden;
+}
+
+.booklist_wrapper .swiper-pagination {
+    width: 100%;
+    position: absolute;
+    top: 270px;
+}
+
+.booklist_wrapper .swiper-pagination span {
+    margin: 0 0 0 10px;
+}
+
+.booklist_wrapper .choosetype_wrapper ul {
+    border-left: 1px solid #ddd;
+}
+
+/*.booklist_wrapper .choosetype_wrapper ul:before, .booklist_wrapper .choosetype_wrapper ul:after{
+	content: '';
+	display: block;
+	width: 5%;
+	height: 0;
+	padding-bottom:5%;
+	background-color: #fff;
+	position: absolute;
+	top: 38%;
+}*/
+.booklist_wrapper .choosetype_wrapper ul:before {
+    left: 30.5%;
+}
+
+.booklist_wrapper .choosetype_wrapper ul:after {
+    left: 63.7%;
+}
+
+.booklist_wrapper .choosetype_wrapper ul li {
+    padding: 5px 0;
+    box-sizing: content-box;
+    width: 33%;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.booklist_wrapper .choosetype_wrapper ul li:before {
+    content: '';
+    position: absolute;
+}
+
+.booklist_wrapper .choosetype_wrapper ul li span {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    background-image: url(../img/m/tpllisticons.png);
+    background-size: 300px 120px;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .all span {
+    background-position: 0 -0;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .entertaining span {
+    background-position: -60px -0;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .graduate span {
+    background-position: -120px -0;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .allimagebook span {
+    background-position: -180px 0;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .baby span {
+    background-position: -240px -0;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .travel span {
+    background-position: 0 -60px;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .love span {
+    background-position: -60px -60px;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .party span {
+    background-position: -120px -60px;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .portrait span {
+    background-position: -180px -60px;
+}
+
+.booklist_wrapper .choosetype_wrapper ul .family span {
+    background-position: -240px -60px;
+}
+
+.booklist_wrapper .mybookshelf_main_wrapper li a img {
+    background-position: -244px -362px;
+}

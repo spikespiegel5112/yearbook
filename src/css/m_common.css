@@ -859,3 +859,51 @@ label.error {
     margin: 0;
     color: #828282;
 }
+/*~~~~~~~~~~common_title_item~~~~~~~~~~*/
+.common_title_item{
+    width: 100%;
+    height: 3em;
+}
+.title_wrapper{
+    position: fixed;
+    z-index: 1;
+}
+.common_title_item span{
+    float: left;
+    margin: 0 0 0 10px;
+    width: 20px;
+    height: 3em;
+    background-image: url(../img/m/titleicon_sprite_img_00000.png);
+    background-position-y: -3px;
+    background-size: 1400%;
+}
+.common_title_item label, .common_title_item i{
+    float: left;
+    margin: 0;
+    line-height: 3em;
+    color: #83a951;
+    font-weight: normal;
+}
+/*加载更多*/
+.ybwechat_loading_item{
+    padding: 1em 0;
+    width: 100%;
+    font-size: 0.75em;
+    clear: both;
+}
+.ybwechat_loading_item a{
+    display: block;
+    margin: 0 auto;
+    width: 11em;
+    height: 3em;
+    line-height: 3em;
+    color: #9a9a9a;
+    text-align: center;
+}
+/*.ybwechat_loading_item span{
+	float: left;
+	margin: 1em 0;
+	width: 20px;
+	height: 20px;
+	background: url(../img/m/img_sprite_00000.png) -150px -165px;/!*加载更多前的icon*!/
+}*/

@@ -31,7 +31,7 @@
 }
 
 /*~~~~~~~~~~user protocol~~~~~~~~~~*/
-.ua-wapper p{
+.ua-wapper p {
     margin-bottom: 10px;
 }
 
@@ -68,7 +68,7 @@
     text-align: center;
 }
 
-.use_guide .choose_category div a{
+.use_guide .choose_category div a {
     text-decoration: none;
 }
 
@@ -90,16 +90,18 @@
 }
 
 /*~~~~~~~~~~instruction photo and interact make~~~~~~~~~~*/
-.step_caption{
+.step_caption {
     margin: 0;
     padding: 10px 0;
     width: 100%;
     text-align: center;
     border-top: 1px solid #e7e7e7;
 }
+
 .step_caption:first-child {
     border: 0;
 }
+
 .step_caption div {
     display: inline-block;
     vertical-align: middle;
@@ -108,49 +110,62 @@
     background: url("../img/m/help_center/step_fig/guide_step_icons.png") no-repeat;
     background-size: 140px 66px;
 }
+
 .step_caption h5 {
     display: inline-block;
     font-size: 16px;
 }
-.photo_pro .step_caption .choose_tpl{
+
+.photo_pro .step_caption .choose_tpl {
     background-position: 0 0;
 }
-.photo_pro .step_caption .upload_img{
+
+.photo_pro .step_caption .upload_img {
     background-position: -35px 0;
 }
-.photo_pro .step_caption .edit_online{
+
+.photo_pro .step_caption .edit_online {
     background-position: -70px 0;
 }
-.photo_pro .step_caption .print{
+
+.photo_pro .step_caption .print {
     background-position: -105px 0;
 }
-.interact_pro .step_caption .choose_tpl{
+
+.interact_pro .step_caption .choose_tpl {
     background-position: 0 -33px;
 }
-.interact_pro .step_caption .upload_img{
+
+.interact_pro .step_caption .upload_img {
     background-position: -35px -33px;
 }
-.interact_pro .step_caption .edit_online{
+
+.interact_pro .step_caption .edit_online {
     background-position: -70px -33px;
 }
-.interact_pro .step_caption .print{
+
+.interact_pro .step_caption .print {
     background-position: -105px -33px;
 }
-.detail_steps{
+
+.detail_steps {
     margin: 0 auto;
     width: 95%;
 }
+
 .detail_steps .step h5 {
     margin: 0;
     text-align: center;
     color: #666;
     line-height: 1.5em;
 }
+
 .detail_steps .step .figure {
     margin: 10px 0;
     width: 100%;
     border: 1px solid #ebebeb;
 }
+
 .detail_steps .step .next {
     display: block;
     margin: 0 auto 15px;
@@ -161,69 +176,84 @@
 }
 
 /*~~~~~~~~~~help center~~~~~~~~~~*/
-.help_center_wrapper{
+.help_center_wrapper {
     padding: 10px 15px 0;
     width: 100%;
     box-sizing: border-box;
 }
-.help_center_wrapper:last-child{
+
+.help_center_wrapper:last-child {
     margin-bottom: 20px;
 }
-.help_center_wrapper h5{
+
+.help_center_wrapper h5 {
+    margin: 0;
     height: 35px;
     line-height: 35px;
     font-size: 14px;
     color: #83a951;
 }
-.help_center_wrapper h5 i{
+
+.help_center_wrapper h5 i {
     margin: 0 5px 0 0;
     font-size: 16px;
 }
-.help_center_wrapper .nav{
+
+.help_center_wrapper .nav {
     margin: 0;
     padding: 5px 15px 15px;
     background-color: #fff;
     border: 1px solid #eee;
     box-sizing: border-box;
 }
-.help_center_wrapper .nav li{
+
+.help_center_wrapper .nav li {
     height: 35px;
     line-height: 35px;
     text-align: center;
     border-bottom: 1px dotted #919191;
 }
-.help_center_wrapper .nav li a{
+
+.help_center_wrapper .nav li a {
     font-size: 14px;
     color: #666;
 }
+
 /*help center story*/
 .ybstory {
     width: 100%;
 }
-.ybstory .story_figure{
+
+.ybstory .story_figure {
     display: block;
     width: 100%;
 }
+
 .ybstory article {
     padding: 15px 0;
 }
+
 .ybstory article p {
+    margin: 0;
     text-align: center;
     color: #333;
     font-size: 14px;
     line-height: 2em;
 }
+
 /*help center online introduction*/
 .introduction .introduction_wrapper {
     text-align: center;
     border-bottom: 1px solid #eee;
 }
+
 .introduction .introduction_wrapper h2 {
     margin: 0;
     font-size: 24px;
     color: #45A6DE;
     padding: 20px 0;
 }
+
 .introduction .introduction_wrapper p {
     font-size: 14px;
     line-height: 1.8em;
@@ -232,12 +262,14 @@
     margin: 15px auto;
     width: 95%;
 }
+
 /*help center coupon*/
-.content .in_describe{
+.content .in_describe {
     padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
 }
+
 .content_caption {
     position: relative;
     margin: 0;
@@ -248,6 +280,7 @@
     font-weight: bold;
     color: #45A6DE;
 }
+
 .content_caption::before {
     content: " ";
     width: 6px;
@@ -258,30 +291,36 @@
     top: 17px;
     background-color: #45a6de;
 }
+
 .in_describe p {
     margin: 0;
     font-size: 14px;
     line-height: 30px;
     text-indent: 2em;
 }
+
 .in_describe p a {
     color: #45a6de;
     text-decoration: underline;
 }
-.in_describe p a img{
+
+.in_describe p a img {
     margin: 0 0 0 5px;
     vertical-align: top;
     border: 8px solid #ccf8f0;
 }
+
 /*help center bind and size*/
-.size .in_describe img{
+.size .in_describe img {
     margin: 5px 0 10px;
     width: 100%;
     border: 1px solid #eaeaea;
 }
-.size .size_fig img{
+
+.size .size_fig img {
     border: 0;
 }
+
 /*help center dispatching*/
 .dispatching_info {
     margin: 10px 0;
@@ -290,6 +329,7 @@
     border: 1px solid #fee7ac;
     border-collapse: separate;
 }
+
 .dispatching_info th {
     height: 30px;
     line-height: 30px;
@@ -299,13 +339,16 @@
     color: #5e5e5e;
     text-align: center;
 }
+
 .dispatching_info th.wid01 {
     width: 85px;
 }
+
 .dispatching_info th.wid02 {
     width: 90px;
     border-left: none;
 }
+
 .dispatching_info td {
     height: 30px;
     line-height: 30px;
@@ -315,17 +358,20 @@
     border-bottom: 1px solid #eee;
     border-left: 1px solid #eee;
 }
+
 /*help center company profile*/
 .contact_information {
     padding-left: 20px;
     border-top: 1px solid #eee;
 }
+
 .contact_information > h4 {
     margin: 0;
     width: 100%;
     line-height: 40px;
     font-weight: bold;
 }
+
 .contact_information p {
     margin: 0;
     font-size: 14px;
@@ -334,42 +380,51 @@
 }
 
 /*help center photo and interact space*/
-.in_describe > div > img{
+.in_describe > div > img {
     display: block;
     margin: 5px auto 15px;
 }
-.in_describe .top_fig img{
+
+.in_describe .top_fig img {
     width: 100%;
 }
-.photo_space .in_describe .nav_fig img{
+
+.photo_space .in_describe .nav_fig img {
     width: 85px;
     height: 116px;
 }
-.interact_space .in_describe .nav_fig img{
+
+.interact_space .in_describe .nav_fig img {
     width: 120px;
     height: 120px;
 }
-.photo_space .in_describe .edit_fig img{
+
+.photo_space .in_describe .edit_fig img {
     width: 216px;
     height: 198px;
 }
-.interact_space .in_describe .edit_fig img{
+
+.interact_space .in_describe .edit_fig img {
     width: 285px;
     height: 190px;
 }
-.photo_space .in_describe .src_fig img{
+
+.photo_space .in_describe .src_fig img {
     width: 126px;
     height: 233px;
 }
-.interact_space .in_describe .src_fig img{
+
+.interact_space .in_describe .src_fig img {
     width: 126px;
     height: 251px;
 }
+
 /*help center common question*/
-.common_question .tips{
+.common_question .tips {
     position: relative;
     margin: 0 0 10px;
 }
+
 .common_question .tips span {
     position: absolute;
     padding-left: 2px;
@@ -385,37 +440,59 @@
     background-color: #999;
     box-shadow: -1px 1px 3px #aaa;
 }
+
 .common_question .tips span::after {
     content: " ";
     border-left: solid 8px #999;
-    border-top: solid 8px rgba(0,0,0,0);
-    border-bottom: solid 8px rgba(0,0,0,0);
+    border-top: solid 8px rgba(0, 0, 0, 0);
+    border-bottom: solid 8px rgba(0, 0, 0, 0);
     position: absolute;
     top: 0;
     left: 35px;
 }
+
 .common_question .tips p {
     padding: 15px 0 0 70px;
     line-height: 1.5em;
     font-size: 14px;
 }
+
+.common_question .tips a {
+    color: #333;
+}
+
+.common_question .tips a:hover {
+    color: #e7b54b;
+}
+
 .common_question .question_container {
     padding: 10px 20px;
     border-top: 1px solid #eee;
 }
+
 .common_question .question_container h4, .common_question .question_container .question, .common_question .question_container .answer {
     font-size: 14px;
     line-height: 30px;
 }
+
 .common_question .question_container h4 {
+    margin: 0;
     height: 30px;
     font-weight: bold;
     color: #999;
 }
+
+.common_question .question_container ul {
+    margin: 0;
+    padding: 0;
+}
+
 .common_question .question_container .question {
+    margin: 0;
     color: #45A6DE;
     cursor: pointer;
 }
+
 .common_question .question_container .answer {
     display: none;
     padding: 5px 10px;
@@ -423,12 +500,16 @@
     border: 1px solid #fee7ac;
     color: #5e5e5e;
 }
+
 .common_question .question_container .answer p:first-child {
+    margin: 0;
     text-indent: 0;
     text-align: justify;
     word-break: break-all;
 }
+
 .common_question .question_container .answer p:not(:first-child) {
+    margin: 0;
     text-indent: 2em;
     text-align: justify;
     word-break: break-all;

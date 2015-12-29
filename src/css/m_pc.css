@@ -1,5 +1,6 @@
 @charset "utf-8";
-/*personal main*/
+
+/*~~~~~~~~~~personal main~~~~~~~~~~*/
 .userinfo_wrapper {
     width: 100%;
     margin: 0 0 1em 0;
@@ -141,7 +142,7 @@
     background-position-x: -60px;
 }
 
-/*personal info*/
+/*~~~~~~~~~~personal info~~~~~~~~~~*/
 .user-info-list li {
     border-left: none;
     border-right: none;
@@ -305,14 +306,15 @@
 .user_info_warning {
     margin: 1em;
 }
-/*bind*/
+
+/*~~~~~~~~~~bind~~~~~~~~~~*/
 .user-center-bind .list-group .list-group-item, .user-center-tool .list-group .list-group-item {
     border-left: none;
     border-right: none;
     border-radius: 0;
 }
 
-.user-center-bind .list-group .list-group-item span{
+.user-center-bind .list-group .list-group-item span {
     font-size: .875em;
 }
 
@@ -333,6 +335,7 @@
     display: block;
     font-size: .875em;
 }
+
 .bind {
     background: url("../img/m/icon-bind.png") no-repeat;
     width: 20px;
@@ -370,18 +373,14 @@
     background-position: 0 -120px;
 }
 
-
-
 .set-username.form-group {
     margin: 2em;
 }
 
 .set-username p,
-.change-ps-ok p{
+.change-ps-ok p {
     margin-bottom: 10px;
 }
-
-
 
 .bindsetcode_wrapper .container, .bindsetcode_wrapper .container-fluid {
     padding: 0;
@@ -399,17 +398,16 @@
     margin: 1em 0;
 }
 
-
 .change-email {
     margin: 2em;
 }
 
-.change-email p{
+.change-email p {
     margin-bottom: 10px;
     font-size: 1em;
 }
 
-/*feedback*/
+/*~~~~~~~~~~feedback~~~~~~~~~~*/
 .feedback-reply {
     padding: 1em;
 }
@@ -433,31 +431,36 @@
     color: #BEBEBE;
 }
 
-/*my message*/
-.message_list{
+/*~~~~~~~~~~my message~~~~~~~~~~*/
+.message_list {
     margin: 15px 10px;
 }
-.message_list > li{
+
+.message_list > li {
     margin-bottom: 10px;
     padding: 5px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 1px #e0e0e0;
 }
-.message_list > li .edit_btn{
+
+.message_list > li .edit_btn {
     float: right;
     color: #d9d9d9;
     font-size: 16px;
     cursor: pointer;
 }
-.message_list > li .edit_btn:hover{
+
+.message_list > li .edit_btn:hover {
     color: #6ea11f;
 }
-.message_list > li .edit_btn.icon-trash{
+
+.message_list > li .edit_btn.icon-trash {
     height: 30px;
     margin-top: -18px;
 }
-.message_list > li > h4{
+
+.message_list > li > h4 {
     float: left;
     margin: 0;
     padding: 0 15px;
@@ -468,28 +471,33 @@
     background: url("../img/m/time_line_circle_green.png") no-repeat 0;
     background-size: 18px 8px;
 }
-.message_list > li > h4 img{
+
+.message_list > li > h4 img {
     position: relative;
     top: -2px;
     left: 5px;
     width: 54px;
     border-radius: 4px;
 }
-.message_list > li > p{
+
+.message_list > li > p {
     padding: 0 15px;
     margin-bottom: 10px;
     clear: both;
 }
-.message_list > li .time{
+
+.message_list > li .time {
     float: left;
     font-size: 12px;
     line-height: 28px;
 }
-.message_list > li.read > h4{
+
+.message_list > li.read > h4 {
     background: none;
 }
-/*my wallet*/
-.wallet_wrapper .balance{
+
+/*~~~~~~~~~~my wallet~~~~~~~~~~*/
+.wallet_wrapper .balance {
     width: 95%;
     height: 50px;
     /* line-height: 40px; */
@@ -501,16 +509,16 @@
     position: relative;
 }
 
-.wallet_wrapper .balance p{
+.wallet_wrapper .balance p {
     line-height: 50px;
 }
 
-.wallet_wrapper .balance p span{
+.wallet_wrapper .balance p span {
     font-size: 24px;
     color: #fc6b52;
 }
 
-.wallet_wrapper .balance a{
+.wallet_wrapper .balance a {
     position: absolute;
     right: 0;
     top: 10px;
@@ -518,17 +526,18 @@
     line-height: normal;
 }
 
-.wallet_wrapper .balance a:hover{
+.wallet_wrapper .balance a:hover {
     color: #e7b54b;
 }
 
-.coupon_switcher{
+.coupon_switcher {
     margin: 10px auto;
     width: 80%;
     overflow: hidden;
     font-size: 18px;
 }
-.coupon_switcher li{
+
+.coupon_switcher li {
     float: left;
     /*width: 49%;*/
     width: 33%;
@@ -542,38 +551,40 @@
     border-bottom: 2px solid #fff;
     box-sizing: border-box;
 }
-.coupon_switcher li:first-child{
+
+.coupon_switcher li:first-child {
     border-left: 2px solid #fff;
     border-right: 2px solid #fff;
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
 }
 
-.coupon_switcher li:last-child{
+.coupon_switcher li:last-child {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
-.coupon_switcher li a{
+.coupon_switcher li a {
     display: block;
     width: 100%;
     height: 100%;
     color: #acdb6f;
 }
-.coupon_switcher li .active{
+
+.coupon_switcher li .active {
     background: #fff;
     color: #fc6b52;
 }
 
-.coupon_list{
+.coupon_list {
     display: none;
     margin: 0 auto;
     width: 95%;
 }
 
-.coupon_list li{
+.coupon_list li {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 50px;
     margin: 15px auto;
     font-size: 16px;
@@ -582,26 +593,26 @@
     background-size: cover;
 }
 
-.coupon_list li .coupon_name{
+.coupon_list li .coupon_name {
     position: absolute;
     left: 4%;
     top: 5px;
 }
 
-.coupon_list li .coupon_name p{
+.coupon_list li .coupon_name p {
     margin: 0;
 }
 
-.coupon_list li .coupon_name p:last-child{
-    font-size: 12px;/*NEWYB-988*/
+.coupon_list li .coupon_name p:last-child {
+    font-size: 12px; /*NEWYB-988*/
     line-height: 1.8em;
 }
 
-.coupon_list li .coupon_name p span{
+.coupon_list li .coupon_name p span {
     font-size: 12px;
 }
 
-.coupon_list li .coupon_money{
+.coupon_list li .coupon_money {
     float: right;
     width: 110px;
     height: 50px;
@@ -610,46 +621,49 @@
     margin-right: -2px;
 }
 
-.coupon_list li .coupon_money span{
+.coupon_list li .coupon_money span {
     font-size: 20px;
     display: block;
     padding-top: 5px;
 }
 
-.coupon_list li .coupon_money.coupon_10{
+.coupon_list li .coupon_money.coupon_10 {
     background: url("../img/m/wallet/coupon_10.png") no-repeat;
     background-size: cover;
 }
 
-.coupon_list li .coupon_money.coupon_20{
+.coupon_list li .coupon_money.coupon_20 {
     background: url("../img/m/wallet/coupon_20.png") no-repeat;
     background-size: cover;
 }
 
-.coupon_list li .coupon_money.coupon_50{
+.coupon_list li .coupon_money.coupon_50 {
     background: url("../img/m/wallet/coupon_50.png") no-repeat;
     background-size: cover;
 }
 
-.coupon_list li .coupon_money.coupon_failed{
+.coupon_list li .coupon_money.coupon_failed {
     background: url("../img/m/wallet/coupon_failed.png") no-repeat;
     background-size: cover;
 }
+
 /*~~~~~~~~~~mybookshelf~~~~~~~~~~*/
-.mybookshelf_main_wrapper{
+.mybookshelf_main_wrapper {
     padding: 0 0 1em 0;
     overflow: hidden;
     background: #fff;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
-.mybookshelf_main_wrapper li{
+
+.mybookshelf_main_wrapper li {
     float: left;
     margin: 1em 0.1em 0 0.1em;
     width: 100px;
     overflow: hidden;
 }
-.mybookshelf_main_wrapper li .cover{
+
+.mybookshelf_main_wrapper li .cover {
     display: block;
     margin: 0 auto;
     width: 90%;
@@ -658,12 +672,14 @@
     position: relative;
     overflow: hidden;
 }
-.mybookshelf_main_wrapper li a img{
+
+.mybookshelf_main_wrapper li a img {
     width: 100%;
     border-radius: 0.4em;
     border: 1px solid #ccc;
 }
-.mybookshelf_main_wrapper li a span{
+
+.mybookshelf_main_wrapper li a span {
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -671,11 +687,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image:url(../img/m/autographbook_bg.png);
-    background-size:cover;
+    background-image: url(../img/m/autographbook_bg.png);
+    background-size: cover;
     border-radius: 0.4em;
 }
-.mybookshelf_main_wrapper label{
+
+.mybookshelf_main_wrapper label {
     /*margin: 0 0 .5em 0;*/
     font-size: 0.9em;
     color: #676767;
@@ -687,21 +704,25 @@
     overflow: hidden;
     display: block;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
     font-weight: normal;
 }
-.mybookshelf_main_wrapper li p{
+
+.mybookshelf_main_wrapper li p {
     font-size: 0.6em;
     text-align: center;
 }
-.mybookshelf_main_wrapper li p span{
+
+.mybookshelf_main_wrapper li p span {
     color: red;
 }
-.mybookshelf_main_wrapper .ybwechat_list_btn{
+
+.mybookshelf_main_wrapper .ybwechat_list_btn {
     margin: 0.5em auto;
 }
-.ybwechat_list_btn{
+
+.ybwechat_list_btn {
     display: block;
     margin: 0 auto;
     padding: 0 0.3em;
@@ -714,40 +735,49 @@
     font-size: 12px;
     box-sizing: content-box;
 }
-.mybookshelf_info_empty_item{
+
+.mybookshelf_info_empty_item {
     margin: 1em 0;
 }
-.mybookshelf_info_empty_item span{
+
+.mybookshelf_info_empty_item span {
     display: block;
     margin: 0 auto;
     width: 85px;
     height: 90px;
     background: url(../img/m/img_sprite_00000.png) -407px -145px;
 }
-.mybookshelf_info_empty_item div{
+
+.mybookshelf_info_empty_item div {
     margin: 1em 0;
     text-align: center;
     font-size: 0.8em;
     color: #666;
 }
-.mybookshelf_info_empty_item div a{
+
+.mybookshelf_info_empty_item div a {
     color: #71a033;
 }
-.mybookshelf_created_icon{
+
+.mybookshelf_created_icon {
     background-position-x: -119px;
 }
-.mybookshelf_joined_icon{
+
+.mybookshelf_joined_icon {
     background-position-x: -137px;
 }
-.mybookshelf_recentlyused_icon{
+
+.mybookshelf_recentlyused_icon {
     background-position-x: -155px;
 }
-/*订单管理*/
-.order_management.order .ybwechatheader_wrapper{
+
+/*~~~~~~~~~~order management~~~~~~~~~~*/
+.order_management.order .ybwechatheader_wrapper {
     position: absolute;
     top: 0;
     background: transparent;
 }
+
 .order_management .book_cover {
     position: relative;
     width: 100%;
@@ -755,6 +785,7 @@
     background-size: cover;
     background: url("../img/m/create_order_bg.jpg") no-repeat center -75px;
 }
+
 /*.order_management .book_cover::before{
     display: block;
     content: " ";
@@ -772,10 +803,12 @@
     border: 2px solid #d5d5d5;
     /* box-shadow: 0 3px 12px #827f7f;*/
 }
-.order_management .basic_info{
+
+.order_management .basic_info {
     border: 0;
 }
-.order_management .basic_info .tpl_info{
+
+.order_management .basic_info .tpl_info {
     position: relative;
     margin: 0 auto;
     width: 90%;
@@ -785,30 +818,37 @@
     color: #333;
     border-bottom: 1px dotted #c9c9c9;
 }
-.order_management .basic_info .tpl_info h4{
+
+.order_management .basic_info .tpl_info h4 {
     font-size: 18px;
     color: #000;
 }
-.order_management .basic_info .tpl_info div span{
+
+.order_management .basic_info .tpl_info div span {
     color: #e52323;
 }
-.order_management .basic_info .book_text{
+
+.order_management .basic_info .book_text {
     margin: 5px auto;
     width: 90%;
 }
-.order_management .basic_info .book_text dt{
+
+.order_management .basic_info .book_text dt {
     display: block;
     float: none;
     line-height: 35px;
     font-weight: normal;
 }
-.order_management .basic_info .book_text dd{
-    margin: 0 10px 0 0!important;
+
+.order_management .basic_info .book_text dd {
+    margin: 0 10px 0 0 !important;
 }
-.order_management .basic_info .book_text .item > div{
+
+.order_management .basic_info .book_text .item > div {
     height: 60px;
 }
-.opd_coupon_wrapper{
+
+.opd_coupon_wrapper {
     position: relative;
     margin: 10px auto;
     width: 90%;
@@ -816,33 +856,40 @@
     color: #666;
     border-top: 1px dotted #d5d5d5;
 }
+
 @media only screen and (max-width: 320px) {
     .order_management .basic_info .tpl_info,
     .order_management .basic_info .book_text,
-    .opd_coupon_wrapper{
+    .opd_coupon_wrapper {
         width: 95%;
     }
 }
-.orderinfo .opd_coupon_wrapper.info{
+
+.orderinfo .opd_coupon_wrapper.info {
     padding: 0 0 0 5%;
 }
-.opd_coupon_wrapper div label{
+
+.opd_coupon_wrapper div label {
     display: block;
     margin: 10px 0;
     font-weight: normal;
 }
-.opd_coupon_wrapper div label div{
+
+.opd_coupon_wrapper div label div {
     margin: 0 5px 0 0;
 }
-.opd_coupon_wrapper div{
+
+.opd_coupon_wrapper div {
     overflow: hidden;
 }
-.opd_coupon_wrapper > div > a{
+
+.opd_coupon_wrapper > div > a {
     float: left;
     line-height: normal;
     margin: 5px;
 }
-.opd_coupon_wrapper div select{
+
+.opd_coupon_wrapper div select {
     float: left;
     margin: 5px 0;
     padding: 0;
@@ -856,25 +903,30 @@
     color: #000;
     box-sizing: content-box;
 }
-.opd_coupon_wrapper div .icon-caret-down{
+
+.opd_coupon_wrapper div .icon-caret-down {
     float: left;
     margin: 12px 0 0 -15px;
     color: #333;
 }
+
 .common_serialnumber_item {
     float: left;
     vertical-align: middle;
     margin: 8px 0;
     overflow: hidden;
 }
+
 .common_serialnumber_item li {
     float: left;
     width: 62px;
     line-height: 20px;
 }
+
 .common_serialnumber_item li:first-child {
     width: 52px;
 }
+
 .common_serialnumber_item input {
     float: left;
     width: 50px;
@@ -882,24 +934,27 @@
     text-align: center;
     border-radius: 0;
 }
+
 .common_serialnumber_item li span {
     float: left;
     margin: 0;
     width: 10px;
     text-align: center;
 }
-/*confirm order odd page tips*/
-.book_oddpage_tips{
+
+/*~~~~~~~~~~confirm order odd page tips~~~~~~~~~~*/
+.book_oddpage_tips {
     display: none;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     z-index: 1;
 }
-.book_oddpage_tips .tips_dialog{
+
+.book_oddpage_tips .tips_dialog {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -909,13 +964,15 @@
     border-radius: 8px;
     box-shadow: 0 3px 26px rgba(0, 0, 0, .9);
 }
-.tips_dialog .titleBar{
+
+.tips_dialog .titleBar {
     background: #efefef;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom: 1px solid #c2c2c2;
 }
-.tips_dialog .title{
+
+.tips_dialog .title {
     height: 29px;
     line-height: 29px;
     padding: 0 25px 0 5px;
@@ -925,6 +982,7 @@
     font-weight: 700;
     font-size: 14px;
 }
+
 .tips_dialog .close {
     display: block;
     position: absolute;
@@ -938,32 +996,38 @@
     text-align: center;
     color: #666;
 }
-.tips_dialog .dialog_main{
+
+.tips_dialog .dialog_main {
     padding: 15px;
 }
-.tips_dialog .dialog_main .icon{
+
+.tips_dialog .dialog_main .icon {
     float: left;
     margin: 10px 10px 0 0;
     width: 48px;
     height: 48px;
     background: url("../img/m/order_management/warning.png") no-repeat center;
 }
-.tips_dialog .dialog_main p{
+
+.tips_dialog .dialog_main p {
     position: relative;
     padding-left: 58px;
     font-size: 14px;
     color: #333;
     line-height: 1.8em;
 }
-.tips_dialog .dialog_main p span{
+
+.tips_dialog .dialog_main p span {
     color: #e05704;
 }
-.tips_dialog .buttons{
+
+.tips_dialog .buttons {
     padding: 8px 8px 12px;
     text-align: center;
     white-space: nowrap;
 }
-.tips_dialog .buttons a{
+
+.tips_dialog .buttons a {
     margin-left: 15px;
     padding: 8px 20px;
     cursor: pointer;
@@ -986,8 +1050,9 @@
     font-size: 12px;
     text-decoration: none;
 }
+
 .tips_dialog .buttons a:hover,
-.tips_dialog .buttons .highlight{
+.tips_dialog .buttons .highlight {
     color: #FFF;
     border: solid 1px #00b8e9;
     background: #2288cc;
@@ -998,7 +1063,7 @@
     text-shadow: -1px -1px 1px #1c6a9e;
 }
 
-.opd_confirm_wrapper{
+.opd_confirm_wrapper {
     position: relative;
     padding: 0 0 0 5%;
     width: 100%;
@@ -1008,17 +1073,20 @@
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
 }
-.order_management.change .opd_confirm_wrapper{
+
+.order_management.change .opd_confirm_wrapper {
     position: absolute;
     bottom: 0;
 }
+
 @media only screen and (max-height: 480px) {
-    .order_management.change .opd_confirm_wrapper{
+    .order_management.change .opd_confirm_wrapper {
         position: relative;
         bottom: auto;
     }
 }
-.opd_confirm_wrapper .opd_confirm_item{
+
+.opd_confirm_wrapper .opd_confirm_item {
     float: right;
     display: block;
     width: 120px;
@@ -1029,22 +1097,26 @@
     background: #df4622;
     text-align: center;
 }
-.opd_subtotalprice_item{
+
+.opd_subtotalprice_item {
     float: left;
     height: 100%;
 }
-.opd_subtotalprice_item label{
+
+.opd_subtotalprice_item label {
     font-size: 14px;
     color: #000;
     font-weight: normal;
 }
-.opd_subtotalprice_item strong{
+
+.opd_subtotalprice_item strong {
     display: inline-block;
     font-size: 24px;
     color: #ff3404;
     vertical-align: middle;
 }
-.order_management .orderinfo .info{
+
+.order_management .orderinfo .info {
     position: relative;
     margin: 20px 0;
     width: 100%;
@@ -1057,70 +1129,84 @@
     box-sizing: border-box;
     overflow: hidden;
 }
-.order_management .orderinfo .info > label{
+
+.order_management .orderinfo .info > label {
     font-weight: normal;
     margin: 0;
 }
-.orderinfo .info > a{
+
+.orderinfo .info > a {
     display: block;
     position: relative;
     padding: 0 8% 0 5%;
     text-decoration: none;
     color: #666;
 }
+
 .orderinfo .user.info a,
-.orderinfo .dispatching.info a div{
+.orderinfo .dispatching.info a div {
     color: #333;
 }
 
-.orderinfo .info > a label{
+.orderinfo .info > a label {
     margin-bottom: 0;
     font-weight: normal;
 }
-.orderinfo .info a i{
+
+.orderinfo .info a i {
     position: absolute;
     right: 10px;
     top: 50%;
     margin: -6px 0 0;
     color: #666;
 }
+
 .orderinfo .user div.cm_fl,
-.orderinfo .user div.cm_fr{
+.orderinfo .user div.cm_fr {
     width: 50%;
 }
-.orderinfo .user label{
+
+.orderinfo .user label {
     display: inline-block;
     min-width: 16px;
     margin: 0 3px 0 0;
     text-align: center;
 }
-.orderinfo .payway{
+
+.orderinfo .payway {
     padding: 0 5%;
 }
-.orderinfo .payway li{
+
+.orderinfo .payway li {
     float: left;
     width: 33.3%;
 }
-.orderinfo .payway li label img{
+
+.orderinfo .payway li label img {
     width: 75px;
     vertical-align: middle;
 }
+
 @media only screen and (max-width: 320px) {
-    .orderinfo .payway li label img{
+    .orderinfo .payway li label img {
         width: 70px;
     }
 }
-.myorder .filter_order{
+
+.myorder .filter_order {
     text-align: right;
 }
-.myorder .filter_order a{
+
+.myorder .filter_order a {
     text-decoration: none;
 }
+
 .myorder .filter_order a:hover,
-.myorder .filter_order a:focus{
+.myorder .filter_order a:focus {
     color: #fff;
 }
-.myorder .filter_order ul{
+
+.myorder .filter_order ul {
     display: none;
     position: absolute;
     right: 0;
@@ -1131,7 +1217,8 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-.myorder .filter_order ul li{
+
+.myorder .filter_order ul li {
     position: relative;
     float: none;
     width: 100%;
@@ -1141,35 +1228,42 @@
     color: #333;
     border-bottom: 1px dashed #999;
 }
+
 .myorder .filter_order ul li:before,
-.myorder .filter_order ul li:after{
+.myorder .filter_order ul li:after {
     display: none;
 }
-.myorder .filter_order ul li a{
+
+.myorder .filter_order ul li a {
     display: block;
     font-size: 12px;
     text-decoration: none;
     color: #333;
 }
+
 .myorder .filter_order ul li a:hover,
-.myorder .filter_order ul li a:active{
+.myorder .filter_order ul li a:active {
     background-color: #f6f6f6;
     color: #e7b54b;
 }
-.myorder .order_head{
+
+.myorder .order_head {
     padding: 0 10px;
     border-bottom: 1px dotted #aaa;
     overflow: hidden;
 }
-.myorder .orderinfo  .order_status span{
+
+.myorder .orderinfo .order_status span {
     color: #ff3404;
 }
-.myorder .order_footer{
+
+.myorder .order_footer {
     padding: 0 10px;
     border-top: 1px dotted #aaa;
     overflow: hidden;
 }
-.myorder .order_btns a{
+
+.myorder .order_btns a {
     display: inline-block;
     margin: 0 0 0 5px;
     width: 70px;
@@ -1183,113 +1277,138 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 @media only screen and (max-width: 320px) {
-    .myorder .order_footer .order_btns a{
+    .myorder .order_footer .order_btns a {
         margin: 0;
         width: 60px;
         font-size: 12px;
     }
 }
-.myorder .order_btns .go_pay{
+
+.myorder .order_btns .go_pay {
     color: #ff7e00;
 }
+
 .myorder .order_btns .change,
-.myorder .order_btns .perfect{
+.myorder .order_btns .perfect {
     color: #6bb508;
 }
-.myorder .order_btns .cancel{
+
+.myorder .order_btns .cancel {
     color: #aaa;
 }
-.myorder .order_btns a:hover{
+
+.myorder .order_btns a:hover {
     color: #e7b54b;
 }
-.orderinfo .product table{
+
+.orderinfo .product table {
     margin: 15px auto;
     width: 90%;
 }
-.orderinfo .product .opd_productimg_item{
+
+.orderinfo .product .opd_productimg_item {
     width: 25%;
 }
-.orderinfo .product .opd_productimg_item img{
+
+.orderinfo .product .opd_productimg_item img {
     width: 75px;
     height: 108px;
     border: 1px solid #cfcfcf;
     vertical-align: top;
 }
-.orderinfo .product td div{
+
+.orderinfo .product td div {
     text-align: center;
 }
-.orderinfo .product td div a{
+
+.orderinfo .product td div a {
     font-size: 14px;
     color: #000;
     text-decoration: none;
 }
-.orderinfo .product td div p{
+
+.orderinfo .product td div p {
     margin-bottom: 0;
     font-size: 12px;
     color: #000;
     line-height: 30px;
 }
-@media only screen and (max-width: 320px){
-    .orderinfo .product td div a{
+
+@media only screen and (max-width: 320px) {
+    .orderinfo .product td div a {
         font-size: 12px;
     }
-    .orderinfo .product td div p{
+
+    .orderinfo .product td div p {
         line-height: 25px;
     }
 }
-.orderinfo .balance{
+
+.orderinfo .balance {
     padding: 0 5%;
 }
-.orderinfo .balance div{
+
+.orderinfo .balance div {
     padding: 0 0 0 2em;
     font-size: 14px;
     color: #666;
 }
-.orderinfo .balance .order_pay span{
+
+.orderinfo .balance .order_pay span {
     color: #0b7100;
 }
-.orderinfo .balance .current_balance span{
+
+.orderinfo .balance .current_balance span {
     color: #df4622;
 }
-.opd_orderinfoprice_item{
+
+.opd_orderinfoprice_item {
     width: 20%;
     font-size: 18px;
     text-align: right;
     color: #ff3404;
     vertical-align: middle;
 }
-.opd_paymentsuccess_wrapper, .opd_paymentfailed_wrapper{
+
+.opd_paymentsuccess_wrapper, .opd_paymentfailed_wrapper {
     overflow: hidden;
 }
-.opd_paymentfailed_wrapper .opd_paymentresult_wrapper{
+
+.opd_paymentfailed_wrapper .opd_paymentresult_wrapper {
     margin: 20px auto;
 }
-.opd_paymentresult_wrapper{
+
+.opd_paymentresult_wrapper {
     display: block;
     margin: 30px auto;
     width: 90%;
     text-align: center;
 }
-.opd_paymentresult_wrapper h2{
+
+.opd_paymentresult_wrapper h2 {
     margin: 30px 0;
     color: #ff3300;
     font-size: 30px;
     font-weight: bold;
 }
-.opd_paymentresult_wrapper p{
+
+.opd_paymentresult_wrapper p {
     line-height: 35px;
     font-size: 14px;
     white-space: nowrap;
 }
-.opd_paymentsuccess_wrapper .opd_paymentresult_wrapper span{
+
+.opd_paymentsuccess_wrapper .opd_paymentresult_wrapper span {
     display: block;
     margin: 20px auto;
     width: 225px;
     height: 90px;
     background: url(../img/m/order_management/truck.png) no-repeat 0;
 }
-.opd_successbind_wrapper{
+
+.opd_successbind_wrapper {
     margin: 30px auto;
     padding: 15px;
     width: 90%;
@@ -1297,22 +1416,26 @@
     background-color: #ffffd6;
     box-sizing: border-box;
 }
-.opd_successbind_wrapper p{
+
+.opd_successbind_wrapper p {
     font-size: 12px;
     color: #999;
     padding-left: 5em;
     text-indent: -5em;
 }
-.opd_successbind_wrapper ul{
+
+.opd_successbind_wrapper ul {
     margin: 20px auto;
     width: 100%;
     overflow: hidden;
 }
-.opd_successbind_wrapper ul li{
+
+.opd_successbind_wrapper ul li {
     float: left;
     width: 50%;
 }
-.opd_successbind_wrapper ul li a{
+
+.opd_successbind_wrapper ul li a {
     float: left;
     width: 100%;
     color: #007dcc;
@@ -1320,24 +1443,29 @@
     text-align: center;
     text-decoration: none;
 }
-.opd_successbind_wrapper ul li a:hover{
+
+.opd_successbind_wrapper ul li a:hover {
     color: #e7b54b;
 }
-.opd_successbind_wrapper ul li a label{
+
+.opd_successbind_wrapper ul li a label {
     text-decoration: underline;
 }
-.opd_successbind_wrapper ul li span{
+
+.opd_successbind_wrapper ul li span {
     width: 1em;
     height: 30px;
     font-size: 21px;
     vertical-align: middle;
 }
-.opd_successbind_wrapper ul li label{
+
+.opd_successbind_wrapper ul li label {
     line-height: 36px;
     font-weight: normal;
     vertical-align: baseline;
 }
-.opd_revieworderlist_item{
+
+.opd_revieworderlist_item {
     display: block;
     margin: 0 auto;
     width: 90px;
@@ -1345,25 +1473,30 @@
     color: #aaa;
     text-decoration: none;
 }
-.opd_paymentfailed_wrapper .opd_revieworderlist_item{
+
+.opd_paymentfailed_wrapper .opd_revieworderlist_item {
     margin: 30px auto;
     width: 110px;
     color: #76bd23;
 }
-.opd_revieworderlist_item:hover{
+
+.opd_revieworderlist_item:hover {
     color: #e7b54b;
 }
-.opd_revieworderlist_item label{
+
+.opd_revieworderlist_item label {
     display: inline-block;
     text-decoration: underline;
     cursor: pointer;
 }
-.opd_revieworderlist_item span{
+
+.opd_revieworderlist_item span {
     display: inline-block;
     margin: 0 5px;
     font-size: 15px;
 }
-.address_manage .address_item{
+
+.address_manage .address_item {
     position: relative;
     margin: 0;
     width: 100%;
@@ -1374,57 +1507,69 @@
     border-bottom: 1px solid #cfcfcf;
     overflow: hidden;
 }
-.address_manage .address_item i{
+
+.address_manage .address_item i {
     position: absolute;
     width: 10%;
     text-align: center;
 }
-.address_manage .address_item .choose{
+
+.address_manage .address_item .choose {
     display: none;
     line-height: 80px;
     color: #40cc1d;
 }
-.address_manage .address_item.select .choose{
+
+.address_manage .address_item.select .choose {
     display: block;
 }
-.address_manage .address_item a{
+
+.address_manage .address_item a {
     text-decoration: none;
     color: #333;
 }
-.address_manage .address_item a:hover{
+
+.address_manage .address_item a:hover {
     color: #e7b54b;
 }
-.address_manage .address_item .edit{
+
+.address_manage .address_item .edit {
     top: 10px;
     right: 0;
 }
-.address_manage .address_item .content{
+
+.address_manage .address_item .content {
     width: 100%;
     padding: 0 10%;
     box-sizing: border-box;
 }
-.address_manage .address_item .content div{
+
+.address_manage .address_item .content div {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .address_manage .address_item .content div.cm_fl,
-.address_manage .address_item .content div.cm_fr{
+.address_manage .address_item .content div.cm_fr {
     width: 50%;
     padding-right: 10px;
     box-sizing: border-box;
 
 }
-.address_manage .address_item .content label{
+
+.address_manage .address_item .content label {
     display: inline-block;
     min-width: 18px;
     text-align: center;
 }
-.order_management .btn_wrapper{
+
+.order_management .btn_wrapper {
     padding: 20px 0;
 }
-.order_management .btn_wrapper a{
+
+.order_management .btn_wrapper a {
     display: block;
     margin: 0 auto;
     width: 80%;
@@ -1435,32 +1580,40 @@
     color: #fff;
     text-decoration: none;
 }
-.order_management .btn_wrapper .new{
+
+.order_management .btn_wrapper .new {
     background-color: #da6423;
 }
-.order_management .btn_wrapper .new:hover{
+
+.order_management .btn_wrapper .new:hover {
     background-color: #aa6423;
 }
-.order_management .btn_wrapper .save{
+
+.order_management .btn_wrapper .save {
     background-color: #89c539;
 }
-.order_management .btn_wrapper .save:hover{
+
+.order_management .btn_wrapper .save:hover {
     background-color: #69c539;
 }
-.order_management .btn_wrapper a i{
+
+.order_management .btn_wrapper a i {
     margin-right: 5px;
 }
-.address_manage .info{
+
+.address_manage .info {
     padding: 0 5%;
 }
-.address_manage .tariff p{
+
+.address_manage .tariff p {
     font-size: 12px;
     text-align: center;
     line-height: 40px;
     color: #ff5151;
     white-space: nowrap;
 }
-.address_manage .info .express{
+
+.address_manage .info .express {
     display: inline-block;
     padding: 0 10px;
     height: 25px;
@@ -1469,7 +1622,8 @@
     color: #ff5151;
     border: 1px solid #ff5151;
 }
-.address_manage .new_address li{
+
+.address_manage .new_address li {
     position: relative;
     padding: 0 5%;
     box-sizing: border-box;
@@ -1481,45 +1635,54 @@
     color: #666;
     border-bottom: 1px solid #cfcfcf;
 }
-.address_manage .new_address li label{
+
+.address_manage .new_address li label {
     display: inline-block;
     width: 60px;
     font-weight: normal;
     margin: 0;
 }
-.address_manage .new_address li label.error{
+
+.address_manage .new_address li label.error {
     position: absolute;
     left: 5%;
     top: 30px;
     width: 90%;
     line-height: 25px;
 }
-.address_manage .new_address li input{
+
+.address_manage .new_address li input {
     width: 75%;
     height: 36px;
     border: 0;
 }
-.address_manage .new_address li a{
+
+.address_manage .new_address li a {
     color: #666;
 }
-.address_manage .new_address li a:after{
+
+.address_manage .new_address li a:after {
     content: ">";
     float: right;
     line-height: 40px;
 }
-.invoice_tips a{
+
+.invoice_tips a {
     text-decoration: none;
     font-size: 12px;
     color: #666;
 }
-.invoice_tips a p{
+
+.invoice_tips a p {
     padding: 0 5%;
     margin: 0 0 15px;
 }
-.invoice_tips a p span{
+
+.invoice_tips a p span {
     margin-right: 5px;
 }
-.invoice .item{
+
+.invoice .item {
     position: relative;
     margin: 0 0 20px;
     padding: 10px 5%;
@@ -1532,7 +1695,8 @@
     border-bottom: 1px solid #cfcfcf;
     overflow: hidden;
 }
-.invoice .category a{
+
+.invoice .category a {
     float: left;
     padding: 5px 6px;
     margin-right: 10px;
@@ -1544,63 +1708,75 @@
     border-radius: 4px;
     box-sizing: content-box;
 }
+
 @media only screen and (max-width: 320px) {
-    .invoice .category a{
+    .invoice .category a {
         margin-right: 6px;
     }
 }
 
-.invoice .category label{
+.invoice .category label {
     margin: 0;
     font-weight: normal;
 }
-.invoice .category a span{
+
+.invoice .category a span {
     display: none;
 }
-.invoice .category a.active{
+
+.invoice .category a.active {
     color: #ff5151;
     border: 1px solid #ff5151;
 }
-.invoice .category a.active span{
+
+.invoice .category a.active span {
     display: inline-block;;
 }
+
 /*.invoice input
 .invoice .special{
     display: none;
 }*/
-.invoice .common > label{
+.invoice .common > label {
     display: inline-block;
     width: 100px;
     margin: 0 0 10px;
     text-align: right;
     font-weight: normal;
 }
-.invoice .common > label div{
+
+.invoice .common > label div {
     margin-right: 5px;
 }
-.invoice .item ul li{
+
+.invoice .item ul li {
     line-height: 40px;
 }
-.invoice .item ul li label{
+
+.invoice .item ul li label {
     margin: 0;
     font-weight: normal;
 }
+
 .invoice .item ul li span {
     display: inline-block;
     width: 110px;
     text-align: right;
 }
+
 .invoice .item ul li span b {
     color: #ff0000;
 }
-.invoice input{
+
+.invoice input {
     padding: 0 6px;
     width: 170px;
     height: 30px;
     line-height: 30px;
     box-sizing: border-box;
 }
-.invoice .preview ul li span{
+
+.invoice .preview ul li span {
     width: auto;
     min-width: 104px;
     max-width: 180px;
@@ -1608,21 +1784,25 @@
     text-align: right;
     word-break: break-all;
 }
-.invoice .preview ul li span:last-child{
+
+.invoice .preview ul li span:last-child {
     text-align: left;
 }
+
 @media only screen and (min-width: 320px) {
-    .invoice .preview ul li span{
+    .invoice .preview ul li span {
         max-width: 179px;
     }
 }
+
 @media only screen and (min-width: 375px) {
-    .invoice .preview ul li span{
+    .invoice .preview ul li span {
         max-width: 229px;
     }
 }
+
 @media only screen and (min-width: 414px) {
-    .invoice .preview ul li span{
+    .invoice .preview ul li span {
         max-width: 264px;
     }
 }

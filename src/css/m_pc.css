@@ -1539,11 +1539,17 @@
     color: #666;
     border: 1px solid #cfcfcf;
     border-radius: 4px;
+    box-sizing: content-box;
 }
 @media only screen and (max-width: 320px) {
     .invoice .category a{
         margin-right: 6px;
     }
+}
+
+.invoice .category a label{
+    margin: 0;
+    font-weight: normal;
 }
 .invoice .category a span{
     display: none;
@@ -1564,12 +1570,17 @@
     width: 100px;
     margin: 0 0 10px;
     text-align: right;
+    font-weight: normal;
 }
 .invoice .common > label div{
     margin-right: 5px;
 }
 .invoice .item ul li{
     line-height: 40px;
+}
+.invoice .item ul li label{
+    margin: 0;
+    font-weight: normal;
 }
 .invoice .item ul li span {
     display: inline-block;

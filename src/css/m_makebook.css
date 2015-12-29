@@ -54,16 +54,24 @@
 .tpl_info h4 {
     margin: 0 0 10px;
     font-size: 18px;
+    line-height: inherit;
+    font-weight: bold;
     color: #333;
     text-align: center;
 }
 
 .tpl_info p,
 .tpl_info div {
+    margin: 0;
     font-size: 12px;
     color: #666;
     text-align: left;
     line-height: 24px;
+}
+
+.tpl_info div label{
+    margin: 0;
+    font-weight: normal;
 }
 
 .tpl_info p span {
@@ -95,8 +103,15 @@
     text-decoration: none;
 }
 
+.tool_wrapper a:hover{
+    background: #eee;
+    color: #333;
+    border-radius: 4px;
+}
+
 .tool_wrapper a.disable {
     color: #a2a2a2;
+    background: #fff;
 }
 
 .tool_wrapper .big_icon {

@@ -800,6 +800,7 @@
     display: block;
     float: none;
     line-height: 35px;
+    font-weight: normal;
 }
 .order_management .basic_info .book_text dd{
     margin: 0 10px 0 0!important;
@@ -886,12 +887,14 @@
 }
 /*confirm order odd page tips*/
 .book_oddpage_tips{
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,.6);
+    z-index: 1;
 }
 .book_oddpage_tips .tips_dialog{
     position: absolute;
@@ -1030,6 +1033,7 @@
 .opd_subtotalprice_item label{
     font-size: 14px;
     color: #000;
+    font-weight: normal;
 }
 .opd_subtotalprice_item strong{
     display: inline-block;

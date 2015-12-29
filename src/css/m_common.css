@@ -930,3 +930,308 @@ label.error {
 .show_more:focus{
     color: #e7b54b;
 }
+/*书册信息*/
+.basic_info{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.basic_info .book_text{
+    display: block;
+    margin: 15px auto;
+    padding: 0;
+    width: 90%;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.basic_info .book_text .item{
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px dotted #c9c9c9;
+}
+
+.basic_info .book_text .item:first-child{
+    padding: 0 0 10px;
+    border: none;
+}
+
+.basic_info .book_text .item > div{
+    display: block;
+    height: 35px;
+    clear: both;
+    overflow: visible;
+}
+
+.basic_info .book_text .name{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic_info .book_text .tpl_info{
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.basic_info .book_text .tpl_info span{
+    margin: 0 3px;
+}
+
+.basic_info .book_text .tpl_info .pic_num{
+    color: #e22929;
+}
+
+.basic_info .book_text .tpl_describe{
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.8em;
+    text-align: justify;
+    min-height: 30px;
+}
+
+.basic_info .book_text dl dd{
+    line-height: 30px;
+}
+
+.basic_info .book_text .price dt,
+.basic_info .book_text .sold dt,
+.basic_info .book_text .deliver dt{
+    float: left;
+    display: inline;
+    width: 50px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.basic_info .book_text .sold dd{
+    float: left;
+}
+
+.basic_info .book_text .sold dt.cm_fl{
+    margin-left: 25px;
+}
+
+.basic_info .book_text .price dd{
+    float: left;
+}
+
+.basic_info .book_text .price dd strong,
+.basic_info .book_text .price dd strong span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #e22929;
+}
+
+.basic_info .book_text .price dd i{
+    display: inline-block;
+    margin: -3px 2px 0 5px;
+    padding: 0;
+    width: 12px;
+    height: 12px;
+    background: url("../img/m/book_details/red_bag.jpg") no-repeat center;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.basic_info .book_text .deliver dd span{
+    font-size: 12px;
+    color: #666;
+}
+
+.basic_info .book_text .price dl dd span{
+    color: #f0754b;
+    font-size: 12px;
+}
+
+.basic_info .book_text .sold span{
+    color: #e22929;
+}
+
+.basic_info .book_text .page_num,
+.basic_info .book_text .cover{
+    margin: 5px 0;
+}
+/*NEWYB 1250*/
+.basic_info .book_text dl dt{
+    float: left;
+    line-height: 25px;
+}
+
+.basic_info .book_text .page_num dd,
+.basic_info .book_text .cover dd,
+.basic_info .book_text .size dd{
+    float: left;
+    line-height: 22px;
+}
+
+.basic_info .book_text .page_num dd,
+.basic_info .book_text .cover dd,
+.basic_info .book_text .size dd {
+    position: relative;
+    margin: 0 5px;
+    width: 45px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.basic_info .book_text .page_num dd{
+    cursor: default;
+    width: auto;
+}
+
+.basic_info .book_text .page_num .tips{
+    width: auto;
+    border: 0;
+    line-height: 20px;
+}
+
+.basic_info .book_text .page_num .tips span{
+    color: #e22929;
+    font-size: 14px;
+}
+
+.basic_info .book_text .size dd,
+.basic_info .book_text .cover dd{
+    position: relative;
+    width: 65px;
+    box-sizing: content-box;
+}
+
+.basic_info .book_text .cover dd .bind_style,
+.basic_info .book_text .size dd .print_size{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    z-index: 1;
+    width: 75px;
+    left: -7px;
+}
+
+.basic_info .book_text .cover dd .bind_style img,
+.basic_info .book_text .size dd .print_size img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.basic_info .book_text .cover dd:hover .bind_style,
+.basic_info .book_text .size dd:hover .print_size{
+    display: block;
+}
+
+.basic_info .book_text .page_num dd:hover,
+.basic_info .book_text .cover dd:hover,
+.basic_info .book_text .size dd:hover{
+    /*font-weight: bold;*/
+    color:#000;
+}
+
+.basic_info .book_text .page_num dd.selected,
+.basic_info .book_text .cover dd.selected,
+.basic_info .book_text .size dd.selected{
+    /*font-weight: bold;*/
+    border: 2px solid #e22929;
+    color:#000;
+}
+
+.basic_info .book_text dd .icon{
+    display: none;
+    position: absolute;
+    border-left: 17px solid transparent;
+    border-bottom: 14px solid #e22929;
+    right: 0;
+    bottom: 0;
+    background: none;
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+.basic_info .book_text dd.selected .icon{
+    display: block;
+}
+
+.basic_info .book_text dd .icon i{
+    position: absolute;
+    color: #fff;
+    right: -1px;
+    top: 4px;
+    font-size: 12px;
+}
+
+/*.basic_info .book_text .item .num label{
+	display: block;
+	position: relative;
+	width: 130px;
+	height: 32px;
+	line-height: 32px;
+	overflow: visible;
+}
+
+.basic_info .book_text .item .num input{
+	margin: 0 0 0 2px;
+	padding: 6px 0 6px 10px;
+	width: 40px;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+}
+
+.basic_info .book_text .item .num i{
+	position: absolute;
+	margin: 0 5px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	width: 14px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.basic_info .book_text .item .num i.icon-angle-up{
+	top: 0;
+}
+
+.basic_info .book_text .item .num i.icon-angle-down{
+	bottom: -2px;
+}*/
+
+.basic_info .book_text .item .num dd{
+    margin: 0 5px;
+}
+/*~~~~~~~~~~ybcommon_counter~~~~~~~~~~*/
+.ybcommon_counter_item{
+    width: 85px;
+    height: 25px;
+    border: 1px solid #a9a9a9;
+    line-height: 23px;/*NEWYB 1250*/
+    box-sizing: border-box;
+}
+.ybcommon_counter_item a{
+    float: left;
+    width: 25px;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #a9a9a9;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.ybcommon_counter_item a:hover{
+    color: #000;
+}
+.ybcommon_counter_item input[type=text]{
+    float: left;
+    width: 33px;
+    height: 100%;
+    border: 0;
+    font-size: 15px;
+    text-align: center;
+}

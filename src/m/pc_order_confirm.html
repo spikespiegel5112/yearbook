@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-确认下单</title>
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/green.css" type="text/css"/>
+</head>
+
+<body>
+<div class='main_container order_management order'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href="javascript:;"></a>
+    </div>
+    <div class="basic_info">
+        <div class="book_cover">
+            <img src="../img/m/index/chaptermark_tpl_img.jpg">
+        </div>
+        <div class="tpl_info">
+            <h4>《天使成长记》</h4>
+            <p><span>24</span>页，含<span>46</span>张照片</p>
+            <div>单价:<span>￥35.60~110.00</span></div>
+            <!-- <div>单价:<span>￥35.60</span></div> -->
+        </div>
+        <div class="book_text">
+            <div class="item">
+                <div class="cover">
+                    <dl>
+                        <dt>封&nbsp;&nbsp;&nbsp;面：</dt>
+                        <!--to add hover 显示图片-->
+                        <dd class="selected" data='书册采用包装为胶装覆膜'>
+                            <div>
+                                <span data='35.60'>平装</span>
+                                <div class="icon"><i class="icon-ok"></i></div>
+                            </div>
+                            <div class="bind_style"><img src="../img/m/book_details/paperback.jpg" alt="平装"></div>
+                        </dd>
+                        <dd data='书册采用包装为精装硬壳覆膜'>
+                            <div>
+                                <span data='35.60'>精装</span>
+                                <div class="icon"><i class="icon-ok"></i></div>
+                            </div>
+                            <div class="bind_style"><img src="../img/m/book_details/hardcover01.jpg" alt="精装"></div>
+                        </dd>
+                        <dd data='书册采用包装为精装硬壳覆膜，装订方式为蝴蝶装'>
+                            <div>
+                                <span data='110.00'>蝴蝶装</span>
+                                <div class="icon"><i class="icon-ok"></i></div>
+                            </div>
+                            <div class="bind_style"><img src="../img/m/book_details/butterflycover.jpg" alt="精装"></div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="size">
+                    <dl>
+                        <dt>尺&nbsp;&nbsp;&nbsp;寸：</dt>
+                        <dd class="selected" data='书册尺寸宽14.5cm，长21.0cm'>
+                            <div>
+                                <span>别致小装</span>
+                                <div class="icon"><i class="icon-ok"></i></div>
+                            </div>
+                            <div class="print_size"><img src="../img/m/book_details/min_size.jpg" alt="别致小装"></div>
+                        </dd>
+                        <dd data='书册尺寸宽17.5cm，长24.8cm'>
+                            <div>
+                                <span>气派大装</span>
+                                <div class="icon"><i class="icon-ok"></i></div>
+                            </div>
+                            <div class="print_size"><img src="../img/m/book_details/max_size.jpg" alt="气派大装"></div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="num">
+                    <dl>
+                        <dt class="cm_fl">数&nbsp;&nbsp;&nbsp;量：</dt>
+                        <dd class="cm_fl">
+                            <div class='ybcommon_counter_item'>
+                                <a href="javascript:;">-</a>
+                                <input type='text' value='0' onchange='change()'>
+                                <a href="javascript:;">+</a>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class='opd_coupon_wrapper'>
+            <div>
+                <label><input type="checkbox" value="useCoupon">使用优惠券</label>
+                <select>
+                    <option>满50减10</option>
+                    <option>满100减20</option>
+                    <option>满200减40</option>
+                    <option>满400减80</option>
+                    <option>满500减100</option>
+                    <option>满5000减1000</option>
+                </select>
+                <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+            </div>
+            <div>
+                <ul class='common_serialnumber_item'>
+                    <li>
+                        <input type='text' maxlength='4'>
+                    </li>
+                    <li>
+                        <span>-</span>
+                        <input type='text' maxlength='4'>
+                    </li>
+                    <li>
+                        <span>-</span>
+                        <input type='text' maxlength='4'>
+                    </li>
+                    <li>
+                        <span>-</span>
+                        <input type='text' maxlength='4'>
+                    </li>
+                </ul>
+                <a class='common_btn' href="javascript:;">确认</a>
+            </div>
+        </div>
+        <div class='opd_confirm_wrapper'>
+            <div class="opd_subtotalprice_item">
+                <label>实付款：</label>
+                <strong>
+                    ￥<span>38.00</span>
+                </strong>
+            </div>
+            <a class='opd_confirm_item' href="javascript:;">确认下单</a>
+        </div>
+    </div>
+</div>
+<!--当书册页数为奇数时，弹窗提示-->
+<div class="book_oddpage_tips">
+    <div class="tips_dialog">
+        <div class="titleBar">
+            <div class="title">提示</div>
+            <a class="close" href="javascript:;">×</a>
+        </div>
+        <div class="dialog_main">
+            <div class="icon"></div>
+            <p>目前书册总页数为奇数页，为保证印刷质量，请添加或删除书页至<span>偶数页</span>再提交订单！</p>
+        </div>
+        <div class="buttons">
+            <a class="highlight" href="javascript:;">继续提交</a>
+            <a href="javascript:;">返回制作</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript" src='../assets/js/icheck.js'></script>
+<script type="text/javascript" src='../js/m_base.js'></script>
+<script type="text/javascript">
+    $(function () {
+        $('.ybcommon_counter_item').priceCalculator({});
+        changeButtonCss();
+        checkBingAndSize();
+        oddPageTips();
+    })
+
+    //单选、复选框
+    function changeButtonCss() {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+    /*选择书册装订方式及尺寸*/
+    function checkBingAndSize() {
+        $('.ybcommon_queryicon_item p').eq(0).text($('.book_text .cover dd').eq(0).attr('data'));
+        $('.ybcommon_queryicon_item p').eq(1).text($('.book_text .size dd').eq(0).attr('data'));
+        $('.book_text .cover dd').click(function() {
+            var $this=$(this),
+                    thisEl=$('.book_text .cover dd'),
+                    thisData=$this.attr('data'),
+                    hintEl=$(this).closest('div').find('.ybcommon_queryicon_item p');
+            thisEl.removeClass('selected');
+            $this.addClass('selected');
+            hintEl.text(thisData);
+        });
+        $('.book_text .size dd').click(function() {
+            var $this=$(this),
+                    thisEl=$('.book_text .size dd'),
+                    thisData=$this.attr('data'),
+                    hintEl=$(this).closest('div').find('.ybcommon_queryicon_item p');
+            thisEl.removeClass('selected');
+            $this.addClass('selected');
+            hintEl.text(thisData);
+        })
+    }
+
+    function change(){
+        var unitPriceEl = $('.book_text .selected div span').attr('data'),
+                unitPrice = unitPriceEl.replace("￥", '');
+        console.log(unitPriceEl)
+        totalprice=unitPriceEl*$('.ybcommon_counter_item input').val();
+        $('.opd_subtotalprice_item strong span').html(parseFloat(totalprice).toFixed(2));
+    }
+
+    function oddPageTips(){
+        $('.book_oddpage_tips').fadeIn();
+        $('.tips_dialog .close').on('touchend',function(){
+            $('.book_oddpage_tips').fadeOut('fast');
+        })
+        $('.tips_dialog .buttons a').on('touchend',function(){
+            $(this).addClass('highlight').siblings().removeClass('highlight');
+            $('.book_oddpage_tips').fadeOut('fast');
+        })
+    }
+</script>
+</body>
+
+</html>

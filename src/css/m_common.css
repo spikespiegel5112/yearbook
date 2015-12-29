@@ -1019,13 +1019,20 @@ label.error {
     overflow: visible;
 }
 
+.basic_info .book_text .item dl{
+    margin: 0;
+}
+
 .basic_info .book_text .name {
     display: block;
+    margin: 0;
+    line-height: 1.5em;
     font-size: 16px;
     font-weight: bold;
 }
 
 .basic_info .book_text .tpl_info {
+    margin-bottom: 0;
     font-size: 14px;
     line-height: 25px;
 }
@@ -1039,6 +1046,7 @@ label.error {
 }
 
 .basic_info .book_text .tpl_describe {
+    margin-bottom: 0;
     padding: 0;
     font-size: 12px;
     line-height: 1.8em;
@@ -1113,6 +1121,7 @@ label.error {
 .basic_info .book_text dl dt {
     float: left;
     line-height: 25px;
+    font-weight: normal;
 }
 
 .basic_info .book_text .page_num dd,

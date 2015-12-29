@@ -1,0 +1,148 @@
+@charset "utf-8";
+.book_space {
+    position: relative;
+}
+
+.book_space .ybwechatheader_wrapper {
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+
+.book_space .share_btn {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    box-sizing: border-box;
+    background: url("../img/m/book_space/share_icon.png") no-repeat center 14px;
+    background-size: 26px;
+}
+
+.book_space .book_cover {
+    position: relative;
+    width: 100%;
+    height: 245px;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.photo_space .book_cover {
+    background: url("../img/m/book_space/ph_space_bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.interact_space .book_cover {
+    background: url("../img/m/book_space/in_space_bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.book_space .book_cover img {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin: 0 0 0 -52px;
+    width: 104px;
+    height: 146px;
+    box-shadow: 0 3px 12px #827f7f;
+}
+
+.tpl_info {
+    margin: 20px auto;
+    width: 95%;
+}
+
+.tpl_info h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.tpl_info p,
+.tpl_info div {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    line-height: 24px;
+}
+
+.tpl_info p span {
+    color: #ed5f3d;
+}
+
+.tool_wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.photo_space .tool_wrapper .cm_fl {
+    width: 33.3%;
+    text-align: center;
+}
+
+.interact_space .tool_wrapper .cm_fl {
+    width: 25%;
+    text-align: center;
+}
+
+.tool_wrapper a {
+    display: block;
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.tool_wrapper a.disable {
+    color: #a2a2a2;
+}
+
+.tool_wrapper .big_icon {
+    display: block;
+    margin: 0 auto 5px;
+    width: 80px;
+    height: 64px;
+    background: url("../img/m/book_space/book_space_icons.png") no-repeat;
+    background-size: 560px 64px;
+}
+
+.tool_wrapper .upload {
+    background-position: 0 0;
+}
+
+.tool_wrapper .auto_layout {
+    background-position: -80px 0;
+}
+
+.tool_wrapper .preview_share {
+    background-position: -160px 0;
+}
+
+.tool_wrapper .trends {
+    background-position: -240px 0;
+}
+
+.tool_wrapper .partner_manage {
+    background-position: -320px 0;
+}
+
+.tool_wrapper .album_manage {
+    background-position: -400px 0;
+}
+
+.tool_wrapper .invite_card {
+    background-position: -480px 0;
+}
+
+.book_space .tips {
+    margin: 20px auto;
+    padding: 0 0 0 3em;
+    text-indent: -3em;
+    width: 90%;
+    font-size: 14px;
+    color: #999;
+    text-align: left;
+    box-sizing: border-box;
+}

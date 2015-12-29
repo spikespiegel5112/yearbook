@@ -742,3 +742,848 @@
 .mybookshelf_recentlyused_icon{
     background-position-x: -155px;
 }
+/*订单管理*/
+.order_management.order .ybwechatheader_wrapper{
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+.order_management .book_cover {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background-size: cover;
+    background: url("../img/m/create_order_bg.jpg") no-repeat center -75px;
+}
+/*.order_management .book_cover::before{
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 95px;
+    background-color: #333;
+}*/
+.order_management .book_cover img {
+    position: absolute;
+    left: 50%;
+    top: 48px;
+    margin: 0 0 0 -52px;
+    width: 104px;
+    height: 146px;
+    border: 2px solid #d5d5d5;
+    /* box-shadow: 0 3px 12px #827f7f;*/
+}
+.order_management .basic_info{
+    border: 0;
+}
+.order_management .basic_info .tpl_info{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px dotted #c9c9c9;
+}
+.order_management .basic_info .tpl_info h4{
+    font-size: 18px;
+    color: #000;
+}
+.order_management .basic_info .tpl_info div span{
+    color: #e52323;
+}
+.order_management .basic_info .book_text{
+    margin: 5px auto;
+    width: 90%;
+}
+.order_management .basic_info .book_text dt{
+    display: block;
+    float: none;
+    line-height: 35px;
+}
+.order_management .basic_info .book_text dd{
+    margin: 0 10px 0 0!important;
+}
+.order_management .basic_info .book_text .item > div{
+    height: 60px;
+}
+.opd_coupon_wrapper{
+    position: relative;
+    margin: 10px auto;
+    width: 90%;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px dotted #d5d5d5;
+}
+@media only screen and (max-width: 320px) {
+    .order_management .basic_info .tpl_info,
+    .order_management .basic_info .book_text,
+    .opd_coupon_wrapper{
+        width: 95%;
+    }
+}
+.orderinfo .opd_coupon_wrapper.info{
+    padding: 0 0 0 5%;
+}
+.opd_coupon_wrapper div label{
+    display: block;
+    margin: 10px 0;
+}
+.opd_coupon_wrapper div label div{
+    margin: 0 5px 0 0;
+}
+.opd_coupon_wrapper div{
+    overflow: hidden;
+}
+.opd_coupon_wrapper > div > a{
+    float: left;
+    line-height: normal;
+    margin: 5px;
+}
+.opd_coupon_wrapper div select{
+    float: left;
+    margin: 5px 0;
+    padding: 0;
+    height: 25px;
+    min-width: 155px;
+    max-width: 245px;
+    border: 1px solid #ccc;
+    line-height: 25px;
+    -webkit-appearance: none;
+    background: #fff;
+}
+.opd_coupon_wrapper div .icon-caret-down{
+    float: left;
+    margin: 12px 0 0 -15px;
+    color: #333;
+}
+.common_serialnumber_item {
+    float: left;
+    vertical-align: middle;
+    margin: 8px 0;
+    overflow: hidden;
+}
+.common_serialnumber_item li {
+    float: left;
+    width: 62px;
+    line-height: 20px;
+}
+.common_serialnumber_item li:first-child {
+    width: 52px;
+}
+.common_serialnumber_item input {
+    float: left;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    border-radius: 0;
+}
+.common_serialnumber_item li span {
+    float: left;
+    margin: 0;
+    width: 10px;
+    text-align: center;
+}
+/*confirm order odd page tips*/
+.book_oddpage_tips{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+}
+.book_oddpage_tips .tips_dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -91px 0 0 -145px;
+    width: 290px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 3px 26px rgba(0, 0, 0, .9);
+}
+.tips_dialog .titleBar{
+    background: #efefef;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #c2c2c2;
+}
+.tips_dialog .title{
+    height: 29px;
+    line-height: 29px;
+    padding: 0 25px 0 5px;
+    _padding: 0;
+    text-indent: 5px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+}
+.tips_dialog .close {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    outline: none;
+    top: 0;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #666;
+}
+.tips_dialog .dialog_main{
+    padding: 15px;
+}
+.tips_dialog .dialog_main .icon{
+    float: left;
+    margin: 10px 10px 0 0;
+    width: 48px;
+    height: 48px;
+    background: url("../img/m/order_management/warning.png") no-repeat center;
+}
+.tips_dialog .dialog_main p{
+    position: relative;
+    padding-left: 58px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8em;
+}
+.tips_dialog .dialog_main p span{
+    color: #e05704;
+}
+.tips_dialog .buttons{
+    padding: 8px 8px 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+.tips_dialog .buttons a{
+    margin-left: 15px;
+    padding: 8px 20px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 2px;
+    width: auto;
+    overflow: visible;
+    color: #333;
+    border: solid 1px #999;
+    border-radius: 5px;
+    background: #DDD;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD');
+    background: linear-gradient(top, #FFF, #DDD);
+    background: -moz-linear-gradient(top, #FFF, #DDD);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#DDD));
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0 -1px 0 rgba(0, 0, 0, .09);
+    font-size: 12px;
+    text-decoration: none;
+}
+.tips_dialog .buttons a:hover,
+.tips_dialog .buttons .highlight{
+    color: #FFF;
+    border: solid 1px #00b8e9;
+    background: #2288cc;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee', endColorstr='#2288cc');
+    background: linear-gradient(top, #00b8e9, #00b8e9);
+    background: -moz-linear-gradient(top, #00b8e9, #00b8e9);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00b8e9), to(#00b8e9));
+    text-shadow: -1px -1px 1px #1c6a9e;
+}
+
+.opd_confirm_wrapper{
+    position: relative;
+    padding: 0 0 0 5%;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    box-sizing: border-box;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+.order_management.change .opd_confirm_wrapper{
+    position: absolute;
+    bottom: 0;
+}
+@media only screen and (max-height: 480px) {
+    .order_management.change .opd_confirm_wrapper{
+        position: relative;
+        bottom: auto;
+    }
+}
+.opd_confirm_wrapper .opd_confirm_item{
+    float: right;
+    display: block;
+    width: 120px;
+    height: 58px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    background: #df4622;
+    text-align: center;
+}
+.opd_subtotalprice_item{
+    float: left;
+    height: 100%;
+}
+.opd_subtotalprice_item label{
+    font-size: 14px;
+    color: #000;
+}
+.opd_subtotalprice_item strong{
+    display: inline-block;
+    font-size: 24px;
+    color: #ff3404;
+    vertical-align: middle;
+}
+.order_management .orderinfo .info{
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 40px;
+    color: #666;
+    background-color: #fff;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.orderinfo .info > a{
+    display: block;
+    position: relative;
+    padding: 0 8% 0 5%;
+    text-decoration: none;
+    color: #666;
+}
+.orderinfo .user.info a,
+.orderinfo .dispatching.info a div{
+    color: #333;
+}
+.orderinfo .info a i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin: -6px 0 0;
+    color: #666;
+}
+.orderinfo .user div.cm_fl,
+.orderinfo .user div.cm_fr{
+    width: 50%;
+}
+.orderinfo .user label{
+    display: inline-block;
+    min-width: 16px;
+    margin: 0 3px 0 0;
+    text-align: center;
+}
+.orderinfo .payway{
+    padding: 0 5%;
+}
+.orderinfo .payway li{
+    float: left;
+    width: 33.3%;
+}
+.orderinfo .payway li label img{
+    width: 75px;
+    vertical-align: middle;
+}
+@media only screen and (max-width: 320px) {
+    .orderinfo .payway li label img{
+        width: 70px;
+    }
+}
+.myorder .filter_order{
+    text-align: right;
+}
+.myorder .filter_order a{
+    text-decoration: none;
+}
+.myorder .filter_order a:hover,
+.myorder .filter_order a:focus{
+    color: #fff;
+}
+.myorder .filter_order ul{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    padding: 0 8px 10px;
+    width: 115px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.myorder .filter_order ul li{
+    position: relative;
+    float: none;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px dashed #999;
+}
+.myorder .filter_order ul li:before,
+.myorder .filter_order ul li:after{
+    display: none;
+}
+.myorder .filter_order ul li a{
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+.myorder .filter_order ul li a:hover,
+.myorder .filter_order ul li a:active{
+    background-color: #f6f6f6;
+    color: #e7b54b;
+}
+.myorder .order_head{
+    padding: 0 10px;
+    border-bottom: 1px dotted #aaa;
+    overflow: hidden;
+}
+.myorder .orderinfo  .order_status span{
+    color: #ff3404;
+}
+.myorder .order_footer{
+    padding: 0 10px;
+    border-top: 1px dotted #aaa;
+    overflow: hidden;
+}
+.myorder .order_btns a{
+    display: inline-block;
+    margin: 0 0 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    border: 1px solid #adadad;
+    text-decoration: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 320px) {
+    .myorder .order_footer .order_btns a{
+        margin: 0;
+        width: 60px;
+        font-size: 12px;
+    }
+}
+.myorder .order_btns .go_pay{
+    color: #ff7e00;
+}
+.myorder .order_btns .change,
+.myorder .order_btns .perfect{
+    color: #6bb508;
+}
+.myorder .order_btns .cancel{
+    color: #aaa;
+}
+.myorder .order_btns a:hover{
+    color: #e7b54b;
+}
+.orderinfo .product table{
+    margin: 15px auto;
+    width: 90%;
+}
+.orderinfo .product .opd_productimg_item{
+    width: 25%;
+}
+.orderinfo .product .opd_productimg_item img{
+    width: 75px;
+    height: 108px;
+    border: 1px solid #cfcfcf;
+    vertical-align: top;
+}
+.orderinfo .product td div{
+    text-align: center;
+}
+.orderinfo .product td div a{
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+.orderinfo .product td div p{
+    font-size: 12px;
+    color: #000;
+    line-height: 30px;
+}
+@media only screen and (max-width: 320px){
+    .orderinfo .product td div a{
+        font-size: 12px;
+    }
+    .orderinfo .product td div p{
+        line-height: 25px;
+    }
+}
+.orderinfo .balance{
+    padding: 0 5%;
+}
+.orderinfo .balance div{
+    padding: 0 0 0 2em;
+    font-size: 14px;
+    color: #666;
+}
+.orderinfo .balance .order_pay span{
+    color: #0b7100;
+}
+.orderinfo .balance .current_balance span{
+    color: #df4622;
+}
+.opd_orderinfoprice_item{
+    width: 20%;
+    font-size: 18px;
+    text-align: right;
+    color: #ff3404;
+    vertical-align: middle;
+}
+.opd_paymentsuccess_wrapper, .opd_paymentfailed_wrapper{
+    overflow: hidden;
+}
+.opd_paymentfailed_wrapper .opd_paymentresult_wrapper{
+    margin: 20px auto;
+}
+.opd_paymentresult_wrapper{
+    display: block;
+    margin: 30px auto;
+    width: 90%;
+    text-align: center;
+}
+.opd_paymentresult_wrapper h2{
+    margin: 30px 0;
+    color: #ff3300;
+    font-size: 30px;
+}
+.opd_paymentresult_wrapper p{
+    line-height: 35px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.opd_paymentsuccess_wrapper .opd_paymentresult_wrapper span{
+    display: block;
+    margin: 20px auto;
+    width: 225px;
+    height: 90px;
+    background: url(../img/m/order_management/truck.png) no-repeat 0;
+}
+.opd_successbind_wrapper{
+    margin: 30px auto;
+    padding: 15px;
+    width: 90%;
+    border: 1px solid #e2e2e2;
+    background-color: #ffffd6;
+    box-sizing: border-box;
+}
+.opd_successbind_wrapper p{
+    font-size: 12px;
+    color: #999;
+    padding-left: 5em;
+    text-indent: -5em;
+}
+.opd_successbind_wrapper ul{
+    margin: 20px auto;
+    width: 100%;
+    overflow: hidden;
+}
+.opd_successbind_wrapper ul li{
+    float: left;
+    width: 50%;
+}
+.opd_successbind_wrapper ul li a{
+    float: left;
+    width: 100%;
+    color: #007dcc;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+.opd_successbind_wrapper ul li a:hover{
+    color: #e7b54b;
+}
+.opd_successbind_wrapper ul li a label{
+    text-decoration: underline;
+}
+.opd_successbind_wrapper ul li span{
+    width: 1em;
+    height: 30px;
+    font-size: 21px;
+    vertical-align: middle;
+}
+.opd_successbind_wrapper ul li label{
+    line-height: 36px;
+    vertical-align: middle;
+}
+.opd_revieworderlist_item{
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    font-size: 13px;
+    color: #aaa;
+    text-decoration: none;
+}
+.opd_paymentfailed_wrapper .opd_revieworderlist_item{
+    margin: 30px auto;
+    width: 110px;
+    color: #76bd23;
+}
+.opd_revieworderlist_item:hover{
+    color: #e7b54b;
+}
+.opd_revieworderlist_item label{
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.opd_revieworderlist_item span{
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 15px;
+}
+.address_manage .address_item{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 40px;
+    color: #333;
+    background-color: #fff;
+    border-bottom: 1px solid #cfcfcf;
+    overflow: hidden;
+}
+.address_manage .address_item i{
+    position: absolute;
+    width: 10%;
+    text-align: center;
+}
+.address_manage .address_item .choose{
+    display: none;
+    line-height: 80px;
+    color: #40cc1d;
+}
+.address_manage .address_item.select .choose{
+    display: block;
+}
+.address_manage .address_item a{
+    text-decoration: none;
+}
+.address_manage .address_item a:hover{
+    color: #e7b54b;
+}
+.address_manage .address_item .edit{
+    top: 10px;
+    right: 0;
+}
+.address_manage .address_item .content{
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+.address_manage .address_item .content div{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.address_manage .address_item .content div.cm_fl,
+.address_manage .address_item .content div.cm_fr{
+    width: 50%;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}
+.address_manage .address_item .content label{
+    display: inline-block;
+    min-width: 18px;
+    text-align: center;
+}
+.order_management .btn_wrapper{
+    padding: 20px 0;
+}
+.order_management .btn_wrapper a{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+.order_management .btn_wrapper .new{
+    background-color: #da6423;
+}
+.order_management .btn_wrapper .save{
+    background-color: #89c539;
+}
+.order_management .btn_wrapper a i{
+    margin-right: 5px;
+}
+.address_manage .info{
+    padding: 0 5%;
+}
+.address_manage .tariff p{
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    color: #ff5151;
+    white-space: nowrap;
+}
+.address_manage .info .express{
+    display: inline-block;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 4px;
+    color: #ff5151;
+    border: 1px solid #ff5151;
+}
+.address_manage .new_address li{
+    position: relative;
+    padding: 0 5%;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #cfcfcf;
+}
+.address_manage .new_address li label{
+    display: inline-block;
+    width: 60px;
+}
+.address_manage .new_address li label.error{
+    position: absolute;
+    left: 5%;
+    top: 30px;
+    width: 90%;
+    line-height: 25px;
+}
+.address_manage .new_address li input{
+    width: 75%;
+    height: 36px;
+    border: 0;
+}
+.address_manage .new_address li a{
+    color: #666;
+}
+.address_manage .new_address li a:after{
+    content: ">";
+    float: right;
+    line-height: 40px;
+}
+.invoice_tips a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #666;
+}
+.invoice_tips a p{
+    padding: 0 5%;
+    margin: 0 0 15px;
+}
+.invoice_tips a p span{
+    margin-right: 5px;
+}
+.invoice .item{
+    position: relative;
+    margin: 0 0 20px;
+    padding: 10px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+    overflow: hidden;
+}
+.invoice .category a{
+    float: left;
+    padding: 5px 6px;
+    margin-right: 10px;
+    width: 76px;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+}
+@media only screen and (max-width: 320px) {
+    .invoice .category a{
+        margin-right: 6px;
+    }
+}
+.invoice .category a span{
+    display: none;
+}
+.invoice .category a.active{
+    color: #ff5151;
+    border: 1px solid #ff5151;
+}
+.invoice .category a.active span{
+    display: inline-block;;
+}
+/*.invoice input
+.invoice .special{
+    display: none;
+}*/
+.invoice .common > label{
+    display: inline-block;
+    width: 100px;
+    margin: 0 0 10px;
+    text-align: right;
+}
+.invoice .common > label div{
+    margin-right: 5px;
+}
+.invoice .item ul li{
+    line-height: 40px;
+}
+.invoice .item ul li span {
+    display: inline-block;
+    width: 110px;
+    text-align: right;
+}
+.invoice .item ul li span b {
+    color: #ff0000;
+}
+.invoice input{
+    padding: 0 6px;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+.invoice .preview ul li span{
+    width: auto;
+    min-width: 104px;
+    max-width: 180px;
+    vertical-align: top;
+    text-align: right;
+    word-break: break-all;
+}
+.invoice .preview ul li span:last-child{
+    text-align: left;
+}
+@media only screen and (min-width: 320px) {
+    .invoice .preview ul li span{
+        max-width: 179px;
+    }
+}
+@media only screen and (min-width: 375px) {
+    .invoice .preview ul li span{
+        max-width: 229px;
+    }
+}
+@media only screen and (min-width: 414px) {
+    .invoice .preview ul li span{
+        max-width: 264px;
+    }
+}

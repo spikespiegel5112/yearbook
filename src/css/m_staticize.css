@@ -88,3 +88,74 @@
 .use_guide .choose_category div a:hover h1 {
     color: #e7b54b;
 }
+
+/*~~~~~~~~~~photo and interact make~~~~~~~~~~*/
+.step_caption{
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+}
+.step_caption:first-child {
+    border: 0;
+}
+.step_caption div {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 33px;
+    background: url("../img/m/help_center/step_fig/guide_step_icons.png") no-repeat;
+    background-size: 140px 66px;
+}
+.step_caption h5 {
+    display: inline-block;
+    font-size: 16px;
+}
+.photo_pro .step_caption .choose_tpl{
+    background-position: 0 0;
+}
+.photo_pro .step_caption .upload_img{
+    background-position: -35px 0;
+}
+.photo_pro .step_caption .edit_online{
+    background-position: -70px 0;
+}
+.photo_pro .step_caption .print{
+    background-position: -105px 0;
+}
+.interact_pro .step_caption .choose_tpl{
+    background-position: 0 -33px;
+}
+.interact_pro .step_caption .upload_img{
+    background-position: -35px -33px;
+}
+.interact_pro .step_caption .edit_online{
+    background-position: -70px -33px;
+}
+.interact_pro .step_caption .print{
+    background-position: -105px -33px;
+}
+.detail_steps{
+    margin: 0 auto;
+    width: 95%;
+}
+.detail_steps .step h5 {
+    margin: 0;
+    text-align: center;
+    color: #666;
+    line-height: 1.5em;
+}
+.detail_steps .step .figure {
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ebebeb;
+}
+.detail_steps .step .next {
+    display: block;
+    margin: 0 auto 15px;
+    width: 18px;
+    height: 25px;
+    background: url("../img/use_guide/down_arrow.png") no-repeat center;
+    background-size: cover;
+}

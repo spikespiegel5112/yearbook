@@ -2638,6 +2638,19 @@
 			}
 		});
 	}
+		/**
+		 * 点击更换事件 新添加更换模板事件
+		 */
+		function chooseTpl() {
+			$('.picList  .cm_cp').click(function() { //点击更换模板按钮
+				$('.picList  .cm_cp').each(function(i) {
+					$(this).css("background", "#4dbbe6");
+					$(this).text("使用此模板");
+				});
+				$(this).css("background", "#ebb32a");
+				$(this).text("已选此模板");
+			});
+		}
 	//渲染控件样式
 	function changeButtonCss() {
 		$("input[type=radio],input[type=checkbox]").iCheck({
@@ -3249,7 +3262,7 @@
 				$(this).find('div').hide();
 			});
 		}
-
+		
 		/*
 		* 照片上传中遮罩进度
 		* */
@@ -3289,6 +3302,7 @@
 				});
 			})
 		}
+		
 	(function($) {
 		$('.ybcommon_counter_item').priceCalculator();
 		computePrice();
@@ -3312,6 +3326,7 @@
         setPage();
         advancedFilter();
 		//helpHover();
+		chooseTpl();
 		addOrDeleteChapter();
 		changeDisplayMode();
 		addOrDeletePage();

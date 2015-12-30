@@ -603,19 +603,29 @@
 			})
 		},
 		priceCalculator: function(options) {
-			var counter = 0,
-				subtotal = 0,
-				unitPrice = ''
-			options = $.extend({
-				unitprice: '',
-				subtotal: '',
-				onchange: function() {}
-			}, options);
-			$(this).each(function() {
-				var $this = $(this),
-					counterEl = $this.find('input');
-				counterEl.html('0');
-				$this.find('a').click(function() {
+			var subtotal = 0,
+				unitPrice = '',
+				totalPrice=[],
+				index=0,
+				config = {
+					unitprice: '',
+					subtotal: '',
+					totalprice:'',
+					onchange: function() {}
+				};
+			if (options) {
+				$.extend(config, options)
+			};
+
+			$.each($(this), function(thisIndex) {
+				var counter = 0,
+					$this = $(this),
+					counterEl = $this.find('input'),
+					thisPrice = $this.closest(config.unitprice).text()
+				console.log('counterEl:' + counterEl.val());
+
+				$(this).find('a').click(function() {
+					index=thisIndex;
 					switch ($(this).index()) {
 						case 0:
 							counter--;
@@ -623,51 +633,68 @@
 								counter = 0;
 							}
 							counterEl.val(counter);
-							getter();
-							setter();
-							options.onchange();
+							getter(index);
+							setter(counter);
+							config.onchange();
 							break;
 						case 2:
 							counter++;
 							counterEl.val(counter);
-							getter();
-							setter();
-							options.onchange();
+							getter(index);
+							setter(counter);
+							config.onchange();
 							break;
 					}
-					fireOnchange(counterEl)
+					fireOnchange(counterEl);
+
 				});
 
 				counterEl.bind('keydown keyup', function(e) {
 					var $this = $(this),
+						counter = 0,
+						index=thisIndex,
 						keycode = e.charCode ? e.charCode : e.keyCode;
 					switch (e.type) {
 						case 'keydown':
-							if (keycode != 8 && keycode < 48 || keycode > 57 && keycode < 96 || keycode > 105) {
+							if (keycode != 8 && keycode != 37 && keycode != 39 && keycode < 48 || keycode > 57 && keycode < 96 || keycode > 105) {
 								e.preventDefault();
-							} else {
+							} else if (keycode != 37 && keycode != 39) {
 								$this.val() != 0 ? $this.val() != 0 : $this.val('');
 							}
 							break;
 						case 'keyup':
 							counter = counterEl.val();
-							getter();
-							setter();
-							options.onchange();
+							getter(index);
+							setter(counter);
+							config.onchange();
 							fireOnchange(counterEl);
 							break;
 					}
 				})
+				
 			});
 
-			function getter() {
-				var unitPriceEl = $(options.unitprice).text();
-				unitPrice = unitPriceEl.replace("￥", '');
+			function getter(index) {
+				var unitPriceTxt = $(config.unitprice).eq(index).text();
+				unitPrice = unitPriceTxt.replace("￥", '');
+				
+				
 			}
 
-			function setter() {
+			function setter(counter) {
 				var result = unitPrice * counter;
-				$(options.subtotal).html(parseFloat(result).toFixed(2));
+				$(config.subtotal).eq(index).html(parseFloat(result).toFixed(2));
+				$(config.totalprice).html();
+				totalprice(index,result)
+			}
+
+			function totalprice(index, price){
+				totalPrice[index+1]=price;
+				console.log(price)
+				for (var i = totalPrice.length - 1; i >= 0; i--) {
+					totalPrice+=totalPrice[i]
+				};
+				return totalPrice;
 			}
 
 			function fireOnchange(_this) {
@@ -676,6 +703,13 @@
 		}
 	});
 
+	$.extend({
+		globalhint: function() {
+			$('.globalhint_close_btn').click(function() {
+				$('.globalhint_wrapper').fadeOut('fast');
+			});
+		}
+	})
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);
 	$('.hide_title').init_title();
 
@@ -2111,7 +2145,44 @@
 			};
 
 			$origin.ajax(s);
-		}
+		},
+		//移动端滚动到底部加载插件
+		// collideLoading:function(options){
+		// 	options=$.extend({
+		// 		callback:function(){}
+		// 	},options)
+		// 	$(window).scroll(function(){
+		// 		var availHeight=$(window).height(),
+		// 			scrollTop=$(window).scrollTop(),
+		// 			docHeight=$(document).height();
+		// 		console.log('aaa')
+		// 		if (availHeight+scrollTop>=docHeight) {
+		// 			options.callback();
+		// 		}
+		// 	})
+		// },
+		collideLoading:function(options){
+			options=$.extend({
+				onScrollBottom:function(){
+					alert('aaa')
+				}
+			},options)
+			window.onscroll=function(){
+				var clientHeight=0,
+					scrollTop=document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop,
+					docHeight=document.scrollHeight?document.scrollHeight:document.documentElement.scrollHeight;
+					
+				if (document.documentElement.clientHeight&&document.body.clientHeight) {
+					clientHeight=Math.min(document.documentElement.clientHeight,document.body.clientHeight);
+				}else{
+					clientHeight=Math.max(document.documentElement.clientHeight,document.body.clientHeight);
+				}
+
+				if (clientHeight+scrollTop>=docHeight) {
+					options.onScrollBottom()
+				};
+				console.log(docHeight)
+			}
 	});
 
 	/**

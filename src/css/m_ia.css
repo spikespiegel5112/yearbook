@@ -2179,3 +2179,92 @@
     line-height: 25px;
     text-align: center;
 }
+
+/*~~~~~~~~~~album~~~~~~~~~~*/
+/*album list*/
+.ybwechat_list_wrapper li {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.ybwechat_list_wrapper li a {
+    float: right;
+}
+
+.ybwechat_list_wrapper .uploadphoto_btn {
+    margin: 5% 2%;
+    width: 50px;
+    height: 60px;
+    background: url(../img/m/uploadphoto_btn.png) no-repeat;
+    position: relative;
+    background-size: 50px 40px;
+}
+
+.ybwechat_list_wrapper .uploadphoto_btn label {
+    width: 100%;
+    font-size: 0.6em;
+    color: #81bc34;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.ybwechat_list_wrapper li:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.ybwechat_list_wrapper li:hover {
+    background: #eee;
+}
+
+.ybwechat_list_wrapper li a.delete_icon {
+    float: left;
+    margin: 10% 1% 0 3%;
+}
+
+.ybwechat_titleimg_item {
+    float: left;
+    margin: 4% 2%;
+    width: 26%;
+    height: 90%;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.ybwechat_titleimg_item img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.ybwechat_titleimg_item span {
+    float: left;
+    width: 100%;
+    height: 0;
+    padding-bottom: 80%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.ybwechat_title_wrapper {
+    float: left;
+    width: 45%;
+    padding-top: .5em;
+}
+
+.ybwechat_title_wrapper h6 {
+    margin: 8% 0;
+}
+
+.ybwechat_title_wrapper div {
+    color: #676767;
+    font-size: 0.8em;
+}
+
+.ybwechat_title_wrapper div label{
+    font-weight: normal;
+    margin: 0;
+}

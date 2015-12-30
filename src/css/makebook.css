@@ -3226,6 +3226,17 @@
 	background: transparent url("../img/bookmanagement/import_photo_hv.png") no-repeat 0;
 }
 
+.main_right .btn_wrap .load_mobile_photo{
+	margin: 50px auto 0 !important;
+	background: transparent url("../img/bookmanagement/mobile_photos.png") no-repeat 0;
+}
+
+.main_right .btn_wrap .load_mobile_photo:hover,
+.main_right .btn_wrap .load_mobile_photo:active{
+	margin: 50px auto 0 !important;
+	background: transparent url("../img/bookmanagement/mobile_photos_hv.png") no-repeat 0;
+}
+
 .auto_edit_main .main_left {
 	width: 100%;
 	float: left;
@@ -3890,4 +3901,29 @@
 .auto_layout_container .photo_box .tips .btn{
     float: right;
     margin: 0 0 0 15px;
+}
+
+/*12.29 swh add load mobile photo*/
+.load_mobile_photo_box{
+	position: relative;
+	min-width: 320px;
+}
+.load_mobile_photo_box p{
+	margin-bottom: 15px;
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+}
+
+.load_mobile_photo_box .status > div{
+	margin-bottom: 10px;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+}
+
+.load_mobile_photo_box .status .success span{
+	margin: 0 5px;
+	color: #e22929;
+	font-weight: bold;
 }

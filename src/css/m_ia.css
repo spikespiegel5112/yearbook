@@ -2369,6 +2369,40 @@
     background-size: 100% 100%;
 }
 
+/*设置*/
+.album_content_settingmenu_wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.album_content_settingmenu_wrapper ul {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.album_content_settingmenu_wrapper li {
+    margin: 0.5em auto;
+    width: 90%;
+    height: 2.5em;
+    text-align: center;
+    background: #fff;
+    line-height: 2.5em;
+    font-size: 1em;
+}
+
+.album_content_settingmenu_wrapper li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #1185e7;
+}
+
 /*photo details*/
 .album_detail_person_wrapper {
     width: 100%;
@@ -2692,37 +2726,104 @@
     line-height: 30px;
 }
 
-
-/*设置*/
-.album_content_settingmenu_wrapper {
-    display: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+/*preview photo*/
+.photopage_container .album_name {
     background: rgba(0, 0, 0, 0.4);
-}
-
-.album_content_settingmenu_wrapper ul {
-    width: 100%;
+    z-index: 2;
     position: absolute;
-    bottom: 0;
-}
-
-.album_content_settingmenu_wrapper li {
-    margin: 0.5em auto;
-    width: 90%;
-    height: 2.5em;
-    text-align: center;
-    background: #fff;
-    line-height: 2.5em;
-    font-size: 1em;
-}
-
-.album_content_settingmenu_wrapper li a {
-    display: block;
+    /*padding: 0 6px;*/
     width: 100%;
-    height: 100%;
-    color: #1185e7;
+}
+
+.photopage_container .album_name h5 {
+    color: #fff;
+    font-size: 1em;
+    line-height: 3em;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.photopage_container .album_name .back_btn {
+    background-image: url(../img/m/yb3wechatheader_sprite_img_00000.png);
+    background-position-y: -41px;
+    background-size: 900%;
+    background-repeat-x: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background-position-x: -74px;
+    box-sizing: border-box;
+}
+
+.photopage_container .photo_pagination {
+    /*float: right;
+	margin: 0 1em 0 0;
+	height: 2.5em;*/
+    line-height: 3em;
+    color: #fff;
+    position: absolute;
+    right: 6px;
+    top: 0; /*NEWYB-710*/
+}
+
+.photo_pagination span:before {
+    content: '/';
+    display: inline-block;
+}
+
+.photopage_footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.photopage_footer ul {
+    float: left;
+    width: 50%;
+    height: 2.5em;
+}
+
+.photopage_footer ul li a {
+    float: left;
+    margin: 0.25em 0.1em 0.25em 0.5em;
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/m/img_sprite_00000.png);
+}
+
+.photopage_footer ul li span {
+    float: left;
+    height: 40px;
+    color: #888;
+    line-height: 40px;
+}
+
+.photopage_button_1 a {
+    background-position: -244px -100px;
+}
+
+.photopage_button_1 .active {
+    background-position: -276px -100px;
+}
+
+.photopage_button_2 a {
+    background-position: -315px -100px;
+}
+
+.photopage_button_2 .active {
+    background-position: -345px -100px;
+}
+
+.photopage_moredetail {
+    float: right;
+    color: #fff;
+    line-height: 2.5em;
+}
+
+.photopage_moredetail:focus {
+    color: #fff;
 }

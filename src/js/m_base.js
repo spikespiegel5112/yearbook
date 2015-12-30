@@ -1258,7 +1258,44 @@
 			};
 
 			$origin.ajax(s);
-		}
+		},
+		//移动端滚动到底部加载插件
+		// collideLoading:function(options){
+		// 	options=$.extend({
+		// 		callback:function(){}
+		// 	},options)
+		// 	$(window).scroll(function(){
+		// 		var availHeight=$(window).height(),
+		// 			scrollTop=$(window).scrollTop(),
+		// 			docHeight=$(document).height();
+		// 		console.log('aaa')
+		// 		if (availHeight+scrollTop>=docHeight) {
+		// 			options.callback();
+		// 		}
+		// 	})
+		// },
+		collideLoading:function(options){
+			options=$.extend({
+				onScrollBottom:function(){
+					alert('aaa')
+				}
+			},options)
+			window.onscroll=function(){
+				var clientHeight=0,
+					scrollTop=document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop,
+					docHeight=document.scrollHeight?document.scrollHeight:document.documentElement.scrollHeight;
+					
+				if (document.documentElement.clientHeight&&document.body.clientHeight) {
+					clientHeight=Math.min(document.documentElement.clientHeight,document.body.clientHeight);
+				}else{
+					clientHeight=Math.max(document.documentElement.clientHeight,document.body.clientHeight);
+				}
+
+				if (clientHeight+scrollTop>=docHeight) {
+					options.onScrollBottom()
+				};
+				console.log(docHeight)
+			}
 	});
 
 	/**

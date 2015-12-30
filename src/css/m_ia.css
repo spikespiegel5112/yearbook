@@ -2794,6 +2794,62 @@
     bottom: 0;
 }
 
+/*照片管理*/
+.photo_management li {
+    text-align: center;
+    line-height: 100px;
+}
+
+.photo_management li img {
+    display: initial !important;
+    max-width: 100%;
+    max-height: 100px;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.photo_management li span {
+    bottom: 0;
+    right: 5px;
+}
+
+.photo_management .btn_wrapper a {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.photo_management .btn_wrapper .delete {
+    background-color: #da6423;
+}
+
+.photo_management .btn_wrapper .delete:hover {
+    background-color: #ca5c20;
+}
+
+.photo_management .btn_wrapper .delete:active {
+    background-color: #be561d;
+}
+
+.photo_management .btn_wrapper .upload {
+    background-color: #89c539;
+}
+
+.photo_management .btn_wrapper .upload:hover {
+    background-color: #81ba35;
+}
+
+.photo_management .btn_wrapper .upload:active {
+    background-color: #78ad31;
+}
+
 
 /*photo details*/
 .album_detail_person_wrapper {

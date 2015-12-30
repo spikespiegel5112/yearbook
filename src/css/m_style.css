@@ -3151,38 +3151,7 @@ a.ia-vote-add-choose-num {
     height: auto;
 }
 
-.album_content_settingmenu_wrapper {
-    display: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.4);
-}
 
-.album_content_settingmenu_wrapper ul {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-.album_content_settingmenu_wrapper li {
-    margin: 0.5em auto;
-    width: 90%;
-    height: 2.5em;
-    text-align: center;
-    background: #fff;
-    line-height: 2.5em;
-    font-size: 1em;
-}
-
-.album_content_settingmenu_wrapper li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    color: #1185e7;
-}
 
 .album_content_upload_wrapper {
     z-index: 9999;
@@ -4689,103 +4658,7 @@ a.ia-vote-add-choose-num {
 /*~~~~~~~~~~book-detail~~~~~~~~~~*/
 
 
-/*~~~~~~~~~~album_content~~~~~~~~~~*/
-.albumcontent_cover_wrapper {
-    width: 100%;
-    overflow: hidden;
-}
 
-.albumcontent_cover_wrapper img {
-    display: block;
-    width: 100%;
-    max-height: 14em;
-}
-
-.albumcontent_info_wrapper {
-    width: 100%;
-    overflow: hidden;
-}
-
-.albumcontent_info_wrapper li {
-    float: left;
-    padding: 1em 0.5em;
-    font-size: 1em;
-}
-
-.albumcontent_info_wrapper li span, .albumcontent_info_wrapper li label {
-    height: 25px;
-    line-height: 25px;
-}
-
-.albumcontent_info_wrapper .viewed_item {
-    color: #91cf49;
-    font-size: 1em;
-    line-height: 1.4em;
-}
-
-.albumcontent_info_wrapper .viewed_item span {
-    float: left;
-    width: 30px;
-    height: 20px;
-    background: url(../img/m/eye.png) no-repeat 0 2px;
-    background-size: cover;
-}
-
-.albumcontent_info_wrapper .viewed_item label {
-    float: left;
-}
-
-.albumcontent_info_wrapper .praise_item a {
-    display: block;
-    width: 20px;
-    height: 25px;
-    background: url(../img/m/praise_gray.png) no-repeat;
-    background-size: cover;
-}
-
-.albumcontent_info_wrapper .praise_item a.active {
-    background: url(../img/m/praise.png) no-repeat;
-    background-size: cover;
-}
-
-.albumcontent_info_wrapper .uploadbtn_item {
-    /*float: right;
-	padding: 0.9em 0.5em;*/
-    display: block;
-    clear: both;
-    margin-bottom: 10px;
-}
-
-.albumcontent_info_wrapper .uploadbtn_item a {
-    /*display: block;
-	padding: 0.5em 1em;
-	background: #89c539;
-	color: #fff;*/
-}
-
-.albumcontent_photo_wrapper, .albumcontent_photo_wrapper ul {
-    width: 100%;
-    overflow: hidden;
-}
-
-.albumcontent_photo_wrapper li {
-    float: left;
-    margin: 0.5%;
-    width: 32%;
-}
-
-.albumcontent_photo_wrapper li img {
-    display: block;
-    width: 100%;
-}
-
-.albumcontent_photo_wrapper a span {
-    display: block;
-    width: 100%;
-    height: 0;
-    padding-bottom: 98%;
-    background-size: 100% 100%;
-}
 
 /*~~~~~~~~~~book_market~~~~~~~~~~*/
 .bookmarket_template_icon {

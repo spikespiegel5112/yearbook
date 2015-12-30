@@ -1012,6 +1012,144 @@ label.error {
     color: #e7b54b;
 }
 
+/** 上拉下拉 */
+
+.scroll_pulldown {
+    position: absolute;
+    top: -2.5em;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    color: #999;
+    line-height: 50px;
+    text-align: center;
+}
+
+.scroll_pulldown_icon {
+    position: absolute;
+    top: -2.5em;
+    right: 50%;
+    margin-right: 40px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/m/pullicon.png);
+    background-size: auto 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(0deg) translateZ(0);
+    -webkit-transform: rotate(0deg) translateZ(0);
+    -moz-transform: rotate(0deg) translateZ(0);
+    transition: -webkit-transform 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -webkit-transform 0.2s;
+}
+
+.scroll_pullup {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    color: #999;
+    line-height: 50px;
+    text-align: center;
+}
+
+.scroll_pullup_icon {
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    margin-right: 40px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/m/pullicon.png);
+    background-size: auto 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-180deg) translateZ(0);
+    -webkit-transform: rotate(-180deg) translateZ(0);
+    -moz-transform: rotate(-180deg) translateZ(0);
+    transition: -webkit-transform 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -webkit-transform 0.2s;
+}
+
+.scroll_pulldown_flip {
+    transform: rotate(-180deg) translateZ(0);
+    -webkit-transform: rotate(-180deg) translateZ(0);
+    -moz-transform: rotate(-180deg) translateZ(0);
+}
+
+.scroll_pullup_flip {
+    transform: rotate(-180deg) translateZ(0);
+    -webkit-transform: rotate(0deg) translateZ(0);
+    -moz-transform: rotate(0deg) translateZ(0);
+}
+
+/** 加载中.. **/
+
+.loading {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -25px;
+    margin-top: 0%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    text-align: center;
+    z-index: 99
+}
+
+.loading img {
+    display: inline-block;
+    margin: 0px auto;
+    width: 20px;
+    height: 20px;
+}
+
+.loading strong {
+    display: inline-block;
+    margin: 0px auto;
+    width: 60px;
+    height: 20px;
+    line-height: 26px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+#loadhint:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#loadhint {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color: #ccc;
+    font-size: 15px;
+}
+
+#loadhint div {
+    margin: 0 auto;
+    width: 6em;
+}
+
+#loadhint img {
+    width: auto;
+    height: 1em;
+    box-shadow: none;
+}
+
 /*~~~~~~~~~~书册信息~~~~~~~~~~*/
 .basic_info {
     border-bottom: 1px solid #e5e5e5;

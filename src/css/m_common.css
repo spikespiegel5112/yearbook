@@ -273,6 +273,62 @@ label.error {
     /*filter: flipv; /!*IE*!/*/
 }
 
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
+    -webkit-animation: glow_blue 0.3s forwards;
+    border-color: #fff;
+}
+
+.bg_ccc {
+    -webkit-animation: bg_ccc 0.3s forwards;
+}
+
+.islider-loader {
+    display: block;
+}
+
+.rotate_45deg {
+    -webkit-animation: rotate_45deg 0.3s forwards;
+}
+
+@-webkit-keyframes glow_blue {
+    0% {
+        box-shadow: 0px 0px 6px transparent;
+        border-color: #a9a9a9;
+    }
+    100% {
+        box-shadow: 0px 0px 6px #1185e7;
+        border-color: #1185e7;
+    }
+}
+
+@-webkit-keyframes bg_ccc {
+    0% {
+        background: #fff
+    }
+    100% {
+        background: #ccc;
+        box-shadow: 0px 0px 6px #666 inset
+    }
+}
+
+@-webkit-keyframes rotate_45deg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes rotate_45deg_to_0deg {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 /*~~~~~~~~~~button样式~~~~~~~~~~*/
 .button {
     color: #666;

@@ -2271,13 +2271,13 @@
 	<!--11.13 add 添加照片-->
 	<div id="uploadIL" class="auto_layout_container hidden">
 		<div class="photo_box">
-			<div class="empty hidden">
+			<div class="empty">
 				<img src="img/bierde_16.png">
 				<p class="tip">目前没有任何照片，还需添加100张照片</p>
 				<a class="btn active" href="javascript:;">点击选择照片</a>
 			</div>
 			<!--结构同一键成书页面的上传中-->
-			<div class="choose_img_con">
+			<div class="choose_img_con hidden">
 				<div class="img_con">
 					<div class="uploading cm_fl"><!--完成上传添加class:finished .to_upload hidden-->
 						<div class="item new_up">
@@ -2401,9 +2401,10 @@
 			</div>
 
 			<div class="tips">
-				<p>已经上传了 <span>0</span> 张照片。<!--，<i>已经入册</i> <span>0</span> 张--></p>
-				<a class="btn" href="javascript:;">完成添加</a>
-				<a class="btn active" href="javascript:;">继续添加</a>
+				<!--<p>已经上传了 <span>0</span> 张照片。<i>已经入册</i> <span>0</span> 张</p>-->
+				<a class="btn finish" href="javascript:;"><i class="icon-ok-circle"></i>完成添加</a>
+				<a class="btn mobile" href="javascript:;"><i class="icon-mobile-phone"></i>手机上传</a>
+				<a class="btn pc active" href="javascript:;"><i class="icon-cloud-upload"></i>本地上传</a>
 			</div>
 		</div>
 	</div>

@@ -322,7 +322,7 @@
 .bmindex_axis_wrapper {
     width: 17%;
     position: absolute;
-    left: 0%;
+    left: 0;
 }
 
 .bmindex_axis_item {
@@ -339,7 +339,7 @@
     background-image: url(../img/imgsprite_yb3_wbl_00000.png);
     border: 3px solid #fff;
     border-radius: 50%;
-    box-shadow: 0px 2px 3px #ccc;
+    box-shadow: 0 2px 3px #ccc;
     box-sizing: content-box;
 }
 
@@ -493,7 +493,6 @@
     min-width: 2em;
 }
 
-/*NEWYB 1271*/
 .timeline_sharetrigger_btn {
     display: table;
     margin: 8px auto 0;
@@ -639,7 +638,7 @@
     margin: 0 auto;
 }
 
-/*~~~~~~~~~~msg link of footer~~~~~~~~~~*/
+/*~~~~~~~~~~msg link of footer (share common)~~~~~~~~~~*/
 .share_container .msg_item {
     margin: 15px 0 25px;
     border-top: 1px solid #ddd;
@@ -2203,8 +2202,10 @@
 }
 
 .ybwechat_list_wrapper .uploadphoto_btn label {
+    margin-bottom: 0;
     width: 100%;
     font-size: 0.6em;
+    font-weight: normal;
     color: #81bc34;
     text-align: center;
     position: absolute;
@@ -2370,7 +2371,7 @@
     background-size: 100% 100%;
 }
 
-/*设置*/
+/*set menu*/
 .album_content_settingmenu_wrapper {
     display: none;
     position: fixed;
@@ -2795,7 +2796,7 @@
     bottom: 0;
 }
 
-/*照片管理*/
+/*manage photo*/
 .photo_management li {
     text-align: center;
     line-height: 100px;
@@ -2849,40 +2850,6 @@
 
 .photo_management .btn_wrapper .upload:active {
     background-color: #78ad31;
-}
-
-/*设置照片质量*/
-.photoqualitysetting_wrapper li {
-    margin: 0 auto;
-    width: 100%;
-    height: 3em;
-    line-height: 2.5em;
-    font-size: 0.8em;
-    background: #fff;
-}
-
-.photoqualitysetting_wrapper li a {
-    float: left;
-    padding: 0 5%;
-    width: 100%;
-    height: 3em;
-    line-height: 3em;
-    color: #333;
-}
-
-.photoqualitysetting_wrapper li span {
-    display: none;
-    float: right;
-    line-height: 3em;
-    color: #007ce5;
-}
-
-.photoqualitysetting_wrapper .active {
-    background: #f5f5f5;
-}
-
-.photoqualitysetting_wrapper .active span {
-    display: block;
 }
 
 /*~~~~~~~~~~uploadphoto~~~~~~~~~~*/
@@ -3156,6 +3123,40 @@
     border: 1px solid #89c539;
     background: #89c539;
     color: #fff;
+}
+
+/*set upload photo's quality */
+.photoqualitysetting_wrapper li {
+    margin: 0 auto;
+    width: 100%;
+    height: 3em;
+    line-height: 2.5em;
+    font-size: 0.8em;
+    background: #fff;
+}
+
+.photoqualitysetting_wrapper li a {
+    float: left;
+    padding: 0 5%;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    color: #333;
+}
+
+.photoqualitysetting_wrapper li span {
+    display: none;
+    float: right;
+    line-height: 3em;
+    color: #007ce5;
+}
+
+.photoqualitysetting_wrapper .active {
+    background: #f5f5f5;
+}
+
+.photoqualitysetting_wrapper .active span {
+    display: block;
 }
 
 /*photo details*/
@@ -3655,4 +3656,366 @@
     .mybookshelf_main_wrapper li {
         margin: 1em 0.8em 0;
     }
+}
+
+/*~~~~~~~~~~interact~~~~~~~~~~*/
+.inter-action-main-container {
+    width: 100%;
+    position: relative;
+}
+
+.inter-action-main-container .inter-action-list {
+    margin: 0;
+    padding: 0;
+}
+
+.inter-action-main-container .inter-action-list .inter-action-item {
+    width: 33.3333%;
+    float: left;
+    border: solid #D9D9D9 1px;
+    height: 0;
+    padding-bottom: 33.3333%;
+    border-radius: 1px;
+}
+
+.inter-action-item {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.inter-action-item.active {
+    background-color: #b4b4b4;
+}
+
+.inter-action-item img {
+    width: 40%;
+    margin-top: 20%;
+}
+
+.inter-action-item p {
+    color: #3c3c3c;
+}
+
+#inter-action-send-leave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.inter-action-item:hover {
+    background-color: #e1e1e1;
+    border: solid #fff 1px;
+}
+
+/*interact of partner*/
+.inter-action-friend-list {
+    margin: 0;
+    padding: 0;
+}
+
+.inter-action-friend-list .inter-action-friend-item {
+    width: 46%;
+    /*height: 110px;*/
+    float: left;
+    position: relative;
+    margin: 2%;
+    height: 0;
+    padding: 0 0 115px 0;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+}
+
+.inter-action-friend-list .inter-action-friend-item:hover {
+    background-color: #ececec;
+}
+
+.inter-action-friend-list .inter-action-friend-item .user-header-img {
+    float: left;
+    width: 35%;
+    height: 35%;
+}
+
+.inter-action-friend-header {
+    position: relative;
+}
+
+.inter-action-friend-header p {
+    float: left;
+    margin: 35px 0 0 25px;
+    font-size: 1em;
+    color: #3c3c3c;
+    top: 28%;
+    width: 44%; /*NEWYB-996*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inter-action-friend-send {
+    width: 100%;
+    float: left;
+}
+
+.inter-action-friend-send span a.button {
+    width: 50%;
+    font-size: 0.8em;
+    height: 2em;
+    line-height: 2em;
+    padding: 0;
+    margin-left: 0.5em;
+}
+
+.inter-action-friend-send span a:not(.button) {
+    font-size: 0.9em;
+    color: #3c3c3c;
+    padding-right: 0.4em;
+    line-height: 1.8em;
+}
+
+.inter-action-friend-send span a:not(.button):after {
+    content: ">";
+    padding-left: 0.2em;
+}
+
+.inter-action-friend-sex {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5%;
+    right: 0;
+}
+
+.inter-action-friend-sex img {
+    width: 54%;
+    height: 54%;
+}
+
+/*friend info*/
+.inter-action-friend-info-wapper {
+    height: auto;
+    position: relative;
+}
+
+.inter-action-friend-info-wapper .personal-page {
+    float: left;
+    width: 25%;
+    margin-top: 2em;
+    margin-left: 0.8em;
+}
+
+.inter-action-friend-info-wapper .personal-page a {
+    font-size: .75em;
+    color: #3c3c3c;
+    margin-left: 0.3em;
+    text-align: center;
+}
+
+.inter-action-friend-info-wapper .personal-page a.active {
+    color: #89c539;
+}
+
+.inter-action-friend-info-wapper .personal-page .view-num {
+    color: #3c3c3c;
+    padding-left: 0.2em;
+}
+
+.inter-action-friend-info-wapper .personal-page p span {
+    margin-top: 0.2em;
+    margin-left: 1.1em;
+}
+
+.inter-action-friend-info-wapper .personal-page img {
+    width: 100%;
+    height: auto;
+}
+
+.inter-action-friend-info-wapper .personal-info {
+    float: right;
+    width: 60%;
+    padding: 0;
+    font-size: 0.8em;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.inter-action-friend-info-wapper .personal-info ul {
+    padding: 0;
+}
+
+.inter-action-friend-info-wapper .personal-info p {
+    margin-bottom: 10px;
+}
+
+.inter-action-friend-leave-topic-wapper {
+    margin-top: 1em;
+    position: relative;
+}
+
+#inter-action-friend-topic-content {
+    display: none;
+}
+
+#inter-action-friend-leave-content-send {
+    display: none;
+    top: 0;
+}
+
+#inter-action-friend-leave-content-recv {
+    display: none;
+    top: 0;
+}
+
+.inter-action-friend-leave-topic-wapper .list-inline {
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.inter-action-friend-leave-topic-wapper ul li {
+    padding: 0;
+}
+
+/*partner invitation card content*/
+.iv_card_info {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 2;
+}
+
+.partner_info_form {
+    position: relative;
+    margin: 10px auto;
+    /*padding: 10px;*/
+    width: 90%;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.partner_info_form .close {
+    position: fixed;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    z-index: 2;
+    opacity: .6;
+}
+
+.partner_info_form .part {
+    margin: 10px 0;
+    padding: 0 10px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.partner_info_form .part h4 {
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.partner_info_form .part h4::before,
+.partner_info_form .part h4::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: "- - - - - - - - ";
+    width: 100%;
+    height: 0;
+    color: #afafb1;
+    text-align: left;
+}
+
+.partner_info_form .part h4::after {
+    text-align: right;
+}
+
+.partner_info_form .part .basic_info label {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+
+.partner_info_form .part .basic_info span {
+    display: inline-block;
+    width: 65%;
+    min-width: 120px;
+    text-align: left;
+}
+
+.partner_info_form .part .upload_img_box {
+    text-align: left;
+}
+
+.partner_info_form .part .upload_img_box .no_upload_img {
+    text-align: center;
+}
+
+.partner_info_form .part .upload_img_box .img_list li {
+    position: relative;
+    display: inline-block;
+    margin: 5px 2px;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.partner_info_form .part .upload_img_box .img_list li img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+}
+
+.partner_info_form .part .topic_box .topic {
+    text-align: left;
+    text-indent: 0;
+    margin: 10px 0;
+}
+
+.partner_info_form .part .topic_box .topic_reply {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.partner_info_form .part .topic_box .topic_reply li {
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.partner_info_form .part .topic_box .topic_reply .head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.partner_info_form .part .topic_box .topic_reply .reply {
+    position: relative;
+    left: 50px;
+    top: 0;
+    padding-top: 10px;
+}
+
+.partner_info_form .part .topic_box .topic_reply span b {
+    font-weight: normal;
+    color: #5cbf6a;
+}
+
+.partner_info_form .part .topic_box .topic_reply .reply p {
+    word-break: break-all;
+    display: inline;
+    line-height: 1.5em;
+    text-indent: 0;
 }

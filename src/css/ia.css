@@ -3613,7 +3613,13 @@
 	-moz-transform: rotate(45deg);
 	-ie-transform: rotate(45deg);
 }
-
+.bmshare_container .active .bp_sharelist_wrapper {
+	display: block;
+	-webkit-transition: opacity;
+	-moz-transition: opacity;
+	-ms-transition: opacity;
+	opacity: 1;
+}
 
 /*~~~~~~~~~~ia_share_uploadphoto.html~~~~~~~~~~*/
 

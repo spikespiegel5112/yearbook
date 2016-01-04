@@ -4210,6 +4210,152 @@
     margin-right: .2em;
 }
 
+/** 留言墙 **/
+
+#all-leave, #send-leave, #recv-leave {
+    display: block;
+    width: 7em;
+    text-align: center;
+    height: 3em;
+    line-height: 3em;
+    font-size: .8em;
+    margin: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    color: #337ab7;
+}
+
+#all-leave:hover, #send-leave:hover, #recv-leave:hover, #all-leave.active, #send-leave.active, #recv-leave.active {
+    color: #696969;
+    background-color: #E5E5E5;
+}
+
+.leave-wall-say {
+    position: relative;
+}
+
+.leave-wall-say textarea {
+    width: 94%;
+    height: 10em;
+    margin: 2%;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+    font-size: .8em;
+    padding: .2em;
+    box-sizing: content-box;
+}
+
+.leave-wall-say a.btn {
+    /*height: 1.5em;*/
+    padding: .375em;
+    width: 20%;
+    margin-right: .5em;
+    /*line-height: 1.5em;*/
+}
+
+.leave-wall-say .leave-all-choose-user {
+    min-width: 10em;
+    display: block;
+    line-height: 2em;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: .9em;
+    height: 2.3em;
+    overflow: hidden;
+    word-break: break-all;
+    color: #337ab7;
+}
+
+.leave-wall-say .leave-all-choose-user span {
+    margin: 0.6em 0.3em;
+}
+
+.leave-wall-say .input-group {
+    width: 40%;
+    height: 2em;
+    margin-left: 0.5em;
+    position: relative;
+}
+
+.leave-wall-say .leave-all-choose-user-all {
+    position: absolute;
+    bottom: -12em;
+    left: 0;
+    z-index: 100;
+    width: 90%;
+    height: 10em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 0 2%;
+    padding: 0 0.9em;
+    overflow: auto;
+    display: none;
+}
+
+.leave-wall-say .leave-all-choose-user-all ul {
+    width: 100%;
+    padding: 0;
+}
+
+.leave-wall-say .leave-all-choose-user-all ul li {
+    float: left;
+    margin-left: .3em;
+    margin-top: .5em;
+    height: 1.5em;
+    text-align: center;
+    color: #337ab7;
+    overflow: auto;
+}
+
+.leave-wall-say .leave-all-choose-user-all ul li:hover {
+    background-color: #EEEEEE;
+    color: #515151;
+}
+
+.ia-empty-show {
+    display: block;
+    height: 10em;
+    width: 10em;
+    position: relative;
+    background-color: #eeeeee;
+    border-radius: 100%;
+    word-break: break-all;
+    overflow: hidden;
+    margin: 3em auto;
+}
+
+.ia-empty-show .ia-empty-first {
+    color: #444444;
+    font-size: 1em;
+    word-break: break-all;
+    text-align: center;
+    display: block;
+    width: 8em;
+    margin: 2.3em auto 0;
+}
+
+.ia-empty-show .ia-empty-sub {
+    color: #b7b7b7;
+    font-size: .8em;
+    text-align: center;
+    display: block;
+    width: 9em;
+    margin: 1em auto 0;
+}
+
+.ia-empty-show .ia-empty-btn {
+    color: #fff;
+    font-size: .8em;
+    text-align: center;
+    display: block;
+    width: 6em;
+    margin: 1em auto 0;
+    background-image: linear-gradient(to bottom, #bfbfbf 0px, #bfbfbf 100%);
+    background-repeat: repeat-x;
+}
+
+
 /*partner invitation card content*/
 .iv_card_info {
     display: none;

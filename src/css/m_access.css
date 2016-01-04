@@ -50,8 +50,6 @@
     -webkit-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     transform: scaleX(-1);
-    /*filter: fliph; /!*IE*!/*/
-    /*transform:rotate(270deg);*/
 }
 
 .yb-error .yb-500-btn {
@@ -292,9 +290,11 @@
 }
 
 .sso_login_wrapper ul li label {
+    margin: 0;
     display: inline-block;
     vertical-align: middle;
     font-size: 0.8em;
+    font-weight: normal;
 }
 
 .sso_login_wrapper ul li > div {
@@ -364,13 +364,8 @@
     margin: 1em;
     padding: 1em;
     -moz-border-radius: 1em;
-    /* Gecko browsers */
-
     -webkit-border-radius: 1em;
-    /* Webkit browsers */
-
     border-radius: 1em;
-    /* W3C syntax */
 }
 
 .choose-way > div.not-support {
@@ -405,4 +400,3 @@
     width: 5em;
     height: 2em;
 }
-

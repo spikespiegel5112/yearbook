@@ -2333,18 +2333,9 @@
 }
 
 .albumcontent_info_wrapper .uploadbtn_item {
-    /*float: right;
-	padding: 0.9em 0.5em;*/
     display: block;
     clear: both;
     margin-bottom: 10px;
-}
-
-.albumcontent_info_wrapper .uploadbtn_item a {
-    /*display: block;
-	padding: 0.5em 1em;
-	background: #89c539;
-	color: #fff;*/
 }
 
 .albumcontent_photo_wrapper, .albumcontent_photo_wrapper ul {
@@ -2651,7 +2642,6 @@
     margin: 7px 10px 0 20px;
     width: 30px;
     height: 26px;
-    /*background: url(../img/m/inter_action/add.png) 0 0 no-repeat;*/
 }
 
 /*choose cover and choose photo*/
@@ -2737,11 +2727,9 @@
 
 .choosephoto_menu_wrapper {
     width: 100%;
-    /*height: auto;*/
     position: fixed;
     bottom: 0;
     border-top: 1px solid #ccc;
-    /*margin-bottom: -10px;*/
 }
 
 .choosephoto_menu_wrapper ul {
@@ -2871,7 +2859,6 @@
 .uploadphoto_input_item label {
     margin: 0 0 0 0.5em;
     max-width: 7em;
-    /*height: 2em;*/
     line-height: 60px;
     overflow: hidden;
     position: absolute;
@@ -2906,7 +2893,6 @@
 .uploadphoto_input_item span {
     float: right;
     padding: 0 15px 0 0;
-    /*height: 5.5em;*/
     line-height: 60px;
     color: #999;
 }
@@ -2936,7 +2922,7 @@
     text-align: center;
     background: #feae1b;
     border: 2px solid #fff;
-    box-shadow: 0px 1px 1px #666;
+    box-shadow: 0 1px 1px #666;
 }
 
 .changecover_unselected_item img {
@@ -3102,8 +3088,6 @@
     filter: alpha(opacity=65) !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    /*background-color: #e6e6e6 !important;
-    border-color: #adadad !important;*/
     color: #999 !important;
 }
 
@@ -3487,7 +3471,6 @@
     background: rgba(0, 0, 0, 0.4);
     z-index: 2;
     position: absolute;
-    /*padding: 0 6px;*/
     width: 100%;
 }
 
@@ -3504,7 +3487,7 @@
     background-image: url(../img/m/yb3wechatheader_sprite_img_00000.png);
     background-position-y: -41px;
     background-size: 900%;
-    background-repeat-x: no-repeat;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     width: 50px;
@@ -3514,14 +3497,11 @@
 }
 
 .photopage_container .photo_pagination {
-    /*float: right;
-	margin: 0 1em 0 0;
-	height: 2.5em;*/
     line-height: 3em;
     color: #fff;
     position: absolute;
     right: 6px;
-    top: 0; /*NEWYB-710*/
+    top: 0;
 }
 
 .photo_pagination span:before {
@@ -3716,7 +3696,6 @@
 
 .inter-action-friend-list .inter-action-friend-item {
     width: 46%;
-    /*height: 110px;*/
     float: left;
     position: relative;
     margin: 2%;
@@ -3747,7 +3726,7 @@
     font-size: 1em;
     color: #3c3c3c;
     top: 28%;
-    width: 44%; /*NEWYB-996*/
+    width: 44%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3806,7 +3785,6 @@
 .partner_info_form {
     position: relative;
     margin: 10px auto;
-    /*padding: 10px;*/
     width: 90%;
     background-color: #f6f6f6;
     border-radius: 4px;
@@ -4047,6 +4025,7 @@
 #choose-leave span {
     margin-left: .4em;
 }
+
 /*received leave msg*/
 .mark-sub-list {
     position: absolute;
@@ -4151,7 +4130,6 @@
 .leave-content-list-item p:not(.leave-header) {
     display: block;
     width: 100%;
-    /*min-height: 5em;*/
     margin-top: .5em;
     word-wrap: break-word;
     line-height: 1.5em;
@@ -4391,11 +4369,9 @@
 }
 
 .leave-wall-say a.btn {
-    /*height: 1.5em;*/
     padding: .375em;
     width: 20%;
     margin-right: .5em;
-    /*line-height: 1.5em;*/
 }
 
 .leave-wall-say .leave-all-choose-user {
@@ -4592,7 +4568,7 @@
     color: #aaa;
 }
 
-.iatopic_title_wrapper div label{
+.iatopic_title_wrapper div label {
     font-weight: normal;
     margin-bottom: 0;
 }
@@ -4712,7 +4688,7 @@
     bottom: 0.75em;
 }
 
-.ia-topic-item-top .ia-topic-item-top-img .ia-topic-title h5{
+.ia-topic-item-top .ia-topic-item-top-img .ia-topic-title h5 {
     margin: 0;
 }
 
@@ -5460,15 +5436,12 @@ a.ia-vote-add-choose-num {
 
 .ia-vote-choose-wapper ul {
     padding: .5em;
-    /*height: 29em;*/
     max-height: 60%;
     overflow: scroll;
-    /*margin-bottom: 4em;*/
 }
 
 .ia-vote-choose-wapper ul.ia-vote-common-choose {
     padding: 0;
-    /*margin-bottom: 4em;*/
 }
 
 .ia-vote-choose-wapper ul li {
@@ -5529,7 +5502,6 @@ a.ia-vote-add-choose-num {
 }
 
 .ia-vote-choose-item input[type=radio], .ia-vote-choose-item input[type=checkbox] {
-    /*font-size: 5em;*/
     margin: 0 0.4em 0 1em;
 }
 
@@ -5621,7 +5593,6 @@ a.ia-vote-add-choose-num {
     color: #9e9e9e;
     font-size: 1em;
     display: block;
-    /*width: 3em;*/
     text-align: center;
     margin-left: .5em;
     float: left;
@@ -5636,7 +5607,6 @@ a.ia-vote-add-choose-num {
     display: inline-block;
     width: 20px;
     height: 20px;
-    /*vertical-align: top;*/
 }
 
 .ia-vote-commit span.num {

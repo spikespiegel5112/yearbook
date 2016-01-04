@@ -4210,8 +4210,7 @@
     margin-right: .2em;
 }
 
-/** 留言墙 **/
-
+/*~~~~~~~~~~ia leave wall~~~~~~~~~~*/
 #all-leave, #send-leave, #recv-leave {
     display: block;
     width: 7em;
@@ -4355,6 +4354,623 @@
     background-repeat: repeat-x;
 }
 
+/*~~~~~~~~~~ia topic~~~~~~~~~~*/
+/*~~~~~~~~~~iatopic~~~~~~~~~~*/
+
+.iatopic_main_wrapper {
+    width: 100%;
+}
+
+.iatopic_switcher {
+    margin: 10px auto;
+    width: 90%;
+    overflow: hidden;
+}
+
+.iatopic_switcher li {
+    float: left;
+    width: 49%;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.iatopic_switcher li:first-child {
+    border-left: 1px solid #e0e0e0;
+}
+
+.iatopic_switcher li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.iatopic_switcher li .active {
+    background: #e9e9e9;
+}
+
+.iatopic_switcher li:first-child {
+    border-right: 1px solid #e0e0e0;
+}
+
+.iatopic_list_wrapper {
+    display: none;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.iatopic_titleimg_item {
+    float: left;
+    margin: 2% 3% 0 1%;
+    width: 68px;
+    height: 68px;
+}
+
+.iatopic_titleimg_item img {
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 100%;
+}
+
+.iatopic_title_wrapper {
+    float: left;
+    width: 56%;
+    height: 90%;
+}
+
+.iatopic_title_wrapper h6, .iatopic_title_wrapper p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.iatopic_title_wrapper h6 {
+    margin: 5px 0;
+    color: #222;
+    font-size: 16px;
+}
+
+.iatopic_title_wrapper p {
+    margin: 0.6em 0;
+    font-size: 0.9em;
+}
+
+.iatopic_title_wrapper div {
+    float: left;
+    margin: 0 2% 0 0;
+    font-size: 0.7em;
+    color: #aaa;
+}
+
+.iatopic_title_wrapper div label{
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.iatopic_list_wrapper li {
+    margin: 10px 0 0;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+
+.iatopic_list_wrapper li a {
+    float: right;
+    padding: 10px 0;
+    width: 17%;
+}
+
+.iatopic_list_wrapper li a span {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 45px;
+    background: url("../img/m/topic.png") no-repeat;
+    background-size: 50px;
+}
+
+.iatopic_list_wrapper li a label {
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #9dd455;
+    font-size: 0.9em;
+}
+
+.ia-topic-list {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ia-topic-list .ia-topic-list-wapper {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+}
+
+.ia-topic-list .ia-topic-list-wapper li {
+    width: 100%;
+    height: 8em;
+    vertical-align: middle;
+    border-bottom: 1px solid #BDBDBD;
+    padding-top: 0;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li:first-child, .ia-topic-list .ia-topic-list-wapper > li:nth-child(2), .ia-topic-list .ia-topic-list-wapper > li:nth-child(3) {
+    -webkit-box-shadow: 3px 3px 3px;
+    -moz-box-shadow: 3px 3px 3px;
+    box-shadow: 3px 3px 3px;
+    padding-top: 2em;
+    height: 10em;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li:first-child::before {
+    content: "第一名";
+    position: absolute;
+    top: 1em;
+    left: 0;
+    padding-left: .2em;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li:nth-child(2)::before {
+    content: "第二名";
+    position: absolute;
+    top: 11em;
+    left: 0;
+    padding-left: .2em;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li:nth-child(3)::before {
+    content: "第三名";
+    position: absolute;
+    top: 21em;
+    left: 0;
+    padding-left: .2em;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li.active {
+    background-color: #E1E1E1;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li:hover {
+    background-color: #E1E1E1;
+}
+
+.ia-topic-list .ia-topic-list-wapper > li:hover {
+    background-color: #E1E1E1;
+}
+
+.ia-topic-list .ia-topic-item-logo {
+    float: left;
+    width: 20%;
+    height: 8em;
+    line-height: 8em;
+    padding: 1%;
+}
+
+.ia-topic-list .ia-topic-item-logo img {
+    width: 4em;
+    height: 4em;
+}
+
+.ia-topic-list .ia-topic-item-info {
+    float: left;
+    width: 60%;
+    height: 8em;
+    margin-left: 1%;
+    padding: 0 2%;
+}
+
+.ia-topic-list .ia-topic-item-info h5 {
+    font-size: 1.1em;
+}
+
+.ia-topic-list .ia-topic-item-info p {
+    font-size: .8em;
+}
+
+.ia-topic-list .ia-topic-item-info .ia-topic-item-level {
+    padding: 0;
+}
+
+.ia-topic-list .ia-topic-item-info .ia-topic-item-level li {
+    display: inline;
+    border-bottom: none;
+    color: #F9983B;
+}
+
+.ia-topic-list .ia-topic-item-info .ia-topic-item-level li:first-child {
+    display: inline;
+    border-bottom: none;
+}
+
+.ia-topic-list .ia-topic-want-say {
+    float: left;
+    width: 19%;
+    padding: 1em 1%;
+    height: 8em;
+    text-align: center;
+}
+
+.ia-topic-list .ia-topic-want-say a img {
+    width: 100%;
+    max-width: 6em;
+}
+
+/** 新建主题 **/
+
+.ia-topic-new-wapper {
+    margin: .3em;
+    padding-top: 1em;
+}
+
+.ia-topic-new-wapper .control-group {
+    margin: .5em;
+}
+
+.ia-topic-new-wapper .control-group > label {
+    /*NEWYB-638*/
+    width: 20%;
+    float: left;
+    font-size: 0.875em;
+    font-weight: bold;
+}
+
+.ia-topic-new-wapper .control-group .controls {
+    width: 80%;
+    float: right;
+}
+
+.ia-topic-new-wapper .control-group .controls-icon {
+    float: left;
+}
+
+.ia-topic-new-wapper .control-group img {
+    width: 69px;
+    height: 69px;
+    border: 1px solid #ccc;
+}
+
+.ia-topic-new-wapper .control-group .controls input {
+    float: right;
+}
+
+.ia-topic-new-wapper .control-group .controls-icon input[type="file"] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    height: 8em;
+}
+
+.ia-topic-new-wapper .control-group .controls textarea {
+    height: 10em;
+    padding: .5em 12px;
+    overflow: auto;
+    word-break: break-all;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.42857;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.ia-topic-new-wapper a {
+    margin-top: 2em;
+}
+
+/** 单个话题 */
+
+.ia-topic-item-top {
+    position: relative;
+    width: 100%;
+    /*-webkit-box-shadow: 3px 3px 3px;
+	-moz-box-shadow: 3px 3px 3px;
+	box-shadow: 3px 3px 3px;*/
+}
+
+.ia-topic-item-top .ia-topic-item-top-img {
+    position: relative;
+    width: 100%;
+}
+
+.ia-topic-item-top .ia-topic-item-top-img .ia-topic-title {
+    color: #fff;
+    text-align: left;
+    float: right;
+    margin-left: 30%;
+    position: absolute;
+    bottom: 0.75em;
+}
+
+.ia-topic-item-top .ia-topic-item-top-img .ia-topic-title h5{
+    margin: 0;
+}
+
+.ia-topic-item-top .ia-topic-item-top-img img {
+    width: 100%;
+}
+
+.ia-topic-item-top .ia-topic-item-top-info {
+    position: relative;
+    padding-bottom: 3em;
+    width: 100%;
+}
+
+.ia-topic-item-top .ia-topic-item-top-info .ia-topic-item-top-info-header {
+    width: 30%;
+    float: left;
+    position: absolute;
+    top: -3em;
+}
+
+.ia-topic-item-top .ia-topic-item-top-info .ia-topic-item-info {
+    width: 70%;
+    float: right;
+}
+
+.ia-topic-item-top .ia-topic-item-top-info .ia-topic-item-info p {
+    margin: 0;
+    color: #BEBEBE;
+    display: block;
+    width: 80%;
+    height: 3.5em;
+    padding-top: .2em;
+    font-size: .75em;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ia-topic-item-top-info-header {
+    text-align: center;
+}
+
+.ia-topic-item-top-info-header img {
+    width: 5.25em;
+    height: 5.25em;
+    border: 1px solid #ccc;
+    vertical-align: baseline;
+}
+
+.ia-topic-item-top-info-header p {
+    margin-bottom: 0;
+    color: #BEBEBE;
+    font-size: .75em;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ia-topic-item-info-bottom {
+    margin-top: 2em;
+    color: #BEBEBE;
+    padding: 0 .8em;
+    font-size: .8em;
+    line-height: 2em;
+}
+
+.ia-topic-item-info-bottom p {
+    float: left;
+    margin: 0;
+}
+
+.ia-topic-item-info-bottom #ia-topic-join {
+    float: right;
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    padding: .2em;
+    color: #333;
+}
+
+.ia-topic-item-info-bottom .delete_item {
+    float: right;
+    margin: 5px 8px;
+}
+
+.ia-topic-item-user-say {
+    position: relative;
+    width: 100%;
+}
+
+.ia-topic-item-user-say p img {
+    width: 15%;
+    margin-right: 1em;
+}
+
+.ia-topic-item-user-say > ul {
+    padding: .5em;
+}
+
+.ia-topic-item-user-say-one {
+    border-bottom: 1px solid #BEBEBE;
+    padding: .2em;
+    background-color: #fff;
+}
+
+.ia-topic-item-user-say-one:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.ia-topic-item-user-say-header p img {
+    float: left;
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+    margin-top: 0.5em;
+}
+
+.ia-topic-item-user-say-header ul {
+    padding: 0.7em 0 0 0.3em;
+    width: 60%;
+    float: left;
+}
+
+.ia-topic-item-user-say-header ul li:not(:first-child) {
+    color: #BEBEBE;
+}
+
+.ia-topic-item-user-say-header ul li {
+    line-height: 1.5em;
+    font-size: 0.875em;
+}
+
+.ia-topic-item-user-say-content {
+    padding: 1em;
+    color: #BEBEBE;
+    word-break: break-all;
+}
+
+.ia-topic-item-user-say-tool {
+    float: right;
+    text-align: right;
+    position: relative;
+}
+
+.ia-topic-item-user-say-tool:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.delete_item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/m/img_sprite_00000.png) -380px -30px;
+}
+
+.ia-topic-item-user-say-one .delete_item {
+    top: -1px;
+    position: relative;
+}
+
+.ia-topic-item-user-say-tool a {
+    float: left;
+    margin-right: 1em;
+    color: #9E9E9E;
+}
+
+.ia-topic-item-user-say-tool a.active {
+    color: #89c539;
+}
+
+.ia-topic-item-user-say-tool a span {
+    margin-right: .2em;
+}
+
+.ia-topic-commit-thumbup {
+    padding: 0 0.8em;
+    margin-top: 1em;
+    height: 2em;
+}
+
+.ia-topic-commit-thumbup a {
+    color: #3C3C3C;
+}
+
+.ia-topic-commit-thumbup a:first-child {
+    float: left;
+}
+
+.ia-topic-commit-thumbup a:last-child {
+    float: right;
+}
+
+.ia-topic-commit-user-reply {
+    padding-bottom: 10em;
+    position: relative;
+}
+
+.ia-topic-commit-user-reply ul {
+    margin: 0;
+    padding: 0 1.4em;
+}
+
+.ia-topic-commit-user-reply ul::before {
+    position: absolute;
+    left: 1.8em;
+    top: -0.7em;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 1em solid #fff;
+}
+
+.ia-topic-commit-user-reply ul li {
+    padding: .5em;
+    background-color: #fff;
+    border-bottom: 1px solid #D4D4D4;
+}
+
+.ia-topic-commit-user-info .ia-topic-commit-user-header {
+    width: 10%;
+    float: left;
+}
+
+.ia-topic-commit-user-info .ia-topic-commit-user-header img {
+    width: 1.75em;
+    height: 1.75em;
+}
+
+.ia-topic-commit-user-info .ia-topic-commit-user-name {
+    width: 50%;
+    float: left;
+    margin-left: .5em;
+    padding-top: .5em;
+}
+
+.ia-topic-commit-user-info .ia-topic-commit-user-name p {
+    font-size: .8em;
+    color: #3C3C3C;
+    line-height: .8em;
+    margin-bottom: 10px;
+}
+
+.ia-topic-commit-user-info a {
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+    color: #c3c3c3;
+    display: block;
+    float: right;
+    text-align: center;
+    width: 15%;
+}
+
+.ia-topic-commit-user-info a span {
+    padding-right: .5em;
+}
+
+.ia-topic-commit-user-info a.active {
+    color: #89c539;
+    border: 1px solid #89c539;
+}
+
+.ia-topic-commit-one-content p {
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", STHeiti, "华文细黑", sans-serif;
+    font-size: 0.9em;
+    word-break: break-all;
+}
+
+/*~~~~~~~~~~ia vote~~~~~~~~~~*/
 
 /*partner invitation card content*/
 .iv_card_info {

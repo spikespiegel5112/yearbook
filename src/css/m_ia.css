@@ -5368,3 +5368,181 @@ a.ia-vote-add-choose-num {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+/*vote details (normal)*/
+.ia-vote-info-top {
+    width: 100%;
+    padding: 1em 0 .1em;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.ia-vote-info-top .ia-vote-info-logo {
+    float: left;
+    width: 20%;
+    padding: .2em;
+}
+
+.ia-vote-info-top .ia-vote-info-logo img {
+    width: 4.5em;
+    height: 4.5em;
+}
+
+.ia-vote-info-top .ia-vote-info-topic {
+    width: 70%;
+    float: left;
+    padding-left: 1em;
+    box-sizing: content-box;
+}
+
+.ia-vote-info-topic h5 {
+    margin: 0;
+    padding: 0 0.3em;
+    font-size: 1em;
+    font-weight: 200;
+    display: block;
+    height: 2.2em;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.ia-vote-info-create {
+    margin-top: 1em;
+    height: 2em;
+}
+
+.ia-vote-info-create img {
+    float: left;
+    width: 2em;
+    height: 2em;
+}
+
+.ia-vote-info-create p.ia-vote-info-cuser {
+    font-size: .75em;
+    line-height: 2.5em;
+    color: #565656;
+    float: left;
+    margin: .2em 0 0 0.5em;
+    display: block;
+    height: 3em;
+}
+
+.ia-vote-info-create p.ia-vote-info-ctime {
+    font-size: .6em;
+    line-height: 2.5em;
+    color: #cdcdcd;
+    float: left;
+    margin: .25em 0 0 0.8em;
+    display: block;
+    height: 3em;
+}
+
+.ia-vote-info-top .ia-vote-type-p {
+    font-size: .875em;
+    padding: .5em;
+    margin: 0;
+}
+
+.ia-vote-info-option {
+    height: 60%;
+    width: 100%;
+    position: relative;
+    background-color: #f5f5f5;
+    overflow: scroll;
+}
+
+.ia-vote-info-option .ia-vote-choose-wapper {
+    padding: .5em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 4em;
+}
+
+.ia-vote-choose-wapper ul {
+    padding: .5em;
+    /*height: 29em;*/
+    max-height: 60%;
+    overflow: scroll;
+    /*margin-bottom: 4em;*/
+}
+
+.ia-vote-choose-wapper ul.ia-vote-common-choose {
+    padding: 0;
+    /*margin-bottom: 4em;*/
+}
+
+.ia-vote-choose-wapper ul li {
+    float: left;
+    width: 50%;
+    margin-top: 1em;
+}
+
+.ia-vote-choose-wapper ul.ia-vote-common-choose li {
+    float: left;
+    width: 100%;
+    margin-top: 0;
+}
+
+.ia-vote-choose-wapper ul.ia-vote-common-choose li .ia-vote-choose-item {
+    width: 96%;
+    height: inherit;
+    line-height: 2.65em;
+    margin: 0;
+    text-align: left;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    box-shadow: none;
+    background-color: #f1f1f1;
+}
+
+.ia-vote-choose-wapper ul.ia-vote-common-choose li .ia-vote-choose-item.odd {
+    background-color: #e2e2e2;
+}
+
+.ia-vote-choose-wapper ul.ia-vote-common-choose.ia-vote-common-result-show li .ia-vote-choose-item {
+    height: auto;
+}
+
+.ia-vote-choose-item {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    background-color: #f1f1f1;
+    border: 1px solid #fff;
+}
+
+.ia-vote-choose-item a {
+    color: #9f9f9f;
+    font-size: .875em;
+}
+
+.ia-vote-choose-item.choose {
+    background-color: #d4f8a3;
+}
+
+.ia-vote-choose-item img {
+    width: 90%;
+    height: 6em;
+    margin-top: .5em;
+}
+
+.ia-vote-choose-item input[type=radio], .ia-vote-choose-item input[type=checkbox] {
+    /*font-size: 5em;*/
+    margin: 0 0.4em 0 1em;
+}
+
+.ia-vote-choose-item p {
+    text-align: left;
+    margin-top: .2em;
+    margin-left: .5em;
+}
+
+.ia-vote-info-bottom {
+    width: 100%;
+    height: 4em;
+    background-color: #f5f5f5;
+    position: fixed;
+    bottom: 0;
+    padding-top: 1em;
+}

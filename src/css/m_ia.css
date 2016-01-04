@@ -3875,6 +3875,341 @@
     padding: 0;
 }
 
+.inter-action-friend-leave-topic-wapper .active {
+    background-color: #cfcfcf;
+}
+
+/*leave msg*/
+#choose-leave,
+#choose-topic {
+    display: block;
+    width: 8em;
+    text-align: center;
+    height: 3em;
+    line-height: 3em;
+    color: #3c3c3c;
+    margin: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    font-size: 0.875em;
+}
+
+#choose-leave.active, #choose-topic.active {
+    color: #fff;
+}
+
+#choose-leave span {
+    margin-left: .4em;
+}
+/*收到的赠言*/
+.mark-sub-list {
+    position: absolute;
+    top: 3em;
+    left: 0;
+    width: 7.67em;
+    padding-left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.mark-sub-list li {
+    margin-left: 0;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    background-color: #fff;
+    height: 2em;
+    line-height: 2em;
+}
+
+.mark-sub-list li:hover {
+    background-color: #CFCFCF;
+}
+
+.mark-sub-list li a {
+    color: #3c3c3c;
+    font-size: .9em;
+}
+
+.mark-sub-list li:hover a {
+    color: #fff;
+    font-size: .9em;
+}
+
+.leave-content-list-wapper {
+    width: 100%;
+    position: relative;
+}
+
+.leave-content-list-wapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.leave-content-list-wapper .leave-content-list {
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 0 0 40px 0;
+}
+
+.leave-content-list-wapper .leave-content-list .leave-content-list-item {
+    margin: 5px;
+    display: block;
+    width: 30%;
+    min-height: 8em;
+    font-size: 0.8em;
+    overflow: hidden;
+    position: absolute;
+    border-bottom-right-radius: 5px;
+    padding: 8px;
+    box-shadow: 0 0 5px #D8C54C;
+    box-sizing: border-box;
+}
+
+.leave-content-list-item.yellow {
+    background: url(../img/m/words/yellow.jpg) repeat-y;
+}
+
+.leave-content-list-item.blue {
+    background: url(../img/m/words/blue.jpg) repeat-y;
+}
+
+.leave-content-list-item.grass {
+    background: url(../img/m/words/grass.jpg) repeat-y;
+}
+
+.leave-content-list-item.orange {
+    background: url(../img/m/words/orange.jpg) repeat-y;
+}
+
+.leave-content-list-item.purple {
+    background: url(../img/m/words/purple.jpg) repeat-y;
+}
+
+.leave-content-list-item .leave-content {
+    overflow: hidden;
+}
+
+.leave-content-list-item .leave-content-name {
+    display: block;
+    color: black;
+}
+
+.leave-content-list-item .leave-content-name:before {
+    content: "--";
+}
+
+.leave-content-list-item p:not(.leave-header) {
+    display: block;
+    width: 100%;
+    /*min-height: 5em;*/
+    margin-top: .5em;
+    word-wrap: break-word;
+    line-height: 1.5em;
+    font-size: 0.875em;
+}
+
+.leave-content-list-item p.leave-header {
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+.leave-content-list-item p.leave-header img {
+    width: 2em;
+    height: 2em;
+}
+
+.leave-bottom-tool {
+    margin-top: .5em;
+    border-top: 1px solid #3c3c3c;
+    padding-top: .5em;
+}
+
+.leave-bottom-tool a.leave-back {
+    display: block;
+    width: 4em;
+    padding: .3em;
+    color: #fff;
+    background-color: #b2b2b2;
+    border-radius: 5px;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.leave-bottom-tool a.leave-back:hover {
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.leave-bottom-tool a.leave-remove {
+    display: block;
+    padding: .3em 0;
+    width: 1.5em;
+    text-align: right;
+    color: red;
+}
+
+.leave-bottom-tool a.leave-remove:hover {
+    color: #fff;
+}
+
+.inter-action-friend-topic-list {
+    padding: 0;
+}
+
+.inter-action-friend-topic-list ul {
+    padding: 0;
+    border-bottom: none;
+}
+
+.leave-content-list .inter-action-friend-topic-list-item {
+    position: relative;
+    padding: 0 1em;
+    margin: 1em 0;
+    width: 100%;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+/*参与的话题*/
+.inter-action-friend-topic-list-item .topic {
+    font-weight: 200;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/*.inter-action-friend-topic-list-item .topic-item-hr {
+    margin-top: 2em;
+}*/
+
+.inter-action-friend-topic-list-item .topic-item h5:after {
+    content: ":";
+}
+
+.inter-action-friend-topic-list-item .topic-item .topic-user-say {
+    text-indent: 2em;
+    font-size: 0.875em;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.inter-action-friend-topic-list-item .topic-item .topic-user-time {
+    padding-right: 2em;
+    font-size: .8em;
+    color: #c3c3c3;
+    margin-bottom: 10px;
+}
+
+.grid-item {
+    width: 30%;
+}
+
+.grid-item--width2 {
+    width: 400px;
+}
+
+.topic-user-time span {
+    font-size: 1.5em;
+    float: right;
+    margin-right: .8em;
+}
+
+.topic-user-time span.active {
+    color: #89c539;
+    background-color: #fff;
+}
+
+.topic-user-time .delete_item {
+    float: right;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: -2px;
+}
+
+.inter-action-friend-topic-list-item .topic-item .topic-user-commit {
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.topic-user-thumpup:before {
+    position: absolute;
+    left: 0.8em;
+    top: -0.6em;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 1em solid #f7f7f7;
+}
+
+.topic-user-commit ul {
+    border-bottom: none;
+    padding: .3em;
+}
+
+.topic-user-commit .topic-user-thumpup {
+    height: 3em;
+    line-height: 3em;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+.topic-user-commit .topic-user-thumpup.no-reply {
+    border-bottom: none;
+}
+
+.topic-user-commit .topic-user-thumpup ul li {
+    display: inline;
+    margin-right: .2em;
+}
+
+.topic-user-commit .topic-user-thumpup .thump-up-name {
+    color: #007ce5;
+}
+
+.topic-user-commit .topic-user-thumpup .thump-up-name:after {
+    content: ",";
+    color: #007ce5;
+}
+
+.topic-user-commit .topic-user-thumpup ul li:last-child .thump-up-name:after {
+    content: " ";
+    color: #007ce5;
+}
+
+.topic-user-commit .topic-user-thumpup ul li {
+    color: #89c539;
+}
+
+.topic-user-commit .topic-user-reply {
+    padding: .5em;
+}
+
+.topic-user-commit .topic-user-reply ul li {
+    margin-top: .2em;
+    line-height: 1.5em;
+    font-size: 0.875em;
+}
+
+.topic-user-commit .topic-user-reply .reply-name {
+    color: #007ce5;
+}
+
+.topic-user-commit .topic-user-reply .reply-name:after {
+    content: ":";
+    color: #007ce5;
+    margin-right: .2em;
+}
+
 /*partner invitation card content*/
 .iv_card_info {
     display: none;

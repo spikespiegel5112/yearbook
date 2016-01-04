@@ -3,10 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <title>加入书册错误</title>
     <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
     <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
@@ -20,6 +21,7 @@
 
 <div class='ybwechatheader_wrapper'>
     <a class='left_btn back_btn' href='javascript:;'></a>
+
     <p>加入书册发生错误</p>
 </div>
 
@@ -27,6 +29,7 @@
     <div class="join_error">
         <div class="error_info">
             <img src="../img/m/join_error_books.png">
+
             <div class="txt">
                 <!--h1>对不起，不能加入指定的书册！</h1-->
                 <p>啊哦！您所输入邀请码不正确，请重新获取正确的邀请码！</p>
@@ -36,23 +39,26 @@
             <ul>
                 <li>
                     <p class="question">1、如何获取正确的书册邀请码？</p>
+
                     <div class="answer">
                         <p>答：用户成功创建书册后，会生成一段由数字及字母组成的书册邀请码，可通过各大社交平台以及链接方式分享给小伙伴们，也可以向书册创建者直接索取该邀请码来加入书册。</p>
                     </div>
                 </li>
                 <li>
                     <p class="question">2、在哪里能找到书册邀请码？</p>
+
                     <div class="answer">
                         <p>答：(1)创建书册成功时，可以看到该书册的邀请码。</p>
+
                         <p>(2)进入书册空间后，查看伙伴页面，点击‘邀请小伙伴’按钮，可以查看到该书册的邀请码以及邀请加入的链接。</p>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="input_code">
-            <form name="invitationForm" >
-                <input type="text" placeholder="请输入邀请码..."  name="identifyCode" type='text' minlength=5 maxlength=16 required />
-                <label id="identifyCode-error" class="error cm_validate_error" for="identifyCode" >邀请码最少不会少于5个字符</label>
+            <form name="invitationForm">
+                <input type="text" placeholder="请输入邀请码..." id="identifyCode" type='text' minlength=5 maxlength=16 required/>
+                <label id="identifyCode-error" class="error cm_validate_error" for="identifyCode">邀请码最少不会少于5个字符</label>
                 <button class="button button-rounded button-highlight yb_book_btn" type="submit">加入书册</button>
             </form>
         </div>

@@ -3,10 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <title>设置邀请卡内容</title>
     <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
     <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
@@ -22,6 +23,7 @@
 
 <div class='ybwechatheader_wrapper'>
     <a class='left_btn back_btn' href='javascript:;'></a>
+
     <p>邀请卡内容设置</p>
 </div>
 
@@ -35,6 +37,7 @@
                 <label><input type="checkbox" name="basic_info">邮箱</label>
                 <label><input type="checkbox" name="basic_info">QQ</label>
                 <label class="user_defined"><input type="checkbox" name="basic_info">自定义内容</label>
+
                 <div class="input_group">
                     <input class="form-control" type="text" placeholder="请输入想要收集的信息名称" disabled="disabled">
                     <span class="icon-plus-sign"></span>
@@ -45,6 +48,7 @@
                 <span>是否要求上传照片：</span>
                 <label><input class="user_defined" type="radio" name="uploadphoto" value="yes">是</label>
                 <label><input type="radio" name="uploadphoto" value="no" checked="checked">否</label>
+
                 <div class="input_group">
                     <label>
                         设置上传数量：
@@ -59,6 +63,7 @@
                 <label>
                     设置话题主题：
                 </label>
+
                 <div class="input_group">
                     <input class="form-control" type="text" placeholder="请输入主题名称" disabled="disabled">
                     <span class="icon-plus-sign"></span>
@@ -102,11 +107,11 @@
     }
 
     //user defined
-    function userDefinedTitle(){
-        $('.user_defined').on('ifChecked',function(){
+    function userDefinedTitle() {
+        $('.user_defined').on('ifChecked', function () {
             $(this).parent().parent().parent().find('.input_group input[type=text]').removeAttr('disabled');
         });
-        $('.user_defined').on('ifUnchecked',function(){
+        $('.user_defined').on('ifUnchecked', function () {
             $(this).parent().parent().parent().find('.input_group input[type=text]').attr('disabled', 'disabled');
             $('.mid_left .icon-plus-sign').unbind();
         })
@@ -114,15 +119,15 @@
 
     //添加删除信息、主题名称
     function addTopicTitle() {
-        $('.set_card_content').on('click','.icon-plus-sign',function () {
-            if($(this).prev('input').attr('disabled') != 'disabled'){
+        $('.set_card_content').on('click', '.icon-plus-sign', function () {
+            if ($(this).prev('input').attr('disabled') != 'disabled') {
                 $(this).parent().clone().appendTo($(this).parent().parent());
                 $(this).addClass('icon-minus-sign').removeClass('icon-plus-sign');
             }
         });
 
-        $('.set_card_content').on('click','.icon-minus-sign',function () {
-            if($(this).prev('input').attr('disabled') != 'disabled') {
+        $('.set_card_content').on('click', '.icon-minus-sign', function () {
+            if ($(this).prev('input').attr('disabled') != 'disabled') {
                 $(this).parent().remove();
             }
         });
@@ -130,11 +135,11 @@
     /*
      * 设置完成后 弹出分享页面
      * */
-    function setFinishCallBack(){
-        $('.set_finished').click(function(){
+    function setFinishCallBack() {
+        $('.set_finished').click(function () {
             $('.pop_share_container').show();
         })
-        $('.share_container .close').click(function(){
+        $('.share_container .close').click(function () {
             $('.pop_share_container').hide();
         })
     }

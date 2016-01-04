@@ -2,514 +2,549 @@
 <html>
 
 <head lang="en">
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<title>互动-赠言墙</title>
-	<link rel="stylesheet" href="../css/m_reset.css" type="text/css" />
-	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
-	<link rel="stylesheet" href="../css/m_ia.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>互动-赠言墙</title>
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_ia.css" type="text/css"/>
 
-	<link rel="stylesheet" href="../css/m_jquery.sureInput.css" type="text/css" />
-	<link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
-	<link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/m_jquery.sureInput.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
 </head>
 
 <body class="bg-fff">
-	<div class='ybwechatheader_wrapper'>
-		<a class='left_btn back_btn' href='javascript:;'></a>
-		<p>赠言墙</p>
-	</div>
-	<div class="inter-action-main-container">
-		<div class="inter-action-friend-info-wapper">
-			<div class="leave-wall-say">
-				<textarea type="text" class="" id="leave-say-some" maxlength="300" placeholder="说点什么..."></textarea>
-				<div class="input-group pull-left">
-					<span class="input-group-addon" id="basic-addon1">@</span>
-					<a class="leave-all-choose-user">张三<span class="icon-chevron-down"></span></a>
-				</div>
-				<div class="leave-all-choose-user-all">
-					<ul>
-						<li>张三张</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三</li>
-						<li>张三张三</li>
-						<li>张三</li>
-						<li>张三</li>
-					</ul>
-				</div>
-				<a class="btn btn-default pull-right">发表</a>
-			</div>
-		</div>
-		<!-- 个人信息 end-->
-		<div class="clearfix"></div>
-		<div class="inter-action-friend-leave-topic-wapper">
-			<ul class="list-inline">
-				<li><a id="all-leave" class="active">全部赠言(<span>30</span>)</a></li>
-				<li><a id="send-leave">我发出的(<span>20</span>)</a></li>
-				<li><a id="recv-leave">我收到的(<span>10</span>)</a></li>
-			</ul>
-			<div class="ia-empty-show">
-				<p class="ia-empty-first">还没写过赠言?</p>
-				<p class="ia-empty-sub">思考一下,去发言吧</p>
-				<a class="btn ia-empty-btn">发表</a>
-			</div>
-			<!-- 全部 -->
-			<div id="inter-action-friend-leave-content">
-				<div class="leave-content-list-wapper">
-					<ul class="leave-content-list grid">
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item grass">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item grass">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item orange">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- 发出 -->
-			<div id="inter-action-friend-leave-content-send">
-				<div class="leave-content-list-wapper">
-					<ul class="leave-content-list grid">
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p class="leave-header"><img src="../img/m/head-portrait.jpg" class="img-circle"><span>李四</span></p>
-								<div class="clearfix"></div>
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-							</div>
-							<div class="leave-bottom-tool">
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- 收到 -->
-			<div id="inter-action-friend-leave-content-recv">
-				<div class="leave-content-list-wapper">
-					<ul class="leave-content-list grid">
-						<li class="leave-content-list-item grid-item blue">
-							<div class="leave-content ">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item yellow">
-							<div class="leave-content">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item blue">
-							<div class="leave-content ">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item grass">
-							<div class="leave-content ">
-								<p>你好帅好晒</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item grass">
-							<div class="leave-content">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item orange">
-							<div class="leave-content ">
-								<p>你好帅好晒</p>
-								<span class="leave-content-name pull-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content ">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name pull-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-						<li class="leave-content-list-item grid-item purple">
-							<div class="leave-content">
-								<p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒 你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
-								</p>
-								<span class="leave-content-name float-right">李四</span>
-							</div>
-							<div class="clearfix"></div>
-							<div class="leave-bottom-tool">
-								<a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
-								<a class="pull-right leave-remove"><span class="icon-remove"></span></a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- 赠言 end -->
-		</div>
-	</div>
-	<div class="loading" style="display: none;">
-		<img src="../img/m/loading.gif"><strong>加载中</strong>
-	</div>
-	<div class="clearfix"></div>
-	<!-- 用户发表留言之类的输入框 -->
-	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/m_jquery.suerInput.js"></script>
-	<script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
-	<script>
-	var pageType = 1;
-	$(function() {
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'></a>
 
-		showmore('#inter-action-friend-leave-content', '#inter-action-friend-leave-content-send', '#inter-action-friend-leave-content-recv', '.leave-content-list');
-		ialeavewall();
+    <p>赠言墙</p>
+</div>
+<div class="inter-action-main-container">
+    <div class="inter-action-friend-info-wapper">
+        <div class="leave-wall-say">
+            <textarea type="text" class="" id="leave-say-some" maxlength="300" placeholder="说点什么..."></textarea>
 
-	})
+            <div class="input-group pull-left">
+                <span class="input-group-addon" id="basic-addon1">@</span>
+                <a class="leave-all-choose-user">张三<span class="icon-chevron-down"></span></a>
+            </div>
+            <div class="leave-all-choose-user-all">
+                <ul>
+                    <li>张三张</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                    <li>张三张三</li>
+                    <li>张三</li>
+                    <li>张三</li>
+                </ul>
+            </div>
+            <a class="btn btn-default pull-right">发表</a>
+        </div>
+    </div>
+    <!-- 个人信息 end-->
+    <div class="clearfix"></div>
+    <div class="inter-action-friend-leave-topic-wapper">
+        <ul class="list-inline">
+            <li><a id="all-leave" class="active">全部赠言(<span>30</span>)</a></li>
+            <li><a id="send-leave">我发出的(<span>20</span>)</a></li>
+            <li><a id="recv-leave">我收到的(<span>10</span>)</a></li>
+        </ul>
+        <div class="ia-empty-show">
+            <p class="ia-empty-first">还没写过赠言?</p>
 
-	function ialeavewall() {
-		$('.grid').eq(pageType - 1).masonry();
-		$('#all-leave').on('click', function() {
-			pageType = 1;
-			$('.grid').eq(pageType - 1).masonry();
-			$('#all-leave').addClass('active');
-			$('#send-leave').removeClass('active');
-			$('#recv-leave').removeClass('active');
-			$('#inter-action-friend-leave-content').show();
-			$('#inter-action-friend-leave-content-send').hide();
-			$('#inter-action-friend-leave-content-recv').hide();
-		});
-		$('#send-leave').on('click', function() {
-			pageType = 2;
-			$('#all-leave').removeClass('active');
-			$('#send-leave').addClass('active');
-			$('#recv-leave').removeClass('active');
-			$('#inter-action-friend-leave-content').hide();
-			$('#inter-action-friend-leave-content-send').show();
-			$('#inter-action-friend-leave-content-recv').hide();
-			$('.grid').eq(pageType - 1).masonry();
-		});
-		$('#recv-leave').on('click', function() {
-			pageType = 3;
-			$('#all-leave').removeClass('active');
-			$('#send-leave').removeClass('active');
-			$('#recv-leave').addClass('active');
-			$('#inter-action-friend-leave-content').hide();
-			$('#inter-action-friend-leave-content-send').hide();
-			$('#inter-action-friend-leave-content-recv').show();
-			$('.grid').eq(pageType - 1).masonry();
-		});
-		$('#inter-action-send-leave ').sureInput({
-			save: function(value, sDiv) {
-				if (value != null && value != "")
-					alert(value)
-			}
-		});
-		$('.topic-user-time span. icon-comment, .leave-back').sureInput({
-			type: "multi",
-			save: function(value, sDiv) {
-				if (value != null && value != "")
-					alert(value)
-			},
-			cancel: function() {
-				alert("cancel click");
-			}
-		});
-		$('.leave-all-choose-user').on('click', function() {
-			if ($('.leave-all-choose-user-all').is(':hidden'))
-				$('.leave-all-choose-user-all').fadeIn();
-			else
-				$('.leave-all-choose-user-all').fadeOut();
-		});
-		$('.leave-all-choose-user-all ul li').on('click', function() {
-			$('.leave-all-choose-user-all').fadeOut();
-		});
-	}
+            <p class="ia-empty-sub">思考一下,去发言吧</p>
+            <a class="btn ia-empty-btn">发表</a>
+        </div>
+        <!-- 全部 -->
+        <div id="inter-action-friend-leave-content">
+            <div class="leave-content-list-wapper">
+                <ul class="leave-content-list grid">
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
 
-	function showmore(classname1, classname2, classname3, ulClassname) {
-		window.onscroll = function() {
-			var bottomFlag = $(document).scrollTop() >= ($(document).height() - $(window).height());
-			//判断页面到达底部
-			if (bottomFlag) {
-				if (pageType == 1) {
-					$('.loading').show();
-					var liEl = "<li class='leave-content-list-item grid-item new'><div class='leave-content'><p class='leave-header'><img src='../img/m/head-portrait.jpg' class='img-circle'><span>李四</span></p><div class='clearfix'></div><p>你好帅好帅好晒你好帅好晒你好帅好晒</p><span class='leave-content-name float-right'>李四</span></div><div class='clearfix'></div><div class='leave-bottom-tool'><a class='pull-left leave-back'><span class='icon-pencil'></span>回赠</a><a class='pull-right leave-remove'><span class='icon-remove'></span></a></div></li>";
-					setTimeout(function() {
-						appendLi(liEl, classname1, ulClassname);
-						$('.loading').hide();
-					}, 500);
-				} else if (pageType == 2) {
-					$('.loading').show();
-					var liEl = "<li class='leave-content-list-item new'><div class='leave-content'><p class='leave-header'><img src='../img/m/head-portrait.jpg' class='img-circle'><span>李四</span></p><div class='clearfix'></div><p>你好帅好帅好晒你好帅好晒你好帅好晒</p><span class='leave-content-name float-right'>李四</span></div><div class='clearfix'></div><div class='leave-bottom-tool'><a class='pull-right leave-remove'><span class='icon-remove'></span></a></div></li>";
-					setTimeout(function() {
-						appendLi(liEl, classname2, ulClassname);
-						$('.loading').hide();
-					}, 500);
-				} else if (pageType == 3) {
-					$('.loading').show();
-					var liEl = "<li class='leave-content-list-item new'><div class='leave-content'><p class='leave-header'><img src='../img/m/head-portrait.jpg' class='img-circle'><span>李四</span></p><div class='clearfix'></div><p>你好帅好帅好晒你好帅好晒你好帅好晒</p><span class='leave-content-name float-right'>李四</span></div><div class='clearfix'></div><div class='leave-bottom-tool'><a class='pull-left leave-back'><span class='icon-pencil'></span>回赠</a><a class='pull-right leave-remove'><span class='icon-remove'></span></a></div></li>";
-					setTimeout(function() {
-						appendLi(liEl, classname3, ulClassname);
-						$('.loading').hide();
-					}, 500);
-				}
-			}
+                            <div class="clearfix"></div>
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item grass">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
 
-			function appendLi(liEl, classname, ulClassname) {
-				var colorArr = ['yellow', 'blue', 'orange', 'purple'];
-				var count = Math.floor(Math.random() * 5); //每次载入的数量
-				var ulEl = $(classname).find(ulClassname);
-				for (var i = 0; i < 5; i++) {
-					var colorIndex = Math.floor(Math.random() * 4);
-					var colorName = colorArr[colorIndex];
-					var $liEl = $(liEl);
-					ulEl.append($liEl).masonry('appended', $liEl);
-					$(classname).find('.new').addClass(colorName).removeClass('new');
-					//找到新添加进的li，给它加颜色
-				}
-			}
+                            <div class="clearfix"></div>
+                            <p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
 
-			// function appendLi(liEl, classname, ulClassname) {
-			// 	var colorArr = ['yellow', 'blue', 'orange', 'purple'];
-			// 	var count = Math.floor(Math.random() * 5); //每次载入的数量
-			// 	for (var i = 0; i < count; i++) {
-			// 		var ulLen = [];
-			// 		var colorIndex = Math.floor(Math.random() * 4);
-			// 		var colorName = colorArr[colorIndex];
-			// 		for (var j = 0; j < 3; j++) { //求出每个ul当前的高度
-			// 			ulLen[j] = $(classname + ' ul').eq(j).height();
-			// 		}
-			// 		var minimal = (compareMin(ulLen[0], ulLen[1], ulLen[2])); //比较哪个ul最短
-			// 		$(classname).find(ulClassname).eq(minimal).append(liEl);
-			// 		$(classname).find('.new').addClass(colorName).removeClass('new');
-			// 		//找到新添加进的li，给它加颜色
-			// 	}
-			// }
+                            <div class="clearfix"></div>
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item grass">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
 
-			// function compareMin(a, b, c) {
-			// 	var min = 0,
-			// 		index = 0;
-			// 	if (a <= b) {
-			// 		min = a;
-			// 		index = 0;
-			// 	} else {
-			// 		min = b;
-			// 		index = 1;
-			// 	}
-			// 	if (c < min) {
-			// 		max = c;
-			// 		index = 2;
-			// 	}
-			// 	return index;
-			// }
-		}
-	}
-	</script>
+                            <div class="clearfix"></div>
+                            <p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item orange">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
+
+                            <div class="clearfix"></div>
+                            <p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
+
+                            <div class="clearfix"></div>
+                            <p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
+
+                            <div class="clearfix"></div>
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
+
+                            <div class="clearfix"></div>
+                            <p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
+
+                            <div class="clearfix"></div>
+                            <p>你好帅好帅好晒你好帅好晒你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 发出 -->
+        <div id="inter-action-friend-leave-content-send">
+            <div class="leave-content-list-wapper">
+                <ul class="leave-content-list grid">
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p class="leave-header"><img src="../img/m/head-portrait.jpg"
+                                                         class="img-circle"><span>李四</span></p>
+
+                            <div class="clearfix"></div>
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                        </div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收到 -->
+        <div id="inter-action-friend-leave-content-recv">
+            <div class="leave-content-list-wapper">
+                <ul class="leave-content-list grid">
+                    <li class="leave-content-list-item grid-item blue">
+                        <div class="leave-content ">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item yellow">
+                        <div class="leave-content">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item blue">
+                        <div class="leave-content ">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item grass">
+                        <div class="leave-content ">
+                            <p>你好帅好晒</p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item grass">
+                        <div class="leave-content">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item orange">
+                        <div class="leave-content ">
+                            <p>你好帅好晒</p>
+                            <span class="leave-content-name pull-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content ">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name pull-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                    <li class="leave-content-list-item grid-item purple">
+                        <div class="leave-content">
+                            <p>你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                                你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒你好帅好晒
+                            </p>
+                            <span class="leave-content-name float-right">李四</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="leave-bottom-tool">
+                            <a class="pull-left leave-back"><span class="icon-pencil"></span>回赠</a>
+                            <a class="pull-right leave-remove"><span class="icon-remove"></span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 赠言 end -->
+    </div>
+</div>
+<div class="loading" style="display: none;">
+    <img src="../img/m/loading.gif"><strong>加载中</strong>
+</div>
+<div class="clearfix"></div>
+<!-- 用户发表留言之类的输入框 -->
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/m_jquery.suerInput.js"></script>
+<script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
+<script>
+    var pageType = 1;
+    $(function () {
+
+        showmore('#inter-action-friend-leave-content', '#inter-action-friend-leave-content-send', '#inter-action-friend-leave-content-recv', '.leave-content-list');
+        ialeavewall();
+
+    })
+
+    function ialeavewall() {
+        $('.grid').eq(pageType - 1).masonry();
+        $('#all-leave').on('click', function () {
+            pageType = 1;
+            $('.grid').eq(pageType - 1).masonry();
+            $('#all-leave').addClass('active');
+            $('#send-leave').removeClass('active');
+            $('#recv-leave').removeClass('active');
+            $('#inter-action-friend-leave-content').show();
+            $('#inter-action-friend-leave-content-send').hide();
+            $('#inter-action-friend-leave-content-recv').hide();
+        });
+        $('#send-leave').on('click', function () {
+            pageType = 2;
+            $('#all-leave').removeClass('active');
+            $('#send-leave').addClass('active');
+            $('#recv-leave').removeClass('active');
+            $('#inter-action-friend-leave-content').hide();
+            $('#inter-action-friend-leave-content-send').show();
+            $('#inter-action-friend-leave-content-recv').hide();
+            $('.grid').eq(pageType - 1).masonry();
+        });
+        $('#recv-leave').on('click', function () {
+            pageType = 3;
+            $('#all-leave').removeClass('active');
+            $('#send-leave').removeClass('active');
+            $('#recv-leave').addClass('active');
+            $('#inter-action-friend-leave-content').hide();
+            $('#inter-action-friend-leave-content-send').hide();
+            $('#inter-action-friend-leave-content-recv').show();
+            $('.grid').eq(pageType - 1).masonry();
+        });
+        $('#inter-action-send-leave ').sureInput({
+            save: function (value, sDiv) {
+                if (value != null && value != "")
+                    alert(value)
+            }
+        });
+        $('.topic-user-time span. icon-comment, .leave-back').sureInput({
+            type: "multi",
+            save: function (value, sDiv) {
+                if (value != null && value != "")
+                    alert(value)
+            },
+            cancel: function () {
+                alert("cancel click");
+            }
+        });
+        $('.leave-all-choose-user').on('click', function () {
+            if ($('.leave-all-choose-user-all').is(':hidden'))
+                $('.leave-all-choose-user-all').fadeIn();
+            else
+                $('.leave-all-choose-user-all').fadeOut();
+        });
+        $('.leave-all-choose-user-all ul li').on('click', function () {
+            $('.leave-all-choose-user-all').fadeOut();
+        });
+    }
+
+    function showmore(classname1, classname2, classname3, ulClassname) {
+        window.onscroll = function () {
+            var bottomFlag = $(document).scrollTop() >= ($(document).height() - $(window).height());
+            //判断页面到达底部
+            if (bottomFlag) {
+                if (pageType == 1) {
+                    $('.loading').show();
+                    var liEl = "<li class='leave-content-list-item grid-item new'><div class='leave-content'><p class='leave-header'><img src='../img/m/head-portrait.jpg' class='img-circle'><span>李四</span></p><div class='clearfix'></div><p>你好帅好帅好晒你好帅好晒你好帅好晒</p><span class='leave-content-name float-right'>李四</span></div><div class='clearfix'></div><div class='leave-bottom-tool'><a class='pull-left leave-back'><span class='icon-pencil'></span>回赠</a><a class='pull-right leave-remove'><span class='icon-remove'></span></a></div></li>";
+                    setTimeout(function () {
+                        appendLi(liEl, classname1, ulClassname);
+                        $('.loading').hide();
+                    }, 500);
+                } else if (pageType == 2) {
+                    $('.loading').show();
+                    var liEl = "<li class='leave-content-list-item new'><div class='leave-content'><p class='leave-header'><img src='../img/m/head-portrait.jpg' class='img-circle'><span>李四</span></p><div class='clearfix'></div><p>你好帅好帅好晒你好帅好晒你好帅好晒</p><span class='leave-content-name float-right'>李四</span></div><div class='clearfix'></div><div class='leave-bottom-tool'><a class='pull-right leave-remove'><span class='icon-remove'></span></a></div></li>";
+                    setTimeout(function () {
+                        appendLi(liEl, classname2, ulClassname);
+                        $('.loading').hide();
+                    }, 500);
+                } else if (pageType == 3) {
+                    $('.loading').show();
+                    var liEl = "<li class='leave-content-list-item new'><div class='leave-content'><p class='leave-header'><img src='../img/m/head-portrait.jpg' class='img-circle'><span>李四</span></p><div class='clearfix'></div><p>你好帅好帅好晒你好帅好晒你好帅好晒</p><span class='leave-content-name float-right'>李四</span></div><div class='clearfix'></div><div class='leave-bottom-tool'><a class='pull-left leave-back'><span class='icon-pencil'></span>回赠</a><a class='pull-right leave-remove'><span class='icon-remove'></span></a></div></li>";
+                    setTimeout(function () {
+                        appendLi(liEl, classname3, ulClassname);
+                        $('.loading').hide();
+                    }, 500);
+                }
+            }
+
+            function appendLi(liEl, classname, ulClassname) {
+                var colorArr = ['yellow', 'blue', 'orange', 'purple'];
+                var count = Math.floor(Math.random() * 5); //每次载入的数量
+                var ulEl = $(classname).find(ulClassname);
+                for (var i = 0; i < 5; i++) {
+                    var colorIndex = Math.floor(Math.random() * 4);
+                    var colorName = colorArr[colorIndex];
+                    var $liEl = $(liEl);
+                    ulEl.append($liEl).masonry('appended', $liEl);
+                    $(classname).find('.new').addClass(colorName).removeClass('new');
+                    //找到新添加进的li，给它加颜色
+                }
+            }
+
+            // function appendLi(liEl, classname, ulClassname) {
+            // 	var colorArr = ['yellow', 'blue', 'orange', 'purple'];
+            // 	var count = Math.floor(Math.random() * 5); //每次载入的数量
+            // 	for (var i = 0; i < count; i++) {
+            // 		var ulLen = [];
+            // 		var colorIndex = Math.floor(Math.random() * 4);
+            // 		var colorName = colorArr[colorIndex];
+            // 		for (var j = 0; j < 3; j++) { //求出每个ul当前的高度
+            // 			ulLen[j] = $(classname + ' ul').eq(j).height();
+            // 		}
+            // 		var minimal = (compareMin(ulLen[0], ulLen[1], ulLen[2])); //比较哪个ul最短
+            // 		$(classname).find(ulClassname).eq(minimal).append(liEl);
+            // 		$(classname).find('.new').addClass(colorName).removeClass('new');
+            // 		//找到新添加进的li，给它加颜色
+            // 	}
+            // }
+
+            // function compareMin(a, b, c) {
+            // 	var min = 0,
+            // 		index = 0;
+            // 	if (a <= b) {
+            // 		min = a;
+            // 		index = 0;
+            // 	} else {
+            // 		min = b;
+            // 		index = 1;
+            // 	}
+            // 	if (c < min) {
+            // 		max = c;
+            // 		index = 2;
+            // 	}
+            // 	return index;
+            // }
+        }
+    }
+</script>
 </body>
 
 </html>

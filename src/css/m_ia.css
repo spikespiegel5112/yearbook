@@ -5546,3 +5546,223 @@ a.ia-vote-add-choose-num {
     bottom: 0;
     padding-top: 1em;
 }
+
+/*vote result*/
+.ia-vote-common-result-show .ia-vote-choose-item p {
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    line-height: 1.5em;
+    word-break: break-all;
+}
+
+.ia-vote-result-percent {
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    font-size: .875em;
+}
+
+.ia-vote-result-percent .ia-vote-result-percent-show {
+    margin-left: 2%;
+    width: 75%;
+    float: left;
+}
+
+.ia-vote-result-percent-show span.percent.first {
+    width: 60%;
+    background-color: #d95350;
+}
+
+.ia-vote-result-percent-show span.percent.second {
+    width: 60%;
+    background-color: #f0ad4d;
+}
+
+.ia-vote-result-percent-show span.percent.third {
+    width: 60%;
+    background-color: #5cb75c;
+}
+
+.ia-vote-result-percent-show span.percent {
+    display: block;
+    min-width: 1%;
+    height: 1em;
+    float: left;
+    margin-top: .6em;
+    background-color: #c3c3c3;
+}
+
+.ia-vote-result-percent-show span.percent.common {
+    max-width: 99%;
+    width: 40%;
+    background-color: #fff;
+}
+
+.ia-vote-choose-item .ia-vote-result {
+    text-align: center;
+    color: #007ce5;
+    font-size: 1em;
+}
+
+/*comment of vote result */
+.ia-vote-commit {
+    position: relative;
+    top: -4em;
+    background-color: #fff;
+}
+
+.ia-vote-commit-tool {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.ia-vote-commit-tool a {
+    color: #9e9e9e;
+    font-size: 1em;
+    display: block;
+    /*width: 3em;*/
+    text-align: center;
+    margin-left: .5em;
+    float: left;
+    min-width: 3em;
+}
+
+.ia-vote-commit-tool a.active {
+    color: #89c539;
+}
+
+.ia-vote-commit-tool a span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /*vertical-align: top;*/
+}
+
+.ia-vote-commit span.num {
+    margin-left: .2em;
+}
+
+.ia-vote-commit-thumb ul {
+    margin: .5em;
+    padding: 0;
+}
+
+.ia-vote-commit-thumb ul li {
+    display: inline;
+    color: #77b9f1;
+    font-size: .8em;
+}
+
+.ia-vote-commit-reply {
+    width: 100%;
+}
+
+.ia-vote-commit-reply ul {
+    padding: .5em;
+    margin: .5em 0;
+}
+
+.ia-vote-commit-reply .ia-vote-commit-reply-one {
+    width: 100%;
+    position: relative;
+    padding: .2em;
+    border-bottom: 1px solid;
+    box-sizing: content-box;
+}
+
+.ia-vote-commit-reply-one img {
+    width: 2.5em;
+    height: 2.5em;
+    float: left;
+    margin-right: .3em;
+}
+
+.ia-vote-commit-reply-one .ia-vote-commit-reply-user {
+    width: 100%;
+}
+
+.ia-vote-commit-reply-one .ia-vote-commit-reply-user p {
+    font-size: .7em;
+    margin: 0;
+}
+
+.ia-vote-commit-reply-one .ia-vote-commit-reply-user p:first-child {
+    margin-top: .4em;
+}
+
+.ia-vote-commit-reply-body {
+    padding: .5em;
+}
+
+.ia-vote-commit-reply-body p {
+    font-size: .9em;
+    margin-bottom: 0;
+}
+
+.ia-vote-common-result {
+    width: 100%;
+}
+
+.ia-vote-common-result .ia-vote-common-result-option {
+    min-height: 3em;
+    background-color: #f5f5f5;
+}
+
+.ia-vote-common-result-option p {
+    padding: .5em;
+    font-size: .9em;
+    margin: 0;
+    word-break: break-all;
+}
+
+.ia-vote-common-join-user {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ia-vote-common-join-user .ia-vote-common-no-join {
+    margin: 2em auto;
+    text-align: center;
+}
+
+.ia-vote-common-join-user .ia-vote-common-no-join img {
+    width: 40%;
+    margin-bottom: 1em;
+}
+
+.ia-vote-common-join-user .ia-vote-common-join-user-list {
+    width: 100%;
+}
+
+.ia-vote-common-join-user-list ul {
+    padding: 0;
+}
+
+.ia-vote-common-join-user-list ul li {
+    border-bottom: 1px solid #d4d4d4;
+    height: 3em;
+    line-height: 2em;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+}
+
+.ia-vote-common-join-user-list ul li:first-child {
+    border-top: 1px solid #d4d4d4;
+}
+
+.ia-vote-common-join-user-list p {
+    font-size: .875em;
+    line-height: 2em;
+}
+
+.ia-vote-common-join-user-list p img {
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ia-vote-common-join-user-list .vote-time {
+    color: #b4b4b4;
+}

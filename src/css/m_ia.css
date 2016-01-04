@@ -5259,3 +5259,112 @@ a.ia-vote-add-choose-num {
     width: 2em;
     height: 2em;
 }
+
+/*choose user*/
+.ia-vote-top-tool {
+    width: 100%;
+    height: 4em;
+    padding: 1em;
+    border-bottom: 2px solid #b4b4b4;
+}
+
+.ia-vote-top-tool a {
+    color: #007ce5;
+    background-color: #fff;
+    font-size: .75em;
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #007ce5;
+    width: 25%;
+    height: 2.5em;
+    line-height: 2.5em;
+    float: left;
+    margin-left: .2em;
+}
+
+.ia-vote-top-tool a.vote-choose-all:hover, .ia-vote-top-tool a:hover, .ia-vote-top-tool a.choose {
+    color: #b4b4b4;
+    background-color: #eee;
+    border: 1px solid #b4b4b4;
+}
+
+.ia-vote-top-tool a.vote-choose-all {
+    color: #89c539;
+    background-color: #fff;
+    border: 1px solid #89c539;
+}
+
+.ia-vote-select-user, .ia-vote-choose-user {
+    margin: .2em;
+    padding: .2em;
+    min-height: 10em;
+    width: 100%;
+    position: relative;
+}
+
+.ia-vote-choose-user ul {
+    padding: 0;
+}
+
+.ia-vote-choose-user ul li {
+    padding: 0;
+    width: 30%;
+    float: left;
+    min-height: 3em;
+    margin-right: .5em;
+    margin-top: .5em;
+    position: relative;
+}
+
+.ia-vote-choose-user ul li .ia-vote-choose-flag {
+    display: none;
+}
+
+.ia-vote-choose-user ul li.choose .ia-vote-choose-flag {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 46%;
+}
+
+.ia-vote-choose-flag img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.ia-vote-single-user {
+    position: relative;
+    width: 100%;
+    display: block;
+    min-height: 3em;
+    border: 1px solid #b4b4b4;
+    line-height: 3em;
+    text-align: center;
+    padding: .2em;
+}
+
+.ia-vote-single-user img {
+    width: 2.5em;
+    height: 2.5em;
+    float: left;
+}
+
+.ia-vote-single-user span {
+    display: block;
+    overflow: hidden;
+    word-break: break-all;
+    height: 2.5em;
+    line-height: 2.5em;
+    color: #3C3C3C;
+    font-size: 0.875em;
+}
+
+.ia-vote-bottom-btn {
+    width: 100%;
+}
+
+.ia-vote-bottom-btn a {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

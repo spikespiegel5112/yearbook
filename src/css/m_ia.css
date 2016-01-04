@@ -2181,7 +2181,7 @@
 }
 
 /*~~~~~~~~~~album~~~~~~~~~~*/
-/*album list*/
+/*album and vote list*/
 .ybwechat_list_wrapper li {
     width: 100%;
     border-bottom: 1px solid #ccc;
@@ -3792,6 +3792,151 @@
     height: 54%;
 }
 
+/*partner invitation card content*/
+.iv_card_info {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 2;
+}
+
+.partner_info_form {
+    position: relative;
+    margin: 10px auto;
+    /*padding: 10px;*/
+    width: 90%;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.partner_info_form .close {
+    position: fixed;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    z-index: 2;
+    opacity: .6;
+}
+
+.partner_info_form .part {
+    margin: 10px 0;
+    padding: 0 10px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.partner_info_form .part h4 {
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.partner_info_form .part h4::before,
+.partner_info_form .part h4::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: "- - - - - - - - ";
+    width: 100%;
+    height: 0;
+    color: #afafb1;
+    text-align: left;
+}
+
+.partner_info_form .part h4::after {
+    text-align: right;
+}
+
+.partner_info_form .part .basic_info label {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+
+.partner_info_form .part .basic_info span {
+    display: inline-block;
+    width: 65%;
+    min-width: 120px;
+    text-align: left;
+}
+
+.partner_info_form .part .upload_img_box {
+    text-align: left;
+}
+
+.partner_info_form .part .upload_img_box .no_upload_img {
+    text-align: center;
+}
+
+.partner_info_form .part .upload_img_box .img_list li {
+    position: relative;
+    display: inline-block;
+    margin: 5px 2px;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.partner_info_form .part .upload_img_box .img_list li img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+}
+
+.partner_info_form .part .topic_box .topic {
+    text-align: left;
+    text-indent: 0;
+    margin: 10px 0;
+}
+
+.partner_info_form .part .topic_box .topic_reply {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.partner_info_form .part .topic_box .topic_reply li {
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.partner_info_form .part .topic_box .topic_reply .head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.partner_info_form .part .topic_box .topic_reply .reply {
+    position: relative;
+    left: 50px;
+    top: 0;
+    padding-top: 10px;
+}
+
+.partner_info_form .part .topic_box .topic_reply span b {
+    font-weight: normal;
+    color: #5cbf6a;
+}
+
+.partner_info_form .part .topic_box .topic_reply .reply p {
+    word-break: break-all;
+    display: inline;
+    line-height: 1.5em;
+    text-indent: 0;
+}
+
 /*friend info*/
 .inter-action-friend-info-wapper {
     height: auto;
@@ -3879,7 +4024,7 @@
     background-color: #cfcfcf;
 }
 
-/*leave msg*/
+/*~~~~~~~~~~leave msg~~~~~~~~~~*/
 #choose-leave,
 #choose-topic {
     display: block;
@@ -3902,7 +4047,7 @@
 #choose-leave span {
     margin-left: .4em;
 }
-/*收到的赠言*/
+/*received leave msg*/
 .mark-sub-list {
     position: absolute;
     top: 3em;
@@ -4079,16 +4224,16 @@
     border-bottom: 1px solid #cfcfcf;
 }
 
-/*参与的话题*/
+/*join topic*/
 .inter-action-friend-topic-list-item .topic {
     font-weight: 200;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-/*.inter-action-friend-topic-list-item .topic-item-hr {
+.inter-action-friend-topic-list-item .topic-item-hr {
     margin-top: 2em;
-}*/
+}
 
 .inter-action-friend-topic-list-item .topic-item h5:after {
     content: ":";
@@ -4355,8 +4500,7 @@
 }
 
 /*~~~~~~~~~~ia topic~~~~~~~~~~*/
-/*~~~~~~~~~~iatopic~~~~~~~~~~*/
-
+/*topic list*/
 .iatopic_main_wrapper {
     width: 100%;
 }
@@ -4484,129 +4628,7 @@
     font-size: 0.9em;
 }
 
-.ia-topic-list {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.ia-topic-list .ia-topic-list-wapper {
-    padding: 0;
-    margin: 0;
-    min-height: 100%;
-}
-
-.ia-topic-list .ia-topic-list-wapper li {
-    width: 100%;
-    height: 8em;
-    vertical-align: middle;
-    border-bottom: 1px solid #BDBDBD;
-    padding-top: 0;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li:first-child, .ia-topic-list .ia-topic-list-wapper > li:nth-child(2), .ia-topic-list .ia-topic-list-wapper > li:nth-child(3) {
-    -webkit-box-shadow: 3px 3px 3px;
-    -moz-box-shadow: 3px 3px 3px;
-    box-shadow: 3px 3px 3px;
-    padding-top: 2em;
-    height: 10em;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li:first-child::before {
-    content: "第一名";
-    position: absolute;
-    top: 1em;
-    left: 0;
-    padding-left: .2em;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li:nth-child(2)::before {
-    content: "第二名";
-    position: absolute;
-    top: 11em;
-    left: 0;
-    padding-left: .2em;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li:nth-child(3)::before {
-    content: "第三名";
-    position: absolute;
-    top: 21em;
-    left: 0;
-    padding-left: .2em;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li.active {
-    background-color: #E1E1E1;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li:hover {
-    background-color: #E1E1E1;
-}
-
-.ia-topic-list .ia-topic-list-wapper > li:hover {
-    background-color: #E1E1E1;
-}
-
-.ia-topic-list .ia-topic-item-logo {
-    float: left;
-    width: 20%;
-    height: 8em;
-    line-height: 8em;
-    padding: 1%;
-}
-
-.ia-topic-list .ia-topic-item-logo img {
-    width: 4em;
-    height: 4em;
-}
-
-.ia-topic-list .ia-topic-item-info {
-    float: left;
-    width: 60%;
-    height: 8em;
-    margin-left: 1%;
-    padding: 0 2%;
-}
-
-.ia-topic-list .ia-topic-item-info h5 {
-    font-size: 1.1em;
-}
-
-.ia-topic-list .ia-topic-item-info p {
-    font-size: .8em;
-}
-
-.ia-topic-list .ia-topic-item-info .ia-topic-item-level {
-    padding: 0;
-}
-
-.ia-topic-list .ia-topic-item-info .ia-topic-item-level li {
-    display: inline;
-    border-bottom: none;
-    color: #F9983B;
-}
-
-.ia-topic-list .ia-topic-item-info .ia-topic-item-level li:first-child {
-    display: inline;
-    border-bottom: none;
-}
-
-.ia-topic-list .ia-topic-want-say {
-    float: left;
-    width: 19%;
-    padding: 1em 1%;
-    height: 8em;
-    text-align: center;
-}
-
-.ia-topic-list .ia-topic-want-say a img {
-    width: 100%;
-    max-width: 6em;
-}
-
-/** 新建主题 **/
-
+/** create topic **/
 .ia-topic-new-wapper {
     margin: .3em;
     padding-top: 1em;
@@ -4617,7 +4639,6 @@
 }
 
 .ia-topic-new-wapper .control-group > label {
-    /*NEWYB-638*/
     width: 20%;
     float: left;
     font-size: 0.875em;
@@ -4671,14 +4692,10 @@
     margin-top: 2em;
 }
 
-/** 单个话题 */
-
+/** topic details */
 .ia-topic-item-top {
     position: relative;
     width: 100%;
-    /*-webkit-box-shadow: 3px 3px 3px;
-	-moz-box-shadow: 3px 3px 3px;
-	box-shadow: 3px 3px 3px;*/
 }
 
 .ia-topic-item-top .ia-topic-item-top-img {
@@ -4972,147 +4989,3 @@
 
 /*~~~~~~~~~~ia vote~~~~~~~~~~*/
 
-/*partner invitation card content*/
-.iv_card_info {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, .6);
-    z-index: 2;
-}
-
-.partner_info_form {
-    position: relative;
-    margin: 10px auto;
-    /*padding: 10px;*/
-    width: 90%;
-    background-color: #f6f6f6;
-    border-radius: 4px;
-    overflow: auto;
-    box-sizing: border-box;
-}
-
-.partner_info_form .close {
-    position: fixed;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
-    z-index: 2;
-    opacity: .6;
-}
-
-.partner_info_form .part {
-    margin: 10px 0;
-    padding: 0 10px;
-    text-align: left;
-    overflow: hidden;
-}
-
-.partner_info_form .part h4 {
-    position: relative;
-    font-size: 18px;
-    text-align: center;
-    line-height: 40px;
-}
-
-.partner_info_form .part h4::before,
-.partner_info_form .part h4::after {
-    position: absolute;
-    top: 0;
-    display: block;
-    content: "- - - - - - - - ";
-    width: 100%;
-    height: 0;
-    color: #afafb1;
-    text-align: left;
-}
-
-.partner_info_form .part h4::after {
-    text-align: right;
-}
-
-.partner_info_form .part .basic_info label {
-    display: inline-block;
-    width: 80px;
-    height: 30px;
-    line-height: 30px;
-    text-align: right;
-}
-
-.partner_info_form .part .basic_info span {
-    display: inline-block;
-    width: 65%;
-    min-width: 120px;
-    text-align: left;
-}
-
-.partner_info_form .part .upload_img_box {
-    text-align: left;
-}
-
-.partner_info_form .part .upload_img_box .no_upload_img {
-    text-align: center;
-}
-
-.partner_info_form .part .upload_img_box .img_list li {
-    position: relative;
-    display: inline-block;
-    margin: 5px 2px;
-    width: 80px;
-    height: 80px;
-    box-sizing: border-box;
-}
-
-.partner_info_form .part .upload_img_box .img_list li img {
-    width: 80px;
-    height: 80px;
-    border: 1px solid #ccc;
-}
-
-.partner_info_form .part .topic_box .topic {
-    text-align: left;
-    text-indent: 0;
-    margin: 10px 0;
-}
-
-.partner_info_form .part .topic_box .topic_reply {
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.partner_info_form .part .topic_box .topic_reply li {
-    position: relative;
-    min-height: 40px;
-    margin-bottom: 10px;
-}
-
-.partner_info_form .part .topic_box .topic_reply .head {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-}
-
-.partner_info_form .part .topic_box .topic_reply .reply {
-    position: relative;
-    left: 50px;
-    top: 0;
-    padding-top: 10px;
-}
-
-.partner_info_form .part .topic_box .topic_reply span b {
-    font-weight: normal;
-    color: #5cbf6a;
-}
-
-.partner_info_form .part .topic_box .topic_reply .reply p {
-    word-break: break-all;
-    display: inline;
-    line-height: 1.5em;
-    text-indent: 0;
-}

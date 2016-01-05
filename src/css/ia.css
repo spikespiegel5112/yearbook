@@ -4400,7 +4400,7 @@
 	margin-top: 20px;
 }
 
-.join_error .answer {
+.join_error .question_container .answer {
 	display: block;
 }
 
@@ -6271,6 +6271,68 @@ button::-moz-focus-inner {
 	top: 0;
 	right: 50px;
 	line-height: 80px;
+}
+
+.writebutton {
+	padding: 7px 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	color: #555;
+}
+
+.writebutton:hover {
+	color: #222;
+}
+
+.writebutton:active {
+	box-shadow: 1px 1px 3px #aaa inset;
+	color: #000;
+}
+
+.bluebutton {
+	padding: 7px 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	background: #00b7ee;
+	color: #fff;
+}
+
+.bluebutton:active {
+	box-shadow: 1px 1px 3px #aaa inset;
+	color: #eee;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper {
+	width: 100%;
+	height: 210px;
+	position: absolute;
+	top: 20px;
+	color: #fff;
+	z-index: 1;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper div {
+	margin: 0 auto;
+	width: 410px;
+	height: 210px;
+	background: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	border-radius: 10px;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper p {
+	padding: 3em;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper a {
+	color: #fff;
+	padding: 0 5px;
+}
+
+.bm_uploadphoto_choosephoto div ul {
+	height: 3em;
 }
 
 .creatalbum_window_container {

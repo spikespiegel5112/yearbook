@@ -79,6 +79,24 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>css/pc.css'
                 ],
                 dest: '<%= meta.distPath %>css/all.css'
+            },
+            mcss: {
+                options: {
+                    banner: '<%= banner %>'
+                },
+                src: [
+                    '<%= meta.srcPath %>css/m_reset.css',
+                    '<%= meta.srcPath %>css/m_common.css',
+                    '<%= meta.srcPath %>css/m_index.css',
+                    '<%= meta.srcPath %>css/m_access.css',
+                    '<%= meta.srcPath %>css/m_booklist.css',
+                    '<%= meta.srcPath %>css/m_bookpreview.css',
+                    '<%= meta.srcPath %>css/m_ia.css',
+                    '<%= meta.srcPath %>css/m_makebook.css',
+                    '<%= meta.srcPath %>css/m_staticize.css',
+                    '<%= meta.srcPath %>css/m_pc.css'
+                ],
+                dest: '<%= meta.distPath %>css/m_all.css'
             }
         },
 
@@ -96,10 +114,20 @@ module.exports = function(grunt) {
                 dest: '<%= meta.distPath %>/'
             },
             html : {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: '*.html',
-                dest: '<%= meta.distPath %>/'
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: '*.html',
+                        dest: '<%= meta.distPath %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: 'm/*.html',
+                        dest: '<%= meta.distPath %>/'
+                    }
+                ]
             },
             img : {
                 expand: true,
@@ -116,8 +144,16 @@ module.exports = function(grunt) {
                 sourceMap: false
             },
             mui: {
-                src: '<%= meta.distPath %>css/all.css',
-                dest: '<%= meta.distPath %>css/all.min.css'
+                files: [
+                    {
+                        src: '<%= meta.distPath %>css/all.css',
+                        dest: '<%= meta.distPath %>css/all.min.css'
+                    },
+                    {
+                        src: '<%= meta.distPath %>css/m_all.css',
+                        dest: '<%= meta.distPath %>css/m_all.min.css'
+                    }
+                ]
             }
         },
 

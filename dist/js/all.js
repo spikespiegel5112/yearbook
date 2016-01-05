@@ -2161,28 +2161,30 @@
 		// 		}
 		// 	})
 		// },
-		collideLoading:function(options){
-			options=$.extend({
-				onScrollBottom:function(){
+		collideLoading:function(options) {
+			options = $.extend({
+				onScrollBottom: function () {
 					alert('aaa')
 				}
-			},options)
-			window.onscroll=function(){
-				var clientHeight=0,
-					scrollTop=document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop,
-					docHeight=document.scrollHeight?document.scrollHeight:document.documentElement.scrollHeight;
-					
-				if (document.documentElement.clientHeight&&document.body.clientHeight) {
-					clientHeight=Math.min(document.documentElement.clientHeight,document.body.clientHeight);
-				}else{
-					clientHeight=Math.max(document.documentElement.clientHeight,document.body.clientHeight);
+			}, options)
+			window.onscroll = function () {
+				var clientHeight = 0,
+					scrollTop = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop,
+					docHeight = document.scrollHeight ? document.scrollHeight : document.documentElement.scrollHeight;
+
+				if (document.documentElement.clientHeight && document.body.clientHeight) {
+					clientHeight = Math.min(document.documentElement.clientHeight, document.body.clientHeight);
+				} else {
+					clientHeight = Math.max(document.documentElement.clientHeight, document.body.clientHeight);
 				}
 
-				if (clientHeight+scrollTop>=docHeight) {
+				if (clientHeight + scrollTop >= docHeight) {
 					options.onScrollBottom()
-				};
+				}
+				;
 				console.log(docHeight)
 			}
+		}
 	});
 
 	/**

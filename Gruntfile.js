@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         },
 
         useminPrepare: {
-            html: 'src/**/*.html',
+            html: ['src/**/*.html','src/m/*.html'],
             options: {
                 dest: '<%= meta.distPath %>',
                 flow : {
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>css/m_staticize.css',
                     '<%= meta.srcPath %>css/m_pc.css'
                 ],
-                dest: '<%= meta.distPath %>css/m_all.css'
+                dest: '<%= meta.distPath %>css/m.all.css'
             }
         },
 
@@ -143,15 +143,20 @@ module.exports = function(grunt) {
                 keepSpecialComments: '*', // set to '*' because we already add the banner in sass
                 sourceMap: false
             },
-            mui: {
+            pc_css: {
                 files: [
                     {
                         src: '<%= meta.distPath %>css/all.css',
                         dest: '<%= meta.distPath %>css/all.min.css'
-                    },
+                    }
+                ]
+            },
+
+            m_css: {
+                files: [
                     {
-                        src: '<%= meta.distPath %>css/m_all.css',
-                        dest: '<%= meta.distPath %>css/m_all.min.css'
+                        src: '<%= meta.distPath %>css/m.all.css',
+                        dest: '<%= meta.distPath %>css/m.all.min.css'
                     }
                 ]
             }
@@ -206,7 +211,7 @@ module.exports = function(grunt) {
         },
 
         usemin: {
-            html: ['<%= meta.distPath %>/*.html'],   // 注意此处是build/
+            html: ['<%= meta.distPath %>/*.html','<%= meta.distPath %>/m/*.html'],   // 注意此处是build/
             options: {
                 assetsDirs: ['<%= meta.distPath %>/css']
             }

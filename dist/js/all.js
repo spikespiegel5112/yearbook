@@ -603,56 +603,45 @@
 			})
 		},
 		priceCalculator: function(options) {
-			var subtotal = 0,
-				unitPrice = '',
-				totalPrice=[],
-				index=0,
+			var $this = $(this),
+				index = 0,
+				totalPriceArr = [],
 				config = {
 					unitprice: '',
 					subtotal: '',
-					totalprice:'',
+					totalprice: '',
 					onchange: function() {}
 				};
 			if (options) {
 				$.extend(config, options)
 			};
-
-			$.each($(this), function(thisIndex) {
-				var counter = 0,
-					$this = $(this),
-					counterEl = $this.find('input'),
-					thisPrice = $this.closest(config.unitprice).text()
-				console.log('counterEl:' + counterEl.val());
-
-				$(this).find('a').click(function() {
-					index=thisIndex;
+			init($this);
+			$.each($this, function(index) {
+				var $this = $(this),
+					index = index,
+					counterEl = $this.find('input');
+				$this.find('a').on('click', function() {
+					var counter = counterEl.val();
+					index = index;
 					switch ($(this).index()) {
 						case 0:
 							counter--;
 							if (counter < 0) {
 								counter = 0;
 							}
-							counterEl.val(counter);
-							getter(index);
-							setter(counter);
-							config.onchange();
 							break;
 						case 2:
 							counter++;
-							counterEl.val(counter);
-							getter(index);
-							setter(counter);
-							config.onchange();
 							break;
 					}
+					counterEl.val(counter);
+					setter(index, counter);
+					config.onchange();
 					fireOnchange(counterEl);
-
-				});
-
-				counterEl.bind('keydown keyup', function(e) {
+				})
+				counterEl.on('keydown keyup', function(e) {
 					var $this = $(this),
 						counter = 0,
-						index=thisIndex,
 						keycode = e.charCode ? e.charCode : e.keyCode;
 					switch (e.type) {
 						case 'keydown':
@@ -664,37 +653,40 @@
 							break;
 						case 'keyup':
 							counter = counterEl.val();
-							getter(index);
-							setter(counter);
+							setter(index, counter);
 							config.onchange();
 							fireOnchange(counterEl);
 							break;
 					}
 				})
-				
 			});
 
-			function getter(index) {
-				var unitPriceTxt = $(config.unitprice).eq(index).text();
-				unitPrice = unitPriceTxt.replace("￥", '');
-				
-				
+			function getUnitprice(index) {
+				var unitPrice = $(config.unitprice).eq(index).text().replace("￥", '');
+				return unitPrice;
 			}
 
-			function setter(counter) {
-				var result = unitPrice * counter;
+			function setter(index, counter) {
+				var result = getUnitprice(index) * counter;
 				$(config.subtotal).eq(index).html(parseFloat(result).toFixed(2));
-				$(config.totalprice).html();
-				totalprice(index,result)
+				totalprice(index, result)
 			}
 
-			function totalprice(index, price){
-				totalPrice[index+1]=price;
-				console.log(price)
-				for (var i = totalPrice.length - 1; i >= 0; i--) {
-					totalPrice+=totalPrice[i]
+			function totalprice(index, price) {
+				totalPriceArr[index] = price;
+				var totalPrice = 0;
+				for (var i = totalPriceArr.length - 1; i >= 0; i--) {
+					totalPrice += totalPriceArr[i];
 				};
-				return totalPrice;
+				$(config.totalprice).html(parseFloat(totalPrice).toFixed(2));
+			}
+
+			function init(_this) {
+				var length = _this.length;
+				$.each(_this, function(index) {
+					var val = _this.eq(index).find('input').val();
+					setter(index, val)
+				});
 			}
 
 			function fireOnchange(_this) {

@@ -134,6 +134,18 @@ module.exports = function(grunt) {
                 cwd: '<%= meta.srcPath %>',
                 src: 'img/**/*',
                 dest: '<%= meta.distPath %>/'
+            },
+            css : {
+                expand: true,
+                cwd: '<%= meta.srcPath %>',
+                src: ['css/m_jquery.sureInput.css','css/m_welcome.css'],
+                dest: '<%= meta.distPath %>/'
+            },
+            js : {
+                expand: true,
+                cwd: '<%= meta.srcPath %>',
+                src: ['js/**/*.js','!**/base.js'],
+                dest: '<%= meta.distPath %>/'
             }
         },
 

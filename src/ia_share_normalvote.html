@@ -141,6 +141,29 @@
 						<li class='share'><a href="javascript:;"><span></span><label>分享</label></a></li>
 					</ul>
 				</div>
+				<div class="comment_box">
+					<div class="">
+						<div class="user_head"><img src="img/user_default_head.png"></div>
+						<input type="text" placeholder="来说两句吧" value="">
+						<button type="button">发表</button>
+					</div>
+					<div class="other_comment">
+						<dl>
+							<dt class="cm_fl"><img src="img/user_img1.jpg"></dt>
+							<dd class="cm_fl">
+								<p class="cm_font_14"><span>赵四:</span>你说的很对</p>
+								<p class="cm_font_12 cm_mt_5 cm_color_6">5月20日 10:00</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="cm_fl"><img src="img/user_img1.jpg"></dt>
+							<dd class="cm_fl">
+								<p class="cm_font_14"><span>赵四:</span>你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对你说的很对</p>
+								<p class="cm_font_12 cm_mt_5 cm_color_6">5月20日 10:00</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -181,6 +204,7 @@
 $(function() {
 	choose();
 	changeButtonCss();
+	showCommentBox();
 })
 
 function choose() {
@@ -201,6 +225,15 @@ function changeButtonCss() {
 		radioClass: 'iradio_minimal-green',
 		increaseArea: '20%'
 	});
+}
+//显示评论框
+function showCommentBox(){
+	$('.bmshare_community_wrapper .comment').click(function(){
+		$('.bmshare_footer_wrapper .comment_box').toggle();
+	});
+	$('.bmshare_community_wrapper .praise, .bmshare_community_wrapper .share').click(function(){
+		$('.bmshare_footer_wrapper .comment_box').hide();
+	})
 }
 </script>
 

@@ -109,7 +109,7 @@
 					</div>
 					<div depth="5" class="hard front-side secondcover even" style="background-image:url('img/pages/2.jpg');">
 						<span class="depth"></span>
-						<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
+						<!-- <link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
 						<div class="container_activity_37_small_left">
 							<div class="page_header_container">
 								<div slottype="article" class="warp1">
@@ -147,12 +147,12 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div class="hard fixed back-side thirdcover p19">
 						<span class="depth"></span>
 						<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
-						<link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
+						<!-- <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
 						<div class="container_panoramic_02_small_right">
 							<div slottype="article" class="warp">
 								<div slottype="articleShow" textheight="62" class="richShow">
@@ -162,7 +162,7 @@
 							</div>
 							<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
 							<img slottype="img" slotnum="1" src="" class="img1">
-						</div>
+						</div> -->
 					</div>
 					<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')"></div>
 				</div>
@@ -361,14 +361,14 @@
 				}
 
 				//这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
-				var bookIdx = 1;
+				var bookIdx = 2;
 				var pageWidth = $('.flipbook-viewport .page').width();
 				var pageHegiht = $('.flipbook-viewport .page').height();
 				var flipbook = $(this);
 				var pageSection = $('.chapter_info ul li');
 
 				if (flipbook.width() == 0 || flipbook.height() == 0) {
-					setTimeout(loadApp, 10);
+					setTimeout($('.flipbook').loadApp(), 10);
 					return;
 				}
 

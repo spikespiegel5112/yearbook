@@ -178,7 +178,7 @@ label.error {
     padding: 0 1.5em;
     height: 2.5em;
     line-height: 2.5em;
-    background: #9ad44d;
+    background: #7ccf6c;
     color: #fff;
     text-align: center;
     box-sizing: content-box;
@@ -189,8 +189,8 @@ label.error {
 }
 
 .input_btn_item:active {
-    background: #90CC3D;
-    color: #76b522;
+    background: #89c27e;
+    color: #57bb44;
 }
 
 .finishandenter_btn {
@@ -228,7 +228,7 @@ label.error {
     border: 1px solid #ccc;
     text-align: center;
     border-radius: 5px;
-    color: #222;
+    color: #666;
     font-size: 13px;
 }
 
@@ -382,8 +382,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .button-highlight {
     color: #FFF;
-    background-color: #89c539;
-    border-color: #89c539;
+    background-color: #7ccf6c;
+    border-color: #7ccf6c;
 }
 
 .button-highlight:visited {
@@ -392,14 +392,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .button-highlight:hover, .button-highlight:focus {
     color: #FFF;
-    background-color: #9AD44D;
-    border-color: #9AD44D;
+    background-color: #86cf77;
+    border-color: #86cf77;
 }
 
 .button-highlight:active {
-    background-color: #90CC3D;
-    border-color: #90CC3D;
-    color: #76b522;
+    background-color: #89c27e;
+    border-color: #7ccf6c;
+    color: #57bb44;
 }
 
 .button-rounded {
@@ -730,27 +730,42 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .set-code .user_account {
-    width: 76px;
+    width: auto;
     float: none;
     display: inline-block;
+    font-weight: normal;
 }
 
 .set-code .send-code-buttons {
-    margin: 2em;
+    margin: 2em 0;
+}
+
+.set-code .id_code{
+    float: none;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    border: 1px solid #b6b6b6;
+    box-sizing: border-box;
 }
 
 .set-code .send-code-input {
     float: none;
-    width: 7.5em;
-    margin: 0 0 0 .5em;
     display: inline-block;
+    margin: 0 0 0 .5em;
+    width: 75%;
+    height: 38px;
+    font-size: 14px;
+    border: 0;
 }
 
 .set-code .fp-set-code-info p {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 10px;
     text-align: center;
     white-space: nowrap;
+    color: #999;
 }
 
 .send-code {
@@ -759,8 +774,21 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .send-code p {
     margin-bottom: 10px;
-    font-size: 0.875em;
+    font-size: 1em;
     text-align: center;
+}
+
+.send-code span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.set-code .send-again{
+    margin: 2em 0;
+}
+
+.set-code .send-again a{
+    color: #57bb44;
 }
 
 /*~~~~~~~~~~unbind resetpassword~~~~~~~~~~*/

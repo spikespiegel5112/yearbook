@@ -603,71 +603,90 @@
 			})
 		},
 		priceCalculator: function(options) {
-			var counter = 0,
-				subtotal = 0,
-				unitPrice = ''
-			options = $.extend({
-				unitprice: '',
-				subtotal: '',
-				onchange: function() {}
-			}, options);
-			$(this).each(function() {
+			var $this = $(this),
+				index = 0,
+				totalPriceArr = [],
+				config = {
+					unitprice: '',
+					subtotal: '',
+					totalprice: '',
+					onchange: function() {}
+				};
+			if (options) {
+				$.extend(config, options)
+			};
+			init($this);
+			$.each($this, function(index) {
 				var $this = $(this),
+					index = index,
 					counterEl = $this.find('input');
-				counterEl.html('0');
-				$this.find('a').click(function() {
+				$this.find('a').on('click', function() {
+					var counter = counterEl.val();
+					index = index;
 					switch ($(this).index()) {
 						case 0:
 							counter--;
 							if (counter < 0) {
 								counter = 0;
 							}
-							counterEl.val(counter);
-							getter();
-							setter();
-							options.onchange();
 							break;
 						case 2:
 							counter++;
-							counterEl.val(counter);
-							getter();
-							setter();
-							options.onchange();
 							break;
 					}
-					fireOnchange(counterEl)
-				});
-
-				counterEl.bind('keydown keyup', function(e) {
+					counterEl.val(counter);
+					setter(index, counter);
+					config.onchange();
+					fireOnchange(counterEl);
+				})
+				counterEl.on('keydown keyup', function(e) {
 					var $this = $(this),
+						counter = 0,
 						keycode = e.charCode ? e.charCode : e.keyCode;
 					switch (e.type) {
 						case 'keydown':
-							if (keycode != 8 && keycode < 48 || keycode > 57 && keycode < 96 || keycode > 105) {
+							if (keycode != 8 && keycode != 37 && keycode != 39 && keycode < 48 || keycode > 57 && keycode < 96 || keycode > 105) {
 								e.preventDefault();
-							} else {
+							} else if (keycode != 37 && keycode != 39) {
 								$this.val() != 0 ? $this.val() != 0 : $this.val('');
 							}
 							break;
 						case 'keyup':
 							counter = counterEl.val();
-							getter();
-							setter();
-							options.onchange();
+							setter(index, counter);
+							config.onchange();
 							fireOnchange(counterEl);
 							break;
 					}
 				})
 			});
 
-			function getter() {
-				var unitPriceEl = $(options.unitprice).text();
-				unitPrice = unitPriceEl.replace("￥", '');
+			function getUnitprice(index) {
+				var unitPrice = $(config.unitprice).eq(index).text().replace("￥", '');
+				return unitPrice;
 			}
 
-			function setter() {
-				var result = unitPrice * counter;
-				$(options.subtotal).html(parseFloat(result).toFixed(2));
+			function setter(index, counter) {
+				var result = getUnitprice(index) * counter;
+				$(config.subtotal).eq(index).html(parseFloat(result).toFixed(2));
+				totalprice(index, result)
+			}
+
+			function totalprice(index, price) {
+				totalPriceArr[index] = price;
+				var totalPrice = 0;
+				for (var i = totalPriceArr.length - 1; i >= 0; i--) {
+					totalPrice += totalPriceArr[i];
+				};
+				$(config.totalprice).html(parseFloat(totalPrice).toFixed(2));
+			}
+
+			function init(_this) {
+				var length = _this.length;
+				$.each(_this, function(index) {
+					var val = _this.eq(index).find('input').val();
+					setter(index, val)
+				});
 			}
 
 			function fireOnchange(_this) {
@@ -676,6 +695,13 @@
 		}
 	});
 
+	$.extend({
+		globalhint: function() {
+			$('.globalhint_close_btn').click(function() {
+				$('.globalhint_wrapper').fadeOut('fast');
+			});
+		}
+	})
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);
 	$('.hide_title').init_title();
 
@@ -2111,6 +2137,45 @@
 			};
 
 			$origin.ajax(s);
+		},
+		//移动端滚动到底部加载插件
+		// collideLoading:function(options){
+		// 	options=$.extend({
+		// 		callback:function(){}
+		// 	},options)
+		// 	$(window).scroll(function(){
+		// 		var availHeight=$(window).height(),
+		// 			scrollTop=$(window).scrollTop(),
+		// 			docHeight=$(document).height();
+		// 		console.log('aaa')
+		// 		if (availHeight+scrollTop>=docHeight) {
+		// 			options.callback();
+		// 		}
+		// 	})
+		// },
+		collideLoading:function(options) {
+			options = $.extend({
+				onScrollBottom: function () {
+					alert('aaa')
+				}
+			}, options)
+			window.onscroll = function () {
+				var clientHeight = 0,
+					scrollTop = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop,
+					docHeight = document.scrollHeight ? document.scrollHeight : document.documentElement.scrollHeight;
+
+				if (document.documentElement.clientHeight && document.body.clientHeight) {
+					clientHeight = Math.min(document.documentElement.clientHeight, document.body.clientHeight);
+				} else {
+					clientHeight = Math.max(document.documentElement.clientHeight, document.body.clientHeight);
+				}
+
+				if (clientHeight + scrollTop >= docHeight) {
+					options.onScrollBottom()
+				}
+				;
+				console.log(docHeight)
+			}
 		}
 	});
 

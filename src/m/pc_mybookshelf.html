@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head lang='ch'>
+    <meta charset='UTF-8'>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name='format-detection' content='telephone=no'>
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+    <title>我的书架</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+</head>
+
+<body class='bg_f6f6f6'>
+<div class='main_container mybookshelf_wrapper'>
+    <div class='ybwechatheader_wrapper'>
+        <a class="left_btn back_btn" href="pc_main.html"></a>
+        <p>我的书库</p>
+    </div>
+    <div class='common_title_item'>
+        <span class='mybookshelf_created_icon'></span>
+        <label>创建的书册</label>
+    </div>
+    <div class='mybookshelf_main_wrapper'>
+        <ul>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春-毕业册模板</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春-毕业册模板</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春毕业册模板</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+        </ul>
+        <div class='ybwechat_loading_item'>
+            <a href="javascript:;">点击加载更多（<b>6</b>）</a>
+        </div>
+    </div>
+    <div class='common_title_item'>
+        <span class='mybookshelf_joined_icon'></span>
+        <label>加入的书册</label>
+    </div>
+    <div class='mybookshelf_main_wrapper'>
+        <div class='mybookshelf_info_empty_item'>
+            <span></span>
+            <div>
+                暂时没有加入的书册，快去<a href="javascript:;">邀请小伙伴</a>吧！
+            </div>
+        </div>
+        <div class='ybwechat_loading_item hidden'>
+            <a href="javascript:;">点击加载更多（<b>6</b>）</a>
+        </div>
+    </div>
+    <div class='common_title_item'>
+        <span class='mybookshelf_recentlyused_icon'></span>
+        <label>最近使用的书册</label>
+    </div>
+    <div class='mybookshelf_main_wrapper'>
+        <ul>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春-毕业册模板</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春-追忆青春毕业册模板追忆青春</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春-毕业</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+            <li>
+                <a class='cover' href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a>
+                <label>追忆青春毕业册模板追忆青春</label>
+                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="loading" style="display: none;">
+    <img src="../img/m/loading.gif"><strong>加载中</strong>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script>
+    /*
+     * 书册名称超过8个字符显示…
+     * */
+    function changeLongBookName(){
+        var bookNum = $('.mybookshelf_main_wrapper li label').length;
+        for (var i = 0 ; i< bookNum ; i++){
+            var bookNameLength = $('.mybookshelf_main_wrapper li label').eq(i).text().length;
+            if(bookNameLength > 7){
+                var newName = $('.mybookshelf_main_wrapper li label').eq(i).text().substr(0,7) + "…";
+                $('.mybookshelf_main_wrapper li label').eq(i).text(newName);
+            }
+        }
+    }
+
+    function loadMoreBook()
+    {
+        $("div.ybwechat_loading_item").on('touchend', function(){
+            showloading();
+            $("div.ybwechat_loading_item").hide();
+            //修改成从后台读取
+            var i = 0;
+            for (i = 0; i < 6; i++) {
+                $('.mybookshelf_main_wrapper ul').eq(0).append(getHtml(i));
+            }
+            hideloading();
+            $(this).show();
+        });
+    }
+
+    var getHtml = function(agru) {
+        return '<li><a class="cover" href="javascript:;"><img src="../img/m/choosetemplate_cover_00000.jpg"></a> <label>追忆青春-毕业册模板</label><a class="ybwechat_list_btn" href="javascript:;">进入书册</a></li>';
+    }
+
+    // 显示loading
+    var showloading = function(txt) {
+        if (typeof(txt) === 'string')
+            $('.loading strong').text(txt);
+        if (typeof(loading) === 'undefined')
+            loading = $('.loading');
+        loading.show();
+    };
+    //隐藏loading
+    var hideloading = function() {
+        if (typeof(loading) === 'undefined')
+            loading = $('.loading');
+        setTimeout(function() {
+            loading.hide();
+            $('.loading strong').text('加载中');
+        }, 1000);
+    };
+
+    $(document).ready(function(){
+        changeLongBookName();
+        loadMoreBook();
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-修改订单</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/green.css" type="text/css"/>
+</head>
+
+<body class="bg_f6f6f6">
+<div class='main_container order_management change'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href="javascript:;"></a>
+        <p>修改订单</p>
+    </div>
+    <div class="basic_info">
+        <div class="orderinfo">
+            <div class="user info">
+                <a href="javascript:;">
+                    <div class="cm_fl"><label class="icon-user"></label><span>用户名</span></div>
+                    <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
+                    <div><label class="icon-truck"></label><span>具体地址</span></div>
+                    <i class="icon-chevron-right"></i>
+                </a>
+            </div>
+            <div class="dispatching info">
+                <a href="javascript:;">
+                    <label>选择配送方式</label>
+                    <span class="cm_fr">全场包邮快递 ¥0.00</span>
+                    <i class="icon-chevron-right"></i>
+                </a>
+            </div>
+            <div class="invoice info">
+                <a href="javascript:;">
+                    <label>选择发票信息</label>
+                    <span class="cm_fr">不开发票</span>
+                    <i class="icon-chevron-right"></i>
+                </a>
+            </div>
+            <div class='opd_coupon_wrapper info'>
+                <div class="">
+                    <label><input type="checkbox" value="useCoupon">使用优惠券</label>
+                    <select>
+                        <option>满50减10</option>
+                        <option>满100减20</option>
+                        <option>满200减40</option>
+                        <option>满400减80</option>
+                        <option>满500减100</option>
+                        <option>满5000减1000</option>
+                        <option>单笔消费满5000元可以优惠500元</option>
+                    </select>
+                    <i class="icon-caret-down"></i>
+                    <a class='common_btn' href="javascript:;">确认</a>
+                    <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+                </div>
+                <div class="hidden">
+                    <label><input type="checkbox" value="useCoupon">使用优惠券</label>
+                    <ul class='common_serialnumber_item'>
+                        <li>
+                            <input type='text' maxlength='4'>
+                        </li>
+                        <li>
+                            <span>-</span>
+                            <input type='text' maxlength='4'>
+                        </li>
+                        <li>
+                            <span>-</span>
+                            <input type='text' maxlength='4'>
+                        </li>
+                        <li>
+                            <span>-</span>
+                            <input type='text' maxlength='4'>
+                        </li>
+                    </ul>
+                    <a class='common_btn' href="javascript:;">确认</a>
+                    <a class='common_btn' href="javascript:;">使用已有优惠券</a>
+                </div>
+                <div class="hidden">
+                    <label>使用的代金卷优惠：￥<span class="voucherPrice"></span><a class="common_btn" id="chooseOtherVoucher" href="javascript:;">更换</a></label>
+                </div>
+            </div>
+        </div>
+        <div class='opd_confirm_wrapper'>
+            <div class="opd_subtotalprice_item">
+                <label>实付款：</label>
+                <span>¥88.88</span>
+            </div>
+            <a class='opd_confirm_item' href="pc_order_confirmpayway.html">选择支付方式</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript" src='../assets/js/icheck.js'></script>
+<script type="text/javascript" src='../js/m_base.js'></script>
+<script type="text/javascript">
+    $(function () {
+        $('.ybcommon_counter_item').priceCalculator();
+        changeButtonCss();
+    })
+
+    //单选、复选框
+    function changeButtonCss() {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+</script>
+</body>
+
+</html>

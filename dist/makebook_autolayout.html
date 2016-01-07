@@ -70,7 +70,7 @@
 			<!--无数据 默认结构 结束-->
 			<div class="choose_img_con">
 				<!--无数据 默认结构 开始-->
-				<div class="empty ">
+				<div class="empty hidden">
 					<div class="cm_fl">
 						<img src="img/bookmanagement/upload_pic_icon.png" width="280" height="280">
 						<h3>请上传<span>30</span>张照片即可完成书册制作</h3>
@@ -84,7 +84,7 @@
 						<a class="enter_space" href="ia_bookspace.html">进入书册空间</a>
 					</div>
 				</div>
-				<div class="time_line hidden">
+				<div class="time_line">
 					<ul class="years">
 						<li class="open">
 							<div class="name current">2015</div>
@@ -127,7 +127,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="img_con hidden">
+				<div class="img_con">
 					<!--有数据 开始-->
 					<div class="loaded">
 						<div class="item">
@@ -531,7 +531,7 @@
 					</div>
 					<!--有数据 上传中 结束-->
 				</div>
-				<div class="main_right hidden">
+				<div class="main_right">
 					<div class="resource_info">
 						<div>一共需要<span>30</span>张照片，已经有<span>0</span>张</div>
 						<p>选择了<span>0</span>张照片，再导入<span>30</span>张即可</p>
@@ -540,21 +540,40 @@
 						<!--无数据 添加class:disable-->
 						<a class="auto_edit" href="javascript:;"></a>
 					</div>
-					<p>我现在还没准备好照片，我先看看</p>
+					<!--<p>我现在还没准备好照片，我先看看</p>
 					<div class="btn_wrap">
 						<a class="enter_space" href="ia_bookspace.html"></a>
-					</div>
+					</div>-->
 					<div class="btn_wrap">
 						<a class="load_photo" href="javascript:;"></a>
+					</div>
+					<div class="btn_wrap">
+						<a class="load_mobile_photo" href="javascript:;"></a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!--原main_right位置-->
 	</div>
+	<!--导入手机照片弹出-->
+	<div class="load_mobile_photo_box hidden">
+		<p>亲，手机上传图片成功后，这里会自动更新状态哦！</p>
+		<div class="status">
+			<div class="success">
+				已经成功上传<span>1</span>张图片。
+			</div>
+			<div class="failed hidden">
+				SORRY,上传失败！
+			</div>
+			<div class="loading">
+				<img src="img/bookmanagement/loading.gif">
+			</div>
+		</div>
+	</div>
     <!-- html end-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
 	<script>
 		$(document).ready(function(){
 			init();
@@ -563,6 +582,7 @@
 			checkPhoto();
 			foldImgList();
 			ybcommonqueryicon();
+			loadMobilePhoto();
 		});
 		//渲染控件样式
 		function changeButtonCss() {
@@ -626,6 +646,17 @@
 			}, function() {
 				$(this).find('div').hide();
 			});
+		}
+
+		//导入手机照片
+		function loadMobilePhoto(){
+			$('.load_mobile_photo').click(function(){
+				art.dialog({
+					title: '扫描二维码在手机完成上传',
+					lock: true,
+					content: document.querySelector('.load_mobile_photo_box')
+				});
+			})
 		}
 	</script>
 </body>

@@ -2691,11 +2691,38 @@
 	box-sizing: border-box;
 }
 
-.auto_layout_container .photo_box .btn:hover,
-.auto_layout_container .photo_box .btn.active {
+.auto_layout_container .photo_box .btn i{
+	margin: 0 5px 0 0;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.auto_layout_container .photo_box .mobile i{
+	font-size: 20px;
+}
+
+.auto_layout_container .photo_box .pc{
 	color: #fff;
-	background-color: #00b7ee;
-	border: 1px solid #00b7ee;
+	background-color: #5cb1dd;
+	border: 1px solid #5cb1dd;
+}
+
+.auto_layout_container .photo_box .mobile{
+	color: #fff;
+	background-color: #5ee292;
+	border: 1px solid #5ee292;
+}
+
+.auto_layout_container .photo_box .finish{
+	color: #fff;
+	background-color: #f4444c;
+	border: 1px solid #f4444c;
+}
+
+.auto_layout_container .photo_box .btn:hover{
+	color: #fff;
+	background-color: #f6bb3f;
+	border: 1px solid #f6bb3f;
 }
 
 .auto_layout_container .photo_box .tips {
@@ -3131,6 +3158,7 @@
 .auto_edit_nav .ybcommon_queryicon_item {
 	float: right;
 	margin: 15px 0 0 0;
+	font-size:18px!important ;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div {
@@ -3223,6 +3251,17 @@
 .main_right .btn_wrap .load_photo:active {
 	margin: 50px auto 0 !important;
 	background: transparent url("../img/bookmanagement/import_photo_hv.png") no-repeat 0;
+}
+
+.main_right .btn_wrap .load_mobile_photo{
+	margin: 50px auto 0 !important;
+	background: transparent url("../img/bookmanagement/mobile_photos.png") no-repeat 0;
+}
+
+.main_right .btn_wrap .load_mobile_photo:hover,
+.main_right .btn_wrap .load_mobile_photo:active{
+	margin: 50px auto 0 !important;
+	background: transparent url("../img/bookmanagement/mobile_photos_hv.png") no-repeat 0;
 }
 
 .auto_edit_main .main_left {
@@ -3889,4 +3928,29 @@
 .auto_layout_container .photo_box .tips .btn{
     float: right;
     margin: 0 0 0 15px;
+}
+
+/*12.29 swh add load mobile photo*/
+.load_mobile_photo_box{
+	position: relative;
+	min-width: 320px;
+}
+.load_mobile_photo_box p{
+	margin-bottom: 15px;
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+}
+
+.load_mobile_photo_box .status > div{
+	margin-bottom: 10px;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+}
+
+.load_mobile_photo_box .status .success span{
+	margin: 0 5px;
+	color: #e22929;
+	font-weight: bold;
 }

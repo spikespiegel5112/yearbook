@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         },
 
         useminPrepare: {
-            html: 'src/**/*.html',
+            html: ['src/**/*.html','src/m/*.html'],
             options: {
                 dest: '<%= meta.distPath %>',
                 flow : {
@@ -79,6 +79,24 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>css/pc.css'
                 ],
                 dest: '<%= meta.distPath %>css/all.css'
+            },
+            mcss: {
+                options: {
+                    banner: '<%= banner %>'
+                },
+                src: [
+                    '<%= meta.srcPath %>css/m_reset.css',
+                    '<%= meta.srcPath %>css/m_common.css',
+                    '<%= meta.srcPath %>css/m_index.css',
+                    '<%= meta.srcPath %>css/m_access.css',
+                    '<%= meta.srcPath %>css/m_booklist.css',
+                    '<%= meta.srcPath %>css/m_bookpreview.css',
+                    '<%= meta.srcPath %>css/m_ia.css',
+                    '<%= meta.srcPath %>css/m_makebook.css',
+                    '<%= meta.srcPath %>css/m_staticize.css',
+                    '<%= meta.srcPath %>css/m_pc.css'
+                ],
+                dest: '<%= meta.distPath %>css/m.all.css'
             }
         },
 
@@ -96,15 +114,37 @@ module.exports = function(grunt) {
                 dest: '<%= meta.distPath %>/'
             },
             html : {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: '*.html',
-                dest: '<%= meta.distPath %>/'
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: '*.html',
+                        dest: '<%= meta.distPath %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: 'm/*.html',
+                        dest: '<%= meta.distPath %>/'
+                    }
+                ]
             },
             img : {
                 expand: true,
                 cwd: '<%= meta.srcPath %>',
                 src: 'img/**/*',
+                dest: '<%= meta.distPath %>/'
+            },
+            css : {
+                expand: true,
+                cwd: '<%= meta.srcPath %>',
+                src: ['css/m_jquery.sureInput.css','css/m_welcome.css'],
+                dest: '<%= meta.distPath %>/'
+            },
+            js : {
+                expand: true,
+                cwd: '<%= meta.srcPath %>',
+                src: ['js/**/*.js','!**/base.js'],
                 dest: '<%= meta.distPath %>/'
             }
         },
@@ -115,9 +155,22 @@ module.exports = function(grunt) {
                 keepSpecialComments: '*', // set to '*' because we already add the banner in sass
                 sourceMap: false
             },
-            mui: {
-                src: '<%= meta.distPath %>css/all.css',
-                dest: '<%= meta.distPath %>css/all.min.css'
+            pc_css: {
+                files: [
+                    {
+                        src: '<%= meta.distPath %>css/all.css',
+                        dest: '<%= meta.distPath %>css/all.min.css'
+                    }
+                ]
+            },
+
+            m_css: {
+                files: [
+                    {
+                        src: '<%= meta.distPath %>css/m.all.css',
+                        dest: '<%= meta.distPath %>css/m.all.min.css'
+                    }
+                ]
             }
         },
 
@@ -170,7 +223,7 @@ module.exports = function(grunt) {
         },
 
         usemin: {
-            html: ['<%= meta.distPath %>/*.html'],   // 注意此处是build/
+            html: ['<%= meta.distPath %>/*.html','<%= meta.distPath %>/m/*.html'],   // 注意此处是build/
             options: {
                 assetsDirs: ['<%= meta.distPath %>/css']
             }

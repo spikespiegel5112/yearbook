@@ -3621,6 +3621,68 @@
 	opacity: 1;
 }
 
+.bmshare_footer_wrapper .comment_box{
+	display: none;
+	position: relative;
+	margin: 20px auto 10px;
+	width: 95%;
+}
+.bmshare_footer_wrapper .comment_box .user_head{
+	float: left;
+	margin: 0 20px 0 0;
+	width: 30px;
+	height: 30px;
+}
+.bmshare_footer_wrapper .comment_box .user_head img{
+	width: 100%;
+	height: 100%;
+}
+.bmshare_footer_wrapper .comment_box input{
+	width: 80%;
+	height: 30px;
+	padding: 3px 10px 3px !important;
+	max-width: none !important;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 1px 3px #ddd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 2px !important;
+	resize: none;
+	font-size: 14px;
+	color: #333;
+}
+.bmshare_footer_wrapper .comment_box button{
+	margin-left: 10px;
+}
+.bmshare_footer_wrapper .comment_box .other_comment{
+	margin: 0 0 20px;
+	width: 100%;
+	border: 0;
+}
+.bmshare_footer_wrapper .comment_box .other_comment dl{
+	margin: 15px 0 0px;
+	border-bottom: 1px dashed #ccc;
+}
+.bmshare_footer_wrapper .comment_box .other_comment dl dt{
+	margin: 5px 10px 10px 0;
+}
+
+.bmshare_footer_wrapper .comment_box .other_comment dl dt img{
+	width: 30px;
+	height: 30px;
+	border-radius: 0;
+}
+
+.bmshare_footer_wrapper .comment_box .other_comment dl dd{
+	margin-bottom: 10px;
+}
+.bmshare_footer_wrapper .comment_box .other_comment dl dd p.cm_font_14 {
+	text-align: justify;
+	width: 690px;
+}
+
 /*~~~~~~~~~~ia_share_uploadphoto.html~~~~~~~~~~*/
 
 .bmshare_uploadphoto_wrapper {
@@ -4400,7 +4462,7 @@
 	margin-top: 20px;
 }
 
-.join_error .answer {
+.join_error .question_container .answer {
 	display: block;
 }
 
@@ -5065,7 +5127,7 @@
 .view_photo_nav {
 	float: left;
 	padding: 0 0 0 10px;
-	width: 20%;
+	/*width: 20%;*/
 	height: 98%;
 	line-height: 50px;
 	border-bottom: 2px solid #93c152;
@@ -6271,6 +6333,68 @@ button::-moz-focus-inner {
 	top: 0;
 	right: 50px;
 	line-height: 80px;
+}
+
+.writebutton {
+	padding: 7px 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	color: #555;
+}
+
+.writebutton:hover {
+	color: #222;
+}
+
+.writebutton:active {
+	box-shadow: 1px 1px 3px #aaa inset;
+	color: #000;
+}
+
+.bluebutton {
+	padding: 7px 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	background: #00b7ee;
+	color: #fff;
+}
+
+.bluebutton:active {
+	box-shadow: 1px 1px 3px #aaa inset;
+	color: #eee;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper {
+	width: 100%;
+	height: 210px;
+	position: absolute;
+	top: 20px;
+	color: #fff;
+	z-index: 1;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper div {
+	margin: 0 auto;
+	width: 410px;
+	height: 210px;
+	background: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	border-radius: 10px;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper p {
+	padding: 3em;
+}
+
+.bm_uploadphoto_choosephoto .successprompt_wrapper a {
+	color: #fff;
+	padding: 0 5px;
+}
+
+.bm_uploadphoto_choosephoto div ul {
+	height: 3em;
 }
 
 .creatalbum_window_container {

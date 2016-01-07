@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>设置邀请卡内容</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_ia.css" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/green.css" type="text/css" media="all"/>
+</head>
+<body class="bg_f6f6f6">
+
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'></a>
+
+    <p>邀请卡内容设置</p>
+</div>
+
+<div class="container-fluid">
+    <div class="invitation_card_form">
+        <form class="set_card_content" method="" action="">
+            <div class="basic_info border_bottom_dashed">
+                <p>想要收集的基本信息：</p>
+                <label><input type="checkbox" name="basic_info">姓名</label>
+                <label><input type="checkbox" name="basic_info">手机</label>
+                <label><input type="checkbox" name="basic_info">邮箱</label>
+                <label><input type="checkbox" name="basic_info">QQ</label>
+                <label class="user_defined"><input type="checkbox" name="basic_info">自定义内容</label>
+
+                <div class="input_group">
+                    <input class="form-control" type="text" placeholder="请输入想要收集的信息名称" disabled="disabled">
+                    <span class="icon-plus-sign"></span>
+                    <!--<label class="error">请输入收集的信息名称</label>-->
+                </div>
+            </div>
+            <div class="img_set border_bottom_dashed">
+                <span>是否要求上传照片：</span>
+                <label><input class="user_defined" type="radio" name="uploadphoto" value="yes">是</label>
+                <label><input type="radio" name="uploadphoto" value="no" checked="checked">否</label>
+
+                <div class="input_group">
+                    <label>
+                        设置上传数量：
+                        <input class="form-control" type="text" placeholder="请输入上传照片数量" disabled="disabled">
+                    </label>
+                </div>
+            </div>
+            <div class="topic_set">
+                <span>是否发起话题讨论：</span>
+                <label><input class="user_defined" type="radio" name="topic" value="yes">是</label>
+                <label><input type="radio" name="topic" value="no" checked="checked">否</label>
+                <label>
+                    设置话题主题：
+                </label>
+
+                <div class="input_group">
+                    <input class="form-control" type="text" placeholder="请输入主题名称" disabled="disabled">
+                    <span class="icon-plus-sign"></span>
+                </div>
+            </div>
+            <button class="set_finished btn-full button button-rounded" type="button">设置完成</button>
+        </form>
+    </div>
+</div>
+<!--设置完成 后弹出分享页面-->
+<div id="pop_share_container" class="pop_share_container">
+    <div class="share_container">
+        <div class="close"><a href="javascript:;">×</a></div>
+        <p>设置完成，赶快分享给你的好友们吧!</p>
+
+        <div class="share_btn">
+            <ul>
+                <li><img src="../img/create_done_btn1.png"></li>
+                <li><img src="../img/create_done_btn2.png"></li>
+                <li><img src="../img/create_done_btn4.png"></li>
+                <li><img src="../img/create_done_btn5.png"></li>
+                <li><img src="../img/create_done_btn6.png"></li>
+            </ul>
+        </div>
+        <div class="btn_group">
+            <a class="share_to" href="javascript:;">分享给好友</a>
+            <a class="enter_book_space" href="javascript:;">直接进入书册</a>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/icheck.js"></script>
+<script>
+    //单选、复选框
+    function changeButtonCss() {
+        $(".set_card_content input").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+
+    //user defined
+    function userDefinedTitle() {
+        $('.user_defined').on('ifChecked', function () {
+            $(this).parent().parent().parent().find('.input_group input[type=text]').removeAttr('disabled');
+        });
+        $('.user_defined').on('ifUnchecked', function () {
+            $(this).parent().parent().parent().find('.input_group input[type=text]').attr('disabled', 'disabled');
+            $('.mid_left .icon-plus-sign').unbind();
+        })
+    }
+
+    //添加删除信息、主题名称
+    function addTopicTitle() {
+        $('.set_card_content').on('click', '.icon-plus-sign', function () {
+            if ($(this).prev('input').attr('disabled') != 'disabled') {
+                $(this).parent().clone().appendTo($(this).parent().parent());
+                $(this).addClass('icon-minus-sign').removeClass('icon-plus-sign');
+            }
+        });
+
+        $('.set_card_content').on('click', '.icon-minus-sign', function () {
+            if ($(this).prev('input').attr('disabled') != 'disabled') {
+                $(this).parent().remove();
+            }
+        });
+    }
+    /*
+     * 设置完成后 弹出分享页面
+     * */
+    function setFinishCallBack() {
+        $('.set_finished').click(function () {
+            $('.pop_share_container').show();
+        })
+        $('.share_container .close').click(function () {
+            $('.pop_share_container').hide();
+        })
+    }
+    $(document).ready(function () {
+        changeButtonCss();
+        addTopicTitle();
+        userDefinedTitle();
+        setFinishCallBack();
+    });
+</script>
+</body>
+</html>

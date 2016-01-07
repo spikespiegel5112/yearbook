@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/islider.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background: #333;
+            overflow: hidden;
+        }
+
+        /*ul wrapper*/
+        #iSlider-wrapper {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #iSlider-wrapper ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #iSlider-wrapper li {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            list-style: none;
+        }
+
+        #iSlider-wrapper li img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+    <title>相册详情</title>
+</head>
+<body>
+<!--<div class="ybwechatheader_wrapper">&lt;!&ndash;NEWYB 710 add&ndash;&gt;
+	<a class='left_btn back_btn' href="javascript:;"></a>
+	<p>相册详情</p>
+</div>-->
+<div class="photopage_container">
+    <div class="album_name">
+        <a class="back_btn"></a>
+        <h5>2012秋季运动会</h5>
+        <a class="photo_pagination" href="javascript:;">14/27</a>
+    </div>
+    <div id='iSlider-wrapper'></div>
+    <div class="photopage_footer">
+        <ul>
+            <li class="photopage_button_1"><a href="javascript:;"></a><span>1</span></li>
+            <li class="photopage_button_2"><a href="javascript:;"></a><span>1</span></li>
+        </ul>
+        <a class="photopage_moredetail" href="javascript:;">查看详情&gt</a>
+    </div>
+    <!-- 	<div class="loading">
+            <img src="img/loading.gif"><strong>加载中</strong>
+        </div> -->
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/islider_core.js"></script>
+<script type="text/javascript" src="../js/m_main.js"></script>
+<script type="text/javascript">
+    function photopage() {
+        var list = [
+            {content: '../img/m/Comp 1_00000.png'},
+            {content: '../img/m/photopage_img_1_00000.jpg'},
+            {content: '../img/m/photopage_img_2_00000.jpg'},
+        ];
+        var islider = new iSlider({
+            type: 'pic',
+            dom: document.getElementById('iSlider-wrapper'),
+            data: list,
+            isLooping: true,
+            animateType: 'default',
+            isLoading: true
+        });
+
+        setTimeout(function () {
+            var img1 = $('.islider-outer li').eq(0);
+
+            function imgready(img, callback) {
+
+                var timer = setInterval(function () {
+                    if (img.complate) {
+                        alert('aaa')
+                        callback(img)
+                        var i = 0;
+
+                        alert('aaa')
+                        i++
+                        clearInterval(timer);
+                    }
+                }, 50)
+            }
+
+            imgready(img1, function () {
+                console.log('aaa')
+            });
+        }, 500)
+
+        $(".photopage_footer li a").on("touchend", function () {
+            var index = $(this).parent().index();
+
+
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+            } else {
+                $(this).addClass("active");
+            }
+        });
+    }
+    photopage();
+</script>
+</body>
+</html>

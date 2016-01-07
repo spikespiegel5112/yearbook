@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-选择发票信息</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/green.css" type="text/css"/>
+</head>
+
+<body class="bg_f6f6f6">
+<div class='main_container order_management'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href="pc_order_fillorderinfo.html"></a>
+
+        <p>选择发票信息</p>
+    </div>
+    <div class="invoice">
+        <div class="item category">
+            <a class="active">
+                <span class="icon-ok"></span>
+                <label>无需发票</label>
+            </a>
+            <a class="">
+                <span class="icon-ok"></span>
+                <label>普通发票</label>
+            </a>
+            <a class="">
+                <span class="icon-ok"></span>
+                <label>增值税发票</label>
+            </a>
+        </div>
+        <div class="item common cm_hidden">
+            <label><input type="radio" name="title" value="personal">个人</label>
+            <label><input type="radio" name="title" value="company">公司</label>
+            <ul class="">
+                <li>
+                    <label>
+                        <span>发票抬头：</span>
+                        <input class="title" type="text" value="个人" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span>发票内容：</span>
+                        <input type="text" value="纪念册" disabled="disabled">
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="item special cm_hidden">
+            <ul class="">
+                <li>
+                    <label>
+                        <span><b>*</b>单位名称：</span>
+                        <input class="" type="text" value="" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span><b>*</b>纳税人识别码：</span>
+                        <input class="" type="text" value="" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span><b>*</b>注册地址：</span>
+                        <input class="" type="text" value="" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span><b>*</b>注册电话：</span>
+                        <input class="" type="text" value="" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span><b>*</b>开户银行：</span>
+                        <input class="" type="text" value="" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span><b>*</b>银行账户：</span>
+                        <input class="" type="text" value="" placeholder="">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <span>发票内容：</span>
+                        <input type="text" value="纪念册" disabled="disabled">
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="btn_wrapper">
+            <a class="save" href="javascript:;">保存</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript" src='../assets/js/icheck.js'></script>
+<script type="text/javascript" src='../js/m_base.js'></script>
+<script type="text/javascript">
+    $(function () {
+        changeButtonCss();
+        chooseInvoiceCategory();
+    })
+
+    //单选、复选框
+    function changeButtonCss() {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+
+    /*
+     *选择发票类别
+     */
+    function chooseInvoiceCategory(){
+        $('.category a').on('touchend',function(){
+            $('.category a').each(function(){
+                $(this).removeClass('active');
+            });
+            $(this).addClass('active');
+            switch ($(this).index()){
+                case 1:
+                    $('.invoice .common').show();
+                    $('.invoice .special').hide();
+                    break;
+                case 2:
+                    $('.invoice .common').hide();
+                    $('.invoice .special').show();
+                    break;
+                default :
+                    $('.invoice .common').hide();
+                    $('.invoice .special').hide();
+
+            }
+        });
+
+        $('.common input[type=radio]').on('ifClicked',function(){
+            if($(this).val() == 'personal'){
+                $('.title').attr('disabled','disabled');
+            }else{
+                $('.title').removeAttr('disabled');
+            }
+        })
+    }
+</script>
+</body>
+
+</html>

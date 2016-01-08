@@ -107,9 +107,65 @@
 							</div>
 						</div>
 					</div>
-					<div depth="5" class="hard front-side secondcover even" style="background-image:url('img/pages/2.jpg');">
+					<div depth="5" class="hard front-side secondcover even">
 						<span class="depth"></span>
-						<!-- <link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
+						<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
+						<div class="container_activity_37_small_left">
+							<div class="page_header_container">
+								<div slottype="article" class="warp1">
+									<div class="richShow" slottype="articleShow" textheight="40">
+										<div class="main_title" slottype="richText" slotnum="0">
+											雄关为头越
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="photo0_container">
+								<span id="imgMask0" imgwidth="1324" imgheight="907" slotnum="0" slottype="mask" class="photoframe_common_property photoframe0"></span>
+								<img slottype="img" slotnum="0" class="img0" src="">
+							</div>
+							<div class="photo1_container">
+								<span id="imgMask1" imgwidth="498" imgheight="334" slotnum="1" slottype="mask" class="photoframe_common_property photoframe1"></span>
+								<img slottype="img" slotnum="1" class="img1" src="">
+							</div> -->
+							<!-- <div class="photo2_container">
+								<span id="imgMask2" imgwidth="389" imgheight="261" slotnum="2" slottype="mask" class="photoframe_common_property photoframe2"></span>
+								<img slottype="img" slotnum="2" class="img2" src="">
+							</div> -->
+							<div class="content_container">
+								<strong>
+											<div slottype="article" class="warp2">
+												<div class="richShow" slottype="articleShow" textheight="30">
+													<p></p><p slottype="richText" slotnum="2" style="min-height:30px;" placeholder="活动标题" mode="inline"></p>
+													<p></p>
+												</div>
+											</div>
+										</strong>
+								<div slottype="article" class="warp3">
+									<div class="richShow" slottype="articleShow" textheight="96">
+										<p slottype="richText" slotnum="3" style="display:block;word-wrap:break-word;" placeholder="活动内容"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hard fixed back-side thirdcover p19">
+						<span class="depth"></span>
+						<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
+						<link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
+						<div class="container_panoramic_02_small_right">
+							<div slottype="article" class="warp">
+								<div slottype="articleShow" textheight="62" class="richShow">
+									<p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+									</p>
+								</div>
+							</div>
+							<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+							<img slottype="img" slotnum="1" src="" class="img1">
+						</div>
+					</div>
+					<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')">
+						<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
 						<div class="container_activity_37_small_left">
 							<div class="page_header_container">
 								<div slottype="article" class="warp1">
@@ -147,24 +203,8 @@
 									</div>
 								</div>
 							</div>
-						</div> -->
+						</div>
 					</div>
-					<div class="hard fixed back-side thirdcover p19">
-						<span class="depth"></span>
-						<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
-						<!-- <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
-						<div class="container_panoramic_02_small_right">
-							<div slottype="article" class="warp">
-								<div slottype="articleShow" textheight="62" class="richShow">
-									<p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
-									</p>
-								</div>
-							</div>
-							<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-							<img slottype="img" slotnum="1" src="" class="img1">
-						</div> -->
-					</div>
-					<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')"></div>
 				</div>
 				<a class='flipbook_nextpage_btn' href="javascript:;"></a>
 			</div>
@@ -741,33 +781,23 @@
 					}
 				}
 
+				
+
 				function flipbookResize() {
 					determineWindowSize({
 						size1: function() {
 							$('.bp_container .flipbook-viewport').css({
 								'width': options.flipbookWidth + 'px'
-							})
-							$('.flipbook-viewport .page>div').css({
-								zoom: options.innerZoom,
-								'-moz-transform': 'scale(' + options.innerZoom + ')',
-								'-moz-transform-origin': 'top left'
 							});
-							$('.flipbook-viewport .hard>div').css({
-								zoom: options.hardZoom,
-								'-moz-transform': 'scale(' + options.hardZoom + ')',
-								'-moz-transform-origin': 'top left'
-							});
-							$('.flipbook-viewport .secondcover>div, .flipbook-viewport .thirdcover>div').css({
-								zoom: options.innerZoom,
-								'-moz-transform': 'scale(' + options.innerZoom + ')',
-								'-moz-transform-origin': 'top left',
-								top: 18
-							});
+							$('.flipbook-viewport .page>div').css(getScale(options.innerZoom, 'left'));
+							$('.flipbook-viewport .hard>div').css(getScale(options.hardZoom, 'left'));
+							$('.flipbook-viewport .secondcover>div').css(getScale(options.innerZoom, 'right', 15));
+							$('.flipbook-viewport .thirdcover>div').css(getScale(options.innerZoom, 'left', 15));
 							if (window.ActiveXObject || 'ActiveXObject' in window) {
 								$('.flipbook-viewport .secondcover>div').css({
 									left: 136
 								});
-							};
+							}
 						},
 						size2: function() {
 							options = $.extend({}, {
@@ -781,34 +811,18 @@
 							});
 							$('.bp_container .flipbook-viewport').css({
 								'width': options.flipbookWidth + 'px'
-							})
-							$('.flipbook-viewport .page>div').css({
-								zoom: options.innerZoom,
-								'-moz-transform': 'scale(' + options.innerZoom + ')',
-								'-moz-transform-origin': 'top left'
 							});
-							$('.flipbook-viewport .hard>div').css({
-								zoom: options.hardZoom,
-								'-moz-transform': 'scale(' + options.hardZoom + ')',
-								'-moz-transform-origin': 'top left'
-							});
+							$('.flipbook-viewport .page>div').css(getScale(options.innerZoom, 'left'));
+							$('.flipbook-viewport .hard>div').css(getScale(options.hardZoom, 'left'));
+							$('.flipbook-viewport .secondcover>div').css(getScale(options.innerZoom, 'right', 10));
+							$('.flipbook-viewport .thirdcover>div').css(getScale(options.innerZoom, 'left', 10));
 							$('.flipbook_prevpage_btn').css({
 								'background-position': '0 340px'
 							});
 							$('.flipbook_nextpage_btn').css({
 								'background-position': '-40px 340px'
 							});
-							$('.flipbook-viewport .secondcover>div, .flipbook-viewport .thirdcover>div').css({
-								zoom: options.innerZoom,
-								'-moz-transform': 'scale(' + options.innerZoom + ')',
-								'-moz-transform-origin': 'top left'
-									// 'position': 'relative'
-
-							});
-							$('.flipbook-viewport .secondcover>div, .flipbook-viewport .thirdcover>div').css({
-								'top': '12px'
-							})
-							console.log(1440)
+							console.log(1440);
 						},
 						size3: function() {
 							options = $.extend({}, {
@@ -822,17 +836,11 @@
 							});
 							$('.bp_container .flipbook-viewport').css({
 								'width': options.flipbookWidth + 'px'
-							})
-							$('.flipbook-viewport .page>div').css({
-								zoom: options.innerZoom,
-								'-moz-transform': 'scale(' + options.innerZoom + ')',
-								'-moz-transform-origin': 'top left'
 							});
-							$('.flipbook-viewport .hard>div').css({
-								zoom: options.hardZoom,
-								'-moz-transform': 'scale(' + options.hardZoom + ')',
-								'-moz-transform-origin': 'top left'
-							});
+							$('.flipbook-viewport .page>div').css(getScale(options.innerZoom, 'left'));
+							$('.flipbook-viewport .hard>div').css(getScale(options.hardZoom, 'left'));
+							$('.flipbook-viewport .secondcover>div').css(getScale(options.innerZoom, 'right', 6));
+							$('.flipbook-viewport .thirdcover>div').css(getScale(options.innerZoom, 'left', 6));
 							$('.flipbook_prevpage_btn').css({
 								'background-position': '0 280px'
 							});
@@ -841,19 +849,21 @@
 							});
 							$('.flipbook_wrapper .depth').css({
 								'height': '575px'
-							})
-							$('.flipbook-viewport .secondcover>div, .flipbook-viewport .thirdcover>div').css({
-								zoom: options.innerZoom,
-								'-moz-transform': 'scale(' + options.innerZoom + ')',
-								'-moz-transform-origin': 'top left'
-								// 'position': 'relative'
 							});
-							$('.flipbook-viewport .secondcover>div>div, .flipbook-viewport .thirdcover>div>div').css({
-								'top': '11px'
-							})
 							console.log(1280)
 						}
-					})
+					});
+				}
+				function getScale(scale, direction, top) {
+					var css = {
+						'-ms-zoom': scale,
+						'-webkit-transform': 'scale(' + scale + ')',
+						'-webkit-transform-origin': direction + ' top',
+						'-moz-transform': 'scale(' + scale + ')',
+						'-moz-transform-origin': direction,
+						'top':top
+					}
+					return css;
 				}
 			}
 		})

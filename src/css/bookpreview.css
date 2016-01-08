@@ -198,20 +198,32 @@
 }
 
 .bmindex_main_wrapper .flipbook-viewport .page>div, .bp_preview_container .flipbook-viewport .page>div {
-	zoom: 0.58;
+	-ms-zoom: 0.58;
+	-webkit-transform: scale(0.58);
+	-webkit-transform-origin: top left;
 	-moz-transform: scale(0.58);
 	-moz-transform-origin: top left;
 }
 .bmindex_main_wrapper .flipbook-viewport .hard>div, .bp_preview_container .flipbook-viewport .hard>div{
-	zoom: 0.6;
+	-ms-zoom: 0.6;
+	-webkit-transform: scale(0.6);
+	-webkit-transform-origin: top left;
 	-moz-transform: scale(0.6);
 	-moz-transform-origin: top left;
 }
 .bmindex_main_wrapper .flipbook-viewport .secondcover>div, .bmindex_main_wrapper .flipbook-viewport .thirdcover>div, .bp_preview_container .flipbook-viewport .secondcover>div, .bp_preview_container .flipbook-viewport .thirdcover>div{
-	zoom: 0.58;
+	-ms-zoom: 0.58;
+	-webkit-transform: scale(0.58);
 	-moz-transform: scale(0.58);
+	top: 8px;
+}
+.bmindex_main_wrapper .flipbook-viewport .secondcover>div, .bp_preview_container .flipbook-viewport .secondcover>div{
+	-webkit-transform-origin: top right;
+	-moz-transform-origin: top right;
+}
+.bmindex_main_wrapper .flipbook-viewport .thirdcover>div, .bp_preview_container .flipbook-viewport .thirdcover>div{
+	-webkit-transform-origin: top left;
 	-moz-transform-origin: top left;
-	top: 13px;
 }
 .flipbook-viewport .hard>div>div>div{
 	margin: 0;

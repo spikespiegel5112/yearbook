@@ -1215,6 +1215,8 @@
 				}
 			});
 
+			IEcss();
+
 			flipbook.turn({
 				width: 816,
 				height: 575,
@@ -1290,6 +1292,7 @@
 							$('#slider').slider('value', getViewNumber(book));
 						}, 1);
 						moveBar(false);
+						IEcss();
 					},
 					missing: function(e, pages) {
 						for (var i = 0; i < pages.length; i++) {
@@ -1440,6 +1443,14 @@
 				preview.css({
 					backgroundPosition: '0px -' + ((view - 1) * previewHeight) + 'px'
 				});
+			}
+
+			function IEcss(argu){
+				if (window.ActiveXObject || 'ActiveXObject' in window) {
+					$('.flipbook-viewport .secondcover>div').css({
+						left: 13
+					});
+				}
 			}
 		}
 

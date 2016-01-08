@@ -793,11 +793,7 @@
 							$('.flipbook-viewport .hard>div').css(getScale(options.hardZoom, 'left'));
 							$('.flipbook-viewport .secondcover>div').css(getScale(options.innerZoom, 'right', 15));
 							$('.flipbook-viewport .thirdcover>div').css(getScale(options.innerZoom, 'left', 15));
-							if (window.ActiveXObject || 'ActiveXObject' in window) {
-								$('.flipbook-viewport .secondcover>div').css({
-									left: 136
-								});
-							}
+							IEcss(19);
 						},
 						size2: function() {
 							options = $.extend({}, {
@@ -822,6 +818,7 @@
 							$('.flipbook_nextpage_btn').css({
 								'background-position': '-40px 340px'
 							});
+							IEcss(13);
 							console.log(1440);
 						},
 						size3: function() {
@@ -850,7 +847,8 @@
 							$('.flipbook_wrapper .depth').css({
 								'height': '575px'
 							});
-							console.log(1280)
+							IEcss(13);
+							console.log(1280);
 						}
 					});
 				}
@@ -860,10 +858,22 @@
 						'-webkit-transform': 'scale(' + scale + ')',
 						'-webkit-transform-origin': direction + ' top',
 						'-moz-transform': 'scale(' + scale + ')',
-						'-moz-transform-origin': direction,
+						'-moz-transform-origin': direction + ' top',
 						'top':top
 					}
+					// if (window.ActiveXObject || 'ActiveXObject' in window) {
+					// 	css={
+					// 		'zoom': scale
+					// 	}
+					// };
 					return css;
+				}
+				function IEcss(left){
+					if (window.ActiveXObject || 'ActiveXObject' in window) {
+						$('.flipbook-viewport .secondcover>div').css({
+							left: 13
+						});
+					}
 				}
 			}
 		})

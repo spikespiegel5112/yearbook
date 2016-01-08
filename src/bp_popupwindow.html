@@ -143,8 +143,10 @@
 						flipbook.turn('next');
 						break;
 				}
-			})
+			});
 
+			IEcss()
+			
 			flipbook.turn({
 				width: 814,
 				height: 576,
@@ -207,6 +209,7 @@
 					end: function(e, pageObj) {
 						var book = $(this);
 						updateDepth(book);
+						IEcss();
 					},
 					missing: function(e, pages) {
 						for (var i = 0; i < pages.length; i++) {
@@ -215,7 +218,6 @@
 					}
 				}
 			});
-
 
 			flipbook.addClass('animated');
 
@@ -348,6 +350,14 @@
 					});
 					$('.flipbook_nextpage_btn').show().css({
 						right: '-39px'
+					});
+				}
+			}
+
+			function IEcss(argu){
+				if (window.ActiveXObject || 'ActiveXObject' in window) {
+					$('.flipbook-viewport .secondcover>div').css({
+						left: 13
 					});
 				}
 			}

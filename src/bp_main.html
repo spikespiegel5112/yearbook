@@ -753,7 +753,7 @@
 									top: 10,
 									'z-index': 1,
 									'background-position': '-21px 0'
-									
+
 								});
 							},
 							size2: function() {
@@ -781,7 +781,7 @@
 					}
 				}
 
-				
+
 
 				function flipbookResize() {
 					determineWindowSize({
@@ -852,23 +852,25 @@
 						}
 					});
 				}
+
 				function getScale(scale, direction, top) {
 					var css = {
-						'-ms-zoom': scale,
-						'-webkit-transform': 'scale(' + scale + ')',
-						'-webkit-transform-origin': direction + ' top',
-						'-moz-transform': 'scale(' + scale + ')',
-						'-moz-transform-origin': direction + ' top',
-						'top':top
-					}
-					// if (window.ActiveXObject || 'ActiveXObject' in window) {
-					// 	css={
-					// 		'zoom': scale
-					// 	}
-					// };
+							'-ms-zoom': scale,
+							'-webkit-transform': 'scale(' + scale + ')',
+							'-webkit-transform-origin': direction + ' top',
+							'-moz-transform': 'scale(' + scale + ')',
+							'-moz-transform-origin': direction + ' top',
+							'top': top
+						}
+						// if (window.ActiveXObject || 'ActiveXObject' in window) {
+						// 	css={
+						// 		'zoom': scale
+						// 	}
+						// };
 					return css;
 				}
-				function IEcss(left){
+
+				function IEcss(left) {
 					if (window.ActiveXObject || 'ActiveXObject' in window) {
 						$('.flipbook-viewport .secondcover>div').css({
 							left: 13

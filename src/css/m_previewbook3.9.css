@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+.bp_container{
+    position: relative;
+}
+.bp_container .ybwechatheader_wrapper{
+    background: transparent;
+}
+.bp_tpl{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 263px;
+    background: url("../img/m/previewbook/pb_bg3-9.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+.bp_tpl .tips{
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+}
+/*.flipbook-viewport .single{
+    position: relative;
+    display: block;
+    margin: 15px auto 30px;
+    width: 155px;
+    height: 210px;
+    background: url("../img/m/previewbook/pb_single_bg.png") no-repeat 0;
+    background-size: cover;
+}
+.flipbook-viewport img{
+    position: absolute;
+    top: -3px;
+    width: 148px;
+    height: 210px;
+}*/
+
+.bp_tpl .flipbook-viewport {
+    margin: 10px auto 30px;
+    width: 280px;
+    overflow: visible;
+}
+
+.flipbook_wrapper {
+    margin: 2% 0 0 0;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.flipbook_wrapper>a {
+    display: block;
+    width: 30px;
+    height: 60px;
+    background: rgba(255,255,255,.4) url("../img/m/previewbook/pb_lrarrow.png") no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    z-index: 1;
+}
+.flipbook-viewport .flipbook {
+    left: 0!important;
+    overflow: hidden;
+}
+
+.flipbook_wrapper .flipbook .page-wrapper {
+    perspective: 3500px;
+    -webkit-perspective: 3500px;
+    -moz-perspective: 3500px;
+}
+
+.flipbook-viewport .page {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.bp_tpl .flipbook-viewport .page>div, .bp_tpl .flipbook-viewport .page>div {
+    -ms-zoom: 0.206;
+    -webkit-transform: scale(0.206);
+    -webkit-transform-origin: top left;
+    -moz-transform: scale(0.206);
+    -moz-transform-origin: top left;
+}
+
+.flipbook-viewport .shadow {
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -o-box-shadow: 0 0 20px #ccc;
+    -ms-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
+}
+
+
+
+
+.bp_container .hsub{
+    position: relative;
+    margin-top: 235px;
+    width: 100%;
+}
+
+.hsub .tpl_info{
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    line-height: 40px;
+    background-color: #F6F6F6;
+}
+
+.hsub .htool_wrap{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.htool_wrap .hd{
+    position: relative;
+    overflow: hidden;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.htool_wrap .hd li{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+
+.htool_wrap .hd li a{
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+
+.htool_wrap .hd li .comment,
+.htool_wrap .hd li .praise{
+    position: relative;
+    margin: 0 auto;
+    width: 40px;
+    height: 45px;
+    background: url("../img/m/previewbook/htool_icons.png") no-repeat;
+    background-size: cover;
+}
+
+.htool_wrap .hd li .praise{
+    background-position: -40px 0;
+}
+
+.htool_wrap .hd li .bootstrap-switch{
+    margin: 3px 0 10px;
+}
+
+.htool_wrap .hd li p{
+    margin-bottom: 10px;
+}
+
+.htool_wrap .bd{
+    position: relative;
+}
+
+.htool_wrap .bd .up_arrow{
+    position: absolute;
+    top: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e0e0e0;
+}
+
+.htool_wrap .bd .comment_con .up_arrow{
+    left: 16.7%;
+    margin-left: -10px;
+}
+
+.htool_wrap .bd .praise_con .up_arrow{
+    right: 16.7%;
+    margin-right: -10px;
+}
+
+.comment_con table{
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.comment_con table tr:first-child td:first-child{
+    width: 40px;
+}
+
+.comment_con table tr:first-child td:last-child{
+    width: 62px;
+}
+
+.comment_con table tr td div{
+    line-height: 50px;
+    font-size: 12px;
+    color: #999;
+}
+
+.comment_con .user_header img{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.comment_con table tr td p{
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.praise_con ul li{
+    float: left;
+    margin: 10px;
+    width: 70px;
+}
+
+.praise_con ul li .user_header{
+    margin: 5px auto;
+    width: 45px;
+    height: 45px;
+}
+
+.praise_con ul li .user_header img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.praise_con ul li .user_name{
+    max-width: 100%;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bp_container .comment_input{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #d3d3d3;
+}
+
+.comment_input .input_box{
+    position: relative;
+    margin: 10px auto;
+    width: 90%;
+    background-color: #fafafa;
+    border: 1px solid #bebebd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.comment_input .input_box input{
+    float: left;
+    padding: 6px 12px;
+    width: 80%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fafafa;
+    border: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+.comment_input .input_box input[type=text]:focus{
+    box-shadow: -1px 1px 0 #fafafa ;
+    border: 0;
+    outline: none;
+}
+
+.comment_input .input_box button{
+    position: absolute;
+    right: 0;
+    margin: 3px 0;
+    padding: 0;
+    width: 20%;
+    height: 28px;
+    background-color: #fafafa;
+    font-size: 20px;
+    color: #666;
+    border: 0;
+    border-left: 1px solid #999;
+}
+
+.comment_input .input_box button:hover{
+    color: #333;
+}

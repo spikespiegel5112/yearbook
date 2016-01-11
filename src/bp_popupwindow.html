@@ -132,33 +132,35 @@
 				flipbook.turn('page', pageIndex);
 			});
 
-			$(document).keydown(function(e) {
-				var previous = 37,
-					next = 39;
-				switch (e.keyCode) {
-					case previous:
-						flipbook.turn('previous');
-						break;
-					case next:
-						flipbook.turn('next');
-						break;
-				}
-			})
+            $(document).keydown(function(e) {
+                var previous = 37,
+                        next = 39;
+                switch (e.keyCode) {
+                    case previous:
+                        flipbook.turn('previous');
+                        break;
+                    case next:
+                        flipbook.turn('next');
+                        break;
+                }
+            });
 
-			flipbook.turn({
-				width: 814,
-				height: 576,
-				elevation: 0,
-				acceleration: !isChrome(),
-				autoCenter: true,
-				gradients: true,
-				duration: 1000,
-				pages: bookLength(),
-				when: {
-					turning: function(e, page, view) {
-						var book = $(this),
-							currentPage = book.turn('page'),
-							pages = book.turn('pages');
+            IEcss()
+
+            flipbook.turn({
+                width: 814,
+                height: 576,
+                elevation: 0,
+                acceleration: !isChrome(),
+                autoCenter: true,
+                gradients: true,
+                duration: 1000,
+                pages: bookLength(),
+                when: {
+                    turning: function(e, page, view) {
+                        var book = $(this),
+                                currentPage = book.turn('page'),
+                                pages = book.turn('pages');
 
 						// $('.page-wrapper .page').addClass('hard')
 
@@ -184,37 +186,38 @@
 							}
 						}
 
-						if (page >= 2) {
-							$('.flipbook_wrapper .p2').addClass('fixed');
-						} else {
-							$('.flipbook_wrapper .p2').removeClass('fixed');
-						}
-						if (page < book.turn('pages')) {
-							$('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
-						} else {
-							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
-						}
-						updateDepth(book, page);
-						disableControls(page);
-					},
-					turned: function(e, page, view) {
-						var book = $(this);
-						updateDepth(book);
-						disableControls(page);
-						book.turn('center');
-					},
-					start: function(e, pageObj) {},
-					end: function(e, pageObj) {
-						var book = $(this);
-						updateDepth(book);
-					},
-					missing: function(e, pages) {
-						for (var i = 0; i < pages.length; i++) {
-							addPage(bookIdx, pages[i], $(this));
-						}
-					}
-				}
-			});
+                        if (page >= 2) {
+                            $('.flipbook_wrapper .p2').addClass('fixed');
+                        } else {
+                            $('.flipbook_wrapper .p2').removeClass('fixed');
+                        }
+                        if (page < book.turn('pages')) {
+                            $('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
+                        } else {
+                            $('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
+                        }
+                        updateDepth(book, page);
+                        disableControls(page);
+                    },
+                    turned: function(e, page, view) {
+                        var book = $(this);
+                        updateDepth(book);
+                        disableControls(page);
+                        book.turn('center');
+                    },
+                    start: function(e, pageObj) {},
+                    end: function(e, pageObj) {
+                        var book = $(this);
+                        updateDepth(book);
+                        IEcss();
+                    },
+                    missing: function(e, pages) {
+                        for (var i = 0; i < pages.length; i++) {
+                            addPage(bookIdx, pages[i], $(this));
+                        }
+                    }
+                }
+            });
 
 
 			flipbook.addClass('animated');
@@ -295,64 +298,71 @@
 					depthWidth = 20 * Math.min(1, (pages - (pages - page)) / pages);
 				newPage = newPage || page;
 
-				if (newPage > 3) {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: depthWidth,
-						left: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-				depthWidth = 30 * Math.min(1, (pages - page) / pages);
-				if (newPage < pages - 3) {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: depthWidth,
-						right: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-			}
+                if (newPage > 3) {
+                    $('.flipbook-viewport .p2 .depth').css({
+                        width: depthWidth,
+                        left: 12 - depthWidth,
+                        'z-index': 1
+                    });
+                } else {
+                    $('.flipbook-viewport .p2 .depth').css({
+                        width: 0,
+                        'z-index': 1
+                    });
+                }
+                depthWidth = 30 * Math.min(1, (pages - page) / pages);
+                if (newPage < pages - 3) {
+                    $('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+                        width: depthWidth,
+                        right: 12 - depthWidth,
+                        'z-index': 1
+                    });
+                } else {
+                    $('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+                        width: 0,
+                        'z-index': 1
+                    });
+                }
+            }
 
-			function disableControls(page) {
-				$('.flipbook_nextpage_btn').css({
-					'background-color': 'rgba(0,0,0,0.1)',
-					'background-position': '-40px 280px'
-				});
-				$('.flipbook_prevpage_btn').css({
-					'background-color': 'rgba(0,0,0,0.1)',
-					'background-position': '0 280px'
-				})
-				if (page == 1) {
-					$('.flipbook_prevpage_btn').hide();
-					$('.flipbook_nextpage_btn').show().css({
-						right: 164,
-					});
-				} else if (page == $('.flipbook').turn('pages')) {
-					var length = $('.flipbook .page-wrapper').length;
-					$('.flipbook_prevpage_btn').show().css({
-						left: 180
-					});
-					$('.flipbook_nextpage_btn').hide();
-				} else {
-					$('.flipbook_prevpage_btn').show().css({
-						left: '-26px'
-					});
-					$('.flipbook_nextpage_btn').show().css({
-						right: '-39px'
-					});
-				}
-			}
-		}
+            function disableControls(page) {
+                $('.flipbook_nextpage_btn').css({
+                    'background-color': 'rgba(0,0,0,0.1)',
+                    'background-position': '-40px 280px'
+                });
+                $('.flipbook_prevpage_btn').css({
+                    'background-color': 'rgba(0,0,0,0.1)',
+                    'background-position': '0 280px'
+                })
+                if (page == 1) {
+                    $('.flipbook_prevpage_btn').hide();
+                    $('.flipbook_nextpage_btn').show().css({
+                        right: 164,
+                    });
+                } else if (page == $('.flipbook').turn('pages')) {
+                    var length = $('.flipbook .page-wrapper').length;
+                    $('.flipbook_prevpage_btn').show().css({
+                        left: 180
+                    });
+                    $('.flipbook_nextpage_btn').hide();
+                } else {
+                    $('.flipbook_prevpage_btn').show().css({
+                        left: '-26px'
+                    });
+                    $('.flipbook_nextpage_btn').show().css({
+                        right: '-39px'
+                    });
+                }
+            }
 
+            function IEcss(argu){
+                if (window.ActiveXObject || 'ActiveXObject' in window) {
+                    $('.flipbook-viewport .secondcover>div').css({
+                        left: 13
+                    });
+                }
+            }
+        }
 		// Load the HTML4 version if there's not CSS transform
 		yepnope({
 			test: Modernizr.csstransforms,

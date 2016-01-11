@@ -122,41 +122,41 @@
 		<div class='bmindex_main_wrapper'>
 			<div class="bmindex_left_wrapper">
 				<div class="flipbook-viewport">
-					<div class='flipbook_wrapper' pagecount='19'>
-						<div class="flipbook">
-							<div depth="5" class="hard" style="background-image:url('img/pages/1.jpg');">
-							</div>
-							<div depth="5" class="hard front-side secondcover even" style="background-image:url('img/pages/2.jpg');">
-								<span class="depth"></span>
-								<link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_left.css" rel="stylesheet" type="text/css">
-								<div class="container_panoramic_02_small_left">
-									<div slottype="article" class="warp">
-										<div slottype="articleShow" textheight="62" class="richShow">
-											<p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
-											</p>
-										</div>
-									</div>
-									<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-									<img slottype="img" slotnum="1" src="" class="img1">
-								</div>
-							</div>
-							<div class="hard fixed back-side thirdcover p19">
-								<span class="depth"></span>
-								<link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
-								<div class="container_panoramic_02_small_right">
-									<div slottype="article" class="warp">
-										<div slottype="articleShow" textheight="62" class="richShow">
-											<p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
-											</p>
-										</div>
-									</div>
-									<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-									<img slottype="img" slotnum="1" src="" class="img1">
-								</div>
-							</div>
-							<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')"></div>
-						</div>
-					</div>
+                    <div class='flipbook_wrapper' pagecount='19'>
+                        <div class="flipbook">
+                            <div depth="5" class="hard" style="background-image:url('img/pages/1.jpg');">
+                            </div>
+                            <div depth="5" class="hard front-side secondcover even" style="background-image:url('img/pages/2.jpg');">
+                                <span class="depth"></span>
+                                <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_left.css" rel="stylesheet" type="text/css">
+                                <div class="container_panoramic_02_small_left">
+                                    <div slottype="article" class="warp">
+                                        <div slottype="articleShow" textheight="62" class="richShow">
+                                            <p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+                                    <img slottype="img" slotnum="1" src="" class="img1">
+                                </div>
+                            </div>
+                            <div class="hard fixed back-side thirdcover p19">
+                                <span class="depth"></span>
+                                <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
+                                <div class="container_panoramic_02_small_right">
+                                    <div slottype="article" class="warp">
+                                        <div slottype="articleShow" textheight="62" class="richShow">
+                                            <p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+                                    <img slottype="img" slotnum="1" src="" class="img1">
+                                </div>
+                            </div>
+                            <div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')"></div>
+                        </div>
+                    </div>
 					<div id="slider-bar" class="turnjs-slider">
 						<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
 							<a class="ui-slider-handle ui-state-default ui-corner-all"></a>
@@ -1142,524 +1142,534 @@
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
-	<script type="text/javascript">
-		(function($) {
-			editBannerTitle();
-			timeline();
-			bpToolbar();
-			changeButtonCss();
-			choose();
-			swiperInit();
-			memberResult();
-		}(jQuery));
+    <script type="text/javascript">
+        (function($) {
+            editBannerTitle();
+            timeline();
+            bpToolbar();
+            changeButtonCss();
+            choose();
+            swiperInit();
+            memberResult();
+        }(jQuery));
 
-		function loadApp() {
-			//这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
-			var bookIdx = 1;
-			var pageWidth = $('.flipbook-viewport .page').width();
-			var pageHegiht = $('.flipbook-viewport .page').height();
-			var flipbook = $('.flipbook');
-			var pageSection = $('.chapter_info ul li');
+        function loadApp() {
+            //这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
+            var bookIdx = 1;
+            var pageWidth = $('.flipbook-viewport .page').width();
+            var pageHegiht = $('.flipbook-viewport .page').height();
+            var flipbook = $('.flipbook');
+            var pageSection = $('.chapter_info ul li');
 
-			flipbook.bind('first', function() {
-				$('.page-wrapper[page=1]').find('.p1').addClass('hard');
-			})
+            flipbook.bind('first', function() {
+                $('.page-wrapper[page=1]').find('.p1').addClass('hard');
+            })
 
-			//点击章节目录中的章节名称跳转到相应的页面中，章节名称所对应的页面序号在html里用page属性做为标记
-			pageSection.click(function() {
-				var $this = $(this);
-				var pageIndex = $this.attr('page');
-				$this.addClass('active').siblings().removeClass('active');
-				flipbook.turn('page', pageIndex);
-			});
+            //点击章节目录中的章节名称跳转到相应的页面中，章节名称所对应的页面序号在html里用page属性做为标记
+            pageSection.click(function() {
+                var $this = $(this);
+                var pageIndex = $this.attr('page');
+                $this.addClass('active').siblings().removeClass('active');
+                flipbook.turn('page', pageIndex);
+            });
 
-			$(document).keydown(function(e) {
-				var previous = 37,
-					next = 39;
-				switch (e.keyCode) {
-					case previous:
-						flipbook.turn('previous');
-						break;
-					case next:
-						flipbook.turn('next');
-						break;
-				}
-			})
+            $(document).keydown(function(e) {
+                var previous = 37,
+                        next = 39;
+                switch (e.keyCode) {
+                    case previous:
+                        flipbook.turn('previous');
+                        break;
+                    case next:
+                        flipbook.turn('next');
+                        break;
+                }
+            })
 
-			$("#slider").slider({
-				min: 1,
-				max: (bookLength() - 2) / 2 + 2,
-				start: function(event, ui) {
-					if (!window._thumbPreview) {
-						_thumbPreview = $('<div />', {
-							'class': 'thumbnail'
-						}).html('<div></div>');
-						setPreview(ui.value);
-						_thumbPreview.appendTo($(ui.handle));
-					} else {
-						setPreview(ui.value);
-					}
-					moveBar(false);
-				},
-				slide: function(event, ui) {
-					setPreview(ui.value);
-				},
-				stop: function() {
-					$('.flipbook_wrapper .flipbook').turn('page', Math.max(1, $(this).slider('value') * 2 - 2));
-					var sliderValue = $('#slider').slider("value");
-					if (sliderValue > 2) {
-						$('.chapter_info ul li').eq((sliderValue - 1) * 2 - 1).addClass('active').siblings().removeClass('active');
-					} else {
-						$('.chapter_info ul li').eq(sliderValue - 1).addClass('active').siblings().removeClass('active');
-					}
-				}
-			});
+            $("#slider").slider({
+                min: 1,
+                max: (bookLength() - 2) / 2 + 2,
+                start: function(event, ui) {
+                    if (!window._thumbPreview) {
+                        _thumbPreview = $('<div />', {
+                            'class': 'thumbnail'
+                        }).html('<div></div>');
+                        setPreview(ui.value);
+                        _thumbPreview.appendTo($(ui.handle));
+                    } else {
+                        setPreview(ui.value);
+                    }
+                    moveBar(false);
+                },
+                slide: function(event, ui) {
+                    setPreview(ui.value);
+                },
+                stop: function() {
+                    $('.flipbook_wrapper .flipbook').turn('page', Math.max(1, $(this).slider('value') * 2 - 2));
+                    var sliderValue = $('#slider').slider("value");
+                    if (sliderValue > 2) {
+                        $('.chapter_info ul li').eq((sliderValue - 1) * 2 - 1).addClass('active').siblings().removeClass('active');
+                    } else {
+                        $('.chapter_info ul li').eq(sliderValue - 1).addClass('active').siblings().removeClass('active');
+                    }
+                }
+            });
 
-			flipbook.turn({
-				width: 816,
-				height: 575,
-				elevation: 0,
-				acceleration: !isChrome(),
-				autoCenter: true,
-				gradients: true,
-				duration: 1000,
-				pages: bookLength(),
-				when: {
-					turning: function(e, page, view) {
-						var book = $(this),
-							currentPage = book.turn('page'),
-							pages = book.turn('pages');
+            IEcss();
 
-						// $('.page-wrapper .page').addClass('hard')
+            flipbook.turn({
+                width: 816,
+                height: 575,
+                elevation: 0,
+                acceleration: !isChrome(),
+                autoCenter: true,
+                gradients: true,
+                duration: 1000,
+                pages: bookLength(),
+                when: {
+                    turning: function(e, page, view) {
+                        var book = $(this),
+                                currentPage = book.turn('page'),
+                                pages = book.turn('pages');
 
-						if (currentPage > 3 && currentPage < pages - 3) {
-							if (page == 1) {
-								book.turn('page', 2).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							} else if (page == pages) {
-								book.turn('page', pages - 1).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							}
-						} else if (page > 3 && page < pages - 3) {
-							if (currentPage == 1) {
-								book.turn('page', 2).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							} else if (currentPage == pages) {
-								book.turn('page', pages - 1).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							}
-						}
-						updateDepth(book, page);
+                        // $('.page-wrapper .page').addClass('hard')
 
-						if (page >= 2) {
-							$('.flipbook_wrapper .p2').addClass('fixed');
-						} else {
-							$('.flipbook_wrapper .p2').removeClass('fixed');
-						}
-						if (page < book.turn('pages')) {
-							$('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
-						} else {
-							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
-						}
+                        if (currentPage > 3 && currentPage < pages - 3) {
+                            if (page == 1) {
+                                book.turn('page', 2).turn('stop').turn('page', page);
+                                e.preventDefault();
+                                return;
+                            } else if (page == pages) {
+                                book.turn('page', pages - 1).turn('stop').turn('page', page);
+                                e.preventDefault();
+                                return;
+                            }
+                        } else if (page > 3 && page < pages - 3) {
+                            if (currentPage == 1) {
+                                book.turn('page', 2).turn('stop').turn('page', page);
+                                e.preventDefault();
+                                return;
+                            } else if (currentPage == pages) {
+                                book.turn('page', pages - 1).turn('stop').turn('page', page);
+                                e.preventDefault();
+                                return;
+                            }
+                        }
+                        updateDepth(book, page);
 
-						var sliderValue = $('#slider').slider("value");
-						if (sliderValue > 2) {
-							$('.chapter_info ul li').eq((sliderValue - 1) * 2 - 1).addClass('active').siblings().removeClass('active');
-						} else {
-							$('.chapter_info ul li').eq(sliderValue - 1).addClass('active').siblings().removeClass('active');
-						}
-						$('#slider').slider('value', getViewNumber(book, page));
-					},
-					turned: function(e, page, view) {
-						var book = $(this);
-						updateDepth(book);
-						$('#slider').slider('value', getViewNumber(book, page));
-						book.turn('center');
-					},
-					start: function(e, pageObj) {
-						moveBar(true);
-					},
-					end: function(e, pageObj) {
-						var book = $(this);
-						updateDepth(book);
-						setTimeout(function() {
-							$('#slider').slider('value', getViewNumber(book));
-						}, 1);
-						moveBar(false);
-					},
-					missing: function(e, pages) {
-						for (var i = 0; i < pages.length; i++) {
-							addPage(bookIdx, pages[i], $(this));
-						}
-					}
-				}
-			});
+                        if (page >= 2) {
+                            $('.flipbook_wrapper .p2').addClass('fixed');
+                        } else {
+                            $('.flipbook_wrapper .p2').removeClass('fixed');
+                        }
+                        if (page < book.turn('pages')) {
+                            $('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
+                        } else {
+                            $('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
+                        }
 
-			flipbook.addClass('animated');
+                        var sliderValue = $('#slider').slider("value");
+                        if (sliderValue > 2) {
+                            $('.chapter_info ul li').eq((sliderValue - 1) * 2 - 1).addClass('active').siblings().removeClass('active');
+                        } else {
+                            $('.chapter_info ul li').eq(sliderValue - 1).addClass('active').siblings().removeClass('active');
+                        }
+                        $('#slider').slider('value', getViewNumber(book, page));
+                    },
+                    turned: function(e, page, view) {
+                        var book = $(this);
+                        updateDepth(book);
+                        $('#slider').slider('value', getViewNumber(book, page));
+                        book.turn('center');
+                    },
+                    start: function(e, pageObj) {
+                        moveBar(true);
+                    },
+                    end: function(e, pageObj) {
+                        var book = $(this);
+                        updateDepth(book);
+                        setTimeout(function() {
+                            $('#slider').slider('value', getViewNumber(book));
+                        }, 1);
+                        moveBar(false);
+                        IEcss();
+                    },
+                    missing: function(e, pages) {
+                        for (var i = 0; i < pages.length; i++) {
+                            addPage(bookIdx, pages[i], $(this));
+                        }
+                    }
+                }
+            });
 
-			// Events for the next button
+            flipbook.addClass('animated');
 
-			$('.flipbook_nextpage_btn').bind($.mouseEvents.over, function() {
-				$(this).addClass('next-button-hover');
-			}).bind($.mouseEvents.out, function() {
-				$(this).removeClass('next-button-hover');
-			}).bind($.mouseEvents.down, function() {
-				$(this).addClass('next-button-down');
-			}).bind($.mouseEvents.up, function() {
-				$(this).removeClass('next-button-down');
-			}).click(function() {
-				flipbook.turn('next');
-			});
+            // Events for the next button
 
-			// Events for the next button
+            $('.flipbook_nextpage_btn').bind($.mouseEvents.over, function() {
+                $(this).addClass('next-button-hover');
+            }).bind($.mouseEvents.out, function() {
+                $(this).removeClass('next-button-hover');
+            }).bind($.mouseEvents.down, function() {
+                $(this).addClass('next-button-down');
+            }).bind($.mouseEvents.up, function() {
+                $(this).removeClass('next-button-down');
+            }).click(function() {
+                flipbook.turn('next');
+            });
 
-			$('.flipbook_prevpage_btn').bind($.mouseEvents.over, function() {
-				$(this).addClass('previous-button-hover');
-			}).bind($.mouseEvents.out, function() {
-				$(this).removeClass('previous-button-hover');
-			}).bind($.mouseEvents.down, function() {
-				$(this).addClass('previous-button-down');
-			}).bind($.mouseEvents.up, function() {
-				$(this).removeClass('previous-button-down');
-			}).click(function() {
-				flipbook.turn('previous');
-			});
+            // Events for the next button
 
-			function bookLength() {
-				var length = $('.flipbook_wrapper').attr('pagecount');
-				if (length % 2 != 0) {
-					return parseInt(length) + 1;
-				} else {
-					return length;
-				}
-				return length;
-			}
+            $('.flipbook_prevpage_btn').bind($.mouseEvents.over, function() {
+                $(this).addClass('previous-button-hover');
+            }).bind($.mouseEvents.out, function() {
+                $(this).removeClass('previous-button-hover');
+            }).bind($.mouseEvents.down, function() {
+                $(this).addClass('previous-button-down');
+            }).bind($.mouseEvents.up, function() {
+                $(this).removeClass('previous-button-down');
+            }).click(function() {
+                flipbook.turn('previous');
+            });
 
-			function moveBar(yes) {
-				if (Modernizr && Modernizr.csstransforms) {
-					$('#slider .ui-slider-handle').css({
-						zIndex: yes ? -1 : 10000
-					});
-				}
-			}
+            function bookLength() {
+                var length = $('.flipbook_wrapper').attr('pagecount');
+                if (length % 2 != 0) {
+                    return parseInt(length) + 1;
+                } else {
+                    return length;
+                }
+                return length;
+            }
 
-			function getViewNumber(book, page) {
-				return parseInt((page || book.turn('page')) / 2 + 1, 10);
-			}
+            function moveBar(yes) {
+                if (Modernizr && Modernizr.csstransforms) {
+                    $('#slider .ui-slider-handle').css({
+                        zIndex: yes ? -1 : 10000
+                    });
+                }
+            }
 
-			function isChrome() {
-				return navigator.userAgent.indexOf('Chrome') != -1;
-			}
+            function getViewNumber(book, page) {
+                return parseInt((page || book.turn('page')) / 2 + 1, 10);
+            }
 
-			function loadPage(bookIdx, page) {
-				$.ajax({
-					url: 'flipbookpages/' + bookIdx + '/page' + page + '.html'
-				}).done(function(pageHtml) {
-					$('.flipbook .p' + page).html(pageHtml.replace('yb3.0/flipbookpages/', ''));
-				});
-			}
+            function isChrome() {
+                return navigator.userAgent.indexOf('Chrome') != -1;
+            }
 
-			function addPage(bookIdx, page, book) {
-				var pages = book.turn('pages');
-				if (!book.turn('hasPage', page)) {
-					var element = $('<div />', {
-						'class': 'own-size',
-						css: {
-							width: 395,
-							height: 560,
-						}
-					}).html('<div class="loader"></div>');
-					if (book.turn('addPage', element, page)) {
-						loadPage(bookIdx, page);
-					}
-				}
-			}
+            function loadPage(bookIdx, page) {
+                $.ajax({
+                    url: 'flipbookpages/' + bookIdx + '/page' + page + '.html'
+                }).done(function(pageHtml) {
+                    $('.flipbook .p' + page).html(pageHtml.replace('yb3.0/flipbookpages/', ''));
+                });
+            }
 
-			function updateDepth(book, newPage) {
-				var page = book.turn('page'),
-					pages = bookLength(),
-					depthWidth = 20 * Math.min(1, (pages - (pages - page)) / pages);
-				newPage = newPage || page;
+            function addPage(bookIdx, page, book) {
+                var pages = book.turn('pages');
+                if (!book.turn('hasPage', page)) {
+                    var element = $('<div />', {
+                        'class': 'own-size',
+                        css: {
+                            width: 395,
+                            height: 560,
+                        }
+                    }).html('<div class="loader"></div>');
+                    if (book.turn('addPage', element, page)) {
+                        loadPage(bookIdx, page);
+                    }
+                }
+            }
 
-				if (newPage > 3) {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: depthWidth,
-						left: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-				depthWidth = 30 * Math.min(1, (pages - page) / pages);
-				if (newPage < pages - 3) {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: depthWidth,
-						right: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-			}
+            function updateDepth(book, newPage) {
+                var page = book.turn('page'),
+                        pages = bookLength(),
+                        depthWidth = 20 * Math.min(1, (pages - (pages - page)) / pages);
+                newPage = newPage || page;
 
-			function setPreview(view) {
-				var previewWidth = 115,
-					previewHeight = 73,
-					previewSrc = 'pages/preview.jpg',
-					preview = $(_thumbPreview.children(':first')),
-					numPages = (view == 1 || view == $('#slider').slider('option', 'max')) ? 1 : 2,
-					width = (numPages == 1) ? previewWidth / 2 : previewWidth;
-				_thumbPreview.addClass('no-transition').css({
-					width: width + 15,
-					height: previewHeight + 15,
-					top: -previewHeight - 30,
-					left: ($($('#slider').children(':first')).width() - width - 15) / 2
-				});
-				preview.css({
-					width: width,
-					height: previewHeight
-				});
-				if (preview.css('background-image') === '' || preview.css('background-image') == 'none') {
-					preview.css({
-						backgroundImage: 'url(' + previewSrc + ')'
-					});
-					setTimeout(function() {
-						_thumbPreview.removeClass('no-transition');
-					}, 0);
-				}
-				preview.css({
-					backgroundPosition: '0px -' + ((view - 1) * previewHeight) + 'px'
-				});
-			}
-		}
+                if (newPage > 3) {
+                    $('.flipbook-viewport .p2 .depth').css({
+                        width: depthWidth,
+                        left: 12 - depthWidth,
+                        'z-index': 1
+                    });
+                } else {
+                    $('.flipbook-viewport .p2 .depth').css({
+                        width: 0,
+                        'z-index': 1
+                    });
+                }
+                depthWidth = 30 * Math.min(1, (pages - page) / pages);
+                if (newPage < pages - 3) {
+                    $('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+                        width: depthWidth,
+                        right: 12 - depthWidth,
+                        'z-index': 1
+                    });
+                } else {
+                    $('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+                        width: 0,
+                        'z-index': 1
+                    });
+                }
+            }
 
-		function timeline() {
-			var availHeight = $(window).height();
-			var timelineInitFlag = false;
-			var loadFlag = false;
-			calculateTimelineAxis();
-			$('.bmindex_bireadmore_btn').click(function() {
-				$('html, body').animate({
-					scrollTop: '1000px'
-				})
-			})
-			if ($(document).scrollTop() > 600 || $(window).scrollTop() + availHeight + 50 >= $(document).height()) {
-				timelineInit();
-			}
-			$(window).scroll(function() {
-				var docHeight = $(document).height();
-				var scrolltop = $(window).scrollTop() + 5;
-				if (scrolltop + availHeight >= docHeight && loadFlag == true) {
-					loadFlag = false;
-					$('.loadmore_inner').addClass('active');
-					setTimeout(function() {
-						loadTimelineData();
-					}, 1000);
-					docHeight = $(document).height();
-				} else if (!timelineInitFlag && scrolltop >= 600) {
-					timelineInit();
-				} else if (!timelineInitFlag && $(window).scrollTop() + availHeight + 50 >= $(document).height()) {
-					timelineInit();
-				}
-			});
+            function setPreview(view) {
+                var previewWidth = 115,
+                        previewHeight = 73,
+                        previewSrc = 'pages/preview.jpg',
+                        preview = $(_thumbPreview.children(':first')),
+                        numPages = (view == 1 || view == $('#slider').slider('option', 'max')) ? 1 : 2,
+                        width = (numPages == 1) ? previewWidth / 2 : previewWidth;
+                _thumbPreview.addClass('no-transition').css({
+                    width: width + 15,
+                    height: previewHeight + 15,
+                    top: -previewHeight - 30,
+                    left: ($($('#slider').children(':first')).width() - width - 15) / 2
+                });
+                preview.css({
+                    width: width,
+                    height: previewHeight
+                });
+                if (preview.css('background-image') === '' || preview.css('background-image') == 'none') {
+                    preview.css({
+                        backgroundImage: 'url(' + previewSrc + ')'
+                    });
+                    setTimeout(function() {
+                        _thumbPreview.removeClass('no-transition');
+                    }, 0);
+                }
+                preview.css({
+                    backgroundPosition: '0px -' + ((view - 1) * previewHeight) + 'px'
+                });
+            }
+            function IEcss(argu) {
+                if (window.ActiveXObject || 'ActiveXObject' in window) {
+                    $('.flipbook-viewport .secondcover>div').css({
+                        left: 13
+                    });
+                }
+            }
+        }
 
-			function loadTimelineData() {
-				for (var i = 0; i < 5; i++) {
-					$('.timeline_main_wrapper').children('ul').append(loadHtml());
-				};
-				var newnodeEl = $('.timeline_newnode');
-				$('.loadmore_inner').removeClass('active');
-				calculateTimelineAxis();
-				addTransition(newnodeEl);
-				setTimeout(function() {
-					loadFlag = true;
-					checkIfOnBottom();
-				}, 2500)
-			}
+        function timeline() {
+            var availHeight = $(window).height();
+            var timelineInitFlag = false;
+            var loadFlag = false;
+            calculateTimelineAxis();
+            $('.bmindex_bireadmore_btn').click(function() {
+                $('html, body').animate({
+                    scrollTop: '1000px'
+                })
+            })
+            if ($(document).scrollTop() > 600 || $(window).scrollTop() + availHeight + 50 >= $(document).height()) {
+                timelineInit();
+            }
+            $(window).scroll(function() {
+                var docHeight = $(document).height();
+                var scrolltop = $(window).scrollTop() + 5;
+                if (scrolltop + availHeight >= docHeight && loadFlag == true) {
+                    loadFlag = false;
+                    $('.loadmore_inner').addClass('active');
+                    setTimeout(function() {
+                        loadTimelineData();
+                    }, 1000);
+                    docHeight = $(document).height();
+                } else if (!timelineInitFlag && scrolltop >= 600) {
+                    timelineInit();
+                } else if (!timelineInitFlag && $(window).scrollTop() + availHeight + 50 >= $(document).height()) {
+                    timelineInit();
+                }
+            });
 
-			function checkIfOnBottom() {
-				var docHeight = $(document).height();
-				var scrolltop = $(window).scrollTop() + 5;
-				if (scrolltop + availHeight >= docHeight && loadFlag == true) {
-					loadFlag = false;
-					$('.loadmore_inner').addClass('active');
-					setTimeout(function() {
-						loadTimelineData();
-					}, 1000)
-				}
-			}
+            function loadTimelineData() {
+                for (var i = 0; i < 5; i++) {
+                    $('.timeline_main_wrapper').children('ul').append(loadHtml());
+                };
+                var newnodeEl = $('.timeline_newnode');
+                $('.loadmore_inner').removeClass('active');
+                calculateTimelineAxis();
+                addTransition(newnodeEl);
+                setTimeout(function() {
+                    loadFlag = true;
+                    checkIfOnBottom();
+                }, 2500)
+            }
 
-			function timelineInit() {
-				timelineInitFlag = true;
-				var timelineLiEl = $('.timeline_main_wrapper>ul>li');
-				var nodeLength = timelineLiEl.length;
-				addTransition(timelineLiEl);
-				setTimeout(function() {
-					loadFlag = true;
-					checkIfOnBottom();
-				}, 500 * nodeLength)
-			}
+            function checkIfOnBottom() {
+                var docHeight = $(document).height();
+                var scrolltop = $(window).scrollTop() + 5;
+                if (scrolltop + availHeight >= docHeight && loadFlag == true) {
+                    loadFlag = false;
+                    $('.loadmore_inner').addClass('active');
+                    setTimeout(function() {
+                        loadTimelineData();
+                    }, 1000)
+                }
+            }
 
-			function addTransition(element) {
-				var delay = 0;
-				$(element).each(function() {
-					$(this).css({
-						'-webkit-transition': 'opacity 0.5s linear ' + delay + 's',
-						'-moz-transition': 'opacity 0.5s linear ' + delay + 's',
-						'-ie-transition': 'opacity 0.5s linear ' + delay + 's'
-					});
-					$(this).removeClass('timeline_newnode').addClass('bmindex_fadein');
-					delay = delay + 0.5;
-				});
-			}
+            function timelineInit() {
+                timelineInitFlag = true;
+                var timelineLiEl = $('.timeline_main_wrapper>ul>li');
+                var nodeLength = timelineLiEl.length;
+                addTransition(timelineLiEl);
+                setTimeout(function() {
+                    loadFlag = true;
+                    checkIfOnBottom();
+                }, 500 * nodeLength)
+            }
 
-			function calculateTimelineAxis() {
-				var timelineHeight = $('.timeline_main_wrapper ul').height() + 500;
-				$('.bmindex_axis_item').css('height', timelineHeight);
-			}
-		}
+            function addTransition(element) {
+                var delay = 0;
+                $(element).each(function() {
+                    $(this).css({
+                        '-webkit-transition': 'opacity 0.5s linear ' + delay + 's',
+                        '-moz-transition': 'opacity 0.5s linear ' + delay + 's',
+                        '-ie-transition': 'opacity 0.5s linear ' + delay + 's'
+                    });
+                    $(this).removeClass('timeline_newnode').addClass('bmindex_fadein');
+                    delay = delay + 0.5;
+                });
+            }
 
-		function loadHtml() {
-			return "<li class='timeline_newnode'><div class='timeline_line_wrapper'><div class='friend'></div><div class='time'>昨天</div></div><div class='timeline_node_wrapper'><div class='timeline_title_wrapper'><img class='avatar' src='img/vote_result_avatar_100_100_00000.jpg' width='45' height='45'><h5>用户XXX发起了投票<a href='javascript:;'>'谁是女神123'</a></h5><a class='timeline_sharetrigger_btn' href='javascript:;'></a></div><div class='timeline_content_wrapper'><p>书册中还有<a href='javascript:;'>王二</a>，<a href='javascript:;'>大智</a>等<a href='javascript:;'>18</a>个小伙伴！</p></div></div><div class='bp_sharelist_wrapper'><label>分享到：</label><ul><li class='weibo'><a href='javascript:;'></a></li><li class='qqzone'><a href='javascript:;'></a></li><li class='wechat'><a href='javascript:;'></a></li><li class='renren'><a href='javascript:;'></a></li></ul></div></li>"
-		}
+            function calculateTimelineAxis() {
+                var timelineHeight = $('.timeline_main_wrapper ul').height() + 500;
+                $('.bmindex_axis_item').css('height', timelineHeight);
+            }
+        }
 
-		function swiperInit() {
-			var mySwiper = new Swiper('.swiper-container', {
-				direction: 'horizontal',
-				loop: true,
+        function loadHtml() {
+            return "<li class='timeline_newnode'><div class='timeline_line_wrapper'><div class='friend'></div><div class='time'>昨天</div></div><div class='timeline_node_wrapper'><div class='timeline_title_wrapper'><img class='avatar' src='img/vote_result_avatar_100_100_00000.jpg' width='45' height='45'><h5>用户XXX发起了投票<a href='javascript:;'>'谁是女神123'</a></h5><a class='timeline_sharetrigger_btn' href='javascript:;'></a></div><div class='timeline_content_wrapper'><p>书册中还有<a href='javascript:;'>王二</a>，<a href='javascript:;'>大智</a>等<a href='javascript:;'>18</a>个小伙伴！</p></div></div><div class='bp_sharelist_wrapper'><label>分享到：</label><ul><li class='weibo'><a href='javascript:;'></a></li><li class='qqzone'><a href='javascript:;'></a></li><li class='wechat'><a href='javascript:;'></a></li><li class='renren'><a href='javascript:;'></a></li></ul></div></li>"
+        }
 
-				// 如果需要分页器
-				pagination: '.swiper-pagination',
+        function swiperInit() {
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                loop: true,
 
-				// 如果需要前进后退按钮
-				nextButton: '.swiper-button-next',
-				prevButton: '.swiper-button-prev',
-				paginationClickable: true
-			})
-		}
+                // 如果需要分页器
+                pagination: '.swiper-pagination',
 
-		function choose() {
-			$('.bmindex_membervote_wrapper ul li').click(function() {
-				var _this = $(this);
-				if (_this.hasClass('active')) {
-					_this.removeClass('active')
-					return;
-				} else {
-					_this.siblings('li').removeClass('active');
-					_this.addClass('active');
-				}
-			});
-		}
+                // 如果需要前进后退按钮
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                paginationClickable: true
+            })
+        }
 
-		function editBannerTitle() {
-			$('.ybbanner_titleedit_item').click(function() {
-				art.dialog({
-					title: '编辑相册名称',
-					lock: true,
-					content: document.querySelector('.bannertitleedit_wrapper'),
-					okValue: '确 定',
-					ok: function() {},
-					cancelValue: '取消',
-					cancel: function() {},
-				});
-			});
-		}
+        function choose() {
+            $('.bmindex_membervote_wrapper ul li').click(function() {
+                var _this = $(this);
+                if (_this.hasClass('active')) {
+                    _this.removeClass('active')
+                    return;
+                } else {
+                    _this.siblings('li').removeClass('active');
+                    _this.addClass('active');
+                }
+            });
+        }
 
-		function bpToolbar() {
-			$('.timeline_main_wrapper ul').on('click', 'li .timeline_sharetrigger_btn', function() {
-				var $thisLi = $(this).closest('li');
-				if ($thisLi.hasClass('active')) {
-					$thisLi.removeClass('active');
-				} else {
-					$thisLi.addClass('active');
-				}
-			});
-		}
+        function editBannerTitle() {
+            $('.ybbanner_titleedit_item').click(function() {
+                art.dialog({
+                    title: '编辑相册名称',
+                    lock: true,
+                    content: document.querySelector('.bannertitleedit_wrapper'),
+                    okValue: '确 定',
+                    ok: function() {},
+                    cancelValue: '取消',
+                    cancel: function() {},
+                });
+            });
+        }
 
-		function memberResult() {
-			var trEl = $('.vote_list_result tr');
-			trEl.each(function() {
-				var rankTdEl = $(this).find('td').eq(0);
-				var percentTdEl = $(this).find('td').eq(2);
-				var percentage = percentTdEl.text();
-				var progressbar = "<span class='progressbar'><label></label></span>";
-				$('.vote_list_result tr').each(function() {
-					$this = $(this);
-					var rankTdEl = $this.find('td').eq(0);
-					var trIndex = $(this).index();
-					rankTdEl.text(trIndex);
-				})
-				rankTdEl.text();
-				percentTdEl.prepend(progressbar).append('%');
-				percentTdEl.find('label').css('width', percentage + '%');
+        function bpToolbar() {
+            $('.timeline_main_wrapper ul').on('click', 'li .timeline_sharetrigger_btn', function() {
+                var $thisLi = $(this).closest('li');
+                if ($thisLi.hasClass('active')) {
+                    $thisLi.removeClass('active');
+                } else {
+                    $thisLi.addClass('active');
+                }
+            });
+        }
 
-				//获取选项的文本给每个此td添加到一个title属性上。
-				var tdEl2 = $(this).find('td').eq(1);
-				var nameTitle = tdEl2.text();
-				tdEl2.attr('title', nameTitle);
-			});
-			trEl.click(function() {
-				$this = $(this);
-				if ($this.hasClass('active')) {
-					return;
-				} else if ($this.index() != 0) {
-					$this.siblings().removeClass('active');
-					$this.addClass('active');
-				}
-			});
+        function memberResult() {
+            var trEl = $('.vote_list_result tr');
+            trEl.each(function() {
+                var rankTdEl = $(this).find('td').eq(0);
+                var percentTdEl = $(this).find('td').eq(2);
+                var percentage = percentTdEl.text();
+                var progressbar = "<span class='progressbar'><label></label></span>";
+                $('.vote_list_result tr').each(function() {
+                    $this = $(this);
+                    var rankTdEl = $this.find('td').eq(0);
+                    var trIndex = $(this).index();
+                    rankTdEl.text(trIndex);
+                })
+                rankTdEl.text();
+                percentTdEl.prepend(progressbar).append('%');
+                percentTdEl.find('label').css('width', percentage + '%');
 
-			$('.vote_list_result ul li').click(function() {
-				var _this = $(this);
-				if (_this.hasClass('active')) {
-					return;
-				} else {
-					_this.siblings().removeClass('active');
-					_this.addClass('active');
-				}
-			})
+                //获取选项的文本给每个此td添加到一个title属性上。
+                var tdEl2 = $(this).find('td').eq(1);
+                var nameTitle = tdEl2.text();
+                tdEl2.attr('title', nameTitle);
+            });
+            trEl.click(function() {
+                $this = $(this);
+                if ($this.hasClass('active')) {
+                    return;
+                } else if ($this.index() != 0) {
+                    $this.siblings().removeClass('active');
+                    $this.addClass('active');
+                }
+            });
 
-			if ($('.vote_head_title .anonymous_vote').length == 1) {
-				$('.vote_form .btn2').css('background', '#ccc').attr('disabled', 'disabled');
-			}
+            $('.vote_list_result ul li').click(function() {
+                var _this = $(this);
+                if (_this.hasClass('active')) {
+                    return;
+                } else {
+                    _this.siblings().removeClass('active');
+                    _this.addClass('active');
+                }
+            })
 
-			$('.gradient_btn').click(function() {
-				if ($(this).attr('disabled')) {
-					return;
-				} else {
-					art.dialog({
-						title: '投票详情',
-						lock: true,
-						content: document.querySelector('.voteresult_dialog_wrapper')
-					});
-				}
-			});
-		}
-		//渲染控件样式
-		function changeButtonCss() {
-			$("input[type=radio],input[type=checkbox]").iCheck({
-				checkboxClass: 'icheckbox_minimal-green',
-				radioClass: 'iradio_minimal-green',
-				increaseArea: '20%'
-			});
-		}
-		// Load the HTML4 version if there's not CSS transform
-		yepnope({
-			test: Modernizr.csstransforms,
-			yep: ['assets/js/turn.js'],
-			nope: ['assets/js/turn.html4.min.js'],
-			complete: loadApp
-		});
-	</script>
+            if ($('.vote_head_title .anonymous_vote').length == 1) {
+                $('.vote_form .btn2').css('background', '#ccc').attr('disabled', 'disabled');
+            }
+
+            $('.gradient_btn').click(function() {
+                if ($(this).attr('disabled')) {
+                    return;
+                } else {
+                    art.dialog({
+                        title: '投票详情',
+                        lock: true,
+                        content: document.querySelector('.voteresult_dialog_wrapper')
+                    });
+                }
+            });
+        }
+        //渲染控件样式
+        function changeButtonCss() {
+            $("input[type=radio],input[type=checkbox]").iCheck({
+                checkboxClass: 'icheckbox_minimal-green',
+                radioClass: 'iradio_minimal-green',
+                increaseArea: '20%'
+            });
+        }
+        // Load the HTML4 version if there's not CSS transform
+        yepnope({
+            test: Modernizr.csstransforms,
+            yep: ['assets/js/turn.js'],
+            nope: ['assets/js/turn.html4.min.js'],
+            complete: loadApp
+        });
+    </script>
 </body>
 
 </html>

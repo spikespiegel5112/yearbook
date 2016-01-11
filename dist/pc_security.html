@@ -136,7 +136,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="access_loginandbind.html">
+							<a class="wechat_bind" href="javascript:;">
 								<div>
 									<img src="img/personal_center/wechat_icon.png"></div>
 								</span>
@@ -264,8 +264,13 @@
 			</div>
 		</div>
 	</div>
+	<!--绑定微信弹出-->
+	<div class="wechat_bind_box hidden">
+		<div class="qrcode"><img class="QRcodeimg" src="img/personal_center/qrcode_ybbind.jpg"></div>
+	</div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.1.js'></script>
+	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
 	<script>
 		//右侧书市上下翻页
 		jQuery(".more_books_container").slide({
@@ -294,8 +299,19 @@
 			});
 
 		}
+		//选择微信绑定
+		function showWecahtBindCode(){
+			$('.wechat_bind').on('click',function(){
+				art.dialog({
+					title: '扫码绑定',
+					lock: true,
+					content: document.querySelector('.wechat_bind_box')
+				});
+			})
+		}
 		$(document).ready(function() {
 			modifyUserName();
+			showWecahtBindCode();
 		});
 	</script>
 </body>

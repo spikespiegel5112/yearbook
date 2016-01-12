@@ -191,6 +191,8 @@
     line-height: 6em;
     margin: 1em 0;
     padding: 0 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .user-info-list a {
@@ -202,6 +204,11 @@
 .user-info-list span:after {
     content: ">";
     padding-left: 0.5em;
+}
+
+.user-info-list .user-header span:after{
+    display: none;
+    content: "";
 }
 
 .user-info-list form {

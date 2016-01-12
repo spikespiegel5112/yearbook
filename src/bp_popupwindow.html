@@ -297,32 +297,32 @@
 					depthWidth = 20 * Math.min(1, (pages - (pages - page)) / pages);
 				newPage = newPage || page;
 
-				if (newPage > 3) {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: depthWidth,
-						left: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-				depthWidth = 30 * Math.min(1, (pages - page) / pages);
-				if (newPage < pages - 3) {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: depthWidth,
-						right: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-			}
+                if (newPage > 3) {
+                    $('.flipbook-viewport .p2 .depth').css({
+                        width: depthWidth,
+                        left: 12 - depthWidth,
+                        'z-index': 1
+                    });
+                } else {
+                    $('.flipbook-viewport .p2 .depth').css({
+                        width: 0,
+                        'z-index': 1
+                    });
+                }
+                depthWidth = 30 * Math.min(1, (pages - page) / pages);
+                if (newPage < pages - 3) {
+                    $('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+                        width: depthWidth,
+                        right: 12 - depthWidth,
+                        'z-index': 1
+                    });
+                } else {
+                    $('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+                        width: 0,
+                        'z-index': 1
+                    });
+                }
+            }
 
 			function disableControls(page) {
 				$('.flipbook_nextpage_btn').css({
@@ -363,6 +363,14 @@
 			}
 		}
 
+            function IEcss(argu){
+                if (window.ActiveXObject || 'ActiveXObject' in window) {
+                    $('.flipbook-viewport .secondcover>div').css({
+                        left: 13
+                    });
+                }
+            }
+        }
 		// Load the HTML4 version if there's not CSS transform
 		yepnope({
 			test: Modernizr.csstransforms,

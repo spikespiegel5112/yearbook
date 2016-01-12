@@ -5355,7 +5355,51 @@
 	line-height: 30px;
 	cursor: pointer;
 }
-
+.edit_btn_group > button.current, .edit_btn_group > button:focus, .edit_btn_group > button:hover {
+  background-color: #a0d350;
+  color: #fff;
+}
+.edit_btn_group > button {
+  background-color: #fff;
+  border: medium none;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px #aaa;
+  color: #666;
+  cursor: pointer;
+  font: 14px "microsoft yahei";
+  height: 35px;
+  margin-right: 8px;
+  padding: 0;
+  width: 115px;
+}
+.edit_btn_group > form {
+  display: inline-block;
+  font-size: 14px;
+}
+.edit_btn_group > div {
+  background-color: #fff9df;
+  border: 1px solid #ffb966;
+  box-shadow: 0 0 5px #b4b4b4;
+  display: inline-block;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+  text-align: center;
+  width: 180px;
+}
+.edit_list > li {
+  text-align: center;
+  vertical-align: middle;
+}
+.edit_list li > a.selected {
+  border: 5px solid #00b7ee;
+  position: relative;
+}
+.edit_list li a img {
+  height: 100%;
+  width: 100%;
+}
 .comment_list_wrapper {
 	max-height: 175px;
 	width: 255px;

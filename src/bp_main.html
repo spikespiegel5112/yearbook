@@ -855,18 +855,19 @@
 
 				function getScale(scale, direction, top) {
 					var css = {
-							'-ms-zoom': scale,
+							// '-ms-zoom': scale,
 							'-webkit-transform': 'scale(' + scale + ')',
 							'-webkit-transform-origin': direction + ' top',
 							'-moz-transform': 'scale(' + scale + ')',
 							'-moz-transform-origin': direction + ' top',
 							'top': top
 						}
-						// if (window.ActiveXObject || 'ActiveXObject' in window) {
-						// 	css={
-						// 		'zoom': scale
-						// 	}
-						// };
+					//IE
+					if (window.ActiveXObject || 'ActiveXObject' in window) {
+						css={
+							'zoom': scale
+						}
+					};
 					return css;
 				}
 

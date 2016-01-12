@@ -4958,7 +4958,12 @@
 .timeline_title_wrapper a:hover {
 	text-decoration: underline;
 }
-
+.timeline_sharetrigger_btn {
+  background: rgba(0, 0, 0, 0) url("../img/imgsprite_yb3_wbl_00000.png") repeat scroll -177px -105px;
+  float: right;
+  height: 25px;
+  width: 25px;
+}
 .timeline_node_wrapper {
 	float: left;
 	margin: 0 0 0 40px;
@@ -5388,6 +5393,9 @@
   text-align: center;
   width: 180px;
 }
+.edit_btn_group > div > span {
+  color: #ff3e38;
+}
 .edit_list > li {
   text-align: center;
   vertical-align: middle;
@@ -5399,6 +5407,12 @@
 .edit_list li a img {
   height: 100%;
   width: 100%;
+}
+.move_photo {
+  color: #666;
+  display: none;
+  font: 14px "microsoft yahei";
+  width: 405px;
 }
 .comment_list_wrapper {
 	max-height: 175px;

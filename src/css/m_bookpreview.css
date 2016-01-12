@@ -130,6 +130,7 @@
 .bp_tpl_v .flipbook-viewport {
     margin: 10px auto 30px;
     width: 280px;
+    height: 198px;
     overflow: visible;
 }
 
@@ -187,9 +188,6 @@
     box-shadow: 0 0 20px #ccc;
 }
 
-.bp_con_v .ybwechatheader_wrapper{
-    background-color: transparent;
-}
 
 .bp_con_h .ybwechatheader_wrapper{
     display: none;
@@ -257,7 +255,7 @@
     background-size: 100% 100%;
 }
 
-.bp_tpl_h .flipbook-viewport .page > div, .bp_tpl .flipbook-viewport .page > div {
+.bp_tpl_h .flipbook-viewport .page > div{
     -ms-zoom: 0.206;
     -webkit-transform: scale(0.206);
     -webkit-transform-origin: top left;
@@ -475,6 +473,14 @@
     color: #333;
 }
 
+.comment_input .input_box button i{
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+    height: 30px;
+    background: url("../img/m/previewbook/send_arrow.jpg") no-repeat 0 -2px;
+}
+
 .comment_msg{
     display: none;
     position: absolute;
@@ -506,6 +512,10 @@
     background-color: #000;
     z-index: 1;
     overflow: hidden;
+}
+
+.bp_con_v .hsub{
+    display: none!important;
 }
 
 .hsub ul li{

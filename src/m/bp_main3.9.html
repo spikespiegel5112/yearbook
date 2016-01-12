@@ -14,8 +14,11 @@
     <!-- build:css ../css/m.all.min.css -->
     <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
     <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/m_previewbook3.9.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css"/>
     <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css"/>
     <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
     <link rel="stylesheet" href="../assets/css/bootstrap-switch.min.css" type="text/css" media="all"/>
 </head>
@@ -26,15 +29,17 @@
         <a class='left_btn back_btn' href="javascript:;"></a>
         <a class='right_btn share_btn' href="javascript:;"></a>
     </div>
-    <div class="bp_tpl">
+    <div class="bp_tpl_h">
         <p class="tips">提示：将手机横屏可进行全屏预览</p>
 
         <div class="flipbook-viewport">
             <div class='flipbook_wrapper' pagecount='19'>
                 <a class='flipbook_prevpage_btn' href="javascript:;"></a>
+
                 <div class='flipbook'>
                     <div depth="5" class="hard" style="background-image:url('../img/pages/1.jpg');">
-                        <link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
+                        <link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css"
+                              rel="stylesheet" type="text/css">
                         <div class="container_activity_37_small_left">
                             <div class="page_header_container">
                                 <div slottype="article" class="warp1">
@@ -46,59 +51,78 @@
                                 </div>
                             </div>
                             <div class="photo0_container">
-                                <span id="imgMask0" imgwidth="1324" imgheight="907" slotnum="0" slottype="mask" class="photoframe_common_property photoframe0"></span>
+                                <span id="imgMask0" imgwidth="1324" imgheight="907" slotnum="0" slottype="mask"
+                                      class="photoframe_common_property photoframe0"></span>
                                 <img slottype="img" slotnum="0" class="img0" src="">
                             </div>
                             <div class="photo1_container">
-                                <span id="imgMask1" imgwidth="498" imgheight="334" slotnum="1" slottype="mask" class="photoframe_common_property photoframe1"></span>
+                                <span id="imgMask1" imgwidth="498" imgheight="334" slotnum="1" slottype="mask"
+                                      class="photoframe_common_property photoframe1"></span>
                                 <img slottype="img" slotnum="1" class="img1" src="">
                             </div>
                             <div class="photo2_container">
-                                <span id="imgMask2" imgwidth="389" imgheight="261" slotnum="2" slottype="mask" class="photoframe_common_property photoframe2"></span>
+                                <span id="imgMask2" imgwidth="389" imgheight="261" slotnum="2" slottype="mask"
+                                      class="photoframe_common_property photoframe2"></span>
                                 <img slottype="img" slotnum="2" class="img2" src="">
                             </div>
                             <div class="content_container">
                                 <strong>
                                     <div slottype="article" class="warp2">
                                         <div class="richShow" slottype="articleShow" textheight="30">
-                                            <p></p><p slottype="richText" slotnum="2" style="min-height:30px;" placeholder="活动标题" mode="inline"></p>
+                                            <p></p>
+
+                                            <p slottype="richText" slotnum="2" style="min-height:30px;"
+                                               placeholder="活动标题" mode="inline"></p>
+
                                             <p></p>
                                         </div>
                                     </div>
                                 </strong>
+
                                 <div slottype="article" class="warp3">
                                     <div class="richShow" slottype="articleShow" textheight="96">
-                                        <p slottype="richText" slotnum="3" style="display:block;word-wrap:break-word;" placeholder="活动内容"></p>
+                                        <p slottype="richText" slotnum="3" style="display:block;word-wrap:break-word;"
+                                           placeholder="活动内容"></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div depth="5" class="hard front-side secondcover even" style="background-image:url('../img/pages/2.jpg');">
+                    <div depth="5" class="hard front-side secondcover even"
+                         style="background-image:url('../img/pages/2.jpg');">
                         <span class="depth"></span>
-                        <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_left.css" rel="stylesheet" type="text/css">
+                        <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_left.css" rel="stylesheet"
+                              type="text/css">
                         <div class="container_panoramic_02_small_left">
                             <div slottype="article" class="warp">
                                 <div slottype="articleShow" textheight="62" class="richShow">
-                                    <p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+                                    <p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline"
+                                       class="graduate-po">
                                     </p>
                                 </div>
                             </div>
-                            <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+                            <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask"
+                                  class="photoframe1"
+                                  style="text-align:center;vertical-align:middle;display: block;"></span>
                             <img slottype="img" slotnum="1" src="" class="img1">
                         </div>
                     </div>
-                    <div class="hard fixed back-side thirdcover p19" style="background-image:url('../img/pages/tpl_small.jpg')">
+                    <div class="hard fixed back-side thirdcover p19"
+                         style="background-image:url('../img/pages/tpl_small.jpg')">
                         <span class="depth"></span>
-                        <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
+                        <link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet"
+                              type="text/css">
                         <div class="container_panoramic_02_small_right">
                             <div slottype="article" class="warp">
                                 <div slottype="articleShow" textheight="62" class="richShow">
-                                    <p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+                                    <p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline"
+                                       class="graduate-po">
                                     </p>
                                 </div>
                             </div>
-                            <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+                            <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask"
+                                  class="photoframe1"
+                                  style="text-align:center;vertical-align:middle;display: block;"></span>
                             <img slottype="img" slotnum="1" src="" class="img1">
                         </div>
                     </div>
@@ -121,8 +145,8 @@
                     </li>
                     <li>
                         <a href="javascript:;">
-                            <div class="">
-                                <input type="checkbox" data-on-color="success" data-off-color="" />
+                            <div class="barrage_switch">
+                                <input type="checkbox" />
                             </div>
                             <p>弹幕开关</p>
                         </a>
@@ -178,7 +202,7 @@
                         <a href="javascript:;">查看更多评论（<span>22</span>）</a>
                     </div>
                 </div>
-                <div class="praise_con hidden">
+                <div class="praise_con">
                     <span class="up_arrow"></span>
                     <ul>
                         <li>
@@ -219,13 +243,14 @@
                         </li>
                     </ul>
                 </div>
+                <div class="comment_msg"></div>
             </div>
         </div>
-    </div>
-    <div class="comment_input">
-        <div class="input_box">
-            <input id="reply-write" type="text" placeholder="这里输入聊天内容" />
-            <button type="button" onclick="sendComment();"><i class="icon-arrow-right"></i></button>
+        <div class="comment_input">
+            <div class="input_box">
+                <input id="reply-write" type="text" placeholder="这里输入聊天内容"/>
+                <button type="button" onclick="sendComment();"><i class="icon-arrow-right"></i></button>
+            </div>
         </div>
     </div>
 </div>
@@ -235,7 +260,11 @@
 <script type="text/javascript" src="../assets/js/bootstrap-switch.min.js"></script>
 <script type="text/javascript" src='../js/check_os.js'></script>
 <script>
-    $("input[type=checkbox]").bootstrapSwitch();
+    $(function () {
+        barrageSwitch();
+        CommentPraiseTab();
+    })
+
 
     function loadApp() {
         //这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
@@ -250,19 +279,19 @@
         //     return;
         // }
 
-        flipbook.bind('first', function() {
+        flipbook.bind('first', function () {
             $('.page-wrapper[page=1]').find('.p1').addClass('hard');
         })
 
         //点击章节目录中的章节名称跳转到相应的页面中，章节名称所对应的页面序号在html里用page属性做为标记
-        pageSection.click(function() {
+        pageSection.click(function () {
             var $this = $(this);
             var pageIndex = $this.attr('page');
             $this.addClass('active').siblings().removeClass('active');
             flipbook.turn('page', pageIndex);
         });
 
-        $(document).keydown(function(e) {
+        $(document).keydown(function (e) {
             var previous = 37,
                     next = 39;
             switch (e.keyCode) {
@@ -287,7 +316,7 @@
             duration: 1000,
             pages: bookLength(),
             when: {
-                turning: function(e, page, view) {
+                turning: function (e, page, view) {
                     var book = $(this),
                             currentPage = book.turn('page'),
                             pages = book.turn('pages');
@@ -329,19 +358,20 @@
                     updateDepth(book, page);
                     disableControls(page);
                 },
-                turned: function(e, page, view) {
+                turned: function (e, page, view) {
                     var book = $(this);
                     updateDepth(book);
                     disableControls(page);
                     book.turn('center');
                 },
-                start: function(e, pageObj) {},
-                end: function(e, pageObj) {
+                start: function (e, pageObj) {
+                },
+                end: function (e, pageObj) {
                     var book = $(this);
                     updateDepth(book);
                     IEcss();
                 },
-                missing: function(e, pages) {
+                missing: function (e, pages) {
                     for (var i = 0; i < pages.length; i++) {
                         addPage(bookIdx, pages[i], $(this));
                     }
@@ -353,25 +383,25 @@
         flipbook.addClass('animated');
 
         if (!$.os.mobile) {
-            $('.flipbook_nextpage_btn').bind($.mouseEvents.down, function() {
+            $('.flipbook_nextpage_btn').bind($.mouseEvents.down, function () {
                 $(this).addClass('next-button-down');
-            }).bind($.mouseEvents.up, function() {
+            }).bind($.mouseEvents.up, function () {
                 $(this).removeClass('next-button-down');
-            }).click(function() {
+            }).click(function () {
                 flipbook.turn('next');
             });
-            $('.flipbook_prevpage_btn').bind($.mouseEvents.down, function() {
+            $('.flipbook_prevpage_btn').bind($.mouseEvents.down, function () {
                 $(this).addClass('previous-button-down');
-            }).bind($.mouseEvents.up, function() {
+            }).bind($.mouseEvents.up, function () {
                 $(this).removeClass('previous-button-down');
-            }).click(function() {
+            }).click(function () {
                 flipbook.turn('previous');
             });
         } else {
-            $('.flipbook_nextpage_btn').on('touchend', function() {
+            $('.flipbook_nextpage_btn').on('touchend', function () {
                 flipbook.turn('next');
             });
-            $('.flipbook_prevpage_btn').on('touchend', function() {
+            $('.flipbook_prevpage_btn').on('touchend', function () {
                 flipbook.turn('previous');
             });
         }
@@ -401,7 +431,7 @@
         function loadPage(bookIdx, page) {
             $.ajax({
                 url: '../flipbookpages/' + bookIdx + '/page' + page + '.html'
-            }).done(function(pageHtml) {
+            }).done(function (pageHtml) {
                 $('.flipbook .p' + page).html(pageHtml.replace('yb3.0/flipbookpages/', ''));
             });
         }
@@ -485,7 +515,7 @@
             }
         }
 
-        function IEcss(argu){
+        function IEcss(argu) {
             if (window.ActiveXObject || 'ActiveXObject' in window) {
                 $('.flipbook-viewport .secondcover>div').css({
                     left: 13
@@ -503,8 +533,41 @@
     });
 
     /*
-    * 发射弹幕
+     * 评论赞tab切换
+     * */
+    function CommentPraiseTab() {
+        $('.htool_wrap .hd a').on('touchend', function () {
+            switch ($(this).closest('li').index()) {
+                case 0:
+                    $('.bd .comment_con').show();
+                    $('.bd .praise_con').hide();
+                    break;
+                case 1:
+                    return
+                case 2:
+                    $('.bd .comment_con').hide();
+                    $('.bd .praise_con').show();
+            }
+        })
+    }
+
+    /*
+    * 弹幕开关
     * */
+
+    function barrageSwitch(){
+        $(".barrage_switch input[type=checkbox]").bootstrapSwitch({
+            onColor: 'success',
+            onSwitchChange: function(e,state){
+                
+            }
+        });
+    }
+
+
+    /*
+     * 发射弹幕
+     * */
     function sendComment() {
         var content = $("#reply-write").val();
         if ($.trim(content) == "") {
@@ -512,19 +575,48 @@
             return false;
         }
 
-        var text=$("#reply-write").val();
-        var div="<div style='font-size:25px;color:#fff;'><p>"+text+"</p></div>";
+        var text = $("#reply-write").val();
+        var div = "<div><p>" + text + "</p></div>";
+        $('.comment_msg div').last().css({'color': getReandomColor(),'font-size':getReandomFontSize()});
         $("#reply-write").val("");
-        $(".comment_con").append(div);
+        $(".comment_msg").append(div);
         init_screen();
+    }
 
+    //考虑数据的交互，多久请求一下数据库
+    $(document).ready(function () {
+        setInterval("startRequest()", 12000);
+    });
+
+    function startRequest() {
+        html = "<div><p>感谢你，啦啦啦</p></div>";
+        html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+        html += "<div><p>我的天呀</p></div>";
+        html += "<div><p>good good good </p></div>";
+        html += "<div><p>O(∩_∩)O哈哈哈~</p></div>";
+        html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+        html += "<div><p>我的天呀</p></div>";
+        html += "<div><p>good good good </p></div>";
+        html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+        html += "<div><p>我的天呀</p></div>";
+        html += "<div><p>good good good</p> </div>";
+
+        $(".comment_msg").append(html);
+        var num = $(".comment_msg").find("div").length;
+        if (num > 30) {
+            $(".comment_msg").find("div:lt(20)").remove();
+        }
+        for (var i = 0; i < num; i++) {
+            $(".comment_msg").find("div").eq(i).css({'color': getReandomColor(),'font-size':getReandomFontSize()});
+        }
+        init_screen();
     }
 
     function init_screen() {
         var _top = 0;
-        $(".d_show").find("div").show().each(function () {
-            var _left = $(window).width() - $(this).width()+220;
-            var _height = $(window).height()+100;
+        $(".comment_msg").find("div").show().each(function () {
+            var _left = $(window).width() - $(this).width() + 220;
+            var _height = $(window).height() + 100;
 
             _top = _top + 36;
             if (_top >= _height - 120) {
@@ -561,6 +653,14 @@
                     return new Array(7 - h.length).join("0") + h
                 })((Math.random() * 0x1000000 << 0).toString(16))
     }
+
+    //随机获取字号
+    function getReandomFontSize() {
+        return (function () {
+                    return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
+        });
+    }
+
 </script>
 </body>
 

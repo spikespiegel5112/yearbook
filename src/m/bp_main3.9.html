@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
     <link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css"/>
     <!-- endbuild -->
-    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css"/>
-    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css"/>
-    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css"/>
+
     <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
     <link rel="stylesheet" href="../assets/css/bootstrap-switch.min.css" type="text/css" media="all"/>
 </head>
@@ -354,7 +352,7 @@
         <div class="comment_input">
             <div class="input_box">
                 <input id="reply-write" type="text" placeholder="这里输入聊天内容"/>
-                <button type="button" onclick="sendComment();"><i class="icon-arrow-right"></i></button>
+                <button type="button" onclick="sendComment();"><i></i></button>
             </div>
         </div>
     </div>
@@ -412,39 +410,11 @@
         var pageWidth = $('.flipbook-viewport .page').width();
         var pageHegiht = $('.flipbook-viewport .page').height();
         var flipbook = $('.flipbook');
-        var pageSection = $('.chapter_info ul li');
-
-        // if (flipbook.width() == 0 || flipbook.height() == 0) {
-        //     setTimeout(loadApp, 10);
-        //     return;
-        // }
 
         flipbook.bind('first', function () {
             $('.page-wrapper[page=1]').find('.p1').addClass('hard');
         })
 
-        //点击章节目录中的章节名称跳转到相应的页面中，章节名称所对应的页面序号在html里用page属性做为标记
-        pageSection.click(function () {
-            var $this = $(this);
-            var pageIndex = $this.attr('page');
-            $this.addClass('active').siblings().removeClass('active');
-            flipbook.turn('page', pageIndex);
-        });
-
-        $(document).keydown(function (e) {
-            var previous = 37,
-                    next = 39;
-            switch (e.keyCode) {
-                case previous:
-                    flipbook.turn('previous');
-                    break;
-                case next:
-                    flipbook.turn('next');
-                    break;
-            }
-        });
-
-        IEcss()
 
         flipbook.turn({
             width: '280',
@@ -509,7 +479,6 @@
                 end: function (e, pageObj) {
                     var book = $(this);
                     updateDepth(book);
-                    IEcss();
                 },
                 missing: function (e, pages) {
                     for (var i = 0; i < pages.length; i++) {
@@ -651,14 +620,6 @@
                 });
                 $('.flipbook_nextpage_btn').show().css({
                     right: '-25px'
-                });
-            }
-        }
-
-        function IEcss(argu) {
-            if (window.ActiveXObject || 'ActiveXObject' in window) {
-                $('.flipbook-viewport .secondcover>div').css({
-                    left: 13
                 });
             }
         }

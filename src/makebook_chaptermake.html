@@ -646,6 +646,17 @@
 				<!--.pagemake_wrap下caption 内容修改-->
 				<div class="caption">
 					<div class="edit_wrap">
+                        <div class="btn_wrap">
+                            <a class="change_tpl_tips" href="javascript:;">
+                                <span class="tpl"></span>
+                                <div>更换模板</div>
+                            </a>
+                            <div class='ybcommon_queryicon_item'>
+                                <div>
+                                    <p>请在推荐模板中选择合适的模板并点击’更换模板‘</p>
+                                </div>
+                            </div>
+                        </div>
 						<div class="btn_wrap">
 							<a class="add_chapter_btn" href="javascript:;">
 								<span class="chapter">+</span>
@@ -2443,11 +2454,17 @@
 	</div>
 	<!--导航页 开始-->
 	<div id="overlay"></div>
-	<div class="guide_container hidden">
+	<div class="guide_container add_page hidden">
 		<div class="" style="position: absolute;right:2%;top: 145px">
 			<img src="img/guide/drag_guide.png">
 		</div>
 	</div>
+    <!--列表模式下更换模板导航-->
+    <div class="guide_container guide_changetpl hidden">
+        <div style="position: absolute;right:1%;top: 87px">
+            <img src="img/guide/change_tpl_tips.png">
+        </div>
+    </div>
 	<div class="add_catalogue_container hidden">
 		<label>
 			<span>显示在目录中:</span><input type="checkbox" name="addcatalog">
@@ -3152,13 +3169,22 @@
 		function showPageGuide(){
 			$('.add_page_btn').click(function(){
 				showOverlay();
-				$('.guide_container').fadeIn();
+				$('.add_page').fadeIn();
 			});
 			$('.guide_container').click(function(){
 				$('.guide_container').fadeOut();
 				hideOverlay();
 				$('.add_page_btn').removeClass('active');
 			});
+            $('.change_tpl_tips').click(function(){
+                showOverlay();
+                $('.guide_changetpl').fadeIn();
+            });
+            /*$('.guide_container').click(function(){
+                $('.guide_container').fadeOut();
+                hideOverlay();
+                $('.change_tpl_tips').removeClass('active');
+            });*/
 			$(window).resize(function(){
 				showPageGuide();
 			});

@@ -5256,6 +5256,17 @@
 	height: 100%;
 }
 
+.photo_list .title {
+	position: absolute;
+	bottom: 0;
+	padding: 0 10px;
+	width: 207px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #3C3C3C;
+	opacity: 0.7;
+}
+
 .photo_list .fancybox img {
 	display: block;
 	margin: 0 auto;
@@ -5319,17 +5330,6 @@
 	height: 18px;
 	line-height: 18px;
 	cursor: pointer;
-}
-
-.photo_list .title {
-	position: absolute;
-	bottom: 0;
-	padding: 0 10px;
-	width: 207px;
-	height: 30px;
-	line-height: 30px;
-	background-color: #3C3C3C;
-	opacity: 0.7;
 }
 
 .edit_group .title > p {
@@ -5407,6 +5407,18 @@
 .edit_list li a img {
   height: 100%;
   width: 100%;
+}
+.edit_list li > a {
+  border: 5px solid transparent;
+  display: block;
+}
+.edit_list li a.selected > span {
+  background: rgba(0, 0, 0, 0) url("../img/imgsprite_yb3_wbl_00000.png") repeat scroll -300px -21px;
+  bottom: -1px;
+  height: 55px;
+  position: absolute;
+  right: 0;
+  width: 50px;
 }
 .move_photo {
   color: #666;

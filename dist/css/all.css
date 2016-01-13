@@ -1969,6 +1969,22 @@ button.select {
 .ybbanner_shortcut_wrapper ul .price a{
 	background-color: #ffab1a;
 }
+.bannertitleedit_wrapper li{
+	margin: 0.2em;
+}
+.bannertitleedit_wrapper label{
+	float: left;
+	min-width: 5em;
+	line-height: 2em;
+}
+.bannertitleedit_wrapper input{
+	height: 1em;
+	border: 1px solid #ccc;
+	color: #555;
+	font-size: 15px;
+	padding: 0.5em;
+	width: 200px;
+}
 /*~~~~~~~~~~banner_slider双向滑动组件~~~~~~~~~~*/
 
 .bannerslider_container {
@@ -6692,24 +6708,33 @@ li.method {
     -moz-transform-origin: top left;
 }
 
-.bmindex_main_wrapper .flipbook-viewport .hard > div, .bp_preview_container .flipbook-viewport .hard > div {
-    -ms-zoom: 0.6;
-    -webkit-transform: scale(0.6);
-    -webkit-transform-origin: top left;
-    -moz-transform: scale(0.6);
-    -moz-transform-origin: top left;
+.bmindex_main_wrapper .flipbook-viewport .page>div, .bp_preview_container .flipbook-viewport .page>div {
+	-ms-zoom: 0.58;
+	-webkit-transform: scale(0.58);
+	-webkit-transform-origin: top left;
+	-moz-transform: scale(0.58);
+	-moz-transform-origin: top left;
 }
-
-.bmindex_main_wrapper .flipbook-viewport .secondcover > div, .bmindex_main_wrapper .flipbook-viewport .thirdcover > div, .bp_preview_container .flipbook-viewport .secondcover > div, .bp_preview_container .flipbook-viewport .thirdcover > div {
-    -ms-zoom: 0.58;
-    -webkit-transform: scale(0.58);
-    -moz-transform: scale(0.58);
-    top: 8px;
+.bmindex_main_wrapper .flipbook-viewport .hard>div, .bp_preview_container .flipbook-viewport .hard>div{
+	-ms-zoom: 0.6;
+	-webkit-transform: scale(0.6);
+	-webkit-transform-origin: top left;
+	-moz-transform: scale(0.6);
+	-moz-transform-origin: top left;
 }
-
-.bmindex_main_wrapper .flipbook-viewport .secondcover > div, .bp_preview_container .flipbook-viewport .secondcover > div {
-    -webkit-transform-origin: top right;
-    -moz-transform-origin: top right;
+.bmindex_main_wrapper .flipbook-viewport .secondcover>div, .bmindex_main_wrapper .flipbook-viewport .thirdcover>div, .bp_preview_container .flipbook-viewport .secondcover>div, .bp_preview_container .flipbook-viewport .thirdcover>div{
+	-ms-zoom: 0.58;
+	-webkit-transform: scale(0.58);
+	-moz-transform: scale(0.58);
+	top: 8px;
+}
+.bmindex_main_wrapper .flipbook-viewport .secondcover>div, .bp_preview_container .flipbook-viewport .secondcover>div{
+	-webkit-transform-origin: top right;
+	-moz-transform-origin: top right;
+}
+.bmindex_main_wrapper .flipbook-viewport .thirdcover>div, .bp_preview_container .flipbook-viewport .thirdcover>div{
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
 }
 
 .bmindex_main_wrapper .flipbook-viewport .thirdcover > div, .bp_preview_container .flipbook-viewport .thirdcover > div {
@@ -12652,7 +12677,12 @@ li.method {
 .timeline_title_wrapper a:hover {
 	text-decoration: underline;
 }
-
+.timeline_sharetrigger_btn {
+  background: rgba(0, 0, 0, 0) url("../img/imgsprite_yb3_wbl_00000.png") repeat scroll -177px -105px;
+  float: right;
+  height: 25px;
+  width: 25px;
+}
 .timeline_node_wrapper {
 	float: left;
 	margin: 0 0 0 40px;
@@ -12945,6 +12975,17 @@ li.method {
 	height: 100%;
 }
 
+.photo_list .title {
+	position: absolute;
+	bottom: 0;
+	padding: 0 10px;
+	width: 207px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #3C3C3C;
+	opacity: 0.7;
+}
+
 .photo_list .fancybox img {
 	display: block;
 	margin: 0 auto;
@@ -13010,17 +13051,6 @@ li.method {
 	cursor: pointer;
 }
 
-.photo_list .title {
-	position: absolute;
-	bottom: 0;
-	padding: 0 10px;
-	width: 207px;
-	height: 30px;
-	line-height: 30px;
-	background-color: #3C3C3C;
-	opacity: 0.7;
-}
-
 .edit_group .title > p {
 	display: inline-block;
 	font-size: 14px;
@@ -13049,7 +13079,72 @@ li.method {
 	line-height: 30px;
 	cursor: pointer;
 }
-
+.edit_btn_group > button.current, .edit_btn_group > button:focus, .edit_btn_group > button:hover {
+  background-color: #a0d350;
+  color: #fff;
+}
+.edit_btn_group > button {
+  background-color: #fff;
+  border: medium none;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px #aaa;
+  color: #666;
+  cursor: pointer;
+  font: 14px "microsoft yahei";
+  height: 35px;
+  margin-right: 8px;
+  padding: 0;
+  width: 115px;
+}
+.edit_btn_group > form {
+  display: inline-block;
+  font-size: 14px;
+}
+.edit_btn_group > div {
+  background-color: #fff9df;
+  border: 1px solid #ffb966;
+  box-shadow: 0 0 5px #b4b4b4;
+  display: inline-block;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+  text-align: center;
+  width: 180px;
+}
+.edit_btn_group > div > span {
+  color: #ff3e38;
+}
+.edit_list > li {
+  text-align: center;
+  vertical-align: middle;
+}
+.edit_list li > a.selected {
+  border: 5px solid #00b7ee;
+  position: relative;
+}
+.edit_list li a img {
+  height: 100%;
+  width: 100%;
+}
+.edit_list li > a {
+  border: 5px solid transparent;
+  display: block;
+}
+.edit_list li a.selected > span {
+  background: rgba(0, 0, 0, 0) url("../img/imgsprite_yb3_wbl_00000.png") repeat scroll -300px -21px;
+  bottom: -1px;
+  height: 55px;
+  position: absolute;
+  right: 0;
+  width: 50px;
+}
+.move_photo {
+  color: #666;
+  display: none;
+  font: 14px "microsoft yahei";
+  width: 405px;
+}
 .comment_list_wrapper {
 	max-height: 175px;
 	width: 255px;
@@ -14764,12 +14859,16 @@ button::-moz-focus-inner {
 	line-height: 35px;
 }
 
+.pagemake_middle .caption .edit_wrap .change_tpl_tips .tpl{
+    margin: 0 auto;
+}
+
 .pagemake_middle .caption .edit_wrap .chapter_state,
 .pagemake_middle .caption .edit_wrap .chapter_config {
 	position: relative;
 	display: inline-block;
 	padding: 0 10px;
-	font-size: 14px;
+	font-size: 12px;
 	color: #666;
 }
 
@@ -15742,6 +15841,94 @@ button::-moz-focus-inner {
 
 
 /*~~~~~~~~~~chaptermake_middle_con2~~~~~~~~~~*/
+.double_page {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	padding: 3px 5px;
+	color: #fff;
+	background-color: #a0d350;
+	border-radius: 3px;
+	cursor: pointer;
+	z-index: 2;
+}
+.double_page_right {
+  background-color: #a0d350;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  padding: 3px 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 2;
+}
+.double_page_left {
+  background-color: #a0d350;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  left: 5px;
+  padding: 3px 5px;
+  position: absolute;
+  top: 5px;
+  z-index: 2;
+}
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a {
+  color: #a4a4a4;
+  display: block;
+  font-size: 14px;
+  height: 28px;
+  line-height: 28px;
+  width: 100%;
+}
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a.active, .pagemake_right .pagemake_wrap .ptpl_switch ul li a:hover {
+  background: #fff none repeat scroll 0 0;
+  color: #7cc952;
+}
+.pagemake_right .pagemake_wrap .ptpl_switch ul li:first-child {
+  border-bottom-left-radius: 4px;
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  border-top-left-radius: 4px;
+}
+.pagemake_right .pagemake_wrap .ptpl_switch ul li {
+  background: #e3e3e3 none repeat scroll 0 0;
+  border-bottom: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  border-top: 1px solid #e3e3e3;
+  box-sizing: border-box;
+  color: #333;
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+.pagemake_right .pagemake_wrap .ptpl_switch ul {
+  height: 30px;
+  margin: 15px auto;
+  overflow: hidden;
+  width: 240px;
+}
+.chaptermake_middle_con2 .main .item ul li .personal_avatar {
+  color: #a0d350;
+  font-size: 12px;
+  height: 28px;
+  line-height: 26px;
+  position: absolute;
+  text-align: center;
+  width: 125px;
+}
+.chaptermake_middle_con2 .main .item ul li .personal_avatar img {
+  border-radius: 15px;
+  clear: both;
+  height: 32px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 32px;
+}
+
+
 
 .pagemake_wrap .caption .icon-exclamation-sign,
 .icon-question-sign {
@@ -15845,7 +16032,17 @@ button::-moz-focus-inner {
 	padding: 5px 7px;
 	font-size: 12px;
 }
-
+.pm_res_image_link .inbook {
+  background: #4dbbe6 none repeat scroll 0 0;
+  border-radius: 3px;
+  bottom: 5px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 3px 5px;
+  position: absolute;
+  right: 0;
+}
 
 
 /*~~~~~~~~~~picScroll~~~~~~~~~~*/
@@ -16444,7 +16641,28 @@ button::-moz-focus-inner {
 #modal_changetpl_con > .hd {
 	font-size: 14px;
 }
-
+#modal_changetpl_con {
+  overflow: hidden;
+  width: 920px;
+}
+.pagemakeBox .turn_btn {
+  height: 50px;
+  margin: 0 auto;
+  width: 140px;
+}
+.pagemakeBox {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+}
+.pagemakeBox .pagemakeBox_tpl {
+  overflow: hidden;
+}
+.pagemakeBox .pagemakeBox_tpl li {
+  float: left;
+  overflow: hidden;
+  text-align: center;
+}
 .pagemakeBox .bd .turn_btn {
 	display: block;
 	width: auto;
@@ -16509,17 +16727,6 @@ button::-moz-focus-inner {
 	color: #d6413d;
 }
 
-.double_page {
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	padding: 3px 5px;
-	color: #fff;
-	background-color: #a0d350;
-	border-radius: 3px;
-	cursor: pointer;
-	z-index: 2;
-}
 
 .pagemake_wrap .caption .icon-plus {
 	margin-right: 10px;
@@ -17583,7 +17790,9 @@ button::-moz-focus-inner {
 .choose_img_con .time_line .month .name:active {
 	background: url(../img/bookmanagement/timeline_bg.png) 0 -150px no-repeat;
 }
-
+.choose_img_con .img_con .uploading.finished {
+	width: 100%;
+}
 .main_left .choose_img_con .img_con {
 	position: relative;
 	float: right;
@@ -21972,7 +22181,6 @@ li.action div:hover {
 .opd_preferential_wrapper {
 	float: left;
 	padding: 20px 30px;
-	width: 560px;
 	border-top: 1px solid #efefef;
 	font-size: 14px;
 	color: #777;
@@ -21995,6 +22203,7 @@ li.action div:hover {
 	margin: 0 5px;
 	width: 18px;
 	height: 18px;
+	line-height: 16px;
 	border: 1px solid #999;
 	text-align: center;
 	color: #000;

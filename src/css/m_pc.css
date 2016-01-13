@@ -191,6 +191,8 @@
     line-height: 6em;
     margin: 1em 0;
     padding: 0 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .user-info-list a {
@@ -202,6 +204,11 @@
 .user-info-list span:after {
     content: ">";
     padding-left: 0.5em;
+}
+
+.user-info-list .user-header span:after{
+    display: none;
+    content: "";
 }
 
 .user-info-list form {
@@ -958,6 +965,7 @@
     width: 100%;
     height: 60px;
     line-height: 60px;
+    background-color: #fff;
     box-sizing: border-box;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
@@ -968,7 +976,7 @@
     bottom: 0;
 }
 
-@media only screen and (max-height: 480px) {
+@media only screen and (max-width: 320px) {
     .order_management.change .opd_confirm_wrapper {
         position: relative;
         bottom: auto;

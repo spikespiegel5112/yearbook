@@ -1609,6 +1609,17 @@
   top: 5px;
   z-index: 2;
 }
+.double_page_left {
+  background-color: #a0d350;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  left: 5px;
+  padding: 3px 5px;
+  position: absolute;
+  top: 5px;
+  z-index: 2;
+}
 .pagemake_right .pagemake_wrap .ptpl_switch ul li a {
   color: #a4a4a4;
   display: block;
@@ -1616,6 +1627,10 @@
   height: 28px;
   line-height: 28px;
   width: 100%;
+}
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a.active, .pagemake_right .pagemake_wrap .ptpl_switch ul li a:hover {
+  background: #fff none repeat scroll 0 0;
+  color: #7cc952;
 }
 .pagemake_right .pagemake_wrap .ptpl_switch ul li:first-child {
   border-bottom-left-radius: 4px;
@@ -1763,7 +1778,17 @@
 	padding: 5px 7px;
 	font-size: 12px;
 }
-
+.pm_res_image_link .inbook {
+  background: #4dbbe6 none repeat scroll 0 0;
+  border-radius: 3px;
+  bottom: 5px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 3px 5px;
+  position: absolute;
+  right: 0;
+}
 
 
 /*~~~~~~~~~~picScroll~~~~~~~~~~*/
@@ -2362,7 +2387,28 @@
 #modal_changetpl_con > .hd {
 	font-size: 14px;
 }
-
+#modal_changetpl_con {
+  overflow: hidden;
+  width: 920px;
+}
+.pagemakeBox .turn_btn {
+  height: 50px;
+  margin: 0 auto;
+  width: 140px;
+}
+.pagemakeBox {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+}
+.pagemakeBox .pagemakeBox_tpl {
+  overflow: hidden;
+}
+.pagemakeBox .pagemakeBox_tpl li {
+  float: left;
+  overflow: hidden;
+  text-align: center;
+}
 .pagemakeBox .bd .turn_btn {
 	display: block;
 	width: auto;

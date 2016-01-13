@@ -2674,7 +2674,7 @@
 .compute_price_container .product_info > div{
     display: block;
     height: 45px;
-    line-height: 45px;
+    line-height: 25px;
     clear: both;
     overflow: visible;
 }
@@ -2720,6 +2720,36 @@
     top: 4px;
     font-size: 12px;
 }
+
+.compute_price_container .product_info .size dd{
+    position: relative;
+}
+
+.compute_price_container .product_info .size dd .print_size{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    z-index: 1;
+    width: 120px;
+    left: -2px;
+    top: -123px;
+    background-color: transparent;
+    border: 0;
+}
+
+.compute_price_container .product_info .size dd:hover .print_size{
+    display: block;
+}
+
+.compute_price_container .product_info .size dd .print_size img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.compute_price_container .product_info .size .ybcommon_queryicon_item{
+    margin-left: 5px;
+}
+
 .compute_price_container .product_info .price dd span{
     font-size: 18px;
     font-weight: bold;

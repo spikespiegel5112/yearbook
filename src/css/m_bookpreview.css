@@ -102,14 +102,55 @@
 }
 
 .bp_con_v .ybwechatheader_wrapper {
+    display: block!important;
+    position: relative;
     background: transparent;
 }
 
-.bp_con_v .tips {
+.bp_con_h .ybwechatheader_wrapper {
+    /*display: none;*/
+    position: absolute;
+    background: #000;
+    z-index: 2;
+}
+
+.ybwechatheader_wrapper p span {
+    display: none;
     font-size: 14px;
     color: #fff;
     text-align: center;
     line-height: 48px;
+}
+
+.bp_con_v .ybwechatheader_wrapper p .tips {
+    display: block;
+}
+
+.bp_con_h .ybwechatheader_wrapper p .tips {
+    display: none;
+}
+
+.bp_con_h .ybwechatheader_wrapper p .cur_page {
+    display: block;
+}
+
+.bp_con_v .ybwechatheader_wrapper p .cur_page {
+    display: none;
+}
+
+.bp_tpl{
+    width: 100%;
+    background: url("../img/m/previewbook/pb_bg3-9.jpg") no-repeat;
+    background-size: cover;
+}
+
+.bp_con_v .bp_tpl{
+    height: 286px;
+}
+
+.bp_con_h .bp_tpl{
+    position: fixed;
+    height: 100%;
 }
 
 .flipbook-viewport {
@@ -119,8 +160,13 @@
     overflow: visible;
 }
 
+.bp_con_h .bp_tpl .flipbook-viewport{
+    margin: 0 auto;
+    height: 100%;
+}
+
 .flipbook_wrapper {
-    margin: 2% 0 0 0;
+    margin: 0;
     height: 100%;
     position: relative;
     z-index: 1;
@@ -173,13 +219,6 @@
     box-shadow: 0 0 20px #ccc;
 }
 
-
-.bp_con_h .ybwechatheader_wrapper{
-    display: none;
-    position: absolute;
-    background-color: #000;
-    z-index: 2;
-}
 
 .vsub {
     display: none;
@@ -420,7 +459,7 @@
 }
 
 .hsub{
-    display: none;
+    /*display: none;*/
     position: absolute;
     bottom: 0;
     left: 0;
@@ -503,7 +542,7 @@
     margin: 0 10px 0 0;
     color: #fff;
     font-size: 12px;
-    line-height: 32px;
+    line-height: 48px;
 }
 
 .chapter_slide a:hover,

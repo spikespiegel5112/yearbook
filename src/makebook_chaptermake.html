@@ -2515,19 +2515,28 @@
 			<div class="size">
 				<dl>
 					<dt>尺&nbsp;&nbsp;&nbsp;寸：</dt>
-					<dd class="selected">
-						<div>
+					<dd class="selected" data='书册尺寸宽14.5cm，长21.0cm'>
+						<div class="" >
 							<span>别致小装</span>
 							<div class="icon"><i class="icon-ok"></i></div>
 						</div>
+                        <div class="print_size"><img src="img/book_details/min_size.png" alt="别致小装"></div>
 					</dd>
-					<dd>
+					<dd data='书册尺寸宽17.5cm，长24.8cm'>
 						<div>
 							<span>气派大装</span>
 							<div class="icon"><i class="icon-ok"></i></div>
 						</div>
+                        <div class="print_size"><img src="img/book_details/max_size.png" alt="气派大装"></div>
 					</dd>
 				</dl>
+                <div class="ybcommon_queryicon_item">
+                    <span class='icon-question-sign'></span>
+                    <div>
+                        <p>书册尺寸宽14.5cm，长21.0cm</p>
+                        <a class="ybcommon_qimoredetail_btn" href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+                    </div>
+                </div>
 			</div>
 			<div class="num">
 				<dl>
@@ -3333,12 +3342,15 @@
 					thisEl.removeClass('selected');
 					$this.addClass('selected');
 				});
-				$('.product_info .size dd').click(function() {
-					var $this=$(this),
-							thisEl=$('.product_info .size dd');
-					thisEl.removeClass('selected');
-					$this.addClass('selected');
-				});
+                $('.product_info .size dd').click(function() {
+                    var $this = $(this),
+                            thisEl = $('.product_info .size dd'),
+                            thisData = $this.attr('data'),
+                            hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
+                    thisEl.removeClass('selected');
+                    $this.addClass('selected');
+                    hintEl.text(thisData);
+                })
 			})
 		}
 		

@@ -107,9 +107,10 @@
 }
 
 .bp_con_h .ybwechatheader_wrapper {
-    display: none;
+    /*display: none;*/
     position: absolute;
     background: #000;
+    z-index: 2;
 }
 
 .ybwechatheader_wrapper p span {
@@ -452,7 +453,7 @@
 }
 
 .hsub{
-    display: none;
+    /*display: none;*/
     position: absolute;
     bottom: 0;
     left: 0;
@@ -535,7 +536,7 @@
     margin: 0 10px 0 0;
     color: #fff;
     font-size: 12px;
-    line-height: 32px;
+    line-height: 48px;
 }
 
 .chapter_slide a:hover,

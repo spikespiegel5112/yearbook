@@ -688,9 +688,13 @@
      * click title and footer tooltip
      * */
     function showBookToolWrap() {
-        $('.bp_con_h .bp_tpl').on("click", function () {
-            $('.ybwechatheader_wrapper').toggle();
-            $('.hsub').toggle();
+        $('.bp_tpl').on("click", function () {
+            if($(this).parent().hasClass('bp_con_v')){
+                return
+            }else{
+                $('.ybwechatheader_wrapper').toggle();
+                $('.hsub').toggle();
+            }
         });
     }
 

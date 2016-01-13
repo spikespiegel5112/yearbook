@@ -604,7 +604,6 @@
 		},
 		priceCalculator: function(options) {
 			var $this = $(this),
-				index = 0,
 				totalPriceArr = [],
 				config = {
 					unitprice: '',
@@ -618,11 +617,9 @@
 			init($this);
 			$.each($this, function(index) {
 				var $this = $(this),
-					index = index,
 					counterEl = $this.find('input');
 				$this.find('a').on('click', function() {
 					var counter = counterEl.val();
-					index = index;
 					switch ($(this).index()) {
 						case 0:
 							counter--;

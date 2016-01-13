@@ -2,22 +2,23 @@
 <html>
 
 <head lang="ch">
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
-	<title>忆尔3.9-书册预览</title>
-	<!-- build:css ../css/m.all.min.css -->
-	<link rel="stylesheet" href="../css/m_reset.css" type="text/css" />
-	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
-	<link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css" />
-	<!-- endbuild -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.9-书册预览</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css"/>
+    <!-- endbuild -->
 
-	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
-	<link rel="stylesheet" href="../assets/css/bootstrap-switch.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-switch.min.css" type="text/css" media="all"/>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
     <div class="bp_tpl">
         <div class="ybwechatheader_wrapper">
             <a class='left_btn back_btn' href="javascript:;"></a>
+
             <p>
                 <span class="tips">提示：将手机横屏可进行全屏预览</span>
                 <span class="cur_page">1/33</span>
@@ -145,7 +147,7 @@
                     <li>
                         <a href="javascript:;">
                             <div class="barrage_switch">
-                                <input type="checkbox" />
+                                <input type="checkbox"/>
                             </div>
                             <p>弹幕开关</p>
                         </a>
@@ -529,13 +531,40 @@
         complete: loadApp
     });
 
-    window.addEventListener("orientationchange", function() {
-        if(window.orientation){
+   /* window.addEventListener("orientationchange", function () {
+        if (window.orientation) {
             $('.main_container').removeClass('bp_con_v').addClass('bp_con_h');
-        }else{
+            $(".flipbook").turn("size", 100, 60);
+        } else {
             $('.main_container').addClass('bp_con_v').removeClass('bp_con_h');
         }
-    }, false);
+    }, false);*/
+
+    function orientationChange(){
+        switch(window.orientation) {
+            case 0:
+                $('.main_container').addClass('bp_con_v').removeClass('bp_con_h');
+                $(".flipbook").turn("size", 280, 198);
+                $('.flipbook-viewport').width('280');
+                break;
+            case 180:
+                break;
+            case -90:
+                break
+            case 90:
+                $('.main_container').removeClass('bp_con_v').addClass('bp_con_h');
+                    var winW = $(window).width();
+                    var winH = $(window).height();
+                    var flipbookW = 1.42 * winH;
+                    var flipbookZ = 0.00104 * winH;
+                $(".flipbook").turn("size", flipbookW, winH);
+                $(".flipbook").turn("zoom", flipbookZ);
+                $('.flipbook-viewport').width(flipbookW)
+
+                break;
+        }
+    }
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", orientationChange, false);
     /*
      * 评论赞tab切换
      * */
@@ -556,17 +585,17 @@
     }
 
     /*
-    * 弹幕开关
-    * */
+     * 弹幕开关
+     * */
 
-    function barrageSwitch(){
+    function barrageSwitch() {
         $(".barrage_switch input[type=checkbox]").bootstrapSwitch({
             onColor: 'success',
-            onSwitchChange: function(e,state){
-                if(state){
+            onSwitchChange: function (e, state) {
+                if (state) {
                     $(".comment_msg").show();
                     init_screen();
-                }else{
+                } else {
                     $(".comment_msg").hide().find('div').remove();
                 }
             }
@@ -575,11 +604,11 @@
         $('.hsub input[type=checkbox]').bootstrapSwitch({
             onColor: 'success',
             size: 'mini',
-            onSwitchChange: function(e,state){
-                if(state){
+            onSwitchChange: function (e, state) {
+                if (state) {
                     $(".comment_msg").show();
                     init_screen();
-                }else{
+                } else {
                     $(".comment_msg").hide().find('div').remove();
                 }
             }
@@ -599,7 +628,7 @@
 
         var text = $("#reply-write").val();
         var div = "<div><p>" + text + "</p></div>";
-        $('.comment_msg div').last().css({'color': getReandomColor(),'font-size':getReandomFontSize()});
+        $('.comment_msg div').last().css({'color': getReandomColor(), 'font-size': getReandomFontSize()});
         $("#reply-write").val("");
         $(".comment_msg").append(div);
         init_screen();
@@ -629,7 +658,7 @@
             $(".comment_msg").find("div:lt(20)").remove();
         }
         for (var i = 0; i < num; i++) {
-            $(".comment_msg").find("div").eq(i).css({'color': getReandomColor(),'font-size':getReandomFontSize()});
+            $(".comment_msg").find("div").eq(i).css({'color': getReandomColor(), 'font-size': getReandomFontSize()});
         }
         init_screen();
     }
@@ -679,7 +708,7 @@
     //随机获取字号
     function getReandomFontSize() {
         return (function () {
-                    return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
+            return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
         });
     }
 
@@ -688,13 +717,13 @@
      * */
     function showBookToolWrap() {
         $('.bp_tpl').on("click", function () {
-            if($(this).parent().hasClass('bp_con_v')){
+            if ($(this).parent().hasClass('bp_con_v')) {
                 return
-            }else{
+            } else {
                 $('.bp_con_h .ybwechatheader_wrapper').toggle();
                 $('.hsub').toggle();
             }
-            $('.flipbook_wrapper a').on('click',function(e){
+            $('.flipbook_wrapper a').on('click', function (e) {
                 e.stopPropagation();
             })
         });

@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<div class='main_container bp_con_v'><!--竖屏class:bp_con_v has_footer_nav，横屏class:bp_con_h-->
+<div class='main_container bp_con_v'><!--竖屏class:bp_con_v，横屏class:bp_con_h-->
     <div class="bp_tpl">
         <div class="ybwechatheader_wrapper">
             <a class='left_btn back_btn' href="javascript:;"></a>
@@ -532,12 +532,11 @@
 
     window.addEventListener("orientationchange", function() {
         if(window.orientation){
-            $('.main_container').removeClass('bp_con_v has_footer_nav').addClass('bp_con_h');
+            $('.main_container').removeClass('bp_con_v').addClass('bp_con_h');
         }else{
-            $('.main_container').addClass('bp_con_v has_footer_nav').removeClass('bp_con_h');
+            $('.main_container').addClass('bp_con_v').removeClass('bp_con_h');
         }
     }, false);
-
     /*
      * 评论赞tab切换
      * */
@@ -689,9 +688,13 @@
      * click title and footer tooltip
      * */
     function showBookToolWrap() {
-        $('.bp_tpl_h').on("click", function () {
-            $('.ybwechatheader_wrapper').toggle();
-            $('.hsub').toggle();
+        $('.bp_tpl').on("click", function () {
+            if($(this).parent().hasClass('bp_con_v')){
+                return
+            }else{
+                $('.ybwechatheader_wrapper').toggle();
+                $('.hsub').toggle();
+            }
         });
     }
 

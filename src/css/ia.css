@@ -6397,14 +6397,35 @@ button::-moz-focus-inner {
 	height: 15px;
 	background: url(../img/imgsprite_yb3_wbl_00000.png) -314px -4px;
 }
-
+.modify_name {
+  display: none;
+  padding: 10px;
+  width: 800px;
+}
 .bm_uploadphoto_button_wrapper {
 	position: absolute;
 	top: 0;
 	right: 50px;
 	line-height: 80px;
 }
-
+.rename_list li {
+  display: inline-block;
+  height: 220px;
+  margin-right: 20px;
+  vertical-align: top;
+  width: 175px;
+}
+.rename_list li > div > img {
+  height: 175px;
+  width: 175px;
+}
+.rename_list li > input {
+  background-color: #f7f7f7;
+  border: medium none;
+  height: 30px;
+  padding-left: 10px;
+  width: 165px;
+}
 .writebutton {
 	padding: 7px 12px;
 	border: 1px solid #ccc;

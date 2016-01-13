@@ -154,7 +154,7 @@
 }
 
 .flipbook-viewport {
-    margin: 10px auto 30px;
+    margin: 0 auto 30px;
     width: 280px;
     height: 198px;
     overflow: visible;
@@ -167,7 +167,7 @@
 }
 
 .flipbook_wrapper {
-    margin: 0;
+    padding: 2% 0 0 0;
     height: 100%;
     position: relative;
     z-index: 1;
@@ -200,13 +200,13 @@
     background-size: 100% 100%;
 }
 
-.flipbook-viewport .page > div, .flipbook-viewport .page > div {
+/*.flipbook-viewport .page > div {
     -ms-zoom: 0.206;
     -webkit-transform: scale(0.206);
     -webkit-transform-origin: top left;
     -moz-transform: scale(0.206);
     -moz-transform-origin: top left;
-}
+}*/
 
 .flipbook-viewport .shadow {
     -webkit-transition: -webkit-box-shadow 0.5s;
@@ -220,6 +220,13 @@
     box-shadow: 0 0 20px #ccc;
 }
 
+
+.bp_con_h .ybwechatheader_wrapper{
+    display: none;
+    position: absolute;
+    background-color: #000;
+    z-index: 2;
+}
 
 .vsub {
     display: none;

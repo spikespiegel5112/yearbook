@@ -203,6 +203,29 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        px2rem: {
+            options: {
+                ignore0: true, // ignore 0px default true
+                ignore1: true, // ignore 1px default true
+                root: 32, // set root fontsize, default 32
+                designWidth : 640,            //设计稿宽度
+                baseFont    : 100,             //基础字体，在设计稿宽度下你要使用的root字体大小（随便填填）
+                border      : 1,              //1不处理border，0处理
+                ie8         : 0,              //1生成ie8代码，0不生成
+                //dest        : '<%= meta.distPath %>css',         //rem css输出目录
+                mode        : 0,             //0:px转rem，1rem转px
+                media       : 0,               //是否自动生成meadia query代码
+            },
+            css: { // seperate
+                files: [{
+                    expand: true, // Enable dynamic expansion
+                    cwd: '<%= meta.distPath %>/css', // Src matches are relative to this path
+                    src: ['m.all*.css'], // Actual patterns to match
+                    dest: '<%= meta.distPath %>/css' // Destination path prefix
+                }]
+            }
+        },
+
 
         watch: {
             options: {
@@ -240,6 +263,7 @@ module.exports = function(grunt) {
             }
         }
     });
+
     // Load the plugins
     require('load-grunt-tasks')(grunt, {
         scope: 'devDependencies'
@@ -248,7 +272,7 @@ module.exports = function(grunt) {
     grunt.registerTask('cleanAll', ['clean']);
     grunt.registerTask('dist-css', ['cssmin', 'clean:sourceMap']);
     grunt.registerTask('dist-js', ['concat', 'uglify']);
-    grunt.registerTask('dist', ['clean:all', 'useminPrepare', 'dist-js', 'dist-css', 'copy', 'usemin']);
+    grunt.registerTask('dist', ['clean:all', 'useminPrepare', 'dist-js', 'dist-css', 'copy', 'usemin'/*,'px2rem'*/]);
     grunt.registerTask('build', ['dist']);
     grunt.registerTask('default', ['dist']);
     grunt.registerTask('server', ['dist','watch']);

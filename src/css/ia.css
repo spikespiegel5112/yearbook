@@ -4873,6 +4873,22 @@
 	clear: both;
 }
 
+/*NEWYB-1347*/
+.timeline_main_wrapper .bp_sharelist_wrapper{
+    position: absolute;
+    top: 0;
+    left: 910px;
+    opacity: 0;
+}
+
+.timeline_main_wrapper .active .bp_sharelist_wrapper {
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ie-transition: opacity .5s;
+}
+
 .timeline_line_wrapper:first-child {
 	margin: 0 0 0 10px;
 }

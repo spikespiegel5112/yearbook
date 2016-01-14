@@ -2043,13 +2043,21 @@
 }
 
 .pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img {
-  border-radius: 15px;
-  height: 16px;
-  width: 16px;
+    border-radius: 15px;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    border: 1px solid #ccc;
 }
 
-.pagemake_left .picScroll-top .bd ul li .pic:hover img,
-.pagemake_left .picScroll-top .bd ul li .pic.selected img {
+.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img:hover{
+    border: 1px solid #89c539;
+}
+
+.pagemake_left .picScroll-top .bd ul li .pic:hover .cover > img,
+.pagemake_left .picScroll-top .bd ul li .pic.selected .cover > img {
 	border: 2px solid #89c539;
 	border-radius: 4px;
 }

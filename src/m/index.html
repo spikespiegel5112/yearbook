@@ -592,6 +592,7 @@
                 phT = winHeight/3-60,
                 iaL = (winWidth)/2+40,
                 jiaT = winHeight/3+80;
+        var curPageIcon = $('.footer_nav li.active').index();
 
         $('.new_option ul li').css({'top':midTop,'left':midLeft});
         /*new option page fadein*/
@@ -613,6 +614,7 @@
         });
         /*new option page fadeout*/
         $('.open_new_container .close_btn a').on('touchend',function(){
+            //保存当前页面
             $('.new_option').removeClass(' fadeIn').addClass('fadeOut');
             $('.open_new_container').addClass('fadeOut').removeClass('fadeIn');
             $('.new_option ul li').animate({'top':midTop,'left':midLeft},300,function(){});
@@ -620,6 +622,7 @@
                 $('.new_option').hide();
                 $('.open_new_container').hide();
             },500);
+            $('.footer_nav li').eq(curPageIcon).addClass('active').siblings().removeClass('active');;
         });
     }
 </script>

@@ -1753,3 +1753,44 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     display: inline-block;
     vertical-align: middle;
 }
+
+/* 11.30 xx add */
+.globalhint_wrapper{
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+.globalhint_wrapper .globalhint_inner_wrapper{
+    margin: 0 auto;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.globalhint_wrapper .globalhint_inner_wrapper .globalhint_mainarticle_item{
+    margin: 10px 0 10px 0;
+    text-align: center;
+}
+.globalhint_wrapper .globalhint_inner_wrapper .globalhint_mainarticle_item span{
+    color:#e67131;
+    text-decoration :underline ;
+}
+.globalhint_wrapper .globalhint_inner_wrapper .globalhint_sidearticle_item{
+    font-size: 13px;
+}
+.globalhint_wrapper .globalhint_inner_wrapper .globalhint_close_btn{
+    padding: 0 0 1em 0;
+    font-size: 25px;
+    color: #ddd;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 1;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}

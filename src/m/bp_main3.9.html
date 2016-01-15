@@ -21,12 +21,11 @@
 </head>
 
 <body>
-	<div class='main_container bp_con_v'>
-		<!--竖屏class:bp_con_v，横屏class:bp_con_h-->
+	<div class='main_container'>
+		<!--竖屏class:bp_con_v has_footer_nav，横屏class:bp_con_h-->
 		<div class="bp_tpl">
 			<div class="ybwechatheader_wrapper">
 				<a class='left_btn back_btn' href="javascript:;"></a>
-
 				<p>
 					<span class="tips">提示：将手机横屏可进行全屏预览</span>
 					<span class="cur_page">1/33</span>
@@ -275,34 +274,175 @@
 		</div>
 	</div>
 	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/modernizr.2.5.3.min.js"></script>
-	<script src="../assets/js/zepto.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/bootstrap-switch.min.js"></script>
 	<script type="text/javascript" src='../js/check_os.js'></script>
 	<script>
+		window.currentPage = 1;
+		var LOG = function() {
+			return;
+		};
+		// var LOG = alert;
 		$(function() {
 			barrageSwitch();
 			CommentPraiseTab();
 			showBookToolWrap();
-		})
+			orientationEventTrigger();
 
+		});
 
-		function loadApp() {
-			//这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
-			var bookIdx = 1;
-			var pageWidth = $('.flipbook-viewport .page').width();
-			var pageHegiht = $('.flipbook-viewport .page').height();
-			var flipbook = $('.flipbook');
+		function orientationEventTrigger() {
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height();
+			// $('.flipbook').attr('currentpage',1)
+			orientationSensor({
+				portrait: function() {
+					$('.flipbook-viewport').css({
+						'height': windowWidth * 0.5
+					});
+					$('.flipbook').attr('currentpage', 1);
+					turnInit();
+					
+					turnToCurrentpage();
+				},
+				landscape: function() {
+					$('.flipbook-viewport').css({
+						'height': windowHeight
+					});
+					$('.flipbook').attr('currentpage', 1);
+					turnInit();
+					
+					turnToCurrentpage();
+				}
+			});
 
-			flipbook.bind('first', function() {
-				$('.page-wrapper[page=1]').find('.p1').addClass('hard');
-			})
+			$(window).on("orientationchange", function(event) {
+				var windowWidth = $(window).width(),
+					windowHeight = $(window).height();
+				orientationHandler(event, {
+					portrait: function() {
+						portraitHandler(windowWidth, windowHeight);
+					},
+					landscape: function() {
+						landscapeHandler(windowHeight);
+					}
+				});
+			});
+		}
 
+		//屏幕方向探测器
+		function orientationSensor(callback) {
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height();
+			if (typeof(callback) == 'undefined') {
+				callback = {
+					portrait: function() {},
+					landscape: function() {}
+				}
+			} else {
+				if (windowWidth < windowHeight) {
+					return callback.portrait();
+				} else {
+					return callback.landscape();
+				}
+			}
+		}
+		//方向判断回调工具
+		function orientationHandler(event, callback) {
+			if (typeof(callback) == 'undefined') {
+				callback = {
+					portrait: function() {},
+					landscape: function() {}
+				}
+			}
+			switch (event.orientation) {
+				case 'portrait':
+					callback.portrait();
+					console.log("方法改变为：" + event.orientation);
+					break;
+				case 'landscape':
+					callback.landscape();
+					console.log("方法改变为：" + event.orientation);
+					break;
+			}
+			return callback;
+		}
 
+		// 竖屏控制器
+		function portraitHandler(windowWidth, windowHeight) {
+			$('.flipbook-viewport').css({
+				'height': windowWidth * 0.5
+			});
+			$(".flipbook").turn("destroy");
+			turnInit();
+			turnToCurrentpage();
+		}
+		// 横屏控制器
+		function landscapeHandler(windowHeight) {
+			$('.flipbook-viewport').css({
+				'height': windowHeight
+			});
+			$(".flipbook").turn("destroy");
+			turnInit();
+			turnToCurrentpage();
+		}
+
+		function turnToCurrentpage() {
+			var flipbook=$('.flipbook');
+			flipbook.turn('page', Number(flipbook.attr('currentpage')));
+		}
+		// 书册大小重定义
+		function flipbookResize() {
+			var zoom = 0,
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
+				originalWidth = 680,
+				originalHeight = 964,
+				portraitFactor = 0.7,
+				landscapeFactor = 0.87;
+			orientationSensor({
+				portrait: function() {
+					var zoom = windowWidth / (originalWidth * 2) * portraitFactor;
+					$('.flipbook .page>div').css(sizeArguObj(zoom));
+				},
+				landscape: function() {
+					var zoom = windowHeight * landscapeFactor / originalHeight;
+					$('.flipbook .page>div').css(sizeArguObj(zoom));
+				}
+			});
+			// 尺寸设定集
+			function sizeArguObj(zoom) {
+				return {
+					'-ms-zoom': zoom,
+					'-webkit-transform': 'scale(' + zoom + ')',
+					'-webkit-transform-origin': 'left top',
+					'-moz-transform': 'scale(' + zoom + ')',
+					'-moz-transform-origin': 'left center'
+				}
+			}
+		}
+
+		function turnInit() {
+			var bookIdx = 2,
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
+				pageWidth = $('.flipbook-viewport .page').width(),
+				pageHegiht = $('.flipbook-viewport .page').height(),
+				flipbook = $('.flipbook'),
+				zoom = 0,
+				flipbookWidth = orientationSensor({
+					portrait: function() {
+						return 1360 * (windowWidth / 1360) * 0.7;
+					},
+					landscape: function() {
+						return 1360 * (windowHeight / 964) * 0.87;
+					}
+				});
+			$('.page-wrapper .page').addClass('hard');
 			flipbook.turn({
-				width: '280',
-				height: '198',
-				elevation: 0,
+				width: flipbookWidth,
+				height: flipbookWidth * 0.7,
 				acceleration: !isChrome(),
 				autoCenter: true,
 				gradients: true,
@@ -311,11 +451,8 @@
 				when: {
 					turning: function(e, page, view) {
 						var book = $(this),
-							currentPage = book.turn('page'),
-							pages = book.turn('pages');
-
-						// $('.page-wrapper .page').addClass('hard')
-
+							pages = book.turn('pages'),
+							currentPage = book.turn('page');
 						if (currentPage > 3 && currentPage < pages - 3) {
 							if (page == 1) {
 								book.turn('page', 2).turn('stop').turn('page', page);
@@ -338,6 +475,8 @@
 							}
 						}
 
+						disableControls(page);
+
 						if (page >= 2) {
 							$('.flipbook_wrapper .p2').addClass('fixed');
 						} else {
@@ -348,53 +487,46 @@
 						} else {
 							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
 						}
-						updateDepth(book, page);
-						disableControls(page);
 					},
 					turned: function(e, page, view) {
 						var book = $(this);
-						updateDepth(book);
 						disableControls(page);
 						book.turn('center');
 					},
 					start: function(e, pageObj) {},
 					end: function(e, pageObj) {
 						var book = $(this);
-						updateDepth(book);
+						flipbookResize();
+						window.currentPage = flipbook.turn('page');
+						flipbook.attr('currentpage', flipbook.turn('page'));
 					},
 					missing: function(e, pages) {
 						for (var i = 0; i < pages.length; i++) {
-							addPage(bookIdx, pages[i], $(this));
+							addPage(bookIdx, pages[i], $(this), flipbookWidth);
 						}
 					}
 				}
 			});
-
+			$('.flipbook_wrapper').css({
+				width: flipbookWidth
+			});
 
 			flipbook.addClass('animated');
 
-			if (!$.os.mobile) {
-				$('.flipbook_nextpage_btn').bind($.mouseEvents.down, function() {
-					$(this).addClass('next-button-down');
-				}).bind($.mouseEvents.up, function() {
-					$(this).removeClass('next-button-down');
-				}).click(function() {
-					flipbook.turn('next');
-				});
-				$('.flipbook_prevpage_btn').bind($.mouseEvents.down, function() {
-					$(this).addClass('previous-button-down');
-				}).bind($.mouseEvents.up, function() {
-					$(this).removeClass('previous-button-down');
-				}).click(function() {
-					flipbook.turn('previous');
-				});
-			} else {
-				$('.flipbook_nextpage_btn').on('touchend', function() {
-					flipbook.turn('next');
-				});
-				$('.flipbook_prevpage_btn').on('touchend', function() {
-					flipbook.turn('previous');
-				});
+			$('.flipbook_nextpage_btn').on('touchend', function() {
+				flipbook.turn('page', Number(flipbook.attr('currentpage'))+2);
+			});
+			$('.flipbook_prevpage_btn').on('touchend', function() {
+				flipbook.turn('page', Number(flipbook.attr('currentpage'))-2);
+			});
+
+			setTimeout(function() {
+				flipbookResize();
+			}, 50)
+
+
+			function isChrome() {
+				return navigator.userAgent.indexOf('Chrome') != -1;
 			}
 
 			function bookLength() {
@@ -404,150 +536,49 @@
 				} else {
 					return length;
 				}
-				return length;
 			}
 
-			function getViewNumber(book, page) {
-				return parseInt((page || book.turn('page')) / 2 + 1, 10);
-			}
-
-			function getViewNumber(book, page) {
-				return parseInt((page || book.turn('page')) / 2 + 1, 10);
-			}
-
-			function isChrome() {
-				return navigator.userAgent.indexOf('Chrome') != -1;
-			}
-
-			function loadPage(bookIdx, page) {
-				$.ajax({
-					url: '../flipbookpages/' + bookIdx + '/page' + page + '.html'
-				}).done(function(pageHtml) {
-					$('.flipbook .p' + page).html(pageHtml.replace('yb3.0/flipbookpages/', ''));
-				});
-			}
-
-			function addPage(bookIdx, page, book) {
+			function addPage(bookIdx, page, book, flipbookWidth) {
 				var pages = book.turn('pages');
 				if (!book.turn('hasPage', page)) {
 					var element = $('<div />', {
 						'class': 'own-size',
 						css: {
-							width: 280,
-							height: 198
+							width: flipbookWidth / 2,
+							height: flipbookWidth * 0.7
 						}
 					}).html('<div class="loader"></div>');
 					if (book.turn('addPage', element, page)) {
 						loadPage(bookIdx, page);
 					}
 				}
-			}
 
-			function updateDepth(book, newPage) {
-				var page = book.turn('page'),
-					pages = bookLength(),
-					depthWidth = 20 * Math.min(1, (pages - (pages - page)) / pages);
-				newPage = newPage || page;
-
-				if (newPage > 3) {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: depthWidth,
-						left: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p2 .depth').css({
-						width: 0,
-						'z-index': 1
-					});
-				}
-				depthWidth = 30 * Math.min(1, (pages - page) / pages);
-				if (newPage < pages - 3) {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: depthWidth,
-						right: 12 - depthWidth,
-						'z-index': 1
-					});
-				} else {
-					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
-						width: 0,
-						'z-index': 1
+				function loadPage(bookIdx, page) {
+					$.ajax({
+						url: '../flipbookpages/' + bookIdx + '/page' + page + '.html'
+					}).done(function(pageHtml) {
+						$('.flipbook .p' + page).html(pageHtml.replace('yb3.0/flipbookpages/', ''));
 					});
 				}
 			}
 
 			function disableControls(page) {
-				$('.flipbook_nextpage_btn').css({
-					'background-color': 'rgba(0,0,0,0.1)',
-					'background-position': '-30px 0'
-				});
-				$('.flipbook_prevpage_btn').css({
-					'background-color': 'rgba(0,0,0,0.1)',
-					'background-position': '0 0'
-				})
+				var prevBtn = $('.flipbook_prevpage_btn'),
+					nextBtn = $('.flipbook_nextpage_btn')
 				if (page == 1) {
-					$('.flipbook_prevpage_btn').hide();
-					$('.flipbook_nextpage_btn').show().css({
-						right: '0',
-					});
-				} else if (page == $('.flipbook').turn('pages')) {
-					var length = $('.flipbook .page-wrapper').length;
-					$('.flipbook_prevpage_btn').show().css({
-						left: '0'
-					});
-					$('.flipbook_nextpage_btn').hide();
+					prevBtn.hide();
+					nextBtn.show();
+				} else if (page == flipbook.turn('pages')) {
+					prevBtn.show();
+					nextBtn.hide();
 				} else {
-					$('.flipbook_prevpage_btn').show().css({
-						left: '-25px'
-					});
-					$('.flipbook_nextpage_btn').show().css({
-						right: '-25px'
-					});
+					prevBtn.show();
+					nextBtn.show();
 				}
 			}
+
 		}
 
-		// Load the HTML4 version if there's not CSS transform
-		yepnope({
-			test: Modernizr.csstransforms,
-			yep: ['../assets/js/turn.js'],
-			nope: ['../assets/js/turn.html4.min.js'],
-			complete: loadApp
-		});
-
-		/* window.addEventListener("orientationchange", function () {
-			 if (window.orientation) {
-				 $('.main_container').removeClass('bp_con_v').addClass('bp_con_h');
-				 $(".flipbook").turn("size", 100, 60);
-			 } else {
-				 $('.main_container').addClass('bp_con_v').removeClass('bp_con_h');
-			 }
-		 }, false);*/
-
-		function orientationChange() {
-			switch (window.orientation) {
-				case 0:
-					$('.main_container').addClass('bp_con_v').removeClass('bp_con_h');
-					$(".flipbook").turn("size", 280, 198);
-					$('.flipbook-viewport').width('280');
-					break;
-				case 180:
-					break;
-				case -90:
-					break
-				case 90:
-					$('.main_container').removeClass('bp_con_v').addClass('bp_con_h');
-					var winW = $(window).width();
-					var winH = $(window).height();
-					var flipbookW = 1.42 * winH;
-					var flipbookZ = 0.00104 * winH;
-					$(".flipbook").turn("size", flipbookW, winH);
-					$(".flipbook").turn("zoom", flipbookZ);
-					$('.flipbook-viewport').width(flipbookW)
-					break;
-			}
-		}
-		window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", orientationChange, false);
 		/*
 		 * 评论赞tab切换
 		 * */
@@ -570,7 +601,6 @@
 		/*
 		 * 弹幕开关
 		 * */
-
 		function barrageSwitch() {
 			$(".barrage_switch input[type=checkbox]").bootstrapSwitch({
 				onColor: 'success',
@@ -603,53 +633,68 @@
 		 * 发射弹幕
 		 * */
 		function sendComment() {
-			var content = $("#reply-write").val();
-			if ($.trim(content) == "") {
-				alert("亲，请输入你的想说的话！");
-				return false;
-			}
+			$('.comment_input button').on('touchend', function() {
+				var content = $("#reply-write").val();
+				if ($.trim(content) == "") {
+					alert("亲，请输入你的想说的话！");
+					return false;
+				}
 
-			var text = $("#reply-write").val();
-			var div = "<div><p>" + text + "</p></div>";
-			$('.comment_msg div').last().css({
-				'color': getReandomColor(),
-				'font-size': getReandomFontSize()
-			});
-			$("#reply-write").val("");
-			$(".comment_msg").append(div);
-			init_screen();
-		}
-
-		//多久请求一下数据库
-		$(document).ready(function() {
-			setInterval("startRequest()", 10000);
-		});
-
-		function startRequest() {
-			html = "<div><p>感谢你，啦啦啦</p></div>";
-			html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
-			html += "<div><p>我的天呀</p></div>";
-			html += "<div><p>good good good </p></div>";
-			html += "<div><p>O(∩_∩)O哈哈哈~</p></div>";
-			html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
-			html += "<div><p>我的天呀</p></div>";
-			html += "<div><p>good good good </p></div>";
-			html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
-			html += "<div><p>我的天呀</p></div>";
-			html += "<div><p>good good good</p> </div>";
-
-			$(".comment_msg").append(html);
-			var num = $(".comment_msg").find("div").length;
-			if (num > 30) {
-				$(".comment_msg").find("div:lt(20)").remove();
-			}
-			for (var i = 0; i < num; i++) {
-				$(".comment_msg").find("div").eq(i).css({
+				var text = $("#reply-write").val();
+				var div = "<div><p>" + text + "</p></div>";
+				$('.comment_msg div').last().css({
 					'color': getReandomColor(),
 					'font-size': getReandomFontSize()
 				});
+				$("#reply-write").val("");
+				$(".comment_msg").append(div);
+				init_screen();
+			});
+
+			//多久请求一下数据库
+			setInterval("startRequest()", 10000);
+
+			function startRequest() {
+				html = "<div><p>感谢你，啦啦啦</p></div>";
+				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+				html += "<div><p>我的天呀</p></div>";
+				html += "<div><p>good good good </p></div>";
+				html += "<div><p>O(∩_∩)O哈哈哈~</p></div>";
+				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+				html += "<div><p>我的天呀</p></div>";
+				html += "<div><p>good good good </p></div>";
+				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+				html += "<div><p>我的天呀</p></div>";
+				html += "<div><p>good good good</p> </div>";
+
+				$(".comment_msg").append(html);
+				var num = $(".comment_msg").find("div").length;
+				if (num > 30) {
+					$(".comment_msg").find("div:lt(20)").remove();
+				}
+				for (var i = 0; i < num; i++) {
+					$(".comment_msg").find("div").eq(i).css({
+						'color': getReandomColor(),
+						'font-size': getReandomFontSize()
+					});
+				}
+				init_screen();
+
+
+				//随机获取颜色值
+				function getReandomColor() {
+					return '#' + (function(h) {
+						return new Array(7 - h.length).join("0") + h
+					})((Math.random() * 0x1000000 << 0).toString(16))
+				}
+
+				//随机获取字号
+				function getReandomFontSize() {
+					return (function() {
+						return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
+					});
+				}
 			}
-			init_screen();
 		}
 
 		function init_screen() {
@@ -691,36 +736,15 @@
 			});
 		}
 
-		//随机获取颜色值
-		function getReandomColor() {
-			return '#' + (function(h) {
-				return new Array(7 - h.length).join("0") + h
-			})((Math.random() * 0x1000000 << 0).toString(16))
-		}
-
-		//随机获取字号
-		function getReandomFontSize() {
-			return (function() {
-				return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
-			});
-		}
 
 		/*
 		 * click title and footer tooltip
 		 * */
 		function showBookToolWrap() {
-			$('.bp_tpl').on("click", function() {
-				if ($(this).parent().hasClass('bp_con_v')) {
-					return
-				} else {
-					$('.bp_con_h .ybwechatheader_wrapper').toggle();
-					$('.hsub').toggle();
-				}
-				$('.flipbook_wrapper a').on('click', function(e) {
-					e.stopPropagation();
-				})
+			$('.bp_tpl_h').on("click", function() {
+				$('.ybwechatheader_wrapper').toggle();
+				$('.hsub').toggle();
 			});
-
 		}
 	</script>
 </body>

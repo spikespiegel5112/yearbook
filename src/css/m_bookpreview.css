@@ -4,7 +4,7 @@
 .ybwechatheader_wrapper.book_tooltip {
     position: absolute;
     top: 0;
-    z-index: 1000;
+    z-index: 1;
     display: none;
     background-color: rgba(0, 0, 0, .4);
 }
@@ -41,7 +41,7 @@
     height: 3em;
     line-height: 3em;
     background: rgba(0, 0, 0, .4);
-    z-index: 100;
+    z-index: 1;
     position: absolute;
     bottom: 0;
     display: none;
@@ -85,7 +85,7 @@
     padding: 0 10px;
     width: 100%;
     height: 80px;
-    z-index: 100;
+    z-index: 1;
     background-color: #fff;
     text-align: center;
     box-sizing: border-box;
@@ -181,7 +181,7 @@
     position: absolute;
     top: 45%;
     margin-top: -30px;
-    z-index: 999;
+/*    z-index: 999;*/
 }
 
 .flipbook_nextpage_btn{

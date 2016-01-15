@@ -274,19 +274,17 @@
 		</div>
 	</div>
 	<script src="../assets/js/jquery.min.js"></script>
-	<!--<script src="../assets/js/modernizr.2.5.3.min.js"></script>-->
-	<!--<script src="../assets/js/zepto.min.js"></script>-->
 	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/bootstrap-switch.min.js"></script>
 	<script type="text/javascript" src='../js/check_os.js'></script>
 	<script>
+		window.currentPage = 1;
 		var LOG = function() {
 			return;
 		};
-		var LOG = alert;
+		// var LOG = alert;
 		$(function() {
-			loadApp();
 			barrageSwitch();
 			CommentPraiseTab();
 			showBookToolWrap();
@@ -295,16 +293,27 @@
 		});
 
 		function orientationEventTrigger() {
-			var flipbookWidth = 0;
-			window.currentPage = 1;
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height();
+			// $('.flipbook').attr('currentpage',1)
 			orientationSensor({
 				portrait: function() {
-					portraitHandler(windowWidth, windowHeight);
+					$('.flipbook-viewport').css({
+						'height': windowWidth * 0.5
+					});
+					$('.flipbook').attr('currentpage', 1);
+					turnInit();
+					
+					turnToCurrentpage();
 				},
 				landscape: function() {
-					landscapeHandler(windowHeight);
+					$('.flipbook-viewport').css({
+						'height': windowHeight
+					});
+					$('.flipbook').attr('currentpage', 1);
+					turnInit();
+					
+					turnToCurrentpage();
 				}
 			});
 
@@ -320,7 +329,6 @@
 					}
 				});
 			});
-			return flipbookWidth;
 		}
 
 		//屏幕方向探测器
@@ -347,7 +355,7 @@
 					portrait: function() {},
 					landscape: function() {}
 				}
-			};
+			}
 			switch (event.orientation) {
 				case 'portrait':
 					callback.portrait();
@@ -357,8 +365,6 @@
 					callback.landscape();
 					console.log("方法改变为：" + event.orientation);
 					break;
-				default:
-					LOG('default');
 			}
 			return callback;
 		}
@@ -369,9 +375,8 @@
 				'height': windowWidth * 0.5
 			});
 			$(".flipbook").turn("destroy");
-			flipbookWidth = 1360 * (windowWidth / 1360) * 0.7;
-			turnInit(window.currentPage);
-			LOG(window.currentPage);
+			turnInit();
+			turnToCurrentpage();
 		}
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
@@ -379,9 +384,13 @@
 				'height': windowHeight
 			});
 			$(".flipbook").turn("destroy");
-			flipbookWidth = 1360 * (windowHeight / 964) * 0.87;
-			turnInit(window.currentPage);
-			LOG(window.currentPage);
+			turnInit();
+			turnToCurrentpage();
+		}
+
+		function turnToCurrentpage() {
+			var flipbook=$('.flipbook');
+			flipbook.turn('page', Number(flipbook.attr('currentpage')));
 		}
 		// 书册大小重定义
 		function flipbookResize() {
@@ -396,12 +405,10 @@
 				portrait: function() {
 					var zoom = windowWidth / (originalWidth * 2) * portraitFactor;
 					$('.flipbook .page>div').css(sizeArguObj(zoom));
-					console.log(zoom);
 				},
 				landscape: function() {
 					var zoom = windowHeight * landscapeFactor / originalHeight;
 					$('.flipbook .page>div').css(sizeArguObj(zoom));
-					console.log(zoom);
 				}
 			});
 			// 尺寸设定集
@@ -416,7 +423,7 @@
 			}
 		}
 
-		function turnInit(currentPage) {
+		function turnInit() {
 			var bookIdx = 2,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
@@ -432,27 +439,21 @@
 						return 1360 * (windowHeight / 964) * 0.87;
 					}
 				});
-
+			$('.page-wrapper .page').addClass('hard');
 			flipbook.turn({
 				width: flipbookWidth,
 				height: flipbookWidth * 0.7,
-				elevation: 0,
 				acceleration: !isChrome(),
 				autoCenter: true,
 				gradients: true,
 				duration: 1000,
 				pages: bookLength(),
 				when: {
-					first: function() {
-						$('.page-wrapper').find('.p1').addClass('hard');
-					},
 					turning: function(e, page, view) {
 						var book = $(this),
-							pages = book.turn('pages');
-						window.currentPage = book.turn('page');
-						// $('.page-wrapper .page').addClass('hard')
-
-						if (window.currentPage > 3 && window.currentPage < pages - 3) {
+							pages = book.turn('pages'),
+							currentPage = book.turn('page');
+						if (currentPage > 3 && currentPage < pages - 3) {
 							if (page == 1) {
 								book.turn('page', 2).turn('stop').turn('page', page);
 								e.preventDefault();
@@ -463,11 +464,11 @@
 								return;
 							}
 						} else if (page > 3 && page < pages - 3) {
-							if (window.currentPage == 1) {
+							if (currentPage == 1) {
 								book.turn('page', 2).turn('stop').turn('page', page);
 								e.preventDefault();
 								return;
-							} else if (window.currentPage == pages) {
+							} else if (currentPage == pages) {
 								book.turn('page', pages - 1).turn('stop').turn('page', page);
 								e.preventDefault();
 								return;
@@ -486,19 +487,18 @@
 						} else {
 							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
 						}
-
 					},
 					turned: function(e, page, view) {
 						var book = $(this);
 						disableControls(page);
 						book.turn('center');
-						window.currentPage = flipbook.turn('page');
-						// LOG(window.currentPage)
 					},
 					start: function(e, pageObj) {},
 					end: function(e, pageObj) {
 						var book = $(this);
 						flipbookResize();
+						window.currentPage = flipbook.turn('page');
+						flipbook.attr('currentpage', flipbook.turn('page'));
 					},
 					missing: function(e, pages) {
 						for (var i = 0; i < pages.length; i++) {
@@ -514,10 +514,10 @@
 			flipbook.addClass('animated');
 
 			$('.flipbook_nextpage_btn').on('touchend', function() {
-				flipbook.turn('page', window.currentPage + 2);
+				flipbook.turn('page', Number(flipbook.attr('currentpage'))+2);
 			});
 			$('.flipbook_prevpage_btn').on('touchend', function() {
-				flipbook.turn('page', window.currentPage - 2);
+				flipbook.turn('page', Number(flipbook.attr('currentpage'))-2);
 			});
 
 			setTimeout(function() {
@@ -579,29 +579,6 @@
 
 		}
 
-		function loadApp() {
-			//这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
-			var bookIdx = 2,
-				windowWidth = $(window).width(),
-				windowHeight = $(window).height(),
-				pageWidth = $('.flipbook-viewport .page').width(),
-				pageHegiht = $('.flipbook-viewport .page').height(),
-				flipbook = $('.flipbook'),
-				zoom = 0,
-				flipbookWidth = orientationSensor({
-					portrait: function() {
-						return 1360 * (windowWidth / 1360) * 0.7;
-					},
-					landscape: function() {
-						return 1360 * (windowHeight / 964) * 0.87;
-					}
-				});
-			turnInit();
-			flipbookResize();
-
-		}
-
-
 		/*
 		 * 评论赞tab切换
 		 * */
@@ -659,7 +636,7 @@
 			$('.comment_input button').on('touchend', function() {
 				var content = $("#reply-write").val();
 				if ($.trim(content) == "") {
-					LOG("亲，请输入你的想说的话！");
+					alert("亲，请输入你的想说的话！");
 					return false;
 				}
 

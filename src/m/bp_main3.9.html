@@ -26,15 +26,14 @@
 		<div class="bp_tpl">
 			<div class="ybwechatheader_wrapper">
 				<a class='left_btn back_btn' href="javascript:;"></a>
-				<p>
-					<span class="tips">提示：将手机横屏可进行全屏预览</span>
-					<span class="cur_page">1/33</span>
+				<p class="title">
+					提示：将手机横屏可进行全屏预览
 				</p>
 				<a class='right_btn share_btn' href="javascript:;"></a>
 			</div>
 			<div class="flipbook-viewport">
 				<div class='flipbook_wrapper' pagecount='19'>
-					<a class='flipbook_prevpage_btn' href="javascript:;"></a>
+					<a class='flipbook_prevpage_btn' href="javascript:;"><span></span></a>
 
 					<div class='flipbook'>
 						<div depth="5" class="hard" style="background-image:url('../img/pages/1.jpg');">
@@ -113,9 +112,11 @@
 						</div>
 						<div class="hard p20" style="background-image:url('../img/pages/tpl_small.jpg')"></div>
 					</div>
-					<a class='flipbook_nextpage_btn' href="javascript:;"></a>
+					<a class='flipbook_nextpage_btn' href="javascript:;"><span></span></a>
 				</div>
+				<div class="bp_paginator_item"><label>1</label>/<span>33</span></div>
 			</div>
+
 		</div>
 		<div class="vsub">
 			<div class="tpl_info">本书一共有<span>XX</span>页，可上传<span>XX</span>张照片</div>
@@ -228,48 +229,14 @@
 							</li>
 						</ul>
 					</div>
-					<div class="comment_msg"></div>
+					<div class="bp_msg_wrapper"></div>
 				</div>
 			</div>
 			<div class="comment_input">
 				<div class="input_box">
 					<input id="reply-write" type="text" placeholder="这里输入聊天内容" />
-					<button type="button" onclick="sendComment();"><i></i></button>
+					<button type="button"><i></i></button>
 				</div>
-			</div>
-		</div>
-		<div class="hsub">
-			<ul>
-				<li>
-					<a href="javascript:;">
-						<div class="comment"></div>
-						<p>评论</p>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<div class="praise"></div>
-						<p>被赞</p>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<div class="share"></div>
-						<p>分享</p>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<div class="barrage_switch">
-							<input type="checkbox" data-size="mini" />
-						</div>
-						<p>弹幕</p>
-					</a>
-				</li>
-			</ul>
-			<div class="cm_fr chapter_slide">
-				<a href="javascript:;">上一章节</a>
-				<a href="javascript:;">下一章节</a>
 			</div>
 		</div>
 	</div>
@@ -279,45 +246,64 @@
 	<script type="text/javascript" src="../assets/js/bootstrap-switch.min.js"></script>
 	<script type="text/javascript" src='../js/check_os.js'></script>
 	<script>
+		var LOG = function() {
+			return;
+		};
+		var LOG = alert;
 		$(function() {
 			barrageSwitch();
 			CommentPraiseTab();
 			showBookToolWrap();
-			orientationEventTrigger();
+			bookpreviewInit();
+			comment();
 		});
 
-		function orientationEventTrigger() {
+		function bookpreviewInit() {
 			var windowWidth = $(window).width(),
-				windowHeight = $(window).height();
+				windowHeight = $(window).height(),
+				flipbook=$('.flipbook');
+			// $('.flipbook').attr('currentpage',1)
 			orientationSensor({
 				portrait: function() {
 					$('.flipbook-viewport').css({
 						'height': windowWidth * 0.5
 					});
-					$('.flipbook').attr('currentpage', 1);
-					turnInit();
-					turnToCurrentpage();
+					flipbook.attr('currentpage', 1);
+					portraitHandler();
 				},
 				landscape: function() {
 					$('.flipbook-viewport').css({
 						'height': windowHeight
 					});
-					$('.flipbook').attr('currentpage', 1);
-					turnInit();
-					turnToCurrentpage();
+					flipbook.attr('currentpage', 1);
+					landscapeHandler();
 				}
 			});
 
+			//监听翻转事件
 			$(window).on("orientationchange", function(event) {
-				var windowWidth = $(window).width(),
-					windowHeight = $(window).height();
 				orientationHandler(event, {
 					portrait: function() {
-						portraitHandler(windowWidth, windowHeight);
+						flipbook.turn("destroy");
+						portraitHandler();
 					},
 					landscape: function() {
-						landscapeHandler(windowHeight);
+						flipbook.turn("destroy");
+						landscapeHandler();
 					}
+				});
+			});
+			// 通过currentpage属性变量翻页方法
+			$('.flipbook_nextpage_btn').on('touchend', function() {
+				flipbook.turn('next');
+				flipbook.attr('currentpage',function(){
+					return Number(flipbook.attr('currentpage'))+2
+				});
+			});
+			$('.flipbook_prevpage_btn').on('touchend', function() {
+				flipbook.turn('previous');
+				flipbook.attr('currentpage',function(){
+					return Number(flipbook.attr('currentpage'))-2
 				});
 			});
 		}
@@ -362,21 +348,25 @@
 
 		// 竖屏控制器
 		function portraitHandler(windowWidth, windowHeight) {
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height();
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
 			});
-			$(".flipbook").turn("destroy");
 			turnInit();
 			turnToCurrentpage();
+			$('.ybwechatheader_wrapper .title').show();
 		}
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height();
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});
-			$(".flipbook").turn("destroy");
 			turnInit();
 			turnToCurrentpage();
+			$('.ybwechatheader_wrapper .title').hide();
 		}
 
 		function turnToCurrentpage() {
@@ -441,26 +431,26 @@
 				pages: bookLength(),
 				when: {
 					turning: function(e, page, view) {
-						var book = $(this),
-							pages = book.turn('pages'),
-							currentPage = book.turn('page');
+						var 
+							pages = flipbook.turn('pages'),
+							currentPage = flipbook.turn('page');
 						if (currentPage > 3 && currentPage < pages - 3) {
 							if (page == 1) {
-								book.turn('page', 2).turn('stop').turn('page', page);
+								flipbook.turn('page', 2).turn('stop').turn('page', page);
 								e.preventDefault();
 								return;
 							} else if (page == pages) {
-								book.turn('page', pages - 1).turn('stop').turn('page', page);
+								flipbook.turn('page', pages - 1).turn('stop').turn('page', page);
 								e.preventDefault();
 								return;
 							}
 						} else if (page > 3 && page < pages - 3) {
 							if (currentPage == 1) {
-								book.turn('page', 2).turn('stop').turn('page', page);
+								flipbook.turn('page', 2).turn('stop').turn('page', page);
 								e.preventDefault();
 								return;
 							} else if (currentPage == pages) {
-								book.turn('page', pages - 1).turn('stop').turn('page', page);
+								flipbook.turn('page', pages - 1).turn('stop').turn('page', page);
 								e.preventDefault();
 								return;
 							}
@@ -473,23 +463,20 @@
 						} else {
 							$('.flipbook_wrapper .p2').removeClass('fixed');
 						}
-						if (page < book.turn('pages')) {
+						if (page < flipbook.turn('pages')) {
 							$('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
 						} else {
 							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
 						}
 					},
 					turned: function(e, page, view) {
-						var book = $(this);
 						disableControls(page);
-						book.turn('center');
+						flipbook.turn('center');
 					},
 					start: function(e, pageObj) {},
 					end: function(e, pageObj) {
-						var book = $(this);
 						flipbookResize();
-						window.currentPage = flipbook.turn('page');
-						flipbook.attr('currentpage', flipbook.turn('page'));
+						$('.bp_paginator_item label').text(flipbook.turn('page'));
 					},
 					missing: function(e, pages) {
 						for (var i = 0; i < pages.length; i++) {
@@ -504,12 +491,15 @@
 
 			flipbook.addClass('animated');
 
-			$('.flipbook_nextpage_btn').on('touchend', function() {
-				flipbook.turn('page', Number(flipbook.attr('currentpage'))+2);
-			});
-			$('.flipbook_prevpage_btn').on('touchend', function() {
-				flipbook.turn('page', Number(flipbook.attr('currentpage'))-2);
-			});
+			
+
+			// turnjs原生翻页方法
+			// $('.flipbook_nextpage_btn').on('touchend', function() {
+			// 	flipbook.turn('next')
+			// });
+			// $('.flipbook_prevpage_btn').on('touchend', function() {
+			// 	flipbook.turn('prev')
+			// });
 
 			setTimeout(function() {
 				flipbookResize();
@@ -567,26 +557,27 @@
 					nextBtn.show();
 				}
 			}
-
 		}
 
 		/*
 		 * 评论赞tab切换
 		 * */
 		function CommentPraiseTab() {
-			$('.htool_wrap .hd a').on('touchend', function() {
-				switch ($(this).closest('li').index()) {
+			$('.htool_wrap .hd li a').on('touchend', function() {
+				var $this=$(this);
+				$this.closest('li').siblings('li').find('a').removeClass('active');
+				$this.addClass('active');
+				switch ($this.closest('li').index()) {
 					case 0:
 						$('.bd .comment_con').show();
 						$('.bd .praise_con').hide();
 						break;
-					case 1:
-						return
 					case 2:
 						$('.bd .comment_con').hide();
 						$('.bd .praise_con').show();
+						break;
 				}
-			})
+			});
 		}
 
 		/*
@@ -597,23 +588,10 @@
 				onColor: 'success',
 				onSwitchChange: function(e, state) {
 					if (state) {
-						$(".comment_msg").show();
-						init_screen();
+						$(".bp_msg_wrapper").show();
+						startRequest();
 					} else {
-						$(".comment_msg").hide().find('div').remove();
-					}
-				}
-			});
-
-			$('.hsub input[type=checkbox]').bootstrapSwitch({
-				onColor: 'success',
-				size: 'mini',
-				onSwitchChange: function(e, state) {
-					if (state) {
-						$(".comment_msg").show();
-						init_screen();
-					} else {
-						$(".comment_msg").hide().find('div').remove();
+						$(".bp_msg_wrapper").hide().find('div').remove();
 					}
 				}
 			});
@@ -621,7 +599,7 @@
 
 
 		/*
-		 * 发射弹幕
+		 * 发表评论
 		 * */
 		function sendComment() {
 			$('.comment_input button').on('touchend', function() {
@@ -633,19 +611,22 @@
 
 				var text = $("#reply-write").val();
 				var div = "<div><p>" + text + "</p></div>";
-				$('.comment_msg div').last().css({
+				$('.bp_msg_wrapper div').last().css({
 					'color': getReandomColor(),
 					'font-size': getReandomFontSize()
 				});
 				$("#reply-write").val("");
-				$(".comment_msg").append(div);
+				$(".bp_msg_wrapper").append(div);
 				init_screen();
 			});
 
 			//多久请求一下数据库
-			setInterval("startRequest()", 10000);
+			setInterval(startRequest(), 1000);
+			
+			
+		}
 
-			function startRequest() {
+		function startRequest() {
 				html = "<div><p>感谢你，啦啦啦</p></div>";
 				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
 				html += "<div><p>我的天呀</p></div>";
@@ -658,39 +639,35 @@
 				html += "<div><p>我的天呀</p></div>";
 				html += "<div><p>good good good</p> </div>";
 
-				$(".comment_msg").append(html);
-				var num = $(".comment_msg").find("div").length;
+				$.ajax({
+					url:'../js/commentBarrage.json',
+					dataType:'json',
+					success:function(data){
+						alert('aaa')
+						for (var i = data.length - 1; i >= 0; i--) {
+							$(".bp_msg_wrapper").append('<div><p>'+data[i]+'</p></div>');
+							console.log(data.comment[i])
+						};
+						
+					}
+				})
+
+				
+				var num = $(".bp_msg_wrapper").find("div").length;
 				if (num > 30) {
-					$(".comment_msg").find("div:lt(20)").remove();
+					$(".bp_msg_wrapper").find("div:lt(20)").remove();
 				}
 				for (var i = 0; i < num; i++) {
-					$(".comment_msg").find("div").eq(i).css({
+					$(".bp_msg_wrapper").find("div").eq(i).css({
 						'color': getReandomColor(),
 						'font-size': getReandomFontSize()
 					});
 				}
 				init_screen();
-
-
-				//随机获取颜色值
-				function getReandomColor() {
-					return '#' + (function(h) {
-						return new Array(7 - h.length).join("0") + h
-					})((Math.random() * 0x1000000 << 0).toString(16))
-				}
-
-				//随机获取字号
-				function getReandomFontSize() {
-					return (function() {
-						return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
-					});
-				}
 			}
-		}
-
 		function init_screen() {
 			var _top = 0;
-			$(".comment_msg").find("div").show().each(function() {
+			$(".bp_msg_wrapper").find("div").show().each(function() {
 				var _left = $(window).width() - $(this).width() + 220;
 				var _height = $(window).height() + 100;
 
@@ -726,7 +703,18 @@
 				}, time, function() {});
 			});
 		}
-
+		//随机获取颜色值
+		function getReandomColor() {
+			return '#' + (function(h) {
+				return new Array(7 - h.length).join("0") + h
+			})((Math.random() * 0x1000000 << 0).toString(16))
+		}
+		//随机获取字号
+		function getReandomFontSize() {
+			return (function() {
+				return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
+			});
+		}
 
 		/*
 		 * click title and footer tooltip
@@ -734,7 +722,6 @@
 		function showBookToolWrap() {
 			$('.bp_tpl_h').on("click", function() {
 				$('.ybwechatheader_wrapper').toggle();
-				$('.hsub').toggle();
 			});
 		}
 	</script>

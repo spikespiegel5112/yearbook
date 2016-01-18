@@ -839,10 +839,9 @@
 
 /*~~~~~~~~~~yb 3.9 photobooklist_wrapper~~~~~~~~~~*/
 .ybwechatheader_wrapper .left_btn.icon-list-ul{
-    left: -3px;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 54px;
-    color: #000;
+    color: #fff;
 }
 
 .ybwechatheader_wrapper .left_btn.icon-list-ul:hover,
@@ -850,7 +849,8 @@
     color: #fff;
 }
 
-.booklist_wrapper .swiper-pagination {
+.booklist_wrapper .photo_classify.swiper-pagination ,
+.booklist_wrapper .ia_classify.swiper-pagination {
     position: relative;
     top: 0;
     margin: 0 0 10px;

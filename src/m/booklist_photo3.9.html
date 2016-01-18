@@ -852,9 +852,10 @@
 
     function initPhotoBookListSwiper(){
         var mySwiper = new Swiper('.booklist_wrapper .swiper-container', {
-            loop: true,
+            loop: false,
             pagination: '.swiper-pagination',
             paginationClickable: true,
+            autoplay: false,
             paginationBulletRender: function (index, className) {
                 switch (index) {
                     case 0: name='推荐';break;
@@ -869,7 +870,12 @@
                 }
                 return '<span class="' + className + '">' + name + '</span>';
             },
-            autoplay: false
+            onTouchEnd: function(swiper){
+                var index = mySwiper.activeIndex- 1,
+                        width = $('.swiper-pagination-bullet').width(),
+                        left = (index)*(width);
+                $('.swiper-pagination').scrollLeft(left);
+            }
         });
     }
 </script>

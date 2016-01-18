@@ -853,19 +853,26 @@
 .booklist_wrapper .ia_classify.swiper-pagination {
     position: relative;
     top: 0;
-    margin: 0 0 10px;
+    margin: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #f6f6f6;
     overflow: hidden;
+    white-space: nowrap;
+   /* height: 50px;*/
+    overflow-x: scroll;
+}
+
+.booklist_wrapper .photo_classify.swiper-pagination::-webkit-scrollbar{
+    width: 0;
 }
 
 .booklist_wrapper .photo_classify.swiper-pagination span{
-    margin: 0;
-    width: 12.5%;
-    background: none;
+    margin: 0 0 5px;
+    width: 25%;
+    background: #fff;
     color: #333;
     opacity: 1;
-    float: left;
+    display: inline-block;
     border-radius: 0;
     text-align: center;
     line-height: 50px;
@@ -875,12 +882,12 @@
 }
 
 .booklist_wrapper .ia_classify.swiper-pagination span{
-    margin: 0;
+    margin: 0 0 10px;
     width: 25%;
-    background: none;
+    background: #fff;
     color: #333;
     opacity: 1;
-    float: left;
+    display: inline-block;
     border-radius: 0;
     text-align: center;
     line-height: 50px;

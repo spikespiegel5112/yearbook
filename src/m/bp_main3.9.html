@@ -279,23 +279,16 @@
 	<script type="text/javascript" src="../assets/js/bootstrap-switch.min.js"></script>
 	<script type="text/javascript" src='../js/check_os.js'></script>
 	<script>
-		window.currentPage = 1;
-		var LOG = function() {
-			return;
-		};
-		// var LOG = alert;
 		$(function() {
 			barrageSwitch();
 			CommentPraiseTab();
 			showBookToolWrap();
 			orientationEventTrigger();
-
 		});
 
 		function orientationEventTrigger() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height();
-			// $('.flipbook').attr('currentpage',1)
 			orientationSensor({
 				portrait: function() {
 					$('.flipbook-viewport').css({
@@ -303,7 +296,6 @@
 					});
 					$('.flipbook').attr('currentpage', 1);
 					turnInit();
-					
 					turnToCurrentpage();
 				},
 				landscape: function() {
@@ -312,7 +304,6 @@
 					});
 					$('.flipbook').attr('currentpage', 1);
 					turnInit();
-					
 					turnToCurrentpage();
 				}
 			});

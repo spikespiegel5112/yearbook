@@ -10,6 +10,7 @@
 		// chooesephoto();
 		// uploadphoto();
         popNewOption();
+        mobileToPcSwitch();
 	});
 	function global(){
 		//关于顶部菜单的滑动交互
@@ -234,6 +235,25 @@
             },500);
             $('.footer_nav li').eq(curPageIcon).addClass('active').siblings().removeClass('active');;
         });
+    }
+
+    /*
+     * mobile to pc switch
+     * */
+    function mobileToPcSwitch(){
+        var conHeight = $('.main_container').height(),
+            minHeight = $(window).height()-39;
+        if($('.main_container').hasClass('has_footer_nav')){
+            $('.main_container').removeClass('has_footer_nav');
+            $('.ft_pc').addClass('has_footer_nav');
+            minHeight = minHeight - 70;
+        }
+        if(conHeight < minHeight){
+            $('.main_container').css('min-height',minHeight);
+        }
+        $(window).resize(function(){
+            mobileToPcSwitch();
+        })
     }
 } (jQuery));
 

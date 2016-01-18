@@ -836,3 +836,121 @@
 .binding .binding_info .binding_show {
     margin: 15px auto;
 }
+
+/*~~~~~~~~~~yb 3.9 photobooklist_wrapper~~~~~~~~~~*/
+.ybwechatheader_wrapper .left_btn.icon-list-ul{
+    left: -3px;
+    font-size: 24px;
+    line-height: 54px;
+    color: #000;
+}
+
+.ybwechatheader_wrapper .left_btn.icon-list-ul:hover,
+.ybwechatheader_wrapper .left_btn.icon-list-ul:active{
+    color: #fff;
+}
+
+.booklist_wrapper .swiper-pagination {
+    position: relative;
+    top: 0;
+    margin: 0 0 10px;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.booklist_wrapper .photo_classify.swiper-pagination span{
+    margin: 0;
+    width: 12.5%;
+    background: none;
+    color: #333;
+    opacity: 1;
+    float: left;
+    border-radius: 0;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.booklist_wrapper .ia_classify.swiper-pagination span{
+    margin: 0;
+    width: 25%;
+    background: none;
+    color: #333;
+    opacity: 1;
+    float: left;
+    border-radius: 0;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.photo_classify.swiper-pagination span.swiper-pagination-bullet-active,
+.ia_classify.swiper-pagination span.swiper-pagination-bullet-active{
+    border-bottom: 2px solid #92c153;
+}
+
+.tpl_classify_con{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+}
+
+.tpl_classify_con .classify{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    margin-top: -50%;
+    width: 90%;
+    background-color: #ebebeb;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px #333;
+    box-sizing: border-box;
+}
+
+.tpl_classify_con .classify .close{
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
+
+.tpl_classify_con .classify > div{
+    width: 90%;
+    margin: 30px auto 0;
+}
+
+.tpl_classify_con .classify h4{
+    margin: 15px 5px 5px;
+    font-size: 18px;
+    clear: both;
+}
+
+.tpl_classify_con .classify ul{
+    overflow: hidden;
+}
+
+.tpl_classify_con .classify div li{
+    float: left;
+    margin: 5px 4px;
+    width: 64px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.tpl_classify_con .classify div li a{
+    color: #333;
+    font-size: 14px;
+}

@@ -21,7 +21,8 @@
 </head>
 
 <body>
-<div class="yb_notice">
+<!--忆尔公告-->
+<!--<div class="yb_notice">
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <p class="swiper-slide">
@@ -30,23 +31,25 @@
         </div>
     </div>
     <a class="close" href="javascript:;"><i class="icon-remove-circle"></i></a>
-</div>
-<ul class='indexnav_main_wrapper'>
+</div>-->
+<!--首页导航-->
+<!--<ul class='indexnav_main_wrapper'>
     <li><a href="index3.8.html">首页</a></li>
     <li><a href="javascript:;">照片书</a></li>
     <li><a href="javascript:;">互动册</a></li>
     <li><a href="javascript:;">个人中心</a></li>
     <li><a href="javascript:;">使用指南</a></li>
     <li><a href="javascript:;">帮助中心</a></li>
-</ul>
-<div class='main_container'>
+</ul>-->
+<div class='main_container has_footer_nav'>
     <div class='index_wrapper'>
         <div class='indexnav_wrapper'>
-            <div class='indexnav_btn_item'>
+            <!--3.9 去掉首页导航btn-->
+            <!--<div class='indexnav_btn_item'>
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div>-->
             <img class='indexlogo_item' src="../img/m/index/index_logo_00000.png">
         </div>
         <div class="yb_banner">
@@ -382,8 +385,70 @@
     </div>
 </div>
 <a class='gotop_item' href="javascript:;"></a>
+<!--底部导航-->
+<div class="footer_nav">
+    <ul>
+        <li class="active">
+            <a href="index.html">
+                <span class="home"></span>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="ia_msg.html">
+                <span class="msg"></span>
+                <p>消息</p>
+            </a>
+        </li>
+        <li id="open_new_option">
+            <a href="javascript:;">
+                <span class="new"></span>
+                <p>新建</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_mybookshelf.html">
+                <span class="bookshelf"></span>
+                <p>书架</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_main.html">
+                <span class="my"></span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--pop new content-->
+<div class="open_new_container">
+    <div class="new_option">
+        <ul>
+            <li class="new_ph">
+                <a href="booklist_photo.html">
+                    <img src="../img/m/wallet/new_photo_book.png">
+                    <p>新建照片书</p>
+                </a>
+            </li>
+            <li class="new_ia">
+                <a href="booklist_ia.html">
+                    <img src="../img/m/wallet/new_interact_book.png">
+                    <p>新建互动册</p>
+                </a>
+            </li>
+            <li class="join_ia">
+                <a href="ia_invitation_joinbook.html">
+                    <img src="../img/m/wallet/join_interact_book.png">
+                    <p>加入互动册</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="close_btn"><a href="javascript:;">×</a></div>
+</div>
 <script type="text/javascript" src='../assets/js/jquery.min.js'></script>
 <script type="text/javascript" src='../assets/js/swiper.jquery.min.js'></script>
+<script type="text/javascript" src='../js/m_main.js'></script>
 <script type="text/javascript">
     $(function () {
         index();
@@ -500,6 +565,7 @@
             $('.yb_notice').fadeOut();
         })
     }
+
 </script>
 </body>
 

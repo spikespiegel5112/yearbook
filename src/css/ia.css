@@ -1602,6 +1602,8 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+    height: 25px;
+    line-height: 25px;
 }
 
 .vote_list ul li .vote_user {
@@ -4873,6 +4875,22 @@
 	clear: both;
 }
 
+/*NEWYB-1347*/
+.timeline_main_wrapper .bp_sharelist_wrapper{
+    position: absolute;
+    top: 0;
+    left: 910px;
+    opacity: 0;
+}
+
+.timeline_main_wrapper .active .bp_sharelist_wrapper {
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ie-transition: opacity .5s;
+}
+
 .timeline_line_wrapper:first-child {
 	margin: 0 0 0 10px;
 }
@@ -5425,6 +5443,11 @@
   display: none;
   font: 14px "microsoft yahei";
   width: 405px;
+}
+.move_photo .choosealbum> select {
+    padding-left: 10px;
+    width: 160px;
+    height: 40px;
 }
 .comment_list_wrapper {
 	max-height: 175px;
@@ -6425,6 +6448,10 @@ button::-moz-focus-inner {
   height: 30px;
   padding-left: 10px;
   width: 165px;
+}
+.rename_list li > input:focus {
+    border: 1px solid #b4b4b4;
+    background-color: #fff;
 }
 .writebutton {
 	padding: 7px 12px;

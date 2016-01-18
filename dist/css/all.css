@@ -14533,7 +14533,17 @@ button::-moz-focus-inner {
 	float: left;
 	background-color: #f9f9f9;
 }
-
+.pagemake_left .picScroll-top .bd ul li .loadThumb {
+  background: rgba(20, 20, 20, 0.6) none repeat scroll 0 0;
+  color: #a0d350;
+  font-size: 12px;
+  height: 28px;
+  line-height: 26px;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 60px;
+}
 .pagemake_right {
 	width: 19%;
 	height: 1280px;
@@ -16272,6 +16282,12 @@ button::-moz-focus-inner {
 	border: 1px solid #ccc;
 }
 
+.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img {
+  border-radius: 15px;
+  height: 16px;
+  width: 16px;
+}
+
 .pagemake_left .picScroll-top .bd ul li .pic:hover img,
 .pagemake_left .picScroll-top .bd ul li .pic.selected img {
 	border: 2px solid #89c539;
@@ -16898,7 +16914,7 @@ button::-moz-focus-inner {
 .compute_price_container .product_info > div{
     display: block;
     height: 45px;
-    line-height: 45px;
+    line-height: 25px;
     clear: both;
     overflow: visible;
 }
@@ -16926,6 +16942,13 @@ button::-moz-focus-inner {
 .compute_price_container .product_info dd.selected > div{
     color: #333;
 }
+
+.compute_price_container .product_info dd > div span{
+    display: block;
+    width: 100%;
+    height: 25px;
+    overflow: hidden;
+}
 .compute_price_container .product_info dd .icon {
     display: none;
     position: absolute;
@@ -16944,6 +16967,36 @@ button::-moz-focus-inner {
     top: 4px;
     font-size: 12px;
 }
+
+.compute_price_container .product_info .size dd{
+    position: relative;
+}
+
+.compute_price_container .product_info .size dd .print_size{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    z-index: 1;
+    width: 120px;
+    left: -2px;
+    top: -123px;
+    background-color: transparent;
+    border: 0;
+}
+
+.compute_price_container .product_info .size dd:hover .print_size{
+    display: block;
+}
+
+.compute_price_container .product_info .size dd .print_size img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.compute_price_container .product_info .size .ybcommon_queryicon_item{
+    margin-left: 5px;
+}
+
 .compute_price_container .product_info .price dd span{
     font-size: 18px;
     font-weight: bold;

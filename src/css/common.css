@@ -1114,7 +1114,7 @@ button.select {
 /*~~~~~ 7.27 xx add disable css ~~~~~*/
 
 .disable {
-	/*pointer-events: none !important;*/
+	pointer-events: none !important;
 	cursor: not-allowed !important;
 	opacity: .65 !important;
 	filter: alpha(opacity=65) !important;
@@ -3072,4 +3072,11 @@ nav .pagination li a:active {
 
 .server_online_main_im .open_im:hover div{
 	background: #70ca5d url(../img/qqserver/open_im.png) no-repeat -27px 0;
+}
+
+/*1.15 swh add loadThumb*/
+.loadThumb{
+    position: absolute;
+    display: none;
+    opacity: 0;
 }

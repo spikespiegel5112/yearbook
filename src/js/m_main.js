@@ -9,6 +9,7 @@
 		// book_list();
 		// chooesephoto();
 		// uploadphoto();
+        popNewOption();
 	});
 	function global(){
 		//关于顶部菜单的滑动交互
@@ -181,5 +182,58 @@
 			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
 		}
 	}
+
+    /*
+    * 通用主底栏弹出新建
+    * */
+    function popNewOption(){
+        var winWidth = $(window).width(),
+            winHeight = $(window).height(),
+            midTop = winHeight/2-54,
+            midLeft = winWidth/2-40,
+            phL = (winWidth)/2-120,
+            phT = winHeight/3-60,
+            iaL = (winWidth)/2+40,
+            jiaT = winHeight/3+80;
+        var curPageIcon = $('.footer_nav li.active').index();
+
+        $('.footer_nav li').on('touchend',function (){
+            $('.footer_nav li').each(function(){
+                $(this).removeClass('active');
+            });
+            $(this).addClass('active');
+        })
+
+        $('.new_option ul li').css({'top':midTop,'left':midLeft});
+        /*new option page fadein*/
+        $('#open_new_option a').on('touchend',function(){
+            $('.open_new_container').addClass('animated fadeIn').removeClass('fadeOut').show();
+            $('.new_option').show().addClass('animated fadeIn').removeClass('fadeOut');
+            $('.new_option ul .new_ph').animate({
+                left: phL,
+                top: phT
+            }, 300, function() {});
+            $('.new_option ul .new_ia').animate({
+                left: iaL,
+                top: phT
+            }, 300, function() {});
+            $('.new_option ul .join_ia').animate({
+                left: midLeft,
+                top: jiaT
+            }, 300, function() {});
+        });
+        /*new option page fadeout*/
+        $('.open_new_container .close_btn a').on('touchend',function(){
+            //保存当前页面
+            $('.new_option').removeClass(' fadeIn').addClass('fadeOut');
+            $('.open_new_container').addClass('fadeOut').removeClass('fadeIn');
+            $('.new_option ul li').animate({'top':midTop,'left':midLeft},300,function(){});
+            setTimeout(function(){
+                $('.new_option').hide();
+                $('.open_new_container').hide();
+            },500);
+            $('.footer_nav li').eq(curPageIcon).addClass('active').siblings().removeClass('active');;
+        });
+    }
 } (jQuery));
 

@@ -159,6 +159,7 @@
 .mark_nav .nav_mid ul li>a {
 	color: #666;
 	line-height: 44px;
+    margin: 0 0 0 8px;
 }
 
 .mark_nav .nav_mid ul li.on {
@@ -1910,7 +1911,7 @@
 }
 
 .chaptermake_tpl ul li .photo div.cover {
-	z-index: 999;
+	z-index: 1;/*NEWYB-1357*/
 }
 
 .chaptermake_tpl ul li .photo div.cover.icon-ok-circle {
@@ -2043,13 +2044,21 @@
 }
 
 .pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img {
-  border-radius: 15px;
-  height: 16px;
-  width: 16px;
+    border-radius: 15px;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    border: 1px solid #ccc;
 }
 
-.pagemake_left .picScroll-top .bd ul li .pic:hover img,
-.pagemake_left .picScroll-top .bd ul li .pic.selected img {
+.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img:hover{
+    border: 1px solid #89c539;
+}
+
+.pagemake_left .picScroll-top .bd ul li .pic:hover .cover > img,
+.pagemake_left .picScroll-top .bd ul li .pic.selected .cover > img {
 	border: 2px solid #89c539;
 	border-radius: 4px;
 }

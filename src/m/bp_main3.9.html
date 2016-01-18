@@ -114,7 +114,9 @@
 					</div>
 					<a class='flipbook_nextpage_btn' href="javascript:;"><span></span></a>
 				</div>
-				<div class="bp_paginator_item"><label>1</label>/<span>33</span></div>
+				<div class="bp_msg_wrapper"></div>
+				<div class="bp_paginator_item">
+					<label>1</label>/<span>33</span></div>
 			</div>
 
 		</div>
@@ -229,7 +231,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="bp_msg_wrapper"></div>
+
 				</div>
 			</div>
 			<div class="comment_input">
@@ -237,6 +239,40 @@
 					<input id="reply-write" type="text" placeholder="这里输入聊天内容" />
 					<button type="button"><i></i></button>
 				</div>
+			</div>
+		</div>
+		<div class="hsub">
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<div class="comment"></div>
+						<p>评论</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<div class="praise"></div>
+						<p>被赞</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<div class="share"></div>
+						<p>分享</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<div class="barrage_switch">
+							<input type="checkbox" data-size="mini" />
+						</div>
+						<p>弹幕</p>
+					</a>
+				</li>
+			</ul>
+			<div class="cm_fr chapter_slide">
+				<a href="javascript:;">上一章节</a>
+				<a href="javascript:;">下一章节</a>
 			</div>
 		</div>
 	</div>
@@ -251,17 +287,15 @@
 		};
 		var LOG = alert;
 		$(function() {
-			barrageSwitch();
-			CommentPraiseTab();
-			showBookToolWrap();
 			bookpreviewInit();
-			comment();
+			CommentPraiseTab();
+			barrageSwitch();
 		});
 
 		function bookpreviewInit() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				flipbook=$('.flipbook');
+				flipbook = $('.flipbook');
 			// $('.flipbook').attr('currentpage',1)
 			orientationSensor({
 				portrait: function() {
@@ -277,6 +311,7 @@
 					});
 					flipbook.attr('currentpage', 1);
 					landscapeHandler();
+
 				}
 			});
 
@@ -296,14 +331,14 @@
 			// 通过currentpage属性变量翻页方法
 			$('.flipbook_nextpage_btn').on('touchend', function() {
 				flipbook.turn('next');
-				flipbook.attr('currentpage',function(){
-					return Number(flipbook.attr('currentpage'))+2
+				flipbook.attr('currentpage', function() {
+					return Number(flipbook.attr('currentpage')) + 2
 				});
 			});
 			$('.flipbook_prevpage_btn').on('touchend', function() {
 				flipbook.turn('previous');
-				flipbook.attr('currentpage',function(){
-					return Number(flipbook.attr('currentpage'))-2
+				flipbook.attr('currentpage', function() {
+					return Number(flipbook.attr('currentpage')) - 2
 				});
 			});
 		}
@@ -356,6 +391,7 @@
 			turnInit();
 			turnToCurrentpage();
 			$('.ybwechatheader_wrapper .title').show();
+			$('.bp_tpl').removeClass('.bp_tpl_h');
 		}
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
@@ -367,10 +403,15 @@
 			turnInit();
 			turnToCurrentpage();
 			$('.ybwechatheader_wrapper .title').hide();
+			$('.bp_tpl').addClass('.bp_tpl_h');
+			$('.bp_tpl_h').on("touchend", function() {
+				LOG('aaa')
+				$('.ybwechatheader_wrapper').toggle();
+			});
 		}
 
 		function turnToCurrentpage() {
-			var flipbook=$('.flipbook');
+			var flipbook = $('.flipbook');
 			flipbook.turn('page', Number(flipbook.attr('currentpage')));
 		}
 		// 书册大小重定义
@@ -408,8 +449,6 @@
 			var bookIdx = 2,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				pageWidth = $('.flipbook-viewport .page').width(),
-				pageHegiht = $('.flipbook-viewport .page').height(),
 				flipbook = $('.flipbook'),
 				zoom = 0,
 				flipbookWidth = orientationSensor({
@@ -421,6 +460,7 @@
 					}
 				});
 			$('.page-wrapper .page').addClass('hard');
+			flipbook.addClass('animated');
 			flipbook.turn({
 				width: flipbookWidth,
 				height: flipbookWidth * 0.7,
@@ -431,39 +471,38 @@
 				pages: bookLength(),
 				when: {
 					turning: function(e, page, view) {
-						var 
-							pages = flipbook.turn('pages'),
-							currentPage = flipbook.turn('page');
-						if (currentPage > 3 && currentPage < pages - 3) {
-							if (page == 1) {
-								flipbook.turn('page', 2).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							} else if (page == pages) {
-								flipbook.turn('page', pages - 1).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							}
-						} else if (page > 3 && page < pages - 3) {
-							if (currentPage == 1) {
-								flipbook.turn('page', 2).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							} else if (currentPage == pages) {
-								flipbook.turn('page', pages - 1).turn('stop').turn('page', page);
-								e.preventDefault();
-								return;
-							}
-						}
+						// var currentPage = flipbook.turn('page');
+						// disableControls(page);
+						// if (currentPage > 3 && currentPage < pages - 3) {
+						// 	if (page == 1) {
+						// 		flipbook.turn('page', 2).turn('stop').turn('page', page);
+						// 		e.preventDefault();
+						// 		return;
+						// 	} else if (page == pages) {
+						// 		flipbook.turn('page', pages - 1).turn('stop').turn('page', page);
+						// 		e.preventDefault();
+						// 		return;
+						// 	}
+						// } else if (page > 3 && page < pages - 3) {
+						// 	if (currentPage == 1) {
+						// 		flipbook.turn('page', 2).turn('stop').turn('page', page);
+						// 		e.preventDefault();
+						// 		return;
+						// 	} else if (currentPage == pages) {
+						// 		flipbook.turn('page', pages - 1).turn('stop').turn('page', page);
+						// 		e.preventDefault();
+						// 		return;
+						// 	}
+						// }
 
-						disableControls(page);
+
 
 						if (page >= 2) {
 							$('.flipbook_wrapper .p2').addClass('fixed');
 						} else {
 							$('.flipbook_wrapper .p2').removeClass('fixed');
 						}
-						if (page < flipbook.turn('pages')) {
+						if (page < bookLength()) {
 							$('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
 						} else {
 							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
@@ -471,7 +510,7 @@
 					},
 					turned: function(e, page, view) {
 						disableControls(page);
-						flipbook.turn('center');
+						// flipbook.turn('center');
 					},
 					start: function(e, pageObj) {},
 					end: function(e, pageObj) {
@@ -489,22 +528,9 @@
 				width: flipbookWidth
 			});
 
-			flipbook.addClass('animated');
-
-			
-
-			// turnjs原生翻页方法
-			// $('.flipbook_nextpage_btn').on('touchend', function() {
-			// 	flipbook.turn('next')
-			// });
-			// $('.flipbook_prevpage_btn').on('touchend', function() {
-			// 	flipbook.turn('prev')
-			// });
-
 			setTimeout(function() {
 				flipbookResize();
 			}, 50)
-
 
 			function isChrome() {
 				return navigator.userAgent.indexOf('Chrome') != -1;
@@ -564,7 +590,7 @@
 		 * */
 		function CommentPraiseTab() {
 			$('.htool_wrap .hd li a').on('touchend', function() {
-				var $this=$(this);
+				var $this = $(this);
 				$this.closest('li').siblings('li').find('a').removeClass('active');
 				$this.addClass('active');
 				switch ($this.closest('li').index()) {
@@ -622,49 +648,85 @@
 
 			//多久请求一下数据库
 			setInterval(startRequest(), 1000);
-			
-			
+
+
 		}
 
 		function startRequest() {
-				html = "<div><p>感谢你，啦啦啦</p></div>";
-				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
-				html += "<div><p>我的天呀</p></div>";
-				html += "<div><p>good good good </p></div>";
-				html += "<div><p>O(∩_∩)O哈哈哈~</p></div>";
-				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
-				html += "<div><p>我的天呀</p></div>";
-				html += "<div><p>good good good </p></div>";
-				html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
-				html += "<div><p>我的天呀</p></div>";
-				html += "<div><p>good good good</p> </div>";
+			// html = "<div><p>感谢你，啦啦啦</p></div>";
+			// html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+			// html += "<div><p>我的天呀</p></div>";
+			// html += "<div><p>good good good </p></div>";
+			// html += "<div><p>O(∩_∩)O哈哈哈~</p></div>";
+			// html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+			// html += "<div><p>我的天呀</p></div>";
+			// html += "<div><p>good good good </p></div>";
+			// html += "<div><p>嗯嗯嗯爱爱爱爱啊</p></div>";
+			// html += "<div><p>我的天呀</p></div>";
+			// html += "<div><p>good good good</p> </div>";
 
-				$.ajax({
-					url:'../js/commentBarrage.json',
-					dataType:'json',
-					success:function(data){
-						alert('aaa')
-						for (var i = data.length - 1; i >= 0; i--) {
-							$(".bp_msg_wrapper").append('<div><p>'+data[i]+'</p></div>');
-							console.log(data.comment[i])
-						};
+			$.ajax({
+				url: '../js/commentBarrage.json',
+				dataType: 'json',
+				success: function(data) {
+					console.log(data)
+					var windowWidth=$(window).width(),
+						windowHeight=$(window).height(),
+						commentEl=new Array();
+					for (var i = 0; i < data.comment.length; i++) {
+
+						commentEl[i] = $('<div></div>').addClass('barrage').css({
+							'position': 'absolute',
+							'left': windowWidth + 100,
+							'top':windowHeight*Math.random(1),
+							'color': getReandomColor(),
+							'font-size': getReandomFontSize()
+						}).html('<p>' + data.comment[i].timestamp + '</p>');
+						$(".bp_msg_wrapper").append(commentEl[i]);
+						setTimeout(function(){
+							animateBarrage(windowWidth, commentEl);
+						},100)
 						
-					}
-				})
+						console.log(data.comment.length);
+					};
+				}
+			})
 
-				
-				var num = $(".bp_msg_wrapper").find("div").length;
-				if (num > 30) {
-					$(".bp_msg_wrapper").find("div:lt(20)").remove();
-				}
-				for (var i = 0; i < num; i++) {
-					$(".bp_msg_wrapper").find("div").eq(i).css({
-						'color': getReandomColor(),
-						'font-size': getReandomFontSize()
-					});
-				}
-				init_screen();
-			}
+			// var num = $(".bp_msg_wrapper").find("div").length;
+			// if (num > 30) {
+			// 	$(".bp_msg_wrapper").find("div:lt(20)").remove();
+			// }
+			// for (var i = 0; i < num; i++) {
+			// 	$(".bp_msg_wrapper").find("div").eq(i).css({
+			// 		'color': getReandomColor(),
+			// 		'font-size': getReandomFontSize()
+			// 	});
+			// }
+			// init_screen();
+
+		}
+
+		function animateBarrage(windowWidth, commentEl) {
+			var commentEl=$('.barrage');
+			
+			commentEl.each(function(idx){
+				commentEl.eq(idx).addClass('active').css({
+					
+					'left': -windowWidth,
+					'transition': 'left' + " " + Math.random(1) * 20 + 's',
+					
+				});
+				// if (commentEl[idx].hasClass('active')) {
+					
+				// };
+			})
+			
+			
+			$('.barrage').removeClass('active');
+		}
+
+
+
 		function init_screen() {
 			var _top = 0;
 			$(".bp_msg_wrapper").find("div").show().each(function() {
@@ -715,14 +777,10 @@
 				return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
 			});
 		}
-
-		/*
-		 * click title and footer tooltip
-		 * */
-		function showBookToolWrap() {
-			$('.bp_tpl_h').on("click", function() {
-				$('.ybwechatheader_wrapper').toggle();
-			});
+		function getRandomTime(min, max, length){
+			for (var i = length; i < length; i++) {
+				
+			};
 		}
 	</script>
 </body>

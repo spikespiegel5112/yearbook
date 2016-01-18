@@ -28,12 +28,7 @@
         <a class="left_btn icon-list-ul" href="javascript:;"></a>
         <p>互动册模板</p>
     </div>
-    <div class="ia_classify swiper-pagination">
-        <span class="swiper-pagination-bullet" data-style="推荐"></span>
-        <span class="swiper-pagination-bullet" data-style="热门"></span>
-        <span class="swiper-pagination-bullet" data-style="毕业册"></span>
-        <span class="swiper-pagination-bullet" data-style="聚会册"></span>
-    </div>
+    <div class="ia_classify swiper-pagination"></div>
     <div class='mybookshelf_main_wrapper swiper-container'>
         <div class="swiper-wrapper ">
             <div class="swiper-slide">
@@ -486,13 +481,19 @@
     }
 
     function initPhotoBookListSwiper(){
-        var mySwiper = new Swiper('.booklist_wrapper .swiper-container', {
+        var mySwiper = new Swiper('.mybookshelf_main_wrapper.swiper-container', {
             loop: true,
             pagination: '.swiper-pagination',
             paginationClickable: true,
             paginationBulletRender: function (index, className) {
-                var styleArr = ['推荐','热门','毕业册','聚会册'];
-                return '<span class="' + className + '">' + (styleArr[index]) + '</span>';
+                switch (index) {
+                    case 0: name='推荐';break;
+                    case 1: name='热门';break;
+                    case 2: name='毕业册';break;
+                    case 3: name='聚会册';break;
+                    default: name='';
+                }
+                return '<span class="' + className + '">' + name + '</span>';
             },
             autoplay: false
         });

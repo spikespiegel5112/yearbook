@@ -28,16 +28,7 @@
         <a class="left_btn icon-list-ul" href="javascript:;"></a>
         <p>照片书模板</p>
     </div>
-    <div class="photo_classify swiper-pagination">
-        <span class="swiper-pagination-bullet" data-style="推荐"></span>
-        <span class="swiper-pagination-bullet" data-style="热门"></span>
-        <span class="swiper-pagination-bullet" data-style="宝宝"></span>
-        <span class="swiper-pagination-bullet" data-style="旅行"></span>
-        <span class="swiper-pagination-bullet" data-style="爱情"></span>
-        <span class="swiper-pagination-bullet" data-style="聚会"></span>
-        <span class="swiper-pagination-bullet" data-style="家庭"></span>
-        <span class="swiper-pagination-bullet" data-style="写真"></span>
-    </div>
+    <div class="photo_classify swiper-pagination"></div>
     <div class='mybookshelf_main_wrapper swiper-container'>
         <div class="swiper-wrapper ">
             <div class="swiper-slide">
@@ -865,8 +856,18 @@
             pagination: '.swiper-pagination',
             paginationClickable: true,
             paginationBulletRender: function (index, className) {
-                var styleArr = ['推荐','热门','宝宝','旅行','爱情','聚会','家庭','写真'];
-                return '<span class="' + className + '">' + (styleArr[index]) + '</span>';
+                switch (index) {
+                    case 0: name='推荐';break;
+                    case 1: name='热门';break;
+                    case 2: name='宝宝';break;
+                    case 3: name='旅行';break;
+                    case 4: name='爱情';break;
+                    case 5: name='聚会';break;
+                    case 6: name='家庭';break;
+                    case 7: name='写真';break;
+                    default: name='';
+                }
+                return '<span class="' + className + '">' + name + '</span>';
             },
             autoplay: false
         });

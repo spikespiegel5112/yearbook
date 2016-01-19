@@ -14,11 +14,11 @@
     color: #fff;
 }
 
-.preview_book_container .flipbook-viewport {
+/*.preview_book_container .flipbook-viewport {
     margin: 0;
     padding: 0;
     background: #ddd;
-}
+}*/
 
 .preview_book_container .flipbook .page {
     background-position: center center !important;
@@ -142,10 +142,11 @@
 }
 
 .flipbook-viewport {
-    margin: 0 auto 30px;
-    padding: 3em 0;
+    margin: 0 auto;
+    padding: 4em 0;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .flipbook_wrapper {
@@ -163,31 +164,32 @@
 }
 .flipbook_wrapper > a span {
     display: block;
+    margin: 0 auto;
     width: 30px;
     height: 70px;
     background-color: rgba(0, 0, 0, .2);
     background-image: url("../img/m/previewbook/pb_lrarrow.png");
     background-repeat: no-repeat;
-    position: absolute;
+    position: relative;
     top: 30%;
 }
 
 .flipbook_nextpage_btn{
-    right: -22%;
+    right: -20%;
 }
 
 .flipbook_prevpage_btn{
-    left: -22%;
+    left: -20%;
 }
 
 .flipbook_nextpage_btn span{
     background-position: 100% 50%;
-    right: 30%;
+    /*right: 30%;*/
 }
 
 .flipbook_prevpage_btn span{
     background-position: 0 50%;
-    left: 30%;
+    right: 0;
 }
 
 .flipbook-viewport .flipbook {
@@ -461,6 +463,7 @@
     top: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
 }
 
 .bp_msg_wrapper div{
@@ -476,7 +479,7 @@
     text-overflow: ellipsis;
 }
 
-/*.hsub{
+.hsub{
     display: none;
     position: absolute;
     bottom: 0;
@@ -554,7 +557,7 @@
 .hsub ul li a p{
     float: left;
     margin: 15px 0;
-}*/
+}
 
 .chapter_slide a{
     margin: 0 10px 0 0;

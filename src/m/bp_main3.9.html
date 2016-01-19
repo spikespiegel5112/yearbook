@@ -419,8 +419,8 @@
 			var zoom = 0,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				originalWidth = 680,
-				originalHeight = 964,
+				originalWidth = 682,
+				originalHeight = 968,
 				portraitFactor = 0.7,
 				landscapeFactor = 0.87;
 			orientationSensor({
@@ -429,10 +429,12 @@
 					$('.flipbook .page>div').css(sizeArguObj(zoom));
 				},
 				landscape: function() {
-					var zoom = windowHeight * landscapeFactor / originalHeight;
+					var zoom = windowHeight * (landscapeFactor / originalHeight);
 					$('.flipbook .page>div').css(sizeArguObj(zoom));
+					console.log(zoom)
 				}
 			});
+
 			// 尺寸设定集
 			function sizeArguObj(zoom) {
 				return {
@@ -666,7 +668,7 @@
 			// html += "<div><p>good good good</p> </div>";
 
 			$.ajax({
-				url: '../js/commentBarrage.json',
+				url: '../js/test/commentBarrage.json',
 				dataType: 'json',
 				success: function(data) {
 					console.log(data)
@@ -707,18 +709,18 @@
 		}
 
 		function animateBarrage(windowWidth, commentEl) {
-			var commentEl=$('.barrage');
+			var commentEl=$('.barrage'),
+				randomTime=0;
 			
 			commentEl.each(function(idx){
+				randomTime=Math.random(1) * 20+15
 				commentEl.eq(idx).addClass('active').css({
 					
 					'left': -windowWidth,
-					'transition': 'left' + " " + Math.random(1) * 20 + 's',
+					'transition': 'left' + " " + randomTime + 's',
 					
 				});
-				// if (commentEl[idx].hasClass('active')) {
-					
-				// };
+				console.log(randomTime);
 			})
 			
 			
@@ -727,44 +729,44 @@
 
 
 
-		function init_screen() {
-			var _top = 0;
-			$(".bp_msg_wrapper").find("div").show().each(function() {
-				var _left = $(window).width() - $(this).width() + 220;
-				var _height = $(window).height() + 100;
+		// function init_screen() {
+		// 	var _top = 0;
+		// 	$(".bp_msg_wrapper").find("div").show().each(function() {
+		// 		var _left = $(window).width() - $(this).width() + 220;
+		// 		var _height = $(window).height() + 100;
 
-				_top = _top + 36;
-				if (_top >= _height - 120) {
-					_top = 40;
-				}
-				$(this).css({
-					left: _left,
-					top: _top
-				});
-				var time = 10000;
-				if ($(this).index() % 2 == 0) {
-					time = 12000;
-				}
-				if ($(this).index() % 3 == 0) {
-					time = 14000;
-				}
-				if ($(this).index() % 4 == 0) {
-					time = 16000;
-				}
-				if ($(this).index() % 5 == 0) {
-					time = 18000;
-				}
-				if ($(this).index() % 7 == 0) {
-					time = 20000;
-				}
-				if ($(this).index() % 8 == 0) {
-					time = 23000;
-				}
-				$(this).animate({
-					left: "-" + _left + "px"
-				}, time, function() {});
-			});
-		}
+		// 		_top = _top + 36;
+		// 		if (_top >= _height - 120) {
+		// 			_top = 40;
+		// 		}
+		// 		$(this).css({
+		// 			left: _left,
+		// 			top: _top
+		// 		});
+		// 		var time = 10000;
+		// 		if ($(this).index() % 2 == 0) {
+		// 			time = 12000;
+		// 		}
+		// 		if ($(this).index() % 3 == 0) {
+		// 			time = 14000;
+		// 		}
+		// 		if ($(this).index() % 4 == 0) {
+		// 			time = 16000;
+		// 		}
+		// 		if ($(this).index() % 5 == 0) {
+		// 			time = 18000;
+		// 		}
+		// 		if ($(this).index() % 7 == 0) {
+		// 			time = 20000;
+		// 		}
+		// 		if ($(this).index() % 8 == 0) {
+		// 			time = 23000;
+		// 		}
+		// 		$(this).animate({
+		// 			left: "-" + _left + "px"
+		// 		}, time, function() {});
+		// 	});
+		// }
 		//随机获取颜色值
 		function getReandomColor() {
 			return '#' + (function(h) {

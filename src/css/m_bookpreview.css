@@ -130,7 +130,7 @@
 	background-color: #fff;
 }
 
-.viewmode_portrait .hsub {
+.viewmode_portrait .bp_landscape_wrapper {
 	display: none;
 }
 
@@ -149,7 +149,7 @@
 	z-index: 2;
 }
 
-.viewmode_landscape .hsub {
+.viewmode_landscape .bp_landscape_wrapper {
 	display: block;
 	bottom: 0;
 	background:-webkit-linear-gradient(top,transparent,#000);
@@ -507,7 +507,7 @@
 	text-overflow: ellipsis;
 }
 
-.hsub {
+.bp_landscape_wrapper {
 	position: fixed;
 	left: 0;
 	bottom: -47px;
@@ -516,10 +516,10 @@
 	z-index: 1;
 	overflow: hidden;
 }
-.hsub ul{
+.bp_landscape_wrapper ul{
 	margin: 0 0 0 10px;
 }
-.hsub ul li {
+.bp_landscape_wrapper ul li {
 	float: left;
 	width: 65px;
 	height: 48px;
@@ -527,17 +527,17 @@
 
 
 
-.hsub ul li a {
+.bp_landscape_wrapper ul li a {
 	display: inline-block;
 	color: #fff;
 }
 
-.hsub ul li a p {
+.bp_landscape_wrapper ul li a p {
 	float: left;
 	margin: 15px 0;
 }
 
-.hsub ul li a div {
+.bp_landscape_wrapper ul li a div {
 	float: left;
 	margin: 15px 2px 0px 0px;
 	width: 20px;
@@ -546,36 +546,36 @@
 	background-size:1200%;
 	background-position-y:-73px;
 }
-.hsub .bp_barrageswitch_item{
+.bp_landscape_wrapper .bp_barrageswitch_item{
 	width: 6rem;
 }
 
-.hsub .bp_barrageswitch_item div{
+.bp_landscape_wrapper .bp_barrageswitch_item div{
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-size:850%;
 	background-position-y:-379px;;
 	background-position-x: 135px;
 	width: 40px;
 }
-.hsub .bp_barrageswitch_item .active div{
+.bp_landscape_wrapper .bp_barrageswitch_item .active div{
 	background-position-x: 97px;
 }
-.hsub ul .comment div {
+.bp_landscape_wrapper ul .comment div {
 	background-position-x: 156px;
 }
 
-.hsub ul .comment:hover div {
+.bp_landscape_wrapper ul .comment:hover div {
 	background-position-x: 137px;
 }
 
-.hsub ul .praise div {
+.bp_landscape_wrapper ul .praise div {
 	background-position-x: 100px;
 }
 
-.hsub ul .praise:hover div {
+.bp_landscape_wrapper ul .praise:hover div {
 	background-position-x: 81px;
 }
-.hsub ul .donate div{
+.bp_landscape_wrapper ul .donate div{
 	background-image:none;
 	text-align: center;
 	line-height: 20px;
@@ -585,16 +585,16 @@
 	color: #000;
 	border-radius: 50%;
 }
-.hsub ul .donate .active div{
+.bp_landscape_wrapper ul .donate .active div{
 	background-color: orange;
 }
-.hsub ul .share div {
+.bp_landscape_wrapper ul .share div {
 	background-position-x: 60px;
 }
-.hsub ul .share:hover div {
+.bp_landscape_wrapper ul .share:hover div {
 	background-position-x: 44px;
 }
-.hsub ul .minimal div{
+.bp_landscape_wrapper ul .minimal div{
 	background-position-x: 26px;
 }
 

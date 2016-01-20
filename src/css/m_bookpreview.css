@@ -106,7 +106,7 @@
 	width: 100%;
 }
 
-.comment_input {
+.bp_sendcomment_item {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -137,7 +137,7 @@
 .viewmode_landscape {
 	width: 100%;
 }
-.viewmode_landscape .comment_input{
+.viewmode_landscape .bp_sendcomment_item{
 	display: none;
 	bottom: 3rem;
 	background-color: transparent;
@@ -427,7 +427,7 @@
 	text-overflow: ellipsis;
 }
 
-.comment_input .input_box {
+.bp_sendcomment_item .input_box {
 	position: relative;
 	margin: 10px auto;
 	width: 90%;
@@ -437,7 +437,7 @@
 	overflow: hidden;
 }
 
-.comment_input .input_box input {
+.bp_sendcomment_item .input_box input {
 	float: left;
 	padding: 6px 12px;
 	width: 80%;
@@ -451,13 +451,13 @@
 	box-sizing: border-box;
 }
 
-.comment_input .input_box input[type=text]:focus {
+.bp_sendcomment_item .input_box input[type=text]:focus {
 	box-shadow: -1px 1px 0 #fafafa;
 	border: 0;
 	outline: none;
 }
 
-.comment_input .input_box button {
+.bp_sendcomment_item .input_box button {
 	position: absolute;
 	right: 0;
 	margin: 3px 0;
@@ -471,11 +471,11 @@
 	border-left: 1px solid #999;
 }
 
-.comment_input .input_box button:hover {
+.bp_sendcomment_item .input_box button:hover {
 	color: #333;
 }
 
-.comment_input .input_box button i {
+.bp_sendcomment_item .input_box button i {
 	display: block;
 	margin: 0 auto;
 	width: 40px;
@@ -524,9 +524,6 @@
 	width: 65px;
 	height: 48px;
 }
-
-
-
 .bp_landscape_wrapper ul li a {
 	display: inline-block;
 	color: #fff;

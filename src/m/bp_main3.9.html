@@ -27,6 +27,12 @@
 			<div class="ybwechatheader_wrapper">
 				<a class='left_btn back_btn' href="javascript:;"></a>
 				<p class="title">
+					<a href="javascript:;">
+								<div class="bp_barrageswitch_item">
+									<input type="checkbox" />
+								</div>
+								<p>弹幕开关</p>
+							</a>
 					提示：将手机横屏可进行全屏预览
 				</p>
 				<a class='right_btn share_btn' href="javascript:;"></a>
@@ -120,23 +126,21 @@
 			</div>
 
 		</div>
-		<div class="vsub">
-			<div class="tpl_info">本书一共有<span>XX</span>页，可上传<span>XX</span>张照片</div>
-			<div class="htool_wrap">
-				<div class="hd">
+		<div class="bp_portrait_wrapper">
+			<div class="bp_bookinfo_item">本书一共有<span>XX</span>页，可上传<span>XX</span>张照片</div>
+			<div class="bp_interaction_wrapper">
+				<div class="bp_menu_wrapper">
 					<ul>
 						<li>
-							<a href="javascript:;">
+							<a href="javascript:;" class='active'>
 								<div class="comment"></div>
 								<p>评论(<span>123</span>)</p>
 							</a>
 						</li>
 						<li>
 							<a href="javascript:;">
-								<div class="barrage_switch">
-									<input type="checkbox" />
-								</div>
-								<p>弹幕开关</p>
+								<div class="donate">赏</div>
+								<p>赞助(<span>123</span>)</p>
 							</a>
 						</li>
 						<li>
@@ -147,8 +151,8 @@
 						</li>
 					</ul>
 				</div>
-				<div class="bd">
-					<div class="comment_con ">
+				<div class="bp_iatab_wrapper">
+					<div class="bp_comment_container">
 						<span class="up_arrow"></span>
 
 						<div class='bp_comment_wrapper'>
@@ -262,10 +266,33 @@
 							</table>
 						</div>
 						<div class="ybwechat_loading_item">
-							<a href="javascript:;">查看更多评论（<span>22</span>）</a>
+							<label><img class='loadingwheel' src="../img/m/loading.gif">加载中...</label>
 						</div>
 					</div>
-					<div class="praise_con">
+					<div class='bp_donate_container'>
+						<div class='bp_donatedperson_wrapper'>
+							<label>赞助过的人</label>
+							<ul>
+								<li>
+									<img src="src/img/m/vote_result_avatar_100_100_00000.jpg" >
+									<span>小惆怅长岑长</span>
+								</li>
+								<li>
+									<img src="src/img/m/vote_result_avatar_100_100_00000.jpg" >
+									<span>小惆怅长岑长</span>
+								</li>
+								<li>
+									<img src="src/img/m/vote_result_avatar_100_100_00000.jpg" >
+									<span>小惆怅长岑长</span>
+								</li>
+								<li>
+									<img src="src/img/m/vote_result_avatar_100_100_00000.jpg" >
+									<span>小惆怅长岑长</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="bp_praise_container">
 						<span class="up_arrow"></span>
 						<ul>
 							<li>
@@ -309,53 +336,96 @@
 
 				</div>
 			</div>
-			<div class="comment_input">
-				<div class="input_box">
-					<input id="reply-write" type="text" placeholder="这里输入聊天内容" />
-					<button type="button"><i></i></button>
-				</div>
-			</div>
+
 		</div>
-		<div class="hsub">
+		<div class="bp_landscape_wrapper">
 			<ul>
-				<li>
+				<li class="comment">
 					<a href="javascript:;">
-						<div class="comment"></div>
+						<div></div>
 						<p>评论</p>
 					</a>
 				</li>
-				<li>
+				<li class="praise">
 					<a href="javascript:;">
-						<div class="praise"></div>
-						<p>被赞</p>
+						<div></div>
+						<p>点赞</p>
 					</a>
 				</li>
-				<li>
+				<li class="donate">
 					<a href="javascript:;">
-						<div class="share"></div>
+						<div>赏</div>
+						<p>赞助</p>
+					</a>
+				</li>
+				<li class="share">
+					<a href="javascript:;">
+						<div></div>
 						<p>分享</p>
 					</a>
 				</li>
-				<li>
+				<li class="bp_barrageswitch_item">
 					<a href="javascript:;">
-						<div class="barrage_switch">
-							<input type="checkbox" data-size="mini" />
-						</div>
+						<div></div>
 						<p>弹幕</p>
+					</a>
+				</li>
+				<li class="minimal">
+					<a href="javascript:;">
+						<div></div>
+						<p>最小化</p>
 					</a>
 				</li>
 			</ul>
 			<div class="chapter_slide">
-				<a href="javascript:;">上一章节</a>
-				<a href="javascript:;">下一章节</a>
+				<a href="javascript:;">上一章</a>
+				<a href="javascript:;">下一章</a>
+			</div>
+		</div>
+		<div class='bp_donate_container'>
+			<div class='bp_donate_wrapper'>
+				<h5>做得不错，赞助鼓舞一下</h5>
+				<ul>
+					<li>
+						<a href="javascript:;">
+							<span>1</span>元</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>1</span>元</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>1</span>元</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>1</span>元</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>1</span>元</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							其他金额</a>
+					</li>
+				</ul>
+				<a class='donateimmediatety' href="javascript:;">立即赞助</a>
+				<p>赞助无悔，概不退款</p>
+			</div>
+		</div>
+		<div class="comment_input">
+			<div class="input_box">
+				<input id="reply-write" type="text" placeholder="这里输入聊天内容" />
+				<button type="button"><i></i></button>
 			</div>
 		</div>
 	</div>
-	<script src="../assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
-	<script type="text/javascript" src="../assets/js/bootstrap-switch.min.js"></script>
-	<script type="text/javascript" src='../js/check_os.js'></script>
+	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
+
 
 	<script>
 		var LOG = function() {
@@ -363,6 +433,7 @@
 		};
 		var LOG = alert;
 		$(function() {
+			//移动端滚动到底部加载插件
 			$.extend({
 				collideLoading: function(options) {
 					options = $.extend({
@@ -378,6 +449,7 @@
 					});
 				}
 			});
+
 			bookpreviewInit();
 			CommentPraiseTab();
 			barrageSwitcher();
@@ -388,11 +460,12 @@
 			$.collideLoading({
 				onScrollBottom: function() {
 					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>'
-					
-					setTimeout(function(){
+					$('.ybwechat_loading_item').show();
+					setTimeout(function() {
 						$('.bp_comment_wrapper').append(commentEl);
-					}, 1000);
-					
+						$('.ybwechat_loading_item').hide();
+					}, 3000);
+
 				}
 			});
 		}
@@ -433,7 +506,7 @@
 					}
 				});
 			});
-			// 通过currentpage属性变量翻页方法
+			// 翻页，同时改变currentpage属性变量的值
 			$('.flipbook_nextpage_btn').on('touchend', function() {
 				flipbook.turn('next');
 				flipbook.attr('currentpage', function() {
@@ -501,7 +574,8 @@
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
 			var windowWidth = $(window).width(),
-				windowHeight = $(window).height();
+				windowHeight = $(window).height(),
+				flipbook = $('.flipbook');
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});
@@ -511,6 +585,43 @@
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
 			$('.viewmode_landscape').on("touchend", function() {
 				$('.ybwechatheader_wrapper').toggle();
+			});
+			$('.bp_donate_wrapper').css({
+				'margin-top': function() {
+					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
+				}
+			});
+			$('.bp_landscape_wrapper ul .donate').on('touchend', function() {
+				$(this).find('a').addClass('active');
+				$('.bp_donate_container').toggleClass('active').on('touchend', function() {
+					$(document).on('touchend', function(e) {
+						if ($(e.target).closest('.bp_donate_wrapper').length == 0 || $(e.target).closest('.donateimmediatety').length == 1) {
+							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
+						};
+						$(this).unbind('touchend');
+					});
+					$('.bp_donate_wrapper ul li a').on('touchend', function() {
+						$(this).parent().siblings().removeClass('active').end().addClass('active');
+					});
+				});
+			});
+			$('.chapter_slide a').on('touchend', function() {
+				switch ($(this).index()) {
+					case 0:
+						flipbook.turn('next');
+				}
+			});
+			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
+				var commentInputEl = $('.comment_input');
+				commentInputEl.toggle().on('touchend',function(){
+					$(document).on('touchend', function(e) {
+						if ($(e.target).closest('.comment_input').length == 0) {
+							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
+							commentInputEl.hide();
+						};
+					})
+				});
+				
 			});
 		}
 
@@ -578,7 +689,7 @@
 				when: {
 					turning: function(e, page, view) {
 						var currentPage = flipbook.turn('page'),
-							pages=bookLength();
+							pages = bookLength();
 						disableControls(page);
 						if (currentPage > 3 && currentPage < pages - 3) {
 							if (page == 1) {
@@ -693,20 +804,11 @@
 		 * 评论赞tab切换
 		 * */
 		function CommentPraiseTab() {
-			$('.htool_wrap .hd li a').on('touchend', function() {
+			$('.bp_interaction_wrapper .bp_menu_wrapper li a').on('touchend', function() {
 				var $this = $(this);
 				$this.closest('li').siblings('li').find('a').removeClass('active');
 				$this.addClass('active');
-				switch ($this.closest('li').index()) {
-					case 0:
-						$('.bd .comment_con').show();
-						$('.bd .praise_con').hide();
-						break;
-					case 2:
-						$('.bd .comment_con').hide();
-						$('.bd .praise_con').show();
-						break;
-				}
+
 			});
 		}
 
@@ -714,29 +816,53 @@
 		 * 弹幕开关
 		 * */
 		function barrageSwitcher() {
-			$(".barrage_switch input[type=checkbox]").bootstrapSwitch({
-				onColor: 'success',
-				onSwitchChange: function(e, state) {
-					if (state) {
-						$(".bp_barrage_wrapper").show();
-						$.ajax({
-							//json文件在js/test的目录中
-							url: '../js/test/commentBarrage.json',
-							dataType: 'json',
-							success: function(data) {
-								var commentEl = new Array();
-								for (var i = 0; i < data.comment.length; i++) {
-									commentEl[i] = data.comment[i];
-								};
-								//把数据载入好了，就传给barrage()函数就直接发弹幕了
-								barrage(commentEl);
-							}
-						});
-					} else {
-						$(".bp_barrage_wrapper").hide().find('div').remove();
-					}
+			var commentJSON = {
+				"commentArr": [{
+					"comment": "感谢你，啦啦啦"
+				}, {
+					"comment": "嗯嗯嗯爱爱爱爱啊"
+				}, {
+					"comment": "我的天呀"
+				}, {
+					"comment": "good good good "
+				}, {
+					"comment": "O(∩_∩)O哈哈哈~"
+				}, {
+					"comment": "嗯嗯嗯爱爱爱爱啊"
+				}, {
+					"comment": "我的天呀"
+				}, {
+					"comment": "good good good "
+				}, {
+					"comment": "嗯嗯嗯爱爱爱爱啊"
+				}, {
+					"comment": "我的天呀"
+				}, {
+					"comment": "good good good "
+				}, {
+					"comment": "11111"
+				}, {
+					"comment": "22222"
+				}, {
+					"comment": "33333"
+				}]
+			}
+			$(".bp_barrageswitch_item").on('touchend', function() {
+				var switcher = $(this).find('a');
+				if (!switcher.hasClass('active')) {
+					switcher.addClass('active')
+					$(".bp_barrage_wrapper").show();
+					var commentEl = new Array();
+					for (var i = 0; i < commentJSON.commentArr.length; i++) {
+						commentEl[i] = commentJSON.commentArr[i];
+					};
+					//把数据载入好了，就传给barrage()函数就直接发弹幕了
+					barrage(commentEl);
+				} else {
+					$(".bp_barrage_wrapper").hide().find('div').remove();
+					switcher.removeClass('active')
 				}
-			});
+			})
 		}
 
 		$('.comment_input button').on('touchend', function() {
@@ -744,7 +870,7 @@
 			if ($.trim(comment) == "") {
 				alert("亲，请输入你的想说的话！");
 				return false;
-			}else{
+			} else {
 				barrage(comment);
 			}
 		});
@@ -756,13 +882,13 @@
 			if (typeof(comment) == 'object') {
 				var commentLength = comment.length;
 				for (var i = 0; i < commentLength; i++) {
-					loadandfire(comment[i].timestamp);
-				};
+					loadandfire(comment[i].comment);
+				}
 			} else {
 				var commentEl = new Array();
 				commentEl[0] = comment;
 				loadandfire(commentEl[0]);
-			};
+			}
 
 			function loadandfire(comment) {
 				var windowWidth = $(window).width(),
@@ -798,7 +924,7 @@
 		function getReandomColor() {
 			return '#' + (function(h) {
 				return new Array(7 - h.length).join("0") + h
-			})((Math.random() * 0x1000000 << 0).toString(16))
+			})((Math.random() * 0x1000000 << 0).toString(16));
 		}
 		//随机获取字号
 		function getReandomFontSize() {

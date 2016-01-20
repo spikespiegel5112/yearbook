@@ -281,35 +281,28 @@
 	line-height: 40px;
 	background-color: #F6F6F6;
 }
-
-.bp_portrait_wrapper .bp_interaction_wrapper {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-}
-
-.bp_interaction_wrapper .bp_menu_wrapper {
+.bp_menu_wrapper {
 	position: relative;
 	overflow: hidden;
 	background-color: #F6F6F6;
 	border-bottom: 1px solid #e5e5e5;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li {
+.bp_menu_wrapper li {
 	float: left;
 	width: 33%;
 	text-align: center;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li a {
+.bp_menu_wrapper li a {
 	display: block;
 	font-size: 12px;
 	color: #666;
 	text-decoration: none;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li .comment,
-.bp_interaction_wrapper .bp_menu_wrapper li .praise {
+.bp_menu_wrapper li .comment,
+.bp_menu_wrapper li .praise {
 	position: relative;
 	margin: 0 auto;
 	width: 40px;
@@ -317,35 +310,35 @@
 	opacity: 0.5;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li .praise {
+.bp_menu_wrapper li .praise {
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-position: -253px -155px;
 	opacity: 0.5;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li .active div {
+.bp_menu_wrapper li .active div {
 	opacity: 0.9;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li .comment {
+.bp_menu_wrapper li .comment {
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-position: -140px -155px;
 	opacity: 0.5;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li .bootstrap-switch {
+.bp_menu_wrapper li .bootstrap-switch {
 	margin: 3px 0 10px;
 }
 
-.bp_interaction_wrapper .bp_menu_wrapper li p {
+.bp_menu_wrapper li p {
 	margin-bottom: 10px;
 }
 
-.bp_interaction_wrapper .bp_iatab_wrapper {
+.bp_iatab_wrapper {
 	position: relative;
 }
 
-.bp_interaction_wrapper .bp_iatab_wrapper .up_arrow {
+.bp_iatab_wrapper .up_arrow {
 	position: absolute;
 	top: -10px;
 	border-left: 10px solid transparent;
@@ -543,16 +536,21 @@
 	background-size:1200%;
 	background-position-y:-73px;
 }
-.bp_landscape_wrapper .bp_barrageswitch_item{
-	width: 6rem;
+.bp_barrageswitch_item{
+	height: 2rem;
 }
 
-.bp_landscape_wrapper .bp_barrageswitch_item div{
+.viewmode_portrait .bp_barrageswitch_item{
+	margin: 0 auto;
+	width: 4rem;
+}
+.main_container .bp_barrageswitch_item div{
 	background-image: url("../img/m/img_sprite_00000.png");
-	background-size:850%;
-	background-position-y:-379px;;
+	background-size:1200%;
+	background-position-y: -73px;
 	background-position-x: 135px;
 	width: 40px;
+	height: 20px;
 }
 .bp_landscape_wrapper .bp_barrageswitch_item .active div{
 	background-position-x: 97px;
@@ -591,7 +589,7 @@
 .bp_landscape_wrapper ul .share:hover div {
 	background-position-x: 44px;
 }
-.bp_landscape_wrapper ul .minimal div{
+.bp_landscape_wrapper ul .bp_resizebtn_item div{
 	background-position-x: 26px;
 }
 

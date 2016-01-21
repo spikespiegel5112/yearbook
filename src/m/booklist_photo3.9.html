@@ -413,7 +413,7 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <ul>
+                <ul class="hidden">
                     <li>
                         <a class='cover' href="javascript:;">
                             <span></span>
@@ -436,6 +436,10 @@
                 <!--<div class='ybwechat_loading_item'>
                     <a href="javascript:;">点击加载更多（<b>6</b>）</a>
                 </div>-->
+                <div class='empty_item'>
+                    <img src="../img/m/bierde_16.png">
+                    <p>对不起，没有符合要求的书册！</p>
+                </div>
             </div>
             <div class="swiper-slide">
                 <ul>
@@ -990,7 +994,7 @@
         choosetemplate();
         showTplClassify();
         initPhotoBookListSwiper();
-        chooseTplStyle();
+//        chooseTplStyle();
     });
 
     function choosetemplate() {
@@ -1036,24 +1040,45 @@
             },
             onInit: function(swiper){
                 $('.swiper-slide').each(function(){
-                    $(this).find('li:gt(8)').hide();
+                    if($(this).find('li').length > 9){
+                        $(this).find('li:gt(8)').hide();
+                        $(this).find('.ybwechat_loading_item').css('display','block');
+                        var swiperHeight = $(this).find('ul').height() + 70;
+
+                        $(this).closest('.swiper-wrapper').height(swiperHeight);
+
+                    }
+                    var minHeight = $(window).height() - 230;
+                    $(this).css('min-height',minHeight);
                     loadMoreTpl();
                 })
             },
-            onSlideChangeStart: function(swiper){
+            onSlideChangeEnd: function(swiper){
                 loadMoreTpl();
                 var index = mySwiper.activeIndex- 1,
                         width = $('.swiper-pagination-bullet').width(),
                         left = (index)*(width);
                 $('.swiper-pagination').scrollLeft(left);
-            },
-            onTouchEnd: function(swiper){
-                /*var index = mySwiper.activeIndex- 1,
-                        width = $('.swiper-pagination-bullet').width(),
-                        left = (index)*(width);
-                $('.swiper-pagination').scrollLeft(left);*/
             }
         });
+
+        //页面内选择模板类别
+        $('.classify li a').on('click',function(e){
+            var activeIndex = $(this).attr('data-style');
+            $('.tpl_classify_con').hide();
+            mySwiper.slideTo(activeIndex, 1000, true);
+            var scrollLeft = $('.swiper-pagination-bullet').width()*(activeIndex-1);
+            $('.swiper-pagination').scrollLeft(scrollLeft);
+            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(activeIndex).addClass('swiper-pagination-bullet-active');
+            e.stopPropagation();
+        });
+    }
+
+    //跨页面选择模板类别
+    function crossPageSelection(){
+        var href = window.location.href;
+        var chooseStyleIndex = href.charAt(href.length-1);
+        mySwiper.slideTo(chooseStyleIndex, 1000, true);
     }
 
     function loadMoreTpl() {
@@ -1064,13 +1089,13 @@
         var visi = $('.swiper-slide-active li:visible').length;
 
         if (all > 9) {
-            $('.swiper-slide-active .ybwechat_loading_item').removeClass('hidden');
+            $('.swiper-slide-active .ybwechat_loading_item').css('display','block');
         }
 
         $('.swiper-slide-active .ybwechat_loading_item b').text(all - visi);
 
         if (all == visi) {
-            $('.swiper-slide-active .ybwechat_loading_item').addClass('hidden');
+            $('.swiper-slide-active .ybwechat_loading_item').css('display','none');
         }
 
         $('.swiper-slide-active .ybwechat_loading_item a').on('touchend', function () {
@@ -1086,27 +1111,12 @@
             visi = $('.swiper-slide-active li:visible').length;
             $('.swiper-slide-active .ybwechat_loading_item b').text(all - visi);
             if (all == visi) {
-                $('.swiper-slide-active .ybwechat_loading_item').addClass('hidden');
+                $('.swiper-slide-active .ybwechat_loading_item').css('display','none');
             }
         });
 
     }
 
-
-    //页面内选择模板类别
-    function chooseTplStyle(){
-        var mySwiper = new Swiper('.booklist_wrapper .swiper-container',{
-        })
-        $('.classify li a').on('click',function(e){
-            var activeIndex = $(this).attr('data-style');
-            $('.tpl_classify_con').hide();
-            mySwiper.slideTo(activeIndex, 1000, false);
-            var scrollLeft = $('.swiper-pagination-bullet').width()*(activeIndex-1);
-            $('.swiper-pagination').scrollLeft(scrollLeft);
-            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(activeIndex).addClass('swiper-pagination-bullet-active');
-            e.stopPropagation();
-        });
-    }
 </script>
 
 </html>

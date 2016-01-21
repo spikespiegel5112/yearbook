@@ -876,47 +876,47 @@
             <h4>互动册</h4>
             <ul>
                 <li>
-                    <a href="booklist_ia3.9.html/#2" data-style="2">
+                    <a href="booklist_ia3.9.html?data-style=2" data-style="2">
                         宝宝
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="3">
+                    <a href="booklist_ia3.9.html?data-style=3" data-style="3">
                         旅行
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="4">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="1">
                         爱情
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="5">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="3">
                         聚会
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="6">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="1">
                         父母
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="6">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="3">
                         家庭
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="7">
+                    <a href="booklist_ia3.9.html?data-style=3" data-style="0">
                         写真
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="0">
+                    <a href="booklist_ia3.9.html?data-style=0" data-style="0">
                         作品
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="1">
+                    <a href="booklist_ia3.9.html?data-style=1" data-style="1">
                         圈子
                     </a>
                 </li>
@@ -1072,13 +1072,15 @@
             $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(activeIndex).addClass('swiper-pagination-bullet-active');
             e.stopPropagation();
         });
-    }
 
-    //跨页面选择模板类别
-    function crossPageSelection(){
+        //跨页面选择模板类别
         var href = window.location.href;
-        var chooseStyleIndex = href.charAt(href.length-1);
-        mySwiper.slideTo(chooseStyleIndex, 1000, true);
+        var reg = /(data-style=[0-9])$/g;
+        var dataStyle = href.match(reg);
+        if(dataStyle){
+            var chooseStyleIndex = dataStyle[0].split('=')[1];
+            mySwiper.slideTo(chooseStyleIndex, 1000, true);
+        }
     }
 
     function loadMoreTpl() {

@@ -292,47 +292,47 @@
             <h4>照片书</h4>
             <ul>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=2">
                         宝宝
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=3">
                         旅行
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=4">
                         爱情
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=5">
                         聚会
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=6">
                         父母
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=6">
                         家庭
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=7">
                         写真
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=0">
                         作品
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="booklist_photo3.9.html?data-style=1">
                         圈子
                     </a>
                 </li>
@@ -340,47 +340,47 @@
             <h4>互动册</h4>
             <ul>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="2">
                         宝宝
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="3">
                         旅行
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="1">
                         爱情
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="3">
                         聚会
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="1">
                         父母
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="3">
                         家庭
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="0">
                         写真
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="0">
                         作品
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a href="javascript:;" data-style="1">
                         圈子
                     </a>
                 </li>
@@ -485,6 +485,8 @@
             loop: true,
             pagination: '.swiper-pagination',
             paginationClickable: true,
+            autoHeight: true,
+            autoplay: false,
             paginationBulletRender: function (index, className) {
                 switch (index) {
                     case 0: name='推荐';break;
@@ -495,8 +497,86 @@
                 }
                 return '<span class="' + className + '">' + name + '</span>';
             },
-            autoplay: false
+            onInit: function(swiper){
+                $('.swiper-slide').each(function(){
+                    if($(this).find('li').length > 9){
+                        $(this).find('li:gt(8)').hide();
+                        $(this).find('.ybwechat_loading_item').css('display','block');
+                        var swiperHeight = $(this).find('ul').height() + 70;
+
+                        $(this).closest('.swiper-wrapper').height(swiperHeight);
+
+                    }
+                    var minHeight = $(window).height() - 230;
+                    $(this).css('min-height',minHeight);
+                    loadMoreTpl();
+                })
+            },
+            onSlideChangeEnd: function(swiper){
+//                loadMoreTpl();
+               /* var index = mySwiper.activeIndex- 1,
+                        width = $('.swiper-pagination-bullet').width(),
+                        left = (index)*(width);
+                $('.swiper-pagination').scrollLeft(left);*/
+            }
         });
+
+        //页面内选择模板类别
+        $('.classify li a').on('click',function(e){
+            var activeIndex = $(this).attr('data-style');
+            $('.tpl_classify_con').hide();
+            mySwiper.slideTo(activeIndex, 1000, true);
+            /*var scrollLeft = $('.swiper-pagination-bullet').width()*(activeIndex-1);
+            $('.swiper-pagination').scrollLeft(scrollLeft);*/
+            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(activeIndex).addClass('swiper-pagination-bullet-active');
+            e.stopPropagation();
+        });
+
+        //跨页面选择模板类别
+        var href = window.location.href;
+        var reg = /(data-style=[0-9])$/g;
+        var dataStyle = href.match(reg);
+        if(dataStyle){
+            var chooseStyleIndex = dataStyle[0].split('=')[1];
+            mySwiper.slideTo(chooseStyleIndex, 1000, true);
+            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(chooseStyleIndex).addClass('swiper-pagination-bullet-active');
+        };
+    }
+
+    function loadMoreTpl() {
+        var limitNum = 8;
+        //所有显示
+        var all = $('.swiper-slide-active li').length;
+        //当前显示的个数
+        var visi = $('.swiper-slide-active li:visible').length;
+
+        if (all > 9) {
+            $('.swiper-slide-active .ybwechat_loading_item').css('display','block');
+        }
+
+        $('.swiper-slide-active .ybwechat_loading_item b').text(all - visi);
+
+        if (all == visi) {
+            $('.swiper-slide-active .ybwechat_loading_item').css('display','none');
+        }
+
+        $('.swiper-slide-active .ybwechat_loading_item a').on('touchend', function () {
+            limitNum += 6;
+            $(this).closest('.swiper-slide').find('li').each(function (index) {
+                if (index >= (limitNum - 6) && index <= limitNum) {
+                    $(this).show()
+                    var height = $(this).closest('.swiper-slide ul').height() + 70;
+                    $('.swiper-wrapper').css('height', height);
+                }
+            })
+
+            visi = $('.swiper-slide-active li:visible').length;
+            $('.swiper-slide-active .ybwechat_loading_item b').text(all - visi);
+            if (all == visi) {
+                $('.swiper-slide-active .ybwechat_loading_item').css('display','none');
+            }
+        });
+
     }
 </script>
 

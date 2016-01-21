@@ -29,6 +29,9 @@
 						<div></div>
 					</a>
 				</div>
+				<a class='bp_resizebtn_item' href="javascript:;">
+						<div></div>
+				</a>
 				<a class='right_btn share_btn' href="javascript:;"></a>
 			</div>
 			<div class="flipbook-viewport">
@@ -147,7 +150,6 @@
 			<div class="bp_iatab_wrapper">
 				<div class="bp_comment_container">
 					<span class="up_arrow"></span>
-
 					<div class='bp_comment_wrapper'>
 						<table>
 							<tr>
@@ -259,72 +261,32 @@
 						</table>
 					</div>
 					<div class="ybwechat_loading_item">
-						<label><img class='loadingwheel' src="../img/m/loading.gif">加载中...</label>
+						<label><img class='loadingicon' src="../img/m/loading.gif">加载中...</label>
 					</div>
 				</div>
-				<div class='bp_donate_container'>
+				<div class='bp_donatetab_wrapper'>
+					<span class="up_arrow"></span>
 					<div class='bp_donatedperson_wrapper'>
 						<label>赞助过的人</label>
 						<ul>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 						</ul>
 					</div>
-				</div>
-				<div class="bp_praise_container">
-					<span class="up_arrow"></span>
-					<ul>
-						<li>
-							<div class="user_header">
-								<img src="../img/m/user_default_head.png">
-							</div>
-							<p class="user_name">username</p>
-						</li>
-						<li>
-							<div class="user_header">
-								<img src="../img/m/user_default_head.png">
-							</div>
-							<p class="user_name">usernameusername</p>
-						</li>
-						<li>
-							<div class="user_header">
-								<img src="../img/m/user_default_head.png">
-							</div>
-							<p class="user_name">username</p>
-						</li>
-						<li>
-							<div class="user_header">
-								<img src="../img/m/user_default_head.png">
-							</div>
-							<p class="user_name">username</p>
-						</li>
-						<li>
-							<div class="user_header">
-								<img src="../img/m/user_default_head.png">
-							</div>
-							<p class="user_name">username</p>
-						</li>
-						<li>
-							<div class="user_header">
-								<img src="../img/m/user_default_head.png">
-							</div>
-							<p class="user_name">username</p>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -375,34 +337,49 @@
 		<div class='bp_donate_container'>
 			<div class='bp_donate_wrapper'>
 				<h5>做得不错，赞助鼓舞一下</h5>
-				<ul>
-					<li>
-						<a href="javascript:;">
-							<span>1</span>元</a>
-					</li>
-					<li>
-						<a href="javascript:;">
-							<span>1</span>元</a>
-					</li>
-					<li>
-						<a href="javascript:;">
-							<span>1</span>元</a>
-					</li>
-					<li>
-						<a href="javascript:;">
-							<span>1</span>元</a>
-					</li>
-					<li>
-						<a href="javascript:;">
-							<span>1</span>元</a>
-					</li>
-					<li>
-						<a href="javascript:;">
+				<div class='bp_donatepannel_wrapper'>
+					<label>选择赞助金额：</label>
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+
+						<li>
+							<a href="javascript:;">
 							其他金额</a>
-					</li>
-				</ul>
-				<a class='donateimmediatety' href="javascript:;">立即赞助</a>
-				<p>赞助无悔，概不退款</p>
+						</li>
+					</ul>
+					<a class='donatebtn' href="javascript:;">立即赞助</a>
+					<p>赞助无悔，概不退款</p>
+				</div>
+
 			</div>
 		</div>
 		<div class="bp_sendcomment_item">
@@ -560,6 +537,9 @@
 			turnToCurrentpage();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
+				$(this).parent().siblings().removeClass('active').end().addClass('active');
+			});
 		}
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
@@ -576,29 +556,35 @@
 			$('.viewmode_landscape').on("touchend", function() {
 				$('.ybwechatheader_wrapper').toggle();
 			});
-			$('.bp_donate_wrapper').css({
+			$('.viewmode_landscape .bp_donate_wrapper').css({
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
 				}
 			});
+			//点击赞助按钮后弹出赞助框
 			$('.bp_landscape_wrapper ul .donate').on('touchend', function() {
 				$(this).find('a').addClass('active');
 				$('.bp_donate_container').toggleClass('active').on('touchend', function() {
 					$(document).on('touchend', function(e) {
-						if ($(e.target).closest('.bp_donate_wrapper').length == 0 || $(e.target).closest('.donateimmediatety').length == 1) {
+						if ($(e.target).closest('.bp_donate_wrapper').length == 0 || $(e.target).closest('.donatebtn').length == 1) {
 							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
 						};
 						$(this).unbind('touchend');
 					});
-					$('.bp_donate_wrapper ul li a').on('touchend', function() {
+					$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
 						$(this).parent().siblings().removeClass('active').end().addClass('active');
 					});
 				});
 			});
+			//章节选择
 			$('.chapter_slide a').on('touchend', function() {
 				switch ($(this).index()) {
 					case 0:
+						flipbook.turn('previous');
+						break;
+					case 1:
 						flipbook.turn('next');
+						break;
 				}
 			});
 			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
@@ -611,7 +597,6 @@
 						};
 					})
 				});
-
 			});
 		}
 
@@ -800,27 +785,15 @@
 					thisEl = $('.bp_iatab_wrapper>div').eq(index);
 				$this.closest('li').siblings('li').find('a').removeClass('active');
 				$this.addClass('active');
+				console.log(index)
+				thisEl.show().siblings('div').hide();
 				switch (index) {
-					case 0:
-						LOG(index)
-						thisEl.show()
-						thisEl.siblings('div').hide();
-						break;
 					case 1:
-						LOG(index)
-						thisEl.show()
-						thisEl.siblings('div').hide();
-						break;
-					case 2:
-						LOG(index)
-						thisEl.show()
-						thisEl.siblings('div').hide();
+						chooseanddonateEl=$('.bp_donatepannel_wrapper')
+						thisEl.append(chooseanddonateEl);
 						break;
 				}
 			});
-			$('.bp_menu_wrapper li').on('touchend', function() {
-
-			})
 		}
 
 		/*

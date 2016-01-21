@@ -289,6 +289,7 @@
 							</li>
 						</ul>
 					</div>
+					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
 				</div>
 			</div>
 		</div>
@@ -338,50 +339,70 @@
 		</div>
 		<div class='bp_donate_container'>
 			<div class='bp_donate_wrapper'>
-				<h5>做得不错，赞助鼓舞一下</h5>
-				<div class='bp_donatepannel_wrapper'>
-					<label>选择赞助金额：</label>
+				<div class='bp_donatestep1_wrapper'>
+					<h5>选择赞助金额</h5>
+					<div class='bp_donatepannel_wrapper'>
+						<ul>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<input type='input' maxlength='3' placeholder='0'/>
+								<label>元</label>
+							</li>
+						</ul>
+						<a class='donatebtn' href="javascript:;">立即赞助</a>
+						<p>赞助无悔，概不退款</p>
+					</div>
+				</div>
+				<div class='bp_donatestep2_wrapper'>
+					<h4>选择支付方式</h4>
+					<p>赞助<label>小叮当</label>用户:￥<span>20.00</span></p>
 					<ul>
 						<li>
-							<a href="javascript:;">
-								<span>1</span>
-								<label>元</label>
-							</a>
+							<a href="javascript:;"><label>银联在线</label><span class='icon-ok'></span></a>
 						</li>
 						<li>
-							<a href="javascript:;">
-								<span>1</span>
-								<label>元</label>
-							</a>
+							<a href="javascript:;"><label>支付宝</label><span class='icon-ok'></span></a>
 						</li>
 						<li>
-							<a href="javascript:;">
-								<span>1</span>
-								<label>元</label>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<span>1</span>
-								<label>元</label>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<span>1</span>
-								<label>元</label>
-							</a>
-						</li>
-
-						<li>
-							<a href="javascript:;">
-							其他金额</a>
+							<a href="javascript:;"><label>微信支付</label><span class='icon-ok'></span></a>
 						</li>
 					</ul>
-					<a class='donatebtn' href="javascript:;">立即赞助</a>
-					<p>赞助无悔，概不退款</p>
+					<a class='donatebtn' href="javascript:;">立即支付</a>
 				</div>
-
+				<div class='bp_donatestep3_wrapper'>
+					<img src="../img/m/donatesuccessful_00000.png">
+					<label>赞助成功！</label>
+					<a href="javascript:;">+</a>
+				</div>
 			</div>
 		</div>
 		<div class="bp_sendcomment_item">
@@ -420,7 +441,7 @@
 			});
 
 			bookpreviewInit();
-			interactionSwitcher();
+			
 			barrageSwitcher();
 			collideLoading();
 		});
@@ -443,12 +464,36 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook');
-			// $('.flipbook').attr('currentpage',1)
+				//点击赞助按钮后弹出赞助框
+				$('.bp_iwanttodonate_btn').on('touchend', function() {
+					popupDonateDialog();
+				});
+				
+				$('.bp_landscape_wrapper ul .donate').on('touchend', function() {
+					popupDonateDialog();
+				});
 			orientationSensor({
 				portrait: function() {
 					$('.flipbook-viewport').css({
 						'height': windowWidth * 0.5
 					});
+					$('.bp_menu_wrapper li a').on('touchend', function() {
+						var $this = $(this),
+							index = $this.parent().index(),
+							thisEl = $('.bp_iatab_wrapper>div').eq(index);
+						$this.closest('li').siblings('li').find('a').removeClass('active');
+						$this.addClass('active');
+						console.log(index)
+						thisEl.show().siblings('div').hide();
+						switch (index) {
+							case 1:
+								$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
+									$(this).parent().siblings().removeClass('active').end().addClass('active');
+								});
+								break;
+						}
+					});
+					
 					flipbook.attr('currentpage', 1);
 					portraitHandler();
 				},
@@ -456,6 +501,7 @@
 					$('.flipbook-viewport').css({
 						'height': windowHeight
 					});
+
 					flipbook.attr('currentpage', 1);
 					landscapeHandler();
 
@@ -539,19 +585,15 @@
 			});
 			turnInit();
 			turnToCurrentpage();
+			interactionSwitcher();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
-			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-				$(this).parent().siblings().removeClass('active').end().addClass('active');
+			$('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
+				$(this).parent().siblings().removeClass('active')
+				$(this).addClass('active');
 			});
-			$(window).scroll(function(){
-				if ($(window).scrollTop()>flipbookHeight) {
-					console.log($(window).scrollTop())
-					portraitHeader.hide();
-				}else{
-					portraitHeader.show();
-				}
-			})
+			
+
 		}
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
@@ -565,26 +607,14 @@
 			turnToCurrentpage();
 			$('.ybwechatheader_wrapper .title').hide();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
-			$('.viewmode_landscape .bp_donate_wrapper').css({
-				'margin-top': function() {
-					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
-				}
-			});
-			//点击赞助按钮后弹出赞助框
-			$('.bp_landscape_wrapper ul .donate').on('touchend', function() {
-				$(this).find('a').addClass('active');
-				$('.bp_donate_container').toggleClass('active').on('touchend', function() {
-					$(document).on('touchend', function(e) {
-						if ($(e.target).closest('.bp_donate_wrapper').length == 0 || $(e.target).closest('.donatebtn').length == 1) {
-							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
-						};
-						$(this).unbind('touchend');
-					});
-					$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-						$(this).parent().siblings().removeClass('active').end().addClass('active');
-					});
-				});
-			});
+			
+			if (windowWidth<=480) {
+				$('.bp_landscape_wrapper li').css({
+					'width':56
+				})
+			};
+			
+			
 			//章节选择
 			$('.chapter_slide a').on('touchend', function() {
 				switch ($(this).index()) {
@@ -602,13 +632,61 @@
 					$(document).on('touchend', function(e) {
 						if ($(e.target).closest('.bp_sendcomment_item').length == 0) {
 							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
-							commentInputEl.hide();
 						};
-					})
+						$(this).unbind('touchend');
+					});
 				});
 			});
 		}
-
+		function popupDonateDialog($this){
+			var windowHeight=$(window).height(),
+				donateContainer=$('.bp_donate_container'),
+				donateWrapper=$('.bp_donate_wrapper')
+			donateWrapper.css({
+				'margin-top': function() {
+					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
+				}
+			});
+			orientationSensor({
+				portrait:function(){
+					donateWrapper.css({
+						width:'90%'
+					})
+				},
+				landscape:function(){
+					donateWrapper.css({
+						width:'60%'
+					})
+				}
+			})
+			$('.donatebtn').on('touchend', function(){
+				var donatestep1=$('.bp_donatestep1_wrapper'),
+					donatestep2=$('.bp_donatestep2_wrapper'),
+					donatestep3=$('.bp_donatestep3_wrapper');
+				if (donatestep1.css('display')=='block') {
+					donatestep1.hide();
+					donatestep2.show();
+				}else if(donatestep2.css('display')=='block'){
+					donatestep2.hide();
+					donatestep3.show();
+				}
+			})
+			$('.bp_donatestep2_wrapper li').on('touchend', function(){
+				var $this=$(this);
+				$this.siblings().removeClass('active').end().addClass('active');
+			})
+			donateContainer.toggleClass('active');
+			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
+				$(this).parent().siblings().removeClass('active').end().addClass('active');
+			});
+			donateContainer.on('touchend', function(e) {
+				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
+					donateContainer.removeClass('active');
+				};
+				$(this).unbind('touchend');
+			});
+			
+		}
 		function turnToCurrentpage() {
 			var flipbook = $('.flipbook');
 			flipbook.turn('page', Number(flipbook.attr('currentpage')));
@@ -788,21 +866,7 @@
 		 * 评论赞tab切换
 		 * */
 		function interactionSwitcher() {
-			$('.bp_menu_wrapper li a').on('touchend', function() {
-				var $this = $(this),
-					index = $this.parent().index(),
-					thisEl = $('.bp_iatab_wrapper>div').eq(index);
-				$this.closest('li').siblings('li').find('a').removeClass('active');
-				$this.addClass('active');
-				console.log(index)
-				thisEl.show().siblings('div').hide();
-				switch (index) {
-					case 1:
-						chooseanddonateEl=$('.bp_donatepannel_wrapper')
-						thisEl.append(chooseanddonateEl);
-						break;
-				}
-			});
+			
 		}
 
 		/*
@@ -925,7 +989,7 @@
 				return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
 			});
 		}
-
+		//获取随机时间，range表示时间随机范围，offset表示不少于多少秒
 		function getRandomTime(config) {
 			config = $.extend({
 				range: 20,

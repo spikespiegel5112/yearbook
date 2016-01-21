@@ -642,10 +642,21 @@
 .bp_landscape_wrapper ul .share:hover div {
 	background-position-x: 44px;
 }
-.bp_landscape_wrapper ul .bp_resizebtn_item div{
+.bp_resizebtn_item div{
 	background-position-x: 26px;
 }
-
+.viewmode_portrait .bp_resizebtn_item{
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	right: 50px;
+	width: 40px;
+	height: 40px;
+	opacity: 0.6;
+	background-image: url("../img/m/img_sprite_00000.png");
+	background-size: 1000%;
+	background-position: -754px -122px;
+}
 
 
 .chapter_slide {

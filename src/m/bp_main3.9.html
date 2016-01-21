@@ -147,7 +147,6 @@
 			<div class="bp_iatab_wrapper">
 				<div class="bp_comment_container">
 					<span class="up_arrow"></span>
-
 					<div class='bp_comment_wrapper'>
 						<table>
 							<tr>
@@ -259,33 +258,34 @@
 						</table>
 					</div>
 					<div class="ybwechat_loading_item">
-						<label><img class='loadingwheel' src="../img/m/loading.gif">加载中...</label>
+						<label><img class='loadingicon' src="../img/m/loading.gif">加载中...</label>
 					</div>
 				</div>
-				<div class='bp_donate_container'>
+				<div class='bp_donate_wrapper'>
+					<span class="up_arrow"></span>
 					<div class='bp_donatedperson_wrapper'>
 						<label>赞助过的人</label>
 						<ul>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 							<li>
-								<img src="src/img/m/vote_result_avatar_100_100_00000.jpg">
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
 								<span>小惆怅长岑长</span>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="bp_praise_container">
+				<!-- <div class="bp_praise_container">
 					<span class="up_arrow"></span>
 					<ul>
 						<li>
@@ -325,7 +325,7 @@
 							<p class="user_name">username</p>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="bp_landscape_wrapper">
@@ -378,24 +378,35 @@
 				<ul>
 					<li>
 						<a href="javascript:;">
-							<span>1</span>元</a>
+							<span>1</span>
+							<label>元</label>
+						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
-							<span>1</span>元</a>
+							<span>1</span>
+							<label>元</label>
+						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
-							<span>1</span>元</a>
+							<span>1</span>
+							<label>元</label>
+						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
-							<span>1</span>元</a>
+							<span>1</span>
+							<label>元</label>
+						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
-							<span>1</span>元</a>
+							<span>1</span>
+							<label>元</label>
+						</a>
 					</li>
+
 					<li>
 						<a href="javascript:;">
 							其他金额</a>
@@ -576,7 +587,7 @@
 			$('.viewmode_landscape').on("touchend", function() {
 				$('.ybwechatheader_wrapper').toggle();
 			});
-			$('.bp_donate_wrapper').css({
+			$('.viewmode_landscape .bp_donate_wrapper').css({
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
 				}
@@ -800,27 +811,9 @@
 					thisEl = $('.bp_iatab_wrapper>div').eq(index);
 				$this.closest('li').siblings('li').find('a').removeClass('active');
 				$this.addClass('active');
-				switch (index) {
-					case 0:
-						LOG(index)
-						thisEl.show()
-						thisEl.siblings('div').hide();
-						break;
-					case 1:
-						LOG(index)
-						thisEl.show()
-						thisEl.siblings('div').hide();
-						break;
-					case 2:
-						LOG(index)
-						thisEl.show()
-						thisEl.siblings('div').hide();
-						break;
-				}
+				console.log(index)
+				thisEl.show().siblings('div').hide();
 			});
-			$('.bp_menu_wrapper li').on('touchend', function() {
-
-			})
 		}
 
 		/*

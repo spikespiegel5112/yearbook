@@ -1080,6 +1080,7 @@
         if(dataStyle){
             var chooseStyleIndex = dataStyle[0].split('=')[1];
             mySwiper.slideTo(chooseStyleIndex, 1000, true);
+            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(chooseStyleIndex).addClass('swiper-pagination-bullet-active');
         }
     }
 

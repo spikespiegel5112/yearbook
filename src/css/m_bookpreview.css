@@ -145,7 +145,10 @@
 }
 .viewmode_landscape .ybwechatheader_wrapper {
 	position: absolute;
-	background: #000;
+	background:-webkit-linear-gradient(bottom,transparent,#000);
+	-webkit-transition: bottom 1s 2s;
+	-moz-transition: bottom 1s 2s;
+	transition: bottom 1s 2s;
 	z-index: 2;
 }
 
@@ -182,11 +185,11 @@
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
 	margin: 10px 0 0 0;
-	padding: 0.5rem 1rem;
+	padding: 0.3rem 0.6rem;
 	height: 1rem;
 	line-height: 1rem;
 	color: #fff;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -737,7 +740,7 @@
 }
 .bp_donate_wrapper{
 	display: block;
-	width: 50%;
+	width: 60%;
 	padding: 4%;
 }
 .bp_donate_wrapper h5{
@@ -752,8 +755,8 @@
 
 .bp_donatepannel_wrapper{
 	margin: 0 auto;
-	padding: 5%;
-	width: 90%;
+/*	padding: 5%;*/
+	width: 95%;
 	background-color: #fff;
 }
 .bp_donatepannel_wrapper ul{

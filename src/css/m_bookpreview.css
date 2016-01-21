@@ -729,13 +729,15 @@
 .bp_donate_wrapper{
 	display: block;
 	width: 60%;
-	padding: 4%;
+	/*padding: 4%;*/
 	margin: 0 auto;
 	background-color: #fff;
 	border-radius: 10px;
 	top: 10%;
 }
-
+.bp_donate_wrapper > div{
+	padding: 4%;
+}
 .bp_donatedperson_wrapper ul li, .bp_donatepannel_wrapper ul li{
 	display: inline-block;
 	text-align: center;
@@ -846,4 +848,39 @@
 .bp_donatestep2_wrapper ul .active a span{
 	display: block;
 	color: #62af56;
+}
+.bp_donatestep3_wrapper{
+	display: none;
+	width: 92%;
+	height: 260px;
+	background-color: #ff696a;
+	border-radius: 10px;
+	position: relative;
+}
+.bp_donatestep3_wrapper img{
+	display: block;
+	margin: 0 auto;
+	padding: 80px 0 0 0;
+	width: 75px;
+}
+.bp_donatestep3_wrapper a{
+	display: block;
+	margin: 1rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	font-size: 4rem;
+	font-weight: lighter;
+	transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+}
+.bp_donatestep3_wrapper label{
+	display: block;
+	margin: 20px 0 0 0;
+	width: 100%;
+	text-align: center;
+	color:#fff;
+	font-size: 1.2rem;
 }

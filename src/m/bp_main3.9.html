@@ -398,6 +398,11 @@
 					</ul>
 					<a class='donatebtn' href="javascript:;">立即支付</a>
 				</div>
+				<div class='bp_donatestep3_wrapper'>
+					<img src="../img/m/donatesuccessful_00000.png">
+					<label>赞助成功！</label>
+					<a href="javascript:;">+</a>
+				</div>
 			</div>
 		</div>
 		<div class="bp_sendcomment_item">
@@ -656,12 +661,14 @@
 			})
 			$('.donatebtn').on('touchend', function(){
 				var donatestep1=$('.bp_donatestep1_wrapper'),
-					donatestep2=$('.bp_donatestep2_wrapper');
+					donatestep2=$('.bp_donatestep2_wrapper'),
+					donatestep3=$('.bp_donatestep3_wrapper');
 				if (donatestep1.css('display')=='block') {
 					donatestep1.hide();
 					donatestep2.show();
-				}else{
+				}else if(donatestep2.css('display')=='block'){
 					donatestep2.hide();
+					donatestep3.show();
 				}
 			})
 			$('.bp_donatestep2_wrapper li').on('touchend', function(){

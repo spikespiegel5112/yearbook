@@ -289,6 +289,47 @@
 							</li>
 						</ul>
 					</div>
+					<div class='bp_donatepannel_wrapper'>
+						<ul>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span>1</span>
+									<label>元</label>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:;">
+								其他金额</a>
+							</li>
+						</ul>
+						<a class='donatebtn' href="javascript:;">立即赞助</a>
+						<p>赞助无悔，概不退款</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -340,7 +381,6 @@
 			<div class='bp_donate_wrapper'>
 				<h5>做得不错，赞助鼓舞一下</h5>
 				<div class='bp_donatepannel_wrapper'>
-					<label>选择赞助金额：</label>
 					<ul>
 						<li>
 							<a href="javascript:;">
@@ -420,7 +460,7 @@
 			});
 
 			bookpreviewInit();
-			interactionSwitcher();
+			
 			barrageSwitcher();
 			collideLoading();
 		});
@@ -457,6 +497,11 @@
 						'height': windowHeight
 					});
 					flipbook.attr('currentpage', 1);
+					if ($(window).width()<=480) {
+						$('.bp_landscape_wrapper li').css({
+							'width':56
+						})
+					};
 					landscapeHandler();
 
 				}
@@ -539,19 +584,13 @@
 			});
 			turnInit();
 			turnToCurrentpage();
+			interactionSwitcher();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-				$(this).parent().siblings().removeClass('active').end().addClass('active');
+				$(this).parent().siblings().removeClass('active')
+				$(this).addClass('active');
 			});
-			$(window).scroll(function(){
-				if ($(window).scrollTop()>flipbookHeight) {
-					console.log($(window).scrollTop())
-					portraitHeader.hide();
-				}else{
-					portraitHeader.show();
-				}
-			})
 		}
 		// 横屏控制器
 		function landscapeHandler(windowHeight) {
@@ -604,7 +643,7 @@
 							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
 							commentInputEl.hide();
 						};
-					})
+					});
 				});
 			});
 		}
@@ -798,8 +837,12 @@
 				thisEl.show().siblings('div').hide();
 				switch (index) {
 					case 1:
-						chooseanddonateEl=$('.bp_donatepannel_wrapper')
-						thisEl.append(chooseanddonateEl);
+						// $('.bp_donatetab_wrapper .bp_donatedperson_wrapper').detach();
+						// var chooseanddonateEl=$('<div></div>').addClass('bp_donatepannel_wrapper').html($('.bp_donate_container .bp_donatepannel_wrapper').html());
+						// thisEl.append(chooseanddonateEl);
+						$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
+							$(this).parent().siblings().removeClass('active').end().addClass('active');
+						});
 						break;
 				}
 			});
@@ -925,7 +968,7 @@
 				return Math.floor(Math.random() * (45 - 12 + 1) + 12) + 'px';
 			});
 		}
-
+		//获取随机时间，range表示时间随机范围，offset表示不少于多少秒
 		function getRandomTime(config) {
 			config = $.extend({
 				range: 20,

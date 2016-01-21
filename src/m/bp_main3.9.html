@@ -33,6 +33,7 @@
 						<div></div>
 				</a>
 				<a class='right_btn share_btn' href="javascript:;"></a>
+				<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
 			</div>
 			<div class="flipbook-viewport">
 				<div class='flipbook_wrapper' pagecount='19'>
@@ -553,9 +554,9 @@
 			turnToCurrentpage();
 			$('.ybwechatheader_wrapper .title').hide();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
-			$('.viewmode_landscape').on("touchend", function() {
-				$('.ybwechatheader_wrapper').toggle();
-			});
+			// $('.viewmode_landscape').on("touchend", function() {
+			// 	$('.ybwechatheader_wrapper').toggle();
+			// });
 			$('.viewmode_landscape .bp_donate_wrapper').css({
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08

@@ -367,11 +367,52 @@
 	display: none;
 	overflow: hidden;
 }
-
-.bp_donate_wrapper .up_arrow {
+.bp_donatetab_wrapper{
+	display: none;
+	width: 100%;
+	background: #f2f2f2;
+}
+.bp_donatetab_wrapper .up_arrow {
 	right: 50%;
-	margin-right: -10px
-;}
+	margin-right: -10px;
+}
+.bp_donatedperson_wrapper{
+	padding: 1% 4%;
+}
+.bp_donatedperson_wrapper label{
+	font-size: 0.8rem;
+}
+.bp_donatedperson_wrapper ul li{
+	width: 70px;
+	margin: 3% 0;
+}
+.bp_donatedperson_wrapper ul li img{
+	display: block;
+	margin: 0 auto;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+}
+.bp_donatepannel_wrapper ul li{
+	margin: 3% 1% 4% 2%;
+	width: 29%;
+	height: 4rem;
+}
+.bp_donatepannel_wrapper ul li:last-child a{
+	display: inline-block;
+	font-size: 1.1rem;
+	line-height: 4rem;
+}
+
+.bp_donatedperson_wrapper ul li span{
+	display: block;
+	font-size: 0.8rem;
+	color: #666;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 
 .bp_comment_container table {
 	margin: 0 auto;
@@ -639,33 +680,14 @@
 	
 }
 .bp_donate_wrapper{
-
 	margin: 0 auto;
-	
 	background-color: #fff;
 	border-radius: 10px;
 	top: 10%;
 }
-.bp_donatetab_wrapper{
-	width: 100%;
-}
 
-.bp_donatedperson_wrapper ul li{
-	width: 70px;
-	margin: 3% 0;
-}
-.bp_donatedperson_wrapper ul li img{
-	display: block;
-	margin: 0 auto;
-	width: 45px;
-	height: 45px;
-	border-radius: 50%;
-}
 .bp_donatedperson_wrapper ul li, .bp_donatepannel_wrapper ul li{
 	display: inline-block;
-	margin: 3% 1% 4% 2%;
-	width: 29%;
-	height: 4rem;
 	text-align: center;
 	vertical-align: middle;
 	position: relative;
@@ -685,25 +707,20 @@
 	overflow: hidden;
 }
 
-.bp_donatepannel_wrapper ul li:last-child a{
-	display: inline-block;
-	font-size: 1.1rem;
-	line-height: 4rem;
+.bp_donatepannel_wrapper{
+	margin: 0 auto;
+	padding: 5%;
+	width: 90%;
+	background-color: #fff;
 }
-
-.bp_donatedperson_wrapper ul li span{
-	display: block;
-	font-size: 0.8rem;
-	color: #666;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
+.bp_donatepannel_wrapper ul{
+	margin: 0 auto;
+	width: 100%;
 }
 .bp_donatepannel_wrapper ul li label{
 	position: absolute;
 	bottom: 0;
 	right: 20%;
-
 }
 .bp_donatepannel_wrapper ul li a{
 	display: block;
@@ -724,8 +741,9 @@
 }
 .bp_donatepannel_wrapper .donatebtn{
 	display: block;
-	margin: 0 auto 0;
+	margin: 0 auto;
 	padding: 4% 0;
+	width: 95%;
 	font-size: 1.6rem;
 	color: #fff;
 	text-align: center;

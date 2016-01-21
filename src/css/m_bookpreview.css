@@ -102,7 +102,7 @@
 
 .viewmode_portrait {
 	position: relative;
-	padding-bottom: 70px;
+	padding-bottom: 56px;
 	width: 100%;
 }
 
@@ -145,7 +145,10 @@
 }
 .viewmode_landscape .ybwechatheader_wrapper {
 	position: absolute;
-	background: #000;
+	background:-webkit-linear-gradient(bottom,transparent,#000);
+	-webkit-transition: bottom 1s 2s;
+	-moz-transition: bottom 1s 2s;
+	transition: bottom 1s 2s;
 	z-index: 2;
 }
 
@@ -164,7 +167,7 @@
 }
 
 .viewmode_landscape .ybwechatheader_wrapper {
-	display: none;
+	display: block;
 	position: absolute;
 	z-index: 2;
 }
@@ -173,7 +176,27 @@
 	display: none;
 }
 
-.bp_flipbook_container .ybwechatheader_wrapper {
+.viewmode_landscape .share_btn{
+	display: none;
+}
+.bp_iwanttomake_btn{
+	display: none;
+}
+.viewmode_landscape .bp_iwanttomake_btn{
+	display: block;
+	margin: 10px 0 0 0;
+	padding: 0.3rem 0.6rem;
+	height: 1rem;
+	line-height: 1rem;
+	color: #fff;
+	font-size: 0.8rem;
+	background-color: #ff9800;
+	border-radius: 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.viewmode_portrait .ybwechatheader_wrapper {
 	display: block!important;
 	position: fixed;
 	top: 0;
@@ -186,6 +209,15 @@
 	width: 100%;
 	text-align: center;
 	color: #fff;
+}
+
+.viewmode_landscape .bp_paginator_item{
+	margin: 0 auto;
+	width: 5rem;
+	position: relative;
+	top: -100%;
+	left: 0;
+	z-index: 2;
 }
 
 .flipbook-viewport {
@@ -589,14 +621,17 @@
 	background-position-y:-73px;
 }
 .main_container .bp_barrageswitch_item{
+	display: none;
 	width: 75px;
 	height: 2rem;
 }
 
 .viewmode_portrait .bp_barrageswitch_item{
+	display: block;
 	margin: 12px auto;
 	width: 2rem;
 }
+
 .main_container .bp_barrageswitch_item div{
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-size:1000%;
@@ -652,7 +687,7 @@
 	right: 50px;
 	width: 40px;
 	height: 40px;
-	opacity: 0.6;
+	opacity: 0.5;
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-size: 1000%;
 	background-position: -754px -122px;
@@ -705,7 +740,7 @@
 }
 .bp_donate_wrapper{
 	display: block;
-	width: 50%;
+	width: 60%;
 	padding: 4%;
 }
 .bp_donate_wrapper h5{
@@ -720,8 +755,8 @@
 
 .bp_donatepannel_wrapper{
 	margin: 0 auto;
-	padding: 5%;
-	width: 90%;
+/*	padding: 5%;*/
+	width: 95%;
 	background-color: #fff;
 }
 .bp_donatepannel_wrapper ul{

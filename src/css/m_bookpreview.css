@@ -145,7 +145,10 @@
 }
 .viewmode_landscape .ybwechatheader_wrapper {
 	position: absolute;
-	background: #000;
+	background:-webkit-linear-gradient(bottom,transparent,#000);
+	-webkit-transition: bottom 1s 2s;
+	-moz-transition: bottom 1s 2s;
+	transition: bottom 1s 2s;
 	z-index: 2;
 }
 
@@ -752,8 +755,8 @@
 
 .bp_donatepannel_wrapper{
 	margin: 0 auto;
-	padding: 5%;
-	width: 90%;
+/*	padding: 5%;*/
+	width: 95%;
 	background-color: #fff;
 }
 .bp_donatepannel_wrapper ul{

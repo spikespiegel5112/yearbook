@@ -477,14 +477,7 @@
 				$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend', function() {
 					popupDonateDialog();
 				});
-				$('.bp_landscape_wrapper li a').on('touchend', function(){
-					var $this=$(this);
-					if ($this.parent().index()==5&&$this.hasClass('active')){
-						$this.removeClass('active');
-					}else{
-						$this.addClass('active');
-					}
-				});
+
 			orientationSensor({
 				portrait: function() {
 					$('.flipbook-viewport').css({
@@ -634,7 +627,6 @@
 					'width':56
 				});
 			};
-			// $('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').addClass('active');
 			$('.flipbook').on('touchend',function(){
 				$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active');
 			});
@@ -649,6 +641,19 @@
 					});
 				});
 			});
+			$('.bp_landscape_wrapper li a').on('touchend', function(){
+					var $this=$(this);
+					if ($this.index()==4){
+						return;
+					}else if($this.hasClass('active')){
+						alert('aaa')
+						$this.removeClass('active');
+					}else{
+						
+						$this.addClass('active');
+					}
+					
+				});
 		}
 		function popupDonateDialog(){
 			var windowHeight=$(window).height(),
@@ -942,7 +947,7 @@
 			$(".bp_barrageswitch_item").on('touchend', function() {
 				var switcher = $(this).find('a');
 				if (!switcher.hasClass('active')) {
-					switcher.addClass('active')
+					switcher.addClass('active');
 					$(".bp_barrage_wrapper").show();
 					var commentEl = new Array();
 					for (var i = 0; i < commentJSON.commentArr.length; i++) {

@@ -339,7 +339,7 @@
 		</div>
 		<div class='bp_donate_container'>
 			<div class='bp_donate_wrapper'>
-				<div class='bp_donatestep1_wrapper'>
+				<div class='bp_donatestep_wrapper step_1'>
 					<h5>选择赞助金额</h5>
 					<div class='bp_donatepannel_wrapper'>
 						<ul>
@@ -382,7 +382,7 @@
 						<p>赞助无悔，概不退款</p>
 					</div>
 				</div>
-				<div class='bp_donatestep2_wrapper'>
+				<div class='bp_donatestep_wrapper step_2'>
 					<h4>选择支付方式</h4>
 					<p>赞助<label>小叮当</label>用户:￥<span>20.00</span></p>
 					<ul>
@@ -398,7 +398,7 @@
 					</ul>
 					<a class='donatebtn' href="javascript:;">立即支付</a>
 				</div>
-				<div class='bp_donatestep3_wrapper'>
+				<div class='bp_donatestep_wrapper step_3'>
 					<img src="../img/m/donatesuccessful_00000.png">
 					<label>赞助成功！</label>
 					<a href="javascript:;">+</a>
@@ -447,15 +447,24 @@
 		});
 
 		function collideLoading() {
+			var loadingFlag=true;
 			$.collideLoading({
 				onScrollBottom: function() {
-					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>'
-					$('.ybwechat_loading_item').show();
-					setTimeout(function() {
-						$('.bp_comment_wrapper').append(commentEl);
-						$('.ybwechat_loading_item').hide();
-					}, 3000);
+					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>';
 
+					//这个变量用来约束标签页只在打开了评论的情况下可触发底部加载事件
+					var index=$('.bp_menu_wrapper .active').parent().index();
+					//用一个flag来约束加载逻辑使其在完成加载过程前触发的底部碰撞事件无效
+					if (loadingFlag&&index==0) {
+						loadingFlag=false;
+						$('.ybwechat_loading_item').show();
+						setTimeout(function() {
+							$('.bp_comment_wrapper').append(commentEl);
+							$('.ybwechat_loading_item').hide();
+							loadingFlag=true;
+						}, 3000);
+					};
+					
 				}
 			});
 		}
@@ -465,11 +474,7 @@
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook');
 				//点击赞助按钮后弹出赞助框
-				$('.bp_iwanttodonate_btn').on('touchend', function() {
-					popupDonateDialog();
-				});
-				
-				$('.bp_landscape_wrapper ul .donate').on('touchend', function() {
+				$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend', function() {
 					popupDonateDialog();
 				});
 			orientationSensor({
@@ -504,6 +509,21 @@
 
 					flipbook.attr('currentpage', 1);
 					landscapeHandler();
+					//章节选择
+					$('.chapter_slide a').on('touchend', function() {
+						switch ($(this).index()) {
+							case 0:
+								flipbook.turn('previous');
+								break;
+							case 1:
+								flipbook.turn('next');
+								break;
+						}
+					});
+					$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').addClass('active')
+					$('.flipbook').on('touchend',function(){
+						$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active')
+					})
 
 				}
 			});
@@ -585,7 +605,7 @@
 			});
 			turnInit();
 			turnToCurrentpage();
-			interactionSwitcher();
+			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
@@ -605,27 +625,15 @@
 			});
 			turnInit();
 			turnToCurrentpage();
+			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').hide();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
-			
 			if (windowWidth<=480) {
 				$('.bp_landscape_wrapper li').css({
 					'width':56
-				})
+				});
 			};
 			
-			
-			//章节选择
-			$('.chapter_slide a').on('touchend', function() {
-				switch ($(this).index()) {
-					case 0:
-						flipbook.turn('previous');
-						break;
-					case 1:
-						flipbook.turn('next');
-						break;
-				}
-			});
 			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
 				var commentInputEl = $('.bp_sendcomment_item');
 				commentInputEl.toggle().on('touchend', function() {
@@ -638,10 +646,11 @@
 				});
 			});
 		}
-		function popupDonateDialog($this){
+		function popupDonateDialog(){
 			var windowHeight=$(window).height(),
 				donateContainer=$('.bp_donate_container'),
-				donateWrapper=$('.bp_donate_wrapper')
+				donateWrapper=$('.bp_donate_wrapper'),
+				donatestep=$('.bp_donate_wrapper>div');
 			donateWrapper.css({
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
@@ -651,41 +660,55 @@
 				portrait:function(){
 					donateWrapper.css({
 						width:'90%'
-					})
+					});
 				},
 				landscape:function(){
 					donateWrapper.css({
 						width:'60%'
-					})
+					});
 				}
-			})
-			$('.donatebtn').on('touchend', function(){
-				var donatestep1=$('.bp_donatestep1_wrapper'),
-					donatestep2=$('.bp_donatestep2_wrapper'),
-					donatestep3=$('.bp_donatestep3_wrapper');
-				if (donatestep1.css('display')=='block') {
-					donatestep1.hide();
-					donatestep2.show();
-				}else if(donatestep2.css('display')=='block'){
-					donatestep2.hide();
-					donatestep3.show();
-				}
-			})
-			$('.bp_donatestep2_wrapper li').on('touchend', function(){
-				var $this=$(this);
-				$this.siblings().removeClass('active').end().addClass('active');
-			})
-			donateContainer.toggleClass('active');
+			});
+			donateContainer.addClass('active');
+			//选择打赏金额
 			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
 				$(this).parent().siblings().removeClass('active').end().addClass('active');
 			});
+			//选择支付方式
+			$('.bp_donatestep_wrapper:eq(1) li').on('touchend', function(){
+				$(this).siblings().removeClass('active').end().addClass('active');
+			});
+			//点击打赏弹窗周围关闭打赏浮层
 			donateContainer.on('touchend', function(e) {
 				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
-					donateContainer.removeClass('active');
-				};
-				$(this).unbind('touchend');
+					closeDonateDialog()
+				}
 			});
-			
+			$('.bp_donatestep_wrapper').each(function(index){
+				var $this=$(this);
+				switch (index){
+					case 0:
+						$this.find('.donatebtn').on('touchend',function(){
+							if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+								$this.hide().next().show();
+							};
+						});
+						break;
+					case 1:
+						$this.find('.donatebtn').on('touchend',function(){
+							if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+								$this.hide().next().show();
+							};
+						});
+						break;
+					case 2:
+						$this.find('a').on('touchend',function(){
+							$('.bp_donate_container').removeClass('active');
+							$this.prev().prev().show();
+							$this.hide();
+						});
+						break;
+				}
+			});
 		}
 		function turnToCurrentpage() {
 			var flipbook = $('.flipbook');
@@ -791,6 +814,7 @@
 					},
 					start: function(e, pageObj) {},
 					end: function(e, pageObj) {
+						
 						flipbookResize();
 						$('.bp_paginator_item label').text(flipbook.turn('page'));
 					},
@@ -860,13 +884,6 @@
 					nextBtn.show();
 				}
 			}
-		}
-
-		/*
-		 * 评论赞tab切换
-		 * */
-		function interactionSwitcher() {
-			
 		}
 
 		/*
@@ -996,6 +1013,11 @@
 				offset: 15
 			}, config);
 			return Math.random(1) * config.range + config.offset;
+		}
+		function closeDonateDialog(){
+			$('.bp_donate_container').removeClass('active');
+			$('.bp_donatestep_wrapper:eq(0)').show();
+			$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
 		}
 	</script>
 </body>

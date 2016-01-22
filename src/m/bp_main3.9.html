@@ -351,25 +351,25 @@
 							</li>
 							<li>
 								<a href="javascript:;">
-									<span>1</span>
+									<span>2</span>
 									<label>元</label>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;">
-									<span>1</span>
+									<span>5</span>
 									<label>元</label>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;">
-									<span>1</span>
+									<span>10</span>
 									<label>元</label>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;">
-									<span>1</span>
+									<span>20</span>
 									<label>元</label>
 								</a>
 							</li>
@@ -477,6 +477,14 @@
 				$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend', function() {
 					popupDonateDialog();
 				});
+				$('.bp_landscape_wrapper li a').on('touchend', function(){
+					var $this=$(this);
+					if ($this.parent().index()==5&&$this.hasClass('active')){
+						$this.removeClass('active');
+					}else{
+						$this.addClass('active');
+					}
+				});
 			orientationSensor({
 				portrait: function() {
 					$('.flipbook-viewport').css({
@@ -498,7 +506,6 @@
 								break;
 						}
 					});
-					
 					flipbook.attr('currentpage', 1);
 					portraitHandler();
 				},
@@ -520,11 +527,6 @@
 								break;
 						}
 					});
-					$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').addClass('active')
-					$('.flipbook').on('touchend',function(){
-						$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active')
-					})
-
 				}
 			});
 
@@ -626,14 +628,16 @@
 			turnInit();
 			turnToCurrentpage();
 			closeDonateDialog();
-			$('.ybwechatheader_wrapper .title').hide();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
 			if (windowWidth<=480) {
 				$('.bp_landscape_wrapper li').css({
 					'width':56
 				});
 			};
-			
+			// $('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').addClass('active');
+			$('.flipbook').on('touchend',function(){
+				$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active');
+			});
 			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
 				var commentInputEl = $('.bp_sendcomment_item');
 				commentInputEl.toggle().on('touchend', function() {
@@ -684,11 +688,6 @@
 			$('.bp_donatepannel_wrapper ul li').on('touchend', function() {
 				var $this=$(this)
 				$this.siblings().removeClass('active').end().addClass('active');
-				// if () {
-				// 	;
-				// }else{
-				// 	;
-				// }
 				$this.parent().hasClass('active')?$this.siblings('label').show():$this.siblings('label').hide()
 			});
 			//选择支付方式
@@ -723,6 +722,7 @@
 							$('.bp_donate_container').removeClass('active');
 							$this.prev().prev().show();
 							$this.hide();
+							closeDonateDialog()
 						});
 						break;
 				}
@@ -1036,6 +1036,7 @@
 			$('.bp_donate_container').removeClass('active');
 			$('.bp_donatestep_wrapper:eq(0)').show();
 			$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
+			$('.bp_landscape_wrapper .donate a').removeClass('active');
 		}
 	</script>
 </body>

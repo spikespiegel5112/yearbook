@@ -349,13 +349,13 @@
 	background-color: #949494;
 	border-radius: 50%;
 	color: #fff;
-	font-size: 16px;
+	font-size: 24px;
 }
 .bp_menu_wrapper .active .donate{
 	background-color: #70758c;
 }
 .bp_menu_wrapper li .active div {
-	opacity: 0.9;
+	background-position: -223px -155px;
 }
 
 .bp_menu_wrapper li .comment {
@@ -508,8 +508,8 @@
 	margin: 0 auto;
 	width: 100%;
 	background-color: #fafafa;
-	border: 1px solid #bebebp_iatab_wrapper;
-	border-radius: 6px;
+	border: 1px solid #bebebe;
+/*	border-radius: 6px;*/
 	overflow: hidden;
 }
 
@@ -646,19 +646,19 @@
 	background-position-x: 110px;
 }
 .bp_landscape_wrapper ul .comment div {
-	background-position-x: 156px;
+	background-position-x: 172px;
 }
 
-.bp_landscape_wrapper ul .comment:hover div {
-	background-position-x: 137px;
+.bp_landscape_wrapper ul .comment .active div {
+	background-position-x: 153px;
 }
 
 .bp_landscape_wrapper ul .praise div {
-	background-position-x: 100px;
+	background-position-x: 114px;
 }
 
-.bp_landscape_wrapper ul .praise:hover div {
-	background-position-x: 81px;
+.bp_landscape_wrapper ul .praise .active  div {
+	background-position-x: 79px;
 }
 .bp_landscape_wrapper ul .donate div{
 	background-image:none;
@@ -676,7 +676,7 @@
 .bp_landscape_wrapper ul .share div {
 	background-position-x: 60px;
 }
-.bp_landscape_wrapper ul .share:hover div {
+.bp_landscape_wrapper ul .share .active div {
 	background-position-x: 44px;
 }
 .bp_resizebtn_item div{
@@ -787,14 +787,11 @@
 	border: 2px solid #df7262;
 	vertical-align: middle;
 }
-.bp_donatestep_wrapper.step_1 ul li input{
-	line-height: 2rem;
-}
 .bp_donatestep_wrapper.step_1 ul li a span{
 	line-height: 3.6rem;
 }
 .bp_donatestep_wrapper.step_1 ul li a span, .bp_donatestep_wrapper.step_1 ul li input{
-	font-size: 2rem;
+	font-size: 1.8rem;
 	text-align: center;
 	color: #df7262;
 }

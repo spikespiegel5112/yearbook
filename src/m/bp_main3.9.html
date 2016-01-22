@@ -374,7 +374,7 @@
 								</a>
 							</li>
 							<li>
-								<input type='input' maxlength='3' placeholder='自定义'/>
+								<input type='tel' maxlength='3' placeholder='自定义'/>
 								<label>元</label>
 							</li>
 						</ul>
@@ -608,10 +608,10 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
-			$('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
-				$(this).parent().siblings().removeClass('active')
-				$(this).addClass('active');
-			});
+			// $('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
+			// 	$(this).parent().siblings().removeClass('active')
+			// 	$(this).addClass('active');
+			// });
 			
 
 		}
@@ -650,7 +650,8 @@
 			var windowHeight=$(window).height(),
 				donateContainer=$('.bp_donate_container'),
 				donateWrapper=$('.bp_donate_wrapper'),
-				donatestep=$('.bp_donate_wrapper>div');
+				donatestep=$('.bp_donate_wrapper>div'),
+				lastChildLiEl=$('.bp_donatepannel_wrapper li:last-child')
 			donateWrapper.css({
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
@@ -669,9 +670,26 @@
 				}
 			});
 			donateContainer.addClass('active');
+			if (true) {};
+			lastChildLiEl.find('label').hide();
+			lastChildLiEl.find('input').on('focus',function(){
+				if ($(this).parent().hasClass('active')) {
+					$(this).siblings('label').show();
+				}else{
+					$(this).siblings('label').show();
+				}
+				
+			});
 			//选择打赏金额
-			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-				$(this).parent().siblings().removeClass('active').end().addClass('active');
+			$('.bp_donatepannel_wrapper ul li').on('touchend', function() {
+				var $this=$(this)
+				$this.siblings().removeClass('active').end().addClass('active');
+				// if () {
+				// 	;
+				// }else{
+				// 	;
+				// }
+				$this.parent().hasClass('active')?$this.siblings('label').show():$this.siblings('label').hide()
 			});
 			//选择支付方式
 			$('.bp_donatestep_wrapper:eq(1) li').on('touchend', function(){

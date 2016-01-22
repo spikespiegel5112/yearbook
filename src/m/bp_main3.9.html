@@ -520,6 +520,11 @@
 								break;
 						}
 					});
+					$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').addClass('active')
+					$('.flipbook').on('touchend',function(){
+						$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active')
+					})
+
 				}
 			});
 
@@ -600,6 +605,7 @@
 			});
 			turnInit();
 			turnToCurrentpage();
+			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
@@ -619,15 +625,15 @@
 			});
 			turnInit();
 			turnToCurrentpage();
+			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').hide();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
-			
 			if (windowWidth<=480) {
 				$('.bp_landscape_wrapper li').css({
 					'width':56
-				})
+				});
 			};
-
+			
 			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
 				var commentInputEl = $('.bp_sendcomment_item');
 				commentInputEl.toggle().on('touchend', function() {
@@ -640,7 +646,7 @@
 				});
 			});
 		}
-		function popupDonateDialog($this){
+		function popupDonateDialog(){
 			var windowHeight=$(window).height(),
 				donateContainer=$('.bp_donate_container'),
 				donateWrapper=$('.bp_donate_wrapper'),
@@ -674,12 +680,7 @@
 			//点击打赏弹窗周围关闭打赏浮层
 			donateContainer.on('touchend', function(e) {
 				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
-					function closeDonateDialog(){
-						donateContainer.removeClass('active');
-						$('.bp_donatestep_wrapper:eq(0)').show();
-						$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
-					}
-					
+					closeDonateDialog()
 				}
 			});
 			$('.bp_donatestep_wrapper').each(function(index){
@@ -1012,6 +1013,11 @@
 				offset: 15
 			}, config);
 			return Math.random(1) * config.range + config.offset;
+		}
+		function closeDonateDialog(){
+			$('.bp_donate_container').removeClass('active');
+			$('.bp_donatestep_wrapper:eq(0)').show();
+			$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
 		}
 	</script>
 </body>

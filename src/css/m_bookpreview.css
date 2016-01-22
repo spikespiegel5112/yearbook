@@ -137,32 +137,34 @@
 	border: none;
 }
 .viewmode_landscape .ybwechatheader_wrapper {
+	display: block;
 	position: absolute;
+	top: -3em;
 	background:-webkit-linear-gradient(bottom,transparent,#000);
-	-webkit-transition: bottom 1s 2s;
-	-moz-transition: bottom 1s 2s;
-	transition: bottom 1s 2s;
 	z-index: 2;
+}
+.viewmode_landscape .ybwechatheader_wrapper.active{
+	top: 0;
+	-webkit-transition: top 1s;
+	-moz-transition: top 1s;
+	transition: top 1s;
+	
 }
 
 .viewmode_landscape .bp_landscape_wrapper {
 	display: block;
-	bottom: 0;
 	background:-webkit-linear-gradient(top,transparent,#000);
-	-webkit-transition: bottom 1s 2s;
-	-moz-transition: bottom 1s 2s;
-	transition: bottom 1s 2s;
+}
+.viewmode_landscape .bp_landscape_wrapper.active{
+	bottom: 0;
+	-webkit-transition: bottom 1s;
+	-moz-transition: bottom 1s;
+	transition: bottom 1s;
 }
 
 .viewmode_landscape .bp_flipbook_container {
 	position: fixed;
 	height: 100%;
-}
-
-.viewmode_landscape .ybwechatheader_wrapper {
-	display: block;
-	position: absolute;
-	z-index: 2;
 }
 
 .viewmode_landscape .bp_portrait_wrapper {
@@ -503,8 +505,8 @@
 
 .bp_sendcomment_item .input_box {
 	position: relative;
-	margin: 10px auto;
-	width: 90%;
+	margin: 0 auto;
+	width: 100%;
 	background-color: #fafafa;
 	border: 1px solid #bebebp_iatab_wrapper;
 	border-radius: 6px;

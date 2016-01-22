@@ -344,6 +344,7 @@
     background-size: contain;
     overflow: hidden;
     clear: both;
+    max-width: 640px;
 }
 
 .tpl_list .item ul li {
@@ -364,6 +365,13 @@
 
     .tpl_list .item ul li {
         margin: 0 6px;
+    }
+}
+
+@media only screen and (min-width: 640px){
+    .yb_hot_tpl .tpl_list .item{
+        background-position: 0 31px;
+        height: 175px;
     }
 }
 

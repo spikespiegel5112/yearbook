@@ -413,7 +413,7 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <ul>
+                <ul class="hidden">
                     <li>
                         <a class='cover' href="javascript:;">
                             <span></span>
@@ -436,6 +436,10 @@
                 <!--<div class='ybwechat_loading_item'>
                     <a href="javascript:;">点击加载更多（<b>6</b>）</a>
                 </div>-->
+                <div class='empty_item'>
+                    <img src="../img/m/bierde_16.png">
+                    <p>对不起，没有符合要求的书册！</p>
+                </div>
             </div>
             <div class="swiper-slide">
                 <ul>
@@ -872,47 +876,47 @@
             <h4>互动册</h4>
             <ul>
                 <li>
-                    <a href="booklist_ia3.9.html/#2" data-style="2">
+                    <a href="booklist_ia3.9.html?data-style=2" data-style="2">
                         宝宝
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="3">
+                    <a href="booklist_ia3.9.html?data-style=3" data-style="3">
                         旅行
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="4">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="1">
                         爱情
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="5">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="3">
                         聚会
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="6">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="1">
                         父母
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="6">
+                    <a href="booklist_ia3.9.html?data-style=4" data-style="3">
                         家庭
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="7">
+                    <a href="booklist_ia3.9.html?data-style=3" data-style="0">
                         写真
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="0">
+                    <a href="booklist_ia3.9.html?data-style=0" data-style="0">
                         作品
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-style="1">
+                    <a href="booklist_ia3.9.html?data-style=1" data-style="1">
                         圈子
                     </a>
                 </li>
@@ -990,7 +994,7 @@
         choosetemplate();
         showTplClassify();
         initPhotoBookListSwiper();
-        chooseTplStyle();
+//        chooseTplStyle();
     });
 
     function choosetemplate() {
@@ -1036,24 +1040,48 @@
             },
             onInit: function(swiper){
                 $('.swiper-slide').each(function(){
-                    $(this).find('li:gt(8)').hide();
+                    if($(this).find('li').length > 9){
+                        $(this).find('li:gt(8)').hide();
+                        $(this).find('.ybwechat_loading_item').css('display','block');
+                        var swiperHeight = $(this).find('ul').height() + 70;
+
+                        $(this).closest('.swiper-wrapper').height(swiperHeight);
+
+                    }
+                    var minHeight = $(window).height() - 230;
+                    $(this).css('min-height',minHeight);
                     loadMoreTpl();
                 })
             },
-            onSlideChangeStart: function(swiper){
+            onSlideChangeEnd: function(swiper){
                 loadMoreTpl();
                 var index = mySwiper.activeIndex- 1,
                         width = $('.swiper-pagination-bullet').width(),
                         left = (index)*(width);
                 $('.swiper-pagination').scrollLeft(left);
-            },
-            onTouchEnd: function(swiper){
-                /*var index = mySwiper.activeIndex- 1,
-                        width = $('.swiper-pagination-bullet').width(),
-                        left = (index)*(width);
-                $('.swiper-pagination').scrollLeft(left);*/
             }
         });
+
+        //页面内选择模板类别
+        $('.classify li a').on('click',function(e){
+            var activeIndex = $(this).attr('data-style');
+            $('.tpl_classify_con').hide();
+            mySwiper.slideTo(activeIndex, 1000, true);
+            var scrollLeft = $('.swiper-pagination-bullet').width()*(activeIndex-1);
+            $('.swiper-pagination').scrollLeft(scrollLeft);
+            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(activeIndex).addClass('swiper-pagination-bullet-active');
+            e.stopPropagation();
+        });
+
+        //跨页面选择模板类别
+        var href = window.location.href;
+        var reg = /(data-style=[0-9])$/g;
+        var dataStyle = href.match(reg);
+        if(dataStyle){
+            var chooseStyleIndex = dataStyle[0].split('=')[1];
+            mySwiper.slideTo(chooseStyleIndex, 1000, true);
+            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(chooseStyleIndex).addClass('swiper-pagination-bullet-active');
+        }
     }
 
     function loadMoreTpl() {
@@ -1064,13 +1092,13 @@
         var visi = $('.swiper-slide-active li:visible').length;
 
         if (all > 9) {
-            $('.swiper-slide-active .ybwechat_loading_item').removeClass('hidden');
+            $('.swiper-slide-active .ybwechat_loading_item').css('display','block');
         }
 
         $('.swiper-slide-active .ybwechat_loading_item b').text(all - visi);
 
         if (all == visi) {
-            $('.swiper-slide-active .ybwechat_loading_item').addClass('hidden');
+            $('.swiper-slide-active .ybwechat_loading_item').css('display','none');
         }
 
         $('.swiper-slide-active .ybwechat_loading_item a').on('touchend', function () {
@@ -1086,27 +1114,12 @@
             visi = $('.swiper-slide-active li:visible').length;
             $('.swiper-slide-active .ybwechat_loading_item b').text(all - visi);
             if (all == visi) {
-                $('.swiper-slide-active .ybwechat_loading_item').addClass('hidden');
+                $('.swiper-slide-active .ybwechat_loading_item').css('display','none');
             }
         });
 
     }
 
-
-    //页面内选择模板类别
-    function chooseTplStyle(){
-        var mySwiper = new Swiper('.booklist_wrapper .swiper-container',{
-        })
-        $('.classify li a').on('click',function(e){
-            var activeIndex = $(this).attr('data-style');
-            $('.tpl_classify_con').hide();
-            mySwiper.slideTo(activeIndex, 1000, false);
-            var scrollLeft = $('.swiper-pagination-bullet').width()*(activeIndex-1);
-            $('.swiper-pagination').scrollLeft(scrollLeft);
-            $('.swiper-pagination span').removeClass('swiper-pagination-bullet-active').eq(activeIndex).addClass('swiper-pagination-bullet-active');
-            e.stopPropagation();
-        });
-    }
 </script>
 
 </html>

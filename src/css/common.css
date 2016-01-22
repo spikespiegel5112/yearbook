@@ -2677,13 +2677,40 @@ nav .pagination li a:active {
 
 .bp_sharelist_wrapper {
 	display: none;
-	padding: 15px;
-	width: 170px;
-	height: 60px;
+	padding: 10px 15px;
+	width: 185px;
+	height: 50px;
 	background-color: #fff;
 	border: 1px solid #ddd;
 	position: absolute;
 	font-size: 13px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.bp_sharelist_wrapper::before{
+    content: " ";
+    position: absolute;
+    left: -9px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 9px solid #fff;
+    z-index: 1;
+}
+
+.bp_sharelist_wrapper::after{
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 9px solid #ddd;
 }
 
 .bp_sharelist_wrapper ul {
@@ -2692,35 +2719,36 @@ nav .pagination li a:active {
 
 .bp_sharelist_wrapper ul li {
 	float: left;
-	margin: 10px 0 0 10px;
+	margin: 0 0 0 10px;
 	overflow: hidden;
 }
 
 .bp_sharelist_wrapper ul li:first-child {
-	margin: 10px 0 0 0;
+	margin: 0;
 }
 
 .bp_sharelist_wrapper ul li a {
 	float: left;
-	width: 35px;
-	height: 35px;
-	background-image: url(../img/imgsprite_yb3_wbl_00000.png);
+	width: 30px;
+	height: 30px;
+	background-image: url(../img/bp_share_icons.png);
+    background-repeat: no-repeat;
 }
 
 .bp_sharelist_wrapper .weibo a {
-	background-position: -197px -202px;
+	background-position: 0 0;
 }
 
 .bp_sharelist_wrapper .qqzone a {
-	background-position: -237px -202px;
+	background-position: -30px 0;
 }
 
 .bp_sharelist_wrapper .wechat a {
-	background-position: -277px -202px;
+	background-position: -60px 0;
 }
 
 .bp_sharelist_wrapper .renren a {
-	background-position: -317px -202px;
+	background-position: -90px 0;
 }
 
 
@@ -3074,11 +3102,4 @@ nav .pagination li a:active {
 
 .server_online_main_im .open_im:hover div{
 	background: #70ca5d url(../img/qqserver/open_im.png) no-repeat -27px 0;
-}
-
-/*1.15 swh add loadThumb*/
-.loadThumb{
-    position: absolute;
-    display: none;
-    opacity: 0;
 }

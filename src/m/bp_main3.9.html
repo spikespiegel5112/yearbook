@@ -339,7 +339,7 @@
 		</div>
 		<div class='bp_donate_container'>
 			<div class='bp_donate_wrapper'>
-				<div class='bp_donatestep1_wrapper'>
+				<div class='bp_donatestep_wrapper step_1'>
 					<h5>选择赞助金额</h5>
 					<div class='bp_donatepannel_wrapper'>
 						<ul>
@@ -382,7 +382,7 @@
 						<p>赞助无悔，概不退款</p>
 					</div>
 				</div>
-				<div class='bp_donatestep2_wrapper'>
+				<div class='bp_donatestep_wrapper step_2'>
 					<h4>选择支付方式</h4>
 					<p>赞助<label>小叮当</label>用户:￥<span>20.00</span></p>
 					<ul>
@@ -398,7 +398,7 @@
 					</ul>
 					<a class='donatebtn' href="javascript:;">立即支付</a>
 				</div>
-				<div class='bp_donatestep3_wrapper'>
+				<div class='bp_donatestep_wrapper step_3'>
 					<img src="../img/m/donatesuccessful_00000.png">
 					<label>赞助成功！</label>
 					<a href="javascript:;">+</a>
@@ -455,7 +455,6 @@
 						$('.bp_comment_wrapper').append(commentEl);
 						$('.ybwechat_loading_item').hide();
 					}, 3000);
-
 				}
 			});
 		}
@@ -465,11 +464,7 @@
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook');
 				//点击赞助按钮后弹出赞助框
-				$('.bp_iwanttodonate_btn').on('touchend', function() {
-					popupDonateDialog();
-				});
-				
-				$('.bp_landscape_wrapper ul .donate').on('touchend', function() {
+				$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend', function() {
 					popupDonateDialog();
 				});
 			orientationSensor({
@@ -504,7 +499,17 @@
 
 					flipbook.attr('currentpage', 1);
 					landscapeHandler();
-
+					//章节选择
+					$('.chapter_slide a').on('touchend', function() {
+						switch ($(this).index()) {
+							case 0:
+								flipbook.turn('previous');
+								break;
+							case 1:
+								flipbook.turn('next');
+								break;
+						}
+					});
 				}
 			});
 
@@ -615,17 +620,7 @@
 			};
 			
 			
-			//章节选择
-			$('.chapter_slide a').on('touchend', function() {
-				switch ($(this).index()) {
-					case 0:
-						flipbook.turn('previous');
-						break;
-					case 1:
-						flipbook.turn('next');
-						break;
-				}
-			});
+			
 			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
 				var commentInputEl = $('.bp_sendcomment_item');
 				commentInputEl.toggle().on('touchend', function() {
@@ -641,12 +636,14 @@
 		function popupDonateDialog($this){
 			var windowHeight=$(window).height(),
 				donateContainer=$('.bp_donate_container'),
-				donateWrapper=$('.bp_donate_wrapper')
+				donateWrapper=$('.bp_donate_wrapper'),
+				donatestep=$('.bp_donate_wrapper>div');
 			donateWrapper.css({
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
 				}
 			});
+			donatestep.eq(0).addClass('active');
 			orientationSensor({
 				portrait:function(){
 					donateWrapper.css({
@@ -658,24 +655,12 @@
 						width:'60%'
 					})
 				}
-			})
-			$('.donatebtn').on('touchend', function(){
-				var donatestep1=$('.bp_donatestep1_wrapper'),
-					donatestep2=$('.bp_donatestep2_wrapper'),
-					donatestep3=$('.bp_donatestep3_wrapper');
-				if (donatestep1.css('display')=='block') {
-					donatestep1.hide();
-					donatestep2.show();
-				}else if(donatestep2.css('display')=='block'){
-					donatestep2.hide();
-					donatestep3.show();
-				}
-			})
+			});
+			donateContainer.addClass('active');
 			$('.bp_donatestep2_wrapper li').on('touchend', function(){
 				var $this=$(this);
 				$this.siblings().removeClass('active').end().addClass('active');
-			})
-			donateContainer.toggleClass('active');
+			});
 			$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
 				$(this).parent().siblings().removeClass('active').end().addClass('active');
 			});
@@ -683,9 +668,37 @@
 				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
 					donateContainer.removeClass('active');
 				};
-				$(this).unbind('touchend');
 			});
-			
+			$('.bp_donatestep_wrapper').each(function(index){
+				var $this=$(this);
+				switch (index){
+					case 0:
+						$this.find('.donatebtn').on('touchend',function(){
+							$this.hide().next().show();
+						});
+						break;
+					case 1:
+						$this.find('.donatebtn').on('touchend',function(){
+							$this.hide().next().show();
+						});
+						break;
+					case 2:
+						$this.find('a').on('touchend',function(){
+							$('.bp_donate_container').removeClass('active');
+							setTimeout(function(){
+								$this.prev().prev().show();
+								$this.hide();
+							},500)
+						});
+						break;
+				}
+			})
+			$('.bp_donatestep_wrapper').on('touchend', function(){
+				donatestep1.show();
+				donatestep3.hide();
+				donateContainer.removeClass('active');
+				
+			})
 		}
 		function turnToCurrentpage() {
 			var flipbook = $('.flipbook');
@@ -791,6 +804,7 @@
 					},
 					start: function(e, pageObj) {},
 					end: function(e, pageObj) {
+						
 						flipbookResize();
 						$('.bp_paginator_item label').text(flipbook.turn('page'));
 					},

@@ -265,6 +265,10 @@
 					<div class="ybwechat_loading_item">
 						<label><img class='loadingicon' src="../img/m/loading.gif">加载中...</label>
 					</div>
+					<div class='bp_empty_wrapper'>
+						<img src="../img/m/preview_comment_empty_1_00000.png">
+						<p>暂无数据</p>
+					</div>
 				</div>
 				<div class='bp_donatetab_wrapper'>
 					<span class="up_arrow"></span>
@@ -433,9 +437,14 @@
 						var availHeight = $(window).height(),
 							scrollTop = $(window).scrollTop(),
 							docHeight = $(document).height();
-						if (availHeight + scrollTop >= docHeight) {
-							options.onScrollBottom();
+						if (availHeight==docHeight&&scrollTop==0) {
+							return;
+						}else{
+							if (availHeight + scrollTop >= docHeight) {
+								options.onScrollBottom();
+							}
 						}
+						
 					});
 				}
 			});
@@ -540,7 +549,10 @@
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			if (window.eventFlagPortrait) {
-				alert('portraitFlag '+window.eventFlagPortrait)
+				// alert('portraitFlag '+window.eventFlagPortrait);
+				if ($('.bp_comment_wrapper table').length==0) {
+					$('.bp_empty_wrapper').show();
+				};
 				$('.bp_menu_wrapper li a').on('touchend', function() {
 					var $this = $(this),
 						index = $this.parent().index(),
@@ -586,7 +598,7 @@
 				});
 			};
 			if (window.eventFlagLandscape) {
-				alert('landscapeFlag '+window.eventFlagLandscape);
+				// alert('landscapeFlag '+window.eventFlagLandscape);
 				$('.flipbook').on('touchend',function(){
 					$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active');
 				});

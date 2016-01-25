@@ -681,22 +681,30 @@
 	background-position-x: 44px;
 }
 .bp_resizebtn_item div{
-	background-position-x: 26px;
+	background-image: url("../img/m/img_sprite_00000.png");
+	background-size: 1000%;
+	
 }
-.viewmode_portrait .bp_resizebtn_item{
+
+.viewmode_portrait .bp_resizebtn_item.active div{
+	background-position: -477px -122px;
+}
+.viewmode_portrait .bp_resizebtn_item div{
 	display: inline-block;
 	position: absolute;
-	top: 10px;
+	top: 8px;
 	right: 50px;
 	width: 40px;
 	height: 40px;
-	opacity: 0.5;
-	background-image: url("../img/m/img_sprite_00000.png");
-	background-size: 1000%;
-	background-position: -754px -122px;
+	opacity: 0.6;
+	background-position: -444px -122px;
 }
-
-
+.viewmode_landscape .bp_resizebtn_item div{
+	background-position: -267px -122px;
+}
+.viewmode_landscape .bp_resizebtn_item.active div{
+	background-position: -287px -122px;
+}
 .chapter_slide {
 	float: right;
 }

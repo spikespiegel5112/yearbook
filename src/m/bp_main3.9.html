@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
 	<link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css" />
 	<!-- endbuild -->
-	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
+	<link rel="stylesheet" href="../assets/css/iconfont.css" type="text/css" />
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 					<label>1</label>/<span>33</span>
 				</div>
 				<a class='bp_resizebtn_item' href="javascript:;">
-						<div></div>
+					<div></div>
 				</a>
 				<a class='right_btn share_btn' href="javascript:;"></a>
 				<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
@@ -501,7 +501,9 @@
 					return Number(flipbook.attr('currentpage')) - 2
 				});
 			});
-
+			$('.bp_resizebtn_item').on('touchend', function(){
+				$(this).toggleClass('active');
+			})
 			//监听翻转事件
 			$(window).on("orientationchange", function(event) {
 				orientationHandler(event, {

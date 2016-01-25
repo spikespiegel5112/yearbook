@@ -478,20 +478,6 @@
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
 			});
-			
-			//监听翻转事件
-			$(window).on("orientationchange", function(event) {
-				orientationHandler(event, {
-					portrait: function() {
-						flipbook.turn("destroy");
-						portraitHandler();
-					},
-					landscape: function() {
-						flipbook.turn("destroy");
-						landscapeHandler();
-					}
-				});
-			});
 			// 翻页，同时改变currentpage属性变量的值
 			$('.flipbook_nextpage_btn').on('touchend', function() {
 				flipbook.turn('next');
@@ -505,24 +491,35 @@
 					return Number(flipbook.attr('currentpage')) - 2
 				});
 			});
-			
+
+			//监听翻转事件
+			$(window).on("orientationchange", function(event) {
+				orientationHandler(event, {
+					portrait: function() {
+						flipbook.turn("destroy");
+						portraitHandler();
+					},
+					landscape: function() {
+						flipbook.turn("destroy");
+						landscapeHandler();
+					}
+				});
+			});
+
 			orientationSensor({
 				portrait: function() {
 					$('.flipbook-viewport').css({
 						'height': windowWidth * 0.5
 					});
-					
 					flipbook.attr('currentpage', 1);
-					portraitHandler(window.eventFlagPortrait);
+					portraitHandler();
 				},
 				landscape: function() {
 					$('.flipbook-viewport').css({
 						'height': windowHeight
 					});
-
 					flipbook.attr('currentpage', 1);
 					landscapeHandler();
-					
 				}
 			});
 		}
@@ -562,7 +559,7 @@
 				});
 				window.eventFlagPortrait=false;
 			};
-			$('.bp_landscape_wrapper').removeClass('active');
+			$('.bp_landscape_wrapper, .ybwechatheader_wrapper').removeClass('active');
 			// $('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
 			// 	$(this).parent().siblings().removeClass('active')
 			// 	$(this).addClass('active');

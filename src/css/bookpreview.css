@@ -918,7 +918,7 @@
 	border-radius: 10px;
     position: relative;
 }
-.bp_donatedperson_wrapper ul li, .bp_donatestep_wrapper.step_1 ul li{
+.bp_donatedperson_wrapper ul li, .bp_donatestep_wrapper ul li{
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
@@ -947,14 +947,16 @@
 }
 
 .bp_donatedperson_wrapper{
+    margin: 0 auto;
     padding: 0 20px;
+    width: 90%;
     overflow: hidden;
 }
 .bp_donatedperson_wrapper label{
     float: left;
-    height: 25px;
-    line-height: 25px;
-    font-size: 0.8rem;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
    
 }
 .bp_donatedperson_wrapper ul{
@@ -962,7 +964,7 @@
 }
 .bp_donatedperson_wrapper ul li{
     width: 30px;
-    margin: 3% 0;
+    margin: 5px 0;
 }
 .bp_donatedperson_wrapper ul li img{
     display: block;
@@ -979,27 +981,28 @@
     white-space: nowrap;
     overflow: hidden;
 }
-.bp_donatestep_wrapper.step_1 ul li{
-	margin: 5px;
+.bp_donatestep_wrapper ul li{
+	margin: 8px 11px;
 	width: 115px;
 	height: 60px;
-    border-radius: 10px;
+
 }
-.bp_donatestep_wrapper.step_1 ul li:last-child a{
+.bp_donatestep_wrapper ul li:last-child a{
 	display: inline-block;
 	font-size: 1.1rem;
 	line-height: 4rem;
 }
-.bp_donatestep_wrapper.step_1{
+.bp_donatestep_wrapper h5{
 	margin: 0 auto;
 	width: 90%;
 	background-color: #fff;
+    font-weight: bolder;
 }
-.bp_donatestep_wrapper.step_1 ul{
+.bp_donatestep_wrapper ul{
 	margin: 10px auto;
-	width: 100%;
+	width: 93%;
 }
-.bp_donatestep_wrapper.step_1 ul li label{
+.bp_donatestep_wrapper ul li label{
 	position: absolute;
 	bottom: 0;
 	right: 10%;
@@ -1007,31 +1010,32 @@
 	color: #df7262;
 }
 
-.bp_donatestep_wrapper.step_1 ul .active a, .bp_donatestep_wrapper.step_1 ul .active input{
+.bp_donatestep_wrapper ul .active a, .bp_donatestep_wrapper ul .active input{
 	background-color: #df7262;
 }
-.bp_donatestep_wrapper.step_1 ul .active label, .bp_donatestep_wrapper.step_1 ul .active a span, .bp_donatestep_wrapper.step_1 ul .active input{
+.bp_donatestep_wrapper ul .active label, .bp_donatestep_wrapper ul .active a span, .bp_donatestep_wrapper ul .active input{
 	color: #fff;
 }
-.bp_donatestep_wrapper.step_1 ul li a, .bp_donatestep_wrapper.step_1 ul li input{
+.bp_donatestep_wrapper ul li a, .bp_donatestep_wrapper ul li input{
 	display: block;
 	width: 100%;
 	height: 100%;
 	border: 2px solid #df7262;
+    border-radius: 5px;
 	vertical-align: middle;
 }
-.bp_donatestep_wrapper.step_1 ul li a span{
+.bp_donatestep_wrapper ul li a span{
 	line-height: 3.6rem;
 }
-.bp_donatestep_wrapper.step_1 ul li a span, .bp_donatestep_wrapper.step_1 ul li input{
+.bp_donatestep_wrapper ul li a span, .bp_donatestep_wrapper ul li input{
 	font-size: 35px;
 	text-align: center;
 	color: #df7262;
 }
-.bp_donatestep_wrapper.step_1 ul li input{
+.bp_donatestep_wrapper ul li input{
     line-height: 35px;
 }
-.bp_donatestep_wrapper.step_1 ul li input::-webkit-input-placeholder{
+.bp_donatestep_wrapper ul li input::-webkit-input-placeholder{
 	color: #df7262;
     font-family: 'microsoft yahei';
 }
@@ -1039,7 +1043,7 @@
 	display: block;
 	margin: 0 auto;
 	padding: 4% 0;
-	width: 95%;
+	width: 90%;
 	font-size: 20px;
 	color: #fff;
 	text-align: center;
@@ -1048,7 +1052,7 @@
 .bp_donate_wrapper .donatebtn:hover{
 	background-color: #A54546;
 }
-.bp_donatestep_wrapper.step_1 p{
+.bp_donatestep_wrapper p{
 	margin: 2% 0 0 0;
 	text-align: center;
 	color: #a1a1a1;
@@ -1104,15 +1108,15 @@
 	padding: 80px 0 0 0;
 	width: 75px;
 }
-.bp_donatestep_wrapper.step_3 a{
+.bp_donatestep_wrapper >a{
 	display: block;
     height: 0.5em;
     line-height: 1em;
 	position: absolute;
 	top: 0;
 	right: 0;
-	color: #fff;
-	font-size: 4rem;
+	color: #ccc;
+	font-size: 3rem;
 	font-weight: lighter;
 	transform:rotate(45deg);
 	-webkit-transform:rotate(45deg);

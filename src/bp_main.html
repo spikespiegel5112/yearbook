@@ -361,6 +361,24 @@
     <!--弹出打赏弹窗-->
     <div class='bp_donate_container'>
 		<div class='bp_donate_wrapper'>
+			<h3>做的不错，赞助鼓舞一下！</h3>
+			<div class='bp_donatedperson_wrapper'>
+				<label>赞助过的人</label>
+				<ul>
+					<li>
+						<img src="img/vote_result_avatar_100_100_00000.jpg">
+					</li>
+					<li>
+						<img src="img/vote_result_avatar_100_100_00000.jpg">
+					</li>
+					<li>
+						<img src="img/vote_result_avatar_100_100_00000.jpg">
+					</li>
+					<li>
+						<img src="img/vote_result_avatar_100_100_00000.jpg">
+					</li>
+				</ul>
+			</div>
 			<div class='bp_donatestep_wrapper step_1'>
 				<h5>选择赞助金额</h5>
 				<div class='bp_donatepannel_wrapper'>
@@ -421,7 +439,7 @@
 				<a class='donatebtn' href="javascript:;">立即支付</a>
 			</div>
 			<div class='bp_donatestep_wrapper step_3'>
-				<img src="../img/m/donatesuccessful_00000.png">
+				<img src="img/donatesuccessful_00000.png">
 				<label>赞助成功！</label>
 				<a href="javascript:;">+</a>
 			</div>
@@ -1152,9 +1170,6 @@
 				'margin-top': function() {
 					return (windowHeight - $(this).height()) / 2;
 				}
-			});
-			donateWrapper.css({
-				width:'60%'
 			});
 			donateContainer.addClass('active');
 			lastChildLiEl.find('label').hide();

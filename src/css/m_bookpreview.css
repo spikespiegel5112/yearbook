@@ -327,19 +327,17 @@
 	text-decoration: none;
 }
 
-.bp_menu_wrapper li .comment,
-.bp_menu_wrapper li .praise {
+.bp_menu_wrapper li .comment, .bp_menu_wrapper li .praise {
 	position: relative;
 	margin: 0 auto;
 	width: 40px;
 	height: 45px;
-	opacity: 0.5;
+	background-image: url("../img/m/img_sprite_00000.png");
+	background-position-y: -155px;
 }
 
 .bp_menu_wrapper li .praise {
-	background-image: url("../img/m/img_sprite_00000.png");
-	background-position: -253px -155px;
-	opacity: 0.5;
+	background-position-x: -297px;
 }
 .bp_menu_wrapper .donate{
 	margin: 0 auto 5px;
@@ -351,18 +349,20 @@
 	color: #fff;
 	font-size: 24px;
 }
+.bp_menu_wrapper li .comment {
+	background-position-x: -183px;
+}
+
+.bp_menu_wrapper .active .comment{
+	background-position-x: -224px;
+}
 .bp_menu_wrapper .active .donate{
 	background-color: #70758c;
 }
-.bp_menu_wrapper li .active div {
-	background-position: -223px -155px;
+.bp_menu_wrapper .active .praise{
+	background-position-x: -335px;	
 }
 
-.bp_menu_wrapper li .comment {
-	background-image: url("../img/m/img_sprite_00000.png");
-	background-position: -140px -155px;
-	opacity: 0.5;
-}
 
 .bp_menu_wrapper li .bootstrap-switch {
 	margin: 3px 0 10px;

@@ -907,20 +907,16 @@
 }
 .bp_donate_container.active{
 	opacity: 1;
-	z-index: 1;
-	
+	z-index: 4;
 }
 .bp_donate_wrapper{
 	display: block;
-	width: 60%;
-	/*padding: 4%;*/
+	width: 460px;
+	height: 380px;
 	margin: 0 auto;
 	background-color: #fff;
 	border-radius: 10px;
-	top: 10%;
-}
-.bp_donate_wrapper > div{
-	padding: 4%;
+    position: relative;
 }
 .bp_donatedperson_wrapper ul li, .bp_donatestep_wrapper.step_1 ul li{
 	display: inline-block;
@@ -928,21 +924,66 @@
 	vertical-align: middle;
 	position: relative;
 }
-
+.bp_donate_wrapper h3{
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 90%;
+    font-size: 30px;
+    font-weight: normal;
+}
+.bp_donate_wrapper h4{
+    padding: 10px 0;
+    width: 100%;
+    font-size: 20px;
+    font-weight: normal;
+}
 .bp_donate_wrapper h5{
-	margin: 0 0 2% 0;
-	font-size: 1.2rem;
+	margin: 0 auto;
+	font-size: 15px;
 	font-weight: normal;
 }
 .bp_donate_wrapper ul{
-	margin: 15px 0;
-	width: 100%;
 	overflow: hidden;
 }
+
+.bp_donatedperson_wrapper{
+    padding: 0 20px;
+    overflow: hidden;
+}
+.bp_donatedperson_wrapper label{
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    font-size: 0.8rem;
+   
+}
+.bp_donatedperson_wrapper ul{
+    float: left;
+}
+.bp_donatedperson_wrapper ul li{
+    width: 30px;
+    margin: 3% 0;
+}
+.bp_donatedperson_wrapper ul li img{
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.bp_donatedperson_wrapper ul li span{
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 .bp_donatestep_wrapper.step_1 ul li{
-	margin: 3% 1% 4% 2%;
-	width: 29%;
-	height: 4rem;
+	margin: 5px;
+	width: 115px;
+	height: 60px;
+    border-radius: 10px;
 }
 .bp_donatestep_wrapper.step_1 ul li:last-child a{
 	display: inline-block;
@@ -955,7 +996,7 @@
 	background-color: #fff;
 }
 .bp_donatestep_wrapper.step_1 ul{
-	margin: 0 auto;
+	margin: 10px auto;
 	width: 100%;
 }
 .bp_donatestep_wrapper.step_1 ul li label{
@@ -965,9 +1006,7 @@
 	font-size: 0.5rem;
 	color: #df7262;
 }
-.bp_donatestep_wrapper.step_1 ul li input{
-	line-height: 1.5rem;
-}
+
 .bp_donatestep_wrapper.step_1 ul .active a, .bp_donatestep_wrapper.step_1 ul .active input{
 	background-color: #df7262;
 }
@@ -985,19 +1024,23 @@
 	line-height: 3.6rem;
 }
 .bp_donatestep_wrapper.step_1 ul li a span, .bp_donatestep_wrapper.step_1 ul li input{
-	font-size: 1.8rem;
+	font-size: 35px;
 	text-align: center;
 	color: #df7262;
 }
+.bp_donatestep_wrapper.step_1 ul li input{
+    line-height: 35px;
+}
 .bp_donatestep_wrapper.step_1 ul li input::-webkit-input-placeholder{
 	color: #df7262;
+    font-family: 'microsoft yahei';
 }
 .bp_donate_wrapper .donatebtn{
 	display: block;
 	margin: 0 auto;
 	padding: 4% 0;
 	width: 95%;
-	font-size: 1.6rem;
+	font-size: 20px;
 	color: #fff;
 	text-align: center;
 	background-color: #ff696a;
@@ -1009,6 +1052,7 @@
 	margin: 2% 0 0 0;
 	text-align: center;
 	color: #a1a1a1;
+    font-size: 12px;
 }
 
 .bp_iwanttodonate_btn{
@@ -1023,11 +1067,14 @@
 }
 .bp_donatestep_wrapper.step_2 {
 	display: none;
+    padding: 0 20px;
 }
 .bp_donatestep_wrapper.step_2 h4{
-	margin: 0 0 10px 0;
 	color: #62af56;
 	font-weight: normal;
+}
+.bp_donatestep_wrapper.step_2 ul{
+    margin: 0 0 20px 0;
 }
 .bp_donatestep_wrapper.step_2 ul li a{
 	display: block;
@@ -1044,11 +1091,12 @@
 }
 .bp_donatestep_wrapper.step_3{
 	display: none;
-	width: 92%;
-	height: 260px;
+	width: 100%;
+	height: 100%;
 	background-color: #ff696a;
 	border-radius: 10px;
-	position: relative;
+	position: absolute;
+    top: 0;
 }
 .bp_donatestep_wrapper.step_3 img{
 	display: block;
@@ -1058,7 +1106,8 @@
 }
 .bp_donatestep_wrapper.step_3 a{
 	display: block;
-	margin: 1rem;
+    height: 0.5em;
+    line-height: 1em;
 	position: absolute;
 	top: 0;
 	right: 0;

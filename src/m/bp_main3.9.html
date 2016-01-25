@@ -29,6 +29,9 @@
 						<div></div>
 					</a>
 				</div>
+				<div class="bp_paginator_item">
+					<label>1</label>/<span>33</span>
+				</div>
 				<a class='bp_resizebtn_item' href="javascript:;">
 						<div></div>
 				</a>
@@ -119,9 +122,7 @@
 					<a class='flipbook_nextpage_btn' href="javascript:;"><span></span></a>
 				</div>
 				<div class="bp_barrage_wrapper"></div>
-				<div class="bp_paginator_item">
-					<label>1</label>/<span>33</span>
-				</div>
+				
 			</div>
 
 		</div>
@@ -598,10 +599,14 @@
 				});
 			};
 			if (window.eventFlagLandscape) {
-				// alert('landscapeFlag '+window.eventFlagLandscape);
-				$('.flipbook').on('touchend',function(){
-					$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active');
+				var toolsEl=$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper');
+				$('.flipbook_prevpage_btn, .flipbook_nextpage_btn, .ybwechatheader_wrapper').on('touchend', function(){
+					toolsEl.removeClass('active');
 				});
+				$('.flipbook').on('touchend', function(){
+					toolsEl.addClass('active');
+				});
+
 				$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
 					var commentInputEl = $('.bp_sendcomment_item');
 					commentInputEl.toggle().on('touchend', function() {
@@ -684,7 +689,7 @@
 			//点击打赏弹窗周围关闭打赏浮层
 			donateContainer.on('touchend', function(e) {
 				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
-					closeDonateDialog()
+					closeDonateDialog();
 				}
 			});
 			$('.bp_donatestep_wrapper').each(function(index){
@@ -709,7 +714,7 @@
 							$('.bp_donate_container').removeClass('active');
 							$this.prev().prev().show();
 							$this.hide();
-							closeDonateDialog()
+							closeDonateDialog();
 						});
 						break;
 				}

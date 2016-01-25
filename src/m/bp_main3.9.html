@@ -439,9 +439,7 @@
 					});
 				}
 			});
-
 			bookpreviewInit();
-			
 			barrageSwitcher();
 			collideLoading();
 		});
@@ -473,56 +471,14 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook');
-				//点击赞助按钮后弹出赞助框
-				$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend', function() {
-					popupDonateDialog();
-				});
-
-			orientationSensor({
-				portrait: function() {
-					$('.flipbook-viewport').css({
-						'height': windowWidth * 0.5
-					});
-					$('.bp_menu_wrapper li a').on('touchend', function() {
-						var $this = $(this),
-							index = $this.parent().index(),
-							thisEl = $('.bp_iatab_wrapper>div').eq(index);
-						$this.closest('li').siblings('li').find('a').removeClass('active');
-						$this.addClass('active');
-						console.log(index)
-						thisEl.show().siblings('div').hide();
-						switch (index) {
-							case 1:
-								$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-									$(this).parent().siblings().removeClass('active').end().addClass('active');
-								});
-								break;
-						}
-					});
-					flipbook.attr('currentpage', 1);
-					portraitHandler();
-				},
-				landscape: function() {
-					$('.flipbook-viewport').css({
-						'height': windowHeight
-					});
-
-					flipbook.attr('currentpage', 1);
-					landscapeHandler();
-					//章节选择
-					$('.chapter_slide a').on('touchend', function() {
-						switch ($(this).index()) {
-							case 0:
-								flipbook.turn('previous');
-								break;
-							case 1:
-								flipbook.turn('next');
-								break;
-						}
-					});
-				}
+				//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
+				window.eventFlagPortrait = true,
+				window.eventFlagLandscape = true;
+			//点击赞助按钮后弹出赞助框
+			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
+				popupDonateDialog();
 			});
-
+			
 			//监听翻转事件
 			$(window).on("orientationchange", function(event) {
 				orientationHandler(event, {
@@ -549,48 +505,41 @@
 					return Number(flipbook.attr('currentpage')) - 2
 				});
 			});
+			
+			orientationSensor({
+				portrait: function() {
+					$('.flipbook-viewport').css({
+						'height': windowWidth * 0.5
+					});
+					
+					flipbook.attr('currentpage', 1);
+					portraitHandler(window.eventFlagPortrait);
+				},
+				landscape: function() {
+					$('.flipbook-viewport').css({
+						'height': windowHeight
+					});
+
+					flipbook.attr('currentpage', 1);
+					landscapeHandler();
+					//章节选择
+					$('.chapter_slide a').on('touchend', function() {
+						switch ($(this).index()) {
+							case 0:
+								flipbook.turn('previous');
+								break;
+							case 1:
+								flipbook.turn('next');
+								break;
+						}
+					});
+				}
+			});
 		}
 
-		//屏幕方向探测器
-		function orientationSensor(callback) {
-			var windowWidth = $(window).width(),
-				windowHeight = $(window).height();
-			if (typeof(callback) == 'undefined') {
-				callback = {
-					portrait: function() {},
-					landscape: function() {}
-				}
-			} else {
-				if (windowWidth < windowHeight) {
-					return callback.portrait();
-				} else {
-					return callback.landscape();
-				}
-			}
-		}
-		//方向判断回调工具
-		function orientationHandler(event, callback) {
-			if (typeof(callback) == 'undefined') {
-				callback = {
-					portrait: function() {},
-					landscape: function() {}
-				}
-			}
-			switch (event.orientation) {
-				case 'portrait':
-					callback.portrait();
-					console.log("方法改变为：" + event.orientation);
-					break;
-				case 'landscape':
-					callback.landscape();
-					console.log("方法改变为：" + event.orientation);
-					break;
-			}
-			return callback;
-		}
-
+		
 		// 竖屏控制器
-		function portraitHandler(windowWidth, windowHeight) {
+		function portraitHandler() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbookHeight=$('.flipbook-viewport').height(),
@@ -603,6 +552,27 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+			if (window.eventFlagPortrait) {
+				alert('portraitFlag '+window.eventFlagPortrait)
+				$('.bp_menu_wrapper li a').on('touchend', function() {
+					var $this = $(this),
+						index = $this.parent().index(),
+						thisEl = $('.bp_iatab_wrapper>div').eq(index);
+					$this.closest('li').siblings('li').find('a').removeClass('active');
+					$this.addClass('active');
+					console.log(index)
+					thisEl.show().siblings('div').hide();
+					switch (index) {
+						case 1:
+							$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
+								$(this).parent().siblings().removeClass('active').end().addClass('active');
+							});
+							break;
+					}
+				});
+				window.eventFlagPortrait=false;
+			};
+			$('.bp_landscape_wrapper').removeClass('active');
 			// $('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
 			// 	$(this).parent().siblings().removeClass('active')
 			// 	$(this).addClass('active');
@@ -611,10 +581,11 @@
 
 		}
 		// 横屏控制器
-		function landscapeHandler(windowHeight) {
+		function landscapeHandler() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook');
+				
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});
@@ -627,30 +598,36 @@
 					'width':56
 				});
 			};
-			$('.flipbook').on('touchend',function(){
-				$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active');
-			});
-			$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
-				var commentInputEl = $('.bp_sendcomment_item');
-				commentInputEl.toggle().on('touchend', function() {
-					$(document).on('touchend', function(e) {
-						if ($(e.target).closest('.bp_sendcomment_item').length == 0) {
-							$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
-						};
-						$(this).unbind('touchend');
+			if (window.eventFlagLandscape) {
+				alert('landscapeFlag '+window.eventFlagLandscape);
+				$('.flipbook').on('touchend',function(){
+					$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper').toggleClass('active');
+				});
+				$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
+					var commentInputEl = $('.bp_sendcomment_item');
+					commentInputEl.toggle().on('touchend', function() {
+						$(document).on('touchend', function(e) {
+							if ($(e.target).closest('.bp_sendcomment_item').length == 0) {
+								$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').	removeClass('active');
+							};
+							$(this).unbind('touchend');
+						});
 					});
 				});
-			});
-			$('.bp_landscape_wrapper li a').on('touchend', function(){
-				var $this=$(this),
-					index=$this.parent().index();
-				if(index!=4&&$this.hasClass('active')){
-					$this.removeClass('active');
-				}else if(index!=4&&!$this.hasClass('active')){
-					$this.addClass('active');
-				}
-			});
+				$('.bp_landscape_wrapper li a').on('touchend', function(){
+					var $this=$(this),
+						index=$this.parent().index();
+					if(index!=4&&$this.hasClass('active')){
+						$this.removeClass('active');
+					}else if(index!=4&&!$this.hasClass('active')){
+						$this.addClass('active');
+					}
+				});
+				window.eventFlagLandscape=false;
+			};
+			
 		}
+
 		function popupDonateDialog(){
 			var windowHeight=$(window).height(),
 				donateContainer=$('.bp_donate_container'),
@@ -1010,6 +987,44 @@
 				console.log(getRandomTime());
 				commentEl.removeClass('active');
 			}
+		}
+
+		//屏幕方向探测器
+		function orientationSensor(callback) {
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height();
+			if (typeof(callback) == 'undefined') {
+				callback = {
+					portrait: function() {},
+					landscape: function() {}
+				}
+			} else {
+				if (windowWidth < windowHeight) {
+					return callback.portrait();
+				} else {
+					return callback.landscape();
+				}
+			}
+		}
+		//方向判断回调工具
+		function orientationHandler(event, callback) {
+			if (typeof(callback) == 'undefined') {
+				callback = {
+					portrait: function() {},
+					landscape: function() {}
+				}
+			}
+			switch (event.orientation) {
+				case 'portrait':
+					callback.portrait();
+					console.log("方法改变为：" + event.orientation);
+					break;
+				case 'landscape':
+					callback.landscape();
+					console.log("方法改变为：" + event.orientation);
+					break;
+			}
+			return callback;
 		}
 
 		//随机获取颜色值

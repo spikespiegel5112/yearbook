@@ -522,17 +522,7 @@
 
 					flipbook.attr('currentpage', 1);
 					landscapeHandler();
-					//章节选择
-					$('.chapter_slide a').on('touchend', function() {
-						switch ($(this).index()) {
-							case 0:
-								flipbook.turn('previous');
-								break;
-							case 1:
-								flipbook.turn('next');
-								break;
-						}
-					});
+					
 				}
 			});
 		}
@@ -621,6 +611,17 @@
 						$this.removeClass('active');
 					}else if(index!=4&&!$this.hasClass('active')){
 						$this.addClass('active');
+					}
+				});
+				//章节选择
+				$('.chapter_slide a').on('touchend', function() {
+					switch ($(this).index()) {
+						case 0:
+							flipbook.turn('previous');
+							break;
+						case 1:
+							flipbook.turn('next');
+							break;
 					}
 				});
 				window.eventFlagLandscape=false;

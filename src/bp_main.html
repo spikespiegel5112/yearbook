@@ -261,7 +261,7 @@
 				<!--<li><a class='praise' href="javascript:;"><span></span><label>点赞</label></a></li>
 				<li><a class='collect' href="javascript:;"><span></span><label>收藏</label></a></li>-->
                 <li>
-                    <a class="reward" href="javascript:;"><span></span><label>赞赏</label></a>
+                    <a class="donate" href="javascript:;"><span></span><label>赞赏</label></a>
                 </li>
 			</ul>
 			<a class='bp_toolbarhandler_item' href="javascript:;"></a>
@@ -358,7 +358,75 @@
 			</div>
 		</div>
 	</div>
-    <!--弹出打赏遮罩 待添加-->
+    <!--弹出打赏弹窗-->
+    <div class='bp_donate_container'>
+		<div class='bp_donate_wrapper'>
+			<div class='bp_donatestep_wrapper step_1'>
+				<h5>选择赞助金额</h5>
+				<div class='bp_donatepannel_wrapper'>
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>2</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>5</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>10</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>20</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<input type='tel' maxlength='3' placeholder='自定义'/>
+							<label>元</label>
+						</li>
+					</ul>
+					<a class='donatebtn' href="javascript:;">立即赞助</a>
+					<p>赞助无悔，概不退款</p>
+				</div>
+			</div>
+			<div class='bp_donatestep_wrapper step_2'>
+				<h4>选择支付方式</h4>
+				<p>赞助<label>小叮当</label>用户:￥<span>20.00</span></p>
+				<ul>
+					<li>
+						<a href="javascript:;"><label>银联在线</label><span class='icon-ok'></span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><label>支付宝</label><span class='icon-ok'></span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><label>微信支付</label><span class='icon-ok'></span></a>
+					</li>
+				</ul>
+				<a class='donatebtn' href="javascript:;">立即支付</a>
+			</div>
+			<div class='bp_donatestep_wrapper step_3'>
+				<img src="../img/m/donatesuccessful_00000.png">
+				<label>赞助成功！</label>
+				<a href="javascript:;">+</a>
+			</div>
+		</div>
+	</div>
 	<!--底部-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src='assets/js/modernizr.2.5.3.min.js'></script>
@@ -909,8 +977,11 @@
 			var toolLi = $('.bp_toolbar_wrapper ul li');
 			var thisEl = $('.bp_toolbar_wrapper');
 			toolLi.find('a').click(function() {
-				var $thisLi = $(this).parent('li');
-				if ($thisLi.hasClass('active')) {
+				var $this=$(this),
+					$thisLi = $(this).parent('li');
+				if ($this.hasClass('donate')){
+					popupDonateDialog();
+				}else if ($thisLi.hasClass('active')) {
 					$thisLi.removeClass('active');
 				} else {
 					$thisLi.addClass('active');
@@ -1070,6 +1141,80 @@
 				radioClass: 'iradio_minimal-green',
 				increaseArea: '20%'
 			})
+		}
+		function popupDonateDialog(){
+			var windowHeight=$(window).height(),
+				donateContainer=$('.bp_donate_container'),
+				donateWrapper=$('.bp_donate_wrapper'),
+				donatestep=$('.bp_donate_wrapper>div'),
+				lastChildLiEl=$('.bp_donatepannel_wrapper li:last-child')
+			donateWrapper.css({
+				'margin-top': function() {
+					return (windowHeight - $(this).height()) / 2;
+				}
+			});
+			donateWrapper.css({
+				width:'60%'
+			});
+			donateContainer.addClass('active');
+			lastChildLiEl.find('label').hide();
+			lastChildLiEl.find('input').on('focus',function(){
+				if ($(this).parent().hasClass('active')) {
+					$(this).siblings('label').show();
+				}else{
+					$(this).siblings('label').show();
+				}
+				
+			});
+			//选择打赏金额
+			$('.bp_donatepannel_wrapper ul li').on('click', function() {
+				var $this=$(this)
+				$this.siblings().removeClass('active').end().addClass('active');
+				$this.parent().hasClass('active')?$this.siblings('label').show():$this.siblings('label').hide()
+			});
+			//选择支付方式
+			$('.bp_donatestep_wrapper:eq(1) li').on('click', function(){
+				$(this).siblings().removeClass('active').end().addClass('active');
+			});
+			//点击打赏弹窗周围关闭打赏浮层
+			donateContainer.on('click', function(e) {
+				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
+					closeDonateDialog()
+				}
+			});
+			$('.bp_donatestep_wrapper').each(function(index){
+				var $this=$(this);
+				switch (index){
+					case 0:
+						$this.find('.donatebtn').on('click',function(){
+							if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+								$this.hide().next().show();
+							};
+						});
+						break;
+					case 1:
+						$this.find('.donatebtn').on('click',function(){
+							if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+								$this.hide().next().show();
+							};
+						});
+						break;
+					case 2:
+						$this.find('a').on('click',function(){
+							$('.bp_donate_container').removeClass('active');
+							$this.prev().prev().show();
+							$this.hide();
+							closeDonateDialog()
+						});
+						break;
+				}
+			});
+			function closeDonateDialog(){
+				$('.bp_donate_container').removeClass('active');
+				$('.bp_donatestep_wrapper:eq(0)').show();
+				$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
+				$('.bp_landscape_wrapper .donate a').removeClass('active');
+			}
 		}
 	</script>
 </body>

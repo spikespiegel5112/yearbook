@@ -642,28 +642,24 @@
 				});
 			});
 			$('.bp_landscape_wrapper li a').on('touchend', function(){
-					var $this=$(this);
-					if ($this.index()==4){
-						return;
-					}else if($this.hasClass('active')){
-						alert('aaa')
-						$this.removeClass('active');
-					}else{
-						
-						$this.addClass('active');
-					}
-					
-				});
+				var $this=$(this),
+					index=$this.parent().index();
+				if(index!=4&&$this.hasClass('active')){
+					$this.removeClass('active');
+				}else if(index!=4&&!$this.hasClass('active')){
+					$this.addClass('active');
+				}
+			});
 		}
 		function popupDonateDialog(){
 			var windowHeight=$(window).height(),
 				donateContainer=$('.bp_donate_container'),
 				donateWrapper=$('.bp_donate_wrapper'),
 				donatestep=$('.bp_donate_wrapper>div'),
-				lastChildLiEl=$('.bp_donatepannel_wrapper li:last-child')
+				lastChildLiEl=$('.bp_donatepannel_wrapper li:last-child');
 			donateWrapper.css({
 				'margin-top': function() {
-					return (windowHeight - $(this).height()) / 2 - windowHeight * 0.08
+					return (windowHeight - $(this).height()) / 2;
 				}
 			});
 			orientationSensor({
@@ -679,7 +675,6 @@
 				}
 			});
 			donateContainer.addClass('active');
-			if (true) {};
 			lastChildLiEl.find('label').hide();
 			lastChildLiEl.find('input').on('focus',function(){
 				if ($(this).parent().hasClass('active')) {
@@ -989,7 +984,7 @@
 
 			function loadandfire(comment) {
 				var windowWidth = $(window).width(),
-					windowHeight = $(window).height();
+					windowHeight = $(window).height(),
 				//拼装弹幕字符元素
 				comment = $('<div></div>').addClass('barrage').css({
 					'position': 'absolute',

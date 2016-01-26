@@ -19,7 +19,7 @@
 </head>
 
 <body>
-	<div class='main_container'>
+	<div class='main_container bp_unsiginedin_wrapper'>
 		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape-->
 		<div class="bp_flipbook_container">
 			<div class="ybwechatheader_wrapper">
@@ -299,6 +299,25 @@
 				</div>
 			</div>
 		</div>
+		<div class='bp_unsignedin_wrapper'>
+			<div class='bp_iwangtomake_wrapper'>
+				<a href="javascript:;">我要制作</a>
+				<p>本书一共有20页，可上传60张照片</p>
+			</div>
+			<div class='bp_introduce_wrapper'>
+				<ul>
+					<li>
+						<span class='photobook'></span>
+						<p>照片书：海量模板供您选择、在线编辑所见即所得、高清晰度印刷成册</p>
+					</li>
+					<li>
+						<span class='iabook'></span>
+						<p>照片书：海量模板供您选择、在线编辑所见即所得、高清晰度印刷成册</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
 		<div class="bp_landscape_wrapper">
 			<ul>
 				<li class="comment">
@@ -417,22 +436,7 @@
 				<button type="button"><i></i></button>
 			</div>
 		</div>
-		<div class='bp_unsignin_wrapper'>
-			<div class='bp_iwangtomake_wrapper'>
-				<a href="javascript:;">我要制作</a>
-				<p>本书一共有20页，可上传60张照片</p>
-			</div>
-			<ul class='bp_introduce_wrapper'>
-				<li>
-					<img src="">
-					<p>照片书：海量模板供您选择、在线编辑所见即所得、高清晰度印刷成册</p>
-				</li>
-				<li>
-					<img src="">
-					<p>照片书：海量模板供您选择、在线编辑所见即所得、高清晰度印刷成册</p>
-				</li>
-			</ul>
-		</div>
+
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
@@ -558,7 +562,7 @@
 		function portraitHandler() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				flipbookHeight=$('.flipbook-viewport').height(),
+				flipbookHeight=$('.bp_flipbook_container').height(),
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item');
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
@@ -568,6 +572,7 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+			$('.bp_unsignedin_wrapper').css('height',windowHeight-flipbookHeight)
 			if (window.eventFlagPortrait) {
 				// alert('portraitFlag '+window.eventFlagPortrait);
 				if ($('.bp_comment_wrapper table').length==0) {

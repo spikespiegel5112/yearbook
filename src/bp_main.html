@@ -1340,6 +1340,11 @@
             var windowHeight=$(window).height(),
                     commentContainer=$('.bp_comment_container');
             commentContainer.addClass('active');
+            $('.bp_comment_wrapper').css({
+                'margin-top': function() {
+                    return (windowHeight - $(this).height()) / 2;
+                }
+            });
             //点击评论弹窗周围关闭打赏浮层
             commentContainer.on('click', function(e) {
                 if ($(e.target).closest('.bp_comment_wrapper').length == 0) {

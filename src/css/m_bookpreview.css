@@ -205,7 +205,13 @@
 	text-align: center;
 	color: #fff;
 }
-
+.viewmode_portrait .bp_paginator_item{
+	position: absolute;
+	bottom: 0;
+}
+.viewmode_portrait .ybwechatheader_wrapper .bp_paginator_item{
+	display: none;
+}
 .viewmode_landscape .bp_paginator_item{
 	margin: 0 auto;
 	width: 5rem;
@@ -299,6 +305,7 @@
 	background: url("../img/m/previewbook/pb_bg3-9.jpg") no-repeat;
 	background-size: cover;
 	overflow: hidden;
+	position: relative;
 }
 
 .bp_portrait_wrapper .bp_bookinfo_item {
@@ -361,7 +368,7 @@
 	background-color: #70758c;
 }
 .bp_menu_wrapper .active .praise{
-	background-position-x: -335px;	
+	background-position-x: -337px;	
 }
 
 
@@ -700,10 +707,10 @@
 	background-position: -444px -122px;
 }
 .viewmode_landscape .bp_resizebtn_item div{
-	background-position: -267px -122px;
+	background-position: -268px -74px;
 }
 .viewmode_landscape .bp_resizebtn_item.active div{
-	background-position: -287px -122px;
+	background-position: -288px -74px;
 }
 .chapter_slide {
 	float: right;

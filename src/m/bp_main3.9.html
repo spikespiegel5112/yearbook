@@ -155,24 +155,6 @@
 				<div class="bp_comment_container">
 					<span class="up_arrow"></span>
 					<div class='bp_comment_wrapper'>
-						<!-- <table>
-							<tr>
-								<td>
-									<div class="user_header"><img src="../img/m/user_default_head.png"></div>
-								</td>
-								<td>
-									<div class="user_name"><span>username</span></div>
-								</td>
-								<td>
-									<div class="commet_time"><span>2015-12-31</span></div>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3" class="">
-									<p>说些什么什么事什么什么事没什么事忙什么什么事...</p>
-								</td>
-							</tr>
-						</table>
 						<table>
 							<tr>
 								<td>
@@ -262,7 +244,25 @@
 									<p>说些什么什么事什么什么事没什么事忙什么什么事...</p>
 								</td>
 							</tr>
-						</table> -->
+						</table>
+						<table>
+							<tr>
+								<td>
+									<div class="user_header"><img src="../img/m/user_default_head.png"></div>
+								</td>
+								<td>
+									<div class="user_name"><span>username</span></div>
+								</td>
+								<td>
+									<div class="commet_time"><span>2015-12-31</span></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="">
+									<p>说些什么什么事什么什么事没什么事忙什么什么事...</p>
+								</td>
+							</tr>
+						</table>
 					</div>
 					<div class="ybwechat_loading_item">
 						<label><img class='loadingicon' src="../img/m/loading.gif">加载中...</label>
@@ -578,9 +578,7 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
-			// $('.bp_unsignedin_wrapper').css('height',windowHeight-flipbookHeight)
 			if (window.eventFlagPortrait) {
-				// alert('portraitFlag '+window.eventFlagPortrait);
 				if ($('.bp_comment_wrapper table').length==0) {
 					$('.bp_empty_wrapper').show();
 				};
@@ -592,23 +590,11 @@
 					$this.find('a').addClass('active');
 					console.log(index)
 					thisEl.show().siblings('div').hide();
-					switch (index) {
-						case 1:
-							$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-								$(this).siblings().removeClass('active').end().addClass('active');
-							});
-							break;
-					}
 				});
+
 				window.eventFlagPortrait=false;
 			};
 			$('.bp_landscape_wrapper, .ybwechatheader_wrapper').removeClass('active');
-			// $('.bp_donatepannel_wrapper ul li a, .bp_donatepannel_wrapper ul li input').on('touchend', function() {
-			// 	$(this).parent().siblings().removeClass('active')
-			// 	$(this).addClass('active');
-			// });
-			
-
 		}
 		// 横屏控制器
 		function landscapeHandler() {

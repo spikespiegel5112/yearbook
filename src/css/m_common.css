@@ -536,7 +536,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .ybwechatheader_wrapper .add_btn,
 .ybwechatheader_wrapper .back_btn,
-.ybwechatheader_wrapper .setting_btn {
+.ybwechatheader_wrapper .setting_btn,
+.ybwechatheader_wrapper .share_btn {
 	background-image: url(../img/m/yb3wechatheader_sprite_img_00000.png);
 	background-position-y: -41px;
 	background-size: 900%;
@@ -569,9 +570,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	position: absolute;
 	top: 0;
 	width: 50px;
+	background-position-x: -156px;
 	box-sizing: border-box;
-	background: url("../img/m/book_space/share_icon.png") no-repeat center 14px;
-	background-size: 26px;
 }
 
 .ybwechatheader_wrapper li:first-child, .ybwechatheader_wrapper a {

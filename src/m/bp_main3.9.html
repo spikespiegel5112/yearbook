@@ -456,7 +456,6 @@
 			$.extend({
 				collideLoading: function(options) {
 					options = $.extend({
-						offset:0,
 						onScrollBottom: function() {}
 					}, options)
 					$(window).scroll(function() {
@@ -467,13 +466,9 @@
 							return;
 						}else{
 							if (availHeight + scrollTop + Number(options.offset) >= docHeight) {
-								console.log(availHeight + scrollTop)
-						console.log(docHeight)
 								options.onScrollBottom();
 							}
 						}
-						console.log(availHeight + scrollTop + Number(options.offset))
-						console.log(docHeight)
 					});
 					
 				}
@@ -487,7 +482,6 @@
 			var loadingFlag=true,
 				commentLength=$('.bp_comment_wrapper table').length;
 			$.collideLoading({
-				offset: '0',
 				onScrollBottom: function() {
 
 					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>';

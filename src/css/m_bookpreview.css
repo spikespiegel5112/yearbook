@@ -399,7 +399,7 @@
 }
 .bp_donatetab_wrapper{
 	display: none;
-	padding: 0 0 3% 0;
+	padding: 0 0 3rem 0;
 	width: 100%;
 	background: #f2f2f2;
 }
@@ -945,10 +945,16 @@
 .bp_unsignedin_wrapper {
 	padding: 0;
 }
-.bp_unsignedin_mode .bp_portrait_wrapper, .bp_unsignedin_mode .bp_sendcomment_item, .bp_unsignedin_mode .bp_barrageswitch_item, .bp_unsignedin_mode .bp_landscape_wrapper ul li{
+.bp_unsignedin_mode .bp_portrait_wrapper, 
+.bp_unsignedin_mode .bp_sendcomment_item, 
+.bp_unsignedin_mode .bp_barrageswitch_item, 
+.bp_unsignedin_mode .bp_landscape_wrapper .comment, 
+.bp_unsignedin_mode .bp_landscape_wrapper .praise, 
+.bp_unsignedin_mode .bp_landscape_wrapper .donate, 
+.bp_unsignedin_mode .bp_landscape_wrapper .bp_barrageswitch_item{
 	display: none;
 }
-.bp_unsignedin_mode .bp_landscape_wrapper .share, {
+.bp_unsignedin_mode .bp_landscape_wrapper .share, .bp_unsignedin_mode .bp_landscape_wrapper .bp_resizebtn_item{
 	display: block;
 }
 .bp_iwangtomake_wrapper{

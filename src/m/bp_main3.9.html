@@ -19,7 +19,7 @@
 </head>
 
 <body>
-	<div class='main_container bp_unsignedin_mode'>
+	<div class='main_container'>
 		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 		<div class="bp_flipbook_container">
 			<div class="ybwechatheader_wrapper">
@@ -155,7 +155,7 @@
 				<div class="bp_comment_container">
 					<span class="up_arrow"></span>
 					<div class='bp_comment_wrapper'>
-						<table>
+						<!-- <table>
 							<tr>
 								<td>
 									<div class="user_header"><img src="../img/m/user_default_head.png"></div>
@@ -262,7 +262,7 @@
 									<p>说些什么什么事什么什么事没什么事忙什么什么事...</p>
 								</td>
 							</tr>
-						</table>
+						</table> -->
 					</div>
 					<div class="ybwechat_loading_item">
 						<label><img class='loadingicon' src="../img/m/loading.gif">加载中...</label>
@@ -479,7 +479,8 @@
 		});
 
 		function collideLoading() {
-			var loadingFlag=true;
+			var loadingFlag=true,
+				commentLength=$('.bp_comment_wrapper table').length;
 			$.collideLoading({
 				onScrollBottom: function() {
 					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>';
@@ -487,7 +488,9 @@
 					//这个变量用来约束标签页只在打开了评论的情况下可触发底部加载事件
 					var index=$('.bp_menu_wrapper .active').parent().index();
 					//用一个flag来约束加载逻辑使其在完成加载过程前触发的底部碰撞事件无效
-					if (loadingFlag&&index==0) {
+					if (commentLength==0) {
+						return;
+					}else if (loadingFlag&&index==0) {
 						loadingFlag=false;
 						$('.ybwechat_loading_item').show();
 						setTimeout(function() {

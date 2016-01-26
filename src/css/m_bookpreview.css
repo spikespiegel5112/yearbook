@@ -95,7 +95,6 @@
 
 .viewmode_portrait {
 	position: relative;
-	padding-bottom: 56px;
 	width: 100%;
 }
 
@@ -780,7 +779,6 @@
 .bp_donatestep_wrapper.step_1{
 	margin: 0 auto;
 	width: 90%;
-	background-color: #fff;
 }
 .bp_donatestep_wrapper.step_1 ul{
 	margin: 0 auto;
@@ -917,14 +915,16 @@
 }
 .bp_empty_wrapper{
 	display: none;
-	margin: 3rem auto;
+	margin: 0 auto;
+	padding: 3rem 0;
 	width: 230px;
+	overflow: hidden;
 }
 .bp_empty_wrapper img, .bp_empty_wrapper p{
-	float: left;
+	display: block;
 }
 .bp_empty_wrapper img{
-	margin: 0 10px;
+	margin: 0 auto;
 }
 .bp_empty_wrapper p{
 	height: 80px;
@@ -932,24 +932,30 @@
 	font-size: 2rem;
 	color: #ccc;
 	vertical-align: middle;
+	text-align: center;
 }
 .bp_unsignedin_wrapper {
+	display: none;
 	height: auto;
 	background: #f6f6f6;
 }
-.bp_unsiginedin_wrapper{
+.bp_unsignedin_mode .bp_unsignedin_wrapper{
+	display: block;
+}
+.bp_unsignedin_wrapper {
 	padding: 0;
 }
-.bp_unsiginedin_wrapper .bp_portrait_wrapper, .bp_unsiginedin_wrapper .bp_sendcomment_item, .bp_unsiginedin_wrapper .bp_barrageswitch_item, .bp_unsiginedin_wrapper .ybwechatheader_wrapper .share_btn, .bp_unsiginedin_wrapper .bp_landscape_wrapper ul li{
+.bp_unsignedin_mode .bp_portrait_wrapper, .bp_unsignedin_mode .bp_sendcomment_item, .bp_unsignedin_mode .bp_barrageswitch_item, .bp_unsignedin_mode .bp_landscape_wrapper ul li{
 	display: none;
 }
-.bp_unsiginedin_wrapper .bp_landscape_wrapper ul li:last-child{
+.bp_unsignedin_mode .bp_landscape_wrapper .share, {
 	display: block;
 }
 .bp_iwangtomake_wrapper{
 	padding: 6% 0;
 	height: 20%;
-	border-bottom: 1px solid #eee;
+	background: #f2f2f2;
+	border-bottom: 1px solid #ddd;
 }
 .bp_iwangtomake_wrapper a{
 	display: block;
@@ -968,6 +974,7 @@
 .bp_iwangtomake_wrapper p{
 	text-align: center;
 	color: #666;
+	font-size: 0.85rem;
 }
 .bp_introduce_wrapper{
 	padding: 3% 0 0 0;
@@ -1009,4 +1016,15 @@
 	border-left: 1px solid #666;
 	font-size: 1rem;
 	color: #555;
+}
+.bp_logolink_wrapper{
+	padding: 2rem 0;
+}
+.bp_logolink_wrapper a{
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+.bp_logolink_wrapper a img{
+	width: 100%;
 }

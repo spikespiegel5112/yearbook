@@ -19,8 +19,8 @@
 </head>
 
 <body>
-	<div class='main_container bp_unsiginedin_wrapper'>
-		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape-->
+	<div class='main_container bp_unsignedin_mode'>
+		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 		<div class="bp_flipbook_container">
 			<div class="ybwechatheader_wrapper">
 				<a class='left_btn back_btn' href="javascript:;"></a>
@@ -315,6 +315,9 @@
 						<p>照片书：海量模板供您选择、在线编辑所见即所得、高清晰度印刷成册</p>
 					</li>
 				</ul>
+				<div class='bp_logolink_wrapper'>
+					<a href="javascript:;"><img src="../img/logo.png"></a>
+				</div>
 			</div>
 			
 		</div>
@@ -502,9 +505,9 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook');
-				//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
-				window.eventFlagPortrait = true,
-				window.eventFlagLandscape = true;
+			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
+			window.eventFlagPortrait = true,
+			window.eventFlagLandscape = true;
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
@@ -513,18 +516,18 @@
 			$('.flipbook_nextpage_btn').on('touchend', function() {
 				flipbook.turn('next');
 				flipbook.attr('currentpage', function() {
-					return Number(flipbook.attr('currentpage')) + 2
+					return Number(flipbook.attr('currentpage')) + 2;
 				});
 			});
 			$('.flipbook_prevpage_btn').on('touchend', function() {
 				flipbook.turn('previous');
 				flipbook.attr('currentpage', function() {
-					return Number(flipbook.attr('currentpage')) - 2
+					return Number(flipbook.attr('currentpage')) - 2;
 				});
 			});
 			$('.bp_resizebtn_item').on('touchend', function(){
 				$(this).toggleClass('active');
-			})
+			});
 			//监听翻转事件
 			$(window).on("orientationchange", function(event) {
 				orientationHandler(event, {
@@ -572,24 +575,24 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
-			$('.bp_unsignedin_wrapper').css('height',windowHeight-flipbookHeight)
+			// $('.bp_unsignedin_wrapper').css('height',windowHeight-flipbookHeight)
 			if (window.eventFlagPortrait) {
 				// alert('portraitFlag '+window.eventFlagPortrait);
 				if ($('.bp_comment_wrapper table').length==0) {
 					$('.bp_empty_wrapper').show();
 				};
-				$('.bp_menu_wrapper li a').on('touchend', function() {
+				$('.bp_menu_wrapper li').on('touchend', function() {
 					var $this = $(this),
-						index = $this.parent().index(),
+						index = $this.index(),
 						thisEl = $('.bp_iatab_wrapper>div').eq(index);
-					$this.closest('li').siblings('li').find('a').removeClass('active');
-					$this.addClass('active');
+					$this.siblings().find('a').removeClass('active');
+					$this.find('a').addClass('active');
 					console.log(index)
 					thisEl.show().siblings('div').hide();
 					switch (index) {
 						case 1:
 							$('.bp_donatepannel_wrapper ul li a').on('touchend', function() {
-								$(this).parent().siblings().removeClass('active').end().addClass('active');
+								$(this).siblings().removeClass('active').end().addClass('active');
 							});
 							break;
 					}

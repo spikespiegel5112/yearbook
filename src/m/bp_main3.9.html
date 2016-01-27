@@ -570,6 +570,7 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbookHeight=$('.bp_flipbook_container').height(),
+				
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item');
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
@@ -579,10 +580,13 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+
 			if (window.eventFlagPortrait) {
+				//当评论页数量为0时显示为空图标
 				if ($('.bp_comment_wrapper table').length==0) {
 					$('.bp_empty_wrapper').show();
 				};
+
 				$('.bp_menu_wrapper li:eq(0)').on('touchend', function(){
 					var $this = $(this);
 					$this.find('a').addClass('active');
@@ -591,14 +595,27 @@
 					$('.bp_donatetab_wrapper').hide();
 					$('.bp_sendcomment_item').show();
 				});
+
 				$('.bp_menu_wrapper li:eq(1)').on('touchend', function(){
 					var $this = $(this);
+					var bookinfoHeight=$('.bp_bookinfo_item').height(),
+					bpmenuHeight=$('.bp_menu_wrapper').height(),
+					donatetabHeight=$('.bp_iatab_wrapper').height(),
+					totalHeight=flipbookHeight+bookinfoHeight+bpmenuHeight+80;
+					//当内容高度不够屏幕高度时手动计算css把高度填充满
+					if(windowHeight-(totalHeight+100)>0){
+						$('.bp_donatedperson_wrapper').css('height',function(){
+							return windowHeight-totalHeight
+						});
+					}
+					
 					$this.find('a').addClass('active');
 					$('.bp_donatetab_wrapper').show();
 					$('.bp_menu_wrapper li:eq(0)').find('a').removeClass('active');
 					$('.bp_comment_container').hide()
 					$('.bp_sendcomment_item').hide();
 				});
+
 				$('.bp_menu_wrapper li:eq(2)').on('touchend', function(){
 					var $this = $(this);
 					$this.find('a').toggleClass('active');

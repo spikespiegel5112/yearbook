@@ -750,6 +750,7 @@
 						$('.bp_donatestep_wrapper.step_2').hide().next().show();
 					};
 			});
+			//等待付款界面的事件
 			$('.bp_donatestep_wrapper.waitingforpay').on('touchend', function(){
 				var $this=$(this);
 				$this.hide().next().show();
@@ -758,6 +759,7 @@
 					$(this).unbind('touchend');
 				})
 			})
+			//支付完成提示
 			$('.bp_donatestep_wrapper.step_3 a').on('touchend', function(){
 				var $this=$(this);
 				$('.bp_donate_container').removeClass('active');

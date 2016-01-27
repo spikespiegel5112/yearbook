@@ -2736,19 +2736,39 @@ nav .pagination li a:active {
 }
 
 .bp_sharelist_wrapper .weibo a {
-	background-position: 0 0;
+	background-position: 0 -30px;
 }
 
 .bp_sharelist_wrapper .qqzone a {
-	background-position: -30px 0;
+	background-position: -30px -30px;
 }
 
 .bp_sharelist_wrapper .wechat a {
-	background-position: -60px 0;
+	background-position: -60px -30px;
 }
 
 .bp_sharelist_wrapper .renren a {
-	background-position: -90px 0;
+	background-position: -90px -30px;
+}
+
+.bp_sharelist_wrapper .weibo a:hover,
+.bp_sharelist_wrapper .weibo.active a {
+    background-position: 0 0;
+}
+
+.bp_sharelist_wrapper .qqzone a:hover ,
+.bp_sharelist_wrapper .qqzone.active a {
+    background-position: -30px 0;
+}
+
+.bp_sharelist_wrapper .wechat a:hover,
+.bp_sharelist_wrapper .wechat.active a {
+    background-position: -60px 0;
+}
+
+.bp_sharelist_wrapper .renren a:hover,
+.bp_sharelist_wrapper .renren.active a {
+    background-position: -90px 0;
 }
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head lang="en">
 	<meta charset="UTF-8">
@@ -263,8 +263,18 @@
                 <li>
                     <a class="donate" href="javascript:;"><span></span><label>赞赏</label></a>
                 </li>
+                <li>
+                    <a class="comment" href="javascript:;"><span></span><label>评论</label></a>
+                </li>
+                <li>
+                    <a class="praise" href="javascript:;"><span></span><label>点赞</label></a>
+                </li>
+                <li>
+                    <a class="barrage" href="javascript:;"><span></span><label>弹幕</label></a>
+                </li>
 			</ul>
-			<a class='bp_toolbarhandler_item' href="javascript:;"></a>
+			<!--<a class='bp_toolbarhandler_item' href="javascript:;"></a>-->
+            <a class="bp_slidefold_btn open" href="javascript:;"></a>
 		</div>
 		<div class="bp_btn">
 			<a class='bp_iwanttomake_btn' href='javascript:;'><span class="icon-book"></span>我要制作</a>
@@ -446,6 +456,111 @@
 			</div>
 		</div>
 	</div>
+    <!--弹出评论-->
+    <div class="bp_comment_container">
+        <div class="bp_comment_wrapper">
+            <a class="closebtn" href="javascript:;">+</a>
+            <form name="" method="">
+                <label>我有话要说</label>
+                <textarea></textarea>
+                <!--<p class="font_limit">还可以输入<span>200</span>个字</p>-->
+                <div class="btn_wrap">
+                    <button class="cm_fr" type="button">评论</button>
+                    <span class="cm_fr">Ctrl+Enter </span>
+                </div>
+            </form>
+            <div class="mod_comments">
+                <div class="comments_list">
+                    <ul class="">
+                        <li class="comments_item">
+                            <div class="comments_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/user_default_head.png">
+                                    </a>
+                                </div>
+                                <div class="comments_content">
+                                    <a class="" href="javascript:;">赵小鱼</a>
+                                    <span class="state">2016-01-26 13:42</span>
+                                    <p>不错哦，我也要做这样的耶~~</p>
+                                    <div class="comments_op">
+                                        <a href="javasccript:;">回复</a>
+                                        <a href="javasccript:;">删除评论</a>
+                                    </div>
+                                </div>
+                                <div class="comments_list mod_comments_sub">
+                                    <ul>
+                                        <li class="comments_item">
+                                            <div class="comments_item_bd">
+                                                <div class="user_head">
+                                                    <a href="javascript:;">
+                                                        <img src="img/user_default_head.png">
+                                                    </a>
+                                                </div>
+                                                <div class="comments_content">
+                                                    <a class="" href="javascript:;">赵小鱼</a>
+                                                    <span class="state">刚刚</span>
+                                                    <p>不错哦，我也要做这样的耶~~</p>
+                                                    <div class="comments_op">
+                                                        <a href="javasccript:;">回复</a>
+                                                        <a href="javasccript:;">删除评论</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="comments_item">
+                            <div class="comments_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/user_default_head.png">
+                                    </a>
+                                </div>
+                                <div class="comments_content">
+                                    <a class="" href="javascript:;">赵小鱼</a>
+                                    <span class="state">2016-01-26 13:42</span>
+                                    <p>不错哦，我也要做这样的耶~~</p>
+                                    <div class="comments_op">
+                                        <a href="javasccript:;">回复</a>
+                                        <a href="javasccript:;">删除评论</a>
+                                    </div>
+                                </div>
+                                <div class="comments_list mod_comments_sub">
+                                    <ul>
+                                        <li class="comments_item">
+                                            <div class="comments_item_bd">
+                                                <div class="user_head">
+                                                    <a href="javascript:;">
+                                                        <img src="img/user_default_head.png">
+                                                    </a>
+                                                </div>
+                                                <div class="comments_content">
+                                                    <a class="" href="javascript:;">赵小鱼</a>
+                                                    <span class="state">刚刚</span>
+                                                    <p>不错哦，我也要做这样的耶~~</p>
+                                                    <div class="comments_op">
+                                                        <a href="javasccript:;">回复</a>
+                                                        <a href="javasccript:;">删除评论</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--暂无评论-->
+                    <div class="empty hidden">
+                        <img src="img/bp_comment_empty.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!--底部-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src='assets/js/modernizr.2.5.3.min.js'></script>
@@ -1000,20 +1115,37 @@
 					$thisLi = $(this).parent('li');
 				if ($this.hasClass('donate')){
 					popupDonateDialog();
-				}else if ($thisLi.hasClass('active')) {
+				}else if($this.hasClass('comment')){
+                    popupCommentDialog();
+                }else if ($thisLi.hasClass('active')) {
 					$thisLi.removeClass('active');
 				} else {
 					$thisLi.addClass('active');
 				}
 			});
 			setTimeout(function() {
-				$('.bp_toolbar_wrapper').addClass('shrink');
+				$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
+                $('.bp_slidefold_btn').addClass('fold').removeClass('open');
 			}, 2000)
-			$('.bp_toolbar_wrapper').hover(function() {
+            //原hover打开收起侧工具栏
+			/*$('.bp_toolbar_wrapper').hover(function() {
 				thisEl.removeClass('shrink').addClass('active');
+                $('.bp_slidefold_btn').removeClass('fold').addClass('open');
 			}, function() {
 				thisEl.removeClass('active').addClass('shrink');
-			});
+                $('.bp_slidefold_btn').addClass('fold').removeClass('open');
+			});*/
+
+            //点击打开收起侧工具栏
+            $('.bp_slidefold_btn').click(function() {
+                if ($(this).hasClass('open')) {
+                    $('.bp_toolbar_wrapper').removeClass('active').addClass('shrink');
+                    $(this).addClass('fold').removeClass('open');
+                } else if($(this).hasClass('fold')) {
+                    $('.bp_toolbar_wrapper').removeClass('shrink').addClass('active');
+                    $(this).addClass('open').removeClass('fold');
+                }
+            });
 		}
 
 		function backgroundSizing() {
@@ -1203,6 +1335,26 @@
 				donateContainer.removeClass('active');
 			})
 		}
+
+        function popupCommentDialog(){
+            var windowHeight=$(window).height(),
+                    commentContainer=$('.bp_comment_container');
+            commentContainer.addClass('active');
+            $('.bp_comment_wrapper').css({
+                'margin-top': function() {
+                    return (windowHeight - $(this).height()) / 2;
+                }
+            });
+            //点击评论弹窗周围关闭打赏浮层
+            commentContainer.on('click', function(e) {
+                if ($(e.target).closest('.bp_comment_wrapper').length == 0) {
+                    $('.bp_comment_container').removeClass('active');
+                }
+            });
+            commentContainer.find('.closebtn').click(function(){
+                commentContainer.removeClass('active');
+            });
+        }
 	</script>
 </body>
 

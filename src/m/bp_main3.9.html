@@ -716,34 +716,59 @@
 				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
 					closeDonateDialog();
 				}
-			});
-			$('.bp_donatestep_wrapper').each(function(index){
+			});、
+			$('.bp_donatestep_wrapper.step_1').on('touchend', function(){
 				var $this=$(this);
-				switch (index){
-					case 0:
-						$this.find('.donatebtn').on('touchend',function(){
-							if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
-								$this.hide().next().show();
-							};
-						});
-						break;
-					case 1:
-						$this.find('.donatebtn').on('touchend',function(){
-							if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
-								$this.hide().next().show();
-							};
-						});
-						break;
-					case 2:
-						$this.find('a').on('touchend',function(){
-							$('.bp_donate_container').removeClass('active');
-							$this.prev().prev().show();
-							$this.hide();
-							closeDonateDialog();
-						});
-						break;
-				}
+				$this.find('.donatebtn').on('touchend',function(){
+					if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+						$this.hide().next().show();
+					};
+				});
 			});
+			$('.bp_donatestep_wrapper.step_2').on('touchend', function(){
+				var $this=$(this);
+				$this.find('.donatebtn').on('touchend',function(){
+					if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+						$this.hide().next().show();
+					};
+				});
+			});
+			$('.bp_donatestep_wrapper.step_3').on('touchend', function(){
+				var $this=$(this);
+				$this.find('a').on('touchend',function(){
+					$('.bp_donate_container').removeClass('active');
+					$this.prev().prev().show();
+					$this.hide();
+					closeDonateDialog();
+				});
+			});
+			// $('.bp_donatestep_wrapper').each(function(index){
+			// 	var $this=$(this);
+			// 	switch (index){
+			// 		case 0:
+			// 			$this.find('.donatebtn').on('touchend',function(){
+			//				if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+			//					$this.hide().next().show();
+			//				};
+			//			});
+			// 			break;
+			// 		case 1:
+			// 			$this.find('.donatebtn').on('touchend',function(){
+			// 				if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+			// 					$this.hide().next().show();
+			// 				};
+			// 			});
+			// 			break;
+			// 		case 2:
+			// 			$this.find('a').on('touchend',function(){
+			// 				$('.bp_donate_container').removeClass('active');
+			// 				$this.prev().prev().show();
+			// 				$this.hide();
+			// 				closeDonateDialog();
+			// 			});
+			// 			break;
+			// 	}
+			// });
 		}
 		function turnToCurrentpage() {
 			var flipbook = $('.flipbook');

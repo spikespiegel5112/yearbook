@@ -953,8 +953,9 @@
 }
 .bp_donate_wrapper{
 	display: block;
-	width: 460px;
-	height: 380px;
+    padding: 30px;
+	width: 490px;
+	height: 395px;
 	margin: 0 auto;
 	background-color: #fff;
 	border-radius: 10px;
@@ -968,9 +969,9 @@
 }
 .bp_donate_wrapper h3{
     margin: 0 auto;
-    padding: 10px 0;
-    width: 90%;
-    font-size: 30px;
+    padding: 0 0 15px 0;
+    width: 100%;
+    font-size: 35px;
     font-weight: normal;
 }
 .bp_donate_wrapper h4{
@@ -981,7 +982,7 @@
 }
 .bp_donate_wrapper h5{
 	margin: 0 auto;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: normal;
 }
 .bp_donate_wrapper ul{
@@ -989,16 +990,14 @@
 }
 
 .bp_donatedperson_wrapper{
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 90%;
+    width: 100%;
     overflow: hidden;
 }
 .bp_donatedperson_wrapper label{
     float: left;
-    height: 35px;
-    line-height: 35px;
-    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
    
 }
 .bp_donatedperson_wrapper ul{
@@ -1006,13 +1005,13 @@
 }
 .bp_donatedperson_wrapper ul li{
     width: 30px;
-    margin: 5px 0;
+    margin: 5px;
 }
 .bp_donatedperson_wrapper ul li img{
     display: block;
     margin: 0 auto;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
 }
 .bp_donatedperson_wrapper ul li span{
@@ -1023,11 +1022,14 @@
     white-space: nowrap;
     overflow: hidden;
 }
+.bp_donatestep_wrapper ul{
+    margin: 15px 0;
+    width: 100%;
+}
 .bp_donatestep_wrapper ul li{
-	margin: 8px 11px;
-	width: 115px;
-	height: 60px;
-
+	margin: 5px 10px;
+	width: 140px;
+	height: 70px;
 }
 .bp_donatestep_wrapper ul li:last-child a{
 	display: inline-block;
@@ -1035,25 +1037,27 @@
 	line-height: 4rem;
 }
 .bp_donatestep_wrapper h5{
-	margin: 0 auto;
-	width: 90%;
+    margin: 10px 0;
+	width: 100%;
+    height: 15px;
+    line-height: 15px;
 	background-color: #fff;
     font-weight: bolder;
 }
-.bp_donatestep_wrapper ul{
-	margin: 10px auto;
-	width: 93%;
-}
 .bp_donatestep_wrapper ul li label{
-	position: absolute;
-	bottom: 0;
-	right: 10%;
+	position: relative;
+	top: 10px;
+	left: 10px;
 	font-size: 0.5rem;
 	color: #df7262;
 }
-
+.bp_donatestep_wrapper ul li:last-child label{
+    position: absolute;
+    top: 44px;
+    left: 110px;
+}
 .bp_donatestep_wrapper ul .active a, .bp_donatestep_wrapper ul .active input{
-	background-color: #df7262;
+	background-color: #ff696a;
 }
 .bp_donatestep_wrapper ul .active label, .bp_donatestep_wrapper ul .active a span, .bp_donatestep_wrapper ul .active input{
 	color: #fff;
@@ -1067,15 +1071,20 @@
 	vertical-align: middle;
 }
 .bp_donatestep_wrapper ul li a span{
-	line-height: 3.6rem;
+	line-height: 4rem;
+    position: relative;
+    left: 10px;
+    font-size: 45px;
 }
 .bp_donatestep_wrapper ul li a span, .bp_donatestep_wrapper ul li input{
-	font-size: 35px;
+	
 	text-align: center;
 	color: #df7262;
+
 }
 .bp_donatestep_wrapper ul li input{
     line-height: 35px;
+    font-size: 35px;
 }
 .bp_donatestep_wrapper ul li input::-webkit-input-placeholder{
 	color: #df7262;
@@ -1083,10 +1092,9 @@
 }
 .bp_donate_wrapper .donatebtn{
 	display: block;
-	margin: 0 auto;
 	padding: 4% 0;
-	width: 90%;
-	font-size: 20px;
+	width: 100%;
+	font-size: 25px;
 	color: #fff;
 	text-align: center;
 	background-color: #ff696a;
@@ -1095,10 +1103,10 @@
 	background-color: #A54546;
 }
 .bp_donatestep_wrapper p{
-	margin: 2% 0 0 0;
+	margin: 3% 0 0 0;
 	text-align: center;
-	color: #a1a1a1;
-    font-size: 12px;
+	color: red;
+    font-size: 13px;
 }
 
 .bp_iwanttodonate_btn{

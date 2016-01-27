@@ -465,7 +465,7 @@
 						if (availHeight==docHeight&&scrollTop==0) {
 							return;
 						}else{
-							if (availHeight + scrollTop + Number(options.offset) >= docHeight) {
+							if (availHeight + scrollTop >= docHeight) {
 								options.onScrollBottom();
 							}
 						}
@@ -590,6 +590,11 @@
 					$this.siblings().find('a').removeClass('active');
 					$this.find('a').addClass('active');
 					thisEl.show().siblings('div').hide();
+					if ($this.index()!=0) {
+						$('.bp_sendcomment_item').hide();
+					}else{
+						$('.bp_sendcomment_item').show();
+					}
 				});
 				window.eventFlagPortrait=false;
 			};

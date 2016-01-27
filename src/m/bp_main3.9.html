@@ -426,11 +426,16 @@
 					</ul>
 					<a class='donatebtn' href="javascript:;">立即支付</a>
 				</div>
+				<div class='bp_donatestep_wrapper waitingforpay'>
+					<img src="../img/m/paymenglinkloading_00000.png">
+					<a href="javascript:;">+</a>
+				</div>
 				<div class='bp_donatestep_wrapper step_3'>
 					<img src="../img/m/donatesuccessful_00000.png">
 					<label>赞助成功！</label>
 					<a href="javascript:;">+</a>
 				</div>
+				
 			</div>
 		</div>
 		<div class="bp_sendcomment_item">
@@ -570,6 +575,7 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbookHeight=$('.bp_flipbook_container').height(),
+				
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item');
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
@@ -579,22 +585,45 @@
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+
 			if (window.eventFlagPortrait) {
+				//当评论页数量为0时显示为空图标
 				if ($('.bp_comment_wrapper table').length==0) {
 					$('.bp_empty_wrapper').show();
 				};
-				$('.bp_menu_wrapper li').on('touchend', function() {
-					var $this = $(this),
-						index = $this.index(),
-						thisEl = $('.bp_iatab_wrapper>div').eq(index);
-					$this.siblings().find('a').removeClass('active');
+
+				$('.bp_menu_wrapper li:eq(0)').on('touchend', function(){
+					var $this = $(this);
 					$this.find('a').addClass('active');
-					thisEl.show().siblings('div').hide();
-					if ($this.index()!=0) {
-						$('.bp_sendcomment_item').hide();
-					}else{
-						$('.bp_sendcomment_item').show();
+					$('.bp_comment_container').show();
+					$('.bp_menu_wrapper li:eq(1)').find('a').removeClass('active');
+					$('.bp_donatetab_wrapper').hide();
+					$('.bp_sendcomment_item').show();
+				});
+
+				$('.bp_menu_wrapper li:eq(1)').on('touchend', function(){
+					var $this = $(this);
+					var bookinfoHeight=$('.bp_bookinfo_item').height(),
+					bpmenuHeight=$('.bp_menu_wrapper').height(),
+					donatetabHeight=$('.bp_iatab_wrapper').height(),
+					totalHeight=flipbookHeight+bookinfoHeight+bpmenuHeight+80;
+					//当内容高度不够屏幕高度时手动计算css把高度填充满
+					if(windowHeight-(totalHeight+100)>0){
+						$('.bp_donatedperson_wrapper').css('height',function(){
+							return windowHeight-totalHeight
+						});
 					}
+					
+					$this.find('a').addClass('active');
+					$('.bp_donatetab_wrapper').show();
+					$('.bp_menu_wrapper li:eq(0)').find('a').removeClass('active');
+					$('.bp_comment_container').hide()
+					$('.bp_sendcomment_item').hide();
+				});
+
+				$('.bp_menu_wrapper li:eq(2)').on('touchend', function(){
+					var $this = $(this);
+					$this.find('a').toggleClass('active');
 				});
 				window.eventFlagPortrait=false;
 			};
@@ -707,9 +736,32 @@
 				$this.siblings().removeClass('active').end().addClass('active');
 				$this.parent().hasClass('active')?$this.siblings('label').show():$this.siblings('label').hide()
 			});
+			$('.bp_donatestep_wrapper.step_1 .donatebtn').on('touchend', function(){
+				if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+						$('.bp_donatestep_wrapper.step_1').hide().next().show();
+					};
+			});
 			//选择支付方式
 			$('.bp_donatestep_wrapper:eq(1) li').on('touchend', function(){
 				$(this).siblings().removeClass('active').end().addClass('active');
+			});
+			$('.bp_donatestep_wrapper.step_2 .donatebtn').on('touchend', function(){
+				if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+						$('.bp_donatestep_wrapper.step_2').hide().next().show();
+					};
+			});
+			$('.bp_donatestep_wrapper.waitingforpay').on('touchend', function(){
+				var $this=$(this);
+				$this.hide().next().show();
+				$this.find('a').on('touchend', function(){
+					$this.hide().next().show();
+					$(this).unbind('touchend');
+				})
+			})
+			$('.bp_donatestep_wrapper.step_3 a').on('touchend', function(){
+				var $this=$(this);
+				$('.bp_donate_container').removeClass('active');
+				closeDonateDialog();
 			});
 			//点击打赏弹窗周围关闭打赏浮层
 			donateContainer.on('touchend', function(e) {
@@ -717,33 +769,36 @@
 					closeDonateDialog();
 				}
 			});
-			$('.bp_donatestep_wrapper').each(function(index){
-				var $this=$(this);
-				switch (index){
-					case 0:
-						$this.find('.donatebtn').on('touchend',function(){
-							if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
-								$this.hide().next().show();
-							};
-						});
-						break;
-					case 1:
-						$this.find('.donatebtn').on('touchend',function(){
-							if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
-								$this.hide().next().show();
-							};
-						});
-						break;
-					case 2:
-						$this.find('a').on('touchend',function(){
-							$('.bp_donate_container').removeClass('active');
-							$this.prev().prev().show();
-							$this.hide();
-							closeDonateDialog();
-						});
-						break;
-				}
-			});
+			
+			
+			
+			// $('.bp_donatestep_wrapper').each(function(index){
+			// 	var $this=$(this);
+			// 	switch (index){
+			// 		case 0:
+			// 			$this.find('.donatebtn').on('touchend',function(){
+			//				if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+			//					$this.hide().next().show();
+			//				};
+			//			});
+			// 			break;
+			// 		case 1:
+			// 			$this.find('.donatebtn').on('touchend',function(){
+			// 				if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+			// 					$this.hide().next().show();
+			// 				};
+			// 			});
+			// 			break;
+			// 		case 2:
+			// 			$this.find('a').on('touchend',function(){
+			// 				$('.bp_donate_container').removeClass('active');
+			// 				$this.prev().prev().show();
+			// 				$this.hide();
+			// 				closeDonateDialog();
+			// 			});
+			// 			break;
+			// 	}
+			// });
 		}
 		function turnToCurrentpage() {
 			var flipbook = $('.flipbook');

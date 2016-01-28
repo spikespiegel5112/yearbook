@@ -5076,12 +5076,6 @@
 	min-width: 2em;
 }
 
-.bmindex_normalvote_wrapper {
-	margin: 0 0 15px 0;
-	max-height: 240px;
-	overflow: auto;
-}
-
 .timeline_content_wrapper .vote_list_result {
 	max-height: 250px;
 }
@@ -5138,6 +5132,95 @@
 .timeline_content_wrapper .tlnode_comment_item .gradient_btn {
 	float: right;
 	margin: 0 60px 0 0;
+}
+
+/*ia space vote and upload photo style*/
+.bmindex_normalvote_wrapper {
+    margin: 0 0 15px 0;
+    max-height: 240px;
+    overflow: auto;
+}
+
+.bmindex_normalvote_wrapper ul{
+    padding: 0 0 10px 0;
+    overflow: hidden;
+}
+
+.bmindex_normalvote_wrapper a{
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+}
+
+.bmindex_membervote_wrapper{
+    max-height: 260px;
+    overflow: auto;
+}
+
+.bmindex_membervote_wrapper li{
+    float: left;
+    width: 100px;
+    height: 110px;
+    border: 1px solid #ccc;
+}
+
+.bmindex_membervote_wrapper ul li a{
+    display: block;
+    width: 100px;
+    height: 80px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+}
+
+.bmindex_membervote_wrapper ul li .choosen_icon{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+}
+.bmindex_membervote_wrapper a .choosen_icon span{
+    display: block;
+    margin: 5px auto;
+    width: 70px;
+    height: 70px;
+    background: url(../img/imgsprite_yb3_wbl_00000.png) -355px -24px;
+}
+
+.bmindex_membervote_wrapper ul .active a .choosen_icon{
+    display: block;
+}
+
+.bmindex_membervote_wrapper label{
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+    color: #222;
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+.bmindex_uploadphoto_wrapper{
+    max-height: 240px;
+    overflow: auto;
+}
+
+.bmindex_uploadphoto_wrapper ul li{
+    float: left;
+    width: 135px;
+    height: 90px;
+}
+
+.bmindex_uploadphoto_wrapper ul li a{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }
 
 

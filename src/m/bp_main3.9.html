@@ -298,7 +298,31 @@
 					</div>
 					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
 				</div>
-				
+				<div class='bp_praisetab_wrapper'>
+					<span class="up_arrow"></span>
+					<div class='bp_praise_wrapper'>
+						<label>赞过的人</label>
+						<ul id="praiseUsers">
+							<li>
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
+								<span>小惆怅长岑长</span>
+							</li>
+							<li>
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
+								<span>小惆怅长岑长</span>
+							</li>
+							<li>
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
+								<span>小惆怅长岑长</span>
+							</li>
+							<li>
+								<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
+								<span>小惆怅长岑长</span>
+							</li>
+						</ul>
+					</div>
+					<a class='bp_praise_btn' href="javascript:;">点赞</a>
+				</div>
 			</div>
 		</div>
 		<div class='bp_unsignedin_wrapper'>
@@ -430,6 +454,7 @@
 				</div>
 				<div class='bp_donatestep_wrapper waitingforpay'>
 					<img src="../img/m/paymenglinkloading_00000.png">
+					<label>等待付款…</label>
 					<a href="javascript:;">+</a>
 				</div>
 				<div class='bp_donatestep_wrapper step_3'>
@@ -618,10 +643,9 @@
 				$('.bp_menu_wrapper li:eq(0)').on('touchend', function(){
 					var $this = $(this);
 					$this.find('a').addClass('active');
+					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_comment_container').show();
-					$('.bp_menu_wrapper li:eq(1)').find('a').removeClass('active');
-					$('.bp_donatetab_wrapper').hide();
-					$('.bp_sendcomment_item').show();
+					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(0).find('a').addClass('active');
 				});
 
 				$('.bp_menu_wrapper li:eq(1)').on('touchend', function(){
@@ -638,15 +662,16 @@
 					}
 					
 					$this.find('a').addClass('active');
+					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_donatetab_wrapper').show();
-					$('.bp_menu_wrapper li:eq(0)').find('a').removeClass('active');
-					$('.bp_comment_container').hide()
-					$('.bp_sendcomment_item').hide();
+					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(1).find('a').addClass('active');
 				});
 
 				$('.bp_menu_wrapper li:eq(2)').on('touchend', function(){
 					var $this = $(this);
-					$this.find('a').toggleClass('active');
+					$('.bp_iatab_wrapper>div').hide();
+					$('.bp_praisetab_wrapper').show();
+					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(2).find('a').addClass('active');
 				});
 				window.eventFlagPortrait=false;
 			};

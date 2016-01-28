@@ -523,30 +523,30 @@
 			window.eventFlagPortrait = true,
 			window.eventFlagLandscape = true;
 			//iSliderInit
-			// var iSliderInit=function(list){
-			// 	console.log('iSliderInit')
-			// 	var list = [
-			// 		{content: "../img/m/Comp_1_00000.png"},
-			// 		{content: "../img/m/bg-yb-wx-login_00000.jpg"},
-			// 		{content: "../img/m/photopage_img_2_00000.jpg"}
-			// 	];
-			// 	var S = new iSlider({
-			// 		dom: document.getElementById('iSlider-wrapper'),
-			// 		data: list,
-			// 		isLooping: 1,
-			// 		isOverspread: false,
-			// 		animateTime: 800, // ms
-			// 		plugins: [[' ', {zoomFactor: 3}]]
+			var iSliderInit=function(list){
+				console.log('iSliderInit')
+				var list = [
+					{content: "../img/m/Comp_1_00000.png"},
+					{content: "../img/m/bg-yb-wx-login_00000.jpg"},
+					{content: "../img/m/photopage_img_2_00000.jpg"}
+				];
+				var S = new iSlider({
+					dom: document.getElementById('iSlider-wrapper'),
+					data: list,
+					isLooping: 1,
+					isOverspread: false,
+					animateTime: 800, // ms
+					plugins: [[' ', {zoomFactor: 3}]]
 				   
-			// 	});
-			// 	var iSliderWrapper=document.querySelector('.bp_photoslider_wrapper');
-			// 	 S.bind('initialized', '.bp_photoslider_wrapper', function(){
-			// 			alert('aaa')
-			// 			iSliderWrapper.css({
-			// 				'display':'none'
-			// 			})
-			// 		})
-			// }();
+				});
+				var iSliderWrapper=document.querySelector('.bp_photoslider_wrapper');
+				 S.bind('initialized', '.bp_photoslider_wrapper', function(){
+						alert('aaa')
+						iSliderWrapper.css({
+							'display':'none'
+						})
+					})
+			}();
 			$('.bp_resizebtn_item').on('touchend', function(){
 				var $this=$(this);
 				$this.toggleClass('active')
@@ -1194,8 +1194,7 @@
 		}
 		function closeDonateDialog(){
 			$('.bp_donate_container').removeClass('active');
-			$('.bp_donatestep_wrapper:eq(0)').show();
-			$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
+			$('.bp_donatestep_wrapper:eq(0)').show().siblings().hide();
 			$('.bp_landscape_wrapper .donate a').removeClass('active');
 		}
 		function collideLoading() {

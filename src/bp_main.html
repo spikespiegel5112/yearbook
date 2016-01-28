@@ -452,7 +452,7 @@
 			<div class='bp_donatestep_wrapper step_3'>
 				<img src="img/donatesuccessful_00000.png">
 				<label>赞助成功！</label>
-				
+				<a href="javascript:;">+</a>
 			</div>
 		</div>
 	</div>
@@ -1333,6 +1333,9 @@
 			});
 			donatestep.find('.closebtn').click(function(){
 				donateContainer.removeClass('active');
+			});
+			$('.bp_donatepannel_wrapper .donatebtn').click(function(){
+				$('.bp_donatestep_wrapper').eq(0).hide().end().eq(2).show();
 			})
 		}
 

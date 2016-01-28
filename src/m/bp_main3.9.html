@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css" />
 	<!-- endbuild -->
 	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
+	<link rel="stylesheet" href="../assets/css/iSlider.min.css" type="text/css" />
 </head>
 
 <body>
@@ -297,6 +298,18 @@
 					</div>
 					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
 				</div>
+				<div class='bp_praisetab_wrapper'>
+					<span class="up_arrow"></span>
+					<div class='bp_praise_wrapper' style="min-height: 3rem">
+						<label>赞过的人</label>
+						<ul class='' id="praiseUsers">
+
+
+						</ul>
+					</div>
+					<a class='bp_praise_btn' href="javascript:;">点赞</a>
+				</div>
+
 			</div>
 		</div>
 		<div class='bp_unsignedin_wrapper'>
@@ -444,12 +457,15 @@
 				<button type="button"><i></i></button>
 			</div>
 		</div>
+		<div class='bp_photoslider_wrapper' id="iSlider-wrapper">
 
+		</div>
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
-
+	<script type="text/javascript" src="../assets/js/iSlider.min.js"></script>
+	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.min.js"></script>
 
 	<script>
 		var LOG = function() {
@@ -483,32 +499,7 @@
 			collideLoading();
 		});
 
-		function collideLoading() {
-			var loadingFlag=true,
-				commentLength=$('.bp_comment_wrapper table').length;
-			$.collideLoading({
-				onScrollBottom: function() {
-
-					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>';
-
-					//这个变量用来约束标签页只在打开了评论的情况下可触发底部加载事件
-					var index=$('.bp_menu_wrapper .active').parent().index();
-					//用一个flag来约束加载逻辑使其在完成加载过程前触发的底部碰撞事件无效
-					if (commentLength==0) {
-						return;
-					}else if (loadingFlag&&index==0) {
-						loadingFlag=false;
-						$('.ybwechat_loading_item').show();
-						setTimeout(function() {
-							$('.bp_comment_wrapper').append(commentEl);
-							$('.ybwechat_loading_item').hide();
-							loadingFlag=true;
-						}, 3000);
-					};
-					
-				}
-			});
-		}
+		
 
 		function bookpreviewInit() {
 			var windowWidth = $(window).width(),
@@ -517,6 +508,51 @@
 			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
 			window.eventFlagPortrait = true,
 			window.eventFlagLandscape = true;
+			//iSliderInit
+			var iSliderInit=function(list){
+				console.log('iSliderInit')
+				var list = [
+					{content: "../img/m/Comp_1_00000.png"},
+					{content: "../img/m/bg-yb-wx-login_00000.jpg"},
+					{content: "../img/m/photopage_img_2_00000.jpg"}
+				];
+				var S = new iSlider({
+					dom: document.getElementById('iSlider-wrapper'),
+					data: list,
+					isLooping: 1,
+					isOverspread: false,
+					animateTime: 800, // ms
+					plugins: [[' ', {zoomFactor: 3}]]
+				   
+				});
+				var iSliderWrapper=document.querySelector('.bp_photoslider_wrapper');
+				 S.bind('initialized', '.bp_photoslider_wrapper', function(){
+						alert('aaa')
+						iSliderWrapper.css({
+							'display':'none'
+						})
+					})
+			}();
+			$('.bp_resizebtn_item').on('touchend', function(){
+				var $this=$(this);
+				$this.toggleClass('active')
+				if ($this.hasClass('active')) {
+					$('.flipbook_wrapper').hide();
+					$('.bp_photoslider_wrapper').css({
+						'display':'block',
+						'z-index':2,
+						'opacity':1
+					});
+				}else{
+					$('.flipbook_wrapper').show();
+					$('.bp_photoslider_wrapper').css({
+						'display':'none',
+						'z-index':'-11111'
+					});
+				}
+				
+				
+			});
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
@@ -534,9 +570,7 @@
 					return Number(flipbook.attr('currentpage')) - 2;
 				});
 			});
-			$('.bp_resizebtn_item').on('touchend', function(){
-				$(this).toggleClass('active');
-			});
+			
 			//监听翻转事件
 			$(window).on("orientationchange", function(event) {
 				orientationHandler(event, {
@@ -1149,6 +1183,32 @@
 			$('.bp_donatestep_wrapper:eq(0)').show();
 			$('.bp_donatestep_wrapper:eq(1), .bp_donatestep_wrapper:eq(2)').hide();
 			$('.bp_landscape_wrapper .donate a').removeClass('active');
+		}
+		function collideLoading() {
+			var loadingFlag=true,
+				commentLength=$('.bp_comment_wrapper table').length;
+			$.collideLoading({
+				onScrollBottom: function() {
+
+					var commentEl = '<table><tr><td><div class="user_header"><img src="../img/m/user_default_head.png"></div></td><td><div class="user_name"><span>username</span></div></td><td><div class="commet_time"><span>2015-12-31</span></div></td></tr><tr><td colspan="3" class=""><p>说些什么什么事什么什么事没什么事忙什么什么事...</p></td></tr></table>';
+
+					//这个变量用来约束标签页只在打开了评论的情况下可触发底部加载事件
+					var index=$('.bp_menu_wrapper .active').parent().index();
+					//用一个flag来约束加载逻辑使其在完成加载过程前触发的底部碰撞事件无效
+					if (commentLength==0) {
+						return;
+					}else if (loadingFlag&&index==0) {
+						loadingFlag=false;
+						$('.ybwechat_loading_item').show();
+						setTimeout(function() {
+							$('.bp_comment_wrapper').append(commentEl);
+							$('.ybwechat_loading_item').hide();
+							loadingFlag=true;
+						}, 3000);
+					};
+					
+				}
+			});
 		}
 	</script>
 </body>

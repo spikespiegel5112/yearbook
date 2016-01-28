@@ -453,7 +453,7 @@
 }
 
 .bp_comment_container table tr:first-child td:last-child {
-	width: 72px;
+	width: 112px;
 }
 
 .bp_comment_container table tr td div {
@@ -744,7 +744,7 @@
 }
 .bp_donate_container.active{
 	opacity: 1;
-	z-index: 1;
+	z-index: 2;
 	
 }
 .bp_donate_wrapper{
@@ -819,7 +819,7 @@
 	color: #df7262;
 }
 .bp_donatestep_wrapper.step_1 ul li input{
-	line-height: 1.5rem;
+	line-height: 1.7rem;
 }
 .bp_donatestep_wrapper.step_1 ul .active a, .bp_donatestep_wrapper.step_1 ul .active input{
 	background-color: #df7262;
@@ -855,7 +855,7 @@
 .bp_iwanttodonate_btn{
 	display: block;
 	margin: 0 auto 0;
-	padding: 2%;
+	padding: 0.5rem;
 	width: 80%;
 	font-size: 1.5rem;
 	border:2px solid #ff696a;
@@ -936,7 +936,13 @@
 }
 .bp_donatestep_wrapper.waitingforpay img{
 	display: block;
-	margin: 70px auto;
+	margin: 3.5rem auto 1rem;
+}
+.bp_donatestep_wrapper.waitingforpay label{
+	display: block;
+	text-align: center;
+	color: #a2a2a2;
+	font-size: 1.2rem;
 }
 .bp_empty_wrapper{
 	display: none;
@@ -1058,4 +1064,12 @@
 }
 .bp_logolink_wrapper a img{
 	width: 100%;
+}
+.bp_photoslider_wrapper{
+	/*height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;*/
+	opacity: 0;
+	z-index: -999;
 }

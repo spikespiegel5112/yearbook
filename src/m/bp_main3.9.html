@@ -426,11 +426,16 @@
 					</ul>
 					<a class='donatebtn' href="javascript:;">立即支付</a>
 				</div>
+				<div class='bp_donatestep_wrapper waitingforpay'>
+					<img src="../img/m/paymenglinkloading_00000.png">
+					<a href="javascript:;">+</a>
+				</div>
 				<div class='bp_donatestep_wrapper step_3'>
 					<img src="../img/m/donatesuccessful_00000.png">
 					<label>赞助成功！</label>
 					<a href="javascript:;">+</a>
 				</div>
+				
 			</div>
 		</div>
 		<div class="bp_sendcomment_item">
@@ -731,9 +736,34 @@
 				$this.siblings().removeClass('active').end().addClass('active');
 				$this.parent().hasClass('active')?$this.siblings('label').show():$this.siblings('label').hide()
 			});
+			$('.bp_donatestep_wrapper.step_1 .donatebtn').on('touchend', function(){
+				if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+						$('.bp_donatestep_wrapper.step_1').hide().next().show();
+					};
+			});
 			//选择支付方式
 			$('.bp_donatestep_wrapper:eq(1) li').on('touchend', function(){
 				$(this).siblings().removeClass('active').end().addClass('active');
+			});
+			$('.bp_donatestep_wrapper.step_2 .donatebtn').on('touchend', function(){
+				if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
+						$('.bp_donatestep_wrapper.step_2').hide().next().show();
+					};
+			});
+			//等待付款界面的事件
+			$('.bp_donatestep_wrapper.waitingforpay').on('touchend', function(){
+				var $this=$(this);
+				$this.hide().next().show();
+				$this.find('a').on('touchend', function(){
+					$this.hide().next().show();
+					$(this).unbind('touchend');
+				})
+			})
+			//支付完成提示
+			$('.bp_donatestep_wrapper.step_3 a').on('touchend', function(){
+				var $this=$(this);
+				$('.bp_donate_container').removeClass('active');
+				closeDonateDialog();
 			});
 			//点击打赏弹窗周围关闭打赏浮层
 			donateContainer.on('touchend', function(e) {
@@ -741,21 +771,9 @@
 					closeDonateDialog();
 				}
 			});
-			$('.bp_donatestep_wrapper.step_1 .donatebtn').on('touchend', function(){
-				if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
-						$('.bp_donatestep_wrapper.step_1').hide().next().show();
-					};
-			});
-			$('.bp_donatestep_wrapper.step_2 .donatebtn').on('touchend', function(){
-				if ($('.bp_donatestep_wrapper:eq(1) li').hasClass('active')) {
-						$('.bp_donatestep_wrapper.step_2').hide().next().show();
-					};
-			});
-			$('.bp_donatestep_wrapper.step_3 a').on('touchend', function(){
-				var $this=$(this);
-				$('.bp_donate_container').removeClass('active');
-				closeDonateDialog();
-			});
+			
+			
+			
 			// $('.bp_donatestep_wrapper').each(function(index){
 			// 	var $this=$(this);
 			// 	switch (index){

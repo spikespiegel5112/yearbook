@@ -709,7 +709,7 @@
 	background-size: 1000%;
 	
 }
-.viewmode_portrait .bp_resizebtn_item div{
+.viewmode_portrait .bp_resizebtn_item{
 	display: block;
 	position: absolute;
 	padding: 5px;
@@ -720,6 +720,8 @@
 	opacity: 0.8;
 	background-image: url("../img/m/img_sprite_00000.png");
 /*	background-size: 1000%;*/
+	background-position-x: 26px;
+
 	background-position: -26px -120px;
 }
 .viewmode_portrait .bp_resizebtn_item.active div{

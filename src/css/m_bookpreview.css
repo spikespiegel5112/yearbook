@@ -708,21 +708,22 @@
 	background-size: 1000%;
 	
 }
-.viewmode_portrait .bp_resizebtn_item div{
+.viewmode_portrait .bp_resizebtn_item{
 	display: block;
 	position: absolute;
 	padding: 5px;
-	top: 8px;
+	top: 6px;
 	right: 50px;
 	width: 30px;
 	height: 30px;
 	opacity: 0.8;
-	background-image: url("../img/m/img_sprite_00000.png");
-/*	background-size: 1000%;*/
-	background-position: -26px -120px;
+	background-image: url("../img/m/yb3wechatheader_sprite_img_00000.png");
+	background-size: 1200%;
+	background-position-y: -3px;
+	background-position-x: -693px;
 }
-.viewmode_portrait .bp_resizebtn_item.active div{
-	background-position: -61px -120px;
+.viewmode_portrait .bp_resizebtn_item.active{
+	background-position-x: -735px;
 }
 .viewmode_landscape .bp_resizebtn_item div{
 	background-position: -258px -74px;

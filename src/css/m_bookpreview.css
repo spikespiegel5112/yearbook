@@ -340,35 +340,37 @@
 	width: 40px;
 	height: 45px;
 	background-image: url("../img/m/img_sprite_00000.png");
-	background-position-y: -155px;
+	background-position-y: -153px;
+	opacity: 0.6;
 }
 
 .bp_menu_wrapper li .praise {
-	background-position-x: -300px;
+	background-position-x: -283px;
 }
 .bp_menu_wrapper .donate{
 	margin: 0 auto 5px;
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
-	background-color: #949494;
+	background-color: #a4a7b5;
 	border-radius: 50%;
 	color: #fff;
 	font-size: 24px;
 }
 .bp_menu_wrapper li .comment {
-	background-position-x: -184px;
+	background-position-x: -170px;
 }
-
 .bp_menu_wrapper .active .comment{
-	background-position-x: -224px;
+	opacity: 1;
+	/*background-position-x: -170px;*/
 }
 .bp_menu_wrapper .active .donate{
 	background-color: #70758c;
 }
 .bp_menu_wrapper .active .praise{
-	background-position-x: -337px;	
-}
+	opacity: 1;
+/*	background-position-x: -327px;	*/
+}	
 
 
 .bp_menu_wrapper li .bootstrap-switch {
@@ -381,6 +383,7 @@
 
 .bp_iatab_wrapper {
 	position: relative;
+	overflow: hidden;
 }
 
 .bp_iatab_wrapper .up_arrow {
@@ -391,11 +394,9 @@
 	border-bottom: 10px solid #e0e0e0;
 }
 
-
-
 .bp_praise_container {
 	display: none;
-	overflow: hidden;
+	background: #f2f2f2;
 }
 .bp_donatetab_wrapper{
 	display: none;
@@ -407,26 +408,30 @@
 	right: 50%;
 	margin-right: -10px;
 }
-.bp_donatedperson_wrapper{
-	padding: 1% 4%;
+.bp_praisedperson_wrapper{
+	width: 100%;
 }
-.bp_donatedperson_wrapper label{
+.bp_donatedperson_wrapper, .bp_praisedperson_wrapper{
+	padding: 1% 4%;
+	width: 92%;
+	height: 7rem;
+	overflow: hidden;
+}
+.bp_donatedperson_wrapper label, .bp_praisedperson_wrapper label{
 	font-size: 0.8rem;
 }
-.bp_donatedperson_wrapper ul li{
+.bp_donatedperson_wrapper ul li, .bp_praisedperson_wrapper li{
 	width: 55px;
 	margin: 3% 0;
 }
-.bp_donatedperson_wrapper ul li img{
+.bp_donatedperson_wrapper ul li img, .bp_praisedperson_wrapper li img{
 	display: block;
 	margin: 0 auto;
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
 }
-
-
-.bp_donatedperson_wrapper ul li span{
+.bp_donatedperson_wrapper ul li span, .bp_praisedperson_wrapper ul li span{
 	display: block;
 	font-size: 0.8rem;
 	color: #666;
@@ -434,9 +439,6 @@
 	white-space: nowrap;
 	overflow: hidden;
 }
-/*.bp_comment_container{
-	padding: 0 0 2rem 0;
-}*/
 .bp_comment_container .up_arrow {
 	left: 16.7%;
 	margin-left: -10px;
@@ -474,12 +476,6 @@
 	color: #333;
 }
 
-.bp_praise_container ul li {
-	float: left;
-	margin: 10px;
-	width: 70px;
-}
-
 .bp_praise_container ul li .user_header {
 	margin: 5px auto;
 	width: 45px;
@@ -500,7 +496,9 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-
+.bp_praise_container .up_arrow{
+	left: 80%;
+}
 .bp_sendcomment_item .input_box {
 	position: relative;
 	margin: 0 auto;
@@ -653,19 +651,19 @@
 	background-position-x: -123px;
 }
 .bp_landscape_wrapper ul .comment div {
-	background-position-x: 172px;
+	background-position-x: 182px;
 }
 
 .bp_landscape_wrapper ul .comment .active div {
-	background-position-x: 153px;
+	background-position-x: 160px;
 }
 
 .bp_landscape_wrapper ul .praise div {
-	background-position-x: 114px;
+	background-position-x: 140px;
 }
 
 .bp_landscape_wrapper ul .praise .active  div {
-	background-position-x: 79px;
+	background-position-x: 122px;
 }
 .bp_landscape_wrapper ul .donate div{
 	background-image:none;
@@ -681,35 +679,35 @@
 	background-color: orange;
 }
 .bp_landscape_wrapper ul .share div {
-	background-position-x: 60px;
+	background-position-x: 52px;
 }
 .bp_landscape_wrapper ul .share .active div {
-	background-position-x: 44px;
+	background-position-x: 35px;
 }
 .bp_resizebtn_item div{
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-size: 1000%;
 	
 }
-
-.viewmode_portrait .bp_resizebtn_item.active div{
-	background-position: -477px -122px;
-}
 .viewmode_portrait .bp_resizebtn_item div{
 	display: inline-block;
 	position: absolute;
+	padding: 5px;
 	top: 8px;
 	right: 50px;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	opacity: 0.7;
-	background-position: -444px -122px;
+	background-position: -26px -120px;
+}
+.viewmode_portrait .bp_resizebtn_item.active div{
+	background-position: -61px -120px;
 }
 .viewmode_landscape .bp_resizebtn_item div{
-	background-position: -268px -74px;
+	background-position: -258px -74px;
 }
 .viewmode_landscape .bp_resizebtn_item.active div{
-	background-position: -288px -74px;
+	background-position: -278px -74px;
 }
 .chapter_slide {
 	float: right;
@@ -760,7 +758,7 @@
 	padding: 4%;
 }
 
-.bp_donatedperson_wrapper ul li, .bp_donatestep_wrapper.step_1 ul li{
+.bp_donatestep_wrapper.step_1 ul li, .bp_donatedperson_wrapper ul li, .bp_praisedperson_wrapper ul li{
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
@@ -852,15 +850,42 @@
 	color: #a1a1a1;
 }
 
-.bp_iwanttodonate_btn{
+.bp_iwanttodonate_btn, .bp_praise_btn{
 	display: block;
 	margin: 0 auto 0;
 	padding: 0.5rem;
 	width: 80%;
-	font-size: 1.5rem;
+	height: 2.2rem;
+	line-height: 2.2rem;
 	border:2px solid #ff696a;
 	color: #ff696a;
+	font-size: 1.5rem;
 	text-align: center;
+	vertical-align: middle;
+}
+.bp_praise_btn{
+	line-height: 2rem;
+}
+.bp_praise_btn.active{
+	background: #ff696a;
+	color: #fff;
+}
+.bp_praise_btn span{
+	display: inline-block;
+	margin: 0 2px;
+	width: 35px;
+	height: 35px;
+	background-image: url(../img/m/img_sprite_00000.png);
+	background-position: -355px -156px;
+	vertical-align: middle;
+}
+.bp_praise_btn.active span{
+	background-position: -320px -156px;
+}
+.bp_praise_btn label{
+	display: inline-block;
+	margin: 0 2px;
+	vertical-align: middle;
 }
 .bp_donatestep_wrapper.step_2 {
 	display: none;

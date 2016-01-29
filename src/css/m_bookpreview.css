@@ -326,12 +326,28 @@
 	width: 33%;
 	text-align: center;
 }
+.bp_menu_wrapper li a:after{
+	content: '';
+	display: none;
+	position: relative;
+	margin: 0 auto;
+	width: 0;
+	height: 0;
+	bottom: 0;
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent #e0e0e0 transparent;
+	border-style: solid;
+}
 
 .bp_menu_wrapper li a {
 	display: block;
 	font-size: 12px;
 	color: #666;
 	text-decoration: none;
+}
+
+.bp_menu_wrapper li .active:after{
+	display: block;
 }
 
 .bp_menu_wrapper li .comment, .bp_menu_wrapper li .praise {
@@ -407,6 +423,9 @@
 .bp_donatetab_wrapper .up_arrow {
 	right: 50%;
 	margin-right: -10px;
+}
+.bp_donatetab_wrapper .swiper-container{
+	z-index: 0;
 }
 .bp_praisedperson_wrapper{
 	width: 100%;
@@ -697,7 +716,7 @@
 	right: 50px;
 	width: 30px;
 	height: 30px;
-	opacity: 0.7;
+	opacity: 0.8;
 	background-position: -26px -120px;
 }
 .viewmode_portrait .bp_resizebtn_item.active div{
@@ -1091,8 +1110,8 @@
 	width: 100%;
 }
 .bp_photoslider_wrapper{
-	/*height: 100%;
-	position: absolute;
+	height: 100%;
+/*	position: absolute;
 	top: 0;
 	left: 0;*/
 	opacity: 0;

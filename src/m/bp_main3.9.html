@@ -23,8 +23,7 @@
 <body>
 	<div class='main_container'>
 		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
-		<div class="bp_flipbook_container">
-			<div class="ybwechatheader_wrapper">
+		<div class="ybwechatheader_wrapper">
 				<a class='left_btn back_btn' href="javascript:;"></a>
 				<div class="bp_barrageswitch_item">
 					<a href="javascript:;">
@@ -40,6 +39,8 @@
 				<a class='right_btn share_btn' href="javascript:;"></a>
 				<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
 			</div>
+		<div class="bp_flipbook_container">
+			
 			<div class="flipbook-viewport">
 				<div class='flipbook_wrapper' pagecount='19'>
 					<a class='flipbook_prevpage_btn' href="javascript:;"><span></span></a>
@@ -128,6 +129,7 @@
 			<div class="bp_paginator_item">
 				<label>1</label>/<span>33</span>
 			</div>
+			
 		</div>
 		<div class="bp_portrait_wrapper">
 			<div class="bp_bookinfo_item">本书一共有<span>XX</span>页，可上传<span>XX</span>张照片</div>
@@ -156,7 +158,7 @@
 			<div class="bp_iatab_wrapper">
 
 				<div class="bp_comment_container">
-					<span class="up_arrow"></span>
+					
 					<div class='bp_comment_wrapper'>
 						<table>
 							<tr>
@@ -276,7 +278,7 @@
 					</div>
 				</div>
 				<div class='bp_donatetab_wrapper'>
-					<span class="up_arrow"></span>
+					
 					<div class='bp_donatedperson_wrapper swiper-container'>
 						<label>赞助过的人</label>
 						<ul class='swiper-wrapper'>
@@ -337,7 +339,7 @@
 					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
 				</div>
 				<div class='bp_praise_container'>
-					<span class="up_arrow"></span>
+					
 					
 					<div class='bp_praisedperson_wrapper swiper-container'>
 						<label>赞过的人</label>
@@ -553,14 +555,14 @@
 		</div>
 		<div class='bp_photoslider_wrapper' id="iSlider-wrapper">
 
-		</div>
+			</div>
 		
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
-	<script type="text/javascript" src="../assets/js/iSlider.min.js"></script>
-	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.min.js"></script>
+	<script type="text/javascript" src="../assets/js/iSlider.js"></script>
+	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.js"></script>
 	<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
 
 	<script>
@@ -605,30 +607,8 @@
 			window.eventFlagPortrait = true,
 			window.eventFlagLandscape = true;
 			//iSliderInit
-			// var iSliderInit=function(list){
-			// 	console.log('iSliderInit')
-			// 	var list = [
-			// 		{content: "../img/m/Comp_1_00000.png"},
-			// 		{content: "../img/m/bg-yb-wx-login_00000.jpg"},
-			// 		{content: "../img/m/photopage_img_2_00000.jpg"}
-			// 	];
-			// 	var S = new iSlider({
-			// 		dom: document.getElementById('iSlider-wrapper'),
-			// 		data: list,
-			// 		isLooping: 1,
-			// 		isOverspread: false,
-			// 		animateTime: 800, // ms
-			// 		plugins: [[' ', {zoomFactor: 3}]]
-				   
-			// 	});
-			// 	var iSliderWrapper=document.querySelector('.bp_photoslider_wrapper');
-			// 	 S.bind('initialized', '.bp_photoslider_wrapper', function(){
-			// 			alert('aaa')
-			// 			iSliderWrapper.css({
-			// 				'display':'none'
-			// 			})
-			// 		})
-			// }();
+			iSliderinit();
+			
 			$('.bp_resizebtn_item').on('touchend', function(){
 				var $this=$(this);
 				$this.toggleClass('active')
@@ -636,7 +616,7 @@
 					$('.flipbook_wrapper').hide();
 					$('.bp_photoslider_wrapper').css({
 						'display':'block',
-						'z-index':2,
+						'z-index':0,
 						'opacity':1
 					});
 				}else{
@@ -741,7 +721,15 @@
 							return windowHeight-totalHeight;
 						});
 					}
-					
+					$('.bp_donatepannel_wrapper input[type=tel]').keyup(function(){
+						var thisVal=$(this).val();
+						// thisVal.replace(/\D/g,'');
+						if (thisVal>200||/\D/.test(thisVal)) {
+							console.log('gtgt')
+							thisVal='';
+							//thisVal.replace(/^1[0-2]$|^[0-9]\d$|^1\d{2}$/,'200')
+						};
+					})
 					$this.find('a').addClass('active');
 					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_donatetab_wrapper').show();
@@ -855,6 +843,31 @@
 				});
 				window.eventFlagLandscape=false;
 			};
+		}
+
+		function iSliderinit(){
+			console.log('iSliderInit');
+			var list = [
+				{content: "../img/m/Comp_1_00000.png"},
+				{content: "../img/m/bg-yb-wx-login_00000.jpg"},
+				{content: "../img/m/photopage_img_2_00000.jpg"}
+			];
+			var S = new iSlider({
+				dom: document.getElementById('iSlider-wrapper'),
+				data: list,
+				isLooping: 1,
+				isOverspread: true,
+				animateTime: 800, // ms
+				useZoom: false,
+				plugins: [['zoompic', {zoomFactor: 8}]]
+			   
+			});
+			var iSliderWrapper=$('.bp_photoslider_wrapper');
+			setTimeout(function(){
+				$('.bp_photoslider_wrapper').css({
+						'display':'none'
+					},100)
+			});
 		}
 
 		function popupDonateDialog(){

@@ -704,8 +704,8 @@
 .bp_landscape_wrapper ul .share .active div {
 	background-position-x: 35px;
 }
-.bp_resizebtn_item div{
-	background-image: url("../img/m/img_sprite_00000.png");
+.bp_resizebtn_item{
+	background-image: url("../img/m/yb3wechatheader_sprite_img_00000.png");
 	background-size: 1000%;
 	
 }
@@ -717,7 +717,6 @@
 	right: 50px;
 	width: 30px;
 	height: 30px;
-	opacity: 0.8;
 	background-image: url("../img/m/yb3wechatheader_sprite_img_00000.png");
 	background-size: 1200%;
 	background-position-y: -3px;
@@ -726,10 +725,10 @@
 .viewmode_portrait .bp_resizebtn_item.active{
 	background-position-x: -735px;
 }
-.viewmode_landscape .bp_resizebtn_item div{
+.viewmode_landscape .bp_resizebtn_item a{
 	background-position: -258px -74px;
 }
-.viewmode_landscape .bp_resizebtn_item.active div{
+.viewmode_landscape .bp_resizebtn_item.active a{
 	background-position: -278px -74px;
 }
 .chapter_slide {
@@ -1121,7 +1120,7 @@
 	opacity: 0;
 	z-index: -999;
 }
-.bp_photoslider_wrapper .bp_resizebtn_item div{
+.bp_photoslider_wrapper .bp_resizebtn_item{
 	display: block;
 	padding: 5px;
 	width: 30px;
@@ -1132,7 +1131,7 @@
 	background-position: -26px -120px;
 	z-index: 1;
 }
-.bp_photoslider_wrapper .bp_resizebtn_item.active div{
+.bp_photoslider_wrapper .bp_resizebtn_item.active{
 	background-position: -26px -120px;
 }
 .viewmode_portrait .bp_photoslider_wrapper .islider-outer>li{

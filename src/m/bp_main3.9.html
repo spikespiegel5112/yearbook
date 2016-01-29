@@ -434,37 +434,31 @@
 				<li class="comment">
 					<a href="javascript:;">
 						<div></div>
-						<p>评论</p>
 					</a>
 				</li>
 				<li class="praise">
 					<a href="javascript:;">
 						<div></div>
-						<p>点赞</p>
 					</a>
 				</li>
 				<li class="donate">
 					<a href="javascript:;">
 						<div>赏</div>
-						<p>赞助</p>
 					</a>
 				</li>
 				<li class="share">
 					<a href="javascript:;">
 						<div></div>
-						<p>分享</p>
 					</a>
 				</li>
 				<li class="bp_barrageswitch_item">
 					<a href="javascript:;">
 						<div></div>
-						<p>弹幕</p>
 					</a>
 				</li>
 				<li class="bp_resizebtn_item">
 					<a href="javascript:;">
 						<div></div>
-						<p>最小化</p>
 					</a>
 				</li>
 			</ul>
@@ -554,8 +548,8 @@
 			</div>
 		</div>
 		<div class='bp_photoslider_wrapper' id="iSlider-wrapper">
-
-			</div>
+			<a class="bp_resizebtn_item active" href="javascript:;"><div></div></a>
+		</div>
 		
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
@@ -605,13 +599,14 @@
 				flipbook = $('.flipbook');
 			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
 			window.eventFlagPortrait = true,
-			window.eventFlagLandscape = true;
-			//iSliderInit
-			iSliderinit();
-			
-			$('.bp_resizebtn_item').on('touchend', function(){
-				var $this=$(this);
-				$this.toggleClass('active')
+			window.eventFlagLandscape = true;			
+				
+			$('.bp_resizebtn_item').on('touchend',function(){
+				var $this=$(this),
+					resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item');
+				$('.bp_resizebtn_item').each(function(){
+					$(this).toggleClass('active')
+				})
 				if ($this.hasClass('active')) {
 					$('.flipbook_wrapper').hide();
 					$('.bp_photoslider_wrapper').css({
@@ -619,16 +614,27 @@
 						'z-index':0,
 						'opacity':1
 					});
+					// orientationSensor({
+					// 	portrait:function(){return;},
+					// 	landscape:function(){
+					// 		$this.show();
+					// 		$this.on('touchend', function(){
+					// 			$(this).hide();
+					// 			$(this).unbind('touchend');
+					// 		});
+					// 	}
+					// });
+					iSliderinit();
 				}else{
+					
 					$('.flipbook_wrapper').show();
 					$('.bp_photoslider_wrapper').css({
 						'display':'none',
-						'z-index':'-11111'
+						'z-index':'-1'
 					});
+					resizeBtn.hide();
 				}
-				
-				
-			});
+			})
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
@@ -692,6 +698,7 @@
 			});
 			turnInit();
 			turnToCurrentpage();
+			
 			closeDonateDialog();
 			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
@@ -702,6 +709,7 @@
 				if ($('.bp_comment_wrapper table').length==0) {
 					$('.bp_empty_wrapper').show();
 				};
+				$('.bp_photoslider_wrapper .resizeBtn').hide();
 
 				$('.bp_menu_wrapper li:eq(0)').on('touchend', function(){
 					var $this = $(this);
@@ -801,6 +809,7 @@
 					'width':56
 				});
 			};
+			$('.bp_photoslider_wrapper .bp_resizebtn_item').show().addClass('active');
 			if (window.eventFlagLandscape) {
 				var toolsEl=$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper');
 				$('.flipbook_prevpage_btn, .flipbook_nextpage_btn, .ybwechatheader_wrapper').on('touchend', function(){
@@ -846,28 +855,36 @@
 		}
 
 		function iSliderinit(){
-			console.log('iSliderInit');
+			var iSliderWrapper=$('.bp_photoslider_wrapper'),
+				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item');
+			iSliderWrapper.find('ul').detach();
+			if (newISlider instanceof iSlider) {
+				newISlider.destroy();
+				alert('iSliderInit');
+			};
+			orientationSensor({
+				portrait:function(){
+					resizeBtn.hide();
+				},
+				landscape:function(){
+					resizeBtn.show();
+				}
+			});
 			var list = [
 				{content: "../img/m/Comp_1_00000.png"},
 				{content: "../img/m/bg-yb-wx-login_00000.jpg"},
 				{content: "../img/m/photopage_img_2_00000.jpg"}
 			];
-			var S = new iSlider({
+			var newISlider = new iSlider({
 				dom: document.getElementById('iSlider-wrapper'),
 				data: list,
 				isLooping: 1,
-				isOverspread: true,
+				isOverspread: false,
 				animateTime: 800, // ms
-				useZoom: false,
+				useZoom: true,
 				plugins: [['zoompic', {zoomFactor: 8}]]
-			   
 			});
-			var iSliderWrapper=$('.bp_photoslider_wrapper');
-			setTimeout(function(){
-				$('.bp_photoslider_wrapper').css({
-						'display':'none'
-					},100)
-			});
+			
 		}
 
 		function popupDonateDialog(){
@@ -876,20 +893,20 @@
 				donateWrapper=$('.bp_donate_wrapper'),
 				donatestep=$('.bp_donate_wrapper>div'),
 				lastChildLiEl=$('.bp_donatepannel_wrapper li:last-child');
-			donateWrapper.css({
-				'margin-top': function() {
-					return (windowHeight - $(this).height()) / 2;
-				}
-			});
+			
 			orientationSensor({
 				portrait:function(){
 					donateWrapper.css({
-						width:'90%'
+						width:'90%',
+						'margin-top': '20%'
 					});
 				},
 				landscape:function(){
 					donateWrapper.css({
-						width:'60%'
+						width:'60%',
+						'margin-top': function() {
+							return (windowHeight - $(this).height()) / 2
+						}
 					});
 				}
 			});

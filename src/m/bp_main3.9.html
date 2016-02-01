@@ -597,7 +597,7 @@
 				flipbookViewport=$('.flipbook-viewport'),
 				resizeBtn=$('.bp_resizebtn_item'),
 				sliderResizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
-				landscapeTools=$('.ybwechatheader_wrapper, .bp_landscape_wrapper');
+				headerAndTools=$('.viewmode_landscape .ybwechatheader_wrapper, .bp_landscape_wrapper');
 			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
 			window.eventFlagPortrait = true,
 			window.eventFlagLandscape = true;			
@@ -605,7 +605,7 @@
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
 					if (!$this.hasClass('active')) {
-						landscapeTools.hide();
+						headerAndTools.hide();
 						flipbookViewport.hide();
 						sliderResizeBtn.show();
 						iSliderinit();
@@ -614,7 +614,7 @@
 						});
 						$('.bp_photoslider_wrapper').show().css({
 							'opacity': 1,
-							'z-index': 0
+							'z-index': 2
 						});
 						orientationSensor({
 							portrait:function(){
@@ -633,13 +633,8 @@
 					}else{
 						flipbook.show();
 						flipbookViewport.show();
+						headerAndTools.show();
 						sliderResizeBtn.hide();
-						orientationSensor({
-							portrait:function(){return;},
-							landscape:function(){
-								landscapeTools.show();
-							}
-						});
 						$('.bp_photoslider_wrapper').css({
 							'z-index': '-1',
 							'opacity':0
@@ -717,7 +712,6 @@
 			turnToCurrentpage();
 			
 			closeDonateDialog();
-			$('.ybwechatheader_wrapper .title').show();
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			resizeBtn.css({
 				top:'0%',

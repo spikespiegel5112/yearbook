@@ -632,13 +632,14 @@
 						});
 					}else{
 						flipbook.show();
+						flipbookViewport.show();
 						orientationSensor({
 							portrait:function(){return;},
 							landscape:function(){
-								flipbookViewport.show();
+								headerAndTools.show();
 							}
 						})
-						headerAndTools.show();
+						
 						sliderResizeBtn.hide();
 						$('.bp_photoslider_wrapper').css({
 							'z-index': '-1',

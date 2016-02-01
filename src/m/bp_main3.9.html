@@ -633,7 +633,13 @@
 					}else{
 						flipbook.show();
 						flipbookViewport.show();
-						headerAndTools.show();
+						orientationSensor({
+							portrait:function(){return;},
+							landscape:function(){
+								headerAndTools.show();
+							}
+						})
+						
 						sliderResizeBtn.hide();
 						$('.bp_photoslider_wrapper').css({
 							'z-index': '-1',

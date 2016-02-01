@@ -266,7 +266,7 @@
                 <li>
                     <a class="comment" href="javascript:;"><span></span><label>评论</label></a>
                 </li>
-                <li>
+                <li class="praise_par">
                     <a class="praise" href="javascript:;"><span></span><label>点赞</label></a>
                 </li>
                 <li>
@@ -1114,15 +1114,23 @@
 				var $this=$(this),
 					$thisLi = $(this).parent('li');
 				if ($this.hasClass('donate')){
+                    $thisLi.siblings().not('.praise_par').removeClass('active');
 					popupDonateDialog();
 				}else if($this.hasClass('comment')){
+                    $thisLi.siblings().not('.praise_par').removeClass('active');
                     popupCommentDialog();
                 }else if ($thisLi.hasClass('active')) {
-					$thisLi.removeClass('active');
+					$thisLi.removeClass('active').siblings().removeClass('active');
 				} else {
 					$thisLi.addClass('active');
+                    if($this.hasClass('.praise')){
+                        $thisLi.siblings().removeClass('active');
+                    }else{
+                        $thisLi.siblings().not('.praise_par').removeClass('active');
+                    }
 				}
 			});
+
 			setTimeout(function() {
 				$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
                 $('.bp_slidefold_btn').addClass('fold').removeClass('open');

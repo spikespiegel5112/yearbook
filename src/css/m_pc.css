@@ -1704,3 +1704,155 @@
         max-width: 264px;
     }
 }
+
+/*~~~~~~~~~~order donate~~~~~~~~~~*/
+.opd_wrapper{
+    position: relative;
+    width: 100%;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper{
+    margin: 0 0 15px;
+    padding: 25px 0;
+    height: 125px;
+    border-bottom: 2px solid #dfdfdf;
+    box-sizing: border-box;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper p{
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 30px;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper p label{
+    display: block;
+    margin: 5px 0;
+    font-size: 30px;
+    color: #ff696a;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper p label b{
+    font-size: 18px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper{
+    position: relative;
+    margin: 0 auto;
+    width: 94%;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li{
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div{
+    font-size: 16px;
+    color: #333;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span{
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 40px;
+    height: 30px;
+    background: url("../img/m/order_management/donate_payway.png") no-repeat;
+    background-size: 140px 105px;
+    vertical-align: middle;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span.wpay{
+    background-position: -98px 2px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span.unipay{
+    background-position: -98px -38px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span.alipay{
+    background-position: -98px -78px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div i{
+    display: none;
+    float: right;
+    line-height: 50px;
+    font-size: 22px;
+    color: #6fb463;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li.select div i{
+    display: block;
+}
+
+.opd_wrapper .opd_confirm_item{
+    display: block;
+    margin: 25px auto;
+    width: 300px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #ff696a;
+    border-radius: 6px;
+}
+
+.opd_wrapper .opd_confirm_item:hover{
+    background: #f26666;
+}
+
+.opd_wrapper .opd_confirm_item:focus{
+    background: #de5e5f;
+}
+
+.opd_wrapper .opd_confirm_item.successful{
+    background: #70ca5d;
+}
+
+.opd_wrapper .opd_confirm_item:hover{
+    background: #6abd58;
+}
+
+.opd_wrapper .opd_confirm_item:focus{
+    background: #63b053;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper{
+    position: relative;
+    margin: 0;
+    padding: 25px 0;
+    width: 100%;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper div{
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 105px;
+    background: url("../img/m/order_management/donate_payway.png") no-repeat;
+    background-size: 140px 105px;
+    background-position: 0 0;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper p{
+    font-size: 16px;
+    color: #6fb463;
+    text-align: center;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper label{
+    display: block;
+    margin: 15px 0;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper label b{
+    font-size: 18px;
+}

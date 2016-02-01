@@ -112,7 +112,7 @@
 }
 
 .viewmode_portrait .bp_flipbook_container {
-	height: 286px;
+	padding: 0 0 3rem 0;
 }
 
 .viewmode_portrait .bp_portrait_wrapper {
@@ -190,7 +190,7 @@
 	right: 0;
 }
 .viewmode_portrait .ybwechatheader_wrapper {
-	display: block!important;
+	display: block;
 	position: absolute;
 	top: 0;
 	background: transparent;
@@ -205,7 +205,7 @@
 }
 .viewmode_portrait .bp_paginator_item{
 	position: absolute;
-	bottom: 0;
+	bottom: 1rem;
 }
 .viewmode_portrait .ybwechatheader_wrapper .bp_paginator_item{
 	display: none;
@@ -641,7 +641,7 @@
 .main_container .bp_barrageswitch_item{
 /*	display: none;*/
 	width: 55px;
-	height: 2rem;
+	height: 3rem;
 }
 
 .viewmode_portrait .bp_barrageswitch_item{
@@ -703,11 +703,6 @@
 .bp_landscape_wrapper ul .share .active div {
 	background-position-x: 35px;
 }
-/*.bp_resizebtn_item{
-	background-image: url("../img/m/yb3wechatheader_sprite_img_00000.png");
-	background-size: 1000%;
-	
-}*/
 .viewmode_portrait .bp_resizebtn_item{
 	display: block;
 	position: absolute;
@@ -723,11 +718,20 @@
 .viewmode_portrait .bp_resizebtn_item.active{
 	background-position-x: -735px;
 }
+
 .viewmode_landscape .bp_resizebtn_item a{
-	background-position: -258px -74px;
+	background-image: url("../img/m/yb3wechatheader_sprite_img_00000.png");
+	background-size: 1000%;
+	background-position-y: -3px;
+	background-position-x: -693px;
+	width: 40px;
+	height: 45px;
+}
+.viewmode_landscape .bp_resizebtn_item a{
+	background-position: -574px -74px;
 }
 .viewmode_landscape .bp_resizebtn_item.active a{
-	background-position: -278px -74px;
+	background-position: -609px -74px;
 }
 .chapter_slide {
 	float: right;
@@ -1110,26 +1114,30 @@
 	width: 100%;
 }
 .bp_photoslider_wrapper{
+	width: 100%;
 	height: 100%;
-/*	position: absolute;
+	position: absolute;
 	top: 0;
-	left: 0;*/
-	opacity: 0;
+	left: 0;
+	opacity: 1;
 	z-index: -999;
+	background: #000;
 }
 .bp_photoslider_wrapper .bp_resizebtn_item{
 	display: block;
 	padding: 5px;
-	width: 30px;
-	height: 30px;
+	width: 45px;
+	height: 45px;
 	position: absolute;
-	top: 10%;
-	right: 5%;
-	background-position: -26px -120px;
+	background-image: url(../img/m/yb3wechatheader_sprite_img_00000.png);
+	background-size: 1200%;
+	background-position-y: -3px;
+	background-position-x: -954px;
 	z-index: 1;
 }
 .bp_photoslider_wrapper .bp_resizebtn_item.active{
-	background-position: -26px -120px;
+	background-position-y: -3px;
+	background-position-x: -1012px;
 }
 .viewmode_portrait .bp_photoslider_wrapper .islider-outer>li{
 	z-index: 1;

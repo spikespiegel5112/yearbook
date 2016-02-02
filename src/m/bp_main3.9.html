@@ -620,7 +620,7 @@
 									top:'10%',
 									right:'5%'
 								});
-							}	
+							}
 						});
 					}else{
 						flipbook.show();
@@ -628,7 +628,7 @@
 						orientationSensor({
 							portrait:function(){return;},
 							landscape:function(){
-								headerAndTools.show();
+								headerAndTools.removeClass('active');
 							}
 						})
 						
@@ -825,7 +825,6 @@
 				});
 
 				$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
-					
 					commentInputEl.toggle().on('touchend', function() {
 						$(document).on('touchend', function(e) {
 							if ($(e.target).closest('.bp_sendcomment_item').length == 0) {

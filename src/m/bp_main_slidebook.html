@@ -609,53 +609,52 @@
 
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
-					if (!$this.hasClass('active')) {
-						headerAndTools.hide();
-						flipbookViewport.hide();
-						sliderResizeBtn.show();
-						iSliderinit();
-						resizeBtn.each(function(){
-							$(this).addClass('active');
-						});
-						$('.bp_photoslider_wrapper').show().css({
-							'opacity': 1,
-							'z-index': 2
-						});
-						orientationSensor({
-							portrait:function(){
-								sliderResizeBtn.css({
-									top:'0%',
-									right:'2%'
-								});
-							},
-							landscape:function(){
-								sliderResizeBtn.css({
-									top:'10%',
-									right:'5%'
-								});
-							}	
-						});
-					}else{
-						flipbook.show();
-						flipbookViewport.show();
-						orientationSensor({
-							portrait:function(){return;},
-							landscape:function(){
-								headerAndTools.show();
-							}
-						})
-						
-						sliderResizeBtn.hide();
-						$('.bp_photoslider_wrapper').css({
-							'z-index': '-1',
-							'opacity':0
-						})
-						resizeBtn.each(function(){
-							$(this).removeClass('active');
-						});
-					}
-				
-			})
+				if (!$this.hasClass('active')) {
+					headerAndTools.removeClass('active');
+					flipbookViewport.hide();
+					sliderResizeBtn.show();
+					iSliderinit();
+					resizeBtn.each(function(){
+						$(this).addClass('active');
+					});
+					$('.bp_photoslider_wrapper').show().css({
+						'opacity': 1,
+						'z-index': 2
+					});
+					orientationSensor({
+						portrait:function(){
+							sliderResizeBtn.css({
+								top:'0%',
+								right:'2%'
+							});
+						},
+						landscape:function(){
+							sliderResizeBtn.css({
+								top:'10%',
+								right:'5%'
+							});
+						}	
+					});
+				}else{
+					orientationSensor({
+						portrait:function(){return;},
+						landscape:function(){
+							flipbook.show();
+							flipbookViewport.show();
+							headerAndTools.addClass('active');
+						}
+					});
+					
+					sliderResizeBtn.hide();
+					$('.bp_photoslider_wrapper').css({
+						'z-index': '-1',
+						'opacity':0
+					});
+					resizeBtn.each(function(){
+						$(this).removeClass('active');
+					});
+				}
+			});
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();

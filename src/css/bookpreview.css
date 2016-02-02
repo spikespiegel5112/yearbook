@@ -732,11 +732,11 @@
 
 /*8.20 swh add 章节配置信息*/
 
-.chapter_info {
+.bp_toolbar_wrapper .chapter_info {
     display: none;
     position: absolute;
     left: 100px;
-    top: 208px;
+    top: -11px;
     padding: 10px;
     width: 130px;
     text-align: center;
@@ -747,7 +747,7 @@
     box-sizing: border-box;
 }
 
-.chapter_info.active {
+.bp_toolbar_wrapper .active .chapter_info {
     display: block;
 }
 

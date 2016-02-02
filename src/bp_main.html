@@ -41,28 +41,6 @@
 			<div>操作提示</div>
 			<p class='  '>请将鼠标移至模板右下角点击翻页进行预览</p>
 		</div>
-        <!--yb 3.9.2 修改为弹出显示章节信息-->
-		<div class="chapter_info">
-			<h4><span></span>本书包含章节</h4>
-			<ul>
-				<li class='active' page='1'><a href="javascript:;">卷首寄语语语</a></li>
-				<li page='2'><a href="javascript:;">校园</a></li>
-				<li page='3'><a href="javascript:;">校园</a></li>
-				<li page='4'><a href="javascript:;">个人风采</a></li>
-				<li page='5'><a href="javascript:;">多彩活动</a></li>
-				<li page='6'><a href="javascript:;">举手投票</a></li>
-				<li page='7'><a href="javascript:;">通讯索引</a></li>
-				<li page='8'><a href="javascript:;">签名留念</a></li>
-				<li page='9'><a href="javascript:;">卷首寄语</a></li>
-				<li page='10'><a href="javascript:;">校园简介</a></li>
-				<li page='11'><a href="javascript:;">校园风光</a></li>
-				<li page='12'><a href="javascript:;">个人风采</a></li>
-				<li page='13'><a href="javascript:;">多彩活动</a></li>
-				<li page='14'><a href="javascript:;">举手投票</a></li>
-				<li page='15'><a href="javascript:;">通讯索引</a></li>
-				<li page='16'><a href="javascript:;">签名留念</a></li>
-			</ul>
-		</div>
 		<div class="flipbook-viewport">
 			<div class='flipbook_wrapper' pagecount='19'>
 				<a class='flipbook_prevpage_btn' href="javascript:;"></a>
@@ -235,7 +213,34 @@
 			</div>
 			<ul>
 				<li><a class='product' href="javascript:;"><span></span><label>制作</label></a></li>
-				<li><a class='chapter' href="javascript:;"><span></span><label>章节</label></a></li>
+				<li>
+                    <a class='chapter' href="javascript:;">
+                        <span></span>
+                        <label>章节</label>
+                    </a>
+                    <!--yb 3.9.2 修改为弹出显示章节信息-->
+                    <div class="chapter_info">
+                        <h4><span></span>本书包含章节</h4>
+                        <ul>
+                            <li class='active' page='1'><a href="javascript:;">卷首寄语语语</a></li>
+                            <li page='2'><a href="javascript:;">校园</a></li>
+                            <li page='3'><a href="javascript:;">校园</a></li>
+                            <li page='4'><a href="javascript:;">个人风采</a></li>
+                            <li page='5'><a href="javascript:;">多彩活动</a></li>
+                            <li page='6'><a href="javascript:;">举手投票</a></li>
+                            <li page='7'><a href="javascript:;">通讯索引</a></li>
+                            <li page='8'><a href="javascript:;">签名留念</a></li>
+                            <li page='9'><a href="javascript:;">卷首寄语</a></li>
+                            <li page='10'><a href="javascript:;">校园简介</a></li>
+                            <li page='11'><a href="javascript:;">校园风光</a></li>
+                            <li page='12'><a href="javascript:;">个人风采</a></li>
+                            <li page='13'><a href="javascript:;">多彩活动</a></li>
+                            <li page='14'><a href="javascript:;">举手投票</a></li>
+                            <li page='15'><a href="javascript:;">通讯索引</a></li>
+                            <li page='16'><a href="javascript:;">签名留念</a></li>
+                        </ul>
+                    </div>
+                </li>
 				<!--<li><a class='print' href="javascript:;"><span></span><label>打印</label></a></li>-->
 				<li>
 					<a class='share' href="javascript:;">
@@ -901,7 +906,7 @@
 							}
 						});
 						$('.chapter_info').css({
-							'z-index': '3'
+							'z-index': '99'
 						});
 					}
 				}
@@ -1148,9 +1153,6 @@
 				}else if($this.hasClass('comment')){
                     $thisLi.siblings().not('.praise_par').removeClass('active');
                     popupCommentDialog();
-                }else if($this.hasClass('chapter')){
-                    $thisLi.siblings().not('.praise_par').removeClass('active');
-                    popChapterList();
                 }else if($this.hasClass('praise')){
                     $thisLi.siblings().removeClass('active');
                     popPraiseUser();
@@ -1402,12 +1404,6 @@
             commentContainer.find('.closebtn').click(function(){
                 commentContainer.removeClass('active');
             });
-        }
-
-        //弹出章节列表
-        function popChapterList(){
-            var chapterContainer=$('.chapter_info');
-            chapterContainer.toggleClass('active');
         }
 
         //弹出赞过的人

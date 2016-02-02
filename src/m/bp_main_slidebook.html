@@ -606,7 +606,7 @@
 					landscapeHandler();
 				}
 			});
-
+			// turnInit();
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
 				if (!$this.hasClass('active')) {
@@ -680,6 +680,7 @@
 						portraitHandler();
 					},
 					landscape: function() {
+						
 						landscapeHandler();
 					}
 				});
@@ -800,18 +801,24 @@
 		function landscapeHandler() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
+				flipbookViewport=$('.flipbook-viewport'),
 				flipbook = $('.flipbook'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				commentInputEl = $('.bp_sendcomment_item');
-			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
+			
 			$('.bp_swiperbook_wrapper').hide();
-			$('.flipbook-viewport').show().css({
+			flipbookViewport.show()
+			flipbookViewport.css({
 				'height': windowHeight
 			});
+
+			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
 			resizeBtn.css({
 				top:'10%',
 				right:'5%'
 			});
+
+			
 			commentInputEl.hide();
 			closeDonateDialog();
 			if (window.eventFlagLandscape) {
@@ -855,6 +862,9 @@
 					}
 				});
 				window.eventFlagLandscape=false;
+			}else{
+				flipbook.turn('destroy');
+				turnInit();
 			}
 		}
 
@@ -1021,6 +1031,7 @@
 		}
 
 		function turnInit() {
+			alert('ccc')
 			var bookIdx = 2,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),

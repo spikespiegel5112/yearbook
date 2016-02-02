@@ -211,6 +211,7 @@
 
 .flipbook_wrapper > a:hover {
     opacity: 1;
+    background-color: rgba(238, 238, 238, 0.8);
 }
 
 .flipbook_prevpage_btn {
@@ -449,6 +450,19 @@
     font-size: 13px;
 }
 
+.bp_toolbar_wrapper .praise_par a p{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #0088ff;
+    cursor: pointer;
+}
+
+.bp_toolbar_wrapper .praise_par a p span,
+.bp_toolbar_wrapper .praise_par a:hover p span{
+    color: #0088ff;
+}
+
 .bp_toolbarhandler_item {
     display: none;/*yb 3.9.2*/
     width: 20px;
@@ -492,6 +506,10 @@
     background-position: -204px 0;
 }
 
+.bp_toolbar_wrapper ul .chapter span {
+    background-position: -330px 0;
+}
+
 .bp_toolbar_wrapper ul .product:hover span, .bp_toolbar_wrapper ul .product:hover label, .bp_toolbar_wrapper ul .active .product span, .bp_toolbar_wrapper ul .active .product label {
     background-position: 0 -40px;
     color: #8a9c14;
@@ -529,6 +547,11 @@
 
 .bp_toolbar_wrapper ul .active .barrage span, .bp_toolbar_wrapper ul .active .barrage label {
     background-position: -204px -40px;
+    color: #8a9c14;
+}
+
+.bp_toolbar_wrapper ul .chapter:hover span, .bp_toolbar_wrapper ul .chapter:hover label, .bp_toolbar_wrapper ul .active .chapter span, .bp_toolbar_wrapper ul .active .chapter label {
+    background-position: -330px -40px;
     color: #8a9c14;
 }
 
@@ -710,20 +733,45 @@
 /*8.20 swh add 章节配置信息*/
 
 .chapter_info {
+    display: none;
     position: absolute;
-    left: 12%;
-    top: 150px;
-    width: 140px;
+    left: 100px;
+    /*top: 150px;*/
+    padding: 10px;
+    width: 130px;
     text-align: center;
     z-index: 4;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    box-sizing: border-box;
+}
+
+.chapter_info.active {
+    display: block;
+}
+
+.chapter_info::before {
+    content: " ";
+    position: absolute;
+    left: -15px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
 }
 
 .chapter_info h4 {
-    color: #cbe13a;
-    font-size: 18px;
+    color: #666;
+    font-size: 16px;
+    line-height: 2.5;
+    border-bottom: 1px solid #dfdfdf;
 }
 
 .chapter_info h4 span {
+    display: none;
     float: left;
     margin: 3px 0 0 0;
     width: 20px;
@@ -731,7 +779,7 @@
     background: url(../img/imgsprite_yb3_wbl_00000.png) -65px -82px;
 }
 
-.chapter_info ul .active:after {
+/*.chapter_info ul .active:after {
     content: '';
     display: block;
     width: 0;
@@ -742,11 +790,17 @@
     border-left: 5px solid #cbe13a;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
+}*/
+
+.chapter_info ul{
+    max-height: 485px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .chapter_info ul li {
-    margin: 10px auto;
-    padding: 0 15px 0 0;
+    margin: 10px 0 10px 20px;
+    padding: 0 8px 0 0;
     height: 20px;
     line-height: 20px;
     font-size: 12px;
@@ -764,22 +818,23 @@
 .chapter_info ul li a {
     float: right;
     width: 5em;
-    color: #fff;
-    font-size: 13px;
+    color: #333;
+    font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .chapter_info ul li:hover, .chapter_info ul .active a, .chapter_info ul .active {
-    color: #DDF08E;
+    color: #91b423;
+    background-color: #eee;
 }
 
-.chapter_info ul li a:after {
+/*.chapter_info ul li a:after {
     content: '';
     float: right;
     background: url(../img/imgsprite_yb3_wbl_00000.png);
-}
+}*/
 
 .flipbook-viewport .page {
     width: 530px;
@@ -1409,9 +1464,9 @@
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
-    .chapter_info {
+   /* .chapter_info {
         left: 5.5%;
-    }
+    }*/
 
     .bp_instrucion_wrapper {
         right: 3%;
@@ -1419,9 +1474,9 @@
 }
 
 @media (min-width: 1440px) and (max-width: 1559px) {
-    .chapter_info {
+   /* .chapter_info {
         left: 2%;
-    }
+    }*/
 
     .flipbook-viewport .page {
         width: 375px;
@@ -1438,9 +1493,9 @@
 }
 
 @media (max-width: 1439px) {
-    .chapter_info {
+    /*.chapter_info {
         left: 0%;
-    }
+    }*/
 }
 
 /*@media (max-width: 1440px){

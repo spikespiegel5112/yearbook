@@ -41,6 +41,7 @@
 			<div>操作提示</div>
 			<p class='  '>请将鼠标移至模板右下角点击翻页进行预览</p>
 		</div>
+        <!--yb 3.9.2 修改为弹出显示章节信息-->
 		<div class="chapter_info">
 			<h4><span></span>本书包含章节</h4>
 			<ul>
@@ -234,6 +235,7 @@
 			</div>
 			<ul>
 				<li><a class='product' href="javascript:;"><span></span><label>制作</label></a></li>
+				<li><a class='chapter' href="javascript:;"><span></span><label>章节</label></a></li>
 				<!--<li><a class='print' href="javascript:;"><span></span><label>打印</label></a></li>-->
 				<li>
 					<a class='share' href="javascript:;">
@@ -267,7 +269,7 @@
                     <a class="comment" href="javascript:;"><span></span><label>评论</label></a>
                 </li>
                 <li class="praise_par">
-                    <a class="praise" href="javascript:;"><span></span><label>点赞</label></a>
+                    <a class="praise" href="javascript:;"><span></span><label>点赞</label><p>(<span>12</span>人)</p></a>
                 </li>
                 <li>
                     <a class="barrage" href="javascript:;"><span></span><label>弹幕</label></a>
@@ -1119,6 +1121,9 @@
 				}else if($this.hasClass('comment')){
                     $thisLi.siblings().not('.praise_par').removeClass('active');
                     popupCommentDialog();
+                }else if($this.hasClass('chapter')){
+                    $thisLi.siblings().not('.praise_par').removeClass('active');
+                    popChapterList();
                 }else if ($thisLi.hasClass('active')) {
 					$thisLi.removeClass('active').siblings().removeClass('active');
 				} else {
@@ -1129,6 +1134,8 @@
                         $thisLi.siblings().not('.praise_par').removeClass('active');
                     }
 				}
+                /*$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
+                $('.bp_slidefold_btn').addClass('fold').removeClass('open');*/
 			});
 
 			setTimeout(function() {
@@ -1356,7 +1363,7 @@
                     return (windowHeight - $(this).height()) / 2;
                 }
             });
-            //点击评论弹窗周围关闭打赏浮层
+            //点击评论弹窗周围关闭评论浮层
             commentContainer.on('click', function(e) {
                 if ($(e.target).closest('.bp_comment_wrapper').length == 0) {
                     $('.bp_comment_container').removeClass('active');
@@ -1365,6 +1372,22 @@
             commentContainer.find('.closebtn').click(function(){
                 commentContainer.removeClass('active');
             });
+        }
+
+        //弹出章节列表
+        function popChapterList(){
+            var windowHeight=$(window).height(),
+                    commentContainer=$('.chapter_info');
+            if(commentContainer.hasClass('active')){
+                commentContainer.removeClass('active');
+            }else{
+                commentContainer.addClass('active');
+                commentContainer.css({
+                    'margin-top': function() {
+                        return (windowHeight - $(this).height()) / 2;
+                    }
+                });
+            }
         }
 	</script>
 </body>

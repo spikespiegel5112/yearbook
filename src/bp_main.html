@@ -486,8 +486,8 @@
                                     <span class="state">2016-01-26 13:42</span>
                                     <p>不错哦，我也要做这样的耶~~</p>
                                     <div class="comments_op">
-                                        <a href="javasccript:;">回复</a>
-                                        <a href="javasccript:;">删除评论</a>
+                                        <a href="javascript:;">回复</a>
+                                        <a href="javascript:;">删除评论</a>
                                     </div>
                                 </div>
                                 <div class="comments_list mod_comments_sub">
@@ -504,8 +504,8 @@
                                                     <span class="state">刚刚</span>
                                                     <p>不错哦，我也要做这样的耶~~</p>
                                                     <div class="comments_op">
-                                                        <a href="javasccript:;">回复</a>
-                                                        <a href="javasccript:;">删除评论</a>
+                                                        <a href="javascript:;">回复</a>
+                                                        <a href="javascript:;">删除评论</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -526,8 +526,8 @@
                                     <span class="state">2016-01-26 13:42</span>
                                     <p>不错哦，我也要做这样的耶~~</p>
                                     <div class="comments_op">
-                                        <a href="javasccript:;">回复</a>
-                                        <a href="javasccript:;">删除评论</a>
+                                        <a href="javascript:;">回复</a>
+                                        <a href="javascript:;">删除评论</a>
                                     </div>
                                 </div>
                                 <div class="comments_list mod_comments_sub">
@@ -544,8 +544,8 @@
                                                     <span class="state">刚刚</span>
                                                     <p>不错哦，我也要做这样的耶~~</p>
                                                     <div class="comments_op">
-                                                        <a href="javasccript:;">回复</a>
-                                                        <a href="javasccript:;">删除评论</a>
+                                                        <a href="javascript:;">回复</a>
+                                                        <a href="javascript:;">删除评论</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -561,6 +561,33 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!--弹出赞过的人-->
+    <div class="bp_praise_container">
+        <div class="bp_praise_wrapper">
+            <a class="closebtn" href="javascript:;">+</a>
+            <label>赞过的人</label>
+            <div class="user_list">
+                <ul>
+                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 01小鱼小鱼小鱼</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 02</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 03</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 04</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 05</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_default_head.png"><label><span>User 06</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 07</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 08</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 09</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 10</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 11</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 12</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 13</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 14</span></label></a></li>
+                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 15</span></label></a></li>
+                </ul>
+            </div>
+            <a class="praise_btn" href="javascript:;"><i></i><span>点赞</span></a>
         </div>
     </div>
 	<!--底部-->
@@ -1124,6 +1151,9 @@
                 }else if($this.hasClass('chapter')){
                     $thisLi.siblings().not('.praise_par').removeClass('active');
                     popChapterList();
+                }else if($this.hasClass('praise')){
+                    $thisLi.siblings().removeClass('active');
+                    popPraiseUser();
                 }else if ($thisLi.hasClass('active')) {
 					$thisLi.removeClass('active').siblings().removeClass('active');
 				} else {
@@ -1376,18 +1406,26 @@
 
         //弹出章节列表
         function popChapterList(){
-            var windowHeight=$(window).height(),
-                    commentContainer=$('.chapter_info');
-            if(commentContainer.hasClass('active')){
-                commentContainer.removeClass('active');
-            }else{
-                commentContainer.addClass('active');
-                /*commentContainer.css({
-                    'margin-top': function() {
-                        return (windowHeight - $(this).height()) / 2;
-                    }
-                });*/
-            }
+            var chapterContainer=$('.chapter_info');
+            chapterContainer.toggleClass('active');
+        }
+
+        //弹出赞过的人
+        function popPraiseUser(){
+            var praiseContainer=$('.bp_praise_container');
+            praiseContainer.toggleClass('active');
+            //点击关闭
+            praiseContainer.find('.closebtn').click(function(){
+                praiseContainer.removeClass('active');
+            });
+            //点赞
+            praiseContainer.find('.praise_btn').click(function(){
+                if(!$(this).hasClass('active')){
+                    $(this).addClass('active').find('span').text('已赞');
+                }else{
+                    $(this).removeClass('active').find('span').text('点赞');
+                }
+            })
         }
 	</script>
 </body>

@@ -1063,6 +1063,29 @@
     width: 30px;
     margin: 5px;
 }
+
+.bp_donatedperson_wrapper ul li:after{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("../img/donate_top3.png") no-repeat;
+    right: -6px;
+    top: -9px;
+    background-size: 20px 60px;
+}
+
+.bp_donatedperson_wrapper ul li:nth-child(1):after{
+    content: " ";
+    background-position: 0 0;
+}
+.bp_donatedperson_wrapper ul li:nth-child(2):after{
+    content: " ";
+    background-position: 0 -20px;
+}
+.bp_donatedperson_wrapper ul li:nth-child(3):after{
+    content: " ";
+    background-position: 0 -40px;
+}
 .bp_donatedperson_wrapper ul li img{
     display: block;
     margin: 0 auto;

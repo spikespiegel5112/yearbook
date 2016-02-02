@@ -1263,6 +1263,40 @@
 .bp_donatestep_wrapper.step_3 a{
     color: #fff;
 }
+
+/*赞助留言*/
+.donate_msg{
+    position: relative;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+}
+
+.donate_msg label{
+    position: absolute;
+    left: 10px;
+    z-index: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.donate_msg input{
+    position: absolute;
+    left: 0;
+    padding-left: 60px;
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    z-index: 0;
+    border: 0;
+}
+
 /*bookpreview comment of pop*/
 .bp_comment_container{
     position: fixed;
@@ -1491,7 +1525,7 @@
     top: 583px;
     margin: 0;
     padding: 20px 25px;
-    width: 400px;
+    width: 420px;
     min-height: 196px;
     background-color: #fff;
     border-radius: 8px;
@@ -1523,6 +1557,12 @@
     color: #333;
 }
 
+.bp_praise_wrapper .user_list{
+    max-height: 210px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .bp_praise_wrapper .user_list li{
     position: relative;
     display: inline-block;
@@ -1540,15 +1580,18 @@
     box-sizing: border-box;
 }
 
+.bp_praise_wrapper .user_list li:hover img{
+    border: 1px solid #40b75d;
+}
+
 .bp_praise_wrapper .user_list li label{
     position: absolute;
-    left: 0;
+    left: -16px;
     bottom: -50px;
-     display: none;
-    max-width: 156px;
+    display: none;
     background-color: #fff;
     border: 1px solid #ddd;
-    min-width: 95px;
+    width: 95px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -1560,7 +1603,7 @@
 .bp_praise_wrapper .user_list li label::before{
     content: " ";
     position: absolute;
-    left: 26px;
+    left: 37px;
     top: -8px;
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
@@ -1571,7 +1614,7 @@
 .bp_praise_wrapper .user_list li label::after{
     content: " ";
     position: absolute;
-    left: 25px;
+    left: 36px;
     top: -9px;
     border-right: 9px solid transparent;
     border-left: 9px solid transparent;

@@ -21,8 +21,8 @@
 </head>
 
 <body>
+	<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 	<div class='main_container'>
-		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 		<div class="ybwechatheader_wrapper">
 			<a class='left_btn back_btn' href="javascript:;"></a>
 			<div class="bp_barrageswitch_item">
@@ -142,16 +142,14 @@
 					</li>
 					<li>
 						<a href="javascript:;">
-							<div class="praise icon-heart"></div>
+							<div class="praise"></div>
 							<p>被赞(<span>123</span>)</p>
 						</a>
 					</li>
 				</ul>
 			</div>
 			<div class="bp_iatab_wrapper">
-
 				<div class="bp_comment_container">
-					
 					<div class='bp_comment_wrapper'>
 						<table>
 							<tr>
@@ -341,7 +339,7 @@
 							</li>
 						</ul>
 					</div>
-					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
+					<a class='bp_iwanttodonate_btn' href="javascript:;"><label><span></span>我要赞助</label></a>
 				</div>
 				<div class='bp_praise_container'>
 					<div class='bp_praisedperson_wrapper swiper-container'>
@@ -402,7 +400,7 @@
 							
 						</ul>
 					</div>
-					<a class='bp_praise_btn' href="javascript:;"><span></span><label>点赞</label></a>
+					<a class='bp_praise_btn' href="javascript:;"><label><span></span>点赞</label></a>
 				</div>
 			</div>
 		</div>
@@ -762,7 +760,14 @@
 					sendcommentEl.hide();
 				});
 				$('.bp_praise_btn').on('touchend', function(){
-					$(this).addClass('active');
+					var $this=$(this);
+					$this.toggleClass('active');
+					if (!$this.hasClass('active')) {
+						$this.find('label').html('<span></span>'+'已赞')
+					}else{
+						$this.find('label').html('<span></span>'+'点赞')
+					}
+					
 				});
 				window.eventFlagPortrait=false;
 			}
@@ -1006,10 +1011,10 @@
 				zoom = 0,
 				flipbookWidth = orientationSensor({
 					portrait: function() {
-						return 2480 * (windowWidth / 2480) * 0.7;
+						return 3496 * (windowWidth / 3496) * 0.7;
 					},
 					landscape: function() {
-						return 2480 * (windowHeight / 1748) * 0.87;
+						return 3496 * (windowHeight / 2480) * 0.87;
 					}
 				});
 			$('.page-wrapper .page').addClass('hard');

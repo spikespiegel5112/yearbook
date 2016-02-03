@@ -366,11 +366,11 @@
 	display: block;
 }
 
-.bp_menu_wrapper li .comment {
+.bp_menu_wrapper li .comment, .bp_menu_wrapper li .praise {
 	position: relative;
-	margin: 0 auto;
-	width: 40px;
-	height: 45px;
+	margin: 0 auto 5px;
+	width: 2.5rem;
+	height: 2.5rem;
 	background-image: url("../img/m/img_sprite_00000.png");
 	background-position-y: -153px;
 	opacity: 0.6;
@@ -378,12 +378,7 @@
 
 .bp_menu_wrapper .praise {
 	display: block;
-	margin: 0 auto 5px;
-	width: 2.5rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	font-size: 2.3rem;
-	color: #ff696a;
+	background-position-x: -283px;
 }
 
 .bp_menu_wrapper li .active .praise{
@@ -412,7 +407,7 @@
 }
 .bp_menu_wrapper .active .praise{
 	opacity: 1;
-/*	background-position-x: -327px;	*/
+	background-position-x: -283px;	
 }	
 
 
@@ -438,6 +433,7 @@
 
 .bp_praise_container {
 	display: none;
+	min-height: 220px;
 	padding: 0 0 3rem 0;
 	background: #f2f2f2;
 }
@@ -991,11 +987,10 @@
 }*/
 .bp_iwanttodonate_btn, .bp_praise_btn{
 	display: block;
-	margin: 0 auto 0;
 	padding: 0.5rem;
-	width: 80%;
+	width: 100%;
+	background: #fff;
 	line-height: 2.2rem;
-	background: #ff696a;
 	color: #fff;
 	font-size: 1.5rem;
 	text-align: center;
@@ -1003,25 +998,36 @@
 	position: fixed;
 	bottom: 0;
 }
+.bp_iwanttodonate_btn label, .bp_praise_btn label{
+	display: block;
+	margin: 0 auto 0;
+	padding: 0.2rem 0;
+	width: 80%;
+	font-size: 1.3rem;
+	background: #ff696a;
+	vertical-align: middle;
+}
+/*.bp_iwanttodonate_btn span,*/
+.bp_praise_btn span{
+	display: inline-block;
+	margin: 0 0.5rem 0 0;
+	width: 2rem;
+	height: 2rem;
+	background-image: url(../img/m/img_sprite_00000.png);
+	vertical-align: middle;
+	background-position-x: -323px;
+	background-position-y: -159px; 
+}
 .bp_praise_btn{
 	line-height: 2rem;
 }
-.bp_praise_btn.active{
+/*.bp_praise_btn.active{
 	background: #ff696a;
 	color: #fff;
-}
-.bp_praise_btn span{
-	display: inline-block;
-	margin: 0 2px;
-	width: 35px;
-	height: 35px;
-	background-image: url(../img/m/img_sprite_00000.png);
-	background-position: -355px -156px;
-	vertical-align: middle;
-}
-.bp_praise_btn.active span{
+}*/
+/*.bp_praise_btn.active span{
 	background-position: -320px -156px;
-}
+}*/
 .bp_praise_btn label{
 	display: inline-block;
 	margin: 0 2px;

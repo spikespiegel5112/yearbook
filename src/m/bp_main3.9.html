@@ -71,11 +71,12 @@
 									<div slottype="article" class="warp2">
 										<div class="richShow" slottype="articleShow" textheight="30">
 											<p></p>
-											<p slottype="richText" slotnum="2" style="min-height:30px;"placeholder="活动标题" mode="inline"></p>
-												<p></p>
-											</div>
+											<p slottype="richText" slotnum="2" style="min-height:30px;" placeholder="活动标题" mode="inline"></p>
+											<p></p>
 										</div>
-									</strong>
+									</div>
+								</strong>
+
 									<div slottype="article" class="warp3">
 										<div class="richShow" slottype="articleShow" textheight="96">
 											<p slottype="richText" slotnum="3" style="display:block;word-wrap:break-word;" placeholder="活动内容"></p>
@@ -548,40 +549,18 @@
 	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.js"></script>
 	<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
 
+	<script type="text/javascript" src="../js/m_base.js"></script>
+
 	<script>
 		var LOG = function() {
 			return;
 		};
 		var LOG = alert;
 		$(function() {
-			//移动端滚动到底部加载插件
-			$.extend({
-				collideLoading: function(options) {
-					options = $.extend({
-						onScrollBottom: function() {}
-					}, options)
-					$(window).scroll(function() {
-						var availHeight = $(window).height(),
-							scrollTop = $(window).scrollTop(),
-							docHeight = $(document).height();
-						if (availHeight==docHeight&&scrollTop==0) {
-							return;
-						}else{
-							if (availHeight + scrollTop >= docHeight) {
-								options.onScrollBottom();
-							}
-						}
-					});
-					
-				}
-			});
 			bookpreviewInit();
 			barrageSwitcher();
 			collideLoading();
 		});
-
-		
-
 		function bookpreviewInit() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
@@ -592,56 +571,64 @@
 				headerAndTools=$('.viewmode_landscape .ybwechatheader_wrapper, .bp_landscape_wrapper');
 			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
 			window.eventFlagPortrait = true,
-			window.eventFlagLandscape = true;			
-				
+			window.eventFlagLandscape = true;
+			flipbook.attr('currentpage', 1);
+			orientationSensor({
+				portrait: function() {
+					portraitHandler();
+				},
+				landscape: function() {
+					landscapeHandler();
+				}
+			});
+			// turnInit();
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
 					if (!$this.hasClass('active')) {
-						headerAndTools.hide();
-						flipbookViewport.hide();
-						sliderResizeBtn.show();
-						iSliderinit();
-						resizeBtn.each(function(){
-							$(this).addClass('active');
-						});
-						$('.bp_photoslider_wrapper').show().css({
-							'opacity': 1,
-							'z-index': 2
-						});
-						orientationSensor({
-							portrait:function(){
-								sliderResizeBtn.css({
-									top:'0%',
-									right:'2%'
-								});
-							},
-							landscape:function(){
-								sliderResizeBtn.css({
-									top:'10%',
-									right:'5%'
-								});
-							}
-						});
-					}else{
-						flipbook.show();
-						flipbookViewport.show();
-						orientationSensor({
-							portrait:function(){return;},
-							landscape:function(){
-								headerAndTools.removeClass('active');
-							}
-						})
-						
-						sliderResizeBtn.hide();
-						$('.bp_photoslider_wrapper').css({
-							'z-index': '-1',
-							'opacity':0
-						})
-						resizeBtn.each(function(){
-							$(this).removeClass('active');
-						});
-					}
-				
+					headerAndTools.removeClass('active');
+					flipbookViewport.hide();
+					sliderResizeBtn.show();
+					iSliderinit();
+					resizeBtn.each(function(){
+						$(this).addClass('active');
+					});
+					$('.bp_photoslider_wrapper').show().css({
+						'opacity': 1,
+						'z-index': 2
+					});
+					orientationSensor({
+						portrait:function(){
+							sliderResizeBtn.css({
+								top:'0%',
+								right:'2%'
+							});
+						},
+						landscape:function(){
+							sliderResizeBtn.css({
+								top:'10%',
+								right:'5%'
+							});
+						}	
+					});
+				}else{
+					flipbook.show();
+					flipbookViewport.show();
+					orientationSensor({
+						portrait:function(){return;},
+						landscape:function(){
+							headerAndTools.removeClass('active');
+						}
+					})
+					
+					sliderResizeBtn.hide();
+					$('.bp_photoslider_wrapper').css({
+						'z-index': '-1',
+						'opacity':0
+					})
+					resizeBtn.each(function(){
+						$(this).removeClass('active');
+					});
+				}
 			})
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
@@ -674,25 +661,7 @@
 					}
 				});
 			});
-
-			orientationSensor({
-				portrait: function() {
-					$('.flipbook-viewport').css({
-						'height': windowWidth * 0.5
-					});
-					flipbook.attr('currentpage', 1);
-					portraitHandler();
-				},
-				landscape: function() {
-					$('.flipbook-viewport').css({
-						'height': windowHeight
-					});
-					flipbook.attr('currentpage', 1);
-					landscapeHandler();
-				}
-			});
 		}
-
 		
 		// 竖屏控制器
 		function portraitHandler() {
@@ -703,13 +672,14 @@
 				flipbookHeight=$('.bp_flipbook_container').height(),
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item');
+			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
 			});
 			turnInit();
 			turnToCurrentpage();
 			closeDonateDialog();
-			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			resizeBtn.css({
 				top:'0%',
 				right:'2%'
@@ -745,13 +715,13 @@
 							console.log('gtgt')
 							thisVal='';
 						};
-					})
+					});
 					$this.find('a').addClass('active');
 					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_donatetab_wrapper').show();
 					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(1).find('a').addClass('active');
 					if (swiperFlag1) {
-						var swiper = new Swiper('.swiper-container', {
+						var swiper = new Swiper('.bp_donatetab_wrapper .swiper-container', {
 						    slidesPerView: 'auto',
 						    centeredSlides: false,
 						    grabCursor: true
@@ -774,7 +744,7 @@
 					$('.bp_praise_container').show();
 					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(2).find('a').addClass('active');
 					if (swiperFlag2) {
-						var swiper = new Swiper('.swiper-container', {
+						var swiper = new Swiper('.bp_praise_container .swiper-container', {
 						    slidesPerView: 'auto',
 						    centeredSlides: false,
 						    grabCursor: true
@@ -787,7 +757,7 @@
 					$(this).addClass('active');
 				});
 				window.eventFlagPortrait=false;
-			};
+			}
 			if (windowWidth<=320) {
 				$('.bp_donatestep_wrapper.step_1 li').children('input').css({
 					'font-size':'1.6rem'
@@ -855,7 +825,7 @@
 					}
 				});
 				window.eventFlagLandscape=false;
-			};
+			}
 		}
 
 		function iSliderinit(){

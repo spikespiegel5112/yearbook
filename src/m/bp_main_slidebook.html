@@ -24,19 +24,19 @@
 	<div class='main_container'>
 		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 		<div class="ybwechatheader_wrapper">
-				<a class='left_btn back_btn' href="javascript:;"></a>
-				<div class="bp_barrageswitch_item">
-					<a href="javascript:;">
-						<div></div>
-					</a>
-				</div>
-				<div class="bp_paginator_item">
-					<label>1</label>/<span>33</span>
-				</div>
-				<a class='bp_resizebtn_item' href="javascript:;"></a>
-				<a class='right_btn share_btn' href="javascript:;"></a>
-				<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
+			<a class='left_btn back_btn' href="javascript:;"></a>
+			<div class="bp_barrageswitch_item">
+				<a href="javascript:;">
+					<div></div>
+				</a>
 			</div>
+			<div class="bp_paginator_item">
+				<label>1</label>/<span>33</span>
+			</div>
+			<a class='bp_resizebtn_item' href="javascript:;"></a>
+			<a class='right_btn share_btn' href="javascript:;"></a>
+			<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
+		</div>
 		<div class="bp_flipbook_container">
 			<div class='bp_swiperbook_wrapper'>
 				<ul class='swiper-wrapper'>
@@ -88,10 +88,7 @@
 									<div slottype="article" class="warp2">
 										<div class="richShow" slottype="articleShow" textheight="30">
 											<p></p>
-
-											<p slottype="richText" slotnum="2" style="min-height:30px;"
-											   placeholder="活动标题" mode="inline"></p>
-
+											<p slottype="richText" slotnum="2" style="min-height:30px;" placeholder="活动标题" mode="inline"></p>
 											<p></p>
 										</div>
 									</div>
@@ -352,8 +349,6 @@
 					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
 				</div>
 				<div class='bp_praise_container'>
-					
-					
 					<div class='bp_praisedperson_wrapper swiper-container'>
 						<label>赞过的人</label>
 						<ul class='swiper-wrapper' id="praiseUsers">
@@ -680,7 +675,6 @@
 						portraitHandler();
 					},
 					landscape: function() {
-						
 						landscapeHandler();
 					}
 				});
@@ -758,7 +752,6 @@
 						});
 						swiperFlag1=false;
 					};
-
 					sendcommentEl.hide();
 				});
 
@@ -774,7 +767,6 @@
 					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_praise_container').show();
 					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(2).find('a').addClass('active');
-
 					if (swiperFlag2) {
 						var swiper = new Swiper('.bp_praise_container .swiper-container', {
 						    slidesPerView: 'auto',
@@ -807,20 +799,17 @@
 				commentInputEl = $('.bp_sendcomment_item');
 			
 			$('.bp_swiperbook_wrapper').hide();
-			flipbookViewport.show()
+			flipbookViewport.show();
 			flipbookViewport.css({
 				'height': windowHeight
 			});
-
+			commentInputEl.hide();
+			closeDonateDialog();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
 			resizeBtn.css({
 				top:'10%',
 				right:'5%'
 			});
-
-			
-			commentInputEl.hide();
-			closeDonateDialog();
 			if (window.eventFlagLandscape) {
 				var toolsEl=$('.ybwechatheader_wrapper, .viewmode_landscape .bp_landscape_wrapper');
 				$('.flipbook_prevpage_btn, .flipbook_nextpage_btn, .ybwechatheader_wrapper').on('touchend', function(){

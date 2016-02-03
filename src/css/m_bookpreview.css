@@ -456,7 +456,6 @@
 .bp_donatedperson_wrapper, .bp_praisedperson_wrapper{
 	padding: 2% 4%;
 	width: 92%;
-	overflow: ;
 }
 .bp_donatedperson_wrapper>label{
 	color: #555;
@@ -469,7 +468,34 @@
 .bp_donatedavatar_item{
 	float: left;
 	margin: 0.7rem 0 0 0;
+	padding: 0.5rem 0;
 	width: 20%;
+	position: relative;
+}
+.bp_donatedperson_wrapper li .bp_donatedavatar_item:before{
+	content: '';
+	display: block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: -5px;
+	right: 10px;
+}
+.bp_donatedperson_wrapper li:nth-child(1) .bp_donatedavatar_item:before{
+	background-image: url(../img/m/previewbook/crown_gold_00000.png);
+}
+.bp_donatedperson_wrapper li:nth-child(2) .bp_donatedavatar_item:before{
+	background-image: url(../img/m/previewbook/crown_silver_00000.png);
+}
+.bp_donatedperson_wrapper li:nth-child(3) .bp_donatedavatar_item:before{
+	background-image: url(../img/m/previewbook/crown_cuprum_00000.png);
+}
+.bp_donatedavatar_item img{
+	display: block;
+	margin: 0 auto;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
 }
 .bp_dontatedmessage_wrapper{
 	float: left;
@@ -481,7 +507,7 @@
 	width: 94%;
 	border-radius: 0.2rem;
 	background: #e5e5e8;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	position: relative;
 }
 .bp_dontatedmessage_wrapper p:before{
@@ -508,13 +534,14 @@
 }
 .identification span{
 	float: left;
-	width: 85%;
+	width: 65%;
 	color: #777;
 }
 .identification label{
 	float: left;
-	width: 15%;
+	width: 35%;
 	color: #999;
+	font-size: 0.8rem;
 }
 .donatedprice span{
 	float: left;
@@ -530,13 +557,7 @@
 .donatedprice label{
 	color: red;
 }
-.bp_donatedavatar_item img{
-	display: block;
-	margin: 0 auto;
-	width: 3rem;
-	height: 3rem;
-	border-radius: 50%;
-}
+
 .bp_praisedperson_wrapper li{
 	width: 55px;
 	margin: 3% 0;

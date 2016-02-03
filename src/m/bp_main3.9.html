@@ -6,8 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
-<!-- 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
 	<title>忆尔3.9-书册预览</title>
 	<!-- build:css ../css/m.all.min.css -->
@@ -24,25 +24,23 @@
 	<div class='main_container'>
 		<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 		<div class="ybwechatheader_wrapper">
-				<a class='left_btn back_btn' href="javascript:;"></a>
-				<div class="bp_barrageswitch_item">
-					<a href="javascript:;">
-						<div></div>
-					</a>
-				</div>
-				<div class="bp_paginator_item">
-					<label>1</label>/<span>33</span>
-				</div>
-				<a class='bp_resizebtn_item' href="javascript:;"></a>
-				<a class='right_btn share_btn' href="javascript:;"></a>
-				<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
+			<a class='left_btn back_btn' href="javascript:;"></a>
+			<div class="bp_barrageswitch_item">
+				<a href="javascript:;">
+					<div></div>
+				</a>
 			</div>
-		<div class="bp_flipbook_container">
-			
+			<div class="bp_paginator_item">
+				<label>1</label>/<span>33</span>
+			</div>
+			<a class='bp_resizebtn_item' href="javascript:;"></a>
+			<a class='right_btn share_btn' href="javascript:;"></a>
+			<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
+		</div>
+		<div class="bp_flipbook_container">	
 			<div class="flipbook-viewport">
 				<div class='flipbook_wrapper' pagecount='19'>
 					<a class='flipbook_prevpage_btn' href="javascript:;"><span></span></a>
-
 					<div class='flipbook'>
 						<div depth="5" class="hard" style="background-image:url('../img/pages/1.jpg');">
 							<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
@@ -73,10 +71,7 @@
 									<div slottype="article" class="warp2">
 										<div class="richShow" slottype="articleShow" textheight="30">
 											<p></p>
-
-											<p slottype="richText" slotnum="2" style="min-height:30px;"
-											   placeholder="活动标题" mode="inline"></p>
-
+											<p slottype="richText" slotnum="2" style="min-height:30px;" placeholder="活动标题" mode="inline"></p>
 											<p></p>
 										</div>
 									</div>
@@ -337,8 +332,6 @@
 					<a class='bp_iwanttodonate_btn' href="javascript:;">我要赞助</a>
 				</div>
 				<div class='bp_praise_container'>
-					
-					
 					<div class='bp_praisedperson_wrapper swiper-container'>
 						<label>赞过的人</label>
 						<ul class='swiper-wrapper' id="praiseUsers">
@@ -556,40 +549,18 @@
 	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.js"></script>
 	<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
 
+	<script type="text/javascript" src="../js/m_base.js"></script>
+
 	<script>
 		var LOG = function() {
 			return;
 		};
 		var LOG = alert;
 		$(function() {
-			//移动端滚动到底部加载插件
-			$.extend({
-				collideLoading: function(options) {
-					options = $.extend({
-						onScrollBottom: function() {}
-					}, options)
-					$(window).scroll(function() {
-						var availHeight = $(window).height(),
-							scrollTop = $(window).scrollTop(),
-							docHeight = $(document).height();
-						if (availHeight==docHeight&&scrollTop==0) {
-							return;
-						}else{
-							if (availHeight + scrollTop >= docHeight) {
-								options.onScrollBottom();
-							}
-						}
-					});
-					
-				}
-			});
 			bookpreviewInit();
 			barrageSwitcher();
 			collideLoading();
 		});
-
-		
-
 		function bookpreviewInit() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
@@ -600,56 +571,64 @@
 				headerAndTools=$('.viewmode_landscape .ybwechatheader_wrapper, .bp_landscape_wrapper');
 			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
 			window.eventFlagPortrait = true,
-			window.eventFlagLandscape = true;			
-				
+			window.eventFlagLandscape = true;
+			flipbook.attr('currentpage', 1);
+			orientationSensor({
+				portrait: function() {
+					portraitHandler();
+				},
+				landscape: function() {
+					landscapeHandler();
+				}
+			});
+			// turnInit();
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
 					if (!$this.hasClass('active')) {
-						headerAndTools.hide();
-						flipbookViewport.hide();
-						sliderResizeBtn.show();
-						iSliderinit();
-						resizeBtn.each(function(){
-							$(this).addClass('active');
-						});
-						$('.bp_photoslider_wrapper').show().css({
-							'opacity': 1,
-							'z-index': 2
-						});
-						orientationSensor({
-							portrait:function(){
-								sliderResizeBtn.css({
-									top:'0%',
-									right:'2%'
-								});
-							},
-							landscape:function(){
-								sliderResizeBtn.css({
-									top:'10%',
-									right:'5%'
-								});
-							}	
-						});
-					}else{
-						flipbook.show();
-						flipbookViewport.show();
-						orientationSensor({
-							portrait:function(){return;},
-							landscape:function(){
-								headerAndTools.show();
-							}
-						})
-						
-						sliderResizeBtn.hide();
-						$('.bp_photoslider_wrapper').css({
-							'z-index': '-1',
-							'opacity':0
-						})
-						resizeBtn.each(function(){
-							$(this).removeClass('active');
-						});
-					}
-				
+					headerAndTools.removeClass('active');
+					flipbookViewport.hide();
+					sliderResizeBtn.show();
+					iSliderinit();
+					resizeBtn.each(function(){
+						$(this).addClass('active');
+					});
+					$('.bp_photoslider_wrapper').show().css({
+						'opacity': 1,
+						'z-index': 2
+					});
+					orientationSensor({
+						portrait:function(){
+							sliderResizeBtn.css({
+								top:'0%',
+								right:'2%'
+							});
+						},
+						landscape:function(){
+							sliderResizeBtn.css({
+								top:'10%',
+								right:'5%'
+							});
+						}	
+					});
+				}else{
+					flipbook.show();
+					flipbookViewport.show();
+					orientationSensor({
+						portrait:function(){return;},
+						landscape:function(){
+							headerAndTools.removeClass('active');
+						}
+					})
+					
+					sliderResizeBtn.hide();
+					$('.bp_photoslider_wrapper').css({
+						'z-index': '-1',
+						'opacity':0
+					})
+					resizeBtn.each(function(){
+						$(this).removeClass('active');
+					});
+				}
 			})
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
@@ -682,43 +661,25 @@
 					}
 				});
 			});
-
-			orientationSensor({
-				portrait: function() {
-					$('.flipbook-viewport').css({
-						'height': windowWidth * 0.5
-					});
-					flipbook.attr('currentpage', 1);
-					portraitHandler();
-				},
-				landscape: function() {
-					$('.flipbook-viewport').css({
-						'height': windowHeight
-					});
-					flipbook.attr('currentpage', 1);
-					landscapeHandler();
-				}
-			});
 		}
-
 		
 		// 竖屏控制器
 		function portraitHandler() {
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				swiperFlag=true,
+				swiperFlag1=true,
+				swiperFlag2=true,
 				flipbookHeight=$('.bp_flipbook_container').height(),
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item');
-				
+			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
 			});
 			turnInit();
 			turnToCurrentpage();
-			
 			closeDonateDialog();
-			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			resizeBtn.css({
 				top:'0%',
 				right:'2%'
@@ -739,7 +700,6 @@
 					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(0).find('a').addClass('active');
 					sendcommentEl.show();
 				});
-
 				$('.bp_menu_wrapper li:eq(1)').on('touchend', function(){
 					var $this = $(this);
 					var totalHeight=flipbookHeight+$('.bp_bookinfo_item').height()+$('.bp_menu_wrapper').height()+80;
@@ -755,21 +715,19 @@
 							console.log('gtgt')
 							thisVal='';
 						};
-					})
+					});
 					$this.find('a').addClass('active');
 					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_donatetab_wrapper').show();
 					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(1).find('a').addClass('active');
-
-					if (swiperFlag) {
-						var swiper = new Swiper('.swiper-container', {
+					if (swiperFlag1) {
+						var swiper = new Swiper('.bp_donatetab_wrapper .swiper-container', {
 						    slidesPerView: 'auto',
 						    centeredSlides: false,
 						    grabCursor: true
 						});
-						swiperFlag=false;
+						swiperFlag1=false;
 					};
-
 					sendcommentEl.hide();
 				});
 
@@ -785,23 +743,21 @@
 					$('.bp_iatab_wrapper>div').hide();
 					$('.bp_praise_container').show();
 					$('.bp_menu_wrapper li').siblings('li').find('a').removeClass('active').end().eq(2).find('a').addClass('active');
-
-					if (swiperFlag) {
-						var swiper = new Swiper('.swiper-container', {
+					if (swiperFlag2) {
+						var swiper = new Swiper('.bp_praise_container .swiper-container', {
 						    slidesPerView: 'auto',
 						    centeredSlides: false,
 						    grabCursor: true
 						});
-						swiperFlag=false;
+						swiperFlag2=false;
 					};
-					
 					sendcommentEl.hide();
 				});
 				$('.bp_praise_btn').on('touchend', function(){
 					$(this).addClass('active');
 				});
 				window.eventFlagPortrait=false;
-			};
+			}
 			if (windowWidth<=320) {
 				$('.bp_donatestep_wrapper.step_1 li').children('input').css({
 					'font-size':'1.6rem'
@@ -814,11 +770,13 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				flipbook = $('.flipbook'),
-				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item');
+				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
+				commentInputEl = $('.bp_sendcomment_item');
 
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});
+			commentInputEl.hide();
 			turnInit();
 			turnToCurrentpage();
 			closeDonateDialog();
@@ -837,7 +795,6 @@
 				});
 
 				$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
-					var commentInputEl = $('.bp_sendcomment_item');
 					commentInputEl.toggle().on('touchend', function() {
 						$(document).on('touchend', function(e) {
 							if ($(e.target).closest('.bp_sendcomment_item').length == 0) {
@@ -868,7 +825,7 @@
 					}
 				});
 				window.eventFlagLandscape=false;
-			};
+			}
 		}
 
 		function iSliderinit(){

@@ -463,7 +463,6 @@
 }
 .bp_donatedperson_wrapper ul li{
 	width: 100%;
-	min-height: 2.5rem;
 	border-bottom: 1px solid #e8e8e8;
 	overflow: hidden;
 }
@@ -959,7 +958,6 @@
 	margin: 3% 1% 4% 2%;
 	width: 29%;
 	height: 3rem;
-	position: relative;
 }
 .bp_donatestep_wrapper.step_1 ul li:last-child a{
 	display: inline-block;
@@ -1017,7 +1015,7 @@
 	width: 100%;
 	height: 40px;
 	background: #fff;
-	line-height: 2.2rem;
+	line-height: 30px;
 	color: #fff;
 	font-size: 1.5rem;
 	text-align: center;
@@ -1028,9 +1026,8 @@
 .bp_iwanttodonate_btn label, .bp_praise_btn label{
 	display: block;
 	margin: 0 auto 0;
-	padding: 0.2rem 0;
+	padding: 4px 0;
 	width: 80%;
-	height: 100%;
 	font-size: 1.3rem;
 	background: #ff696a;
 	vertical-align: middle;
@@ -1045,9 +1042,6 @@
 	vertical-align: middle;
 	background-position-x: -323px;
 	background-position-y: -159px; 
-}
-.bp_praise_btn{
-	line-height: 2rem;
 }
 /*.bp_praise_btn.active{
 	background: #ff696a;
@@ -1330,9 +1324,9 @@
 .bp_donatemessage_item input{
 	padding: 0 0 0 3rem;
 	width: 100%;
-	height: 2rem;
+	height: 100%;
 	line-height: 2rem;
-	border: none;
+	border: 0;
 	font-size: 1rem;
 	box-sizing: border-box;
 }

@@ -578,11 +578,22 @@
 				<button type="button"><i></i></button>
 			</div>
 		</div>
-		
-		
 	</div>
 	<div class='bp_photoslider_wrapper' id="iSlider-wrapper">
-			<a class="bp_resizebtn_item active" href="javascript:;"></a>
+		<a class="bp_resizebtn_item active" href="javascript:;"></a>
+	</div>
+	<div class='bp_sendcomment_container'>
+		<div class='bp_sendcomment_wrapper'>
+			<div class='bp_sendcommentbtn_wrapper'>
+				<a class='cancel' href="javascript:;">取消</a>
+				<a class='send' href="javascript:;">发送</a>
+			</div>
+			<div class='bp_commentavatar_item'>
+				<img src="../img/m/vote_result_avatar_100_100_00000.jpg">
+				<label>呆呆鱼呆呆鱼</label>
+			</div>
+			<textarea></textarea>
+		</div>
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
@@ -676,6 +687,10 @@
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
 			});
+			$('.bp_sendcommentbtn_wrapper .cancel').on('touchend', function(){
+				$('.bp_sendcomment_container').hide();
+				$('.main_container').show();
+			});
 			// 翻页，同时改变currentpage属性变量的值
 			$('.flipbook_nextpage_btn').on('touchend', function() {
 				flipbook.turn('next');
@@ -719,6 +734,9 @@
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
 			});
+			$('.bp_sendcomment_container').css({
+				'height': windowHeight
+			})
 			turnInit();
 			turnToCurrentpage();
 			closeDonateDialog();
@@ -734,6 +752,10 @@
 				};
 				$('.bp_photoslider_wrapper .resizeBtn').hide();
 				$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
+				sendcommentEl.find('input').on('touchend', function(){
+					$('.main_container').hide();
+					$('.bp_sendcomment_container').show();
+				});
 				$('.bp_menu_wrapper li:eq(0)').on('touchend', function(){
 					var $this = $(this);
 					$this.find('a').addClass('active');

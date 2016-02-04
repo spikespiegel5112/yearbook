@@ -274,7 +274,41 @@
                     <a class="comment" href="javascript:;"><span></span><label>评论</label></a>
                 </li>
                 <li class="praise_par">
-                    <a class="praise" href="javascript:;"><span></span><label>点赞</label><p>(<span>12</span>人)</p></a>
+                    <a class="praise" href="javascript:;">
+                        <span></span>
+                        <label>点赞</label>
+                        <p>(<span>12</span>人)</p>
+                    </a>
+                    <!--弹出赞过的人-->
+                    <div class="bp_praise_container">
+                        <div class="bp_praise_wrapper">
+                            <a class="closebtn" href="javascript:;">+</a>
+                            <label>赞过的人</label>
+                            <div class="user_list">
+                                <ul class="hidden">
+                                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 01小鱼小鱼小鱼</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 02</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 03</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 04</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 05</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_default_head.png"><label><span>User 06</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 07</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 08</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 09</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 10</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 11</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 12</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 13</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 14</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 15</span></label></a></li>
+                                </ul>
+                                <div class="empty">
+                                    <img src="img/bp_prasie_empty.png">
+                                </div>
+                            </div>
+                            <a class="praise_btn" href="javascript:;"><i></i><span>点赞</span></a>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a class="barrage" href="javascript:;"><span></span><label>弹幕</label></a>
@@ -673,33 +707,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--弹出赞过的人-->
-    <div class="bp_praise_container">
-        <div class="bp_praise_wrapper">
-            <a class="closebtn" href="javascript:;">+</a>
-            <label>赞过的人</label>
-            <div class="user_list">
-                <ul>
-                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 01小鱼小鱼小鱼</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 02</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 03</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 04</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 05</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_default_head.png"><label><span>User 06</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 07</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 08</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 09</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 10</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img1.jpg"><label><span>User 11</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 12</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img3.jpg"><label><span>User 13</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img4.jpg"><label><span>User 14</span></label></a></li>
-                    <li><a href="javascript:;"><img src="img/user_img2.jpg"><label><span>User 15</span></label></a></li>
-                </ul>
-            </div>
-            <a class="praise_btn" href="javascript:;"><i></i><span>点赞</span></a>
         </div>
     </div>
 	<!--底部-->
@@ -1516,10 +1523,10 @@
         //弹出赞过的人
         function popPraiseUser(){
             var praiseContainer=$('.bp_praise_container');
-            praiseContainer.toggleClass('active');
+            praiseContainer.parent().toggleClass('active');
             //点击关闭
             praiseContainer.find('.closebtn').click(function(){
-                praiseContainer.removeClass('active');
+                praiseContainer.parent().removeClass('active');
             });
             //点赞
             praiseContainer.find('.praise_btn').click(function(){

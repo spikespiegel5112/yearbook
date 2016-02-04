@@ -1447,11 +1447,11 @@
 .bp_comment_wrapper .closebtn,
 .bp_praise_container .closebtn{
     display: block;
-    height: 0.5em;
+    height: 1em;
     line-height: 1em;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -4px;
+    right: 4px;
     color: #ccc;
     font-size: 3rem;
     font-weight: lighter;
@@ -1539,12 +1539,14 @@
     box-sizing: border-box;
 }
 
-.comments_list .empty{
+.comments_list .empty,
+.bp_praise_wrapper .user_list .empty{
     width: 100%;
     text-align: center;
 }
 
-.comments_list .empty img{
+.comments_list .empty img,
+.bp_praise_wrapper .user_list .empty img{
     margin: 45px 0 55px;
 }
 
@@ -1621,11 +1623,11 @@
 }
 
 /*bookpreview praise user*/
-.bp_praise_container{
+.bp_toolbar_wrapper .bp_praise_container{
     display: none;
     position: absolute;
     left: 100px;
-    top: 583px;
+    top: -8px;
     margin: 0;
     padding: 20px 25px;
     width: 420px;
@@ -1637,7 +1639,7 @@
     box-shadow: 0 2px 10px #333;
 }
 
-.bp_praise_container.active{
+.bp_toolbar_wrapper .active .bp_praise_container{
     display: block;
 }
 

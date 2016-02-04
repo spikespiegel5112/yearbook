@@ -112,7 +112,7 @@
 }
 
 .viewmode_portrait .bp_flipbook_container {
-	padding: 0 0 90px 0;
+	padding: 0 0 15% 0;
 }
 
 .viewmode_portrait .bp_portrait_wrapper {
@@ -459,10 +459,10 @@
 }
 .bp_donatedperson_wrapper>label{
 	color: #555;
+	font-size: 0.8rem;
 }
 .bp_donatedperson_wrapper ul li{
 	width: 100%;
-	min-height: 2.5rem;
 	border-bottom: 1px solid #e8e8e8;
 	overflow: hidden;
 }
@@ -521,7 +521,7 @@
 	border-color: transparent transparent #e5e5e8 transparent;
 	position: absolute;
 	left: -0.6rem;
-	top: 0.8rem;
+	top: 0.1rem;
 	transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
@@ -958,7 +958,6 @@
 	margin: 3% 1% 4% 2%;
 	width: 29%;
 	height: 3rem;
-	position: relative;
 }
 .bp_donatestep_wrapper.step_1 ul li:last-child a{
 	display: inline-block;
@@ -1012,9 +1011,9 @@
 }*/
 .bp_iwanttodonate_btn, .bp_praise_btn{
 	display: block;
-	padding: 0.5rem;
+	padding: 8px;
 	width: 100%;
-	height: 2.5rem;
+	height: 40px;
 	background: #fff;
 	line-height: 2.5rem;
 	color: #fff;
@@ -1027,9 +1026,8 @@
 .bp_iwanttodonate_btn label, .bp_praise_btn label{
 	display: block;
 	margin: 0 auto 0;
-	padding: 0.2rem 0;
+	padding: 4px 0;
 	width: 80%;
-	height: 100%;
 	font-size: 1.3rem;
 	background: #ff696a;
 	vertical-align: middle;
@@ -1044,9 +1042,6 @@
 	vertical-align: middle;
 	background-position-x: -323px;
 	background-position-y: -159px; 
-}
-.bp_praise_btn{
-	line-height: 2rem;
 }
 /*.bp_praise_btn.active{
 	background: #ff696a;
@@ -1160,7 +1155,7 @@
 .bp_empty_wrapper p{
 	height: 80px;
 	line-height: 80px;
-	font-size: 2rem;
+	font-size: 1rem;
 	color: #ccc;
 	vertical-align: middle;
 	text-align: center;
@@ -1329,9 +1324,9 @@
 .bp_donatemessage_item input{
 	padding: 0 0 0 3rem;
 	width: 100%;
-	height: 2rem;
+	height: 100%;
 	line-height: 2rem;
-	border: none;
+	border: 0;
 	font-size: 1rem;
 	box-sizing: border-box;
 }

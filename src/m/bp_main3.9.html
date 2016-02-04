@@ -687,7 +687,7 @@
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
 			});
-			$('.bp_sendcommentbtn_wrapper .cancel').on('touchend', function(){
+			$('.bp_sendcommentbtn_wrapper a').on('touchend', function(){
 				$('.bp_sendcomment_container').hide();
 				$('.main_container').show();
 			});
@@ -1253,8 +1253,8 @@
 			})
 		}
 
-		$('.bp_sendcomment_item button').on('touchend', function() {
-			var comment = $(this).prev().val();
+		$('.bp_sendcommentbtn_wrapper .send').on('touchend', function() {
+			var comment = $('.bp_sendcomment_wrapper textarea').val();
 			if ($.trim(comment) == "") {
 				alert("亲，请输入你的想说的话！");
 				return false;
@@ -1281,14 +1281,14 @@
 			function loadandfire(comment) {
 				var windowWidth = $(window).width(),
 					windowHeight = $(window).height(),
-				//拼装弹幕字符元素
-				comment = $('<div></div>').addClass('barrage').css({
-					'position': 'absolute',
-					'left': windowWidth + 100,
-					'top': windowWidth * 0.5 * Math.random(1),
-					'color': getReandomColor(),
-					'font-size': getReandomFontSize()
-				}).html('<p>' + comment + '</p>');
+					//拼装弹幕字符元素
+					comment = $('<div></div>').addClass('barrage').css({
+						'position': 'absolute',
+						'left': windowWidth + 100,
+						'top': windowWidth * 0.5 * Math.random(1),
+						'color': getReandomColor(),
+						'font-size': getReandomFontSize()
+					}).html('<p>' + comment + '</p>');
 
 				$(".bp_barrage_wrapper").append(comment);
 				setTimeout(function() {

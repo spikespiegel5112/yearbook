@@ -527,19 +527,21 @@
 }
 .bp_dontatedmessage_wrapper .identification{
 	margin: 1rem 0 0 0;
+	width: 100%;
 	overflow: hidden;
+	position: relative;
 }
 .bp_dontatedmessage_wrapper .donatedprice{
 	margin: 0.4rem 0 0 0;
 }
 .identification span{
 	float: left;
-	width: 65%;
+	width: 50%;
 	color: #777;
 }
 .identification label{
 	float: left;
-	width: 35%;
+	width: 50%;
 	color: #999;
 	font-size: 0.8rem;
 }
@@ -954,7 +956,7 @@
 	float: left;
 	margin: 3% 1% 4% 2%;
 	width: 29%;
-	height: 4rem;
+	height: 3rem;
 }
 .bp_donatestep_wrapper.step_1 ul li:last-child a{
 	display: inline-block;
@@ -987,7 +989,7 @@
 	position: relative;
 }
 .bp_donatestep_wrapper.step_1 ul li a span{
-	line-height: 3.6rem;
+	line-height: 3rem;
 }
 .bp_donatestep_wrapper.step_1 ul li a span, .bp_donatestep_wrapper.step_1 ul li input{
 	font-size: 1.8rem;
@@ -1010,6 +1012,7 @@
 	display: block;
 	padding: 0.5rem;
 	width: 100%;
+	height: 2.5rem;
 	background: #fff;
 	line-height: 2.2rem;
 	color: #fff;
@@ -1302,4 +1305,30 @@
 	display: block;
 	margin: 0 auto;
 	height: 100%;
+}
+.bp_donatemessage_item{
+	margin: 0 auto 0.5rem;
+	width: 96%;
+	height: 2rem;
+	border: 1px solid #ebebeb;
+	border-radius: 0.2rem;
+	position: relative;
+}
+.bp_donatemessage_item span{
+	display: block;
+	padding: 0 0 0 0.2rem;
+	line-height: 2rem;
+	position: absolute;
+	left: 0;
+	font-size: 1rem;
+	font-family: 'arial';
+}
+.bp_donatemessage_item input{
+	padding: 0 0 0 3rem;
+	width: 100%;
+	height: 100%;
+	line-height: 2rem;
+	border: 0;
+	font-size: 1rem;
+	box-sizing: border-box;
 }

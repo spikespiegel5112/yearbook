@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/chosen.css" media="screen" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -77,7 +78,8 @@
 			<li><a href="javascript:;">个人照片书</a></li>
 			<li><a href="javascript:;">多人互动册</a></li>
 		</ul>-->
-		<ul class='agb_bannermain_wrapper'>
+        <!--旧照片书单张banner-->
+		<ul class='agb_bannermain_wrapper hidden'>
 			<!--<li class=''>
 				<p>数百个纪念册模板、千个书页模板任您自由组合，</p>
 				<p>不管是毕业册、聚会册还是个人照片书，在这里可以轻而易举的制作出来！</p>
@@ -94,6 +96,23 @@
 				<img class='agb_banner_img ' width='1920' height='320' src="img/autographbook/agb_banner3_img_00000.jpg">
 			</li>-->
 		</ul>
+        <!--3.9.2 轮播banner-->
+        <div class="photo_banner_slide swiper-container">
+            <ul class='swiper-wrapper'>
+                <li class='swiper-slide'>
+                    <div><img src="img/autographbook/photo_list_banner01.jpg"></div>
+                </li>
+                <li class='swiper-slide'>
+                    <div><img src="img/autographbook/photo_list_banner02.jpg"></div>
+                </li>
+                <li class='swiper-slide'>
+                    <div><img src="img/autographbook/photo_list_banner03.jpg"></div>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
 	</div>
 	<div class='mian_container bg_f5f5f5'>
 		<div class='left_content_wrapper'>
@@ -430,6 +449,7 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<script type="text/javascript" src="js/check_os.js"></script>
@@ -443,12 +463,14 @@
 		//scrollFixed();
 		//leftFilter();
 		//filterStyle();
-		imgAlignCenter();
+        //单张banner居中显示
+		//imgAlignCenter();
 		bookPreview();
 		$('.tpl_sort').chosen({
 			disable_search_threshold: 5 ,
 			width:'110px'
 		});
+        photoBannerSwiperInit();
 	});
 
 	/*左侧风格选中效果*/
@@ -636,5 +658,40 @@
 			});
 		});
 	}
+
+    /*
+     * banner焦点图
+     * */
+    function photoBannerSwiperInit() {
+        alignToCenter();
+        var bannerSwiper = new Swiper('.photo_banner_slide.swiper-container', {
+            loop: true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            paginationClickable: true,
+            autoplay: false
+        });
+        $(window).resize(function() {
+            alignToCenter();
+        });
+
+        function alignToCenter() {
+            var windowWidth = $(window).width();
+            $('.swiper-container').css({
+                'height': '320px'
+            });
+            $('.swiper-slide').css({
+                'overflow': 'hidden'
+            })
+            $('.swiper-slide>div').css({
+                'position': 'absolute',
+                'top': '0',
+                'right': (1920 - windowWidth) / 2
+            });
+        }
+    }
 	</script>
 </body>

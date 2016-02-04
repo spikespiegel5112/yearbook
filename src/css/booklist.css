@@ -126,6 +126,53 @@
 	clear: both;
 }
 
+/*photo book list banner slide*/
+.photo_banner_slide{
+    position: relative;
+    width: 100%;
+    min-width: 1280px;
+    height: 320px;
+}
+
+.photo_banner_slide ul li > div {
+    position: relative;
+    width: 100%;
+    min-width: 1280px;
+    height: 320px;
+}
+
+.photo_banner_slide .swiper-button-prev, .photo_banner_slide .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: url("../img/index/banner_slide_arrows.png") no-repeat;
+}
+
+.photo_banner_slide .swiper-button-prev {
+    left: 5%;
+    background-position: 0 0;
+}
+
+.photo_banner_slide .swiper-button-prev:hover {
+    left: 5%;
+    background-position: 0 -50px;
+}
+
+.photo_banner_slide .swiper-button-next {
+    right: 5%;
+    background-position: -50px 0;
+}
+
+.photo_banner_slide .swiper-button-next:hover {
+    right: 5%;
+    background-position: -50px -50px;
+}
+
+.photo_banner_slide .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #6eb362;
+}
 
 /*~~~~~~~~~~mian_container~~~~~~~~~~*/
 

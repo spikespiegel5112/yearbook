@@ -1262,10 +1262,10 @@
 				var $this=$(this),
 					$thisLi = $(this).parent('li');
 				if ($this.hasClass('donate')){
-                    $thisLi.siblings().not('.praise_par').removeClass('active');
+                    $thisLi.siblings().removeClass('active');
 					popupDonateDialog();
 				}else if($this.hasClass('comment')){
-                    $thisLi.siblings().not('.praise_par').removeClass('active');
+                    $thisLi.siblings().removeClass('active');
                     popupCommentDialog();
                 }else if($this.hasClass('praise')){
                     $thisLi.siblings().removeClass('active');

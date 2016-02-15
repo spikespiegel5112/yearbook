@@ -1820,3 +1820,123 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 }
+/*~~~~~~~~~~loginpopup~~~~~~~~~~*/
+.loginpopup_container{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+.loginpopup_wrapper{
+	margin: 20% auto 0;
+	width: 80%;
+	max-width: 640px;
+	border-radius: 0.5rem;
+	background-color: #fff;
+	overflow: hidden;
+}
+.loginpopup_wrapper h1{
+	padding: 1rem;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+.loginpopup_input_wrapper{
+	padding: 0 8% 8% 8%;
+	width: 84%
+}
+.loginpopup_input_wrapper li{
+	margin: 1rem 0 0 0;
+	padding: 0.3rem 0;
+	width: 100%;
+	height: 1.5rem;
+	border-bottom: 1px solid #cecece;
+}
+.loginpopup_input_wrapper img{
+	float: left;
+	width: 8%;
+}
+.loginpopup_input_wrapper input{
+	float: right;
+	padding: 0;
+	border: 0;
+	height: 100%;
+	line-height: 1rem;
+	width: 90%;
+}
+.loginpopup_login_btn{
+	display: block;
+	margin: 0 auto;
+	padding: 0.5rem 0;
+	width: 90%;
+	background-color: #90c24f;
+	font-size: 1.2rem;
+	color: #fff;
+	text-align: center;
+	border-radius: 0.5rem;
+}
+.loginpopup_register_wrapper{
+	margin: 0 auto;
+	padding: 1rem 0;
+	width: 90%;
+}
+.loginpopup_register_wrapper a{
+	color: #336699;
+}
+.loginpopup_register_wrapper a:last-child{
+	float: right;
+}
+.loginpopup_ssologin_wrapper{
+	padding: 1rem;
+	overflow: hidden;
+	background-color: #eee;
+	border-top: 1px solid #cacaca;
+}
+.loginpopup_ssologin_wrapper p:before, .loginpopup_ssologin_wrapper p:after{
+	content: '';
+	float: left;
+	margin: 0.5rem 0 0 0;
+	width: 17%;
+	height: 2px;
+	background-color: #cacaca;
+}
+.loginpopup_ssologin_wrapper p:after{
+	float: right;
+}
+.loginpopup_ssologin_wrapper p{
+	color: #9a9a9a;
+	text-align: center;
+}
+.loginpopup_ssologin_wrapper ul{
+	padding: 1rem 0;
+}
+.loginpopup_ssologin_wrapper li{
+	float: left;
+	width: 33%;
+
+}
+.loginpopup_ssologin_wrapper li a{
+	display: block;
+	margin: 0 auto;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.loginpopup_ssologin_wrapper li a img{
+	display: block;
+	margin: 20% auto 0;
+	width: 50%;
+}
+.loginpopup_ssologin_wrapper .qq a{
+	background: url(../ing/m/previewbook/loginpopup_qq_00000.png) #039dff;
+}
+.loginpopup_ssologin_wrapper .wechat a{
+	background: url(../ing/m/previewbook/loginpopup_wechat_00000.png) #1bcb44;
+}
+.loginpopup_ssologin_wrapper .weibo a{
+	background: url(../ing/m/previewbook/loginpopup_weibo_00000.png) #e42744;
+}

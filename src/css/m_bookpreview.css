@@ -180,11 +180,11 @@ html{
 }
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
-	margin: 10px 0 0 0;
-	padding: 0.3rem 0.6rem;
-	line-height: 1rem;
+	margin: 0.3rem 0 0 0;
+	padding: 0.1rem 0.3rem;
+	line-height: 0.6rem;
 	color: #fff;
-	font-size: 0.8rem;
+	font-size: 0.5rem;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -331,6 +331,7 @@ html{
 
 .bp_menu_wrapper li a {
 	display: block;
+	height: 5.2rem;
 	font-size: 0.5rem;
 	color: #666;
 	text-decoration: none;
@@ -354,11 +355,12 @@ html{
 .bp_menu_wrapper li a:after{
 	content: '';
 	display: none;
-	position: relative;
+	position: absolute;
+	left: 41%;
 	margin: 0 auto;
 	width: 0;
 	height: 0;
-	bottom: -1px;
+	bottom: 0;
 	border-width: 0 10px 10px 10px;
 	border-color: transparent transparent #e1e1e1 transparent;
 	border-style: solid;
@@ -736,9 +738,10 @@ html{
 }
 
 .bp_landscape_wrapper {
+	height: 3em;
 	position: fixed;
 	left: 0;
-	bottom: -47px;
+	bottom: -3rem;
 	width: 100%;
 	background-color: #000;
 	z-index: 1;
@@ -1022,7 +1025,7 @@ html{
 }*/
 .bp_iwanttodonate_btn, .bp_praise_btn{
 	display: block;
-	padding: 8px;
+	padding: 8px 0;
 	width: 100%;
 	height: 40px;
 	background: #fff;
@@ -1370,6 +1373,7 @@ html{
 	width: 2rem;
 	background-color: #71cb5d;
 	color: #fff;
+	font-size: 0.9rem;
 }
 
 .bp_sendcommentbtn_wrapper .cancel{

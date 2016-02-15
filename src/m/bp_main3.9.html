@@ -595,6 +595,47 @@
 			<textarea></textarea>
 		</div>
 	</div>
+	<div class='loginpopup_container'>
+		<div class='loginpopup_wrapper'>
+			<h1>登录忆尔</h1>
+			<ul class='loginpopup_input_wrapper'>
+				<li>
+					<img src="../img/m/previewbook/loginpopup_username_00000.png">
+					<input type='text'>
+				</li>
+				<li>
+					<img src="../img/m/previewbook/loginpopup_password_00000.png">
+					<input type='password'>
+				</li>
+			</ul>
+			<a class='loginpopup_login_btn' href="javascript:;">登录</a>
+			<p class='loginpopup_register_wrapper'>
+				还没有账号？
+				<a href="javascript:;">立即注册</a>
+				<a href="javascript:;">忘记密码？</a>
+			</p>
+			<div class='loginpopup_ssologin_wrapper'>
+				<p>第三方登陆，无须注册</p>
+				<ul>
+					<li class='qq'>
+						<a href="javascript:;">
+							<img src="../img/m/previewbook/loginpopup_qq_00000.png">
+						</a>
+					</li>
+					<li class='wechat'>
+						<a href="javascript:;">
+							<img src="../img/m/previewbook/loginpopup_wechat_00000.png">
+						</a>
+					</li>
+					<li class='weibo'>
+						<a href="javascript:;">
+							<img src="../img/m/previewbook/loginpopup_weibo_00000.png">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
@@ -622,7 +663,9 @@
 				flipbookViewport=$('.flipbook-viewport'),
 				resizeBtn=$('.bp_resizebtn_item'),
 				sliderResizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
-				headerAndTools=$('.viewmode_landscape .ybwechatheader_wrapper, .bp_landscape_wrapper');
+				headerAndTools=$('.viewmode_landscape .ybwechatheader_wrapper, .bp_landscape_wrapper'),
+				sendcommentEl=$('.bp_sendcomment_item'),
+				loginpopupEl=$('.loginpopup_container');
 			//横竖屏初始化注册事件的flag标记，让横竖屏的事件只注册一遍
 			window.eventFlagPortrait = true,
 			window.eventFlagLandscape = true;
@@ -692,6 +735,21 @@
 				$('.bp_sendcomment_container').hide();
 				$('.main_container').show();
 			});
+			sendcommentEl.find('input').on('touchend', function(){
+				loginpopupEl.show();
+			});
+			//点击登陆弹窗周围关闭登陆弹窗
+			loginpopupEl.on('touchend', function(e){
+				if ($(e.target).closest('.loginpopup_wrapper').length==0) {
+					loginpopupEl.hide();
+				};
+			});
+
+			$('.loginpopup_login_btn').on('touchend', function(){
+				$('.main_container').hide();
+				loginpopupEl.hide();
+				$('.bp_sendcomment_container').show();
+			});
 			// 翻页，同时改变currentpage属性变量的值
 			$('.flipbook_nextpage_btn').on('touchend', function() {
 				flipbook.turn('next');
@@ -729,15 +787,16 @@
 				swiperFlag2=true,
 				flipbookHeight=$('.bp_flipbook_container').height(),
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
-				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item');
+				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
+				sendcommentEl=$('.bp_sendcomment_item');
+				
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
-
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
 			});
-			$('.bp_sendcomment_container').css({
+			$('.bp_sendcomment_container, .loginpopup_container').css({
 				'height': windowHeight
-			})
+			});
 			turnInit();
 			turnToCurrentpage();
 			closeDonateDialog();
@@ -746,17 +805,13 @@
 				right:'2%'
 			});
 			if (window.eventFlagPortrait) {
-				var sendcommentEl=$('.bp_sendcomment_item');
 				//当评论页数量为0时显示为空图标
 				if ($('.bp_comment_wrapper table').length==0) {
 					$('.bp_empty_wrapper').show();
 				};
 				$('.bp_photoslider_wrapper .resizeBtn').hide();
 				$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
-				sendcommentEl.find('input').on('touchend', function(){
-					$('.main_container').hide();
-					$('.bp_sendcomment_container').show();
-				});
+
 				$('.bp_menu_wrapper li:eq(0)').on('touchend', function(){
 					var $this = $(this);
 					$this.find('a').addClass('active');

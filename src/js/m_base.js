@@ -1,8 +1,5 @@
 ;
 (function($) {
-
-	
-
 	$.fn.extend({
 		textCount: function(settings) {
 			//当textArea输入框文字字数变化时，自动显示字数
@@ -144,6 +141,22 @@
 				;
 				console.log(docHeight)
 			}
+		},
+		remResizing:function(fontsize){
+			var htmlEl=$('html'),
+				windowWidth=$(window).width(),
+				factor=windowWidth/320;
+			if (typeof fontsize == 'undefined') {
+				fontsize=15;
+			};
+			console.log(fontsize)
+			htmlEl.css('font-size',fontsize*factor);
+			$(window).resize(function(){
+				console.log(fontsize)
+				var windowWidth=$(window).width(),
+					factor=windowWidth/320;
+				htmlEl.css('font-size',fontsize*factor);
+			});
 		}
 	});
 

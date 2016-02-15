@@ -254,7 +254,6 @@
 						}, 'fast', 'swing', function() {
 							slideFlag = true;
 						});
-
 					}
 				}
 			});
@@ -285,7 +284,7 @@
 
 			carouselLi.css({
 				'width': liWidth
-			})
+			});
 			options = $.extend({
 				arrowLeft: 'carousel_arrow_left',
 				arrowRight: 'carousel_arrow_right',

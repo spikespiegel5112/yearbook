@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+html{
+	font-size: 16px;
+}
 /*~~~~~~~~~~yb old preview book~~~~~~~~~~*/
 
 .ybwechatheader_wrapper.book_tooltip {
@@ -112,7 +114,7 @@
 }
 
 .viewmode_portrait .bp_flipbook_container {
-	padding: 0 0 15% 0;
+	padding: 0 0 3.5rem 0;
 }
 
 .viewmode_portrait .bp_portrait_wrapper {
@@ -206,6 +208,7 @@
 .viewmode_portrait .bp_paginator_item{
 	position: absolute;
 	bottom: 1rem;
+	font-size: 1rem;
 }
 .viewmode_portrait .ybwechatheader_wrapper .bp_paginator_item{
 	display: none;
@@ -307,10 +310,10 @@
 }
 
 .bp_portrait_wrapper .bp_bookinfo_item {
-	font-size: 14px;
+	font-size: 0.7rem;
 	color: #666;
 	text-align: center;
-	line-height: 40px;
+	line-height: 2rem;
 	background-color: #fff;
 }
 .bp_menu_wrapper {
@@ -328,7 +331,7 @@
 
 .bp_menu_wrapper li a {
 	display: block;
-	font-size: 12px;
+	font-size: 0.5rem;
 	color: #666;
 	text-decoration: none;
 	position: relative;
@@ -416,7 +419,8 @@
 }
 
 .bp_menu_wrapper li p {
-	margin-bottom: 10px;
+	margin-bottom: 0.4rem;
+	font-size: 0.8rem;
 }
 
 .bp_iatab_wrapper {
@@ -476,8 +480,8 @@
 .bp_donatedperson_wrapper li .bp_donatedavatar_item:before{
 	content: '';
 	display: block;
-	width: 25px;
-	height: 25px;
+	width: 1.5rem;
+	height: 1.2rem;
 	position: absolute;
 	top: -5px;
 	right: 10px;
@@ -539,6 +543,7 @@
 	float: left;
 	width: 50%;
 	color: #777;
+	font-size: 1rem;
 }
 .identification label{
 	float: left;
@@ -559,17 +564,19 @@
 }
 .donatedprice label{
 	color: red;
+	font-size: 0.9rem;
+	line-height: 1.5rem;
 }
 
 .bp_praisedperson_wrapper li{
-	width: 55px;
+	width: 3.5rem;
 	margin: 3% 0;
 }
 .bp_praisedperson_wrapper li img{
 	display: block;
 	margin: 0 auto;
-	width: 25px;
-	height: 25px;
+	width: 1.6rem;
+	height: 1.6rem;
 	border-radius: 50%;
 }
 .bp_praisedperson_wrapper label{
@@ -595,7 +602,7 @@
 }
 
 .bp_comment_container table tr:first-child td:first-child {
-	width: 40px;
+	width: 2.5rem;
 }
 
 .bp_comment_container table tr:first-child td:last-child {
@@ -603,20 +610,24 @@
 }
 
 .bp_comment_container table tr td div {
-	line-height: 50px;
-	font-size: 12px;
+	line-height: 2.5rem;
+	font-size: 0.5rem;
 	color: #999;
 }
 
+.bp_comment_container table tr td .commet_time {
+	text-align: right;
+}
+
 .bp_comment_container .user_header img {
-	width: 30px;
-	height: 30px;
+	width: 1.5rem;
+	height: 1.5rem;
 	vertical-align: middle;
 }
 
 .bp_comment_container table tr td p {
-	margin-bottom: 10px;
-	font-size: 12px;
+	margin-bottom: 0.6rem;
+	font-size: 0.5rem;
 	color: #333;
 }
 
@@ -874,7 +885,7 @@
 	color: #e7b54b;
 }
 .bp_comment_container{
-	padding: 0 0 30px 0;
+	padding: 0 0 2rem 0;
 }
 /*~~~~~~~~~打赏弹窗组件~~~~~~~~~*/
 .bp_donate_container{

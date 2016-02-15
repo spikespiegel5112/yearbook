@@ -221,7 +221,7 @@ html{
 }
 .ybwechatheader_wrapper .bp_paginator_item label{
 	margin: 0;
-	font-size: 1rem;
+	font-size: 0.6rem;
 }
 .flipbook-viewport {
 	margin: 0 auto;
@@ -1356,7 +1356,7 @@ html{
 }
 .bp_sendcomment_wrapper{
 	margin: 0 auto;
-	padding: 0.5rem 0 2rem 0;
+	padding: 0.5rem 0 0.5rem 0;
 	width: 100%;
 	border-top: 1px solid #d9d9d9;
 	position: absolute;
@@ -1374,6 +1374,7 @@ html{
 	background-color: #71cb5d;
 	color: #fff;
 	font-size: 0.9rem;
+	border-radius: 0.4rem;
 }
 
 .bp_sendcommentbtn_wrapper .cancel{
@@ -1384,6 +1385,13 @@ html{
 .bp_sendcommentbtn_wrapper .send{
 	float: right;
 }
+.bp_sendcommentbtn_wrapper .send:hover{
+	background-color: #4C883F;
+}
+.bp_sendcommentbtn_wrapper .cancel{
+	background-color: #aaa;
+	color: #fff;
+}
 .bp_commentavatar_item{
 	margin: 0 auto;
 	padding: 0.5rem 0;
@@ -1393,20 +1401,21 @@ html{
 }
 .bp_commentavatar_item img{
 	display: inline-block;
-	width: 3rem;
-	height: 3rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	border-radius: 50%;
 	vertical-align: middle;
 }
 .bp_commentavatar_item label{
 	display: inline-block;
+	font-size: 0.8rem;
 }
 .bp_sendcomment_wrapper textarea{
 	display: block;
 	margin: 0 auto;
 	padding: 0.4rem;
 	width: 95%;
-	height: 3rem;
+	height: 5rem;
 	font-size: 1.2rem;
 	box-sizing: border-box;
 }

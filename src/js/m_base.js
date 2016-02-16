@@ -143,19 +143,22 @@
 			}
 		},
 		remResizing:function(fontsize){
-			var htmlEl=$('html'),
-				windowWidth=$(window).width(),
-				factor=windowWidth/320;
+			var htmlEl=$('html'), windowWidth=$(window).width(), factor;
 			if (typeof fontsize == 'undefined') {
-				fontsize=15;
-			};
-			console.log(fontsize)
+				fontsize = 15;
+			}
+			if (windowWidth > 640)
+				windowWidth = 640;
+
+			factor = windowWidth / 320;
+
 			htmlEl.css('font-size',fontsize*factor);
 			$(window).resize(function(){
-				console.log(fontsize)
-				var windowWidth=$(window).width(),
-					factor=windowWidth/320;
-				htmlEl.css('font-size',fontsize*factor);
+				var windowWidth=$(window).width();
+				if (windowWidth > 640)
+					windowWidth = 640;
+				var factor = windowWidth / 320;
+				htmlEl.css('font-size', fontsize * factor);
 			});
 		}
 	});

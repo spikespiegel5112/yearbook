@@ -149,7 +149,7 @@
 				factor=0;
 
 			if (typeof fontsize == 'undefined') {
-				fontsize=15;
+				fontsize=10;
 			};
 			if (windowWidth<windowHeight) {
 				factor=windowWidth/320;

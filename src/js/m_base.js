@@ -145,10 +145,17 @@
 		remResizing:function(fontsize){
 			var htmlEl=$('html'),
 				windowWidth=$(window).width(),
-				factor=windowWidth/320;
+				windowHeight=$(window).height(),
+				factor=0;
+
 			if (typeof fontsize == 'undefined') {
 				fontsize=15;
 			};
+			if (windowWidth<windowHeight) {
+				factor=windowWidth/320;
+			}else{
+				factor=windowHeight/320;
+			}
 			console.log(fontsize)
 			htmlEl.css('font-size',fontsize*factor);
 			$(window).resize(function(){

@@ -573,7 +573,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 /*~~~~~~~~~~common head~~~~~~~~~~*/
 .ybwechatheader_wrapper {
 	width: 100%;
-	height: 3rem;
+	height: 3em;
 	background: #8ac280;
 	z-index: 1;
 	position: relative;
@@ -690,9 +690,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .ybwechatheader_wrapper label {
-	margin: 0 1rem;
-	line-height: 3rem;
-/*	font-size: 0.9em;*/
+	margin: 0 1em;
+	line-height: 3em;
+	/*	font-size: 0.9em;*/
 }
 
 .ybwechatheader_wrapper h5 {
@@ -1379,8 +1379,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin-bottom: 0;
 	font-size: 14px;
 	line-height: 25px;
-    background-color: transparent;
-    padding: 0;
+	background-color: transparent;
+	padding: 0;
 }
 
 .basic_info .book_text .tpl_info span {
@@ -1658,15 +1658,15 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 @media only screen and (min-width: 360px) and (max-width: 374px){
-    .mybookshelf_main_wrapper li{
-        margin: 1em .6em 0 .6em;
-    }
+	.mybookshelf_main_wrapper li{
+		margin: 1em .6em 0 .6em;
+	}
 }
 
 @media only screen and (min-width: 375px) and (max-width: 413px) {
-    .mybookshelf_main_wrapper li {
-        margin: 1em 0.7em 0 0.7em;
-    }
+	.mybookshelf_main_wrapper li {
+		margin: 1em 0.7em 0 0.7em;
+	}
 }
 
 .mybookshelf_main_wrapper li a img {
@@ -1674,7 +1674,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	height: 100%;
 	border-radius: 0.4em;
 	border: 1px solid #ccc;
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .mybookshelf_main_wrapper li a span {
@@ -2019,6 +2019,84 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .loginpopup_ssologin_wrapper .weibo a{
 	background: url(../ing/m/previewbook/loginpopup_weibo_00000.png) #e42744;
 }
+
+/* 评论 输入框 */
+.bp_sendcomment_container{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 1;
+}
+.bp_sendcomment_wrapper{
+	margin: 0 auto;
+	padding: .2rem 0 ;
+	width: 100%;
+	border-top: 1px solid #d9d9d9;
+	position: absolute;
+	bottom: 0;
+}
+.bp_sendcommentbtn_wrapper{
+	margin: .5rem auto;
+	width: 90%;
+	overflow: hidden;
+}
+.bp_sendcommentbtn_wrapper a{
+	display: block;
+	padding: 0.2rem 0.8rem;
+	width: 2rem;
+	background-color: #71cb5d;
+	color: #fff;
+	font-size: 0.9rem;
+	border-radius: 0.4rem;
+}
+
+.bp_sendcommentbtn_wrapper .cancel{
+	float: left;
+	background-color: #efefef;
+	color: #000;
+}
+.bp_sendcommentbtn_wrapper .send{
+	float: right;
+}
+.bp_sendcommentbtn_wrapper .send:hover{
+	background-color: #4C883F;
+}
+.bp_sendcommentbtn_wrapper .cancel{
+	background-color: #aaa;
+	color: #fff;
+}
+.bp_commentavatar_item{
+	margin: 0 auto;
+	padding: 0.5rem 0;
+	width: 95%;
+	overflow: hidden;
+	border-top: 1px solid #d9d9d9;
+}
+.bp_commentavatar_item img{
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.bp_commentavatar_item label{
+	display: inline-block;
+	font-size: 0.8rem;
+}
+.bp_sendcomment_wrapper textarea{
+	display: block;
+	margin: 0 auto;
+	padding: 0.4rem;
+	width: 95%;
+	height: 5rem;
+	font-size: 1.2rem;
+	box-sizing: border-box;
+}
+
 @charset "utf-8";
 
 .index_wrapper {
@@ -4062,9 +4140,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     overflow: hidden;
 }
 @charset "utf-8";
-html{
-	font-size: 16px;
-}
+
 /*~~~~~~~~~~yb old preview book~~~~~~~~~~*/
 
 .ybwechatheader_wrapper.book_tooltip {
@@ -4203,6 +4279,7 @@ html{
 .viewmode_landscape .ybwechatheader_wrapper {
 	display: block;
 	position: absolute;
+	height: 1.8rem;
 	top: -3em;
 	background:-webkit-linear-gradient(bottom,transparent,#000);
 	z-index: 2;
@@ -4243,10 +4320,10 @@ html{
 }
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
-	margin: 0.8rem 0 0 0;
+	margin: 0.4rem 0 0 0;
 	padding: 0.2rem 1rem;
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: .5rem;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -4259,6 +4336,7 @@ html{
 	top: 0;
 	background: transparent;
 	z-index: 2;
+	max-height: 40px;
 }
 
 .bp_paginator_item {
@@ -4953,6 +5031,7 @@ html{
 }
 .bp_comment_container{
 	padding: 0 0 2rem 0;
+	background-color: #f2f2f2;
 }
 /*~~~~~~~~~打赏弹窗组件~~~~~~~~~*/
 .bp_donate_container{
@@ -5408,81 +5487,6 @@ html{
 	font-size: 1rem;
 	box-sizing: border-box;
 }
-.bp_sendcomment_container{
-	display: none;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: #fff;
-	z-index: 1;
-}
-.bp_sendcomment_wrapper{
-	margin: 0 auto;
-	padding: 0.5rem 0 0.5rem 0;
-	width: 100%;
-	border-top: 1px solid #d9d9d9;
-	position: absolute;
-	bottom: 0;
-}
-.bp_sendcommentbtn_wrapper{
-	margin: 1rem auto;
-	width: 90%;
-	overflow: hidden;
-}
-.bp_sendcommentbtn_wrapper a{
-	display: block;
-	padding: 0.2rem 0.8rem;
-	width: 2rem;
-	background-color: #71cb5d;
-	color: #fff;
-	font-size: 0.9rem;
-	border-radius: 0.4rem;
-}
-
-.bp_sendcommentbtn_wrapper .cancel{
-	float: left;
-	background-color: #efefef;
-	color: #000;
-}
-.bp_sendcommentbtn_wrapper .send{
-	float: right;
-}
-.bp_sendcommentbtn_wrapper .send:hover{
-	background-color: #4C883F;
-}
-.bp_sendcommentbtn_wrapper .cancel{
-	background-color: #aaa;
-	color: #fff;
-}
-.bp_commentavatar_item{
-	margin: 0 auto;
-	padding: 0.5rem 0;
-	width: 95%;
-	overflow: hidden;
-	border-top: 1px solid #d9d9d9;
-}
-.bp_commentavatar_item img{
-	display: inline-block;
-	width: 1.5rem;
-	height: 1.5rem;
-	border-radius: 50%;
-	vertical-align: middle;
-}
-.bp_commentavatar_item label{
-	display: inline-block;
-	font-size: 0.8rem;
-}
-.bp_sendcomment_wrapper textarea{
-	display: block;
-	margin: 0 auto;
-	padding: 0.4rem;
-	width: 95%;
-	height: 5rem;
-	font-size: 1.2rem;
-	box-sizing: border-box;
-}
 
 @charset "utf-8";
 /*~~~~~~~~~~book space~~~~~~~~~~*/
@@ -5871,7 +5875,7 @@ html{
     margin: 15px auto;
     width: 40px;
     height: 40px;
-    background-image: url(../img/imgsprite_yb3_wbl_00000.png);
+    background-image: url(../img/sprite/imgsprite_yb3_wbl_00000.png);
     border: 3px solid #fff;
     border-radius: 50%;
     box-shadow: 0 2px 3px #ccc;
@@ -6081,7 +6085,7 @@ html{
     margin: 0 auto;
     width: 70px;
     height: 60px;
-    background: url(../img/imgsprite_yb3_wbl_00000.png) -355px -24px;
+    background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -355px -24px;
 }
 
 .bmindex_membervote_wrapper ul .active a .choosen_icon {

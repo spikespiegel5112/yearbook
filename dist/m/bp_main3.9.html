@@ -14,6 +14,11 @@
 	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
 	<link rel="stylesheet" href="../assets/css/iSlider.min.css" type="text/css" />
 	<link rel="stylesheet" href="../assets/css/swiper.min.css" type="text/css" />
+	<style>
+		html{
+			font-size: 16px;
+		}
+	</style>
 </head>
 
 <body>
@@ -897,6 +902,9 @@
 				commentInputEl = $('.bp_sendcomment_item');
 			$.remResizing();
 			$('.flipbook-viewport').css({
+				'height': windowHeight
+			});
+				$('.bp_sendcomment_container, .loginpopup_container').css({
 				'height': windowHeight
 			});
 			commentInputEl.hide();

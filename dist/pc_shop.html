@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <title>忆尔3.10-个人中心-我的店铺首页</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+<!--头部导航-->
+<div class="cm_header_nav">
+    <div class="logo">
+        <a href="javascript:;"><img src="img/logo.png"></a>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="booklist_photo.html">照片书</a></li>
+            <li><a href="booklist_ia.html">互动册</a></li>
+            <li><a href="pc_mybookshelf.html" class="active">个人中心</a></li>
+            <li><a href="static_instruction_entrance.html">使用指南</a></li>
+        </ul>
+    </div>
+    <div class="nav_login">
+        <ul>
+            <li><a href="access_login.html">登录</a></li>
+            <li><a href="access_register.html">注册</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cm_header_shadow"></div>
+<!--主内容区域-->
+<div class="main_content_container">
+    <!--左侧内容 开始-->
+    <div class="left_content_container">
+        <div class="personal_list_box">
+            <ul>
+                <li>
+                    <a href="pc_personInfo.html">
+                        <div class="personal_info">
+                            <div class="personal_head"><img src="img/default/personal_head.png" alt="头像"></div>
+                            <h5>李四</h5>
+                            <span>1995年10月4日</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="active"><span class="myShop_icon"></span><a href="pc_shop.html">我的店铺</a></li>
+                <li><span class="myBookshelf_icon"></span><a href="pc_mybookshelf.html">我的书架</a></li>
+                <li><span class="myMessage_icon"></span><a href="pc_myMessage.html">我的消息</a></li>
+                <li><span class="ybWallet_icon"></span><a href="pc_wallet.html">忆尔钱包</a></li>
+                <li><span class="order_icon"></span><a href="pc_myorder_list.html">我的订单</a></li>
+                <li><span class="account_security_icon"></span><a href="pc_security.html">账户安全</a></li>
+                <li><span class="feedback_icon"></span><a href="pc_feedback.html">意见反馈</a></li>
+            </ul>
+        </div>
+        <div class="personal_content_box">
+            <a href="javascript:;">我的店铺</a>
+
+            <div class="hr">
+                <div class="green"></div>
+                <div class="gray"></div>
+            </div>
+            <div class="shop_apply_con default">
+                <div class='shop_default'>
+                    <span></span>
+
+                    <p>您还没有开设自己的忆尔小店，简单三步轻松搞定忆尔小店！</p>
+                    <a id="openShopNow" href="javascript:;">开设我的小店</a>
+                </div>
+                <div class="eb_step_tips">
+                    <ul>
+                        <li class="current">
+                            <div>
+                                <i class="icon-ok"></i>
+                                <i class="step">1</i>
+                            </div>
+                            <p>绑定手机</p>
+                        </li>
+                        <li class="">
+                            <div>
+                                <i class="icon-ok"></i>
+                                <i class="step">2</i>
+                            </div>
+                            <p>绑定出款账户</p>
+                        </li>
+                        <li>
+                            <div>
+                                <i class="icon-ok"></i>
+                                <i class="step">3</i>
+                            </div>
+                            <p>设置店铺信息</p>
+                        </li>
+                        <li>
+                            <div>
+                                <i class="icon-ok"></i>
+                                <i class="step">4</i>
+                            </div>
+                            <p>申请成功</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bind_phone">
+                    <form id="bindPhoneForm" name="bindPhoneForm">
+                        <div class="form_list">
+                            <div class="form_group">
+                                <div class="form_item">
+                                    <label>手机号码</label>
+                                    <input autocomplete="off" class="data required" name="mobile" id="mobile"
+                                           type="text" value="" placeholder="手机号">
+                                    <button type="button">获取短信验证码</button>
+                                </div>
+                                <div class="form_item">
+                                    <label>短信验证码</label>
+                                    <input autocomplete="off" class="data required" name="code" id="msgCode" type="text"
+                                           value="" placeholder="验证码">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_group">
+                            <button class="btn next step2" type="button">下一步</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bind_account">
+                    <p>为了方便将分润金额提供给您，请扫码绑定微信号，隔天会自动汇至您的微信零钱中：</p>
+                    <img src="img/qrcode_bindyb.png">
+
+                    <div class="btn_group">
+                        <button class="btn disabled" type="button">扫码绑定微信</button>
+                        <!--<button class="btn next step3" type="button">绑定成功</button>-->
+                    </div>
+                    <a class="next step3" href="javascript:;">跳过此步！</a>
+                </div>
+                <div class="shop_set">
+                    <form id="setShopForm" name="setShopForm">
+                        <div class="form_list">
+                            <div class="form_group">
+                                <div class="form_item">
+                                    <label>店铺LOGO</label>
+
+                                    <div class="shop_logo">
+                                        <img src="img/pc/shop_logo.png">
+                                    </div>
+                                    <button class="upload_logo" type="button">点击上传头像</button>
+                                </div>
+                                <div class="form_item">
+                                    <label>店铺名称</label>
+                                    <input autocomplete="off" class="data required" name="shopName" id="shopName"
+                                           type="text" value="" placeholder="XXXX的忆尔小店">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_group">
+                            <button class="btn next step4" type="button">下一步</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="apply_success">
+                    <img class="img_success" src="img/pc/shop_apply_success.png">
+
+                    <h3>恭喜您成功开设了忆尔小店！</h3>
+                    <!--绑定过微信出现-->
+                    <p class="ybtips hidden">忆尔提示:您已绑定微信<span>XXX</span>，分润金额隔天会自动汇至您的微信零钱中！</p>
+                    <!--未绑定微信时出现-->
+                    <p class="ybtips"><span>忆尔提示:</span>您尚为绑定微信账户，不能提取获得的分润金额！</p>
+
+                    <p>您的店铺链接为：<a href="javascript:;">http://xxx.xxx.xxx</a>，快分享给小伙伴们吧！</p>
+
+                    <div class="bp_sharelist_wrapper">
+                        <label>将店铺分享至：</label>
+                        <ul>
+                            <li class="weibo">
+                                <a href="javascript:;"></a>
+                            </li>
+                            <li class="qqzone">
+                                <a href="javascript:;"></a>
+                            </li>
+                            <li class="wechat">
+                                <a href="javascript:;"></a>
+                            </li>
+                            <li class="renren">
+                                <a href="javascript:;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧内容 结束-->
+    <!--右侧内容 开始-->
+    <div class="right_content_container">
+        <a href="javascript:;">书市</a>
+        <a href="booklist_photo.html" class="more">更多…</a>
+
+        <div class="hr">
+            <div class="green"></div>
+            <div class="gray"></div>
+        </div>
+        <div class="more_books_container max">
+            <div class="hd">
+                <a class="prev"></a>
+            </div>
+            <div class="bd">
+                <ul class="book_carousel picList">
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class="icon-trash"></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/cartoon001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class="icon-trash"></span>
+                            </div>
+                            <div class="book_name" title="漫画风格">漫画风格</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect002.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class="icon-trash"></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class="icon-trash"></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/cartoon001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class="icon-trash"></span>
+                            </div>
+                            <div class="book_name" title="漫画风格">漫画风格</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect002.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class="icon-trash"></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hd">
+                <a class="next"></a>
+            </div>
+        </div>
+    </div>
+    <!--右侧内容 结束-->
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="footer_info">
+        <a href="javascript:;"><img src="img/yb_logo.png"></a>
+
+        <div class="footer_title">
+            <div>忆尔-在线DIY纪念册平台</div>
+            <p>专业在线制作电子书册平台</p>
+
+            <p>DIY出独一无二的青春纪念册</p>
+        </div>
+    </div>
+    <div class="footer_list">
+        <div class="ft_nav">
+            <a href="javascript:;">客服电话 400 0610 127</a>
+            <a href="javascript:;">客服QQ</a>
+            <a href="javascript:;">客服邮箱</a>
+            <a href="javascript:;">关于我们</a>
+        </div>
+        <p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+
+        <div class="ft_shares">
+            <a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+            <a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+            <a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+            <a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+        </div>
+    </div>
+</div>
+<!--绑定微信弹出-->
+<div class="wechat_bind_box hidden">
+    <div class="qrcode"><img class="QRcodeimg" src="img/pc/qrcode_ybbind.jpg"></div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.1.js'></script>
+<script>
+
+    //右侧书市上下翻页
+    jQuery(".more_books_container").slide({
+        titCell: ".hd ul",
+        mainCell: ".bd ul",
+        autoPlay: false,
+        effect: "top",
+        vis: 3,
+        pnLoop: false,
+        autoPage: true
+    });
+
+    //验证绑定手机
+    function validatebindPhoneForm() {
+        //validate方法参数可选
+        return $('#bindPhoneForm').validate({
+            messages: {
+                mobile: {
+                    required: "请输入手机号码",
+                },
+                code: {
+                    required: '请输入验证码',
+                }
+            }
+        }).form();
+    }
+
+    //验证设置店铺信息
+    function validateSetShopForm() {
+        //validate方法参数可选
+        return $('#setShopForm').validate({
+            messages: {
+                shopName: {
+                    required: "请输入店铺名称"
+                }
+            }
+        }).form();
+    }
+
+    function applyShop() {
+        $('#openShopNow').click(function () {
+            //显示申请开店步骤1-绑定手机
+            $('.shop_apply_con').removeClass('default').addClass('step1');
+            $('.personal_content_box > a').text('我的店铺-绑定手机');
+        });
+
+        $('.next.step2').click(function () {
+            if (validatebindPhoneForm()) {
+                //document.bindPhoneForm.submit();
+                //显示申请开店步骤2-绑定出款账号
+                $('.shop_apply_con').removeClass('step1').addClass('step2');
+                $('.personal_content_box > a').text('我的店铺-绑定出款账户');
+                $('.eb_step_tips li').eq(0).removeClass('current').addClass('fin');
+                $('.eb_step_tips li').eq(1).addClass('current');
+            }
+
+        });
+
+        $('.next.step3').click(function () {
+            //显示申请开店步骤3-设置店铺信息
+            $('.shop_apply_con').removeClass('step2').addClass('step3');
+            $('.personal_content_box > a').text('我的店铺-设置店铺信息');
+            $('.eb_step_tips li').eq(1).removeClass('current').addClass('fin');
+            $('.eb_step_tips li').eq(2).addClass('current');
+        });
+
+        $('.next.step4').click(function () {
+            if (validateSetShopForm()) {
+                //document.setShopForm.submit();
+                //显示申请开店步骤4-申请成功
+                $('.shop_apply_con').removeClass('step3').addClass('success');
+                $('.personal_content_box > a').text('我的店铺-申请成功');
+                $('.eb_step_tips li').eq(2).removeClass('current').addClass('fin');
+                $('.eb_step_tips li').eq(3).addClass('current');
+            }
+        });
+    }
+    $(document).ready(function () {
+        applyShop();
+    });
+</script>
+</body>
+</html>

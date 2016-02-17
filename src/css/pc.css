@@ -3496,3 +3496,264 @@ li.action div:hover {
 .opd_donatesuccess_wrapper a:hover{
 	text-decoration: underline;
 }
+
+/*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/
+.shop_apply_con .shop_default{
+    display: none;
+    position: relative;
+    margin: 0;
+    padding: 30px 0;
+}
+
+.shop_apply_con.default .shop_default{
+    display: block;
+}
+
+.shop_default span{
+    display: block;
+    margin: 25px auto;
+    width: 151px;
+    height: 124px;
+    background: url("../img/pc/shop_default.png") no-repeat;
+}
+
+.shop_default p{
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+}
+
+.shop_default a{
+    display: block;
+    margin: 30px auto;
+    width: 240px;
+    height: 44px;
+    line-height: 40px;
+    font-size: 22px;
+    color: #70ca5d;
+    text-align: center;
+    border: 2px solid #70ca5d;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.shop_default a:hover{
+    color: #e7b54b;
+    border: 2px solid #e7b54b;
+}
+
+.shop_apply_con.default .eb_step_tips{
+    display: none;
+}
+
+.shop_apply_con .bind_phone,
+.shop_apply_con .bind_account,
+.shop_apply_con .shop_set,
+.shop_apply_con .apply_success{
+    display: none;
+    clear: both;
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 560px;
+}
+
+.shop_apply_con.step1 .bind_phone{
+    display: block;
+}
+
+.shop_apply_con .form_list{
+    padding: 10px 0;
+}
+
+.shop_apply_con .form_list .form_item {
+    padding: 10px 0 15px 195px;
+    line-height: 40px;
+    zoom: 1;
+    box-sizing: border-box;
+}
+
+.shop_apply_con .form_list .form_item label {
+    display: inline;
+    float: left;
+    margin-left: -195px;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+}
+
+.shop_apply_con .form_list .form_item input{
+    width: 170px;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #e8eaea;
+    box-sizing: border-box;
+}
+
+.shop_apply_con .form_list .form_item input:focus{
+    border: 1px solid #70ca5d;
+}
+
+.shop_apply_con .form_list .form_item button{
+    height: 26px;
+    border: 1px solid #dcdcdc;
+    background: transparent;
+    font-size: 14px;
+}
+
+.shop_apply_con .form_list .form_item button:focus{
+    outline: none;
+}
+
+.shop_apply_con .btn_group .btn{
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height: 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #70ca5d;
+    border: 1px solid #70ca5d;
+}
+
+.shop_apply_con .btn_group .btn.disabled{
+    background-color: #cecfcd;
+    border: 1px solid #cecfcd;
+    pointer-events: none;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    opacity: 1;
+}
+
+.shop_apply_con .btn_group .btn:hover{
+    background-color: #74bc65;
+    border: 1px solid #74bc65;
+}
+
+.shop_apply_con .form_list .form_item label.error{
+    clear: both;
+    display: block;
+    margin: 0;
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.shop_apply_con.step2 .bind_account{
+    display: block;
+}
+
+.shop_apply_con .bind_account p{
+    text-align: center;
+}
+
+.shop_apply_con .bind_account img{
+    display: block;
+    margin: 25px auto;
+}
+
+.shop_apply_con .bind_account a.next{
+    display: block;
+    font-size: 12px;
+    color: #5da72e;
+    margin: 0 auto;
+    padding: 5px 10px;
+    width: 70px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.shop_apply_con .bind_account a.next:hover{
+    color: #e7b54b;
+}
+
+.shop_apply_con.step3 .shop_set{
+    display: block;
+}
+
+.shop_apply_con .shop_set .shop_logo{
+    float: left;
+    margin: -22px 0 0 10px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.shop_apply_con .shop_set .upload_logo{
+    clear: both;
+    display: block;
+    border: none!important;
+}
+
+.shop_apply_con .shop_set input[name="shopName"]{
+    width: 260px;
+}
+
+.shop_apply_con.success .apply_success{
+    display: block;
+}
+
+.shop_apply_con .apply_success .img_success{
+    display: block;
+    margin: 25px auto;
+}
+
+.shop_apply_con .apply_success h3{
+    margin: 20px 0;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+.shop_apply_con .apply_success p{
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #000;
+}
+
+.shop_apply_con .apply_success .ybtips{
+    color: #666;
+}
+
+.shop_apply_con .apply_success .ybtips span{
+    color: #7aab2f;
+}
+
+.shop_apply_con .apply_success p a{
+    color: #7aab2f;
+    text-decoration: underline;
+}
+
+.shop_apply_con .apply_success p a:hover{
+    color: #e7b54b;
+}
+
+.shop_apply_con .apply_success .bp_sharelist_wrapper{
+    display: block;
+    opacity: 1;
+    position: relative;
+    width: 285px;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+}
+
+.shop_apply_con .apply_success .bp_sharelist_wrapper::before,
+.shop_apply_con .apply_success .bp_sharelist_wrapper::after{
+    content: "";
+    display: none;
+}
+
+.shop_apply_con .apply_success .bp_sharelist_wrapper label,
+.shop_apply_con .apply_success .bp_sharelist_wrapper ul{
+    float: left;
+    line-height: 30px;
+    color: #000;
+}

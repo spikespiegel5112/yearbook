@@ -80,43 +80,38 @@
 <div class="footer_nav">
     <ul>
         <li>
-            <a href="javascript:;">
+            <a href="index.html">
                 <span class="home"></span>
-
-                <p>消息</p>
+                <p>首页</p>
             </a>
         </li>
         <li>
-            <a href="javascript:;">
-                <span class="find"></span>
-
-                <p>发现</p>
+            <a href="ia_msg.html">
+                <span class="msg"></span>
+                <p>消息</p>
             </a>
         </li>
         <li class="active" id="open_new_option">
             <a href="javascript:;">
                 <span class="new"></span>
-
                 <p>新建</p>
             </a>
         </li>
         <li>
-            <a href="javascript:;">
+            <a href="pc_mybookshelf.html">
                 <span class="bookshelf"></span>
-
                 <p>书架</p>
             </a>
         </li>
         <li>
-            <a href="javascript:;">
+            <a href="pc_main.html">
                 <span class="my"></span>
-
                 <p>我的</p>
             </a>
         </li>
     </ul>
 </div>
-<!--10.10 add pop new content-->
+<!--pop new content-->
 <div class="open_new_container">
     <div class="new_option">
         <ul>
@@ -152,69 +147,12 @@
     </div>
 </div>
 <script src="../assets/js/jquery.min.js"></script>
+<script src="../js/m_main.js"></script>
 <script>
     $(function () {
-        footerNavSwitch();
-        popNewOption();
         joinBook();
         setViewHeight();
     });
-
-    /*
-     * footer nav switch
-     * */
-
-    function footerNavSwitch() {
-        $('.footer_nav li').on('touchend', function () {
-            $('.footer_nav li').each(function () {
-                $(this).removeClass('active');
-            });
-            $(this).addClass('active');
-        })
-    }
-
-    /*
-     *
-     * */
-    function popNewOption(){
-        var winWidth = $(window).width(),
-                winHeight = $(window).height(),
-                midTop = winHeight/2-54,
-                midLeft = winWidth/2-40,
-                phL = (winWidth)/2-120,
-                phT = winHeight/3-60,
-                iaL = (winWidth)/2+40,
-                jiaT = winHeight/3+80;
-
-        $('.new_option ul li').css({'top':midTop,'left':midLeft});
-        /*new option page fadein*/
-        $('#open_new_option a').on('touchend',function(){
-            $('.open_new_container').addClass('animated fadeIn').removeClass('fadeOut').show();
-            $('.new_option').show().addClass('animated fadeIn').removeClass('fadeOut');
-            $('.new_option ul .new_ph').animate({
-                left: phL,
-                top: phT
-            }, 300, function() {});
-            $('.new_option ul .new_ia').animate({
-                left: iaL,
-                top: phT
-            }, 300, function() {});
-            $('.new_option ul .join_ia').animate({
-                left: midLeft,
-                top: jiaT
-            }, 300, function() {});
-        });
-        /*new option page fadeout*/
-        $('.open_new_container .close_btn a').on('touchend',function(){
-            $('.new_option').removeClass(' fadeIn').addClass('fadeOut');
-            $('.open_new_container').addClass('fadeOut').removeClass('fadeIn');
-            $('.new_option ul li').animate({'top':midTop,'left':midLeft},300,function(){});
-            setTimeout(function(){
-                $('.new_option').hide();
-                $('.open_new_container').hide();
-            },500);
-        });
-    }
 
     /*
      * 加入 弹出输入邀请码

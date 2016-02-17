@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head lang="en">
 	<meta charset="UTF-8">
@@ -37,32 +37,11 @@
 			<div>操作提示</div>
 			<p class='  '>请将鼠标移至模板右下角点击翻页进行预览</p>
 		</div>
-		<div class="chapter_info">
-			<h4><span></span>本书包含章节</h4>
-			<ul>
-				<li class='active' page='1'><a href="javascript:;">卷首寄语语语</a></li>
-				<li page='2'><a href="javascript:;">校园</a></li>
-				<li page='3'><a href="javascript:;">校园</a></li>
-				<li page='4'><a href="javascript:;">个人风采</a></li>
-				<li page='5'><a href="javascript:;">多彩活动</a></li>
-				<li page='6'><a href="javascript:;">举手投票</a></li>
-				<li page='7'><a href="javascript:;">通讯索引</a></li>
-				<li page='8'><a href="javascript:;">签名留念</a></li>
-				<li page='9'><a href="javascript:;">卷首寄语</a></li>
-				<li page='10'><a href="javascript:;">校园简介</a></li>
-				<li page='11'><a href="javascript:;">校园风光</a></li>
-				<li page='12'><a href="javascript:;">个人风采</a></li>
-				<li page='13'><a href="javascript:;">多彩活动</a></li>
-				<li page='14'><a href="javascript:;">举手投票</a></li>
-				<li page='15'><a href="javascript:;">通讯索引</a></li>
-				<li page='16'><a href="javascript:;">签名留念</a></li>
-			</ul>
-		</div>
 		<div class="flipbook-viewport">
 			<div class='flipbook_wrapper' pagecount='19'>
 				<a class='flipbook_prevpage_btn' href="javascript:;"></a>
 				<div class="flipbook">
-					<div depth="5" class="hard" style="background-image:url('img/pages/1.jpg');">
+					<div depth="5" class="hard" style="background-image:url('img/default/1.jpg');">
 						<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
 						<div class="container_activity_37_small_left">
 							<div class="page_header_container">
@@ -160,7 +139,7 @@
 							<img slottype="img" slotnum="1" src="" class="img1">
 						</div>
 					</div>
-					<div class="hard p20" style="background-image:url('img/pages/tpl_small.jpg')">
+					<div class="hard p20" style="background-image:url('img/default/tpl_small.jpg')">
 						<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
 						<div class="container_activity_37_small_left">
 							<div class="page_header_container">
@@ -230,14 +209,42 @@
 			</div>
 			<ul>
 				<li><a class='product' href="javascript:;"><span></span><label>制作</label></a></li>
-				<li><a class='print' href="javascript:;"><span></span><label>打印</label></a></li>
+				<li>
+                    <a class='chapter' href="javascript:;">
+                        <span></span>
+                        <label>章节</label>
+                    </a>
+                    <!--yb 3.9.2 修改为弹出显示章节信息-->
+                    <div class="chapter_info">
+                        <h4><span></span>本书包含章节</h4>
+                        <ul>
+                            <li class='active' page='1'><a href="javascript:;">卷首寄语语语</a></li>
+                            <li page='2'><a href="javascript:;">校园</a></li>
+                            <li page='3'><a href="javascript:;">校园</a></li>
+                            <li page='4'><a href="javascript:;">个人风采</a></li>
+                            <li page='5'><a href="javascript:;">多彩活动</a></li>
+                            <li page='6'><a href="javascript:;">举手投票</a></li>
+                            <li page='7'><a href="javascript:;">通讯索引</a></li>
+                            <li page='8'><a href="javascript:;">签名留念</a></li>
+                            <li page='9'><a href="javascript:;">卷首寄语</a></li>
+                            <li page='10'><a href="javascript:;">校园简介</a></li>
+                            <li page='11'><a href="javascript:;">校园风光</a></li>
+                            <li page='12'><a href="javascript:;">个人风采</a></li>
+                            <li page='13'><a href="javascript:;">多彩活动</a></li>
+                            <li page='14'><a href="javascript:;">举手投票</a></li>
+                            <li page='15'><a href="javascript:;">通讯索引</a></li>
+                            <li page='16'><a href="javascript:;">签名留念</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<!--<li><a class='print' href="javascript:;"><span></span><label>打印</label></a></li>-->
 				<li>
 					<a class='share' href="javascript:;">
 						<span></span>
 						<label>分享</label>
 					</a>
 					<div class='bp_sharelist_wrapper'>
-						<label>分享到：</label>
+						<!--<label>分享到：</label>-->
 						<ul>
 							<li class='weibo'>
 								<a href="javascript:;"></a>
@@ -254,10 +261,57 @@
 						</ul>
 					</div>
 				</li>
-				<li><a class='praise' href="javascript:;"><span></span><label>点赞</label></a></li>
-				<li><a class='collect' href="javascript:;"><span></span><label>收藏</label></a></li>
+				<!--<li><a class='praise' href="javascript:;"><span></span><label>点赞</label></a></li>
+				<li><a class='collect' href="javascript:;"><span></span><label>收藏</label></a></li>-->
+                <li>
+                    <a class="donate" href="javascript:;"><span></span><label>赞赏</label></a>
+                </li>
+                <li>
+                    <a class="comment" href="javascript:;"><span></span><label>评论</label></a>
+                </li>
+                <li class="praise_par">
+                    <a class="praise" href="javascript:;">
+                        <span></span>
+                        <label>点赞</label>
+                        <p>(<span>12</span>人)</p>
+                    </a>
+                    <!--弹出赞过的人-->
+                    <div class="bp_praise_container">
+                        <div class="bp_praise_wrapper">
+                            <a class="closebtn" href="javascript:;">+</a>
+                            <label>赞过的人</label>
+                            <div class="user_list">
+                                <ul class="hidden">
+                                    <li><a href="javascript:;"><img src="img/default/user_img1.jpg"><label><span>User 01小鱼小鱼小鱼</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img2.jpg"><label><span>User 02</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img3.jpg"><label><span>User 03</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img4.jpg"><label><span>User 04</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img3.jpg"><label><span>User 05</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/user_default_head.png"><label><span>User 06</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img4.jpg"><label><span>User 07</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img3.jpg"><label><span>User 08</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img2.jpg"><label><span>User 09</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img1.jpg"><label><span>User 10</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img1.jpg"><label><span>User 11</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img2.jpg"><label><span>User 12</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img3.jpg"><label><span>User 13</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img4.jpg"><label><span>User 14</span></label></a></li>
+                                    <li><a href="javascript:;"><img src="img/default/user_img2.jpg"><label><span>User 15</span></label></a></li>
+                                </ul>
+                                <div class="empty">
+                                    <img src="img/bp_prasie_empty.png">
+                                </div>
+                            </div>
+                            <a class="praise_btn" href="javascript:;"><i></i><span>点赞</span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="barrage" href="javascript:;"><span></span><label>弹幕</label></a>
+                </li>
 			</ul>
-			<a class='bp_toolbarhandler_item' href="javascript:;"></a>
+			<!--<a class='bp_toolbarhandler_item' href="javascript:;"></a>-->
+            <a class="bp_slidefold_btn open" href="javascript:;"></a>
 		</div>
 		<div class="bp_btn">
 			<a class='bp_iwanttomake_btn' href='javascript:;'><span class="icon-book"></span>我要制作</a>
@@ -333,7 +387,7 @@
 				</ul>
 				<a href="javascript:;">忘记密码？</a>
 			</div>
-			<a class='loginpopup_loginbtn_item' href="book_manage_ia_chaptermake_new.html">登录</a>
+			<a class='loginpopup_loginbtn_item' href="access_login.html">登录</a>
 			<p class='loginpopup_register_item'>没有账号?&nbsp;&nbsp;&nbsp;<a href="javascript:;">马上注册</a></p>
 			<div class='loginpopup_thirdpartylogin_wrapper'>
 				<p>还可以使用以下方式登录</p>
@@ -351,6 +405,306 @@
 			</div>
 		</div>
 	</div>
+    <!--弹出打赏弹窗-->
+    <div class='bp_donate_container'>
+        <div class="mask"></div>
+		<div class='bp_donate_wrapper'>
+			<h3>做的不错，赞助鼓舞一下！</h3>
+			<div class='bp_donatestep_wrapper step_1'>
+				<h5>选择赞助金额：</h5>
+				<div class='bp_donatepannel_wrapper'>
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<span>1</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>2</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>5</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>10</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>20</span>
+								<label>元</label>
+							</a>
+						</li>
+						<li>
+							<input type='tel' maxlength='3' placeholder='自定义'/>
+							<label>元</label>
+						</li>
+					</ul>
+                    <div class="donate_msg">
+                        <label for="donatemsg">留言：</label>
+                        <input id="donatemsg" type="text" placeholder="做得不错哦，鼓舞一下！" value="">
+                    </div>
+					<a class='donatebtn' href="javascript:;">立即赞助</a>
+					<!--<p>单次赞助金额不可超过200元</p>-->
+				</div>
+				<a class='closebtn' href="javascript:;">+</a>
+			</div>
+            <div class='bp_donatedperson_wrapper'>
+                <label>赞助过的人：</label>
+                <div class="user_list">
+                    <ul class="">
+                        <li class="user_item">
+                            <div class="user_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/default/user_img1.jpg">
+                                    </a>
+                                </div>
+                                <div class="user_op">
+                                    <a class="name" href="javascript:;">赵小鱼</a>
+                                    <i>赏</i>
+                                    <span class="money">￥20.00</span>
+                                    <span class="state">2016-01-26 13:42</span>
+                                </div>
+                                <div class="user_content">
+                                    <p>新年快乐！万事如意哈~~</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user_item">
+                            <div class="user_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/default/user_img2.jpg">
+                                    </a>
+                                </div>
+                                <div class="user_op">
+                                    <a class="name" href="javascript:;">赵小鱼</a>
+                                    <i>赏</i>
+                                    <span class="money">￥20.00</span>
+                                    <span class="state">2016-01-26 13:42</span>
+                                </div>
+                                <div class="user_content">
+                                    <p>新年快乐！万事如意哈~~</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user_item">
+                            <div class="user_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/user_default_head.png">
+                                    </a>
+                                </div>
+                                <div class="user_op">
+                                    <a class="name" href="javascript:;">赵小鱼</a>
+                                    <i>赏</i>
+                                    <span class="money">￥20.00</span>
+                                    <span class="state">2016-01-26 13:42</span>
+                                </div>
+                                <div class="user_content">
+                                    <p>新年快乐！万事如意哈~~</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user_item">
+                            <div class="user_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/default/user_img1.jpg">
+                                    </a>
+                                </div>
+                                <div class="user_op">
+                                    <a class="name" href="javascript:;">赵小鱼</a>
+                                    <i>赏</i>
+                                    <span class="money">￥20.00</span>
+                                    <span class="state">2016-01-26 13:42</span>
+                                </div>
+                                <div class="user_content">
+                                    <p>新年快乐！万事如意哈~~</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user_item">
+                            <div class="user_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/default/user_img2.jpg">
+                                    </a>
+                                </div>
+                                <div class="user_op">
+                                    <a class="name" href="javascript:;">赵小鱼</a>
+                                    <i>赏</i>
+                                    <span class="money">￥20.00</span>
+                                    <span class="state">2016-01-26 13:42</span>
+                                </div>
+                                <div class="user_content">
+                                    <p>新年快乐！万事如意哈~~</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user_item">
+                            <div class="user_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/user_default_head.png">
+                                    </a>
+                                </div>
+                                <div class="user_op">
+                                    <a class="name" href="javascript:;">赵小鱼</a>
+                                    <i>赏</i>
+                                    <span class="money">￥20.00</span>
+                                    <span class="state">2016-01-26 13:42</span>
+                                </div>
+                                <div class="user_content">
+                                    <p>新年快乐！万事如意哈~~</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--暂无评论-->
+                    <div class="empty hidden">
+                        <img src="img/bp_comment_empty.png">
+                    </div>
+                </div>
+            </div>
+			<div class='bp_donatestep_wrapper step_2'>
+				<h4>选择支付方式</h4>
+				<p>赞助<label>小叮当</label>用户:￥<span>20.00</span></p>
+				<ul>
+					<li>
+						<a href="javascript:;"><label>银联在线</label><span class='icon-ok'></span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><label>支付宝</label><span class='icon-ok'></span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><label>微信支付</label><span class='icon-ok'></span></a>
+					</li>
+				</ul>
+				<a class='donatebtn' href="javascript:;">立即支付</a>
+			</div>
+			<div class='bp_donatestep_wrapper step_3'>
+				<img src="img/pc/donatesuccessful_00000.png">
+				<label>赞助成功！</label>
+				<a href="javascript:;">+</a>
+			</div>
+		</div>
+	</div>
+    <!--弹出评论-->
+    <div class="bp_comment_container">
+        <div class="bp_comment_wrapper">
+            <a class="closebtn" href="javascript:;">+</a>
+            <form name="" method="">
+                <label>我有话要说</label>
+                <textarea></textarea>
+                <!--<p class="font_limit">还可以输入<span>200</span>个字</p>-->
+                <div class="btn_wrap">
+                    <button class="cm_fr" type="button">评论</button>
+                    <span class="cm_fr">Ctrl+Enter </span>
+                </div>
+            </form>
+            <div class="mod_comments">
+                <div class="comments_list">
+                    <ul class="">
+                        <li class="comments_item">
+                            <div class="comments_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/user_default_head.png">
+                                    </a>
+                                </div>
+                                <div class="comments_content">
+                                    <a class="" href="javascript:;">赵小鱼</a>
+                                    <span class="state">2016-01-26 13:42</span>
+                                    <p>不错哦，我也要做这样的耶~~</p>
+                                    <div class="comments_op">
+                                        <a href="javascript:;">回复</a>
+                                        <a href="javascript:;">删除评论</a>
+                                    </div>
+                                </div>
+                                <div class="comments_list mod_comments_sub">
+                                    <ul>
+                                        <li class="comments_item">
+                                            <div class="comments_item_bd">
+                                                <div class="user_head">
+                                                    <a href="javascript:;">
+                                                        <img src="img/user_default_head.png">
+                                                    </a>
+                                                </div>
+                                                <div class="comments_content">
+                                                    <a class="" href="javascript:;">赵小鱼</a>
+                                                    <span class="state">刚刚</span>
+                                                    <p>不错哦，我也要做这样的耶~~</p>
+                                                    <div class="comments_op">
+                                                        <a href="javascript:;">回复</a>
+                                                        <a href="javascript:;">删除评论</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="comments_item">
+                            <div class="comments_item_bd">
+                                <div class="user_head">
+                                    <a href="javascript:;">
+                                        <img src="img/user_default_head.png">
+                                    </a>
+                                </div>
+                                <div class="comments_content">
+                                    <a class="" href="javascript:;">赵小鱼</a>
+                                    <span class="state">2016-01-26 13:42</span>
+                                    <p>不错哦，我也要做这样的耶~~</p>
+                                    <div class="comments_op">
+                                        <a href="javascript:;">回复</a>
+                                        <a href="javascript:;">删除评论</a>
+                                    </div>
+                                </div>
+                                <div class="comments_list mod_comments_sub">
+                                    <ul>
+                                        <li class="comments_item">
+                                            <div class="comments_item_bd">
+                                                <div class="user_head">
+                                                    <a href="javascript:;">
+                                                        <img src="img/user_default_head.png">
+                                                    </a>
+                                                </div>
+                                                <div class="comments_content">
+                                                    <a class="" href="javascript:;">赵小鱼</a>
+                                                    <span class="state">刚刚</span>
+                                                    <p>不错哦，我也要做这样的耶~~</p>
+                                                    <div class="comments_op">
+                                                        <a href="javascript:;">回复</a>
+                                                        <a href="javascript:;">删除评论</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--暂无评论-->
+                    <div class="empty hidden">
+                        <img src="img/bp_comment_empty.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!--底部-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src='assets/js/modernizr.2.5.3.min.js'></script>
@@ -578,7 +932,7 @@
 					} else {
 						return length;
 					}
-					return length;
+					// return length;
 				}
 
 				function getViewNumber(book, page) {
@@ -659,7 +1013,7 @@
 							}
 						});
 						$('.chapter_info').css({
-							'z-index': '3'
+							'z-index': '99'
 						});
 					}
 				}
@@ -898,21 +1252,54 @@
 			var toolLi = $('.bp_toolbar_wrapper ul li');
 			var thisEl = $('.bp_toolbar_wrapper');
 			toolLi.find('a').click(function() {
-				var $thisLi = $(this).parent('li');
-				if ($thisLi.hasClass('active')) {
-					$thisLi.removeClass('active');
+				var $this=$(this),
+					$thisLi = $(this).parent('li');
+				if ($this.hasClass('donate')){
+                    $thisLi.siblings().removeClass('active');
+					popupDonateDialog();
+				}else if($this.hasClass('comment')){
+                    $thisLi.siblings().removeClass('active');
+                    popupCommentDialog();
+                }else if($this.hasClass('praise')){
+                    $thisLi.siblings().removeClass('active');
+                    popPraiseUser();
+                }else if ($thisLi.hasClass('active')) {
+					$thisLi.removeClass('active').siblings().removeClass('active');
 				} else {
 					$thisLi.addClass('active');
+                    if($this.hasClass('.praise')){
+                        $thisLi.siblings().removeClass('active');
+                    }else{
+                        $thisLi.siblings().not('.praise_par').removeClass('active');
+                    }
 				}
+                /*$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
+                $('.bp_slidefold_btn').addClass('fold').removeClass('open');*/
 			});
+
 			setTimeout(function() {
-				$('.bp_toolbar_wrapper').addClass('shrink');
+				$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
+                $('.bp_slidefold_btn').addClass('fold').removeClass('open');
 			}, 2000)
-			$('.bp_toolbar_wrapper').hover(function() {
+            //原hover打开收起侧工具栏
+			/*$('.bp_toolbar_wrapper').hover(function() {
 				thisEl.removeClass('shrink').addClass('active');
+                $('.bp_slidefold_btn').removeClass('fold').addClass('open');
 			}, function() {
 				thisEl.removeClass('active').addClass('shrink');
-			});
+                $('.bp_slidefold_btn').addClass('fold').removeClass('open');
+			});*/
+
+            //点击打开收起侧工具栏
+            $('.bp_slidefold_btn').click(function() {
+                if ($(this).hasClass('open')) {
+                    $('.bp_toolbar_wrapper').removeClass('active').addClass('shrink');
+                    $(this).addClass('fold').removeClass('open');
+                } else if($(this).hasClass('fold')) {
+                    $('.bp_toolbar_wrapper').removeClass('shrink').addClass('active');
+                    $(this).addClass('open').removeClass('fold');
+                }
+            });
 		}
 
 		function backgroundSizing() {
@@ -1060,6 +1447,89 @@
 				increaseArea: '20%'
 			})
 		}
+		function popupDonateDialog(){
+			var windowHeight=$('body').height(),
+				donateContainer=$('.bp_donate_container'),
+				donatestep=$('.bp_donatestep_wrapper'),
+				lastChildLiEl=$('.bp_donatepannel_wrapper li:last-child')
+			$('.bp_donate_wrapper').css({
+				'margin-top': function() {
+					return (windowHeight - $(this).height()) / 2;
+				}
+			});
+			donateContainer.addClass('active');
+			lastChildLiEl.find('label').hide();
+			lastChildLiEl.find('input').on('focus',function(){
+				if ($(this).parent().hasClass('active')) {
+					$(this).siblings('label').show();
+				}else{
+					$(this).siblings('label').show();
+				}
+				
+			});
+			//选择打赏金额
+			$('.bp_donatepannel_wrapper ul li').on('click', function() {
+				var $this=$(this)
+				$this.siblings().removeClass('active').end().addClass('active');
+				$this.parent().hasClass('active')?$this.siblings('label').show():$this.siblings('label').hide();
+			});
+			//点击打赏弹窗周围关闭打赏浮层
+			donateContainer.on('click', function(e) {
+				if ($(e.target).closest('.bp_donate_wrapper').length == 0) {
+					$('.bp_donate_container').removeClass('active');
+				}
+			});
+			donatestep.find('.donatebtn').on('click',function(){
+				if ($('.bp_donatepannel_wrapper li').hasClass('active')) {
+					$this.hide().next().show();
+				};
+				donateContainer.removeClass('active');
+			});
+			donatestep.find('.closebtn').click(function(){
+				donateContainer.removeClass('active');
+			});
+			$('.bp_donatepannel_wrapper .donatebtn').click(function(){
+				$('.bp_donatestep_wrapper').eq(0).hide().end().eq(2).show();
+			})
+		}
+
+        function popupCommentDialog(){
+            var windowHeight=$(window).height(),
+                    commentContainer=$('.bp_comment_container');
+            commentContainer.addClass('active');
+            $('.bp_comment_wrapper').css({
+                'margin-top': function() {
+                    return (windowHeight - $(this).height()) / 2;
+                }
+            });
+            //点击评论弹窗周围关闭评论浮层
+            commentContainer.on('click', function(e) {
+                if ($(e.target).closest('.bp_comment_wrapper').length == 0) {
+                    $('.bp_comment_container').removeClass('active');
+                }
+            });
+            commentContainer.find('.closebtn').click(function(){
+                commentContainer.removeClass('active');
+            });
+        }
+
+        //弹出赞过的人
+        function popPraiseUser(){
+            var praiseContainer=$('.bp_praise_container');
+            praiseContainer.parent().toggleClass('active');
+            //点击关闭
+            praiseContainer.find('.closebtn').click(function(){
+                praiseContainer.parent().removeClass('active');
+            });
+            //点赞
+            praiseContainer.find('.praise_btn').click(function(){
+                if(!$(this).hasClass('active')){
+                    $(this).addClass('active').find('span').text('已赞');
+                }else{
+                    $(this).removeClass('active').find('span').text('点赞');
+                }
+            })
+        }
 	</script>
 </body>
 

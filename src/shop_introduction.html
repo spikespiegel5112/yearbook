@@ -70,22 +70,31 @@
 	</div>
 	<div class='main_container'>
 		<div class='shop_banner_wrapper'>
-			<h1>加入忆尔小店</h1>
-			<p>轻松圆你专属个性网店梦！</p>
-			<a href="javascript:;">我要开店</a>
+			<div class='shop_bannertitle_wrapper'>
+				<h1>加入忆尔小店</h1>
+				<p>轻松圆你专属个性网店梦！</p>
+				<a href="javascript:;">我要开店</a>
+			</div>
+			<img src="img/banner/shop_introduction_banner_00000.jpg">
 		</div>
 		<div class='shop_serviceobject_wrapper' href='javascript:;'>
 			<ul>
-				<li>
+				<li class='personal'>
 					<a class='shop_sopersonal_item' href='javascript:;'>
 						<span></span>
-						<h5></h5>
+						<div>
+							<h5>个人卖家</h5>
+							<p>一分钟免费开店</p>
+						</div>
 					</a>
 				</li>
-				<li>
+				<li class='wechatsubscripton'>
 					<a class='shop_sopersonal_item' href='javascript:;'>
 						<span></span>
-						<h5></h5>
+						<div>
+							<h5>公众号</h5>
+							<p>全行业支持</p>
+						</div>
 					</a>
 				</li>
 			</ul>
@@ -95,9 +104,122 @@
 				<span></span>
 			</div>
 		</div>
-		<div class='shop_serviceinduce_wrapper'>
-			<img src="">
-			<p></p>
+		<div class='shop_serviceintroduce_wrapper'>
+			<div class='shop_content_wrapper'>
+				<img src="img/icon/shop_service_00000.png">
+				<div class='shop_siarticle_wrapper'>
+					<h5>服务内容</h5>
+					<p>
+						忆尔小店功能开放啦！任何人都可以在忆尔开设自己的专属店铺啦，除了能享受到忆尔海量书册模板资源，另外只要有人从您的店铺下单制作并完成支付，我们在第二天将会把产生的利润金额	打到您的出款账户中！
+					</p>
+					<a href="javascript:;">申请开店</a>
+				</div>
+			</div>
+		</div>
+		<div class='shop_advantage_wrapper'>
+			<div class='shop_content_wrapper'>
+				<div class='shop_subtitle_item'>
+					<span></span>
+					<h5>
+						加入忆尔小店优势
+					</h5>
+					<span></span>
+				</div>
+				<ul>
+					<li class='zero'>
+						<span></span>
+						<p>零加盟费<br>隔天结算</p>
+					</li>
+					<li class='simple'>
+						<span></span>
+						<p>注册审核简单<br>分享店铺便捷</p>
+					</li>
+					<li class='diy'>
+						<span></span>
+						<p>海量模板资源<br>专属DIY定制系统</p>
+					</li>
+					<li class='delivery'>
+						<span></span>
+						<p>全国代发货<br>12天免费退换货</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='shop_shareprofit_wrapper'>
+			<div class='shop_content_wrapper'>
+				<div class='shop_subtitle_item'>
+					<span></span>
+					<h5>
+						忆尔分润方案
+					</h5>
+					<span></span>
+				</div>
+				<img src="img/icon/shareprofit_1_00000.png">
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th><=100（本）</th>
+							<th>100-500（本）</th>
+							<th>>=500（本）</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>大本蝴蝶装</td>
+							<td>5%</td>
+							<td>8%</td>
+							<td>10%</td>
+						</tr>
+						<tr>
+							<td>小本蝴蝶装</td>
+							<td>5%</td>
+							<td>8%</td>
+							<td>10%</td>
+						</tr>
+						<tr>
+							<td>大本硬壳装</td>
+							<td>5%</td>
+							<td>8%</td>
+							<td>10%</td>
+						</tr>
+						<tr>
+							<td>小本硬壳装</td>
+							<td>3%</td>
+							<td>3%</td>
+							<td>5%</td>
+						</tr>
+						<tr>
+							<td>大本胶装</td>
+							<td>5%</td>
+							<td>8%</td>
+							<td>10%</td>
+						</tr>
+						<tr>
+							<td>小本胶装</td>
+							<td>3%</td>
+							<td>3%</td>
+							<td>3%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class='shop_shareprofit_wrapper'>
+			<div class='shop_content_wrapper'>
+				<div class='shop_subtitle_item'>
+					<span></span>
+					<h5>
+						加入流程
+					</h5>
+					<span></span>
+				</div>
+				<ul>
+					<li>
+
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	</div>
@@ -108,10 +230,15 @@
 	<!-- endbuild -->
 	<script>
 	$(function(){
-
+		tableBackgroundColor();
 	});
-
-	
+	function tableBackgroundColor(){
+		var trElEven=$('.shop_shareprofit_wrapper tr:even');
+		trElEven.css('background-color','#fce4e1')
+	}
+	function banner () {
+		// body...
+	}
 	</script>
 </body>
 

@@ -1,7 +1,5 @@
 @charset "utf-8";
-html{
-	font-size: 16px;
-}
+
 /*~~~~~~~~~~yb old preview book~~~~~~~~~~*/
 
 .ybwechatheader_wrapper.book_tooltip {
@@ -140,6 +138,7 @@ html{
 .viewmode_landscape .ybwechatheader_wrapper {
 	display: block;
 	position: absolute;
+	height: 1.8rem;
 	top: -3em;
 	background:-webkit-linear-gradient(bottom,transparent,#000);
 	z-index: 2;
@@ -180,10 +179,10 @@ html{
 }
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
-	margin: 0.8rem 0 0 0;
+	margin: 0.4rem 0 0 0;
 	padding: 0.2rem 1rem;
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: .5rem;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -196,6 +195,7 @@ html{
 	top: 0;
 	background: transparent;
 	z-index: 2;
+	max-height: 40px;
 }
 
 .bp_paginator_item {
@@ -890,6 +890,7 @@ html{
 }
 .bp_comment_container{
 	padding: 0 0 2rem 0;
+	background-color: #f2f2f2;
 }
 /*~~~~~~~~~打赏弹窗组件~~~~~~~~~*/
 .bp_donate_container{

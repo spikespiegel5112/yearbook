@@ -108,6 +108,18 @@
     </ul>
     <input type="text" id="user_birth_day_choose" value="2015年04月22日"/>
 </div>
+
+<div class='globalhint_wrapper'>
+    <div class='globalhint_inner_wrapper'>
+        <div class='globalhint_mainarticle_item'>
+            是否切换至<span>忆尔PC端</span>
+        </div>
+        <div class='globalhint_sidearticle_item'>
+            (点击关闭按钮隐藏提示)
+        </div>
+        <a class='globalhint_close_btn' href="javascript:;">+</a>
+    </div>
+</div>
 <script type="text/javascript" src='../assets/js/jquery.min.js'></script>
 
 <script src="../assets/js/mobiscroll/mobiscroll.core.js"></script>
@@ -141,6 +153,7 @@
 
     $(document).ready(function(){
         mobileToPcSwitch();
+        closeSwitchToPcTips();
     });
     /*
      * mobile to pc switch
@@ -158,6 +171,12 @@
         }
         $(window).resize(function(){
             mobileToPcSwitch();
+        })
+    }
+
+    function closeSwitchToPcTips(){
+        $('.globalhint_close_btn').on('touchend',function(){
+            $('.globalhint_wrapper').fadeOut('fast');
         })
     }
 </script>

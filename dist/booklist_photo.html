@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/chosen.css" media="screen" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
 			<ul>
 				<li><a href="index.html">首页</a></li>
 				<li class="photos">
-					<a href="autographbook3.5.html" class="active">照片书<i class="icon-caret-down"></i></a>
+					<a href="booklist_photo.html" class="active">照片书<i class="icon-caret-down"></i></a>
 					<ul class="style_list">
 						<li>
 							<a href="javascript:;">
@@ -73,7 +74,8 @@
 			<li><a href="javascript:;">个人照片书</a></li>
 			<li><a href="javascript:;">多人互动册</a></li>
 		</ul>-->
-		<ul class='agb_bannermain_wrapper'>
+        <!--旧照片书单张banner-->
+		<ul class='agb_bannermain_wrapper hidden'>
 			<!--<li class=''>
 				<p>数百个纪念册模板、千个书页模板任您自由组合，</p>
 				<p>不管是毕业册、聚会册还是个人照片书，在这里可以轻而易举的制作出来！</p>
@@ -82,7 +84,7 @@
 			<li class='active'>
 				<p>照片书能记录您的照片信息，让您和家人成为书中的主角、封面上的明星，</p>
 				<p>或者写段游记，分门别类、分时编册，像流行杂志一样，支持多种装订方式。</p>
-				<img class='agb_banner_img ' width='1920' height='320' src="img/autographbook/agb_banner2_img_00000.jpg">
+				<img class='agb_banner_img ' width='1920' height='320' src="img/banner/agb_banner2_img_00000.jpg">
 			</li>
 			<!--<li class=''>
 				<p>多人互动册分为聚会册和毕业册两种，您可以邀请好友、同学一起来和您制作纪念册，</p>
@@ -90,6 +92,23 @@
 				<img class='agb_banner_img ' width='1920' height='320' src="img/autographbook/agb_banner3_img_00000.jpg">
 			</li>-->
 		</ul>
+        <!--3.9.2 轮播banner-->
+        <div class="photo_banner_slide swiper-container">
+            <ul class='swiper-wrapper'>
+                <li class='swiper-slide'>
+                    <div><img src="img/banner/photo_list_banner01.jpg"></div>
+                </li>
+                <li class='swiper-slide'>
+                    <div><img src="img/banner/photo_list_banner02.jpg"></div>
+                </li>
+                <li class='swiper-slide'>
+                    <div><img src="img/banner/photo_list_banner03.jpg"></div>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
 	</div>
 	<div class='mian_container bg_f5f5f5'>
 		<div class='left_content_wrapper'>
@@ -197,55 +216,55 @@
 					<li>
 						<a href="javascript:;">
 							<span class="first"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="second"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="third"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="fourth"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="fifth"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="sixth"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="seventh"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="eighth"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 					<li>
 						<a href="javascript:;">
 							<span class="ninth"></span>
-							<img src="img/chaptermark_tpl_img.jpg">
+							<img src="img/default/chaptermark_tpl_img.jpg">
 						</a>
 					</li>
 				</ul>
@@ -272,7 +291,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -282,7 +301,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -292,7 +311,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class="agbcover_title hide_title" max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -302,7 +321,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -312,7 +331,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -322,7 +341,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class="agbcover_title hide_title" max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -332,7 +351,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -342,7 +361,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -352,7 +371,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class="agbcover_title hide_title" max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -362,7 +381,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -372,7 +391,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -382,7 +401,7 @@
 					<li>
 						<a class='bookcover' href="booklist_detail.html">
 							<span class='agbcover_bg_item'></span>
-							<img src="img/autographbook/albumcover_205_295_1_00000.jpg">
+							<img src="img/default/albumcover_205_295_1_00000.jpg">
 						</a>
 						<b class="agbcover_title hide_title" max-length="10">青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -426,6 +445,7 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
 	<script src="js/all.js"></script>
 	<script>
 	/**
@@ -436,12 +456,14 @@
 		//scrollFixed();
 		//leftFilter();
 		//filterStyle();
-		imgAlignCenter();
+        //单张banner居中显示
+		//imgAlignCenter();
 		bookPreview();
 		$('.tpl_sort').chosen({
 			disable_search_threshold: 5 ,
 			width:'110px'
 		});
+        photoBannerSwiperInit();
 	});
 
 	/*左侧风格选中效果*/
@@ -459,7 +481,7 @@
 		return ' <li> ' +
 			'<a class="bookcover" href="javascript:;">' +
 			'<span class="agbcover_bg_item"></span>' +
-			'<img src="img/autographbook/albumcover_205_295_1_00000.jpg">' +
+			'<img src="img/default/albumcover_205_295_1_00000.jpg">' +
 			' </a>' +
 			'<b class="agbcover_title">青春记忆</b>' +
 			'<div class="agbcover_price"></div>' +
@@ -629,5 +651,40 @@
 			});
 		});
 	}
+
+    /*
+     * banner焦点图
+     * */
+    function photoBannerSwiperInit() {
+        alignToCenter();
+        var bannerSwiper = new Swiper('.photo_banner_slide.swiper-container', {
+            loop: true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            paginationClickable: true,
+            autoplay: 3000
+        });
+        $(window).resize(function() {
+            alignToCenter();
+        });
+
+        function alignToCenter() {
+            var windowWidth = $(window).width();
+            $('.swiper-container').css({
+                'height': '320px'
+            });
+            $('.swiper-slide').css({
+                'overflow': 'hidden'
+            })
+            $('.swiper-slide>div').css({
+                'position': 'absolute',
+                'top': '0',
+                'right': (1920 - windowWidth) / 2
+            });
+        }
+    }
 	</script>
 </body>

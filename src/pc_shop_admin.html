@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pc.css">
-    <link rel="stylesheet" href="css/bookpreview.css">
     <!-- endbuild -->
 </head>
 <body>
@@ -65,132 +64,60 @@
             </ul>
         </div>
         <div class="personal_content_box">
-            <a href="javascript:;">我的店铺</a>
-
+            <a href="javascript:;">我的店铺-管理店铺</a>
             <div class="hr">
                 <div class="green"></div>
                 <div class="gray"></div>
             </div>
-            <div class="shop_apply_con default">
-                <div class='shop_default'>
-                    <span></span>
-
-                    <p>您还没有开设自己的忆尔小店，简单三步轻松搞定忆尔小店！</p>
-                    <a id="openShopNow" href="javascript:;">开设我的小店</a>
-                </div>
-                <div class="eb_step_tips">
-                    <ul>
-                        <li class="current">
-                            <div>
-                                <i class="icon-ok"></i>
-                                <i class="step">1</i>
-                            </div>
-                            <p>绑定手机</p>
-                        </li>
-                        <li class="">
-                            <div>
-                                <i class="icon-ok"></i>
-                                <i class="step">2</i>
-                            </div>
-                            <p>绑定出款账户</p>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="icon-ok"></i>
-                                <i class="step">3</i>
-                            </div>
-                            <p>设置店铺信息</p>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="icon-ok"></i>
-                                <i class="step">4</i>
-                            </div>
-                            <p>申请成功</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bind_phone">
-                    <form id="bindPhoneForm" name="bindPhoneForm">
-                        <div class="form_list">
-                            <div class="form_group">
-                                <div class="form_item">
-                                    <label>手机号码</label>
-                                    <input autocomplete="off" class="data required" name="mobile" id="mobile"
-                                           type="text" value="" placeholder="手机号">
-                                    <button type="button">获取短信验证码</button>
-                                </div>
-                                <div class="form_item">
-                                    <label>短信验证码</label>
-                                    <input autocomplete="off" class="data required" name="code" id="msgCode" type="text"
-                                           value="" placeholder="验证码">
-                                </div>
-                            </div>
+            <div class="shop_admin">
+                <div class="shop_home">
+                    <div class="shop_info">
+                        <div class="shop_logo">
+                            <img src="img/default/shop_logo.png">
                         </div>
-                        <div class="btn_group">
-                            <button class="btn next step2" type="button">下一步</button>
+                        <div>
+                            <h3 class="shop_name">呆呆鱼的小店18</h3>
+                            <span class="money">金额：<b>￥0.00</b></span>
+                            <a class="take_money" href="javascript:;">提取</a>
                         </div>
-                    </form>
-                </div>
-                <div class="bind_account">
-                    <p>为了方便将分润金额提供给您，请扫码绑定微信号，隔天会自动汇至您的微信零钱中：</p>
-                    <img src="img/qrcode_bindyb.png">
-
-                    <div class="btn_group">
-                        <button class="btn disabled" type="button">扫码绑定微信</button>
-                        <!--<button class="btn next step3" type="button">绑定成功</button>-->
+                        <div class="bp_sharelist_wrapper">
+                            <label>将店铺分享至：</label>
+                            <ul>
+                                <li class="weibo">
+                                    <a href="javascript:;"></a>
+                                </li>
+                                <li class="qqzone">
+                                    <a href="javascript:;"></a>
+                                </li>
+                                <li class="wechat">
+                                    <a href="javascript:;"></a>
+                                </li>
+                                <li class="renren">
+                                    <a href="javascript:;"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p>您的店铺链接为：<a href="javascript:;">http://xxx.xxx.xxx</a>，快分享给小伙伴们吧！</p>
                     </div>
-                    <a class="next step3" href="javascript:;">跳过此步！</a>
-                </div>
-                <div class="shop_set">
-                    <form id="setShopForm" name="setShopForm">
-                        <div class="form_list">
-                            <div class="form_group">
-                                <div class="form_item">
-                                    <label>店铺LOGO</label>
-
-                                    <div class="shop_logo">
-                                        <img src="img/pc/shop_logo.png">
-                                    </div>
-                                    <button class="upload_logo" type="button">点击上传头像</button>
-                                </div>
-                                <div class="form_item">
-                                    <label>店铺名称</label>
-                                    <input autocomplete="off" class="data required" name="shopName" id="shopName"
-                                           type="text" value="" placeholder="XXXX的忆尔小店">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn_group">
-                            <button class="btn next step4" type="button">下一步</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="apply_success">
-                    <img class="img_success" src="img/pc/shop_apply_success.png">
-
-                    <h3>恭喜您成功开设了忆尔小店！</h3>
-                    <!--绑定过微信出现-->
-                    <p class="ybtips hidden">忆尔提示:您已绑定微信<span>XXX</span>，分润金额隔天会自动汇至您的微信零钱中！</p>
-                    <!--未绑定微信时出现-->
-                    <p class="ybtips"><span>忆尔提示:</span>您尚为绑定微信账户，不能提取获得的分润金额！</p>
-
-                    <p>您的店铺链接为：<a href="javascript:;">http://xxx.xxx.xxx</a>，快分享给小伙伴们吧！</p>
-
-                    <div class="bp_sharelist_wrapper">
-                        <label>将店铺分享至：</label>
+                    <div class="reset_btn_group">
                         <ul>
-                            <li class="weibo">
-                                <a href="javascript:;"></a>
+                            <li>
+                                <div class="revise_info">
+                                    <span></span>
+                                    <a href="javascript:;">修改店铺设置</a>
+                                </div>
                             </li>
-                            <li class="qqzone">
-                                <a href="javascript:;"></a>
+                            <li>
+                                <div class="view_order">
+                                    <span></span>
+                                    <a href="javascript:;">查看店铺订单</a>
+                                </div>
                             </li>
-                            <li class="wechat">
-                                <a href="javascript:;"></a>
-                            </li>
-                            <li class="renren">
-                                <a href="javascript:;"></a>
+                            <li>
+                                <div class="revise_account">
+                                    <span></span>
+                                    <a href="javascript:;">编辑出款账户</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -344,74 +271,6 @@
         autoPage: true
     });
 
-    //验证绑定手机
-    function validatebindPhoneForm() {
-        //validate方法参数可选
-        return $('#bindPhoneForm').validate({
-            messages: {
-                mobile: {
-                    required: "请输入手机号码",
-                },
-                code: {
-                    required: '请输入验证码',
-                }
-            }
-        }).form();
-    }
-
-    //验证设置店铺信息
-    function validateSetShopForm() {
-        //validate方法参数可选
-        return $('#setShopForm').validate({
-            messages: {
-                shopName: {
-                    required: "请输入店铺名称"
-                }
-            }
-        }).form();
-    }
-
-    function applyShop() {
-        $('#openShopNow').click(function () {
-            //显示申请开店步骤1-绑定手机
-            $('.shop_apply_con').removeClass('default').addClass('step1');
-            $('.personal_content_box > a').text('我的店铺-绑定手机');
-        });
-
-        $('.next.step2').click(function () {
-            if (validatebindPhoneForm()) {
-                //document.bindPhoneForm.submit();
-                //显示申请开店步骤2-绑定出款账号
-                $('.shop_apply_con').removeClass('step1').addClass('step2');
-                $('.personal_content_box > a').text('我的店铺-绑定出款账户');
-                $('.eb_step_tips li').eq(0).removeClass('current').addClass('fin');
-                $('.eb_step_tips li').eq(1).addClass('current');
-            }
-
-        });
-
-        $('.next.step3').click(function () {
-            //显示申请开店步骤3-设置店铺信息
-            $('.shop_apply_con').removeClass('step2').addClass('step3');
-            $('.personal_content_box > a').text('我的店铺-设置店铺信息');
-            $('.eb_step_tips li').eq(1).removeClass('current').addClass('fin');
-            $('.eb_step_tips li').eq(2).addClass('current');
-        });
-
-        $('.next.step4').click(function () {
-            if (validateSetShopForm()) {
-                //document.setShopForm.submit();
-                //显示申请开店步骤4-申请成功
-                $('.shop_apply_con').removeClass('step3').addClass('success');
-                $('.personal_content_box > a').text('我的店铺-申请成功');
-                $('.eb_step_tips li').eq(2).removeClass('current').addClass('fin');
-                $('.eb_step_tips li').eq(3).addClass('current');
-            }
-        });
-    }
-    $(document).ready(function () {
-        applyShop();
-    });
 </script>
 </body>
 </html>

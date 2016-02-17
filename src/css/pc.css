@@ -121,6 +121,15 @@
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -240px;
 }
 
+.myShop_icon {
+    background: url("../img/pc/personal_list_icon.png") no-repeat center -390px;
+}
+
+.personal_list_box li:hover .myShop_icon,
+.personal_list_box li.active .myShop_icon {
+    background: url("../img/pc/personal_list_icon.png") no-repeat center -360px;
+}
+
 .personal_list_box li a {
 	font-size: 13px;
 	color: #3C3C3C;

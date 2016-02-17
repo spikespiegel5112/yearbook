@@ -33,17 +33,7 @@
 	font-weight: lighter;
 	letter-spacing: 5px;
 }
-.shop_bannertitle_wrapper a{
-	display: block;
-	margin: 80px auto 0;
-	padding: 15px 0;
-	width: 350px;
-	font-size: 25px;
-	color: #fff;
-	border-radius: 10px;
-	background: #68c96c;
 
-}
 .shop_serviceobject_wrapper{
 	margin: 0 auto;
 	padding: 80px 0;
@@ -194,7 +184,6 @@
 }
 .shop_subtitle_item{
 	width: 100%;
-
 }
 .shop_subtitle_item h5{
 	display: inline-block;
@@ -219,7 +208,7 @@
 .shop_advantage_wrapper ul{
 	padding: 110px 0 0 0;
 }
-.shop_content_wrapper ul li p{
+.shop_advantage_wrapper ul li p{
 	margin: 45px 0 0 0;
 	font-size: 18px;
 	text-align: center;
@@ -243,6 +232,35 @@
 	text-align: center;
 	border: 2px solid #fff;
 }
+.shop_shareprofit_wrapper  th{
+	position: relative;
+}
+.shop_shareprofit_wrapper  th div{
+	display: block;
+	width: 100%;
+	height: 50%;
+	line-height: 26px;
+}
+.shop_shareprofit_wrapper label{
+	display: block;
+	width: 100%;
+}
+.shop_shareprofit_wrapper .salesvolume:after{
+	content: '';
+	display: block;
+	height: 2px;
+	background: #fff;
+	transform: rotate(18deg);
+}
+.shop_shareprofit_wrapper .salesvolume label{
+	width: 90%;
+	text-align: right;
+}
+.shop_shareprofit_wrapper .reservationmode label{
+	float: right;
+	width: 90%;
+	text-align: left;
+}
 .shop_shareprofit_wrapper thead th{
 	height: 55px;
 	background-color: #e65434;
@@ -256,4 +274,94 @@
 	width: 180px;
 	color: #333;
 	font-size: 18px;
+}
+.shop_joinprocess_wrapper{
+	padding: 0 0 80px 0;
+}
+.shop_joinprocess_wrapper ul{
+	padding:30px;
+	overflow: hidden;
+}
+.shop_joinprocess_wrapper ul li{
+	float: left;
+	margin: 0 14px;
+	width: 140px;
+	height: 190px;
+	position: relative;
+}
+.shop_joinprocess_wrapper ul li div{
+	display: block;
+	margin: 0 auto;
+	width: 115px;
+	height: 155px;
+	background-color: #3d95e1;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.shop_joinprocess_wrapper ul li div label{
+	display: block;
+	width: 55px;
+	height: 55px;
+	background-image: url(../img/sprite/shop_joinprocess_00000.png);
+	background-color: #3d95e1;
+	border-radius: 50%;
+	position: absolute;
+	top: -20px;
+	left: -10px;
+}
+.shop_joinprocess_wrapper ul li div span{
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	height: 70px;
+	background-image: url(../img/sprite/shop_joinprocess_00000.png);
+	position: relative;
+	top: 45px;
+}
+.shop_joinprocess_wrapper ul .bindcellphone div span{
+	background-position: 0 -45px;
+}
+.shop_joinprocess_wrapper ul .bindwechat div span{
+	background-position: -80px -45px;
+}
+.shop_joinprocess_wrapper ul .setupshop div span{
+	background-position: -160px -45px;
+}
+.shop_joinprocess_wrapper ul .sharehop div span{
+	background-position: -240px -45px;
+}
+.shop_joinprocess_wrapper ul .earnprofit div span{
+	background-position: -320px -45px;
+}
+.shop_joinprocess_wrapper ul .bindcellphone div label{
+	background-position: 12px 8px;
+}
+.shop_joinprocess_wrapper ul .bindwechat div label{
+	background-position: -25px 8px;
+}
+.shop_joinprocess_wrapper ul .setupshop div label{
+	background-position: -68px 8px;
+}
+.shop_joinprocess_wrapper ul .sharehop div label{
+	background-position: -110px 8px;
+}
+.shop_joinprocess_wrapper ul .earnprofit div label{
+	background-position: -150px 8px;
+}
+.shop_joinprocess_wrapper ul li strong{
+	display: block;
+	width: 39px;
+	height: 35px;
+	position: absolute;
+	right: -42px;
+	top: 50px;
+	font-size: 70px;
+	color: #abaebe;
+}
+.shop_joinprocess_wrapper p{
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+.shop_joinprocess_wrapper .transitionbtn_68c96c{
+	width: 200px;
 }

@@ -1,0 +1,91 @@
+.main_container{
+	width: 100%;
+	background-color: #ff5645;
+	overflow: hidden;
+}
+.activity_banner_wrapper{
+	width: 100%;
+	overflow: hidden;
+}
+.activity_main_wrapper{
+	margin: 40px auto 80px;
+	width: 1240px;
+	height: 1320px;
+	border-radius: 15px;
+	background: url(../../img/activity/activity_1602_shareorder_bg_1_00000.png) #f8ecca no-repeat;
+	background-position: 50% 30%;
+	background-size: 85%;
+	position: relative;
+	box-shadow: 5px 5px 80px rgba(0,0,0,0.7);
+}
+.activitydate{
+	display: inline;
+	position: absolute;
+	top: 83px;
+	left: 58%;
+	font-size: 24px;
+	color: #000;
+}
+.activitydescribe{
+	width: 725px;
+	position: absolute;
+	right: 170px;
+	top: 190px;
+	font-size: 18px;
+	line-height: 32px;
+}
+.share{
+	width: 670px;
+	margin: 0 auto;
+	position: relative;
+	top: 590px;
+}
+.share li{
+	display: inline-block;
+	margin: 0 45px;
+	width: 110px;
+	height: 160px;
+	text-align: center;
+} 
+.share li a span{
+	display: block;
+	width: 108px;
+	height: 108px;
+	background-image: url(../../img/sprite/socialicon_108_108_00000.png);
+}
+.share li a label{
+	display: block;
+	margin: 10px 0;
+}
+.share li a:hover{
+	color: red;
+}
+.share .wechat span{
+	background-position: 0 0;
+}
+.share .weibo span{
+	background-position: -120px 0;
+}
+.share .qzone span{
+	background-position: -240px 0;
+}
+.rules{
+	margin: 0 auto;
+	width: 875px;
+	line-height: 30px;
+	font-size: 18px;
+	position: relative;
+	top: 730px;
+}
+.qrcode{
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	right: 165px;
+	bottom: 150px;
+}
+.qrcode img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}

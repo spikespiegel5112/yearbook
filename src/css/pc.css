@@ -3629,6 +3629,10 @@ li.action div:hover {
     border: 1px solid #70ca5d;
 }
 
+.shop_apply_con .btn_group .btn:focus{
+    outline: none;
+}
+
 .shop_apply_con .btn_group .btn.disabled{
     background-color: #cecfcd;
     border: 1px solid #cecfcd;
@@ -3645,10 +3649,14 @@ li.action div:hover {
     border: 1px solid #74bc65;
 }
 
-.shop_apply_con .btn_group .btn.init{
+.shop_apply_con .btn_group .btn.bind_other{
     background-color: #81b82b;
     border: 1px solid #81b82b;
-    pointer-events: none;
+}
+
+.shop_apply_con .btn_group .btn.bind_other:hover{
+    background-color: #70ca5d;
+    border: 1px solid #70ca5d;
 }
 
 .shop_admin .shop_apply_con .bind_account .btn_group .btn{
@@ -3673,6 +3681,10 @@ li.action div:hover {
     text-align: center;
 }
 
+.shop_admin .bind_account p{
+    margin: 20px 0 0;
+}
+
 .shop_apply_con .bind_account p span{
     color: #6ea11f;
 }
@@ -3680,6 +3692,12 @@ li.action div:hover {
 .shop_apply_con .bind_account img{
     display: block;
     margin: 25px auto;
+    width: 187px;
+    height: 187px;
+}
+
+.shop_admin .bind_account .yb_qrcode{
+    display: none;
 }
 
 .shop_apply_con .bind_account a.next{
@@ -3946,6 +3964,11 @@ li.action div:hover {
 
 .shop_order.order_list li li:nth-child(6){
     width: 8%;
+}
+
+.shop_order.order_list li li a{
+    color: #336699;
+    text-decoration: underline;
 }
 
 .shop_admin .turn_btn{

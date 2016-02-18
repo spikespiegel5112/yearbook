@@ -74,11 +74,13 @@
                     <div class="bind_account">
                         <p>当前已绑定<span>微信XXXXXXXXXXXXX</span></p>
                         <div class="btn_group">
-                            <button class="btn init" type="button">绑定其他微信</button>
+                            <button class="btn bind_other" type="button">绑定其他微信</button>
                             <!--<button class="btn" type="button">修改绑定成功</button>-->
                         </div>
-                        <img src="img/qrcode_bindyb.png">
-                        <p>请使用新微信号扫描上方二维码完成绑定</p>
+                        <div class="yb_qrcode">
+                            <img src="img/qrcode_bindyb.png">
+                            <p>请使用新微信号扫描上方二维码完成绑定</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -230,6 +232,16 @@
         autoPage: true
     });
 
+    //绑定其他微信
+    function showYbQrCode(){
+        $('.bind_account .bind_other').click(function(){
+            $('.yb_qrcode').fadeIn();
+        })
+    }
+
+    $(document).ready(function(){
+        showYbQrCode();
+    })
 </script>
 </body>
 </html>

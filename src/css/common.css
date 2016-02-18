@@ -2190,7 +2190,7 @@ button.select {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
-	/*background: url(../img/imgsprite_yb3_wbl_00000.png) -220px -180px;*/
+	/*background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -220px -180px;*/
 	position: relative;
 	cursor: pointer;
 }
@@ -2451,6 +2451,30 @@ button.select {
 	color: #e7b54b;
 }
 
+.footer.new .ft_link {
+	margin: 0 auto;
+	width: 1220px;
+	height: auto;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 28px;
+	color: #333;
+	box-sizing: border-box;
+	text-align:center;
+}
+
+.footer.new .ft_link ul li {
+	display : inline;
+	margin:0 5px;
+}
+
+.footer.new .ft_link ul li a {
+	color: #336699;
+}
+
+.footer.new .ft_link ul li a:hover {
+	color: #0088ff;
+}
 
 /*~~~~~~~~~~agb_banner_wrapper模板列表banner~~~~~~~~~~*/
 
@@ -3181,4 +3205,136 @@ nav .pagination li a:active {
 
 .server_online_main_im .open_im:hover div{
 	background: #70ca5d url(../img/qqserver/open_im.png) no-repeat -27px 0;
+}
+
+/*swh 11.12 add edit book step tips*/
+
+.eb_step_tips {
+    margin: 25px auto 0 auto;
+    width: 560px;
+    height: 100%;
+    color: #999;
+    font-size: 12px;
+}
+
+.eb_step_tips ul li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 25px;
+}
+
+.eb_step_tips ul li::after {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    content: " ";
+    width: 100%;
+    height: 0;
+    border-top: 1px dotted #a4a4a4;
+    z-index: 0;
+}
+
+.eb_step_tips ul li:last-child::after {
+    width: 0;
+}
+
+.eb_step_tips ul li > div {
+    position: relative;
+    margin: 0 auto;
+    width: 26px;
+    height: 26px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #999;
+    background-color: #fff;
+    border: 2px solid #aeaeae;
+    border-radius: 100%;
+    z-index: 1;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.eb_step_tips ul li div .step {
+    display: block;
+    font-style: normal;
+}
+
+.eb_step_tips ul li div .icon-ok {
+    display: none;
+}
+
+.eb_step_tips ul li div .tips {
+    display: none;
+    position: absolute;
+    left: -90px;
+    top: -27px;
+    padding: 0 10px;
+    width: auto;
+    min-width: 200px;
+    line-height: 1.5em;
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.eb_step_tips ul li div .tips::after {
+    position: absolute;
+    left: 94px;
+    bottom: -5px;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.eb_step_tips ul li div .tips p::after {
+    position: absolute;
+    left: 94px;
+    top: 19px;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 5px solid #bfbfbf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.eb_step_tips ul .current div:hover .tips {
+    display: block;
+}
+
+.eb_step_tips ul .fin::after {
+    border-top: 1px dotted #5da72e;
+}
+
+.eb_step_tips ul .fin > div {
+    background-color: #5da72e;
+    border: 2px solid #5da72e;
+}
+
+.eb_step_tips ul .fin div .icon-ok {
+    display: inline-block;
+    color: #fff;
+}
+
+.eb_step_tips ul .fin div .step {
+    display: none;
+}
+
+.eb_step_tips ul .current > div {
+    color: #1950a2;
+    border: 2px solid #1950a2;
+}
+
+.eb_step_tips ul .current > p {
+    color: #000;
+    font-weight: bold;
 }

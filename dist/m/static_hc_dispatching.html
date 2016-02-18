@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<div class='main_container'>
+<div class='main_container has_footer_nav'>
 	<div class="ybwechatheader_wrapper">
 		<a class='left_btn back_btn' href="javascript:;"></a>
 		<p>配送方式</p>
@@ -79,5 +79,68 @@
 		</div>
 	</div>
 </div>
+<!--底部导航-->
+<div class="footer_nav">
+    <ul>
+        <li>
+            <a href="index.html">
+                <span class="home"></span>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="ia_msg.html">
+                <span class="msg"></span>
+                <p>消息</p>
+            </a>
+        </li>
+        <li class="active" id="open_new_option">
+            <a href="javascript:;">
+                <span class="new"></span>
+                <p>新建</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_mybookshelf.html">
+                <span class="bookshelf"></span>
+                <p>书架</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_main.html">
+                <span class="my"></span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--pop new content-->
+<div class="open_new_container">
+    <div class="new_option">
+        <ul>
+            <li class="new_ph">
+                <a href="booklist_photo.html">
+                    <img src="../img/m/wallet/new_photo_book.png">
+                    <p>新建照片书</p>
+                </a>
+            </li>
+            <li class="new_ia">
+                <a href="booklist_ia.html">
+                    <img src="../img/m/wallet/new_interact_book.png">
+                    <p>新建互动册</p>
+                </a>
+            </li>
+            <li class="join_ia">
+                <a href="ia_invitation_joinbook.html">
+                    <img src="../img/m/wallet/join_interact_book.png">
+                    <p>加入互动册</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="close_btn"><a href="javascript:;">×</a></div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../js/m_main.js"></script>
 </body>
 </html>

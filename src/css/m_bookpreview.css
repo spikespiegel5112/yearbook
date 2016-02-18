@@ -1,7 +1,5 @@
 @charset "utf-8";
-html{
-	font-size: 16px;
-}
+
 /*~~~~~~~~~~yb old preview book~~~~~~~~~~*/
 
 .ybwechatheader_wrapper.book_tooltip {
@@ -140,6 +138,7 @@ html{
 .viewmode_landscape .ybwechatheader_wrapper {
 	display: block;
 	position: absolute;
+	height: 1.8rem;
 	top: -3em;
 	background:-webkit-linear-gradient(bottom,transparent,#000);
 	z-index: 2;
@@ -180,10 +179,10 @@ html{
 }
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
-	margin: 0.8rem 0 0 0;
+	margin: 0.4rem 0 0 0;
 	padding: 0.2rem 1rem;
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: .5rem;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -196,6 +195,7 @@ html{
 	top: 0;
 	background: transparent;
 	z-index: 2;
+	max-height: 40px;
 }
 
 .bp_paginator_item {
@@ -890,6 +890,7 @@ html{
 }
 .bp_comment_container{
 	padding: 0 0 2rem 0;
+	background-color: #f2f2f2;
 }
 /*~~~~~~~~~打赏弹窗组件~~~~~~~~~*/
 .bp_donate_container{
@@ -1343,80 +1344,5 @@ html{
 	line-height: 2rem;
 	border: 0;
 	font-size: 1rem;
-	box-sizing: border-box;
-}
-.bp_sendcomment_container{
-	display: none;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: #fff;
-	z-index: 1;
-}
-.bp_sendcomment_wrapper{
-	margin: 0 auto;
-	padding: 0.5rem 0 0.5rem 0;
-	width: 100%;
-	border-top: 1px solid #d9d9d9;
-	position: absolute;
-	bottom: 0;
-}
-.bp_sendcommentbtn_wrapper{
-	margin: 1rem auto;
-	width: 90%;
-	overflow: hidden;
-}
-.bp_sendcommentbtn_wrapper a{
-	display: block;
-	padding: 0.2rem 0.8rem;
-	width: 2rem;
-	background-color: #71cb5d;
-	color: #fff;
-	font-size: 0.9rem;
-	border-radius: 0.4rem;
-}
-
-.bp_sendcommentbtn_wrapper .cancel{
-	float: left;
-	background-color: #efefef;
-	color: #000;
-}
-.bp_sendcommentbtn_wrapper .send{
-	float: right;
-}
-.bp_sendcommentbtn_wrapper .send:hover{
-	background-color: #4C883F;
-}
-.bp_sendcommentbtn_wrapper .cancel{
-	background-color: #aaa;
-	color: #fff;
-}
-.bp_commentavatar_item{
-	margin: 0 auto;
-	padding: 0.5rem 0;
-	width: 95%;
-	overflow: hidden;
-	border-top: 1px solid #d9d9d9;
-}
-.bp_commentavatar_item img{
-	display: inline-block;
-	width: 1.5rem;
-	height: 1.5rem;
-	border-radius: 50%;
-	vertical-align: middle;
-}
-.bp_commentavatar_item label{
-	display: inline-block;
-	font-size: 0.8rem;
-}
-.bp_sendcomment_wrapper textarea{
-	display: block;
-	margin: 0 auto;
-	padding: 0.4rem;
-	width: 95%;
-	height: 5rem;
-	font-size: 1.2rem;
 	box-sizing: border-box;
 }

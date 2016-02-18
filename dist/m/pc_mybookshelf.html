@@ -16,14 +16,14 @@
 </head>
 
 <body class='bg_f6f6f6'>
-<div class='main_container mybookshelf_wrapper'>
-    <div class='ybwechatheader_wrapper'>
+<div class='main_container mybookshelf_wrapper has_footer_nav'>
+    <!--<div class='ybwechatheader_wrapper'>
         <a class="left_btn back_btn" href="pc_main.html"></a>
         <p>我的书库</p>
-    </div>
+    </div>-->
     <div class='common_title_item'>
-        <span class='mybookshelf_created_icon'></span>
-        <label>创建的书册</label>
+        <span class='mybookshelf_recentlyused_icon'></span>
+        <label>最近浏览的书册</label>
     </div>
     <div class='mybookshelf_main_wrapper'>
         <ul>
@@ -54,8 +54,8 @@
         </div>
     </div>
     <div class='common_title_item'>
-        <span class='mybookshelf_joined_icon'></span>
-        <label>加入的书册</label>
+        <span class='mybookshelf_created_icon'></span>
+        <label>创建的书册</label>
     </div>
     <div class='mybookshelf_main_wrapper'>
         <div class='mybookshelf_info_empty_item'>
@@ -69,8 +69,8 @@
         </div>
     </div>
     <div class='common_title_item'>
-        <span class='mybookshelf_recentlyused_icon'></span>
-        <label>最近使用的书册</label>
+        <span class='mybookshelf_joined_icon'></span>
+        <label>加入的书册</label>
     </div>
     <div class='mybookshelf_main_wrapper'>
         <ul>
@@ -100,7 +100,69 @@
 <div class="loading" style="display: none;">
     <img src="../img/m/loading.gif"><strong>加载中</strong>
 </div>
+<!--底部导航-->
+<div class="footer_nav">
+    <ul>
+        <li>
+            <a href="index.html">
+                <span class="home"></span>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="ia_msg.html">
+                <span class="msg"></span>
+                <p>消息</p>
+            </a>
+        </li>
+        <li id="open_new_option">
+            <a href="javascript:;">
+                <span class="new"></span>
+                <p>新建</p>
+            </a>
+        </li>
+        <li class="active">
+            <a href="pc_mybookshelf.html">
+                <span class="bookshelf"></span>
+                <p>书架</p>
+            </a>
+        </li>
+        <li >
+            <a href="pc_main.html">
+                <span class="my"></span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--pop new content-->
+<div class="open_new_container">
+    <div class="new_option">
+        <ul>
+            <li class="new_ph">
+                <a href="booklist_photo.html">
+                    <img src="../img/m/wallet/new_photo_book.png">
+                    <p>新建照片书</p>
+                </a>
+            </li>
+            <li class="new_ia">
+                <a href="booklist_ia.html">
+                    <img src="../img/m/wallet/new_interact_book.png">
+                    <p>新建互动册</p>
+                </a>
+            </li>
+            <li class="join_ia">
+                <a href="ia_invitation_joinbook.html">
+                    <img src="../img/m/wallet/join_interact_book.png">
+                    <p>加入互动册</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="close_btn"><a href="javascript:;">×</a></div>
+</div>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/m_main.js"></script>
 <script>
     /*
      * 书册名称超过8个字符显示…
@@ -152,6 +214,7 @@
             $('.loading strong').text('加载中');
         }, 1000);
     };
+
 
     $(document).ready(function(){
         changeLongBookName();

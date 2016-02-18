@@ -6,9 +6,9 @@
 	overflow: hidden;
 }
 
-.main_content_container a {
+/*.main_content_container a {
 	color: #3C3C3C;
-}
+}*/
 
 .left_content_container {
 	display: inline-block;
@@ -3622,10 +3622,15 @@ li.action div:hover {
     margin: 20px auto;
     width: 400px;
     height: 30px;
+    line-height: 30px;
     font-size: 16px;
     color: #fff;
     background-color: #70ca5d;
     border: 1px solid #70ca5d;
+}
+
+.shop_apply_con .btn_group .btn:focus{
+    outline: none;
 }
 
 .shop_apply_con .btn_group .btn.disabled{
@@ -3642,6 +3647,20 @@ li.action div:hover {
 .shop_apply_con .btn_group .btn:hover{
     background-color: #74bc65;
     border: 1px solid #74bc65;
+}
+
+.shop_apply_con .btn_group .btn.bind_other{
+    background-color: #81b82b;
+    border: 1px solid #81b82b;
+}
+
+.shop_apply_con .btn_group .btn.bind_other:hover{
+    background-color: #70ca5d;
+    border: 1px solid #70ca5d;
+}
+
+.shop_admin .shop_apply_con .bind_account .btn_group .btn{
+    margin: 35px auto;
 }
 
 .shop_apply_con .form_list .form_item label.error{
@@ -3662,9 +3681,23 @@ li.action div:hover {
     text-align: center;
 }
 
+.shop_admin .bind_account p{
+    margin: 20px 0 0;
+}
+
+.shop_apply_con .bind_account p span{
+    color: #6ea11f;
+}
+
 .shop_apply_con .bind_account img{
     display: block;
     margin: 25px auto;
+    width: 187px;
+    height: 187px;
+}
+
+.shop_admin .bind_account .yb_qrcode{
+    display: none;
 }
 
 .shop_apply_con .bind_account a.next{
@@ -3913,4 +3946,103 @@ li.action div:hover {
 
 .shop_home .reset_btn_group .revise_account span{
     background: url("../img/pc/rsaccount.png") no-repeat;
+}
+
+.shop_order.order_list .caption li{
+    color: #000;
+}
+
+.shop_order.order_list li li{
+    width: 12%;
+    font-size: 12px;
+    color: #333;
+}
+
+.shop_order.order_list li li:nth-child(2){
+    width: 15%;
+}
+
+.shop_order.order_list li li:nth-child(6){
+    width: 8%;
+}
+
+.shop_order.order_list li li a{
+    color: #336699;
+    text-decoration: underline;
+}
+
+.shop_admin .turn_btn{
+    margin: 15px auto;
+    text-align: center;
+}
+
+.shop_order_detail .order_info{
+    position: relative;
+    margin: 0 0 30px;
+    padding: 0 0 8px;
+    width: 536px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0 1px #e0e0e0;
+    border-radius: 2px;
+}
+
+.shop_order_detail .order_info::after{
+    content: " ";
+    position: absolute;
+    bottom: -18px;
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #dedede;
+}
+
+.shop_order_detail .order_info:last-child{
+    margin: 0;
+}
+
+.shop_order_detail .order_info:last-child::after{
+    display: none;
+}
+
+.shop_order_detail .order_info table{
+    width: 100%;
+}
+
+.shop_order_detail .order_info table caption{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    border-bottom: 1px solid #ecedf0;
+}
+
+.shop_order_detail .order_info tr{
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #333;
+}
+
+.shop_order_detail .order_info tr:nth-child(even){
+    background-color: #f6f8fa;
+}
+
+.shop_order_detail .order_info tr:hover{
+    background-color: #f1f1f1;
+}
+
+.shop_order_detail .order_info tr td{
+    text-align: center;
+}
+
+.shop_order_detail .order_info tr td:nth-child(1){
+    width: 140px;
+    text-align: center;
+    border-right: 1px solid #ecedf0;
+}
+
+.shop_order_detail .order_info tr td:nth-child(2){
+    text-align: center;
 }

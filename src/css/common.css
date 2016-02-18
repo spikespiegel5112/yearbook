@@ -2441,7 +2441,7 @@ button.select {
 
 .footer.new .ft_copyright a {
 	display: block;
-	margin: 0 0 15px;
+	margin: 0 0 -12px;
 	color: #333;
 }
 
@@ -3192,7 +3192,7 @@ nav .pagination li a:active {
 	padding: 14px 7px;
 	cursor: pointer;
 	border-top-left-radius: 4px;
-	/*border-bottom-left-radius: 4px;*/
+	border-bottom-left-radius: 4px;
 	background: #70ca5d;
 }
 
@@ -3336,4 +3336,47 @@ nav .pagination li a:active {
 .eb_step_tips ul .current > p {
     color: #000;
     font-weight: bold;
+}
+
+/*分页插件样式*/
+.turn_btn > a,
+.turn_btn > span {
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffa530;
+    background-color: #fff;
+    border: 1px solid #f0cb9b;
+}
+
+.turn_btn > a{
+    border: 1px solid #f0cb9b;
+}
+
+.turn_btn > span {
+    cursor: default;
+}
+
+.turn_btn > span.current {
+    background-color: #ffa530;
+    color: #fff;
+    border: 1px solid #f0cb9b;
+}
+
+.turn_btn > span.current.prev,
+.turn_btn > span.current.next {
+    background-color: #fff;
+    color: #666;
+}
+
+.turn_btn > span.prev,
+.turn_btn > span.next {
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #999;
 }

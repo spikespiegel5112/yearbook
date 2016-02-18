@@ -548,7 +548,36 @@ input {
 	text-decoration: none;
 }
 
+.cm_navuseravatar_item{
+	float: left;
+	margin: 20px 0 0 15px;
+	width: 280px;
 
+}
+.cm_navuseravatar_item div{
+	display: inline-block;
+	width: 45px;
+	height: 45px;
+	background: url(../img/icon/default_navuseravatar_00000.png);
+	vertical-align: middle;
+}
+.cm_navuseravatar_item span{
+	display: inline-block;
+	margin: 0 10px;
+	width: 2px;
+	height: 40px;
+	background-color: #ccc;
+	vertical-align: middle;
+}
+.cm_navuseravatar_item label{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 25px;
+	color: #999;
+}
+.loginedin .logo{
+	display: none;
+}
 /*页面尾部*/
 
 .footer {
@@ -2413,7 +2442,7 @@ button.select {
 
 .footer.new .ft_copyright a {
 	display: block;
-	margin: 0 0 15px;
+	margin: 0 0 -12px;
 	color: #333;
 }
 

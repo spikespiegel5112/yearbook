@@ -218,6 +218,7 @@
 .shop_shareprofit_wrapper{
 	background-color: #edeff3;
 	overflow: hidden;
+	padding: 0 0 100px 0;
 }
 .shop_shareprofit_wrapper img{
 	float: left;
@@ -231,6 +232,16 @@
 	background-color: #fef0f0;
 	text-align: center;
 	border: 2px solid #fff;
+	box-shadow: 15px 15px 40px #ccc;
+}
+.shop_shareprofit_wrapper table td{
+	border: 2px solid #fff;
+	color: #ec7861;
+}
+.shop_shareprofit_wrapper table td:first-child{
+	width: 180px;
+	color: #333;
+	font-size: 18px;
 }
 .shop_shareprofit_wrapper  th{
 	position: relative;
@@ -265,16 +276,9 @@
 	height: 55px;
 	background-color: #e65434;
 	border: 2px solid #fff;
+	color: #fff;
 }
-.shop_shareprofit_wrapper table td{
-	border: 2px solid #fff;
-	color: #ec7861;
-}
-.shop_shareprofit_wrapper table td:first-child{
-	width: 180px;
-	color: #333;
-	font-size: 18px;
-}
+
 .shop_joinprocess_wrapper{
 	padding: 0 0 80px 0;
 }

@@ -7,8 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
-    <title>忆尔3.10-个人中心-我的店铺-店铺管理</title>
+    <title>忆尔3.10-个人中心-我的店铺-查看订单</title>
     <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery-ui-datepicker.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/cangas.datepicker.css" type="text/css" media="all">
 
     <!-- build:css css/all.min.css -->
     <link rel="stylesheet" href="css/reset.css">
@@ -64,63 +67,108 @@
             </ul>
         </div>
         <div class="personal_content_box">
-            <a href="javascript:;">我的店铺-管理店铺</a>
+            <a href="javascript:;">我的店铺-查看店铺订单</a>
             <div class="hr">
                 <div class="green"></div>
                 <div class="gray"></div>
             </div>
             <div class="shop_admin">
-                <div class="shop_home">
-                    <div class="shop_info">
-                        <div class="shop_logo">
-                            <img src="img/default/shop_logo.png">
-                        </div>
-                        <div>
-                            <h3 class="shop_name">呆呆鱼的小店18</h3>
-                            <span class="money">金额：<b>￥0.00</b></span>
-                            <a class="take_money" href="javascript:;">提取</a>
-                        </div>
-                        <div class="bp_sharelist_wrapper">
-                            <label>将店铺分享至：</label>
+                <div class="query_group">
+                    <div class="query_date">
+                        <label>起止日期</label>
+                        <input id="start_date" class="form-control" type="text" value="" placeholder="" onchange="setMinEndDate();"> —
+                        <input id="end_date" class="form-control" type="text" value="" placeholder="">
+                        <button type="button" class="btn query">查询</button>
+                    </div>
+                    <div class="status_query">
+                        <select class="choose_status">
+                            <option>全部</option>
+                            <option>已发货</option>
+                            <option>制作中</option>
+                            <option>未付款</option>
+                            <option>已付款</option>
+                            <option>已取消</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="order_list shop_order">
+                    <ul>
+                        <li class="caption">
                             <ul>
-                                <li class="weibo">
-                                    <a href="javascript:;"></a>
-                                </li>
-                                <li class="qqzone">
-                                    <a href="javascript:;"></a>
-                                </li>
-                                <li class="wechat">
-                                    <a href="javascript:;"></a>
-                                </li>
-                                <li class="renren">
-                                    <a href="javascript:;"></a>
-                                </li>
+                                <li>订单号</li>
+                                <li>订单名称</li>
+                                <li>支付金额</li>
+                                <li>分润总金额</li>
+                                <li>待提取金额</li>
+                                <li>付款时间</li>
+                                <li>订单状态</li>
+                                <li>操作</li>
                             </ul>
-                        </div>
-                        <p>您的店铺链接为：<a href="javascript:;">http://xxx.xxx.xxx</a>，快分享给小伙伴们吧！</p>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>已付款</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>制作中</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>已发货</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>已发货</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--订单数据为空-->
+                    <div class="pc_empty_item hidden">
+                        <span></span>
+                        <label id="empty_dis">对不起，没有查询到相应的订单！</label>
                     </div>
-                    <div class="reset_btn_group">
-                        <ul>
-                            <li>
-                                <div class="revise_info">
-                                    <span></span>
-                                    <a href="pc_shop_admin_shopinfo.html">修改店铺设置</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="view_order">
-                                    <span></span>
-                                    <a href="pc_shop_admin_order.html">查看店铺订单</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="revise_account">
-                                    <span></span>
-                                    <a href="pc_shop_admin_accountunbind.html">编辑出款账户</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="turn_btn">
+                    <span class="prev"> < </span>
+                    <span class="current">1</span>
+                    <a>2</a>
+                    <a>3</a>
+                    <span class="">…</span>
+                    <a>12</a>
+                    <a>13</a>
+                    <a class="next"> > </a>
                 </div>
             </div>
         </div>
@@ -258,6 +306,8 @@
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
 <script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.1.js'></script>
+<script type="text/javascript" src='assets/js/chosen.jquery.min.js'></script>
+<script type="text/javascript" src='assets/js/jquery-ui-datepicker.min.js'></script>
 <script>
 
     //右侧书市上下翻页
@@ -271,6 +321,58 @@
         autoPage: true
     });
 
+    //日历初始化
+    $('#start_date,#end_date').datepicker({
+        showOtherMonths: true,
+        dateFormat: 'yy-mm-dd',
+        changeYear: true,
+        changeMonth: true,
+        yearRange: "1979:2025",
+        maxDate: null,
+        minDate: null,
+        selectOtherMonths: true,
+        showButtonPanel: false
+    }).datepicker('widget').wrap('<div class="ll-skin-cangas"/>');
+
+    $.datepicker.regional['zh-CN'] = {
+        closeText: '关闭',
+        prevText: '&#x3c;上月',
+        nextText: '下月&#x3e;',
+        currentText: '今天',
+        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'
+        ],
+        monthNamesShort: ['一', '二', '三', '四', '五', '六',
+            '七', '八', '九', '十', '十一', '十二'
+        ],
+        dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+        dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+        weekHeader: '周',
+        dateFormat: 'yy-mm-dd',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: true,
+        yearSuffix: '年'
+    };
+    $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+
+    //设置查询截止最小日期
+    function setMinEndDate() {
+        var minEndDayStr = $('#start_date').val().split('-');
+        var year = minEndDayStr[0],
+                month = minEndDayStr[1],
+                day = minEndDayStr[2];
+        $('#end_date').datepicker("option", "minDate", new Date(year, month - 1, day));
+    }
+
+    $(document).ready(function() {
+        $(".choose_status").chosen({
+            disable_search_threshold: 10,
+            width: '100px'
+        });
+        setMinEndDate();
+    });
 </script>
 </body>
 </html>

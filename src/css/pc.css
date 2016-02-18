@@ -6,9 +6,9 @@
 	overflow: hidden;
 }
 
-.main_content_container a {
+/*.main_content_container a {
 	color: #3C3C3C;
-}
+}*/
 
 .left_content_container {
 	display: inline-block;
@@ -3622,6 +3622,7 @@ li.action div:hover {
     margin: 20px auto;
     width: 400px;
     height: 30px;
+    line-height: 30px;
     font-size: 16px;
     color: #fff;
     background-color: #70ca5d;
@@ -3644,6 +3645,16 @@ li.action div:hover {
     border: 1px solid #74bc65;
 }
 
+.shop_apply_con .btn_group .btn.init{
+    background-color: #81b82b;
+    border: 1px solid #81b82b;
+    pointer-events: none;
+}
+
+.shop_admin .shop_apply_con .bind_account .btn_group .btn{
+    margin: 35px auto;
+}
+
 .shop_apply_con .form_list .form_item label.error{
     clear: both;
     display: block;
@@ -3660,6 +3671,10 @@ li.action div:hover {
 
 .shop_apply_con .bind_account p{
     text-align: center;
+}
+
+.shop_apply_con .bind_account p span{
+    color: #6ea11f;
 }
 
 .shop_apply_con .bind_account img{
@@ -3913,4 +3928,27 @@ li.action div:hover {
 
 .shop_home .reset_btn_group .revise_account span{
     background: url("../img/pc/rsaccount.png") no-repeat;
+}
+
+.shop_order.order_list .caption li{
+    color: #000;
+}
+
+.shop_order.order_list li li{
+    width: 12%;
+    font-size: 12px;
+    color: #333;
+}
+
+.shop_order.order_list li li:nth-child(2){
+    width: 15%;
+}
+
+.shop_order.order_list li li:nth-child(6){
+    width: 8%;
+}
+
+.shop_admin .turn_btn{
+    margin: 15px auto;
+    text-align: center;
 }

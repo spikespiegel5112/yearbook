@@ -3338,3 +3338,46 @@ nav .pagination li a:active {
     color: #000;
     font-weight: bold;
 }
+
+/*分页插件样式*/
+.turn_btn > a,
+.turn_btn > span {
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffa530;
+    background-color: #fff;
+    border: 1px solid #f0cb9b;
+}
+
+.turn_btn > a{
+    border: 1px solid #f0cb9b;
+}
+
+.turn_btn > span {
+    cursor: default;
+}
+
+.turn_btn > span.current {
+    background-color: #ffa530;
+    color: #fff;
+    border: 1px solid #f0cb9b;
+}
+
+.turn_btn > span.current.prev,
+.turn_btn > span.current.next {
+    background-color: #fff;
+    color: #666;
+}
+
+.turn_btn > span.prev,
+.turn_btn > span.next {
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #999;
+}

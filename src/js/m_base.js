@@ -89,6 +89,19 @@
 			function fireOnchange(_this) {
 				_this.trigger('onchange');
 			}
+		},
+		imgAlignCenter:function(){
+			var windowWidth=$(window).width(),
+				imgWidth=this.width(),
+				_this=this;
+			$(window).resize(function(){
+				_this.css({
+					'margin-left':(windowWidth-imgWidth)/2
+				});
+			});
+			this.css({
+				'margin-left':(windowWidth-imgWidth)/2
+			});
 		}
 	});
 	var textCountSettings = {
@@ -143,23 +156,35 @@
 			}
 		},
 		remResizing:function(fontsize){
-			var htmlEl=$('html'), windowWidth=$(window).width(), factor;
+			var htmlEl=$('html'),
+				bodyEl=$('body'),
+				windowWidth=$(window).width(),
+				factor;
 			if (typeof fontsize == 'undefined') {
-				fontsize = 15;
+				fontsize = 16;
 			}
-			if (windowWidth > 640)
-				windowWidth = 640;
-
-			factor = windowWidth / 320;
-
-			htmlEl.css('font-size',fontsize*factor);
+			if (bodyEl.width() >= 640){
+				bodyEl.css('width',640);
+				htmlEl.css('font-size', fontsize * 2);
+			}
+			sizeConstraint();
 			$(window).resize(function(){
-				var windowWidth=$(window).width();
-				if (windowWidth > 640)
-					windowWidth = 640;
-				var factor = windowWidth / 320;
-				htmlEl.css('font-size', fontsize * factor);
+				sizeConstraint();
 			});
+			function sizeConstraint () {
+				if ($(window).width() >= 640){
+					bodyEl.css({
+						'width': 640,
+						'margin': '0 auto'
+					});
+					htmlEl.css('font-size', fontsize * 2);
+				}else{
+					var windowWidth=$(window).width(),
+						factor = windowWidth / 320;
+					bodyEl.css('width','auto');
+					htmlEl.css('font-size', fontsize * factor);
+				}
+			}
 		}
 	});
 

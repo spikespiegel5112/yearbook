@@ -965,3 +965,49 @@
 .booklist_wrapper .mybookshelf_main_wrapper .swiper-slide ul {
     overflow: hidden;
 }
+
+/*photobook list of shop*/
+.shop_pbl_banner{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: url("../img/m/banner/shop_photolist_bg.jpg") no-repeat center top;
+    background-size: cover;
+    border-bottom: 4px solid #89c27e;
+}
+
+.shop_pbl_banner .shop_logo{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 89px;
+    height: 89px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+.shop_pbl_banner .shop_logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.shop_pbl_banner .shop_name{
+    position: absolute;
+    top: 30px;
+    left: 120px;
+    padding: 10px;
+    font-size: 24px;
+    color: #fff;
+    max-width: 65%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width:320px) {
+    .shop_pbl_banner .shop_name{
+        max-width: 60%;
+    }
+}

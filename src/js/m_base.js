@@ -168,10 +168,6 @@
 				htmlEl.css('font-size', fontsize * 2);
 			}
 			sizeConstraint();
-
-			factor = windowWidth / 320;
-
-			htmlEl.css('font-size',fontsize*factor);
 			$(window).resize(function(){
 				sizeConstraint();
 			});

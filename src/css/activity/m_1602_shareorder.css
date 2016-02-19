@@ -1,0 +1,123 @@
+.main_container{
+	width: 100%;
+	background-color: #ff5645;
+	overflow: hidden;
+}
+.activity_main_wrapper h5{
+	width: 100%;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	text-align: center;
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: #fff;
+	position: absolute;
+}
+.title_activitydate{
+	top: 1.6rem;
+}
+.title_share{
+	top: 17.2rem;
+}
+.title_rules{
+	top: 27.4rem;
+}
+.activity_banner_wrapper{
+	width: 100%;
+	overflow: hidden;
+}
+.activity_banner_wrapper img{
+	width: 150%;
+}
+.activity_main_wrapper{
+	margin: 0 auto 80px;
+	width: 100%;
+	height: 56rem;
+/*	border-radius: 15px;*/
+	background-image: url(../../img/m/activity/activity_1692_bg_1_00000.png);
+	background-repeat: no-repeat;
+	background-position: 50% 1%;
+	background-size: 92%;
+	position: relative;
+/*	box-shadow: 5px 5px 80px rgba(0,0,0,0.7);*/
+}
+.activitydate{
+	width: 100%;
+	position: absolute;
+	top: 3.5rem;
+}
+.activitydate p{
+	display: block;
+	width: 100%;
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+}
+.activitydescribe{
+	margin: 0 auto;
+	width: 76%;
+	position: relative;
+	top: 6.5rem;
+	font-size: 0.8rem;
+	line-height:1.1rem;
+}
+.share{
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	top: 12.5rem;
+}
+.share li{
+	display: inline-block;
+	margin: 0 0.5rem;
+	width: 4rem;
+	height: 5rem;
+	text-align: center;
+} 
+.share li a span{
+	display: block;
+	margin: 0 auto;
+	width: 3.5rem;
+	height: 3.3rem;
+	background-image: url(../../img/m/sprite/socialicon_108_108_00000.png);
+	background-size: 10rem;
+}
+.share li a label{
+	display: block;
+	margin: 10px 0;
+	font-size: 0.7rem;
+}
+.share li a:hover{
+	color: red;
+}
+.share .wechat span{
+	background-position: 0 0;
+}
+.share .weibo span{
+	background-position: -3.3rem 0;
+}
+.share .qzone span{
+	background-position: -6.6rem 0;
+}
+.rules{
+	margin: 0 auto;
+	width: 80%;
+	line-height: 1.2rem;
+	font-size: 0.8rem;
+	position: relative;
+	top: 17rem;
+}
+.qrcode{
+	margin: 0 auto 3rem;
+	width: 100%;
+	height: 3rem;
+	position: absolute;
+	bottom: 0.5rem;
+}
+.qrcode img{
+	display: block;
+	margin: 0 auto;
+	width: 3rem;
+	height: 3rem;
+}

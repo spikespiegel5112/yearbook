@@ -89,6 +89,19 @@
 			function fireOnchange(_this) {
 				_this.trigger('onchange');
 			}
+		},
+		imgAlignCenter:function(){
+			var windowWidth=$(window).width(),
+				imgWidth=this.width(),
+				_this=this;
+			$(window).resize(function(){
+				_this.css({
+					'margin-left':(windowWidth-imgWidth)/2
+				});
+			});
+			this.css({
+				'margin-left':(windowWidth-imgWidth)/2
+			});
 		}
 	});
 	var textCountSettings = {
@@ -143,20 +156,23 @@
 			}
 		},
 		remResizing:function(fontsize){
-			var htmlEl=$('html'), windowWidth=$(window).width(), factor;
+			var htmlEl=$('html'),
+				windowWidth=$(window).width(),
+				bodyEl=$('body'),
+				factor;
 			if (typeof fontsize == 'undefined') {
 				fontsize = 16;
 			}
-			if (windowWidth > 640)
-				windowWidth = 640;
+			if (bodyEl.width() >= '15rem')
+				bodyEl.css('width','15rem')
 
 			factor = windowWidth / 320;
 
 			htmlEl.css('font-size',fontsize*factor);
 			$(window).resize(function(){
 				var windowWidth=$(window).width();
-				if (windowWidth > 640)
-					windowWidth = 640;
+				if (bodyEl.width() >= '15rem')
+					bodyEl.css('width','15rem')
 				var factor = windowWidth / 320;
 				htmlEl.css('font-size', fontsize * factor);
 			});

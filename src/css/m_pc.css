@@ -2235,8 +2235,14 @@
 .shop_apply_con .shop_set .upload_logo{
     clear: both;
     display: block;
+    color: #333;
     border: none!important;
     background-color: transparent!important;
+}
+
+.shop_apply_con .shop_set .upload_logo:hover,
+.shop_apply_con .shop_set .upload_logo:active{
+    color: #7aab2f!important;
 }
 
 .shop_apply_con .shop_set input[name="shopName"]{

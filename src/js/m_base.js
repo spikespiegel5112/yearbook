@@ -158,8 +158,7 @@
 		remResizing:function(fontsize){
 			var htmlEl=$('html'),
 				bodyEl=$('body'),
-				windowWidth=$(window).width(),
-				factor;
+				windowWidth=$(window).width();
 			if (typeof fontsize == 'undefined') {
 				fontsize = 16;
 			}

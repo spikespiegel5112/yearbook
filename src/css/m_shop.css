@@ -32,7 +32,7 @@
 	display: block;
 	margin: 6rem auto 0;
 	padding: 0.5rem 5rem;
-	width: 6rem;
+	width: 8rem;
 	height: 2rem;
 	line-height: 2rem;
 	border-radius: 2rem;
@@ -203,7 +203,7 @@
 .shop_shareprofit_wrapper{
 	background-color: #edeff3;
 	overflow: hidden;
-	padding: 0 0 100px 0;
+	padding: 0 0 3rem 0;
 }
 .shop_shareprofit_wrapper img{
 	float: left;
@@ -267,18 +267,18 @@
 }
 
 .shop_joinprocess_wrapper{
-	padding: 0 0 80px 0;
+	padding: 0 0 1rem 0;
 }
 .shop_joinprocess_wrapper ul{
-	padding:30px 0;
+	padding: 0 0 30px 0;
 	margin: 0 auto;
 	width: 90%;
 	overflow: hidden;
 }
 .shop_joinprocess_wrapper ul li{
 	float: left;
-	margin: 0 2%;
-	width: 16%;
+	margin: 0 1.5%;
+	width: 17%;
 	height: 6rem;
 	position: relative;
 }
@@ -287,62 +287,26 @@
 	margin: 0 auto;
 	width: 100%;
 	height: 100%;
-	background-color: #3d95e1;
+	background-image: url(../img/m/sprite/shop_joinpeocedure_00000.png);
+	background-size: 25rem;
+	background-repeat: no-repeat;
 	border-radius: 10px;
 	overflow: hidden;
 }
-.shop_joinprocess_wrapper ul li div label{
-	display: block;
-	width: 2rem;
-	height: 2rem;
-	background-image: url(../img/sprite/shop_joinprocess_00000.png);
-	background-color: #3d95e1;
-	background-size: 16rem;
-	border-radius: 50%;
-	border: 2px solid #fff;
-	position: absolute;
-	top: -20px;
-	left: -10px;
+.shop_joinprocess_wrapper ul .bindcellphone div{
+	background-position: 0 0.5rem;
 }
-.shop_joinprocess_wrapper ul li div span{
-	display: block;
-	margin: 0.8rem auto;
-	width: 100%;
-	height: 3rem;
-	background-image: url(../img/sprite/shop_joinprocess_00000.png);
-	background-size: 18rem;
-	position: relative;
-	top: 1.2rem;
+.shop_joinprocess_wrapper ul .bindwechat div{
+	background-position: -5.1rem 0.5rem;
 }
-.shop_joinprocess_wrapper ul .bindcellphone div span{
-	background-position: 0 -45px;
+.shop_joinprocess_wrapper ul .setupshop div{
+	background-position: -9.5rem 0.5rem;
 }
-.shop_joinprocess_wrapper ul .bindwechat div span{
-	background-position: -80px -45px;
+.shop_joinprocess_wrapper ul .sharehop div{
+	background-position: -13.8rem 0.5rem;
 }
-.shop_joinprocess_wrapper ul .setupshop div span{
-	background-position: -160px -45px;
-}
-.shop_joinprocess_wrapper ul .sharehop div span{
-	background-position: -240px -45px;
-}
-.shop_joinprocess_wrapper ul .earnprofit div span{
-	background-position: -320px -45px;
-}
-.shop_joinprocess_wrapper ul .bindcellphone div label{
-	background-position: 0.5rem 0.4rem;
-}
-.shop_joinprocess_wrapper ul .bindwechat div label{
-	background-position: -1.1rem 0.4rem;
-}
-.shop_joinprocess_wrapper ul .setupshop div label{
-	background-position: -2.8rem 0.4rem;
-}
-.shop_joinprocess_wrapper ul .sharehop div label{
-	background-position: -4.5rem 0.4rem;
-}
-.shop_joinprocess_wrapper ul .earnprofit div label{
-	background-position: -6.1rem 0.4rem;
+.shop_joinprocess_wrapper ul .earnprofit div{
+	background-position: -18.4rem 0.5rem;
 }
 .shop_joinprocess_wrapper ul li strong{
 	display: block;
@@ -359,5 +323,5 @@
 	text-align: center;
 }
 .shop_joinprocess_wrapper .transitionbtn_68c96c{
-
+	margin: 3rem auto;
 }

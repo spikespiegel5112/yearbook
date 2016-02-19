@@ -145,7 +145,7 @@
 		remResizing:function(fontsize){
 			var htmlEl=$('html'), windowWidth=$(window).width(), factor;
 			if (typeof fontsize == 'undefined') {
-				fontsize = 15;
+				fontsize = 16;
 			}
 			if (windowWidth > 640)
 				windowWidth = 640;

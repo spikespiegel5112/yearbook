@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
 	<link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
 	<!-- endbuild -->
-	<link rel="stylesheet" href="../css/activity/m_activity_1602.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/activity/m_1602_shareorder.css" type="text/css"/>
 </head>
 
 <body>
@@ -22,10 +22,12 @@
 			<img src="../img/banner/activity/1602_shareorder_00000.jpg">
 		</div>
 		<div class='activity_main_wrapper'>
+			<h5 class='title_activitydate'>活动时间</h5>
+			<h5 class='title_share'>活动渠道</h5>
+			<h5 class='title_rules'>攻略详情</h5>
 			<div class='activitydate'>
 				<p>2016年2月20日—2016年3月31日</p>
 			</div>
-			
 			<p class='activitydescribe'>
 				亲们，晒单领红包啦！<br>
 				动动手指，将您制作的书册实物照片晒到微信朋友圈、新浪微博或者QQ空间，并附上自己的感言或者对忆尔的建议和期望，就可以获得订单金额的5%现金红包（最低￥3元，最高￥200元），是现金哦~~小伙伴们，还等什么，钱就在你面前！！！
@@ -69,14 +71,16 @@
 	<!--主要内容-->
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<!-- build:js js/all.js -->
-	<script type="text/javascript" src="../js/base.js"></script>
+	<script type="text/javascript" src="../js/m_base.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(function(){
-		activity_1602_1();
+		// activity_1602_1();
+		$.remResizing();
 	});
 	function activity_1602_1(){
 		$.imgAlignCenter('.activity_banner_wrapper img');
+
 	}
 	</script>
 </body>

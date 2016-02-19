@@ -1,67 +1,88 @@
-.shop_banner_wrapper{
+/*~~~~~~~~~~shop_introduction~~~~~~~~~~*/
+.shop_introtitle_wrapper{
 	width: 100%;
-	height: 540px;
+	height: auto;
+	background-image: url(../img/m/shop/shop_introduce_titlebg_00000.jpg);
+	background-position: 100% 0s;
+	background-size: 100%;
 	overflow: hidden;
 	position: relative;
 }
-.shop_banner_wrapper img{
+.shop_introtitle_wrapper .logo{
 	display: block;
-	height: 100%;
-	position: absolute;
-	top: 0;
+	margin: 4rem auto;
+	width: 9rem;
 }
-.shop_content_wrapper{
-	margin: 0 auto;
-	width: 900px;
-}
-.shop_bannertitle_wrapper{
+.shop_introtitle_wrapper h1, .shop_introtitle_wrapper p{
 	width: 100%;
 	text-align: center;
-	z-index: 1;
-	position: relative;
-}
-.shop_bannertitle_wrapper h1{
-	margin: 145px 0 0 0;
-	font-size: 80px;
 	color: #fff;
-	text-shadow: 2px 3px #333;
-}
-.shop_bannertitle_wrapper p{
-	color: #fff;
-	text-shadow: 2px 3px #333;
-	font-size: 35px;
 	font-weight: lighter;
-	letter-spacing: 5px;
 }
-
+.shop_introtitle_wrapper h1{
+	font-size: 3rem;
+	line-height: 4rem;
+	letter-spacing: 0.3rem;
+}
+.shop_introtitle_wrapper p{
+	font-size: 1.5rem;
+	letter-spacing: 0.15rem;
+}
+.shop_introtitle_wrapper a{
+	display: block;
+	margin: 6rem auto 0;
+	padding: 0.5rem 5rem;
+	width: 6rem;
+	height: 2rem;
+	line-height: 2rem;
+	border-radius: 2rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.8rem;
+	background-color: #81ca51;
+}
+.shop_wave_item{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.shop_wave_item img{
+	display: block;
+	width: 100%;
+}
 .shop_serviceobject_wrapper{
 	margin: 0 auto;
-	padding: 80px 0;
-	width: 830px;
-	height: 100px;
+	padding: 1rem 0 4rem 0;
+	width: 90%;
+}
+.shop_serviceobject_wrapper ul{
+	height: 10rem;
 }
 .shop_serviceobject_wrapper li:first-child{
 	float: left;
 }
 .shop_serviceobject_wrapper li{
 	float: right;
-	width: 250px;
+	width: 50%;
 	overflow: hidden;
 }
 .shop_serviceobject_wrapper li span{
-	float: left;
+	display: block;
+	margin: 0 auto;
 	padding: 0;
-	width: 100px;
-	height: 80px;
+	width: 5.3rem;
+	height: 5rem;
 	background: url(../img/sprite/shop_serviceobject_00000.png) no-repeat;
+	background-size: 13rem;
 }
 .shop_serviceobject_wrapper li a div{
-	float: left;
-	padding: 0 0 0 15px;
+	display: block;	
 	text-align: center;
 }
 .shop_serviceobject_wrapper li h5{
-	font-size: 33px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.8rem;
 }
 .shop_serviceobject_wrapper .personal h5{
 	color: #2899d6;
@@ -70,49 +91,45 @@
 	color: #00ca5a;
 }
 .shop_serviceobject_wrapper .personal span{
-	background-position: 15px 0;
+	background-position: 1rem 0;
 }
 .shop_serviceobject_wrapper .wechatsubscripton span{
-	background-position: -96px 0;
+	background-position: -6rem  0;
 }
 .shop_serviceobject_wrapper li p{
 	padding: 5px 0;
+	color: #999999;
+	font-size: 1rem;
+}
+.shop_serviceobject_wrapper a{
+	display: block;
+	overflow: hidden;
+}
+.shop_subtitle_item{
+	padding:  3rem 0;
+	width: 100%;
+	text-align: center;
+	font-size: 2rem;
+	overflow: hidden;
+}
+.shop_subtitle_item h5{
+	display: inline-block;
+	margin: 0 1rem;
+	width: 8rem;
 	color: #333;
-	font-size: 18px;
+}
+.shop_subtitle_item span{
+	display: inline-block;
+	width: 4.5rem;
+	height: 1px;
+	line-height: 35px;
+	background-color: #cecece;
+	vertical-align: middle;
 }
 
-.shop_sotitle_item{
-	margin: 0 auto;
-	width: 200px;
-	height: 80px;
-	font-size: 30px;
-}
-.shop_sotitle_item span{
-	float: left;
-	width: 0;
-	height: 0;
-	border-style: solid;
-}
-.shop_sotitle_item span{
-	border-width: 40px 40px 40px 0;
-	border-color: transparent #cccccc transparent transparent;
-}
-.shop_sotitle_item span:last-child{
-	border-width: 40px 0 40px 40px;
-	border-color: transparent transparent transparent #cccccc;
-}
-.shop_sotitle_item h5{
-	float: left;
-	margin: 0 20px;
-	text-align: center;
-	font-size: 35px;
-	color: #333;
-	position: relative;
-	bottom: 8px;
-}
 .shop_serviceintroduce_wrapper{
 	margin: 0 auto;
-	padding: 95px 0;
+	padding: 0 0 3rem 0;
 	width: 100%;
 	background-color: #edeff3;
 	overflow: hidden;
@@ -123,97 +140,65 @@
 	width: 200px;
 }
 .shop_serviceintroduce_wrapper p{
-	margin: 45px 0 0 0;
-	width: 585px;
+	margin: 0 auto;
+	width: 90%;
 	min-height: 70px;
 	line-height: 25px;
-}
-
-.shop_serviceintroduce_wrapper h5{
-	font-size: 35px;
+	color: #666666;
 }
 .shop_serviceintroduce_wrapper a{
 	display: block;
-	margin: 90px auto 0;
-	width: 235px;
-	height: 40px;
-	line-height: 40px;
-	border: 2px solid #90d394;
-	color: #90d394;
+	margin: 4rem auto 0;
+	width: 16rem;
+	height: 3rem;
+	line-height: 3rem;
+	border: 2px solid #8cc64c;
+	color: #8cc64c;
 	text-align: center;
-	border-radius: 5px;
-	font-size: 
+	border-radius: 0.5rem;
+	font-size: 2rem;
 }
 .shop_serviceintroduce_wrapper a:hover{
 	background-color: #90d394;
 	color: #fff;
 }
-.shop_siarticle_wrapper{
-	float: left;
-	width: 580px;
-}
 .shop_advantage_wrapper{
 	width: 100%;
-	height: 620px;
 }
 .shop_advantage_wrapper li{
 	float: left;
-	margin: 0 30px;
+	width: 50%;
+	margin: 0 0 3rem 0;
 }
 .shop_advantage_wrapper li span{
 	display: block;
-	width: 150px;
-	height: 160px;
+	margin: 0 auto;
+	width: 7.5rem;
+	height: 7.5rem;
 	background-image: url(../img/sprite/shop_advantage_00000.png);
+	background-size: 30rem;
 }
 .shop_advantage_wrapper .zero span{
-	background-position: 0 -7px;
+	background-position: 0.4rem -0.4rem;
 }
 .shop_advantage_wrapper .simple span{
-	background-position: -160px -7px;
+	background-position: -7.2rem -0.4rem;
 }
 .shop_advantage_wrapper .diy span{
-	background-position: -320px -7px;
+	background-position: -14.5rem -0.4rem;
 }
 .shop_advantage_wrapper .delivery span{
-	background-position: -480px -7px;
+	background-position: -22.2rem -0.4rem;
 }
 .shop_advantage_wrapper ul{
-	width: 860px;
+	margin: 0 auto;
+	width: 90%;
 	overflow: hidden;
 }
-.shop_subtitle_item{
-	width: 100%;
-}
-.shop_subtitle_item h5{
-	display: inline-block;
-	margin: 0 15px;
-	width: 280px;
-	color: #333;
-}
-.shop_subtitle_item{
-	padding:  60px 0 0 0;
+.shop_advantage_wrapper p{
+	margin: 1rem 0 0 0 ;
+	line-height: 1.5rem;
 	text-align: center;
-	font-size: 35px;
-	overflow: hidden;
-}
-.shop_subtitle_item span{
-	display: inline-block;
-	width: 205px;
-	height: 1px;
-	line-height: 35px;
-	background-color: #cecece;
-	vertical-align: middle;
-}
-.shop_advantage_wrapper ul{
-	padding: 110px 0 0 0;
-}
-.shop_advantage_wrapper ul li p{
-	margin: 45px 0 0 0;
-	font-size: 18px;
-	text-align: center;
-	line-height: 30px;
-	color: #666;
 }
 .shop_shareprofit_wrapper{
 	background-color: #edeff3;
@@ -225,9 +210,8 @@
 	margin: 95px 45px 0 0;
 }
 .shop_shareprofit_wrapper table{
-	float: left;
-	margin: 65px 0 0 0;
-	width: 530px;
+	margin: 0 auto;
+	width: 90%;
 	height: 300px;
 	background-color: #fef0f0;
 	text-align: center;
@@ -237,11 +221,12 @@
 .shop_shareprofit_wrapper table td{
 	border: 2px solid #fff;
 	color: #ec7861;
+	font-size: 1.5rem
 }
 .shop_shareprofit_wrapper table td:first-child{
 	width: 180px;
 	color: #333;
-	font-size: 18px;
+	font-size: 1.3rem;
 }
 .shop_shareprofit_wrapper  th{
 	position: relative;
@@ -285,31 +270,34 @@
 	padding: 0 0 80px 0;
 }
 .shop_joinprocess_wrapper ul{
-	padding:30px;
+	padding:30px 0;
+	margin: 0 auto;
+	width: 90%;
 	overflow: hidden;
 }
 .shop_joinprocess_wrapper ul li{
 	float: left;
-	margin: 0 14px;
-	width: 140px;
-	height: 190px;
+	margin: 0 2%;
+	width: 16%;
+	height: 6rem;
 	position: relative;
 }
 .shop_joinprocess_wrapper ul li div{
 	display: block;
 	margin: 0 auto;
-	width: 115px;
-	height: 155px;
+	width: 100%;
+	height: 100%;
 	background-color: #3d95e1;
 	border-radius: 10px;
 	overflow: hidden;
 }
 .shop_joinprocess_wrapper ul li div label{
 	display: block;
-	width: 55px;
-	height: 55px;
+	width: 2rem;
+	height: 2rem;
 	background-image: url(../img/sprite/shop_joinprocess_00000.png);
 	background-color: #3d95e1;
+	background-size: 16rem;
 	border-radius: 50%;
 	border: 2px solid #fff;
 	position: absolute;
@@ -318,12 +306,13 @@
 }
 .shop_joinprocess_wrapper ul li div span{
 	display: block;
-	margin: 0 auto;
-	width: 80px;
-	height: 70px;
+	margin: 0.8rem auto;
+	width: 100%;
+	height: 3rem;
 	background-image: url(../img/sprite/shop_joinprocess_00000.png);
+	background-size: 18rem;
 	position: relative;
-	top: 45px;
+	top: 1.2rem;
 }
 .shop_joinprocess_wrapper ul .bindcellphone div span{
 	background-position: 0 -45px;
@@ -341,19 +330,19 @@
 	background-position: -320px -45px;
 }
 .shop_joinprocess_wrapper ul .bindcellphone div label{
-	background-position: 12px 8px;
+	background-position: 0.5rem 0.4rem;
 }
 .shop_joinprocess_wrapper ul .bindwechat div label{
-	background-position: -25px 8px;
+	background-position: -1.1rem 0.4rem;
 }
 .shop_joinprocess_wrapper ul .setupshop div label{
-	background-position: -68px 8px;
+	background-position: -2.8rem 0.4rem;
 }
 .shop_joinprocess_wrapper ul .sharehop div label{
-	background-position: -110px 8px;
+	background-position: -4.5rem 0.4rem;
 }
 .shop_joinprocess_wrapper ul .earnprofit div label{
-	background-position: -150px 8px;
+	background-position: -6.1rem 0.4rem;
 }
 .shop_joinprocess_wrapper ul li strong{
 	display: block;
@@ -370,5 +359,5 @@
 	text-align: center;
 }
 .shop_joinprocess_wrapper .transitionbtn_68c96c{
-	width: 200px;
+
 }

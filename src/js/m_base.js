@@ -163,10 +163,6 @@
 			if (typeof fontsize == 'undefined') {
 				fontsize = 16;
 			}
-			if (bodyEl.width() >= 640){
-				bodyEl.css('width',640);
-				htmlEl.css('font-size', fontsize * 2);
-			}
 			sizeConstraint();
 			$(window).resize(function(){
 				sizeConstraint();

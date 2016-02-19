@@ -157,25 +157,38 @@
 		},
 		remResizing:function(fontsize){
 			var htmlEl=$('html'),
-				windowWidth=$(window).width(),
 				bodyEl=$('body'),
+				windowWidth=$(window).width(),
 				factor;
 			if (typeof fontsize == 'undefined') {
 				fontsize = 16;
 			}
-			if (bodyEl.width() >= '15rem')
-				bodyEl.css('width','15rem')
+			if (bodyEl.width() >= 640){
+				bodyEl.css('width',640);
+				htmlEl.css('font-size', fontsize * 2);
+			}
+			sizeConstraint();
 
 			factor = windowWidth / 320;
 
 			htmlEl.css('font-size',fontsize*factor);
 			$(window).resize(function(){
-				var windowWidth=$(window).width();
-				if (bodyEl.width() >= '15rem')
-					bodyEl.css('width','15rem')
-				var factor = windowWidth / 320;
-				htmlEl.css('font-size', fontsize * factor);
+				sizeConstraint();
 			});
+			function sizeConstraint () {
+				if ($(window).width() >= 640){
+					bodyEl.css({
+						'width': 640,
+						'margin': '0 auto'
+					});
+					htmlEl.css('font-size', fontsize * 2);
+				}else{
+					var windowWidth=$(window).width(),
+						factor = windowWidth / 320;
+					bodyEl.css('width','auto');
+					htmlEl.css('font-size', fontsize * factor);
+				}
+			}
 		}
 	});
 

@@ -160,7 +160,7 @@
 				bodyEl=$('body'),
 				windowWidth=$(window).width();
 			if (typeof fontsize == 'undefined') {
-				fontsize = 16;
+				fontsize = 100+'%';
 			}
 			sizeConstraint();
 			$(window).resize(function(){
@@ -172,13 +172,14 @@
 						'width': 640,
 						'margin': '0 auto'
 					});
-					htmlEl.css('font-size', fontsize * 2);
+					htmlEl.css('font-size', fontsize/16*100+'%');
 				}else{
 					var windowWidth=$(window).width(),
 						factor = windowWidth / 320;
 					bodyEl.css('width','auto');
-					htmlEl.css('font-size', fontsize * factor);
+					htmlEl.css('font-size', fontsize/16*100 * factor + '%');
 				}
+				console.log(fontsize/16*100 * factor + '%')
 			}
 		}
 	});

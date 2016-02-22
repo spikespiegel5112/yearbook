@@ -932,3 +932,90 @@
 	line-height: 30px;
 	text-indent: 2em;
 }
+
+/*～～～～～～～～～～static_list_encyclopedia.html～～～～～～～～～～*/
+.static_list_container{
+	width: 100%;
+	background-color: #f0f0f0;
+}
+.static_list_wrapper{
+	margin: 0 auto 0;
+	padding: 20px 0;
+	width: 735px;
+}
+.static_crumbs_wrapper{
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	color: #333;
+}
+.static_crumbs_wrapper li{
+	float: left;
+	margin: 0 10px 0 0;
+}
+.static_mainlist_wrapper{
+	border: 1px solid #e2e3e3;
+	background-color: #ffffff;
+}
+.static_listtitle_wrapper{
+	padding: 8px 15px;
+	background: -webkit-linear-gradient(#fff,#fafafa,#f5f5f5,#f0f0f0);
+	background: -moz-linear-gradient(#fff,#fafafa,#f5f5f5,#f0f0f0);
+	background: -ie-linear-gradient(#fff,#fafafa,#f5f5f5,#f0f0f0);
+	border-bottom: 1px solid #e2e3e3;
+}
+.static_listcontent_wrapper li{
+	height: 30px;
+	overflow: hidden;
+	font-size: 12px;
+
+	border-bottom: 1px dashed #e0e0e0;
+}
+.static_listcontent_wrapper li a{
+	float: left;
+	padding: 0 10px;
+	color: #333;
+	line-height: 30px;
+}
+.static_listcontent_wrapper li a:hover{
+	text-decoration: underline;
+}
+.static_listcontent_wrapper li label{
+	float: right;
+	padding: 0 10px;
+	line-height: 30px;
+}
+.static_pagination_wrapper{
+	margin: 20px auto;
+	width: 335px;
+	overflow: hidden;
+}
+.static_pagination_wrapper ul{
+	float: left;
+	overflow: hidden;
+}
+.static_pagination_wrapper li{
+	float: left;
+	margin: 0 5px;
+}
+.static_pagination_wrapper li a, .static_turnpage_btn{
+	display: block;
+	padding: 0 6px;
+	min-width: 15px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #ffa349;
+	background-color: #fff;
+	color: #ffa349;
+}
+.static_pagination_wrapper li .active{
+	background-color: #ffa349;
+	color: #fff;
+}
+.static_turnpage_btn{
+	float: left;
+}
+.static_pagination_wrapper .ellipsis{
+
+}

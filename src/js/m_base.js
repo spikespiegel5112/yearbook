@@ -167,16 +167,19 @@
 				sizeConstraint();
 			});
 			function sizeConstraint () {
+				htmlEl.css('－webkit-text-size-adjust', 'none');
 				if ($(window).width() >= 640){
 					bodyEl.css({
 						'width': 640,
 						'margin': '0 auto'
 					});
+					htmlEl.css('min-font-size', '10px');
 					htmlEl.css('font-size', fontsize/16*100+'%');
 				}else{
 					var windowWidth=$(window).width(),
 						factor = windowWidth / 320;
 					bodyEl.css('width','auto');
+					htmlEl.css('min-font-size', '10px');
 					htmlEl.css('font-size', fontsize/16*100 * factor + '%');
 				}
 				console.log(fontsize/16*100 * factor + '%')

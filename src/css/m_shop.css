@@ -13,11 +13,17 @@
 	margin: 4rem auto;
 	width: 9rem;
 }
+.shop_introtitle_wrapper .logo{
+	display: block;
+	margin: 8rem auto 3rem;
+	width: 10rem;
+}
 .shop_introtitle_wrapper h1, .shop_introtitle_wrapper p{
 	width: 100%;
 	text-align: center;
 	color: #fff;
 	font-weight: lighter;
+	text-shadow: 2px 2px #222;
 }
 .shop_introtitle_wrapper h1{
 	font-size: 3rem;
@@ -40,11 +46,13 @@
 	color: #fff;
 	font-size: 1.8rem;
 	background-color: #81ca51;
+	position: relative;
+	z-index: 1;
 }
 .shop_wave_item{
 	width: 100%;
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
 }
 .shop_wave_item img{
 	display: block;

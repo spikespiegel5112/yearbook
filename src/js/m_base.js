@@ -151,34 +151,36 @@
 				if (clientHeight + scrollTop >= docHeight) {
 					options.onScrollBottom()
 				}
-				;
-				console.log(docHeight)
+				console.log(docHeight);
 			}
 		},
-		remResizing:function(fontsize){
+		remResizing:function(fontsize, excaption){
 			var htmlEl=$('html'),
 				bodyEl=$('body'),
 				windowWidth=$(window).width();
 			if (typeof fontsize == 'undefined') {
-				fontsize = 16;
+				fontsize = 100+'%';
 			}
 			sizeConstraint();
 			$(window).resize(function(){
 				sizeConstraint();
 			});
 			function sizeConstraint () {
+				htmlEl.css('－webkit-text-size-adjust', 'none');
 				if ($(window).width() >= 640){
 					bodyEl.css({
 						'width': 640,
 						'margin': '0 auto'
 					});
-					htmlEl.css('font-size', fontsize * 2);
+					htmlEl.css('font-size', fontsize/16*200+'%');
 				}else{
 					var windowWidth=$(window).width(),
 						factor = windowWidth / 320;
 					bodyEl.css('width','auto');
-					htmlEl.css('font-size', fontsize * factor);
+					//$(excaption).css('font-size', '100%');
+					htmlEl.css('font-size', fontsize/16*100 * factor + '%');
 				}
+				console.log(fontsize/16*100 * factor + '%')
 			}
 		}
 	});

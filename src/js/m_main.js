@@ -244,9 +244,11 @@
         var conHeight = $('.main_container').height(),
             minHeight = $(window).height()-39;
         if($('.main_container').hasClass('has_footer_nav')){
-            $('.main_container').removeClass('has_footer_nav');
-            $('.ft_pc').addClass('has_footer_nav');
-            minHeight = minHeight - 70;
+            if(!$('.ft_pc')){
+                $('.main_container').removeClass('has_footer_nav');
+                $('.ft_pc').addClass('has_footer_nav');
+                minHeight = minHeight - 70;
+            }
         }
         if(conHeight < minHeight){
             $('.main_container').css('min-height',minHeight);

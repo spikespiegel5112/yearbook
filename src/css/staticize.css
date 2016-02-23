@@ -933,7 +933,7 @@
 	text-indent: 2em;
 }
 
-/*～～～～～～～～～～static_list_encyclopedia.html～～～～～～～～～～*/
+/*～～～～～～～～～～static_list.html～～～～～～～～～～*/
 .static_list_container{
 	width: 100%;
 	background-color: #f0f0f0;
@@ -966,17 +966,18 @@
 	border-bottom: 1px solid #e2e3e3;
 }
 .static_listcontent_wrapper li{
-	height: 30px;
+	height: 35px;
 	overflow: hidden;
 	font-size: 12px;
-
+	color: #333;
 	border-bottom: 1px dashed #e0e0e0;
+	font-family: 'sonti'
 }
 .static_listcontent_wrapper li a{
 	float: left;
 	padding: 0 10px;
 	color: #333;
-	line-height: 30px;
+	line-height: 35px;
 }
 .static_listcontent_wrapper li a:hover{
 	text-decoration: underline;
@@ -984,11 +985,11 @@
 .static_listcontent_wrapper li label{
 	float: right;
 	padding: 0 10px;
-	line-height: 30px;
+	line-height: 35px;
 }
 .static_pagination_wrapper{
 	margin: 20px auto;
-	width: 335px;
+	width: 370px;
 	overflow: hidden;
 }
 .static_pagination_wrapper ul{
@@ -1009,7 +1010,7 @@
 	background-color: #fff;
 	color: #ffa349;
 }
-.static_pagination_wrapper li .active{
+.static_pagination_wrapper li .active, .static_pagination_wrapper a:hover{
 	background-color: #ffa349;
 	color: #fff;
 }
@@ -1017,6 +1018,8 @@
 	float: left;
 }
 .static_pagination_wrapper .ellipsis{
+	margin: 0 5px;
+}
 
 /*ybshop share profit ratio*/
 .share_profit_ratio{

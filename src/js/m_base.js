@@ -134,7 +134,7 @@
 		collideLoading:function(options) {
 			options = $.extend({
 				onScrollBottom: function () {
-					alert('aaa')
+					alert('已触发底部但没有任何操作')
 				}
 			}, options)
 			window.onscroll = function () {

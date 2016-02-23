@@ -2580,28 +2580,30 @@
     background-color: #f3f9f2;
 }
 
-.shop_admin .order_list .item table tr td{
+.shop_admin .order_list .item table tr td,
+.shop_admin .order_list .item table tr th{
     width: 40%;
 }
 
-.shop_admin .order_list .item table thead tr td:nth-child(2){
+.shop_admin .order_list .item table thead tr th:nth-child(2){
     text-align: right;
 }
 
-.shop_admin .order_list .item table tr td div{
+.shop_admin .order_list .item table tr div{
     padding: 0 10px;
     height: 35px;
     line-height: 35px;
     font-size: 12px;
     color: #666;
+    font-weight: normal;
 }
 
-.shop_admin .order_list .item table tr td div span{
+.shop_admin .order_list .item table tr div span{
     font-size: 14px;
     color: #333;
 }
 
-.shop_admin .order_list .item table tr td div .name{
+.shop_admin .order_list .item table tr div .name{
     display: inline-block;
     max-width: 88px;
     white-space: nowrap;
@@ -2610,7 +2612,7 @@
     vertical-align: middle;
 }
 
-.shop_admin .order_list .item table tr td div b{
+.shop_admin .order_list .item table tr div b{
     color: #ff0000;
     font-size: 14px;
 }

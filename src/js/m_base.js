@@ -151,11 +151,10 @@
 				if (clientHeight + scrollTop >= docHeight) {
 					options.onScrollBottom()
 				}
-				;
-				console.log(docHeight)
+				console.log(docHeight);
 			}
 		},
-		remResizing:function(fontsize){
+		remResizing:function(fontsize, excaption){
 			var htmlEl=$('html'),
 				bodyEl=$('body'),
 				windowWidth=$(window).width();
@@ -173,13 +172,12 @@
 						'width': 640,
 						'margin': '0 auto'
 					});
-					htmlEl.css('min-font-size', '10px');
 					htmlEl.css('font-size', fontsize/16*200+'%');
 				}else{
 					var windowWidth=$(window).width(),
 						factor = windowWidth / 320;
 					bodyEl.css('width','auto');
-					htmlEl.css('min-font-size', '10px');
+					//$(excaption).css('font-size', '100%');
 					htmlEl.css('font-size', fontsize/16*100 * factor + '%');
 				}
 				console.log(fontsize/16*100 * factor + '%')

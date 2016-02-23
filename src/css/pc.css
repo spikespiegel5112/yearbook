@@ -3629,10 +3629,6 @@ li.action div:hover {
     border: 1px solid #70ca5d;
 }
 
-.shop_apply_con .btn_group .btn:focus{
-    outline: none;
-}
-
 .shop_apply_con .btn_group .btn.disabled{
     background-color: #cecfcd;
     border: 1px solid #cecfcd;
@@ -3647,6 +3643,15 @@ li.action div:hover {
 .shop_apply_con .btn_group .btn:hover{
     background-color: #74bc65;
     border: 1px solid #74bc65;
+}
+
+.shop_apply_con .btn_group .btn:active{
+    background-color: #49B54E;
+    border: 1px solid #49B54E;
+}
+
+.shop_apply_con .btn_group .btn:focus{
+    outline: none;
 }
 
 .shop_apply_con .btn_group .btn.bind_other{

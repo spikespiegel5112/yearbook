@@ -526,7 +526,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 /*~~~~~~~~~~common head~~~~~~~~~~*/
 .ybwechatheader_wrapper {
 	width: 100%;
-	height: 2rem;
+	height: 3em;
 	background: #8ac280;
 	z-index: 1;
 	position: relative;
@@ -563,10 +563,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	left: 0;
 }
 
-.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .back_btn, .ybwechatheader_wrapper .setting_btn, .ybwechatheader_wrapper .share_btn {
+.ybwechatheader_wrapper .add_btn,
+.ybwechatheader_wrapper .back_btn,
+.ybwechatheader_wrapper .setting_btn,
+.ybwechatheader_wrapper .share_btn {
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-	background-position-y: 0rem;
-	background-size: 20rem;
+	background-position-y: -41px;
+	background-size: 900%;
 	background-repeat-x: no-repeat;
 }
 
@@ -579,8 +582,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybwechatheader_wrapper .back_btn {
 	position: absolute;
 	top: 0;
-	width: 1.4rem;
-	background-position-x: -3.7rem;
+	width: 50px;
+	background-position-x: -74px;
 	box-sizing: border-box;
 }
 
@@ -637,11 +640,11 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybwechatheader_wrapper p {
 	width: 100%;
 	height: 100%;
-	line-height: 2rem;
+	line-height: 3em;
 	position: relative;
 	top: 0;
 	text-align: center;
-	font-size: 0.8rem;
+	font-size: 1.1em;
 	color: #fff;
 	margin: 0 auto;
 	white-space: nowrap;
@@ -657,15 +660,15 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .ybwechatheader_wrapper label {
 	margin: 0 1em;
-	line-height: 2rem;
+	line-height: 3em;
 	/*	font-size: 0.9em;*/
 }
 
 .ybwechatheader_wrapper h5 {
 	float: left;
 	padding: 0 0 0 1em;
-	height: 2em;
-	line-height: 2em;
+	height: 2.5em;
+	line-height: 2.5em;
 }
 
 .ybwechatheader_wrapper .ok_item {
@@ -1115,18 +1118,18 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 /*~~~~~~~~~~load more content~~~~~~~~~~*/
 .ybwechat_loading_item {
 	display: none;
-	padding: 1rem 0;
+	padding: 1em 0;
 	width: 100%;
-	font-size: 0.6rem;
+	font-size: 0.75em;
 	clear: both;
 }
 
 .ybwechat_loading_item a {
 	display: block;
 	margin: 0 auto;
-	width: 11rem;
-	height: 3rem;
-	line-height: 3rem;
+	width: 11em;
+	height: 3em;
+	line-height: 3em;
 	color: #9a9a9a;
 	text-align: center;
 	text-decoration: none;
@@ -1142,25 +1145,27 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	text-align: center;
 }
 .ybwechat_loading_item .loadingicon{
-	width: 1rem;
-	height: 1rem;
+	width: 20px;
+	height: 20px;
 	vertical-align: middle;
 }
 .show_more {
 	display: block;
-	padding: 0.5rem 0;
-	font-size: 0.5rem;
+	margin: 10px 0;
+	font-size: 12px;
 	color: #666;
 	text-align: center;
 	text-decoration: none;
 }
-.show_more a{
-	display: block;
-	padding: 0.5rem 0;
-}
+
 .show_more:hover,
 .show_more:focus {
 	color: #e7b54b;
+}
+
+.show_more a{
+	display: block;
+	padding: 8px 0;
 }
 
 /** pullUp pullDown */

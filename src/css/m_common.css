@@ -526,7 +526,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 /*~~~~~~~~~~common head~~~~~~~~~~*/
 .ybwechatheader_wrapper {
 	width: 100%;
-	height: 2rem;
+	height: 40px;
 	background: #8ac280;
 	z-index: 1;
 	position: relative;
@@ -554,8 +554,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	right: 0;
 }
 
-.ybwechatheader_wrapper .right_btn:hover,
-.ybwechatheader_wrapper .right_btn:focus {
+.ybwechatheader_wrapper .right_btn:hover, .ybwechatheader_wrapper .right_btn:focus {
 	color: #fff;
 }
 
@@ -565,8 +564,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .back_btn, .ybwechatheader_wrapper .setting_btn, .ybwechatheader_wrapper .share_btn {
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-	background-position-y: 0rem;
-	background-size: 20rem;
+	background-position-y: -2px;
+	background-size: 1500%;
 	background-repeat-x: no-repeat;
 }
 
@@ -579,8 +578,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybwechatheader_wrapper .back_btn {
 	position: absolute;
 	top: 0;
-	width: 1.4rem;
-	background-position-x: -3.7rem;
+	width: 30px;
+	background-position-x: -83px;
 	box-sizing: border-box;
 }
 
@@ -620,11 +619,11 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybwechatheader_wrapper p {
 	width: 100%;
 	height: 100%;
-	line-height: 2rem;
+	line-height: 40px;
 	position: relative;
 	top: 0;
 	text-align: center;
-	font-size: 0.8rem;
+	font-size: 18px;
 	color: #fff;
 	margin: 0 auto;
 	white-space: nowrap;

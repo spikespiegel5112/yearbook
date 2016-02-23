@@ -174,7 +174,7 @@
 						'margin': '0 auto'
 					});
 					htmlEl.css('min-font-size', '10px');
-					htmlEl.css('font-size', fontsize/16*100+'%');
+					htmlEl.css('font-size', fontsize/16*200+'%');
 				}else{
 					var windowWidth=$(window).width(),
 						factor = windowWidth / 320;

@@ -550,7 +550,7 @@ input {
 .cm_navuseravatar_item{
 	float: left;
 	margin: 20px 0 0 15px;
-	width: 280px;
+	width: 320px;/*NEWYB-1476*/
 
 }
 .cm_navuseravatar_item div{
@@ -571,8 +571,12 @@ input {
 .cm_navuseravatar_item label{
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 25px;
+	font-size: 24px;
 	color: #999;
+    max-width: 240px;/*NEWYB-1476*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .loginedin .logo{
 	display: none;

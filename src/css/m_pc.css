@@ -2329,6 +2329,9 @@
     line-height: 35px;
     font-size: 18px;
     color: #000;
+    white-space: nowrap;/*NEWYB-1482*/
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .shop_home .shop_info .money {

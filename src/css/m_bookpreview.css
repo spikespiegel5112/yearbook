@@ -145,7 +145,7 @@
 }
 .viewmode_landscape .ybwechatheader_wrapper.active{
 	top: 0;
-	min-height: 45px;
+	min-height: 2.1rem;
 	-webkit-transition: top 1s;
 	-moz-transition: top 1s;
 	transition: top 1s;
@@ -202,10 +202,10 @@
 .bp_paginator_item {
 	display: block;
 	width: 100%;
-	line-height: 3rem;
+/*	line-height: 3rem;*/
 	text-align: center;
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 1rem;
 }
 .viewmode_portrait .bp_paginator_item{
 	position: absolute;
@@ -1289,18 +1289,21 @@
 }
 .bp_photoslider_wrapper .bp_resizebtn_item{
 	display: block;
-	width: 55px;
-	height: 55px;
+	margin: 0 0.5rem;
+	padding: 0 0.5rem;
+	width: 50px;
+	height: 2rem;
 	position: absolute;
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-	background-size: 1200%;
-	background-position-y: -3px;
-	background-position-x: -954px;
+	background-size: 22rem;
+	background-repeat: no-repeat;
+	background-position-y: -48px;
+	background-position-x: -74px;
 	z-index: 1;
 }
 .bp_photoslider_wrapper .bp_resizebtn_item.active{
-	background-position-y: -3px;
-	background-position-x: -1012px;
+	background-position-y: 0;
+	background-position-x: -3.6rem;
 }
 .viewmode_portrait .bp_photoslider_wrapper .islider-outer>li{
 	z-index: 1;

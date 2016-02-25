@@ -702,13 +702,13 @@
 						portrait:function(){
 							sliderResizeBtn.css({
 								top:'0%',
-								right:'2%'
+								left:'2%'
 							});
 						},
 						landscape:function(){
 							sliderResizeBtn.css({
-								top:'10%',
-								right:'5%'
+								top:'0',
+								left:'0%'
 							});
 						}	
 					});
@@ -794,7 +794,7 @@
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				sendcommentEl=$('.bp_sendcomment_item');
-			$.remResizing();
+			$.remResizing(20);
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
@@ -904,7 +904,7 @@
 				flipbook = $('.flipbook'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				commentInputEl = $('.bp_sendcomment_item');
-			$.remResizing();
+			$.remResizing(20);
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});

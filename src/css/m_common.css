@@ -526,7 +526,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 /*~~~~~~~~~~common head~~~~~~~~~~*/
 .ybwechatheader_wrapper {
 	width: 100%;
-	height: 3em;
+	height: 40px;
 	background: #8ac280;
 	z-index: 1;
 	position: relative;
@@ -563,12 +563,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	left: 0;
 }
 
-.ybwechatheader_wrapper .add_btn,
-.ybwechatheader_wrapper .back_btn,
-.ybwechatheader_wrapper .setting_btn,
-.ybwechatheader_wrapper .share_btn {
+.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .back_btn, .ybwechatheader_wrapper .setting_btn, .ybwechatheader_wrapper .share_btn {
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-	background-position-y: -41px;
+	background-position-y: -48px;
 	background-size: 900%;
 	background-repeat-x: no-repeat;
 }
@@ -644,11 +641,11 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybwechatheader_wrapper p {
 	width: 100%;
 	height: 100%;
-	line-height: 3em;
+	line-height: 40px;
 	position: relative;
 	top: 0;
 	text-align: center;
-	font-size: 1.1em;
+	font-size: 18px;
 	color: #fff;
 	margin: 0 auto;
 	white-space: nowrap;

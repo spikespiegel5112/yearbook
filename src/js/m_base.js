@@ -188,7 +188,7 @@
                     
                     bodyEl.css('width', 'auto');
                     //$(excaption).css('font-size', '100%');
-                    htmlEl.css('font-size', fontsize / 16 * 100 * factor + '%');
+                    htmlEl.css('font-size', options.fontsize / 16 * 100 * factor + '%');
                 }
             }
         }

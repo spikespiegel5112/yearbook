@@ -4,7 +4,7 @@
 .yb_banner .banner_slide {
 	position: relative;
 	width: 100%;
-	min-width: 1280px;
+	min-width: 1150px;
 	height: 445px;
 }
 
@@ -39,7 +39,7 @@
 .yb_banner .banner_slide .bd li > div {
 	position: relative;
 	width: 100%;
-	min-width: 1280px;
+	min-width: 1150px;
 	height: 445px;
 }
 
@@ -130,9 +130,9 @@
 /*main con book category*/
 .bk_category {
 	position: relative;
-	margin: 0;
 	padding: 20px 0;
 	width: 100%;
+
 	overflow: hidden;
 }
 
@@ -145,8 +145,9 @@
 
 .bk_category > div > h1 {
 	margin: 20px 0 10px;
-	width: 600px;
+	width: 100%;
 	font-size: 30px;
+	text-align: center;
 }
 
 .bk_category > div > p {
@@ -483,10 +484,10 @@
 
 .yb_hot_tpl .tpl_list .item {
 	margin: 0 auto;
-	width: 1280px;
+	width: 100%;
 	height: 285px;
 	text-align: center;
-	background: url("../img/index/hot_tpl_bg.png") no-repeat 0 68px;
+	background: url("../img/index/hot_tpl_bg.png") no-repeat center 90%;
 	overflow: hidden;
 	clear: both;
 }
@@ -619,14 +620,15 @@
 	position: relative;
 	padding: 30px 0;
 	width: 100%;
+	min-width: 1150px;
 	/*border-bottom: 1px solid #e0e0e0;*/
 }
 
 .show_case .bask_book_slide {
 	position: relative;
 	margin: 30px auto;
-	width: 1280px;
-	min-width: 1280px;
+	width: 100%;
+	min-width: 1150px;
 	text-align: center;
 }
 
@@ -652,18 +654,20 @@
 
 .bask_book_slide .bd > div {
 	margin: 0 auto;
+	width: 1150px;
+	position: relative;
 }
 
 .bask_book_slide .bd ul {
 	margin: 0 auto;
-	min-width: 1200px;
+	min-width: 1150px;
 }
 
 .bask_book_slide .bd li {
 	position: relative;
 	margin: 10px 15px;
 	padding: 0;
-	width: 370px;
+	width: 350px;
 	border: 1px solid #e0e0e0;
 	/*box-sizing: border-box;*/
 }
@@ -831,7 +835,7 @@
 	margin: 0;
 	padding: 30px 0 50px;
 	width: 100%;
-	min-width: 1280px;
+	min-width: 1150px;
 }
 
 .stock_time div {

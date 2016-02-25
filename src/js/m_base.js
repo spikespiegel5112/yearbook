@@ -154,26 +154,28 @@
                 console.log(docHeight);
             }
         },
-        remResizing: function(fontsize, excaption) {
+        remResizing: function(options) {
+        	options=$.extend({
+        		fontsize:16,
+        		maxwidth:640
+        	})
             var htmlEl = $('html'),
                 bodyEl = $('body'),
                 windowWidth = $(window).width();
-            if (typeof fontsize == 'undefined') {
-                fontsize = 16;
-            }
             sizeConstraint();
             $(window).resize(function() {
                 sizeConstraint();
             });
 
             function sizeConstraint() {
+            	$.extend
                 htmlEl.css('－webkit-text-size-adjust', 'none');
-                if ($(window).width() >= 640) {
+                if ($(window).width() >= options.maxwidth) {
                     bodyEl.css({
-                        'width': 640,
+                        'width': options.maxwidth,
                         'margin': '0 auto'
                     });
-                    htmlEl.css('font-size', fontsize / 16 * 200 + '%');
+                    htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
                 } else {
                     var windowWidth = $(window).width(),
                     	windowHeight=$(window).height();

@@ -138,14 +138,15 @@
 .viewmode_landscape .ybwechatheader_wrapper {
 	display: block;
 	position: absolute;
-	height: 1.8rem;
-	top: -3em;
+	height: 50px;
+	top: -50px;
+	left: 0;
 	background:-webkit-linear-gradient(bottom,transparent,#000);
 	z-index: 2;
 }
 .viewmode_landscape .ybwechatheader_wrapper.active{
 	top: 0;
-	min-height: 2.1rem;
+	min-height: 40px;
 	-webkit-transition: top 1s;
 	-moz-transition: top 1s;
 	transition: top 1s;
@@ -180,10 +181,10 @@
 }
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
-	margin: 0.4rem 0 0 0;
-	padding: 0.2rem 1rem;
+	margin: 7px 0;
+	padding: 1px 10px;
 	color: #fff;
-	font-size: .5rem;
+	font-size: 16px;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -202,10 +203,11 @@
 .bp_paginator_item {
 	display: block;
 	width: 100%;
-/*	line-height: 3rem;*/
+	height: 100%;
+	line-height: 40px;
 	text-align: center;
 	color: #fff;
-	font-size: 1rem;
+	font-size: 21px;
 }
 .viewmode_portrait .bp_paginator_item{
 	position: absolute;
@@ -1291,7 +1293,7 @@
 	display: block;
 	margin: 0 0.5rem;
 	padding: 0 0.5rem;
-	width: 50px;
+	width: 1.5rem;
 	height: 2rem;
 	position: absolute;
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);

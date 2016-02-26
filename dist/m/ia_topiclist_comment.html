@@ -29,7 +29,7 @@
         <div class="ia-topic-item-user-say-one">
             <div class="ia-topic-item-user-say-header">
                 <p>
-                    <img src="../img/m/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
+                    <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
                 <ul>
                     <li>张三</li>
                     <li>一小时之前</li>
@@ -54,7 +54,7 @@
             <li class="ia-topic-commit-one">
                 <div class="ia-topic-commit-user-info">
                     <div class="ia-topic-commit-user-header">
-                        <img src="../img/m/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
+                        <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
                     </div>
                     <div class="ia-topic-commit-user-name">
                         <p>张三</p>
@@ -71,7 +71,7 @@
             <li class="ia-topic-commit-one">
                 <div class="ia-topic-commit-user-info">
                     <div class="ia-topic-commit-user-header">
-                        <img src="../img/m/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
+                        <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
                     </div>
                     <div class="ia-topic-commit-user-name">
                         <p>张三</p>
@@ -88,7 +88,7 @@
             <li class="ia-topic-commit-one">
                 <div class="ia-topic-commit-user-info">
                     <div class="ia-topic-commit-user-header">
-                        <img src="../img/m/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
+                        <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="话题参与人头像">
                     </div>
                     <div class="ia-topic-commit-user-name">
                         <p>张三</p>
@@ -123,7 +123,7 @@
         return '<li class="ia-topic-commit-one">' +
                 '<div class="ia-topic-commit-user-info">' +
                 '<div class="ia-topic-commit-user-header">' +
-                '<img src="../img/m/head-portrait.jpg" class="img-circle" alt="话题参与人头像">' +
+                '<img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="话题参与人头像">' +
                 '</div>' +
                 '<div class="ia-topic-commit-user-name">' +
                 '<p>' + username + '</p><p>刚刚</p>' +
@@ -152,7 +152,7 @@
             //判断页面到达底部
             if (bottomFlag) {
                 $('.loading').show();
-                var liEl = "<li class='ia-topic-commit-one'><div class='ia-topic-commit-user-info'><div class='ia-topic-commit-user-header'><img src='../img/m/head-portrait.jpg' class='img-circle' alt='话题参与人头像'></div><div class='ia-topic-commit-user-name'><p>张三</p><p>一小时之前</p></div><a class='active'><span class='icon-thumbs-up'></span>1</a></div><div class='clearfix'></div><div class='ia-topic-commit-one-content'><p>可垃圾点快啦三季度可垃圾的垃圾收到了卡机的拉升建档立卡坚实的垃圾死得啦圣诞节阿萨</p></div></li>";
+                var liEl = "<li class='ia-topic-commit-one'><div class='ia-topic-commit-user-info'><div class='ia-topic-commit-user-header'><img src='../img/m/default/head-portrait.jpg' class='img-circle' alt='话题参与人头像'></div><div class='ia-topic-commit-user-name'><p>张三</p><p>一小时之前</p></div><a class='active'><span class='icon-thumbs-up'></span>1</a></div><div class='clearfix'></div><div class='ia-topic-commit-one-content'><p>可垃圾点快啦三季度可垃圾的垃圾收到了卡机的拉升建档立卡坚实的垃圾死得啦圣诞节阿萨</p></div></li>";
                 setTimeout(function () {
                     var count = Math.floor(Math.random() * 5);
                     for (var i = 0; i < count; i++) {

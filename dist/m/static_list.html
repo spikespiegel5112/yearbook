@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-忆尔百科文章</title>
+	<link rel="stylesheet" href="css/all.min.css" media="all">
+	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all">
+</head>
+
+<body class='bg_f6f6f6'>
+	<div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href="javascript:;"></a>
+        <p>忆尔百科文章</p>
+    </div>
+	<div class='static_list_container'>
+		<div class='static_list_wrapper'>
+			<div class='static_listtitle_item'>
+				<span class='icon-list'></span>
+				<h5>百科文章列表</h5>
+			</div>
+			<div class='static_mainlist_wrapper'>
+				<ul class='static_listcontent_wrapper'>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span>全场满99包邮</span>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+				</ul>
+			</div>
+			 <div class='show_more'>
+        	    <a href="javascript:;">点击加载更多（<span>6</span>）</a>
+        	</div>
+        	<div class="ybwechat_loading_item">
+				<label>
+					<img class='loadingicon' src="../img/m/loading.gif">
+					加载中...
+				</label>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/m_base.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		collideLoading();
+		$.remResizing(20);
+	});
+	function collideLoading() {
+		var loadingFlag=true;
+		$.collideLoading({
+			onScrollBottom: function() {
+				var commentEl = '<li><a href="javascript:;">	<span>全场满99包邮</span>	<label>2016-02-16</label></a></li>';
+				//用一个flag来约束加载逻辑使其在完成加载过程前触发的底部碰撞事件无效
+				if (loadingFlag) {
+					loadingFlag=false;
+					$('.ybwechat_loading_item').show();
+					setTimeout(function() {
+						$('.static_listcontent_wrapper').append(commentEl);
+						$('.ybwechat_loading_item').hide();
+						loadingFlag=true;
+					}, 2000);
+				};
+			}
+		});
+	}
+	</script>
+</body>
+</html>

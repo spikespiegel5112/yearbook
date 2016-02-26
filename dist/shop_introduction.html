@@ -296,12 +296,13 @@
 	<script>
 	$(function(){
 		shopIntroduction();
+		$('.shop_banner_wrapper img').imgAlignCenter();
 	});
 	function shopIntroduction(){
 		//设置表格背景颜色
 		var trElEven=$('.shop_shareprofit_wrapper tr:even');
 		trElEven.css('background-color','#fce4e1');
-
+		//加入流程图标的渐变效果
 		var jpLiEl=$('.shop_joinprocess_wrapper ul li');
 		for (var i = 0; i < jpLiEl.length; i++) {
 			jpLiEl.eq(i).css('opacity',0.4+i*0.15)

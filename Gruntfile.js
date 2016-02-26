@@ -76,7 +76,7 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>css/makebook.css',
                     '<%= meta.srcPath %>css/staticize.css',
                     '<%= meta.srcPath %>css/tplshowcase.css',
-                    '<%= meta.srcPath %>css/pc.css'
+                    '<%= meta.srcPath %>css/pc.css',
                 ],
                 dest: '<%= meta.distPath %>css/all.css'
             },
@@ -94,7 +94,8 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>css/m_ia.css',
                     '<%= meta.srcPath %>css/m_makebook.css',
                     '<%= meta.srcPath %>css/m_staticize.css',
-                    '<%= meta.srcPath %>css/m_pc.css'
+                    '<%= meta.srcPath %>css/m_pc.css',
+                    '<%= meta.srcPath %>css/m_shop.css'
                 ],
                 dest: '<%= meta.distPath %>css/m.all.css'
             }
@@ -138,7 +139,7 @@ module.exports = function(grunt) {
             css : {
                 expand: true,
                 cwd: '<%= meta.srcPath %>',
-                src: ['css/m_jquery.sureInput.css','css/m_welcome.css'],
+                src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
                 dest: '<%= meta.distPath %>/'
             },
             js : {

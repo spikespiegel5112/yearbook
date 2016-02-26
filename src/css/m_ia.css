@@ -3308,7 +3308,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -380px -30px;
+/*    background: url(../img/m/sprite/img_sprite_00000.png) -380px -30px;*/
 }
 
 .album_detail_photo_wrapper, .album_detail_photo_wrapper img {
@@ -3641,8 +3641,9 @@
     margin: 0.7em 0.1em 0.25em 0.5em;
     width: 20px;
     height: 20px;
-    background-image: url(../img/m/sprite/img_sprite_00000.png);
+    background-image: url(../img/m/sprite/common_img_sprite_00000.png);
     background-size: 1200%;
+    background-position-y: -15px;
 }
 
 .photopage_footer ul li span {
@@ -3653,19 +3654,19 @@
 }
 
 .photopage_button_1 a {
-    background-position: -100px -73px;
+    background-position-x: -45px;
 }
 
 .photopage_button_1 .active {
-    background-position: -117px -73px;
+    background-position-x: -45px;
 }
 
 .photopage_button_2 a {
-    background-position: -60px -73px;
+    background-position-x: -65px;
 }
 
 .photopage_button_2 .active {
-    background-position: -60px -73px;
+    background-position-x: -65px;
 }
 
 .photopage_moredetail {
@@ -4956,13 +4957,6 @@
     content: '';
     display: block;
     clear: both;
-}
-
-.delete_item {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -380px -30px;
 }
 
 .ia-topic-item-user-say-one .delete_item {

@@ -378,14 +378,14 @@
 	margin: 0 auto 5px;
 	width: 2.5rem;
 	height: 2.5rem;
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-position-y: -153px;
+	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	background-position-y: -70px;
 	opacity: 0.6;
 }
 
 .bp_menu_wrapper .praise {
 	display: block;
-	background-position-x: -283px;
+	background-position-x: -180px;
 }
 
 .bp_menu_wrapper li .active .praise{
@@ -403,7 +403,7 @@
 	font-size: 1.5rem;
 }
 .bp_menu_wrapper li .comment {
-	background-position-x: -170px;
+	background-position-x: -90px;
 }
 .bp_menu_wrapper .active .comment{
 	opacity: 1;
@@ -414,7 +414,7 @@
 }
 .bp_menu_wrapper .active .praise{
 	opacity: 1;
-	background-position-x: -283px;
+	background-position-y: -110px;
 }
 
 
@@ -751,6 +751,7 @@
 }
 .bp_landscape_wrapper ul{
 	margin: 0 0 0 10px;
+	padding: 0 0 0 10px;
 }
 .bp_landscape_wrapper ul li {
 	float: left;
@@ -758,8 +759,10 @@
 	height: 48px;
 }
 .bp_landscape_wrapper ul li a {
-	display: inline-block;
+	display: block;
+	margin: 0 auto;
 	color: #fff;
+	overflow: hidden;
 }
 
 .bp_landscape_wrapper ul li a p {
@@ -768,13 +771,13 @@
 }
 
 .bp_landscape_wrapper ul li a div {
-	float: left;
-	margin: 15px 2px 0px 0px;
+	margin: 15px auto 0px;
 	width: 20px;
 	height: 20px;
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-size:1200%;
-	background-position-y:-73px;
+	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	background-repeat: no-repeat;
+	background-size:1300%;
+	background-position-y:-16px;
 }
 .viewmode_landscape .ybwechatheader_wrapper .bp_barrageswitch_item{
 	display: none;
@@ -792,44 +795,47 @@
 }
 
 .main_container .bp_barrageswitch_item div{
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-size:1000%;
-	background-position-y: -46px;
+	background-image: url("../img/m/sprite/barrage_sprite_00000.png");
+	background-size:400%;
+	background-position-y: -10px;
+	background-repeat: no-repeat;
 	width: 40px;
 	height: 30px;
 }
+
 .viewmode_portrait .bp_barrageswitch_item div{
-	background-position-x: 0;
+	background-position-x: -80px;
+	background-position-y: -25px;
 }
 .viewmode_portrait .bp_barrageswitch_item .active div{
-	background-position-x: -40px;
+	background-position-x: -257px;
 }
 .viewmode_landscape .bp_barrageswitch_item div{
 	background-position-x: -80px;
 }
 .viewmode_landscape .bp_barrageswitch_item .active div{
-	background-position-x: -123px;
+	background-position-x: -125px;
 }
 .bp_landscape_wrapper ul .comment div {
-	background-position-x: 182px;
+	background-position-x: -50px;
 }
 
 .bp_landscape_wrapper ul .comment .active div {
-	background-position-x: 160px;
+	background-position-y: -40px;
 }
 
 .bp_landscape_wrapper ul .praise div {
-	background-position-x: 140px;
+	background-position-x: -72px;
 }
 
 .bp_landscape_wrapper ul .praise .active  div {
-	background-position-x: 122px;
+	background-position-y: -60px;
 }
 .bp_landscape_wrapper ul .donate div{
 	background-image:none;
 	text-align: center;
 	line-height: 20px;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
 	background: #fff;
 	color: #000;
@@ -839,10 +845,10 @@
 	background-color: orange;
 }
 .bp_landscape_wrapper ul .share div {
-	background-position-x: 52px;
+	background-position-x: -114px;
 }
 .bp_landscape_wrapper ul .share .active div {
-	background-position-x: 35px;
+	background-position-y: -40px;
 }
 .viewmode_portrait .bp_resizebtn_item{
 	display: block;
@@ -1055,7 +1061,7 @@
 	margin: 0 0.5rem 0 0;
 	width: 2rem;
 	height: 2rem;
-	background-image: url(../img/m/sprite/img_sprite_00000.png);
+	background-image: url(../img/m/sprite/common_img_sprite_00000.png);
 	vertical-align: middle;
 	background-position-x: -323px;
 	background-position-y: -159px;
@@ -1248,7 +1254,7 @@
 	margin: 0 1.2rem;
 	width: 45px;
 	height: 60px;
-	background-image: url(../img/m/sprite/img_sprite_00000.png);
+	background-image: url(../img/m/sprite/common_img_sprite_00000.png);
 	background-position-y: -215px;
 }
 .bp_introduce_wrapper .photobook{
@@ -1327,8 +1333,8 @@
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-size: 1190%;
+	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	background-size: 1300%;
 }
 .bp_photoslider_wrapper ol li:first-child{
 	float: left;
@@ -1341,10 +1347,10 @@
 }
 
 .bp_photoslider_wrapper ol .praise  a{
-	background-position:  -148px -107px;
+	background-position:  -108px -21px;
 }
 .bp_photoslider_wrapper ol .praise  .active {
-	background-position:  -178px -107px;
+	background-position:  -108px -91px;
 }
 .bp_swiperbook_wrapper{
 	width: 100%;

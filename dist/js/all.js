@@ -592,14 +592,20 @@
 			})
 		},
 		loginPopupDialog: function() {
+			var windowHeight=$(window).height(),
+				marginTop=(windowHeight-560)/2;
+				if (marginTop<0) {marginTop=0;}
 			$(this).each(function() {
 				$(this).click(function() {
+					console.log(marginTop);
 					$('.loginpopup_container').addClass('active');
-				})
+					$('.loginpopup_wrapper').css('margin-top',marginTop);
+
+				});
 				$('.loginpopup_header_wrapper a').click(function() {
 					$('.loginpopup_container').removeClass('active');
-				})
-			})
+				});
+			});
 		},
 		priceCalculator: function(options) {
 			var $this = $(this),

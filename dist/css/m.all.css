@@ -4614,14 +4614,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 0 auto 5px;
 	width: 2.5rem;
 	height: 2.5rem;
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-position-y: -153px;
+	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	background-position-y: -70px;
 	opacity: 0.6;
 }
 
 .bp_menu_wrapper .praise {
 	display: block;
-	background-position-x: -283px;
+	background-position-x: -180px;
 }
 
 .bp_menu_wrapper li .active .praise{
@@ -4639,7 +4639,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	font-size: 1.5rem;
 }
 .bp_menu_wrapper li .comment {
-	background-position-x: -170px;
+	background-position-x: -90px;
 }
 .bp_menu_wrapper .active .comment{
 	opacity: 1;
@@ -4650,7 +4650,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 .bp_menu_wrapper .active .praise{
 	opacity: 1;
-	background-position-x: -283px;
+	background-position-y: -112px;
 }
 
 
@@ -4987,6 +4987,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 .bp_landscape_wrapper ul{
 	margin: 0 0 0 10px;
+	padding: 0 0 0 10px;
 }
 .bp_landscape_wrapper ul li {
 	float: left;
@@ -4994,8 +4995,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	height: 48px;
 }
 .bp_landscape_wrapper ul li a {
-	display: inline-block;
+	display: block;
+	margin: 0 auto;
 	color: #fff;
+	overflow: hidden;
 }
 
 .bp_landscape_wrapper ul li a p {
@@ -5004,13 +5007,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .bp_landscape_wrapper ul li a div {
-	float: left;
-	margin: 15px 2px 0px 0px;
+	margin: 15px auto 0px;
 	width: 20px;
 	height: 20px;
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-size:1200%;
-	background-position-y:-73px;
+	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	background-repeat: no-repeat;
+	background-size:1300%;
+	background-position-y:-16px;
 }
 .viewmode_landscape .ybwechatheader_wrapper .bp_barrageswitch_item{
 	display: none;
@@ -5023,19 +5026,22 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .viewmode_portrait .bp_barrageswitch_item{
 	display: block;
-	margin: 12px auto;
+	margin: 5px auto;
 	width: 2rem;
 }
 
 .main_container .bp_barrageswitch_item div{
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-size:1000%;
-	background-position-y: -46px;
+	background-image: url("../img/m/sprite/barrage_sprite_00000.png");
+	background-size:400%;
+	background-position-y: -10px;
+	background-repeat: no-repeat;
 	width: 40px;
 	height: 30px;
 }
+
 .viewmode_portrait .bp_barrageswitch_item div{
-	background-position-x: 0;
+	background-position-x: 2px;
+	background-position-y: -5px;
 }
 .viewmode_portrait .bp_barrageswitch_item .active div{
 	background-position-x: -40px;
@@ -5044,28 +5050,28 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	background-position-x: -80px;
 }
 .viewmode_landscape .bp_barrageswitch_item .active div{
-	background-position-x: -123px;
+	background-position-x: -125px;
 }
 .bp_landscape_wrapper ul .comment div {
-	background-position-x: 182px;
+	background-position-x: -50px;
 }
 
 .bp_landscape_wrapper ul .comment .active div {
-	background-position-x: 160px;
+	background-position-y: -40px;
 }
 
 .bp_landscape_wrapper ul .praise div {
-	background-position-x: 140px;
+	background-position-x: -72px;
 }
 
 .bp_landscape_wrapper ul .praise .active  div {
-	background-position-x: 122px;
+	background-position-y: -60px;
 }
 .bp_landscape_wrapper ul .donate div{
 	background-image:none;
 	text-align: center;
 	line-height: 20px;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
 	background: #fff;
 	color: #000;
@@ -5075,10 +5081,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	background-color: orange;
 }
 .bp_landscape_wrapper ul .share div {
-	background-position-x: 52px;
+	background-position-x: -114px;
 }
 .bp_landscape_wrapper ul .share .active div {
-	background-position-x: 35px;
+	background-position-y: -40px;
 }
 .viewmode_portrait .bp_resizebtn_item{
 	display: block;
@@ -5291,10 +5297,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 0 0.5rem 0 0;
 	width: 2rem;
 	height: 2rem;
-	background-image: url(../img/m/sprite/img_sprite_00000.png);
+	background-image: url(../img/m/sprite/common_img_sprite_00000.png);
 	vertical-align: middle;
-	background-position-x: -323px;
-	background-position-y: -159px;
+	background-position-x: -184px;
+	background-position-y: -34px;
 }
 /*.bp_praise_btn.active{
 	background: #ff696a;
@@ -5484,7 +5490,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 0 1.2rem;
 	width: 45px;
 	height: 60px;
-	background-image: url(../img/m/sprite/img_sprite_00000.png);
+	background-image: url(../img/m/sprite/common_img_sprite_00000.png);
 	background-position-y: -215px;
 }
 .bp_introduce_wrapper .photobook{
@@ -5559,28 +5565,27 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	display: block;
 	position: relative;
 	z-index: 1;
-	width: 90%;
-	height: 90%;
-	background-image: url("../img/m/sprite/img_sprite_00000.png");
-	background-size: 1190%;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	background-size: 1200%;
 }
 .bp_photoslider_wrapper ol li:first-child{
 	float: left;
 }
 .bp_photoslider_wrapper ol .avatar img{
 	display: block;
+	margin: 3px auto;
 	width: 80%;
 	height: 80%;
 	border-radius: 50%;
-	margin-top: 5px;
-	margin-left: 16px;
 }
 
 .bp_photoslider_wrapper ol .praise  a{
-	background-position:  -134px -94px;
+	background-position:  -98px -18px;
 }
-.bp_photoslider_wrapper ol .praise  a.active {
-	background-position:  -160px -94px;
+.bp_photoslider_wrapper ol .praise  .active {
+	background-position:  -98px -81px;
 }
 .bp_swiperbook_wrapper{
 	width: 100%;
@@ -8935,7 +8940,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -380px -30px;
+/*    background: url(../img/m/sprite/img_sprite_00000.png) -380px -30px;*/
 }
 
 .album_detail_photo_wrapper, .album_detail_photo_wrapper img {
@@ -9268,8 +9273,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     margin: 0.7em 0.1em 0.25em 0.5em;
     width: 20px;
     height: 20px;
-    background-image: url(../img/m/sprite/img_sprite_00000.png);
+    background-image: url(../img/m/sprite/common_img_sprite_00000.png);
     background-size: 1200%;
+    background-position-y: -15px;
 }
 
 .photopage_footer ul li span {
@@ -9280,19 +9286,19 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .photopage_button_1 a {
-    background-position: -100px -73px;
+    background-position-x: -45px;
 }
 
 .photopage_button_1 .active {
-    background-position: -117px -73px;
+    background-position-x: -45px;
 }
 
 .photopage_button_2 a {
-    background-position: -60px -73px;
+    background-position-x: -65px;
 }
 
 .photopage_button_2 .active {
-    background-position: -60px -73px;
+    background-position-x: -65px;
 }
 
 .photopage_moredetail {
@@ -10585,13 +10591,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     clear: both;
 }
 
-.delete_item {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -380px -30px;
-}
-
 .ia-topic-item-user-say-one .delete_item {
     top: -1px;
     position: relative;
@@ -11484,12 +11483,14 @@ a.ia-vote-add-choose-num {
 .ybarticle_ilustri_wrapper {
     margin: 20px auto;
     width: 197px;
-    height: 153px;
+    /*height: 153px;*/
 }
 
 .ybarticle_ilustri_wrapper img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    /*max-height: 100%;*/
+    margin: 0 auto;
+    display: block;
 }
 
 .ybarticle_article_item {

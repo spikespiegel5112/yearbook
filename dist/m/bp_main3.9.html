@@ -738,7 +738,10 @@
 						$(this).removeClass('active');
 					});
 				}
-			})
+			});
+			$('.bp_photoslider_wrapper .praise a').on('touchend', function(){
+				$(this).toggleClass('active');
+			});
 			//点击赞助按钮后弹出赞助框
 			$('.bp_iwanttodonate_btn, .bp_landscape_wrapper ul .donate').on('touchend',function() {
 				popupDonateDialog();
@@ -936,16 +939,16 @@
 					toolsEl.addClass('active');
 				});
 
-				$('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
-					commentInputEl.toggle().on('touchend', function() {
-						$(document).on('touchend', function(e) {
-							if ($(e.target).closest('.bp_sendcomment_item').length == 0) {
-								$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
-							};
-							$(this).unbind('touchend');
-						});
-					});
-				});
+				// $('.viewmode_landscape .bp_landscape_wrapper .comment').on('touchend', function() {
+				// 	commentInputEl.toggle().on('touchend', function() {
+				// 		$(document).on('touchend', function(e) {
+				// 			if ($(e.target).closest('.bp_sendcomment_item').length == 0) {
+				// 				$('.bp_donate_container, .bp_landscape_wrapper ul .donate a').removeClass('active');
+				// 			};
+				// 			$(this).unbind('touchend');
+				// 		});
+				// 	});
+				// });
 				$('.bp_landscape_wrapper li a').on('touchend', function(){
 					var $this=$(this),
 						index=$this.parent().index();

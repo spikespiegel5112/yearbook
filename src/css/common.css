@@ -3390,3 +3390,195 @@ nav .pagination li a:active {
     color: #666;
     border: 1px solid #999;
 }
+
+/*yb3.11 yb_global_toolbar*/
+.yb_toolbar_wrap{
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    bottom: 0;
+    z-index: 99999;
+}
+
+.yb_toolbar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 100%;
+    /*border-right: 6px solid #7a6e6e;*/
+    background-color: #363636;
+    -webkit-transition: right .3s ease-in-out 0s;
+    -moz-transition: right .3s ease-in-out 0s;
+    transition: right .3s ease-in-out 0s;
+}
+
+.yb_toolbar .yb_toolbar_tabs{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 35px;
+    margin-top: -53px;
+}
+
+.yb_toolbar .toolbar_tab {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #363636;
+}
+
+.toolbar_tab:hover{
+    background-color: #71ca5e;
+}
+
+.toolbar_tab .tab_icon{
+    display: block;
+    width: 100%;
+    height: 35px;
+    position: relative;
+    z-index: 2;
+    background: transparent url("../img/sprite/yb_toolbar_icons.png") no-repeat;
+}
+
+.toolbar_tab.service .tab_icon{
+    background-position: 0 0;
+}
+
+.toolbar_tab.hotline .tab_icon{
+    background-position: 0 -35px;
+}
+
+.toolbar_tab.help .tab_icon{
+    background-position: 0 -70px;
+}
+
+.toolbar_tab.discount .tab_icon{
+    background-position: 0 -105px;
+}
+
+.toolbar_tab.qrcode .tab_icon{
+    background-position: 0 -140px;
+}
+
+.toolbar_tab.feedback .tab_icon{
+    background-position: 0 -175px;
+}
+
+.toolbar_tab.top .tab_icon{
+    background-position: 0 -210px;
+}
+
+.toolbar_tab .tab_text{
+    display: none;
+    position: absolute;
+    right: 125px;
+    top: 0;
+    padding: 0 12px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #666;
+    opacity: 1;
+    border-radius: 3px 0 0 3px;
+    white-space: nowrap;
+}
+
+.toolbar_tab .tab_text::after,
+.yb_toolbar_footer .qrcode .wechat::after,
+.yb_toolbar_footer .discount .activity::after{
+    content: " ";
+    position: absolute;
+    right: -5px;
+    top: 13px;
+    border-left: 5px solid #666;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    z-index: 3;
+}
+
+.yb_toolbar .yb_toolbar_footer{
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    left: 0;
+}
+
+@-webkit-keyframes transright {
+    from{
+        opacity: 0;
+        right: 70px;
+    }
+    to{
+        opacity: 1;
+        right: 35px;
+    }
+}
+
+.yb_toolbar_footer .qrcode .wechat{
+    display: none;
+    position: absolute;
+    right: 35px;
+    top: -65px;
+    width: 110px;
+    height: 158px;
+    background: #fff;
+    z-index: 999999;
+    cursor: default;
+    border: 1px solid #D1D1D1;
+    border-left: 0;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.4);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,.4);
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    opacity: 0;
+}
+
+.yb_toolbar_footer .qrcode .wechat::after{
+    top: 76px;
+    border-left: 5px solid #fff;
+}
+
+.yb_toolbar_footer .qrcode .wechat .wechat_qrcode{
+    display: block;
+    margin: 5px auto 0;
+    width: 100px;
+    height: 100px;
+}
+
+.yb_toolbar_footer .qrcode .wechat p{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.yb_toolbar_footer .discount .activity{
+    display: none;
+    position: absolute;
+    right: 35px;
+    top: -75px;
+}
+
+.yb_toolbar_footer .discount .activity::after{
+    top: 87px;
+}
+
+.yb_toolbar_footer .discount .activity img{
+    width: 335px;
+    height: 210px;
+    border: 2px solid #666;
+}
+
+.toolbar_tab:hover .tab_text,
+.qrcode:hover .wechat,
+.discount:hover .activity{
+    right: 35px;
+    display: block;
+    opacity: 1;
+    animation: transright .3s ease-in-out;
+}

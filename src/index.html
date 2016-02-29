@@ -664,7 +664,7 @@
                             <em class="tab_text">建议</em>
                         </a>
                     </div>
-                    <div class="toolbar_tab top">
+                    <div class="toolbar_tab go_top">
                         <a href="javascript:;">
                             <i class="tab_icon"></i>
                         </a>
@@ -685,6 +685,7 @@
 		switchBookCategory();
 		swiperInit();
 		icheck();
+        goTop();
 		$.globalhint();//全局提示框，用来提示更换浏览器，提示切换移动端oc端
 		//qqServer();
 		//CloseYbNotice();
@@ -791,6 +792,14 @@
 		});
 	}
 
+        /*
+        * 返回页面顶部
+        * */
+        function goTop(){
+            $('.go_top').bind('click',function(){
+                $(window).scrollTop(0);
+            });
+        }
 	</script>
 </body>
 

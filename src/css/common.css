@@ -386,6 +386,7 @@ input {
 	float: left;
 	margin-left: 80px;
 	margin-top: 30px;
+    height: 50px;
 }
 
 .cm_header_nav .nav ul {
@@ -395,39 +396,63 @@ input {
 .cm_header_nav .nav ul li {
 	float: left;
 	margin-right: 40px;
-	padding: 3px 6px;
+	padding: 3px 0 0;
 }
 
 .cm_header_nav .nav ul li a {
+    display: block;
+    padding: 0 6px;
 	color: #666;
+    height: 44px;
 }
 
 .cm_header_nav .nav ul li a.active {
-	color: #6ba72b;
+	color: #8bba38;
+    border-bottom: 3px solid #8bba38;
 }
 
 .cm_header_nav .nav_login {
+    position: relative;
 	float: right;
-	margin-top: 30px
+	margin: 30px 40px 0 30px;
+}
+
+.cm_header_nav .nav_login::before{
+    content: " ";
+    position: absolute;
+    left: -29px;
+    top: 0px;
+    width: 35px;
+    height: 30px;
+    background: url("../img/sprite/yb_toolbar_icons.png") no-repeat 0 -247px;
 }
 
 .cm_header_nav .nav_login ul {
-	font-size: 18px;
-	color: #666;
+	font-size: 14px;
+	color: #999;
 }
 
 .cm_header_nav .nav_login ul li {
+    position: relative;
 	float: left;
-	margin-right: 40px;
-	padding: 3px 6px;
+	margin-right: 8px;
+	padding: 6px 6px;
+}
+
+.cm_header_nav .nav_login ul li:nth-child(1)::after{
+    content: "/";
+    position: absolute;
+    top: 6px;
+    right: -8px;
 }
 
 .cm_header_nav .nav_login ul li a {
 	color: #666;
 }
 
+.cm_header_nav .nav_login ul li a:hover,
 .cm_header_nav .nav_login ul li a.active {
-	color: #6ba72b;
+	color: #8bba38;
 }
 
 .cm_header_shadow {
@@ -3469,7 +3494,7 @@ nav .pagination li a:active {
     background-position: 0 -175px;
 }
 
-.toolbar_tab.top .tab_icon{
+.toolbar_tab.go_top .tab_icon{
     background-position: 0 -210px;
 }
 

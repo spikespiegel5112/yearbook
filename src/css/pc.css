@@ -1166,7 +1166,7 @@
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	box-shadow: 0px 0px 1px #e0e0e0;
-	background-color: #f7f8f9;
+	background-color: #f7f8fa;
 }
 
 .available_balance {
@@ -1183,8 +1183,7 @@
 	color: #444;
 }
 
-.balance .btn,
-.query_date .btn {
+.balance .btn, .query_date .btn {
 	color: #fff;
 	cursor: pointer;
 	font-size: 14px;
@@ -1192,7 +1191,7 @@
 	height: 25px;
 	outline: 0 none;
 	border-radius: 6px;
-	background-image: linear-gradient(hsla(0, 0%, 100%, 0.4), hsla(0, 0%, 100%, 0) 25px);
+	/*background-image: linear-gradient(hsla(0, 0%, 100%, 0.4), hsla(0, 0%, 100%, 0) 25px);*/
 }
 
 .balance .btn:hover,
@@ -1201,8 +1200,8 @@
 }
 
 .available_balance .recharge {
-	background-color: #36ad53;
-	border: 1px solid #0c8b2b;
+	background-color: #6ac96d;
+/*	border: 1px solid #0c8b2b;*/
 	position: absolute;
 	right: 25px;
 	top: 16px;
@@ -1247,23 +1246,6 @@
 	line-height: 30px;
 }
 
-.transaction_detail {
-	margin: 25px 0;
-	padding-bottom: 10px;
-	width: 100%;
-	background-color: #fff;
-}
-
-.transaction_detail .title {
-	margin-left: -1px;
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	background-color: #f9fafb;
-	border: 1px solid #e5e5e5;
-	background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0) 30px);
-}
-
 .title h4 {
 	font-size: 16px;
 	font-weight: bold;
@@ -1271,14 +1253,23 @@
 }
 
 .query_date {
-	margin: 10px 0 10px 15px;
+	margin: 6px 15px;
 	color: #666;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.query_date label{
+	color: #989898;
 }
 
 .query_date input {
 	display: inline-block;
+	padding: 3px;
 	width: 160px;
-	height: 30px;
+	height: 25px;
+	background: #f5f6f7;
 }
 
 .query_date .query {
@@ -1291,18 +1282,45 @@
 	padding: 0;
 }
 
-.transaction_detail .detail_list > ul {
-	margin-bottom: 10px;
-	min-height: 155px;
+.transaction_detail {
+	margin: 25px 0 0 0;
+	width: 100%;
+	position: relative;
 }
 
-.transaction_detail .detail_list > ul > li,
-.coupon_list > li {
-	margin: 0 15px;
+.transaction_detail .title {
+	margin-left: -1px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+
+.transaction_detail .detail_list{
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+.transaction_detail .detail_list > ul {
+	margin-bottom: 10px;
+	background: #eeeeee;
+}
+
+.transaction_detail .detail_list > ul > li, .coupon_list > li {
+	margin: 0 auto;
 	padding: 0 8px;
-	height: 30px;
-	line-height: 30px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.coupon_list .list{
 	border-bottom: 1px dashed #ddd;
+}
+
+.coupon_list .pc_empty_item{
+	display: none;
+	padding: 20px 0;
+	width: 100%;
+	height: 100%;
 }
 
 .transaction_detail .detail_list li li {
@@ -1331,6 +1349,8 @@
 .transaction_detail .detail_list li.list {
 	color: #f88f1c;
 	font-size: 12px;
+	background: #fff;
+	border-bottom: 1px dashed #ddd;
 }
 
 .transaction_detail .detail_list li.list:hover {
@@ -1341,34 +1361,46 @@
 	color: #3C3C3C;
 }
 
-.coin_certificate .coupon_slidebox .hd ul {
+/*.coin_certificate .coupon_slidebox .hd ul {
 	border-bottom: 3px solid #427d38;
+}*/
+
+.coin_certificate{
+	padding: 10px 0 0 0;
+	background: #fff;
 }
 
 .coin_certificate .coupon_slidebox .hd ul > li {
 	display: inline-block;
-	width: 120px;
-	height: 40px;
-	line-height: 40px;
+	margin: 10px 0 10px 20px;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
 	text-align: center;
-	border: 1px solid #ddd;
-	background-color: #fff;
 	color: #999;
 	box-sizing: border-box;
 	border-bottom: none;
 	cursor: pointer;
 }
 
+.coin_certificate .coupon_slidebox .hd ul > li:hover{
+	color: #6cb767;
+}
+
 .coin_certificate .coupon_slidebox .hd ul > li.on {
-	background-color: #519247;
-	border: 1px solid #519247;
-	border-bottom: none;
-	color: #fff;
+	border: 1px solid #6cb767;
+	color: #6cb767;
+	border-radius: 20px; 
 }
 
 .coin_certificate .coupon_slidebox .bd {
 	background-color: #fff;
 	padding-bottom: 10px;
+	border: 1px solid #ddd;
+}
+
+.coupon_slidebox .coupon_list{
+/*	border: 1px solid #ddd;*/
 }
 
 .coupon_list {
@@ -1405,10 +1437,13 @@
 
 .coupon_list li.caption {
 	border-bottom: none;
-	padding: 8px 0 4px;
+/*	padding: 8px 0 4px;*/
+	height: 40px;
+	line-height: 40px;
 }
 
 .coupon_list li.caption ul {
+	width: 100%;
 	background-color: #f6f6f6;
 }
 

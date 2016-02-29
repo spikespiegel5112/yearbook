@@ -649,7 +649,7 @@
     margin: 0 auto;
     width: 85px;
     height: 90px;
-    background: url(../img/m/empty_avatar_00000.png) 0 0 no-repeat;
+    background: url(../img/m/icon/empty_box_1_00000.png) 0 0 no-repeat;
 }
 
 .mybookshelf_info_empty_item div {
@@ -2684,4 +2684,12 @@
 
 .shop_admin .order_detail .order_info tr td:nth-child(2){
     text-align: center;
+}
+/*~~~~~~~~~~mybookshelf_wrapper~~~~~~~~~~*/
+.mybookshelf_wrapper.mybookshelf_main_wrapper{
+    margin: 0;
+}
+.mybookshelf_wrapper .common_empty_item:last-child{
+    padding: 0;
+
 }

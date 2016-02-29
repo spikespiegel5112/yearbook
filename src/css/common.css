@@ -424,7 +424,7 @@ input {
     top: 0px;
     width: 35px;
     height: 30px;
-    background: url("../img/sprite/yb_toolbar_icons.png") no-repeat 0 -247px;
+    background: url("../img/sprite/yb_toolbar_icons.png") no-repeat 0 -350px;
 }
 
 .cm_header_nav .nav_login ul {
@@ -3420,25 +3420,32 @@ nav .pagination li a:active {
 .yb_toolbar_wrap{
     position: fixed;
     _position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
-    width: 0;
-    height: 100%;
+    width: 35px;
+    height: 180px;
     bottom: 0;
     z-index: 99999;
 }
 
 .yb_toolbar{
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: -35px;
     top: 0;
     width: 35px;
     height: 100%;
-    /*border-right: 6px solid #7a6e6e;*/
     background-color: #363636;
     -webkit-transition: right .3s ease-in-out 0s;
     -moz-transition: right .3s ease-in-out 0s;
     transition: right .3s ease-in-out 0s;
+}
+
+.yb_toolbar.active{
+    right: 0;
+}
+
+.yb_toolbar.open{
+    right: 270px;
 }
 
 .yb_toolbar .yb_toolbar_tabs{
@@ -3446,7 +3453,7 @@ nav .pagination li a:active {
     top: 50%;
     left: 0;
     width: 35px;
-    margin-top: -53px;
+    margin-top: -87px;
 }
 
 .yb_toolbar .toolbar_tab {
@@ -3498,6 +3505,18 @@ nav .pagination li a:active {
     background-position: 0 -210px;
 }
 
+.toolbar_tab.my_msg .tab_icon{
+    background-position: 0 -280px;
+}
+
+.toolbar_tab.my_msg:hover .tab_icon{
+    background-position: 0 -245px;
+}
+
+.toolbar_tab.my_book .tab_icon{
+    background-position: 0 -315px;
+}
+
 .toolbar_tab .tab_text{
     display: none;
     position: absolute;
@@ -3529,9 +3548,19 @@ nav .pagination li a:active {
 }
 
 .yb_toolbar .yb_toolbar_footer{
-    position: absolute;
+    position: relative;
     bottom: -1px;
-    width: 100%;
+    top: 100%;
+    margin-top: -180px;
+    width: 35px;
+    left: -35px;
+    padding: 20px 0;
+    background-color: #363636;
+    border-radius: 3px 3px 0 0;
+}
+
+.yb_toolbar.active .yb_toolbar_footer,
+.yb_toolbar.open .yb_toolbar_footer{
     left: 0;
 }
 
@@ -3550,7 +3579,7 @@ nav .pagination li a:active {
     display: none;
     position: absolute;
     right: 35px;
-    top: -65px;
+    top: -42px;
     width: 110px;
     height: 158px;
     background: #fff;
@@ -3565,7 +3594,7 @@ nav .pagination li a:active {
 }
 
 .yb_toolbar_footer .qrcode .wechat::after{
-    top: 76px;
+    top: 54px;
     border-left: 5px solid #fff;
 }
 
@@ -3601,9 +3630,61 @@ nav .pagination li a:active {
 
 .toolbar_tab:hover .tab_text,
 .qrcode:hover .wechat,
-.discount:hover .activity{
+.discount:hover .activity,
+.yb_toolbar_footer .qrcode.active .wechat{
     right: 35px;
     display: block;
     opacity: 1;
     animation: transright .3s ease-in-out;
+}
+
+.yb_toolbar_tabs .personal_wrap{
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    top: 0;
+    right: -270px;
+    -webkit-transition: right .3s ease-in-out 0s;
+    -moz-transition: right .3s ease-in-out 0s;
+    transition: right .3s ease-in-out 0s;
+}
+
+.yb_toolbar_tabs .personal_wrap.active {
+    right: 0;
+}
+
+.yb_toolbar_tabs .personal_wrap .space_con{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.personal_wrap .space_con h4{
+    font-size: 18px;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    background-color: #87c186;
+}
+
+.personal_wrap .space_con .yb_empty{
+    position: absolute;
+    top: 50%;
+    margin-top: -92px;
+    width: 100%;
+}
+
+.personal_wrap .space_con .yb_empty span{
+    display: block;
+    margin: 10px auto;
+    width: 70px;
+    height: 125px;
+    background: url("../img/yb_empty.png") no-repeat;
+}
+
+.personal_wrap .space_con .yb_empty p{
+    text-align: center;
+    font-size: 14px;
+    color: #999;
 }

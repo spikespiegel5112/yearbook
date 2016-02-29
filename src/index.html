@@ -621,6 +621,36 @@
         <div class="yb_toolbar_wrap">
             <div class="yb_toolbar">
                 <div class="yb_toolbar_tabs">
+                    <div class="toolbar_tab my_msg personal_btn">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">我的消息</em>
+                            <div class="personal_wrap">
+                                <div class="space_con">
+                                    <h4>我的消息</h4>
+                                    <div class="yb_empty">
+                                        <span></span>
+                                        <p>记录是空的，没有新消息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab my_book personal_btn">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">我的书册</em>
+                            <div class="personal_wrap">
+                                <div class="space_con">
+                                    <h4>我的书册</h4>
+                                    <div class="yb_empty">
+                                        <span></span>
+                                        <p>记录是空的，没有新消息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                     <div class="toolbar_tab service">
                         <a href="javascript:;">
                             <i class="tab_icon"></i>
@@ -685,7 +715,7 @@
 		switchBookCategory();
 		swiperInit();
 		icheck();
-        goTop();
+        ybGlobalToolBar();
 		$.globalhint();//全局提示框，用来提示更换浏览器，提示切换移动端oc端
 		//qqServer();
 		//CloseYbNotice();
@@ -793,11 +823,42 @@
 	}
 
         /*
-        * 返回页面顶部
+        * yb3.11右工具栏
         * */
-        function goTop(){
+        function ybGlobalToolBar(){
+            //返回页面顶部
             $('.go_top').bind('click',function(){
                 $(window).scrollTop(0);
+            });
+
+            //初始显示yb二维码
+            $('.yb_toolbar_footer .qrcode').addClass('active');
+            var qrTime = setTimeout("$('.yb_toolbar_footer .qrcode').removeClass('active')",2000);
+
+            //hover显示全部工具栏
+            $('.yb_toolbar_wrap').hover(function(){
+                $('.yb_toolbar').addClass('active');
+            },function(){
+                $('.yb_toolbar').removeClass('active');
+            });
+
+            //个人消息、书册信息
+            $('.yb_toolbar_tabs .personal_btn').click(function(e){
+                if($('.personal_wrap').hasClass('active')){
+                    $(this).closest('.yb_toolbar').removeClass('open');
+                    $(this).find('.personal_wrap').removeClass('active');
+                }else{
+                    $(this).closest('.yb_toolbar').addClass('open');
+                    $(this).find('.personal_wrap').addClass('active');
+                    $(document).one("click", function(){
+                        $('.yb_toolbar').removeClass('open');
+                        $('.personal_wrap').removeClass('active');
+                    });
+                    e.stopPropagation();
+                }
+                $(".personal_wrap").on("click", function(e){
+                    e.stopPropagation();
+                });
             });
         }
 	</script>

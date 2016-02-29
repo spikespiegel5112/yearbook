@@ -19,13 +19,10 @@
 	<link rel="stylesheet" href="css/index.css" type="text/css" media="all">
 	<!-- endbuild -->
 
-	<style>
-		html #hm_t_undefined .hm-t-feedback-trigger {position: fixed;display: block;right: 0;top: 50%;margin-top: 160px;border-top:1px solid #ddd;border-bottom-left-radius: 4px;z-index: 99998;cursor: pointer;width: 40px;height: 37px!important;text-align: center;text-decoration: none;white-space: normal;font-size: 14px;line-height: 17px;padding-top: 3px;color: #fff;background: #70ca5d;_position: absolute;_top: expression(eval(document.documentElement.scrollTop+(document.documentElement.clientHeight||document.body.clientHeight)-this.offsetHeight-2));}
-	</style>
 </head>
 
 <body>
-	<div class="yb_notice">
+	<div class="yb_notice hidden">
 	    <p>
 	        <span>【2016元旦、春节放假通知】</span>12月31日-1月3日，2月5日-2月14日期间，忆尔将暂停纪念册制作与发货，在线订单照常接受。有问题可用手机拨打客服热线400-0610-127，给您带来的不便，请多包涵！
 	    </p>
@@ -569,7 +566,7 @@
 		</div>
 	</div>
 
-	<div class='globalhint_wrapper mobile_pc_switch'>
+	<div class='globalhint_wrapper mobile_pc_switch hidden'>
 		<div class='globalhint_inner_wrapper'>
 			<div class='globalhint_mainarticle_item'>
 				是否切换至<span>忆尔移动端</span>
@@ -581,8 +578,8 @@
 		</div>
 	</div>
 
-	<!--10.10 add QQ online server-->
-	<div class="server_online_main_im" id="server_online_main_im">
+	<!--10.10 add QQ online server yb < 3.10-->
+	<div class="server_online_main_im hidden" id="server_online_main_im">
 		<div id="open_im" class="open_im">
 			<div></div>
 		</div>
@@ -618,7 +615,94 @@
 			</div>
 		</div>
 	</div>
-	<div id="hm_t_undefined" class="hm-t-container"><div class="hm-t-feedback-trigger hm-t-unfold-button hm-t-unfold-button-txt" title="反馈建议" style="bottom: 2px; font-size: 14px; line-height: 17px; padding-top: 3px; height: 37px;">反馈建议</div></div>
+
+    <!--yb3.11 yb-global-toolbar-->
+    <div id="yb_global_toolbar">
+        <div class="yb_toolbar_wrap">
+            <div class="yb_toolbar">
+                <div class="yb_toolbar_tabs">
+                    <div class="toolbar_tab my_msg personal_btn">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">我的消息</em>
+                            <div class="personal_wrap">
+                                <div class="space_con">
+                                    <h4>我的消息</h4>
+                                    <div class="yb_empty">
+                                        <span></span>
+                                        <p>记录是空的，没有新消息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab my_book personal_btn">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">我的书册</em>
+                            <div class="personal_wrap">
+                                <div class="space_con">
+                                    <h4>我的书册</h4>
+                                    <div class="yb_empty">
+                                        <span></span>
+                                        <p>记录是空的，没有新消息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab service">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">在线客服</em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab hotline">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">热线：<b>400-0610-127</b></em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab help">
+                        <a href="static_hc_question.html">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">帮助中心</em>
+                        </a>
+                    </div>
+                </div>
+                <div class="yb_toolbar_footer">
+                    <div class="toolbar_tab discount">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <div class="activity">
+                                <img src="img/banner/photo_list_banner01.jpg">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab qrcode">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <div class="wechat">
+                                <img class="wechat_qrcode" src="img/footer_wx.png">
+                                <p class="txt">微信扫码<br>联系客服</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab feedback">
+                        <a href="static_hc_feedback.html">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">建议</em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab go_top">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
@@ -631,9 +715,10 @@
 		switchBookCategory();
 		swiperInit();
 		icheck();
+        ybGlobalToolBar();
 		$.globalhint();//全局提示框，用来提示更换浏览器，提示切换移动端oc端
-		qqServer();
-		CloseYbNotice();
+		//qqServer();
+		//CloseYbNotice();
 		$('.nav_login a:eq(0)').loginPopupDialog();
 		$(".bask_book_slide").slide({
 			mainCell: ".bd ul",
@@ -736,13 +821,46 @@
 			$('.weixing_show').hide();
 		});
 	}
-	var _hmt = _hmt || [];
-	(function() {
-		var hm = document.createElement("script");
-		hm.src = "//hm.baidu.com/hm.js?6c2a4a4a16555081b9d43efce54baa21";
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(hm, s);
-	})();
+
+        /*
+        * yb3.11右工具栏
+        * */
+        function ybGlobalToolBar(){
+            //返回页面顶部
+            $('.go_top').bind('click',function(){
+                $(window).scrollTop(0);
+            });
+
+            //初始显示yb二维码
+            $('.yb_toolbar_footer .qrcode').addClass('active');
+            var qrTime = setTimeout("$('.yb_toolbar_footer .qrcode').removeClass('active')",2000);
+
+            //hover显示全部工具栏
+            $('.yb_toolbar_wrap').hover(function(){
+                $('.yb_toolbar').addClass('active');
+            },function(){
+                $('.yb_toolbar').removeClass('active');
+            });
+
+            //个人消息、书册信息
+            $('.yb_toolbar_tabs .personal_btn').click(function(e){
+                if($('.personal_wrap').hasClass('active')){
+                    $(this).closest('.yb_toolbar').removeClass('open');
+                    $(this).find('.personal_wrap').removeClass('active');
+                }else{
+                    $(this).closest('.yb_toolbar').addClass('open');
+                    $(this).find('.personal_wrap').addClass('active');
+                    $(document).one("click", function(){
+                        $('.yb_toolbar').removeClass('open');
+                        $('.personal_wrap').removeClass('active');
+                    });
+                    e.stopPropagation();
+                }
+                $(".personal_wrap").on("click", function(e){
+                    e.stopPropagation();
+                });
+            });
+        }
 	</script>
 </body>
 

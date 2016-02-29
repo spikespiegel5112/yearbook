@@ -386,6 +386,7 @@ input {
 	float: left;
 	margin-left: 80px;
 	margin-top: 30px;
+    height: 50px;
 }
 
 .cm_header_nav .nav ul {
@@ -395,39 +396,63 @@ input {
 .cm_header_nav .nav ul li {
 	float: left;
 	margin-right: 40px;
-	padding: 3px 6px;
+	padding: 3px 0 0;
 }
 
 .cm_header_nav .nav ul li a {
+    display: block;
+    padding: 0 6px;
 	color: #666;
+    height: 44px;
 }
 
 .cm_header_nav .nav ul li a.active {
-	color: #6ba72b;
+	color: #8bba38;
+    border-bottom: 3px solid #8bba38;
 }
 
 .cm_header_nav .nav_login {
+    position: relative;
 	float: right;
-	margin-top: 30px
+	margin: 30px 40px 0 30px;
+}
+
+.cm_header_nav .nav_login::before{
+    content: " ";
+    position: absolute;
+    left: -29px;
+    top: 0px;
+    width: 35px;
+    height: 30px;
+    background: url("../img/sprite/yb_toolbar_icons.png") no-repeat 0 -350px;
 }
 
 .cm_header_nav .nav_login ul {
-	font-size: 18px;
-	color: #666;
+	font-size: 14px;
+	color: #999;
 }
 
 .cm_header_nav .nav_login ul li {
+    position: relative;
 	float: left;
-	margin-right: 40px;
-	padding: 3px 6px;
+	margin-right: 8px;
+	padding: 6px 6px;
+}
+
+.cm_header_nav .nav_login ul li:nth-child(1)::after{
+    content: "/";
+    position: absolute;
+    top: 6px;
+    right: -8px;
 }
 
 .cm_header_nav .nav_login ul li a {
 	color: #666;
 }
 
+.cm_header_nav .nav_login ul li a:hover,
 .cm_header_nav .nav_login ul li a.active {
-	color: #6ba72b;
+	color: #8bba38;
 }
 
 .cm_header_shadow {
@@ -3402,4 +3427,277 @@ nav .pagination li a:active {
     background-color: #fff;
     color: #666;
     border: 1px solid #999;
+}
+
+/*yb3.11 yb_global_toolbar*/
+.yb_toolbar_wrap{
+    position: fixed;
+    _position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35px;
+    height: 180px;
+    bottom: 0;
+    z-index: 99999;
+}
+
+.yb_toolbar{
+    position: fixed;
+    right: -35px;
+    top: 0;
+    width: 35px;
+    height: 100%;
+    background-color: #363636;
+    -webkit-transition: right .3s ease-in-out 0s;
+    -moz-transition: right .3s ease-in-out 0s;
+    transition: right .3s ease-in-out 0s;
+}
+
+.yb_toolbar.active{
+    right: 0;
+}
+
+.yb_toolbar.open{
+    right: 270px;
+}
+
+.yb_toolbar .yb_toolbar_tabs{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 35px;
+    margin-top: -87px;
+}
+
+.yb_toolbar .toolbar_tab {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #363636;
+}
+
+.toolbar_tab:hover{
+    background-color: #71ca5e;
+}
+
+.toolbar_tab .tab_icon{
+    display: block;
+    width: 100%;
+    height: 35px;
+    position: relative;
+    z-index: 2;
+    background: transparent url("../img/sprite/yb_toolbar_icons.png") no-repeat;
+}
+
+.toolbar_tab.service .tab_icon{
+    background-position: 0 0;
+}
+
+.toolbar_tab.hotline .tab_icon{
+    background-position: 0 -35px;
+}
+
+.toolbar_tab.help .tab_icon{
+    background-position: 0 -70px;
+}
+
+.toolbar_tab.discount .tab_icon{
+    background-position: 0 -105px;
+}
+
+.toolbar_tab.qrcode .tab_icon{
+    background-position: 0 -140px;
+}
+
+.toolbar_tab.feedback .tab_icon{
+    background-position: 0 -175px;
+}
+
+.toolbar_tab.go_top .tab_icon{
+    background-position: 0 -210px;
+}
+
+.toolbar_tab.my_msg .tab_icon{
+    background-position: 0 -280px;
+}
+
+.toolbar_tab.my_msg:hover .tab_icon{
+    background-position: 0 -245px;
+}
+
+.toolbar_tab.my_book .tab_icon{
+    background-position: 0 -315px;
+}
+
+.toolbar_tab .tab_text{
+    display: none;
+    position: absolute;
+    right: 125px;
+    top: 0;
+    padding: 0 12px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #666;
+    opacity: 1;
+    border-radius: 3px 0 0 3px;
+    white-space: nowrap;
+}
+
+.toolbar_tab .tab_text::after,
+.yb_toolbar_footer .qrcode .wechat::after,
+.yb_toolbar_footer .discount .activity::after{
+    content: " ";
+    position: absolute;
+    right: -5px;
+    top: 13px;
+    border-left: 5px solid #666;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    z-index: 3;
+}
+
+.yb_toolbar .yb_toolbar_footer{
+    position: relative;
+    bottom: -1px;
+    top: 100%;
+    margin-top: -180px;
+    width: 35px;
+    left: -35px;
+    padding: 20px 0;
+    background-color: #363636;
+    border-radius: 3px 3px 0 0;
+}
+
+.yb_toolbar.active .yb_toolbar_footer,
+.yb_toolbar.open .yb_toolbar_footer{
+    left: 0;
+}
+
+@-webkit-keyframes transright {
+    from{
+        opacity: 0;
+        right: 70px;
+    }
+    to{
+        opacity: 1;
+        right: 35px;
+    }
+}
+
+.yb_toolbar_footer .qrcode .wechat{
+    display: none;
+    position: absolute;
+    right: 35px;
+    top: -42px;
+    width: 110px;
+    height: 158px;
+    background: #fff;
+    z-index: 999999;
+    cursor: default;
+    border: 1px solid #D1D1D1;
+    border-left: 0;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.4);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,.4);
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    opacity: 0;
+}
+
+.yb_toolbar_footer .qrcode .wechat::after{
+    top: 54px;
+    border-left: 5px solid #fff;
+}
+
+.yb_toolbar_footer .qrcode .wechat .wechat_qrcode{
+    display: block;
+    margin: 5px auto 0;
+    width: 100px;
+    height: 100px;
+}
+
+.yb_toolbar_footer .qrcode .wechat p{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.yb_toolbar_footer .discount .activity{
+    display: none;
+    position: absolute;
+    right: 35px;
+    top: -75px;
+}
+
+.yb_toolbar_footer .discount .activity::after{
+    top: 87px;
+}
+
+.yb_toolbar_footer .discount .activity img{
+    width: 335px;
+    height: 210px;
+    border: 2px solid #666;
+}
+
+.toolbar_tab:hover .tab_text,
+.qrcode:hover .wechat,
+.discount:hover .activity,
+.yb_toolbar_footer .qrcode.active .wechat{
+    right: 35px;
+    display: block;
+    opacity: 1;
+    animation: transright .3s ease-in-out;
+}
+
+.yb_toolbar_tabs .personal_wrap{
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    top: 0;
+    right: -270px;
+    -webkit-transition: right .3s ease-in-out 0s;
+    -moz-transition: right .3s ease-in-out 0s;
+    transition: right .3s ease-in-out 0s;
+}
+
+.yb_toolbar_tabs .personal_wrap.active {
+    right: 0;
+}
+
+.yb_toolbar_tabs .personal_wrap .space_con{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.personal_wrap .space_con h4{
+    font-size: 18px;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    background-color: #87c186;
+}
+
+.personal_wrap .space_con .yb_empty{
+    position: absolute;
+    top: 50%;
+    margin-top: -92px;
+    width: 100%;
+}
+
+.personal_wrap .space_con .yb_empty span{
+    display: block;
+    margin: 10px auto;
+    width: 70px;
+    height: 125px;
+    background: url("../img/yb_empty.png") no-repeat;
+}
+
+.personal_wrap .space_con .yb_empty p{
+    text-align: center;
+    font-size: 14px;
+    color: #999;
 }

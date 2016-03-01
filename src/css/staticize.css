@@ -56,7 +56,6 @@
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	min-width: 1280px;
 	background: #f9f9f9;
 }
 
@@ -65,7 +64,8 @@
 	position: relative;
 	margin: 0 auto;
 	padding: 20px 0 0;
-	width: 1280px;
+	width: 100%;
+    max-width: 1150px;
 }
 
 .use_process .caption h4 {
@@ -175,7 +175,8 @@
 	position: relative;
 	padding: 0 0 25px 0;
 	margin: 0 0 35px 226px;
-	width: 1026px;
+	/*width: 100%;*/
+    max-width: 1024px;
 	border-bottom: 1px solid #e7e7e7;
 }
 
@@ -192,8 +193,9 @@
 
 .process .detail_steps .step img {
 	margin: 10px 0;
-	width: 1024px;
-	height: 200px;
+    width: 100%;
+	max-width: 1024px;
+	/*height: 200px;*/
 	border: 1px solid #eaeaea;
 }
 

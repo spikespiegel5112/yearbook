@@ -33,6 +33,48 @@
 	margin-left: 25px
 }
 
+.login_from .lf_left a{
+	display: block;
+	width: 220px;
+	height: 45px;
+}
+
+.login_from .lf_left a span{
+	float: left;
+	margin: 0 10px 0 20px;
+	width: 30px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 25px;
+	color: #fff;
+}
+
+.login_from .lf_left a label{
+	float: left;
+	height: 45px;
+	line-height: 49px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: lighter;
+	font-family: 'helvetica';
+}
+.login_from .weixin{
+	background-color: #019916;
+}
+
+.login_from .weibo{
+	background-color: #d73d32;
+}
+
+.login_from .qq{
+	background-color: #00adef;
+}
+
+
+.login_from .lf_left a:before{
+	position: absolute;
+}
+
 .login_from .lf_left ul li {
 	margin-bottom: 5px;
 }
@@ -183,22 +225,30 @@
 	display: block;
 	width: 45px;
 	height: 45px;
-	background-image: url(../img/sprite/imgsprite_yb3_wbl_00000.png);
+	line-height: 45px;
+	text-align: center;
+/*	background-image: url(../img/sprite/imgsprite_yb3_wbl_00000.png);*/
 	position: absolute;
 	bottom: -6px;
 	right: -10px;
+	border-radius: 50%;
+	font-size: 28px;
+	color: #fff;
 }
 
 .sso_avatar_item .wechat {
 	background-position: -210px -345px;
+	background-color: #229916;
 }
 
 .sso_avatar_item .qq {
 	background-position: -255px -345px;
+	background-color: #26adee;
 }
 
 .sso_avatar_item .weibo {
 	background-position: -300px -345px;
+	background-color: #fa414e;
 }
 
 .sso_nickname_item {

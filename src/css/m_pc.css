@@ -2123,7 +2123,8 @@
     outline: none;
 }
 
-.shop_apply_con .btn_group .btn{
+.shop_apply_con .btn_group .btn,
+.shop_admin .btn_group .btn{
     display: block;
     margin: 20px auto;
     padding: 0;
@@ -2136,11 +2137,13 @@
     border: 1px solid #70ca5d;
 }
 
-.shop_apply_con .btn_group .btn:focus{
+.shop_apply_con .btn_group .btn:focus,
+.shop_admin .btn_group .btn:focus{
     outline: none;
 }
 
-.shop_apply_con .btn_group .btn.disabled{
+.shop_apply_con .btn_group .btn.disabled,
+.shop_admin .btn_group .btn.disabled{
     background-color: #cecfcd;
     border: 1px solid #cecfcd;
     pointer-events: none;
@@ -2151,7 +2154,8 @@
     opacity: 1;
 }
 
-.shop_apply_con .btn_group .btn:hover{
+.shop_apply_con .btn_group .btn:hover,
+.shop_admin .btn_group .btn:hover{
     background-color: #74bc65;
     border: 1px solid #74bc65;
 }
@@ -2700,6 +2704,64 @@
 .shop_admin .order_detail .order_info tr td:nth-child(2){
     text-align: center;
 }
+
+.shop_admin .shop_close{
+    position: relative;
+    margin: 60px auto 20px;
+    padding: 30px 0;
+    width: 90%;
+    height: 240px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.shop_admin .shop_close::before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    margin-left: -33px;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    background-color: #ddd;
+}
+
+.shop_admin .shop_close .warning_info{
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.shop_admin .shop_close .warning_info span{
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    margin-left: -32px;
+    width: 64px;
+    height: 66px;
+    background: #fff url("../img/m/icon/icon_warning.png") no-repeat center;
+    background-size: 50px;
+    border-radius: 100% 100% 0 0;
+}
+
+.shop_admin .shop_close .warning_info h2{
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.shop_admin .shop_close .warning_info p{
+    font-size: 12px;
+    color: #666;
+}
+
+.shop_admin .shop_close .btn{
+    margin: 45px auto 20px;
+    text-align: center;
+}
+
 /*~~~~~~~~~~mybookshelf_wrapper~~~~~~~~~~*/
 .mybookshelf_wrapper.mybookshelf_main_wrapper{
     margin: 0;

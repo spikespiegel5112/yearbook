@@ -425,9 +425,24 @@ input {
     float: right;
     margin: 30px 40px 0 30px;
 }
+.cm_header_nav .nav_login .iconfont{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #a4a4a4;
+    vertical-align: middle;
+}
 
-.cm_header_nav .nav_login ul::before{
-    content: " ";
+.cm_header_nav .nav_login ul {
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    vertical-align: middle;
+}
+
+/*.cm_header_nav .nav_login ul::before{
+    content: '';
     position: absolute;
     left: -29px;
     top: 0;
@@ -435,12 +450,7 @@ input {
     height: 30px;
     background: url("../img/sprite/yb_toolbar_icons.png") no-repeat 0 -350px;
 }
-
-.cm_header_nav .nav_login ul {
-    font-size: 14px;
-    color: #999;
-}
-
+*/
 .cm_header_nav .nav_login ul li {
     position: relative;
     float: left;
@@ -594,7 +604,13 @@ input {
     display: inline-block;
     width: 45px;
     height: 45px;
-    background: url(../img/icon/default_navuseravatar_00000.png);
+    line-height: 45px;
+    /*background: url(../img/icon/default_navuseravatar_00000.png);*/
+    text-align: center;
+    color: #fff;
+    background-color: #abadbc;
+    border-radius: 50%;
+    font-size: 30px;
     vertical-align: middle;
 }
 

@@ -1062,6 +1062,7 @@
     top: 50%;
     margin: -6px 0 0;
     color: #666;
+    font-size: 14px;
 }
 
 .orderinfo .user div.cm_fl,
@@ -1835,11 +1836,15 @@
 .opd_donatepayoff_wrapper .opd_donatesuccess_wrapper div{
     display: block;
     margin: 0 auto;
-    width: 90px;
+    width: 95px;
     height: 105px;
-    background: url("../img/m/pc/donate_payway.png") no-repeat;
+    /*background: url("../img/m/pc/donate_payway.png") no-repeat;
     background-size: 140px 105px;
-    background-position: 0 0;
+    background-position: 0 0;*/
+    color: #89C27E;
+    font-size: 95px;
+    text-align: center;
+    line-height: 105px;
 }
 
 .opd_donatepayoff_wrapper .opd_donatesuccess_wrapper p{
@@ -1875,9 +1880,12 @@
 .shop_default span{
     display: block;
     margin: 25px auto;
-    width: 151px;
+    width: 168px;
     height: 124px;
-    background: url("../img/m/pc/shop_default.png") no-repeat;
+    /*background: url("../img/m/pc/shop_default.png") no-repeat;*/
+    font-size: 168px;
+    color: #abaebd;
+    line-height: 124px;
 }
 
 .shop_default p{
@@ -2115,7 +2123,8 @@
     outline: none;
 }
 
-.shop_apply_con .btn_group .btn{
+.shop_apply_con .btn_group .btn,
+.shop_admin .btn_group .btn{
     display: block;
     margin: 20px auto;
     padding: 0;
@@ -2128,11 +2137,13 @@
     border: 1px solid #70ca5d;
 }
 
-.shop_apply_con .btn_group .btn:focus{
+.shop_apply_con .btn_group .btn:focus,
+.shop_admin .btn_group .btn:focus{
     outline: none;
 }
 
-.shop_apply_con .btn_group .btn.disabled{
+.shop_apply_con .btn_group .btn.disabled,
+.shop_admin .btn_group .btn.disabled{
     background-color: #cecfcd;
     border: 1px solid #cecfcd;
     pointer-events: none;
@@ -2143,7 +2154,8 @@
     opacity: 1;
 }
 
-.shop_apply_con .btn_group .btn:hover{
+.shop_apply_con .btn_group .btn:hover,
+.shop_admin .btn_group .btn:hover{
     background-color: #74bc65;
     border: 1px solid #74bc65;
 }
@@ -2242,9 +2254,14 @@
     display: block;
 }
 
-.shop_apply_con .apply_success .img_success{
+.shop_apply_con .apply_success .iconfont{
     display: block;
     margin: 25px auto;
+    width: 168px;
+    height: 124px;
+    line-height: 124px;
+    font-size: 168px;
+    color: #88C27D;
 }
 
 .shop_apply_con .apply_success h3{
@@ -2397,8 +2414,10 @@
 }
 
 .shop_home .reset_btn_group .revise_info span{
-    background: url("../img/pc/rsshopmsg.png") no-repeat;
-    background-size: cover;
+    font-size: 31px;
+    line-height: 26px;
+    color: #48CFAD;
+    text-align: center;
 }
 
 .shop_home .reset_btn_group .view_order span{
@@ -2414,7 +2433,7 @@
 .shop_home .reset_btn_group ul li a i{
     float: right;
     line-height: 45px;
-    font-size: 24px;
+    font-size: 16px;
     color: #ccc;
 }
 
@@ -2615,7 +2634,7 @@
 }
 
 .shop_admin .order_list .item .show_detail i{
-    font-size: 30px;
+    font-size: 24px;
     color: #ccc;
 }
 
@@ -2685,6 +2704,64 @@
 .shop_admin .order_detail .order_info tr td:nth-child(2){
     text-align: center;
 }
+
+.shop_admin .shop_close{
+    position: relative;
+    margin: 60px auto 20px;
+    padding: 30px 0;
+    width: 90%;
+    height: 240px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.shop_admin .shop_close::before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    margin-left: -33px;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    background-color: #ddd;
+}
+
+.shop_admin .shop_close .warning_info{
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.shop_admin .shop_close .warning_info span{
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    margin-left: -32px;
+    width: 64px;
+    height: 66px;
+    background: #fff url("../img/m/icon/icon_warning.png") no-repeat center;
+    background-size: 50px;
+    border-radius: 100% 100% 0 0;
+}
+
+.shop_admin .shop_close .warning_info h2{
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.shop_admin .shop_close .warning_info p{
+    font-size: 12px;
+    color: #666;
+}
+
+.shop_admin .shop_close .btn{
+    margin: 45px auto 20px;
+    text-align: center;
+}
+
 /*~~~~~~~~~~mybookshelf_wrapper~~~~~~~~~~*/
 .mybookshelf_wrapper.mybookshelf_main_wrapper{
     margin: 0;

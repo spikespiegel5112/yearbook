@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <title>yb3.10 我的店铺-管理店铺-编辑出款账户</title>
+    <title>yb3.10 我的店铺-管理店铺</title>
     <!-- build:css ../css/m.all.min.css -->
     <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
@@ -26,17 +26,21 @@
 <body class='bg_efeff4'>
 <div class="main_container has_footer_nav">
     <div class="ybwechatheader_wrapper">
-        <a class='left_btn back_btn' href='javascript:;'>
-            <span class="iconfont icon-029houtui"></span>
+        <a class='left_btn left_angle' href='javascript:;'>
+            <span class="iconfont icon-031houtui"></span>
         </a>
-        <p>编辑出款账户</p>
+        <p>我的店铺</p>
     </div>
     <div class="shop_admin">
-        <div class="shop_account">
-            <p>为了方便将分润金额提供给您，请绑定微信号，隔天会自动汇至您的微信零钱中。</p>
-        </div>
-        <div class="btn_group">
-            <a class="btn" href="javascript:;">绑定微信</a>
+        <div class="shop_close">
+            <div class="warning_info">
+                <span></span>
+                <h2>抱歉，店铺暂时关闭！</h2>
+                <p>店铺违规，暂时关闭，详细原因请咨询客服。</p>
+            </div>
+            <div class="btn_group">
+                <a class="btn" href="javascript:;">联系客服</a>
+            </div>
         </div>
     </div>
 </div>
@@ -101,6 +105,7 @@
     </div>
     <div class="close_btn"><a href="javascript:;">×</a></div>
 </div>
+
 <script type="text/javascript" src='../assets/js/jquery.min.js'></script>
 <script>
     $(function () {
@@ -165,6 +170,7 @@
             $('.footer_nav li').eq(curPageIcon).addClass('active').siblings().removeClass('active');;
         });
     }
+
 </script>
 </body>
 

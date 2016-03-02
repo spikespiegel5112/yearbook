@@ -10,14 +10,14 @@
     background: transparent;
 }
 
-.book_space .share_btn {
+/*.book_space .share_btn {
     position: absolute;
     top: 0;
     width: 50px;
     box-sizing: border-box;
     background: url("../img/m/icon/share_icon.png") no-repeat center 8px;
     background-size: 26px;
-}
+}*/
 
 .book_space .book_cover {
     position: relative;
@@ -547,8 +547,13 @@
     margin: 13px 10px 0 0;
     width: 25px;
     height: 25px;
-    background: url("../img/m/icon/ia_trandslist_share_icon.png") no-repeat 0;
-    background-size: cover;
+    /*background: url("../img/m/icon/ia_trandslist_share_icon.png") no-repeat 0;
+    background-size: cover;*/
+}
+
+.timeline_sharetrigger_btn span{
+    font-size: 24px;
+    color: #A9BA38;
 }
 
 .bmindex_normalvote_wrapper {
@@ -954,11 +959,14 @@
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url("../img/m/ia/share_icons.png") no-repeat;
+    /*background: url("../img/m/ia/share_icons.png") no-repeat;*/
     vertical-align: middle;
+    font-size: 20px;
+    color: #A9BA38;
+    line-height: 30px;
 }
 
-.share_tool li .comment span {
+/*.share_tool li .comment span {
     background-position: -5px 0;
     background-size: cover;
 }
@@ -971,7 +979,7 @@
 .share_tool li .share span {
     background-position: -70px 0;
     background-size: cover;
-}
+}*/
 
 /*share main bottom shadow*/
 .share_container .share_shadow {
@@ -2436,13 +2444,14 @@
     display: block;
     width: 20px;
     height: 25px;
-    background: url(../img/m/icon/praise_gray.png) no-repeat;
-    background-size: cover;
+    /*background: url(../img/m/icon/praise_gray.png) no-repeat;
+    background-size: cover;*/
+    text-align: center;
+    color: #aaa;
 }
 
 .albumcontent_info_wrapper .praise_item a.active {
-    background: url(../img/m/icon/praise.png) no-repeat;
-    background-size: cover;
+    color: #9CDA59;
 }
 
 .albumcontent_info_wrapper .uploadbtn_item {
@@ -2831,7 +2840,13 @@
     position: absolute;
     right: 0;
     bottom: 10px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -464px -96px;
+    color: #fff;
+    background: #9CDA59;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 26px;
+    box-sizing: border-box;
 }
 
 .choosephoto_wrapper .active span, .choosecover_wrapper .active span {
@@ -2876,8 +2891,10 @@
     margin: 0 auto;
     width: 30px;
     height: 35px;
-    background: url(../img/m/icon/trash.png) no-repeat center;
-    background-size: cover;
+    /*background: url(../img/m/icon/trash.png) no-repeat center;
+    background-size: cover;*/
+    font-size: 24px;
+    color: #9CDA59;
 }
 
 .choosephoto_menu_wrapper ul li a label {
@@ -2886,10 +2903,10 @@
     font-weight: normal;
 }
 
-.choosephoto_menu_wrapper ul li:first-child span {
+/*.choosephoto_menu_wrapper ul li:first-child span {
     background: url(../img/m/icon/move.png) no-repeat center;
     background-size: cover;
-}
+}*/
 
 .bottomfixedbtn_item {
     width: 100%;
@@ -3244,7 +3261,7 @@
 .photoqualitysetting_wrapper li span {
     display: none;
     float: right;
-    line-height: 3em;
+    line-height: 2.5em;
     color: #007ce5;
 }
 
@@ -3358,16 +3375,22 @@
     margin: 0 5px;
     width: 30px;
     height: 25px;
-    background: url(../img/m/sprite/img_sprite_00000.png);
-    border-radius: 5px;
+    /*background: url(../img/m/sprite/img_sprite_00000.png);
+    border-radius: 5px;*/
+    color: #999;
+    text-align: center;
 }
 
-.praise_button {
+/*.praise_button {
     background-position: -469px -2px;
 }
 
 .comment_button {
     background-position: -466px -30px;
+}*/
+
+.praise_wrapper .active{
+    color: #9CDA59;
 }
 
 .album_detail_main_wrapper:after {
@@ -3403,16 +3426,18 @@
     float: left;
     width: 30px;
     height: 25px;
-    background: url(../img/m/sprite/img_sprite_00000.png);
+    color: #9CDA59;
+    text-align: center;
 }
 
 .album_detail_viewed_item span {
+    background: url(../img/m/sprite/img_sprite_00000.png);
     background-position: -431px -28px
 }
 
-.album_detail_praise_item span {
+/*.album_detail_praise_item span {
     background-position: -440px -4px
-}
+}*/
 
 .album_detail_praise_item div img {
     float: left;
@@ -3514,7 +3539,10 @@
     float: left;
     width: 30px;
     height: 25px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -462px -30px;
+    /*background: url(../img/m/sprite/img_sprite_00000.png) -462px -30px;*/
+    text-align: center;
+    line-height: 26px;
+    color: #999;
 }
 
 .peply_item a {
@@ -3524,9 +3552,9 @@
     color: #aaa;
 }
 
-.praise_wrapper .active {
+/*.praise_wrapper .active {
     background-position: -439px -2px
-}
+}*/
 
 .album_detail_comment_window {
     display: none;
@@ -3596,16 +3624,18 @@
 }
 
 .photopage_container .album_name .back_btn {
-    background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-    background-position-y: -41px;
-    background-size: 900%;
-    background-repeat-x: no-repeat;
     position: absolute;
     top: 0;
-    width: 50px;
-    height: 50px;
-    background-position-x: -74px;
+    width: 48px;
+    height: 48px;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.photopage_container .album_name .back_btn span{
+    font-size: 29px;
+    color: #fff;
+    line-height: 50px;
 }
 
 .photopage_container .photo_pagination {
@@ -3653,11 +3683,13 @@
 }
 
 .photopage_button_1 a {
-    background-position-x: -45px;
+    background-image: none!important;
+    color: #fff;
+    line-height: 18px;
 }
 
 .photopage_button_1 .active {
-    background-position-x: -45px;
+    color: #6F748B;
 }
 
 .photopage_button_2 a {
@@ -3666,6 +3698,7 @@
 
 .photopage_button_2 .active {
     background-position-x: -65px;
+    background-position-y: -57px;
 }
 
 .photopage_moredetail {
@@ -5413,9 +5446,16 @@ a.ia-vote-add-choose-num {
     top: 46%;
 }
 
-.ia-vote-choose-flag img {
-    width: 1.2em;
-    height: 1.2em;
+.ia-vote-choose-flag span {
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    background-color: #89C539;
+    border-radius: 100%;
+    border: 1px solid #fff;
 }
 
 .ia-vote-single-user {

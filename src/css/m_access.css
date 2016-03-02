@@ -148,7 +148,18 @@
     background-color: #50a000;
 }
 
-.sns {
+
+.third-login span.iconfont{
+    font-size: 20px;
+    line-height: 35px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.third-login span.icon-qq{
+    font-size: 18px;
+}
+/*.sns {
     background: url("../img/m/sprite/icon-sns.png") no-repeat;
     width: 25px;
     height: 26px;
@@ -170,7 +181,7 @@
 
 .sns.wechat {
     background-position: 0 -75px;
-}
+}*/
 
 .clear-padding {
     margin: 0;
@@ -208,11 +219,15 @@
     display: block;
     width: 30px;
     height: 30px;
-    background: url(../img/m/sprite/icon-sns.png) no-repeat center;
     position: absolute;
     bottom: 0;
     right: 0;
     border-radius: 100%;
+    background-color: #50a000;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
 }
 
 .sso_nickname_item {

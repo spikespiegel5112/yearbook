@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
 	<link rel="stylesheet" href="../assets/css/iSlider.min.css" type="text/css" />
 	<link rel="stylesheet" href="../assets/css/swiper.min.css" type="text/css" />
+
+	<link rel="stylesheet" href="../css/iconfont.css" type="text/css" />
 	<style>
 		html{
 			font-size: 16px;
@@ -29,7 +31,7 @@
 	<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 	<div class='main_container'>
 		<div class="ybwechatheader_wrapper">
-			<a class='left_btn back_btn' href="javascript:;"></a>
+			<a class='left_btn back_btn' href="javascript:;"><span class="iconfont icon-029houtui"></span></a>
 			<div class="bp_barrageswitch_item">
 				<a href="javascript:;">
 					<div></div>
@@ -38,8 +40,8 @@
 			<div class="bp_paginator_item">
 				<label>1</label>/<span>33</span>
 			</div>
-			<a class='bp_resizebtn_item' href="javascript:;"></a>
-			<a class='right_btn share_btn' href="javascript:;"></a>
+			<a class='bp_resizebtn_item' href="javascript:;"><span class="iconfont icon-021quanping"></span></a>
+			<a class='right_btn share_btn' href="javascript:;"><span class="iconfont icon-035fenxiang"></span></a>
 			<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
 		</div>
 		<div class="bp_flipbook_container">	
@@ -135,7 +137,7 @@
 				<ul>
 					<li>
 						<a href="javascript:;" class='active'>
-							<div class="comment"></div>
+							<div class="comment"><span class="iconfont icon-025pinglun"></span></div>
 							<p>评论(<span>123</span>)</p>
 						</a>
 					</li>
@@ -147,7 +149,7 @@
 					</li>
 					<li>
 						<a href="javascript:;">
-							<div class="praise"></div>
+							<div class="praise"><span class="iconfont icon-014dianzan"></span></div>
 							<p>被赞(<span>123</span>)</p>
 						</a>
 					</li>
@@ -437,7 +439,7 @@
 							</li>
 						</ul>
 					</div>
-					<a class='bp_praise_btn' href="javascript:;"><label><span></span>点赞</label></a>
+					<a class='bp_praise_btn' href="javascript:;"><label><span class="iconfont icon-014dianzan"></span>点赞</label></a>
 				</div>
 			</div>
 		</div>
@@ -467,7 +469,7 @@
 			<ul>
 				<li class="comment">
 					<a href="javascript:;">
-						<div></div>
+						<div class="iconfont icon-025pinglun"></div>
 					</a>
 				</li>
 				<li class="praise">
@@ -482,7 +484,7 @@
 				</li>
 				<li class="share">
 					<a href="javascript:;">
-						<div></div>
+						<div class="iconfont icon-035fenxiang"></div>
 					</a>
 				</li>
 				<li class="bp_barrageswitch_item">
@@ -491,7 +493,7 @@
 					</a>
 				</li>
 				<li class="bp_resizebtn_item">
-					<a href="javascript:;"></a>
+					<a href="javascript:;"><span class="iconfont icon-022suoxiao"></span></a>
 				</li>
 			</ul>
 			<div class="chapter_slide">
@@ -587,7 +589,7 @@
 	<div class='bp_photoslider_wrapper' id="iSlider-wrapper">
 		<ol>
 			<li>
-				<a class="bp_resizebtn_item active" href="javascript:;"></a>
+				<a class="bp_resizebtn_item active" href="javascript:;"><span class="iconfont icon-029houtui"></span></a>
 			</li>
 			<li class="praise">
 				<a href="javascript:;"></a>
@@ -896,9 +898,9 @@
 					var $this=$(this);
 					$this.toggleClass('active');
 					if (!$this.hasClass('active')) {
-						$this.find('label').html('<span></span>'+'点赞')
+						$this.find('label').html('<span class="iconfont icon-014dianzan"></span>'+'点赞')
 					}else{
-						$this.find('label').html('<span></span>'+'已赞')
+						$this.find('label').html('<span class="iconfont icon-014dianzan"></span>'+'已赞')
 					}
 					
 				});

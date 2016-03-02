@@ -20,12 +20,16 @@
     <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../assets/css/swiper.min.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../css/iconfont.css" type="text/css" media="all"/>
 </head>
 
 <body class='bg_f6f6f6'>
 <div class="main_container booklist_wrapper has_footer_nav">
     <div class="ybwechatheader_wrapper">
-        <a class="left_btn icon-list-ul" href="javascript:;"></a>
+        <a class='left_btn list_btn' href='javascript:;'>
+            <span class="iconfont icon-037fenlei"></span>
+        </a>
         <p>照片书模板</p>
     </div>
     <div class="photo_classify swiper-pagination"></div>
@@ -1007,7 +1011,7 @@
     }
 
     function showTplClassify(){
-        $('.ybwechatheader_wrapper .icon-list-ul').on('click',function(){
+        $('.ybwechatheader_wrapper .list_btn').on('click',function(){
             $('.tpl_classify_con').show();
         });
         $('.tpl_classify_con .close').on('click',function(e){

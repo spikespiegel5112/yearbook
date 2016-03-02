@@ -3043,10 +3043,11 @@ li.action div:hover {
 .opd_paymentsuccess_wrapper,
 .opd_paymentfailed_wrapper {
 	overflow: hidden;
+    text-align: center;
 }
 
 .opd_paymentsuccess_wrapper .opd_paymentresult_wrapper {
-	float: left;
+	/*float: left;*/
 }
 
 .opd_paymentfailed_wrapper .opd_paymentresult_wrapper {
@@ -3054,10 +3055,11 @@ li.action div:hover {
 }
 
 .opd_paymentresult_wrapper {
-	display: block;
+	display: inline-block;
 	margin: 20px 30px;
 	width: 380px;
 	text-align: center;
+    vertical-align: middle;
 }
 
 .opd_paymentresult_wrapper h2 {
@@ -3081,13 +3083,14 @@ li.action div:hover {
 }
 
 .opd_successbind_wrapper {
-	float: left;
+	display: inline-block;
 	margin: 60px 30px;
 	padding: 35px 35px;
 	width: 370px;
 	height: 200px;
 	border: 1px solid #e2e2e2;
 	background-color: #ffffd6;
+    vertical-align: middle;
 }
 
 .opd_successbind_wrapper p {
@@ -3101,12 +3104,20 @@ li.action div:hover {
 	overflow: hidden;
 }
 
+.personal_content_box .opd_successbind_wrapper ul{
+    margin: 40px auto;
+}
+
 .opd_successbind_wrapper ul li a {
 	float: left;
 	width: 100%;
 	color: #007dcc;
 	font-size: 18px;
 	text-align: center;
+}
+
+.personal_content_box .opd_successbind_wrapper ul li a{
+    width: 50%;
 }
 
 .opd_successbind_wrapper ul li a:hover label {
@@ -3155,7 +3166,13 @@ li.action div:hover {
 .personal_content_box .opd_paymentresult_wrapper,
 .personal_content_box .opd_successbind_wrapper {
 	margin: 0 auto 30px;
-	float: none;
+	display: block;
+}
+
+.personal_content_box .opd_successbind_wrapper{
+    padding: 25px 20px;
+    width: 360px;
+    height: 160px;
 }
 
 .opd_invoicedetial_wrapper {

@@ -1880,9 +1880,12 @@
 .shop_default span{
     display: block;
     margin: 25px auto;
-    width: 151px;
+    width: 168px;
     height: 124px;
-    background: url("../img/m/pc/shop_default.png") no-repeat;
+    /*background: url("../img/m/pc/shop_default.png") no-repeat;*/
+    font-size: 168px;
+    color: #abaebd;
+    line-height: 124px;
 }
 
 .shop_default p{
@@ -2247,9 +2250,14 @@
     display: block;
 }
 
-.shop_apply_con .apply_success .img_success{
+.shop_apply_con .apply_success .iconfont{
     display: block;
     margin: 25px auto;
+    width: 168px;
+    height: 124px;
+    line-height: 124px;
+    font-size: 168px;
+    color: #88C27D;
 }
 
 .shop_apply_con .apply_success h3{
@@ -2402,8 +2410,10 @@
 }
 
 .shop_home .reset_btn_group .revise_info span{
-    background: url("../img/pc/rsshopmsg.png") no-repeat;
-    background-size: cover;
+    font-size: 31px;
+    line-height: 26px;
+    color: #48CFAD;
+    text-align: center;
 }
 
 .shop_home .reset_btn_group .view_order span{
@@ -2419,7 +2429,7 @@
 .shop_home .reset_btn_group ul li a i{
     float: right;
     line-height: 45px;
-    font-size: 24px;
+    font-size: 16px;
     color: #ccc;
 }
 
@@ -2620,7 +2630,7 @@
 }
 
 .shop_admin .order_list .item .show_detail i{
-    font-size: 30px;
+    font-size: 24px;
     color: #ccc;
 }
 

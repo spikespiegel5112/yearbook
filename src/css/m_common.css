@@ -559,7 +559,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	left: 0;
 }
 
-.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .back_btn, .ybwechatheader_wrapper .setting_btn, .ybwechatheader_wrapper .share_btn {
+.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .setting_btn, .ybwechatheader_wrapper .share_btn {
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
 	background-position-y: -48px;
 	background-size: 900%;
@@ -573,14 +573,12 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	box-sizing: border-box;
 }
 
-.ybwechatheader_wrapper .back_btn {
-	position: absolute;
-	top: 0;
-	width: 50px;
-	height: 40px;
-	background-position-x: -73px;
-	box-sizing: border-box;
+.ybwechatheader_wrapper .back_btn span{
+    font-size: 29px;
+    color: #fff;
+    line-height: 42px;
 }
+
 
 .ybwechatheader_wrapper .setting_btn {
 	position: absolute;
@@ -2040,13 +2038,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	width: 50%;
 }
 .loginpopup_ssologin_wrapper .qq a{
-	background: url(../ing/m/previewbook/loginpopup_qq_00000.png) #039dff;
+	background: url(../img/m/previewbook/loginpopup_qq_00000.png) #039dff;
 }
 .loginpopup_ssologin_wrapper .wechat a{
-	background: url(../ing/m/previewbook/loginpopup_wechat_00000.png) #1bcb44;
+	background: url(../img/m/previewbook/loginpopup_wechat_00000.png) #1bcb44;
 }
 .loginpopup_ssologin_wrapper .weibo a{
-	background: url(../ing/m/previewbook/loginpopup_weibo_00000.png) #e42744;
+	background: url(../img/m/previewbook/loginpopup_weibo_00000.png) #e42744;
 }
 
 /* 评论 输入框 */

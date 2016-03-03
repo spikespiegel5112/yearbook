@@ -5,14 +5,21 @@
 	width: 1200px;
 	position: relative;
 	z-index: 4;
+	text-align: center;
 }
 
 .bp_title {
-	width: 100%;
-	text-align: center;
+	display: inline-block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 30px;
 	color: #d1e648;
 	font-size: 18px;
 	opacity: 0;
+}
+
+.bp_title p{
+
 }
 
 .bp_titlehint_item {
@@ -22,7 +29,9 @@
 	height: 20px;
 	border-radius: 50%;
 	color: #5C3000;
-	position: relative;
+	position: absolute;
+	right: 0;
+	top:0;
 	cursor: pointer;
 }
 
@@ -452,7 +461,7 @@
 	width: 50%;
 	height: 40px;
 	line-height: 40px;
-	font-size: 38px;
+	font-size: 32px;
 	text-align: center;
 }
 

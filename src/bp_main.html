@@ -22,16 +22,17 @@
 	<!-- main -->
 	<div class="bp_container">
 		<div class='bp_title_wrapper'>
-			<div class="bp_title fadeIn2S">《追忆青春》模板预览模板预览预览预览预览预览预览预览预览预览
-				<div class='bp_titlehint_item ybicon-info-sign'>
-					<div class="bp_des">
-						<ul>
-							<li>限量500本，机会难得，批量更优惠，免费送过膜，宝宝相册，旅游相册，聚会纪念册，</li>
-							<li>配套设计及影楼相册工艺，经久耐用不掉色。可平铺180度跨页设计，模板可灵活设计，</li>
-							<li>大人，小孩，情侣模板都有，超值包邮体验。</li>
-						</ul>
+			<div class="bp_title fadeIn2S">
+				《追忆青春》模板预览模板预览预览预览预览预览预览预览预览预览
+					<div class='bp_titlehint_item ybiconfont ybicon-infosign'>
+						<div class="bp_des">
+							<ul>
+								<li>限量500本，机会难得，批量更优惠，免费送过膜，宝宝相册，旅	游相册，聚会纪念册，</li>
+								<li>配套设计及影楼相册工艺，经久耐用不掉色。可平铺180度跨页设	计，模板可灵活设计，</li>
+								<li>大人，小孩，情侣模板都有，超值包邮体验。</li>
+							</ul>
+						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 		<div class='bp_instrucion_wrapper'>
@@ -256,16 +257,16 @@
 						<!--<label>分享到：</label>-->
 						<ul>
 							<li>
-								<a class='ybiconfont ybicon-weibo' href="javascript:;"></a>
+								<a class='weibo ybiconfont ybicon-weibo' href="javascript:;"></a>
 							</li>
 							<li>
-								<a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+								<a class='qzone ybiconfont ybicon-qzone' href="javascript:;"></a>
 							</li>
 							<li>
-								<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+								<a class='wechat ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
 							</li>
 							<li>
-								<a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+								<a class='renren ybiconfont ybicon-renren' href="javascript:;"></a>
 							</li>
 						</ul>
 					</div>
@@ -398,7 +399,7 @@
 		</div>
 		<div class="bp_btn">
 			<a class='bp_iwanttomake_btn' href='javascript:;'><span class="icon-book"></span>我要制作</a>
-			<a class="bp_iwanttoprint_btn" href='javascript:;'><span class="icon-print"></span>打印成书</a>
+			<a class="bp_iwanttoprint_btn" href='javascript:;'><span class="ybiconfont ybicon-printer"></span>打印成书</a>
 		</div>
 	</div>
 	<div class='bppreloadmask_wrapper'>
@@ -1343,52 +1344,29 @@
 		var thisEl = $('.bp_toolbar_wrapper');
 		toolLi.find('a').click(function() {
 			var $this = $(this),
-				$thisLi = $(this).parent('li');
-				switch($this.attr('class')){
-					case 'donate':
+				$thisLi = $this.parent('li');
+			$thisLi.siblings().removeClass('active');
+			switch($this.attr('class')){
+				case 'donate':
+					popupDonateDialog();
+					break;
+				case 'comment':
+					popupCommentDialog();
+					break;
+				case 'praise':
+					popPraiseUser();
+					break;
+				case 'active':
+					$thisLi.removeClass('active').siblings().removeClass('active');
+					break;
+				default:
+					$thisLi.addClass('active');
+					if ($this.hasClass('.praise')) {
 						$thisLi.siblings().removeClass('active');
-						popupDonateDialog();
-						break;
-					case 'comment':
-						$thisLi.siblings().removeClass('active');
-						popupCommentDialog();
-						break;
-					case 'praise':
-						$thisLi.siblings().removeClass('active');
-						popPraiseUser();
-						break;
-					case 'active':
-						$thisLi.removeClass('active').siblings().removeClass('active');
-						break;
-					default:
-						$thisLi.addClass('active');
-						if ($this.hasClass('.praise')) {
-							$thisLi.siblings().removeClass('active');
-						} else {
-							$thisLi.siblings().not('.praise_par').removeClass('active');
-						}
-				}
-			if ($this.hasClass('donate')) {
-				// $thisLi.siblings().removeClass('active');
-				// popupDonateDialog();
-			} else if ($this.hasClass('comment')) {
-				// $thisLi.siblings().removeClass('active');
-				// popupCommentDialog();
-			} else if ($this.hasClass('praise')) {
-				// $thisLi.siblings().removeClass('active');
-				// popPraiseUser();
-			} else if ($thisLi.hasClass('active')) {
-				//$thisLi.removeClass('active').siblings().removeClass('active');
-			} else {
-				// $thisLi.addClass('active');
-				// if ($this.hasClass('.praise')) {
-				// 	$thisLi.siblings().removeClass('active');
-				// } else {
-				// 	$thisLi.siblings().not('.praise_par').removeClass('active');
-				// }
+					} else {
+						$thisLi.siblings().not('.praise_par').removeClass('active');
+					}
 			}
-			/*$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
-			$('.bp_slidefold_btn').addClass('fold').removeClass('open');*/
 		});
 
 		setTimeout(function() {

@@ -5,11 +5,14 @@
 	width: 1200px;
 	position: relative;
 	z-index: 4;
+	text-align: center;
 }
 
 .bp_title {
-	width: 100%;
-	text-align: center;
+	display: inline-block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 30px;
 	color: #d1e648;
 	font-size: 18px;
 	opacity: 0;
@@ -22,7 +25,9 @@
 	height: 20px;
 	border-radius: 50%;
 	color: #5C3000;
-	position: relative;
+	position: absolute;
+	right: 0;
+	top:0;
 	cursor: pointer;
 }
 
@@ -368,8 +373,10 @@
     margin: 20px auto 10px;
     width: 60px;
     height: 40px;
-    background: url(../img/yb_logo.png) 0 0 no-repeat;
-    background-size: contain;
+    line-height: 40px;
+    font-size: 60px;
+    color: #a9ba38;
+    text-align: center;
 }
 
 .bp_toolbarhead_wrapper div {
@@ -433,15 +440,7 @@
 	display: block;
 	color: #706a6a;
 	overflow: hidden;
-}
-
-.bp_toolbar_wrapper > ul > li > a > span {
-	display: block;
-	margin: 5px auto;
-	width: 50%;
-	height: 40px;
-	font-size: 38px;
-	background-image: url(../img/sprite/bp_slide_icons.png);
+	font-size: 30px;
 }
 
 .bp_toolbar_wrapper ul li a label {
@@ -450,6 +449,16 @@
 	text-align: center;
 	cursor: pointer;
 	font-size: 13px;
+}
+
+.bp_toolbar_wrapper > ul > li > a > span {
+	display: block;
+	margin: 5px auto;
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 32px;
+	text-align: center;
 }
 
 .bp_toolbar_wrapper .praise_par a p{
@@ -503,10 +512,10 @@
 	background-position: -80px 0;
 }*/
 
-.bp_toolbar_wrapper ul .barrage span {
+/*.bp_toolbar_wrapper ul .barrage span {
 	width: 44px;
 	background-position: -204px 0;
-}
+}*/
 
 /*.bp_toolbar_wrapper ul .chapter span {
 	background-position: -330px 0;
@@ -563,7 +572,12 @@
 	z-index: 1;
 	width: 40px;
 	height: 40px;
-	background: #eee url("../img/sprite/bp_slide_icons.png") no-repeat;
+	background-color: #eeeeee;
+	line-height: 40px;
+	font-size: 30px;
+	text-align: center;
+	color: #aaadbc;
+/*	background: #eee url("../img/sprite/bp_slide_icons.png") no-repeat;*/
 }
 
 .bp_slidefold_btn.open{
@@ -576,6 +590,7 @@
 }
 
 .bp_slidefold_btn.fold{
+	display: block;
 	left: 80px;
 	background-position: -250px -40px;
 	border-top-right-radius: 8px;
@@ -688,8 +703,9 @@
 	display: inline-block;
 	width: 100%;
 	height: 100%;
-	background-image: url(../img/previewpage/light-fullScreen.png);
-	opacity: 0.6;
+	line-height: 35px;
+	font-size: 25px;
+	opacity: 0.5;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -698,14 +714,6 @@
 	opacity: 1;
 }
 
-.bp_sliderbaroption_wrapper .light a {
-	background-position: 0 36px;
-}
-
-/*.bp_sliderbaroption_wrapper .fullscreen a {
-	background-position: 0 0;
-}
-*/
 .bp_container .flipbook-viewport {
 	margin: 0 auto;
 	width: 1070px;

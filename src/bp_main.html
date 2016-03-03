@@ -262,7 +262,7 @@
 								<a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
 							</li>
 							<li>
-								<a class='ybiconfont ybicon-wechat' href="javascript:;"></a>
+								<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
 							</li>
 							<li>
 								<a class='ybiconfont ybicon-renren' href="javascript:;"></a>
@@ -808,8 +808,8 @@
 		backgroundSizing();
 		bpToobar();
 		bookPreview();
-		globalhint();
 		icheck();
+		$.globalhint();
 		$('.bp_iwanttomake_btn').loginPopupDialog();
 		// Load the HTML4 version if there's not CSS transform
 		// yepnope({
@@ -1545,12 +1545,6 @@
 		}
 		preview.css({
 			backgroundPosition: '0px -' + ((view - 1) * previewHeight) + 'px'
-		});
-	}
-
-	function globalhint() {
-		$('.globalhint_close_btn').click(function() {
-			$('.globalhint_wrapper').fadeOut('fast');
 		});
 	}
 

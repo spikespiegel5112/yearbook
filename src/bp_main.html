@@ -23,7 +23,7 @@
 	<div class="bp_container">
 		<div class='bp_title_wrapper'>
 			<div class="bp_title fadeIn2S">《追忆青春》模板预览模板预览预览预览预览预览预览预览预览预览
-				<div class='bp_titlehint_item icon-info-sign'>
+				<div class='bp_titlehint_item ybicon-info-sign'>
 					<div class="bp_des">
 						<ul>
 							<li>限量500本，机会难得，批量更优惠，免费送过膜，宝宝相册，旅游相册，聚会纪念册，</li>
@@ -197,31 +197,30 @@
 			</div>
 			<ul class='bp_sliderbaroption_wrapper'>
 				<li class='light'>
-					<a href="javascript:;"></a>
+					<a class='ybiconfont ybicon-sun' href="javascript:;"></a>
 				</li>
 				<li class='fullscreen'>
-					<a class='iconfont icon-021quanping' href="javascript:;"></a>
+					<a class='ybiconfont ybicon-fullscreen' href="javascript:;"></a>
 				</li>
 			</ul>
 		</div>
 		<div class='bp_toolbar_wrapper'>
 			<div class='bp_toolbarhead_wrapper'>
-				<a href="javascript:;"></a>
+				<a class='ybiconfont ybicon-yblogoshort' href="javascript:;"></a>
 				<div><span>213</span>
-					<label>人
-						<br>使用此模板</label>
+					<label>人<br>使用此模板</label>
 				</div>
 			</div>
 			<ul>
 				<li>
 					<a class='product' href="javascript:;">
-						<span class='iconfont icon-010book'></span>
+						<span class='ybiconfont ybicon-book'></span>
 						<label>制作</label>
 					</a>
 				</li>
 				<li>
 					<a class='chapter' href="javascript:;">
-						<span class='iconfont icon-037fenlei'></span>
+						<span class='ybiconfont ybicon-unorderedlist'></span>
 						<label>章节</label>
 					</a>
 					<!--yb 3.9.2 修改为弹出显示章节信息-->
@@ -250,23 +249,23 @@
 				<!--<li><a class='print' href="javascript:;"><span></span><label>打印</label></a></li>-->
 				<li>
 					<a class='share' href="javascript:;">
-						<span class='iconfont icon-035fenxiang'></span>
+						<span class='ybiconfont ybicon-sharehollow'></span>
 						<label>分享</label>
 					</a>
 					<div class='common_sharelist_wrapper'>
 						<!--<label>分享到：</label>-->
 						<ul>
-							<li class='weibo'>
-								<a href="javascript:;"></a>
+							<li>
+								<a class='ybiconfont ybicon-weibo' href="javascript:;"></a>
 							</li>
-							<li class='qqzone'>
-								<a href="javascript:;"></a>
+							<li>
+								<a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
 							</li>
-							<li class='wechat'>
-								<a href="javascript:;"></a>
+							<li>
+								<a class='ybiconfont ybicon-wechat' href="javascript:;"></a>
 							</li>
-							<li class='renren'>
-								<a href="javascript:;"></a>
+							<li>
+								<a class='ybiconfont ybicon-renren' href="javascript:;"></a>
 							</li>
 						</ul>
 					</div>
@@ -275,19 +274,19 @@
 				<li><a class='collect' href="javascript:;"><span></span><label>收藏</label></a></li>-->
 				<li>
 					<a class="donate" href="javascript:;">
-						<span class='iconfont icon-018shang'></span>
+						<span class='ybiconfont ybicon-shanghollow1'></span>
 						<label>赞赏</label>
 					</a>
 				</li>
 				<li>
 					<a class="comment" href="javascript:;">
-						<span class='iconfont icon-026pinglun'></span>
+						<span class='ybiconfont ybicon-commenthollow'></span>
 						<label>评论</label>
 					</a>
 				</li>
 				<li class="praise_par">
 					<a class="praise" href="javascript:;">
-						<span class='iconfont icon-014dianzan'></span>
+						<span class='ybiconfont ybicon-praise'></span>
 						<label>点赞</label>
 						<p>(<span>12</span>人)</p>
 					</a>
@@ -375,20 +374,23 @@
 									</li>
 								</ul>
 								<div class="empty">
-									<span class='iconfont icon-zanwushuju'></span>
+									<span class='ybiconfont ybicon-zanwushuju'></span>
 									<label>暂无点赞</label>
 									<!-- <img src="img/bp_prasie_empty.png"> -->
 								</div>
 							</div>
 							<a class="praise_btn" href="javascript:;">
-								<i class='iconfont icon-014dianzan'></i>
+								<i class='ybiconfont ybicon-014dianzan'></i>
 								<span>点赞</span>
 							</a>
 						</div>
 					</div>
 				</li>
 				<li>
-					<a class="barrage" href="javascript:;"><span></span><label>弹幕</label></a>
+					<a class="barrage" href="javascript:;">
+						<span class='ybiconfont ybicon-barrageoff'></span>
+						<label>弹幕</label>
+					</a>
 				</li>
 			</ul>
 			<!--<a class='bp_toolbarhandler_item' href="javascript:;"></a>-->
@@ -1342,24 +1344,48 @@
 		toolLi.find('a').click(function() {
 			var $this = $(this),
 				$thisLi = $(this).parent('li');
-			if ($this.hasClass('donate')) {
-				$thisLi.siblings().removeClass('active');
-				popupDonateDialog();
-			} else if ($this.hasClass('comment')) {
-				$thisLi.siblings().removeClass('active');
-				popupCommentDialog();
-			} else if ($this.hasClass('praise')) {
-				$thisLi.siblings().removeClass('active');
-				popPraiseUser();
-			} else if ($thisLi.hasClass('active')) {
-				$thisLi.removeClass('active').siblings().removeClass('active');
-			} else {
-				$thisLi.addClass('active');
-				if ($this.hasClass('.praise')) {
-					$thisLi.siblings().removeClass('active');
-				} else {
-					$thisLi.siblings().not('.praise_par').removeClass('active');
+				switch($this.attr('class')){
+					case 'donate':
+						$thisLi.siblings().removeClass('active');
+						popupDonateDialog();
+						break;
+					case 'comment':
+						$thisLi.siblings().removeClass('active');
+						popupCommentDialog();
+						break;
+					case 'praise':
+						$thisLi.siblings().removeClass('active');
+						popPraiseUser();
+						break;
+					case 'active':
+						$thisLi.removeClass('active').siblings().removeClass('active');
+						break;
+					default:
+						$thisLi.addClass('active');
+						if ($this.hasClass('.praise')) {
+							$thisLi.siblings().removeClass('active');
+						} else {
+							$thisLi.siblings().not('.praise_par').removeClass('active');
+						}
 				}
+			if ($this.hasClass('donate')) {
+				// $thisLi.siblings().removeClass('active');
+				// popupDonateDialog();
+			} else if ($this.hasClass('comment')) {
+				// $thisLi.siblings().removeClass('active');
+				// popupCommentDialog();
+			} else if ($this.hasClass('praise')) {
+				// $thisLi.siblings().removeClass('active');
+				// popPraiseUser();
+			} else if ($thisLi.hasClass('active')) {
+				//$thisLi.removeClass('active').siblings().removeClass('active');
+			} else {
+				// $thisLi.addClass('active');
+				// if ($this.hasClass('.praise')) {
+				// 	$thisLi.siblings().removeClass('active');
+				// } else {
+				// 	$thisLi.siblings().not('.praise_par').removeClass('active');
+				// }
 			}
 			/*$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
 			$('.bp_slidefold_btn').addClass('fold').removeClass('open');*/
@@ -1367,7 +1393,7 @@
 
 		setTimeout(function() {
 				$('.bp_toolbar_wrapper').addClass('shrink').removeClass('active');
-				$('.bp_slidefold_btn').addClass('fold').removeClass('open');
+				$('.bp_slidefold_btn').addClass('fold ybiconfont ybicon-tabright').removeClass('ybicon-tableft open');
 			}, 2000)
 			//原hover打开收起侧工具栏
 			/*$('.bp_toolbar_wrapper').hover(function() {
@@ -1382,10 +1408,10 @@
 		$('.bp_slidefold_btn').click(function() {
 			if ($(this).hasClass('open')) {
 				$('.bp_toolbar_wrapper').removeClass('active').addClass('shrink');
-				$(this).addClass('fold').removeClass('open');
+				$(this).addClass('fold ybicon-tabright').removeClass('open ybicon-tableft');
 			} else if ($(this).hasClass('fold')) {
 				$('.bp_toolbar_wrapper').removeClass('shrink').addClass('active');
-				$(this).addClass('open').removeClass('fold');
+				$(this).addClass('open ybicon-tableft').removeClass('fold ybicon-tabright');
 			}
 		});
 	}
@@ -1525,7 +1551,7 @@
 	function globalhint() {
 		$('.globalhint_close_btn').click(function() {
 			$('.globalhint_wrapper').fadeOut('fast');
-		})
+		});
 	}
 
 	function icheck() {

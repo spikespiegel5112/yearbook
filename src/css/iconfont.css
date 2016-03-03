@@ -1,78 +1,117 @@
 
-@font-face {font-family: "iconfont";
+@font-face {font-family: "ybiconfont";
   src: url('../fonts/iconfont.eot'); /* IE9*/
   src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
   url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+  url('../fonts/iconfont.svg#ybiconfont') format('svg'); /* iOS 4.1- */
 }
 
-.iconfont {
-  font-family:"iconfont" !important;
+.ybiconfont {
+  font-family:"ybiconfont" !important;
   font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-kefuzhongxin:before { content: "\e600"; }
-.icon-002dianhua:before { content: "\e601"; }
-.icon-books:before { content: "\e602"; }
-.icon-message:before { content: "\e603"; }
-.icon-006youhuiquan:before { content: "\e604"; }
-.icon-erweima:before { content: "\e605"; }
-.icon-009top:before { content: "\e606"; }
-.icon-012hudongce:before { content: "\e607"; }
-.icon-013zhaopian:before { content: "\e608"; }
-.icon-014dianzan:before { content: "\e609"; }
-.icon-016dengdaifukuan:before { content: "\e60a"; }
-.icon-017caozuochenggong:before { content: "\e60b"; }
-.icon-018shang:before { content: "\e60c"; }
-.icon-shang:before { content: "\e60d"; }
-.icon-020danmu:before { content: "\e60e"; }
-.icon-011zhaopianshu:before { content: "\e60f"; }
-.icon-010book:before { content: "\e610"; }
-.icon-021quanping:before { content: "\e611"; }
-.icon-022suoxiao:before { content: "\e612"; }
-.icon-023zhiding:before { content: "\e613"; }
-.icon-024huo:before { content: "\e614"; }
-.icon-025pinglun:before { content: "\e615"; }
-.icon-026pinglun:before { content: "\e616"; }
-.icon-027gouxuan:before { content: "\e617"; }
-.icon-028zhizuo:before { content: "\e618"; }
-.icon-029houtui:before { content: "\e619"; }
-.icon-030qianjin:before { content: "\e61a"; }
-.icon-031houtui:before { content: "\e61b"; }
-.icon-032qianjin:before { content: "\e61c"; }
-.icon-033houtui:before { content: "\e61d"; }
-.icon-034qianjin:before { content: "\e61e"; }
-.icon-035fenxiang:before { content: "\e61f"; }
-.icon-036fenxiang:before { content: "\e620"; }
-.icon-037fenlei:before { content: "\e621"; }
-.icon-038shangdian:before { content: "\e622"; }
-.icon-039shangdianweishezhi:before { content: "\e623"; }
-.icon-shangdianshezhichenggong:before { content: "\e624"; }
-.icon-041shangdianshezhi:before { content: "\e625"; }
-.icon-042bangdingshouji:before { content: "\e626"; }
-.icon-bangdingweixin:before { content: "\e627"; }
-.icon-044shezhidianpu:before { content: "\e628"; }
-.icon-045zhuanqulirun:before { content: "\e629"; }
-.icon-zanwushuju:before { content: "\e62a"; }
-.icon-geren:before { content: "\e62b"; }
-.icon-mianfei:before { content: "\e62c"; }
-.icon-049jiandanbianli:before { content: "\e62d"; }
-.icon-diy:before { content: "\e62e"; }
-.icon-quanguodaifa:before { content: "\e62f"; }
-.icon-052shucedongtai:before { content: "\e630"; }
-.icon-huobanguanli:before { content: "\e631"; }
-.icon-xiangceguanli:before { content: "\e632"; }
-.icon-yaoqingqia:before { content: "\e633"; }
-.icon-shangchuantupian:before { content: "\e634"; }
-.icon-yulanfenxiang:before { content: "\e635"; }
-.icon-qq:before { content: "\e636"; }
-.icon-weixin:before { content: "\e637"; }
-.icon-weibo:before { content: "\e638"; }
-.icon-062qqkongjian:before { content: "\e639"; }
-.icon-renrenwang:before { content: "\e63a"; }
-.icon-zidongpaiban:before { content: "\e63b"; }
-.icon-help-copy:before { content: "\e63c"; }
+.ybicon-customerservice:before { content: "\e600"; }
+.ybicon-telephone:before { content: "\e601"; }
+.ybicon-bookshelf:before { content: "\e602"; }
+.ybicon-message:before { content: "\e603"; }
+.ybicon-huihollow1:before { content: "\e604"; }
+.ybicon-qrcode:before { content: "\e605"; }
+.ybicon-gotop:before { content: "\e606"; }
+.ybicon-iabook:before { content: "\e607"; }
+.ybicon-photo:before { content: "\e608"; }
+.ybicon-praise:before { content: "\e609"; }
+.ybicon-closethin:before { content: "\e653"; }
+.ybicon-waitforpay:before { content: "\e60a"; }
+.ybicon-successfulopration:before { content: "\e60b"; }
+.ybicon-shanghollow1:before { content: "\e60c"; }
+.ybicon-shangsolid1:before { content: "\e60d"; }
+.ybicon-dansolid1:before { content: "\e60e"; }
+.ybicon-photobook:before { content: "\e60f"; }
+.ybicon-book:before { content: "\e610"; }
+.ybicon-fullscreen:before { content: "\e611"; }
+.ybicon-narrow:before { content: "\e612"; }
+.ybicon-dingsolid1:before { content: "\e613"; }
+.ybicon-fire:before { content: "\e614"; }
+.ybicon-commentsolid:before { content: "\e615"; }
+.ybicon-commenthollow:before { content: "\e616"; }
+.ybicon-ok:before { content: "\e617"; }
+.ybicon-editbook:before { content: "\e618"; }
+.ybicon-backward1:before { content: "\e619"; }
+.ybicon-forward1:before { content: "\e61a"; }
+.ybicon-backward3:before { content: "\e61b"; }
+.ybicon-forward3:before { content: "\e61c"; }
+.ybicon-backward2:before { content: "\e61d"; }
+.ybicon-forward2:before { content: "\e61e"; }
+.ybicon-sharehollow:before { content: "\e61f"; }
+.ybicon-sharesolid:before { content: "\e620"; }
+.ybicon-unorderedlist:before { content: "\e621"; }
+.ybicon-shop:before { content: "\e622"; }
+.ybicon-shopalert:before { content: "\e623"; }
+.ybicon-shopmark:before { content: "\e624"; }
+.ybicon-shopsettings:before { content: "\e625"; }
+.ybicon-bindphone:before { content: "\e626"; }
+.ybicon-bindwechat:before { content: "\e627"; }
+.ybicon-sjhopsettings2:before { content: "\e628"; }
+.ybicon-profit:before { content: "\e629"; }
+.ybicon-box:before { content: "\e62a"; }
+.ybicon-user:before { content: "\e62b"; }
+.ybicon-rmb1:before { content: "\e62c"; }
+.ybicon-smile:before { content: "\e62d"; }
+.ybicon-diy:before { content: "\44"; }
+.ybicon-hierachy:before { content: "\e62f"; }
+.ybicon-bookstatus:before { content: "\e630"; }
+.ybicon-partner:before { content: "\e631"; }
+.ybicon-booksettings:before { content: "\e632"; }
+.ybicon-invitationcard:before { content: "\e633"; }
+.ybicon-uploadphoto:before { content: "\e634"; }
+.ybicon-previewandshare:before { content: "\e635"; }
+.ybicon-qqsolid:before { content: "\e636"; }
+.ybicon-wechatsolid:before { content: "\e637"; }
+.ybicon-weibo:before { content: "\e638"; }
+.ybicon-qzone:before { content: "\e639"; }
+.ybicon-renren:before { content: "\e63a"; }
+.ybicon-autolayout:before { content: "\e63b"; }
+.ybicon-queryhollow:before { content: "\e63c"; }
+.ybicon-location:before { content: "\e63d"; }
+.ybicon-checkout:before { content: "\e62e"; }
+.ybicon-editform:before { content: "\e63e"; }
+.ybicon-shiled:before { content: "\e63f"; }
+.ybicon-wallet:before { content: "\e640"; }
+.ybicon-trash:before { content: "\e642"; }
+.ybicon-successfulmark1:before { content: "\e643"; }
+.ybicon-failure:before { content: "\e644"; }
+.ybicon-alert1:before { content: "\e645"; }
+.ybicon-waiting:before { content: "\e646"; }
+.ybicon-orderlist:before { content: "\e647"; }
+.ybicon-pencil:before { content: "\e648"; }
+.ybicon-76xinzeng:before { content: "\e65f"; }
+.ybicon-iabook1:before { content: "\e649"; }
+.ybicon-teddy:before { content: "\e64a"; }
+.ybicon-coconuttree:before { content: "\e64b"; }
+.ybicon-heart2:before { content: "\e64c"; }
+.ybicon-family:before { content: "\e64d"; }
+.ybicon-clinkglasses:before { content: "\e64e"; }
+.ybicon-butterfly:before { content: "\e64f"; }
+.ybicon-yblogoshort:before { content: "\e650"; }
+.ybicon-turnoff:before { content: "\e651"; }
+.ybicon-bookcenter:before { content: "\e652"; }
+.ybicon-barrageon:before { content: "\e654"; }
+.ybicon-barrageoff:before { content: "\e655"; }
+.ybicon-querysolid:before { content: "\e656"; }
+.ybicon-printer:before { content: "\e657"; }
+.ybicon-sun:before { content: "\e658"; }
+.ybicon-tableft:before { content: "\e659"; }
+.ybicon-tabright:before { content: "\e65a"; }
+.ybicon-shopsettings1:before { content: "\e65b"; }
+.ybicon-infosign:before { content: "\e641"; }
+.ybicon-home:before { content: "\e65c"; }
+.ybicon-message1:before { content: "\e65d"; }
+.ybicon-user1:before { content: "\e65e"; }
+.ybicon-download:before { content: "\e660"; }
+.ybicon-upload:before { content: "\e661"; }
+.ybicon-cog:before { content: "\e662"; }

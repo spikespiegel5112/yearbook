@@ -10,7 +10,7 @@
 	<meta name="keywords" content="">
 	<title>忆尔3.5-书册详情</title>
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/all.min.css">
+	<link rel="stylesheet" href="css/all.min.css" media="all">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 			<a href="index.html"><img src="img/logo.png"></a>
 		</div>
 		<div class='cm_navuseravatar_item'>
-			<div><img src=""></div>
+			<div class='iconfont icon-038shangdian'></div>
 			<span></span>
 			<label>呆呆鱼的小店</label>
 		</div>
@@ -36,10 +36,9 @@
 		<div class="nav_login">
 			<ul>
 				<li><a href="access_login.html">登录</a></li>
-            <li><a href="access_register.html">注册</a></li>
+				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
-		
 	</div>
 	<div class="cm_header_shadow"></div>
 	<!--主内容区域-->
@@ -180,7 +179,6 @@
 										</div>
 										<div class="bind_style"><img src="img/booklist/butterflycover.jpg" alt="精装"></div>
 									</dd>
-
 								</dl>
 								<div class="ybcommon_queryicon_item">
 									<span class='icon-question-sign'></span>
@@ -1486,152 +1484,152 @@
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
 	<script src="js/all.js"></script>
 	<script>
-		$(document).ready(function() {
-			doSubmit();
-			checkBingAndSize();
-			showBaskImg();
-			slideslideslide();
-			icheck();
-			ybcommonqueryicon();
-			$('.auto_edit').loginPopupDialog();
-			$('.book_details_box .basic_info .book_img .bd li').showLoadingImg();
-			$('.ybcommon_counter_item').priceCalculator();
+	$(document).ready(function() {
+		doSubmit();
+		checkBingAndSize();
+		showBaskImg();
+		slideslideslide();
+		icheck();
+		ybcommonqueryicon();
+		$('.auto_edit').loginPopupDialog();
+		$('.book_details_box .basic_info .book_img .bd li').showLoadingImg();
+		$('.ybcommon_counter_item').priceCalculator();
+	});
+
+	function slideslideslide() {
+		//书册
+		jQuery(".book_img").slide({
+			mainCell: ".bd ul",
+			effect: "left",
+			autoPlay: false,
+			trigger: "click"
 		});
+		jQuery(".detail_more").slide({
+			prevCell: ".nPrev",
+			nextCell: ".nNext",
+			trigger: "click",
+			pnLoop: false,
+			autoPlay: false
+		});
+		/* 更多模板内层图片滚动切换 */
+		jQuery(".more_tpl .book_slide").slide({
+			mainCell: ".sbd ul",
+			prevCell: ".sPrev",
+			nextCell: ".sNext",
+			pageStateCell: '.sPageState',
+			vis: 6,
+			effect: "leftLoop",
+			autoPlay: false,
+			scroll: 6,
+			mouseOverStop: true,
+			autoPage: true,
+			pnLoop: false
+		});
+		/* 更多模板外层tab切换 */
+		jQuery(".more_tpl").slide({
+			titCell: ".parhd li",
+			mainCell: ".parbd",
+			prevCell: ".nPrev",
+			nextCell: ".nNext",
+			trigger: "click",
+			pnLoop: false,
+			autoPlay: false
+		});
+	}
 
-		function slideslideslide() {
-			//书册
-			jQuery(".book_img").slide({
-				mainCell: ".bd ul",
-				effect: "left",
-				autoPlay: false,
-				trigger: "click"
-			});
-			jQuery(".detail_more").slide({
-				prevCell: ".nPrev",
-				nextCell: ".nNext",
-				trigger: "click",
-				pnLoop: false,
-				autoPlay: false
-			});
-			/* 更多模板内层图片滚动切换 */
-			jQuery(".more_tpl .book_slide").slide({
-				mainCell: ".sbd ul",
-				prevCell: ".sPrev",
-				nextCell: ".sNext",
-				pageStateCell: '.sPageState',
-				vis: 6,
-				effect: "leftLoop",
-				autoPlay: false,
-				scroll: 6,
-				mouseOverStop: true,
-				autoPage: true,
-				pnLoop: false
-			});
-			/* 更多模板外层tab切换 */
-			jQuery(".more_tpl").slide({
-				titCell: ".parhd li",
-				mainCell: ".parbd",
-				prevCell: ".nPrev",
-				nextCell: ".nNext",
-				trigger: "click",
-				pnLoop: false,
-				autoPlay: false
-			});
-		}
+	function validateForm() {
+		//validate方法参数可选
+		return $('#commentForm').validate({
+			messages: {
+				bookName: {
+					required: '书册名未填写',
+				},
+				schoolName: {
+					required: "学校名未填写"
+				},
+				className: {
+					required: '班级名未填写',
+				}
+			}
+		}).form();
+	}
 
-		function validateForm() {
-			//validate方法参数可选
-			return $('#commentForm').validate({
-				messages: {
-					bookName: {
-						required: '书册名未填写',
-					},
-					schoolName: {
-						required: "学校名未填写"
-					},
-					className: {
-						required: '班级名未填写',
-					}
-				}
-			}).form();
-		}
+	function doSubmit() { //点击登录触发验证
+		$('.production_btn').click(function() {
+			if (validateForm()) {
+				document.form1.submit()
+			}
+		});
+	}
+	/*选择书册装订方式及尺寸*/
+	function checkBingAndSize() {
+		$('.ybcommon_queryicon_item p').eq(0).text($('.book_text .cover dd').eq(0).attr('data'));
+		$('.ybcommon_queryicon_item p').eq(1).text($('.book_text .size dd').eq(0).attr('data'));
+		$('.book_text .cover dd').click(function() {
+			var $this = $(this),
+				thisEl = $('.book_text .cover dd'),
+				thisData = $this.attr('data'),
+				hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
+			thisEl.removeClass('selected');
+			$this.addClass('selected');
+			hintEl.text(thisData);
+		});
+		$('.book_text .size dd').click(function() {
+			var $this = $(this),
+				thisEl = $('.book_text .size dd'),
+				thisData = $this.attr('data'),
+				hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
+			thisEl.removeClass('selected');
+			$this.addClass('selected');
+			hintEl.text(thisData);
+		})
+	}
+	/*查看晒图*/
+	function showBaskImg() {
+		$('.bask_img .item').click(function() {
+			$(this).addClass('cur').css('opacity', '1');
+			$(this).siblings().removeClass('cur').css('opacity', '.5');
+			var curImg = $(this).find('img').attr('src');
+			$('.bask_show').fadeIn().find('.img_show img').attr('src', curImg);
+		});
+		/*上一张*/
+		$('.img_show .left').click(function() {
+			if ($('.bask_img .cur').prev().length != 0) {
+				var curImg = $('.bask_img .cur').prev().find('img').attr('src');
+				$('.bask_img .cur').removeClass('cur').css('opacity', '.5').prev().addClass('cur').css('opacity', '1');
+				$('.img_show img').attr('src', curImg);
+			}
+		});
+		/*下一张*/
+		$('.img_show .right').click(function() {
+			if ($('.bask_img .cur').next().length != 0) {
+				var curImg = $('.bask_img .cur').next().find('img').attr('src');
+				$('.bask_img .cur').removeClass('cur').css('opacity', '.5').next().addClass('cur').css('opacity', '1');
+				$('.img_show img').attr('src', curImg);
+			}
+		});
+		/*关闭*/
+		$('.img_show .center').click(function() {
+			$('.bask_img .item').removeClass('cur').css('opacity', '1');
+			$('.bask_show').fadeOut();
+		});
+	}
 
-		function doSubmit() { //点击登录触发验证
-			$('.production_btn').click(function() {
-				if (validateForm()) {
-					document.form1.submit()
-				}
-			});
-		}
-		/*选择书册装订方式及尺寸*/
-		function checkBingAndSize() {
-			$('.ybcommon_queryicon_item p').eq(0).text($('.book_text .cover dd').eq(0).attr('data'));
-			$('.ybcommon_queryicon_item p').eq(1).text($('.book_text .size dd').eq(0).attr('data'));
-			$('.book_text .cover dd').click(function() {
-				var $this = $(this),
-					thisEl = $('.book_text .cover dd'),
-					thisData = $this.attr('data'),
-					hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
-				thisEl.removeClass('selected');
-				$this.addClass('selected');
-				hintEl.text(thisData);
-			});
-			$('.book_text .size dd').click(function() {
-				var $this = $(this),
-					thisEl = $('.book_text .size dd'),
-					thisData = $this.attr('data'),
-					hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
-				thisEl.removeClass('selected');
-				$this.addClass('selected');
-				hintEl.text(thisData);
-			})
-		}
-		/*查看晒图*/
-		function showBaskImg() {
-			$('.bask_img .item').click(function() {
-				$(this).addClass('cur').css('opacity', '1');
-				$(this).siblings().removeClass('cur').css('opacity', '.5');
-				var curImg = $(this).find('img').attr('src');
-				$('.bask_show').fadeIn().find('.img_show img').attr('src', curImg);
-			});
-			/*上一张*/
-			$('.img_show .left').click(function() {
-				if ($('.bask_img .cur').prev().length != 0) {
-					var curImg = $('.bask_img .cur').prev().find('img').attr('src');
-					$('.bask_img .cur').removeClass('cur').css('opacity', '.5').prev().addClass('cur').css('opacity', '1');
-					$('.img_show img').attr('src', curImg);
-				}
-			});
-			/*下一张*/
-			$('.img_show .right').click(function() {
-				if ($('.bask_img .cur').next().length != 0) {
-					var curImg = $('.bask_img .cur').next().find('img').attr('src');
-					$('.bask_img .cur').removeClass('cur').css('opacity', '.5').next().addClass('cur').css('opacity', '1');
-					$('.img_show img').attr('src', curImg);
-				}
-			});
-			/*关闭*/
-			$('.img_show .center').click(function() {
-				$('.bask_img .item').removeClass('cur').css('opacity', '1');
-				$('.bask_show').fadeOut();
-			});
-		}
-
-		function icheck() {
-			$('input').iCheck({
-				checkboxClass: 'icheckbox_minimal-green',
-				radioClass: 'iradio_minimal-green',
-				increaseArea: '20%'
-			})
-		}
-		//hover问号显示信息提示
-		function ybcommonqueryicon() {
-			$('.ybcommon_queryicon_item').hover(function() {
-				$(this).find('div').show();
-			}, function() {
-				$(this).find('div').hide();
-			});
-		}
+	function icheck() {
+		$('input').iCheck({
+			checkboxClass: 'icheckbox_minimal-green',
+			radioClass: 'iradio_minimal-green',
+			increaseArea: '20%'
+		})
+	}
+	//hover问号显示信息提示
+	function ybcommonqueryicon() {
+		$('.ybcommon_queryicon_item').hover(function() {
+			$(this).find('div').show();
+		}, function() {
+			$(this).find('div').hide();
+		});
+	}
 	</script>
 </body>
 

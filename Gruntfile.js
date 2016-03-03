@@ -139,7 +139,7 @@ module.exports = function(grunt) {
             css : {
                 expand: true,
                 cwd: '<%= meta.srcPath %>',
-                src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
+                src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/iconfont.css','css/activity/*.css'],
                 dest: '<%= meta.distPath %>/'
             },
             js : {

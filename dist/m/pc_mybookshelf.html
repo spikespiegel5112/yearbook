@@ -27,7 +27,7 @@
     </div>
     <div class='mybookshelf_main_wrapper'>
         <ul>
-            <li>
+           <!--  <li>
                 <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
                 <label>追忆青春-毕业册模板</label>
                 <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
@@ -42,13 +42,18 @@
                 <label>追忆青</label>
                 <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
             </li>
-
             <li>
                 <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
                 <label>追忆青春毕业册模板</label>
                 <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
+            </li> -->
         </ul>
+        <div class='common_empty_item'>
+            <span></span>
+            <div>
+                没有浏览过书册
+            </div>
+        </div>
         <div class='ybwechat_loading_item'>
             <a href="javascript:;">点击加载更多（<b>6</b>）</a>
         </div>
@@ -58,10 +63,10 @@
         <label>创建的书册</label>
     </div>
     <div class='mybookshelf_main_wrapper'>
-        <div class='mybookshelf_info_empty_item'>
+        <div class='common_empty_item'>
             <span></span>
             <div>
-                暂时没有加入的书册，快去<a href="javascript:;">邀请小伙伴</a>吧！
+                没有创建过过书册
             </div>
         </div>
         <div class='ybwechat_loading_item hidden'>
@@ -74,7 +79,7 @@
     </div>
     <div class='mybookshelf_main_wrapper'>
         <ul>
-            <li>
+            <!-- <li>
                 <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
                 <label>追忆青春-毕业册模板</label>
                 <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
@@ -93,8 +98,15 @@
                 <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
                 <label>追忆青春毕业册模板追忆青春</label>
                 <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
+            </li> -->
         </ul>
+        <div class='common_empty_item'>
+            <span></span>
+            <div>
+                您还没有加入书册，立即新建！
+                <span class='arrow'></span>
+            </div>
+        </div>
     </div>
 </div>
 <div class="loading" style="display: none;">
@@ -215,10 +227,19 @@
         }, 1000);
     };
 
+    function showEmptyItem () {
+        $('.mybookshelf_main_wrapper').each(function(){
+            if ($(this).find('li').length==0) {
+                $(this).find('.common_empty_item').show()
+            };
+        });
+    }
+
 
     $(document).ready(function(){
         changeLongBookName();
         loadMoreBook();
+        showEmptyItem();
     })
 </script>
 </body>

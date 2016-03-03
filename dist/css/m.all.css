@@ -75,10 +75,6 @@ label {
     font-weight: normal;
 }
 @charset "utf-8";
-html{
-	-webkit-transform: 0.83333333333333;
-	-webkit-transform-origin-x: 0;
-}
 /*~~~~~~~~~~公共类~~~~~~~~~~*/
 .clearfloat {
 	clear: both;
@@ -639,7 +635,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	left: 0;
 }
 
-.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .back_btn, .ybwechatheader_wrapper .setting_btn, .ybwechatheader_wrapper .share_btn {
+.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .setting_btn {
 	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
 	background-position-y: -48px;
 	background-size: 900%;
@@ -653,14 +649,12 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	box-sizing: border-box;
 }
 
-.ybwechatheader_wrapper .back_btn {
-	position: absolute;
-	top: 0;
-	width: 50px;
-	height: 40px;
-	background-position-x: -73px;
-	box-sizing: border-box;
+.ybwechatheader_wrapper .back_btn span{
+    font-size: 29px;
+    color: #fff;
+    line-height: 42px;
 }
+
 
 .ybwechatheader_wrapper .setting_btn {
 	position: absolute;
@@ -671,25 +665,22 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	box-sizing: border-box;
 }
 
-.ybwechatheader_wrapper .share_btn {
-	position: absolute;
-	top: 0;
-	width: 50px;
-	height: 40px;
-	background-position-x: -156px;
-	box-sizing: border-box;
+.ybwechatheader_wrapper .share_btn span{
+    font-size: 26px;
+    line-height: 40px;
+    color: #fff;
 }
 
-.ybwechatheader_wrapper .icon-list-ul{
-	font-size: 20px;
+.ybwechatheader_wrapper .list_btn span{
+	font-size: 30px;
 	line-height: 40px;
 	color: #fff;
 }
 
-.ybwechatheader_wrapper .icon-angle-left{
-	font-size: 32px;
-	line-height: 37px;
-	margin: 0 7px;
+.ybwechatheader_wrapper .left_angle span{
+    color: #fff;
+	font-size: 26px;
+	line-height: 40px;
 }
 
 .ybwechatheader_wrapper a:hover,
@@ -965,6 +956,57 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .empty_item p a {
 	color: #71a033;
+}
+
+/*~~~~~~~~~~common_empty_item~~~~~~~~~~*/
+.common_empty_item {
+	margin: 0 auto;
+	padding: 20px 0;
+	width: 200px;
+	overflow: hidden;
+}
+
+.common_empty_item>span {
+	display: block;
+	margin: 10px auto;
+	width: 60px;
+	height: 60px;
+	background: url(../img/m/icon/empty_box_1_00000.png) 0 0 no-repeat;
+	background-size: 100%;
+}
+
+.common_empty_item label {
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #a8a8a8;
+}
+
+.common_empty_item div{
+    margin: 1em 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.common_empty_item div a {
+    color: #71a033;
+}
+
+.common_empty_item .arrow{
+	display: block;
+	margin: 0 auto;
+	width: 70px;
+	height: 125px;
+	background: url(../img/m/icon/turnarrow_1_00000.png);
+	background-size: cover;
+}
+
+.common_empty_item .avatar_1{
+	width: 60px;
+	height: 110px;
+	background: url(../img/m/icon/empty_avatar_1_00000.png);
+	background-size: cover;
 }
 
 /*~~~~~~~~~~footer nav~~~~~~~~~~*/
@@ -2069,13 +2111,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	width: 50%;
 }
 .loginpopup_ssologin_wrapper .qq a{
-	background: url(../ing/m/previewbook/loginpopup_qq_00000.png) #039dff;
+	background: url(../img/m/previewbook/loginpopup_qq_00000.png) #039dff;
 }
 .loginpopup_ssologin_wrapper .wechat a{
-	background: url(../ing/m/previewbook/loginpopup_wechat_00000.png) #1bcb44;
+	background: url(../img/m/previewbook/loginpopup_wechat_00000.png) #1bcb44;
 }
 .loginpopup_ssologin_wrapper .weibo a{
-	background: url(../ing/m/previewbook/loginpopup_weibo_00000.png) #e42744;
+	background: url(../img/m/previewbook/loginpopup_weibo_00000.png) #e42744;
 }
 
 /* 评论 输入框 */
@@ -2982,7 +3024,18 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     background-color: #50a000;
 }
 
-.sns {
+
+.third-login span.iconfont{
+    font-size: 20px;
+    line-height: 35px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.third-login span.icon-qq{
+    font-size: 18px;
+}
+/*.sns {
     background: url("../img/m/sprite/icon-sns.png") no-repeat;
     width: 25px;
     height: 26px;
@@ -3004,7 +3057,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .sns.wechat {
     background-position: 0 -75px;
-}
+}*/
 
 .clear-padding {
     margin: 0;
@@ -3042,11 +3095,15 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     display: block;
     width: 30px;
     height: 30px;
-    background: url(../img/m/sprite/icon-sns.png) no-repeat center;
     position: absolute;
     bottom: 0;
     right: 0;
     border-radius: 100%;
+    background-color: #50a000;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
 }
 
 .sso_nickname_item {
@@ -4614,17 +4671,27 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 0 auto 5px;
 	width: 2.5rem;
 	height: 2.5rem;
-	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
+	/*background-image: url("../img/m/sprite/common_img_sprite_00000.png");
 	background-position-y: -70px;
-	opacity: 0.6;
+	opacity: 0.6;*/
 }
 
-.bp_menu_wrapper .praise {
+.bp_menu_wrapper li .comment span,
+.bp_menu_wrapper li .praise span{
+    font-size: 36px;
+    color: #6F748B;
+}
+
+.bp_menu_wrapper li .comment span{
+    line-height: 3rem
+}
+
+/*.bp_menu_wrapper .praise {
 	display: block;
 	background-position-x: -180px;
-}
+}*/
 
-.bp_menu_wrapper li .active .praise{
+.bp_menu_wrapper li .active .praise span{
 	color: #ff696a;
 }
 
@@ -4721,10 +4788,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	content: '';
 	display: block;
 	width: 1.5rem;
-	height: 1.2rem;
+	height: 1.5rem;
 	position: absolute;
-	top: -5px;
-	right: 10px;
+	top: -7px;
+	right: 8px;
 }
 .bp_donatedperson_wrapper li:nth-child(1) .bp_donatedavatar_item:before{
 	background-image: url(../img/m/previewbook/crown_gold_00000.png);
@@ -4999,6 +5066,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 0 auto;
 	color: #fff;
 	overflow: hidden;
+    text-align: center;
 }
 
 .bp_landscape_wrapper ul li a p {
@@ -5014,6 +5082,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	background-repeat: no-repeat;
 	background-size:1300%;
 	background-position-y:-16px;
+    line-height: 48px;
+    font-size: 16px;
+    color: #fff;
 }
 .viewmode_landscape .ybwechatheader_wrapper .bp_barrageswitch_item{
 	display: none;
@@ -5053,11 +5124,12 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	background-position-x: -125px;
 }
 .bp_landscape_wrapper ul .comment div {
-	background-position-x: -50px;
+	background-image: none;
+    line-height: 50px;
 }
 
 .bp_landscape_wrapper ul .comment .active div {
-	background-position-y: -40px;
+	color: #6F748B;
 }
 
 .bp_landscape_wrapper ul .praise div {
@@ -5081,10 +5153,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	background-color: orange;
 }
 .bp_landscape_wrapper ul .share div {
-	background-position-x: -114px;
+	background-image: none;
 }
 .bp_landscape_wrapper ul .share .active div {
-	background-position-y: -40px;
+	color: #E7B44A;
 }
 .viewmode_portrait .bp_resizebtn_item{
 	display: block;
@@ -5093,29 +5165,45 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	right: 50px;
 	width: 40px;
 	height: 40px;
-	background-image: url("../img/m/sprite/yb3wechatheader_sprite_img_00000.png");
+    text-align: center;
+	/*background-image: url("../img/m/sprite/yb3wechatheader_sprite_img_00000.png");
 	background-size: 1200%;
 	background-position-y: -3px;
-	background-position-x: -693px;
+	background-position-x: -693px;*/
 }
-.viewmode_portrait .bp_resizebtn_item.active{
+
+/*.viewmode_portrait .bp_resizebtn_item.active{
 	background-position-x: -735px;
+}*/
+
+.viewmode_portrait .bp_resizebtn_item span{
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.viewmode_landscape .bp_resizebtn_item span{
+    font-size: 0;
 }
 
 .viewmode_landscape .bp_resizebtn_item a{
-	background-image: url("../img/m/sprite/yb3wechatheader_sprite_img_00000.png");
+	/*background-image: url("../img/m/sprite/yb3wechatheader_sprite_img_00000.png");
 	background-size: 1000%;
 	background-position-y: -3px;
-	background-position-x: -693px;
+	background-position-x: -693px;*/
 	width: 40px;
 	height: 45px;
 }
-.viewmode_landscape .bp_resizebtn_item a{
+
+.viewmode_landscape .bp_resizebtn_item a span{
+    font-size: 20px;
+    line-height: 50px;
+}
+/*.viewmode_landscape .bp_resizebtn_item a{
 	background-position: -574px -74px;
 }
 .viewmode_landscape .bp_resizebtn_item.active a{
 	background-position: -609px -74px;
-}
+}*/
 .chapter_slide {
 	float: right;
 }
@@ -5297,10 +5385,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 0 0.5rem 0 0;
 	width: 2rem;
 	height: 2rem;
-	background-image: url(../img/m/sprite/common_img_sprite_00000.png);
-	vertical-align: middle;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 30px;
+	/*background-image: url(../img/m/sprite/common_img_sprite_00000.png);
+
 	background-position-x: -184px;
-	background-position-y: -34px;
+	background-position-y: -34px;*/
 }
 /*.bp_praise_btn.active{
 	background: #ff696a;
@@ -5533,15 +5624,17 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	display: block;
 	margin: -2px 10px;
 	position: absolute;
-	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
+	/*background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
 	background-size: 1200%;
 	background-position-y: -3px;
-	background-position-x: -954px;
+	background-position-x: -954px;*/
 	z-index: 1;
+    background-image: none;
 }
-.bp_photoslider_wrapper .bp_resizebtn_item.active{
-	background-position-y: -3px;
-	background-position-x: -60px;
+.bp_photoslider_wrapper .bp_resizebtn_item.active span{
+	font-size: 29px;
+    color: #fff;
+    line-height: 40px;
 }
 .viewmode_portrait .bp_photoslider_wrapper .islider-outer>li{
 	z-index: 1;
@@ -5565,8 +5658,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	display: block;
 	position: relative;
 	z-index: 1;
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 90%;
 	background-image: url("../img/m/sprite/common_img_sprite_00000.png");
 	background-size: 1200%;
 }
@@ -5582,10 +5675,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .bp_photoslider_wrapper ol .praise  a{
-	background-position:  -98px -18px;
+	background-position:  -90px -15px;
 }
-.bp_photoslider_wrapper ol .praise  .active {
-	background-position:  -98px -81px;
+.bp_photoslider_wrapper ol .praise  a.active {
+	background-position:  -90px -72px;
 }
 .bp_swiperbook_wrapper{
 	width: 100%;
@@ -5642,14 +5735,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     background: transparent;
 }
 
-.book_space .share_btn {
+/*.book_space .share_btn {
     position: absolute;
     top: 0;
     width: 50px;
     box-sizing: border-box;
     background: url("../img/m/icon/share_icon.png") no-repeat center 8px;
     background-size: 26px;
-}
+}*/
 
 .book_space .book_cover {
     position: relative;
@@ -6179,8 +6272,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     margin: 13px 10px 0 0;
     width: 25px;
     height: 25px;
-    background: url("../img/m/icon/ia_trandslist_share_icon.png") no-repeat 0;
-    background-size: cover;
+    /*background: url("../img/m/icon/ia_trandslist_share_icon.png") no-repeat 0;
+    background-size: cover;*/
+}
+
+.timeline_sharetrigger_btn span{
+    font-size: 24px;
+    color: #A9BA38;
 }
 
 .bmindex_normalvote_wrapper {
@@ -6586,11 +6684,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url("../img/m/ia/share_icons.png") no-repeat;
+    /*background: url("../img/m/ia/share_icons.png") no-repeat;*/
     vertical-align: middle;
+    font-size: 20px;
+    color: #A9BA38;
+    line-height: 30px;
 }
 
-.share_tool li .comment span {
+/*.share_tool li .comment span {
     background-position: -5px 0;
     background-size: cover;
 }
@@ -6603,7 +6704,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .share_tool li .share span {
     background-position: -70px 0;
     background-size: cover;
-}
+}*/
 
 /*share main bottom shadow*/
 .share_container .share_shadow {
@@ -8068,13 +8169,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     display: block;
     width: 20px;
     height: 25px;
-    background: url(../img/m/icon/praise_gray.png) no-repeat;
-    background-size: cover;
+    /*background: url(../img/m/icon/praise_gray.png) no-repeat;
+    background-size: cover;*/
+    text-align: center;
+    color: #aaa;
 }
 
 .albumcontent_info_wrapper .praise_item a.active {
-    background: url(../img/m/icon/praise.png) no-repeat;
-    background-size: cover;
+    color: #9CDA59;
 }
 
 .albumcontent_info_wrapper .uploadbtn_item {
@@ -8463,7 +8565,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     position: absolute;
     right: 0;
     bottom: 10px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -464px -96px;
+    color: #fff;
+    background: #9CDA59;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 26px;
+    box-sizing: border-box;
 }
 
 .choosephoto_wrapper .active span, .choosecover_wrapper .active span {
@@ -8508,8 +8616,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     margin: 0 auto;
     width: 30px;
     height: 35px;
-    background: url(../img/m/icon/trash.png) no-repeat center;
-    background-size: cover;
+    /*background: url(../img/m/icon/trash.png) no-repeat center;
+    background-size: cover;*/
+    font-size: 24px;
+    color: #9CDA59;
 }
 
 .choosephoto_menu_wrapper ul li a label {
@@ -8518,10 +8628,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     font-weight: normal;
 }
 
-.choosephoto_menu_wrapper ul li:first-child span {
+/*.choosephoto_menu_wrapper ul li:first-child span {
     background: url(../img/m/icon/move.png) no-repeat center;
     background-size: cover;
-}
+}*/
 
 .bottomfixedbtn_item {
     width: 100%;
@@ -8876,7 +8986,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .photoqualitysetting_wrapper li span {
     display: none;
     float: right;
-    line-height: 3em;
+    line-height: 2.5em;
     color: #007ce5;
 }
 
@@ -8988,19 +9098,24 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .praise_button, .comment_button {
     float: left;
     margin: 0 5px;
-    padding: 0 5px;
     width: 30px;
     height: 25px;
-    background: url(../img/m/sprite/img_sprite_00000.png) #fff;
-    border-radius: 5px;
+    /*background: url(../img/m/sprite/img_sprite_00000.png);
+    border-radius: 5px;*/
+    color: #999;
+    text-align: center;
 }
 
-.praise_button {
+/*.praise_button {
     background-position: -469px -2px;
 }
 
 .comment_button {
     background-position: -466px -30px;
+}*/
+
+.praise_wrapper .active{
+    color: #9CDA59;
 }
 
 .album_detail_main_wrapper:after {
@@ -9036,16 +9151,18 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     float: left;
     width: 30px;
     height: 25px;
-    background: url(../img/m/sprite/img_sprite_00000.png);
+    color: #9CDA59;
+    text-align: center;
 }
 
 .album_detail_viewed_item span {
+    background: url(../img/m/sprite/img_sprite_00000.png);
     background-position: -431px -28px
 }
 
-.album_detail_praise_item span {
+/*.album_detail_praise_item span {
     background-position: -440px -4px
-}
+}*/
 
 .album_detail_praise_item div img {
     float: left;
@@ -9147,7 +9264,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     float: left;
     width: 30px;
     height: 25px;
-    background: url(../img/m/sprite/img_sprite_00000.png) -462px -30px;
+    /*background: url(../img/m/sprite/img_sprite_00000.png) -462px -30px;*/
+    text-align: center;
+    line-height: 26px;
+    color: #999;
 }
 
 .peply_item a {
@@ -9157,9 +9277,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     color: #aaa;
 }
 
-.praise_wrapper .active {
+/*.praise_wrapper .active {
     background-position: -439px -2px
-}
+}*/
 
 .album_detail_comment_window {
     display: none;
@@ -9229,16 +9349,18 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .photopage_container .album_name .back_btn {
-    background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-    background-position-y: -41px;
-    background-size: 900%;
-    background-repeat-x: no-repeat;
     position: absolute;
     top: 0;
-    width: 50px;
-    height: 50px;
-    background-position-x: -74px;
+    width: 48px;
+    height: 48px;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.photopage_container .album_name .back_btn span{
+    font-size: 29px;
+    color: #fff;
+    line-height: 50px;
 }
 
 .photopage_container .photo_pagination {
@@ -9286,11 +9408,13 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .photopage_button_1 a {
-    background-position-x: -45px;
+    background-image: none!important;
+    color: #fff;
+    line-height: 18px;
 }
 
 .photopage_button_1 .active {
-    background-position-x: -45px;
+    color: #6F748B;
 }
 
 .photopage_button_2 a {
@@ -9299,6 +9423,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 .photopage_button_2 .active {
     background-position-x: -65px;
+    background-position-y: -57px;
 }
 
 .photopage_moredetail {
@@ -11046,9 +11171,16 @@ a.ia-vote-add-choose-num {
     top: 46%;
 }
 
-.ia-vote-choose-flag img {
-    width: 1.2em;
-    height: 1.2em;
+.ia-vote-choose-flag span {
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    background-color: #89C539;
+    border-radius: 100%;
+    border: 1px solid #fff;
 }
 
 .ia-vote-single-user {
@@ -12007,11 +12139,12 @@ a.ia-vote-add-choose-num {
     height: 1rem;
     line-height: 1rem;
     color: #7da959;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
+    box-sizing: content-box;
 }
 .static_listtitle_item h5{
     display: inline-block;
-    
+    vertical-align: top;
 }
 .static_list_wrapper{
     margin: 0 auto 0;
@@ -12816,7 +12949,7 @@ a.ia-vote-add-choose-num {
     margin: 0 auto;
     width: 85px;
     height: 90px;
-    background: url(../img/m/empty_avatar_00000.png) 0 0 no-repeat;
+    background: url(../img/m/icon/empty_box_1_00000.png) 0 0 no-repeat;
 }
 
 .mybookshelf_info_empty_item div {
@@ -13229,6 +13362,7 @@ a.ia-vote-add-choose-num {
     top: 50%;
     margin: -6px 0 0;
     color: #666;
+    font-size: 14px;
 }
 
 .orderinfo .user div.cm_fl,
@@ -14002,11 +14136,15 @@ a.ia-vote-add-choose-num {
 .opd_donatepayoff_wrapper .opd_donatesuccess_wrapper div{
     display: block;
     margin: 0 auto;
-    width: 90px;
+    width: 95px;
     height: 105px;
-    background: url("../img/m/pc/donate_payway.png") no-repeat;
+    /*background: url("../img/m/pc/donate_payway.png") no-repeat;
     background-size: 140px 105px;
-    background-position: 0 0;
+    background-position: 0 0;*/
+    color: #89C27E;
+    font-size: 95px;
+    text-align: center;
+    line-height: 105px;
 }
 
 .opd_donatepayoff_wrapper .opd_donatesuccess_wrapper p{
@@ -14042,9 +14180,12 @@ a.ia-vote-add-choose-num {
 .shop_default span{
     display: block;
     margin: 25px auto;
-    width: 151px;
+    width: 168px;
     height: 124px;
-    background: url("../img/m/pc/shop_default.png") no-repeat;
+    /*background: url("../img/m/pc/shop_default.png") no-repeat;*/
+    font-size: 168px;
+    color: #abaebd;
+    line-height: 124px;
 }
 
 .shop_default p{
@@ -14282,7 +14423,8 @@ a.ia-vote-add-choose-num {
     outline: none;
 }
 
-.shop_apply_con .btn_group .btn{
+.shop_apply_con .btn_group .btn,
+.shop_admin .btn_group .btn{
     display: block;
     margin: 20px auto;
     padding: 0;
@@ -14295,11 +14437,13 @@ a.ia-vote-add-choose-num {
     border: 1px solid #70ca5d;
 }
 
-.shop_apply_con .btn_group .btn:focus{
+.shop_apply_con .btn_group .btn:focus,
+.shop_admin .btn_group .btn:focus{
     outline: none;
 }
 
-.shop_apply_con .btn_group .btn.disabled{
+.shop_apply_con .btn_group .btn.disabled,
+.shop_admin .btn_group .btn.disabled{
     background-color: #cecfcd;
     border: 1px solid #cecfcd;
     pointer-events: none;
@@ -14310,7 +14454,8 @@ a.ia-vote-add-choose-num {
     opacity: 1;
 }
 
-.shop_apply_con .btn_group .btn:hover{
+.shop_apply_con .btn_group .btn:hover,
+.shop_admin .btn_group .btn:hover{
     background-color: #74bc65;
     border: 1px solid #74bc65;
 }
@@ -14409,9 +14554,14 @@ a.ia-vote-add-choose-num {
     display: block;
 }
 
-.shop_apply_con .apply_success .img_success{
+.shop_apply_con .apply_success .iconfont{
     display: block;
     margin: 25px auto;
+    width: 168px;
+    height: 124px;
+    line-height: 124px;
+    font-size: 168px;
+    color: #88C27D;
 }
 
 .shop_apply_con .apply_success h3{
@@ -14564,8 +14714,10 @@ a.ia-vote-add-choose-num {
 }
 
 .shop_home .reset_btn_group .revise_info span{
-    background: url("../img/pc/rsshopmsg.png") no-repeat;
-    background-size: cover;
+    font-size: 31px;
+    line-height: 26px;
+    color: #48CFAD;
+    text-align: center;
 }
 
 .shop_home .reset_btn_group .view_order span{
@@ -14581,7 +14733,7 @@ a.ia-vote-add-choose-num {
 .shop_home .reset_btn_group ul li a i{
     float: right;
     line-height: 45px;
-    font-size: 24px;
+    font-size: 16px;
     color: #ccc;
 }
 
@@ -14782,7 +14934,7 @@ a.ia-vote-add-choose-num {
 }
 
 .shop_admin .order_list .item .show_detail i{
-    font-size: 30px;
+    font-size: 24px;
     color: #ccc;
 }
 
@@ -14851,6 +15003,72 @@ a.ia-vote-add-choose-num {
 
 .shop_admin .order_detail .order_info tr td:nth-child(2){
     text-align: center;
+}
+
+.shop_admin .shop_close{
+    position: relative;
+    margin: 60px auto 20px;
+    padding: 30px 0;
+    width: 90%;
+    height: 240px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.shop_admin .shop_close::before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    margin-left: -33px;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    background-color: #ddd;
+}
+
+.shop_admin .shop_close .warning_info{
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.shop_admin .shop_close .warning_info span{
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    margin-left: -32px;
+    width: 64px;
+    height: 66px;
+    background: #fff url("../img/m/icon/icon_warning.png") no-repeat center;
+    background-size: 50px;
+    border-radius: 100% 100% 0 0;
+}
+
+.shop_admin .shop_close .warning_info h2{
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.shop_admin .shop_close .warning_info p{
+    font-size: 12px;
+    color: #666;
+}
+
+.shop_admin .shop_close .btn{
+    margin: 45px auto 20px;
+    text-align: center;
+}
+
+/*~~~~~~~~~~mybookshelf_wrapper~~~~~~~~~~*/
+.mybookshelf_wrapper.mybookshelf_main_wrapper{
+    margin: 0;
+}
+.mybookshelf_wrapper .common_empty_item:last-child{
+    padding: 0;
+
 }
 /*~~~~~~~~~~shop_introduction~~~~~~~~~~*/
 .shop_introtitle_wrapper{
@@ -14935,8 +15153,9 @@ a.ia-vote-add-choose-num {
 	padding: 0;
 	width: 5.3rem;
 	height: 5rem;
-	background: url(../img/sprite/shop_serviceobject_00000.png) no-repeat;
+	/*background: url(../img/sprite/shop_serviceobject_00000.png) no-repeat;*/
 	background-size: 13rem;
+    text-align: center;
 }
 .shop_serviceobject_wrapper li a div{
 	display: block;
@@ -14954,10 +15173,16 @@ a.ia-vote-add-choose-num {
 	color: #00ca5a;
 }
 .shop_serviceobject_wrapper .personal span{
-	background-position: 1rem 0;
+	/*background-position: 1rem 0;*/
+    color: #3497DB;
+    font-size: 4.4rem;
+    line-height: 4.4rem;
 }
 .shop_serviceobject_wrapper .wechatsubscripton span{
-	background-position: -6rem  0;
+	/*background-position: -6rem  0;*/
+    color: #1BCB44;
+    font-size: 5.6rem;
+    line-height: 4.75rem;
 }
 .shop_serviceobject_wrapper li p{
 	padding: 5px 0;

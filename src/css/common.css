@@ -2852,18 +2852,18 @@ nav .pagination li a:active {
 }
 
 
-/*~~~~~bp_sharelist_wrapper分量按钮弹出层通用组件（用在分享页面和书册预览页面）~~~~~*/
+/*~~~~~common_sharelist_wrapper分量按钮弹出层通用组件（用在分享页面和书册预览页面）~~~~~*/
 
-.bmshare_community_wrapper .bp_sharelist_wrapper {
+.bmshare_community_wrapper .common_sharelist_wrapper {
     top: 0;
     left: 100px;
 }
 
-.bp_sharelist_wrapper {
+.common_sharelist_wrapper {
     display: none;
     padding: 10px 15px;
     width: 185px;
-    height: 50px;
+    min-height: 50px;
     background-color: #fff;
     border: 1px solid #ddd;
     position: absolute;
@@ -2872,7 +2872,7 @@ nav .pagination li a:active {
     border-radius: 8px;
 }
 
-.bp_sharelist_wrapper::before {
+.common_sharelist_wrapper::before {
     content: " ";
     position: absolute;
     left: -9px;
@@ -2885,7 +2885,7 @@ nav .pagination li a:active {
     z-index: 1;
 }
 
-.bp_sharelist_wrapper::after {
+.common_sharelist_wrapper::after {
     content: " ";
     position: absolute;
     left: -10px;
@@ -2897,21 +2897,21 @@ nav .pagination li a:active {
     border-right: 9px solid #ddd;
 }
 
-.bp_sharelist_wrapper ul {
+.common_sharelist_wrapper ul {
     overflow: hidden;
 }
 
-.bp_sharelist_wrapper ul li {
+.common_sharelist_wrapper ul li {
     float: left;
     margin: 0 0 0 10px;
     overflow: hidden;
 }
 
-.bp_sharelist_wrapper ul li:first-child {
+.common_sharelist_wrapper ul li:first-child {
     margin: 0;
 }
 
-.bp_sharelist_wrapper ul li a {
+.common_sharelist_wrapper ul li a {
     float: left;
     width: 30px;
     height: 30px;
@@ -2919,39 +2919,39 @@ nav .pagination li a:active {
     background-repeat: no-repeat;
 }
 
-.bp_sharelist_wrapper .weibo a {
+.common_sharelist_wrapper .weibo a {
     background-position: 0 -30px;
 }
 
-.bp_sharelist_wrapper .qqzone a {
+.common_sharelist_wrapper .qqzone a {
     background-position: -30px -30px;
 }
 
-.bp_sharelist_wrapper .wechat a {
+.common_sharelist_wrapper .wechat a {
     background-position: -60px -30px;
 }
 
-.bp_sharelist_wrapper .renren a {
+.common_sharelist_wrapper .renren a {
     background-position: -90px -30px;
 }
 
-.bp_sharelist_wrapper .weibo a:hover,
-.bp_sharelist_wrapper .weibo.active a {
+.common_sharelist_wrapper .weibo a:hover,
+.common_sharelist_wrapper .weibo.active a {
     background-position: 0 0;
 }
 
-.bp_sharelist_wrapper .qqzone a:hover,
-.bp_sharelist_wrapper .qqzone.active a {
+.common_sharelist_wrapper .qqzone a:hover,
+.common_sharelist_wrapper .qqzone.active a {
     background-position: -30px 0;
 }
 
-.bp_sharelist_wrapper .wechat a:hover,
-.bp_sharelist_wrapper .wechat.active a {
+.common_sharelist_wrapper .wechat a:hover,
+.common_sharelist_wrapper .wechat.active a {
     background-position: -60px 0;
 }
 
-.bp_sharelist_wrapper .renren a:hover,
-.bp_sharelist_wrapper .renren.active a {
+.common_sharelist_wrapper .renren a:hover,
+.common_sharelist_wrapper .renren.active a {
     background-position: -90px 0;
 }
 

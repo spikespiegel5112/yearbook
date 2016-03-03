@@ -522,17 +522,35 @@
 }
 .static_listtitle_item{
     margin: 0 auto;
-    padding: 0.5rem 0;
     width: 95%;
-    height: 1rem;
-    line-height: 1rem;
+    height: 2rem;
+    line-height: 2rem;
     color: #7da959;
     font-size: 0.75rem;
     box-sizing: content-box;
 }
+.static_listtitle_item ul{
+    overflow: hidden;
+    height: 100%;
+}
+.static_listtitle_item ul li{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.static_listtitle_item ul li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+}
+.static_listtitle_item ul .active a{
+    height: 1.9rem;
+    color: #7bb44a;
+    border-bottom: 3px solid #7bb44a;
+}
 .static_listtitle_item h5{
     display: inline-block;
-    vertical-align: top;
 }
 .static_list_wrapper{
     margin: 0 auto 0;
@@ -550,10 +568,13 @@
     margin: 0 10px 0 0;
 }
 .static_mainlist_wrapper{
+    width: 100%;
+    border-top: 1px solid #e2e3e3;
+    background-color: #ffffff;
+}
+.static_mainlist_wrapper ul{
     margin: 0 auto;
     width: 90%;
-    border: 1px solid #e2e3e3;
-    background-color: #ffffff;
 }
 .static_listtitle_wrapper{
     padding: 8px 15px;
@@ -573,8 +594,7 @@
 }
 .static_listcontent_wrapper li a{
     display: inline-block;
-    padding: 0 2%;
-    width: 96%;
+    width: 100%;
     color: #333;
     line-height: 1.75rem;
     font-size: 0.6rem;
@@ -584,7 +604,6 @@
 }
 .static_listcontent_wrapper li label{
     float: right;
-    padding: 0 0.5rem;
     line-height: 1.75rem;
 }
 .static_pagination_wrapper{

@@ -28,12 +28,13 @@
 			</ul>
 		</div>
 		<div class="nav_login">
+			<span class='iconfont icon-geren'></span>
 			<ul>
 				<li><a href="access_login.html">登录</a></li>
-            <li><a href="access_register.html">注册</a></li>
+				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
-        <div class="cm_header_shadow"></div>
+		<div class="cm_header_shadow"></div>
 	</div>
 	<div class='static_list_container'>
 		<div class='static_list_wrapper'>
@@ -48,52 +49,100 @@
 					</li>
 				</ul>
 			</div>
+			<div class='static_listsidebar_wrapper'>
+				<ul>
+					<li>
+						<a href="javascript:;">
+							<span></span>
+							<label>照片书</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span></span>
+							<label>互动册</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span></span>
+							<label>优惠券</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span></span>
+							<label>小技巧小帮助</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<span></span>
+							<label>产品优势</label>
+						</a>
+					</li>
+				</ul>
+			</div>
 			<div class='static_mainlist_wrapper'>
 				<h5 class='static_listtitle_wrapper'>
 					网站动态
 				</h5>
 				<ul class='static_listcontent_wrapper'>
 					<li>
-						<a href="javascript:;">全场满99包邮</a>
-						<label>2016-02-16</label>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
 					</li>
 					<li>
-						<a href="javascript:;">全场满99包邮</a>
-						<label>2016-02-16</label>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
 					</li>
 					<li>
-						<a href="javascript:;">全场满99包邮</a>
-						<label>2016-02-16</label>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
 					</li>
 					<li>
-						<a href="javascript:;">全场满99包邮</a>
-						<label>2016-02-16</label>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
 					</li>
 					<li>
-						<a href="javascript:;">全场满99包邮</a>
-						<label>2016-02-16</label>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
 					</li>
 					<li>
-						<a href="javascript:;">全场满99包邮</a>
-						<label>2016-02-16</label>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<p>全场满99包邮</p>
+							<label>2016-02-16</label>
+						</a>
 					</li>
 				</ul>
-			</div>
-			<div class='static_pagination_wrapper'>
-				<a  class='static_turnpage_btn'href="javascript:;">
-					上一页
-				</a>
-				<ul>
-					<li><a href="javascript:;">1</a></li>
-					<li><a href="javascript:;">2</a></li>
-					<li><a href="javascript:;">3</a></li>
-					<li><a href="javascript:;">4</a></li>
-					<li class='ellipsis'>…</li>
-					<li><a href="javascript:;">12</a></li>
-				</ul>
-				<a class='static_turnpage_btn' href="javascript:;">
-					下一页
-				</a>
+				<div class='static_pagination_wrapper'>
+					<a class='static_turnpage_btn' href="javascript:;">上一页</a>
+					<ul>
+						<li><a class='active' href="javascript:;">1</a></li>
+						<li><a href="javascript:;">2</a></li>
+						<li><a href="javascript:;">3</a></li>
+						<li><a href="javascript:;">4</a></li>
+						<li class='ellipsis'>…</li>
+						<li><a href="javascript:;">12</a></li>
+					</ul>
+					<a class='static_turnpage_btn' href="javascript:;">下一页</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -123,4 +172,17 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		list();
+	})
+
+	function list() {
+		var listHeight=$('.static_mainlist_wrapper').height();
+		$('.static_listsidebar_wrapper').css('height',listHeight)
+	}
+	</script>
 </body>
+
+</html>

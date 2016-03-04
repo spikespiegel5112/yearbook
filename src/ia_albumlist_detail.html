@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457064137_201013.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457081987_9662395.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/ia.css" type="text/css" media="all">
@@ -42,8 +42,8 @@
 				</li>
 				<li class='ybnav_username_item'><a href="javascript:;">HI,admin</a></li>
 				<li class='ybnav_message_item'>
-					<a class='ybiconfont ybicon-envelope' href="javascript:;"></a>
-				</li>
+				<a class='ybiconfont ybicon-bookcenter' href="javascript:;"></a>
+			</li>
 				<li class='ybnav_logout_item'>
 					<a class='ybiconfont ybicon-turnoff' href="javascript:;"></a>
 				</li>
@@ -564,14 +564,14 @@
 					</div>
 				</div>
 				<div class="photo_name">
-					<p>油菜花田里的美女</p><span class="icon-pencil"></span>
+					<p>油菜花田里的美女</p><span class='ybiconfont ybicon-pencil'></span>
 				</div>
 				<div class="edit_name_input">
 					<input type="text" value="" autofocus="autofocus">
 				</div>
 				<div class="comment-group">
 					<div class="comment_count">
-						<div><b class="icon-thumbs-up"></b><span>3人</span>喜欢这张照片</div>
+						<div><b class="ybiconfont ybicon-praise"></b><span>3人</span>喜欢这张照片</div>
 						<span>评论<b class="badge">122</b></span>
 						<span>浏览<b class="badge">8</b></span>
 					</div>
@@ -798,7 +798,7 @@
 	 * */
 	function editPhotoName() {
 		$('.edit_name_input').hide();
-		$('.photo_name .icon-pencil').click(function() {
+		$('.photo_name .ybicon-pencil').click(function() {
 			var name = $(this).siblings('p').text();
 			$('.edit_name_input').show().find('input').val(name).focus(function() {
 				this.select();

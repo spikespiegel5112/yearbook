@@ -73,53 +73,59 @@
 	display: inline-block;
 	width: 30px;
 	height: 30px;
+	line-height: 30px;
+	font-size: 25px;
 	vertical-align: middle;
 }
 
-.myBookshelf_icon {
-	background: url("../img/pc/personal_list_icon.png") no-repeat 1px -32px;
+.personal_list_box > ul > li:hover, .personal_list_box > ul > li:active{
+	color: #6ea11f;
 }
 
-.personal_list_box > ul > li:hover .myBookshelf_icon,
+/*.myBookshelf_icon {
+	background: url("../img/pc/personal_list_icon.png") no-repeat 1px -32px;
+}*/
+
+/*.personal_list_box > ul > li:hover .myBookshelf_icon,
 .personal_list_box li.active .myBookshelf_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat 1px -1px;
-}
+}*/
 
-.myMessage_icon {
+/*.myMessage_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -92px;
-}
+}*/
 
-.personal_list_box li:hover .myMessage_icon,
+/*.personal_list_box li:hover .myMessage_icon,
 .personal_list_box li.active .myMessage_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -62px;
-}
+}*/
 
-.ybWallet_icon {
+/*.ybWallet_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -151px;
-}
+}*/
 
-.personal_list_box li:hover .ybWallet_icon,
+/*.personal_list_box li:hover .ybWallet_icon,
 .personal_list_box li.active .ybWallet_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -120px;
-}
+}*/
 
-.account_security_icon {
+/*.account_security_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -212px;
-}
+}*/
 
-.personal_list_box li:hover .account_security_icon,
+/*.personal_list_box li:hover .account_security_icon,
 .personal_list_box li.active .account_security_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -182px;
-}
+}*/
 
-.feedback_icon {
+/*.feedback_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -270px;
-}
+}*/
 
-.personal_list_box li:hover .feedback_icon,
+/*.personal_list_box li:hover .feedback_icon,
 .personal_list_box li.active .feedback_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -240px;
-}
+}*/
 
 .myShop_icon {
     background: url("../img/pc/personal_list_icon.png") no-repeat -1px -390px;
@@ -1121,19 +1127,19 @@
 	cursor: default;
 }
 
-.order_icon {
+/*.order_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -330px;
-}
+}*/
 
 .hr {
 	padding: 10px 0;
 	position: relative;
 }
 
-.personal_list_box li:hover .order_icon,
+/*.personal_list_box li:hover .order_icon,
 .personal_list_box li.active .order_icon {
 	background: url("../img/pc/personal_list_icon.png") no-repeat center -300px;
-}
+}*/
 
 .binding_mode .user_name input {
 	display: inline-block;
@@ -3274,17 +3280,25 @@ li.action div:hover {
 	width: 400px;
 	overflow: hidden;
 }
-.opd_donatesuccess_wrapper img, .opd_donatesuccess_wrapper div{
-	float: left;
+.opd_donatesuccess_wrapper span, .opd_donatesuccess_wrapper div{
+	margin: 0 auto;
+}
+.opd_donatesuccess_wrapper span{
+	display: block;
+	color: #a9ba38;
+	text-align: center;
+	font-size: 180px;
 }
 .opd_donatesuccess_wrapper p, .opd_donatesuccess_wrapper a{
 	display: block;
+	margin: 0 auto;
 	width: 240px;
 	text-align: center;
 }
 .opd_donatesuccess_wrapper p{
-	margin: 30px 0 10px 0;
+	margin: 30px auto 10px;
 	font-size: 26px;
+	text-align: center;
 }
 .opd_donatesuccess_wrapper a{
 	color: #a9ba38;

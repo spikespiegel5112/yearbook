@@ -242,9 +242,12 @@
 	width: 17%;
 	border-left: 1px dotted #ddd;
 	color: #999;
-	line-height: 44px;
-	height: 44px;
 	box-sizing: border-box;
+}
+
+.mark_nav .nav_right .caption{
+	float: left;
+	margin: 13px 0 0 0;	
 }
 
 .mark_nav .nav_right .icon {
@@ -3191,7 +3194,7 @@
 .auto_edit_nav .nav_right {
 	width: 87%;
 	padding: 0 0 0 15px;
-	line-height: 44px;
+/*	line-height: 44px;*/
 	font-size: 12px;
 	box-sizing: border-box;
 }
@@ -3212,6 +3215,7 @@
 
 .auto_edit_nav .ybcommon_queryicon_item {
 	float: right;
+	margin: 15px 0 0 0;
 	font-size:18px!important ;
 }
 
@@ -3602,15 +3606,18 @@
 	position: relative;
 }
 
-.choose_img_con .img_con .photo_list a.selected > span {
-	/* display: none; */
+.choose_img_con .img_con .photo_list a.selected > span{
+	display: block;
 	position: absolute;
-	bottom: -1px;
-	right: -1px;
-	width: 24px;
-	height: 26px;
-	background: url(../img/makebook/blue_angle.png) no-repeat 1px;
-	background-size: cover;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	color: #fff;
+	font-size: 15px;
+	border-style: solid;
+	border-width: 18px;
+	border-color: transparent #00b7ee #00b7ee transparent;
 }
 
 .choose_img_con .img_con .photo_list li img {

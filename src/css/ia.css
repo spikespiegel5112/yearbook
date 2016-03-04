@@ -5321,12 +5321,8 @@
 }
 
 .bm_uploadphoto_button:before {
-	content: '';
-	float: left;
-	margin: 5px 0 0 5px;
-	width: 30px;
-	height: 30px;
-	background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -95px -51px;
+	display: inline-block;
+	margin: 0 5px 0 0;
 }
 
 .bmviewalbum_main_wrapper {
@@ -6125,8 +6121,7 @@ button::-moz-focus-inner {
 	clear: both;
 }
 
-.bm_creatalbum_button,
-.bm_uploadphoto_button {
+.bm_creatalbum_button, .bm_uploadphoto_button {
 	float: right;
 	width: 110px;
 	height: 40px;
@@ -6135,9 +6130,11 @@ button::-moz-focus-inner {
 	box-shadow: 0 1px 2px #aaa;
 	border: 0;
 	color: #fff;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight: bold;
 	cursor: pointer;
 	border-radius: 5px;
+	text-align: center;
 }
 
 .bm_creatalbum_button:hover,
@@ -6471,9 +6468,13 @@ button::-moz-focus-inner {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	height: 55px;
-	width: 50px;
-	background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -300px -21px;
+	width: 0;
+	height: 0;
+	color: #fff;
+	font-size: 20px;
+	border-style: solid;
+	border-width: 25px;
+	border-color: transparent #00b7ee #00b7ee transparent;
 }
 
 .bm_uploadphoto_choosephoto h6 {

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
     <link rel="stylesheet" href="../css/m_ia.css" type="text/css"/>
     <!-- endbuild -->
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457080447_3996513.css " type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457084893_226195.css" type="text/css" media="all"/>
 
     <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
     <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
@@ -65,19 +65,19 @@
                 <ul class="ia-vote-option common">
                     <li>
                         <input placeholder="" maxlength="20" class="form-control" type="text" required>
-                        <a class="ia-vote-reduce"><img src="../img/m/icon/vote-reduce.png"></a>
+                        <a class="ia-vote-reduce"><span class="ybiconfont ybicon-minus2"></span></a>
                     </li>
                     <li>
                         <input placeholder="" maxlength="20" class="form-control" type="text" required>
-                        <a class="ia-vote-reduce"><img src="../img/m/icon/vote-reduce.png"></a>
+                        <a class="ia-vote-reduce"><span class="ybiconfont ybicon-minus2"></span></a>
                     </li>
                     <li>
                         <input placeholder="" maxlength="20" class="form-control" type="text" required>
-                        <a class="ia-vote-reduce"><img src="../img/m/icon/vote-reduce.png"></a>
+                        <a class="ia-vote-reduce"><span class="ybiconfont ybicon-minus2"></span></a>
                     </li>
                     <li>
                         <input placeholder="" maxlength="20" class="form-control" type="text" required>
-                        <a class="ia-vote-reduce"><img src="../img/m/icon/vote-reduce.png"></a>
+                        <a class="ia-vote-reduce"><span class="ybiconfont ybicon-minus2"></span></a>
                     </li>
                 </ul>
                 <a class="ia-vote-add-option">+添加选项</a>
@@ -89,49 +89,49 @@
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                         <li>
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                         <li>
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                         <li>
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                         <li>
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                         <li>
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                         <li>
                             <div class="ia-vote-option-user">
                                 <img src="../img/m/default/head-portrait.jpg" class="img-circle">
                                 <span>张三</span>
-                                <a><img src="../img/m/icon/vote-reduce.png"></a>
+                                <a><span class="ybiconfont ybicon-minus2"></span></a>
                             </div>
                         </li>
                     </ul>
@@ -160,8 +160,8 @@
 
             <div class="ia-vote-choose-num">
                 <p>最多<span class="ia-vote-max-choose-num">2</span>项
-                    <a class="ia-vote-add-choose-num"><img src="../img/m/icon/vote-add.png"></a>
-                    <a class="ia-vote-add-choose-num"><img src="../img/m/icon/vote-reduce.png"></a>
+                    <a class="ia-vote-add-choose-num"><span class="ybiconfont ybicon-plus"></span></a>
+                    <a class="ia-vote-add-choose-num"><span class="ybiconfont ybicon-minus2"></span></a>
                 </p>
             </div>
             <div class="clearfix"></div>
@@ -217,7 +217,7 @@
     $('.ia-vote-add-option').on('click', function () {
         var optionHtml = '  <li> ' +
                 '<input placeholder="" maxlength="20" class="form-control" type="text" required>' +
-                '<a class="ia-vote-reduce"><img src="../img/m/icon/vote-reduce.png"></a>' +
+                '<a class="ia-vote-reduce"><span class="ybiconfont ybicon-minus2"></span></a>' +
                 '</li>';
         $('.ia-vote-option.common').append(optionHtml);
     });

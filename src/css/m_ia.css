@@ -2350,6 +2350,11 @@
     margin: 10% 1% 0 3%;
 }
 
+.ybwechat_list_wrapper li a.delete_icon span{
+    font-size: 20px;
+    color: #81bc34;
+}
+
 .ybwechat_titleimg_item {
     float: left;
     margin: 4% 2%;
@@ -2432,10 +2437,10 @@
 
 .albumcontent_info_wrapper .viewed_item span {
     float: left;
-    width: 30px;
+    width: 26px;
     height: 20px;
-    background: url(../img/m/icon/eye.png) no-repeat 0 2px;
-    background-size: cover;
+    font-size: 24px;
+    text-align: center;
 }
 
 .albumcontent_info_wrapper .viewed_item label {
@@ -3433,8 +3438,7 @@
 }
 
 .album_detail_viewed_item span {
-    background: url(../img/m/sprite/img_sprite_00000.png);
-    background-position: -431px -28px
+    font-size: 24px;
 }
 
 /*.album_detail_praise_item span {
@@ -5178,10 +5182,13 @@
     top: -7px;
 }
 
-.ia-vote-create-item .ia-vote-reduce img {
-    height: 2em;
-    width: 2em;
+.ia-vote-create-item .ia-vote-reduce span {
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
     float: right;
+    font-size: 28px;
+    color: #81d42f;
 }
 
 .ia-vote-create-item .ia-vote-choose-common, .ia-vote-create-item .ia-vote-select-user {
@@ -5236,6 +5243,29 @@ a.ia-vote-type-choose.choose, a.ia-vote-model-choose.choose {
 
 a.ia-vote-add-choose-num {
     margin-left: .5em;
+}
+
+a.ia-vote-add-choose-num span.ybicon-minus2{
+    font-size: 23px;
+    color: #b4b4b4;
+    display: inline-block;
+    vertical-align: middle;
+    height: 21px;
+    line-height: 21px;
+}
+
+a.ia-vote-add-choose-num span.ybicon-plus{
+    font-size: 12px;
+    color: #b4b4b4;
+    display: inline-block;
+    vertical-align: middle;
+    width: 21px;
+    height: 21px;
+    line-height: 18px;
+    text-align: center;
+    border: 2px solid #b4b4b4;
+    border-radius: 100%;
+    box-sizing: border-box;
 }
 
 .control-group a.ia-vote-add-choose-num img {
@@ -5320,6 +5350,13 @@ a.ia-vote-add-choose-num {
 .ia-vote-option-user a {
     float: right;
     margin-right: 4em;
+}
+
+.ia-vote-option-user a span{
+    font-size: 28px;
+    color: #81d42f;
+    text-align: center;
+    line-height: 40px;
 }
 
 .ia-vote-option-user {

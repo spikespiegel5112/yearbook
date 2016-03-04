@@ -1838,6 +1838,7 @@ button.select {
 .ybnav_userinfo_wrapper {
     float: right;
     margin: 0 50px 0 0;
+    height: 35px;
 }
 
 .ybnav_userinfo_wrapper ul li {
@@ -1849,9 +1850,9 @@ button.select {
     display: block;
     width: 100%;
     height: 100%;
-    line-height: 24px;
+/*    line-height: 27px;*/
     color: #9a9a9a;
-    font-size: 12px;
+    text-align: center;
 }
 
 .ybnav_userinfo_wrapper ul li a:hover {
@@ -1868,10 +1869,12 @@ button.select {
     overflow: hidden;
 }
 
-.ybnav_username_item {
+.ybnav_username_item a {
     min-width: 50px;
     max-width: 120px;
     height: 25px;
+    line-height: 25px;
+    font-size: 12px;
 }
 
 .ybnav_username_item a {
@@ -1880,32 +1883,12 @@ button.select {
     text-overflow: ellipsis;
 }
 
-.ybnav_message_item {
+.ybnav_userinfo_wrapper .ybnav_message_item a, .ybnav_userinfo_wrapper .ybnav_logout_item  a{
     width: 25px;
     height: 25px;
+    font-size: 18px;
+    line-height: 27px;
 }
-
-.ybnav_message_item a {
-    background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -118px -82px;
-}
-
-.ybnav_message_item a:hover {
-    background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -170px -82px;
-}
-
-.ybnav_logout_item {
-    width: 25px;
-    height: 25px;
-}
-
-.ybnav_logout_item a {
-    background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -143px -82px;
-}
-
-.ybnav_logout_item a:hover {
-    background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -195px -82px;
-}
-
 
 /*~~~~~~~~~~bookspace_banner书册空间头部~~~~~~~~~~*/
 
@@ -2146,8 +2129,11 @@ button.select {
     margin: 0 auto 10px;
     width: 45px;
     height: 45px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 25px;
     border-radius: 50%;
-    background-image: url(../img/sprite/bannertools_sprite_img_00000.png);
+    /*background-image: url(../img/sprite/bannertools_sprite_img_00000.png);*/
 }
 
 .bannerslider_inner ul li a p {

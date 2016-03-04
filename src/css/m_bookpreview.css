@@ -373,49 +373,39 @@
 	display: block;
 }
 
-.bp_menu_wrapper li .comment, .bp_menu_wrapper li .praise {
+.bp_menu_wrapper li .comment,
+.bp_menu_wrapper li .praise,
+.bp_menu_wrapper li .donate {
 	position: relative;
 	margin: 0 auto 5px;
 	width: 2.5rem;
 	height: 2.5rem;
+    line-height: 2.5rem;
 }
 
-.bp_menu_wrapper li .comment span,
 .bp_menu_wrapper li .praise span{
     font-size: 36px;
     color: #6F748B;
 }
 
 .bp_menu_wrapper li .comment span{
+    font-size: 36px;
+    color: #a4a7b5;
     line-height: 3rem
+}
+
+.bp_menu_wrapper li .donate span{
+    font-size: 42px;
+    color: #a4a7b5;
 }
 
 .bp_menu_wrapper li .active .praise span{
 	color: #ff696a;
 }
 
-.bp_menu_wrapper .donate{
-	margin: 0 auto 5px;
-	width: 2.5rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	background-color: #a4a7b5;
-	border-radius: 50%;
-	color: #fff;
-	font-size: 1.5rem;
-}
-.bp_menu_wrapper li .comment {
-	background-position-x: -90px;
-}
-.bp_menu_wrapper .active .comment{
-	opacity: 1;
-}
-.bp_menu_wrapper .active .donate{
-	background-color: #70758c;
-}
-.bp_menu_wrapper .active .praise{
-	opacity: 1;
-	background-position-y: -112px;
+.bp_menu_wrapper .active .comment span,
+.bp_menu_wrapper .active .donate span{
+	color: #70758c;
 }
 
 
@@ -830,7 +820,7 @@
 
 .bp_landscape_wrapper ul .comment div {
 	background-image: none;
-    line-height: 22px;
+    line-height: 24px;
 }
 
 .bp_landscape_wrapper ul .comment .active div {
@@ -849,15 +839,13 @@
 .bp_landscape_wrapper ul .donate div{
 	background-image:none;
 	text-align: center;
-	line-height: 20px;
-	font-size: 14px;
-	font-weight: bold;
-	background: #fff;
-	color: #000;
+	line-height: 22px;
+	font-size: 20px;
+	color: #fff;
 	border-radius: 50%;
 }
 .bp_landscape_wrapper ul .donate .active div{
-	background-color: orange;
+	color: orange;
 }
 .bp_landscape_wrapper ul .share div {
 	background-image: none;

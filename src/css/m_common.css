@@ -1997,19 +1997,25 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	border-radius: 50%;
 	overflow: hidden;
 }
-.loginpopup_ssologin_wrapper li a img{
+.loginpopup_ssologin_wrapper li a span{
 	display: block;
-	margin: 20% auto 0;
-	width: 50%;
+    margin: 0;
+    width: 100%;
+    border-radius: 100%;
+    font-size: 28px;
+    height: 100%;
+    text-align: center;
+    line-height: 3rem;
+    color: #fff;
 }
 .loginpopup_ssologin_wrapper .qq a{
-	background: url(../img/m/previewbook/loginpopup_qq_00000.png) #039dff;
+	background: #039dff;
 }
 .loginpopup_ssologin_wrapper .wechat a{
-	background: url(../img/m/previewbook/loginpopup_wechat_00000.png) #1bcb44;
+	background: #1bcb44;
 }
 .loginpopup_ssologin_wrapper .weibo a{
-	background: url(../img/m/previewbook/loginpopup_weibo_00000.png) #e42744;
+	background: #e42744;
 }
 
 /* 评论 输入框 */

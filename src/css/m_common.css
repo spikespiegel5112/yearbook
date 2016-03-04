@@ -559,34 +559,32 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	left: 0;
 }
 
-.ybwechatheader_wrapper .add_btn, .ybwechatheader_wrapper .setting_btn {
-	background-image: url(../img/m/sprite/yb3wechatheader_sprite_img_00000.png);
-	background-position-y: -48px;
-	background-size: 900%;
-	background-repeat-x: no-repeat;
+.ybwechatheader_wrapper .add_btn{
+	line-height: 45px;
 }
 
-.ybwechatheader_wrapper .add_btn {
-	width: 50px;
-	height: 40px;
-	background-position-x: -32px;
-	box-sizing: border-box;
+.ybwechatheader_wrapper .add_btn span{
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    line-height: 25px;
+    width: 27px;
+    height: 27px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    text-align: center;
 }
 
-.ybwechatheader_wrapper .back_btn{
+.ybwechatheader_wrapper .back_btn span{
     font-size: 29px;
     color: #fff;
     line-height: 42px;
 }
 
-
-.ybwechatheader_wrapper .setting_btn {
-	position: absolute;
-	top: 0;
-	width: 50px;
-	height: 40px;
-	background-position: -114.5px -47px;
-	box-sizing: border-box;
+.ybwechatheader_wrapper .setting_btn span {
+    font-size: 29px;
+    color: #fff;
+    line-height: 42px;
 }
 
 .ybwechatheader_wrapper .share_btn span{
@@ -895,8 +893,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	margin: 10px auto;
 	width: 60px;
 	height: 60px;
-	background: url(../img/m/icon/empty_box_1_00000.png) 0 0 no-repeat;
-	background-size: 100%;
+    line-height: 60px;
+	font-size: 60px;
+    color: #ccc;
 }
 
 .common_empty_item label {
@@ -1013,66 +1012,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .footer_nav ul li.active .new{
     color: #fff;
 }
-
-/*.footer_nav ul li span.home {
-	background: url("../img/m/icon/icon_home_gray.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li.active span.home {
-	background: url("../img/m/icon/icon_home_white.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li span.msg {
-	background: url("../img/m/icon/icon_msg_gray.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li.active span.msg {
-	background: url("../img/m/icon/icon_msg_white.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li span.find {
-	background: url("../img/m/icon/icon_find_gray.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li.active span.find {
-	background: url("../img/m/icon/icon_find_white.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li span.new {
-	background: url("../img/m/icon/icon_new_gray.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li.active span.new {
-	background: url("../img/m/icon/icon_new_white.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li span.bookshelf {
-	background: url("../img/m/icon/icon_bookshelf_gray.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li.active span.bookshelf {
-	background: url("../img/m/icon/icon_bookshelf_white.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li span.my {
-	background: url("../img/m/icon/icon_my_gray.png") no-repeat center;
-	background-size: cover;
-}
-
-.footer_nav ul li.active span.my {
-	background: url("../img/m/icon/icon_my_white.png") no-repeat center;
-	background-size: cover;
-}*/
 
 /*~~~~~~~~~~add pop new style~~~~~~~~~~*/
 .open_new_container {

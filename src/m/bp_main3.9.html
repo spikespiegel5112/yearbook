@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="../css/m_reset.css" type="text/css" />
 	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
 	<link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css" />
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457004547_639932.css " type="text/css" />
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457074153_7422893.css " type="text/css" />
 	<!-- endbuild -->
 	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
 	<link rel="stylesheet" href="../assets/css/iSlider.min.css" type="text/css" />
@@ -25,17 +25,18 @@
 	<!--竖屏class:viewmode_portrait，横屏class:viewmode_landscape， 未登录状态class：bp_unsignedin_mode-->
 	<div class='main_container bp_unsignedin_mode'>
 		<div class="ybwechatheader_wrapper">
-			<a class='left_btn back_btn' href="javascript:;"><span class="ybiconfont icon-029houtui"></span></a>
+			<a class='left_btn back_btn' href="javascript:;"><span class="ybiconfont ybicon-backward1"></span></a>
 			<div class="bp_barrageswitch_item">
 				<a href="javascript:;">
-					<div></div>
+                    <div class="ybiconfont ybicon-barrageoff off"></div>
+                    <div class="ybiconfont ybicon-barrageon on"></div>
 				</a>
 			</div>
 			<div class="bp_paginator_item">
 				<label>1</label>/<span>33</span>
 			</div>
-			<a class='bp_resizebtn_item' href="javascript:;"><span class="ybiconfont icon-021quanping"></span></a>
-			<a class='right_btn share_btn' href="javascript:;"><span class="ybiconfont icon-035fenxiang"></span></a>
+			<a class='bp_resizebtn_item' href="javascript:;"><span class="ybiconfont ybicon-fullscreen"></span></a>
+			<a class='right_btn share_btn' href="javascript:;"><span class="ybiconfont ybicon-sharehollow"></span></a>
 			<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
 		</div>
 		<div class="bp_flipbook_container">	
@@ -131,7 +132,7 @@
 				<ul>
 					<li>
 						<a href="javascript:;" class='active'>
-							<div class="comment"><span class="ybiconfont icon-025pinglun"></span></div>
+							<div class="comment"><span class="ybiconfont ybicon-commentsolid"></span></div>
 							<p>评论(<span>123</span>)</p>
 						</a>
 					</li>
@@ -143,7 +144,7 @@
 					</li>
 					<li>
 						<a href="javascript:;">
-							<div class="praise"><span class="ybiconfont icon-014dianzan"></span></div>
+							<div class="praise"><span class="ybiconfont ybicon-praise"></span></div>
 							<p>被赞(<span>123</span>)</p>
 						</a>
 					</li>
@@ -433,7 +434,7 @@
 							</li>
 						</ul>
 					</div>
-					<a class='bp_praise_btn' href="javascript:;"><label><span class="ybiconfont icon-014dianzan"></span>点赞</label></a>
+					<a class='bp_praise_btn' href="javascript:;"><label><span class="ybiconfont ybicon-praise"></span>点赞</label></a>
 				</div>
 			</div>
 		</div>
@@ -463,12 +464,12 @@
 			<ul>
 				<li class="comment">
 					<a href="javascript:;">
-						<div class="ybiconfont icon-025pinglun"></div>
+						<div class="ybiconfont ybicon-commentsolid"></div>
 					</a>
 				</li>
 				<li class="praise">
 					<a href="javascript:;">
-						<div></div>
+						<div class="ybiconfont ybicon-praise"></div>
 					</a>
 				</li>
 				<li class="donate">
@@ -478,16 +479,17 @@
 				</li>
 				<li class="share">
 					<a href="javascript:;">
-						<div class="ybiconfont icon-035fenxiang"></div>
+						<div class="ybiconfont ybicon-sharehollow"></div>
 					</a>
 				</li>
 				<li class="bp_barrageswitch_item">
 					<a href="javascript:;">
-						<div></div>
+						<div class="ybiconfont ybicon-barrageoff off"></div>
+                        <div class="ybiconfont ybicon-barrageon on"></div>
 					</a>
 				</li>
 				<li class="bp_resizebtn_item">
-					<a href="javascript:;"><span class="ybiconfont icon-022suoxiao"></span></a>
+					<a href="javascript:;"><span class="ybiconfont ybicon-narrow"></span></a>
 				</li>
 			</ul>
 			<div class="chapter_slide">
@@ -583,10 +585,10 @@
 	<div class='bp_photoslider_wrapper' id="iSlider-wrapper">
 		<ol>
 			<li>
-				<a class="bp_resizebtn_item active" href="javascript:;"><span class="ybiconfont icon-029houtui"></span></a>
+				<a class="bp_resizebtn_item active" href="javascript:;"><span class="ybiconfont ybicon-backward1"></span></a>
 			</li>
 			<li class="praise">
-				<a href="javascript:;"></a>
+				<a href="javascript:;"><span class="ybiconfont ybicon-praise"></span></a>
 			</li>
 			<li class="avatar">
 				<img src="../img/m/default/vote_result_avatar_100_100_00000.jpg">
@@ -892,9 +894,9 @@
 					var $this=$(this);
 					$this.toggleClass('active');
 					if (!$this.hasClass('active')) {
-						$this.find('label').html('<span class="ybiconfont icon-014dianzan"></span>'+'点赞')
+						$this.find('label').html('<span class="ybiconfont ybicon-praise"></span>'+'点赞')
 					}else{
-						$this.find('label').html('<span class="ybiconfont icon-014dianzan"></span>'+'已赞')
+						$this.find('label').html('<span class="ybiconfont ybicon-praise"></span>'+'已赞')
 					}
 					
 				});

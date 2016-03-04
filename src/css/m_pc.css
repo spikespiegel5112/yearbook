@@ -1059,8 +1059,7 @@
 .orderinfo .info a i {
     position: absolute;
     right: 10px;
-    top: 50%;
-    margin: -6px 0 0;
+    line-height: 40px;
     color: #666;
     font-size: 14px;
 }
@@ -1882,7 +1881,6 @@
     margin: 25px auto;
     width: 168px;
     height: 124px;
-    /*background: url("../img/m/pc/shop_default.png") no-repeat;*/
     font-size: 168px;
     color: #abaebd;
     line-height: 124px;
@@ -2408,26 +2406,26 @@
 .shop_home .reset_btn_group ul li a span{
     display: inline-block;
     margin: 10px auto;
-    width: 31px;
+    width: 34px;
     height: 25px;
     vertical-align: middle;
-}
-
-.shop_home .reset_btn_group .revise_info span{
-    font-size: 31px;
     line-height: 26px;
-    color: #48CFAD;
     text-align: center;
 }
 
+.shop_home .reset_btn_group .revise_info span{
+    font-size: 34px;
+    color: #48CFAD;
+}
+
 .shop_home .reset_btn_group .view_order span{
-    background: url("../img/pc/vsorder.png") no-repeat;
-    background-size: cover;
+    font-size: 31px;
+    color: #4fc1e9;
 }
 
 .shop_home .reset_btn_group .revise_account span{
-    background: url("../img/pc/rsaccount.png") no-repeat;
-    background-size: cover;
+    font-size: 29px;
+    color: #ac92ec;
 }
 
 .shop_home .reset_btn_group ul li a i{
@@ -2741,8 +2739,10 @@
     margin-left: -32px;
     width: 64px;
     height: 66px;
-    background: #fff url("../img/m/icon/icon_warning.png") no-repeat center;
-    background-size: 50px;
+    color: #3498db;
+    font-size: 56px;
+    line-height: 66px;
+    background-color: #fff;
     border-radius: 100% 100% 0 0;
 }
 

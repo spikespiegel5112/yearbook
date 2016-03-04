@@ -10,15 +10,6 @@
     background: transparent;
 }
 
-/*.book_space .share_btn {
-    position: absolute;
-    top: 0;
-    width: 50px;
-    box-sizing: border-box;
-    background: url("../img/m/icon/share_icon.png") no-repeat center 8px;
-    background-size: 26px;
-}*/
-
 .book_space .book_cover {
     position: relative;
     width: 100%;
@@ -114,31 +105,33 @@
 }
 
 .book_space .detail_more li a span.cm_fl{
-    margin: 7px 5px 7px 0;
+    margin: 0;
     width: 25px;
-    height: 25px;
-    background: url("../img/m/sprite/space_icons.png") no-repeat;
-    background-size: 350px 75px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: transparent;
 }
 
 .book_space .detail_more li a span.vote{
-    background-position: -1px -50px;
+    color: #00bb9c;
 }
 
 .book_space .detail_more li a span.topic{
-    background-position: -25px -50px;
+    color: #f1c40f;
 }
 
 .book_space .detail_more li a span.leave_msg{
-    background-position: -50px -50px;
+    color: #56abe4;
 }
 
 .book_space .detail_more li a span.mark{
-    background-position: -73px -50px;
+    color: #f38181;
 }
 
 .book_space .detail_more li a span.pic{
-    background-position: -100px -50px;
+    font-size: 18px;
+    color: #00adb5;
 }
 
 .book_space .detail_more li a i.cm_fr {
@@ -164,41 +157,50 @@
     /*background: #fff;*/
 }
 
-.tool_wrapper .big_icon {
+.tool_wrapper .ybiconfont {
     display: block;
     margin: 0 auto 5px;
-    width: 50px;
-    height: 50px;
-    background: url("../img/m/sprite/space_icons.png") no-repeat;
-    background-size: 350px 75px;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    line-height: 46px;
+    border-radius: 100%;
 }
 
 .tool_wrapper .upload {
-    background-position: -200px 0;
+    padding-left: 2px;
+    background-color: #41b3ff;
 }
 
 .tool_wrapper .auto_layout {
-    background-position: -250px 0;
+    font-size: 30px;
+    background-color: #f78536;
 }
 
 .tool_wrapper .preview_share {
-    background-position: -300px 0;
+    font-size: 32px;
+    padding-left: 2px;
+    line-height: 46px;
+    background-color: #50c19a;
 }
 
 .tool_wrapper .trends {
-    background-position: 0 0;
+    background-color: #9bbc1c;
 }
 
 .tool_wrapper .partner_manage {
-    background-position: -50px 0;
+    background-color: #ffaa00;
 }
 
 .tool_wrapper .album_manage {
-    background-position: -100px 0;
+    background-color: #ff4085;
 }
 
 .tool_wrapper .invite_card {
-    background-position: -150px 0;
+    padding-top: 2px;
+    background-color: #00d0ff;
 }
 
 .book_space .tips {
@@ -3539,7 +3541,6 @@
     float: left;
     width: 30px;
     height: 25px;
-    /*background: url(../img/m/sprite/img_sprite_00000.png) -462px -30px;*/
     text-align: center;
     line-height: 26px;
     color: #999;
@@ -3551,10 +3552,6 @@
     line-height: 24px;
     color: #aaa;
 }
-
-/*.praise_wrapper .active {
-    background-position: -439px -2px
-}*/
 
 .album_detail_comment_window {
     display: none;

@@ -387,15 +387,19 @@
     margin: 15px auto;
     width: 40px;
     height: 40px;
-    background-image: url(../img/sprite/imgsprite_yb3_wbl_00000.png);
+   /* background-image: url(../img/sprite/imgsprite_yb3_wbl_00000.png);*/
     border: 3px solid #fff;
     border-radius: 50%;
     box-shadow: 0 2px 3px #ccc;
     box-sizing: content-box;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 28px;
 }
 
 .timeline_line_wrapper .vote {
-    background-position: 0 -402px;
+    /*background-position: 0 -402px;*/
     background-color: #f7d477;
 }
 
@@ -764,6 +768,33 @@
 
 .share_main .share_head li div {
     line-height: 30px;
+}
+
+.share_main .share_head li div .ybiconfont{
+    width: 25px;
+    height: 25px;
+    background-color: #75b4d9;
+    border-radius: 100%;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    line-height: 26px;
+}
+
+.share_main .share_head li div .ybicon-message{
+    background-color: #75b4d9;
+}
+
+.share_main .share_head li div .ybicon-photo{
+    background-color: #5dd5d1;
+}
+
+.share_main .share_head li div .ybicon-bulb{
+    background-color: #d28cd2;
+}
+
+.share_main .share_head li div .ybicon-vote{
+    background-color: #f7d477;
 }
 
 .share_main .share_head li .user_name {
@@ -3914,9 +3945,16 @@
     right: 0;
 }
 
-.inter-action-friend-sex img {
-    width: 54%;
-    height: 54%;
+.inter-action-friend-sex span {
+    font-size: 24px;
+}
+
+.inter-action-friend-sex span.ybicon-male{
+    color: #6dbec5;
+}
+
+.inter-action-friend-sex span.ybicon-female{
+    color: #f870ad;
 }
 
 /*partner invitation card content*/
@@ -4740,8 +4778,12 @@
     margin: 0 auto;
     width: 50px;
     height: 45px;
-    background: url("../img/m/ia/topic.png") no-repeat;
-    background-size: 50px;
+    /*background: url("../img/m/ia/topic.png") no-repeat;
+    background-size: 50px;*/
+    text-align: center;
+    font-size: 50px;
+    line-height: 45px;
+    color: #9dd455;
 }
 
 .iatopic_list_wrapper li a label {

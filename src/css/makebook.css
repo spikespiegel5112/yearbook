@@ -409,10 +409,10 @@
 	margin: -2px 2px 0;
 	width: 18px;
 	height: 18px;
-	vertical-align: middle;
+	line-height: 18px;
 }
 
-.pagemake_wrap .caption a span.page,
+/*.pagemake_wrap .caption a span.page,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.page {
     background: url("../img/makebook/icon_open_book_gray.png") no-repeat center;
     background-size: cover;
@@ -422,57 +422,57 @@
 .pagemake_wrap .caption .btn_wrap:hover a span.page {
     background: url("../img/makebook/icon_open_book_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .slide_btns a.active span.page,
+/*.pagemake_wrap .caption .slide_btns a.active span.page,
 .pagemake_wrap .caption .slide_btns a:hover span.page {
     background: url("../img/makebook/icon_open_book_green.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption a span.chapter ,
+/*.pagemake_wrap .caption a span.chapter ,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.chapter {
     background: url("../img/makebook/icon_layer_gray.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption a.active span.chapter,
+/*.pagemake_wrap .caption a.active span.chapter,
 .pagemake_wrap .caption .btn_wrap:hover a span.chapter {
     background: url("../img/makebook/icon_layer_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .slide_btns a.active span.chapter,
+/*.pagemake_wrap .caption .slide_btns a.active span.chapter,
 .pagemake_wrap .caption .slide_btns a:hover span.chapter {
     background: url("../img/makebook/icon_layer_green.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a span.tpl ,
+/*.pagemake_wrap .caption .btn_wrap a span.tpl ,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.tpl {
     background: url("../img/makebook/icon_tpl_gray.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a.active span.tpl,
+/*.pagemake_wrap .caption .btn_wrap a.active span.tpl,
 .pagemake_wrap .caption .btn_wrap:hover a span.tpl {
     background: url("../img/makebook/icon_tpl_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a span.sample ,
+/*.pagemake_wrap .caption .btn_wrap a span.sample ,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.sample {
     background: url("../img/makebook/icon_sample_gray.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a.active span.sample,
+/*.pagemake_wrap .caption .btn_wrap a.active span.sample,
 .pagemake_wrap .caption .btn_wrap:hover a span.sample {
     background: url("../img/makebook/icon_sample_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a span.editor ,
+/*.pagemake_wrap .caption .btn_wrap a span.editor ,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.editor {
     background: url("../img/makebook/icon_editor_gray.png") no-repeat center;
     background-size: cover;
@@ -482,31 +482,31 @@
 .pagemake_wrap .caption .btn_wrap:hover a span.editor {
     background: url("../img/makebook/icon_editor_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a span.save ,
+/*.pagemake_wrap .caption .btn_wrap a span.save ,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.save {
     background: url("../img/makebook/icon_save_gray.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a.active span.save,
+/*.pagemake_wrap .caption .btn_wrap a.active span.save,
 .pagemake_wrap .caption .btn_wrap:hover a span.save {
     background: url("../img/makebook/icon_save_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a span.submit ,
+/*.pagemake_wrap .caption .btn_wrap a span.submit ,
 .pagemake_wrap .caption .btn_wrap:hover a.disable span.submit {
     background: url("../img/makebook/icon_print_gray.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
-.pagemake_wrap .caption .btn_wrap a.active span.submit,
+/*.pagemake_wrap .caption .btn_wrap a.active span.submit,
 .pagemake_wrap .caption .btn_wrap:hover a span.submit {
     background: url("../img/makebook/icon_print_white.png") no-repeat center;
     background-size: cover;
-}
+}*/
 
 .pagemake_middle .caption {
 	margin: 0;
@@ -600,14 +600,17 @@
 .pagemake_middle .caption .edit_wrap a span {
 	display: block;
 	float: none;
-	padding-left: 32px;
+	margin: 0 auto;
 	width: 35px;
 	height: 35px;
-	line-height: 30px;
+	line-height: 35px;
 	box-sizing: border-box;
-	font-size: 24px;
+	font-size: 28px;
 	color: #a4a4a4;
+	text-align: center;
 }
+
+.pagemake_middle .caption .edit_wrap a span
 
 .pagemake_middle .caption .edit_wrap a span.page {
 	margin-left: 2px;
@@ -616,15 +619,6 @@
 .pagemake_middle .caption .edit_wrap .savePn .save,
 .pagemake_middle .caption .edit_wrap .editor_btn .editor {
 	margin: 0 auto;
-}
-
-.pagemake_middle .caption .edit_wrap .editPage .page {
-	font-size: 16px;
-	line-height: 35px;
-}
-
-.pagemake_middle .caption .edit_wrap .change_tpl_tips .tpl{
-    margin: 0 auto;
 }
 
 .pagemake_middle .caption .edit_wrap .chapter_state,
@@ -2052,17 +2046,21 @@
 	border: 1px solid #ccc;
 }
 
-.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img {
+.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 span {
     border-radius: 15px;
     height: 16px;
     width: 16px;
+    font-size: 15px;
     position: absolute;
     top: -6px;
     right: -6px;
     border: 1px solid #ccc;
+    color: #fff;
+    background-color: #ccc;
+    border-radius: 50%;
 }
 
-.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img:hover{
+.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 span:hover{
     border: 1px solid #89c539;
 }
 
@@ -2420,13 +2418,13 @@
 	height: 80px;
 }
 
-.pagemake_wrap .caption span{
+/*.pagemake_wrap .caption span{
     float: right;
     font-size: 16px;
     height: 25px;
     line-height: 25px;
     color: #333;
-}
+}*/
 .pagemake_wrap .caption .fold_btn{
     font-size: 24px;
 }

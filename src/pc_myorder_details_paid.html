@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="assets/css/green.css">
 	<link rel="stylesheet" href="assets/css/cityStyle.css">
 	<!-- build:css css/all.min.css -->
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457064137_201013.css " type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457086750_8893392.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/pc.css">
@@ -59,12 +59,12 @@
 							</div>
 						</a>
 					</li>
-					<li><span class="myBookshelf_icon"></span><a href="pc_mybookshelf.html">我的书架</a></li>
-					<li><span class="myMessage_icon"></span><a href="pc_myMessage.html">我的消息</a></li>
-					<li><span class="ybWallet_icon"></span><a href="pc_wallet.html">忆尔钱包</a></li>
-					<li class="active"><span class="order_icon"></span><a href="pc_myorder_list.html">我的订单</a></li>
-					<li><span class="account_security_icon"></span><a href="pc_security.html">账户安全</a></li>
-					<li><span class="feedback_icon"></span><a href="pc_feedback.html">意见反馈</a></li>
+					<li><span class="ybWallet_icon ybiconfont ybicon-bookshelf"></span><a href="pc_mybookshelf.html">我的书架</a></li>
+					<li><span class="ybWallet_icon ybiconfont ybicon-message"></span><a href="pc_myMessage.html">我的消息</a></li>
+					<li><span class="ybWallet_icon ybiconfont ybicon-wallet"></span><a href="pc_wallet.html">忆尔钱包</a></li>
+					<li class="active"><span class="order_icon ybiconfont ybicon-orderlist"></span><a href="pc_myorder_list.html">我的订单</a></li>
+					<li><span class="account_security_icon ybiconfont ybicon-lock"></span><a href="pc_security.html">账户安全</a></li>
+					<li><span class="feedback_icon ybiconfont ybicon-feedback"></span><a href="pc_feedback.html">意见反馈</a></li>
 				</ul>
 			</div>
 			<div class="personal_content_box">
@@ -215,7 +215,7 @@
 								<div class="edit_icon">
 									<span class="icon-eye-open"></span>
 									<span class="icon_book"></span>
-									<span class="icon-trash"></span>
+									<span class='ybiconfont ybicon-trash'></span>
 								</div>
 								<div class="book_name" title="青春记忆">青春记忆</div>
 							</a>
@@ -226,7 +226,7 @@
 								<div class="edit_icon">
 									<span class="icon-eye-open"></span>
 									<span class="icon_book"></span>
-									<span class="icon-trash"></span>
+									<span class='ybiconfont ybicon-trash'></span>
 								</div>
 								<div class="book_name" title="漫画风格">漫画风格</div>
 							</a>
@@ -237,7 +237,7 @@
 								<div class="edit_icon">
 									<span class="icon-eye-open"></span>
 									<span class="icon_book"></span>
-									<span class="icon-trash"></span>
+									<span class='ybiconfont ybicon-trash'></span>
 								</div>
 								<div class="book_name" title="青春记忆">青春记忆</div>
 							</a>
@@ -248,7 +248,7 @@
 								<div class="edit_icon">
 									<span class="icon-eye-open"></span>
 									<span class="icon_book"></span>
-									<span class="icon-trash"></span>
+									<span class='ybiconfont ybicon-trash'></span>
 								</div>
 								<div class="book_name" title="青春记忆">青春记忆</div>
 							</a>
@@ -259,7 +259,7 @@
 								<div class="edit_icon">
 									<span class="icon-eye-open"></span>
 									<span class="icon_book"></span>
-									<span class="icon-trash"></span>
+									<span class='ybiconfont ybicon-trash'></span>
 								</div>
 								<div class="book_name" title="漫画风格">漫画风格</div>
 							</a>
@@ -270,7 +270,7 @@
 								<div class="edit_icon">
 									<span class="icon-eye-open"></span>
 									<span class="icon_book"></span>
-									<span class="icon-trash"></span>
+									<span class='ybiconfont ybicon-trash'></span>
 								</div>
 								<div class="book_name" title="青春记忆">青春记忆</div>
 							</a>
@@ -455,7 +455,7 @@
 
 	//添加新收货地址
 	function addNewAddress() {
-		$('.new_address, .edit .icon-pencil').click(function() {
+		$('.new_address, .edit .ybicon-pencil').click(function() {
 			art.dialog({
 				id: 'new_address',
 				title: '添加收货地址',
@@ -469,7 +469,7 @@
 	}
 	//编辑收货地址
 	function editAddress() {
-		$('.edit .icon-pencil').click(function() {
+		$('.edit .ybicon-pencil').click(function() {
 			art.dialog({
 				id: 'new_address',
 				title: '编辑收货地址',

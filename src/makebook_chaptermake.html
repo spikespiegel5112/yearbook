@@ -9,7 +9,7 @@
 	<meta name="keywords" content="">
 	<title>忆尔3.4-章节定制</title>
 	<!-- build:css css/all.min.css -->
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457064137_201013.css " type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457086750_8893392.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
@@ -41,8 +41,8 @@
 				</li>
 				<li class='ybnav_username_item'><a href="javascript:;">HI,admin</a></li>
 				<li class='ybnav_message_item'>
-					<a class='ybiconfont ybicon-envelope' href="javascript:;"></a>
-				</li>
+				<a class='ybiconfont ybicon-bookcenter' href="javascript:;"></a>
+			</li>
 				<li class='ybnav_logout_item'>
 					<a class='ybiconfont ybicon-turnoff' href="javascript:;"></a>
 				</li>
@@ -159,7 +159,7 @@
 		<div class="nav_left cm_fl box_sb">
 			<a href="makebook_chaptermake.html">导航视图—<span>章节</span></a>
 			<div class='ybcommon_queryicon_item'>
-				<span class='icon-question-sign'></span>
+				<span class='ybiconfont ybicon-querysolid'></span>
 				<div>
 					<p>可按页面或章节方式进行导航，拖动章节可直接调整顺序</p>
 					<a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
@@ -179,7 +179,7 @@
 						</ul>
 					</div>
 					<div class='ybcommon_queryicon_item'>
-						<span class='icon-question-sign'></span>
+						<span class='ybiconfont ybicon-querysolid'></span>
 						<div>
 							<p>使用左侧下拉按钮，可切换为单页编辑模式和列表编辑模式</p>
 							<a class='ybcommon_qimoredetail_btn' href="static_hc_photo_space.html" target='_blank'>查看详情</a>
@@ -192,7 +192,7 @@
 			<div class="caption">
 				可使用的模板
 				<div class='ybcommon_queryicon_item'>
-					<span class='icon-question-sign'></span>
+					<span class='ybiconfont ybicon-querysolid'></span>
 					<div>
 						<p>此处显示的是您当前编辑模式下可使用的资源</p>
 						<a class='ybcommon_qimoredetail_btn' href="static_hc_photo_space.html" target='_blank'>查看详情</a>
@@ -859,7 +859,7 @@
 							<ul>
 								<li class="pos_rel active"><!--添加class:active 选中效果 边框加粗变色-->
 									<span class="icon-columns double_page" title="双页模板"></span>
-									<div class="cm_cp"><i class="icon-remove-sign"></i></div>
+									<div class="cm_cp"><i class="ybiconfont ybicon-failure"></i></div>
 									<div class="unsubmit">
 										<img src="img/makebook/unSubmit.png">
 									</div>
@@ -877,7 +877,7 @@
 						<div class="cm_fl item">
 							<ul>
 								<li class="pos_rel">
-									<div class="cm_cp"><i class="icon-remove-sign"></i></div>
+									<div class="cm_cp"><i class="ybiconfont ybicon-failure"></i></div>
 									<div class="icon2"><i class="icon-remove-circle"></i>不符合模板要求</div>
 									<img src="img/default/cartoon001.png">
 								</li>
@@ -933,7 +933,7 @@
 								<div>保存书页</div>
 							</a>
 							<div class='ybcommon_queryicon_item'>
-								<!--<span class='icon-question-sign'></span>-->
+								<!--<span class='ybiconfont ybicon-querysolid'></span>-->
 								<div>
 									<p>拖动改变页面顺序，或者双击页码编辑页码后保存修改结果</p>
 								</div>
@@ -961,7 +961,7 @@
 									<ul>
 										<li><i class="icon-picture"></i>照片（<span>10</span>/11）</li>
 										<li><i class="icon-bullhorn"></i>话题（<span>0</span>/2）</li>
-										<li><i class="icon-comments"></i>赠言（<span>0</span>/3）</li>
+										<li><i class="ybiconfont ybicon-commentsolid"></i>赠言（<span>0</span>/3）</li>
 										<li><i class="icon-bar-chart"></i>投票（<span>0</span>/4）</li>
 										<li><i class=" icon-list-alt"></i>文本（<span>0</span>/4）</li>
 									</ul>
@@ -2533,7 +2533,7 @@
 					</dd>
 				</dl>
                 <div class="ybcommon_queryicon_item">
-                    <span class='icon-question-sign'></span>
+                    <span class='ybiconfont ybicon-querysolid'></span>
                     <div>
                         <p>书册尺寸宽14.5cm，长21.0cm</p>
                         <a class="ybcommon_qimoredetail_btn" href="static_hc_bind_size.html" target='_blank'>查看详情</a>
@@ -2577,7 +2577,7 @@
 		 * 资源列表help hover事件
 		 */
 		function helpHover(){
-			$(document).on("mouseover mouseout", ".caption .icon-question-sign", function(event) {
+			$(document).on("mouseover mouseout", ".caption .ybiconfont ybicon-querysolid", function(event) {
 				if (event.type == "mouseover") {
 					//鼠标悬浮
 					$(this).children(".cover").removeClass("hidden");

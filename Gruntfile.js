@@ -1,19 +1,53 @@
 module.exports = function(grunt) {
     'use strict';
 
-    // Force use of Unix newlines
     grunt.util.linefeed = '\n';
 
     RegExp.quote = function(string) {
         return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
     };
 
+    var YBConfig = {
+        staticPort : 9000, //静态资源查看地址
 
-    // Project configuration.
+        //移动端的压缩css文件
+        css : {
+            pc : [
+                '<%= meta.srcPath %>css/reset.css',
+                '<%= meta.srcPath %>css/common.css',
+                '<%= meta.srcPath %>css/index.css',
+                '<%= meta.srcPath %>css/access.css',
+                '<%= meta.srcPath %>css/booklist.css',
+                '<%= meta.srcPath %>css/bookpreview.css',
+                '<%= meta.srcPath %>css/ia.css',
+                '<%= meta.srcPath %>css/makebook.css',
+                '<%= meta.srcPath %>css/staticize.css',
+                '<%= meta.srcPath %>css/tplshowcase.css',
+                '<%= meta.srcPath %>css/pc.css'
+            ],
+            wap : [
+                '<%= meta.srcPath %>css/m_reset.css',
+                '<%= meta.srcPath %>css/m_common.css',
+                '<%= meta.srcPath %>css/m_index.css',
+                '<%= meta.srcPath %>css/m_access.css',
+                '<%= meta.srcPath %>css/m_booklist.css',
+                '<%= meta.srcPath %>css/m_bookpreview.css',
+                '<%= meta.srcPath %>css/m_ia.css',
+                '<%= meta.srcPath %>css/m_makebook.css',
+                '<%= meta.srcPath %>css/m_staticize.css',
+                '<%= meta.srcPath %>css/m_pc.css',
+                '<%= meta.srcPath %>css/m_shop.css'
+            ]
+        },
+        js : {
+            pc : [],
+            wap : []
+        }
+    };
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Metadata.
         meta: {
             assetPath: 'src/assets/',
             distPath: 'dist/',
@@ -31,6 +65,32 @@ module.exports = function(grunt) {
         clean: {
             all: ['<%= meta.distPath %>'],
             sourceMap: ['<%= meta.distPath %>css/*.map']
+        },
+
+        /**
+         * 启动静态文件的服务器
+         */
+        connect: {
+            distServer : {
+                options: {
+                    open: true,
+                    protocol : "http",
+                    port: YBConfig.staticPort + 1,
+                    hostname: '127.0.0.1',
+                    livereload: 35730,
+                    base: ['dist']
+                }
+            },
+            srcServer : {
+                options: {
+                    open: true,
+                    protocol : "http",
+                    port: YBConfig.staticPort,
+                    hostname: '127.0.0.1',
+                    livereload: 35729,
+                    base: ['src']
+                }
+            }
         },
 
         useminPrepare: {
@@ -51,6 +111,9 @@ module.exports = function(grunt) {
             }
         },
 
+        /**
+         * 合并文件
+         */
         concat: {
             js: {
                 options: {
@@ -65,109 +128,85 @@ module.exports = function(grunt) {
                 options: {
                     banner: '<%= banner %>'
                 },
-                src: [
-                    '<%= meta.srcPath %>css/reset.css',
-                    '<%= meta.srcPath %>css/common.css',
-                    '<%= meta.srcPath %>css/index.css',
-                    '<%= meta.srcPath %>css/access.css',
-                    '<%= meta.srcPath %>css/booklist.css',
-                    '<%= meta.srcPath %>css/bookpreview.css',
-                    '<%= meta.srcPath %>css/ia.css',
-                    '<%= meta.srcPath %>css/makebook.css',
-                    '<%= meta.srcPath %>css/staticize.css',
-                    '<%= meta.srcPath %>css/tplshowcase.css',
-                    '<%= meta.srcPath %>css/pc.css',
-                ],
+                src: YBConfig.css.pc,
                 dest: '<%= meta.distPath %>css/all.css'
             },
             mcss: {
                 options: {
                     banner: '<%= banner %>'
                 },
-                src: [
-                    '<%= meta.srcPath %>css/m_reset.css',
-                    '<%= meta.srcPath %>css/m_common.css',
-                    '<%= meta.srcPath %>css/m_index.css',
-                    '<%= meta.srcPath %>css/m_access.css',
-                    '<%= meta.srcPath %>css/m_booklist.css',
-                    '<%= meta.srcPath %>css/m_bookpreview.css',
-                    '<%= meta.srcPath %>css/m_ia.css',
-                    '<%= meta.srcPath %>css/m_makebook.css',
-                    '<%= meta.srcPath %>css/m_staticize.css',
-                    '<%= meta.srcPath %>css/m_pc.css',
-                    '<%= meta.srcPath %>css/m_shop.css'
-                ],
+                src: YBConfig.css.wap,
                 dest: '<%= meta.distPath %>css/m.all.css'
             }
         },
 
+        /**
+         * 复制文件
+         */
         copy: {
-            fonts: {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: 'fonts/**/*',
-                dest: '<%= meta.distPath %>/'
-            },
-            assets : {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: 'assets/**/*',
-                dest: '<%= meta.distPath %>/'
-            },
-            html : {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= meta.srcPath %>',
-                        src: '*.html',
-                        dest: '<%= meta.distPath %>/'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= meta.srcPath %>',
-                        src: 'm/*.html',
-                        dest: '<%= meta.distPath %>/'
-                    }
-                ]
-            },
-            img : {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: 'img/**/*',
-                dest: '<%= meta.distPath %>/'
-            },
-            css : {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/iconfont.css','css/activity/*.css'],
-                dest: '<%= meta.distPath %>/'
-            },
-            js : {
-                expand: true,
-                cwd: '<%= meta.srcPath %>',
-                src: ['js/**/*.js','!**/base.js'],
-                dest: '<%= meta.distPath %>/'
+            main : {
+                files : [{
+                    //复制字体
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: 'fonts/**/*',
+                    dest: '<%= meta.distPath %>/'
+                },{
+                    //复制第三方插件
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: 'assets/**/*',
+                    dest: '<%= meta.distPath %>/'
+                }, {
+                    //复制PChtml文件
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: '*.html',
+                    dest: '<%= meta.distPath %>/'
+                },
+                {
+                    //复制WAPhtml文件
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: 'm/*.html',
+                    dest: '<%= meta.distPath %>/'
+                },{
+                    //复制图像文件
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: 'img/**/*',
+                    dest: '<%= meta.distPath %>/'
+                },{
+                    //复制css文件
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
+                    dest: '<%= meta.distPath %>/'
+                }, {
+                    //复制js文件
+                    expand: true,
+                    cwd: '<%= meta.srcPath %>',
+                    src: ['js/**/*.js', '!**/base.js'],
+                    dest: '<%= meta.distPath %>/'
+                }]
             }
         },
 
+        /**
+         * 压缩css
+         */
         cssmin: {
             options: {
-                banner: '', // set to empty; see bellow
-                keepSpecialComments: '*', // set to '*' because we already add the banner in sass
+                banner: '',
+                keepSpecialComments: '*',
                 sourceMap: false
             },
-            pc_css: {
+            css: {
                 files: [
                     {
                         src: '<%= meta.distPath %>css/all.css',
                         dest: '<%= meta.distPath %>css/all.min.css'
-                    }
-                ]
-            },
-
-            m_css: {
-                files: [
-                    {
+                    },{
                         src: '<%= meta.distPath %>css/m.all.css',
                         dest: '<%= meta.distPath %>css/m.all.min.css'
                     }
@@ -175,6 +214,9 @@ module.exports = function(grunt) {
             }
         },
 
+        /**
+         * 压缩js
+         */
         uglify: {
             options: {
                 banner: '<%= banner %>',
@@ -187,9 +229,10 @@ module.exports = function(grunt) {
                 dest: '<%= meta.distPath %>js/all.min.js'
             }
         },
-
+        /**
+         * 压缩图片大小
+         */
         imagemin: {
-            /* 压缩图片大小 */
             dist: {
                 options: {
                     optimizationLevel: 3 //定义 PNG 图片优化水平
@@ -204,6 +247,10 @@ module.exports = function(grunt) {
                 ]
             }
         },
+
+        /**
+         * px单位转换为 rem
+         */
         px2rem: {
             options: {
                 ignore0: true, // ignore 0px default true
@@ -227,7 +274,9 @@ module.exports = function(grunt) {
             }
         },
 
-
+        /**
+         * 监听文件
+         */
         watch: {
             options: {
                 dateFormat: function(time) {
@@ -243,29 +292,56 @@ module.exports = function(grunt) {
                     '<%= meta.srcPath %>*.html',
                 ],
                 tasks: 'dist'
+            },
+            livereload: {
+                options: {
+                    livereload: '<%=connect.options.srcServer.livereload%>'
+                },
+
+                files: [
+                    'dist/*.html',
+                    'dist/css/{,*/}*.css',
+                    'dist/js/{,*/}*.js',
+                    'dist/img/{,*/}*.{png,jpg}'
+                ]
             }
         },
 
+        /**
+         * 替换压缩之后的文件
+         */
         usemin: {
-            html: ['<%= meta.distPath %>/*.html','<%= meta.distPath %>/m/*.html'],   // 注意此处是build/
+            html: ['<%= meta.distPath %>/*.html','<%= meta.distPath %>/m/*.html'],
             options: {
                 assetsDirs: ['<%= meta.distPath %>/css']
             }
         },
 
-        sed: {
-            versionNumber: {
-                pattern: (function() {
-                    var old = grunt.option('oldver');
-                    return old ? RegExp.quote(old) : old;
-                })(),
-                replacement: grunt.option('newver'),
-                recursive: true
+        /**
+         *  格式化和清理html文件
+         */
+        htmlmin: {
+            html: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true //压缩html:根据情况开启与否
+                },
+
+                files: [{
+                    expand: true,
+                    cwd: 'dist/',
+                    src: ['*.html'],
+                    dest: 'dist/'
+                },{
+                    expand: true,
+                    cwd: 'dist/m/',
+                    src: ['*.html'],
+                    dest: 'dist/m/'
+                }]
             }
         }
     });
 
-    // Load the plugins
     require('load-grunt-tasks')(grunt, {
         scope: 'devDependencies'
     });
@@ -276,7 +352,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dist', ['clean:all', 'useminPrepare', 'dist-js', 'dist-css', 'copy', 'usemin'/*,'px2rem'*/]);
     grunt.registerTask('build', ['dist']);
     grunt.registerTask('default', ['dist']);
-    grunt.registerTask('server', ['dist','watch']);
+    grunt.registerTask('server', ['dist',  'connect:srcServer', 'connect:distServer', 'watch']);
 
     grunt.event.on('watch', function(action, filepath, target) {
         grunt.log.writeln(target + ': ' + filepath + ' has ' + action);

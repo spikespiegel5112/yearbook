@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-确认订单</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457341281_9913986.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/green.css" type="text/css"/>
+</head>
+
+<body class="bg_f6f6f6">
+<div class='main_container order_management'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward1"></span>
+        </a>
+        <p>确认订单</p>
+    </div>
+    <div class="basic_info">
+        <div class="orderinfo">
+            <div class="user info">
+                <a href="javascript:;">
+                    <div class="cm_fl"><label class="icon-user"></label><span>用户名</span></div>
+                    <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
+                    <div><label class="icon-truck"></label><span>具体地址</span></div>
+                    <i class="ybiconfont ybicon-forward2"></i>
+                </a>
+            </div>
+            <div class="dispatching info">
+                <a href="javascript:;">
+                    <label>选择配送方式</label>
+                    <span class="cm_fr">全场包邮快递 ¥0.00</span>
+                    <i class="ybiconfont ybicon-forward2"></i>
+                </a>
+            </div>
+            <div class="invoice info hidden">
+                <a href="javascript:;">
+                    <label>选择发票信息</label>
+                    <span class="cm_fr">不开发票</span>
+                    <i class="ybiconfont ybicon-forward2"></i>
+                </a>
+            </div>
+            <div class="payway info">
+                <label>选择支付方式</label>
+                <ul>
+                    <li>
+                        <input type="radio" id="alipay" name="payway">
+                        <label for="alipay" class=""><img src="../img/pc/alipay_img.png"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="unipay" name="payway">
+                        <label for="unipay" class=""><img src="../img/m/pc/Unionpay_img.png"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="wechatpay" name="payway">
+                        <label for="wechatpay" class=""><img src="../img/m/pc/wechatpay.png"></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="product info">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class='opd_productimg_item'>
+                            <a href="javascript:;">
+                                <img src="../img/m/default/choosetemplate_cover_00000.jpg">
+                            </a>
+                        </td>
+                        <td>
+                            <div>
+                                <a href="javascript:;">《月圆家团圆》*<span>1</span></a>
+                                <p>精装硬壳</p>
+                                <p>别致小装14.5cm*21cm</p>
+                            </div>
+                        </td>
+                        <td class='opd_orderinfoprice_item'>
+                            ¥88.88
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="invoice_tips ">
+                <a href="javascript:;">
+                    <p><span class="icon-question-sign"></span>如需开取发票，请联系忆尔客服</p>
+                </a>
+            </div>
+        </div>
+        <div class='opd_confirm_wrapper'>
+            <div class="opd_subtotalprice_item">
+                <label>实付款：</label>
+                <span>¥88.88</span>
+            </div>
+            <a class='opd_confirm_item' href="javascript:;">马上支付</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript" src='../assets/js/icheck.js'></script>
+<script type="text/javascript">
+    $(function () {
+        changeButtonCss();
+    })
+
+    //单选、复选框
+    function changeButtonCss() {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+</script>
+</body>
+
+</html>

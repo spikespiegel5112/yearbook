@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-我的订单-无数据</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457341281_9913986.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+</head>
+
+<body class="bg_f6f6f6">
+<div class='main_container order_management myorder'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward1"></span>
+        </a>
+        <p>我的订单</p>
+        <div class="filter_order right_btn">
+            <a class="search_status" href="javascript:;">全部<i class="icon-caret-down"></i></a>
+            <ul>
+                <li><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">已下单</a></li>
+                <li><a href="javascript:;">未付款</a></li>
+                <li><a href="javascript:;">已付款</a></li>
+                <li><a href="javascript:;">制作中</a></li>
+                <li><a href="javascript:;">已发货</a></li>
+                <li><a href="javascript:;">已完成</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="basic_info">
+        <div class='common_empty_item'>
+            <span class="ybiconfont ybicon-box"></span>
+            <div>您还没有任何订单！</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript">
+    $(function () {
+        filterOrder();
+    })
+
+    /*
+     * 筛选订单状态
+     * */
+    function filterOrder(){
+        $('.search_status').on('touchend',function(e){
+            var $this = $(this);
+            if($this.next().is(':visible')){
+                $this.next().hide();
+                $this.find('i').removeClass('icon-caret-up').addClass('icon-caret-down');
+            }else{
+                $this.next().show()
+                $this.find('i').removeClass('icon-caret-down').addClass('icon-caret-up');
+            }
+
+            $(document).one('touchend',function(){
+                $('.filter_order ul').hide();
+            });
+            e.stopPropagation();
+        });
+        $('.filter_order ul li a').on('touchend',function(){
+            $('.search_status').html($(this).html()+'<i class="icon-caret-down"></i>');
+            $(this).closest('ul').hide();
+        });
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,2784 @@
+@charset "utf-8";
+
+/*~~~~~~~~~~personal main~~~~~~~~~~*/
+.userinfo_wrapper {
+    width: 100%;
+    margin: 0 0 1em 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    height: 6em;
+}
+
+.userinfo_wrapper a {
+    display: block;
+    height: 100%;
+    background: #fff;
+}
+
+.userinfo_wrapper img {
+    float: left;
+    margin: 20px 10px 0 10px;
+    border-radius: 50%;
+}
+
+.name_wrapper {
+    float: left;
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    color: #3c3c3c;
+}
+
+.name_wrapper div {
+    margin: 0.3em 0 0 0;
+    font-size: 0.6em;
+    color: #9e9e9e;
+}
+
+.rightarrow_item {
+    float: right;
+    margin: 0;
+    padding: 0 1em 0 0;
+    line-height: 40px;
+}
+
+.userinfo_wrapper .rightarrow_item {
+    height: 6em;
+    line-height: 6em;
+    color: #9e9e9e;
+}
+
+.usercenter_tools_wrapper {
+    margin: 0 0 3em 0;
+}
+
+.usercenter_tools_wrapper > ul > li {
+    font-size: 14px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.usercenter_tools_wrapper > ul > li:hover {
+    background: #d1d1d1;
+}
+
+.usercenter_tools_wrapper > ul > li:first-child {
+    margin: 1em 0;
+}
+
+.usercenter_tools_wrapper ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    color: #000;
+}
+
+.usercenter_tools_wrapper ul li a > span {
+    float: left;
+    margin: 5px 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.usercenter_tools_wrapper ul li a > span img {
+    width: 30px;
+    height: 30px;
+    vertical-align: baseline;
+}
+
+.userbindicon_wrapper {
+    float: right;
+    margin: 10px 0 0 0;
+    height: 20px;
+}
+
+.userbindicon_wrapper li {
+    float: left;
+    margin: 0 1px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.userbindicon_wrapper img {
+    position: absolute;
+    top: 0;
+}
+
+.userbindicon_wrapper li span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/m/sprite/icon-bind.png);
+    background-size: 40px 140px;
+}
+
+.userbindicon_wrapper .phone_icon {
+    background-position: 0 -2px;
+}
+
+.userbindicon_wrapper .email_icon {
+    background-position: 0 -25px;
+}
+
+.userbindicon_wrapper .qq_icon {
+    background-position: 0 -48px;
+}
+
+.userbindicon_wrapper .renren_icon {
+    background-position: 0 -72px;
+}
+
+.userbindicon_wrapper .weibo_icon {
+    background-position: 0 -95px;
+}
+
+.userbindicon_wrapper .wechat_icon {
+    background-position: 0 -119px;
+}
+
+.userbindicon_wrapper .active {
+    background-position-x: -60px;
+}
+
+/*~~~~~~~~~~personal info~~~~~~~~~~*/
+.user-info-list li {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-sizing: content-box;
+}
+
+.user-header {
+    width: 100%;
+    height: 6em;
+    border: 1px solid #DDDDDD;
+    border-left: none;
+    border-right: none;
+    margin: 1em 0;
+    background-color: #fff;
+}
+
+.user-header a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.user-header p {
+    float: right;
+    line-height: 6em;
+    margin-right: 1em;
+}
+
+.user-header ul {
+    color: #3c3c3c;
+    font-style: normal;
+    vertical-align: middle;
+    margin: 1.6em 0 0 0;
+    padding: 0;
+}
+
+.user-header ul li.thin-float-cl {
+    color: #9e9e9e;
+    font-size: 0.6em;
+    margin-top: .3em;
+}
+
+.user-info-list .user-header {
+    height: 6em;
+    line-height: 6em;
+    margin: 1em 0;
+    padding: 0 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-info-list a {
+    display: block;
+    color: #3c3c3c;
+    font-size: .875em;
+}
+
+.user-info-list span:after {
+    content: ">";
+    padding-left: 0.5em;
+}
+
+.user-info-list .user-header span:after{
+    display: none;
+    content: "";
+}
+
+.user-info-list form {
+    width: 70%;
+}
+
+.user-info-list textarea {
+    height: 10em;
+}
+
+.user-info-list li:hover {
+    background-color: #C3C3C8;
+}
+
+.user-info-list li:hover a, .user-info-list li:hover span {
+    color: #fff;
+}
+
+.user-info-list li:last-child {
+    border-radius: 0;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.user-info-edit-header {
+    height: 3em;
+    text-align: center;
+    padding: 0 0.2em;
+    line-height: 3em;
+}
+
+.user-info-edit-header .header-cancel {
+    float: left;
+    font-size: .9em;
+}
+
+.user-info-edit-header .header-save {
+    float: right;
+    font-size: .9em;
+}
+
+.user_info_edit {
+    position: relative;
+}
+
+.user_info_edit input {
+    width: 100%;
+    min-width: 8em;
+    height: 3em;
+    overflow: hidden;
+    float: left;
+    font-size: .875em;
+    padding: 0 6px;
+!important;
+}
+
+.user_info_edit textarea {
+    width: 97%;
+    height: 10em;
+    margin: 0;
+    font-size: .875em;
+    padding: 1%;
+!important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: content-box;
+}
+
+.user_info_edit span {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 6px;
+    color: #3c3c3c;
+    display: block;
+    width: 10%;
+    height: 3em;
+    text-align: right;
+    z-index: 100;
+!important;
+    text-align: center;
+    line-height: 3em;
+}
+
+.user_info_edit span:focus {
+    color: #3c3c3c;
+    display: none;
+}
+
+.user_info_warning {
+    margin: 1em;
+}
+
+/*~~~~~~~~~~bind~~~~~~~~~~*/
+.user-center-bind .list-group .list-group-item, .user-center-tool .list-group .list-group-item {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.user-center-bind .list-group .list-group-item span {
+    font-size: .875em;
+}
+
+.user-center-bind li:hover, .user-center-tool li:hover {
+    background-color: #C3C3C8;
+}
+
+.user-center-bind li:hover a, .user-center-tool li:hover a {
+    color: #fff;
+}
+
+.user-center-bind li:hover span {
+    color: #fff;
+}
+
+.user-center-bind a {
+    color: #3c3c3c;
+    display: block;
+    font-size: .875em;
+}
+
+.bind {
+    background: url("../img/m/sprite/icon-bind.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 2px;
+    background-size: 40px 140px;
+}
+
+.bind.active {
+    background-position-x: -20px;
+}
+
+.photo-icon {
+    background-position: 0 -2px;
+}
+
+.email-icon {
+    background-position: 0 -25px;
+}
+
+.qq-icon {
+    background-position: 0 -48px;
+}
+
+.renren-icon {
+    background-position: 0 -72px;
+}
+
+.weibo-icon {
+    background-position: 0 -95px;
+}
+
+.wechat-icon {
+    background-position: 0 -120px;
+}
+
+.set-username.form-group {
+    margin: 2em;
+}
+
+.set-username p,
+.change-ps-ok p {
+    margin-bottom: 10px;
+}
+
+.bindsetcode_wrapper .container, .bindsetcode_wrapper .container-fluid {
+    padding: 0;
+}
+
+.bindsetcode_wrapper .set-code form {
+    margin: 0;
+}
+
+.bindsetcode_wrapper .set-username {
+    margin: 2em 0;
+}
+
+.bindsetcode_wrapper .set-code label {
+    margin: 1em 0;
+}
+
+.change-email {
+    margin: 2em;
+}
+
+.change-email p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/*~~~~~~~~~~feedback~~~~~~~~~~*/
+.feedback-reply {
+    padding: 1em;
+}
+
+.feedback-reply ul li {
+    border-left: solid #05a51e;
+}
+
+.feedback-reply .feedback-reply-system {
+    border-left: solid #006ce5;
+}
+
+.feedback-reply .feedback-content {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feedback-reply .feedback-date {
+    font-size: 0.6em;
+    color: #BEBEBE;
+}
+
+/*~~~~~~~~~~my message~~~~~~~~~~*/
+.message_list {
+    margin: 15px 10px;
+}
+
+.message_list > li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px #e0e0e0;
+}
+
+.message_list > li .edit_btn {
+    float: right;
+    color: #d9d9d9;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.message_list > li .edit_btn:hover {
+    color: #6ea11f;
+}
+
+.message_list > li .edit_btn.icon-trash {
+    height: 30px;
+    margin-top: -18px;
+}
+
+.message_list > li > h4 {
+    float: left;
+    margin: 0;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background: url("../img/m/pc/time_line_circle_green.png") no-repeat 0;
+    background-size: 18px 8px;
+}
+
+.message_list > li > h4 img {
+    position: relative;
+    top: -2px;
+    left: 5px;
+    width: 54px;
+    border-radius: 4px;
+}
+
+.message_list > li > p {
+    padding: 0 15px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.message_list > li .time {
+    float: left;
+    font-size: 12px;
+    line-height: 28px;
+}
+
+.message_list > li.read > h4 {
+    background: none;
+}
+
+/*~~~~~~~~~~my wallet~~~~~~~~~~*/
+.wallet_wrapper .balance {
+    width: 95%;
+    height: 50px;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 10px auto 20px;
+    position: relative;
+}
+
+.wallet_wrapper .balance p {
+    line-height: 50px;
+}
+
+.wallet_wrapper .balance p span {
+    font-size: 24px;
+    color: #fc6b52;
+}
+
+.wallet_wrapper .balance a {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.wallet_wrapper .balance a:hover {
+    color: #e7b54b;
+}
+
+.coupon_switcher {
+    margin: 10px auto;
+    width: 80%;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.coupon_switcher li {
+    float: left;
+    width: 33%;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    background: #f6f6f6;
+    color: #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    box-sizing: border-box;
+}
+
+.coupon_switcher li:first-child {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.coupon_switcher li:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.coupon_switcher li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #acdb6f;
+}
+
+.coupon_switcher li .active {
+    background: #fff;
+    color: #fc6b52;
+}
+
+.coupon_list {
+    display: none;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.coupon_list li {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 15px auto;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: url("../img/m/pc/coupon_bg.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_name {
+    position: absolute;
+    left: 4%;
+    top: 5px;
+}
+
+.coupon_list li .coupon_name p {
+    margin: 0;
+}
+
+.coupon_list li .coupon_name p:last-child {
+    font-size: 12px;
+    line-height: 1.8em;
+}
+
+.coupon_list li .coupon_name p span {
+    font-size: 12px;
+}
+
+.coupon_list li .coupon_money {
+    float: right;
+    width: 110px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    margin-right: -2px;
+}
+
+.coupon_list li .coupon_money span {
+    font-size: 20px;
+    display: block;
+    padding-top: 5px;
+}
+
+.coupon_list li .coupon_money.coupon_10 {
+    background: url("../img/m/pc/coupon_10.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_money.coupon_20 {
+    background: url("../img/m/pc/coupon_20.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_money.coupon_50 {
+    background: url("../img/m/pc/coupon_50.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list li .coupon_money.coupon_failed {
+    background: url("../img/m/pc/coupon_failed.png") no-repeat;
+    background-size: cover;
+}
+
+.mybookshelf_info_empty_item {
+    margin: 1em 0;
+}
+
+.mybookshelf_info_empty_item span {
+    display: block;
+    margin: 0 auto;
+    width: 85px;
+    height: 90px;
+    background: url(../img/m/icon/empty_box_1_00000.png) 0 0 no-repeat;
+}
+
+.mybookshelf_info_empty_item div {
+    margin: 1em 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.mybookshelf_info_empty_item div a {
+    color: #71a033;
+}
+
+.common_title_item span.ybiconfont{
+    float: left;
+    margin: 0 0 0 10px;
+    width: 25px;
+    height: 48px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 48px;
+    color: #88ad41;
+    background-image: none;
+}
+
+.common_title_item span.mybookshelf_created_icon {
+   font-size: 17px;
+}
+
+/*.mybookshelf_joined_icon {
+    background-position-x: -137px;
+}
+
+.mybookshelf_recentlyused_icon {
+    background-position-x: -155px;
+}*/
+
+/*~~~~~~~~~~order management~~~~~~~~~~*/
+.order_management.order .ybwechatheader_wrapper {
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+
+.order_management .book_cover {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background-size: cover;
+    background: url("../img/m/pc/create_order_bg.jpg") no-repeat center -75px;
+}
+
+.order_management .book_cover img {
+    position: absolute;
+    left: 50%;
+    top: 48px;
+    margin: 0 0 0 -52px;
+    width: 104px;
+    height: 146px;
+    border: 2px solid #d5d5d5;
+}
+
+.order_management .basic_info {
+    border: 0;
+}
+
+.order_management .basic_info .tpl_info {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border-bottom: 1px dotted #c9c9c9;
+}
+
+.order_management .basic_info .tpl_info h4 {
+    font-size: 18px;
+    color: #000;
+}
+
+.order_management .basic_info .tpl_info div span {
+    color: #e52323;
+}
+
+.order_management .basic_info .book_text {
+    margin: 5px auto;
+    width: 90%;
+}
+
+.order_management .basic_info .book_text dt {
+    display: block;
+    float: none;
+    line-height: 35px;
+    font-weight: normal;
+}
+
+.order_management .basic_info .book_text dd {
+    margin: 0 10px 0 0 !important;
+}
+
+.order_management .basic_info .book_text .item > div {
+    height: 60px;
+}
+
+.opd_coupon_wrapper {
+    position: relative;
+    margin: 10px auto;
+    width: 90%;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px dotted #d5d5d5;
+}
+
+@media only screen and (max-width: 320px) {
+    .order_management .basic_info .tpl_info,
+    .order_management .basic_info .book_text,
+    .opd_coupon_wrapper {
+        width: 95%;
+    }
+}
+
+.orderinfo .opd_coupon_wrapper.info {
+    padding: 0 0 0 5%;
+}
+
+.opd_coupon_wrapper div label {
+    display: block;
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.opd_coupon_wrapper div label div {
+    margin: 0 5px 0 0;
+}
+
+.opd_coupon_wrapper div {
+    overflow: hidden;
+}
+
+.opd_coupon_wrapper > div > a {
+    float: left;
+    line-height: normal;
+    margin: 5px;
+}
+
+.opd_coupon_wrapper div select {
+    float: left;
+    margin: 5px 0;
+    padding: 0;
+    height: 25px;
+    min-width: 155px;
+    max-width: 245px;
+    border: 1px solid #ccc;
+    line-height: 25px;
+    -webkit-appearance: none;
+    background: #fff;
+    color: #000;
+    box-sizing: content-box;
+}
+
+.opd_coupon_wrapper div .icon-caret-down {
+    float: left;
+    margin: 12px 0 0 -15px;
+    color: #333;
+}
+
+.common_serialnumber_item {
+    float: left;
+    vertical-align: middle;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.common_serialnumber_item li {
+    float: left;
+    width: 62px;
+    line-height: 20px;
+}
+
+.common_serialnumber_item li:first-child {
+    width: 52px;
+}
+
+.common_serialnumber_item input {
+    float: left;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    border-radius: 0;
+}
+
+.common_serialnumber_item li span {
+    float: left;
+    margin: 0;
+    width: 10px;
+    text-align: center;
+}
+
+/*~~~~~~~~~~confirm order odd page tips~~~~~~~~~~*/
+.book_oddpage_tips {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 1;
+}
+
+.book_oddpage_tips .tips_dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -91px 0 0 -145px;
+    width: 290px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 3px 26px rgba(0, 0, 0, .9);
+}
+
+.tips_dialog .titleBar {
+    background: #efefef;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.tips_dialog .title {
+    height: 29px;
+    line-height: 29px;
+    padding: 0 25px 0 5px;
+    _padding: 0;
+    text-indent: 5px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.tips_dialog .close {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    outline: none;
+    top: 0;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.tips_dialog .dialog_main {
+    padding: 15px;
+}
+
+.tips_dialog .dialog_main .icon {
+    float: left;
+    margin: 10px 10px 0 0;
+    width: 48px;
+    height: 48px;
+    background: url("../img/m/pc/warning.png") no-repeat center;
+}
+
+.tips_dialog .dialog_main p {
+    position: relative;
+    padding-left: 58px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8em;
+}
+
+.tips_dialog .dialog_main p span {
+    color: #e05704;
+}
+
+.tips_dialog .buttons {
+    padding: 8px 8px 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tips_dialog .buttons a {
+    margin-left: 15px;
+    padding: 8px 20px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 2px;
+    width: auto;
+    overflow: visible;
+    color: #333;
+    border: solid 1px #999;
+    border-radius: 5px;
+    background: #DDD;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD');
+    background: linear-gradient(top, #FFF, #DDD);
+    background: -moz-linear-gradient(top, #FFF, #DDD);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#DDD));
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0 -1px 0 rgba(0, 0, 0, .09);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.tips_dialog .buttons a:hover,
+.tips_dialog .buttons .highlight {
+    color: #FFF;
+    border: solid 1px #00b8e9;
+    background: #2288cc;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee', endColorstr='#2288cc');
+    background: linear-gradient(top, #00b8e9, #00b8e9);
+    background: -moz-linear-gradient(top, #00b8e9, #00b8e9);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00b8e9), to(#00b8e9));
+    text-shadow: -1px -1px 1px #1c6a9e;
+}
+
+.opd_confirm_wrapper {
+    position: relative;
+    padding: 0 0 0 5%;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.order_management.change .opd_confirm_wrapper {
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 320px) {
+    .order_management.change .opd_confirm_wrapper {
+        position: relative;
+        bottom: auto;
+    }
+}
+
+.opd_confirm_wrapper .opd_confirm_item {
+    float: right;
+    display: block;
+    width: 120px;
+    height: 58px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    background: #df4622;
+    text-align: center;
+}
+
+.opd_confirm_wrapper .opd_confirm_item:hover,
+.opd_confirm_wrapper .opd_confirm_item:focus{
+    background-color: #b02b1b;
+}
+
+.opd_subtotalprice_item {
+    float: left;
+    height: 100%;
+}
+
+.opd_subtotalprice_item label {
+    font-size: 14px;
+    color: #000;
+    font-weight: normal;
+}
+
+.opd_subtotalprice_item strong {
+    display: inline-block;
+    font-size: 24px;
+    color: #ff3404;
+    vertical-align: middle;
+}
+
+.order_management .orderinfo .info {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 40px;
+    color: #666;
+    background-color: #fff;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.order_management .orderinfo .info > label {
+    font-weight: normal;
+    margin: 0;
+}
+
+.orderinfo .info > a {
+    display: block;
+    position: relative;
+    padding: 0 8% 0 5%;
+    text-decoration: none;
+    color: #666;
+}
+
+.orderinfo .user.info a,
+.orderinfo .dispatching.info a div {
+    color: #333;
+}
+
+.orderinfo .info > a label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.orderinfo .info a i {
+    position: absolute;
+    right: 10px;
+    line-height: 40px;
+    color: #666;
+    font-size: 14px;
+}
+
+.orderinfo .user div.cm_fl,
+.orderinfo .user div.cm_fr {
+    width: 50%;
+}
+
+.orderinfo .user label {
+    display: inline-block;
+    min-width: 16px;
+    margin: 0 3px 0 0;
+    text-align: center;
+}
+
+.orderinfo .payway {
+    padding: 0 5%;
+}
+
+.orderinfo .payway li {
+    float: left;
+    width: 33.3%;
+}
+
+.orderinfo .payway li label img {
+    width: 75px;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 320px) {
+    .orderinfo .payway li label img {
+        width: 70px;
+    }
+}
+
+.myorder .filter_order {
+    text-align: right;
+}
+
+.myorder .filter_order a {
+    text-decoration: none;
+}
+
+.myorder .filter_order a:hover,
+.myorder .filter_order a:focus {
+    color: #fff;
+}
+
+.myorder .filter_order ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    padding: 0 8px 10px;
+    width: 115px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.myorder .filter_order ul li {
+    position: relative;
+    float: none;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px dashed #999;
+}
+
+.myorder .filter_order ul li:before,
+.myorder .filter_order ul li:after {
+    display: none;
+}
+
+.myorder .filter_order ul li a {
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+.myorder .filter_order ul li a:hover,
+.myorder .filter_order ul li a:active {
+    background-color: #f6f6f6;
+    color: #e7b54b;
+}
+
+.myorder .order_head {
+    padding: 0 10px;
+    border-bottom: 1px dotted #aaa;
+    overflow: hidden;
+}
+
+.myorder .orderinfo .order_status span {
+    color: #ff3404;
+}
+
+.myorder .order_footer {
+    padding: 0 10px;
+    border-top: 1px dotted #aaa;
+    overflow: hidden;
+}
+
+.myorder .order_btns a {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    border: 1px solid #adadad;
+    text-decoration: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 320px) {
+    .myorder .order_footer .order_btns a {
+        margin: 0;
+        width: 60px;
+        font-size: 12px;
+    }
+}
+
+.myorder .order_btns .go_pay {
+    color: #ff7e00;
+}
+
+.myorder .order_btns .change,
+.myorder .order_btns .perfect {
+    color: #6bb508;
+}
+
+.myorder .order_btns .cancel {
+    color: #aaa;
+}
+
+.myorder .order_btns a:hover {
+    color: #e7b54b;
+}
+
+.orderinfo .product table {
+    margin: 15px auto;
+    width: 90%;
+}
+
+.orderinfo .product .opd_productimg_item {
+    width: 25%;
+}
+
+.orderinfo .product .opd_productimg_item img {
+    width: 75px;
+    height: 108px;
+    border: 1px solid #cfcfcf;
+    vertical-align: top;
+}
+
+.orderinfo .product td div {
+    text-align: center;
+}
+
+.orderinfo .product td div a {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+
+.orderinfo .product td div p {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #000;
+    line-height: 30px;
+}
+
+@media only screen and (max-width: 320px) {
+    .orderinfo .product td div a {
+        font-size: 12px;
+    }
+
+    .orderinfo .product td div p {
+        line-height: 25px;
+    }
+}
+
+.orderinfo .balance {
+    padding: 0 5%;
+}
+
+.orderinfo .balance div {
+    padding: 0 0 0 2em;
+    font-size: 14px;
+    color: #666;
+}
+
+.orderinfo .balance .order_pay span {
+    color: #0b7100;
+}
+
+.orderinfo .balance .current_balance span {
+    color: #df4622;
+}
+
+.opd_orderinfoprice_item {
+    width: 20%;
+    font-size: 18px;
+    text-align: right;
+    color: #ff3404;
+    vertical-align: middle;
+}
+
+.opd_paymentsuccess_wrapper, .opd_paymentfailed_wrapper {
+    overflow: hidden;
+}
+
+.opd_paymentfailed_wrapper .opd_paymentresult_wrapper {
+    margin: 20px auto;
+}
+
+.opd_paymentresult_wrapper {
+    display: block;
+    margin: 30px auto;
+    width: 90%;
+    text-align: center;
+}
+
+.opd_paymentresult_wrapper h2 {
+    margin: 30px 0;
+    color: #ff3300;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.opd_paymentresult_wrapper p {
+    line-height: 35px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.opd_paymentsuccess_wrapper .opd_paymentresult_wrapper span {
+    display: block;
+    margin: 20px auto;
+    width: 225px;
+    height: 90px;
+    background: url(../img/m/pc/truck.png) no-repeat 0;
+}
+
+.opd_successbind_wrapper {
+    margin: 30px auto;
+    padding: 15px;
+    width: 90%;
+    border: 1px solid #e2e2e2;
+    background-color: #ffffd6;
+    box-sizing: border-box;
+}
+
+.opd_successbind_wrapper p {
+    font-size: 12px;
+    color: #999;
+    padding-left: 5em;
+    text-indent: -5em;
+}
+
+.opd_successbind_wrapper ul {
+    margin: 20px auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.opd_successbind_wrapper ul li {
+    float: left;
+    width: 50%;
+}
+
+.opd_successbind_wrapper ul li a {
+    float: left;
+    width: 100%;
+    color: #007dcc;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.opd_successbind_wrapper ul li a:hover {
+    color: #e7b54b;
+}
+
+.opd_successbind_wrapper ul li a label {
+    text-decoration: underline;
+}
+
+.opd_successbind_wrapper ul li span {
+    width: 1em;
+    height: 30px;
+    font-size: 21px;
+    vertical-align: middle;
+}
+
+.opd_successbind_wrapper ul li label {
+    line-height: 36px;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+.opd_revieworderlist_item {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    font-size: 13px;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.opd_paymentfailed_wrapper .opd_revieworderlist_item {
+    margin: 30px auto;
+    width: 110px;
+    color: #76bd23;
+}
+
+.opd_revieworderlist_item:hover {
+    color: #e7b54b;
+}
+
+.opd_revieworderlist_item label {
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.opd_revieworderlist_item span {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 15px;
+}
+
+.address_manage .address_item {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 40px;
+    color: #333;
+    background-color: #fff;
+    border-bottom: 1px solid #cfcfcf;
+    overflow: hidden;
+}
+
+.address_manage .address_item i {
+    position: absolute;
+    width: 10%;
+    text-align: center;
+}
+
+.address_manage .address_item .choose {
+    display: none;
+    line-height: 80px;
+    color: #40cc1d;
+}
+
+.address_manage .address_item.select .choose {
+    display: block;
+}
+
+.address_manage .address_item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.address_manage .address_item a:hover {
+    color: #e7b54b;
+}
+
+.address_manage .address_item .edit {
+    top: 10px;
+    right: 0;
+}
+
+.address_manage .address_item .content {
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+.address_manage .address_item .content div {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.address_manage .address_item .content div.cm_fl,
+.address_manage .address_item .content div.cm_fr {
+    width: 50%;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}
+
+.address_manage .address_item .content label {
+    display: inline-block;
+    min-width: 18px;
+    text-align: center;
+}
+
+.order_management .btn_wrapper {
+    padding: 20px 0;
+}
+
+.order_management .btn_wrapper a {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.order_management .btn_wrapper .new {
+    background-color: #da6423;
+}
+
+.order_management .btn_wrapper .new:hover {
+    background-color: #aa6423;
+}
+
+.order_management .btn_wrapper .save {
+    background-color: #89c539;
+}
+
+.order_management .btn_wrapper .save:hover {
+    background-color: #69c539;
+}
+
+.order_management .btn_wrapper a i {
+    margin-right: 5px;
+}
+
+.address_manage .info {
+    padding: 0 5%;
+}
+
+.address_manage .tariff p {
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    color: #ff5151;
+    white-space: nowrap;
+}
+
+.address_manage .info .express {
+    display: inline-block;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 4px;
+    color: #ff5151;
+    border: 1px solid #ff5151;
+}
+
+.address_manage .new_address li {
+    position: relative;
+    padding: 0 5%;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.address_manage .new_address li label {
+    display: inline-block;
+    width: 60px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.address_manage .new_address li label.error {
+    position: absolute;
+    left: 5%;
+    top: 30px;
+    width: 90%;
+    line-height: 25px;
+}
+
+.address_manage .new_address li input {
+    width: 75%;
+    height: 36px;
+    border: 0;
+    position: relative;
+    top: 6px;
+}
+
+.address_manage .new_address li a {
+    color: #666;
+}
+
+.address_manage .new_address li a:after {
+    content: ">";
+    float: right;
+    line-height: 40px;
+}
+
+.invoice_tips a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #666;
+}
+
+.invoice_tips a p {
+    padding: 0 5%;
+    margin: 0 0 15px;
+}
+
+.invoice_tips a p span {
+    margin-right: 5px;
+}
+
+.invoice .item {
+    position: relative;
+    margin: 0 0 20px;
+    padding: 10px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+    overflow: hidden;
+}
+
+.invoice .category a {
+    float: left;
+    padding: 5px 6px;
+    margin-right: 10px;
+    width: 76px;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    box-sizing: content-box;
+}
+
+@media only screen and (max-width: 320px) {
+    .invoice .category a {
+        margin-right: 6px;
+    }
+}
+
+.invoice .category label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.invoice .category a span {
+    display: none;
+}
+
+.invoice .category a.active {
+    color: #ff5151;
+    border: 1px solid #ff5151;
+}
+
+.invoice .category a.active span {
+    display: inline-block;;
+}
+
+.invoice .common > label {
+    display: inline-block;
+    width: 100px;
+    margin: 0 0 10px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.invoice .common > label div {
+    margin-right: 5px;
+}
+
+.invoice .item ul li {
+    line-height: 40px;
+}
+
+.invoice .item ul li label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.invoice .item ul li span {
+    display: inline-block;
+    width: 110px;
+    text-align: right;
+}
+
+.invoice .item ul li span b {
+    color: #ff0000;
+}
+
+.invoice input {
+    padding: 0 6px;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+
+.invoice .preview ul li span {
+    width: auto;
+    min-width: 104px;
+    max-width: 180px;
+    vertical-align: top;
+    text-align: right;
+    word-break: break-all;
+}
+
+.invoice .preview ul li span:last-child {
+    text-align: left;
+}
+
+@media only screen and (min-width: 320px) {
+    .invoice .preview ul li span {
+        max-width: 179px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .invoice .preview ul li span {
+        max-width: 229px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    .invoice .preview ul li span {
+        max-width: 264px;
+    }
+}
+
+/*~~~~~~~~~~order donate~~~~~~~~~~*/
+.opd_wrapper{
+    position: relative;
+    width: 100%;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper{
+    margin: 0 0 15px;
+    padding: 25px 0;
+    height: 125px;
+    border-bottom: 2px solid #dfdfdf;
+    box-sizing: border-box;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper p{
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 30px;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper p label{
+    display: block;
+    margin: 5px 0;
+    font-size: 30px;
+    color: #ff696a;
+}
+
+.opd_donatepayoff_wrapper .opd_donatecontent_wrapper p label b{
+    font-size: 18px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper{
+    position: relative;
+    margin: 0 auto;
+    width: 94%;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li{
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div{
+    font-size: 16px;
+    color: #333;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span{
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 40px;
+    height: 30px;
+    background: url("../img/m/pc/donate_payway.png") no-repeat;
+    background-size: 140px 105px;
+    vertical-align: middle;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span.wpay{
+    background-position: -98px 2px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span.unipay{
+    background-position: -98px -38px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div span.alipay{
+    background-position: -98px -78px;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li div i{
+    display: none;
+    float: right;
+    line-height: 50px;
+    font-size: 22px;
+    color: #6fb463;
+}
+
+.opd_donatepayoff_wrapper .opd_modeofpayment_wrapper li.select div i{
+    display: block;
+}
+
+.opd_wrapper .opd_confirm_item{
+    display: block;
+    margin: 25px auto;
+    width: 300px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #ff696a;
+    border-radius: 6px;
+}
+
+.opd_wrapper .opd_confirm_item:hover{
+    background: #f26666;
+}
+
+.opd_wrapper .opd_confirm_item:focus{
+    background: #de5e5f;
+}
+
+.opd_wrapper .opd_confirm_item.successful{
+    background: #70ca5d;
+}
+
+.opd_wrapper .opd_confirm_item.successful:hover{
+    background: #6abd58;
+}
+
+.opd_wrapper .opd_confirm_item.successful:focus{
+    background: #63b053;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper{
+    position: relative;
+    margin: 0;
+    padding: 25px 0;
+    width: 100%;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper div{
+    display: block;
+    margin: 0 auto;
+    width: 95px;
+    height: 105px;
+    /*background: url("../img/m/pc/donate_payway.png") no-repeat;
+    background-size: 140px 105px;
+    background-position: 0 0;*/
+    color: #89C27E;
+    font-size: 95px;
+    text-align: center;
+    line-height: 105px;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper p{
+    font-size: 16px;
+    color: #6fb463;
+    text-align: center;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper label{
+    display: block;
+    margin: 15px 0;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.opd_donatepayoff_wrapper .opd_donatesuccess_wrapper label b{
+    font-size: 18px;
+}
+
+/*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/
+.shop_apply_con .shop_default{
+    display: none;
+    position: relative;
+    margin: 0;
+    padding: 30px 0;
+}
+
+.shop_apply_con.default .shop_default{
+    display: block;
+}
+
+.shop_default span{
+    display: block;
+    margin: 25px auto;
+    width: 168px;
+    height: 124px;
+    font-size: 168px;
+    color: #abaebd;
+    line-height: 124px;
+}
+
+.shop_default p{
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+}
+
+.shop_apply_con .btn_tr{
+    display: block;
+    margin: 30px auto;
+    width: 240px;
+    height: 44px;
+    line-height: 40px;
+    font-size: 22px;
+    color: #70ca5d;
+    text-align: center;
+    border: 2px solid #70ca5d;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.shop_apply_con .btn_tr a:hover,
+.shop_apply_con .btn_tr a:active{
+    color: #e7b54b;
+    border: 2px solid #e7b54b;
+}
+
+.shop_apply_con.default .eb_step_tips{
+    display: none;
+}
+
+.eb_step_tips {
+    margin: 25px auto 0 auto;
+    width: 100%;
+    height: 100%;
+    color: #999;
+    font-size: 12px;
+}
+
+.eb_step_tips ul li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 25px;
+}
+
+.eb_step_tips ul li::after {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    content: " ";
+    width: 100%;
+    height: 0;
+    border-top: 1px dotted #a4a4a4;
+    z-index: 0;
+}
+
+.eb_step_tips ul li:last-child::after {
+    width: 0;
+}
+
+.eb_step_tips ul li > div {
+    position: relative;
+    margin: 0 auto 5px;
+    width: 26px;
+    height: 26px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #999;
+    background-color: #fff;
+    border: 2px solid #aeaeae;
+    border-radius: 100%;
+    z-index: 1;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.eb_step_tips ul li div .step {
+    display: block;
+    font-style: normal;
+}
+
+.eb_step_tips ul li div .icon-ok {
+    display: none;
+}
+
+.eb_step_tips ul li div .tips {
+    display: none;
+    position: absolute;
+    left: -90px;
+    top: -27px;
+    padding: 0 10px;
+    width: auto;
+    min-width: 200px;
+    line-height: 1.5em;
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.eb_step_tips ul li div .tips::after {
+    position: absolute;
+    left: 94px;
+    bottom: -5px;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.eb_step_tips ul li div .tips p::after {
+    position: absolute;
+    left: 94px;
+    top: 19px;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 5px solid #bfbfbf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.eb_step_tips ul .current div:hover .tips {
+    display: block;
+}
+
+.eb_step_tips ul .fin::after {
+    border-top: 1px dotted #5da72e;
+}
+
+.eb_step_tips ul .fin > div {
+    background-color: #5da72e;
+    border: 2px solid #5da72e;
+}
+
+.eb_step_tips ul .fin div .icon-ok {
+    display: inline-block;
+    color: #fff;
+}
+
+.eb_step_tips ul .fin div .step {
+    display: none;
+}
+
+.eb_step_tips ul .current > div {
+    color: #1950a2;
+    border: 2px solid #1950a2;
+}
+
+.eb_step_tips ul .current > p {
+    color: #000;
+    font-weight: bold;
+}
+
+.shop_apply_con .bind_phone,
+.shop_apply_con .bind_account,
+.shop_apply_con .shop_set,
+.shop_apply_con .apply_success{
+    display: none;
+    clear: both;
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 100%;
+}
+
+.shop_apply_con.step1 .bind_phone{
+    display: block;
+}
+
+.shop_apply_con .form_list{
+    padding: 10px 0;
+}
+
+.shop_apply_con .form_list .form_item {
+    margin: 0 auto;
+    padding: 12px 0 15px 90px;
+    width: 320px;
+    line-height: 38px;
+    zoom: 1;
+    box-sizing: border-box;
+}
+
+.shop_apply_con .form_list .form_item label {
+    display: inline;
+    float: left;
+    margin: 0 0 0 -86px;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    font-size: 14px;
+    color: #000;
+}
+
+.shop_apply_con .form_list .form_item input{
+    width: 130px;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #e8eaea;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.shop_apply_con .form_list .form_item input:focus{
+    border: 1px solid #70ca5d;
+}
+
+.shop_apply_con .form_list .form_item button{
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #dcdcdc;
+    background: #f7f7f7;
+    font-size: 14px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.shop_apply_con .form_list .form_item button:hover,
+.shop_apply_con .form_list .form_item button:active{
+    background-color: #70ca5d;
+    color: #fff;
+}
+
+.shop_apply_con .form_list .form_item button:focus{
+    outline: none;
+}
+
+.shop_apply_con .btn_group .btn,
+.shop_admin .btn_group .btn{
+    display: block;
+    margin: 20px auto;
+    padding: 0;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #70ca5d;
+    border: 1px solid #70ca5d;
+}
+
+.shop_apply_con .btn_group .btn:focus,
+.shop_admin .btn_group .btn:focus{
+    outline: none;
+}
+
+.shop_apply_con .btn_group .btn.disabled,
+.shop_admin .btn_group .btn.disabled{
+    background-color: #cecfcd;
+    border: 1px solid #cecfcd;
+    pointer-events: none;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    opacity: 1;
+}
+
+.shop_apply_con .btn_group .btn:hover,
+.shop_admin .btn_group .btn:hover{
+    background-color: #74bc65;
+    border: 1px solid #74bc65;
+}
+
+.shop_apply_con .btn_group .btn.bind_other{
+    background-color: #81b82b;
+    border: 1px solid #81b82b;
+}
+
+.shop_apply_con .btn_group .btn.bind_other:hover{
+    background-color: #70ca5d;
+    border: 1px solid #70ca5d;
+}
+
+.shop_apply_con .form_list .form_item label.error{
+    clear: both;
+    display: block;
+    margin: 0;
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.shop_apply_con.step2 .bind_account{
+    display: block;
+}
+
+.shop_apply_con .bind_account p{
+    text-align: center;
+    padding: 0 20px;
+}
+
+.shop_apply_con .bind_account p span{
+    color: #6ea11f;
+}
+
+.shop_apply_con .bind_account img{
+    display: block;
+    margin: 25px auto;
+    width: 187px;
+    height: 187px;
+}
+
+.shop_apply_con .bind_account a.next{
+    display: block;
+    font-size: 12px;
+    color: #5da72e;
+    margin: 0 auto;
+    padding: 5px 10px;
+    width: 80px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.shop_apply_con .bind_account a.next:hover{
+    color: #e7b54b;
+}
+
+.shop_apply_con.step3 .shop_set{
+    display: block;
+}
+
+.shop_apply_con .shop_set .shop_logo{
+    float: left;
+    margin: -22px 0 0 6px;
+    width: 85px;
+    height: 85px;
+}
+
+.shop_apply_con .shop_set .shop_logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.shop_apply_con .shop_set .upload_logo{
+    clear: both;
+    display: block;
+    color: #333;
+    border: none!important;
+    background-color: transparent!important;
+}
+
+.shop_apply_con .shop_set .upload_logo:hover,
+.shop_apply_con .shop_set .upload_logo:active{
+    color: #7aab2f!important;
+}
+
+.shop_apply_con .shop_set input[name="shopName"]{
+    width: 200px;
+}
+
+.shop_apply_con.success .apply_success{
+    display: block;
+}
+
+.shop_apply_con .apply_success .ybiconfont{
+    display: block;
+    margin: 25px auto;
+    width: 168px;
+    height: 124px;
+    line-height: 124px;
+    font-size: 168px;
+    color: #88C27D;
+}
+
+.shop_apply_con .apply_success h3{
+    margin: 20px 0;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+.shop_apply_con .apply_success p{
+    margin-bottom: 15px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #000;
+}
+
+.shop_apply_con .apply_success .ybtips{
+    color: #666;
+}
+
+.shop_apply_con .apply_success .ybtips span{
+    color: #7aab2f;
+}
+
+.shop_apply_con .apply_success p a{
+    color: #7aab2f;
+    text-decoration: underline;
+}
+
+.shop_apply_con .apply_success p a:hover{
+    color: #e7b54b;
+}
+
+/*shop admin*/
+.shop_admin{
+    position: relative;
+    width: 100%;
+}
+
+.shop_admin .shop_home .shop_info{
+    position: relative;
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.shop_home .shop_info .shop_logo{
+    float: left;
+    margin: 0 20px 0 0;
+    width: 85px;
+    height: 85px;
+}
+
+.shop_home .shop_info .shop_logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.shop_home .shop_info .shop_name {
+    margin: 0;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    color: #000;
+    white-space: nowrap;/*NEWYB-1482*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shop_home .shop_info .money {
+    margin: 0 20px 0 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #000;
+}
+
+.shop_home .shop_info .money b{
+    font-size: 18px;
+    color: #ff0000;
+}
+
+.shop_home .shop_info .take_money{
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #92c153;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.shop_home .shop_info .take_money:hover{
+    background-color: #e7b54b;
+}
+
+.shop_home .shop_info .link a{
+    color: #ccc;
+    font-size: 18px;
+    margin: 0 15px 0 0;
+}
+
+.shop_home .shop_info .link a:hover{
+    color: #92c153;
+}
+
+.shop_home .reset_btn_group{
+    padding:0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.shop_home .reset_btn_group ul li{
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.shop_home .reset_btn_group ul li a{
+    display: block;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+.shop_home .reset_btn_group ul li a:hover{
+    color: #92c153;
+    background-color: #f6f6f6;
+}
+
+.shop_home .reset_btn_group ul li a span{
+    display: inline-block;
+    margin: 10px auto;
+    width: 34px;
+    height: 25px;
+    vertical-align: middle;
+    line-height: 26px;
+    text-align: center;
+}
+
+.shop_home .reset_btn_group .revise_info span{
+    font-size: 34px;
+    color: #48CFAD;
+}
+
+.shop_home .reset_btn_group .view_order span{
+    font-size: 31px;
+    color: #4fc1e9;
+}
+
+.shop_home .reset_btn_group .revise_account span{
+    font-size: 29px;
+    color: #ac92ec;
+}
+
+.shop_home .reset_btn_group ul li a i{
+    float: right;
+    line-height: 45px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.shop_qrcode_con{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.6);
+}
+
+.shop_qrcode_con .qrcode{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -132px 0 0 -125px;
+    padding: 30px;
+    width: 250px;
+    height: 264px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 0 12px #333;
+}
+
+.shop_qrcode_con .qrcode .qrcode_img{
+    display: block;
+    margin: 0 auto;
+    width: 178px;
+    height: 178px;
+}
+
+.shop_qrcode_con .qrcode p{
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.shop_qrcode_con .qrcode p span{
+    display: inline-block;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.shop_admin .shop_info_list a{
+    display: block;
+    color: #3c3c3c;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.shop_admin .shop_info_list .shop_logo{
+    height: 60px;
+    line-height: 60px;
+    margin: 15px 0;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.shop_admin .shop_info_list .shop_logo .shop_logo_img{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.shop_admin .shop_info_list span{
+    float: right;
+    color: #999;
+    font-weight: normal;
+}
+
+.shop_admin .shop_info_list span:after {
+    content: ">";
+    padding-left: 0.5em;
+}
+
+.shop_admin .shop_info_name input{
+    width: 100%;
+    min-width: 8em;
+    height: 45px;
+    overflow: hidden;
+    float: left;
+    font-size: 14px;
+    padding: 0 6px;
+}
+
+.shop_admin .shop_info_name span {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 6px;
+    color: #3c3c3c;
+    display: block;
+    width: 10%;
+    height: 45px;
+    z-index: 1;
+    text-align: center;
+    line-height: 45px;
+}
+
+.shop_admin .shop_account{
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.shop_admin .shop_account .wxhead{
+    width: 65px;
+    height: 65px;
+    margin: 0 auto;
+}
+
+.shop_admin .shop_account .wxhead img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 2px solid #ddd;
+}
+
+.shop_admin .shop_account .account_name{
+    margin: 6px 0 0 0;
+    text-align: center;
+}
+
+.shop_admin .order_list .item{
+    position: relative;
+}
+
+.shop_admin .order_list .item table{
+    background-color: #fff;
+    width: 100%;
+    margin: 15px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.shop_admin .order_list .item table thead tr{
+    background-color: #f3f9f2;
+}
+
+.shop_admin .order_list .item table tr td,
+.shop_admin .order_list .item table tr th{
+    width: 40%;
+}
+
+.shop_admin .order_list .item table thead tr th:nth-child(2){
+    text-align: right;
+}
+
+.shop_admin .order_list .item table tr div{
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+
+.shop_admin .order_list .item table tr div span{
+    color: #333;
+}
+
+.shop_admin .order_list .item table tr div .name{
+    display: inline-block;
+    max-width: 88px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.shop_admin .order_list .item table tr div b{
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.shop_admin .order_list .item .show_detail{
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    height: 40px;
+    width: 20px;
+    text-align: center;
+}
+
+.shop_admin .order_list .item .show_detail i{
+    font-size: 24px;
+    color: #ccc;
+}
+
+.shop_admin .order_detail .order_info{
+    position: relative;
+    margin: 0 0 30px;
+    padding: 0 0 8px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0 1px #e0e0e0;
+    border-radius: 2px;
+}
+
+.shop_admin .order_detail .order_info::after{
+    content: " ";
+    position: absolute;
+    bottom: -18px;
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #dedede;
+}
+
+.shop_admin .order_detail .order_info:last-child::after{
+    display: none;
+}
+
+.shop_admin .order_detail .order_info table{
+    width: 100%;
+}
+
+.shop_admin .order_detail .order_info table caption{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    border-bottom: 1px solid #ecedf0;
+}
+
+.shop_admin .order_detail .order_info tr{
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #333;
+}
+
+.shop_admin .order_detail .order_info tr:nth-child(even){
+    background-color: #f6f8fa;
+}
+
+.shop_admin .order_detail .order_info tr:hover{
+    background-color: #f1f1f1;
+}
+
+.shop_admin .order_detail .order_info tr td{
+    text-align: center;
+}
+
+.shop_admin .order_detail .order_info tr td:nth-child(1){
+    width: 140px;
+    text-align: center;
+    border-right: 1px solid #ecedf0;
+}
+
+.shop_admin .order_detail .order_info tr td:nth-child(2){
+    text-align: center;
+}
+
+.shop_admin .shop_close{
+    position: relative;
+    margin: 60px auto 20px;
+    padding: 30px 0;
+    width: 90%;
+    height: 240px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.shop_admin .shop_close::before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    margin-left: -33px;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    background-color: #ddd;
+}
+
+.shop_admin .shop_close .warning_info{
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.shop_admin .shop_close .warning_info span{
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    margin-left: -32px;
+    width: 64px;
+    height: 66px;
+    color: #3498db;
+    font-size: 56px;
+    line-height: 66px;
+    background-color: #fff;
+    border-radius: 100% 100% 0 0;
+}
+
+.shop_admin .shop_close .warning_info h2{
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.shop_admin .shop_close .warning_info p{
+    font-size: 12px;
+    color: #666;
+}
+
+.shop_admin .shop_close .btn{
+    margin: 45px auto 20px;
+    text-align: center;
+}
+
+/*~~~~~~~~~~mybookshelf_wrapper~~~~~~~~~~*/
+.mybookshelf_wrapper.mybookshelf_main_wrapper{
+    margin: 0;
+}
+.mybookshelf_wrapper .common_empty_item:last-child{
+    padding: 0;
+
+}

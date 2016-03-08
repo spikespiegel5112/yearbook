@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>编辑相册-选择照片</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_ia.css" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457341281_9913986.css" type="text/css" media="all"/>
+</head>
+
+<body>
+
+<div class="main_container choosephoto_container has_footer_nav">
+    <div class='ybwechatheader_wrapper'>
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward1"></span>
+        </a>
+        <p>选择照片</p>
+        <a class="right_btn accept_button chooseall" href="javascript:;">全选/清除全选</a>
+    </div>
+    <div class="choosephoto_wrapper">
+        <ul>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/book1.png"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/bg-yb-wx-login_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/editalbum_changecover_img_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/access/yb-bg.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/bg-yb-wx-login_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+        </ul>
+        <div class='ybwechat_loading_item'>
+            <a href="javascript:;">
+                <span></span><label>点击加载更多……</label>
+            </a>
+        </div>
+    </div>
+    <div class="choosephoto_menu_wrapper">
+        <ul>
+            <li><a href="javascript:;"><span class="icon-share-alt"></span><label>移动</label></a></li>
+            <li><a href="javascript:;"><span class="icon-trash"></span><label>删除</label></a></li>
+        </ul>
+    </div>
+    <div class="loading" style="display: none;">
+        <img src="../img/m/loading.gif"><strong>加载中</strong>
+    </div>
+</div>
+<div class="ft_pc">
+    <i class="icon-desktop"></i><a href="#">切换至电脑版</a>
+</div>
+<script type="text/javascript" src='../assets/js/zepto.min.js'></script>
+<script type="text/javascript">
+    $(function () {
+        var touchFlag = true;
+        $(document).on("touchmove", function () {
+            touchFlag = false;
+        });
+        $(".choosephoto_wrapper").on("touchend", 'li', function () {
+            if (touchFlag == true && $(this).hasClass('active')) {
+                $(this).removeClass("active");
+            } else if (touchFlag == true) {
+                $(this).addClass("active");
+            }
+        });
+        $(".breadcrumb_wrapper .chooseall").on("touchend", function () {
+            if ($(".choosephoto_wrapper ul .active").length == $(".choosephoto_wrapper ul li").length) {
+                $(".choosephoto_wrapper li").removeClass("active");
+            } else {
+                $(".choosephoto_wrapper li").addClass("active");
+            }
+        })
+    });
+
+    $(document).ready(function () {
+        mobileToPcSwitch();
+    })
+
+
+    /*
+     * mobile to pc switch
+     * */
+    function mobileToPcSwitch() {
+        var conHeight = $('.main_container').height(),
+                minHeight = $(window).height() - 39;
+        if ($('.main_container').hasClass('has_footer_nav')) {
+            $('.main_container').removeClass('has_footer_nav');
+            $('.ft_pc').addClass('has_footer_nav');
+            minHeight = minHeight - 70;
+        }
+        if (conHeight < minHeight) {
+            $('.main_container').css('min-height', minHeight);
+        }
+        $(window).resize(function () {
+            mobileToPcSwitch();
+        })
+    }
+</script>
+</body>
+
+</html>

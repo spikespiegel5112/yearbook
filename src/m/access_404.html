@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>404</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_access.css" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/animate.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+
+
+</head>
+<body class="bg-efeff4">
+<div class="yb-error">
+    <img src="../img/m/access/404.png" alt="没有找到对应的资源" class="yb-error-404 animated shake">
+
+    <p>ERROR 404</p>
+
+    <p class="yb-error-sub">对不起，您访问的页面不存在。</p>
+
+    <p class="yb-error-sub">您要查看的页面可能已被删、名称已被更改，或者暂时不可用。</p>
+    <a class="error-return"><span class="icon-reply"></span>返回</a>
+</div>
+
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="1111" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    var duoshuoQuery = {short_name: "yearbook"};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script>
+    $('.yb-error-404').on('click', function () {
+        $(this).addClass('fadeInUp');
+        setTimeout(function () {
+            $('.yb-error-404').removeClass('fadeInUp');
+        }, 1000);
+    })
+</script>
+</body>
+</html>

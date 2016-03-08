@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>绑定忆尔账号</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_access.css" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457341281_9913986.css" type="text/css" media="all"/>
+</head>
+
+<body class="bg-efeff4">
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'>
+        <span class="ybiconfont ybicon-backward1"></span>
+    </a>
+    <p>绑定忆尔账号</p>
+</div>
+<div class='sso_main_container'>
+    <div class='sso_bind_wrapper'>
+        <div class='sso_dialogue_wrapper'>
+            <a class='sso_avatar_item' href="javascript:;">
+                <img src="../img/default/vote_result_avatar_100_100_00000.jpg">
+                <span class='ybiconfont ybicon-wechatsolid'></span>
+                <!--<span class='qq'></span>
+                <span class='weibo'></span> -->
+            </a>
+            <span class='sso_nickname_item'>梅德韦杰夫</span>
+
+            <div class='sso_btn_wrapper'>
+                <a class='sso_solid_btn' href="javascript:;">直接使用此账号</a>
+                <a class='sso_hollow_btn' href="javascript:;">绑定已有忆尔账号</a>
+
+                <div class='sso_login_wrapper'>
+                    <ul>
+                        <li>
+                            <label>已有账号：</label>
+                            <input type='text'>
+                        </li>
+                        <li>
+                            <label>输入密码：</label>
+                            <input type='password'>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        singlesignon();
+    })
+    function singlesignon() {
+        var loginformEl = $('.sso_login_wrapper');
+        $('.sso_dialogue_wrapper .sso_hollow_btn').click(function () {
+            $('.sso_btn_wrapper .sso_hollow_btn').addClass('active');
+            $('.sso_login_wrapper').addClass('active')
+        })
+    }
+</script>
+</body>
+
+</html>

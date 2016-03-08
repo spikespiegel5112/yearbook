@@ -808,7 +808,11 @@
 	background: url("../img/booklist/inner_page_shadow.png") no-repeat 0;
 }
 
-.pagemake_middle .main .tpldouble.double::before{
+.pagemake_middle .main .tpldouble.double .double_con {
+	display: inline-block;
+}
+
+.pagemake_middle .main .tpldouble.spread::before{
     position: absolute;
     top: 10px;
     left: 50%;
@@ -819,12 +823,8 @@
     opacity: .85;
 }
 
-.pagemake_middle .main .tpldouble.double .double_con {
-	display: inline-block;
-}
-
 .pagemake_middle .main .tpldouble .split_tips{
-    display: block;
+    display: none;
     position: absolute;
     top: -35px;
     left: 50%;
@@ -832,6 +832,10 @@
     padding: 6px 10px;
     font-size: 14px;
     color: #666;
+}
+
+.pagemake_middle .main .tpldouble.spread .split_tips{
+    display: block;
 }
 
 .pagemake_middle {

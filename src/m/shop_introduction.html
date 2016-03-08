@@ -182,22 +182,22 @@
 				<li class='bindcellphone'>
 					<div></div>
 					<p>绑定手机</p>
-					<strong class='icon-angle-right'></strong>
+					<strong class='ybiconfont ybicon-forward3'></strong>
 				</li>
 				<li class='bindwechat'>
 					<div></div>
 					<p>绑定微信</p>
-					<strong class='icon-angle-right'></strong>
+					<strong class='ybiconfont ybicon-forward3'></strong>
 				</li>
 				<li class='setupshop'>
 					<div></div>
 					<p>设置店铺</p>
-					<strong class='icon-angle-right'></strong>
+					<strong class='ybiconfont ybicon-forward3'></strong>
 				</li>
 				<li class='sharehop'>
 					<div></div>
 					<p>分享店铺</p>
-					<strong class='icon-angle-right'></strong>
+					<strong class='ybiconfont ybicon-forward3'></strong>
 				</li>
 				<li class='earnprofit'>
 					<div></div>
@@ -218,7 +218,10 @@
 	<script>
 	$(function(){
 		shopIntroduction();
-		$.remResizing(10);
+		$.remResizing({
+			fontsize: 20,
+			maxwidth: 640
+		});
 	});
 	function shopIntroduction(){
 		//标题div适配窗口高度
@@ -228,9 +231,9 @@
 		var trElEven=$('.shop_shareprofit_wrapper tr:even');
 		trElEven.css('background-color','#fce4e1');
 		//加入流程图标的渐变效果
-		var jpLiEl=$('.shop_joinprocess_wrapper ul li');
+		var jpLiEl=$('.shop_joinprocess_wrapper ul li strong');
 		for (var i = 0; i < jpLiEl.length; i++) {
-			jpLiEl.eq(i).css('opacity',0.7+i*0.07)
+			jpLiEl.eq(i).css('opacity',0.5+i*0.2);
 		};
 	}
 	</script>

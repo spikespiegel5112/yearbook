@@ -158,7 +158,7 @@
         	options=$.extend({
         		fontsize:16,
         		maxwidth:640
-        	})
+        	}, options);
             var htmlEl = $('html'),
                 bodyEl = $('body'),
                 windowWidth = $(window).width();
@@ -168,13 +168,12 @@
             });
 
             function sizeConstraint() {
-            	$.extend
-                htmlEl.css('－webkit-text-size-adjust', 'none');
                 if ($(window).width() >= options.maxwidth) {
                     bodyEl.css({
                         'width': options.maxwidth,
                         'margin': '0 auto'
                     });
+                    alert(options.fontsize)
                     htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
                 } else {
                     var windowWidth = $(window).width(),

@@ -384,7 +384,7 @@ module.exports = function(grunt) {
     grunt.registerTask('compile', ['clean:all', 'useminPrepare', 'compile-js', 'compile-css', 'copy', 'usemin'/*,'px2rem'*/]);
     grunt.registerTask('build', ['compile']);
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('publish', ['sftp-deploy']);
+    grunt.registerTask('publish', ['build', 'sftp-deploy']);
     grunt.registerTask('server', ['build',  'connect:srcServer', 'connect:distServer', 'watch']);
 
     grunt.event.on('watch', function(action, filepath, target) {

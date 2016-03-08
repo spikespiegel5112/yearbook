@@ -339,6 +339,38 @@ module.exports = function(grunt) {
                     dest: 'dist/m/'
                 }]
             }
+        },
+        /**
+         * 发布到FTP服务器 : 请注意密码安全，ftp的帐号密码保存在主目录 .ftppass 文件
+         */
+        'ftp-deploy': {
+            build: {
+                auth: {
+                    host: '192.168.2.184',
+                    port: 21,
+                    authKey: 'test184'
+                },
+                src: './',
+                dest: '/home/static/FE/yearbook3-static-page',
+                exclusions: ['./**/.DS_Store', './**/Thumbs.db', './node_modules/**']
+            }
+        },
+
+        'sftp-deploy': {
+            build: {
+                auth: {
+                    host: '192.168.2.184',
+                    port: 22,
+                    authKey: 'test184'
+                },
+                cache: 'sftpCache.json',
+                src: './',
+                dest: '/home/static/FE/yearbook3-static-page',
+                exclusions: ['./**/.DS_Store', './**/Thumbs.db', './node_modules/**'],
+                serverSep: '/',
+                concurrency: 4,
+                progress: true
+            }
         }
     });
 
@@ -347,12 +379,13 @@ module.exports = function(grunt) {
     });
     require('time-grunt')(grunt);
     grunt.registerTask('cleanAll', ['clean']);
-    grunt.registerTask('dist-css', ['cssmin', 'clean:sourceMap']);
-    grunt.registerTask('dist-js', ['concat', 'uglify']);
-    grunt.registerTask('dist', ['clean:all', 'useminPrepare', 'dist-js', 'dist-css', 'copy', 'usemin'/*,'px2rem'*/]);
-    grunt.registerTask('build', ['dist']);
-    grunt.registerTask('default', ['dist']);
-    grunt.registerTask('server', ['dist',  'connect:srcServer', 'connect:distServer', 'watch']);
+    grunt.registerTask('compile-css', ['cssmin', 'clean:sourceMap']);
+    grunt.registerTask('compile-js', ['concat', 'uglify']);
+    grunt.registerTask('compile', ['clean:all', 'useminPrepare', 'compile-js', 'compile-css', 'copy', 'usemin'/*,'px2rem'*/]);
+    grunt.registerTask('build', ['compile']);
+    grunt.registerTask('default', ['build']);
+    grunt.registerTask('publish', ['sftp-deploy'])
+    grunt.registerTask('server', ['build',  'connect:srcServer', 'connect:distServer', 'watch']);
 
     grunt.event.on('watch', function(action, filepath, target) {
         grunt.log.writeln(target + ': ' + filepath + ' has ' + action);

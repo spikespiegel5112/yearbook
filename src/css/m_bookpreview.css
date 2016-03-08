@@ -551,9 +551,8 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	line-height: 1.5rem;
-	font-size: 0.9rem;
-	color: #f2f2f2;
-	background: #acafbe;
+	font-size: 1.5rem;
+	color: #acafbe;
 	border-radius: 50%;
 	text-align: center;
 }
@@ -1104,11 +1103,14 @@
 	border-radius: 10px;
 	position: relative;
 }
-.bp_donatestep_wrapper.step_3 img{
+.bp_donatestep_wrapper.step_3 span{
 	display: block;
 	margin: 0 auto;
 	padding: 60px 0 0 0;
 	width: 75px;
+    font-size: 75px;
+    line-height: 80px;
+    color: #fff;
 }
 .bp_donatestep_wrapper.step_3 a{
 	display: block;
@@ -1117,11 +1119,14 @@
 	top: 0;
 	right: 0;
 	color: #fff;
-	font-size: 4rem;
-	font-weight: lighter;
-	transform:rotate(45deg);
-	-webkit-transform:rotate(45deg);
-	-moz-transform:rotate(45deg);
+}
+.bp_donatestep_wrapper.step_3 a span{
+    font-size: 1.75rem;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    padding: 0;
+    width: auto;
 }
 .bp_donatestep_wrapper.step_3 label{
 	display: block;
@@ -1142,15 +1147,26 @@
 	top: 0;
 	right: 0;
 	color: #999;
-	font-size: 4rem;
+	/*font-size: 4rem;
 	font-weight: lighter;
 	transform:rotate(45deg);
 	-webkit-transform:rotate(45deg);
-	-moz-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);*/
 }
-.bp_donatestep_wrapper.waitingforpay img{
+
+.bp_donatestep_wrapper.waitingforpay a span{
+    font-size: 1.75rem;
+    color: #999;
+    margin: 0;
+    line-height: 1;
+}
+.bp_donatestep_wrapper.waitingforpay span{
 	display: block;
 	margin: 3.5rem auto 1rem;
+    font-size: 125px;
+    color: #ff696a;
+    line-height: 110px;
+    text-align: center;
 }
 .bp_donatestep_wrapper.waitingforpay label{
 	display: block;
@@ -1254,6 +1270,11 @@
 	font-size: 3.2rem;
 	text-align: center;
 	color: #abaebd;
+}
+.bp_introduce_wrapper span.ybicon-bookia{
+    font-size: 3.875rem;
+    position: relative;
+    left: -.325rem;
 }
 .bp_introduce_wrapper p{
 	width: 64%;

@@ -168,12 +168,14 @@
             });
 
             function sizeConstraint() {
-                if ($(window).width() >= options.maxwidth) {
+                var windowWidth=$(window).width(),
+                    windowHeight=$(window).height();
+                if (windowWidth >= options.maxwidth&&windowWidth<=windowHeight) {
+                    console.log(windowWidth, windowHeight)
                     bodyEl.css({
                         'width': options.maxwidth,
                         'margin': '0 auto'
                     });
-                    alert(options.fontsize)
                     htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
                 } else {
                     var windowWidth = $(window).width(),

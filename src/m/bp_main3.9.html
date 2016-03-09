@@ -35,7 +35,7 @@
 			<div class="bp_paginator_item">
 				<label>1</label>/<span>33</span>
 			</div>
-			<a class='bp_resizebtn_item' href="javascript:;"><span class="ybiconfont ybicon-fullscreen"></span></a>
+			<!-- <a class='bp_resizebtn_item' href="javascript:;"><span class="ybiconfont ybicon-fullscreen"></span></a> -->
 			<a class='right_btn share_btn' href="javascript:;"><span class="ybiconfont ybicon-sharehollow"></span></a>
 			<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
 		</div>
@@ -489,7 +489,9 @@
 					</a>
 				</li>
 				<li class="bp_resizebtn_item">
-					<a href="javascript:;"><span class="ybiconfont ybicon-narrow"></span></a>
+					<a href="javascript:;">
+						<div class="ybiconfont ybicon-narrow"></div>
+					</a>
 				</li>
 			</ul>
 			<div class="chapter_slide">
@@ -499,7 +501,7 @@
 		</div>
 		<div class='bp_donate_container'>
 			<div class='bp_donate_wrapper'>
-				<div class='bp_donatestep_wrapper step_1 hidden'>
+				<div class='bp_donatestep_wrapper step_1'>
 					<h5>选择赞助金额</h5>
 					<div class='bp_donatepannel_wrapper'>
 						<ul>
@@ -614,7 +616,7 @@
 			<h1>登录忆尔</h1>
 			<ul class='loginpopup_input_wrapper'>
 				<li>
-					<span class="ybiconfont ybicon-user2"></span>
+					<span class="ybiconfont ybicon-user"></span>
 					<input type='text'>
 				</li>
 				<li>
@@ -806,7 +808,10 @@
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				sendcommentEl=$('.bp_sendcomment_item');
-			$.remResizing(20);
+			$.remResizing({
+				fontsize:20,
+				maxwidth:640
+			});
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
@@ -902,9 +907,9 @@
 				});
 				window.eventFlagPortrait=false;
 			}
-			if (windowWidth<=320) {
+			if (windowWidth<=640) {
 				$('.bp_donatestep_wrapper.step_1 li').children('input').css({
-					'font-size':'1.6rem'
+					'font-size':'1.3rem'
 				});
 			};
 			$('.bp_landscape_wrapper, .ybwechatheader_wrapper').removeClass('active');
@@ -916,7 +921,10 @@
 				flipbook = $('.flipbook'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				commentInputEl = $('.bp_sendcomment_item');
-			$.remResizing(20);
+			$.remResizing({
+				fontsize:20,
+				maxwidth:640
+			});
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});

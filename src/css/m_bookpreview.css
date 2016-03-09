@@ -138,7 +138,7 @@
 .viewmode_landscape .ybwechatheader_wrapper {
 	display: block;
 	position: absolute;
-	height: 1.8rem;
+	height: 1.2rem;
 	top: -3em;
 	background:-webkit-linear-gradient(bottom,transparent,#000);
 	z-index: 2;
@@ -180,10 +180,10 @@
 }
 .viewmode_landscape .bp_iwanttomake_btn{
 	display: block;
-	margin: 0.4rem 0 0 0;
-	padding: 0.2rem 1rem;
+	margin: 0.2rem 0 0 0;
+	padding: 0.1rem 1rem;
 	color: #fff;
-	font-size: .5rem;
+	font-size: 0.7rem;
 	background-color: #ff9800;
 	border-radius: 15px;
 	position: absolute;
@@ -202,10 +202,10 @@
 .bp_paginator_item {
 	display: block;
 	width: 100%;
-	line-height: 3rem;
+	line-height: 1rem;
 	text-align: center;
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 0.7rem;
 }
 .viewmode_portrait .bp_paginator_item{
 	position: absolute;
@@ -373,30 +373,32 @@
 	display: block;
 }
 
-.bp_menu_wrapper li .comment,
-.bp_menu_wrapper li .praise,
-.bp_menu_wrapper li .donate {
+.bp_menu_wrapper li div>span,
+.bp_menu_wrapper li div>span,
+.bp_menu_wrapper li div>span {
 	position: relative;
 	margin: 0 auto 5px;
 	width: 2.5rem;
 	height: 2.5rem;
     line-height: 2.5rem;
+	font-size: 2rem;
+	color: #a4a7b5;
 }
 
 .bp_menu_wrapper li .praise span{
-    font-size: 36px;
+
     color: #a4a7b5;
 }
 
 .bp_menu_wrapper li .comment span{
-    font-size: 36px;
+/*    font-size: 36px;
     color: #a4a7b5;
-    line-height: 3rem
+    line-height: 3rem*/
 }
 
 .bp_menu_wrapper li .donate span{
-    font-size: 42px;
-    color: #a4a7b5;
+/*    font-size: 2rem;
+    color: #a4a7b5;*/
 }
 
 .bp_menu_wrapper li .active .praise span{
@@ -478,8 +480,8 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	position: absolute;
-	top: -7px;
-	right: 8px;
+	top: 0;
+	right: -0.4rem;
 }
 .bp_donatedperson_wrapper li:nth-child(1) .bp_donatedavatar_item:before{
 	background-image: url(../img/m/previewbook/crown_gold_00000.png);
@@ -493,8 +495,8 @@
 .bp_donatedavatar_item img{
 	display: block;
 	margin: 0 auto;
-	width: 3rem;
-	height: 3rem;
+	width: 2.7rem;
+	height: 2.7rem;
 	border-radius: 50%;
 }
 .bp_dontatedmessage_wrapper{
@@ -538,13 +540,13 @@
 	float: left;
 	width: 50%;
 	color: #777;
-	font-size: 1rem;
+	font-size: 0.8rem;
 }
 .identification label{
 	float: left;
 	width: 50%;
 	color: #999;
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 }
 .donatedprice span{
 	float: left;
@@ -578,7 +580,7 @@
 }
 .bp_praisedperson_wrapper ul li span{
 	display: block;
-	font-size: 0.8rem;
+	font-size: 0.6rem;
 	color: #666;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -605,7 +607,7 @@
 
 .bp_comment_container table tr td div {
 	line-height: 2.5rem;
-	font-size: 0.5rem;
+	font-size: 0.8rem;
 	color: #999;
 }
 
@@ -621,7 +623,7 @@
 
 .bp_comment_container table tr td p {
 	margin-bottom: 0.6rem;
-	font-size: 0.5rem;
+	font-size: 0.7rem;
 	color: #333;
 }
 
@@ -730,7 +732,7 @@
 }
 
 .bp_landscape_wrapper {
-	height: 3em;
+	height: 1.8rem;
 	position: fixed;
 	left: 0;
 	bottom: -3rem;
@@ -745,8 +747,8 @@
 }
 .bp_landscape_wrapper ul li {
 	float: left;
-	width: 40px;
-	height: 48px;
+	width: 2.1rem;
+	height: 2rem;
 }
 .bp_landscape_wrapper ul li a {
 	display: block;
@@ -762,11 +764,11 @@
 }
 
 .bp_landscape_wrapper ul li a div {
-	margin: 15px auto 0px;
-	width: 20px;
-	height: 20px;
-    line-height: 48px;
-    font-size: 16px;
+	margin: 0.4rem auto 0;
+	width: 1.2rem;
+	height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 1rem;
     color: #fff;
 }
 .viewmode_landscape .ybwechatheader_wrapper .bp_barrageswitch_item{
@@ -784,10 +786,10 @@
 	width: 2rem;
 }
 
-.main_container .bp_barrageswitch_item div{
+/*.main_container .bp_barrageswitch_item div{
 	width: 40px;
 	height: 30px;
-}
+}*/
 
 .viewmode_portrait .bp_barrageswitch_item div{
     font-size: 36px;
@@ -796,8 +798,9 @@
 }
 
 .viewmode_landscape .bp_barrageswitch_item div{
-    font-size: 36px;
-    line-height: 22px;
+/*    font-size: 36px;
+    line-height: 22px;*/
+    font-size: 1.2rem;
     color: #60e550;
 }
 
@@ -817,39 +820,39 @@
     display: none;
 }
 
-.bp_landscape_wrapper ul .comment div {
+/*.bp_landscape_wrapper ul .comment div {
 	background-image: none;
     line-height: 24px;
-}
+}*/
 
 .bp_landscape_wrapper ul .comment .active div {
 	color: #6F748B;
 }
 
-.bp_landscape_wrapper ul .praise div {
+/*.bp_landscape_wrapper ul .praise div {
     background-image: none;
     color: #fff;
     line-height: 22px;
-}
+}*/
 
 .bp_landscape_wrapper ul .praise .active  div {
 	color: #ff696a;
 }
-.bp_landscape_wrapper ul .donate div{
+/*.bp_landscape_wrapper ul .donate div{
 	background-image:none;
 	text-align: center;
 	line-height: 22px;
 	font-size: 20px;
 	color: #fff;
 	border-radius: 50%;
-}
+}*/
 .bp_landscape_wrapper ul .donate .active div{
 	color: orange;
 }
-.bp_landscape_wrapper ul .share div {
+/*.bp_landscape_wrapper ul .share div {
 	background-image: none;
     line-height: 22px;
-}
+}*/
 .bp_landscape_wrapper ul .share .active div {
 	color: #E7B44A;
 }
@@ -868,20 +871,16 @@
     line-height: 40px;
 }
 
-.viewmode_landscape .bp_resizebtn_item span{
-    font-size: 0;
-}
-
 .viewmode_landscape .bp_resizebtn_item a{
 	width: 40px;
 	height: 45px;
 }
 
-.viewmode_landscape .bp_resizebtn_item a span{
+/*.viewmode_landscape .bp_resizebtn_item a span{
     font-size: 20px;
     line-height: 50px;
 }
-
+*/
 .chapter_slide {
 	float: right;
 }
@@ -955,7 +954,7 @@
 	margin: 0 auto;
 	padding: 4% 0;
 	width: 95%;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	color: #fff;
 	text-align: center;
 	background-color: #ff696a;
@@ -1036,9 +1035,9 @@
 }*/
 .bp_iwanttodonate_btn, .bp_praise_btn{
 	display: block;
-	padding: 8px 0;
+	padding: 0.4rem 0;
 	width: 100%;
-	height: 40px;
+	height: 2rem;
 	background: #fff;
 	line-height: 2.5rem;
 	color: #fff;
@@ -1051,9 +1050,11 @@
 .bp_iwanttodonate_btn label, .bp_praise_btn label{
 	display: block;
 	margin: 0 auto 0;
-	padding: 4px 0;
+	padding: 0.25rem 0;
 	width: 80%;
-	font-size: 16px;
+	height: 100%;
+	line-height: 2rem;
+	font-size: 1.2rem;
 	background: #ff696a;
 	vertical-align: middle;
 }
@@ -1063,6 +1064,7 @@
 	margin: 0 0.5rem 0 0;
 	width: 2rem;
 	height: 2rem;
+	line-height: 2rem;
     vertical-align: middle;
     color: #fff;
     font-size: 30px;
@@ -1297,6 +1299,7 @@
 	width: 100%;
 }
 .bp_photoslider_wrapper{
+	display: none;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -1402,6 +1405,6 @@
 	height: 100%;
 	line-height: 2rem;
 	border: 0;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	box-sizing: border-box;
 }

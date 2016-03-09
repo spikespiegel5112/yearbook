@@ -3461,10 +3461,14 @@
             });
 
             $('.photo_box .btn.book').click(function(){
-                $('.load_obp_box').slideDown();
-                $('.photo_box .btn:not(".book")').click(function(){
+                if($('.load_obp_box').is(':visible')){
                     $('.load_obp_box').slideUp();
-                })
+                }else{
+                    $('.load_obp_box').slideDown();
+                    $('.photo_box .btn:not(".book")').click(function(){
+                        $('.load_obp_box').slideUp();
+                    });
+                }
             });
 
             //选择目标书册

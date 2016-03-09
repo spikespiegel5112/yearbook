@@ -2947,6 +2947,12 @@
 	border: 1px solid #f4444c;
 }
 
+.auto_layout_container .photo_box .book{
+    color: #fff;
+    background-color: #b0df4a;
+    border: 1px solid #b0df4a;
+}
+
 .auto_layout_container .photo_box .btn:hover{
 	color: #fff;
 	background-color: #f6bb3f;
@@ -3354,6 +3360,17 @@
 .main_right .btn_wrap .load_mobile_photo:active{
 	margin: 50px auto 0 !important;
 	background: transparent url("../img/makebook/mobile_photos_hv.png") no-repeat 0;
+}
+
+.main_right .btn_wrap .load_book_photo{
+    margin: 50px auto 0 !important;
+    background: transparent url("../img/makebook/book_photos.png") no-repeat 0;
+}
+
+.main_right .btn_wrap .load_book_photo:hover,
+.main_right .btn_wrap .load_book_photo:active{
+    margin: 50px auto 0 !important;
+    background: transparent url("../img/makebook/book_photos_hv.png") no-repeat 0;
 }
 
 .auto_edit_main .main_left {
@@ -4056,6 +4073,160 @@
 
 .load_mobile_photo_box .pagemakeBox {
 	margin-left: 65px;
+}
+
+/*导入其他书册的照片*/
+.load_obp_box{
+    position: relative;
+    margin: 0;
+    padding: 0 20px;
+    width: 815px;
+    box-sizing: border-box;
+}
+
+.auto_layout_container .load_obp_box{
+    margin: 20px auto 10px;
+    width: 100%;
+}
+
+.load_obp_box p{
+    position: relative;
+    font-size: 12px;
+    color: #333;
+    line-height: 35px;
+}
+
+.load_obp_box p::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 166px;
+    height: 1px;
+    background-color: #91c31e;
+    z-index: 1;
+}
+
+.load_obp_box p::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #b4b4b4;
+}
+
+.load_obp_box .booklist_wrap{
+    position: relative;
+    margin: 15px 0 10px;
+}
+
+.load_obp_box .booklist_wrap .hd a{
+    position: absolute;
+    top: 83px;
+    cursor: pointer;
+    width: 17px;
+    height: 23px;
+}
+
+.load_obp_box .booklist_wrap .hd .next{
+    right: -20px;
+    background: url('../img/icon/next_btn.png') no-repeat;
+}
+
+.booklist_wrap .hd .prev{
+    left: -20px;
+    background: url('../img/icon/prev_btn.png') no-repeat;
+}
+
+.load_obp_box .booklist_wrap .booklist li{
+    float: left;
+    margin: 10px;
+    text-align: center;
+    width: 125px;
+    box-sizing: content-box;
+}
+
+.booklist_wrap .booklist li .bookcover{
+    position: relative;
+    display: block;
+    margin: 0 0 5px;
+    width: 125px;
+    height: 165px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.booklist_wrap .booklist li .bookcover.selected{
+    border: 3px solid #99c141;
+}
+
+.booklist_wrap .booklist li .bookcover img{
+    width: 100%;
+    height: 100%;
+}
+
+.booklist_wrap .booklist li .bookcover span{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 18px;
+    line-height: 16px;
+    border-style: solid;
+    border-width: 22px;
+    border-color: transparent #99c141 #99c141 transparent;
+}
+
+.booklist_wrap .booklist li .bookcover.selected span{
+    display: block;
+}
+
+.booklist_wrap .booklist li .name{
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    max-width: 100%;
+    line-height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.booklist_wrap .booklist li .number{
+    font-size: 12px;
+    color: #333;
+}
+
+.booklist_wrap .booklist li .number span{
+    color: #668a16;
+}
+
+.btn_wrap{
+    position: relative;
+}
+
+.btn_wrap .btn{
+    display: block;
+    float: right;
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #e93223;
+    background: url("../img/gradient_bg_00000.jpg") repeat-x;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}
+
+.btn_wrap .btn:hover{
+    color: #333;
 }
 
 /*更换模板生成中*/

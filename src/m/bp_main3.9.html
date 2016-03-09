@@ -489,7 +489,9 @@
 					</a>
 				</li>
 				<li class="bp_resizebtn_item">
-					<a href="javascript:;"><span class="ybiconfont ybicon-narrow"></span></a>
+					<a href="javascript:;">
+						<div class="ybiconfont ybicon-narrow"></div>
+					</a>
 				</li>
 			</ul>
 			<div class="chapter_slide">
@@ -614,7 +616,7 @@
 			<h1>登录忆尔</h1>
 			<ul class='loginpopup_input_wrapper'>
 				<li>
-					<span class="ybiconfont ybicon-user2"></span>
+					<span class="ybiconfont ybicon-user"></span>
 					<input type='text'>
 				</li>
 				<li>
@@ -651,8 +653,8 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/islider.js"></script>
 	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.js"></script>
 	<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
@@ -695,7 +697,7 @@
 			// turnInit();
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
-					if (!$this.hasClass('active')) {
+				if (!$this.hasClass('active')) {
 					headerAndTools.removeClass('active');
 					flipbookViewport.hide();
 					sliderResizeBtn.show();
@@ -730,7 +732,6 @@
 							headerAndTools.removeClass('active');
 						}
 					})
-					
 					sliderResizeBtn.hide();
 					$('.bp_photoslider_wrapper').css({
 						'z-index': '-1',
@@ -806,7 +807,10 @@
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				sendcommentEl=$('.bp_sendcomment_item');
-			$.remResizing(20);
+			$.remResizing({
+				fontsize: 20,
+				maxwidth: 640
+			});
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.flipbook-viewport').css({
 				'height': windowWidth * 0.5
@@ -902,9 +906,9 @@
 				});
 				window.eventFlagPortrait=false;
 			}
-			if (windowWidth<=320) {
+			if (windowWidth<=640) {
 				$('.bp_donatestep_wrapper.step_1 li').children('input').css({
-					'font-size':'1.6rem'
+					'font-size':'1.3rem'
 				});
 			};
 			$('.bp_landscape_wrapper, .ybwechatheader_wrapper').removeClass('active');
@@ -916,7 +920,10 @@
 				flipbook = $('.flipbook'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				commentInputEl = $('.bp_sendcomment_item');
-			$.remResizing(20);
+			$.remResizing({
+				fontsize:20,
+				maxwidth:640
+			});
 			$('.flipbook-viewport').css({
 				'height': windowHeight
 			});
@@ -929,6 +936,7 @@
 			closeDonateDialog();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
 			resizeBtn.css({
+				display:'block',
 				top:'10%',
 				right:'5%'
 			});

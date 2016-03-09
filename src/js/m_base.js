@@ -90,18 +90,28 @@
                 _this.trigger('onchange');
             }
         },
-        imgAlignCenter: function() {
+        verticalAlign: function(optipns) {
+            options=$.extend({
+                direction:'center'
+            },options);
+            switch (options.direction) {
+                case 'center':
+                aligning('')
+            }
             var windowWidth = $(window).width(),
                 imgWidth = this.width(),
                 _this = this;
-            $(window).resize(function() {
-                _this.css({
+            function aligning(callback){
+                $(window).resize(function() {
+                    _this.css({
+                        'margin-left': (windowWidth - imgWidth) / 2
+                    });
+                });
+                this.css({
                     'margin-left': (windowWidth - imgWidth) / 2
                 });
-            });
-            this.css({
-                'margin-left': (windowWidth - imgWidth) / 2
-            });
+            }
+            
         }
     });
     var textCountSettings = {
@@ -168,12 +178,14 @@
             });
 
             function sizeConstraint() {
-                if ($(window).width() >= options.maxwidth) {
+                var windowWidth=$(window).width(),
+                    windowHeight=$(window).height();
+                if (windowWidth >= options.maxwidth&&windowWidth<=windowHeight) {
+                    console.log(windowWidth, windowHeight)
                     bodyEl.css({
                         'width': options.maxwidth,
                         'margin': '0 auto'
                     });
-                    alert(options.fontsize)
                     htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
                 } else {
                     var windowWidth = $(window).width(),

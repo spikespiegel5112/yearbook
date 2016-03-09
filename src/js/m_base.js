@@ -90,18 +90,28 @@
                 _this.trigger('onchange');
             }
         },
-        imgAlignCenter: function() {
+        verticalAlign: function(optipns) {
+            options=$.extend({
+                direction:'center'
+            },options);
+            switch (options.direction) {
+                case 'center':
+                aligning('')
+            }
             var windowWidth = $(window).width(),
                 imgWidth = this.width(),
                 _this = this;
-            $(window).resize(function() {
-                _this.css({
+            function aligning(callback){
+                $(window).resize(function() {
+                    _this.css({
+                        'margin-left': (windowWidth - imgWidth) / 2
+                    });
+                });
+                this.css({
                     'margin-left': (windowWidth - imgWidth) / 2
                 });
-            });
-            this.css({
-                'margin-left': (windowWidth - imgWidth) / 2
-            });
+            }
+            
         }
     });
     var textCountSettings = {

@@ -35,7 +35,7 @@
 			<div class="bp_paginator_item">
 				<label>1</label>/<span>33</span>
 			</div>
-			<!-- <a class='bp_resizebtn_item' href="javascript:;"><span class="ybiconfont ybicon-fullscreen"></span></a> -->
+			<a class='bp_resizebtn_item' href="javascript:;"><span class="ybiconfont ybicon-fullscreen"></span></a>
 			<a class='right_btn share_btn' href="javascript:;"><span class="ybiconfont ybicon-sharehollow"></span></a>
 			<a class='bp_iwanttomake_btn' href="javascript:;">我要制作</a>
 		</div>
@@ -653,8 +653,8 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="../assets/js/turn.js"></script>
 	<script type="text/javascript" src="../assets/js/islider.js"></script>
 	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.js"></script>
 	<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
@@ -697,7 +697,7 @@
 			// turnInit();
 			resizeBtn.on('touchend',function(){
 				var $this=$(this);
-					if (!$this.hasClass('active')) {
+				if (!$this.hasClass('active')) {
 					headerAndTools.removeClass('active');
 					flipbookViewport.hide();
 					sliderResizeBtn.show();
@@ -732,7 +732,6 @@
 							headerAndTools.removeClass('active');
 						}
 					})
-					
 					sliderResizeBtn.hide();
 					$('.bp_photoslider_wrapper').css({
 						'z-index': '-1',
@@ -809,8 +808,8 @@
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				sendcommentEl=$('.bp_sendcomment_item');
 			$.remResizing({
-				fontsize:20,
-				maxwidth:640
+				fontsize: 20,
+				maxwidth: 640
 			});
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.flipbook-viewport').css({
@@ -937,6 +936,7 @@
 			closeDonateDialog();
 			$('.main_container').removeClass('viewmode_portrait').addClass('viewmode_landscape');
 			resizeBtn.css({
+				display:'block',
 				top:'10%',
 				right:'5%'
 			});

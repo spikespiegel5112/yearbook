@@ -2071,6 +2071,15 @@
 	display: block;
 	border: 1px solid #ccc;
 }
+.pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 img {
+    border-radius: 15px;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    border: 1px solid #ccc;
+}
 
 .pagemake_left .picScroll-top .bd ul li .pic .cover .icon3 span {
     border-radius: 15px;
@@ -3629,7 +3638,9 @@
 	border: 3px solid transparent;
 	position: relative;
 }
-
+.choose_img_con .img_con .photo_list a > span{
+	display: none;
+}
 .choose_img_con .img_con .photo_list a.selected > span{
 	display: block;
 	position: absolute;

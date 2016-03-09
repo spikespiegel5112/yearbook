@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-小伙伴列表</title>
+	<link rel="stylesheet" href="assets/css/bootstrap-switch.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/all.min.css" media="all">
+</head>
+
+<body>
+	<!--头部导航-->
+	<div class='ybnav_wrapper'>
+		<div class='headerlogo_item'>
+			<img src="img/logo.png" width='226' height='42'>
+		</div>
+		<div class='ybnav_nav_wrapper'>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="booklist_photo.html">照片书</a></li>
+				<li><a href="booklist_ia.html" class="active">互动册</a></li>
+				<li><a href="pc_mybookshelf.html">个人中心</a></li>
+				<li><a href="static_instruction_entrance.html">使用指南</a></li>
+			</ul>
+		</div>
+		<div class='ybnav_userinfo_wrapper'>
+			<ul>
+				<li class='ybnav_avatar_item'>
+					<a href="javascript:;"><img src='img/default/user_img1.jpg' width='25' height='25'></a>
+				</li>
+				<li class='ybnav_username_item'><a href="javascript:;">HI,admin</a></li>
+				<li class='ybnav_message_item'>
+				<a class='ybiconfont ybicon-bookcenter' href="javascript:;"></a>
+			</li>
+				<li class='ybnav_logout_item'>
+					<a class='ybiconfont ybicon-turnoff' href="javascript:;"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--banner-->
+	<div class='ybbanner_wrapper'>
+		<div class='ybbanner_bookinfo_wrapper'>
+			<a href="bp_main.html">
+				<img class='ybbanner_bookcover_item' src="img/default/cover_css.jpg" width='80' height='120'>
+			</a>
+			<div class='ybbanner_bookinfo_item'>
+				<div class='ybbanner_bititle_item'>
+					<h6>十五个字符十五个字符十五个字符十五个字符</h6>
+					<a class="ybbanner_titleedit_item" href="javascript:;"><span class="icon-edit"></span></a>
+				</div>
+				<div class='ybbanner_biinfo_item'>
+					<label>班级名：</label>
+					<p>XXXXXXXXXXXX</p>
+				</div>
+				<div class='ybbanner_biinfo_item'>
+					<label>学校名：</label>
+					<p>学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校</p>
+				</div>
+			</div>
+		</div>
+		<div class='bannerslider_wrapper'>
+			<a class='bs_arrowbtn_left' href="javascript:;"></a>
+			<div class='bannerslider_inner'>
+				<ul>
+					<li class='bookspace'>
+						<a class='active' href="ia_bookspace.html">
+							<span class='ybiconfont ybicon-bookshelf'></span>
+							<p>书册空间</p>
+						</a>
+					</li>
+					<li class='chaptermaker'>
+						<a class='active' href="makebook_chaptermake.html">
+							<span class='ybiconfont ybicon-editbook'></span>
+							<p>编辑制作</p>
+						</a>
+					</li>
+					<li class='interaction'>
+						<a class='active' href="ia_entrance.html">
+							<span class='ybiconfont ybicon-iabook'></span>
+							<p>书册互动</p>
+						</a>
+					</li>
+					<li class='bookmanagement'>
+						<a class='active' href="ia_albumlist.html">
+							<span class='ybiconfont ybicon-photobook'></span>
+							<p>相册管理</p>
+						</a>
+					</li>
+					<li class='friendmanagement'>
+						<a class='active' href="ia_friend.html">
+							<span class='ybiconfont ybicon-partner'></span>
+							<p>小伙伴管理</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a class='bs_arrowbtn_right' href="javascript:;"></a>
+		</div>
+		<div class='ybbanner_shortcut_wrapper'>
+			<ul>
+				<li class='print'><a href="javascript:;">提交下单</a></li>
+				
+				<li class='share'><a href="javascript:;">分享预览</a></li>
+				<li class='invite'><a href="javascript:;">邀请卡</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="ia_list_main">
+		<div class="ia_list_con ia_topic_con">
+			<div class="friend_con">
+				<p class="user_length">我的小伙伴共有 8 人</p>
+				<div class="cm_fl btn1 add active"><span class="icon-plus"></span><a href="ia_friend_add.html">添加小伙伴</a></div>
+				<div class="cm_fl btn2 manage"><a href="javascript:;">管理小伙伴</a></div>
+				<div class="cm_fl btn3 lock "><a href="javascript:;">锁定小伙伴</a>
+					<div class="switch has-switch">
+						<input type="checkbox" checked />
+					</div>
+				</div>
+			</div>
+			<ul class="friend_ul">
+				<li>
+					<div class="pop friend_create">创</div>
+					<!--<div class="message_btn"><a href="javascript:;">给TA留言</a></div>-->
+					<img src="img/user_default_head.png" class="friend_head">
+					<div class="friend_info">
+						<div class="info1">李冰<span><img src="img/icon/manage_friend_women.png"></span></div>
+						<div>生日:1990-07-09</div>
+						<div>电话:13910033300</div>
+						<div>邮箱:bing.li@163.com</div>
+					</div>
+					<div class="manage_btn_group">
+						<span class="icon-upload" title="提升为管理员"></span>
+						<span class="icon-download" title="取消管理员"></span>
+						<span class='ybiconfont ybicon-trash' title="删除小伙伴"></span>
+					</div>
+				</li>
+				<li>
+					<div class="pop friend_manage">管</div>
+					<!--<div class="message_btn"><a href="javascript:;">给TA留言</a></div>-->
+					<img src="img/user_default_head.png" class="friend_head">
+					<div class="friend_info">
+						<div class="info1">李冰<span><img src="img/icon/manage_friend_man.png"></span></div>
+						<div>生日:1990-07-09</div>
+						<div>电话:13910033300</div>
+						<div>邮箱:bing.li@163.com</div>
+					</div>
+					<div class="manage_btn_group">
+						<span class="icon-upload" title="提升为管理员"></span>
+						<span class="icon-download" title="取消管理员"></span>
+						<span class='ybiconfont ybicon-trash' title="删除小伙伴"></span>
+					</div>
+				</li>
+				<li>
+					<div class="pop">普</div>
+					<!--<div class="message_btn"><a href="javascript:;">给TA留言</a></div>-->
+					<img src="img/user_default_head.png" class="friend_head">
+					<div class="friend_info">
+						<div class="info1">李冰<span><img src="img/icon/manage_friend_man.png"></span></div>
+						<div>生日:1990-07-09</div>
+						<div>电话:13910033300</div>
+						<div>邮箱:bing.li@163.com</div>
+					</div>
+					<div class="manage_btn_group">
+						<span class="icon-upload" title="提升为管理员"></span>
+						<span class="icon-download" title="取消管理员"></span>
+						<span class='ybiconfont ybicon-trash' title="删除小伙伴"></span>
+					</div>
+				</li>
+				<li>
+					<div class="pop">普</div>
+					<!--<div class="message_btn"><a href="javascript:;">给TA留言</a></div>-->
+					<img src="img/user_default_head.png" class="friend_head">
+					<div class="friend_info">
+						<div class="info1">李冰<span><img src="img/icon/manage_friend_man.png"></span></div>
+						<div>生日:1990-07-09</div>
+						<div>TEL:13910033300</div>
+						<div>邮箱:bing.li@163.com</div>
+					</div>
+					<div class="manage_btn_group">
+						<span class="icon-upload" title="提升为管理员"></span>
+						<span class="icon-download" title="取消管理员"></span>
+						<span class='ybiconfont ybicon-trash' title="删除小伙伴"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--底部-->
+	<div class="footer">
+		<div class="footer_info">
+			<a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="javascript:;"></a>
+			<div class="footer_title">
+				<div>忆尔-在线DIY纪念册平台</div>
+				<p>专业在线制作电子书册平台</p>
+				<p>DIY出独一无二的青春纪念册</p>
+			</div>
+		</div>
+		<div class="footer_list">
+			<div class="ft_nav">
+				<a href="javascript:;">客服电话 400 0610 127</a>
+				<a href="javascript:;">客服QQ</a>
+				<a href="javascript:;">客服邮箱</a>
+				<a href="javascript:;">关于我们</a>
+			</div>
+			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+			<div class="ft_shares">
+				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+				<a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+			</div>
+		</div>
+	</div>
+	<div id="modal_con" class="hidden">
+		<textarea class="join_topic" id="" name="" rows="4"></textarea>
+	</div>
+	<div class='bannertitleedit_wrapper hidden'>
+		<ul>
+			<li>
+				<label>相册名称：</label>
+				<input type='text'>
+			</li>
+			<li>
+				<label>班级名称：</label>
+				<input type='text'>
+			</li>
+			<li>
+				<label>学校名称：</label>
+				<input type='text'>
+			</li>
+		</ul>
+	</div>
+
+	<!--预览小伙伴详细信息-->
+	<div class="partner_info_container hidden">
+		<div class="partner_info_form">
+			<form method="" action="">
+				<div class="part">
+					<h4>基本资料</h4>
+					<ul class="basic_info">
+						<li>
+							<label>姓名：</label>
+							<span>李冰</span>
+						</li>
+						<li>
+							<label>手机号码：</label>
+							<span>13910033300</span>
+						</li>
+						<li>
+							<label>QQ号码：</label>
+							<span>4000610127</span>
+						</li>
+						<li>
+							<label>常用邮箱：</label>
+							<span>bing.li@163.com</span>
+						</li>
+					</ul>
+				</div>
+				<div class="part">
+					<h4>上传的照片</h4>
+					<div class="upload_img_box">
+						<div class="no_upload_img hidden">
+							<img src="img/ia/upload_img_default.jpg">
+							<p>未上传照片</p>
+						</div>
+						<!--已上传图片-->
+						<ul class="img_list">
+							<li>
+								<img src="img/default/upload_img_175_175_1_00000.jpg">
+							</li>
+							<li>
+								<img src="img/default/upload_img_175_175_1_00000.jpg">
+							</li>
+							<li>
+								<img src="img/default/upload_img_175_175_1_00000.jpg">
+							</li>
+							<li>
+								<img src="img/default/upload_img_175_175_1_00000.jpg">
+							</li>
+							<li>
+								<img src="img/default/upload_img_175_175_1_00000.jpg">
+							</li>
+							<li>
+								<img src="img/default/upload_img_175_175_1_00000.jpg">
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="part">
+					<h4>参与的话题</h4>
+					<div class="topic_box">
+						<p class="topic">话题：<span>一条什么什么什么什么话题？</span></p>
+						<div class="topic_reply">
+							<ul>
+								<li>
+									<img class="head" src="img/default/partner_head01.png">
+									<div class="reply">
+										<span><b>XXX</b>回复了：</span>
+										<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+									</div>
+								</li>
+								<li>
+									<img class="head" src="img/default/partner_head01.png">
+									<div class="reply">
+										<span><b>XXX</b>回复了：</span>
+										<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-switch.js"></script>
+	<script src="js/all.js"></script>
+	<script>
+	$('.message_btn').on('click', function() {
+		art.dialog({
+			title: '给TA留言',
+			lock: true,
+			content: document.getElementById('modal_con'),
+			okValue: '确 定',
+			ok: function() {},
+			cancelValue: '取消',
+			cancel: function() {},
+		});
+	});
+
+	function editBannerTitle() {
+		$('.banner_titleedit_item').click(function() {
+			art.dialog({
+				title: '编辑相册名称',
+				lock: true,
+				content: document.querySelector('.bannertitleedit_wrapper'),
+				okValue: '确 定',
+				ok: function() {},
+				cancelValue: '取消',
+				cancel: function() {},
+			});
+		});
+	}
+	//锁定小伙伴开关
+	$(function(argument) {
+		$('.switch input[type="checkbox"]').bootstrapSwitch();
+		editBannerTitle();
+	});
+
+	//管理按钮显示隐藏
+	$('.friend_con .add').click(function() {
+		$(this).addClass('active').siblings().removeClass('active');
+		$('.manage_btn_group').hide();
+	});
+	$('.friend_con .manage').click(function() {
+		if ($('.manage_btn_group').is(":visible")) {
+			$(this).removeClass('active');
+			$('.manage_btn_group').hide();
+		} else {
+			$(this).addClass('active').siblings().removeClass('active');
+			$('.manage_btn_group').show();
+		}
+	});
+
+		/*
+		* 预览小伙伴详细信息
+		* */
+	$('.friend_ul li img.friend_head').on('click', function() {
+		art.dialog({
+			title: '小伙伴详情',
+			lock: true,
+			content: document.querySelector('.partner_info_container'),
+			cancelVal: '关闭',
+			cancel: function() {}
+		});
+	});
+	</script>
+</body>
+
+</html>

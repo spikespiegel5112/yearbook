@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.9-赞助选择支付方式</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div class='main_container '>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward1"></span>
+        </a>
+        <p>选择支付方式</p>
+    </div>
+    <div class='opd_wrapper'>
+        <div class='opd_donatepayoff_wrapper'>
+            <div class='opd_donatecontent_wrapper'>
+                <p>赞助给赵晓宇用户：<label><b>￥</b>20.00</label></p>
+            </div>
+            <div class='opd_modeofpayment_wrapper'>
+                <ul>
+                    <li class="select">
+                        <div><span class="wpay"></span>微信支付<i class="ybiconfont ybicon-ok"></i></div>
+                    </li>
+                    <li>
+                        <div><span class="unipay"></span>银联在线<i class="ybiconfont ybicon-ok"></i></div>
+                    </li>
+                    <li>
+                        <div><span class="alipay"></span>支付宝<i class="ybiconfont ybicon-ok"></i></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class='opd_confirm_item' href="javascript:;">提交支付</a>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript">
+    $(function () {
+        selectDonatePatWay();
+    })
+
+    //选择支付方式
+    function selectDonatePatWay() {
+        $('.opd_modeofpayment_wrapper li').on('touchend',function(){
+            $('.opd_modeofpayment_wrapper li').each(function(){
+                $(this).removeClass('select');
+            });
+            $(this).addClass('select');
+        })
+    }
+</script>
+</body>
+
+</html>

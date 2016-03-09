@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <title>忆尔3.10-个人中心-我的店铺-查看订单</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery-ui-datepicker.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/cangas.datepicker.css" type="text/css" media="all">
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1457425317_6870656.css">
+</head>
+<body>
+<!--头部导航-->
+<div class="cm_header_nav">
+    <div class="logo">
+        <a href="javascript:;"><img src="img/logo.png"></a>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="booklist_photo.html">照片书</a></li>
+            <li><a href="booklist_ia.html">互动册</a></li>
+            <li><a href="pc_mybookshelf.html" class="active">个人中心</a></li>
+            <li><a href="static_instruction_entrance.html">使用指南</a></li>
+        </ul>
+    </div>
+	<div class="nav_login">
+		<span class='ybiconfont ybicon-user'></span>
+		<ul>
+			<li><a href="access_login.html" class="active">登录</a></li>
+			<li><a href="access_register.html">注册</a></li>
+		</ul>
+	</div>
+</div>
+<div class="cm_header_shadow"></div>
+<!--主内容区域-->
+<div class="main_content_container">
+    <!--左侧内容 开始-->
+    <div class="left_content_container">
+        <div class="personal_list_box">
+            <ul>
+                <li>
+                    <a href="pc_personInfo.html">
+                        <div class="personal_info">
+                            <div class="personal_head"><img src="img/default/personal_head.png" alt="头像"></div>
+                            <h5>李四</h5>
+                            <span>1995年10月4日</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="active"><span class="myShop_icon ybiconfont ybicon-shop"></span><a href="pc_shop.html">我的店铺</a></li>
+                <li><span class="myBookshelf_icon ybiconfont ybicon-bookshelf"></span><a href="pc_mybookshelf.html">我的书架</a></li>
+                <li><span class="myMessage_icon ybiconfont ybicon-message"></span><a href="pc_myMessage.html">我的消息</a></li>
+                <li><span class="ybWallet_icon ybiconfont ybicon-wallet"></span><a href="pc_wallet.html">忆尔钱包</a></li>
+                <li><span class="order_icon ybiconfont ybicon-orderlist"></span><a href="pc_myorder_list.html">我的订单</a></li>
+                <li><span class="account_security_icon ybiconfont ybicon-lock"></span><a href="pc_security.html">账户安全</a></li>
+                <li><span class="feedback_icon ybiconfont ybicon-feedback"></span><a href="pc_feedback.html">意见反馈</a></li>
+            </ul>
+        </div>
+        <div class="personal_content_box">
+            <a href="javascript:;">我的店铺-查看店铺订单</a>
+            <div class="hr">
+                <div class="green"></div>
+                <div class="gray"></div>
+            </div>
+            <div class="shop_admin">
+                <div class="query_group">
+                    <div class="query_date">
+                        <label>起止日期</label>
+                        <input id="start_date" class="form-control" type="text" value="" placeholder="" onchange="setMinEndDate();"> —
+                        <input id="end_date" class="form-control" type="text" value="" placeholder="">
+                        <button type="button" class="btn query">查询</button>
+                    </div>
+                    <div class="status_query">
+                        <select class="choose_status">
+                            <option>全部</option>
+                            <option>已发货</option>
+                            <option>制作中</option>
+                            <option>未付款</option>
+                            <option>已付款</option>
+                            <option>已取消</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="order_list shop_order">
+                    <ul>
+                        <li class="caption">
+                            <ul>
+                                <li>订单号</li>
+                                <li>订单名称</li>
+                                <li>支付金额</li>
+                                <li>分润总金额</li>
+                                <li>待提取金额</li>
+                                <li>付款时间</li>
+                                <li>订单状态</li>
+                                <li>操作</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>已付款</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>制作中</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>已发货</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><span>207...5968</span></li>
+                                <li><span>宝贝成长纪念</span></li>
+                                <li><span>¥80.00</span></li>
+                                <li><span>¥4.00</span></li>
+                                <li><span>¥0.00</span></li>
+                                <li><span>16-01-12 11:45</span></li>
+                                <li><span>已发货</span></li>
+                                <li><a href="javascript:;">查看详情</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--订单数据为空-->
+                    <div class="pc_empty_item hidden">
+                        <span></span>
+                        <label id="empty_dis">对不起，没有查询到相应的订单！</label>
+                    </div>
+                </div>
+                <div class="turn_btn">
+                    <span class="prev"> < </span>
+                    <span class="current">1</span>
+                    <a>2</a>
+                    <a>3</a>
+                    <span class="">…</span>
+                    <a>12</a>
+                    <a>13</a>
+                    <a class="next"> > </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧内容 结束-->
+    <!--右侧内容 开始-->
+    <div class="right_content_container">
+        <a href="javascript:;">书市</a>
+        <a href="booklist_photo.html" class="more">更多…</a>
+
+        <div class="hr">
+            <div class="green"></div>
+            <div class="gray"></div>
+        </div>
+        <div class="more_books_container max">
+            <div class="hd">
+                <a class="prev"></a>
+            </div>
+            <div class="bd">
+                <ul class="book_carousel picList">
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class='ybiconfont ybicon-trash'></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/cartoon001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class='ybiconfont ybicon-trash'></span>
+                            </div>
+                            <div class="book_name" title="漫画风格">漫画风格</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect002.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class='ybiconfont ybicon-trash'></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class='ybiconfont ybicon-trash'></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/cartoon001.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class='ybiconfont ybicon-trash'></span>
+                            </div>
+                            <div class="book_name" title="漫画风格">漫画风格</div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="more_books_list max" href="makebook_chaptermake.html">
+                            <img class="book_thum_img" src="img/default/recollect002.png">
+
+                            <div class="edit_icon">
+                                <span class="icon-eye-open"></span>
+                                <span class="icon_book"></span>
+                                <span class='ybiconfont ybicon-trash'></span>
+                            </div>
+                            <div class="book_name" title="青春记忆">青春记忆</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hd">
+                <a class="next"></a>
+            </div>
+        </div>
+    </div>
+    <!--右侧内容 结束-->
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="footer_info">
+        <a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="javascript:;"></a>
+
+        <div class="footer_title">
+            <div>忆尔-在线DIY纪念册平台</div>
+            <p>专业在线制作电子书册平台</p>
+
+            <p>DIY出独一无二的青春纪念册</p>
+        </div>
+    </div>
+    <div class="footer_list">
+        <div class="ft_nav">
+            <a href="javascript:;">客服电话 400 0610 127</a>
+            <a href="javascript:;">客服QQ</a>
+            <a href="javascript:;">客服邮箱</a>
+            <a href="javascript:;">关于我们</a>
+        </div>
+        <p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+
+        <div class="ft_shares">
+            <a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+            <a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+            <a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+            <a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+        </div>
+    </div>
+</div>
+<!--查看订单详情弹出-->
+<div id="shop_order_detail" class="shop_order_detail hidden">
+    <div class="order_info">
+        <table>
+            <caption>订单详情</caption>
+            <tbody>
+                <tr>
+                    <td><span>订单号：</span></td>
+                    <td><span>201602160020736</span></td>
+                </tr>
+                <tr>
+                    <td><span>订单名称：</span></td>
+                    <td><span>《YB_再聚首》订单</span></td>
+                </tr>
+                <tr>
+                    <td><span>订单状态：</span></td>
+                    <td><span>已发货</span></td>
+                </tr>
+                <tr>
+                    <td><span>支付金额：</span></td>
+                    <td><span>¥80.00</span></td>
+                </tr>
+                <tr>
+                    <td><span>分润金额：</span></td>
+                    <td><span>¥4.00</span></td>
+                </tr>
+                <tr>
+                    <td><span>待分润金额：</span></td>
+                    <td><span>¥4.00</span></td>
+                </tr>
+                <tr>
+                    <td><span>支付方式：</span></td>
+                    <td><span>支付宝</span></td>
+                </tr>
+                <tr>
+                    <td><span>付款时间：</span></td>
+                    <td><span>2016-2-17</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="order_info">
+        <table>
+            <caption>书册详情</caption>
+            <tbody>
+            <tr>
+                <td><span>书册名称：</span></td>
+                <td><span>YB_再聚首</span></td>
+            </tr>
+            <tr>
+                <td><span>打印数量：</span></td>
+                <td><span>1本</span></td>
+            </tr>
+            <tr>
+                <td><span>装订方式：</span></td>
+                <td><span>软皮封面</span></td>
+            </tr>
+            <tr>
+                <td><span>装订尺寸：</span></td>
+                <td><span>别致小装（145mm×210mm）</span></td>
+            </tr>
+            <tr>
+                <td><span>总页数：</span></td>
+                <td><span>50页</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="order_info">
+        <table>
+            <caption>下单用户信息</caption>
+            <tbody>
+            <tr>
+                <td><span>收货人姓名：</span></td>
+                <td><span>尹女士</span></td>
+            </tr>
+            <tr>
+                <td><span>配送方式：</span></td>
+                <td><span>未配送</span></td>
+            </tr>
+            <tr>
+                <td><span>配送单号：</span></td>
+                <td><span>未配送</span></td>
+            </tr>
+            <tr>
+                <td><span>配送状态：</span></td>
+                <td><span>未配送</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.1.js'></script>
+<script type="text/javascript" src='assets/js/chosen.jquery.min.js'></script>
+<script type="text/javascript" src='assets/js/jquery-ui-datepicker.min.js'></script>
+<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
+<script>
+
+    //右侧书市上下翻页
+    jQuery(".more_books_container").slide({
+        titCell: ".hd ul",
+        mainCell: ".bd ul",
+        autoPlay: false,
+        effect: "top",
+        vis: 3,
+        pnLoop: false,
+        autoPage: true
+    });
+
+    //日历初始化
+    $('#start_date,#end_date').datepicker({
+        showOtherMonths: true,
+        dateFormat: 'yy-mm-dd',
+        changeYear: true,
+        changeMonth: true,
+        yearRange: "1979:2025",
+        maxDate: null,
+        minDate: null,
+        selectOtherMonths: true,
+        showButtonPanel: false
+    }).datepicker('widget').wrap('<div class="ll-skin-cangas"/>');
+
+    $.datepicker.regional['zh-CN'] = {
+        closeText: '关闭',
+        prevText: '&#x3c;上月',
+        nextText: '下月&#x3e;',
+        currentText: '今天',
+        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'
+        ],
+        monthNamesShort: ['一', '二', '三', '四', '五', '六',
+            '七', '八', '九', '十', '十一', '十二'
+        ],
+        dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+        dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+        weekHeader: '周',
+        dateFormat: 'yy-mm-dd',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: true,
+        yearSuffix: '年'
+    };
+    $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+
+    //设置查询截止最小日期
+    function setMinEndDate() {
+        var minEndDayStr = $('#start_date').val().split('-');
+        var year = minEndDayStr[0],
+                month = minEndDayStr[1],
+                day = minEndDayStr[2];
+        $('#end_date').datepicker("option", "minDate", new Date(year, month - 1, day));
+    }
+
+    //查看订单详情
+    function viewOrderDetails(){
+        $('.shop_order.order_list li a').click(function(){
+            art.dialog({
+                title: '查看订单详情',
+                lock: true,
+                content: document.getElementById('shop_order_detail'),
+            });
+        })
+    }
+
+    $(document).ready(function() {
+        $(".choose_status").chosen({
+            disable_search_threshold: 10,
+            width: '100px'
+        });
+        setMinEndDate();
+        viewOrderDetails();
+    });
+</script>
+</body>
+</html>

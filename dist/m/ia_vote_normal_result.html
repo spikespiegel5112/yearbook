@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>互动-民主选举-结果</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../css/m_jquery.sureInput.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+</head>
+<body class="bg-fff">
+
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'>
+        <span class="ybiconfont ybicon-backward1"></span>
+    </a>
+    <p>投票结果</p>
+</div>
+
+<div class="ia-vote-info">
+    <div class="ia-vote-info-top">
+        <div class="ia-vote-info-logo">
+            <img src="../img/m/ia/teacher-gl.jpg" alt="投票主题图像">
+        </div>
+        <div class="ia-vote-info-topic">
+            <h5>班级谁最帅帅班级谁最帅帅班级谁最帅帅班级谁最帅帅班级谁最帅帅</h5>
+            <div class="ia-vote-info-create">
+                <img src="../img/m/default/head-portrait.jpg" alt="头像" class="img-circle">
+                <p class="ia-vote-info-cuser">发起者:<span>张三</span></p>
+                <p class="ia-vote-info-ctime"><span>昨天 15:22</span>发起投票</p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <p class="ia-vote-type-p">已有<span>120</span>人投票</p>
+    </div>
+
+    <div class="ia-vote-info-option">
+        <div class="ia-vote-choose-wapper">
+            <ul class="ia-vote-common-choose ia-vote-common-result-show">
+                <li>
+                    <div class="ia-vote-choose-item">
+                       <p>赵老师赵老师赵老师赵老师赵老师赵老师赵老师赵老师赵老师赵老师</p>
+                        <div class="ia-vote-result-percent">
+                            <div class="ia-vote-result-percent-show">
+                                <span class="percent first" data-percent="40"></span>
+                                <span class="percent common" data-percent="60"></span>
+                            </div>
+                            <span class="pull-right">40(40%)</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ia-vote-choose-item">
+                        <p>赵老师</p>
+                        <div class="ia-vote-result-percent">
+                            <div class="ia-vote-result-percent-show">
+                                <span class="percent second" data-percent="20"></span>
+                                <span class="percent common" data-percent="80"></span>
+                            </div>
+                            <span class="pull-right">20(20%)</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ia-vote-choose-item">
+                        <p>赵老师赵老师</p>
+                        <div class="ia-vote-result-percent">
+                            <div class="ia-vote-result-percent-show">
+                                <span class="percent third" data-percent="10"></span>
+                                <span class="percent common" data-percent="90"></span>
+                            </div>
+                            <span class="pull-right">10(10%)</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ia-vote-choose-item">
+                        <p>赵老师</p>
+                        <div class="ia-vote-result-percent">
+                            <div class="ia-vote-result-percent-show">
+                                <span class="percent " data-percent="0"></span>
+                                <span class="percent common" data-percent="100"></span>
+                            </div>
+                            <span class="pull-right">0(0%)</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ia-vote-commit">
+
+        <p class="ia-vote-commit-tool">
+            <a><span class="icon-thumbs-up"></span><b class="num">1</b></a>
+            <a id="ia-vote-commit"><span class="icon-comment"></span><b class="num">1</b></a>
+            <a><span class="icon-remove"></span>删除</a>
+        </p>
+        <div class="clearfix"></div>
+        <div class="ia-vote-commit-thumb">
+            <ul>
+                <li><span class="icon-thumbs-up active"></span></li>
+                <li>张三,</li>
+                <li>张三,</li>
+                <li>张三,</li>
+                <li>张三,</li>
+                <li>张三,</li>
+                <li>张三</li>
+            </ul>
+        </div>
+        <div class="ia-vote-commit-reply">
+            <ul>
+                <li>
+                    <div class="ia-vote-commit-reply-one">
+                        <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="头像">
+                        <div class="ia-vote-commit-reply-user">
+                            <p>张三</p>
+                            <p>一小时前</p>
+                        </div>
+                        <div class="ia-vote-commit-reply-body">
+                            <p>很不错很不错很不错很不错很不错很不错很不错很不错很不错</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ia-vote-commit-reply-one">
+                        <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="头像">
+                        <div class="ia-vote-commit-reply-user">
+                            <p>张三</p>
+                            <p>一小时前</p>
+                        </div>
+                        <div class="ia-vote-commit-reply-body">
+                            <p>很不错很不错很不错很不错很不错很不错很不错很不错很不错</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ia-vote-commit-reply-one">
+                        <img src="../img/m/default/head-portrait.jpg" class="img-circle" alt="头像">
+                        <div class="ia-vote-commit-reply-user">
+                            <p>张三</p>
+                            <p>一小时前</p>
+                        </div>
+                        <div class="ia-vote-commit-reply-body">
+                            <p>很不错很不错很不错很不错很不错很不错很不错很不错很不错</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div style="display: none;" class="loading">
+    <img src="../img/m/loading.gif"><strong>加载中</strong>
+</div>
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/m_jquery.suerInput.js"></script>
+<script>
+    $('#ia-vote-commit').sureInput({
+        type : 'multi',
+        save : function(value){
+
+        }
+    });
+
+    $('.percent').each(function() {
+            var percent = $(this).attr('data-percent');
+            $(this).css('width', percent + '%');
+    });
+
+    /*
+    * 投票列表隔行变色
+    * */
+    $('.ia-vote-choose-item:odd').addClass('odd');
+</script>
+</body>
+</html>

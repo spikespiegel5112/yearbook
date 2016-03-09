@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>忆尔3.8-选择收货地址</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css"/>
+</head>
+
+<body class="bg_f6f6f6">
+<div class='main_container order_management'>
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward1"></span>
+        </a>
+        <p>选择收货地址</p>
+    </div>
+    <div class="address_manage">
+        <div class="address_item select">
+            <i class="icon-ok-sign choose"></i>
+            <div class="content">
+                <div class="cm_fl"><label class="icon-user"></label><span>用户名</span></div>
+                <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
+                <div><label class="icon-truck"></label><span>具体地址具体地址具体地址具体地址具体地址具体地址</span></div>
+            </div>
+            <a href="javascript:;"><i class="icon-edit edit"></i></a>
+        </div>
+        <div class="address_item">
+            <i class="icon-ok-sign choose"></i>
+            <div class="content">
+                <div class="cm_fl"><label class="icon-user"></label><span>用户名用户名用户名用户名</span></div>
+                <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
+                <div><label class="icon-truck"></label><span>具体地址</span></div>
+            </div>
+            <a href="javascript:;"><i class="icon-edit edit"></i></a>
+        </div>
+        <div class="address_item">
+            <i class="icon-ok-sign choose"></i>
+            <div class="content">
+                <div class="cm_fl"><label class="icon-user"></label><span>用户名3</span></div>
+                <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
+                <div><label class="icon-truck"></label><span>具体地址</span></div>
+            </div>
+            <a href="javascript:;"><i class="icon-edit edit"></i></a>
+        </div>
+        <div class="btn_wrapper">
+            <a class="new" href="javascript:;"><i class=" icon-plus"></i>新建地址</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript" src='../js/m_base.js'></script>
+<script type="text/javascript">
+    $(function () {
+        chooseAddress();
+    })
+
+    /*
+     * 选择收货地址
+     * */
+    function chooseAddress(){
+        $('.address_manage .address_item .content').on('touchend',function(){
+            $('.address_manage .address_item').each(function(){
+                $(this).removeClass('select');
+            });
+            $(this).closest('.address_item').addClass('select');
+        })
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>个人信息-修改手机号码</title>
+	<link rel="stylesheet" href="../css/m.all.min.css">
+	<link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+</head>
+<body class="bg-efeff4">
+
+<div class='ybwechatheader_wrapper'>
+	<a class='left_btn' href='pc_personinfo.html'>取消</a>
+	<p>手机号码</p>
+	<a class='right_btn' href='javascript:;'>保存</a>
+</div>
+
+<div class="user-info-main-container">
+	<div class="user_info_edit">
+		<input type="text" class="" id="user_phone" maxlength="11" value="12345678901">
+		<a id="user-info-remove"><span class="icon-remove"></span></a>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script>
+	$('#user-info-remove').on("click", function() {
+		$('#user_phone').val("");
+	});
+</script>
+
+</body>
+</html>

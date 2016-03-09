@@ -545,14 +545,15 @@
 			}
 		},
 		imgAlignCenter:function(){
-			var windowWidth=$(window).width(),
-				imgWidth=this.width();
+			var $this=$(this),
+				windowWidth=$(window).width(),
+				imgWidth=$this.width();
 			$(window).resize(function(){
-				this.css({
+				$this.css({
 					'margin-left':(windowWidth-imgWidth)/2
 				});
 			});
-			this.css({
+			$this.css({
 				'margin-left':(windowWidth-imgWidth)/2
 			});
 		}

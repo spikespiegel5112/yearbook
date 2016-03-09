@@ -555,6 +555,9 @@
 					<div class="btn_wrap">
 						<a class="load_mobile_photo" href="javascript:;"></a>
 					</div>
+                    <div class="btn_wrap">
+                        <a class="load_book_photo" href="javascript:;"></a>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -575,10 +578,96 @@
 			</div>
 		</div>
 	</div>
+    <!--导入其他书册照片-->
+    <div class="load_obp_box hidden">
+        <p>请选择您想要导入照片的书册：（支持多选）</p>
+        <div class='pc_empty_item hidden'>
+            <span class='avatar_1'></span>
+            <label>您没有可导入照片的书册！</label>
+        </div>
+        <div class="booklist_wrap ">
+            <div class="hd">
+                <a class="prev" href="javascript:;"></a>
+                <a class="next" href="javascript:;"></a>
+            </div>
+            <div class="bd">
+                <ul class="booklist">
+                    <li>
+                        <a class='bookcover selected' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <a class="btn" href="javascript:;">导入照片</a>
+        </div>
+    </div>
     <!-- html end-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
 	<script>
 		$(document).ready(function(){
 			init();
@@ -588,6 +677,7 @@
 			foldImgList();
 			ybcommonqueryicon();
 			loadMobilePhoto();
+            loadOtherBookPhoto();
 		});
 		//渲染控件样式
 		function changeButtonCss() {
@@ -663,6 +753,38 @@
 				});
 			})
 		}
+
+        //导入其他书册照片
+        function loadOtherBookPhoto(){
+            jQuery(".booklist_wrap").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                autoPage: true,
+                effect: "left",
+                vis: 5,
+                trigger: "click",
+                scroll:5,
+                pnLoop:true
+            });
+
+            $('.load_book_photo').click(function(){
+                art.dialog({
+                    title: '上传图片',
+                    lock: true,
+                    content: document.querySelector('.load_obp_box')
+                });
+            });
+
+            //选择目标书册
+            $('.booklist li .bookcover').click(function(){
+                $('.booklist li .bookcover').each(function(){
+                    $(this).removeClass('selected');
+                })
+                $(this).addClass('selected');
+            })
+        }
+
+
 	</script>
 </body>
 

@@ -444,7 +444,7 @@
 
 .bp_toolbar_wrapper > ul > li > a > span {
 	display: block;
-	margin: 5px auto;
+	margin: 0 auto;
 	width: 50%;
 	height: 40px;
 	line-height: 40px;
@@ -557,9 +557,17 @@
 	color: #8a9c14;
 }
 
+.bp_toolbar_wrapper ul .product span{
+    font-size: 25px;
+}
+
+.bp_toolbar_wrapper ul .product:hover span, .bp_toolbar_wrapper ul .product:hover label, .bp_toolbar_wrapper ul .active .product span, .bp_toolbar_wrapper ul .active .product label {
+    color: #8a9c14;
+}
+
 .bp_slidefold_btn{
 	position: absolute;
-	bottom: 20px;
+	bottom: 205px;
 	z-index: 1;
 	width: 40px;
 	height: 40px;
@@ -583,6 +591,7 @@
 .bp_slidefold_btn.fold{
 	display: block;
 	left: 80px;
+    bottom: 36%;
 	background-position: -250px -40px;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <title>yb3.10 我的店铺-管理店铺-店铺设置</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+</head>
+
+<body class='bg_efeff4'>
+<div class="main_container has_footer_nav">
+    <div class="ybwechatheader_wrapper">
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward1"></span>
+        </a>
+        <p>店铺设置</p>
+    </div>
+    <div class="shop_admin">
+        <div class="shop_info_list">
+            <ul class="list-group">
+                <li class="list-group-item shop_logo">
+                    <a href="javascript:;">小店LOGO<span><img class="shop_logo_img" src="../img/m/default/shop_logo.png" width="50" height="50"></span></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="pc_shop_admin_shopinfo_name.html">小店名称<span>呆呆鱼的小店</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部导航-->
+<div class="footer_nav">
+    <ul>
+        <li>
+            <a href="index.html">
+                <span class="ybiconfont ybicon-home"></span>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="ia_msg.html">
+                <span class="ybiconfont ybicon-message"></span>
+                <p>消息</p>
+            </a>
+        </li>
+        <li class="active" id="open_new_option">
+            <a href="javascript:;">
+                <span class="new ybiconfont ybicon-plus"></span>
+            </a>
+        </li>
+        <li>
+            <a href="pc_mybookshelf.html">
+                <span class="ybiconfont ybicon-bookshelf"></span>
+                <p>书架</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_main.html">
+                <span class="ybiconfont ybicon-userthin"></span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--pop new content-->
+<div class="open_new_container">
+    <div class="new_option">
+        <ul>
+            <li class="new_ph">
+                <a href="booklist_photo.html">
+                    <img src="../img/m/icon/new_photo_book.png">
+
+                    <p>新建照片书</p>
+                </a>
+            </li>
+            <li class="new_ia">
+                <a href="booklist_ia.html">
+                    <img src="../img/m/icon/new_interact_book.png">
+
+                    <p>新建互动册</p>
+                </a>
+            </li>
+            <li class="join_ia">
+                <a href="ia_invitation_joinbook.html">
+                    <img src="../img/m/icon/join_interact_book.png">
+
+                    <p>加入互动册</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="close_btn"><a href="javascript:;">×</a></div>
+</div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script>
+    $(function () {
+        footerNavSwitch();
+        popNewOption();
+    })
+    /*
+     * footer nav switch
+     * */
+
+    function footerNavSwitch() {
+        $('.footer_nav li').on('touchend', function () {
+            $('.footer_nav li').each(function () {
+                $(this).removeClass('active');
+            });
+            $(this).addClass('active');
+        })
+    }
+
+    /*
+     *
+     * */
+    function popNewOption() {
+        var winWidth = $(window).width(),
+                winHeight = $(window).height(),
+                midTop = winHeight / 2 - 54,
+                midLeft = winWidth / 2 - 40,
+                phL = (winWidth) / 2 - 120,
+                phT = winHeight / 3 - 60,
+                iaL = (winWidth) / 2 + 40,
+                jiaT = winHeight / 3 + 80;
+        var curPageIcon = $('.footer_nav li.active').index();
+
+        $('.new_option ul li').css({'top': midTop, 'left': midLeft});
+        /*new option page fadein*/
+        $('#open_new_option a').on('touchend', function () {
+            $('.open_new_container').addClass('animated fadeIn').removeClass('fadeOut').show();
+            $('.new_option').show().addClass('animated fadeIn').removeClass('fadeOut');
+            $('.new_option ul .new_ph').animate({
+                left: phL,
+                top: phT
+            }, 300, function () {
+            });
+            $('.new_option ul .new_ia').animate({
+                left: iaL,
+                top: phT
+            }, 300, function () {
+            });
+            $('.new_option ul .join_ia').animate({
+                left: midLeft,
+                top: jiaT
+            }, 300, function () {
+            });
+        });
+        /*new option page fadeout*/
+        $('.open_new_container .close_btn a').on('touchend', function () {
+            //保存当前页面
+            $('.new_option').removeClass(' fadeIn').addClass('fadeOut');
+            $('.open_new_container').addClass('fadeOut').removeClass('fadeIn');
+            $('.new_option ul li').animate({'top': midTop, 'left': midLeft}, 300, function () {
+            });
+            setTimeout(function () {
+                $('.new_option').hide();
+                $('.open_new_container').hide();
+            }, 500);
+            $('.footer_nav li').eq(curPageIcon).addClass('active').siblings().removeClass('active');
+            ;
+        });
+    }
+
+</script>
+</body>
+
+</html>

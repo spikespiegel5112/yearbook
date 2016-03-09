@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>上传照片</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css" type="text/css" media="all"/>
+</head>
+<body>
+
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'>
+        <span class="ybiconfont ybicon-backward1"></span>
+    </a>
+    <p>上传照片</p>
+    <a class='right_btn ' href='javascript:;'>上传</a><!--有数据 可上传 去掉disable-->
+</div>
+<!--<div class="album_list_tab_wapper">
+    <ul>
+        <li><a href="join_book.html">创建新书册</a></li>
+        <li><a href="join_book_by_code.html">加入书册</a></li>
+    </ul>
+</div>-->
+<div class="main_container">
+    <div class="uploadphoto_input_wrapper">
+        <div class="uploadphoto_input_item input_item">
+            <label>上传到</label>
+            <a href="javascript:;">
+                <div class="changecover_unselected_item">
+                    <img src="../img/m/default/yb_wechat_album_banner_1_00000.jpg" width="370" height="165">
+                    <label>相册封面</label>
+                </div>
+                <label>相册1相册1相册1相册1相册1</label>
+                <span class="ybiconfont ybicon-forward3"></span>
+            </a>
+        </div>
+        <!-- <div class="uploadphoto_input_item input_item">
+             <label>图片质量</label>
+             <a href="javascript:;">
+                 <p>原图（上传速度慢，非wifi环境不建议使用）</p>
+                 <span class="icon-chevron-right"></span>
+             </a>
+         </div>-->
+    </div>
+    <div class="uploadphoto_main_wrapper">
+        <!--<div class="uploadphoto_progressbar_item">
+            <span></span>
+        </div>-->
+        <!--有数据-->
+        <ul class="">
+            <li><label class="closebutton_img">+</label><a href="javascript:;"><img src="../img/m/default/book1.png"></a>
+
+                <div class="progressbar" data-progress="50%"><p>上传：<span>50%</span></p></div>
+            </li>
+            <li><label class="closebutton_img">+</label><a href="javascript:;"><img
+                    src="../img/m/default/choosephoto_img_1_00000.jpg"></a>
+
+                <div class="progressbar" data-progress="20%"><p>上传：<span>20%</span></p></div>
+            </li>
+            <li><label class="closebutton_img">+</label><a href="javascript:;"><img
+                    src="../img/m/default/choosephoto_img_1_00000.jpg"></a>
+
+                <div class="progressbar" data-progress="0"><p>等待上传<span></span></p></div>
+            </li>
+            <li><label class="closebutton_img">+</label><a href="javascript:;"><img
+                    src="../img/m/default/choosephoto_img_1_00000.jpg"></a>
+
+                <div class="progressbar" data-progress="0"><p>等待上传<span></span></p></div>
+            </li>
+            <li><label class="closebutton_img">+</label><a href="javascript:;"><img
+                    src="../img/m/default/choosephoto_img_1_00000.jpg"></a>
+
+                <div class="progressbar" data-progress="0"><p>等待上传<span></span></p></div>
+            </li>
+            <li class="uploadphoto_addphoto_item"><a href="javascript:;"><span>+</span></a></li>
+        </ul>
+        <!--无数据-->
+        <div class="empty_item hidden">
+            <a href="javascript:;"><i class="icon-arrow-up"></i><span>点击添加照片</span></a>
+        </div>
+    </div>
+    <!--取消有数据时弹出-->
+    <div id="show_confim_cancel" class="uploadphoto_input_wrapper">
+        <ul>
+            <li><a href="ia_albumlist.html">放弃上传</a></li>
+            <li><a class="cancel" href="javascript:;">取消</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/m_main.js"></script>
+<script>
+
+    (function ($) {
+        uploadImgProgress();
+        showConfimCancel();
+    }(jQuery));
+    /*
+     * 照片上传中遮罩进度
+     * */
+    function uploadImgProgress() {
+        $('.progressbar').each(function () {
+            var upPercent = $(this).attr('data-progress');
+            var shadeHeight = 100 * (1 - parseFloat(upPercent) / 100);
+            $(this).height(shadeHeight);
+            if (upPercent == '0') {
+                $(this).find('.p').text('等待上传');
+            }
+        })
+    }
+
+    function showConfimCancel() {
+        $('.left_btn.cancel').on('touchend', function () {
+            $('#show_confim_cancel').fadeIn('fast');
+        });
+        $('#show_confim_cancel .cancel').on('touchend', function () {
+            $('#show_confim_cancel').fadeOut('fast');
+        });
+    }
+</script>
+</body>
+</html>

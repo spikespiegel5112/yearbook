@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>编辑相册-选择封面</title>
+    <link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'>
+        <span class="ybiconfont ybicon-backward1"></span>
+    </a>
+    <p>选择封面</p>
+    <a class='right_btn' href='javascript:;'>确定</a>
+</div>
+<div class="main_container">
+    <div class="choosecover_wrapper">
+        <ul>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+            <li>
+                <a href="javascript:;"><img src="../img/m/default/choosephoto_img_1_00000.jpg"></a><span class="ybiconfont ybicon-ok"></span></li>
+        </ul>
+    </div>
+</div>
+<div class="loading" style="display: none;">
+    <img src="../img/m/loading.gif"><strong>加载中</strong>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src='../assets/js/iscroll.js'></script>
+<script type="text/javascript">
+    $(function () {
+        choosecover();
+    });
+
+    function choosecover() {
+        var availHeight = $(window).height();
+        //判断手机是安卓还是苹果，计算不同的容器高度
+        $(".choosecover_wrapper").css({
+            "height": availHeight - 50
+        });
+        var availWidth = $(window).width();
+        var touchFlag = true;
+        $(document).on("touchstart", function () {
+            touchFlag = true;
+        });
+        $(document).on("touchmove", function () {
+            touchFlag = false;
+        });
+        $(".choosecover_wrapper").on("touchend", 'li', function (e) {
+            if (touchFlag == true) {
+                $(".choosecover_wrapper li").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+
+        // 显示loading
+        var showloading = function (txt) {
+            if (typeof(txt) === 'string')
+                $('.loading strong').text(txt);
+            if (typeof(loading) === 'undefined')
+                loading = $('.loading');
+            loading.show();
+        };
+        //隐藏loading
+        var hideloading = function () {
+            if (typeof(loading) === 'undefined')
+                loading = $('.loading');
+            setTimeout(function () {
+                loading.hide();
+                $('.loading strong').text('加载中');
+            }, 1000);
+        };
+        var getHtml = function (agru) {
+            return "<li><a href='javascript:;'><img src='../img/m/default/choosephoto_img_1_00000.jpg'></a><span class='ybiconfont ybicon-ok'></span></li>"
+        }
+        var createIScroll = function (selector, pullDownFunc, pullUpFunc, opts, pullText) {
+            //自定义提示文字
+            var pulldownText = pullText && pullText['pulldownText'] ? pullText['pulldownText'] : '下拉可以刷新',
+                    pullupText = pullText && pullText['pullupText'] ? pullText['pullupText'] : '上拉加载更多',
+                    releasedownText = pullText && pullText['releasedownText'] ? pullText['releasedownText'] : '松手可以刷新',
+                    releaseupText = pullText && pullText['releaseupText'] ? pullText['releaseupText'] : '松手加载更多',
+                    loadingText = pullText && pullText['loadingText'] ? pullText['loadingText'] : '加载中';
+
+            var newScroller = new IScroll(selector);
+
+            //定义下拉和上拉的方法
+            if (typeof(pullDownFunc) === 'function' || typeof(pullUpFunc) === 'function') {
+                if (typeof(pullDownFunc) === 'function') {
+                    //tr('有下拉函数');
+                    var $container = $(selector + '>:first-child');
+                    $container.append('<div class="scroll_pulldown_icon"></div><div class="scroll_pulldown">' + pulldownText + '</div>');
+                }
+                if (typeof(pullUpFunc) === 'function') {
+                    //tr('有上拉函数');
+                    var $container = $(selector + '>:first-child');
+                    $container.prepend('<div class="scroll_pullup_icon"></div><div class="scroll_pullup">' + pullupText + '</div>');
+                }
+                //监听滑动，改变图示和文字
+                newScroller.on('scrollMove', function () {
+                    if (this.y > 50) {
+                        $('.scroll_pulldown_icon').addClass('scroll_pulldown_flip');
+                        $('.scroll_pulldown').text(releasedownText);
+                    } else {
+                        $('.scroll_pulldown_icon').removeClass('scroll_pulldown_flip');
+                        $('.scroll_pulldown').text(pulldownText);
+                    }
+                    if (this.y < -$container.height() + $(selector).height() - 50) {
+                        $('.scroll_pullup_icon').addClass('scroll_pullup_flip');
+                        $('.scroll_pullup').text(releaseupText);
+                    } else {
+                        $('.scroll_pullup_icon').removeClass('scroll_pullup_flip');
+                        $('.scroll_pullup').text(pullupText);
+                    }
+                });
+                newScroller.on('scrollEnd', function () {
+                    if ($('.scroll_pulldown_icon').hasClass('scroll_pulldown_flip')) {
+                        $('.scroll_pulldown_icon').removeClass('scroll_pulldown_flip');
+                        pullDownFunc.call();
+                    }
+                    if ($('.scroll_pullup_icon').hasClass('scroll_pullup_flip')) {
+                        $('.scroll_pullup_icon').removeClass('scroll_pullup_flip');
+                        pullUpFunc.call();
+                    }
+                });
+            }
+            return newScroller;
+        }
+        // setTimeout(function() {
+        var mScroller = createIScroll('.choosecover_wrapper', null, function () {
+            showloading();
+            //修改成从后台读取
+            var i = 0;
+            for (i = 0; i < 6; i++) {
+                $('.choosecover_wrapper ul').append(getHtml(i));
+            }
+            touchFlag = true;
+            mScroller.refresh();
+            hideloading();
+        }, {
+            mouseWheel: true,
+            scrollbars: false,
+            bounceLock: false
+        });
+        // }, 500);
+    }
+</script>
+</body>
+
+</html>

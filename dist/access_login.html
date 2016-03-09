@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.0-登录页</title>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body class="login_body">
+	<!--头部导航-->
+	<div class="cm_header_nav">
+		<div class="logo">
+			<a href="index.html"><img src="img/logo.png"></a>
+		</div>
+		<div class="nav">
+			<ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="booklist_photo.html">照片书</a></li>
+            <li><a href="booklist_ia.html">互动册</a></li>
+				<li><a href="pc_mybookshelf.html">个人中心</a></li>
+				<li><a href="static_instruction_entrance.html">使用指南</a></li>
+			</ul>
+		</div>
+		<div class="nav_login">
+			<span class='ybiconfont ybicon-user'></span>
+			<ul>
+				<li><a href="access_login.html" class="active">登录</a></li>
+				<li><a href="access_register.html">注册</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cm_header_shadow"></div>
+	<!--登录表单-->
+	<div class="login_main_container">
+		<h2>用户登录</h2>
+		<div class="login_from">
+			<div class="lf_left">
+				<ul>
+					<li>
+						<a class='weixin' href="access_loginandbind.html">
+							<span class='ybiconfont ybicon-wechatsolid'></span>
+							<label>WeChat</label>
+						</a>
+						<!-- <a class='ybiconfont ybicon-wechatsolid' href="access_loginandbind.html">
+							<img src="img/access/login_wx_join.png">
+						</a> -->
+					</li>
+					<li>
+						<a class='weibo' href="access_loginandbind.html">
+							<span class='ybiconfont ybicon-weibosina'></span>
+							<label>Weibo</label>
+						</a>
+						<!-- <a href="access_loginandbind.html"><img src="img/access/login_weibo_join.png"></a> -->
+					</li>
+					<li>
+						<a class='qq' href="access_loginandbind.html">
+							<span class='ybiconfont ybicon-qqsolid'></span>
+							<label>QQ</label>
+						</a>
+						<!-- <a href="access_loginandbind.html"><img src="img/access/login_qq_join.png"></a> -->
+					</li>
+				</ul>
+			</div>
+			<div class="lf_middle"></div>
+			<div class="lf_right">
+				<form id="commentForm">
+					<input class="login_input data required" id="cname" name="loginName" placeholder="用户名" type="text">
+					<input class="login_input data required" id="cpassword" name="password" placeholder="密码" type="password">
+					<div class="login_btn cm_cp"><a href="pc_mybookshelf.html">登录</a></div>
+				</form>
+				</ul>
+			</div>
+		</div>
+		<div class="lf_des">
+			<a href="access_resetpassword_1.html">忘记密码？</a>
+			<br/> 还没有账户
+			<a href="access_register.html">立即注册！</a>
+		</div>
+	</div>
+	</div>
+	<!--底部-->
+	<div class="footer login_footer">
+		<div class="footer_info">
+			<a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="index.html"></a></a>
+			<div class="footer_title">
+				<div>忆尔-在线DIY纪念册平台</div>
+				<p>专业在线制作电子书册平台</p>
+				<p>DIY出独一无二的青春纪念册</p>
+			</div>
+		</div>
+		<div class="footer_list">
+			<div class="ft_nav">
+				<a href="javascript:;">客服电话 400 0610 127</a>
+				<a href="javascript:;">客服QQ</a>
+				<a href="javascript:;">客服邮箱</a>
+				<a href="static_hc_company_profile.html">关于我们</a>
+			</div>
+			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+			<div class="ft_shares">
+				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+				<a href="javascript:;"><img src="img/footer_wb_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_qq_btn.png"></a>
+				<a href="javascript:;"><img src="img/footer_wx_btn.png"></a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+	<script src="js/all.js"></script>
+	<script>
+	function validateForm() {
+		//validate方法参数可选  
+		return $('#commentForm').validate({
+			messages: {
+				loginName: {
+					required: "用户名未填写"
+				},
+				password: {
+					required: '密码未填写',
+				}
+			}
+		}).form();
+	}
+
+	function doSubmit() { //点击登录触发验证
+		$('.login_btn').click(function() {
+			if (validateForm()) {
+				document.form1.submit();
+			}
+		});
+	}
+
+	$(function() {
+		doSubmit();
+		$('.login_main_container').footerAlignBottom();
+	});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>个人信息</title>
+	<link rel="stylesheet" href="../css/m.all.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457425317_6870656.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+
+	<link href="../assets/css/mobiscroll/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/mobiscroll/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/mobiscroll/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/mobiscroll/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/mobiscroll/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="bg-efeff4">
+<div class='ybwechatheader_wrapper'>
+    <a class='left_btn back_btn' href='javascript:;'>
+        <span class="ybiconfont ybicon-backward1"></span>
+    </a>
+	<p>个人信息</p>
+</div>
+<div class="container-fluid no-padding user-info">
+	<div class="container  no-padding">
+		<div class="user-info-list">
+			<ul class="list-group">
+				<li class="list-group-item user-header">
+					<a href="#">头像<span class="float-right"><img class="user-header-photo" src="../img/m/default/head-portrait.jpg" width="50"  height="50"></span></a>
+				</li>
+				<li class="list-group-item">
+					<a id="user_sex">性别<span class="float-right">女</span></a>
+				</li>
+				<li class="list-group-item">
+					<a id="user_birth_day">生日<span class="float-right">2015年04月22日</span></a>
+				</li>
+				<li class="list-group-item">
+					<a href="pc_personinfo_changename.html">姓名<span class="float-right">张十三</span></a>
+				</li>
+				<li class="list-group-item">
+					<a id="user_origin_city">籍贯<span class="float-right">北京</span></a>
+				</li>
+				<li class="list-group-item">
+					<a href="pc_personinfo_changephone.html">手机<span class="float-right">12345678901</span></a>
+				</li>
+				<li class="list-group-item">
+					<a href="pc_personinfo_changeinterest.html">爱好<span class="float-right">做一个快乐的吃货!</span></a>
+				</li>
+				<li class="list-group-item">
+					<a href="pc_personinfo_changesign.html">个性签名<span class="float-right">我是一个菠菜,我是一个苹果...</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="text-center">
+			<a  href="pc_main.html" class="button button-rounded button-highlight">保存</a>
+			<!--<a  href="user_center.html" class="button button-rounded button-highlight">返回</a>-->
+		</div>
+		<div style="display: none;">
+			<ul id="user_origin_city_choose">
+				<li>北京
+					<ul>
+						<li>海淀
+							<ul>
+								<li>XX</li>
+								<li>XX</li>
+								<li>XX</li>
+							</ul>
+						</li>
+						<li>海淀2
+							<ul>
+								<li>OO</li>
+								<li>OO</li>
+								<li>OO</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>江苏
+					<ul>
+						<li>无锡
+							<ul>
+								<li>滨湖区</li>
+								<li>新区</li>
+								<li>市区</li>
+							</ul>
+						</li>
+						<li>无锡
+							<ul>
+								<li>滨湖区</li>
+								<li>新区</li>
+								<li>市区</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="user_sex_choose">
+				<li>男</li>
+				<li>女</li>
+			</ul>
+			<input type="text" id="user_birth_day_choose" value="2015年04月22日"/>
+		</div>
+
+	</div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+
+<script src="../assets/js/mobiscroll/mobiscroll.core.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.frame.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.scroller.js"></script>
+
+<script src="../assets/js/mobiscroll/mobiscroll.util.datetime.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.datetimebase.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.datetime.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.select.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.listbase.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.image.js"></script>
+<script src="../assets/js/mobiscroll/mobiscroll.treelist.js"></script>
+
+
+
+<script src="../assets/js/mobiscroll/i18n/mobiscroll.i18n.zh.js"></script>
+
+<script>
+	$('#user_birth_day_choose').mobiscroll().date({
+		theme: $.mobiscroll.defaults.theme,
+		mode: "scroller",
+		display: "bottom",
+		lang: "zh",
+		dateFormat:"yy年mm月dd日",
+		headerText:"选择出生日期",
+		showLabel : true,
+		labels: ['年', '月', '日']
+	});
+
+	$('#user_origin_city_choose').mobiscroll().treelist({
+		theme: $.mobiscroll.defaults.theme,
+		mode: "scroller",
+		display: "bottom",
+		lang: "zh",
+		labels: ['省', '市', '区'],
+		showLabel : true,
+		headerText: "选择籍贯"
+	});
+
+	$('#user_sex_choose').mobiscroll().treelist({
+		theme: $.mobiscroll.defaults.theme,
+		mode: "scroller",
+		display: "bottom",
+		lang: "zh",
+		headerText : "选择性别"
+	});
+
+
+	$('#user_origin_city').click(function(){
+		$('#user_origin_city_choose').mobiscroll('show');
+		return false;
+	});
+
+	$('#user_sex').click(function(){
+		$('#user_sex_choose').mobiscroll('show');
+		return false;
+	});
+
+	$('#user_birth_day').click(function(){
+		$('#user_birth_day_choose').mobiscroll('show');
+		return false;
+	});
+
+
+</script>
+
+</body>
+</html>

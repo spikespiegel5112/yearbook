@@ -19,7 +19,7 @@
 .use_process_main {
 	position: relative;
 	width: 100%;
-	background-color: #fff;
+	background: url("../img/use_guide/use_guide_bg.jpg") repeat;
 }
 
 .use_process_main .choose_category {
@@ -27,28 +27,79 @@
 	margin: 0 auto;
 	width: 960px;
 	min-height: 650px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	clear: both;
 }
 
-.use_process_main .choose_category div {
+.use_process_main .choose_category > div {
 	margin: 100px 0 0;
-	width: 358px;
 	text-align: center;
 }
 
-.use_process_main .choose_category div a img {
-	margin: 0 0 65px;
-	width: 100%;
+.use_process_main .choose_category .photo_book,
+.use_process_main .choose_category .interact_book{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px #fff;
+    line-height: 100%;
+}
+
+.use_process_main .choose_category .photo_book{
+    background: url("../img/use_guide/enter_book_fig.png") no-repeat 0;
+    background-size: cover;
+}
+
+.use_process_main .choose_category .interact_book{
+    background: url("../img/use_guide/interact_book_fig.png") no-repeat 0;
+    background-size: cover;
+}
+
+.use_process_main .choose_category .photo_book img{
+    position: absolute;
+    width: 120%;
+    left: -16%;
+    top: 4%;
+}
+
+.use_process_main .choose_category .interact_book img{
+    position: absolute;
+    width: 120%;
+    left: -11%;
+    top: 1%;
 }
 
 .use_process_main .choose_category div a h1 {
+    margin: 15px 0 5px;
 	font-size: 30px;
 	color: #333;
 }
 
-.use_process_main .choose_category div a:hover h1 {
-	color: #e7b54b;
+.use_process_main .choose_category div a p{
+    font-size: 14px;
+    color: #666;
+    line-height: 25px;
+}
+
+.use_process_main .choose_category .item:hover div{
+	border: 1px solid #85d249;
+    box-shadow: 0 0 3px #85d249;
+}
+
+.use_process_main .choose_category .item:hover h1,
+.use_process_main .choose_category .item:hover p{
+    color: #8dc181;
+}
+
+.use_process_main .choose_category .guide_dec{
+    position: absolute;
+    margin: 0 0 0 -163px;
+    left: 50%;
+    top: 155px;
+    z-index: 2;
 }
 
 .use_process {

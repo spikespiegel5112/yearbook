@@ -3260,7 +3260,7 @@
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div {
-	left: -181px;
+	left: -179px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div:before,
@@ -3382,9 +3382,16 @@
 	overflow-y: auto;
 }
 
+.auto_edit_main .main_left .choose_img_con{
+    height: inherit;
+    overflow: hidden;
+}
+
 .auto_edit_main .main_left .empty {
 	padding: 70px 0 0;
 	text-align: center;
+    background: url("../img/use_guide/use_guide_bg.jpg") repeat;
+    height: inherit;
 }
 
 .auto_edit_main .main_left .empty > div {
@@ -3402,60 +3409,65 @@
 	margin-right: 100px;
 }
 
+.auto_edit_main .main_left .empty .ybiconfont{
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 270px;
+    height: 270px;
+    text-align: center;
+    line-height: 250px;
+    font-size: 64px;
+    color: #fff;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    box-sizing: border-box;
+}
+
+.auto_edit_main .main_left .empty .ybicon-upload{
+    background-color: #f58730;
+}
+
+.auto_edit_main .main_left .empty .ybicon-book{
+    background-color: #b2c022;
+}
+
 .auto_edit_main .main_left .empty > div h3 {
-	font-size: 18px;
+    margin: 15px 0 0;
+	font-size: 24px;
 	line-height: 45px;
-	color: #000;
+	color: #333;
 }
 
 .auto_edit_main .main_left .empty > div p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 45px;
 	color: #666;
 }
 
-.auto_edit_main .main_left .empty > div p span {
-	color: #e22929;
+.auto_edit_main .main_left .empty div p span {
+	color: #333;
+    font-weight: bold;
 }
 
-.auto_edit_main .main_left .empty > div img {
-	display: block;
-	margin: 15px auto 20px;
-	width: 280px;
-	height: 280px;
-	border-radius: 100%;
+.auto_edit_main .main_left .empty .upload:hover .ybiconfont{
+    border: 10px solid #f3bd92;
 }
 
-.auto_edit_main .main_left .empty > div a {
-	position: relative;
-	display: block;
-	margin: 0 auto;
-	width: 125px;
-	height: 35px;
-	line-height: 35px;
-	box-sizing: border-box;
-	font-size: 18px;
-	color: #7bb125;
+.auto_edit_main .main_left .empty .upload:hover h3,
+.auto_edit_main .main_left .empty .upload:hover p,
+.auto_edit_main .main_left .empty .upload:hover p span{
+    color: #f58730;
 }
 
-.auto_edit_main .main_left .empty > div a::after {
-	position: absolute;
-	margin: 3px 5px;
-	content: " ";
-	width: 28px;
-	height: 28px;
-	border-radius: 100%;
-	background: url("../img/makebook/next_icon.jpg") no-repeat 0;
+.auto_edit_main .main_left .empty .enter_space:hover .ybiconfont{
+    border: 10px solid #c9d485;
 }
 
-.auto_edit_main .main_left .empty > div a:hover,
-.auto_edit_main .main_left .empty > div a:active {
-	color: #f3ac14;
-}
-
-.auto_edit_main .main_left .empty > div a:hover::after,
-.auto_edit_main .main_left .empty > div a:active::after {
-	background: url("../img/makebook/next_icon_hv.jpg") no-repeat 0;
+.auto_edit_main .main_left .empty .enter_space:hover h3,
+.auto_edit_main .main_left .empty .enter_space:hover p,
+.auto_edit_main .main_left .empty .enter_space:hover p span{
+    color: #b2c022;
 }
 
 .choose_img_con .time_line {

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <title>忆尔3.6-使用指南</title>
-
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
     <!-- build:css css/all.min.css -->
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -44,18 +44,25 @@
 <!-- main -->
 <div class="use_process_main cm_min_width">
     <div class="choose_category">
-        <div class="cm_fl">
+        <div class="cm_fl item">
             <a href="static_instruction_photo.html">
-                <img src="img/makebook/enter_book_space_icon.png" alt="照片书使用指南">
-
+                <div class="photo_book">
+                    <img src="img/use_guide/pb_dec01.png" alt="照片书使用指南">
+                </div>
                 <h1>照片书使用指南</h1>
+                <p>海量模板供您选择<br>在线编辑所见即所得<br>高清晰度印刷成册</p>
             </a>
         </div>
-        <div class="cm_fr">
+        <div class="guide_dec">
+            <img src="img/use_guide/dec_text.png">
+        </div>
+        <div class="cm_fr item">
             <a href="static_instruction_interactive.html">
-                <img src="img/use_guide/interact_book_fig.png" alt="互动册使用指南">
-
+                <div class="interact_book">
+                    <img src="img/use_guide/ib_dec01.png" alt="互动册使用指南">
+                </div>
                 <h1>互动册使用指南</h1>
+                <p>轻松搞定毕业册聚会册<br>可邀请小伙伴一起制作<br>支持多人在线互动</p>
             </a>
         </div>
     </div>
@@ -104,13 +111,17 @@
             })
             function resize(){
                 var windowHeight=$(window).height();
-                $('.use_process_main .choose_category div').css({
-                    'width':358*(windowHeight/975),
+                $('.use_process_main .choose_category div div').css({
+                    'width':350*(windowHeight/975),
+                    'height':350*(windowHeight/975),
                     'margin-left':50*(975/windowHeight),
                     'margin-right':50*(975/windowHeight)
                 });
                 $('.choose_category div a h1').css({
                     'font-size':30*(windowHeight/975)
+                });
+                $('.choose_category div a p').css({
+                    'font-size':14*(windowHeight/975)
                 })
             }
         }

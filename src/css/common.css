@@ -1918,9 +1918,10 @@ button.select {
 .ybbanner_wrapper {
     min-width: 1150px;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: relative;
-    z-index: 0;
+    /*z-index: 0;*/
+    height: 100px;
 }
 
 .ybbanner_bookcover_item {
@@ -1931,9 +1932,10 @@ button.select {
 
 .ybbanner_bookinfo_wrapper {
     float: left;
-    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
     width: 360px;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .ybbanner_bookinfo_wrapper>a {
@@ -2018,9 +2020,10 @@ button.select {
 
 .ybbanner_shortcut_wrapper ul li {
     float: right;
+    position: relative;
     margin: 0 0 0 15px;
     width: 80px;
-    height: 30px;
+    /*height: 30px;*/
 }
 
 .ybbanner_shortcut_wrapper ul li a {
@@ -2060,7 +2063,7 @@ button.select {
     top: 1px;
 }
 
-.ybbanner_shortcut_wrapper ul .share a {
+.ybbanner_shortcut_wrapper ul .preview a {
     background-color: #5cb8f7;
 }
 
@@ -2072,7 +2075,7 @@ button.select {
     background-color: #FF6347;
 }
 
-.ybbanner_shortcut_wrapper ul .price a {
+.ybbanner_shortcut_wrapper ul .share a {
     background-color: #ffab1a;
 }
 
@@ -2106,10 +2109,11 @@ button.select {
 
 .bannerslider_wrapper {
     float: left;
-    margin: 10px 0 0 0;
+    padding: 10px 0;
     width: 600px;
     height: 100%;
     position: relative;
+    box-sizing: border-box;
 }
 
 .bannerslider_wrapper:after {
@@ -2917,6 +2921,8 @@ nav .pagination li a:active {
     float: left;
     margin: 0 0 0 10px;
     overflow: hidden;
+    width: 30px;
+    height: 30px;
 }
 
 .common_sharelist_wrapper ul li:first-child {
@@ -2931,9 +2937,14 @@ nav .pagination li a:active {
     font-size: 25px;
     text-align: center;
     color: #abaebe;
+    background-color: transparent!important;
 }
 
-.common_sharelist_wrapper .weibo a:hover {
+.common_sharelist_wrapper ul li a:hover{
+    box-shadow: none;
+}
+
+/*.common_sharelist_wrapper .weibo a:hover {
     color: #d8282a;
 }
 
@@ -2947,26 +2958,26 @@ nav .pagination li a:active {
 
 .common_sharelist_wrapper .renren a:hover {
     color: #217dc6;
-}
+}*/
 
 .common_sharelist_wrapper .weibo a:hover,
 .common_sharelist_wrapper .weibo.active a {
-    background-position: 0 0;
+    color: #d8282a;
 }
 
-.common_sharelist_wrapper .qqzone a:hover,
-.common_sharelist_wrapper .qqzone.active a {
-    background-position: -30px 0;
+.common_sharelist_wrapper .qzone a:hover,
+.common_sharelist_wrapper .qzone.active a {
+    color: #ffd074;
 }
 
 .common_sharelist_wrapper .wechat a:hover,
 .common_sharelist_wrapper .wechat.active a {
-    background-position: -60px 0;
+    color: #97e23f;
 }
 
 .common_sharelist_wrapper .renren a:hover,
 .common_sharelist_wrapper .renren.active a {
-    background-position: -90px 0;
+    color: #217dc6;
 }
 
 
@@ -3336,13 +3347,14 @@ nav .pagination li a:active {
 /*swh 11.12 add edit book step tips*/
 
 .eb_step_tips {
-    margin: 25px 0;
+    padding: 25px 0;
     width: 20%;
     min-width: 440px;
     height: 100%;
     color: #999;
     font-size: 12px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .eb_step_tips ul li {
@@ -3613,6 +3625,10 @@ nav .pagination li a:active {
 
 .toolbar_tab.my_book .tab_icon {
     background-position: 0 -315px;
+}
+
+.toolbar_tab.price .tab_icon {
+    background-position: 0 -385px;
 }
 
 .toolbar_tab .tab_text {

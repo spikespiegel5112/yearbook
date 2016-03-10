@@ -2744,8 +2744,9 @@ li.action div:hover {
 
 .opd_confirm_wrapper {
 	width: 100%;
-	height: 60px;
+	height: 90px;
 	background-color: #efefef;
+    border: 1px solid #efefef;
 }
 
 .opd_advice_wrapper span {
@@ -2757,18 +2758,43 @@ li.action div:hover {
 	margin: 0 35px;
 	font-size: 13px;
 	color: #ababab;
-	line-height: 60px;
+	line-height: 50px;
 }
 
 .opd_advice_wrapper .ybcommon_queryicon_item span {
-	left: 2px;
+	top: 2px;
+}
+
+.opd_advice_wrapper .ybcommon_queryicon_item div{
+    top: 40px;
+    left: -111px;
+}
+
+.opd_advice_wrapper .common_sharelist_wrapper{
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: auto;
+    line-height: 35px;
+    padding: 0;
+}
+
+.opd_advice_wrapper .common_sharelist_wrapper::before,
+.opd_advice_wrapper .common_sharelist_wrapper::after{
+    content: "";
+    display: none;
+}
+
+.opd_advice_wrapper .common_sharelist_wrapper label,
+.opd_advice_wrapper .common_sharelist_wrapper ul{
+    float: left;
 }
 
 .opd_notyetbtn_item {
 	float: left;
 	font-size: 14px;
 	color: #f3ac14;
-	line-height: 60px;
+	line-height: 90px;
 }
 
 .opd_notyetbtn_item:hover {
@@ -2782,7 +2808,7 @@ li.action div:hover {
 
 .opd_confirm_item {
 	float: right;
-	margin: 10px;
+	margin: 25px 10px;
 	width: 145px;
 	height: 40px;
 	line-height: 40px;
@@ -3314,6 +3340,18 @@ li.action div:hover {
 }
 .opd_donatesuccess_wrapper a:hover{
 	text-decoration: underline;
+}
+
+.activity_push_wrap{
+    position: relative;
+    width: 1000px;
+    height: 140px;
+    margin: 15px auto;
+}
+
+.activity_push_wrap img{
+    width: 100%;
+    height: 100%;
 }
 
 /*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/

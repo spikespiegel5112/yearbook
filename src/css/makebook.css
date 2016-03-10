@@ -4261,3 +4261,55 @@
     text-align: center;
     width: 60px
 }
+
+/*照片制作添加分享*/
+.ybbanner_bookinfo_item .common_sharelist_wrapper{
+    display: block;
+    background-color: transparent;
+    border: 0;
+}
+
+.ybbanner_bookinfo_item .common_sharelist_wrapper::before,
+.ybbanner_bookinfo_item .common_sharelist_wrapper::after{
+    display: none;
+}
+
+.ybbanner_shortcut_wrapper .common_sharelist_wrapper{
+    display: none;
+    top: 40px;
+    left: -53px;
+    z-index: 99;
+    background-color: #f6f6f6;
+}
+
+.ybbanner_shortcut_wrapper .share:hover .common_sharelist_wrapper{
+    display: block;
+}
+
+.ybbanner_shortcut_wrapper .common_sharelist_wrapper::before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -18px;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #f6f6f6;
+    border-right: 9px solid transparent;
+    z-index: 1;
+}
+
+.ybbanner_shortcut_wrapper .common_sharelist_wrapper::after{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -19px;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #ddd;
+    border-right: 9px solid transparent;
+    z-index: 0;
+}

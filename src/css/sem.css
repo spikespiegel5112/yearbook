@@ -24,7 +24,7 @@
 }
 .sem_mainlist_wrapper{
 	margin: 0 auto;
-	padding: 0 0 145px 0;
+	padding: 0 0 245px 0;
 	width: 100%;
 	height: auto;
 	overflow: hidden;
@@ -49,7 +49,8 @@
 }
 .sem_mainlist_wrapper li img{
 	display: block;
-	width: 100%;
+	width: 200px;
+	height: 200px;
 }
 .sem_mainlist_wrapper li div{
 	margin: 10px 0;
@@ -75,6 +76,9 @@
 	right: 0;
 	top: 8px;
 }
+.sem_eye_item:hover{
+	color: #DE7307;
+}
 
 .sem_mainlist_wrapper li div span{
 	display: block;
@@ -84,26 +88,25 @@
 .sem_listbg_item{
 	display: block;
 	width: 100%;
-	height: 1520px;
+	height: 1600px;
+	overflow: hidden;
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	left: 0;
 }
 .sem_listbg_item div{
-	width: 100%;
+	width: 300%;
 	height: 50px;
-	bottom: 43px;
-	position: relative;
+	bottom: 0;
+	position: absolute;
 	overflow: hidden;
+	background: #fff;
 }
-.sem_listbg_item span{
+.sem_listbg_item .parenting{
 	display: block;
 	margin: 0 auto;
 	width: 1320px;
 	height: 1520px;
-}
-.sem_listbg_item .parenting{
-	width: 100%;
 	background:url(../img/sem/sem_bubble_1_00000.png) 0 0;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -122,6 +125,12 @@
 	text-align: center;
 	position: relative;
 	z-index: 1;
+}
+.sem_moretpl_btn:hover{
+	background: #EA4978;
+}
+.sem_moretpl_btn:active{
+	background: #AD4764;
 }
 .sem_deliverguarantee_wrapper{
 	width: 100%;
@@ -193,7 +202,7 @@
 .sem_actvity_wrapper{
 	margin: 0 auto;
 	padding: 0 0 70px 0;
-	width: 700px;
+	width: 1000px;
 	overflow: hidden;
 }
 .sem_actvity_item h5{
@@ -202,20 +211,22 @@
 }
 .sem_actvity_item{
 	float: left;
-	width: 45%;
+	width: 450px;
 }
 .sem_actvity_item div{
-	min-height: 200px;
+	height: 300px;
 }
 .sem_actvity_item:first-child{
 	margin: 0 10% 0 0;
 }
 .sem_actvity_item img{
 	display: block;
-	width: 100%;
+	width: 450px;
+	height: 300px;
 	border-top: 4px solid #a7be4a;
 }
 .sem_actvity_item p{
+	margin: 20px 0 0 0;
 	font-size: 13px;
 	line-height: 30px;
 }
@@ -244,7 +255,10 @@
 	line-height: 33px;
 	font-family: 'songti';
 	font-size: 14px;
-
+}
+.footer_menu_item li img{
+	display: inline-block;
+	vertical-align: middle;
 }
 .footer_menu_item .triangle{
 	display: inline-block;

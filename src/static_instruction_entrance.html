@@ -102,7 +102,8 @@
 <!-- endbuild -->
 <script>
     $(document).ready(function(){
-        $('.use_process_main').footerAlignBottom();
+        guideButtonAlignCenter();
+        //$('.use_process_main').footerAlignBottom();
         //buttonAutoResize();
         function buttonAutoResize(){
             resize();
@@ -126,6 +127,32 @@
             }
         }
     });
+
+    function guideButtonAlignCenter(){
+        var $this = $('.use_process_main');
+        realign();
+        $(window).resize(function() {
+            realign();
+        });
+
+        function realign() {
+            var availHeight = $(window).height();
+            var thisHeight = $this.height();
+            var mainPadding = availHeight - 210 - thisHeight;
+            if (mainPadding > 0) {
+                $this.css({
+                    'padding-top': mainPadding / 2,
+                    'padding-bottom': mainPadding / 2,
+                });
+                $('.footer').css('position', 'absolute');
+            } else if (mainPadding < 0) {
+                $this.css({
+                    'padding-top': 0,
+                    'padding-bottom': 0
+                });
+            }
+        }
+    }
 </script>
 </body>
 </html>

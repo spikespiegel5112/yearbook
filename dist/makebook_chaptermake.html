@@ -56,51 +56,68 @@
 					<h6>十五个字符十五个字符十五个字符十五个字符</h6>
 					<a class="ybbanner_titleedit_item" href="javascript:;"><span class="icon-edit"></span></a>
 				</div>
-				<div class='ybbanner_biinfo_item'>
+				<!--<div class='ybbanner_biinfo_item'>
 					<label>班级名：</label>
 					<p>XXXXXXXXXXXX</p>
 				</div>
 				<div class='ybbanner_biinfo_item'>
 					<label>学校名：</label>
 					<p>学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校学校</p>
-				</div>
+				</div>-->
+                <!--照片书制作页面左上角分享按钮-->
+                <div class='common_sharelist_wrapper'>
+                    <ul>
+                        <li class='weibo'>
+                            <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                        </li>
+                        <li class='qzone'>
+                            <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                        </li>
+                        <li class='wechat'>
+                            <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                        </li>
+                        <li class='renren'>
+                            <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                        </li>
+                    </ul>
+                </div>
 			</div>
 		</div>
 		<div class='bannerslider_wrapper hidden'>
 			<a class='bs_arrowbtn_left' href="javascript:;"></a>
 			<div class='bannerslider_inner'>
-				<ul>
-					<li class='bookspace'>
-						<a class='' href="ia_bookspace.html">
-							<span></span>
-							<p>书册空间</p>
-						</a>
-					</li>
-					<li class='chaptermaker'>
-						<a class='active' href="makebook_chaptermake.html">
-							<span></span>
-							<p>编辑制作</p>
-						</a>
-					</li>
-					<li class='interaction'>
-						<a class='' href="ia_entrance.html">
-							<span></span>
-							<p>书册互动</p>
-						</a>
-					</li>
-					<li class='bookmanagement'>
-						<a class='' href="ia_albumlist.html">
-							<span></span>
-							<p>相册管理</p>
-						</a>
-					</li>
-					<li class='friendmanagement'>
-						<a class='' href="ia_friend.html">
-							<span></span>
-							<p>小伙伴管理</p>
-						</a>
-					</li>
-				</ul>
+                <ul>
+                    <li class='bookspace'>
+                        <a class='active' href="ia_bookspace.html">
+                            <span class='ybiconfont ybicon-bookshelf'></span>
+                            <p>书册空间</p>
+                        </a>
+                    </li>
+                    <li class='chaptermaker'>
+                        <a class='active' href="makebook_chaptermake.html">
+                            <span class='ybiconfont ybicon-editbook'></span>
+                            <p>编辑制作</p>
+                        </a>
+                    </li>
+                    <li class='interaction'>
+                        <a class='active' href="ia_entrance.html">
+                            <span class='ybiconfont ybicon-iabook'></span>
+                            <p>书册互动</p>
+                        </a>
+                    </li>
+                    <li class='bookmanagement'>
+                        <a class='active' href="ia_albumlist.html">
+                            <span class='ybiconfont ybicon-photobook'></span>
+                            <p>相册管理</p>
+                        </a>
+                    </li>
+                    <li class='friendmanagement'>
+                        <a class='active' href="ia_friend.html">
+                            <span class='ybiconfont ybicon-partner'></span>
+                            <p>小伙伴管理</p>
+                        </a>
+                    </li>
+                </ul>
 			</div>
 			<a class='bs_arrowbtn_right' href="javascript:;"></a>
 		</div>
@@ -142,10 +159,29 @@
 		</div>
 		<div class='ybbanner_shortcut_wrapper'>
 			<ul>
-				<li class='print'><a href="javascript:;">提交下单</a></li>
-				<li class='price'><a href="javascript:;"><span class='icon-money'></span>计算价格</a></li>
-				<li class='share'><a href="javascript:;">分享预览</a></li>
-				<li class='invite'><a href="javascript:;">邀请卡</a></li>
+				<li class='preview'><a href="javascript:;">在线预览</a></li>
+				<li class='print'><a href="javascript:;">打印书册</a></li>
+				<li class='share'>
+                    <a href="javascript:;">分享书册</a>
+                    <div class='common_sharelist_wrapper'>
+                        <!--<label>忆尔分享：</label>-->
+                        <ul>
+                            <li class='weibo'>
+                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                            </li>
+                            <li class='qzone'>
+                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                            </li>
+                            <li class='wechat'>
+                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                            </li>
+                            <li class='renren'>
+                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+				<li class='auto_complete'><a href="javascript:;">一键成书</a></li>
 			</ul>
 		</div>
 	</div>
@@ -2649,6 +2685,99 @@
 			</div>
 		</div>
 	</div>
+    <!--yb3.11 yb-global-toolbar-->
+    <div id="yb_global_toolbar">
+        <div class="yb_toolbar_wrap">
+            <div class="yb_toolbar">
+                <div class="yb_toolbar_tabs">
+                    <div class="toolbar_tab price">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">计算价格</em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab my_msg personal_btn">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">我的消息</em>
+                            <div class="personal_wrap">
+                                <div class="space_con">
+                                    <h4>我的消息</h4>
+                                    <div class="yb_empty">
+                                        <span></span>
+                                        <p>记录是空的，没有新消息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab my_book personal_btn">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">我的书册</em>
+                            <div class="personal_wrap">
+                                <div class="space_con">
+                                    <h4>我的书册</h4>
+                                    <div class="yb_empty">
+                                        <span></span>
+                                        <p>记录是空的，没有新消息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab service">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">在线客服</em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab hotline">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">热线：<b>400-0610-127</b></em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab help">
+                        <a href="static_hc_question.html">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">帮助中心</em>
+                        </a>
+                    </div>
+                </div>
+                <div class="yb_toolbar_footer">
+                    <div class="toolbar_tab discount">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <div class="activity">
+                                <img src="img/banner/photo_list_banner01.jpg">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab qrcode">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                            <div class="wechat">
+                                <img class="wechat_qrcode" src="img/footer_wx.png">
+                                <p class="txt">微信扫码<br>联系客服</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab feedback">
+                        <a href="static_hc_feedback.html">
+                            <i class="tab_icon"></i>
+                            <em class="tab_text">建议</em>
+                        </a>
+                    </div>
+                    <div class="toolbar_tab go_top">
+                        <a href="javascript:;">
+                            <i class="tab_icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- html end-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
@@ -3415,7 +3544,7 @@
 		* compute price
 		* */
 		function computePrice(){
-			$('.ybbanner_shortcut_wrapper .price').click(function(){
+			$('.yb_toolbar_tabs .price').click(function(){
 				art.dialog({
 					title: '价格计算器',
 					lock: true,
@@ -3474,6 +3603,45 @@
             })
         }
 
+        /*
+         * yb3.11右工具栏
+         * */
+        function ybGlobalToolBar(){
+            //返回页面顶部
+            $('.go_top').bind('click',function(){
+                $(window).scrollTop(0);
+            });
+
+            //初始显示yb二维码
+            $('.yb_toolbar_footer .qrcode').addClass('active');
+            var qrTime = setTimeout("$('.yb_toolbar_footer .qrcode').removeClass('active')",2000);
+
+            //hover显示全部工具栏
+            $('.yb_toolbar_wrap').hover(function(){
+                $('.yb_toolbar').addClass('active');
+            },function(){
+                $('.yb_toolbar').removeClass('active');
+            });
+
+            //个人消息、书册信息
+            $('.yb_toolbar_tabs .personal_btn').click(function(e){
+                if($('.personal_wrap').hasClass('active')){
+                    $(this).closest('.yb_toolbar').removeClass('open');
+                    $(this).find('.personal_wrap').removeClass('active');
+                }else{
+                    $(this).closest('.yb_toolbar').addClass('open');
+                    $(this).find('.personal_wrap').addClass('active');
+                    $(document).one("click", function(){
+                        $('.yb_toolbar').removeClass('open');
+                        $('.personal_wrap').removeClass('active');
+                    });
+                    e.stopPropagation();
+                }
+                $(".personal_wrap").on("click", function(e){
+                    e.stopPropagation();
+                });
+            });
+        }
 
         (function($) {
 		$('.ybcommon_counter_item').priceCalculator();
@@ -3512,6 +3680,7 @@
 		uploadIL();
 		ybcommonqueryicon();
         loadOtherBookPhoto();
+        ybGlobalToolBar();
 	}(jQuery));
 	</script>
 </body>

@@ -296,6 +296,29 @@ input {
 
 /*~~~~~~~~~~线性过渡色按钮~~~~~~~~~~*/
 
+.transition_btn {
+    display: block;
+    width: 100px;
+    text-align: center;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.transition_btn:hover {
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.transition_btn:active {
+    box-shadow: 0px 0px 35px #666 inset;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+}
+
+
 .transitionbtn_68c96c {
     display: block;
     margin: 80px auto 0;

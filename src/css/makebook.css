@@ -3134,7 +3134,6 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	padding: 0 25px;
 	width: 100%;
 	min-width: 1150px;
 	height: 75px;
@@ -3147,10 +3146,19 @@
 .al_head .yblogo {
 	float: left;
 	line-height: 75px;
+    padding: 0 20px 0 25px;
 }
 
 .al_head .yblogo img {
 	vertical-align: middle;
+}
+
+.al_head .edit_online{
+    float: left;
+    margin: 0 25px 0 0;
+    line-height: 75px;
+    font-size: 25px;
+    color: #666;
 }
 
 .al_head .progress_bar {
@@ -3169,11 +3177,11 @@
 
 .al_head .progress_bar ul li::after {
 	position: absolute;
-	top: 45px;
+	top: 27px;
 	content: " ";
 	width: 108px;
 	height: 6px;
-	background-color: #8cc237;
+	background-color: #ccc;
 	z-index: 0;
 }
 
@@ -3181,16 +3189,40 @@
 	height: 0;
 }
 
+.al_head .progress_bar ul li.finish:after{
+    background-color: #b2c022;
+}
+
 .al_head .progress_bar ul li div {
 	position: relative;
-	margin: 0 auto;
+	margin: 16px auto 0;
 	width: 26px;
 	height: 26px;
 	line-height: 26px;
 	color: #fff;
-	background-color: #8cc237;
+	background-color: #ccc;
 	border-radius: 100%;
 	z-index: 1;
+}
+
+.al_head .progress_bar ul li.cur div{
+    background-color: #999;
+}
+
+.al_head .progress_bar ul li.finish div{
+    background-color: #b2c022;
+}
+
+.al_head .progress_bar ul li p{
+    color: #ccc;
+}
+
+.al_head .progress_bar ul li.cur p{
+    color: #999;
+}
+
+.al_head .progress_bar ul li.finish p{
+    color: #b2c022;
 }
 
 .auto_edit_nav {
@@ -3205,21 +3237,31 @@
 	box-sizing: border-box;
 	z-index: 2;
 	border-top: 1px solid #e6e6e6;
-	;
-	border-bottom: 1px solid #e6e6e6;
-	;
+	/*border-bottom: 1px solid #e6e6e6;*/
 	clear: both;
 }
 
-.auto_edit_nav .nav_left {
-	width: 12.5%;
-	border-right: 1px dotted #ddd;
+.auto_edit_nav .cm_header_shadow {
+	top: auto;
+    bottom: -5px;
+}
+
+.auto_edit_nav .nav_left{
+    float: left;
+    /*width: 20%;*/
 }
 
 .auto_edit_nav .nav_left h4 {
+    float: left;
 	font-size: 14px;
-	line-height: 44px;
+	line-height: 42px;
 	color: #333;
+}
+
+.auto_edit_nav .nav_left .edit_name {
+    float: left;
+    color: #ccc;
+    line-height: 42px;
 }
 
 .auto_edit_nav .nav_left h4 span {
@@ -3231,36 +3273,59 @@
 	vertical-align: middle;
 }
 
+.auto_edit_nav .nav_left label {
+    font-weight: bold;
+    color: #333;
+    line-height: 42px;
+}
+
+.auto_edit_nav .nav_left label div {
+    margin-right: 5px;
+}
+
 .auto_edit_nav .nav_right {
-	width: 87%;
+	/*width: 80%;*/
 	padding: 0 0 0 15px;
-/*	line-height: 44px;*/
+	line-height: 44px;
 	font-size: 12px;
 	box-sizing: border-box;
 }
 
-.auto_edit_nav .nav_right label {
-	font-weight: bold;
-}
-
-.auto_edit_nav .nav_right label div {
-	margin-right: 5px;
-}
-
-.auto_edit_nav .nav_right i.cm_fr {
-	line-height: 44px;
-	font-size: 16px;
+.auto_edit_nav .nav_right a {
+    float: right;
+	line-height: 42px;
+	font-size: 14px;
 	cursor: pointer;
+    color: #999;
+}
+
+.al_head .btn:hover,
+.auto_edit_nav .btn:hover,
+.auto_edit_nav .btn:hover i{
+    color: #b2c022;
+}
+
+.auto_edit_nav .nav_right a i{
+    color: #ccc;
+    padding: 0 5px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item {
-	float: right;
-	margin: 15px 0 0 0;
+	float: left;
+    margin: 0 20px 0 10px;
 	font-size:18px!important ;
+    line-height: 42px;
+}
+
+.auto_edit_nav .ybcommon_queryicon_item span{
+    font-size: 18px;
+    color: #ccc;
+    line-height: 42px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div {
 	left: -179px;
+    top: 38px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div:before,
@@ -3384,17 +3449,19 @@
 
 .auto_edit_main .main_left .choose_img_con{
     height: inherit;
-    overflow: hidden;
 }
 
 .auto_edit_main .main_left .empty {
-	padding: 70px 0 0;
+    position: relative;
+	padding:0;
 	text-align: center;
     background: url("../img/use_guide/use_guide_bg.jpg") repeat;
     height: inherit;
+    box-sizing: border-box;
 }
 
-.auto_edit_main .main_left .empty > div {
+.auto_edit_main .main_left .empty .upload,
+.auto_edit_main .main_left .empty .enter_space {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -3403,10 +3470,6 @@
 	text-align: center;
 	box-sizing: border-box;
 	float: none!important;
-}
-
-.auto_edit_main .main_left .empty > div:first-child {
-	margin-right: 100px;
 }
 
 .auto_edit_main .main_left .empty .ybiconfont{
@@ -3468,6 +3531,28 @@
 .auto_edit_main .main_left .empty .enter_space:hover p,
 .auto_edit_main .main_left .empty .enter_space:hover p span{
     color: #b2c022;
+}
+
+.auto_edit_main .empty .al_footer{
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+}
+
+.auto_edit_main .empty .al_footer .bottom_bor{
+    width: 100%;
+    height: 3px;
+    background: url("../img/makebook/border_colors.jpg") no-repeat;
+    background-size: contain;
+}
+
+.auto_edit_main .empty .al_footer p{
+    font-size: 14px;
+    color: #999;
+    line-height: 45px;
 }
 
 .choose_img_con .time_line {

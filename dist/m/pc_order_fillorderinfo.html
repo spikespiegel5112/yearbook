@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
-    <title>忆尔3.8-确认订单</title>
+    <title>忆尔3.11-完善订单信息</title>
     <link rel="stylesheet" href="../css/m.all.min.css">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all"/>
 
@@ -27,15 +27,24 @@
         <a class='left_btn back_btn' href='javascript:;'>
             <span class="ybiconfont ybicon-backward1"></span>
         </a>
-        <p>确认订单</p>
+        <p>完善订单信息</p>
+        <a class="right_btn share_btn -mob-share-open" href="javascript:;">
+            <span class="ybiconfont ybicon-sharehollow"></span>
+        </a>
     </div>
     <div class="basic_info">
         <div class="orderinfo">
-            <div class="user info">
+            <div class="user info hidden">
                 <a href="javascript:;">
                     <div class="cm_fl"><label class="icon-user"></label><span>用户名</span></div>
                     <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
                     <div><label class="icon-truck"></label><span>具体地址</span></div>
+                    <i class="ybiconfont ybicon-forward2"></i>
+                </a>
+            </div>
+            <div class="dispatching info">
+                <a href="javascript:;">
+                    <label>选择收货地址</label>
                     <i class="ybiconfont ybicon-forward2"></i>
                 </a>
             </div>
@@ -46,6 +55,48 @@
                     <i class="ybiconfont ybicon-forward2"></i>
                 </a>
             </div>
+            <div class='opd_coupon_wrapper info'>
+                <div class="hidden">
+                    <label><input type="checkbox" value="useCoupon">使用优惠券</label>
+                    <select>
+                        <option>满50减10</option>
+                        <option>满100减20</option>
+                        <option>满200减40</option>
+                        <option>满400减80</option>
+                        <option>满500减100</option>
+                        <option>满5000减1000</option>
+                        <option>单笔消费满5000元可以优惠500元</option>
+                    </select>
+                    <i class="icon-caret-down"></i>
+                    <a class='common_btn' href="javascript:;">确认</a>
+                    <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+                </div>
+                <div class="">
+                    <label><input type="checkbox" value="useCoupon">使用优惠券</label>
+                    <ul class='common_serialnumber_item'>
+                        <li>
+                            <input type='text' maxlength='4'>
+                        </li>
+                        <li>
+                            <span>-</span>
+                            <input type='text' maxlength='4'>
+                        </li>
+                        <li>
+                            <span>-</span>
+                            <input type='text' maxlength='4'>
+                        </li>
+                        <li>
+                            <span>-</span>
+                            <input type='text' maxlength='4'>
+                        </li>
+                    </ul>
+                    <a class='common_btn' href="javascript:;">确认</a>
+                    <a class='common_btn' href="javascript:;">使用已有优惠券</a>
+                </div>
+                <div class="hidden">
+                    <label>使用的代金卷优惠：￥<span class="voucherPrice"></span><a class="common_btn" id="chooseOtherVoucher" href="javascript:;">更换</a></label>
+                </div>
+            </div>
             <div class="invoice info hidden">
                 <a href="javascript:;">
                     <label>选择发票信息</label>
@@ -53,7 +104,7 @@
                     <i class="ybiconfont ybicon-forward2"></i>
                 </a>
             </div>
-            <div class="payway info">
+            <div class="payway info hidden">
                 <label>选择支付方式</label>
                 <ul>
                     <li>
@@ -70,7 +121,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="product info">
+            <div class="product info hidden">
                 <table>
                     <tbody>
                     <tr>
@@ -99,6 +150,11 @@
                 </a>
             </div>
         </div>
+        <div class="activity_push_wrap">
+            <a href="activity_1602_shareorder.html">
+                <img src="../img/m/default/activity_push01.jpg">
+            </a>
+        </div>
         <div class='opd_confirm_wrapper'>
             <div class="opd_subtotalprice_item">
                 <label>实付款：</label>
@@ -108,6 +164,30 @@
         </div>
     </div>
 </div>
+<!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui  -mob-share-ui-theme" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo">
+            <p>新浪微博</p>
+        </li>
+        <li class="-mob-share-qzone">
+            <p>QQ空间</p>
+        </li>
+        <li class="-mob-share-qq">
+            <p>QQ好友</p>
+        </li>
+        <li class="-mob-share-douban">
+            <p>豆瓣</p>
+        </li>
+        <li class="-mob-share-weixin">
+            <p>微信</p>
+        </li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=a80bfb821574"></script>
+<!--MOB SHARE END-->
 <script type="text/javascript" src='../assets/js/jquery.min.js'></script>
 <script type="text/javascript" src='../assets/js/icheck.js'></script>
 <script type="text/javascript">

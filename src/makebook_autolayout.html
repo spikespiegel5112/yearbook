@@ -748,6 +748,9 @@
 			$('.auto_edit_main .main_left').css('height',docH -119);
 			$('.auto_edit_main .empty').css('height',docH -119);
 			$('.auto_edit_main .empty .upload').css('margin-top',(docH -540)/2);
+            $(window).resize(function(){
+                init();
+            })
 		}
 
 		//hover问号显示信息提示

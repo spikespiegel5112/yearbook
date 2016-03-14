@@ -450,10 +450,11 @@ input {
 .cm_header_nav .nav_login {
     position: relative;
     float: right;
-    margin: 30px 40px 0 30px;
+    /*margin: 30px 40px 0 30px;*//*NEWYB-1617*/
 }
 .cm_header_nav .nav_login .ybiconfont{
     display: inline-block;
+    margin: 30px 0 0 30px;
     width: 20px;
     height: 20px;
     font-size: 20px;
@@ -463,6 +464,7 @@ input {
 
 .cm_header_nav .nav_login ul {
     display: inline-block;
+    margin: 30px 40px 0 0;
     font-size: 14px;
     color: #999;
     vertical-align: middle;

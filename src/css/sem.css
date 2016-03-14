@@ -356,16 +356,16 @@
     overflow: visible;
 }
 
-.party_family_con .sem_actvity_item h5{
+.party_family_con .sem_actvity_item{
     position: relative;
 }
 
-.party_family_con .sem_actvity_item h5::after{
-    content: " ";
+.party_family_con .sem_actvity_item .ybiconfont{
     position: absolute;
     top: 35px;
     right: -45px;
     width: 124px;
     height: 124px;
-    background: url("../img/sem/status_ongoing.png") no-repeat;
+    font-size: 124px;
+    color: #fbbfbf;
 }

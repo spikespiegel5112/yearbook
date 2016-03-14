@@ -43,13 +43,10 @@
 		<div class="cm_header_shadow"></div>
 	</div>
 	<!-- main -->
-	<div class='sem_parenting_container'>
-		<div class='sem_banner_wrapper'>
-			<img src="img/banner/sem_banner_1_00000.jpg">
-		</div>
-		<div class='sem_mainlist_container bg_a8e7ec'>
+	<div class='sem_tourism_container'>
+		<div class='sem_mainlist_container'>
 			<div class='sem_title_wrapper'>
-				<img src="img/sem/sem_title_1_00000.png">
+				《旅行纪念册》
 			</div>
 			<div class='sem_mainlist_wrapper'>
 				<ul>
@@ -174,10 +171,7 @@
 						</div>
 					</li>
 				</ul>
-				<a class='sem_moretpl_btn transition_btn' href="javascript:;">更多模板</a>
-			</div>
-			<div class='sem_listbg_item'>
-				<span class='parenting'></span>
+				<a class='sem_moretpl_btn' href="javascript:;">更多模板</a>
 			</div>
 		</div>
 		<DIV class='sem_actvity_wrapper'>
@@ -208,20 +202,19 @@
 		</DIV>
 		<div class='sem_deliverguarantee_wrapper'>
 			<h5>
-				<span class='left'></span>
 				5个工作日内发货
-				<span class='right'></span></h5>
+			</h5>
 			<div>
 				<span class='left'></span>
 				<p>一本精致的照片书需要耐心的打磨，请给我们5天的时间</p>
 				<span class='right'></span>
 			</div>
-			<img src="img/icon/delivery_1_00000.png">
+			<img src="img/icon/delivery_2_00000.png">
 		</div>
 	</div>
 	<!--底部-->
 	<div class='footer'>
-		<div class='footer_menu_container'>
+		<div class='footer_menu_container sem_tourism'>
 			<div class='footer_menu_wrapper'>
 				<div class='footer_menu_item'>
 					<h5>关于我们</h5>
@@ -300,28 +293,14 @@
 	<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
 	<script type="text/javascript">
 	$(function() {
-		circle();
+		semTourism();
 	});
 
-	function circle() {
-		var circleEl = '<i></i>',
-			windowWidth = $(window).width();
-		for (var i = 0; i <= windowWidth / 50-1; i++) {
-			circleEl += '<i></i>';
-		}
-		circleEl = '<div>' + circleEl + '</div>';
-		circleEl = $(circleEl);
-		circleEl.find('i').css({
-			'display': 'inline-block',
-			'width': 50,
-			'height': 50,
-			'border-radius': '50%',
-			'background-color': '#a8e7ec',
-			'position': 'relative',
-			'bottom': '30px'
+	function semTourism(argument) {
+		var liElOdd = $('.sem_mainlist_wrapper li:even');
+		liElOdd.css({
+			top: 45
 		});
-
-		$('.sem_listbg_item').append(circleEl);
 	}
 	</script>
 </body>

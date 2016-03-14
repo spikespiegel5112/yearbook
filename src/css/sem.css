@@ -1,4 +1,5 @@
 @charset "utf-8";
+/*~~~~~~~~~~sem_parenting.html~~~~~~~~~~*/
 .sem_main_container{
 	width: 100%;
 	min-width: 1150px;
@@ -13,6 +14,7 @@
 }
 .sem_title_wrapper{
 	width: 100%;
+	height: 400px;
 	position: relative;
 }
 .sem_title_wrapper img{
@@ -35,8 +37,11 @@
 	width: 1000px;
 	z-index: 1;
 	position: relative;
-	overflow: hidden;
-
+}
+.sem_mainlist_wrapper ul:after{
+	content: '';
+	display: block;
+	clear: both;
 }
 .sem_mainlist_wrapper li{
 	float: left;
@@ -46,11 +51,18 @@
 	background-color: #fff;
 	box-shadow: 0 0 15px #aaa;
 	overflow: hidden;
+	position: relative;
 }
 .sem_mainlist_wrapper li img{
 	display: block;
 	width: 200px;
 	height: 200px;
+}
+.sem_parenting_container .sem_mainlist_wrapper li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/sem/sem_bookbg_1_00000.jpg);
 }
 .sem_mainlist_wrapper li div{
 	margin: 10px 0;
@@ -134,7 +146,7 @@
 }
 .sem_deliverguarantee_wrapper{
 	width: 100%;
-	height: 530px;
+	height: 450px;
 	background-color: #efefeb;
 	overflow: hidden;
 }
@@ -203,7 +215,11 @@
 	margin: 0 auto;
 	padding: 0 0 70px 0;
 	width: 1000px;
-	overflow: hidden;
+}
+.sem_actvity_wrapper:after{
+	content: '';
+	display: block;
+	clear: both;
 }
 .sem_actvity_item h5{
 	padding: 45px 0 15px 0;
@@ -219,6 +235,9 @@
 .sem_actvity_item:first-child{
 	margin: 0 10% 0 0;
 }
+.sem_actvity_item>div{
+	position: relative;
+}
 .sem_actvity_item img{
 	display: block;
 	width: 450px;
@@ -229,6 +248,17 @@
 	margin: 20px 0 0 0;
 	font-size: 13px;
 	line-height: 30px;
+}
+.sem_actvity_item span{
+	display: block;
+	width: 115px;
+	height: 115px;
+	font-size: 140px;
+	color: rgba(255,0,0,0.4);
+	position: absolute;
+	right: -60px;
+	top: -60px;
+	transform:rotate(60deg);
 }
 /*~~~~~~~~~~footer_menu_container~~~~~~~~~~*/
 .footer_menu_container{
@@ -285,6 +315,7 @@
 	color: #fff;
 	font-size: 12px;
 }
+
 
 /*sem party and family*/
 .party_family_con .party_con,
@@ -360,12 +391,96 @@
     position: relative;
 }
 
-.party_family_con .sem_actvity_item h5::after{
-    content: " ";
-    position: absolute;
-    top: 35px;
-    right: -45px;
-    width: 124px;
-    height: 124px;
-    background: url("../img/sem/status_ongoing.png") no-repeat;
+.party_family_con .sem_actvity_item h5::after {
+	content: " ";
+	position: absolute;
+	top: 35px;
+	right: -45px;
+	width: 124px;
+	height: 124px;
+	background: url("../img/sem/status_ongoing.png") no-repeat;
+}
+
+/*~~~~~~~~~~sem_tourism.html~~~~~~~~~~*/
+.sem_tourism_container{
+	background: url(../img/sem/sem_tourism_bg_00000.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+.sem_tourismbg_wrapper{
+	width: 100%;
+	background: url(../img/sem/sem_tourism_banner_00000.jpg);
+}
+.sem_parenting_container 
+.sem_tourism_container .sem_mainlist_wrapper li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/sem/sem_bookbg_2_00000.jpg);
+}
+.sem_listbg_item .tourism{
+	display: block;
+	margin: 0 auto;
+	width: 1320px;
+	height: 1520px;
+	background:url(../img/sem/sem_touism_bg_00000.png) 0 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.sem_tourism_container .sem_title_wrapper{
+	height: 570px;
+	font-size: 60px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	line-height: 485px;
+}
+.sem_listbg_item .toursim{
+	display: block;
+	margin: 0 auto;
+	width: 1320px;
+	height: 1520px;
+	background:url(../img/sem/sem_touism_bg_00000.png) 0 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sem_tourism_container .sem_mainlist_wrapper li{
+	border-radius: 10px;
+	box-shadow: none;
+}
+
+.sem_tourism_container .sem_moretpl_btn{
+	width: 250px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #fff;
+	color: #77cb47;
+	box-shadow: 3px 3px #888;
+	position: relative;
+	top: 0;
+	left: 0;
+	-webkit-transition:all 0.1s;
+}
+.sem_tourism_container .sem_moretpl_btn:hover{
+	color: #96d6c6;
+	-webkit-transition:all 0.3s;
+}
+.sem_tourism_container .sem_moretpl_btn:active{
+	box-shadow: none;
+	top: 3px;
+	left: 3px;
+	-webkit-transition:all 0.1s;
+}
+.sem_tourism_container .sem_deliverguarantee_wrapper h5 {
+	color: #000;
+	font-weight: bold;
+}
+.sem_tourism_container .sem_deliverguarantee_wrapper div{
+	background-color: #30976b;
+	font-weight: lighter;
+}
+.footer_menu_container.sem_tourism{
+	background: url(../img/sem/sem_footer_tourism_00000.jpg);
+	background-position: center;
 }

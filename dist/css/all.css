@@ -351,6 +351,29 @@ input {
 
 /*~~~~~~~~~~线性过渡色按钮~~~~~~~~~~*/
 
+.transition_btn {
+    display: block;
+    width: 100px;
+    text-align: center;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.transition_btn:hover {
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.transition_btn:active {
+    box-shadow: 0px 0px 35px #666 inset;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+}
+
+
 .transitionbtn_68c96c {
     display: block;
     margin: 80px auto 0;
@@ -19293,7 +19316,6 @@ button::-moz-focus-inner {
 	position: relative;
 	top: 0;
 	left: 0;
-	padding: 0 25px;
 	width: 100%;
 	min-width: 1150px;
 	height: 75px;
@@ -19306,10 +19328,19 @@ button::-moz-focus-inner {
 .al_head .yblogo {
 	float: left;
 	line-height: 75px;
+    padding: 0 20px 0 25px;
 }
 
 .al_head .yblogo img {
 	vertical-align: middle;
+}
+
+.al_head .edit_online{
+    float: left;
+    margin: 0 25px 0 0;
+    line-height: 75px;
+    font-size: 25px;
+    color: #666;
 }
 
 .al_head .progress_bar {
@@ -19328,11 +19359,11 @@ button::-moz-focus-inner {
 
 .al_head .progress_bar ul li::after {
 	position: absolute;
-	top: 45px;
+	top: 27px;
 	content: " ";
 	width: 108px;
 	height: 6px;
-	background-color: #8cc237;
+	background-color: #ccc;
 	z-index: 0;
 }
 
@@ -19340,16 +19371,40 @@ button::-moz-focus-inner {
 	height: 0;
 }
 
+.al_head .progress_bar ul li.finish:after{
+    background-color: #b2c022;
+}
+
 .al_head .progress_bar ul li div {
 	position: relative;
-	margin: 0 auto;
+	margin: 16px auto 0;
 	width: 26px;
 	height: 26px;
 	line-height: 26px;
 	color: #fff;
-	background-color: #8cc237;
+	background-color: #ccc;
 	border-radius: 100%;
 	z-index: 1;
+}
+
+.al_head .progress_bar ul li.cur div{
+    background-color: #999;
+}
+
+.al_head .progress_bar ul li.finish div{
+    background-color: #b2c022;
+}
+
+.al_head .progress_bar ul li p{
+    color: #ccc;
+}
+
+.al_head .progress_bar ul li.cur p{
+    color: #999;
+}
+
+.al_head .progress_bar ul li.finish p{
+    color: #b2c022;
 }
 
 .auto_edit_nav {
@@ -19364,21 +19419,31 @@ button::-moz-focus-inner {
 	box-sizing: border-box;
 	z-index: 2;
 	border-top: 1px solid #e6e6e6;
-	;
-	border-bottom: 1px solid #e6e6e6;
-	;
+	/*border-bottom: 1px solid #e6e6e6;*/
 	clear: both;
 }
 
-.auto_edit_nav .nav_left {
-	width: 12.5%;
-	border-right: 1px dotted #ddd;
+.auto_edit_nav .cm_header_shadow {
+	top: auto;
+    bottom: -5px;
+}
+
+.auto_edit_nav .nav_left{
+    float: left;
+    /*width: 20%;*/
 }
 
 .auto_edit_nav .nav_left h4 {
+    float: left;
 	font-size: 14px;
-	line-height: 44px;
+	line-height: 42px;
 	color: #333;
+}
+
+.auto_edit_nav .nav_left .edit_name {
+    float: left;
+    color: #ccc;
+    line-height: 42px;
 }
 
 .auto_edit_nav .nav_left h4 span {
@@ -19390,36 +19455,59 @@ button::-moz-focus-inner {
 	vertical-align: middle;
 }
 
+.auto_edit_nav .nav_left label {
+    font-weight: bold;
+    color: #333;
+    line-height: 42px;
+}
+
+.auto_edit_nav .nav_left label div {
+    margin-right: 5px;
+}
+
 .auto_edit_nav .nav_right {
-	width: 87%;
+	/*width: 80%;*/
 	padding: 0 0 0 15px;
-/*	line-height: 44px;*/
+	line-height: 44px;
 	font-size: 12px;
 	box-sizing: border-box;
 }
 
-.auto_edit_nav .nav_right label {
-	font-weight: bold;
-}
-
-.auto_edit_nav .nav_right label div {
-	margin-right: 5px;
-}
-
-.auto_edit_nav .nav_right i.cm_fr {
-	line-height: 44px;
-	font-size: 16px;
+.auto_edit_nav .nav_right a {
+    float: right;
+	line-height: 42px;
+	font-size: 14px;
 	cursor: pointer;
+    color: #999;
+}
+
+.al_head .btn:hover,
+.auto_edit_nav .btn:hover,
+.auto_edit_nav .btn:hover i{
+    color: #b2c022;
+}
+
+.auto_edit_nav .nav_right a i{
+    color: #ccc;
+    padding: 0 5px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item {
-	float: right;
-	margin: 15px 0 0 0;
+	float: left;
+    margin: 0 20px 0 10px;
 	font-size:18px!important ;
+    line-height: 42px;
+}
+
+.auto_edit_nav .ybcommon_queryicon_item span{
+    font-size: 18px;
+    color: #ccc;
+    line-height: 42px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div {
 	left: -179px;
+    top: 38px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div:before,
@@ -19543,17 +19631,19 @@ button::-moz-focus-inner {
 
 .auto_edit_main .main_left .choose_img_con{
     height: inherit;
-    overflow: hidden;
 }
 
 .auto_edit_main .main_left .empty {
-	padding: 70px 0 0;
+    position: relative;
+	padding:0;
 	text-align: center;
     background: url("../img/use_guide/use_guide_bg.jpg") repeat;
     height: inherit;
+    box-sizing: border-box;
 }
 
-.auto_edit_main .main_left .empty > div {
+.auto_edit_main .main_left .empty .upload,
+.auto_edit_main .main_left .empty .enter_space {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -19562,10 +19652,6 @@ button::-moz-focus-inner {
 	text-align: center;
 	box-sizing: border-box;
 	float: none!important;
-}
-
-.auto_edit_main .main_left .empty > div:first-child {
-	margin-right: 100px;
 }
 
 .auto_edit_main .main_left .empty .ybiconfont{
@@ -19627,6 +19713,28 @@ button::-moz-focus-inner {
 .auto_edit_main .main_left .empty .enter_space:hover p,
 .auto_edit_main .main_left .empty .enter_space:hover p span{
     color: #b2c022;
+}
+
+.auto_edit_main .empty .al_footer{
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+}
+
+.auto_edit_main .empty .al_footer .bottom_bor{
+    width: 100%;
+    height: 3px;
+    background: url("../img/makebook/border_colors.jpg") no-repeat;
+    background-size: contain;
+}
+
+.auto_edit_main .empty .al_footer p{
+    font-size: 14px;
+    color: #999;
+    line-height: 45px;
 }
 
 .choose_img_con .time_line {
@@ -20506,14 +20614,13 @@ button::-moz-focus-inner {
 	position: relative;
 	width: 100%;
 	background: url("../img/use_guide/use_guide_bg.jpg") repeat;
+    min-height: 650px;
 }
 
 .use_process_main .choose_category {
 	position: relative;
 	margin: 0 auto;
-	width: 960px;
-	min-height: 650px;
-	/*overflow: hidden;*/
+	width: 810px;
 	clear: both;
 }
 
@@ -20525,8 +20632,8 @@ button::-moz-focus-inner {
 .use_process_main .choose_category .photo_book,
 .use_process_main .choose_category .interact_book{
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
     text-align: center;
     border-radius: 100%;
     border: 1px solid #fff;
@@ -20560,8 +20667,8 @@ button::-moz-focus-inner {
 
 .use_process_main .choose_category div a h1 {
     margin: 15px 0 5px;
-	font-size: 30px;
-	color: #333;
+	font-size: 28px;
+	color: #666;
 }
 
 .use_process_main .choose_category div a p{
@@ -20584,7 +20691,7 @@ button::-moz-focus-inner {
     position: absolute;
     margin: 0 0 0 -163px;
     left: 50%;
-    top: 155px;
+    top: 100px;
     z-index: 2;
 }
 
@@ -25526,7 +25633,7 @@ li.action div:hover {
     position: relative;
     margin: 0 auto;
     padding: 60px 0 40px;
-    width: 400px;
+    width: 420px;
     box-sizing: border-box;
     overflow: hidden;
 }

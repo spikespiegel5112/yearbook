@@ -285,3 +285,87 @@
 	color: #fff;
 	font-size: 12px;
 }
+
+/*sem party and family*/
+.party_family_con .party_con,
+.party_family_con .family_con{
+    background-color: #f1f1f1;
+}
+
+.party_family_con .party_con .sem_mainlist_wrapper,
+.party_family_con .family_con .sem_mainlist_wrapper{
+    padding: 0 0 80px 0;
+}
+
+.party_family_con .family_con{
+    border-bottom: 1px solid #ddd;
+}
+
+.party_family_con .footer_menu_container{
+    background: url("../img/sem/footer_menu_bg_party.jpg") no-repeat;
+    background-size: cover;
+}
+
+.party_con .sem_moretpl_btn{
+    margin: 60px auto 0;
+    background-color: #e34a87;
+    border: 0;
+}
+
+.party_con .sem_moretpl_btn:hover{
+    background: #f24c7c;
+}
+
+.party_con .sem_moretpl_btn:active{
+    background: #AD4764;
+}
+
+.family_con .sem_moretpl_btn{
+    margin: 60px auto 0;
+    background-color: #ff6600;
+    border: 0;
+}
+
+.family_con .sem_moretpl_btn:hover{
+    background: #ec6002;
+}
+
+.family_con .sem_moretpl_btn:active{
+    background: #bd4d02;
+}
+
+.party_family_con .sem_mainlist_wrapper li > a{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: url("../img/sem/book_bg_party.png") no-repeat center;
+    border: 1px solid #ddd;
+}
+
+.party_family_con .sem_mainlist_wrapper li > a img{
+    position: absolute;
+    left: 25px;
+    top: 10px;
+    width: 150px;
+    height: 180px;
+}
+
+.party_family_con .sem_actvity_wrapper{
+    height: 510px;
+    overflow: visible;
+}
+
+.party_family_con .sem_actvity_item h5{
+    position: relative;
+}
+
+.party_family_con .sem_actvity_item h5::after{
+    content: " ";
+    position: absolute;
+    top: 35px;
+    right: -45px;
+    width: 124px;
+    height: 124px;
+    background: url("../img/sem/status_ongoing.png") no-repeat;
+}

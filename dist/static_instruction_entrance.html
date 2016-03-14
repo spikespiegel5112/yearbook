@@ -45,7 +45,7 @@
                 <div class="photo_book">
                     <img src="img/use_guide/pb_dec01.png" alt="照片书使用指南">
                 </div>
-                <h1>照片书使用指南</h1>
+                <h1>照片书</h1>
                 <p>海量模板供您选择<br>在线编辑所见即所得<br>高清晰度印刷成册</p>
             </a>
         </div>
@@ -57,7 +57,7 @@
                 <div class="interact_book">
                     <img src="img/use_guide/ib_dec01.png" alt="互动册使用指南">
                 </div>
-                <h1>互动册使用指南</h1>
+                <h1>互动册</h1>
                 <p>轻松搞定毕业册聚会册<br>可邀请小伙伴一起制作<br>支持多人在线互动</p>
             </a>
         </div>
@@ -96,8 +96,9 @@
 <script src="js/all.js"></script>
 <script>
     $(document).ready(function(){
-        $('.use_process_main').footerAlignBottom();
-        buttonAutoResize();
+        guideButtonAlignCenter();
+        //$('.use_process_main').footerAlignBottom();
+        //buttonAutoResize();
         function buttonAutoResize(){
             resize();
             $(window).resize(function(){
@@ -120,6 +121,32 @@
             }
         }
     });
+
+    function guideButtonAlignCenter(){
+        var $this = $('.use_process_main');
+        realign();
+        $(window).resize(function() {
+            realign();
+        });
+
+        function realign() {
+            var availHeight = $(window).height();
+            var thisHeight = $this.height();
+            var mainPadding = availHeight - 210 - thisHeight;
+            if (mainPadding > 0) {
+                $this.css({
+                    'padding-top': mainPadding / 2,
+                    'padding-bottom': mainPadding / 2,
+                });
+                $('.footer').css('position', 'absolute');
+            } else if (mainPadding < 0) {
+                $this.css({
+                    'padding-top': 0,
+                    'padding-bottom': 0
+                });
+            }
+        }
+    }
 </script>
 </body>
 </html>

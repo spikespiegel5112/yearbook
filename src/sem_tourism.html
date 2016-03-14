@@ -9,7 +9,7 @@
 	<meta name="author" content="">
 	<meta name="keywords" content="">
 	<title>忆尔3.0-书册空间</title>
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457937983_3337536.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -48,7 +48,6 @@
 	<div class='sem_tourism_container'>
 		<div class='sem_mainlist_container'>
 			<div class='sem_title_wrapper'>
-				
 			</div>
 			<div class='sem_mainlist_wrapper'>
 				<ul>
@@ -180,7 +179,7 @@
 			<div class='sem_actvity_item'>
 				<h5>关注公众号领取优惠券</h5>
 				<div>
-					<samp></samp>
+					<span class='underway ybiconfont ybicon-underway'></span>
 					<img src="img/sem/sem_activity_1.jpg">
 				</div>
 				<p>
@@ -192,7 +191,7 @@
 			<div class='sem_actvity_item'>
 				<h5>照片书晒单红包拿不停</h5>
 				<div>
-					<samp></samp>
+					<span class='finished ybiconfont ybicon-finished'></span>
 					<img src="img/sem/sem_activity_2.jpg">
 				</div>
 				<p>
@@ -204,20 +203,19 @@
 		</DIV>
 		<div class='sem_deliverguarantee_wrapper'>
 			<h5>
-				<span class='left'></span>
 				5个工作日内发货
-				<span class='right'></span></h5>
+			</h5>
 			<div>
 				<span class='left'></span>
 				<p>一本精致的照片书需要耐心的打磨，请给我们5天的时间</p>
 				<span class='right'></span>
 			</div>
-			<img src="img/icon/delivery_1_00000.png">
+			<img src="img/icon/delivery_2_00000.png">
 		</div>
 	</div>
 	<!--底部-->
 	<div class='footer'>
-		<div class='footer_menu_container'>
+		<div class='footer_menu_container sem_tourism'>
 			<div class='footer_menu_wrapper'>
 				<div class='footer_menu_item'>
 					<h5>关于我们</h5>
@@ -299,13 +297,12 @@
 		semTourism();
 	});
 
-	function semTourism (argument) {
-		var liElOdd=$('.sem_mainlist_wrapper li:even');
+	function semTourism(argument) {
+		var liElOdd = $('.sem_mainlist_wrapper li:even');
 		liElOdd.css({
-			top:45
+			top: 45
 		});
 	}
-
 	</script>
 </body>
 

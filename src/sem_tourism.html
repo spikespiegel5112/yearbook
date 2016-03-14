@@ -28,34 +28,7 @@
 			<ul>
 				<li><a href="index.html">首页</a></li>
 				<li class="photos">
-					<a href="booklist_photo.html">照片书<i class="icon-caret-down"></i></a>
-					<ul class="style_list">
-						<li>
-							<a href="javascript:;">
-								<i class="icon-github-alt"></i>宝宝
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<i class="icon-plane"></i>旅行
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<i class="ybiconfont ybicon-hearthollow"></i>爱情
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<i class="icon-home"></i>家庭
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<i class="icon-glass"></i>聚会
-							</a>
-						</li>
-					</ul>
+					<a href="booklist_photo.html">照片书</a>
 				</li>
 				<li><a href="booklist_ia.html">互动册</a></li>
 				<li><a href="pc_mybookshelf.html">个人中心</a></li>
@@ -72,13 +45,10 @@
 		<div class="cm_header_shadow"></div>
 	</div>
 	<!-- main -->
-	<div class='sem_main_container tourism'>
-		<div class='sem_banner_wrapper'>
-			<img src="img/sem/sem_title_2_00000.jpg">
-		</div>
+	<div class='sem_tourism_container'>
 		<div class='sem_mainlist_container'>
 			<div class='sem_title_wrapper'>
-				<!-- <img src="img/sem/sem_title_2_00000.jpg"> -->
+				
 			</div>
 			<div class='sem_mainlist_wrapper'>
 				<ul>
@@ -203,10 +173,7 @@
 						</div>
 					</li>
 				</ul>
-				<a class='sem_moretpl_btn transition_btn' href="javascript:;">更多模板</a>
-			</div>
-			<div class='sem_listbg_item'>
-				<span class='parenting'></span>
+				<a class='sem_moretpl_btn' href="javascript:;">更多模板</a>
 			</div>
 		</div>
 		<DIV class='sem_actvity_wrapper'>
@@ -329,29 +296,16 @@
 	<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
 	<script type="text/javascript">
 	$(function() {
-		circle();
+		semTourism();
 	});
 
-	function circle() {
-		var circleEl = '<i></i>',
-			windowWidth = $(window).width();
-		for (var i = 0; i <= windowWidth / 50-1; i++) {
-			circleEl += '<i></i>';
-		}
-		circleEl = '<div>' + circleEl + '</div>';
-		circleEl = $(circleEl);
-		circleEl.find('i').css({
-			'display': 'inline-block',
-			'width': 50,
-			'height': 50,
-			'border-radius': '50%',
-			'background-color': '#a8e7ec',
-			'position': 'relative',
-			'bottom': '30px'
+	function semTourism (argument) {
+		var liElOdd=$('.sem_mainlist_wrapper li:even');
+		liElOdd.css({
+			top:45
 		});
-
-		$('.sem_listbg_item').append(circleEl);
 	}
+
 	</script>
 </body>
 

@@ -26,7 +26,7 @@
 }
 .sem_mainlist_wrapper{
 	margin: 0 auto;
-	padding: 0 0 245px 0;
+	padding: 0 0 160px 0;
 	width: 100%;
 	height: auto;
 	overflow: hidden;
@@ -132,7 +132,7 @@
 	font-size: 30px;
 	color: #fff;
 	border-radius: 10px;
-	border: 3px solid #fff;
+/*	border: 3px solid #fff;*/
 	background-color: #ee688f;
 	text-align: center;
 	position: relative;
@@ -389,15 +389,6 @@
     position: relative;
 }
 
-/*.party_family_con .sem_actvity_item h5::after {
-	content: " ";
-	position: absolute;
-	top: 35px;
-	right: -45px;
-	width: 124px;
-	height: 124px;
-	background: url("../img/sem/status_ongoing.png") no-repeat;
-}*/
 .party_family_con .sem_actvity_item .ybiconfont {
     position: absolute;
     top: 35px;
@@ -469,16 +460,22 @@
 	top: 0;
 	left: 0;
 	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
 }
 .sem_tourism_container .sem_moretpl_btn:hover{
 	color: #96d6c6;
 	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
 }
 .sem_tourism_container .sem_moretpl_btn:active{
 	box-shadow: none;
 	top: 3px;
 	left: 3px;
 	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
 }
 .sem_tourism_container .sem_deliverguarantee_wrapper h5 {
 	color: #000;
@@ -498,3 +495,116 @@
 	background: url(../img/sem/sem_footer_tourism_00000.jpg);
 	background-position: center;
 }
+/*~~~~~~~~~~sem_loveandportrait.html~~~~~~~~~~*/
+.sem_love_container{
+	background:url(../img/sem/sem_love_bg.jpg);
+	position: relative;
+}
+.sem_love_container .sem_mainlist_wrapper li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/sem/sem_bookbg_2_00000.jpg);
+}
+.sem_love_container .sem_moretpl_btn{
+	width: 290px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #e74984;
+	color: #fff;
+	box-shadow: 3px 3px #888;
+	position: relative;
+	top: 0;
+	left: 0;
+	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
+}
+.sem_love_container .sem_moretpl_btn:hover{
+	color: #eee;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
+}
+.sem_love_container .sem_moretpl_btn:active{
+	box-shadow: none;
+	top: 3px;
+	left: 3px;
+	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
+}
+.sem_listbg_item div i{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: relative;
+}
+.sem_love_container .sem_listbg_item div i{
+	box-shadow: 3px 3px #ccc;
+	background: url(../img/sem/sem_love_bg.jpg);
+}
+.sem_portrait_container .sem_listbg_item div i{
+	box-shadow: 3px 3px #ccc;
+	background: url(../img/sem/sem_portrait_bg.jpg);
+}
+.sem_portrait_container .sem_banner_wrapper{
+	position: relative;
+	z-index: 2;
+}
+.sem_portrait_container .sem_mainlist_wrapper li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/sem/sem_bookbg_2_00000.jpg);
+}
+
+.sem_portrait_container .sem_moretpl_btn{
+	width: 290px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #5ec7fe;
+	color: #fff;
+	box-shadow: 3px 3px #888;
+	position: relative;
+	top: 0;
+	left: 0;
+	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
+}
+.sem_portrait_container .sem_moretpl_btn:hover{
+	color: #eee;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
+}
+.sem_portrait_container .sem_moretpl_btn:active{
+	box-shadow: none;
+	top: 3px;
+	left: 3px;
+	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-ms-transition:all 0.1s;
+}
+.sem_portrait_container .sem_mainlist_container{
+	background: url(../img/sem/sem_portrait_bg.jpg);
+	bottom: 50px;
+}
+.sem_portrait_container .sem_mainlist_wrapper ul{
+	padding: 40px 0 0 0;
+}
+.sem_portrait_container .sem_mainlist_wrapper{
+	background: url(../img/sem/sem_bubble_2_00000.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+.footer_menu_container.sem_love{
+	background: url(../img/sem/sem_footer_love_00000.jpg);
+	background-position: center;
+}
+.sem_portrait_container .sem_deliverguarantee_wrapper h5{
+	color: #666666;
+}
+	

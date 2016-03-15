@@ -314,6 +314,12 @@
 	padding: 0 10px;
 }
 
+@media screen and (min-width: 1024px){
+    .pagemake_right .pagemake_wrap.over_vis {
+        padding: 0 4px;
+    }
+}
+
 /*3.4 add mark_nav*/
 .pagemake_right .filter {
 	font-size: 14px;
@@ -1315,21 +1321,22 @@
 }
 
 .chaptermake_tpl ul li .photo {
-	width: 109px;
-	height: 133px;
+	width: 104px;
+	height: 127px;
 	background: url('../img/chaptermark_tpl_bg.png') no-repeat;
 	padding: 1px 0 0 1px;
 	margin-bottom: 5px;
+    background-size: cover;
 }
 
 .chaptermake_tpl ul li .photo div {
-	width: 104px;
-	height: 131px;
+	width: 101px;
+	height: 127px;
 }
 
 .chaptermake_tpl ul li .photo div img {
-	width: 104px;
-	height: 131px;
+	width: 100px;
+	height: 126px;
 }
 
 .chaptermake_tpl ul li .photo .preview_btn {
@@ -1664,41 +1671,54 @@
   top: 5px;
   z-index: 2;
 }
-.pagemake_right .pagemake_wrap .ptpl_switch ul li a {
-  color: #a4a4a4;
-  display: block;
-  font-size: 14px;
-  height: 28px;
-  line-height: 28px;
-  width: 100%;
-}
-.pagemake_right .pagemake_wrap .ptpl_switch ul li a.active, .pagemake_right .pagemake_wrap .ptpl_switch ul li a:hover {
-  background: #fff none repeat scroll 0 0;
-  color: #7cc952;
-}
-.pagemake_right .pagemake_wrap .ptpl_switch ul li:first-child {
-  border-bottom-left-radius: 4px;
-  border-left: 1px solid #e3e3e3;
-  border-right: 1px solid #e3e3e3;
-  border-top-left-radius: 4px;
-}
-.pagemake_right .pagemake_wrap .ptpl_switch ul li {
-  background: #e3e3e3 none repeat scroll 0 0;
-  border-bottom: 1px solid #e3e3e3;
-  border-right: 1px solid #e3e3e3;
-  border-top: 1px solid #e3e3e3;
-  box-sizing: border-box;
-  color: #333;
-  float: left;
-  text-align: center;
-  width: 50%;
-}
+
 .pagemake_right .pagemake_wrap .ptpl_switch ul {
   height: 30px;
   margin: 15px auto;
   overflow: hidden;
-  width: 240px;
+  width: 90%;
 }
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li {
+    background: #e3e3e3 none repeat scroll 0 0;
+    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    color: #333;
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li:first-child {
+    border-bottom-left-radius: 4px;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-top-left-radius: 4px;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li:nth-child(2) {
+    border-bottom-right-radius: 4px;
+    /*border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;*/
+    border-top-right-radius: 4px;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a {
+    color: #a4a4a4;
+    display: block;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a.active, .pagemake_right .pagemake_wrap .ptpl_switch ul li a:hover {
+    background: #fff none repeat scroll 0 0;
+    color: #7cc952;
+}
+
 .chaptermake_middle_con2 .main .item ul li .personal_avatar {
   color: #a0d350;
   font-size: 12px;

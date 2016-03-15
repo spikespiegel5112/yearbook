@@ -314,12 +314,6 @@
 	padding: 0 10px;
 }
 
-@media screen and (min-width: 1024px){
-    .pagemake_right .pagemake_wrap.over_vis {
-        padding: 0 4px;
-    }
-}
-
 /*3.4 add mark_nav*/
 .pagemake_right .filter {
 	font-size: 14px;
@@ -521,6 +515,7 @@
 	background: url("../img/makebook/chapter_caption_bg.jpg") repeat-x 0;
 	border-bottom: 1px solid #ddd;
 	box-sizing: border-box;
+    overflow: hidden;
 }
 
 .pagemake_middle .caption .edit_wrap {

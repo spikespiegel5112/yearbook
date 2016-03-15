@@ -505,10 +505,11 @@ input {
 .cm_header_nav .nav_login {
     position: relative;
     float: right;
-    margin: 30px 40px 0 30px;
+    /*margin: 30px 40px 0 30px;*//*NEWYB-1617*/
 }
 .cm_header_nav .nav_login .ybiconfont{
     display: inline-block;
+    margin: 30px 0 0 30px;
     width: 20px;
     height: 20px;
     font-size: 20px;
@@ -518,6 +519,7 @@ input {
 
 .cm_header_nav .nav_login ul {
     display: inline-block;
+    margin: 30px 40px 0 0;
     font-size: 14px;
     color: #999;
     vertical-align: middle;
@@ -4874,15 +4876,17 @@ nav .pagination li a:active {
 .login_from .lf_right form .login_btn {
 	width: 100%;
 	height: 43px;
-	background-color: #6ba72b;
+	background-color: #6ba72b!important;
 	line-height: 43px;
 	text-align: center;
-	border-radius: 2px !important;
+	border-radius: 2px!important;
 	font-size: 16px;
 	border: none;
 	color: #fff;
 	font-family: Microsoft YaHei, Verdana, sans-serif, 宋体;
 	cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .login_from .lf_right form .login_btn:hover {
@@ -6622,14 +6626,14 @@ li.method {
 
 .product_detail .standard .standard_info {
 	margin: 25px auto 0;
-	width: 75%;
+	width: 82%;/*NEWYB-1615*/
 	font-size: 16px;
 }
 
 .standard .standard_info ul li {
 	display: inline-block;
 	margin: 0 4%;
-	padding-left: 4%;
+	/*padding-left: 4%;*/
 	width: 40%;
 	height: 35px;
 	line-height: 35px;
@@ -18766,6 +18770,7 @@ button::-moz-focus-inner {
 .book_resource_info .info p {
 	height: 30px;
 	line-height: 30px;
+    white-space: nowrap;
 }
 
 .book_resource_info .info button,
@@ -22232,7 +22237,7 @@ button::-moz-focus-inner {
 
 .bookshelf_list {
 	display: inline-block;
-	width: 85%;
+	width: 82%;
 	padding-left: 10px;
 	vertical-align: top;
     box-sizing: border-box;
@@ -22240,7 +22245,7 @@ button::-moz-focus-inner {
 
 .bookshelf_list > li {
 	display: inline-block;
-	padding: 20px;
+	padding: 15px;
 	margin-left: -5px;
 	border-bottom: 1px solid #b4b4b4;
 }
@@ -25410,11 +25415,13 @@ li.action div:hover {
 .shop_apply_con .form_list .form_item button{
     padding: 0 10px;
     min-width: 85px;
-    height: 26px;
+    height: 34px;
+    line-height: 34px;
     border: 1px solid #dcdcdc;
     background: transparent;
     font-size: 14px;
-    vertical-align: baseline;
+    vertical-align: middle;
+    box-sizing: content-box;
 }
 
 .shop_apply_con .form_list .form_item button:focus{

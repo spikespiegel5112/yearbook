@@ -782,6 +782,9 @@
 
 		function alignToCenter() {
 			var windowWidth = $(window).width();
+            if(windowWidth <= 1150){
+                windowWidth = 1150;
+            }
 			$('.swiper-container').css({
 				'height': '450px'
 			});

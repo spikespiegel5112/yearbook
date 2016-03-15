@@ -1208,7 +1208,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 
 /*~~~~~~~~~~load more content~~~~~~~~~~*/
 .ybwechat_loading_item {
-	display: none;
 	padding: 1em 0;
 	width: 100%;
 	font-size: 12px;
@@ -14746,6 +14745,7 @@ a.ia-vote-add-choose-num span.ybicon-plus{
     height: 100%;
     border-radius: 50%;
     border: 2px solid #ddd;
+    box-sizing: border-box;
 }
 
 .shop_home .shop_info .shop_name {
@@ -14760,7 +14760,7 @@ a.ia-vote-add-choose-num span.ybicon-plus{
 }
 
 .shop_home .shop_info .money {
-    margin: 0 20px 0 0;
+    margin: 0 8px 0 0;
     height: 30px;
     line-height: 30px;
     font-size: 12px;

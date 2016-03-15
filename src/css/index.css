@@ -1,11 +1,17 @@
 @charset "utf-8";
 
 /*3.6 yb_banner*/
+.yb_banner{
+    position: relative;
+    width: 100%;
+    min-width: 1150px;
+    height: 445px;
+}
+
 .yb_banner .banner_slide {
 	position: relative;
 	width: 100%;
-	min-width: 1150px;
-	height: 445px;
+	height: 100%;
 }
 
 .yb_banner .banner_slide .hd {
@@ -95,6 +101,7 @@
 	width: 50px;
 	height: 50px;
 	background: url("../img/index/banner_slide_arrows.png") no-repeat;
+    background-size: 100px;
 }
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
 	position: absolute;
@@ -102,6 +109,7 @@
 	width: 50px;
 	height: 50px;
 	background: url("../img/index/banner_slide_arrows.png") no-repeat;
+    background-size: 100px;
 }
 
 .yb_banner .swiper-button-prev{

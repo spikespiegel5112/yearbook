@@ -2005,7 +2005,7 @@ button.select {
     /*overflow: hidden;*/
     position: relative;
     /*z-index: 0;*/
-    height: 100px;
+   /* height: 100px;*/
 }
 
 .ybbanner_bookcover_item {
@@ -2362,6 +2362,11 @@ button.select {
 .ybbanner_ornamentimg_wrapper {
     width: 100%;
     height: 215px;
+}
+
+.ybbanner_ornamentimg_wrapper img{
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 1440px) {
@@ -3890,11 +3895,17 @@ nav .pagination li a:active {
 @charset "utf-8";
 
 /*3.6 yb_banner*/
+.yb_banner{
+    position: relative;
+    width: 100%;
+    min-width: 1150px;
+    height: 445px;
+}
+
 .yb_banner .banner_slide {
 	position: relative;
 	width: 100%;
-	min-width: 1150px;
-	height: 445px;
+	height: 100%;
 }
 
 .yb_banner .banner_slide .hd {
@@ -3984,6 +3995,7 @@ nav .pagination li a:active {
 	width: 50px;
 	height: 50px;
 	background: url("../img/index/banner_slide_arrows.png") no-repeat;
+    background-size: 100px;
 }
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
 	position: absolute;
@@ -3991,6 +4003,7 @@ nav .pagination li a:active {
 	width: 50px;
 	height: 50px;
 	background: url("../img/index/banner_slide_arrows.png") no-repeat;
+    background-size: 100px;
 }
 
 .yb_banner .swiper-button-prev{
@@ -7312,7 +7325,7 @@ li.method {
 .bp_title_wrapper {
 	margin: 0 auto;
 	padding: 20px 0 0 0;
-	width: 1200px;
+	width: 100%;
 	position: relative;
 	z-index: 4;
 	text-align: center;
@@ -12579,6 +12592,7 @@ li.method {
 	padding: 0 0 100px 0;
 	width: 100%;
 	min-height: 600px;
+    min-width: 1150px;
 	background: url(../img/bm_bg_00000.jpg);
 	position: relative;
 	z-index: 0;
@@ -16701,6 +16715,7 @@ button::-moz-focus-inner {
 	background: url("../img/makebook/chapter_caption_bg.jpg") repeat-x 0;
 	border-bottom: 1px solid #ddd;
 	box-sizing: border-box;
+    overflow: hidden;
 }
 
 .pagemake_middle .caption .edit_wrap {
@@ -17501,21 +17516,22 @@ button::-moz-focus-inner {
 }
 
 .chaptermake_tpl ul li .photo {
-	width: 109px;
-	height: 133px;
+	width: 104px;
+	height: 127px;
 	background: url('../img/chaptermark_tpl_bg.png') no-repeat;
 	padding: 1px 0 0 1px;
 	margin-bottom: 5px;
+    background-size: cover;
 }
 
 .chaptermake_tpl ul li .photo div {
-	width: 104px;
-	height: 131px;
+	width: 101px;
+	height: 127px;
 }
 
 .chaptermake_tpl ul li .photo div img {
-	width: 104px;
-	height: 131px;
+	width: 100px;
+	height: 126px;
 }
 
 .chaptermake_tpl ul li .photo .preview_btn {
@@ -17850,41 +17866,54 @@ button::-moz-focus-inner {
   top: 5px;
   z-index: 2;
 }
-.pagemake_right .pagemake_wrap .ptpl_switch ul li a {
-  color: #a4a4a4;
-  display: block;
-  font-size: 14px;
-  height: 28px;
-  line-height: 28px;
-  width: 100%;
-}
-.pagemake_right .pagemake_wrap .ptpl_switch ul li a.active, .pagemake_right .pagemake_wrap .ptpl_switch ul li a:hover {
-  background: #fff none repeat scroll 0 0;
-  color: #7cc952;
-}
-.pagemake_right .pagemake_wrap .ptpl_switch ul li:first-child {
-  border-bottom-left-radius: 4px;
-  border-left: 1px solid #e3e3e3;
-  border-right: 1px solid #e3e3e3;
-  border-top-left-radius: 4px;
-}
-.pagemake_right .pagemake_wrap .ptpl_switch ul li {
-  background: #e3e3e3 none repeat scroll 0 0;
-  border-bottom: 1px solid #e3e3e3;
-  border-right: 1px solid #e3e3e3;
-  border-top: 1px solid #e3e3e3;
-  box-sizing: border-box;
-  color: #333;
-  float: left;
-  text-align: center;
-  width: 50%;
-}
+
 .pagemake_right .pagemake_wrap .ptpl_switch ul {
   height: 30px;
   margin: 15px auto;
   overflow: hidden;
-  width: 240px;
+  width: 90%;
 }
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li {
+    background: #e3e3e3 none repeat scroll 0 0;
+    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    color: #333;
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li:first-child {
+    border-bottom-left-radius: 4px;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-top-left-radius: 4px;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li:nth-child(2) {
+    border-bottom-right-radius: 4px;
+    /*border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;*/
+    border-top-right-radius: 4px;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a {
+    color: #a4a4a4;
+    display: block;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+}
+
+.pagemake_right .pagemake_wrap .ptpl_switch ul li a.active, .pagemake_right .pagemake_wrap .ptpl_switch ul li a:hover {
+    background: #fff none repeat scroll 0 0;
+    color: #7cc952;
+}
+
 .chaptermake_middle_con2 .main .item ul li .personal_avatar {
   color: #a0d350;
   font-size: 12px;
@@ -22384,7 +22413,8 @@ button::-moz-focus-inner {
 .myMessage_container .btn_group > button {
 	display: inline-block;
 	margin: 0 5px;
-	width: 90px;
+    padding: 0 8px;
+	/*width: 90px;*/
 	height: 25px;
 	background-color: #fff;
 	color: #646464;
@@ -23128,7 +23158,7 @@ button::-moz-focus-inner {
 .available_balance {
 	display: inline-block;
 	margin: 5px 0 0 10px;
-	width: 49%;
+	width: 48%;
 	font-size: 16px;
 	position: relative;
 	line-height: 1.8em;
@@ -23179,7 +23209,7 @@ button::-moz-focus-inner {
 	display: inline-block;
 	padding: 15px 0 0 15px;
 	vertical-align: middle;
-	width: 49%;
+	width: 48%;
 	float: right;
 }
 
@@ -23567,7 +23597,10 @@ button::-moz-focus-inner {
 .recharge_con .input_money {
 	display: inline-block;
 	width: 160px;
-	height: 25px;
+	height: 35px;
+    padding: 5px 12px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
 .recharge_con .payment {
@@ -25790,7 +25823,7 @@ li.action div:hover {
 }
 
 .shop_order.order_list li li:nth-child(2){
-    width: 18%;
+    width: 17%;
 }
 
 .shop_order.order_list li li:nth-child(6){

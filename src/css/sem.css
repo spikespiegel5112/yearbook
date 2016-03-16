@@ -214,7 +214,7 @@
 .sem_actvity_wrapper{
 	margin: 0 auto;
 	padding: 0 0 70px 0;
-	width: 1000px;
+	width: 940px;
 }
 .sem_actvity_wrapper:after{
 	content: '';
@@ -225,22 +225,25 @@
 	padding: 45px 0 15px 0;
 	font-size: 24px;
 }
+.sem_actvity_item:first-child{
+	width: 390px;
+}
 .sem_actvity_item{
 	float: left;
-	width: 450px;
+	width: 470px;
 }
 .sem_actvity_item div{
 	height: 300px;
 }
 .sem_actvity_item:first-child{
-	margin: 0 10% 0 0;
+	margin: 0 75px 0 0;
 }
 .sem_actvity_item>div{
 	position: relative;
 }
 .sem_actvity_item img{
 	display: block;
-	width: 450px;
+	width: 100%;
 	height: 300px;
 	border-top: 4px solid #a7be4a;
 }

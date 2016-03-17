@@ -3989,7 +3989,8 @@ nav .pagination li a:active {
 	height: 66px;
 }
 
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+.yb_banner .swiper-button-prev,
+.yb_banner .swiper-container-rtl .swiper-button-next {
 	position: absolute;
 	top: 50%;
 	width: 50px;
@@ -3997,7 +3998,8 @@ nav .pagination li a:active {
 	background: url("../img/index/banner_slide_arrows.png") no-repeat;
     background-size: 100px;
 }
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+.yb_banner .swiper-button-next,
+.yb_banner .swiper-container-rtl .swiper-button-prev {
 	position: absolute;
 	top: 50%;
 	width: 50px;
@@ -7752,7 +7754,7 @@ li.method {
 
 .bp_toolbar_wrapper ul li a {
 	display: block;
-	color: #706a6a;
+	color: #aaadbc;
 	overflow: hidden;
 	font-size: 30px;
 }
@@ -7896,7 +7898,7 @@ li.method {
 	height: 40px;
 	background-color: #eeeeee;
 	line-height: 40px;
-	font-size: 30px;
+	font-size: 16px;
 	text-align: center;
 	color: #aaadbc;
 /*	background: #eee url("../img/sprite/bp_slide_icons.png") no-repeat;*/
@@ -18434,7 +18436,7 @@ button::-moz-focus-inner {
 	font-size: 12px;
 }
 
-.advanced_filter_con ul li input {
+.advanced_filter_con ul li input[type="number"] {
 	width: 60px;
 	max-width: none !important;
 	display: inline-block;

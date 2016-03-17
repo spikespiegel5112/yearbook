@@ -89,8 +89,8 @@
 						<td>
 							<div class='opd_sketch_item'>
 								<select>
-									<option val='1'>别致小装</option>
-									<option val='2'>气派大装</option>
+									<option val='1'>别致小装（145mm×210mm）</option>
+									<option val='2'>气派大装（175mm×248mm）</option>
 								</select>
 								<img src="img/booklist/min_size.jpg">
 								<label>尺寸实例图片
@@ -109,9 +109,9 @@
 						<td>
 							<div class='opd_sketch_item'>
 								<select>
-									<option val='10'>平装（软面）</option>
-									<option val='20'>精装（硬壳）</option>
-									<option val='30'>蝴蝶装（硬壳）</option>
+                                    <option val='30'>蝴蝶装</option>
+									<option val='10'>平装（软）</option>
+									<option val='20'>精装（硬）</option>
 								</select>
 								<img src="img/booklist/paperback.jpg">
 								<label>装订实例图片
@@ -413,11 +413,11 @@
 						realterTextEl = $('.opd_sketch_item:eq(0) .ybcommon_queryicon_item div p');
 					switch (selected.val()) {
 						case '别致小装':
-							relatedImgEl.attr('src', 'img/book_details/min_size.jpg');
+							relatedImgEl.attr('src', 'img/booklist/min_size.jpg');
 							realterTextEl.text('书册尺寸宽14.5cm，长21.0cm');
 							break;
 						case '气派大装':
-							relatedImgEl.attr('src', 'img/book_details/max_size.jpg');
+							relatedImgEl.attr('src', 'img/booklist/max_size.jpg');
 							realterTextEl.text('书册尺寸宽17.5cm，长s24.8cm');
 							break;
 					}
@@ -428,15 +428,15 @@
 						realterTextEl = $('.opd_sketch_item:eq(1) .ybcommon_queryicon_item div p');
 					switch (selected.val()) {
 						case '平装（软面）':
-							relatedImgEl.attr('src', 'img/book_details/paperback.jpg');
+							relatedImgEl.attr('src', 'img/booklist/paperback.jpg');
 							realterTextEl.text('书册采用包装为胶装覆膜');
 							break;
 						case '精装（硬壳）':
-							relatedImgEl.attr('src', 'img/book_details/hardcover01.jpg');
+							relatedImgEl.attr('src', 'img/booklist/hardcover01.jpg');
 							realterTextEl.text('书册采用包装为精装硬壳覆膜');
 							break;
 						case '蝴蝶装（硬壳）':
-							relatedImgEl.attr('src', 'img/book_details/butterflycover.jpg');
+							relatedImgEl.attr('src', 'img/booklist/butterflycover.jpg');
 							realterTextEl.text('书册采用包装为精装硬壳覆膜，装订方式为蝴蝶装');
 							break;
 					}

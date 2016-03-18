@@ -39,9 +39,11 @@
 		<div class="cm_header_shadow"></div>
 	</div>
 	<!-- main -->
-	<div class='sem_tourism_container'>
+	<div class='sem_love_container'>
+		<div class='sem_banner_wrapper'>
+			<img src="img/sem/sem_title_love_00000.png">
+		</div>
 		<div class='sem_mainlist_container'>
-			<div class='sem_title_wrapper'></div>
 			<div class='sem_mainlist_wrapper'>
 				<ul>
 					<li>
@@ -124,6 +126,59 @@
 							<span>入册照片：<label>49</label>张</span>
 						</div>
 					</li>
+				</ul>
+				<a class='sem_moretpl_btn transition_btn' href="javascript:;">更多模板</a>
+			</div>
+			<div class='sem_listbg_item'></div>
+		</div>
+	</div>
+	<div class='sem_portrait_container'>
+		<div class='sem_banner_wrapper'>
+			<img src="img/sem/sem_title_portrait.png">
+		</div>
+		<div class='sem_mainlist_container'>
+			<div class='sem_mainlist_wrapper'>
+				<ul>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_bookcover_1_00000.png">
+						</a>
+						<div>
+							<a class='sem_bookname_item' href="javascript:;">《我的成长日记》</a>
+							<a class='sem_eye_item ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							<span>入册照片：<label>49</label>张</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_bookcover_1_00000.png">
+						</a>
+						<div>
+							<a class='sem_bookname_item' href="javascript:;">《我的成长日记》</a>
+							<a class='sem_eye_item ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							<span>入册照片：<label>49</label>张</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_bookcover_1_00000.png">
+						</a>
+						<div>
+							<a class='sem_bookname_item' href="javascript:;">《我的成长日记》</a>
+							<a class='sem_eye_item ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							<span>入册照片：<label>49</label>张</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_bookcover_1_00000.png">
+						</a>
+						<div>
+							<a class='sem_bookname_item' href="javascript:;">《我的成长日记》</a>
+							<a class='sem_eye_item ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							<span>入册照片：<label>49</label>张</span>
+						</div>
+					</li>
 					<li>
 						<a href="javascript:;">
 							<img src="img/sem/sem_bookcover_1_00000.png">
@@ -165,7 +220,9 @@
 						</div>
 					</li>
 				</ul>
-				<a class='sem_moretpl_btn' href="javascript:;">更多模板</a>
+				<a class='sem_moretpl_btn transition_btn' href="javascript:;">更多模板</a>
+			</div>
+			<div class='sem_listbg_item'>
 			</div>
 		</div>
 		<div class='sem_actvity_container'>
@@ -202,22 +259,23 @@
 				<!-- <img class='sem_actvitybg_item' src="img/sem/sem_boat_bg.jpg"> -->
 			</DIV>
 		</div>
-		
 		<div class='sem_deliverguarantee_wrapper'>
 			<h5>
-				5个工作日内发货
+				<span class='left'></span>
+					5个工作日内发货
+				<span class='right'></span>
 			</h5>
 			<div>
 				<span class='left'></span>
 				<p>一本精致的照片书需要耐心的打磨，请给我们5天的时间</p>
 				<span class='right'></span>
 			</div>
-			<img src="img/icon/delivery_2_00000.png">
+			<img src="img/icon/delivery_3_00000.png">
 		</div>
 	</div>
 	<!--底部-->
 	<div class='footer'>
-		<div class='footer_menu_container sem_tourism'>
+		<div class='footer_menu_container sem_love'>
 			<div class='footer_menu_wrapper'>
 				<div class='footer_menu_item'>
 					<h5>关于我们</h5>
@@ -292,18 +350,34 @@
 		</div>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
-	<script type="text/javascript" src='assets/js/masonry.pkgd.min.js'></script>
-	<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
 	<script type="text/javascript">
 	$(function() {
-		semTourism();
+		circle();
 	});
 
-	function semTourism(argument) {
-		var liElOdd = $('.sem_mainlist_wrapper li:even');
-		liElOdd.css({
-			top: 45
+	function circle() {
+		var circleEl = '<i></i>',
+			windowWidth = $(window).width();
+
+		function loop(callback) {
+			for (var i = 0; i <= windowWidth / 50 - 1; i++) {
+				callback(i);
+			}
+		}
+		loop(function() {
+			return circleEl += '<i></i>';
+		})
+		circleEl = '<div>' + circleEl + '</div>';
+		circleEl = $(circleEl);
+		circleEl.find('i').css({
+			'bottom': '24px'
 		});
+		loop(function(i) {
+			circleEl.find('i').eq(i).css({
+				'background-position': -(i * 50) + 'px 83px'
+			});
+		});
+		$('.sem_listbg_item').append(circleEl);
 	}
 	</script>
 </body>

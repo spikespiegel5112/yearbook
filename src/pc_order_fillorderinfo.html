@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔-在线支付</title>
+	<title>3.11 填写订单信息</title>
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all">
@@ -43,256 +43,331 @@
 		</div>
 	</div>
 	<div class="cm_header_shadow"></div>
-	<div class='opd_wrapper'>
-		<div class='opd_procedure_wrapper'>
-			<ul>
-				<li class='already'>
-					<div class='opdnode_text_item'><span></span>
-						<label>确认下单</label>
-					</div>
-				</li>
-				<li class='active'>
-					<div class='opdnode_dash_item'></div>
-					<div class='opdnode_text_item'><span></span>
-						<label>填写收货地址</label>
-					</div>
-				</li>
-				<li>
-					<div class='opdnode_dash_item'></div>
-					<div class='opdnode_text_item'><span></span>
-						<label>在线支付</label>
-					</div>
-				</li>
-				<li>
-					<div class='opdnode_dash_item'></div>
-					<div class='opdnode_text_item'><span></span>
-						<label>等待收货</label>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class='opd_receivingaddress_wrapper'>
-			<div class='opd_header_item'>
-				<p>收货地址</p>
-				<a class='opd_addnewaddress_item' href="javascript:;"><span>+</span>使用新的地址</a>
-			</div>
-			<div class='opd_addressandmode_wrapper'>
-				<table>
-					<tbody>
-						<tr>
-							<td>
-								<div>
-									<input id='opd_address_1' type='radio' name='address'>
-									<label for='opd_address_1'>莫斯科红场克里姆林宫</label>
-								</div>
-							</td>
-							<td>
-								<label>普京（收）</label>
-							</td>
-							<td>
-								<label>联系电话：</label>
-								<span>138888888888</span>
-							</td>
-							<td class='opd_editaddress_wrapper'>
-								<div>
-									<a class='icon-pencil' href="javascript:;"></a>
-									<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div>
-									<input id='opd_address_2' type='radio' name='address'>
-									<label for='opd_address_2'>莫斯科红场克里姆林宫</label>
-								</div>
-							</td>
-							<td>
-								<label>普京（收）</label>
-							</td>
-							<td>
-								<label>联系电话：</label>
-								<span>138888888888</span>
-							</td>
-							<td class='opd_editaddress_wrapper'>
-								<div>
-									<a class='icon-pencil' href="javascript:;"></a>
-									<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div>
-									<input id='opd_address_3' type='radio' name='address'>
-									<label for='opd_address_3'>莫斯科红场克里姆林宫</label>
-								</div>
-							</td>
-							<td>
-								<label>普京（收）</label>
-							</td>
-							<td>
-								<label>联系电话：</label>
-								<span>138888888888</span>
-							</td>
-							<td class='opd_editaddress_wrapper'>
-								<div>
-									<a class='icon-pencil' href="javascript:;"></a>
-									<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class='opd_header_item'>
-				<p>配送方式</p>
-			</div>
-			<div class='opd_addressandmode_wrapper'>
-				<table>
-					<thead>
-						<tr>
-							<td>
-								选择配送物流
-							</td>
-							<td>
-								运费
-							</td>
-							<td>
-								其他说明
-							</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<input id='opd_modeofdistrit_item' type='radio' name='opd_modeofdistrit_item'>
-								<label for='opd_modeofdistrit_item'>快递</label>
-							</td>
-							<td>
-								￥0
-							</td>
-							<td>
-								无
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class='opd_header_item'>
-				<p>是否需要发票</p>
-			</div>
-			<div class='opd_ifneedinvoice_wrapper'>
-				<ul>
-					<li>
-						<input class='no' id='opd_invoice_1' type='radio' name='opd_invoice'>
-						<label for='opd_invoice_1'>否</label>
-					</li>
-					<li>
-						<input class='yes' id='opd_invoice_2' type='radio' name='opd_invoice'>
-						<label for='opd_invoice_2'>是</label>
-					</li>
-				</ul>
-				<div class="opd_invoicedetial_wrapper">
-					<table>
-						<thead>
-							<tr>
-								<td style="width:8%;">发票类别</td>
-								<td style="width:10%;">发票类型</td>
-								<td style="width:12%;">发票抬头</td>
-								<td style="width:10%;">发票内容</td>
-								<td class='opd_tdn_item' style="width:10%;">纳税人识别号</td>
-								<td class='opd_registeredaddress_item' style="width:15%;">注册地址</td>
-								<td style="width:10%;">注册电话</td>
-								<td style="width:10%;">开户银行</td>
-								<td class='opd_bankaccount_item' style="width:10%;">银行账户</td>
-								<td style="width:5%;">操作</td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									公司
-								</td>
-								<td>
-									普通发票
-								</td>
-								<td>无锡众志和达数据计算股份有限公司</td>
-								<td>纪念册</td>
-								<td>626644440001211555</td>
-								<td>无锡众志和达数据计算股份有限公司</td>
-								<td>626644440001211555</td>
-								<td>无锡众志和达数据计算股份有限公司</td>
-								<td>626644440001211555</td>
-								<td>
-									<a href='javascript:;'>修改</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class='opd_header_item'>
-				<p>商品清单</p>
-			</div>
-			<div class='opd_productlist_wrapper'>
-				<table>
-					<thead>
-						<tr>
-							<td>
-							</td>
-							<td>
-								书册名称
-							</td>
-							<td>
-								配件及尺寸
-							</td>
-							<td>
-								数量
-							</td>
-							<td>
-								下单时间
-							</td>
-							<td>
-								实际支付金额
-							</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class='opd_productimg_item'>
-								<a href="javascript:;">
-									<img src="img/default/checklist_cover_00000.jpg">
-								</a>
-							</td>
-							<td>
-								<a href="javascript:;">《月圆家团圆》</a>
-							</td>
-							<td>
-								<p>精装硬壳</p>
-								<p>别致小装14.5cm*21cm</p>
-							</td>
-							<td>
-								<span>1</span>本
-							</td>
-							<td>
-								<span>2015.11.25</span>
-								<span>16:36</span>
-							</td>
-							<td class='opd_orderinfoprice_item'>
-								￥36.00
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<DIV class='opd_confirm_wrapper'>
-			<div class='opd_confirmbtn_wrapper'>
-				<a class='opd_confirm_item' href="javascript:;">我要付款<span></span></a>
-			</div>
-		</DIV>
-	</div>
+    <div class="main_container create_order">
+        <div class='opd_wrapper'>
+            <!--<div class='opd_procedure_wrapper'>
+                <ul>
+                    <li class='already'>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>确认下单</label>
+                        </div>
+                    </li>
+                    <li class='active'>
+                        <div class='opdnode_dash_item'></div>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>填写收货地址</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='opdnode_dash_item'></div>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>在线支付</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='opdnode_dash_item'></div>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>等待收货</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->
+            <div class="opd_title">
+                <h1><span></span>收货相关信息</h1>
+                <div class="progress_bar">
+                    <ul>
+                        <li class="finish">
+                            <div><span>1</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>确认下单</p>
+                        </li>
+                        <li class="cur">
+                            <div><span>2</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>填写收货地址</p>
+                        </li>
+                        <li>
+                            <div><span>3</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>在线支付</p>
+                        </li>
+                        <li>
+                            <div><span>4</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>等待收货</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class='opd_receivingaddress_wrapper'>
+                <div class='opd_header_item'>
+                    <p>收货地址</p>
+                    <a class='opd_addnewaddress_item' href="javascript:;"><span class="ybiconfont ybicon-plus"></span>使用新的地址</a>
+                </div>
+                <div class='opd_addressandmode_wrapper'>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input id='opd_address_1' type='radio' name='address'>
+                                    <label for='opd_address_1'>莫斯科红场克里姆林宫</label>
+                                </div>
+                            </td>
+                            <td>
+                                <label>普京（收）</label>
+                            </td>
+                            <td>
+                                <label>联系电话：</label>
+                                <span>138888888888</span>
+                            </td>
+                            <td class='opd_editaddress_wrapper default'>
+                                <div>
+                                    <a class='default_btn' href="javascript:;">默认地址</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input id='opd_address_2' type='radio' name='address'>
+                                    <label for='opd_address_2'>莫斯科红场克里姆林宫</label>
+                                </div>
+                            </td>
+                            <td>
+                                <label>普京（收）</label>
+                            </td>
+                            <td>
+                                <label>联系电话：</label>
+                                <span>138888888888</span>
+                            </td>
+                            <td class='opd_editaddress_wrapper'>
+                                <div>
+                                    <a class='modify' href="javascript:;">修改</a>
+                                    <a class='delete' href="javascript:;">删除</a>
+                                    <a class='set_default' href="javascript:;">设为默认</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input id='opd_address_3' type='radio' name='address'>
+                                    <label for='opd_address_3'>莫斯科红场克里姆林宫</label>
+                                </div>
+                            </td>
+                            <td>
+                                <label>普京（收）</label>
+                            </td>
+                            <td>
+                                <label>联系电话：</label>
+                                <span>138888888888</span>
+                            </td>
+                            <td class='opd_editaddress_wrapper'>
+                                <div>
+                                    <a class='modify' href="javascript:;">修改</a>
+                                    <a class='delete' href="javascript:;">删除</a>
+                                    <a class='set_default' href="javascript:;">设为默认</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='opd_header_item'>
+                    <p>配送方式</p>
+                </div>
+                <div class='opd_addressandmode_wrapper'>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>
+                                选择配送物流
+                            </td>
+                            <td>
+                                运费
+                            </td>
+                            <td>
+                                其他说明
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input id='opd_modeofdistrit_item' type='radio' name='opd_modeofdistrit_item'>
+                                <label for='opd_modeofdistrit_item'>快递</label>
+                            </td>
+                            <td>
+                                ￥0
+                            </td>
+                            <td>
+                                无
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='opd_header_item hidden'>
+                    <p>是否需要发票</p>
+                </div>
+                <div class='opd_ifneedinvoice_wrapper hidden'>
+                    <ul>
+                        <li>
+                            <input class='no' id='opd_invoice_1' type='radio' name='opd_invoice'>
+                            <label for='opd_invoice_1'>否</label>
+                        </li>
+                        <li>
+                            <input class='yes' id='opd_invoice_2' type='radio' name='opd_invoice'>
+                            <label for='opd_invoice_2'>是</label>
+                        </li>
+                    </ul>
+                    <div class="opd_invoicedetial_wrapper">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td style="width:8%;">发票类别</td>
+                                <td style="width:10%;">发票类型</td>
+                                <td style="width:12%;">发票抬头</td>
+                                <td style="width:10%;">发票内容</td>
+                                <td class='opd_tdn_item' style="width:10%;">纳税人识别号</td>
+                                <td class='opd_registeredaddress_item' style="width:15%;">注册地址</td>
+                                <td style="width:10%;">注册电话</td>
+                                <td style="width:10%;">开户银行</td>
+                                <td class='opd_bankaccount_item' style="width:10%;">银行账户</td>
+                                <td style="width:5%;">操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    公司
+                                </td>
+                                <td>
+                                    普通发票
+                                </td>
+                                <td>无锡众志和达数据计算股份有限公司</td>
+                                <td>纪念册</td>
+                                <td>626644440001211555</td>
+                                <td>无锡众志和达数据计算股份有限公司</td>
+                                <td>626644440001211555</td>
+                                <td>无锡众志和达数据计算股份有限公司</td>
+                                <td>626644440001211555</td>
+                                <td>
+                                    <a href='javascript:;'>修改</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+               <!-- <div class='opd_header_item'>
+                    <p>商品清单</p>
+                </div>
+                <div class='opd_productlist_wrapper'>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                书册名称
+                            </td>
+                            <td>
+                                配件及尺寸
+                            </td>
+                            <td>
+                                数量
+                            </td>
+                            <td>
+                                下单时间
+                            </td>
+                            <td>
+                                实际支付金额
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class='opd_productimg_item'>
+                                <a href="javascript:;">
+                                    <img src="img/default/checklist_cover_00000.jpg">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:;">《月圆家团圆》</a>
+                            </td>
+                            <td>
+                                <p>精装硬壳</p>
+                                <p>别致小装14.5cm*21cm</p>
+                            </td>
+                            <td>
+                                <span>1</span>本
+                            </td>
+                            <td>
+                                <span>2015.11.25</span>
+                                <span>16:36</span>
+                            </td>
+                            <td class='opd_orderinfoprice_item'>
+                                ￥36.00
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>-->
+                <div class='opd_header_item'>
+                    <p>商品总价确认</p>
+                </div>
+                <div class='opd_sumprice_wrapper'>
+                    <div class='opd_privilege_wrapper'>
+                        <p><a class="ybiconfont ybicon-down1" href="javascript:;"></a>已享受的优惠</p>
+                        <ul>
+                            <li>
+                                <label>[活动]</label>全场书册免费包邮配送
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='opd_subtotal_wrapper'>
+                        <ul>
+                            <li class='opd_mercprice_item'>
+                                <label>商品金额：</label>
+                                <strong>
+                                    ￥<span>38.00</span>
+                                </strong>
+                            </li>
+                            <li class='opd_freight_item'>
+                                <label>所需运费：</label>
+                                <strong>
+                                    ￥<span>00.00</span>
+                                </strong>
+                            </li>
+                            <li class='opd_privprice_item'>
+                                <label>优惠金额：</label>
+                                <strong>
+                                    ￥<span>00.00</span>
+                                </strong>
+                            </li>
+                        </ul>
+                        <div class='opd_subtotalprice_item'>
+                            <label>实际需支付：</label>
+                            <strong>
+                                ￥<span>38.00</span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class='opd_confirm_wrapper'>
+                    <p class="tips"><span class="ybiconfont ybicon-infosign"></span>如需发票，请联系在线客服。</p>
+                    <div class='opd_confirmbtn_wrapper'>
+                        <a class='opd_confirm_item' href="pc_order_payoff.html">我要付款</a>
+                    </div>
+                </div>
+            </div>
+            <!--活动推送ad-->
+            <div class="activity_push_wrap">
+                <a href="activity_1602_shareorder.html">
+                    <img src="img/default/activity_push01.jpg" alt="晒单赢现金红包">
+                </a>
+            </div>
+        </div>
+    </div>
+
 	<!--添加收货地址-->
 	<div id="new_address" class="add_new_address hidden">
 		<form>
@@ -518,7 +593,7 @@
 	<script type="text/javascript" src="assets/js/cityselector.js"></script>
 	<script type="text/javascript">
 	$(function() {
-		icheck();
+		//icheck();
 		addNewAddress();
 		editAddress();
 		citySelector();

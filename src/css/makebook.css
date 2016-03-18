@@ -3181,65 +3181,7 @@
 	float: right;
 }
 
-.al_head .progress_bar ul li {
-	position: relative;
-	display: inline-block;
-	width: 108px;
-	text-align: center;
-	line-height: 35px;
-	font-size: 14px;
-	color: #8cc237;
-}
 
-.al_head .progress_bar ul li::after {
-	position: absolute;
-	top: 27px;
-	content: " ";
-	width: 108px;
-	height: 6px;
-	background-color: #ccc;
-	z-index: 0;
-}
-
-.al_head .progress_bar ul li:last-child::after {
-	height: 0;
-}
-
-.al_head .progress_bar ul li.finish:after{
-    background-color: #b2c022;
-}
-
-.al_head .progress_bar ul li div {
-	position: relative;
-	margin: 16px auto 0;
-	width: 26px;
-	height: 26px;
-	line-height: 26px;
-	color: #fff;
-	background-color: #ccc;
-	border-radius: 100%;
-	z-index: 1;
-}
-
-.al_head .progress_bar ul li.cur div{
-    background-color: #999;
-}
-
-.al_head .progress_bar ul li.finish div{
-    background-color: #b2c022;
-}
-
-.al_head .progress_bar ul li p{
-    color: #ccc;
-}
-
-.al_head .progress_bar ul li.cur p{
-    color: #999;
-}
-
-.al_head .progress_bar ul li.finish p{
-    color: #b2c022;
-}
 
 .auto_edit_nav {
 	position: relative;

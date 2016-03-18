@@ -1593,10 +1593,15 @@ button.select {
 
 
 .loginpopup_register_item {
-    margin: 0 auto;
+    padding: 0 5%;
     width: 90%;
+    height: 40px;
     text-align: right;
     font-size: 13px;
+    border-radius: 6px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .loginpopup_register_item a {
@@ -1613,6 +1618,7 @@ button.select {
     position: relative;
     bottom: 0;
     z-index: 2;
+    border-bottom: 1px solid #ccc
 }
 
 .loginpopup_thirdpartylogin_wrapper p {
@@ -1636,10 +1642,20 @@ button.select {
 }
 
 .loginpopup_thirdpartylogin_wrapper ul li {
-    margin: 0 0 0 15%;
     float: left;
+    width: 33%;
+    text-align: center;
+}
+.loginpopup_thirdpartylogin_wrapper ul li a{
+    margin: 0 auto;
+    display: inline-block;
+    padding: 0%;
     border-radius: 50%;
 }
+.loginpopup_thirdpartylogin_wrapper ul li a{
+    text-align: center;
+}
+
 
 .loginpopup_thirdpartylogin_wrapper ul .qq{
     background-color: #00adef;
@@ -1654,9 +1670,7 @@ button.select {
 /*.loginpopup_thirdpartylogin_wrapper ul li:first-child {
     margin: 0;
 }*/
-.loginpopup_thirdpartylogin_wrapper ul li a{
-    display: block;
-}
+
 
 .loginpopup_thirdpartylogin_wrapper ul li a  span{
     display: block;
@@ -1749,7 +1763,7 @@ button.select {
 }
 
 
-@media (max-width:640px){
+@media (max-width:1024px){
     .cm_header_nav{
         display: none;
     }
@@ -1762,9 +1776,9 @@ button.select {
     .loginpopup_wrapper{
         width: 90%;
     }
-    .loginpopup_thirdpartylogin_wrapper ul li, .loginpopup_thirdpartylogin_wrapper ul li:first-child{
+    /*.loginpopup_thirdpartylogin_wrapper ul li, .loginpopup_thirdpartylogin_wrapper ul li:first-child{
         margin: 0 0 0 1.5rem;
-    }
+    }*/
     .loginpopup_checkbox_wrapper li{
         margin: 0;
     }
@@ -1775,14 +1789,24 @@ button.select {
         width: 2rem;
         line-height: 2rem;
     }
+    .loginpopup_thirdpartylogin_wrapper div, .common_triplelap_wrapper span{
+        margin: 0 auto;
+        background-color: #fff;
+    }
     .loginpopup_thirdpartylogin_wrapper div{
-        background-color: none;
+        width: 50%;
     }
     .loginpopup_input_wrapper li{
         height: 2rem;
     }
     .loginpopup_thirdpartylogin_wrapper ul{
         width: 100%;
+    }
+    .loginpopup_thirdpartylogin_wrapper ul li a span{
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.2rem;
     }
 }
 

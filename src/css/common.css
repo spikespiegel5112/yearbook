@@ -312,7 +312,7 @@ input {
 }
 
 .transition_btn:active {
-    box-shadow: 0px 0px 35px #666 inset;
+    box-shadow: 0px 0px 16px #555 inset;
     transition: all 0.1s;
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
@@ -1376,9 +1376,6 @@ button.select {
     box-sizing: border-box;
 }
 
-
-/*~~~~~~~~~~loginpupop登录弹窗~~~~~~~~~~*/
-
 .loginpopup_container {
     width: 100%;
     height: 100%;
@@ -1399,9 +1396,9 @@ button.select {
 }
 
 .loginpopup_wrapper {
-    margin: 10% auto;
+    margin: 0 auto;
     width: 550px;
-    height: 560px;
+    height: 520px;
     position: relative;
     background: #fff;
     border: 1px solid #ccc;
@@ -1413,7 +1410,7 @@ button.select {
 }
 
 .loginpopup_header_wrapper div {
-    padding: 20px 0;
+    padding: 15px 0 0 0;
     margin: 0 auto;
     width: 145px;
     text-align: center;
@@ -1423,6 +1420,12 @@ button.select {
     display: inline-block;
     width: 55px;
     vertical-align: middle;
+}
+.loginpopup_header_wrapper div span{
+    display: inline-block;
+    font-size: 60px;
+    vertical-align: middle;
+    color: #aab93e;
 }
 
 .loginpopup_header_wrapper div label {
@@ -1488,7 +1491,7 @@ button.select {
 }
 
 .loginpopup_input_wrapper input {
-    padding: 0 0 0 60px;
+    padding: 0 0 0 13%;
     width: 87%;
     height: 100%;
     font-size: 15px;
@@ -1521,7 +1524,7 @@ button.select {
     height: 100%;
     text-align: center;
     color: #aaa;
-    font-size: 16px;
+    font-size: 1.3rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -1586,21 +1589,21 @@ button.select {
     margin: 0 auto;
     height: 50px;
     border: 1px solid #ccc;
-    background-color: #fff;
+    background-color: #e7e7e6;
     border-radius: 6px;
     position: absolute;
 }
 
 .loginpopup_wrapper:before {
     width: 98%;
-    top: 513px;
+    top: 475px;
     left: 4px;
     z-index: -1;
 }
 
 .loginpopup_wrapper:after {
     width: 96%;
-    top: 516px;
+    top: 480px;
     left: 9px;
     z-index: -2;
 }
@@ -1628,10 +1631,10 @@ button.select {
 
 .loginpopup_thirdpartylogin_wrapper {
     width: 100%;
-    height: 115px;
     border-top: 1px solid #eee;
     position: absolute;
     bottom: 0;
+    border-top: 1px solid #e7e7e6;
 }
 
 .loginpopup_thirdpartylogin_wrapper p {
@@ -1642,15 +1645,31 @@ button.select {
     color: #666;
 }
 
-.loginpopup_thirdpartylogin_wrapper ul {
-    margin: 15px auto;
-    width: 245px;
+.loginpopup_thirdpartylogin_wrapper div {
+    padding: 10px 0;
+    width: 100%;
     overflow: hidden;
+    background-color: #e7e7e6;
+}
+.loginpopup_thirdpartylogin_wrapper ul {
+    margin: 0 auto;
+    width: 245px;
 }
 
 .loginpopup_thirdpartylogin_wrapper ul li {
     margin: 0 0 0 55px;
     float: left;
+    border-radius: 50%;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul .qq{
+    background-color: #00adef;
+}
+.loginpopup_thirdpartylogin_wrapper ul .wechat{
+    background-color: #009834;
+}
+.loginpopup_thirdpartylogin_wrapper ul .weibo{
+    background-color: #db3a37;
 }
 
 .loginpopup_thirdpartylogin_wrapper ul li:first-child {
@@ -1661,7 +1680,10 @@ button.select {
     display: block;
     width: 45px;
     height: 45px;
-    background-image: url(../img/sprite/imgsprite_yb3_wbl_00000.png);
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
 }
 
 .loginpopup_thirdpartylogin_wrapper ul .qq a {
@@ -1676,6 +1698,15 @@ button.select {
     background-position: -208px -345px;
 }
 
+.login_main_container h2 {
+    font-size: 24px;
+    margin: 27px
+}
+@media (max-width:640px){
+    .loginpopup_wrapper{
+        width: 85%;
+    }
+}
 
 /*~~~~~~~~~~globalhint全局顶部提示框~~~~~~~~~~*/
 

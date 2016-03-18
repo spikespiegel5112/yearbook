@@ -143,32 +143,6 @@
 					$('.cus_popup_wrapper .cus_popup_item').eq(3).hide();
 				});*/
 		},
-		//footer自动贴底效果，任意调整浏览器窗口高度都可以自动贴底，同时让页面主体内容垂直居中
-		footerAlignBottom: function() {
-			var $this = $(this);
-			realign();
-			$(window).resize(function() {
-				realign();
-			});
-
-			function realign() {
-				var availHeight = $(window).height();
-				var thisHeight = $this.height();
-				var loginMargin = availHeight - 210 - thisHeight;
-				if (loginMargin > 0) {
-					$this.css({
-						'margin-top': loginMargin / 2,
-						'margin-bottom': loginMargin / 2,
-					});
-					$('.footer').css('position', 'absolute');
-				} else if (loginMargin < 0) {
-					$this.css({
-						'margin-top': 0,
-						'margin-bottom': 0,
-					});
-				}
-			}
-		},
 		//banner双向滑动效果
 		toolsSlide: function(bsContainer, bsInner, arrowLeft, arrowRight, liPadding) {
 			var $this = $(this);
@@ -441,14 +415,14 @@
 			})
 		},
 		loginPopupDialog: function() {
-			var windowHeight=$(window).height(),
-				marginTop=(windowHeight-560)/2;
-				if (marginTop<0) {marginTop=0;}
+			var windowHeight = $(window).height(),
+				marginTop = (windowHeight - 560) / 2;
+			if (marginTop < 0) { marginTop = 0; }
 			$(this).each(function() {
 				$(this).click(function() {
 					console.log(marginTop);
 					$('.loginpopup_container').addClass('active');
-					$('.loginpopup_wrapper').css('margin-top',marginTop);
+					$('.loginpopup_wrapper').css('margin-top', marginTop);
 
 				});
 				$('.loginpopup_header_wrapper a').click(function() {
@@ -544,18 +518,166 @@
 				_this.trigger('onchange');
 			}
 		},
-		imgAlignCenter:function(){
-			var $this=$(this),
-				windowWidth=$(window).width(),
-				imgWidth=$this.width();
-			$(window).resize(function(){
+		//footer自动贴底效果，任意调整浏览器窗口高度都可以自动贴底，同时让页面主体内容垂直居中
+		footerAlignBottom: function(options) {
+			options = $.extend({
+				marginOffset: 10,
+				footer: '.footer'
+			}, options);
+			var $this = $(this);
+			realign();
+			$(window).resize(function() {
+				realign();
+			});
+
+			function realign() {
+				var availHeight = $(window).height();
+				var thisHeight = $this.height();
+				var loginMargin = availHeight - 210 - thisHeight;
+				if (loginMargin > 0) {
+					$this.css({
+						'margin-top': loginMargin / 2 + options.marginOffset,
+						'margin-bottom': loginMargin / 2 + options.marginOffset
+					});
+					$(options.footer).css('position', 'absolute');
+				} else if (loginMargin < 0) {
+					$this.css({
+						'margin-top': 0,
+						'margin-bottom': 0,
+					});
+				}
+			}
+		},
+		imgAlignCenter: function() {
+			var $this = $(this),
+				windowWidth = $(window).width(),
+				imgWidth = $this.width();
+			$(window).resize(function() {
 				$this.css({
-					'margin-left':(windowWidth-imgWidth)/2
+					'margin-left': (windowWidth - imgWidth) / 2
 				});
 			});
 			$this.css({
-				'margin-left':(windowWidth-imgWidth)/2
+				'margin-left': (windowWidth - imgWidth) / 2
 			});
+		},
+		align: function(options) {
+			options = $.extend({
+				direction: 'both',
+				position: 'center',
+				obstacleX: 0,
+				obstacleY: 0
+			}, options);
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
+				thieWidth = this.width(),
+				thisHeight = this.height(),
+				_this = this;
+			if (typeof options.obstacleX == 'number') {
+				windowWidth = windowWidth - options.obstacleX;
+			} else {
+				var sum = 0;
+				for (var i = 0; i < options.obstacleX.length; i++) {
+					sum += $(options.obstacleX[i]).height();
+				};
+				windowWidth = windowWidth - sum;
+			}
+			if (typeof options.obstacleY == 'number') {
+				windowHeight = windowHeight - options.obstacleY;
+			} else {
+				var sum = 0;
+				for (var i = 0; i < options.obstacleY.length; i++) {
+					sum += $(options.obstacleY[i]).height();
+					// console.log(sum);
+				};
+				// alert(windowWidth+','+sum)
+				windowHeight = windowHeight - sum;
+			}
+
+			switch (options.direction) {
+				case 'both':
+					switch (options.position) {
+						case 'top':
+							return;
+							break;
+						case 'center':
+							aligning(function() {
+								_this.css({
+									'margin': (windowWidth - thieWidth) / 2 + ' auto'
+								});
+							});
+							break;
+						case 'bottom':
+							return;
+							break;
+					}
+					break;
+				case 'vertical':
+					aligning(function() {
+						if ($(document).height() > $(window).height()) {
+							return;
+						} else {
+							_this.css({
+								'position': 'absolute',
+							});
+						}
+					});
+					switch (options.position) {
+						case 'top':
+							_this.css({
+								'top': 0
+							});
+							break;
+						case 'center':
+							aligning(function() {
+								_this.css({
+									'margin-left': (windowWidth - thisWidth) / 2,
+									'margin-top': (windowHeight - thisHeight) / 2
+								});
+							});
+							break;
+						case 'bottom':
+							_this.css({
+								'bottom': 0
+							});
+							break;
+					}
+					break;
+				case 'horizonal':
+					aligning(function() {
+						_this.css({
+							'margin-top': (windowWidth - thisHeight) / 2
+						});
+					});
+					switch (options.position) {
+						case 'left':
+							_this.css({
+								'left': 0
+							});
+							break;
+						case 'center':
+							aligning(function() {
+								_this.css({
+									'margin-left': (windowWidth - thieWidth) / 2,
+									'margin-top': (windowHeight - thisHeight) / 2
+								});
+							});
+							break;
+						case 'right':
+							_this.css({
+								'right': 0
+							});
+							break;
+					}
+					break;
+			}
+
+			function aligning(callback) {
+				$(window).resize(function() {
+					callback()
+				});
+				callback();
+			}
 		}
 	});
 
@@ -566,38 +688,38 @@
 			});
 		},
 		tipsBox: function(options) {
-					options = $.extend({
-						obj: null,
-						str: "+1",
-						startSize: "12px",
-						endSize: "30px",
-						interval: 600,
-						color: "#5d7895",
-						callback: function() {}
-					}, options);
-					$("body").append("<span class='num'>" + options.str + "</span>");
-					var box = $(".num");
-					var left = options.obj.offset().left + options.obj.width() / 2;
-					var top = options.obj.offset().top;
-					box.css({
-						"position": "absolute",
-						"left": left + "px",
-						"top": top + "px",
-						"z-index": 9999,
-						"font-size": options.startSize,
-						"line-height": options.endSize,
-						"color": options.color
-					});
-					box.animate({
-						"font-size": options.endSize,
-						"opacity": "0",
-						"top": top - parseInt(options.endSize) + "px"
-					}, options.interval, function() {
-						box.remove();
-						options.callback();
-					});
-				}
-		
+			options = $.extend({
+				obj: null,
+				str: "+1",
+				startSize: "12px",
+				endSize: "30px",
+				interval: 600,
+				color: "#5d7895",
+				callback: function() {}
+			}, options);
+			$("body").append("<span class='num'>" + options.str + "</span>");
+			var box = $(".num");
+			var left = options.obj.offset().left + options.obj.width() / 2;
+			var top = options.obj.offset().top;
+			box.css({
+				"position": "absolute",
+				"left": left + "px",
+				"top": top + "px",
+				"z-index": 9999,
+				"font-size": options.startSize,
+				"line-height": options.endSize,
+				"color": options.color
+			});
+			box.animate({
+				"font-size": options.endSize,
+				"opacity": "0",
+				"top": top - parseInt(options.endSize) + "px"
+			}, options.interval, function() {
+				box.remove();
+				options.callback();
+			});
+		}
+
 	})
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);
 	$('.hide_title').init_title();

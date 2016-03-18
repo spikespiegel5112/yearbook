@@ -9,17 +9,30 @@
 }
 
 .login_main_container {
+	margin: 7em auto;
 	width: 640px;
 	height: 100%;
 	overflow: hidden;
 	background-color: #fff;
 	border: 1px solid #d0d1d2;
-	margin: 7em auto;
+	overflow: hidden;
+	position: relative;
+}
+.access_login_container{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-image: url(../img/access/login_bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
 }
 
-.login_main_container h2 {
-	font-size: 24px;
-	margin: 27px
+.access_loginbg_item{
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 0;
 }
 
 .login_from {

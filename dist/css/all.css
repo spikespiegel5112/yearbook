@@ -509,7 +509,7 @@ input {
 }
 .cm_header_nav .nav_login .ybiconfont{
     display: inline-block;
-    margin: 30px 0 0 30px;
+    margin: 30px 0 0 25px;
     width: 20px;
     height: 20px;
     font-size: 20px;
@@ -1058,7 +1058,7 @@ label.error {
 .pc_empty_item {
     margin: 0 auto;
     padding: 20px 0;
-    width: 200px;
+    width: 220px;
     overflow: hidden;
 }
 
@@ -3623,8 +3623,7 @@ nav .pagination li a:active {
     right: 0;
     width: 35px;
     height: 180px;
-    bottom: 0;
-    z-index: 99999;
+    z-index: 99;
 }
 
 .yb_toolbar {
@@ -4049,7 +4048,7 @@ nav .pagination li a:active {
 
 .bk_category > div > h1 {
 	margin: 20px 0 10px;
-	width: 50%;
+	width: 600px;
 	font-size: 30px;
 	text-align: center;
 }
@@ -4902,6 +4901,7 @@ nav .pagination li a:active {
 	cursor: pointer;
     padding: 0;
     box-sizing: border-box;
+    -webkit-appearance: none;
 }
 
 .login_from .lf_right form .login_btn:hover {
@@ -6641,15 +6641,15 @@ li.method {
 
 .product_detail .standard .standard_info {
 	margin: 25px auto 0;
-	width: 82%;/*NEWYB-1615*/
+	width: 85%;/*NEWYB-1615*/
 	font-size: 16px;
 }
 
 .standard .standard_info ul li {
 	display: inline-block;
-	margin: 0 4%;
+	margin: 0 2%;
 	/*padding-left: 4%;*/
-	width: 40%;
+	width: 44%;
 	height: 35px;
 	line-height: 35px;
 	text-align: left;
@@ -11388,6 +11388,13 @@ li.method {
 	margin: 0 0 0 5px;
 	position: relative;
 	bottom: 1px!important;
+    float: none;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    line-height: inherit;
+    border: 0;
+    color: #333;
 }
 
 #vtitle-error,
@@ -24550,8 +24557,33 @@ li.action div:hover {
 	background-color: #efefef;
 }
 
+.opd_checklist_wrapper thead tr th{
+    border: 0;
+}
+
+.opd_checklist_wrapper thead tr th:nth-child(1),
+.opd_checklist_wrapper thead tr th:nth-child(2){
+    width: 220px;
+}
+
+.opd_checklist_wrapper thead tr th:nth-child(3){
+    width: 90px;
+}
+
+.opd_checklist_wrapper thead tr th:nth-child(4){
+    width: 124px;
+}
+
+.opd_checklist_wrapper thead tr th:nth-child(5){
+    width: 116px;
+}
+
+.opd_checklist_wrapper thead tr th:nth-child(6){
+    width: 100px;
+}
+
 .opd_checklisttotalprice_item {
-	width: 120px;
+	width: 130px;
 }
 
 .opd_checklist_wrapper tbody td {
@@ -25797,6 +25829,7 @@ li.action div:hover {
 
 .shop_home .reset_btn_group .revise_info span{
 	color: #35cfb0;
+    font-size: 60px;
 /*    background: url("../img/pc/rsshopmsg.png") no-repeat;*/
 }
 

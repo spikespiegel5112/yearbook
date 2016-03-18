@@ -2768,6 +2768,91 @@ nav .pagination li a:active {
     padding: 0;
     background-color: #fff;
 }
+/*~~~~~~~~~~翻页组件（用在钱包和章节制作页面）2~~~~~~~~~~*/
+.pagination {
+    font-size: 100%;
+    margin-left: 20px;
+    height: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pagination a {
+    text-decoration: none;
+    border: solid 1px #f0cb9b;
+    color: #ffa530;
+}
+
+.pagination a, .pagination span {
+    /*display: block;
+    float: left;*/
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.pagination .current {
+    background: #ffa530;
+    color: #fff;
+    border: solid 1px #f0cb9b;
+}
+
+.pagination .current.prev, .pagination .current.next {
+    color: #999;
+    border-color: #999;
+    background: #fff;
+}
+
+.turn-page .roll-up {
+    display: block;
+    width: 36px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #999;
+    float: left;
+    color: #333333;
+}
+
+.turn-page .page-f {
+    width: 14px;
+    line-height: 14px;
+    background-image: url(/img/floor/result/page-f.jpg);
+    margin-left: 8px;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+}
+
+.turn-page .page-n {
+    width: 14px;
+    line-height: 14px;
+    background-image: url(/img/floor/result/page-n.jpg);
+    margin-right: 8px;
+    text-align: center;
+    float: right;
+    font-size: 12px;
+}
+
+.turn-page .roll-lower {
+    display: block;
+    width: 36px;
+    line-height: 14px;
+    font-size: 12px;
+    float: right;
+    color: #999;
+    color: #333333;
+}
+
+/*~~~~~ ia_leavewall ajax more btn css ~~~~~*/
+
+.ia_message_more_btn {
+    background: url('../img/next_btn2.png') no-repeat;
+    padding-left: 35px;
+    font-size: 12px;
+    color: #666;
+    width: 60px;
+    margin: 10px auto 20px;
+}
 
 
 /*~~~~~~~~~~留言框一样的item组件（章节制作页面）~~~~~~~~~~*/

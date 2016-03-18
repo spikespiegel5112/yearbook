@@ -2411,7 +2411,8 @@ button.select {
 .ybcommon_counter_item {
     width: 85px;
     height: 25px;
-    border: 1px solid #a9a9a9;
+    border: 1px solid #e5e5e5;
+    background-color: #f0f0f0;
 }
 
 .ybcommon_counter_item a {
@@ -2433,9 +2434,11 @@ button.select {
     float: left;
     width: 33px;
     height: 100%;
-    border: 0;
     font-size: 15px;
     text-align: center;
+    border: 1px solid #aaa;
+    box-sizing: content-box;
+    margin-top: -1px;
 }
 
 
@@ -4141,4 +4144,85 @@ nav .pagination li a:active {
     height: 20px;
     line-height: 20px;
     font-size: 20px!important;
+}
+
+/*一键成书 确认下单 进度条*/
+.progress_bar ul li {
+    position: relative;
+    display: inline-block;
+    width: 108px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color: #8cc237;
+}
+
+.progress_bar ul li::after {
+    position: absolute;
+    top: 27px;
+    content: " ";
+    width: 108px;
+    height: 6px;
+    background-color: #ccc;
+    z-index: 0;
+}
+
+.progress_bar ul li:last-child::after {
+    height: 0;
+}
+
+.progress_bar ul li.finish:after{
+    background-color: #b2c022;
+}
+
+.progress_bar ul li.cur:after{
+    background-color: #999;
+}
+
+.progress_bar ul li div {
+    position: relative;
+    margin: 16px auto 0;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    color: #fff;
+    background-color: #ccc;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.progress_bar ul li.cur div{
+    background-color: #999;
+}
+
+.progress_bar ul li.finish div{
+    background-color: #b2c022;
+}
+
+.progress_bar ul li div span{
+    display: block;
+}
+
+.progress_bar ul li.finish div span{
+    display: none;
+}
+
+.progress_bar ul li div i{
+    display: none;
+}
+
+.progress_bar ul li.finish div i{
+    display: block;
+}
+
+.progress_bar ul li p{
+    color: #ccc;
+}
+
+.progress_bar ul li.cur p{
+    color: #999;
+}
+
+.progress_bar ul li.finish p{
+    color: #b2c022;
 }

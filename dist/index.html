@@ -839,17 +839,22 @@
             var qrTime = setTimeout("$('.yb_toolbar_footer .qrcode').removeClass('active')",2000);
 
             //hover显示全部工具栏
-            $('.yb_toolbar_wrap').hover(function(){
+            $('.yb_toolbar_wrap').hover(function(e){
                 $('.yb_toolbar').addClass('active');
-            },function(){
-                $('.yb_toolbar').removeClass('active');
+                $(document).one("click", function(e){
+                    $('.yb_toolbar').removeClass('active');
+                    $(".yb_toolbar").on("click", function(e){
+                        e.stopPropagation();
+                    });
+                });
+                e.stopPropagation();
             });
 
             //个人消息、书册信息
             $('.yb_toolbar_tabs .personal_btn').click(function(e){
                 if($('.personal_wrap').hasClass('active')){
                     $(this).closest('.yb_toolbar').removeClass('open');
-                    $(this).find('.personal_wrap').removeClass('active');
+                    $('.personal_wrap').removeClass('active');
                 }else{
                     $(this).closest('.yb_toolbar').addClass('open');
                     $(this).find('.personal_wrap').addClass('active');

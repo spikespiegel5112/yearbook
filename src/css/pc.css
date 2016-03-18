@@ -2832,9 +2832,11 @@ li.action div:hover {
 .opd_confirm_item span {
 	display: inline-block;
 	margin: 0 0 0 5px;
-	width: 12px;
-	height: 10px;
-	background: url(../img/sprite/imgsprite_yb3_wbl_00000.png) -50px -91px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent transparent transparent #fff;
+	border-width: 5px 0 5px 10px;
 }
 
 .opd_header_item {

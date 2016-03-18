@@ -2550,8 +2550,7 @@
 	right: 20px;
 }
 
-.friend_con .btn1,
-.friend_con .btn2 {
+.friend_con .btn1, .friend_con .btn2 {
 	width: 148px;
 	height: 44px;
 	/*background: #fff url('../img/friend_btn_bg1.png') no-repeat 15px 15px;*/
@@ -2566,6 +2565,7 @@
 	border: 1px solid #dcdcdc;
 	text-align: center;
 	box-sizing: border-box;
+	font-weight: bold;
 }
 
 .friend_con .btn1 span {
@@ -2599,18 +2599,14 @@
 	outline: none;
 }
 
-.friend_con .btn2 {
-	background: url('../img/ia/friend_btn_bg2.png') no-repeat 15px 15px;
-}
-
-.friend_con .btn2.active,
+/*.friend_con .btn2.active,
 .friend_con .btn2:hover {
 	background: #fec43c url('../img/ia/friend_btn_bg2_white.png') no-repeat 15px 15px;
-}
+}*/
 
 .friend_con .btn2 a {
 	color: #333;
-	margin-left: 30px;
+	font-size: 17px;
 }
 
 .friend_con .btn3 a {
@@ -2699,6 +2695,13 @@
 
 .friend_ul li .friend_info .info1 span {
 	margin-left: 5px;
+	font-size: 13px;
+}
+.friend_ul li .friend_info .info1 .ybicon-male {
+	color: #53bdf9;
+}
+.friend_ul li .friend_info .info1 .ybicon-female {
+	color: #f36ea6;
 }
 
 .friend_ul li .friend_info .info1 span.color_b {

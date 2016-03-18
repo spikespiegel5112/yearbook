@@ -40,68 +40,81 @@
 				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
+		<div class="cm_header_shadow"></div>
 	</div>
-	<div class="cm_header_shadow"></div>
 	<!--登录表单-->
 	<div class="access_login_container">
-			<div class='loginpopup_wrapper'>
-				<div class='loginpopup_header_wrapper'>
-					<div>
-						<span class='ybiconfont ybicon-yblogoshort'></span>
-						<label>登录忆尔</label>
+		<!-- <div class='verticalalgin_container'>
+			<span class='verticalalgin'></span> -->
+			<!-- <div class='access_logininner_container'> -->
+				<div class='loginpopup_wrapper'>
+					<div class='loginpopup_header_wrapper'>
+						<div>
+							<span class='ybiconfont ybicon-yblogoshort'></span>
+							<label>登录忆尔</label>
+						</div>
+						<a class='icon-remove' href="javascript:;"></a>
 					</div>
-					<a class='icon-remove' href="javascript:;"></a>
-				</div>
-				<div class='loginpopup_dividline_wrapper'>
-					<span></span>
-					<!-- <label></label> -->
-				</div>
-				<ul class='loginpopup_input_wrapper'>
-					<li>
-						<span class='ybiconfont ybicon-user'></span>
-						<input type='text' placeholder='输入用户名'>
-					</li>
-					<li>
-						<span class='ybiconfont ybicon-lock'></span>
-						<input type='password' placeholder='输入密码'>
-					</li>
-				</ul>
-				<div class='loginpopup_checkbox_wrapper'>
-					<ul>
+					<div class='loginpopup_dividline_wrapper'>
+						<span></span>
+						<!-- <label></label> -->
+					</div>
+					<ul class='loginpopup_input_wrapper'>
 						<li>
-							<input id='rememberme' type='checkbox'>
-							<label for='rememberme'>记住我</label>
+							<span class='ybiconfont ybicon-user'></span>
+							<input type='text' placeholder='输入用户名'>
 						</li>
 						<li>
-							<input id='savepw' type='checkbox'>
-							<label for='savepw'>一周内免登录</label>
+							<span class='ybiconfont ybicon-lock'></span>
+							<input type='password' placeholder='输入密码'>
 						</li>
 					</ul>
-					<a href="javascript:;">忘记密码？</a>
-				</div>
-				<a class='loginpopup_loginbtn_item transition_btn' href="javascript:;">登录</a>
-				<p class='loginpopup_register_item'>没有账号?&nbsp&nbsp&nbsp<a href="javascript:;">马上注册</a></p>
-				<div class='loginpopup_thirdpartylogin_wrapper'>
-					<p>还可以使用以下方式登录</p>
-					<div>
+					<div class='loginpopup_checkbox_wrapper'>
 						<ul>
-							<li class='qq'>
-								<a class='ybiconfont ybicon-qqsolid' href="access_loginandbind.html"></a>
+							<li>
+								<input id='rememberme' type='checkbox'>
+								<label for='rememberme'>记住我</label>
 							</li>
-							<li class='weibo'>
-								<a class='ybiconfont ybicon-weibosina' href="access_loginandbind.html"></a>
-							</li>
-							<li class='wechat'>
-								<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+							<li>
+								<input id='savepw' type='checkbox'>
+								<label for='savepw'>一周内免登录</label>
 							</li>
 						</ul>
+						<a href="javascript:;">忘记密码？</a>
 					</div>
-					
+					<a class='loginpopup_loginbtn_item transition_btn' href="javascript:;">登录</a>
+					<p class='loginpopup_register_item'>没有账号?&nbsp&nbsp&nbsp<a href="javascript:;">马上注册</a></p>
+					<div class='loginpopup_thirdpartylogin_wrapper'>
+						<p>还可以使用以下方式登录</p>
+						<div>
+							<ul>
+								<li class='qq'>
+									<a href="access_loginandbind.html">
+										<span class='ybiconfont ybicon-qqsolid'></span>
+									</a>
+								</li>
+								<li class='weibo'>
+									<a href="access_loginandbind.html">
+										<span class='ybiconfont ybicon-weibosina'></span>
+									</a>
+								</li>
+								<li class='wechat'>
+									<a href="javascript:;">
+										<span class='ybiconfont ybicon-wechatsolid'></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class='common_triplelap_wrapper'>
+						<span class='first'></span>
+						<span class='second'></span>
+					</div>
 				</div>
-			</div>
-			<!-- <img class='access_loginbg_item' src="img/access/login_bg.jpg"> -->
+			<!-- </div> -->
+		<!-- </div> -->
+		<!-- <img class='access_loginbg_item' src="img/access/login_bg.jpg"> -->
 	</div>
-	
 	<!--底部-->
 	<div class="footer login_footer">
 		<div class="footer_info">
@@ -158,7 +171,7 @@
 		});
 	}
 
-	function icheck (argument) {
+	function icheck(argument) {
 		$("input[type=radio],input[type=checkbox]").iCheck({
 			checkboxClass: 'icheckbox_minimal-green',
 			radioClass: 'iradio_minimal-green',
@@ -166,15 +179,33 @@
 		});
 	}
 
+	function login(){
+		// $('.access_login_container').css({
+		// 		'height':$(window).height()
+		// 	})
+		// $(window).resize(function(){
+		// 	$('.access_login_container').css({
+		// 		'height':$(window).height()
+		// 	})
+		// })
+		
+	}
+
 	$(function() {
 		doSubmit();
 		icheck();
+		login();
+		$.remResizing({
+				fontsize: 20,
+				maxwidth:0
+			});
 		$('.loginpopup_wrapper').align({
-			obstacleY:['.cm_header_nav','.footer']
+			obstacleY:['.cm_header_nav','.footer'],
+			offsetY: 20
 		});
 		$('.footer').align({
 			direction: 'vertical',
-			position:'bottom'
+			position: 'bottom'
 		});
 	});
 	</script>

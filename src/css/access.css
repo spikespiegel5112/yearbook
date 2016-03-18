@@ -25,7 +25,26 @@
 	background-image: url(../img/access/login_bg.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
-	z-index: 1;
+
+}
+.verticalalgin_container{
+		position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /*background: red;*/
+        text-align: center;
+}
+.verticalalgin_container .verticalalgin{
+		display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+}
+.access_logininner_container{
+		display: inline-block;
+        vertical-align: middle;
+		position: relative;
 }
 
 .access_loginbg_item{

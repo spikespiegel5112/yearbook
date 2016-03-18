@@ -411,11 +411,16 @@ input {
     background-color: #fff;
     min-width: 1150px;
     position: relative;
+    z-index: 1;
 }
 
 .cm_header_nav .logo {
     padding: 20px 0 0 42px;
     float: left;
+}
+
+.cm_header_nav .logo a {
+    display: block;
 }
 
 .cm_header_nav .nav {
@@ -511,7 +516,7 @@ input {
     top: 80px;
     left: 0;
     z-index: 1;
-    min-width: 1150px;
+   /* min-width: 1150px;*/
 }
 
 .cm_header_nav .nav_user_info {
@@ -1398,11 +1403,12 @@ button.select {
 .loginpopup_wrapper {
     margin: 0 auto;
     width: 550px;
-    height: 520px;
+/*    height: 520px;*/
     position: relative;
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #bbb;
     border-radius: 6px;
+    z-index: 1;
 }
 
 .loginpopup_header_wrapper {
@@ -1412,7 +1418,7 @@ button.select {
 .loginpopup_header_wrapper div {
     padding: 15px 0 0 0;
     margin: 0 auto;
-    width: 145px;
+    width: 165px;
     text-align: center;
 }
 
@@ -1486,11 +1492,12 @@ button.select {
 .loginpopup_input_wrapper li {
     margin: 30px 0;
     width: 100%;
-    height: 60px;
+    height: 50px;
     position: relative;
 }
 
 .loginpopup_input_wrapper input {
+    display: block;
     padding: 0 0 0 13%;
     width: 87%;
     height: 100%;
@@ -1519,12 +1526,12 @@ button.select {
 .loginpopup_input_wrapper span {
     display: inline-block;
     vertical-align: middle;
-    line-height: 64px;
+    line-height: 50px;
     width: 55px;
     height: 100%;
     text-align: center;
     color: #aaa;
-    font-size: 1.3rem;
+    font-size: 26px;
     position: absolute;
     top: 0;
     left: 0;
@@ -1541,7 +1548,7 @@ button.select {
 }
 
 .loginpopup_checkbox_wrapper li {
-    display: inline-block;
+    float: left;
     margin: 0 15px 0 0;
     font-size: 13px;
     color: #777;
@@ -1550,6 +1557,7 @@ button.select {
 .loginpopup_checkbox_wrapper a {
     float: right;
     color: #7bba38;
+    font-size: 13px;
 }
 
 .loginpopup_checkbox_wrapper a:hover {
@@ -1582,6 +1590,100 @@ button.select {
     background-color: #689D2F;
 }
 
+
+
+.loginpopup_register_item {
+    margin: 0 auto;
+    width: 90%;
+    text-align: right;
+    font-size: 13px;
+}
+
+.loginpopup_register_item a {
+    color: #7bba38;
+}
+
+.loginpopup_register_item a:hover {
+    text-decoration: underline;
+}
+
+.loginpopup_thirdpartylogin_wrapper {
+    margin: 10px 0 0 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+}
+
+.loginpopup_thirdpartylogin_wrapper p {
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.loginpopup_thirdpartylogin_wrapper div {
+    padding: 10px 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #e7e7e6;
+    border-radius: 6px;
+}
+.loginpopup_thirdpartylogin_wrapper ul {
+    margin: 0 auto;
+    width: 45%;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul li {
+    margin: 0 0 0 15%;
+    float: left;
+    border-radius: 50%;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul .qq{
+    background-color: #00adef;
+}
+.loginpopup_thirdpartylogin_wrapper ul .wechat{
+    background-color: #009834;
+}
+.loginpopup_thirdpartylogin_wrapper ul .weibo{
+    background-color: #db3a37;
+}
+
+/*.loginpopup_thirdpartylogin_wrapper ul li:first-child {
+    margin: 0;
+}*/
+.loginpopup_thirdpartylogin_wrapper ul li a{
+    display: block;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul li a  span{
+    display: block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul .qq a {
+    background-position: -255px -345px;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul .weibo a {
+    background-position: -298px -345px;
+}
+
+.loginpopup_thirdpartylogin_wrapper ul .wechat a {
+    background-position: -208px -345px;
+}
+
+.login_main_container h2 {
+    font-size: 24px;
+    margin: 27px
+}/*
 .loginpopup_wrapper:before,
 .loginpopup_wrapper:after {
     content: '';
@@ -1612,99 +1714,75 @@ button.select {
     display: block;
     margin: 0 auto;
     width: 98%;
-}
+}*/
 
-.loginpopup_register_item {
+.common_triplelap_wrapper, .common_triplelap_wrapper span{
+    display: block;
+    border-radius: 6px;
+    position: relative;
+}
+.common_triplelap_wrapper{
     margin: 0 auto;
-    width: 90%;
-    text-align: right;
-    font-size: 13px;
-}
-
-.loginpopup_register_item a {
-    color: #7bba38;
-}
-
-.loginpopup_register_item a:hover {
-    text-decoration: underline;
-}
-
-.loginpopup_thirdpartylogin_wrapper {
     width: 100%;
-    border-top: 1px solid #eee;
+    height: 20px;
     position: absolute;
-    bottom: 0;
-    border-top: 1px solid #e7e7e6;
+    bottom: -7px;
+    z-index: 0;
 }
-
-.loginpopup_thirdpartylogin_wrapper p {
-    margin: 15px 0;
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
-    color: #666;
-}
-
-.loginpopup_thirdpartylogin_wrapper div {
-    padding: 10px 0;
-    width: 100%;
-    overflow: hidden;
+.common_triplelap_wrapper span{
+    display: block;
+    height: 15px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #ccc;
     background-color: #e7e7e6;
 }
-.loginpopup_thirdpartylogin_wrapper ul {
-    margin: 0 auto;
-    width: 245px;
+.common_triplelap_wrapper .first{
+    width: 98%;
+    z-index: 2;
+    top: 4px;
+}
+.common_triplelap_wrapper .second{
+    width: 96%;
+    z-index: 1;
+    top: -7px;
 }
 
-.loginpopup_thirdpartylogin_wrapper ul li {
-    margin: 0 0 0 55px;
-    float: left;
-    border-radius: 50%;
-}
 
-.loginpopup_thirdpartylogin_wrapper ul .qq{
-    background-color: #00adef;
-}
-.loginpopup_thirdpartylogin_wrapper ul .wechat{
-    background-color: #009834;
-}
-.loginpopup_thirdpartylogin_wrapper ul .weibo{
-    background-color: #db3a37;
-}
-
-.loginpopup_thirdpartylogin_wrapper ul li:first-child {
-    margin: 0;
-}
-
-.loginpopup_thirdpartylogin_wrapper ul li a {
-    display: block;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    color: #fff;
-    font-size: 1.6rem;
-}
-
-.loginpopup_thirdpartylogin_wrapper ul .qq a {
-    background-position: -255px -345px;
-}
-
-.loginpopup_thirdpartylogin_wrapper ul .weibo a {
-    background-position: -298px -345px;
-}
-
-.loginpopup_thirdpartylogin_wrapper ul .wechat a {
-    background-position: -208px -345px;
-}
-
-.login_main_container h2 {
-    font-size: 24px;
-    margin: 27px
-}
 @media (max-width:640px){
+    .cm_header_nav{
+        display: none;
+    }
+    .footer{
+        display: none;
+    }
+    .access_logininner_container{
+        width: 100%;
+    }
     .loginpopup_wrapper{
-        width: 85%;
+        width: 90%;
+    }
+    .loginpopup_thirdpartylogin_wrapper ul li, .loginpopup_thirdpartylogin_wrapper ul li:first-child{
+        margin: 0 0 0 1.5rem;
+    }
+    .loginpopup_checkbox_wrapper li{
+        margin: 0;
+    }
+    .loginpopup_input_wrapper input{
+        padding: 0 0 0 2rem;
+    }
+    .loginpopup_input_wrapper span{
+        width: 2rem;
+        line-height: 2rem;
+    }
+    .loginpopup_thirdpartylogin_wrapper div{
+        background-color: none;
+    }
+    .loginpopup_input_wrapper li{
+        height: 2rem;
+    }
+    .loginpopup_thirdpartylogin_wrapper ul{
+        width: 100%;
     }
 }
 

@@ -566,11 +566,12 @@
 				direction: 'both',
 				position: 'center',
 				obstacleX: 0,
-				obstacleY: 0
+				obstacleY: 0,
+				offsetY: 0
 			}, options);
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				thieWidth = this.width(),
+				thisWidth = this.width(),
 				thisHeight = this.height(),
 				_this = this;
 			if (typeof options.obstacleX == 'number') {
@@ -578,6 +579,11 @@
 			} else {
 				var sum = 0;
 				for (var i = 0; i < options.obstacleX.length; i++) {
+					if ($(options.obstacleX[i]).is(':hidden')) {
+						sum += 0;
+					}else{
+						sum += $(options.obstacleX[i]).height();
+					}
 					sum += $(options.obstacleX[i]).height();
 				};
 				windowWidth = windowWidth - sum;
@@ -587,11 +593,16 @@
 			} else {
 				var sum = 0;
 				for (var i = 0; i < options.obstacleY.length; i++) {
-					sum += $(options.obstacleY[i]).height();
-					// console.log(sum);
+					if ($(options.obstacleY[i]).is(':hidden')) {
+						sum += 0;
+					}else{
+						sum += $(options.obstacleY[i]).height();
+					}
+					
 				};
 				// alert(windowWidth+','+sum)
 				windowHeight = windowHeight - sum;
+				console.log( options.offsetY);
 			}
 
 			switch (options.direction) {
@@ -602,8 +613,12 @@
 							break;
 						case 'center':
 							aligning(function() {
+								var marginY=(windowHeight - thisHeight) / 2;
+								if (marginY<=0) {
+									marginY=0;
+								};
 								_this.css({
-									'margin': (windowWidth - thieWidth) / 2 + ' auto'
+									'margin': marginY +options.offsetY + 'px auto'
 								});
 							});
 							break;
@@ -658,7 +673,7 @@
 						case 'center':
 							aligning(function() {
 								_this.css({
-									'margin-left': (windowWidth - thieWidth) / 2,
+									'margin-left': (windowWidth - thisWidth) / 2,
 									'margin-top': (windowHeight - thisHeight) / 2
 								});
 							});
@@ -718,6 +733,45 @@
 				box.remove();
 				options.callback();
 			});
+		},
+		remResizing: function(options) {
+			options = $.extend({
+				fontsize: 16,
+				maxwidth: 640
+			}, options);
+			var htmlEl = $('html'),
+				bodyEl = $('body'),
+				windowWidth = $(window).width();
+			sizeConstraint();
+			$(window).resize(function() {
+				sizeConstraint();
+			});
+
+			function sizeConstraint() {
+				var windowWidth = $(window).width(),
+					windowHeight = $(window).height();
+				if (windowWidth >= options.maxwidth && windowWidth <= windowHeight&&options.maxwidth!=0) {
+					console.log(windowWidth, windowHeight)
+					bodyEl.css({
+						'width': options.maxwidth,
+						'margin': '0 auto'
+					});
+					htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
+				} else {
+					var windowWidth = $(window).width(),
+						windowHeight = $(window).height(),
+						factor = 0;
+					if (windowWidth < windowHeight) {
+						factor = windowWidth / 320;
+					} else {
+						factor = windowHeight / 320;
+					}
+
+					bodyEl.css('width', 'auto');
+					//$(excaption).css('font-size', '100%');
+					htmlEl.css('font-size', options.fontsize / 16 * 100 * factor + '%');
+				}
+			}
 		}
 
 	})

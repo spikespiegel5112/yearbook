@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<meta name="keywords" content="">
 	<title>忆尔3.4-章节定制</title>
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/all.min.css" media="all">
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
@@ -1114,22 +1114,43 @@
 				<div class="clear"></div>
 				<div class="advanced_filter_con hidden">
 					<ul>
-						<li><div class="cm_fl">模板图片数量</div><div class="cm_fl"><input class="data required" id="cname" name="className" placeholder="" type="number"></div></li>
-						<li><div class="cm_fl">模板文本数量</div><div class="cm_fl"><input class="data required" id="cname" name="className" placeholder="" type="number"></div></li>
-						<li>
-							<div class="cm_fl">展示方式选择</div>
-							<label><input type="radio" name="type" value="" checked="checked" >全部页</label>
-                            <label><input type="radio" name="type" value="">单页</label>
-                            <label><input type="radio" name="type" value="">双页</label>
-						</li>
-						<li>
-							<div class="cm_fl">是否包含互动</div>
-							<label><input name="type" type="checkbox" value="1"></label>
-						</li>
-						<li>
-							<div class="seach_btn cm_cp">搜索</div>
-						</li>
-					</ul>
+					    <li>
+					        <div class="cm_fl">模板图片数量</div>
+					        <div class="cm_fl">
+					            <input class="data required" id="cname" name="className" placeholder="" type="number">
+					        </div>
+					    </li>
+					    <li>
+					        <div class="cm_fl">模板文本数量</div>
+					        <div class="cm_fl">
+					            <input class="data required" id="cname" name="className" placeholder="" type="number">
+					        </div>
+					    </li>
+					    <li>
+					        <div class="cm_fl">展示方式选择</div>
+					        <label>
+					        	<input type="radio" name="type" value="" checked="checked">
+								<span>全部页</span>
+					        </label>
+					        <label>
+					        	<input type="radio" name="type" value="">
+								<span>单页</span>
+							</label>
+					        <label>
+					        	<input type="radio" name="type" value="">
+								<span> 双页</span>
+					        </label>
+					    </li>
+					    <li>
+					        <div class="cm_fl">是否包含互动</div>
+							<label>
+				                <input name="type" type="checkbox" value="1">
+				            </label>
+				        </li>
+				        <li>
+				            <div class="seach_btn cm_cp">搜索</div>
+				        </li>
+				    </ul>
 				</div>
 				<div class="chaptermake_tpl">
 					<ul>
@@ -3121,7 +3142,7 @@
 	 * 高级筛选折叠功能
 	 */
 	 function advancedFilter(){
-		$('.advanced_filter').click(function(){
+		$('.advanced_filter').on('click', function(){
 			if($('.advanced_filter_con').hasClass('hidden')){
 				$('.advanced_filter_con').removeClass('hidden');
 				$(this).children('.icon-caret-down').removeClass('icon-caret-down');
@@ -3658,7 +3679,7 @@
 		pagemake_left_filter();
 		changeTpl();
 		pagemake_middle_tpl();
-		changeButtonCss();
+		// changeButtonCss();
 		editBannerTitle();
         deleteChapterTip();
 		setListChapterTip();

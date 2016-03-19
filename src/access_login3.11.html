@@ -2,214 +2,650 @@
 <html>
 
 <head lang="en">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="keywords" content="">
-	<title>忆尔3.0-登录页</title>
-	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458204648_8938842.css" type="text/css" media="all">
-	<!-- build:css css/all.min.css -->
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/common.css">
-	<link rel="stylesheet" href="css/access.css">
-	<!-- endbuild -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <title>忆尔3.0-登录页</title>
+    <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1458204648_8938842.css" type="text/css" media="all">
+    <!-- build:css css/all.min.css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!--<link rel="stylesheet" href="css/common.css">-->
+    <!--<link rel="stylesheet" href="css/access.css">-->
+    <!-- endbuild -->
 </head>
+<style>
+    .access_login_container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background-image: url(img/access/login_bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+
+    .loginpopup_container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .loginpopup_container.active {
+        opacity: 1;
+        z-index: 4;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+    }
+
+    .loginpopup_wrapper {
+        margin: 0 auto;
+        width: 550px;
+        /*    height: 520px;*/
+        position: relative;
+        background: #fff;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        z-index: 1;
+    }
+
+    .loginpopup_header_wrapper {
+        width: 100%;
+    }
+
+    .loginpopup_header_wrapper div {
+        padding: 15px 0 0 0;
+        margin: 0 auto;
+        width: 165px;
+        text-align: center;
+    }
+
+    .loginpopup_header_wrapper div img {
+        display: inline-block;
+        width: 55px;
+        vertical-align: middle;
+    }
+
+    .loginpopup_header_wrapper div span {
+        display: inline-block;
+        font-size: 60px;
+        vertical-align: middle;
+        color: #aab93e;
+    }
+
+    .loginpopup_header_wrapper div label {
+        display: inline-block;
+        font-size: 18px;
+        vertical-align: middle;
+    }
+
+    .loginpopup_header_wrapper a {
+        display: block;
+        font-size: 22px;
+        color: #ccc;
+        font-weight: lighter;;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+
+    .loginpopup_header_wrapper a:hover {
+        color: #000;
+    }
+
+    .loginpopup_dividline_wrapper {
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .loginpopup_dividline_wrapper span {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+        height: 2px;
+        background: linear-gradient(left, #fff, #efefef, #efefef, #fff);
+        background: -webkit-linear-gradient(left, #fff, #efefef, #efefef, #fff);
+        background: -moz-linear-gradient(left, #fff, #efefef, #efefef, #fff);
+        background: -ms-linear-gradient(left, #fff, #efefef, #efefef, #fff);
+    }
+
+    .loginpopup_dividline_wrapper label {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 150px #ccc;
+        position: relative;
+        bottom: 110px;
+    }
+
+    .loginpopup_input_wrapper {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .loginpopup_input_wrapper li {
+        margin: 30px 0;
+        width: 100%;
+        height: 50px;
+        position: relative;
+    }
+
+    .loginpopup_input_wrapper input {
+        display: block;
+        padding: 0 0 0 13%;
+        width: 87%;
+        height: 100%;
+        font-size: 15px;
+        font-family: 'microsoft yahei';
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+
+    .loginpopup_input_wrapper input:focus {
+        border: 1px solid #82c43b;
+    }
+
+    .loginpopup_input_wrapper li input::-webkit-input-placeholder {
+        color: #bbb;
+    }
+
+    .loginpopup_input_wrapper li input::-moz-input-placeholder {
+        color: #bbb;
+    }
+
+    .loginpopup_input_wrapper li input::-ms-input-placeholder {
+        color: #bbb;
+    }
+
+    .loginpopup_input_wrapper span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 50px;
+        width: 55px;
+        height: 100%;
+        text-align: center;
+        color: #aaa;
+        font-size: 26px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .loginpopup_checkbox_wrapper {
+        margin: 0 auto;
+        width: 90%;
+        overflow: hidden;
+    }
+
+    .loginpopup_checkbox_wrapper ul {
+        float: left;
+    }
+
+    .loginpopup_checkbox_wrapper li {
+        float: left;
+        margin: 0 15px 0 0;
+        font-size: 13px;
+        color: #777;
+    }
+
+    .loginpopup_checkbox_wrapper a {
+        float: right;
+        color: #7bba38;
+        font-size: 13px;
+    }
+
+    .loginpopup_checkbox_wrapper a:hover {
+        text-decoration: underline;
+    }
+
+    .loginpopup_checkbox_wrapper label {
+        display: inline-block;
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+
+    .loginpopup_loginbtn_item {
+        display: block;
+        margin: 15px auto;
+        width: 90%;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: #fff;
+        background-color: #7bba38;
+        font-size: 16px;
+    }
+
+    .loginpopup_loginbtn_item:hover {
+        background-color: #82C43B;
+    }
+
+    .loginpopup_loginbtn_item:active {
+        background-color: #689D2F;
+    }
+
+    .loginpopup_register_item {
+        padding: 0 5%;
+        width: 90%;
+        height: 40px;
+        text-align: right;
+        font-size: 13px;
+        border-radius: 6px;
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    .loginpopup_register_item a {
+        color: #7bba38;
+    }
+
+    .loginpopup_register_item a:hover {
+        text-decoration: underline;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper {
+        margin: 10px 0 0 0;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        z-index: 2;
+        border-bottom: 1px solid #ccc
+    }
+
+    .loginpopup_thirdpartylogin_wrapper p {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper div {
+        padding: 10px 0;
+        width: 100%;
+        overflow: hidden;
+        background-color: #e7e7e6;
+        border-radius: 6px;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul {
+        margin: 0 auto;
+        width: 45%;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul li {
+        float: left;
+        width: 33%;
+        text-align: center;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul li a {
+        margin: 0 auto;
+        display: inline-block;
+        padding: 0%;
+        border-radius: 50%;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul li a {
+        text-align: center;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul .qq {
+        background-color: #00adef;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul .wechat {
+        background-color: #009834;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul .weibo {
+        background-color: #db3a37;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul li a span {
+        display: block;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul .qq a {
+        background-position: -255px -345px;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul .weibo a {
+        background-position: -298px -345px;
+    }
+
+    .loginpopup_thirdpartylogin_wrapper ul .wechat a {
+        background-position: -208px -345px;
+    }
+
+    .login_main_container h2 {
+        font-size: 24px;
+        margin: 27px
+    }
+
+    .common_triplelap_wrapper, .common_triplelap_wrapper span {
+        display: block;
+        border-radius: 6px;
+        position: relative;
+    }
+
+    .common_triplelap_wrapper {
+        margin: 0 auto;
+        width: 100%;
+        height: 20px;
+        position: absolute;
+        bottom: -7px;
+        z-index: 0;
+    }
+
+    .common_triplelap_wrapper span {
+        display: block;
+        height: 15px;
+        margin: 0 auto;
+        position: relative;
+        border: 1px solid #ccc;
+        background-color: #e7e7e6;
+    }
+
+    .common_triplelap_wrapper .first {
+        width: 98%;
+        z-index: 2;
+        top: 4px;
+    }
+
+    .common_triplelap_wrapper .second {
+        width: 96%;
+        z-index: 1;
+        top: -7px;
+    }
+
+    @media (max-width: 1024px) {
+        .cm_header_nav {
+            display: none;
+        }
+
+        .footer {
+            display: none;
+        }
+
+        .access_logininner_container {
+            width: 100%;
+        }
+
+        .loginpopup_wrapper {
+            width: 90%;
+        }
+
+        /*.loginpopup_thirdpartylogin_wrapper ul li, .loginpopup_thirdpartylogin_wrapper ul li:first-child{
+            margin: 0 0 0 1.5rem;
+        }*/
+        .loginpopup_checkbox_wrapper li {
+            margin: 0;
+            font-size: .8rem;
+        }
+
+        .loginpopup_input_wrapper input {
+            padding: 0 0 0 2rem;
+            font-size: .8rem;
+        }
+
+        .loginpopup_input_wrapper input:focus {
+            border: 1px solid #82c43b;
+        }
+
+        .loginpopup_input_wrapper span {
+            width: 2rem;
+            line-height: 2rem;
+            font-size: .8rem;
+        }
+
+        .loginpopup_thirdpartylogin_wrapper div, .common_triplelap_wrapper span {
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        .loginpopup_thirdpartylogin_wrapper div {
+            width: 50%;
+        }
+
+        .loginpopup_input_wrapper li {
+            height: 2rem;
+            margin: 1rem 0;
+        }
+
+        .loginpopup_loginbtn_item {
+            margin: .5rem auto;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            text-align: center;
+            color: #fff;
+            background-color: #7bba38;
+            font-size: 1rem;
+        }
+
+        .loginpopup_loginbtn_item:hover {
+            background-color: #82C43B;
+        }
+
+        .loginpopup_loginbtn_item:active {
+            background-color: #689D2F;
+        }
+
+        .loginpopup_register_item {
+            height: 2rem;
+            font-size: .8rem;
+        }
+
+        .loginpopup_checkbox_wrapper a {
+            font-size: .8rem;
+            line-height: 1.2rem;
+        }
+
+        .loginpopup_thirdpartylogin_wrapper p {
+            margin: .5rem 0;
+        }
+
+        .loginpopup_thirdpartylogin_wrapper ul {
+            width: 100%;
+        }
+
+        .loginpopup_thirdpartylogin_wrapper ul li a span {
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 1.2rem;
+        }
+    }
+</style>
 
 <body>
-	<!--头部导航-->
-	<div class="cm_header_nav">
-		<div class="logo">
-			<a href="index.html"><img src="img/logo.png"></a>
-		</div>
-		<div class="nav">
-			<ul>
-				<li><a href="index.html">首页</a></li>
-				<li><a href="booklist_photo.html">照片书</a></li>
-				<li><a href="booklist_ia.html">互动册</a></li>
-				<li><a href="pc_mybookshelf.html">个人中心</a></li>
-				<li><a href="static_instruction_entrance.html">使用指南</a></li>
-			</ul>
-		</div>
-		<div class="nav_login">
-			<span class='ybiconfont ybicon-user'></span>
-			<ul>
-				<li><a href="access_login.html" class="active">登录</a></li>
-				<li><a href="access_register.html">注册</a></li>
-			</ul>
-		</div>
-		<div class="cm_header_shadow"></div>
-	</div>
-	<!--登录表单-->
-	<div class="access_login_container">
-		<!-- <div class='verticalalgin_container'>
-			<span class='verticalalgin'></span> -->
-			<!-- <div class='access_logininner_container'> -->
-				<div class='loginpopup_wrapper'>
-					<div class='loginpopup_header_wrapper'>
-						<div>
-							<span class='ybiconfont ybicon-yblogoshort'></span>
-							<label>登录忆尔</label>
-						</div>
-						<a class='icon-remove' href="javascript:;"></a>
-					</div>
-					<div class='loginpopup_dividline_wrapper'>
-						<span></span>
-						<!-- <label></label> -->
-					</div>
-					<ul class='loginpopup_input_wrapper'>
-						<li>
-							<span class='ybiconfont ybicon-user'></span>
-							<input type='text' placeholder='输入用户名'>
-						</li>
-						<li>
-							<span class='ybiconfont ybicon-lock'></span>
-							<input type='password' placeholder='输入密码'>
-						</li>
-					</ul>
-					<div class='loginpopup_checkbox_wrapper'>
-						<ul>
-							<li>
-								<input id='rememberme' type='checkbox'>
-								<label for='rememberme'>记住我</label>
-							</li>
-							<li>
-								<input id='savepw' type='checkbox'>
-								<label for='savepw'>一周内免登录</label>
-							</li>
-						</ul>
-						<a href="javascript:;">忘记密码？</a>
-					</div>
-					<a class='loginpopup_loginbtn_item transition_btn' href="javascript:;">登录</a>
-					<p class='loginpopup_register_item'>没有账号?<a href="javascript:;">马上注册</a></p>
-					<p class='loginpopup_register_item'>没有账号?<a href="javascript:;">马上注册</a></p>
-					<div class='loginpopup_thirdpartylogin_wrapper'>
-						<p>还可以使用以下方式登录</p>
-						<div>
-							<ul>
-								<li>
-									<a class='qq' href="access_loginandbind.html">
-										<span class='ybiconfont ybicon-qqsolid'></span>
-									</a>
-								</li>
-								<li>
-									<a class='weibo' href="access_loginandbind.html">
-										<span class='ybiconfont ybicon-weibosina'></span>
-									</a>
-								</li>
-								<li>
-									<a class='wechat' href="javascript:;">
-										<span class='ybiconfont ybicon-wechatsolid'></span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class='common_triplelap_wrapper'>
-						<span class='first'></span>
-						<span class='second'></span>
-					</div>
-				</div>
-			<!-- </div> -->
-		<!-- </div> -->
-		<!-- <img class='access_loginbg_item' src="img/access/login_bg.jpg"> -->
-	</div>
-	<!--底部-->
-	<div class="footer login_footer">
-		<div class="footer_info">
-			<a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="index.html"></a>
-			</a>
-			<div class="footer_title">
-				<div>忆尔-在线DIY纪念册平台</div>
-				<p>专业在线制作电子书册平台</p>
-				<p>DIY出独一无二的青春纪念册</p>
-			</div>
-		</div>
-		<div class="footer_list">
-			<div class="ft_nav">
-				<a href="javascript:;">客服电话 400 0610 127</a>
-				<a href="javascript:;">客服QQ</a>
-				<a href="javascript:;">客服邮箱</a>
-				<a href="static_hc_company_profile.html">关于我们</a>
-			</div>
-			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
-			<div class="ft_shares">
-				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
-				<a class='ybiconfont ybicon-weibotencent' href="javascript:;"></a>
-				<a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
-				<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
-	<script type="text/javascript" src="assets/js/icheck.js"></script>
-	<!-- build:js js/all.js -->
-	<script type="text/javascript" src="js/base.js"></script>
-	<!-- endbuild -->
-	<script>
-	function validateForm() {
-		//validate方法参数可选  
-		return $('#commentForm').validate({
-			messages: {
-				loginName: {
-					required: "用户名未填写"
-				},
-				password: {
-					required: '密码未填写',
-				}
-			}
-		}).form();
-	}
+<!--登录表单-->
+<div class="access_login_container">
+    <div class='loginpopup_wrapper'>
+        <div class='loginpopup_header_wrapper'>
+            <div>
+                <span class='ybiconfont ybicon-yblogoshort'></span>
+                <label>登录忆尔</label>
+            </div>
+            <a class='icon-remove' href="javascript:;"></a>
+        </div>
+        <div class='loginpopup_dividline_wrapper'>
+            <span></span>
+            <!-- <label></label> -->
+        </div>
+        <form method="post"
+              action="/login;jsessionid=DC917C6992A727988D39AF0C65D402DA?service=http%3A%2F%2Fwww.yearbook.com.cn%2Fcallback%3Fclient_name%3DCasClient"
+              id="fm1">
+            <ul class='loginpopup_input_wrapper'>
+                <li>
+                    <span class='ybiconfont ybicon-user'></span>
+                    <input type='text' placeholder='输入用户名'>
+                </li>
+                <li>
+                    <span class='ybiconfont ybicon-lock'></span>
+                    <input type='password' placeholder='输入密码'>
+                </li>
+            </ul>
+            <div class='loginpopup_checkbox_wrapper'>
+                <ul>
+                    <li>
+                        <input id='rememberme' type='checkbox'>
+                        <label for='rememberme'>记住我</label>
+                    </li>
+                    <li>
+                        <input id='savepw' type='checkbox'>
+                        <label for='savepw'>一周内免登录</label>
+                    </li>
+                </ul>
+                <a href="javascript:;">忘记密码？</a>
+            </div>
+            <a class='loginpopup_loginbtn_item transition_btn' href="javascript:;">登录</a>
 
-	function doSubmit() { //点击登录触发验证
-		$('.login_btn').click(function() {
-			if (validateForm()) {
-				document.form1.submit();
-			}
-		});
-	}
+            <p class='loginpopup_register_item'>没有账号?<a href="javascript:;">马上注册</a></p>
 
-	function icheck(argument) {
-		$("input[type=radio],input[type=checkbox]").iCheck({
-			checkboxClass: 'icheckbox_minimal-green',
-			radioClass: 'iradio_minimal-green',
-			increaseArea: '20%'
-		});
-	}
+            <div class='loginpopup_thirdpartylogin_wrapper'>
+                <p>还可以使用以下方式登录</p>
 
-	function login(){
-		// $('.access_login_container').css({
-		// 		'height':$(window).height()
-		// 	})
-		// $(window).resize(function(){
-		// 	$('.access_login_container').css({
-		// 		'height':$(window).height()
-		// 	})
-		// })
-		
-	}
+                <div>
+                    <ul>
+                        <li>
+                            <a class='qq' href="access_loginandbind.html">
+                                <span class='ybiconfont ybicon-qqsolid'></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='weibo' href="access_loginandbind.html">
+                                <span class='ybiconfont ybicon-weibosina'></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='wechat' href="javascript:;">
+                                <span class='ybiconfont ybicon-wechatsolid'></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <div class='common_triplelap_wrapper '>
+            <span class='first'></span>
+            <span class='second'></span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src="assets/js/icheck.js"></script>
+<!-- build:js js/all.js -->
+<script type="text/javascript" src="js/base.js"></script>
+<!-- endbuild -->
+<script>
 
-	$(function() {
-		doSubmit();
-		icheck();
-		login();
-		$.remResizing({
-				fontsize: 20,
-				maxwidth:0
-			});
-		$('.loginpopup_wrapper').align({
-			obstacleY:['.cm_header_nav','.footer'],
-			offsetY: 20
-		});
-		$('.footer').align({
-			direction: 'vertical',
-			position: 'bottom'
-		});
-	});
-	</script>
+    function remResizing(fontsize, checkScreen) {
+        var htmlEl = $('html'), bodyEl = $('body');
+        if (typeof fontsize == 'undefined') {
+            fontsize = 16;
+        }
+        function sizeConstraint() {
+            var isPortrait = checkScreen == true ? ($(window).width() < $(window).height()) : true;
+            if (isPortrait) {
+                if (bodyEl.width() >= 640) {
+//                    bodyEl.css({'width': 640, 'margin': '0 auto'});
+                    htmlEl.css('font-size', fontsize * 2);
+                } else {
+                    var windowWidth = $(window).width(),
+                            factor = windowWidth / 320;
+//                    bodyEl.css('width','auto');
+                    htmlEl.css('font-size', fontsize * factor);
+                }
+            } else {
+                htmlEl.css('font-size', fontsize);
+            }
+        }
+
+        sizeConstraint();
+        $(window).resize(function () {
+            sizeConstraint();
+        });
+    }
+
+    function validateForm() {
+        //validate方法参数可选
+        return $('#commentForm').validate({
+            messages: {
+                loginName: {
+                    required: "用户名未填写"
+                },
+                password: {
+                    required: '密码未填写',
+                }
+            }
+        }).form();
+    }
+
+    function doSubmit() { //点击登录触发验证
+        $('.login_btn').click(function () {
+            if (validateForm()) {
+                document.form1.submit();
+            }
+        });
+    }
+
+    function icheck(argument) {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+
+    function login() {
+        // $('.access_login_container').css({
+        // 		'height':$(window).height()
+        // 	})
+        // $(window).resize(function(){
+        // 	$('.access_login_container').css({
+        // 		'height':$(window).height()
+        // 	})
+        // })
+
+    }
+
+    $(function () {
+        doSubmit();
+        icheck();
+        login();
+        remResizing();
+        $('.loginpopup_wrapper').align({
+            obstacleY: ['.cm_header_nav', '.footer'],
+            offsetY: 20
+        });
+        $('.footer').align({
+            direction: 'vertical',
+            position: 'bottom'
+        });
+    });
+</script>
 </body>
 
 </html>

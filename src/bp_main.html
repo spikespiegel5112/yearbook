@@ -436,14 +436,14 @@
 		</div>
 	</div>
 	<!--登录表单-->
-	<div class="access_login_container">
+	<div class="bp_login_container access_login_container">
 		<div class='access_login_wrapper'>
 			<div class='access_loginheader_wrapper'>
 				<div>
 					<span class='ybiconfont ybicon-yblogoshort'></span>
 					<label>登录忆尔</label>
 				</div>
-				<a class='icon-remove' href="javascript:;"></a>
+				<a class='ybiconfont ybicon-closebtn' href="javascript:;"></a>
 			</div>
 			<div class='access_logindividline_wrapper'>
 				<span></span>
@@ -828,6 +828,10 @@
 		bookPreview();
 		icheck();
 		$.globalhint();
+		$('.access_login_wrapper').align({
+			direction:'both',
+			position:'center'
+		})
 		$('.bp_iwanttomake_btn').loginPopupDialog();
 		// Load the HTML4 version if there's not CSS transform
 		// yepnope({

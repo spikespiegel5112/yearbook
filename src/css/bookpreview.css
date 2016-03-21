@@ -144,6 +144,17 @@
 .bp_iwanttoprint_btn:hover {
 	background: #cfbf33;
 }
+.bp_login_container{
+	display: none;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	z-index: 4;
+}
+.bp_login_container.active{
+	display: block;
+}
 
 /*~~~~~~~~~~flipbook_preview~~~~~~~~~~*/
 

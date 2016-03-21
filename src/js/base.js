@@ -421,12 +421,12 @@
 			$(this).each(function() {
 				$(this).click(function() {
 					console.log(marginTop);
-					$('.loginpopup_container').addClass('active');
+					$('.access_login_container').addClass('active');
 					$('.access_login_wrapper').css('margin-top', marginTop);
 
 				});
 				$('.access_loginheader_wrapper a').click(function() {
-					$('.loginpopup_container').removeClass('active');
+					$('.access_login_container').removeClass('active');
 				});
 			});
 		},

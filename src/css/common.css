@@ -1405,8 +1405,8 @@ button.select {
     width: 550px;
 /*    height: 520px;*/
     position: relative;
-    background: #fff;
-    border: 1px solid #bbb;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #ccc;
     border-radius: 6px;
     z-index: 1;
 }
@@ -1417,7 +1417,7 @@ button.select {
 
 .access_loginheader_wrapper div {
     margin: 0 auto;
-    width: 165px;
+    width: 100%;
     text-align: center;
 }
 
@@ -1463,12 +1463,13 @@ button.select {
 .access_logindividline_wrapper span {
     display: block;
     margin: 0 auto;
-    width: 300px;
+    width: 60%;
     height: 2px;
-    background: linear-gradient(left, #fff, #efefef, #efefef, #fff);
+    background-color: #ededed;
+    /*background: linear-gradient(left, #fff, #efefef, #efefef, #fff);
     background: -webkit-linear-gradient(left, #fff, #efefef, #efefef, #fff);
     background: -moz-linear-gradient(left, #fff, #efefef, #efefef, #fff);
-    background: -ms-linear-gradient(left, #fff, #efefef, #efefef, #fff);
+    background: -ms-linear-gradient(left, #fff, #efefef, #efefef, #fff);*/
 }
 
 .access_logindividline_wrapper label {
@@ -1483,46 +1484,46 @@ button.select {
     bottom: 110px;
 }
 
-.loginpopup_input_wrapper {
+.access_logininput_wrapper {
     margin: 0 auto;
     width: 90%;
 }
 
-.loginpopup_input_wrapper li {
+.access_logininput_wrapper li {
     margin: 30px 0;
     width: 100%;
     height: 50px;
     position: relative;
 }
 
-.loginpopup_input_wrapper input {
+.access_logininput_wrapper input {
     display: block;
     padding: 0 0 0 13%;
     width: 83%;
     height: 100%;
-    font-size: 15px;
+    font-size: 12px;
     font-family: 'microsoft yahei';
     border: 1px solid #999;
     border-radius: 5px;
 }
 
-.loginpopup_input_wrapper input:focus {
+.access_logininput_wrapper input:focus {
     border: 1px solid #82c43b;
 }
 
-.loginpopup_input_wrapper li input::-webkit-input-placeholder {
+.access_logininput_wrapper li input::-webkit-input-placeholder {
     color: #bbb;
 }
 
-.loginpopup_input_wrapper li input::-moz-input-placeholder {
+.access_logininput_wrapper li input::-moz-input-placeholder {
     color: #bbb;
 }
 
-.loginpopup_input_wrapper li input::-ms-input-placeholder {
+.access_logininput_wrapper li input::-ms-input-placeholder {
     color: #bbb;
 }
 
-.loginpopup_input_wrapper span {
+.access_logininput_wrapper span {
     display: inline-block;
     vertical-align: middle;
     line-height: 50px;
@@ -1597,7 +1598,6 @@ button.select {
     text-align: right;
     font-size: 12px;
     border-radius: 6px;
-    background-color: #fff;
     position: relative;
     z-index: 1;
 }
@@ -1611,7 +1611,7 @@ button.select {
 }
 
 .access_ssologin_wrapper {
-    margin: 10px 0 0 0;
+    padding: 0 0 10px 0;
     width: 100%;
     min-height: 20px;
     position: relative;
@@ -1728,7 +1728,25 @@ button.select {
     margin: 0 auto;
     width: 98%;
 }*/
-
+.common_triplelap_container{
+    width: 100%;
+    height: 10px;
+    bottom: -11px;
+    position: absolute;
+    overflow: hidden;
+}
+.common_triplelap_container label{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+/*    height: 19px;*/
+/*    background-color: #fff;*/
+/*    border: 1px solid #fff;*/
+    top: 0;
+    z-index: 1;
+    box-sizing:border-box;
+}
 .common_triplelap_wrapper, .common_triplelap_wrapper span{
     display: block;
     border-radius: 6px;
@@ -1737,9 +1755,9 @@ button.select {
 .common_triplelap_wrapper{
     margin: 0 auto;
     width: 100%;
-    height: 20px;
-    position: absolute;
-    bottom: -7px;
+    height: 10px;
+    position: relative;
+    bottom: 10px;
     z-index: 0;
 }
 .common_triplelap_wrapper span{
@@ -1749,16 +1767,22 @@ button.select {
     position: relative;
     border: 1px solid #ccc;
     background-color: #e7e7e6;
+    box-sizing: border-box;
 }
 .common_triplelap_wrapper .first{
     width: 98%;
-    z-index: 2;
+    z-index: 3;
     bottom: 0;
 }
 .common_triplelap_wrapper .second{
-    width: 96%;
+    width: 94%;
+    z-index: 2;
+    bottom: 10px;
+}
+.common_triplelap_wrapper .third{
+    width: 94%;
     z-index: 1;
-    bottom: 15px;
+    bottom: 23px;
 }
 
 

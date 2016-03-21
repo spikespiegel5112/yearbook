@@ -1400,7 +1400,7 @@ button.select {
     -ms-transition: opacity 0.5s;
 }
 
-.access_login_wrapper {
+.common_login_wrapper {
     margin: 0 auto;
     width: 550px;
 /*    height: 520px;*/
@@ -1411,35 +1411,35 @@ button.select {
     z-index: 1;
 }
 
-.access_loginheader_wrapper {
+.common_loginheader_wrapper {
     width: 100%;
 }
 
-.access_loginheader_wrapper div {
+.common_loginheader_wrapper div {
     margin: 0 auto;
     width: 100%;
     text-align: center;
 }
 
-.access_loginheader_wrapper div img {
+.common_loginheader_wrapper div img {
     display: inline-block;
     width: 55px;
     vertical-align: middle;
 }
-.access_loginheader_wrapper div span{
+.common_loginheader_wrapper div span{
     display: inline-block;
     font-size: 60px;
     vertical-align: middle;
     color: #aab93e;
 }
 
-.access_loginheader_wrapper div label {
+.common_loginheader_wrapper div label {
     display: inline-block;
     font-size: 18px;
     vertical-align: middle;
 }
 
-.access_loginheader_wrapper a {
+.common_loginheader_wrapper a {
     display: block;
     font-size: 22px;
     color: #ccc;
@@ -1450,17 +1450,17 @@ button.select {
     top: 10px;
 }
 
-.access_loginheader_wrapper a:hover {
+.common_loginheader_wrapper a:hover {
     color: #000;
 }
 
-.access_logindividline_wrapper {
+.common_logindividline_wrapper {
     width: 100%;
     position: absolute;
     overflow: hidden;
 }
 
-.access_logindividline_wrapper span {
+.common_logindividline_wrapper span {
     display: block;
     margin: 0 auto;
     width: 60%;
@@ -1472,7 +1472,7 @@ button.select {
     background: -ms-linear-gradient(left, #fff, #efefef, #efefef, #fff);*/
 }
 
-.access_logindividline_wrapper label {
+.common_logindividline_wrapper label {
     display: block;
     margin: 0 auto;
     width: 100px;
@@ -1484,19 +1484,19 @@ button.select {
     bottom: 110px;
 }
 
-.access_logininput_wrapper {
+.common_logininput_wrapper {
     margin: 0 auto;
     width: 90%;
 }
 
-.access_logininput_wrapper li {
+.common_logininput_wrapper li {
     margin: 30px 0;
     width: 100%;
     height: 50px;
     position: relative;
 }
 
-.access_logininput_wrapper input {
+.common_logininput_wrapper input {
     display: block;
     padding: 0 0 0 13%;
     width: 83%;
@@ -1508,23 +1508,23 @@ button.select {
     background-color: rgba(0,0,0,0);
 }
 
-.access_logininput_wrapper input:focus {
+.common_logininput_wrapper input:focus {
     border: 1px solid #82c43b;
 }
 
-.access_logininput_wrapper li input::-webkit-input-placeholder {
+.common_logininput_wrapper li input::-webkit-input-placeholder {
     color: #bbb;
 }
 
-.access_logininput_wrapper li input::-moz-input-placeholder {
+.common_logininput_wrapper li input::-moz-input-placeholder {
     color: #bbb;
 }
 
-.access_logininput_wrapper li input::-ms-input-placeholder {
+.common_logininput_wrapper li input::-ms-input-placeholder {
     color: #bbb;
 }
 
-.access_logininput_wrapper span {
+.common_logininput_wrapper span {
     display: inline-block;
     vertical-align: middle;
     line-height: 50px;
@@ -1538,40 +1538,40 @@ button.select {
     left: 0;
 }
 
-.access_logincheckbox_wrapper {
+.common_logincheckbox_wrapper {
     margin: 0 auto;
     width: 90%;
     overflow: hidden;
 }
 
-.access_logincheckbox_wrapper ul {
+.common_logincheckbox_wrapper ul {
     float: left;
 }
 
-.access_logincheckbox_wrapper li {
+.common_logincheckbox_wrapper li {
     float: left;
     margin: 0 15px 0 0;
     font-size: 13px;
     color: #777;
 }
 
-.access_logincheckbox_wrapper a {
+.common_logincheckbox_wrapper a {
     float: right;
     color: #7bba38;
     font-size: 13px;
 }
 
-.access_logincheckbox_wrapper a:hover {
+.common_logincheckbox_wrapper a:hover {
     text-decoration: underline;
 }
 
-.access_logincheckbox_wrapper label {
+.common_logincheckbox_wrapper label {
     display: inline-block;
     margin: 0 5px;
     vertical-align: middle;
 }
 
-.access_loginbtn_item {
+.common_loginbtn_item {
     display: block;
     margin: 15px auto;
     width: 90%;
@@ -1583,17 +1583,17 @@ button.select {
     font-size: 16px;
 }
 
-.access_loginbtn_item:hover {
+.common_loginbtn_item:hover {
     background-color: #82C43B;
 }
 
-.access_loginbtn_item:active {
+.common_loginbtn_item:active {
     background-color: #689D2F;
 }
 
 
 
-.access_loginproviso_item {
+.common_loginproviso_item {
     padding: 0 5%;
     width: 90%;
     text-align: right;
@@ -1603,12 +1603,24 @@ button.select {
     z-index: 1;
 }
 
-.access_loginproviso_item a {
+.common_loginproviso_item a {
     color: #7bba38;
 }
 
-.access_loginproviso_item a:hover {
+.common_loginproviso_item a:hover {
     text-decoration: underline;
+}
+.common_login_container{
+    display: none;
+}
+.common_login_container.active{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    z-index: 4;
 }
 
 .access_ssologin_wrapper {
@@ -1698,8 +1710,8 @@ button.select {
     font-size: 24px;
     margin: 27px
 }/*
-.access_login_wrapper:before,
-.access_login_wrapper:after {
+.common_login_wrapper:before,
+.common_login_wrapper:after {
     content: '';
     display: block;
     margin: 0 auto;
@@ -1710,21 +1722,21 @@ button.select {
     position: absolute;
 }
 
-.access_login_wrapper:before {
+.common_login_wrapper:before {
     width: 98%;
     top: 475px;
     left: 4px;
     z-index: -1;
 }
 
-.access_login_wrapper:after {
+.common_login_wrapper:after {
     width: 96%;
     top: 480px;
     left: 9px;
     z-index: -2;
 }
 
-.access_login_wrapper:after span {
+.common_login_wrapper:after span {
     display: block;
     margin: 0 auto;
     width: 98%;

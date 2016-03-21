@@ -45,20 +45,20 @@
 	</div>
 	<!--登录表单-->
 	<div class="access_login_container">
-		<div class='access_login_wrapper'>
-			<div class='access_loginheader_wrapper'>
+		<div class='common_login_wrapper'>
+			<div class='common_loginheader_wrapper'>
 				<div>
 					<span class='ybiconfont ybicon-yblogoshort'></span>
 					<label>登录忆尔</label>
 				</div>
 				<a class='icon-remove' href="javascript:;"></a>
 			</div>
-			<div class='access_logindividline_wrapper'>
+			<div class='common_logindividline_wrapper'>
 				<span></span>
 				<!-- <label></label> -->
 			</div>
 			<form method="post" action="/login;jsessionid=DC917C6992A727988D39AF0C65D402DA?service=http%3A%2F%2Fwww.yearbook.com.cn%2Fcallback%3Fclient_name%3DCasClient" id="fm1">
-				<ul class='access_logininput_wrapper'>
+				<ul class='common_logininput_wrapper'>
 					<li>
 						<span class='ybiconfont ybicon-user'></span>
 						<input type='text' placeholder='输入用户名'>
@@ -69,7 +69,7 @@
 					</li>
 				</ul>
 			</form>
-			<div class='access_logincheckbox_wrapper'>
+			<div class='common_logincheckbox_wrapper'>
 				<ul>
 					<li>
 						<input id='rememberme' type='checkbox'>
@@ -82,8 +82,8 @@
 				</ul>
 				<a href="javascript:;">忘记密码？</a>
 			</div>
-			<a class='access_loginbtn_item transition_btn' href="javascript:;">登录</a>
-			<p class='access_loginproviso_item'>没有账号?<a href="javascript:;">马上注册</a></p>
+			<a class='common_loginbtn_item transition_btn' href="javascript:;">登录</a>
+			<p class='common_loginproviso_item'>没有账号?<a href="javascript:;">马上注册</a></p>
 			<div class='access_ssologin_wrapper'>
 				<p>还可以使用以下方式登录</p>
 				<div>
@@ -179,11 +179,11 @@
 	}
 
 	function login() {
-		// $('.access_login_container').css({
+		// $('.common_login_container').css({
 		// 		'height':$(window).height()
 		// 	})
 		// $(window).resize(function(){
-		// 	$('.access_login_container').css({
+		// 	$('.common_login_container').css({
 		// 		'height':$(window).height()
 		// 	})
 		// })
@@ -198,7 +198,7 @@
 			fontsize: 20,
 			maxwidth: 0
 		});
-		$('.access_login_wrapper').align({
+		$('.common_login_wrapper').align({
 			obstacleY: ['.cm_header_nav', '.footer'],
 			offsetY: 20
 		});

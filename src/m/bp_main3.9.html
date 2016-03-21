@@ -612,9 +612,9 @@
 		</div>
 	</div>
 	<div class='loginpopup_container'>
-		<div class='access_login_wrapper'>
+		<div class='common_login_wrapper'>
 			<h1>登录忆尔</h1>
-			<ul class='access_logininput_wrapper'>
+			<ul class='common_logininput_wrapper'>
 				<li>
 					<span class="ybiconfont ybicon-user"></span>
 					<input type='text'>
@@ -755,11 +755,11 @@
 			});
 			sendcommentEl.find('input').on('touchend', function(){
 				loginpopupEl.show();
-				$('.access_login_wrapper').alignCenter();
+				$('.common_login_wrapper').alignCenter();
 			});
 			//点击登陆弹窗周围关闭登陆弹窗
 			loginpopupEl.on('touchend', function(e){
-				if ($(e.target).closest('.access_login_wrapper').length==0) {
+				if ($(e.target).closest('.common_login_wrapper').length==0) {
 					loginpopupEl.hide();
 				};
 			});

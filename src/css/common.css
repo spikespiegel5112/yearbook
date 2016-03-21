@@ -355,24 +355,31 @@ input {
 
 .common_serialnumber_item li {
     float: left;
-    width: 76px;
+    /*width: 76px;*/
 }
 
-.common_serialnumber_item li:first-child {
+/*.common_serialnumber_item li:first-child {
     width: 58px;
-}
+}*/
 
 .common_serialnumber_item li span {
     display: inline-block;
     margin: 0 2px;
     width: 1em;
     text-align: center;
+    line-height: 30px;
 }
 
 .common_serialnumber_item input {
     float: right;
-    width: 4em;
+    width: 5em;
     text-align: center;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0;
+    box-shadow: 0 0 5px #ddd inset;
 }
 
 .dash {
@@ -2884,7 +2891,7 @@ button.select {
 /*~~~~~~~~~~翻页组件（用在钱包和章节制作页面）~~~~~~~~~~*/
 
 nav .pagination {
-    width: 36%;
+    width: 45%;
     height: auto;
     margin: 10px auto;
 }
@@ -3146,6 +3153,7 @@ nav .pagination li a:active {
     font-size: 13px;
     box-sizing: border-box;
     border-radius: 8px;
+    z-index: 1;
 }
 
 .common_sharelist_wrapper::before {

@@ -125,7 +125,7 @@
                                     <option val='2'>气派大装（175mm×248mm）</option>
                                 </select>
                                 <img src="img/pc/min_size.png">
-                                <label>尺寸实例图
+                                <label>尺寸示例图
                                     <div class='ybcommon_queryicon_item'>
                                         <span class='ybiconfont ybicon-querysolid'></span>
                                         <div>
@@ -146,7 +146,7 @@
                                     <option val='20'>精装（硬）</option>
                                 </select>
                                 <img src="img/pc/butterflycover.png">
-                                <label>装订实例图片
+                                <label>装订示例图片
                                     <div class='ybcommon_queryicon_item'>
                                         <span class='ybiconfont ybicon-querysolid'></span>
                                         <div>
@@ -635,7 +635,7 @@
 		$('.ybcommon_queryicon_item').hover(function() {
 			$(this).find('div').show();
 		}, function() {
-			$(this).find('div').show();
+			$(this).find('div').hide();
 		});
 
 		$('.opd_sketch_item select').change(function() {
@@ -680,7 +680,7 @@
 		// $('.opd_sketch_item select, .opd_coupon_wrapper select').chosen({
 		// 	disable_search_threshold: 15
 		// });
-		/*art.dialog({
+		art.dialog({
 			title: '提示',
 			lock : true,
 			icon: 'warning',
@@ -689,7 +689,7 @@
 			ok: function () {},
 			cancelVal: '返回制作',
 			cancel: function () {}
-		});*/
+		});
 
         //更换书册
         $('.change_book').click(function(){

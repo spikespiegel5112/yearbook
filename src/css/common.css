@@ -1613,6 +1613,7 @@ button.select {
 .access_ssologin_wrapper {
     margin: 10px 0 0 0;
     width: 100%;
+    min-height: 20px;
     position: relative;
     z-index: 2;
     border-bottom: 1px solid #ccc;
@@ -1760,83 +1761,6 @@ button.select {
     bottom: 15px;
 }
 
-
-@media (max-width:1024px){
-    .cm_header_nav{
-        display: none;
-    }
-    .footer{
-        display: none;
-    }
-    .access_logininner_container{
-        width: 100%;
-    }
-    .access_login_wrapper{
-        width: 90%;
-    }
-    .access_loginbtn_item{
-        margin: 0.5rem auto;
-        height: 1.5rem;
-        line-height: 1.5rem;
-        font-size: 0.7rem;
-    }
-    .access_logincheckbox_wrapper li{
-        margin: 0;
-    }
-    .loginpopup_input_wrapper input{
-        padding: 0 0 0 2rem;
-    }
-    .loginpopup_input_wrapper span{
-        width: 17%;
-        line-height: 1.5rem;
-        font-size: 1rem;
-    }
-    .access_loginheader_wrapper div span{
-        font-size: 2rem;
-    }
-    .access_loginheader_wrapper div label{
-        font-size: 0.7rem;
-    }
-    .access_ssologin_wrapper{
-        background-color: #fff;
-    }
-    .access_ssologin_wrapper div, .common_triplelap_wrapper span{
-        margin: 0 auto;
-        background-color: #fff;
-    }
-    .access_ssologin_wrapper div{
-        padding: 0.2rem 0;
-        width: 60%;
-    }
-    .access_ssologin_wrapper p{
-        margin: 0.5rem 0;
-    }
-    .loginpopup_input_wrapper li{
-        margin: 0.7rem 0;
-        height: 1.5rem;
-    }
-    .access_ssologin_wrapper ul{
-        width: 100%;
-    }
-    .access_ssologin_wrapper ul li a span{
-        width: 1.5rem;
-        height: 1.5rem;
-        line-height: 1.5rem;
-        font-size: 0.9rem;
-    }
-    .access_loginproviso_item{
-        margin: 0.5rem 0;
-    }
-    /*.common_triplelap_wrapper{
-        bottom: -0.4rem;
-    }
-    .common_triplelap_wrapper .first{
-        bottom: 0.1rem;
-    }
-    .common_triplelap_wrapper .second{
-        bottom: 0.7rem;
-    }*/
-}
 
 /*~~~~~~~~~~globalhint全局顶部提示框~~~~~~~~~~*/
 

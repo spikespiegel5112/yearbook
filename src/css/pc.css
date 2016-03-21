@@ -2770,7 +2770,7 @@ li.action div:hover {
     color: #999;
 }
 
-.opd_checklist_wrapper .opd_actions a:hover{
+.opd_checklist_wrapper .opd_actions div > a:hover{
     color: #70ca5d;
 }
 
@@ -2778,6 +2778,25 @@ li.action div:hover {
     margin-right: 5px;
     font-size: 14px;
     line-height: 30px;
+}
+
+.opd_checklist_wrapper .opd_actions .share{
+    position: relative;
+}
+
+.opd_actions .share:hover .common_sharelist_wrapper{
+    display: block;
+    top: -10px;
+    right: -152px;
+    width: 162px;
+}
+
+.opd_actions .share .common_sharelist_wrapper ul li{
+    width: 25px;
+}
+
+.opd_actions .share .common_sharelist_wrapper ul li a{
+    font-size: 24px;
 }
 
 .opd_summarize_wrapper {

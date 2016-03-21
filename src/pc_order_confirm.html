@@ -41,8 +41,8 @@
 				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
+        <div class="cm_header_shadow"></div>
 	</div>
-	<div class="cm_header_shadow"></div>
     <div class="main_container create_order">
         <div class='opd_wrapper'>
             <!--<div class='opd_procedure_wrapper'>
@@ -720,12 +720,26 @@
 
         //新增订单
         $('.opd_actions .add').click(function(){
-            $(this).closest('tr').clone(true).insertBefore('.opd_checklist_wrapper tbody tr');
+            $(this).closest('tr').clone(true).insertBefore('.opd_checklist_wrapper tbody tr:first');
         });
 
         //删除订单
         $('.opd_actions .delete').click(function(){
-            $(this).closest('tr').clone(true).insertBefore('.opd_checklist_wrapper tbody tr');
+            var $this = $(this);
+            art.dialog({
+                title: '删除书册',
+                lock : true,
+                icon: 'warning',
+                content: '确认删除此书册？',
+                okValue: '确 定',
+                ok: function() {
+                    if(!($this.closest('tbody').find('tr').length == 1)){
+                        $this.closest('tr').remove();
+                    }
+                },
+                cancelValue: '取消',
+                cancel: function() {}
+            });
         });
 	}
 

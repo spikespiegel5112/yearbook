@@ -167,10 +167,11 @@
 			maxwidth: 0
 		});
 		$('.common_login_wrapper').align({
-			obstacleY: ['.cm_header_nav', '.footer']
+			position:'both',
+			obstacleY: ['.cm_header_nav', '.footer'],
+			offsetY: 20
 		});
 		$('.footer').align({
-			direction: 'vertical',
 			position: 'bottom'
 		});
 	});

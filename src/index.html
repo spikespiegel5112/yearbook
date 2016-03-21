@@ -643,7 +643,7 @@
         <div class="yb_toolbar_wrap">
             <div class="yb_toolbar">
                 <div class="yb_toolbar_tabs">
-                    <div class="toolbar_tab my_msg personal_btn">
+                    <div class="toolbar_tab personal_btn my_msg "><!--无新消息 class:none-->
                         <a href="javascript:;">
                             <i class="tab_icon"></i>
                             <em class="tab_text">我的消息</em>
@@ -1170,11 +1170,14 @@
 
             //个人消息、书册信息
             $('.yb_toolbar_tabs .personal_btn').click(function(e){
-                if($('.personal_wrap').hasClass('active')){
+                if($(this).find('.personal_wrap').hasClass('active')){
                     $(this).closest('.yb_toolbar').removeClass('open');
-                    $('.personal_wrap').removeClass('active');
+                    $(this).find('.personal_wrap').removeClass('active');
                 }else{
                     $(this).closest('.yb_toolbar').addClass('open');
+                    $('.personal_wrap').each(function(){
+                        $(this).removeClass('active');
+                    });
                     $(this).find('.personal_wrap').addClass('active');
                     $(document).one("click", function(){
                         $('.yb_toolbar').removeClass('open');

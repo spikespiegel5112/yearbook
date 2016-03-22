@@ -513,30 +513,33 @@
 			<div><a href="static_hc_company_profile.html">北京众志和达数据计算有限公司</a></div>
 		</div>
 	</div>
-	<div class='loginpopup_container'>
-		<div class='loginpopup_wrapper'>
-			<div class='loginpopup_header_wrapper'>
+	<!--登录表单-->
+	<div class="common_login_container">
+		<div class='common_login_wrapper'>
+			<div class='common_loginheader_wrapper'>
 				<div>
-					
+					<span class='ybiconfont ybicon-yblogoshort'></span>
 					<label>登录忆尔</label>
 				</div>
 				<a class='icon-remove' href="javascript:;"></a>
 			</div>
-			<div class='loginpopup_dividline_wrapper'>
+			<div class='common_logindividline_wrapper'>
 				<span></span>
-				<label></label>
+				<!-- <label></label> -->
 			</div>
-			<ul class='loginpopup_input_wrapper'>
-				<li>
-					<span class='icon-user'></span>
-					<input type='text' placeholder='输入用户名'>
-				</li>
-				<li>
-					<span class='icon-lock'></span>
-					<input type='password' placeholder='输入密码'>
-				</li>
-			</ul>
-			<div class='loginpopup_checkbox_wrapper'>
+			<form method="post" action="/login;jsessionid=DC917C6992A727988D39AF0C65D402DA?service=http%3A%2F%2Fwww.yearbook.com.cn%2Fcallback%3Fclient_name%3DCasClient" id="fm1">
+				<ul class='common_logininput_wrapper'>
+					<li>
+						<span class='ybiconfont ybicon-user'></span>
+						<input type='text' placeholder='输入用户名'>
+					</li>
+					<li>
+						<span class='ybiconfont ybicon-lock'></span>
+						<input type='password' placeholder='输入密码'>
+					</li>
+				</ul>
+			</form>
+			<div class='common_logincheckbox_wrapper'>
 				<ul>
 					<li>
 						<input id='rememberme' type='checkbox'>
@@ -549,25 +552,38 @@
 				</ul>
 				<a href="javascript:;">忘记密码？</a>
 			</div>
-			<a class='loginpopup_loginbtn_item' href="javascript:;">登录</a>
-			<p class='loginpopup_register_item'>没有账号?&nbsp&nbsp&nbsp<a href="javascript:;">马上注册</a></p>
-			<div class='loginpopup_thirdpartylogin_wrapper'>
+			<a class='common_loginbtn_item transition_btn' href="javascript:;">登录</a>
+			<p class='common_loginproviso_item'>没有账号?<a href="javascript:;">马上注册</a></p>
+			<div class='access_ssologin_wrapper'>
 				<p>还可以使用以下方式登录</p>
-				<ul>
-					<li class='qq'>
-						<a href="access_loginandbind.html"></a>
-					</li>
-					<li class='weibo'>
-						<a href="access_loginandbind.html"></a>
-					</li>
-					<li class='wechat'>
-						<a href="javascript:;"></a>
-					</li>
-				</ul>
+				<div>
+					<ul>
+						<li>
+							<a class='qq' href="access_loginandbind.html">
+								<span class='ybiconfont ybicon-qqsolid'></span>
+							</a>
+						</li>
+						<li>
+							<a class='weibo' href="access_loginandbind.html">
+								<span class='ybiconfont ybicon-weibosina'></span>
+							</a>
+						</li>
+						<li>
+							<a class='wechat' href="javascript:;">
+								<span class='ybiconfont ybicon-wechatsolid'></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class='common_triplelap_container'>
+				<div class='common_triplelap_wrapper'>
+					<span class='first'></span>
+					<span class='second'></span>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class='globalhint_wrapper mobile_pc_switch hidden'>
 		<div class='globalhint_inner_wrapper'>
 			<div class='globalhint_mainarticle_item'>
@@ -623,7 +639,7 @@
         <div class="yb_toolbar_wrap">
             <div class="yb_toolbar">
                 <div class="yb_toolbar_tabs">
-                    <div class="toolbar_tab my_msg personal_btn">
+                    <div class="toolbar_tab personal_btn my_msg "><!--无新消息 class:none-->
                         <a href="javascript:;">
                             <i class="tab_icon"></i>
                             <em class="tab_text">我的消息</em>
@@ -1148,11 +1164,14 @@
 
             //个人消息、书册信息
             $('.yb_toolbar_tabs .personal_btn').click(function(e){
-                if($('.personal_wrap').hasClass('active')){
+                if($(this).find('.personal_wrap').hasClass('active')){
                     $(this).closest('.yb_toolbar').removeClass('open');
-                    $('.personal_wrap').removeClass('active');
+                    $(this).find('.personal_wrap').removeClass('active');
                 }else{
                     $(this).closest('.yb_toolbar').addClass('open');
+                    $('.personal_wrap').each(function(){
+                        $(this).removeClass('active');
+                    });
                     $(this).find('.personal_wrap').addClass('active');
                     $(document).one("click", function(){
                         $('.yb_toolbar').removeClass('open');

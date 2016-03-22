@@ -410,24 +410,31 @@ input {
 
 .common_serialnumber_item li {
     float: left;
-    width: 76px;
+    /*width: 76px;*/
 }
 
-.common_serialnumber_item li:first-child {
+/*.common_serialnumber_item li:first-child {
     width: 58px;
-}
+}*/
 
 .common_serialnumber_item li span {
     display: inline-block;
     margin: 0 2px;
     width: 1em;
     text-align: center;
+    line-height: 30px;
 }
 
 .common_serialnumber_item input {
     float: right;
-    width: 4em;
+    width: 5em;
     text-align: center;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0;
+    box-shadow: 0 0 5px #ddd inset;
 }
 
 .dash {
@@ -466,7 +473,7 @@ input {
     background-color: #fff;
     min-width: 1150px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .cm_header_nav .logo {
@@ -1455,47 +1462,46 @@ button.select {
     -ms-transition: opacity 0.5s;
 }
 
-.loginpopup_wrapper {
+.common_login_wrapper {
     margin: 0 auto;
     width: 550px;
 /*    height: 520px;*/
     position: relative;
-    background: #fff;
-    border: 1px solid #bbb;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #ccc;
     border-radius: 6px;
     z-index: 1;
 }
 
-.loginpopup_header_wrapper {
+.common_loginheader_wrapper {
     width: 100%;
 }
 
-.loginpopup_header_wrapper div {
-    padding: 15px 0 0 0;
+.common_loginheader_wrapper div {
     margin: 0 auto;
-    width: 165px;
+    width: 100%;
     text-align: center;
 }
 
-.loginpopup_header_wrapper div img {
+.common_loginheader_wrapper div img {
     display: inline-block;
     width: 55px;
     vertical-align: middle;
 }
-.loginpopup_header_wrapper div span{
+.common_loginheader_wrapper div span{
     display: inline-block;
     font-size: 60px;
     vertical-align: middle;
     color: #aab93e;
 }
 
-.loginpopup_header_wrapper div label {
+.common_loginheader_wrapper div label {
     display: inline-block;
     font-size: 18px;
     vertical-align: middle;
 }
 
-.loginpopup_header_wrapper a {
+.common_loginheader_wrapper a {
     display: block;
     font-size: 22px;
     color: #ccc;
@@ -1506,28 +1512,29 @@ button.select {
     top: 10px;
 }
 
-.loginpopup_header_wrapper a:hover {
+.common_loginheader_wrapper a:hover {
     color: #000;
 }
 
-.loginpopup_dividline_wrapper {
+.common_logindividline_wrapper {
     width: 100%;
     position: absolute;
     overflow: hidden;
 }
 
-.loginpopup_dividline_wrapper span {
+.common_logindividline_wrapper span {
     display: block;
     margin: 0 auto;
-    width: 300px;
+    width: 60%;
     height: 2px;
-    background: linear-gradient(left, #fff, #efefef, #efefef, #fff);
+    background-color: #ededed;
+    /*background: linear-gradient(left, #fff, #efefef, #efefef, #fff);
     background: -webkit-linear-gradient(left, #fff, #efefef, #efefef, #fff);
     background: -moz-linear-gradient(left, #fff, #efefef, #efefef, #fff);
-    background: -ms-linear-gradient(left, #fff, #efefef, #efefef, #fff);
+    background: -ms-linear-gradient(left, #fff, #efefef, #efefef, #fff);*/
 }
 
-.loginpopup_dividline_wrapper label {
+.common_logindividline_wrapper label {
     display: block;
     margin: 0 auto;
     width: 100px;
@@ -1539,46 +1546,47 @@ button.select {
     bottom: 110px;
 }
 
-.loginpopup_input_wrapper {
+.common_logininput_wrapper {
     margin: 0 auto;
     width: 90%;
 }
 
-.loginpopup_input_wrapper li {
+.common_logininput_wrapper li {
     margin: 30px 0;
     width: 100%;
     height: 50px;
     position: relative;
 }
 
-.loginpopup_input_wrapper input {
+.common_logininput_wrapper input {
     display: block;
     padding: 0 0 0 13%;
-    width: 87%;
+    width: 83%;
     height: 100%;
     font-size: 15px;
     font-family: 'microsoft yahei';
     border: 1px solid #999;
     border-radius: 5px;
+    background-color: rgba(0,0,0,0);
 }
 
-.loginpopup_input_wrapper input:focus {
+.common_logininput_wrapper input:focus {
     border: 1px solid #82c43b;
 }
 
-.loginpopup_input_wrapper li input::-webkit-input-placeholder {
+.common_logininput_wrapper li input::-webkit-input-placeholder {
     color: #bbb;
 }
 
-.loginpopup_input_wrapper li input::-moz-input-placeholder {
+.common_logininput_wrapper li input::-moz-input-placeholder {
     color: #bbb;
 }
 
-.loginpopup_input_wrapper li input::-ms-input-placeholder {
+.common_logininput_wrapper li input::-ms-input-placeholder {
     color: #bbb;
 }
 
-.loginpopup_input_wrapper span {
+.common_logininput_wrapper span {
     display: inline-block;
     vertical-align: middle;
     line-height: 50px;
@@ -1592,40 +1600,40 @@ button.select {
     left: 0;
 }
 
-.loginpopup_checkbox_wrapper {
+.common_logincheckbox_wrapper {
     margin: 0 auto;
     width: 90%;
     overflow: hidden;
 }
 
-.loginpopup_checkbox_wrapper ul {
+.common_logincheckbox_wrapper ul {
     float: left;
 }
 
-.loginpopup_checkbox_wrapper li {
+.common_logincheckbox_wrapper li {
     float: left;
     margin: 0 15px 0 0;
     font-size: 13px;
     color: #777;
 }
 
-.loginpopup_checkbox_wrapper a {
+.common_logincheckbox_wrapper a {
     float: right;
     color: #7bba38;
     font-size: 13px;
 }
 
-.loginpopup_checkbox_wrapper a:hover {
+.common_logincheckbox_wrapper a:hover {
     text-decoration: underline;
 }
 
-.loginpopup_checkbox_wrapper label {
+.common_logincheckbox_wrapper label {
     display: inline-block;
     margin: 0 5px;
     vertical-align: middle;
 }
 
-.loginpopup_loginbtn_item {
+.common_loginbtn_item {
     display: block;
     margin: 15px auto;
     width: 90%;
@@ -1637,46 +1645,57 @@ button.select {
     font-size: 16px;
 }
 
-.loginpopup_loginbtn_item:hover {
+.common_loginbtn_item:hover {
     background-color: #82C43B;
 }
 
-.loginpopup_loginbtn_item:active {
+.common_loginbtn_item:active {
     background-color: #689D2F;
 }
 
 
 
-.loginpopup_register_item {
+.common_loginproviso_item {
     padding: 0 5%;
     width: 90%;
-    height: 40px;
     text-align: right;
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 6px;
-    background-color: #fff;
     position: relative;
     z-index: 1;
 }
 
-.loginpopup_register_item a {
+.common_loginproviso_item a {
     color: #7bba38;
 }
 
-.loginpopup_register_item a:hover {
+.common_loginproviso_item a:hover {
     text-decoration: underline;
 }
-
-.loginpopup_thirdpartylogin_wrapper {
-    margin: 10px 0 0 0;
+.common_login_container{
+    display: none;
+}
+.common_login_container.active{
+    display: block;
     width: 100%;
-    position: relative;
-    bottom: 0;
-    z-index: 2;
-    border-bottom: 1px solid #ccc
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    z-index: 4;
 }
 
-.loginpopup_thirdpartylogin_wrapper p {
+.access_ssologin_wrapper {
+/*    padding: 0 0 10px 0;*/
+    width: 100%;
+    min-height: 20px;
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.access_ssologin_wrapper p {
     margin: 15px 0;
     width: 100%;
     text-align: center;
@@ -1684,50 +1703,50 @@ button.select {
     color: #666;
 }
 
-.loginpopup_thirdpartylogin_wrapper div {
+.access_ssologin_wrapper div {
     padding: 10px 0;
     width: 100%;
     overflow: hidden;
     background-color: #e7e7e6;
     border-radius: 6px;
 }
-.loginpopup_thirdpartylogin_wrapper ul {
+.access_ssologin_wrapper ul {
     margin: 0 auto;
     width: 45%;
 }
 
-.loginpopup_thirdpartylogin_wrapper ul li {
+.access_ssologin_wrapper ul li {
     float: left;
     width: 33%;
     text-align: center;
 }
-.loginpopup_thirdpartylogin_wrapper ul li a{
+.access_ssologin_wrapper ul li a{
     margin: 0 auto;
     display: inline-block;
     padding: 0%;
     border-radius: 50%;
 }
-.loginpopup_thirdpartylogin_wrapper ul li a{
+.access_ssologin_wrapper ul li a{
     text-align: center;
 }
 
 
-.loginpopup_thirdpartylogin_wrapper ul .qq{
+.access_ssologin_wrapper ul .qq{
     background-color: #00adef;
 }
-.loginpopup_thirdpartylogin_wrapper ul .wechat{
+.access_ssologin_wrapper ul .wechat{
     background-color: #009834;
 }
-.loginpopup_thirdpartylogin_wrapper ul .weibo{
+.access_ssologin_wrapper ul .weibo{
     background-color: #db3a37;
 }
 
-/*.loginpopup_thirdpartylogin_wrapper ul li:first-child {
+/*.access_ssologin_wrapper ul li:first-child {
     margin: 0;
 }*/
 
 
-.loginpopup_thirdpartylogin_wrapper ul li a  span{
+.access_ssologin_wrapper ul li a  span{
     display: block;
     width: 45px;
     height: 45px;
@@ -1737,15 +1756,15 @@ button.select {
     font-size: 30px;
 }
 
-.loginpopup_thirdpartylogin_wrapper ul .qq a {
+.access_ssologin_wrapper ul .qq a {
     background-position: -255px -345px;
 }
 
-.loginpopup_thirdpartylogin_wrapper ul .weibo a {
+.access_ssologin_wrapper ul .weibo a {
     background-position: -298px -345px;
 }
 
-.loginpopup_thirdpartylogin_wrapper ul .wechat a {
+.access_ssologin_wrapper ul .wechat a {
     background-position: -208px -345px;
 }
 
@@ -1753,8 +1772,8 @@ button.select {
     font-size: 24px;
     margin: 27px
 }/*
-.loginpopup_wrapper:before,
-.loginpopup_wrapper:after {
+.common_login_wrapper:before,
+.common_login_wrapper:after {
     content: '';
     display: block;
     margin: 0 auto;
@@ -1765,26 +1784,44 @@ button.select {
     position: absolute;
 }
 
-.loginpopup_wrapper:before {
+.common_login_wrapper:before {
     width: 98%;
     top: 475px;
     left: 4px;
     z-index: -1;
 }
 
-.loginpopup_wrapper:after {
+.common_login_wrapper:after {
     width: 96%;
     top: 480px;
     left: 9px;
     z-index: -2;
 }
 
-.loginpopup_wrapper:after span {
+.common_login_wrapper:after span {
     display: block;
     margin: 0 auto;
     width: 98%;
 }*/
-
+.common_triplelap_container{
+    width: 100%;
+    height: 10px;
+    bottom: -11px;
+    position: absolute;
+    overflow: hidden;
+}
+.common_triplelap_container label{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+/*    height: 19px;*/
+/*    background-color: #fff;*/
+/*    border: 1px solid #fff;*/
+    top: 0;
+    z-index: 1;
+    box-sizing:border-box;
+}
 .common_triplelap_wrapper, .common_triplelap_wrapper span{
     display: block;
     border-radius: 6px;
@@ -1793,9 +1830,9 @@ button.select {
 .common_triplelap_wrapper{
     margin: 0 auto;
     width: 100%;
-    height: 20px;
-    position: absolute;
-    bottom: -7px;
+    height: 10px;
+    position: relative;
+    bottom: 10px;
     z-index: 0;
 }
 .common_triplelap_wrapper span{
@@ -1805,65 +1842,24 @@ button.select {
     position: relative;
     border: 1px solid #ccc;
     background-color: #e7e7e6;
+    box-sizing: border-box;
 }
 .common_triplelap_wrapper .first{
-    width: 98%;
-    z-index: 2;
-    top: 4px;
+    width: 97%;
+    z-index: 3;
+    bottom: 0;
 }
 .common_triplelap_wrapper .second{
-    width: 96%;
+    width: 94%;
+    z-index: 2;
+    bottom: 10px;
+}
+.common_triplelap_wrapper .third{
+    width: 94%;
     z-index: 1;
-    top: -7px;
+    bottom: 23px;
 }
 
-
-@media (max-width:1024px){
-    .cm_header_nav{
-        display: none;
-    }
-    .footer{
-        display: none;
-    }
-    .access_logininner_container{
-        width: 100%;
-    }
-    .loginpopup_wrapper{
-        width: 90%;
-    }
-    /*.loginpopup_thirdpartylogin_wrapper ul li, .loginpopup_thirdpartylogin_wrapper ul li:first-child{
-        margin: 0 0 0 1.5rem;
-    }*/
-    .loginpopup_checkbox_wrapper li{
-        margin: 0;
-    }
-    .loginpopup_input_wrapper input{
-        padding: 0 0 0 2rem;
-    }
-    .loginpopup_input_wrapper span{
-        width: 2rem;
-        line-height: 2rem;
-    }
-    .loginpopup_thirdpartylogin_wrapper div, .common_triplelap_wrapper span{
-        margin: 0 auto;
-        background-color: #fff;
-    }
-    .loginpopup_thirdpartylogin_wrapper div{
-        width: 50%;
-    }
-    .loginpopup_input_wrapper li{
-        height: 2rem;
-    }
-    .loginpopup_thirdpartylogin_wrapper ul{
-        width: 100%;
-    }
-    .loginpopup_thirdpartylogin_wrapper ul li a span{
-        width: 2rem;
-        height: 2rem;
-        line-height: 2rem;
-        font-size: 1.2rem;
-    }
-}
 
 /*~~~~~~~~~~globalhint全局顶部提示框~~~~~~~~~~*/
 
@@ -2136,10 +2132,10 @@ button.select {
 .ybbanner_wrapper {
     min-width: 1150px;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*//*影响章节制作的分享显示*/
     position: relative;
-    /*z-index: 0;*/
-   /* height: 100px;*/
+    z-index: 1;
+    height: 100px;
 }
 
 .ybbanner_bookcover_item {
@@ -2305,6 +2301,10 @@ button.select {
     float: left;
     min-width: 5em;
     line-height: 2em;
+}
+
+.bannertitleedit_wrapper label.error{
+    float: none;
 }
 
 .bannertitleedit_wrapper input {
@@ -2935,7 +2935,7 @@ button.select {
 /*~~~~~~~~~~翻页组件（用在钱包和章节制作页面）~~~~~~~~~~*/
 
 nav .pagination {
-    width: 36%;
+    width: 45%;
     height: auto;
     margin: 10px auto;
 }
@@ -3197,6 +3197,7 @@ nav .pagination li a:active {
     font-size: 13px;
     box-sizing: border-box;
     border-radius: 8px;
+    z-index: 1;
 }
 
 .common_sharelist_wrapper::before {
@@ -3929,6 +3930,7 @@ nav .pagination li a:active {
     background-position: 0 -280px;
 }
 
+.toolbar_tab.my_msg.none .tab_icon,
 .toolbar_tab.my_msg:hover .tab_icon {
     background-position: 0 -245px;
 }
@@ -4260,6 +4262,10 @@ nav .pagination li a:active {
 .space_con .booklist_wrap ul li .btn_wrap .btn{
     position: relative;
     display: inline-block;
+    background: none;
+    width: 50px;
+    height: 25px;
+    border: 0;
 }
 
 .space_con .booklist_wrap ul li .btn_wrap .btn > a{
@@ -4413,6 +4419,171 @@ nav .pagination li a:active {
 
 .progress_bar ul li.finish p{
     color: #b2c022;
+}
+
+/*导入其他书册的照片*/
+.load_obp_box{
+    position: relative;
+    margin: 0;
+    padding: 0 20px;
+    width: 815px;
+    box-sizing: border-box;
+}
+
+.auto_layout_container .load_obp_box{
+    margin: 20px auto 10px;
+    width: 100%;
+}
+
+.load_obp_box p{
+    position: relative;
+    font-size: 12px;
+    color: #333;
+    line-height: 35px;
+}
+
+.load_obp_box p::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 166px;
+    height: 1px;
+    background-color: #91c31e;
+    z-index: 1;
+}
+
+.load_obp_box p::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #b4b4b4;
+}
+
+.load_obp_box .booklist_wrap{
+    position: relative;
+    margin: 15px 0 10px;
+}
+
+.load_obp_box .booklist_wrap .hd a{
+    position: absolute;
+    top: 83px;
+    cursor: pointer;
+    width: 17px;
+    height: 23px;
+}
+
+.load_obp_box .booklist_wrap .hd .next{
+    right: -20px;
+    background: url('../img/icon/next_btn.png') no-repeat;
+}
+
+.booklist_wrap .hd .prev{
+    left: -20px;
+    background: url('../img/icon/prev_btn.png') no-repeat;
+}
+
+.load_obp_box .booklist_wrap .booklist li{
+    float: left;
+    margin: 10px 15px;
+    text-align: center;
+    width: 125px;
+    box-sizing: content-box;
+}
+
+.booklist_wrap .booklist li .bookcover{
+    position: relative;
+    display: block;
+    margin: 0 0 5px;
+    width: 125px;
+    height: 165px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.booklist_wrap .booklist li .bookcover.selected{
+    border: 3px solid #99c141;
+}
+
+.booklist_wrap .booklist li .bookcover img{
+    width: 100%;
+    height: 100%;
+}
+
+.booklist_wrap .booklist li .bookcover span{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 18px;
+    line-height: 16px;
+    border-style: solid;
+    border-width: 22px;
+    border-color: transparent #99c141 #99c141 transparent;
+}
+
+.booklist_wrap .booklist li .bookcover.selected span{
+    display: block;
+}
+
+.booklist_wrap .booklist li .name{
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    max-width: 100%;
+    line-height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.booklist_wrap .booklist li .number{
+    font-size: 12px;
+    color: #333;
+}
+
+.booklist_wrap .booklist li .number span{
+    color: #668a16;
+}
+
+.load_obp_box .btn_wrap{
+    position: relative;
+}
+
+.load_obp_box .btn_wrap .btn{
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #e93223;
+    background: url("../img/gradient_bg_00000.jpg") repeat-x;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}
+
+.load_obp_box .btn_wrap .btn:hover{
+    color: #333;
+}
+
+.load_obp_box .btn_wrap .btn.change{
+    color: #fff;
+    background: #70ca5d;
+    border: 1px solid #70ca5d;
+}
+
+.load_obp_box .btn_wrap .btn.change:hover{
+    background-color: #e7b54b;
+    border: 1px solid #e7b54b;
 }
 
 @charset "utf-8";
@@ -8025,6 +8196,17 @@ li.method {
 .bp_iwanttoprint_btn:hover {
 	background: #cfbf33;
 }
+.bp_login_container{
+	display: none;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	z-index: 4;
+}
+.bp_login_container.active{
+	display: block;
+}
 
 /*~~~~~~~~~~flipbook_preview~~~~~~~~~~*/
 
@@ -9338,20 +9520,20 @@ li.method {
 	border-right: 15px solid #fff;
 }
 
-.bp_comment_wrapper .closebtn,
-.bp_praise_container .closebtn{
+.bp_comment_wrapper .closebtn, .bp_praise_container .closebtn{
 	display: block;
+	margin: 20px;
 	height: 1em;
 	line-height: 1em;
 	position: absolute;
 	top: -4px;
 	right: 4px;
 	color: #ccc;
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: lighter;
-	transform: rotate(45deg);
+/*	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);*/
 }
 
 .bp_comment_wrapper .closebtn:hover,
@@ -19001,7 +19183,7 @@ button::-moz-focus-inner {
 	font-size: 12px;
 }
 
-.advanced_filter_con ul li input {{
+.advanced_filter_con ul li input {
 	width: 60px;
 	max-width: none !important;
 	display: inline-block;
@@ -20897,160 +21079,6 @@ button::-moz-focus-inner {
 
 .load_mobile_photo_box .pagemakeBox {
 	margin-left: 65px;
-}
-
-/*导入其他书册的照片*/
-.load_obp_box{
-    position: relative;
-    margin: 0;
-    padding: 0 20px;
-    width: 815px;
-    box-sizing: border-box;
-}
-
-.auto_layout_container .load_obp_box{
-    margin: 20px auto 10px;
-    width: 100%;
-}
-
-.load_obp_box p{
-    position: relative;
-    font-size: 12px;
-    color: #333;
-    line-height: 35px;
-}
-
-.load_obp_box p::before{
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 166px;
-    height: 1px;
-    background-color: #91c31e;
-    z-index: 1;
-}
-
-.load_obp_box p::after{
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #b4b4b4;
-}
-
-.load_obp_box .booklist_wrap{
-    position: relative;
-    margin: 15px 0 10px;
-}
-
-.load_obp_box .booklist_wrap .hd a{
-    position: absolute;
-    top: 83px;
-    cursor: pointer;
-    width: 17px;
-    height: 23px;
-}
-
-.load_obp_box .booklist_wrap .hd .next{
-    right: -20px;
-    background: url('../img/icon/next_btn.png') no-repeat;
-}
-
-.booklist_wrap .hd .prev{
-    left: -20px;
-    background: url('../img/icon/prev_btn.png') no-repeat;
-}
-
-.load_obp_box .booklist_wrap .booklist li{
-    float: left;
-    margin: 10px;
-    text-align: center;
-    width: 125px;
-    box-sizing: content-box;
-}
-
-.booklist_wrap .booklist li .bookcover{
-    position: relative;
-    display: block;
-    margin: 0 0 5px;
-    width: 125px;
-    height: 165px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.booklist_wrap .booklist li .bookcover.selected{
-    border: 3px solid #99c141;
-}
-
-.booklist_wrap .booklist li .bookcover img{
-    width: 100%;
-    height: 100%;
-}
-
-.booklist_wrap .booklist li .bookcover span{
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    color: #fff;
-    font-size: 18px;
-    line-height: 16px;
-    border-style: solid;
-    border-width: 22px;
-    border-color: transparent #99c141 #99c141 transparent;
-}
-
-.booklist_wrap .booklist li .bookcover.selected span{
-    display: block;
-}
-
-.booklist_wrap .booklist li .name{
-    font-size: 14px;
-    color: #000;
-    text-align: center;
-    max-width: 100%;
-    line-height: 25px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.booklist_wrap .booklist li .number{
-    font-size: 12px;
-    color: #333;
-}
-
-.booklist_wrap .booklist li .number span{
-    color: #668a16;
-}
-
-.btn_wrap{
-    position: relative;
-}
-
-.btn_wrap .btn{
-    display: block;
-    float: right;
-    width: 140px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    color: #e93223;
-    background: url("../img/gradient_bg_00000.jpg") repeat-x;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-}
-
-.btn_wrap .btn:hover{
-    color: #333;
 }
 
 /*更换模板生成中*/
@@ -24463,20 +24491,93 @@ li.action div:hover {
 	padding-bottom: 20px;
 }
 
-.order_details li li {
-	width: 10%;
+.order_details .title{
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #eaeaea;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
 }
 
-.order_details li li.number {
-	width: 16%;
+.order_details .title li{
+    display: inline-block;
+    margin-right: 25px;
+    font-size: 12px;
+    color: #333;
 }
 
-.order_details li li.size {
-	width: 18%;
+.order_details .title li:nth-child(3) span{
+    color: #3a84c9;
 }
 
-.order_details li li.time {
-	width: 12%;
+.order_details .title li:last-child{
+    float: right;
+    margin-right: 0;
+}
+
+.order_details .title li:last-child span{
+    color: #e90000;
+    font-size: 16px;
+}
+
+.order_details .opd_checklist_wrapper{
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+}
+
+.order_details .opd_checklist_wrapper thead tr{
+    background-color: #f9fafb;
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0) 30px);
+    width: 100%;
+    border-top: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order_details .opd_checklist_wrapper thead tr th:nth-child(1),
+.order_details .opd_checklist_wrapper thead tr th:nth-child(2){
+    width: 120px;
+}
+
+.order_details .opd_checklist_wrapper thead tr th:nth-child(3),
+.order_details .opd_checklist_wrapper thead tr th:nth-child(4){
+    width: 145px;
+}
+
+.order_details .opd_checklist_wrapper thead tr th:nth-child(6),
+.order_details .opd_checklist_wrapper thead tr th:nth-child(7){
+    width: 90px;
+}
+
+.order_details .opd_checklist_wrapper td .book span{
+    display: block;
+    padding: 5px 0;
+
+}
+
+.order_details .opd_checklist_wrapper td .book.photo span{
+    color: #5ec9d3;
+    font-size: 30px;
+}
+
+.order_details .opd_checklist_wrapper td .book.ia span{
+    color: #70ca5d;
+    font-size: 36px;
+}
+
+.order_details .opd_product_info div{
+    width: 90px;
+    height: 115px;
+}
+
+.order_details .opd_sketch_item select{
+    width: 100px;
+}
+
+.order_details .opd_actions .share:hover .common_sharelist_wrapper{
+    display: block;
 }
 
 .new_address {
@@ -24505,7 +24606,7 @@ li.action div:hover {
 }
 
 .address_list .address {
-	width: 45%;
+	width: 42%;
 }
 
 .address_list .recipients {
@@ -24513,7 +24614,7 @@ li.action div:hover {
 }
 
 .address_list .mobile {
-	width: 24%;
+	width: 20%;
 }
 
 .address_list .edit,
@@ -24523,9 +24624,19 @@ li.action div:hover {
 	font-size: 14px;
 }
 
+.address_list .set_default a{
+    font-size: 12px;
+    color: #999;
+}
+
 .address_list .edit span:hover,
-.address_list .delete span:hover {
-	color: #6ea11f;
+.address_list .delete span:hover,
+.address_list .set_default a:hover {
+    color: #6ea11f;
+}
+
+.personal_content_box .coupon .opd_coupon_wrapper label{
+    display: inline;
 }
 
 .logistics_list > ul > li {
@@ -24978,6 +25089,7 @@ li.action div:hover {
     margin: 0;
     padding: 25px 0;
     width: 100%;
+    min-height: 650px;
     background-color: #f5f5f5;
 }
 
@@ -25012,7 +25124,8 @@ li.action div:hover {
     float: right;
 }
 
-.opd_wrapper .opd_payoff_wrapper{
+.opd_wrapper .opd_payoff_wrapper,
+.personal_content_box .opd_payoff_wrapper{
     position: relative;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -25253,7 +25366,7 @@ li.action div:hover {
     color: #999;
 }
 
-.opd_checklist_wrapper .opd_actions a:hover{
+.opd_checklist_wrapper .opd_actions div > a:hover{
     color: #70ca5d;
 }
 
@@ -25261,6 +25374,71 @@ li.action div:hover {
     margin-right: 5px;
     font-size: 14px;
     line-height: 30px;
+}
+
+.opd_checklist_wrapper .opd_actions .share{
+    position: relative;
+}
+
+.opd_actions .share:hover .common_sharelist_wrapper{
+    display: block;
+    top: -10px;
+    right: -152px;
+    width: 162px;
+}
+
+.opd_actions .share .common_sharelist_wrapper ul li{
+    width: 25px;
+}
+
+.opd_actions .share .common_sharelist_wrapper ul li a{
+    font-size: 24px;
+}
+
+.opd_actions .preview img{
+    margin: 10px auto 0;
+    width: 44px;
+    height: 60px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.opd_actions .preview img:hover{
+    border: 1px solid #70ca5d;
+}
+
+.opd_checklist_wrapper .opd_selected_item{
+    position: relative;
+}
+
+.opd_checklist_wrapper .opd_selected_item label{
+    display: block;
+    margin: 10px auto;
+}
+
+.opd_checklist_wrapper .opd_selected_item .sample label{
+    cursor: pointer;
+}
+
+.opd_checklist_wrapper .opd_selected_item label span{
+    margin-right: 5px;
+}
+
+.opd_checklist_wrapper .opd_selected_item .sample img{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 52px;
+    margin-left: -53px;
+    width: 106px;
+    height: 106px;
+    border: 2px solid #ddd;
+    border-radius: 100%;
+}
+
+.opd_checklist_wrapper .opd_selected_item:hover .sample img{
+    display: block;
 }
 
 .opd_summarize_wrapper {
@@ -25451,7 +25629,7 @@ li.action div:hover {
 
 .opd_confirm_wrapper .return_modify{
     float: right;
-    margin: 0 40px;
+    margin: 0 20px;
     line-height: 60px;
 }
 
@@ -25558,6 +25736,11 @@ li.action div:hover {
 	background-color: #fff;
 	border-bottom: 1px solid #ddd;
     border-top: 3px solid #a9ba38;
+}
+
+.order_details .opd_header_item{
+    border-top: 1px solid #ddd;
+    border-bottom: 0;
 }
 
 .opd_header_item p {
@@ -25748,6 +25931,11 @@ li.action div:hover {
 .opd_addressandmode_wrapper tbody tr:hover .opd_editaddress_wrapper div,
 .opd_editaddress_wrapper.default div{
     display: block;
+}
+
+.opd_editaddress_wrapper.default div .modify,
+.opd_editaddress_wrapper.default div .delete{
+    display: none;
 }
 
 .opd_editaddress_wrapper a {
@@ -26034,7 +26222,9 @@ li.action div:hover {
 
 .opd_donatepayoff_wrapper{
 	margin: 40px 0 0 0;
-	border: 1px solid #efefef;
+	border: 1px solid #ddd;
+    background-color: #fff;
+    overflow: hidden;
 }
 .opd_donatepayoff_wrapper .opd_modeofpayment_wrapper ul{
 	width: 65%;
@@ -26053,13 +26243,12 @@ li.action div:hover {
 .opd_donateheader_item{
 	padding: 0 2%;
 	width: 96%;
-	height: 30px;
-	line-height: 30px;
-	border-top: 1px solid #efefef;
-	border-left: 1px solid #efefef;
-	border-right: 1px solid #efefef;
-	font-size: 12px;
-	color: #aaa;
+	height: 50px;
+	line-height: 50px;
+	border-top: 3px solid #a9ba38;
+    border-bottom: 1px solid #ddd;
+	font-size: 16px;
+	color: #333;
 
 }
 .opd_donatecontent_wrapper p{
@@ -26067,8 +26256,6 @@ li.action div:hover {
 	height: 75px;
 	line-height: 75px;
 	text-align: center;
-	border-left: 1px solid #efefef;
-	border-right: 1px solid #efefef;
 	border-bottom: 1px solid #efefef;
 	font-size: 16px;
 }
@@ -26423,7 +26610,8 @@ li.action div:hover {
     color: #e7b54b;
 }
 
-.personal_content_box .common_sharelist_wrapper{
+.shop_admin .common_sharelist_wrapper,
+.shop_apply_con .common_sharelist_wrapper{
     display: block;
     opacity: 1;
     position: relative;
@@ -26432,14 +26620,18 @@ li.action div:hover {
     border: none;
 }
 
-.personal_content_box .common_sharelist_wrapper::before,
-.personal_content_box .common_sharelist_wrapper::after{
+.shop_admin .common_sharelist_wrapper::before,
+.shop_admin .common_sharelist_wrapper::after,
+.shop_apply_con .common_sharelist_wrapper::before,
+.shop_apply_con .common_sharelist_wrapper::after{
     content: "";
     display: none;
 }
 
-.personal_content_box .common_sharelist_wrapper label,
-.personal_content_box .common_sharelist_wrapper ul{
+.shop_admin .common_sharelist_wrapper label,
+.shop_apply_con .common_sharelist_wrapper label,
+.shop_admin .common_sharelist_wrapper ul,
+.shop_apply_con .common_sharelist_wrapper ul{
     float: left;
     line-height: 30px;
     color: #000;

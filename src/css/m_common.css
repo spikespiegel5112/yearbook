@@ -1563,9 +1563,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybcommon_counter_item {
 	width: 85px;
 	height: 25px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid #ccc;
 	line-height: 23px;
 	box-sizing: border-box;
+    border-radius: 3px;
 }
 
 .ybcommon_counter_item a {
@@ -1591,6 +1592,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	border: 0;
 	font-size: 15px;
 	text-align: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 0;
 }
 
 /*~~~~~~~~~~bottom switch to pc~~~~~~~~~~*/

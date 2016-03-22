@@ -572,12 +572,12 @@
 			$(this).each(function() {
 				$(this).click(function() {
 					console.log(marginTop);
-					$('.loginpopup_container').addClass('active');
-					$('.loginpopup_wrapper').css('margin-top', marginTop);
+					$('.common_login_container').addClass('active');
+					$('.common_login_wrapper').css('margin-top', marginTop);
 
 				});
-				$('.loginpopup_header_wrapper a').click(function() {
-					$('.loginpopup_container').removeClass('active');
+				$('.common_loginheader_wrapper a').click(function() {
+					$('.common_login_container').removeClass('active');
 				});
 			});
 		},

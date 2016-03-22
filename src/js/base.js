@@ -571,6 +571,7 @@
 			var _this=this,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
+			//障碍物处理判断
 			if (typeof options.obstacleX == 'number') {
 				windowWidth = windowWidth - options.obstacleX;
 			} else {
@@ -595,11 +596,9 @@
 					}else{
 						sum += $(options.obstacleY[i]).height();
 					}
-					
 				};
-				// alert(windowWidth+','+sum)
 				windowHeight = windowHeight - sum;
-				console.log( options.offsetY);
+				console.log('offsetY'+ options.offsetY);
 			}
 
 			switch(options.position){
@@ -620,44 +619,40 @@
 							return;
 						} else {
 							_this.css({
-								'left':(windowWidth-thisWidth)/2,
-								'top':0
+								'margin':(windowWidth-thisWidth)/2+' auto'
 							});
 						}
 					});
 				break;
-				case 'left':
+				case 'right':
 					aligning(function(thisWidth,thisHeight) {
 						_this.css({
-							'left':0,
-							'top':(windowHeight-thisHeight)/2
+							'margin': (windowHeight-thisHeight)/2+'px 0 0 '+(windowWidth-thisWidth)+'px'
 						});
 					});
 				break;
 				case 'bottom':
 					aligning(function(thisWidth,thisHeight) {
 						_this.css({
-							'left':(windowWidth-thisWidth)/2,
-							'bottom':0
+							'margin': (windowHeight-thisHeight)+'px auto 0'
 						});
 					});
 				break;
-				case 'right':
+				case 'left':
 					aligning(function(thisWidth,thisHeight) {
 						_this.css({
-							'right':0,
-							'top':(windowHeight-thisHeight)/2
+							'margin': (windowHeight-thisHeight)/2+'px 0 0 0'
 						});
 					});
 				break;
 			}
 
 			function aligning(callback) {
-				var thisWidth = _this.width(),
-					thisHeight = _this.height();
+				var thisWidth = _this.outerWidth(),
+					thisHeight = _this.outerHeight();
 				$(window).resize(function() {
-					thisWidth = _this.width();
-					thisHeight = _this.height();
+					thisWidth = _this.outerWidth();
+					thisHeight = _this.outerHeight();
 					return callback(thisWidth,thisHeight)
 				});
 				return callback(thisWidth,thisHeight);

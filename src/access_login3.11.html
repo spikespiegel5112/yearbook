@@ -20,29 +20,6 @@
 </head>
 
 <body>
-	<!--头部导航-->
-	<div class="cm_header_nav">
-		<div class="logo">
-			<a href="index.html"><img src="img/logo.png"></a>
-		</div>
-		<div class="nav">
-			<ul>
-				<li><a href="index.html">首页</a></li>
-				<li><a href="booklist_photo.html">照片书</a></li>
-				<li><a href="booklist_ia.html">互动册</a></li>
-				<li><a href="pc_mybookshelf.html">个人中心</a></li>
-				<li><a href="static_instruction_entrance.html">使用指南</a></li>
-			</ul>
-		</div>
-		<div class="nav_login">
-			<span class='ybiconfont ybicon-user'></span>
-			<ul>
-				<li><a href="access_login.html" class="active">登录</a></li>
-				<li><a href="access_register.html">注册</a></li>
-			</ul>
-		</div>
-		<div class="cm_header_shadow"></div>
-	</div>
 	<!--登录表单-->
 	<div class="access_login_container">
 		<div class='common_login_wrapper'>
@@ -114,33 +91,6 @@
 			</div>
 		</div>
 	</div>
-	<!--底部-->
-	<div class="footer login_footer">
-		<div class="footer_info">
-			<a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="index.html"></a>
-			</a>
-			<div class="footer_title">
-				<div>忆尔-在线DIY纪念册平台</div>
-				<p>专业在线制作电子书册平台</p>
-				<p>DIY出独一无二的青春纪念册</p>
-			</div>
-		</div>
-		<div class="footer_list">
-			<div class="ft_nav">
-				<a href="javascript:;">客服电话 400 0610 127</a>
-				<a href="javascript:;">客服QQ</a>
-				<a href="javascript:;">客服邮箱</a>
-				<a href="static_hc_company_profile.html">关于我们</a>
-			</div>
-			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
-			<div class="ft_shares">
-				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
-				<a class='ybiconfont ybicon-weibotencent' href="javascript:;"></a>
-				<a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
-				<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
-			</div>
-		</div>
-	</div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
@@ -198,13 +148,7 @@
 			fontsize: 20,
 			maxwidth: 0
 		});
-		$('.common_login_wrapper').align({
-			obstacleY: ['.cm_header_nav', '.footer'],
-			offsetY: 20
-		});
-		$('.footer').align({
-			position: 'bottom'
-		});
+		$('.common_login_wrapper').align();
 	});
 	</script>
 </body>

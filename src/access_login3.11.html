@@ -61,11 +61,11 @@
 				<ul class='common_logininput_wrapper'>
 					<li>
 						<span class='ybiconfont ybicon-user'></span>
-						<input type='text' placeholder='输入用户名'>
+						<input id='loginName' name='loginName' type='text' placeholder='输入用户名' required>
 					</li>
 					<li>
 						<span class='ybiconfont ybicon-lock'></span>
-						<input type='password' placeholder='输入密码'>
+						<input id='password' name='password' type='password' placeholder='输入密码' required>
 					</li>
 				</ul>
 			</form>
@@ -150,7 +150,7 @@
 	<script>
 	function validateForm() {
 		//validate方法参数可选  
-		return $('#commentForm').validate({
+		return $('#fm1').validate({
 			messages: {
 				loginName: {
 					required: "用户名未填写"
@@ -163,7 +163,7 @@
 	}
 
 	function doSubmit() { //点击登录触发验证
-		$('.login_btn').click(function() {
+		$('.common_loginbtn_item').click(function() {
 			if (validateForm()) {
 				document.form1.submit();
 			}

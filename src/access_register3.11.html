@@ -57,15 +57,15 @@
 				<span></span>
 				<!-- <label></label> -->
 			</div>
-			<form method="post" action="/login;jsessionid=DC917C6992A727988D39AF0C65D402DA?service=http%3A%2F%2Fwww.yearbook.com.cn%2Fcallback%3Fclient_name%3DCasClient" id="fm1">
+			<form method="post" action="" id="fm1">
 				<ul class='common_logininput_wrapper'>
 					<li>
 						<span class='ybiconfont ybicon-user'></span>
-						<input type='text' placeholder='输入用户名'>
+						<input id='loginName' name='loginName' type='text' placeholder='输入用户名'required>
 					</li>
 					<li>
 						<span class='ybiconfont ybicon-lock'></span>
-						<input type='password' placeholder='输入密码'>
+						<input id='password' name='password' type='password' placeholder='输入密码'required>
 					</li>
 				</ul>
 			</form>
@@ -118,20 +118,20 @@
 	<script>
 	function validateForm() {
 		//validate方法参数可选  
-		return $('#commentForm').validate({
+		$('#fm1').validate({
 			messages: {
 				loginName: {
 					required: "用户名未填写"
 				},
 				password: {
-					required: '密码未填写',
+					required: '密码未填写'
 				}
 			}
 		}).form();
 	}
 
 	function doSubmit() { //点击登录触发验证
-		$('.login_btn').click(function() {
+		$('.common_loginbtn_item').click(function() {
 			if (validateForm()) {
 				document.form1.submit();
 			}
@@ -147,32 +147,24 @@
 	}
 
 	function login() {
-		// $('.common_login_container').css({
-		//      'height':$(window).height()
-		//  })
-		// $(window).resize(function(){
-		//  $('.common_login_container').css({
-		//      'height':$(window).height()
-		//  })
-		// })
-
+		$.remResizing({
+			fontsize: 20,
+			maxwidth: 0
+		});
+		$('.common_login_wrapper').align({
+			position:'both',
+			obstacleY: ['.cm_header_nav', '.footer'],
+			offsetY: 20
+		});
+		$('.footer').align({
+			position: 'bottom'
+		});
 	}
 
 	$(function() {
 		doSubmit();
 		icheck();
 		login();
-		$.remResizing({
-			fontsize: 20,
-			maxwidth: 0
-		});
-		$('.common_login_wrapper').align({
-			obstacleY: ['.cm_header_nav', '.footer']
-		});
-		$('.footer').align({
-			direction: 'vertical',
-			position: 'bottom'
-		});
 	});
 	</script>
 </body>

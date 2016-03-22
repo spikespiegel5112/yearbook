@@ -41,8 +41,8 @@
 				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
+        <div class="cm_header_shadow"></div>
 	</div>
-	<div class="cm_header_shadow"></div>
 	<!--主内容区域-->
 	<div class="main_content_container">
 		<!--左侧内容 开始-->
@@ -75,34 +75,175 @@
 					<div class="green"></div>
 					<div class="gray"></div>
 				</div>
-				<div class="for_pay order_info">
-					<ul>
-						<li class="caption">
-							<ul>
-								<li class="number">订单号<span>850793146972</span></li>
-								<li class="time">创建时间<span>2015-06-07 17:00</span></li>
-							</ul>
-						</li>
-						<li class="book_info">
-							<div>
-								<a href="booklist_detail.html"><img src="img/default/recollect001.png"></a>
-							</div>
-							<ul>
-								<li>书册名称：<span>《TEST》</span></li>
-								<li>书页数量：<span>44</span>页*<span>1</span></li>
-								<li>书册包装：<span>精装牛皮封面</span></li>
-								<li>收货人：<span>XXX</span></li>
-								<li>收货地址：<span>XXXXXXXXXXXXXXXXXXXXXXXX</span></li>
-								<li>联系方式：<span>139XXXXXXXX</span></li>
-							</ul>
-						</li>
-						<li class="total_pay">
-							<a href="javascript:;">使用满100免20优惠券一张，实际支付减免¥20</a>
-							<span>实际支付金额：<b>￥45</b></span>
-						</li>
-					</ul>
+				<div class="order_details payoff">
+                    <div class='opd_checklist_wrapper'>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>商品类型</th>
+                                <th>商品名称</th>
+                                <th>选择尺寸</th>
+                                <th>选择装订材质</th>
+                                <th>数量</th>
+                                <th>商品单价</th>
+                                <th>在线预览</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="book ia hidden">
+                                        <span class="ybiconfont ybicon-bookia"></span>
+                                        <label>互动册</label>
+                                    </div>
+                                    <div class="book photo">
+                                        <span class="ybiconfont ybicon-photobook"></span>
+                                        <label>照片书</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="opd_product_info">
+                                        <h5>《<span>小鱼幼儿园记</span>》</h5>
+                                        <!--<div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                        <a class="change_book" href="javascript:;">更换书册</a>-->
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='opd_selected_item'>
+                                        <label>别致小装</label>
+                                        <div class="sample">
+                                            <label><span class="icon-picture"></span>尺寸示例图片</label>
+                                            <img src="img/pc/min_size.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='opd_selected_item'>
+                                        <label>蝴蝶装</label>
+                                        <div class="sample">
+                                            <label><span class="icon-picture"></span>装订示例图片</label>
+                                            <img src="img/pc/butterflycover.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div><span>1</span>本</div>
+                                </td>
+                                <td class='opd_unitprice_item'>
+                                    <span>￥</span>
+                                    <label>38.00</label>
+                                </td>
+                                <td>
+                                    <div class="opd_actions">
+                                        <div class="preview">
+                                            <a href="bp_main.html">
+                                                <img src="img/default/chaptermark_tpl_img.jpg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class='opd_payoff_wrapper'>
+                        <div class='opd_header_item'>
+                            <p>确认订单信息</p>
+                        </div>
+                        <div class='opd_orderinfo_wrapper'>
+                            <ul>
+                                <li><label>订单号：</label><span>201603080024660</span></li>
+                                <li><label>创建时间：</label><span>2016-03-08 09:23</span></li>
+                                <li><label>收货人：</label><span>赵上华</span></li>
+                                <li><label>收货地址：</label><span>无锡新区 太湖花园155号902室</span></li>
+                                <li><label>联系方式：</label><span>136 1619 3200</span></li>
+                            </ul>
+                        </div>
+                        <div class='opd_header_item'>
+                            <p>选择支付方式</p>
+                        </div>
+                        <div class='opd_modeofpayment_wrapper'>
+                            <ul>
+                                <li>
+                                    <label>您的账户余额：</label>
+                                    <span>￥0.00</span>
+                                </li>
+                                <li>
+                                    <!--<label>其他付款方式：</label>-->
+                                    <ul>
+                                        <li>
+                                            <input id='alipay' type='radio' name='payment'>
+                                            <label for='alipay'><img src="img/pc/alipay_img.png"></label>
+                                        </li>
+                                        <li>
+                                            <input id='unipay' type='radio' name='payment'>
+                                            <label for='unipay'><img src="img/pc/Unionpay_img.png"></label>
+                                        </li>
+                                        <li>
+                                            <input id='wechatpay' type='radio' name='payment'>
+                                            <label for='wechatpay'><img src="img/pc/wechatpay.png"></label>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!--<li>
+                                    <label>需要支付：</label>
+                                    <span>￥32元</span>
+                                </li>-->
+                            </ul>
+                        </div>
+                        <div class='opd_header_item'>
+                            <p>商品总价确认</p>
+                        </div>
+                        <div class='opd_sumprice_wrapper'>
+                            <div class='opd_privilege_wrapper'>
+                                <p><a class="ybiconfont ybicon-down1" href="javascript:;"></a>已享受的优惠</p>
+                                <ul>
+                                    <li>
+                                        <label>[活动]</label>全场书册免费包邮配送
+                                    </li>
+                                    <li>
+                                        使用满50减10优惠券一张
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class='opd_subtotal_wrapper'>
+                                <ul>
+                                    <li class='opd_mercprice_item'>
+                                        <label>商品金额：</label>
+                                        <strong>
+                                            ￥<span>38.00</span>
+                                        </strong>
+                                    </li>
+                                    <li class='opd_freight_item'>
+                                        <label>所需运费：</label>
+                                        <strong>
+                                            ￥<span>00.00</span>
+                                        </strong>
+                                    </li>
+                                    <li class='opd_privprice_item'>
+                                        <label>优惠金额：</label>
+                                        <strong>
+                                            ￥<span>00.00</span>
+                                        </strong>
+                                    </li>
+                                </ul>
+                                <div class='opd_subtotalprice_item'>
+                                    <label>实际需支付：</label>
+                                    <strong>
+                                        ￥<span>38.00</span>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='opd_confirm_wrapper'>
+                            <div class='opd_confirmbtn_wrapper'>
+                                <a class='opd_confirm_item' href="pc_order_paymentsuccessful.html">提交支付<span></span></a>
+                            </div>
+                            <a class="return_modify" href="javascript:;">&lt;返回修改配置</a>
+                        </div>
+                    </div>
 				</div>
-				<div class="account_recharge">
+				<!--<div class="account_recharge">
 					<div class="hd">
 						<ul>
 							<li>我要付款</li>
@@ -129,7 +270,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 		<!--左侧内容 结束-->
@@ -306,9 +447,10 @@
 		});
 	}
 
+
 	$(document).ready(function() {
 		changeButtonCss();
-		popPayTip();
+		//popPayTip();
 	});
 	</script>
 </body>

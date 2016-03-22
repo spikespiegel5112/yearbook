@@ -41,8 +41,8 @@
 				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
+        <div class="cm_header_shadow"></div>
 	</div>
-	<div class="cm_header_shadow"></div>
     <div class="main_container create_order">
         <div class='opd_wrapper'>
             <!--<div class='opd_procedure_wrapper'>
@@ -119,6 +119,8 @@
                             </td>
                             <td class='opd_editaddress_wrapper default'>
                                 <div>
+                                    <a class='modify' href="javascript:;">修改</a>
+                                    <a class='delete' href="javascript:;">删除</a>
                                     <a class='default_btn' href="javascript:;">默认地址</a>
                                 </div>
                             </td>
@@ -468,35 +470,6 @@
 			</div>
 		</div>
 	</div>
-	<!--添加收货地址-->
-	<div id="new_address" class="add_new_address hidden">
-		<form>
-			<div class="item">
-				<label for="recipients"><b>*</b>收货人：</label>
-				<input id="recipients" class="form-control" type="text" value="">
-			</div>
-			<div class="item">
-				<label for="place"><b>*</b>所在地区：</label>
-				<input id="place" class="form-control" type="text" name="place" />
-				<button type="button" id="input_city">选择</button>
-			</div>
-			<div class="item">
-				<label for="detail_place"><b>*</b>详细地址：</label>
-				<input id="detail_place" class="form-control" type="text" value="">
-			</div>
-			<div class="item">
-				<label for="mobile"><b>*</b>手机号：</label>
-				<input id="mobile" class="form-control" type="text" value="">
-			</div>
-			<div class="item">
-				<label for="email">邮箱：</label>
-				<input id="email" class="form-control" type="email" value="">
-			</div>
-			<div class="btn save">
-				<a href="javascript:;">保存收货地址</a>
-			</div>
-		</form>
-	</div>
 	<!--删除收货地址提示-->
 	<div id="delete_address" class="delete_address hidden">
 		<h4>您确定要删除该收货地址吗？</h4>
@@ -598,6 +571,7 @@
 		editAddress();
 		citySelector();
 		deleteAddress();
+        setDefaultAddress();
 		commonInvoice();
 		jQuery(".slideTxtBox").slide({
 			trigger: "click"
@@ -635,7 +609,7 @@
 	}
 	//编辑收货地址
 	function editAddress() {
-		$('.opd_editaddress_wrapper .ybicon-pencil').click(function() {
+		$('.opd_editaddress_wrapper .modify').click(function() {
 			art.dialog({
 				id: 'new_address',
 				title: '编辑收货地址',
@@ -646,7 +620,7 @@
 	}
 	//删除收货地址
 	function deleteAddress() {
-		$('.opd_editaddress_wrapper .icon-trash').click(function() {
+		$('.opd_editaddress_wrapper .delete').click(function() {
 			art.dialog({
 				id: 'delete_address',
 				title: '删除收货地址',
@@ -659,6 +633,14 @@
 			});
 		})
 	}
+
+    //设为默认地址
+    function setDefaultAddress(){
+        $('.opd_editaddress_wrapper').on('click','.set_default',function() {
+            $('.opd_editaddress_wrapper .default_btn').removeClass('default_btn').addClass('set_default').text('设为默认').closest('td').removeClass('default');
+            $(this).addClass('default_btn').removeClass('set_default').text('默认地址').closest('td').addClass('default');
+        })
+    }
 	//普通发票
 	function commonInvoice() {
 		/*

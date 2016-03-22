@@ -573,10 +573,10 @@
 				$(this).click(function() {
 					console.log(marginTop);
 					$('.loginpopup_container').addClass('active');
-					$('.loginpopup_wrapper').css('margin-top', marginTop);
+					$('.access_login_wrapper').css('margin-top', marginTop);
 
 				});
-				$('.loginpopup_header_wrapper a').click(function() {
+				$('.access_loginheader_wrapper a').click(function() {
 					$('.loginpopup_container').removeClass('active');
 				});
 			});

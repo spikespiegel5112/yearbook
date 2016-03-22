@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="../css/m_reset.css" type="text/css" />
 	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
 	<link rel="stylesheet" href="../css/m_bookpreview.css" type="text/css" />
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457937983_3337536.css" type="text/css" />
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" />
 	<!-- endbuild -->
 	<link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" />
 	<link rel="stylesheet" href="../assets/css/iSlider.min.css" type="text/css" />
@@ -567,12 +567,12 @@
 				<div class='bp_donatestep_wrapper waitingforpay'>
 					<span class="ybiconfont ybicon-waitforpay"></span>
 					<label>等待付款…</label>
-					<a href="javascript:;"><span class="ybiconfont ybicon-closethin"></span></a>
+					<a href="javascript:;"><span class="ybiconfont ybicon-closebtnthin"></span></a>
 				</div>
 				<div class='bp_donatestep_wrapper step_3'>
 					<span class="ybiconfont ybicon-successful"></span>
 					<label>赞助成功！</label>
-					<a href="javascript:;"><span class="ybiconfont ybicon-closethin"></span></a>
+					<a href="javascript:;"><span class="ybiconfont ybicon-closebtnthin"></span></a>
 				</div>
 				
 			</div>
@@ -612,9 +612,9 @@
 		</div>
 	</div>
 	<div class='loginpopup_container'>
-		<div class='loginpopup_wrapper'>
+		<div class='common_login_wrapper'>
 			<h1>登录忆尔</h1>
-			<ul class='loginpopup_input_wrapper'>
+			<ul class='common_logininput_wrapper'>
 				<li>
 					<span class="ybiconfont ybicon-user"></span>
 					<input type='text'>
@@ -755,11 +755,11 @@
 			});
 			sendcommentEl.find('input').on('touchend', function(){
 				loginpopupEl.show();
-				$('.loginpopup_wrapper').alignCenter();
+				$('.common_login_wrapper').alignCenter();
 			});
 			//点击登陆弹窗周围关闭登陆弹窗
 			loginpopupEl.on('touchend', function(e){
-				if ($(e.target).closest('.loginpopup_wrapper').length==0) {
+				if ($(e.target).closest('.common_login_wrapper').length==0) {
 					loginpopupEl.hide();
 				};
 			});

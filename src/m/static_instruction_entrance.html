@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/m_common.css" />
 	<link rel="stylesheet" type="text/css" href="../css/m_staticize.css" />
 	<!-- endbuild -->
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1457937983_3337536.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all"/>
 
     <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
 	<link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
@@ -24,7 +24,7 @@
 </head>
 
 <body>
-<div class='main_container use_guide has_footer_nav'>
+<div class='main_container use_guide'>
 	<div class="ybwechatheader_wrapper">
         <a class='left_btn back_btn' href='javascript:;'>
             <span class="ybiconfont ybicon-backward1"></span>
@@ -51,7 +51,7 @@
 	</div>
 </div>
 <!--底部导航-->
-<div class="footer_nav">
+<!--<div class="footer_nav">
     <ul>
         <li>
             <a href="index.html">
@@ -84,7 +84,7 @@
         </li>
     </ul>
 </div>
-<!--pop new content-->
+&lt;!&ndash;pop new content&ndash;&gt;
 <div class="open_new_container">
     <div class="new_option">
         <ul>
@@ -109,9 +109,26 @@
         </ul>
     </div>
     <div class="close_btn"><a href="javascript:;">×</a></div>
-</div>
+</div>-->
 <script src="../assets/js/jquery.min.js"></script>
-<script src="../js/m_main.js"></script>
+<!--<script src="../js/m_main.js"></script>-->
+<script>
+    $(document).ready(function(){
+        setGuideBgHeight();
+    });
+
+    function setGuideBgHeight(){
+        var winHeight = $(window).height();
+        if( winHeight <= 582){
+            $('.use_guide').height(582);
+        }else{
+            $('.use_guide').height(winHeight);
+        }
+        $(window).resize(function(){
+            setGuideBgHeight();
+        })
+    }
+</script>
 </body>
 
 </html>

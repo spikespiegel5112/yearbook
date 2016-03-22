@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link type="text/css" rel="stylesheet" id="fb_css" media="screen" href="http://f3.baidu.com/feedback/css/fb_flat_0.3.css">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -517,30 +517,33 @@
 			<div><a href="static_hc_company_profile.html">北京众志和达数据计算有限公司</a></div>
 		</div>
 	</div>
-	<div class='loginpopup_container'>
-		<div class='loginpopup_wrapper'>
-			<div class='loginpopup_header_wrapper'>
+	<!--登录表单-->
+	<div class="common_login_container">
+		<div class='common_login_wrapper'>
+			<div class='common_loginheader_wrapper'>
 				<div>
-					
+					<span class='ybiconfont ybicon-yblogoshort'></span>
 					<label>登录忆尔</label>
 				</div>
 				<a class='icon-remove' href="javascript:;"></a>
 			</div>
-			<div class='loginpopup_dividline_wrapper'>
+			<div class='common_logindividline_wrapper'>
 				<span></span>
-				<label></label>
+				<!-- <label></label> -->
 			</div>
-			<ul class='loginpopup_input_wrapper'>
-				<li>
-					<span class='icon-user'></span>
-					<input type='text' placeholder='输入用户名'>
-				</li>
-				<li>
-					<span class='icon-lock'></span>
-					<input type='password' placeholder='输入密码'>
-				</li>
-			</ul>
-			<div class='loginpopup_checkbox_wrapper'>
+			<form method="post" action="/login;jsessionid=DC917C6992A727988D39AF0C65D402DA?service=http%3A%2F%2Fwww.yearbook.com.cn%2Fcallback%3Fclient_name%3DCasClient" id="fm1">
+				<ul class='common_logininput_wrapper'>
+					<li>
+						<span class='ybiconfont ybicon-user'></span>
+						<input type='text' placeholder='输入用户名'>
+					</li>
+					<li>
+						<span class='ybiconfont ybicon-lock'></span>
+						<input type='password' placeholder='输入密码'>
+					</li>
+				</ul>
+			</form>
+			<div class='common_logincheckbox_wrapper'>
 				<ul>
 					<li>
 						<input id='rememberme' type='checkbox'>
@@ -553,25 +556,38 @@
 				</ul>
 				<a href="javascript:;">忘记密码？</a>
 			</div>
-			<a class='loginpopup_loginbtn_item' href="javascript:;">登录</a>
-			<p class='loginpopup_register_item'>没有账号?&nbsp&nbsp&nbsp<a href="javascript:;">马上注册</a></p>
-			<div class='loginpopup_thirdpartylogin_wrapper'>
+			<a class='common_loginbtn_item transition_btn' href="javascript:;">登录</a>
+			<p class='common_loginproviso_item'>没有账号?<a href="javascript:;">马上注册</a></p>
+			<div class='access_ssologin_wrapper'>
 				<p>还可以使用以下方式登录</p>
-				<ul>
-					<li class='qq'>
-						<a href="access_loginandbind.html"></a>
-					</li>
-					<li class='weibo'>
-						<a href="access_loginandbind.html"></a>
-					</li>
-					<li class='wechat'>
-						<a href="javascript:;"></a>
-					</li>
-				</ul>
+				<div>
+					<ul>
+						<li>
+							<a class='qq' href="access_loginandbind.html">
+								<span class='ybiconfont ybicon-qqsolid'></span>
+							</a>
+						</li>
+						<li>
+							<a class='weibo' href="access_loginandbind.html">
+								<span class='ybiconfont ybicon-weibosina'></span>
+							</a>
+						</li>
+						<li>
+							<a class='wechat' href="javascript:;">
+								<span class='ybiconfont ybicon-wechatsolid'></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class='common_triplelap_container'>
+				<div class='common_triplelap_wrapper'>
+					<span class='first'></span>
+					<span class='second'></span>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class='globalhint_wrapper mobile_pc_switch hidden'>
 		<div class='globalhint_inner_wrapper'>
 			<div class='globalhint_mainarticle_item'>
@@ -627,35 +643,331 @@
         <div class="yb_toolbar_wrap">
             <div class="yb_toolbar">
                 <div class="yb_toolbar_tabs">
-                    <div class="toolbar_tab my_msg personal_btn">
+                    <div class="toolbar_tab personal_btn my_msg "><!--无新消息 class:none-->
                         <a href="javascript:;">
                             <i class="tab_icon"></i>
                             <em class="tab_text">我的消息</em>
-                            <div class="personal_wrap">
-                                <div class="space_con">
-                                    <h4>我的消息</h4>
-                                    <div class="yb_empty">
-                                        <span></span>
-                                        <p>记录是空的，没有新消息</p>
-                                    </div>
+                        </a>
+                        <div class="personal_wrap">
+                            <div class="space_con">
+                                <h4>我的消息</h4>
+                                <div class="yb_empty hidden">
+                                    <span></span>
+                                    <p>记录是空的，没有新消息</p>
+                                </div>
+                                <div class="msg_list_wrap">
+                                    <ul>
+                                        <li>
+                                            <div class="content">
+                                                <a class="close" href="javascript:;"><span class="ybiconfont ybicon-closebtn"></span></a>
+                                                <h5>来自：忆尔书册</h5>
+                                                <p>亲爱的忆尔用户 徐晓，您购买的书册《毕业纪念册》已成功下单，订单号为201603010097864，请尽快完善信息并完成支付！</p>
+                                                <a class="details" href="pc_myMessage.html">查看详情&gt;</a>
+                                            </div>
+                                            <div class="time">2016-03-03  10:59:20</div>
+                                        </li>
+                                        <li>
+                                            <div class="content">
+                                                <a class="close" href="javascript:;"><span class="ybiconfont ybicon-closebtn"></span></a>
+                                                <h5>来自：忆尔书册</h5>
+                                                <p>亲爱的忆尔用户 徐晓，您购买的书册《毕业纪念册》已成功下单，订单号为201603010097864，请尽快完善信息并完成支付！</p>
+                                                <a class="details" href="pc_myMessage.html">查看详情&gt;</a>
+                                            </div>
+                                            <div class="time">2016-03-03  10:59:20</div>
+                                        </li>
+                                        <li>
+                                            <div class="content">
+                                                <a class="close" href="javascript:;"><span class="ybiconfont ybicon-closebtn"></span></a>
+                                                <h5>来自：忆尔书册</h5>
+                                                <p>亲爱的忆尔用户 徐晓，您购买的书册《毕业纪念册》已成功下单，订单号为201603010097864，请尽快完善信息并完成支付！</p>
+                                                <a class="details" href="pc_myMessage.html">查看详情&gt;</a>
+                                            </div>
+                                            <div class="time">2016-03-03  10:59:20</div>
+                                        </li>
+                                        <li>
+                                            <div class="content">
+                                                <a class="close" href="javascript:;"><span class="ybiconfont ybicon-closebtn"></span></a>
+                                                <h5>来自：忆尔书册</h5>
+                                                <p>亲爱的忆尔用户 徐晓，您购买的书册《毕业纪念册》已成功下单，订单号为201603010097864，请尽快完善信息并完成支付！</p>
+                                                <a class="details" href="pc_myMessage.html">查看详情&gt;</a>
+                                            </div>
+                                            <div class="time">2016-03-03  10:59:20</div>
+                                        </li>
+                                        <li>
+                                            <div class="content">
+                                                <a class="close" href="javascript:;"><span class="ybiconfont ybicon-closebtn"></span></a>
+                                                <h5>来自：忆尔书册</h5>
+                                                <p>亲爱的忆尔用户 徐晓，您购买的书册《毕业纪念册》已成功下单，订单号为201603010097864，请尽快完善信息并完成支付！</p>
+                                                <a class="details" href="pc_myMessage.html">查看详情&gt;</a>
+                                            </div>
+                                            <div class="time">2016-03-03  10:59:20</div>
+                                        </li>
+                                    </ul>
+                                    <div class="all_loadmore"><a href="javascript:;">查看更多消息</a></div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="toolbar_tab my_book personal_btn">
                         <a href="javascript:;">
                             <i class="tab_icon"></i>
                             <em class="tab_text">我的书册</em>
-                            <div class="personal_wrap">
-                                <div class="space_con">
-                                    <h4>我的书册</h4>
-                                    <div class="yb_empty">
-                                        <span></span>
-                                        <p>记录是空的，没有新消息</p>
-                                    </div>
+                        </a>
+                        <div class="personal_wrap">
+                            <div class="space_con">
+                                <h4>我的书册</h4>
+                                <div class="yb_empty hidden">
+                                    <span></span>
+                                    <p>记录是空的，没有新消息</p>
+                                </div>
+                                <div class="booklist_wrap">
+                                    <h5>最近编辑</h5>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                                <div class="name">《<span>漫画风格漫画风格漫画风格漫画风格</span>》</div>
+                                            </a>
+                                            <div class="btn_wrap">
+                                                <div class="btn share active">
+                                                    <a href="javascript:;">分享</a>
+                                                    <div class='common_sharelist_wrapper'>
+                                                        <ul>
+                                                            <li class='weibo'>
+                                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='qzone'>
+                                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='wechat'>
+                                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                            </li>
+                                                            <li class='renren'>
+                                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn print">
+                                                    <a href="javascript:;">打印</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="all_loadmore"><a href="javascript:;">查看更多书册</a></div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="toolbar_tab service">
                         <a href="javascript:;">
@@ -845,19 +1157,27 @@
             var qrTime = setTimeout("$('.yb_toolbar_footer .qrcode').removeClass('active')",2000);
 
             //hover显示全部工具栏
-            $('.yb_toolbar_wrap').hover(function(){
+            $('.yb_toolbar_wrap').hover(function(e){
                 $('.yb_toolbar').addClass('active');
-            },function(){
-                $('.yb_toolbar').removeClass('active');
+                $(document).one("click", function(e){
+                    $('.yb_toolbar').removeClass('active');
+                    $(".yb_toolbar").on("click", function(e){
+                        e.stopPropagation();
+                    });
+                });
+                e.stopPropagation();
             });
 
             //个人消息、书册信息
             $('.yb_toolbar_tabs .personal_btn').click(function(e){
-                if($('.personal_wrap').hasClass('active')){
+                if($(this).find('.personal_wrap').hasClass('active')){
                     $(this).closest('.yb_toolbar').removeClass('open');
                     $(this).find('.personal_wrap').removeClass('active');
                 }else{
                     $(this).closest('.yb_toolbar').addClass('open');
+                    $('.personal_wrap').each(function(){
+                        $(this).removeClass('active');
+                    });
                     $(this).find('.personal_wrap').addClass('active');
                     $(document).one("click", function(){
                         $('.yb_toolbar').removeClass('open');

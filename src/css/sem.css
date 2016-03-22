@@ -79,7 +79,7 @@
 	overflow: hidden;
 }
 .sem_bookname_item:hover{
-	text-decoration: underline;
+	color: #a9bf00;
 }
 .sem_eye_item{
 	font-size: 30px;
@@ -132,7 +132,6 @@
 	font-size: 30px;
 	color: #fff;
 	border-radius: 10px;
-/*	border: 3px solid #fff;*/
 	background-color: #ee688f;
 	text-align: center;
 	position: relative;
@@ -147,7 +146,6 @@
 .sem_deliverguarantee_wrapper{
 	width: 100%;
 	height: 450px;
-	background-color: #efefeb;
 	overflow: hidden;
 }
 .sem_deliverguarantee_wrapper h5{
@@ -211,38 +209,59 @@
 	display: block;
 	margin: 60px auto;
 }
+.sem_actvity_container{
+	width: 100%;
+	position: relative;
+	background-image: url(../img/sem/sem_boat_bg.jpg);
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
 .sem_actvity_wrapper{
 	margin: 0 auto;
 	padding: 0 0 70px 0;
-	width: 1000px;
+	width: 940px;
+	
 }
 .sem_actvity_wrapper:after{
 	content: '';
 	display: block;
 	clear: both;
 }
+.sem_actvitybg_item{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
 .sem_actvity_item h5{
 	padding: 45px 0 15px 0;
 	font-size: 24px;
+	position: relative;
+}
+.sem_actvity_item:first-child img{
+	width: 100%;
 }
 .sem_actvity_item{
 	float: left;
-	width: 450px;
+
 }
 .sem_actvity_item div{
-	height: 300px;
+	padding: 20px 0 0 0;
+	border-top: 4px solid #a7be4a;
+	overflow: hidden;
 }
 .sem_actvity_item:first-child{
-	margin: 0 10% 0 0;
+	margin: 0 85px 0 0;
+	width: 380px;
 }
-.sem_actvity_item>div{
-	position: relative;
+.sem_actvity_item img:first-child{
+	padding: 0;
 }
 .sem_actvity_item img{
-	display: block;
-	width: 450px;
-	height: 300px;
-	border-top: 4px solid #a7be4a;
+	display: inline-block;
+	padding: 0 0 0 10px;;
+	width: 230px;
+	height: 230px;
 }
 .sem_actvity_item p{
 	margin: 20px 0 0 0;
@@ -257,7 +276,7 @@
 	color: rgba(255,0,0,0.4);
 	position: absolute;
 	right: -60px;
-	top: -60px;
+	top: 10px;
 	transform:rotate(60deg);
 }
 /*~~~~~~~~~~footer_menu_container~~~~~~~~~~*/
@@ -558,6 +577,9 @@
 	box-shadow: 3px 3px #ccc;
 	background: url(../img/sem/sem_portrait_bg.jpg);
 }
+/*.sem_love_container .sem_banner_wrapper{
+	height: 768px;
+}*/
 .sem_portrait_container .sem_banner_wrapper{
 	position: relative;
 	z-index: 2;
@@ -616,4 +638,4 @@
 .sem_portrait_container .sem_deliverguarantee_wrapper h5{
 	color: #666666;
 }
-	
+

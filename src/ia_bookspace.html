@@ -10,7 +10,7 @@
 	<meta name="keywords" content="">
 	<title>忆尔3.0-书册空间</title>
 	
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -1141,8 +1141,8 @@
 	<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
 	<script type="text/javascript" src='assets/js/jquery-ui-slider.min.js'></script>
 	<script type="text/javascript" src='assets/js/icheck.js'></script>
-	<script type="text/javascript" src='assets/js/swiper/swiper.jquery.min.js'></script>
-	
+	<script type="text/javascript" src='assets/js/swiper.jquery.min.js'></script>
+	<script type="text/javascript" src='js/check_os.js'></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
@@ -1460,8 +1460,8 @@
 		}
 
         function timeline() {
-            var availHeight = $(window).height();
-            var timelineInitFlag = false;
+			var availHeight = window.innerHeight;
+            var timelineInitFlag = true;
             var loadFlag = false;
             calculateTimelineAxis();
             $('.bmindex_bireadmore_btn').click(function() {
@@ -1469,25 +1469,21 @@
                     scrollTop: '1000px'
                 })
             })
-            if ($(document).scrollTop() > 600 || $(window).scrollTop() + availHeight + 50 >= $(document).height()) {
+            if ($(document).scrollTop() > 600) {
                 timelineInit();
             }
-            $(window).scroll(function() {
-                var docHeight = $(document).height();
-                var scrolltop = $(window).scrollTop() + 5;
-                if (scrolltop + availHeight >= docHeight && loadFlag == true) {
-                    loadFlag = false;
-                    $('.loadmore_inner').addClass('active');
-                    setTimeout(function() {
-                        loadTimelineData();
-                    }, 1000);
-                    docHeight = $(document).height();
-                } else if (!timelineInitFlag && scrolltop >= 600) {
-                    timelineInit();
-                } else if (!timelineInitFlag && $(window).scrollTop() + availHeight + 50 >= $(document).height()) {
+            window.onscroll=function() {
+                if ($.os.android) {
+                	var scrolltop = $(window).scrollTop()+75;
+                }else{
+                	var scrolltop = $(window).scrollTop();
+                }
+               	console.log('doc_height '+$(document).height()+' avail_top_height'+(scrolltop + availHeight));
+                if (timelineInitFlag && scrolltop >= 600 && timelineInitFlag==true) {
                     timelineInit();
                 }
-            });
+                checkIfOnBottom();
+            }
 
             function loadTimelineData() {
                 for (var i = 0; i < 5; i++) {
@@ -1505,24 +1501,34 @@
 
             function checkIfOnBottom() {
                 var docHeight = $(document).height();
-                var scrolltop = $(window).scrollTop() + 5;
-                if (scrolltop + availHeight >= docHeight && loadFlag == true) {
+                if ($.os.android) {
+                	var scrolltop = $(window).scrollTop()+75;
+                }else{
+                	var scrolltop = $(window).scrollTop();
+                }
+
+               	if (scrolltop + availHeight  >= $(document).height() && loadFlag == true) {
+               		alert($(document).height());
+					alert($(window).height());
                     loadFlag = false;
                     $('.loadmore_inner').addClass('active');
                     setTimeout(function() {
-                        loadTimelineData();
+                    	alert('init_2');
+						loadTimelineData();
                     }, 1000)
-                }
+                    
+                } 
             }
 
             function timelineInit() {
-                timelineInitFlag = true;
+                timelineInitFlag = false;
                 var timelineLiEl = $('.timeline_main_wrapper>ul>li');
                 var nodeLength = timelineLiEl.length;
                 addTransition(timelineLiEl);
                 setTimeout(function() {
                     loadFlag = true;
                     checkIfOnBottom();
+                    
                 }, 500 * nodeLength)
             }
 
@@ -1546,7 +1552,7 @@
         }
 
         function loadHtml() {
-            return "<li class='timeline_newnode'><div class='timeline_line_wrapper'><div class='friend ybiconfont ybicon-friend'></div><div class='time'>昨天</div></div><div class='timeline_node_wrapper'><div class='timeline_title_wrapper'><img class='avatar' src='img/default/vote_result_avatar_100_100_00000.jpg' width='45' height='45'><h5>用户XXX发起了投票<a href='javascript:;'>'谁是女神123'</a></h5><a class='timeline_sharetrigger_btn ybiconfont ybicon-sharehollow' href='javascript:;'></a></div><div class='timeline_content_wrapper'><p>书册中还有<a href='javascript:;'>王二</a>，<a href='javascript:;'>大智</a>等<a href='javascript:;'>18</a>个小伙伴！</p></div></div><div class='common_sharelist_wrapper'><ul><li class='weibo'><a href='javascript:;'></a></li><li class='qzone'><a href='javascript:;'></a></li><li class='wechat'><a href='javascript:;'></a></li><li class='renren'><a href='javascript:;'></a></li></ul></div></li>"
+            return "<li class='timeline_newnode'><div class='timeline_line_wrapper'><div class='friend ybiconfont ybicon-friend'></div><div class='time'>昨天</div></div><div class='timeline_node_wrapper'><div class='timeline_title_wrapper'><img class='avatar' src='img/default/vote_result_avatar_100_100_00000.jpg' width='45' height='45'><h5>用户XXX发起了投票<a href='javascript:;'>'谁是女神123'</a></h5><a class='timeline_sharetrigger_btn ybiconfont ybicon-sharehollow' href='javascript:;'></a></div><div class='timeline_content_wrapper'><p>书册中还有<a href='javascript:;'>王二</a>，<a href='javascript:;'>大智</a>等<a href='javascript:;'>18</a>个小伙伴！</p></div></div><div class='common_sharelist_wrapper'><ul><li class='weibo'><a class='ybiconfont ybicon-weibosina' href='javascript:;'></a></li><li class='qzone'><a class='ybiconfont ybicon-qzone' href='javascript:;'></a></li><li class='wechat'><a class='ybiconfont ybicon-wechatsolid' href='javascript:;'></a></li><li class='renren'><a class='ybiconfont ybicon-renren' href='javascript:;'></a></li></ul></div></li>"
         }
 
         function swiperInit() {

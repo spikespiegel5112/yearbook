@@ -2,7 +2,7 @@
 .bp_title_wrapper {
 	margin: 0 auto;
 	padding: 20px 0 0 0;
-	width: 1200px;
+	width: 100%;
 	position: relative;
 	z-index: 4;
 	text-align: center;
@@ -143,6 +143,17 @@
 
 .bp_iwanttoprint_btn:hover {
 	background: #cfbf33;
+}
+.bp_login_container{
+	display: none;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	z-index: 4;
+}
+.bp_login_container.active{
+	display: block;
 }
 
 /*~~~~~~~~~~flipbook_preview~~~~~~~~~~*/
@@ -429,7 +440,7 @@
 
 .bp_toolbar_wrapper ul li a {
 	display: block;
-	color: #706a6a;
+	color: #aaadbc;
 	overflow: hidden;
 	font-size: 30px;
 }
@@ -573,7 +584,7 @@
 	height: 40px;
 	background-color: #eeeeee;
 	line-height: 40px;
-	font-size: 30px;
+	font-size: 16px;
 	text-align: center;
 	color: #aaadbc;
 /*	background: #eee url("../img/sprite/bp_slide_icons.png") no-repeat;*/
@@ -1358,17 +1369,15 @@
 }
 .bp_donatestep_wrapper > a{
 	display: block;
+	margin: 20px;
 	height: 0.5em;
 	line-height: 1em;
 	position: absolute;
 	top: 0;
 	right: 0;
 	color: #ccc;
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: lighter;
-	transform:rotate(45deg);
-	-webkit-transform:rotate(45deg);
-	-moz-transform:rotate(45deg);
 }
 .bp_donatestep_wrapper.step_3 label{
 	display: block;
@@ -1459,20 +1468,20 @@
 	border-right: 15px solid #fff;
 }
 
-.bp_comment_wrapper .closebtn,
-.bp_praise_container .closebtn{
+.bp_comment_wrapper .closebtn, .bp_praise_container .closebtn{
 	display: block;
+	margin: 20px;
 	height: 1em;
 	line-height: 1em;
 	position: absolute;
 	top: -4px;
 	right: 4px;
 	color: #ccc;
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: lighter;
-	transform: rotate(45deg);
+/*	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);*/
 }
 
 .bp_comment_wrapper .closebtn:hover,

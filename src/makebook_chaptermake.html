@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<meta name="keywords" content="">
 	<title>忆尔3.4-章节定制</title>
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -1118,22 +1118,43 @@
 				<div class="clear"></div>
 				<div class="advanced_filter_con hidden">
 					<ul>
-						<li><div class="cm_fl">模板图片数量</div><div class="cm_fl"><input class="data required" id="cname" name="className" placeholder="" type="number"></div></li>
-						<li><div class="cm_fl">模板文本数量</div><div class="cm_fl"><input class="data required" id="cname" name="className" placeholder="" type="number"></div></li>
-						<li>
-							<div class="cm_fl">展示方式选择</div>
-							<label><input type="radio" name="type" value="" checked="checked" >全部页</label>
-                            <label><input type="radio" name="type" value="">单页</label>
-                            <label><input type="radio" name="type" value="">双页</label>
-						</li>
-						<li>
-							<div class="cm_fl">是否包含互动</div>
-							<label><input name="type" type="checkbox" value="1"></label>
-						</li>
-						<li>
-							<div class="seach_btn cm_cp">搜索</div>
-						</li>
-					</ul>
+					    <li>
+					        <div class="cm_fl">模板图片数量</div>
+					        <div class="cm_fl">
+					            <input class="data required" id="cname" name="className" placeholder="" type="number">
+					        </div>
+					    </li>
+					    <li>
+					        <div class="cm_fl">模板文本数量</div>
+					        <div class="cm_fl">
+					            <input class="data required" id="cname" name="className" placeholder="" type="number">
+					        </div>
+					    </li>
+					    <li>
+					        <div class="cm_fl">展示方式选择</div>
+					        <label>
+					        	<input type="radio" name="type" value="" checked="checked">
+								<span>全部页</span>
+					        </label>
+					        <label>
+					        	<input type="radio" name="type" value="">
+								<span>单页</span>
+							</label>
+					        <label>
+					        	<input type="radio" name="type" value="">
+								<span> 双页</span>
+					        </label>
+					    </li>
+					    <li>
+					        <div class="cm_fl">是否包含互动</div>
+							<label>
+				                <input name="type" type="checkbox" value="1">
+				            </label>
+				        </li>
+				        <li>
+				            <div class="seach_btn cm_cp">搜索</div>
+				        </li>
+				    </ul>
 				</div>
 				<div class="chaptermake_tpl">
 					<ul>
@@ -2110,6 +2131,7 @@
 			<li>
 				<label>相册名称：</label>
 				<input type='text'>
+                <label class="error">请输入书册名称。</label>
 			</li>
 			<li>
 				<label>班级名称：</label>
@@ -3127,7 +3149,7 @@
 	 * 高级筛选折叠功能
 	 */
 	 function advancedFilter(){
-		$('.advanced_filter').click(function(){
+		$('.advanced_filter').on('click', function(){
 			if($('.advanced_filter_con').hasClass('hidden')){
 				$('.advanced_filter_con').removeClass('hidden');
 				$(this).children('.icon-caret-down').removeClass('icon-caret-down');
@@ -3623,19 +3645,27 @@
             var qrTime = setTimeout("$('.yb_toolbar_footer .qrcode').removeClass('active')",2000);
 
             //hover显示全部工具栏
-            $('.yb_toolbar_wrap').hover(function(){
+            $('.yb_toolbar_wrap').hover(function(e){
                 $('.yb_toolbar').addClass('active');
-            },function(){
-                $('.yb_toolbar').removeClass('active');
+                $(document).one("click", function(e){
+                    $('.yb_toolbar').removeClass('active');
+                    $(".yb_toolbar").on("click", function(e){
+                        e.stopPropagation();
+                    });
+                });
+                e.stopPropagation();
             });
 
             //个人消息、书册信息
             $('.yb_toolbar_tabs .personal_btn').click(function(e){
-                if($('.personal_wrap').hasClass('active')){
+                if($(this).find('.personal_wrap').hasClass('active')){
                     $(this).closest('.yb_toolbar').removeClass('open');
                     $(this).find('.personal_wrap').removeClass('active');
                 }else{
                     $(this).closest('.yb_toolbar').addClass('open');
+                    $('.personal_wrap').each(function(){
+                        $(this).removeClass('active');
+                    });
                     $(this).find('.personal_wrap').addClass('active');
                     $(document).one("click", function(){
                         $('.yb_toolbar').removeClass('open');
@@ -3659,7 +3689,7 @@
 		pagemake_left_filter();
 		changeTpl();
 		pagemake_middle_tpl();
-		changeButtonCss();
+		// changeButtonCss();
 		editBannerTitle();
         deleteChapterTip();
 		setListChapterTip();

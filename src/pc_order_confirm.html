@@ -8,10 +8,10 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔-确认订单</title>
+	<title>3.11 确认订单</title>
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1457510000_475605.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -41,238 +41,390 @@
 				<li><a href="access_register.html">注册</a></li>
 			</ul>
 		</div>
+        <div class="cm_header_shadow"></div>
 	</div>
-	<div class="cm_header_shadow"></div>
-	<div class='opd_wrapper'>
-		<div class='opd_procedure_wrapper'>
-			<ul>
-				<li class='active'>
-					<div class='opdnode_text_item'><span></span>
-						<label>确认下单</label>
-					</div>
-				</li>
-				<li>
-					<div class='opdnode_dash_item'></div>
-					<div class='opdnode_text_item'><span></span>
-						<label>填写收货地址</label>
-					</div>
-				</li>
-				<li>
-					<div class='opdnode_dash_item'></div>
-					<div class='opdnode_text_item'><span></span>
-						<label>在线支付</label>
-					</div>
-				</li>
-				<li>
-					<div class='opdnode_dash_item'></div>
-					<div class='opdnode_text_item'><span></span>
-						<label>等待收货</label>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class='opd_checklist_wrapper'>
-			<table>
-				<thead>
-					<tr>
-						<th>尺寸选择</th>
-						<th>装订选择</th>
-						<th>内页数量</th>
-						<th>入册照片数量</th>
-						<th>单价</th>
-						<th>数量</th>
-						<th class='opd_checklisttotalprice_item'>总价</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<div class='opd_sketch_item'>
-								<select>
-									<option val='1'>别致小装</option>
-									<option val='2'>气派大装</option>
-								</select>
-								<img src="img/booklist/min_size.jpg">
-								<label>尺寸实例图片
-									<div class='ybcommon_queryicon_item'>
-										<span class='ybiconfont ybicon-querysolid'></span>
-										<div>
-											<p>
-												书册尺寸宽14.5cm，长21.0cm
-											</p>
-											<a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
-										</div>
-									</div>
-								</label>
-							</div>
-						</td>
-						<td>
-							<div class='opd_sketch_item'>
-								<select>
-									<option val='10'>平装（软面）</option>
-									<option val='20'>精装（硬壳）</option>
-									<option val='30'>蝴蝶装（硬壳）</option>
-								</select>
-								<img src="img/booklist/paperback.jpg">
-								<label>装订实例图片
-									<div class='ybcommon_queryicon_item'>
-										<span class='ybiconfont ybicon-querysolid'></span>
-										<div>
-											<p>
-												书册采用包装为胶装覆膜
-											</p>
-											<a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
-										</div>
-									</div>
-								</label>
-							</div>
-						</td>
-						<td>
-							60P
-						</td>
-						<td>
-							80张
-						</td>
-						<td class='opd_unitprice_item'>
-							￥38.00
-						</td>
-						<td>
-							<div class='ybcommon_counter_item'>
-								<a href="javascript:;">-</a>
-								<input type='text' value='0' onchange='wtf()'>
-								<a href="javascript:;">+</a>
-							</div>
-						</td>
-						<td class='opd_summaraize_item'>
-							<span>￥</span>
-							<label>38.00</label>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class='opd_summarize_wrapper'>
-			<div class='opd_preferential_wrapper'>
-				<div class='opd_coupon_wrapper'>
-					<div>
-						<label>选择我的优惠券</label>
-						<select>
-							<option>满50减10</option>
-							<option>满100减20</option>
-							<option>满200减40</option>
-							<option>满400减80</option>
-							<option>满500减100</option>
-							<option>满5000减1000</option>
-							<option>一二三四五六七八九十一二三四五</option>
-						</select>
-						<a class='common_btn' href="javascript:;">我要兑换优惠券</a>
-					</div>
-					<div>
-						<div class='ybcommon_queryicon_item'>
-							<span class='ybiconfont ybicon-querysolid'></span>
-							<div>
-								<p>
-									关注忆尔公众号领取优惠券
-								</p>
-								<a class='ybcommon_qimoredetail_btn' href="static_hc_coupon.html" target='_blank'>查看详情</a>
-							</div>
-						</div>
-						<label>我要兑换优惠券</label>
-						<ul class='common_serialnumber_item'>
-							<li>
-								<input type='text' maxlength='4'>
-							</li>
-							<li>
-								<span>-</span>
-								<input type='text' maxlength='4'>
-							</li>
-							<li>
-								<span>-</span>
-								<input type='text' maxlength='4'>
-							</li>
-							<li>
-								<span>-</span>
-								<input type='text' maxlength='4'>
-							</li>
-						</ul>
-						<a class='common_btn' href="javascript:;">确认</a>
-					</div>
-				</div>
-				<div class='opd_privilege_wrapper'>
-					<p><a href="javascript:;">-</a>已享受的优惠</p>
-					<ul>
-						<li>
-							<label>[活动]</label>全场书册免费包邮配送
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class='opd_subtotal_wrapper'>
-				<ul>
-					<li class='opd_mercprice_item'>
-						<label>商品金额：</label>
-						<strong>
-							￥<span>38.00</span>
-						</strong>
-					</li>
-					<li class='opd_privprice_item'>
-						<label>优惠金额：</label>
-						<strong>
-							￥<span>38.00</span>
-						</strong>
-					</li>
-					<li class='opd_subtotalprice_item'>
-						<label>实际需支付：</label>
-						<strong>
-							￥<span>38.00</span>
-						</strong>
-					</li>
-				</ul>
-			</div>
-			<div class='clearfloat'></div>
-		</div>
-		<div class='opd_confirm_wrapper'>
-			<div class='opd_advice_wrapper'>
-				<div class="ybcommon_queryicon_item">
-					<span class='ybiconfont ybicon-querysolid'></span>
-					<div>
-						<p>
-							忆尔将根据您的内页数量给出合适的装订建议
-						</p>
-						<a class="ybcommon_qimoredetail_btn" href="static_hc_bind_size.html" target='_blank'>查看详情</a>
-					</div>
-				</div>
-				<label>忆尔建议：您的内页数量较少，装订方式可以选择使用蝴蝶装</label>
-                <div class='common_sharelist_wrapper'>
-                    <label>忆尔分享：</label>
+    <div class="main_container create_order">
+        <div class='opd_wrapper'>
+            <!--<div class='opd_procedure_wrapper'>
+                <ul>
+                    <li class='active'>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>确认下单</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='opdnode_dash_item'></div>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>填写收货地址</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='opdnode_dash_item'></div>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>在线支付</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='opdnode_dash_item'></div>
+                        <div class='opdnode_text_item'><span></span>
+                            <label>等待收货</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->
+            <div class="opd_title">
+                <h1><span></span>我的订单</h1>
+                <div class="progress_bar">
                     <ul>
-                        <li class='weibo active'>
-                            <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                        <li class="cur">
+                            <div><span>1</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>确认下单</p>
                         </li>
-                        <li class='qzone active'>
-                            <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                        <li class="">
+                            <div><span>2</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>填写收货地址</p>
                         </li>
-                        <li class='wechat active'>
-                            <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                        <li>
+                            <div><span>3</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>在线支付</p>
                         </li>
-                        <li class='renren active'>
-                            <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                        <li>
+                            <div><span>4</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>等待收货</p>
                         </li>
                     </ul>
                 </div>
-			</div>
-			<div class='opd_confirmbtn_wrapper'>
-				<a class='opd_notyetbtn_item' href="javascript:;">还没做好，返回制作</a>
-				<a class='opd_confirm_item' href="javascript:;">确认下单<span></span></a>
-			</div>
-		</div>
-        <!--活动推送ad-->
-        <div class="activity_push_wrap">
-            <a href="activity_1602_shareorder.html">
-                <img src="img/default/activity_push01.jpg" alt="晒单赢现金红包">
-            </a>
+            </div>
+            <div class='opd_checklist_wrapper'>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>商品信息</th>
+                        <th>尺寸选择</th>
+                        <th>装订选择</th>
+                        <th>内页&入册照片数</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>总价</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="opd_product_info">
+                                <h5>《<span>小鱼幼儿园记</span>》</h5>
+                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                <a class="change_book" href="javascript:;">更换书册</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option val='1'>别致小装（145mm×210mm）</option>
+                                    <option val='2'>气派大装（175mm×248mm）</option>
+                                </select>
+                                <img src="img/pc/min_size.png">
+                                <label>尺寸示例图
+                                    <div class='ybcommon_queryicon_item'>
+                                        <span class='ybiconfont ybicon-querysolid'></span>
+                                        <div>
+                                            <p>
+                                                书册尺寸宽14.5cm，长21.0cm
+                                            </p>
+                                            <a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option val='30'>蝴蝶装</option>
+                                    <option val='10'>平装（软）</option>
+                                    <option val='20'>精装（硬）</option>
+                                </select>
+                                <img src="img/pc/butterflycover.png">
+                                <label>装订示例图片
+                                    <div class='ybcommon_queryicon_item'>
+                                        <span class='ybiconfont ybicon-querysolid'></span>
+                                        <div>
+                                            <p>
+                                                书册采用包装为胶装覆膜
+                                            </p>
+                                            <a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>20P</div>
+                            <div>36张</div>
+                        </td>
+                        <td class='opd_unitprice_item'>
+                            ￥38.00
+                        </td>
+                        <td>
+                            <div class='ybcommon_counter_item'>
+                                <a href="javascript:;">-</a>
+                                <input type='text' value='0' onchange='wtf()'>
+                                <a href="javascript:;">+</a>
+                            </div>
+                        </td>
+                        <td class='opd_summaraize_item'>
+                            <span>￥</span>
+                            <label>38.00</label>
+                        </td>
+                        <td>
+                            <div class="opd_actions">
+                                <div class="add"><a href="javascript:;"><i class="ybiconfont ybicon-add"></i>新增</a></div>
+                                <div class="share">
+                                    <a href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    <div class='common_sharelist_wrapper'>
+                                        <ul>
+                                            <li class='weibo'>
+                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                            </li>
+                                            <li class='qzone'>
+                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                            </li>
+                                            <li class='wechat'>
+                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                            </li>
+                                            <li class='renren'>
+                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="delete"><a href="javascript:;"><i class="ybiconfont ybicon-trash"></i>移除</a></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="opd_product_info">
+                                <h5>《<span>小鱼幼儿园记</span>》</h5>
+                                <div class="cover"><img src="img/default/chaptermark_tpl_img.jpg"></div>
+                                <a class="change_book" href="javascript:;">更换书册</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option val='2'>气派大装（175mm×248mm）</option>
+                                    <option val='1'>别致小装（145mm×210mm）</option>
+                                </select>
+                                <img src="img/pc/max_size.png">
+                                <label>尺寸实例图
+                                    <div class='ybcommon_queryicon_item'>
+                                        <span class='ybiconfont ybicon-querysolid'></span>
+                                        <div>
+                                            <p>
+                                                书册尺寸宽17.8cm，长24.8cm
+                                            </p>
+                                            <a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option val='10'>平装（软）</option>
+                                    <option val='30'>蝴蝶装</option>
+                                    <option val='20'>精装（硬）</option>
+                                </select>
+                                <img src="img/pc/paperback.png">
+                                <label>装订实例图片
+                                    <div class='ybcommon_queryicon_item'>
+                                        <span class='ybiconfont ybicon-querysolid'></span>
+                                        <div>
+                                            <p>
+                                                书册采用包装为胶装覆膜
+                                            </p>
+                                            <a class='ybcommon_qimoredetail_btn' href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>20P</div>
+                            <div>36张</div>
+                        </td>
+                        <td class='opd_unitprice_item'>
+                            ￥38.00
+                        </td>
+                        <td>
+                            <div class='ybcommon_counter_item'>
+                                <a href="javascript:;">-</a>
+                                <input type='text' value='0' onchange='wtf()'>
+                                <a href="javascript:;">+</a>
+                            </div>
+                        </td>
+                        <td class='opd_summaraize_item'>
+                            <span>￥</span>
+                            <label>38.00</label>
+                        </td>
+                        <td>
+                            <div class="opd_actions">
+                                <div class="add"><a href="javascript:;"><i class="ybiconfont ybicon-add"></i>新增</a></div>
+                                <div class="share">
+                                    <a href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    <div class='common_sharelist_wrapper'>
+                                        <ul>
+                                            <li class='weibo'>
+                                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                            </li>
+                                            <li class='qzone'>
+                                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                            </li>
+                                            <li class='wechat'>
+                                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                            </li>
+                                            <li class='renren'>
+                                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="delete"><a href="javascript:;"><i class="ybiconfont ybicon-trash"></i>移除</a></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='opd_summarize_wrapper'>
+                <div class='opd_preferential_wrapper'>
+                    <div class='opd_coupon_wrapper'>
+                        <!--<div>
+                            <label>选择我的优惠券</label>
+                            <select>
+                                <option>满50减10</option>
+                                <option>满100减20</option>
+                                <option>满200减40</option>
+                                <option>满400减80</option>
+                                <option>满500减100</option>
+                                <option>满5000减1000</option>
+                                <option>一二三四五六七八九十一二三四五</option>
+                            </select>
+                            <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+                        </div>-->
+                        <div>
+                            <div class='ybcommon_queryicon_item'>
+                                <span class='ybiconfont ybicon-querysolid'></span>
+                                <div>
+                                    <p>
+                                        关注忆尔公众号领取优惠券
+                                    </p>
+                                    <a class='ybcommon_qimoredetail_btn' href="static_hc_coupon.html" target='_blank'>查看详情</a>
+                                </div>
+                            </div>
+                            <label>兑换我的优惠券</label>
+                            <ul class='common_serialnumber_item'>
+                                <li>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                                <li>
+                                    <span>-</span>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                                <li>
+                                    <span>-</span>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                                <li>
+                                    <span>-</span>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                            </ul>
+                            <a class='common_btn' href="javascript:;">确认</a>
+                        </div>
+                    </div>
+                    <!--<div class='opd_privilege_wrapper'>
+                        <p><a href="javascript:;">-</a>已享受的优惠</p>
+                        <ul>
+                            <li>
+                                <label>[活动]</label>全场书册免费包邮配送
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+                <div class='opd_subtotal_wrapper'>
+                    <ul>
+                        <li class='opd_mercprice_item'>
+                            <label>商品金额：</label>
+                            <strong>
+                                ￥<span>38.00</span>
+                            </strong>
+                        </li>
+                        <li class='opd_privprice_item'>
+                            <label>优惠金额：</label>
+                            <strong>
+                                ￥<span>38.00</span>
+                            </strong>
+                        </li>
+                    </ul>
+                    <div class='opd_subtotalprice_item'>
+                        <label>合计：</label>
+                        <strong>
+                            ￥<span>38.00</span>
+                        </strong>
+                    </div>
+                    <div class='opd_confirmbtn_wrapper'>
+                        <a class='opd_confirm_item' href="pc_order_fillorderinfo.html">确认下单</a>
+                    </div>
+                </div>
+                <div class='clearfloat'></div>
+            </div>
+            <!--<div class='opd_confirm_wrapper'>
+                <div class='opd_advice_wrapper'>
+                    <div class="ybcommon_queryicon_item">
+                        <span class='ybiconfont ybicon-querysolid'></span>
+                        <div>
+                            <p>
+                                忆尔将根据您的内页数量给出合适的装订建议
+                            </p>
+                            <a class="ybcommon_qimoredetail_btn" href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+                        </div>
+                    </div>
+                    <label>忆尔建议：您的内页数量较少，装订方式可以选择使用蝴蝶装</label>
+                    <div class='common_sharelist_wrapper'>
+                        <label>忆尔分享：</label>
+                        <ul>
+                            <li class='weibo active'>
+                                <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                            </li>
+                            <li class='qzone active'>
+                                <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                            </li>
+                            <li class='wechat active'>
+                                <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                            </li>
+                            <li class='renren active'>
+                                <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='opd_confirmbtn_wrapper'>
+                    <a class='opd_notyetbtn_item' href="javascript:;">还没做好，返回制作</a>
+                    <a class='opd_confirm_item' href="javascript:;">确认下单<span></span></a>
+                </div>
+            </div>-->
+            <!--活动推送ad-->
+            <div class="activity_push_wrap">
+                <a href="activity_1602_shareorder.html">
+                    <img src="img/default/activity_push01.jpg" alt="晒单赢现金红包">
+                </a>
+            </div>
         </div>
-	</div>
+    </div>
 	<!--底部-->
 	<div class="footer new cm_min_width">
 		<div class="ft_service">
@@ -362,9 +514,91 @@
 		<p>目前书册总页数为奇数页，为保证印刷质量，
 			<br>请添加或删除书页至<span>偶数页</span>再提交订单！</p>
 	</div>
+    <!--更换出册-->
+    <div class="load_obp_box hidden">
+        <p>请选择您想要更换的书册：</p>
+        <div class="booklist_wrap">
+            <div class="hd">
+                <a class="prev" href="javascript:;"></a>
+                <a class="next" href="javascript:;"></a>
+            </div>
+            <div class="bd">
+                <ul class="booklist">
+                    <li>
+                        <a class='bookcover selected' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                    <li>
+                        <a class='bookcover' href="javascript:;">
+                            <img src="img/default/chaptermark_tpl_img.jpg">
+                            <span class="ybiconfont ybicon-ok"></span>
+                        </a>
+                        <h5 class='name'>《越单纯越幸福》</h5>
+                        <div class='number'>含照片:<span>40</span>张</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <a class="btn change" href="javascript:;">更换书册</a>
+        </div>
+    </div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 	<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
+	<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.2.js'></script>
 	<script type="text/javascript" src="js/base.js"></script>
 	<script type="text/javascript">
 	$(function() {
@@ -401,48 +635,48 @@
 		$('.ybcommon_queryicon_item').hover(function() {
 			$(this).find('div').show();
 		}, function() {
-			$(this).find('div').show();
+			$(this).find('div').hide();
 		});
 
 		$('.opd_sketch_item select').change(function() {
 			$this = $(this);
 			switch ($this.closest('td').index()) {
-				case 0:
+				case 1:
 					var selected = $this.find('option:selected'),
-						relatedImgEl = $('.opd_sketch_item:eq(0) img'),
-						realterTextEl = $('.opd_sketch_item:eq(0) .ybcommon_queryicon_item div p');
+						relatedImgEl = $this.parent().find('img'),
+						realterTextEl = $this.parent().find('.ybcommon_queryicon_item div p');
 					switch (selected.val()) {
-						case '别致小装':
-							relatedImgEl.attr('src', 'img/book_details/min_size.jpg');
+						case '别致小装（145mm×210mm）':
+							relatedImgEl.attr('src', 'img/pc/min_size.png');
 							realterTextEl.text('书册尺寸宽14.5cm，长21.0cm');
 							break;
-						case '气派大装':
-							relatedImgEl.attr('src', 'img/book_details/max_size.jpg');
+						case '气派大装（175mm×248mm）':
+							relatedImgEl.attr('src', 'img/pc/max_size.png');
 							realterTextEl.text('书册尺寸宽17.5cm，长s24.8cm');
 							break;
 					}
 					break;
-				case 1:
+				case 2:
 					var selected = $this.find('option:selected'),
-						relatedImgEl = $('.opd_sketch_item:eq(1) img'),
-						realterTextEl = $('.opd_sketch_item:eq(1) .ybcommon_queryicon_item div p');
+						relatedImgEl = $this.parent().find('img'),
+						realterTextEl = $this.parent().find('.ybcommon_queryicon_item div p');
 					switch (selected.val()) {
-						case '平装（软面）':
-							relatedImgEl.attr('src', 'img/book_details/paperback.jpg');
+						case '平装（软）':
+							relatedImgEl.attr('src', 'img/pc/paperback.png');
 							realterTextEl.text('书册采用包装为胶装覆膜');
 							break;
-						case '精装（硬壳）':
-							relatedImgEl.attr('src', 'img/book_details/hardcover01.jpg');
+						case '精装（硬）':
+							relatedImgEl.attr('src', 'img/pc/hardcover01.png');
 							realterTextEl.text('书册采用包装为精装硬壳覆膜');
 							break;
-						case '蝴蝶装（硬壳）':
-							relatedImgEl.attr('src', 'img/book_details/butterflycover.jpg');
+						case '蝴蝶装':
+							relatedImgEl.attr('src', 'img/pc/butterflycover.png');
 							realterTextEl.text('书册采用包装为精装硬壳覆膜，装订方式为蝴蝶装');
 							break;
 					}
 					break;
 			}
-		})
+		});
 		// $('.opd_sketch_item select, .opd_coupon_wrapper select').chosen({
 		// 	disable_search_threshold: 15
 		// });
@@ -456,6 +690,57 @@
 			cancelVal: '返回制作',
 			cancel: function () {}
 		});
+
+        //更换书册
+        $('.change_book').click(function(){
+            jQuery(".booklist_wrap").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                autoPage: true,
+                effect: "left",
+                vis: 5,
+                trigger: "click",
+                scroll:5,
+                pnLoop:true
+            });
+            art.dialog({
+                title: '更换书册至订单',
+                lock : true,
+                content: document.querySelector('.load_obp_box')
+            });
+
+            //选择目标书册
+            $('.booklist li .bookcover').click(function(){
+                $('.booklist li .bookcover').each(function(){
+                    $(this).removeClass('selected');
+                });
+                $(this).addClass('selected');
+            })
+        });
+
+        //新增订单
+        $('.opd_actions .add').click(function(){
+            $(this).closest('tr').clone(true).insertBefore('.opd_checklist_wrapper tbody tr:first');
+        });
+
+        //删除订单
+        $('.opd_actions .delete').click(function(){
+            var $this = $(this);
+            art.dialog({
+                title: '删除书册',
+                lock : true,
+                icon: 'warning',
+                content: '确认删除此书册？',
+                okValue: '确 定',
+                ok: function() {
+                    if(!($this.closest('tbody').find('tr').length == 1)){
+                        $this.closest('tr').remove();
+                    }
+                },
+                cancelValue: '取消',
+                cancel: function() {}
+            });
+        });
 	}
 
 	function serialNumber() {

@@ -2928,7 +2928,7 @@
     padding: 5px 0;
     margin: 0 auto;
     width: 30px;
-    height: 35px;
+    /*height: 35px;*/
     /*background: url(../img/m/icon/trash.png) no-repeat center;
     background-size: cover;*/
     font-size: 24px;
@@ -3173,23 +3173,27 @@
 
 .closebutton_img {
     display: block;
-    width: 1em;
-    height: 1em;
-    line-height: 20px;
-    border-radius: 1em;
+    width: 26px;
+    height: 26px;
+    line-height: 18px;
+    border-radius: 100%;
     position: absolute;
     top: -5px;
     left: -5px;
     z-index: 1;
     background: rgba(255, 255, 255, 0.7);
-    transform: rotate(45deg);
+    /*transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);*/
     border: 2px solid #555;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 20px;
     font-weight: normal;
-    box-sizing: content-box;
+    box-sizing: border-box;
+}
+
+.closebutton_img span{
+    font-size: 12px;
 }
 
 .uploadphoto_main_wrapper li .progressbar {
@@ -3386,7 +3390,9 @@
 .photograph_time_item span {
     float: left;
     width: 32px;
-    height: 20px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
 }
 
 .photograph_time_item p {
@@ -5287,27 +5293,13 @@ a.ia-vote-add-choose-num {
     margin-left: .5em;
 }
 
-a.ia-vote-add-choose-num span.ybicon-minus2{
+a.ia-vote-add-choose-num span.ybiconfont{
     font-size: 23px;
     color: #b4b4b4;
     display: inline-block;
     vertical-align: middle;
     height: 21px;
     line-height: 21px;
-}
-
-a.ia-vote-add-choose-num span.ybicon-plus{
-    font-size: 12px;
-    color: #b4b4b4;
-    display: inline-block;
-    vertical-align: middle;
-    width: 21px;
-    height: 21px;
-    line-height: 18px;
-    text-align: center;
-    border: 2px solid #b4b4b4;
-    border-radius: 100%;
-    box-sizing: border-box;
 }
 
 .control-group a.ia-vote-add-choose-num img {

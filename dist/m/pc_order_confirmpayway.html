@@ -23,65 +23,58 @@
 <body class="bg_f6f6f6">
 <div class='main_container order_management change'>
     <div class="ybwechatheader_wrapper">
-        <a class='left_btn back_btn' href='javascript:;'>
-            <span class="ybiconfont ybicon-backward1"></span>
+        <a class='left_btn left_angle' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward3"></span>
         </a>
-        <p>确认支付方式</p>
+        <p>支付</p>
     </div>
-    <div class="basic_info">
-        <div class="orderinfo">
-            <div class="product info">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class='opd_productimg_item'>
-                            <a href="javascript:;">
-                                <img src="../img/m/default/choosetemplate_cover_00000.jpg">
-                            </a>
-                        </td>
-                        <td>
-                            <div>
-                                <a href="javascript:;">《月圆家团圆》<span>24页*1册</span></a>
-                                <p>精装硬壳</p>
-                                <p>别致小装（145mm×210mm）</p>
-                            </div>
-                        </td>
-                        <td class='opd_orderinfoprice_item'>
-                            ¥88.88
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="balance info">
-                <label>使用余额支付</label>
-                <div class="current_balance">当前账户余额：<span>¥18.00</span></div>
-                <div class="order_pay">需要支付金额：<span>¥88.00</span></div>
-            </div>
-            <div class="payway info">
-                <label>选择支付方式</label>
+    <div class="order_manage">
+        <div class="receive_info">
+            <div class="info money">
                 <ul>
                     <li>
-                        <input type="radio" id="alipay" name="payway">
-                        <label for="alipay" class=""><img src="../img/pc/alipay_img.png"></label>
+                        <div><label>实际支付：</label><span>￥2230.00</span></div>
                     </li>
                     <li>
-                        <input type="radio" id="unipay" name="payway">
-                        <label for="unipay" class=""><img src="../img/m/pc/Unionpay_img.png"></label>
+                        <div><label>商品总额：</label><b>￥2240.00</b></div>
                     </li>
                     <li>
-                        <input type="radio" id="wechatpay" name="payway">
-                        <label for="wechatpay" class=""><img src="../img/m/pc/wechatpay.png"></label>
+                        <div><label>优惠金额：</label><b>￥10.00</b></div>
+                    </li>
+                    <li>
+                        <div><label>运费：</label><b>￥0.00</b></div>
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class='opd_confirm_wrapper'>
-            <div class="opd_subtotalprice_item">
-                <label>实付款：</label>
-                <span>¥88.88</span>
+            <div class="info payway">
+                <a href="javascript:;"><h4>支付方式<i class="ybiconfont ybicon-forward2"></i></h4></a>
+                <ul>
+                    <li>
+                        <div>您的账户余额为：<span>￥0.00</span></div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="radio" id="alipay" name="payway">
+                            <label for="alipay" class=""><img src="../img/pc/alipay_img.png"></label>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="radio" id="unipay" name="payway">
+                            <label for="unipay" class=""><img src="../img/m/pc/Unionpay_img.png"></label>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="radio" id="wechatpay" name="payway">
+                            <label for="wechatpay" class=""><img src="../img/m/pc/wechatpay.png"></label>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <a class='opd_confirm_item' href="javascript:;">马上支付</a>
+            <div class="om_btn_wrap">
+                <a class="om_btn" href="pc_order_paymentsuccessful.html">付款</a>
+            </div>
         </div>
     </div>
 </div>

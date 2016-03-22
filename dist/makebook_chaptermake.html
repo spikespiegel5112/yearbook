@@ -2127,6 +2127,7 @@
 			<li>
 				<label>相册名称：</label>
 				<input type='text'>
+                <label class="error">请输入书册名称。</label>
 			</li>
 			<li>
 				<label>班级名称：</label>
@@ -3651,11 +3652,14 @@
 
             //个人消息、书册信息
             $('.yb_toolbar_tabs .personal_btn').click(function(e){
-                if($('.personal_wrap').hasClass('active')){
+                if($(this).find('.personal_wrap').hasClass('active')){
                     $(this).closest('.yb_toolbar').removeClass('open');
-                    $('.personal_wrap').removeClass('active');
+                    $(this).find('.personal_wrap').removeClass('active');
                 }else{
                     $(this).closest('.yb_toolbar').addClass('open');
+                    $('.personal_wrap').each(function(){
+                        $(this).removeClass('active');
+                    });
                     $(this).find('.personal_wrap').addClass('active');
                     $(document).one("click", function(){
                         $('.yb_toolbar').removeClass('open');

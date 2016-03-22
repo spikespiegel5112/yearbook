@@ -15,29 +15,6 @@
 </head>
 
 <body>
-	<!--头部导航-->
-	<div class="cm_header_nav">
-		<div class="logo">
-			<a href="index.html"><img src="img/logo.png"></a>
-		</div>
-		<div class="nav">
-			<ul>
-				<li><a href="index.html">首页</a></li>
-				<li><a href="booklist_photo.html">照片书</a></li>
-				<li><a href="booklist_ia.html">互动册</a></li>
-				<li><a href="pc_mybookshelf.html">个人中心</a></li>
-				<li><a href="static_instruction_entrance.html">使用指南</a></li>
-			</ul>
-		</div>
-		<div class="nav_login">
-			<span class='ybiconfont ybicon-user'></span>
-			<ul>
-				<li><a href="access_login.html" class="active">登录</a></li>
-				<li><a href="access_register.html">注册</a></li>
-			</ul>
-		</div>
-		<div class="cm_header_shadow"></div>
-	</div>
 	<!--登录表单-->
 	<div class="access_login_container">
 		<div class='common_login_wrapper'>
@@ -52,15 +29,15 @@
 				<span></span>
 				<!-- <label></label> -->
 			</div>
-			<form method="post" action="/login;jsessionid=DC917C6992A727988D39AF0C65D402DA?service=http%3A%2F%2Fwww.yearbook.com.cn%2Fcallback%3Fclient_name%3DCasClient" id="fm1">
+			<form method="post" action="" id="fm1">
 				<ul class='common_logininput_wrapper'>
 					<li>
 						<span class='ybiconfont ybicon-user'></span>
-						<input type='text' placeholder='输入用户名'>
+						<input id='loginName' name='loginName' type='text' placeholder='输入用户名'required>
 					</li>
 					<li>
 						<span class='ybiconfont ybicon-lock'></span>
-						<input type='password' placeholder='输入密码'>
+						<input id='password' name='password' type='password' placeholder='输入密码'required>
 					</li>
 				</ul>
 			</form>
@@ -77,33 +54,6 @@
 			</div>
 		</div>
 	</div>
-	<!--底部-->
-	<div class="footer login_footer">
-		<div class="footer_info">
-			<a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="index.html"></a>
-			</a>
-			<div class="footer_title">
-				<div>忆尔-在线DIY纪念册平台</div>
-				<p>专业在线制作电子书册平台</p>
-				<p>DIY出独一无二的青春纪念册</p>
-			</div>
-		</div>
-		<div class="footer_list">
-			<div class="ft_nav">
-				<a href="javascript:;">客服电话 400 0610 127</a>
-				<a href="javascript:;">客服QQ</a>
-				<a href="javascript:;">客服邮箱</a>
-				<a href="static_hc_company_profile.html">关于我们</a>
-			</div>
-			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
-			<div class="ft_shares">
-				<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
-				<a class='ybiconfont ybicon-weibotencent' href="javascript:;"></a>
-				<a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
-				<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
-			</div>
-		</div>
-	</div>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
@@ -111,20 +61,20 @@
 	<script>
 	function validateForm() {
 		//validate方法参数可选  
-		return $('#commentForm').validate({
+		$('#fm1').validate({
 			messages: {
 				loginName: {
 					required: "用户名未填写"
 				},
 				password: {
-					required: '密码未填写',
+					required: '密码未填写'
 				}
 			}
 		}).form();
 	}
 
 	function doSubmit() { //点击登录触发验证
-		$('.login_btn').click(function() {
+		$('.common_loginbtn_item').click(function() {
 			if (validateForm()) {
 				document.form1.submit();
 			}
@@ -140,32 +90,17 @@
 	}
 
 	function login() {
-		// $('.common_login_container').css({
-		//      'height':$(window).height()
-		//  })
-		// $(window).resize(function(){
-		//  $('.common_login_container').css({
-		//      'height':$(window).height()
-		//  })
-		// })
-
+		$.remResizing({
+			fontsize: 20,
+			maxwidth: 0
+		});
+		$('.common_login_wrapper').align();
 	}
 
 	$(function() {
 		doSubmit();
 		icheck();
 		login();
-		$.remResizing({
-			fontsize: 20,
-			maxwidth: 0
-		});
-		$('.common_login_wrapper').align({
-			obstacleY: ['.cm_header_nav', '.footer']
-		});
-		$('.footer').align({
-			direction: 'vertical',
-			position: 'bottom'
-		});
 	});
 	</script>
 </body>

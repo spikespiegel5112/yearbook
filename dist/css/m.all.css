@@ -1639,9 +1639,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .ybcommon_counter_item {
 	width: 85px;
 	height: 25px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid #ccc;
 	line-height: 23px;
 	box-sizing: border-box;
+    border-radius: 3px;
 }
 
 .ybcommon_counter_item a {
@@ -1667,6 +1668,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	border: 0;
 	font-size: 15px;
 	text-align: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 0;
 }
 
 /*~~~~~~~~~~bottom switch to pc~~~~~~~~~~*/
@@ -2101,25 +2105,25 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 .bp_sendcomment_wrapper{
 	margin: 0 auto;
-	padding: .2rem 0 ;
+	padding: 5px 0 ;
 	width: 100%;
 	border-top: 1px solid #d9d9d9;
 	position: absolute;
 	bottom: 0;
 }
 .bp_sendcommentbtn_wrapper{
-	margin: .5rem auto;
+	margin: 5px auto;
 	width: 90%;
 	overflow: hidden;
 }
 .bp_sendcommentbtn_wrapper a{
 	display: block;
-	padding: 0.2rem 0.8rem;
-	width: 2rem;
+	padding: 5px 10px;
+	width: 24px;
 	background-color: #71cb5d;
 	color: #fff;
-	font-size: 0.9rem;
-	border-radius: 0.4rem;
+	font-size: 12px;
+	border-radius: 5px;
 }
 
 .bp_sendcommentbtn_wrapper .cancel{
@@ -2139,29 +2143,29 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 .bp_commentavatar_item{
 	margin: 0 auto;
-	padding: 0.5rem 0;
+	padding: 10px 0;
 	width: 95%;
 	overflow: hidden;
 	border-top: 1px solid #d9d9d9;
 }
 .bp_commentavatar_item img{
 	display: inline-block;
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 15px;
+	height: 15px;
 	border-radius: 50%;
 	vertical-align: middle;
 }
 .bp_commentavatar_item label{
 	display: inline-block;
-	font-size: 0.8rem;
+	font-size: 12px;
 }
 .bp_sendcomment_wrapper textarea{
 	display: block;
 	margin: 0 auto;
-	padding: 0.4rem;
+	padding: 5px;
 	width: 95%;
-	height: 5rem;
-	font-size: 0.8rem;
+	min-height: 120px;
+	font-size: 12px;
 	box-sizing: border-box;
 }
 
@@ -14263,7 +14267,501 @@ a.ia-vote-add-choose-num span.ybiconfont{
     font-size: 18px;
 }
 
-/*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/
+/*~~~~~~~~~~yb3.11 order_management confirm config ~~~~~~~~~~*/
+.order_manage {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.order_manage .add_tips{
+    position: relative;
+}
+
+.order_manage .add_tips p{
+    margin: 0;
+    padding: 0 10px;
+    height: 40px;
+    background-color: #ffdbd3;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.order_manage .add_tips p b{
+    margin: 0 5px;
+}
+
+.order_manage .add_tips p a{
+    margin: 0 5px;
+    color: #0088ff;
+    font-weight: bold;
+}
+
+.order_manage .order_list .order_info{
+    position: relative;
+    margin: 0 0 15px;
+    padding: 6px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.order_info .ot{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #333;
+}
+
+.order_info .ot .name{
+    display: inline-block;
+}
+
+.order_info .ot .name span{
+    display: inline-block;
+    max-width: 138px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.order_info .ot .sumprice{
+    float: right;
+    font-size: 18px;
+}
+
+.order_info .om{
+    position: relative;
+    padding: 5px 0 15px;
+    overflow: hidden;
+}
+
+.order_info .om .book{
+    float: left;
+    width: 85px;
+    height: 105px;
+    padding: 4px;
+    border: 1px solid #ccc;
+}
+
+.order_info .om .book img{
+    width: 100%;
+    height: 100%;
+}
+
+.order_info .om .bd_wrap{
+    margin-left: 10px;
+    padding-left: 90px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order_info .om .bd_wrap ul{
+    margin: 0;
+}
+
+.order_info .om .bd_wrap li > div{
+    font-size: 14px;
+    color: #999;
+    line-height: 25px;
+}
+
+.order_info .om .bd_wrap .ybcommon_counter_item{
+    margin: 5px 0 0;
+}
+
+.order_info .om .edit_order{
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.order_info .od_btn_wrap{
+    position: relative;
+    margin: 0;
+}
+
+.order_info .od_btn_wrap a{
+    margin-right: 12px;
+    font-size: 16px;
+    color: #999;
+}
+
+.order_info .om .edit_order:hover,
+.order_info .od_btn_wrap a:hover{
+    color: #70ca5d;
+}
+
+.order_info .od_btn_wrap a i{
+    margin-right: 3px;
+}
+
+.order_info .od_btn_wrap .delete{
+    float: right;
+}
+
+.order_manage .account_wrap{
+    position: fixed;
+    bottom: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 55px;
+    line-height:55px;
+    text-align: right;
+    background-color: #fff;
+    border-top: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+.order_manage .account_wrap .price{
+    font-size: 20px;
+    color: #666;
+    font-weight: normal;
+}
+
+.order_manage .account_wrap .price span{
+    font-size: 26px;
+    color: #ff0000;
+}
+
+.order_manage .account_wrap .om_btn_wrap{
+    float: right;
+    margin: 0;
+}
+
+.om_btn_wrap{
+    position: relative;
+    margin: 10px auto;
+}
+
+.om_btn_wrap .om_btn{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #ff6600;
+    border-radius: 4px;
+}
+
+.om_btn_wrap .om_btn:hover{
+    background-color: #df610c;
+}
+
+.om_btn_wrap .om_btn:active{
+    background-color: #c9570a;
+}
+
+.order_manage .account_wrap a{
+    display: inline-block;
+    margin: 0 0 0 8px;
+    width: 80px;
+    line-height: 37px;
+}
+
+/*添加其他书册至订单*/
+.add_order_container,
+.add_book_container{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.add_book_container .finished_book_wrap{
+    position: absolute;
+    bottom: 0;
+    padding: 6px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.finished_book_wrap h4{
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.finished_book_wrap .book_list .swiper-slide{
+    float: left;
+    padding: 5px 10px;
+    text-align: center;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.finished_book_wrap .book_list .bookcover {
+    position: relative;
+    display: block;
+    margin: 0 auto 5px;
+    width: 80px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.finished_book_wrap .book_list .bookcover.selected {
+    border: 2px solid #99c141;
+}
+
+.finished_book_wrap .book_list .bookcover img {
+    width: 100%;
+    height: 100%;
+}
+
+.finished_book_wrap .book_list .bookcover span {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    border-style: solid;
+    border-width: 13px;
+    border-color: transparent #99c141 #99c141 transparent;
+}
+
+.finished_book_wrap .book_list .bookcover.selected span {
+    display: block;
+}
+
+.finished_book_wrap .book_list .name {
+    margin: 0;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    max-width: 100%;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.finished_book_wrap .book_list .number {
+    font-size: 12px;
+    color: #333;
+}
+
+/*添加新订单*/
+.add_order_container .new_order_wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 6px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.new_order_wrap .om .cover{
+    float: left;
+}
+
+.order_info .om .cover .page_num{
+    padding: 6px 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.order_info .om .bd_wrap .style label{
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #999;
+
+}
+
+.order_info .om .bd_wrap .style .item {
+    position: relative;
+    margin: 0 0 8px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.order_info .om .bd_wrap .style.size .item{
+    width: 200px;
+}
+
+.order_info .om .bd_wrap .style.binding .item{
+    display: inline-block;
+    margin-right: 6px;
+    width: 95px;
+}
+
+.order_info .om .bd_wrap .style .item.selected{
+    border: 1px solid #ff6600;
+}
+
+.order_info .om .bd_wrap .style .item i{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 10px;
+    border-style: solid;
+    border-width: 12px;
+    border-color: transparent #ff6600 #ff6600 transparent;
+
+}
+
+.order_info .om .bd_wrap .style .item.selected i{
+    display: block;
+}
+
+/*~~~~~~~~~~ yb3.11 confirm receive info ~~~~~~~~~~*/
+.order_manage .receive_info{
+    position: relative;
+}
+
+.receive_info .info{
+    position: relative;
+    margin: 0 0 15px;
+    padding: 6px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.receive_info .dispatching .default{
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.receive_info .dispatching .default label{
+    color: #333;
+}
+
+.receive_info .dispatching.unset .default{
+    display: block;
+}
+
+.receive_info .dispatching h4,
+.receive_info .dispatching ul{
+    display: block;
+}
+
+.receive_info .dispatching.unset h4,
+.receive_info .dispatching.unset ul{
+    display: none;
+}
+
+.receive_info .info h4{
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #333;
+    line-height: 40px;
+}
+
+.receive_info .info ul li{
+    display: block;
+    padding-left: 20px;
+    line-height: 30px;
+    color: #333;
+}
+
+.receive_info .info  ul li .name{
+    float: left;
+    width: 55%;
+}
+
+.receive_info .info  ul li .phone{
+    float: left;
+    width: 45%;
+}
+
+.receive_info .info > i{
+    position: absolute;
+    color: #ccc;
+    right: 10px;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 16px;
+}
+
+.receive_info .info  ul li label{
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.receive_info .coupon h4{
+    border-bottom: 1px solid #ddd;
+}
+
+.receive_info .coupon h4 i,
+.receive_info .payway h4 i{
+    float: right;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.receive_info .money ul{
+    margin-top: 5px;
+}
+
+.receive_info .money ul li{
+    padding-left: 0;
+}
+
+.receive_info .money ul li label{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
+
+.receive_info .money ul li span{
+    font-size: 22px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.receive_info .payway ul li img{
+    width: 75px;
+    height: 23px;
+}
+
+.receive_info .om_btn_wrap{
+    width: 90%;
+}
+
+
+
+
+    /*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/
 .shop_apply_con .shop_default{
     display: none;
     position: relative;

@@ -563,17 +563,15 @@
 		},
 		align: function(options) {
 			options = $.extend({
-				direction: 'both',
-				position: 'center',
+				position: 'both',
 				obstacleX: 0,
 				obstacleY: 0,
 				offsetY: 0
 			}, options);
-			var windowWidth = $(window).width(),
-				windowHeight = $(window).height(),
-				thisWidth = this.width(),
-				thisHeight = this.height(),
-				_this = this;
+			var _this=this,
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height();
+			//障碍物处理判断
 			if (typeof options.obstacleX == 'number') {
 				windowWidth = windowWidth - options.obstacleX;
 			} else {
@@ -598,100 +596,66 @@
 					}else{
 						sum += $(options.obstacleY[i]).height();
 					}
-					
 				};
-				// alert(windowWidth+','+sum)
 				windowHeight = windowHeight - sum;
-				console.log( options.offsetY);
+				console.log('offsetY'+ options.offsetY);
 			}
 
-			switch (options.direction) {
+			switch(options.position){
 				case 'both':
-					switch (options.position) {
-						case 'top':
-							return;
-							break;
-						case 'center':
-							aligning(function() {
-								var marginY=(windowHeight - thisHeight) / 2;
-								if (marginY<=0) {
-									marginY=0;
-								};
-								_this.css({
-									'margin': marginY +options.offsetY + 'px auto'
-								});
-							});
-							break;
-						case 'bottom':
-							return;
-							break;
-					}
-					break;
-				case 'vertical':
-					aligning(function() {
+					aligning(function(thisWidth,thisHeight) {
+						var marginY=(windowHeight - thisHeight) / 2;
+						if (marginY<=0) {
+							marginY=0;
+						};
+						_this.css({
+							'margin': marginY +options.offsetY + 'px auto'
+						});
+					});
+				break;
+				case 'top':
+					aligning(function(thisWidth,thisHeight) {
 						if ($(document).height() > $(window).height()) {
 							return;
 						} else {
 							_this.css({
-								'position': 'absolute',
+								'margin':(windowWidth-thisWidth)/2+' auto'
 							});
 						}
 					});
-					switch (options.position) {
-						case 'top':
-							_this.css({
-								'top': 0
-							});
-							break;
-						case 'center':
-							aligning(function() {
-								_this.css({
-									'margin-left': (windowWidth - thisWidth) / 2,
-									'margin-top': (windowHeight - thisHeight) / 2
-								});
-							});
-							break;
-						case 'bottom':
-							_this.css({
-								'bottom': 0
-							});
-							break;
-					}
-					break;
-				case 'horizonal':
-					aligning(function() {
+				break;
+				case 'right':
+					aligning(function(thisWidth,thisHeight) {
 						_this.css({
-							'margin-top': (windowWidth - thisHeight) / 2
+							'margin': (windowHeight-thisHeight)/2+'px 0 0 '+(windowWidth-thisWidth)+'px'
 						});
 					});
-					switch (options.position) {
-						case 'left':
-							_this.css({
-								'left': 0
-							});
-							break;
-						case 'center':
-							aligning(function() {
-								_this.css({
-									'margin-left': (windowWidth - thisWidth) / 2,
-									'margin-top': (windowHeight - thisHeight) / 2
-								});
-							});
-							break;
-						case 'right':
-							_this.css({
-								'right': 0
-							});
-							break;
-					}
-					break;
+				break;
+				case 'bottom':
+					aligning(function(thisWidth,thisHeight) {
+						_this.css({
+							'margin': (windowHeight-thisHeight)+'px auto 0'
+						});
+					});
+				break;
+				case 'left':
+					aligning(function(thisWidth,thisHeight) {
+						_this.css({
+							'margin': (windowHeight-thisHeight)/2+'px 0 0 0'
+						});
+					});
+				break;
 			}
 
 			function aligning(callback) {
+				var thisWidth = _this.outerWidth(),
+					thisHeight = _this.outerHeight();
 				$(window).resize(function() {
-					callback()
+					thisWidth = _this.outerWidth();
+					thisHeight = _this.outerHeight();
+					return callback(thisWidth,thisHeight)
 				});
-				callback();
+				return callback(thisWidth,thisHeight);
 			}
 		}
 	});

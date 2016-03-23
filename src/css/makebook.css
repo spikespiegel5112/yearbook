@@ -2252,9 +2252,8 @@
 }
 
 .advanced_filter_con ul li label {
-	display: block;
-	margin-left: 60px;
-	padding: 0 20px;
+	display: inline-block;
+	margin: 5px;
 }
 
 .advanced_filter_con ul li .seach_btn {
@@ -2268,6 +2267,9 @@
 
 .advanced_filter_con ul li .seach_btn:hover {
 	background-color: #e7b54b;
+}
+.advanced_filter_con ul li>div{
+	line-height: 30px;
 }
 
 .tpl_pagination ul {

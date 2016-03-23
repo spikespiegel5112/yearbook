@@ -1,4 +1,9 @@
 @media (max-width:1024px){
+    .transition_btn{
+        transition: background-color 0.4s;
+        -webkit-transition: background-color 0.4s;
+        -moz-transition: background-color 0.4s;
+    }
     .cm_header_nav{
         display: none;
     }
@@ -26,6 +31,7 @@
     }
     .common_logininput_wrapper input{
         padding: 0 0 0 17%;
+        width: 83%;
         height: 1.5rem;
         background-color: rgba(255,255,255,0);
         font-size: 12px;

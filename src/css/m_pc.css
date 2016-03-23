@@ -1166,6 +1166,15 @@
     padding: 0 10px;
     border-bottom: 1px dotted #aaa;
     overflow: hidden;
+    font-weight: bold;
+}
+
+.myorder .orderinfo .order_num{
+    float: left;
+}
+
+.myorder .orderinfo .order_status{
+    float: right;
 }
 
 .myorder .orderinfo .order_status span {
@@ -1176,6 +1185,15 @@
     padding: 0 10px;
     border-top: 1px dotted #aaa;
     overflow: hidden;
+    font-weight: bold;
+}
+
+.myorder .order_footer .order_time{
+    float: left;
+}
+
+.myorder .order_footer .order_btns{
+    float: right;
 }
 
 .myorder .order_btns a {
@@ -2343,11 +2361,19 @@
     border-bottom: 1px solid #ddd;
 }
 
-.receive_info .coupon h4 i,
-.receive_info .payway h4 i{
+.receive_info .coupon h4 i{
     float: right;
     color: #ccc;
     font-size: 16px;
+}
+
+.receive_info .coupon li span{
+    margin-left: 5px;
+}
+
+.receive_info .coupon li b{
+    margin: 0 5px;
+    color: #f00;
 }
 
 .receive_info .money ul{
@@ -2379,10 +2405,53 @@
     width: 90%;
 }
 
+/*personal center order manage*/
+.myorder .order_info .title h4{
+    float: left;
+    margin: 0;
+    font-size: 18px;
+    line-height: 35px;
+    color: #333;
+    font-weight: bold;
+}
 
+.myorder .order_info .title .status{
+    float: right;
+    line-height: 35px;
+    font-size: 16px;
+}
 
+.myorder .order_info .title .status span{
+    color: #187e04;
+}
 
-    /*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/
+.myorder .order_info .item{
+    display: block;
+    margin-bottom: 8px;
+    width: 100%;
+    clear: both;
+    border-bottom: 1px solid #ddd;
+}
+
+.myorder .order_info .item:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.myorder .order_info .om .bd_wrap li > div{
+    line-height: 35px;
+}
+
+.myorder .order_info .om .bd_wrap .buy_num{
+    position: absolute;
+    right: 0;
+    top: 11px;
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*~~~~~~~~~~shop of personal center ~~~~~~~~~~*/
 .shop_apply_con .shop_default{
     display: none;
     position: relative;

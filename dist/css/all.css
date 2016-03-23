@@ -17468,7 +17468,7 @@ button::-moz-focus-inner {
 	background: url("../img/makebook/chapter_caption_bg.jpg") repeat-x 0;
 	border-bottom: 1px solid #ddd;
 	box-sizing: border-box;
-    overflow: hidden;
+    /*overflow: hidden;*//*NEWYB-1683*/
 }
 
 .pagemake_middle .caption .edit_wrap {
@@ -19188,7 +19188,7 @@ button::-moz-focus-inner {
 	font-size: 12px;
 }
 
-.advanced_filter_con ul li input {
+.advanced_filter_con ul li div input {
 	width: 60px;
 	max-width: none !important;
 	display: inline-block;
@@ -19206,7 +19206,7 @@ button::-moz-focus-inner {
 
 .advanced_filter_con ul li label {
 	display: block;
-	margin-left: 10px;
+	margin-left: 60px;
 	padding: 0 20px;
 }
 
@@ -19878,7 +19878,8 @@ button::-moz-focus-inner {
 	display: block;
 }
 
-.auto_layout_container .photo_box .btn {
+.auto_layout_container .photo_box .empty .btn,
+.auto_layout_container .photo_box .tips .btn {
 	display: inline-block;
 	/*margin: 10px 0;*/
 	padding: 6px 10px;
@@ -19901,31 +19902,32 @@ button::-moz-focus-inner {
 	font-size: 20px;
 }
 
-.auto_layout_container .photo_box .pc{
+.auto_layout_container .photo_box .tips .pc{
 	color: #fff;
 	background-color: #5cb1dd;
 	border: 1px solid #5cb1dd;
 }
 
-.auto_layout_container .photo_box .mobile{
+.auto_layout_container .photo_box .tips .mobile{
 	color: #fff;
 	background-color: #5ee292;
 	border: 1px solid #5ee292;
 }
 
-.auto_layout_container .photo_box .finish{
+.auto_layout_container .photo_box .tips .finish{
 	color: #fff;
 	background-color: #f4444c;
 	border: 1px solid #f4444c;
 }
 
-.auto_layout_container .photo_box .book{
+.auto_layout_container .photo_box .tips .book{
     color: #fff;
     background-color: #b0df4a;
     border: 1px solid #b0df4a;
 }
 
-.auto_layout_container .photo_box .btn:hover{
+.auto_layout_container .photo_box .empty .btn:hover,
+.auto_layout_container .photo_box .tips .btn:hover{
 	color: #fff;
 	background-color: #f6bb3f;
 	border: 1px solid #f6bb3f;
@@ -20238,13 +20240,13 @@ button::-moz-focus-inner {
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div {
-	left: -179px;
+	left: -106px;
     top: 38px;
 }
 
 .auto_edit_nav .ybcommon_queryicon_item div:before,
 .auto_edit_nav .ybcommon_queryicon_item div:after {
-	left: 180px;
+	left: 108px;
 }
 
 .auto_edit_main {
@@ -21052,10 +21054,10 @@ button::-moz-focus-inner {
     font-style: normal;
 }
 
-.auto_layout_container .photo_box .tips .btn{
+/*.auto_layout_container .photo_box .tips .btn{
     float: right;
     margin: 0 0 0 15px;
-}
+}*/
 
 /*12.29 swh add load mobile photo*/
 .load_mobile_photo_box{
@@ -26331,7 +26333,7 @@ li.action div:hover {
     height: 124px;
     line-height: 124px;
     font-size: 170px;
-    color: #abaebc;
+    color: #ccc;
     /*background: url("../img/default/shop_default.png") no-repeat;*/
 }
 

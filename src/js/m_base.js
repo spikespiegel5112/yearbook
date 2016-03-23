@@ -206,8 +206,8 @@
 					htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
 				} else {
 					var windowWidth = $(window).width(),
-						windowHeight = $(window).height();
-					factor = 0;
+						windowHeight = $(window).height(),
+						factor = 0;
 					if (windowWidth < windowHeight) {
 						factor = windowWidth / 320;
 					} else {

@@ -701,7 +701,8 @@
 		remResizing: function(options) {
 			options = $.extend({
 				fontsize: 16,
-				maxwidth: 640
+				maxwidth: 320,
+				minwidth: 640
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -713,28 +714,25 @@
 
 			function sizeConstraint() {
 				var windowWidth = $(window).width(),
-					windowHeight = $(window).height();
-				if (windowWidth >= options.maxwidth && windowWidth <= windowHeight&&options.maxwidth!=0) {
-					console.log(windowWidth, windowHeight)
+				windowHeight = $(window).height(),
+					factor = 0;
+				if (options.minwidth!=0&&windowWidth <= options.minwidth) {
 					bodyEl.css({
-						'width': options.maxwidth,
-						'margin': '0 auto'
+						'width': options.minwidth
 					});
-					htmlEl.css('font-size', options.fontsize / 16 * 200 + '%');
-				} else {
-					var windowWidth = $(window).width(),
-						windowHeight = $(window).height(),
-						factor = 0;
-					if (windowWidth < windowHeight) {
-						factor = windowWidth / 320;
-					} else {
-						factor = windowHeight / 320;
-					}
-
-					bodyEl.css('width', 'auto');
-					//$(excaption).css('font-size', '100%');
-					htmlEl.css('font-size', options.fontsize / 16 * 100 * factor + '%');
+					factor=1;
+				} else if(windowWidth > options.minwidth&&windowWidth < options.maxwidth){
+					factor = windowWidth / options.minwidth;
+				}else if(windowWidth > options.maxwidth){
+					bodyEl.css({
+						'width': options.maxwidth
+					});
+					factor=options.maxwidth/options.minwidth
 				}
+
+				bodyEl.css('width', 'auto');
+				console.log(factor)
+				htmlEl.css('font-size', options.fontsize / 16 * 100 *factor + '%');
 			}
 		}
 

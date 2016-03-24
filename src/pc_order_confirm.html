@@ -620,16 +620,16 @@
 
 	function orderConfirm() {
 		//已享受的优惠的下拉效果
-		var flag = true;
+		var flag = false;
 		$('.opd_privilege_wrapper p a').click(function() {
 			var $this = $(this);
 
 			if (flag) {
-				$this.html('+');
+                $this.removeClass('ybicon-up1').addClass('ybicon-down1');
 				$('.opd_privilege_wrapper ul').stop().slideUp();
 				flag = false;
 			} else {
-				$this.html('-');
+				$this.addClass('ybicon-up1').removeClass('ybicon-down1');
 				$('.opd_privilege_wrapper ul').stop().slideDown();
 				flag = true;
 			}

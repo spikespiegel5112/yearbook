@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
-    <title>忆尔3.8-查看订单详情</title>
+    <title>忆尔3.11-查看我的订单</title>
     <link rel="stylesheet" href="../css/m.all.min.css">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1458277695_4017153.css" type="text/css" media="all"/>
 
@@ -21,58 +21,127 @@
 </head>
 
 <body class="bg_f6f6f6">
-<div class='main_container order_management change'>
+<div class='main_container myorder'>
     <div class="ybwechatheader_wrapper">
-        <a class='left_btn back_btn' href='javascript:;'>
-            <span class="ybiconfont ybicon-backward1"></span>
+        <a class='left_btn left_angle' href='pc_myorder.html'>
+            <span class="ybiconfont ybicon-backward3"></span>
         </a>
-        <p>查看订单详情</p>
+        <p>查看我的订单</p>
     </div>
-    <div class="basic_info">
-        <div class="orderinfo">
-            <div class="product info">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class='opd_productimg_item'>
-                            <a href="javascript:;">
-                                <img src="../img/m/default/myorder_thum.jpg">
-                            </a>
-                        </td>
-                        <td>
-                            <div>
-                                <a href="javascript:;">《月圆家团圆》*<span>1</span></a>
-                                <p>精装硬壳</p>
-                                <p>别致小装14.5cm*21cm</p>
-                            </div>
-                        </td>
-                        <td class='opd_orderinfoprice_item'>
-                            ¥88.88
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+    <div class="order_manage">
+        <div class="order_list">
+            <div class="order_info">
+                <div class="title">
+                    <h4>购买商品</h4>
+                    <div class="status">订单状态：<span>已发货</span></div>
+                </div>
+                <div class="item">
+                    <div class="ot">
+                        <div class="name">照片书：《<span>小鱼幼儿园记</span>》</div>
+                        <b class="sumprice">￥64.00</b>
+                    </div>
+                    <div class="om">
+                        <div class="book">
+                            <img src="../img/m/default/grow_up_healthy.jpg">
+                        </div>
+                        <div class="bd_wrap">
+                            <span class="buy_num">×34</span>
+                            <ul>
+                                <li>
+                                    <div>气派大装(175mm×148mm)</div>
+                                </li>
+                                <li>
+                                    <div>精装（硬）</div>
+                                </li>
+                                <li>
+                                    <div>20P/36张入册</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ot">
+                        <div class="name">照片书：《<span>小鱼幼儿园记</span>》</div>
+                        <b class="sumprice">￥64.00</b>
+                    </div>
+                    <div class="om">
+                        <div class="book">
+                            <img src="../img/m/default/grow_up_healthy.jpg">
+                        </div>
+                        <div class="bd_wrap">
+                            <span class="buy_num">×1</span>
+                            <ul>
+                                <li>
+                                    <div>气派大装(175mm×148mm)</div>
+                                </li>
+                                <li>
+                                    <div>精装（硬）</div>
+                                </li>
+                                <li>
+                                    <div>20P/36张入册</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="user info">
-                <a href="javascript:;">
-                    <div class="cm_fl"><label class="icon-user"></label><span>用户名</span></div>
-                    <div class="cm_fr"><label class="icon-tablet"></label><span>13800000000</span></div>
-                    <div><label class="icon-truck"></label><span>具体地址</span></div>
+        </div>
+        <div class="receive_info">
+            <div class="info dispatching">
+                <a href="pc_order_chooseaddress.html">
+                    <h4>收货地址</h4>
+                    <ul>
+                        <li>
+                            <div class="name">收件人：<span>赵女士</span></div>
+                            <div class="phone"><span>13616193200</span></div>
+                        </li>
+                        <li>
+                            <div>中国江苏无锡市新区</div>
+                        </li>
+                        <li>
+                            <div>长江北路太湖花园一888号801室</div>
+                        </li>
+                    </ul>
                 </a>
             </div>
-            <div class="invoice info">
-                <a href="javascript:;">
-                    <label>查看发票信息</label>
-                    <span class="cm_fr">不开发票</span>
-                    <i class="ybiconfont ybicon-forward2"></i>
-                </a>
+            <div class="info">
+                <h4>配送信息</h4>
+                <ul>
+                    <li>
+                        <div>
+                            选择配送物流：<span>顺丰快递</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>物流号：<span>XXXXXXXXXXX</span></div>
+                    </li>
+                    <li>
+                        <div>发货日期：<span>XXXX-XX-XX</span></div>
+                    </li>
+                    <li>
+                        <div>运费：<span>￥0.00</span>(已支付)</div>
+                    </li>
+                </ul>
             </div>
-            <div class="dispatching info">
-                <a href="javascript:;">
-                    <label>查看配送信息</label>
-                    <div><label>配送方：</label><span class="">XXXXXXXXXXXXXX</span>快递</div>
-                    <div><label>配送单号：</label><span class="">XXXXXXXXXXXXXXXXXXXXXX</span></div>
-                </a>
+            <div class="info money">
+                <ul>
+                    <li>
+                        <div><label><b>实际支付：</b></label><span>￥2230.00</span></div>
+                    </li>
+                    <li>
+                        <div><label>商品总额：</label><b>￥2240.00</b></div>
+                    </li>
+                    <li>
+                        <div><label>优惠金额：</label><b>￥10.00</b></div>
+                    </li>
+                    <li>
+                        <div><label>运费：</label><b>￥0.00</b></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="om_btn_wrap">
+                <a class="om_btn" href="pc_myorder.html">确认</a>
             </div>
         </div>
     </div>

@@ -3126,13 +3126,19 @@ li.action div:hover {
     margin-right: 5px;
 }
 
-.opd_confirm_wrapper .return_modify{
+.opd_confirm_wrapper .btn_group{
     float: right;
-    margin: 0 20px;
-    line-height: 60px;
+    margin: 15px 25px 0 0;
 }
 
-.opd_confirm_wrapper .return_modify:hover{
+.opd_confirm_wrapper .btn_group .btn{
+    margin-left: 20px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.opd_confirm_wrapper .btn_group .btn:hover{
     color: #e7b54b;
 }
 
@@ -3437,6 +3443,11 @@ li.action div:hover {
     display: none;
 }
 
+.opd_addressandmode_wrapper tbody tr:hover div .modify,
+.opd_addressandmode_wrapper tbody tr:hover div .delete{
+    display: inline-block;
+}
+
 .opd_editaddress_wrapper a {
 	display: inline-block;
 	margin: 0 4px;
@@ -3446,6 +3457,8 @@ li.action div:hover {
 
 .opd_editaddress_wrapper a.set_default{
     color: #ff6600;
+    width: 72px;
+    text-align: center;
 }
 
 .opd_editaddress_wrapper a:hover {
@@ -3454,6 +3467,7 @@ li.action div:hover {
 
 .opd_editaddress_wrapper a.default_btn{
     display: block;
+    margin: 0 4px 0 10px;
     color: #f5c8c8;
     border: 2px solid #f5c8c8;
     border-radius: 2px;
@@ -3462,6 +3476,7 @@ li.action div:hover {
     font-weight: bold;
     float: right;
     cursor: default;
+    box-sizing: border-box;
 }
 
 .opd_receivingaddress_wrapper {

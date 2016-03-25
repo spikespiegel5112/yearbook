@@ -2248,7 +2248,10 @@ li.action div:hover {
     border-bottom: 1px solid #ddd;
 }
 
-.order_details .opd_checklist_wrapper thead tr th:nth-child(1),
+.order_details .opd_checklist_wrapper thead tr th:nth-child(1){
+    width: 110px;
+}
+
 .order_details .opd_checklist_wrapper thead tr th:nth-child(2){
     width: 120px;
 }
@@ -2258,6 +2261,7 @@ li.action div:hover {
     width: 145px;
 }
 
+.order_details .opd_checklist_wrapper thead tr th:nth-child(5),
 .order_details .opd_checklist_wrapper thead tr th:nth-child(6),
 .order_details .opd_checklist_wrapper thead tr th:nth-child(7){
     width: 90px;

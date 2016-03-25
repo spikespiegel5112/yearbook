@@ -163,7 +163,12 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div><span>1</span>本</div>
+                                        <!--<div><span>1</span>本</div>-->
+                                        <div class='ybcommon_counter_item'>
+                                            <a href="javascript:;">-</a>
+                                            <input type='text' value='1'>
+                                            <a href="javascript:;">+</a>
+                                        </div>
                                     </td>
                                     <td class='opd_unitprice_item'>
                                         <span>￥</span>
@@ -691,6 +696,7 @@
 	<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
 	<script type="text/javascript" src="assets/js/cityScript.js"></script>
 	<script type="text/javascript" src="assets/js/cityselector.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
 	<script>
 	//右侧书市上下翻页
 	jQuery(".more_books_container").slide({
@@ -944,6 +950,7 @@
 		commonInvoice();
         orderConfirm();
         setDefaultAddress();
+        $('.ybcommon_counter_item').priceCalculator();
 	});
 	</script>
 </body>

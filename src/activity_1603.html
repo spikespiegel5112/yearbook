@@ -159,33 +159,38 @@
 	<script>
 	$(function(){
 		activity_1603();
-	});
-	function activity_1603(){
-		// $('.activity_banner_wrapper img').align();
-		var bgSizing=function(){
-			$('.main_container').css({
-				height:function(){
-					var windowWidth=$(window).width(),
-						height=0;
-					if (windowWidth>=1150) {
-						height=2215*($(window).width()/1920);
-					}else{
-						height=2215*(1150/1920);;
-					}
-					return height;
-				}
-			});
-			return;
-		};
-		bgSizing();
-		$(window).resize(function(){
-			bgSizing();
-		})
 		$.remResizing({
 			fontsize:20,
 			minwidth: 1150,
 			maxwidth: 1920
 		})
+	});
+	
+	function activity_1603(){
+		var bgHeight=2215;
+			
+		// var bgSizing=function(){
+		// 	var windowWidth=$(window).width(),
+		// 		screenMaxwidth=1920,
+		// 		screenMinwidth=1150;
+		// 	$('.main_container').css({
+		// 		height:function(){
+		// 			var height=0;
+		// 			if (windowWidth>=screenMinwidth) {
+		// 				height=bgHeight*(windowWidth/screenMaxwidth);
+		// 			}else{
+		// 				height=bgHeight*(screenMinwidth/screenMaxwidth);
+		// 			}
+		// 			console.log($(window).width())
+		// 			return height;
+		// 		}
+		// 	});
+		// };
+		// bgSizing();
+		// $(window).resize(function(){
+		// 	bgSizing();
+		// })
+		
 	}
 	</script>
 </body>

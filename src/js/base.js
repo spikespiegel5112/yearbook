@@ -701,8 +701,8 @@
 		remResizing: function(options) {
 			options = $.extend({
 				fontsize: 16,
-				maxwidth: 320,
-				minwidth: 640
+				maxwidth: 640,
+				minwidth: 320
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -714,25 +714,29 @@
 
 			function sizeConstraint() {
 				var windowWidth = $(window).width(),
-				windowHeight = $(window).height(),
+					windowHeight = $(window).height(),
 					factor = 0;
 				if (options.minwidth!=0&&windowWidth <= options.minwidth) {
+					// alert('aaa')
 					bodyEl.css({
-						'width': options.minwidth
+						'width': windowWidth
 					});
 					factor=1;
 				} else if(windowWidth > options.minwidth&&windowWidth < options.maxwidth){
+					// alert('bbb')
+					bodyEl.css({
+						'width': windowWidth
+					});
 					factor = windowWidth / options.minwidth;
 				}else if(windowWidth > options.maxwidth){
+					// alert('ccc')
 					bodyEl.css({
-						'width': options.maxwidth
+						'width': windowWidth
 					});
 					factor=options.maxwidth/options.minwidth
 				}
-
-				bodyEl.css('width', 'auto');
 				console.log(factor)
-				htmlEl.css('font-size', options.fontsize / 16 * 100 *factor + '%');
+				htmlEl.css('font-size', Math.floor(options.fontsize / 16 * 100 *factor) + '%');
 			}
 		}
 

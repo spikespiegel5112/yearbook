@@ -722,21 +722,23 @@
 						'width': windowWidth
 					});
 					factor=1;
-				} else if(windowWidth > options.minwidth&&windowWidth < options.maxwidth){
-					// alert('bbb')
+				} else if(windowWidth > options.minwidth&&windowWidth < options.maxwidth||options.maxwidth=='none'){
+					console.log('bbb')
 					bodyEl.css({
 						'width': windowWidth
 					});
 					factor = windowWidth / options.minwidth;
 				}else if(windowWidth > options.maxwidth){
-					// alert('ccc')
-					bodyEl.css({
-						'width': windowWidth
-					});
-					factor=options.maxwidth/options.minwidth
+					console.log('ccc')
+						bodyEl.css({
+							'margin':'0 auto',
+							'width': options.maxwidth
+						});
+						factor=options.maxwidth/options.minwidth
 				}
 				console.log(factor)
-				htmlEl.css('font-size', Math.floor(options.fontsize / 16 * 100 *factor) + '%');
+				// htmlEl.css('font-size', Math.floor(options.fontsize / 16 * 100 *factor) + '%');
+				htmlEl.css('font-size', options.fontsize*factor);
 			}
 		}
 

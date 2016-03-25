@@ -293,6 +293,146 @@
 }
 
 /*3.11 bookshelf wrap */
+
+.personal_content_box .tool_wrap{
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+}
+
+.personal_content_box .tool_wrap .yb_menu{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 95px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    z-index: 99;
+}
+
+.personal_content_box .tool_wrap .yb_menu .menu_hd {
+    position: relative;
+    display: block;
+    line-height: 25px;
+    font-size: 12px;
+    color: #666;
+}
+
+.personal_content_box .tool_wrap .yb_menu .menu_hd b{
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.tool_wrap .yb_menu .menu_bd .menu_bd_panel {
+    padding: 6px 0;
+    text-align: center;
+}
+
+.tool_wrap .yb_menu .menu_bd{
+    display: none;
+}
+
+.tool_wrap .yb_menu:hover .menu_bd{
+    display: block;
+}
+
+.tool_wrap .yb_menu .menu_bd a {
+    display: block;
+    line-height: 25px;
+    font-size: 12px;
+    color: #666;
+}
+
+.tool_wrap .yb_menu .menu_bd .menu_bd_panel a:hover{
+    color: #88b247;
+    background-color: #f2f2f2;
+    border-top: 1px solid #dedddd;
+    border-bottom: 1px solid #dedddd;
+}
+
+.personal_content_box .tool_wrap .add_friend{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 15px 0 10px;
+    width: 34px;
+    height: 25px;
+    background: url("../img/icon/add_friend.png") no-repeat center;
+}
+
+.personal_content_box .tool_wrap .search_bar{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    min-width: 30px;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-backface-visibility: hidden;
+}
+
+.tool_wrap .search_bar .input{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 25px;
+    line-height:25px;
+    font-size: 14px;
+    color: #666;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.tool_wrap .search_bar.search_open{
+    width: 200px;
+}
+
+.tool_wrap .search_bar.search_open input{
+    display: block;
+}
+
+.tool_wrap .search_bar .search_ico,
+.tool_wrap .search_bar .search_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.tool_wrap .search_bar .search_ico{
+    font-size: 20px;
+    color: #abaebd;
+    z-index: 3;
+}
+
+.tool_wrap .search_bar.search_open .search_ico{
+    color: #fff;
+    background-color: #90c132;
+    border-radius: 0 4px 4px 0;
+}
+
 .personal_content_box .bookshelf_wrap{
     position: relative;
     margin: -8px 0 0;
@@ -359,9 +499,10 @@
 }
 
 .bookshelf_wrap .bookshelf .grid{
+    position: relative;
+    margin-bottom: 15px;
     border-bottom: 2px solid #eee;
     box-shadow: 0 1px 0 #fff;
-    overflow: hidden;
 }
 
 .bookshelf .grid .display{
@@ -455,7 +596,12 @@
     margin: 10px 0;
 }
 
-.grid .describe .info .btn_group a{
+.grid .describe .info .btn_group .btn{
+    display: inline-block;
+    position: relative;
+}
+
+.grid .describe .info .btn_group .btn > a{
     display: inline-block;
     margin-right: 5px;
     width: 45px;
@@ -469,32 +615,93 @@
     border-radius: 2px;
 }
 
-.grid .describe .info .btn_group a:hover{
-    color: #333;
+.grid .describe .info .btn_group .btn > a:hover{
+    color: #e7b54b;
+    border: 1px solid #e7b54b;
+}
+
+.grid .describe .info .btn_group .share:hover .common_sharelist_wrapper{
+    display: block;
+    left: -70px;
+    top: 35px;
+}
+
+.grid .describe .info .btn_group .share .common_sharelist_wrapper::before {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -17px;
+    margin-left: -9px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #fff;
+    border-right: 9px solid transparent;
+    z-index: 1;
+}
+
+.grid .describe .info .btn_group .share .common_sharelist_wrapper::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -18px;
+    margin-left: -9px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #ddd;
+    border-right: 9px solid transparent;
 }
 
 .bookshelf .grid .describe .progress{
     float: left;
+    margin: 20px 0;
     width: 29%;
     font-size: 12px;
     color: #666;
 }
 
-.grid .describe .percent label{
-    float: left;
+.grid .progress .percent{
+    margin: 0 0 10px;
+    overflow: hidden;
 }
 
-.grid .describe .percent .bar{
+.grid .progress .percent label{
+    float: left;
+    padding: 14px 0 0 0;
+    box-sizing: border-box;
+}
+
+.grid .progress .percent span{
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}
+
+.grid .progress .percent .bar{
+    display: inline-block;
     width: 60px;
     height: 5px;
-    border: 1px solid #ccc;
+    background-color: #ccc;
     border-radius: 5px;
+}
+
+.grid .progress .percent .bar span{
+    display: block;
+    width: 0%;
+    background-color: #90c132;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.grid .progress .status.sub span{
+    color: #f00;
 }
 
 .bookshelf .grid .actions{
     position: absolute;
     right: 5px;
-    top: 0;
+    top: 65px;
     width: 65px;
 }
 
@@ -511,9 +718,19 @@
     border-radius: 2px;
 }
 
+.bookshelf .grid .actions a:hover{
+    background-color: #e7b54b;
+}
+
+.bookshelf .turn_btn{
+    position: relative;
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}
 
 
-    /*3.11 bookshelf wrap end*/
+/*3.11 bookshelf wrap end*/
 
 .bookshelf_list {
 	display: inline-block;

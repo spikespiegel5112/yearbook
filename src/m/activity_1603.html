@@ -71,6 +71,7 @@
 				</li>
 			</ul>
 		</div>
+		<img class='qrcode' src="../img/m/activity/activity_1603_qrcode_00000.jpg">
 	</div>
 	
 	<!--主要内容-->
@@ -96,24 +97,19 @@
 			$('.main_container').css({
 				height:function(){
 					var height=0;
-					// if (windowWidth>=docMinwidth) {
-					// 	height=bgHeight*(windowWidth/docMaxwidth);
-					// }else{
 						height=bgHeight*(bodyWidth/bgWidth);
-					//}
-					console.log(bodyWidth)
 					return height;
 				}
 			});
 		};
-		// bgSizing();
-		// $(window).resize(function(){
-		// 	bgSizing();
-		// })
+		bgSizing();
+		$(window).resize(function(){
+			bgSizing();
+		})
 		
 		//解决UC移动端浏览器rem样式在加载完成后不被解析的问题！
 		var styleLink=$('link');
-		$('html').append(styleLink)
+		$('head').append(styleLink)
 	}
 	</script>
 </body>

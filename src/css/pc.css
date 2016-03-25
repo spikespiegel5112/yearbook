@@ -2309,6 +2309,10 @@ li.action div:hover {
 	text-overflow: ellipsis;
 }
 
+.address_list li:first-child{
+    min-width: 22px;
+}
+
 .address_list > label {
 	display: block;
 	padding-left: 20px;
@@ -2319,6 +2323,12 @@ li.action div:hover {
 
 .address_list .address {
 	width: 42%;
+}
+
+@media only screen and (min-width: 1024px) {
+    .address_list .address {
+        width: 40%;
+    }
 }
 
 .address_list .recipients {

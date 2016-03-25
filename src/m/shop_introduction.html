@@ -219,14 +219,24 @@
 	$(function(){
 		shopIntroduction();
 		$.remResizing({
-			fontsize: 20,
-			maxwidth: 640
+			fontsize: 20
 		});
 	});
 	function shopIntroduction(){
 		//标题div适配窗口高度
-		var titleEl=$('.shop_introtitle_wrapper');
-		titleEl.css('height',$(window).height());
+		var bannerHeight=function(){
+			var titleEl=$('.shop_introtitle_wrapper');
+			if ($(window).width()<=430) {
+				titleEl.css('height',$(window).height());
+			}else{
+				titleEl.css('height','none');
+			}
+		};
+		bannerHeight();
+		$(window).resize(function(){
+			bannerHeight();
+		})
+		
 		//设置表格背景颜色
 		var trElEven=$('.shop_shareprofit_wrapper tr:even');
 		trElEven.css('background-color','#fce4e1');

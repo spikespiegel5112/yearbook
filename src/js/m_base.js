@@ -206,24 +206,28 @@
 					});
 					factor = windowWidth / options.minwidth;
 				//当最小宽度不等于0且屏幕宽度小于等最小宽度时
-				}else if (windowWidth <= options.minwidth) {
+				}else if (options.minwidth!=0&&windowWidth <= options.minwidth) {
 					bodyEl.css({
 						'width': options.minwidth
 					});
 					factor=1;
 				//当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时
-				}else if(options.maxwidth==0||windowWidth > options.minwidth&&windowWidth < options.maxwidth){
+				}else if(options.maxwidth==0||windowWidth > options.minwidth&&windowWidth <= options.maxwidth){
+					console.log('aaa')
 					bodyEl.css({
 						'width': windowWidth
 					});
 					factor = windowWidth / options.minwidth;
 				//当屏幕宽度大于最大宽度时
 				}else if(windowWidth > options.maxwidth){
+					console.log('ccc')
 					bodyEl.css({
 						'margin':'0 auto',
 						'width': options.maxwidth
 					});
-					factor=options.maxwidth/options.minwidth
+					factor=1
+				}else{
+					alert('abnormal')
 				}
 				htmlEl.css('font-size', options.fontsize*factor);
 			}

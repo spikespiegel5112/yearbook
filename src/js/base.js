@@ -701,8 +701,8 @@
 		remResizing: function(options) {
 			options = $.extend({
 				fontsize: 16,
-				maxwidth: 0,
-				minwidth: 320
+				minwidth: 320,
+				maxwidth: 0
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -716,28 +716,29 @@
 				var windowWidth = $(window).width(),
 					windowHeight = $(window).height(),
 					factor = 0;
-				//当屏幕宽度小于最小宽度时
+					// alert(windowWidth)
 				if(options.minwidth==0){
+					//alert('当当最小宽度等于0时')
 					bodyEl.css({
 						'width': windowWidth
 					});
 					factor = windowWidth / options.minwidth;
-				//当最小宽度不等于0且屏幕宽度小于等最小宽度时
 				}else if (options.minwidth!=0&&windowWidth <= options.minwidth) {
+					//alert('当最小宽度不等于0且屏幕宽度小于等最小宽度时')
 					bodyEl.css({
 						'width': options.minwidth
 					});
 					factor=1;
-				//当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时
 				}else if(options.maxwidth==0||windowWidth > options.minwidth&&windowWidth <= options.maxwidth){
-					console.log('aaa')
+					// alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					bodyEl.css({
 						'width': windowWidth
 					});
+					// factor = 2;
 					factor = windowWidth / options.minwidth;
-				//当屏幕宽度大于最大宽度时
+					//alert(factor = windowWidth / options.minwidth)
 				}else if(windowWidth > options.maxwidth){
-					console.log('ccc')
+					//alert('当屏幕宽度大于最大宽度时')
 					bodyEl.css({
 						'margin':'0 auto',
 						'width': options.maxwidth

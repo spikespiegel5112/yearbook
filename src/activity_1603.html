@@ -158,39 +158,38 @@
 	<!-- endbuild -->
 	<script>
 	$(function(){
-		activity_1603();
 		$.remResizing({
 			fontsize:20,
 			minwidth: 1150,
-			maxwidth: 1920
+			maxwidth: 'none'
 		})
+		activity_1603();
 	});
 	
 	function activity_1603(){
-		var bgHeight=2215;
+		var bgHeight=2215
 			
-		// var bgSizing=function(){
-		// 	var windowWidth=$(window).width(),
-		// 		screenMaxwidth=1920,
-		// 		screenMinwidth=1150;
-		// 	$('.main_container').css({
-		// 		height:function(){
-		// 			var height=0;
-		// 			if (windowWidth>=screenMinwidth) {
-		// 				height=bgHeight*(windowWidth/screenMaxwidth);
-		// 			}else{
-		// 				height=bgHeight*(screenMinwidth/screenMaxwidth);
-		// 			}
-		// 			console.log($(window).width())
-		// 			return height;
-		// 		}
-		// 	});
-		// };
-		// bgSizing();
-		// $(window).resize(function(){
-		// 	bgSizing();
-		// })
-		
+		function bgSizing(){
+			var bodyWidth=$('body').width(),
+				docMaxwidth=1920,
+				docMinwidth=1150;
+			$('.main_container').css({
+				height:function(){
+					var height=0;
+					// if (windowWidth>=docMinwidth) {
+					// 	height=bgHeight*(windowWidth/docMaxwidth);
+					// }else{
+						height=bgHeight*(bodyWidth/bgWidth);
+					//}
+					console.log(bodyWidth)
+					return height;
+				}
+			});
+		};
+		bgSizing();
+		$(window).resize(function(){
+			bgSizing();
+		})
 	}
 	</script>
 </body>

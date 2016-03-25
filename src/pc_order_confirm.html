@@ -302,7 +302,7 @@
             <div class='opd_summarize_wrapper'>
                 <div class='opd_preferential_wrapper'>
                     <div class='opd_coupon_wrapper'>
-                        <!--<div>
+                        <div>
                             <label>选择我的优惠券</label>
                             <select>
                                 <option>满50减10</option>
@@ -314,7 +314,7 @@
                                 <option>一二三四五六七八九十一二三四五</option>
                             </select>
                             <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
-                        </div>-->
+                        </div>
                         <div>
                             <div class='ybcommon_queryicon_item'>
                                 <span class='ybiconfont ybicon-querysolid'></span>
@@ -346,14 +346,17 @@
                             <a class='common_btn' href="javascript:;">确认</a>
                         </div>
                     </div>
-                    <!--<div class='opd_privilege_wrapper'>
-                        <p><a href="javascript:;">-</a>已享受的优惠</p>
+                    <div class='opd_privilege_wrapper'>
+                        <p><a class="ybiconfont ybicon-down1" href="javascript:;"></a>已享受的优惠</p>
                         <ul>
                             <li>
-                                <label>[活动]</label>全场书册免费包邮配送
+                                <label>[活动]</label><span>全场书册免费包邮配送</span>
+                            </li>
+                            <li>
+                                <span>满50减10</span>
                             </li>
                         </ul>
-                    </div>-->
+                    </div>
                 </div>
                 <div class='opd_subtotal_wrapper'>
                     <ul>
@@ -617,16 +620,16 @@
 
 	function orderConfirm() {
 		//已享受的优惠的下拉效果
-		var flag = true;
+		var flag = false;
 		$('.opd_privilege_wrapper p a').click(function() {
 			var $this = $(this);
 
 			if (flag) {
-				$this.html('+');
+                $this.removeClass('ybicon-up1').addClass('ybicon-down1');
 				$('.opd_privilege_wrapper ul').stop().slideUp();
 				flag = false;
 			} else {
-				$this.html('-');
+				$this.addClass('ybicon-up1').removeClass('ybicon-down1');
 				$('.opd_privilege_wrapper ul').stop().slideDown();
 				flag = true;
 			}
@@ -680,7 +683,7 @@
 		// $('.opd_sketch_item select, .opd_coupon_wrapper select').chosen({
 		// 	disable_search_threshold: 15
 		// });
-		art.dialog({
+		/*art.dialog({
 			title: '提示',
 			lock : true,
 			icon: 'warning',
@@ -689,7 +692,7 @@
 			ok: function () {},
 			cancelVal: '返回制作',
 			cancel: function () {}
-		});
+		});*/
 
         //更换书册
         $('.change_book').click(function(){

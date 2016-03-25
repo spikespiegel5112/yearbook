@@ -2931,6 +2931,7 @@ li.action div:hover {
 }
 
 .opd_summarize_wrapper {
+    position: relative;
 	width: 100%;
     background-color: #fff;
 	border-left: 1px solid #ddd;
@@ -2941,7 +2942,7 @@ li.action div:hover {
 .opd_preferential_wrapper {
 	float: left;
 	padding: 20px 30px;
-	border-top: 1px solid #efefef;
+	/*border-top: 1px solid #efefef;*/
 	font-size: 14px;
 	color: #777;
 }
@@ -2974,7 +2975,8 @@ li.action div:hover {
 }
 
 .opd_privilege_wrapper ul {
-	margin: 0 0 0 20px;
+    display: none;
+	margin: 0 0 0 25px;
 }
 
 .opd_privilege_wrapper ul li{
@@ -2983,7 +2985,7 @@ li.action div:hover {
 
 .opd_privilege_wrapper p{
     margin: 10px 0 0;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 .opd_privilege_wrapper p a {
@@ -3007,8 +3009,7 @@ li.action div:hover {
 }
 
 .opd_coupon_wrapper>div {
-	margin: 10px 0;
-	height: 30px;
+	margin: 0 0 10px;
 	position: relative;
 }
 
@@ -3030,6 +3031,10 @@ li.action div:hover {
 	left: -20px;
 }
 
+.opd_coupon_wrapper .ybcommon_queryicon_item div{
+    left: -108px;
+}
+
 .opd_coupon_wrapper .ybcommon_queryicon_item span {
 	left: 2px;
 }
@@ -3045,8 +3050,12 @@ li.action div:hover {
 
 .opd_subtotal_wrapper {
 	float: right;
-	padding: 15px;
+	padding: 10px 15px;
 	/*width: 200px;*/
+}
+
+.opd_subtotal_wrapper ul{
+    overflow: hidden;
 }
 
 .opd_subtotal_wrapper ul li {
@@ -3073,8 +3082,9 @@ li.action div:hover {
 }*/
 
 .opd_subtotalprice_item{
-    float: right;
+    /*float: right;*/
     margin: 10px 0 15px;
+    text-align: right;
 }
 
 .opd_subtotalprice_item strong {

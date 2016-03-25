@@ -701,7 +701,7 @@
 		remResizing: function(options) {
 			options = $.extend({
 				fontsize: 16,
-				maxwidth: 640,
+				maxwidth: 0,
 				minwidth: 320
 			}, options);
 			var htmlEl = $('html'),
@@ -716,33 +716,36 @@
 				var windowWidth = $(window).width(),
 					windowHeight = $(window).height(),
 					factor = 0;
-				if (options.minwidth!=0&&windowWidth <= options.minwidth) {
-					// alert('aaa')
-					bodyEl.css({
-						'width': windowWidth
-					});
-					factor=1;
-				} else if(windowWidth > options.minwidth&&windowWidth < options.maxwidth||options.maxwidth=='none'){
-					console.log('bbb')
+				//当屏幕宽度小于最小宽度时
+				if(options.minwidth==0){
 					bodyEl.css({
 						'width': windowWidth
 					});
 					factor = windowWidth / options.minwidth;
+				//当最小宽度不等于0且屏幕宽度小于等最小宽度时
+				}else if (windowWidth <= options.minwidth) {
+					bodyEl.css({
+						'width': options.minwidth
+					});
+					factor=1;
+				//当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时
+				}else if(options.maxwidth==0||windowWidth > options.minwidth&&windowWidth < options.maxwidth){
+					bodyEl.css({
+						'width': windowWidth
+					});
+					factor = windowWidth / options.minwidth;
+				//当屏幕宽度大于最大宽度时
 				}else if(windowWidth > options.maxwidth){
-					console.log('ccc')
-						bodyEl.css({
-							'margin':'0 auto',
-							'width': options.maxwidth
-						});
-						factor=options.maxwidth/options.minwidth
+					bodyEl.css({
+						'margin':'0 auto',
+						'width': options.maxwidth
+					});
+					factor=options.maxwidth/options.minwidth
 				}
-				console.log(factor)
-				// htmlEl.css('font-size', Math.floor(options.fontsize / 16 * 100 *factor) + '%');
 				htmlEl.css('font-size', options.fontsize*factor);
 			}
 		}
-
-	})
+	});
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);
 	$('.hide_title').init_title();
 

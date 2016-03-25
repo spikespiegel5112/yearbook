@@ -82,16 +82,13 @@
 	$(function(){
 		$.remResizing({
 			fontsize:20,
-			minwidth: 320,
-			maxwidth: 640
+			minwidth: 320
 		})
-		//activity_1603();
-		
+		activity_1603();
 	});
 	function activity_1603(){
 		var bgHeight=2376,
 			bgWidth=640;
-			
 		function bgSizing(){
 			var bodyWidth=$('body').width(),
 				docMaxwidth=1920,
@@ -109,12 +106,16 @@
 				}
 			});
 		};
-		bgSizing();
-		$(window).resize(function(){
-			bgSizing();
-		})
+		// bgSizing();
+		// $(window).resize(function(){
+		// 	bgSizing();
+		// })
+		
+		//解决UC移动端浏览器rem样式在加载完成后不被解析的问题！
+		var styleLink=$('link');
+		$('html').append(styleLink)
 	}
 	</script>
 </body>
-
+	
 </html>

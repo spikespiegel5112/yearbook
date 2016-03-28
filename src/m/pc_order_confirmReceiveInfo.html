@@ -89,6 +89,7 @@
                     </li>
                 </ul>
                 <div class='opd_coupon_wrapper'>
+                    <!--选择已兑换为应用的优惠券-->
                     <div class="hidden">
                         <label>选择我的优惠券</label>
                         <select>
@@ -102,8 +103,9 @@
                         </select>
                         <i class="icon-caret-down"></i>
                         <a class='common_btn' href="javascript:;">确认</a>
-                        <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+                        <a class='common_btn go_exchange' href="javascript:;">我要兑换优惠券</a>
                     </div>
+                    <!--兑换优惠券-->
                     <div class="">
                         <label>兑换我的优惠券</label>
                         <ul class='common_serialnumber_item'>
@@ -124,8 +126,9 @@
                             </li>
                         </ul>
                         <a class='common_btn' href="javascript:;">确认</a>
-                        <a class='common_btn' href="javascript:;">使用已有优惠券</a>
+                        <a class='common_btn use_exist' href="javascript:;">使用已有优惠券</a>
                     </div>
+                    <!--已选择优惠券后更改优惠券-->
                     <div class="hidden">
                         <label>使用的代金卷优惠：￥<span class="voucherPrice"></span><a class="common_btn" id="chooseOtherVoucher" href="javascript:;">更换</a></label>
                     </div>
@@ -153,7 +156,23 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<script type="text/javascript" >
+    $(function () {
+        chooseCoupon();
+    });
 
+    function chooseCoupon(){
+        //使用已有优惠券
+        $('.use_exist').on('touchend',function(){
+            $(this).parent().addClass('hidden').prev().removeClass('hidden');
+        });
+        //兑换优惠券
+        $('.go_exchange').on('touchend',function(){
+            $(this).parent().addClass('hidden').next().removeClass('hidden');
+        });
+    }
+</script>
 </body>
 
 </html>

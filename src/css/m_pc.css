@@ -828,17 +828,17 @@
 
 .common_serialnumber_item li {
     float: left;
-    width: 62px;
+    width: 68px;
     line-height: 20px;
 }
 
 .common_serialnumber_item li:first-child {
-    width: 52px;
+    width: 58px;
 }
 
 .common_serialnumber_item input {
     float: left;
-    width: 50px;
+    width: 58px;
     height: 20px;
     text-align: center;
     border-radius: 0;
@@ -2324,7 +2324,7 @@
     line-height: 40px;
 }
 
-.receive_info .info ul li{
+.receive_info .info > ul li{
     display: block;
     padding-left: 20px;
     line-height: 30px;
@@ -2367,13 +2367,18 @@
     font-size: 16px;
 }
 
-.receive_info .coupon li span{
+.receive_info .coupon > ul li span{
     margin-left: 5px;
 }
 
 .receive_info .coupon li b{
     margin: 0 5px;
     color: #f00;
+}
+
+.receive_info .coupon .opd_coupon_wrapper{
+    margin: 0;
+    border-top: 0;
 }
 
 .receive_info .money ul{

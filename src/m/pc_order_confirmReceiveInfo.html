@@ -80,7 +80,7 @@
             </div>
             <div class="info coupon">
                 <a href="javascript:;"><h4>我的优惠券<i class="ybiconfont ybicon-forward2"></i></h4></a>
-                <ul>
+                <ul class="hidden">
                     <li>
                         <div>参与<span>全场包邮</span></div>
                     </li>
@@ -88,6 +88,48 @@
                         <div>使用满<b>50减10</b>优惠券一张</div>
                     </li>
                 </ul>
+                <div class='opd_coupon_wrapper'>
+                    <div class="hidden">
+                        <label>选择我的优惠券</label>
+                        <select>
+                            <option>满50减10</option>
+                            <option>满100减20</option>
+                            <option>满200减40</option>
+                            <option>满400减80</option>
+                            <option>满500减100</option>
+                            <option>满5000减1000</option>
+                            <option>单笔消费满5000元可以优惠500元</option>
+                        </select>
+                        <i class="icon-caret-down"></i>
+                        <a class='common_btn' href="javascript:;">确认</a>
+                        <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+                    </div>
+                    <div class="">
+                        <label>兑换我的优惠券</label>
+                        <ul class='common_serialnumber_item'>
+                            <li>
+                                <input type='text' maxlength='4'>
+                            </li>
+                            <li>
+                                <span>-</span>
+                                <input type='text' maxlength='4'>
+                            </li>
+                            <li>
+                                <span>-</span>
+                                <input type='text' maxlength='4'>
+                            </li>
+                            <li>
+                                <span>-</span>
+                                <input type='text' maxlength='4'>
+                            </li>
+                        </ul>
+                        <a class='common_btn' href="javascript:;">确认</a>
+                        <a class='common_btn' href="javascript:;">使用已有优惠券</a>
+                    </div>
+                    <div class="hidden">
+                        <label>使用的代金卷优惠：￥<span class="voucherPrice"></span><a class="common_btn" id="chooseOtherVoucher" href="javascript:;">更换</a></label>
+                    </div>
+                </div>
             </div>
             <div class="info money">
                 <ul>

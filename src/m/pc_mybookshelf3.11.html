@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head lang='ch'>
+    <meta charset='UTF-8'>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name='format-detection' content='telephone=no'>
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+    <title>我的书架</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/swiper.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1459154853_012007.css" type="text/css" media="all"/>
+</head>
+
+<body class='bg_f6f6f6'>
+<div class='main_container has_footer_nav'>
+    <div class='ybwechatheader_wrapper'>
+        <a class='left_btn list_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-unorderedlist"></span>
+        </a>
+        <p>我的书架</p>
+        <a class='right_btn search_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-search"></span>
+        </a>
+    </div>
+    <div class="bookshelf_wrap">
+        <div class="shelf_tab swiper-pagination"></div>
+        <div class="bookshelf swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <ul>
+                        <li class="grid">
+                            <span class="type templet"></span>
+                            <div class="display max">
+                                <a href="javascript:;">
+                                    <span class="size"></span>
+                                    <div class="cover">
+                                        <img src="../img/default/bookshelf_book01.jpg">
+                                        <span class="rate">90%</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="describe">
+                                <div class="info">
+                                    <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
+                                    <div class="config">
+                                        <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                    </div>
+                                    <div class="status">状态：<span>已提交待付款</span></div>
+                                    <p class="time">创建日期：<span>2016-03-21</span></p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a class="btn" href="javascript:;"><i class="ybiconfont ybicon-sharehollow"></i>分享书册</a>
+                            </div>
+                            <div class="btn_group">
+                                <a class="edit" href="javascript:;"><i class="icon-edit"></i>编辑</a>
+                                <a class="print" href="javascript:;"><i class="icon-print"></i>打印</a>
+                                <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                <a class="delete" href="javascript:;"><i class="icon-trash"></i>删除</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loading" style="display: none;">
+    <img src="../img/m/loading.gif"><strong>加载中</strong>
+</div>
+<!--底部导航-->
+<div class="footer_nav">
+    <ul>
+        <li>
+            <a href="index.html">
+                <span class="ybiconfont ybicon-home"></span>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="ia_msg.html">
+                <span class="ybiconfont ybicon-message"></span>
+                <p>消息</p>
+            </a>
+        </li>
+        <li class="active" id="open_new_option">
+            <a href="javascript:;">
+                <span class="new ybiconfont ybicon-plus"></span>
+            </a>
+        </li>
+        <li>
+            <a href="pc_mybookshelf.html">
+                <span class="ybiconfont ybicon-bookshelf"></span>
+                <p>书架</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_main.html">
+                <span class="ybiconfont ybicon-userthin"></span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--pop new content-->
+<div class="open_new_container">
+    <div class="new_option">
+        <ul>
+            <li class="new_ph">
+                <a href="booklist_photo.html">
+                    <img src="../img/m/icon/new_photo_book.png">
+                    <p>新建照片书</p>
+                </a>
+            </li>
+            <li class="new_ia">
+                <a href="booklist_ia.html">
+                    <img src="../img/m/icon/new_interact_book.png">
+                    <p>新建互动册</p>
+                </a>
+            </li>
+            <li class="join_ia">
+                <a href="ia_invitation_joinbook.html">
+                    <img src="../img/m/icon/join_interact_book.png">
+                    <p>加入互动册</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="close_btn"><a href="javascript:;">×</a></div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="../js/m_main.js"></script>
+<script>
+    /*
+     * 书册名称超过8个字符显示…
+     * */
+    function changeLongBookName(){
+        var bookNum = $('.mybookshelf_main_wrapper li label').length;
+        for (var i = 0 ; i< bookNum ; i++){
+            var bookNameLength = $('.mybookshelf_main_wrapper li label').eq(i).text().length;
+            if(bookNameLength > 7){
+                var newName = $('.mybookshelf_main_wrapper li label').eq(i).text().substr(0,7) + "…";
+                $('.mybookshelf_main_wrapper li label').eq(i).text(newName);
+            }
+        }
+    }
+
+    function loadMoreBook()
+    {
+        $("div.ybwechat_loading_item").on('touchend', function(){
+            showloading();
+            $("div.ybwechat_loading_item").hide();
+            //修改成从后台读取
+            var i = 0;
+            for (i = 0; i < 6; i++) {
+                $('.mybookshelf_main_wrapper ul').eq(0).append(getHtml(i));
+            }
+            hideloading();
+            $(this).show();
+        });
+    }
+
+    var getHtml = function(agru) {
+        return '<li><a class="cover" href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a> <label>追忆青春-毕业册模板</label><a class="ybwechat_list_btn" href="javascript:;">进入书册</a></li>';
+    }
+
+    // 显示loading
+    var showloading = function(txt) {
+        if (typeof(txt) === 'string')
+            $('.loading strong').text(txt);
+        if (typeof(loading) === 'undefined')
+            loading = $('.loading');
+        loading.show();
+    };
+    //隐藏loading
+    var hideloading = function() {
+        if (typeof(loading) === 'undefined')
+            loading = $('.loading');
+        setTimeout(function() {
+            loading.hide();
+            $('.loading strong').text('加载中');
+        }, 1000);
+    };
+
+    function showEmptyItem () {
+        $('.mybookshelf_main_wrapper').each(function(){
+            if ($(this).find('li').length==0) {
+                $(this).find('.common_empty_item').show()
+            };
+        });
+    }
+
+
+    var mySwiper = new Swiper('.bookshelf.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoHeight: true,
+        autoplay: false,
+        paginationBulletRender: function (index, className) {
+            switch (index) {
+                case 0:
+                    name = '最近编辑';
+                    break;
+                case 1:
+                    name = '全部书册';
+                    break;
+                case 2:
+                    name = '回收站';
+                    break;
+                default:
+                    name = '';
+            }
+            return '<span class="' + className + '">' + name + '</span>';
+        }
+    });
+
+    $(document).ready(function(){
+        changeLongBookName();
+        loadMoreBook();
+        showEmptyItem();
+    })
+</script>
+</body>
+</html>

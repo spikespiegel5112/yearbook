@@ -506,6 +506,8 @@
 }
 
 .bookshelf .grid .display{
+    position: relative;
+    z-index: 1;
     float: left;
     padding: 0 10px 0 15px;
 }
@@ -520,6 +522,7 @@
     filter: gray; /* just for IE6-9 */
     pointer-events: none;
     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    background-color: #ececec;
 }
 
 .bookshelf .grid .display a{

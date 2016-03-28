@@ -506,8 +506,23 @@
 }
 
 .bookshelf .grid .display{
+    position: relative;
+    z-index: 1;
     float: left;
     padding: 0 10px 0 15px;
+}
+
+.recycle_bin.bookshelf .grid .display,
+.recycle_bin.bookshelf .grid .describe{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* just for IE6-9 */
+    pointer-events: none;
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    background-color: #ececec;
 }
 
 .bookshelf .grid .display a{
@@ -516,11 +531,6 @@
     width: 158px;
     height: 160px;
     background: url("../img/pc/pc_bookshelf.png") no-repeat center bottom;
-}
-
-.recycle_bin.bookshelf .grid .display a{
-    pointer-events: none;
-    cursor: default;
 }
 
 .bookshelf .grid .display .cover{
@@ -563,10 +573,6 @@
 
 .bookshelf .grid .display:hover .size{
     display: block;
-}
-
-.recycle_bin.bookshelf .grid .display:hover .size{
-    display: none;
 }
 
 .bookshelf .grid .display.max .size{
@@ -614,11 +620,6 @@
     box-sizing: border-box;
 }
 
-.recycle_bin.bookshelf .grid .describe a{
-    cursor: default;
-    pointer-events: none;
-}
-
 .bookshelf .grid .describe .info{
     float: left;
     width: 71%;
@@ -628,6 +629,19 @@
 .bookshelf .grid .describe .info .name{
     font-size: 16px;
     color: #333;
+}
+
+.bookshelf .grid .describe .info .name input{
+    width: 100px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+}
+
+.bookshelf .grid .describe .info .name input:focus{
+    border: 1px solid #aaa;
 }
 
 .bookshelf .grid .describe .info .time{
@@ -696,11 +710,6 @@
     top: 35px;
 }
 
-.recycle_bin .grid .describe .info .btn_group .share:hover .common_sharelist_wrapper{
-    display: none;
-
-}
-
 .grid .describe .info .btn_group .share .common_sharelist_wrapper::before {
     content: " ";
     position: absolute;
@@ -732,6 +741,7 @@
     float: left;
     margin: 20px 0;
     width: 29%;
+    max-width: 163px;
     font-size: 12px;
     color: #666;
 }
@@ -3549,7 +3559,7 @@ li.action div:hover {
 }
 
 .opd_privilege_wrapper ul {
-    display: none;
+    /**display: none;**/
 	margin: 0 0 0 25px;
 }
 

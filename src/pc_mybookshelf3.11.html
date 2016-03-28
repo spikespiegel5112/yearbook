@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>蝴蝶装大本</span></a>
@@ -237,7 +237,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>胶装小本</span></a>
@@ -305,7 +305,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>蝴蝶装大本</span></a>
@@ -391,7 +391,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>蝴蝶装大本</span></a>
@@ -459,7 +459,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>胶装小本</span></a>
@@ -527,7 +527,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>蝴蝶装大本</span></a>
@@ -595,6 +595,7 @@
                                 <a class="next"> > </a>
                             </div>
                         </div>
+                        <!--回收站class:recycle_bin-->
                         <div class="bookshelf recycle_bin">
                             <div class='pc_empty_item hidden'>
                                 <span class='avatar_1'></span>
@@ -603,7 +604,7 @@
                             <ul>
                                 <li class="grid">
                                     <div class="display max">
-                                        <a href="javascript:;">
+                                        <a href="bp_main.html">
                                             <span class="size"></span>
                                             <div class="cover">
                                                 <img src="img/default/bookshelf_book01.jpg">
@@ -613,7 +614,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>蝴蝶装大本</span></a>
@@ -682,7 +683,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>胶装小本</span></a>
@@ -751,7 +752,7 @@
                                     </div>
                                     <div class="describe">
                                         <div class="info">
-                                            <a href="javascript:;"><h4 class="name">《我的成长日记》</h4></a>
+                                            <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
                                             <p class="time">创建日期：<span>2016-03-21</span></p>
                                             <div class="config">
                                                 <a href="javascript:;"><span>蝴蝶装大本</span></a>
@@ -1022,7 +1023,7 @@
 	}
 
 
-    //书册完成率
+
     function bookCompletionRate(){
         jQuery(".bookshelf_wrap").slide({
             titCell: ".hd a",
@@ -1031,6 +1032,7 @@
             pnLoop:false
         });
 
+        //书册完成率
         var orderNum = $('.bookshelf li').length;
         for (var i =0 ;i < orderNum;i++){
             var rate = $('.bookshelf li').eq(i).find('.percent > span').text();

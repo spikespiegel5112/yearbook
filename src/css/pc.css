@@ -292,6 +292,229 @@
 	vertical-align: top;
 }
 
+/*3.11 bookshelf wrap */
+.personal_content_box .bookshelf_wrap{
+    position: relative;
+    margin: -8px 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+.bookshelf_wrap .filter_wrap{
+    position: relative;
+    margin: 0 0 12px;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 3px #ddd;
+}
+
+.bookshelf_wrap .filter_group{
+    float: left;
+    margin-left: 15px;
+}
+
+.bookshelf_wrap .filter_group a{
+    margin: 10px 5px 10px 0;
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666;
+}
+
+.bookshelf_wrap .filter_group a:hover,
+.bookshelf_wrap .filter_group a.active{
+    color: #90c132;
+}
+
+.bookshelf_wrap .filter_wrap .new_book{
+    float: right;
+    margin: 12px 2px 12px 25px;
+    width: 145px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff696a;
+    border-radius: 4px;
+}
+
+.bookshelf_wrap .filter_wrap .new_book:hover{
+    background-color: #e96364;
+}
+
+.bookshelf_wrap .filter_wrap .new_book:active{
+    background-color: #d45b5c;
+}
+
+.bookshelf_wrap .bookshelf{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bookshelf_wrap .bookshelf .grid{
+    border-bottom: 2px solid #eee;
+    box-shadow: 0 1px 0 #fff;
+    overflow: hidden;
+}
+
+.bookshelf .grid .display{
+    float: left;
+    padding: 0 10px 0 15px;
+}
+
+.bookshelf .grid .display a{
+    position: relative;
+    display: block;
+    width: 158px;
+    height: 160px;
+}
+
+.bookshelf .grid .display.max a{
+    background: url("../img/pc/bookshelf_bg_max.png") no-repeat 0;
+}
+
+.bookshelf .grid .display.min a{
+    background: url("../img/pc/bookshelf_bg_min.png") no-repeat 0;
+}
+
+.bookshelf .grid .display a img{
+    position: absolute;
+    left: 42px;
+    top: 22px;
+    width: 84px;
+    height: 119px;
+}
+
+.bookshelf .grid .display a .type{
+    position: absolute;
+    left: 42px;
+    top: 22px;
+    width: 23px;
+    height: 58px;
+    z-index: 1;
+}
+
+.bookshelf .grid .display a .type.interact{
+    background: url("../img/pc/label_interact.png") no-repeat 0;
+}
+
+.bookshelf .grid .display a .type.photo{
+    background: url("../img/pc/label_photo.png") no-repeat 0;
+}
+
+.bookshelf .grid .display a .type.templet{
+    background: url("../img/pc/label_templet.png") no-repeat 0;
+}
+
+.bookshelf .grid .describe{
+    padding: 22px 65px 0 188px;
+    width: 100%;
+    height: 160px;
+    box-sizing: border-box;
+}
+
+.bookshelf .grid .describe .info{
+    float: left;
+    width: 71%;
+    line-height: 30px;
+}
+
+.bookshelf .grid .describe .info .name{
+    font-size: 16px;
+    color: #333;
+}
+
+.bookshelf .grid .describe .info .time{
+    font-size: 12px;
+    color: #999;
+}
+
+.bookshelf .grid .describe .info .config{
+    font-size: 14px;
+    color: #666;
+}
+
+.bookshelf .grid .describe .info .config span{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.bookshelf .grid .describe .info .config span b{
+    font-weight: normal;
+}
+
+.bookshelf .grid .describe .info .btn_group{
+    display: block;
+    margin: 10px 0;
+}
+
+.grid .describe .info .btn_group a{
+    display: inline-block;
+    margin-right: 5px;
+    width: 45px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    color: #97c76c;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.grid .describe .info .btn_group a:hover{
+    color: #333;
+}
+
+.bookshelf .grid .describe .progress{
+    float: left;
+    width: 29%;
+    font-size: 12px;
+    color: #666;
+}
+
+.grid .describe .percent label{
+    float: left;
+}
+
+.grid .describe .percent .bar{
+    width: 60px;
+    height: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bookshelf .grid .actions{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 65px;
+}
+
+.bookshelf .grid .actions a{
+    display: block;
+    margin: 0 auto;
+    width: 55px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #90c132;
+    border-radius: 2px;
+}
+
+
+
+    /*3.11 bookshelf wrap end*/
+
 .bookshelf_list {
 	display: inline-block;
 	width: 82%;
@@ -2025,7 +2248,10 @@ li.action div:hover {
     border-bottom: 1px solid #ddd;
 }
 
-.order_details .opd_checklist_wrapper thead tr th:nth-child(1),
+.order_details .opd_checklist_wrapper thead tr th:nth-child(1){
+    width: 110px;
+}
+
 .order_details .opd_checklist_wrapper thead tr th:nth-child(2){
     width: 120px;
 }
@@ -2035,6 +2261,7 @@ li.action div:hover {
     width: 145px;
 }
 
+.order_details .opd_checklist_wrapper thead tr th:nth-child(5),
 .order_details .opd_checklist_wrapper thead tr th:nth-child(6),
 .order_details .opd_checklist_wrapper thead tr th:nth-child(7){
     width: 90px;
@@ -2086,6 +2313,10 @@ li.action div:hover {
 	text-overflow: ellipsis;
 }
 
+.address_list li:first-child{
+    min-width: 22px;
+}
+
 .address_list > label {
 	display: block;
 	padding-left: 20px;
@@ -2096,6 +2327,12 @@ li.action div:hover {
 
 .address_list .address {
 	width: 42%;
+}
+
+@media only screen and (min-width: 1024px) {
+    .address_list .address {
+        width: 40%;
+    }
 }
 
 .address_list .recipients {

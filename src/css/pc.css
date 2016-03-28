@@ -2538,6 +2538,7 @@ li.action div:hover {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+    min-width: 30px;
 }
 
 .address_list li:first-child{
@@ -2570,22 +2571,45 @@ li.action div:hover {
 	width: 20%;
 }
 
-.address_list .edit,
-.address_list .delete {
-	width: 25px;
-	cursor: pointer;
-	font-size: 14px;
-}
-
-.address_list .set_default a{
-    font-size: 12px;
+.address_list .edit a,
+.address_list .delete a{
+    display: none;
+	width: 30px;
+	font-size: 12px;
     color: #999;
 }
 
-.address_list .edit span:hover,
-.address_list .delete span:hover,
+.address_list .set_default a{
+    display: none;
+    width: 60px;
+    text-align: center;
+    font-size: 12px;
+    color: #ff6600;
+}
+
+.address_list label:hover{
+    background-color: #fff;
+}
+
+.address_list label:hover .edit a,
+.address_list label:hover .delete a,
+.address_list label:hover .set_default a{
+    display: block;
+}
+
+.address_list .edit a:hover,
+.address_list .delete a:hover,
 .address_list .set_default a:hover {
-    color: #6ea11f;
+    color: #333;
+}
+
+.address_list .default a{
+    padding: 0 4px;
+    color: #f5a8a8 ;
+    font-weight: bold;
+    border: 2px solid #f5a8a8;
+    border-radius: 2px;
+    cursor: default;
 }
 
 .personal_content_box .coupon .opd_coupon_wrapper label{

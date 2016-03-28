@@ -223,8 +223,8 @@
 								<li class="address">江苏省无锡市XXX路XXX小区XXX路XXXxxxxx</li>
 								<li class="recipients">XXX（收）</li>
 								<li class="mobile">联系电话:13200000000</li>
-								<li class="edit"><span class='ybiconfont ybicon-pencil'></span></li>
-								<li class="delete"><span class='ybiconfont ybicon-trash'></span></li>
+								<li class="edit"><a href="javascript:;" >修改</a></li>
+								<li class="delete"><a href="javascript:;" >删除</a></li>
 								<li class="default"><a href="javascript:;">默认地址</a></li>
 							</ul>
 						</label>
@@ -236,8 +236,8 @@
                                 <li class="address">江苏省无锡市XXX路XXX小区XXX路XXXxxxxx</li>
                                 <li class="recipients">XXX（收）</li>
                                 <li class="mobile">联系电话:13200000000</li>
-                                <li class="edit"><span class='ybiconfont ybicon-pencil'></span></li>
-                                <li class="delete"><span class='ybiconfont ybicon-trash'></span></li>
+                                <li class="edit"><a href="javascript:;" >修改</a></li>
+                                <li class="delete"><a href="javascript:;" >删除</a></li>
                                 <li class="set_default"><a href="javascript:;">设为默认</a></li>
                             </ul>
                         </label>
@@ -249,8 +249,8 @@
                                 <li class="address">江苏省无锡市XXX路XXX小区XXX路XXXxxxxx</li>
                                 <li class="recipients">XXX（收）</li>
                                 <li class="mobile">联系电话:13200000000</li>
-                                <li class="edit"><span class='ybiconfont ybicon-pencil'></span></li>
-                                <li class="delete"><span class='ybiconfont ybicon-trash'></span></li>
+                                <li class="edit"><a href="javascript:;" >修改</a></li>
+                                <li class="delete"><a href="javascript:;" >删除</a></li>
                                 <li class="set_default"><a href="javascript:;">设为默认</a></li>
                             </ul>
                         </label>
@@ -731,7 +731,7 @@
 
 	//添加新收货地址
 	function addNewAddress() {
-		$('.new_address, .edit .ybicon-pencil').click(function() {
+		$('.new_address, .edit a').click(function() {
 			art.dialog({
 				id: 'new_address',
 				title: '添加收货地址',
@@ -745,7 +745,7 @@
 	}
 	//编辑收货地址
 	function editAddress() {
-		$('.edit .ybicon-pencil').click(function() {
+		$('.address_list .edit a').click(function() {
 			art.dialog({
 				id: 'new_address',
 				title: '编辑收货地址',
@@ -756,7 +756,7 @@
 	}
 	//删除收货地址
 	function deleteAddress() {
-		$('.delete .icon-trash').click(function() {
+		$('.address_list .delete a').click(function() {
 			art.dialog({
 				id: 'delete_address',
 				title: '删除收货地址',

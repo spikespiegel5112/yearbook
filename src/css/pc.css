@@ -465,7 +465,7 @@
 }
 
 .bookshelf_wrap .filter_group a:hover,
-.bookshelf_wrap .filter_group a.active{
+.bookshelf_wrap .filter_group a.on{
     color: #90c132;
 }
 
@@ -518,41 +518,93 @@
     background: url("../img/pc/pc_bookshelf.png") no-repeat center bottom;
 }
 
-.bookshelf .grid .display.max a{
-
+.recycle_bin.bookshelf .grid .display a{
+    pointer-events: none;
+    cursor: default;
 }
 
-.bookshelf .grid .display.min a{
-
-}
-
-.bookshelf .grid .display a img{
+.bookshelf .grid .display .cover{
     position: absolute;
-    left: 42px;
-    top: 22px;
+    left: 37px;
+    padding: 4px 4px 0 0;
+}
+
+.bookshelf .grid .display.max .cover{
+    top: 18px;
+    width: 84px;
+    height: 119px;
+    background: url("../img/pc/book_bg_max.png") no-repeat 0 0;
+}
+
+.bookshelf .grid .display.min .cover{
+    top: 34px;
+    width: 73px;
+    height: 103px;
+    background: url("../img/pc/book_bg_min.png") no-repeat 0 0;
+}
+
+.bookshelf .grid .display.max .cover img{
     width: 84px;
     height: 119px;
 }
 
-.bookshelf .grid .display a .type{
+.bookshelf .grid .display.min .cover img{
+    width: 73px;
+    height: 103px;
+}
+
+.bookshelf .grid .display .size{
+    display: none;
     position: absolute;
-    left: 42px;
-    top: 22px;
+    left: -4px;
+    width: 128px;
+    height: 145px;
+}
+
+.bookshelf .grid .display:hover .size{
+    display: block;
+}
+
+.recycle_bin.bookshelf .grid .display:hover .size{
+    display: none;
+}
+
+.bookshelf .grid .display.max .size{
+    top: -4px;
+    background: url("../img/pc/size_max.png") no-repeat 0;
+}
+
+.bookshelf .grid .display.min .size{
+    top: 3px;
+    background: url("../img/pc/size_min.png") no-repeat 0;
+}
+
+.bookshelf .grid .display .type{
+    position: absolute;
+    left: 37px;
     width: 23px;
     height: 58px;
     z-index: 1;
 }
 
+.bookshelf .grid .display.max .type{
+    top: 22px;
+}
+
+.bookshelf .grid .display.min .type{
+    top: 38px;
+}
+
 .bookshelf .grid .display a .type.interact{
-    background: url("../img/pc/label_interact.png") no-repeat 0;
+    background: url("../img/pc/label_interact.png") no-repeat 0 top;
 }
 
 .bookshelf .grid .display a .type.photo{
-    background: url("../img/pc/label_photo.png") no-repeat 0;
+    background: url("../img/pc/label_photo.png") no-repeat 0 top;
 }
 
 .bookshelf .grid .display a .type.templet{
-    background: url("../img/pc/label_templet.png") no-repeat 0;
+    background: url("../img/pc/label_templet.png") no-repeat 0 top;
 }
 
 .bookshelf .grid .describe{
@@ -560,6 +612,11 @@
     width: 100%;
     height: 160px;
     box-sizing: border-box;
+}
+
+.recycle_bin.bookshelf .grid .describe a{
+    cursor: default;
+    pointer-events: none;
 }
 
 .bookshelf .grid .describe .info{
@@ -578,15 +635,18 @@
     color: #999;
 }
 
-.bookshelf .grid .describe .info .config{
+.bookshelf .grid .describe .info .config a{
     font-size: 14px;
     color: #666;
+}
+
+.bookshelf .grid .describe .info .config a:hover{
+    color: #e7b54b;
 }
 
 .bookshelf .grid .describe .info .config span{
     display: inline-block;
     margin-right: 15px;
-    color: #666;
 }
 
 .bookshelf .grid .describe .info .config span b{
@@ -622,10 +682,23 @@
     border: 1px solid #e7b54b;
 }
 
+.recycle_bin .grid .describe .info .btn_group .btn > a{
+    pointer-events: none;
+    color: #999;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    cursor: default;
+}
+
 .grid .describe .info .btn_group .share:hover .common_sharelist_wrapper{
     display: block;
     left: -70px;
     top: 35px;
+}
+
+.recycle_bin .grid .describe .info .btn_group .share:hover .common_sharelist_wrapper{
+    display: none;
+
 }
 
 .grid .describe .info .btn_group .share .common_sharelist_wrapper::before {
@@ -722,13 +795,26 @@
     height: 30px;
     text-align: center;
     line-height: 30px;
+}
+
+.bookshelf .grid .actions .btn{
     font-size: 14px;
     color: #fff;
     background-color: #90c132;
     border-radius: 2px;
 }
 
+.bookshelf .grid .actions a{
+    font-size: 12px;
+    color: #666;
+}
+
 .bookshelf .grid .actions a:hover{
+    color: #e7b54b;
+}
+
+.bookshelf .grid .actions .btn:hover{
+    color: #fff;
     background-color: #e7b54b;
 }
 

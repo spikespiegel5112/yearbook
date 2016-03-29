@@ -3374,7 +3374,7 @@
     overflow: hidden;
     white-space: nowrap;
     /* height: 50px; */
-    overflow-x: scroll;
+    /*overflow-x: scroll;*/
 }
 
 .bookshelf_wrap .swiper-pagination span {
@@ -3411,21 +3411,40 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 23px;
-    height: 58px;
+    padding: 5px 0 5px;
+    width: 20px;
+    height: 60px;
     z-index: 1;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+    box-sizing: border-box;
+}
+
+.bookshelf .grid .type::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
 }
 
 .bookshelf .grid .type.interact{
-    background: url("../img/pc/label_interact.png") no-repeat 0 top;
+    background-color: #3498db;
 }
 
 .bookshelf .grid .type.photo{
-    background: url("../img/pc/label_photo.png") no-repeat 0 top;
+    background-color: #ffaa00;
 }
 
 .bookshelf .grid .type.templet{
-    background: url("../img/pc/label_templet.png") no-repeat 0 top;
+    height: 50px;
+    background-color: #f00;
 }
 
 

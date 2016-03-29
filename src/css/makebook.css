@@ -3218,9 +3218,11 @@
 
 .auto_edit_nav .nav_left h4 {
     float: left;
+    min-width: 75px;
 	font-size: 14px;
 	line-height: 42px;
 	color: #333;
+	text-align: center;
 }
 
 .auto_edit_nav .nav_left .edit_name {
@@ -3231,7 +3233,6 @@
 
 .auto_edit_nav .nav_left h4 span {
 	display: inline-block;
-	width: 80%;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;

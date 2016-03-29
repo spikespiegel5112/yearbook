@@ -23,6 +23,10 @@
     font-size: 14px;
     text-indent: 2em;
 }
+.ybarticle_article_item p img{
+    margin: 20px auto;
+    max-width: 80%;
+}
 
 .ybarticle_article_item p a {
     color: #0880d7;
@@ -314,7 +318,6 @@
 
 /*help center coupon*/
 .content .in_describe {
-    padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -340,9 +343,12 @@
     top: 17px;
     background-color: #45a6de;
 }
-
-.in_describe p {
+.in_describe article{
+    padding: 10px 20px;
+}
+.in_describe article p {
     margin: 0;
+    padding: 10px 20px;
     font-size: 14px;
     line-height: 30px;
     text-indent: 2em;
@@ -352,9 +358,16 @@
     color: #45a6de;
     text-decoration: underline;
 }
+.in_describe p img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 .in_describe p a img {
     margin: 0 0 0 5px;
+    width: 100%;
+    height: auto;
     vertical-align: top;
     border: 8px solid #ccf8f0;
 }

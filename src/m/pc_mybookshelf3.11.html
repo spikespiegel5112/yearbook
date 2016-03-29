@@ -17,99 +17,63 @@
     <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
     <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/swiper.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1459154853_012007.css" type="text/css" media="all"/>
 </head>
 
 <body class='bg_f6f6f6'>
-<div class='main_container mybookshelf_wrapper has_footer_nav'>
-    <!--<div class='ybwechatheader_wrapper'>
-        <a class="left_btn back_btn" href="pc_main.html"></a>
-        <p>我的书库</p>
-    </div>-->
-    <div class='common_title_item'>
-        <span class='mybookshelf_recentlyused_icon ybiconfont ybicon-editpage'></span>
-        <label>最近浏览的书册</label>
+<div class='main_container has_footer_nav'>
+    <div class='ybwechatheader_wrapper'>
+        <a class='left_btn list_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-unorderedlist"></span>
+        </a>
+        <p>我的书架</p>
+        <a class='right_btn search_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-search"></span>
+        </a>
     </div>
-    <div class='mybookshelf_main_wrapper'>
-        <ul>
-           <!--  <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春-毕业册模板</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
-            <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春-毕业册模板</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
-            <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
-            <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春毕业册模板</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li> -->
-        </ul>
-        <div class='common_empty_item'>
-            <span class="ybiconfont ybicon-box"></span>
-            <div>
-                没有浏览过书册
-            </div>
-        </div>
-        <div class='ybwechat_loading_item'>
-            <a href="javascript:;">点击加载更多（<b>6</b>）</a>
-        </div>
-    </div>
-    <div class='common_title_item'>
-        <span class='mybookshelf_created_icon ybiconfont ybicon-bookopened'></span>
-        <label>创建的书册</label>
-    </div>
-    <div class='mybookshelf_main_wrapper'>
-        <div class='common_empty_item'>
-            <span class="ybiconfont ybicon-box"></span>
-            <div>
-                没有创建过过书册
-            </div>
-        </div>
-        <div class='ybwechat_loading_item hidden'>
-            <a href="javascript:;">点击加载更多（<b>6</b>）</a>
-        </div>
-    </div>
-    <div class='common_title_item'>
-        <span class='mybookshelf_joined_icon ybiconfont ybicon-addpage'></span>
-        <label>加入的书册</label>
-    </div>
-    <div class='mybookshelf_main_wrapper'>
-        <ul>
-            <!-- <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春-毕业册模板</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
-            <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春-追忆青春毕业册模板追忆青春</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
-            <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春-毕业</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li>
-            <li>
-                <a class='cover' href="javascript:;"><img src="../img/m/default/choosetemplate_cover_00000.jpg"></a>
-                <label>追忆青春毕业册模板追忆青春</label>
-                <a class='ybwechat_list_btn' href="javascript:;">进入书册</a>
-            </li> -->
-        </ul>
-        <div class='common_empty_item'>
-            <span class="ybiconfont ybicon-box"></span>
-            <div>
-                您还没有加入书册，立即新建！
-                <span class='arrow'></span>
+    <div class="bookshelf_wrap">
+        <div class="shelf_tab swiper-pagination"></div>
+        <div class="bookshelf swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <ul>
+                        <li class="grid">
+                            <span class="type interact">照片书</span>
+                            <div class="display max">
+                                <a href="javascript:;">
+                                    <span class="size"></span>
+                                    <div class="cover">
+                                        <img src="../img/default/bookshelf_book01.jpg">
+                                        <span class="rate">90%</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="describe">
+                                <div class="info">
+                                    <a href="javascript:;"><h4 class="name">《<input type="text" value="我的成长日记">》</h4></a>
+                                    <div class="config">
+                                        <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                    </div>
+                                    <div class="status">状态：<span>已提交待付款</span></div>
+                                    <p class="time">创建日期：<span>2016-03-21</span></p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a class="btn" href="javascript:;"><i class="ybiconfont ybicon-sharehollow"></i>分享书册</a>
+                            </div>
+                            <div class="btn_group">
+                                <a class="edit" href="javascript:;"><i class="icon-edit"></i>编辑</a>
+                                <a class="print" href="javascript:;"><i class="icon-print"></i>打印</a>
+                                <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                <a class="delete" href="javascript:;"><i class="icon-trash"></i>删除</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
             </div>
         </div>
     </div>
@@ -178,6 +142,7 @@
     <div class="close_btn"><a href="javascript:;">×</a></div>
 </div>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
 <script type="text/javascript" src="../js/m_main.js"></script>
 <script>
     /*
@@ -239,6 +204,30 @@
         });
     }
 
+
+    var mySwiper = new Swiper('.bookshelf.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoHeight: true,
+        autoplay: false,
+        paginationBulletRender: function (index, className) {
+            switch (index) {
+                case 0:
+                    name = '最近编辑';
+                    break;
+                case 1:
+                    name = '全部书册';
+                    break;
+                case 2:
+                    name = '回收站';
+                    break;
+                default:
+                    name = '';
+            }
+            return '<span class="' + className + '">' + name + '</span>';
+        }
+    });
 
     $(document).ready(function(){
         changeLongBookName();

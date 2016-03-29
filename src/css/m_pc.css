@@ -3373,8 +3373,7 @@
     background-color: #f6f6f6;
     overflow: hidden;
     white-space: nowrap;
-    /* height: 50px; */
-    /*overflow-x: scroll;*/
+    overflow-x: auto;
 }
 
 .bookshelf_wrap .swiper-pagination span {
@@ -3388,19 +3387,20 @@
     text-align: center;
     line-height: 50px;
     height: 50px;
-    font-size: 14px;
+    font-size: 18px;
     border-bottom: 1px solid #d1d1d1;
 }
 
 .bookshelf_wrap .swiper-pagination span.swiper-pagination-bullet-active{
-    border-bottom: 2px solid #92c153;
+    border-bottom: 2px solid #73a72d;
+    color: #73a72d;
 }
 
 .bookshelf .grid{
     position: relative;
     display: block;
     margin: 0 0 10px;
-    padding: 10px 0;
+    padding: 15px 0 5px;
     width: 100%;
     background-color: #fff;
     border-top: 1px solid #d1d1d1;
@@ -3414,7 +3414,7 @@
     padding: 5px 0 5px;
     width: 20px;
     height: 60px;
-    z-index: 1;
+    z-index: 2;
     color: #fff;
     text-align: center;
     font-size: 12px;
@@ -3432,6 +3432,10 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid #fff;
+}
+
+.bookshelf .recycle_bin .grid .type::after{
+    border-bottom: 10px solid #ececec;
 }
 
 .bookshelf .grid .type.interact{
@@ -3452,18 +3456,11 @@
     position: relative;
     z-index: 1;
     float: left;
-    margin-left: 15px;
-    padding: 0 10px 0 15px;
+    margin-left: 10px;
+    padding: 0;
     display: block;
-    width: 140px;
+    width: 135px;
     height: 160px;
-}
-
-.recycle_bin.bookshelf .grid .display,
-.recycle_bin.bookshelf .grid .describe{
-    -webkit-filter: grayscale(100%);
-    pointer-events: none;
-    background-color: #ececec;
 }
 
 .bookshelf .grid .display .cover{
@@ -3474,7 +3471,7 @@
 }
 
 .bookshelf .grid .display.max .cover{
-    top: 18px;
+    top: 24px;
     width: 84px;
     height: 119px;
     background: url("../img/pc/book_bg_max.png") no-repeat 0 0;
@@ -3497,6 +3494,33 @@
     height: 103px;
 }
 
+.bookshelf .grid .display .cover .rate{
+    position: absolute;
+    top: 4px;
+    left: 0;
+    padding: 50% 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,.6);
+}
+
+.bookshelf .grid .display.max .cover .rate{
+    width: 84px;
+    height: 119px;
+}
+
+.bookshelf .grid .display.min .cover .rate{
+    width: 73px;
+    height: 103px;
+}
+
+.bookshelf .grid .display .cover .rate span{
+    display: block;
+    margin: 0 auto;
+}
+
 .bookshelf .grid .display .size{
     display: block;
     position: absolute;
@@ -3506,7 +3530,7 @@
 }
 
 .bookshelf .grid .display.max .size{
-    top: -4px;
+    top: 2px;
     background: url("../img/pc/size_max.png") no-repeat 0;
 }
 
@@ -3517,7 +3541,8 @@
 
 
 .bookshelf .grid .describe{
-    padding: 22px 10px 0 155px;
+    position: relative;
+    padding: 22px 10px 0 145px;
     width: 100%;
     height: 160px;
     box-sizing: border-box;
@@ -3535,19 +3560,6 @@
     color: #333;
 }
 
-.bookshelf .grid .describe .info .name input{
-    width: 100px;
-    text-align: center;
-    color: #333;
-    font-size: 16px;
-    border: none;
-    background: transparent;
-}
-
-.bookshelf .grid .describe .info .name input:focus{
-    border: 1px solid #aaa;
-}
-
 .bookshelf .grid .describe .info .time,
 .bookshelf .grid .describe .info .status{
     font-size: 12px;
@@ -3555,7 +3567,7 @@
 }
 
 .bookshelf .grid .describe .info .config a{
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
 }
 
@@ -3570,25 +3582,34 @@
 .bookshelf .grid .actions{
     position: absolute;
     right: 5px;
-    top: 65px;
-    width: 65px;
+    top: 36px;
 }
 
 .bookshelf .grid .actions a{
     display: block;
     margin: 0 auto;
-    width: 55px;
+   /* width: 55px;*/
     height: 30px;
     text-align: center;
     line-height: 30px;
 }
 
 .bookshelf .grid .actions .btn{
-    padding: 0;
+    padding: 0 6px;
     font-size: 14px;
     color: #fff;
-    background-color: #90c132;
+    background-color: #97c76c;
     border-radius: 2px;
+}
+
+@media only screen and (max-width: 320px) {
+    .bookshelf .grid .describe .info .name{
+        font-size: 14px;
+    }
+    .bookshelf .grid .actions .btn,
+    .bookshelf .grid .actions a i{
+        font-size: 12px;
+    }
 }
 
 .bookshelf .grid .actions a{
@@ -3600,10 +3621,20 @@
     color: #e7b54b;
 }
 
+.bookshelf .grid .actions .btn:hover{
+    background-color: #e7b54b;
+    color: #fff;
+}
+
+.bookshelf .grid .actions a i{
+    font-size: 14px;
+}
+
 .bookshelf .grid .btn_group{
     display: block;
-    margin: 10px 0;
+    padding: 10px 0;
     text-align: center;
+    border-top: 1px dashed #dedede;
 }
 
 .bookshelf .grid .btn_group > a{
@@ -3626,6 +3657,7 @@
 }
 
 .bookshelf .grid .btn_group > a i{
+    font-size: 14px;
     margin-right: 3px;
 }
 
@@ -3635,4 +3667,11 @@
     background-color: #ddd;
     border: 1px solid #ccc;
     cursor: default;
+}
+
+.bookshelf .recycle_bin .grid .display,
+.bookshelf .recycle_bin .grid .describe{
+    -webkit-filter: grayscale(100%);
+    pointer-events: none;
+    background-color: #ececec;
 }

@@ -44,7 +44,7 @@ $(function() {
 		var options = {
 
 			},
-			degree=0,
+			// degree=0,
 			scale=1,
 			image = $('.common_epimage_item').css('transition','transform 0.5s'),
 			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
@@ -53,11 +53,29 @@ $(function() {
 			zoomoutBtn=$('.common_epscrollbar_wrapper .zoomout');
 		trBtn.on('touchend', function() {
 			image.css(turning('right'));
-			
+			// image.css({'transform': 'rotate(' + turning('right') + 'deg)'});
+			// image.style.transform(rotate)=css;
 		});
 		tlBtn.on('touchend', function() {
 			image.css(turning('left'));
 		});
+		function turning(direction){
+			var degree=0;
+			var closure=function(){
+				switch (direction) {
+					case 'right':
+						degree += 90;
+						console.log(degree)
+						cnntinue;
+					case 'left':
+						degree -= 90;
+						cnntinue;
+				}
+				// return degree;
+				return {'transform': 'rotate(' + degree + 'deg)'}
+			};
+			return closure();
+		}
 		zoomoutBtn.on('touchend',function(){
 			image.css(zooming('zoomout'));
 			console.log(zooming());
@@ -65,23 +83,8 @@ $(function() {
 		zoominBtn.on('touchend',function(){
 			image.css(zooming('zoomin'));
 		})
-		function turning(direction){
-			// var degree=0;
-			return (function(){
-				switch (direction) {
-					case 'right':
-						degree += 90;
-						break;
-					case 'left':
-						degree -= 90;
-						break;
-				}
-				return {'transform': 'rotate(' + degree + 'deg)'}
-			})();
-		}
 		function zooming(direction){
 			var xaxis,yaxis;
-
 			return function(){
 				var unit=0.2;
 				switch (direction){

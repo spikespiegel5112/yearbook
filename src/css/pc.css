@@ -353,13 +353,15 @@
     border-bottom: 1px solid #dedddd;
 }
 
-.personal_content_box .tool_wrap .add_friend{
+.personal_content_box .tool_wrap .ybicon-addfriend{
     display: inline-block;
     vertical-align: middle;
     margin: 0 15px 0 10px;
     width: 34px;
     height: 25px;
-    background: url("../img/icon/add_friend.png") no-repeat center;
+    font-size: 35px;
+    line-height: 25px;
+    color: #abaebd;
 }
 
 .personal_content_box .tool_wrap .search_bar{
@@ -601,8 +603,8 @@
     top: 38px;
 }
 
-.bookshelf .grid .display a .type.interact{
-    background: url("../img/pc/label_interact.png") no-repeat 0 top;
+.bookshelf .grid .display a .type.team{
+    background: url("../img/pc/label_team.png") no-repeat 0 top;
 }
 
 .bookshelf .grid .display a .type.photo{
@@ -629,19 +631,6 @@
 .bookshelf .grid .describe .info .name{
     font-size: 16px;
     color: #333;
-}
-
-.bookshelf .grid .describe .info .name input{
-    width: 100px;
-    text-align: center;
-    color: #333;
-    font-size: 16px;
-    border: none;
-    background: transparent;
-}
-
-.bookshelf .grid .describe .info .name input:focus{
-    border: 1px solid #aaa;
 }
 
 .bookshelf .grid .describe .info .time{
@@ -4365,9 +4354,11 @@ li.action div:hover {
 	margin: 30px auto;
 	width: 400px;
 	overflow: hidden;
+    text-align: center;
 }
 .opd_donatesuccess_wrapper span, .opd_donatesuccess_wrapper div{
 	margin: 0 auto;
+    text-align: center;
 }
 .opd_donatesuccess_wrapper span{
 	display: block;

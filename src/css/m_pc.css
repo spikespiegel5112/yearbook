@@ -3364,3 +3364,375 @@
     padding: 0;
 
 }
+/*~~~~~~~~~~yb3.11 mybookshelf~~~~~~~~~~*/
+.bookshelf_wrap .swiper-pagination{
+    position: relative;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.bookshelf_wrap .swiper-pagination span {
+    margin: 0 0 10px;
+    width: 33.3%;
+    background: #fff;
+    color: #333;
+    opacity: 1;
+    display: inline-block;
+    border-radius: 0;
+    text-align: center;
+    line-height: 3.125rem;
+    height: 3.125rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.bookshelf_wrap .swiper-pagination span.swiper-pagination-bullet-active{
+    border-bottom: 2px solid #73a72d;
+    color: #73a72d;
+}
+
+.bookshelf .grid{
+    position: relative;
+    display: block;
+    margin: 0 0 10px;
+    padding: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.bookshelf .grid .type{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px 0 5px;
+    width: 1.25rem;
+    height: 3.75rem;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    font-size: .75rem;
+    line-height: .875rem;
+    box-sizing: border-box;
+}
+
+.bookshelf .grid .type::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: .625rem solid transparent;
+    border-right: .625rem solid transparent;
+    border-bottom: .625rem solid #fff;
+}
+
+.bookshelf.recycle_bin .grid .type::after{
+    border-bottom: .625rem solid #ececec;
+}
+
+.bookshelf .grid .type.team{
+    background-color: #3498db;
+}
+
+.bookshelf .grid .type.photo{
+    background-color: #ffaa00;
+}
+
+.bookshelf .grid .type.templet{
+    height: 3.125rem;
+    background-color: #ff5220;
+}
+
+
+.bookshelf .grid .display{
+    position: relative;
+    z-index: 1;
+    float: left;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 8.438rem;
+    height: 10rem;
+}
+
+.bookshelf .grid .display .cover{
+    position: absolute;
+    left: 2.813rem;
+    padding: 4px 5px 0 0;
+    box-sizing: content-box;
+}
+
+.bookshelf .grid .display.max .cover{
+    top: 2rem;
+    width: 5.25rem;
+    height: 7.438rem;
+    background: url("../img/m/pc/book_bg_max.png") no-repeat 0 0;
+    background-size: contain;
+}
+
+.bookshelf .grid .display.min .cover{
+    top: 2.125rem;
+    width: 4.563rem;
+    height: 6.438rem;
+    background: url("../img/m/pc/book_bg_min.png") no-repeat 0 0;
+    background-size: contain;
+}
+
+.bookshelf .grid .display.max .cover img{
+    width: 5.25rem;
+    height: 7.438rem;
+}
+
+.bookshelf .grid .display.min .cover img{
+    width: 4.563rem;
+    height: 6.438rem;
+}
+
+.bookshelf .grid .display .cover .rate{
+    position: absolute;
+    top: .225rem;
+    left: 0;
+    padding: 50% 0 0;
+    font-size: .75rem;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,.4);
+}
+
+.bookshelf .grid .display.max .cover .rate{
+    width: 5.25rem;
+    height: 7.438rem;
+}
+
+.bookshelf .grid .display.min .cover .rate{
+    width: 4.563rem;
+    height: 6.438rem;
+}
+
+.bookshelf .grid .display .cover .rate span{
+    display: block;
+    margin: 0 auto;
+}
+
+.bookshelf .grid .display .size{
+    display: block;
+    position: absolute;
+    left: .813rem;
+    top: .65rem;
+}
+
+.bookshelf .grid .display.max .size{
+    width: 8rem;
+    height: 9.063rem;
+
+    background: url("../img/m/pc/size_max.png") no-repeat 0;
+    background-size: contain;
+}
+
+.bookshelf .grid .display.min .size{
+    width: 7.313rem;
+    height: 8.125rem;
+    background: url("../img/m/pc/size_min.png") no-repeat 0;
+    background-size: contain;
+}
+
+
+.bookshelf .grid .describe{
+    position: relative;
+    padding: 1.375rem .625rem 0 9.063rem;
+    width: 100%;
+    height: 10.313rem;
+    box-sizing: border-box;
+}
+
+.bookshelf .grid .describe .info{
+    float: left;
+    width: 100%;
+    line-height: 1.875rem;
+    box-sizing: border-box;
+}
+
+.bookshelf .grid .describe .info .name{
+    margin: .625rem 0;
+    font-size: .875rem;
+    color: #333;
+    width: 7.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bookshelf .grid .describe .info .time,
+.bookshelf .grid .describe .info .status{
+    font-size: .75rem;
+    color: #999;
+}
+
+.bookshelf .grid .describe .info .status.sub span{
+    color: #f00;
+}
+
+.bookshelf .grid .describe .info .config a{
+    font-size: .75rem;
+    color: #666;
+}
+
+.bookshelf .grid .describe .info .config a:hover{
+    color: #e7b54b;
+}
+
+.bookshelf .grid .describe .info .config span b{
+    font-weight: normal;
+}
+
+.bookshelf .grid .actions{
+    position: absolute;
+    right: .313rem;
+    top: 1.5rem;
+}
+
+.bookshelf .grid .actions a{
+    display: block;
+    margin: 0 auto;
+    padding: 0 6px;
+    height: 1.875rem;
+    text-align: center;
+    line-height: 1.875rem;
+    font-size: .875rem;
+    color: #999;
+}
+
+.bookshelf .grid .actions a:hover,
+.bookshelf .grid .actions a:hover i{
+    color: #e7b54b;
+}
+
+.bookshelf .grid .actions a i{
+    margin-right: 3px;
+    font-size: .875rem;
+    color: #ccc;
+}
+
+@media only screen and (max-width: 320px) {
+    .bookshelf .grid .actions a,
+    .bookshelf .grid .actions a i{
+        font-size: .75rem;
+    }
+}
+
+.bookshelf .grid .btn_group{
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px dashed #cdcdcd;
+}
+
+.bookshelf .grid .btn_group > a{
+    display: inline-block;
+    margin: 0 8px;
+    padding: 0 6px;
+    height: 1.5rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: #70ca5d;
+    background-color: #fff;
+    border: 1px solid #bce6b3;
+    border-radius: 2px;
+}
+
+.bookshelf .grid  .btn_group a:hover{
+    color: #e7b54b;
+    border: 1px solid #e7b54b;
+}
+
+.bookshelf .grid .btn_group > a i{
+    font-size: .875rem;
+    margin-right: 3px;
+}
+
+.bookshelf.recycle_bin .grid .display,
+.bookshelf.recycle_bin .grid .describe{
+    -webkit-filter: grayscale(100%);
+    pointer-events: none;
+    background-color: #ececec;
+}
+
+.pop_tips_box{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+}
+
+.pop_tips_box .tips_con{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    margin-top: -60px;
+    padding: 20px 15px 10px;
+    width: 90%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #333;
+}
+
+.pop_tips_box .tips_con span{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+.pop_tips_box .tips_con span.ybicon-infosign{
+    color: #ffaa00;
+}
+
+.pop_tips_box .tips_con span.ybicon-alert1{
+    color: #3498db;
+}
+
+.pop_tips_box .tips_con .tips{
+    font-size: 12px;
+    color: #999;
+}
+
+.pop_tips_box .tips_con a{
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0;
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.pop_tips_box .tips_con a:hover{
+    color: #333;
+}
+
+.pop_tips_box .tips_con a.ok{
+    background-color: #70ca5d;
+}
+
+.pop_tips_box .tips_con a.cancel{
+    background-color: #e7b54b;
+}

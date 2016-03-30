@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+<head lang='ch'>
+    <meta charset='UTF-8'>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name='format-detection' content='telephone=no'>
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+    <title>我的书架</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/m_pc.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/swiper.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1459154853_012007.css" type="text/css" media="all"/>
+</head>
+
+<body class='bg_f6f6f6'>
+<div class='main_container has_footer_nav'>
+    <div class='ybwechatheader_wrapper'>
+        <a class='left_btn left_angle' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward3"></span>
+        </a>
+        <p>我的书架</p>
+        <!--<a class='right_btn search_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-search"></span>
+        </a>-->
+    </div>
+    <div class="bookshelf_wrap">
+        <div class="shelf_tab swiper-pagination"></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class='common_empty_item'>
+                        <span class="ybiconfont ybicon-box"></span>
+                        <div>
+                            没有浏览过书册
+                        </div>
+                    </div>
+                    <div class="bookshelf hidden">
+                        <ul>
+                            <li class="grid">
+                                <div class="display max"><!--大小尺寸class: max or min-->
+                                    <span class="type team">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <div class="rate">完成率：<span>20%</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status sub">状态：<span>已提交待付款</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="edit" href="ia_bookspace_interact.html"><i class="ybiconfont ybicon-pencil"></i>编辑</a>
+                                    <a class="print" href="pc_order_confirmConfig.html"><i class="ybiconfont ybicon-printer"></i>打印</a>
+                                    <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <div class="display min">
+                                    <span class="type photo">照片书</span>
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <div class="rate">完成率：<span>100%</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status">状态：<span>未提交可编辑</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="edit" href="ia_bookspace_photo.html"><i class="ybiconfont ybicon-pencil"></i>编辑</a>
+                                    <a class="print" href="pc_order_confirmConfig.html"><i class="ybiconfont ybicon-printer"></i>打印</a>
+                                    <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <div class="display max">
+                                    <span class="type templet">模板</span>
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <!--<div class="rate">完成率：<span>100%</span></div>-->
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status sub">状态：<span>已提交待付款</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="edit" href="ia_bookspace_photo.html"><i class="ybiconfont ybicon-pencil"></i>编辑</a>
+                                    <a class="print" href="pc_order_confirmConfig.html"><i class="ybiconfont ybicon-printer"></i>打印</a>
+                                    <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="show_more" href="javascript:;">点击加载更多（<span>15</span>）</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class='common_empty_item hidden'>
+                        <span class="ybiconfont ybicon-box"></span>
+                        <div>
+                            没有创建过过书册
+                        </div>
+                    </div>
+                    <div class="bookshelf">
+                        <ul>
+                            <li class="grid">
+                                <div class="display max"><!--大小尺寸class: max or min-->
+                                    <span class="type team">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <div class="rate">完成率：<span>20%</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status sub">状态：<span>已提交待付款</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="edit" href="ia_bookspace_interact.html"><i class="ybiconfont ybicon-pencil"></i>编辑</a>
+                                    <a class="print" href="pc_order_confirmConfig.html"><i class="ybiconfont ybicon-printer"></i>打印</a>
+                                    <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <div class="display min">
+                                    <span class="type photo">照片书</span>
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <div class="rate">完成率：<span>100%</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status">状态：<span>未提交可编辑</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="edit" href="ia_bookspace_photo.html"><i class="ybiconfont ybicon-pencil"></i>编辑</a>
+                                    <a class="print" href="pc_order_confirmConfig.html"><i class="ybiconfont ybicon-printer"></i>打印</a>
+                                    <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <div class="display max">
+                                    <span class="type templet">模板</span>
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <!--<div class="rate">完成率：<span>100%</span></div>-->
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status sub">状态：<span>已提交待付款</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="edit" href="ia_bookspace_photo.html"><i class="ybiconfont ybicon-pencil"></i>编辑</a>
+                                    <a class="print" href="pc_order_confirmConfig.html"><i class="ybiconfont ybicon-printer"></i>打印</a>
+                                    <a class="copy" href="javascript:;"><i class="icon-copy"></i>复制</a>
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="show_more" href="javascript:;">点击加载更多（<span>15</span>）</a>
+                    </div>
+                </div>
+                <!--回收站class:recycle_bin-->
+                <div class="swiper-slide">
+                    <div class='common_empty_item hidden'>
+                        <span class="ybiconfont ybicon-box"></span>
+                        <div>
+                            没有删除的书册
+                        </div>
+                    </div>
+                    <div class="bookshelf recycle_bin">
+                        <ul>
+                            <li class="grid">
+                                <div class="display max"><!--大小尺寸class: max or min-->
+                                    <span class="type team">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <div class="rate">完成率：<span>20%</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status sub">状态：<span>已提交待付款</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>彻底删除</a>
+                                    <a class="revert" href="javascript:;"><i class="ybiconfont ybicon-reply"></i>还原</a>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <div class="display min">
+                                    <span class="type photo">照片书</span>
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <div class="rate">完成率：<span>100%</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status">状态：<span>未提交可编辑</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>彻底删除</a>
+                                    <a class="revert" href="javascript:;"><i class="ybiconfont ybicon-reply"></i>还原</a>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <div class="display max">
+                                    <span class="type templet">模板</span>
+                                    <a href="javascript:;">
+                                        <span class="size"></span>
+                                        <div class="cover">
+                                            <img src="../img/default/bookshelf_book01.jpg">
+                                            <!--未完成书册显示遮罩及百分比，完成无遮罩-->
+                                            <!--<div class="rate">完成率：<span>100%</span></div>-->
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="describe">
+                                    <div class="info">
+                                        <a href="pc_bookshelf_editBookName.html"><h4 class="name">《我的成长日记》</h4></a>
+                                        <div class="config">
+                                            <a href="javascript:;"><span>蝴蝶装大本</span><span>36P</span></a>
+                                        </div>
+                                        <div class="status sub">状态：<span>已提交待付款</span></div>
+                                        <p class="time">创建日期：<span>2016-03-21</span></p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="-mob-share-open" href="javascript:;"><i class="ybiconfont ybicon-sharesolid"></i>分享</a>
+                                    </div>
+                                </div>
+                                <div class="btn_group">
+                                    <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>彻底删除</a>
+                                    <a class="revert" href="javascript:;"><i class="ybiconfont ybicon-reply"></i>还原</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="show_more" href="javascript:;">点击加载更多（<span>15</span>）</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除书册提示-->
+<div class="pop_tips_box hidden">
+    <div class="tips_con">
+        <!--消息class:ybicon-infosign黄色;警告class:ybicon-alert1蓝色-->
+        <p><span class="ybiconfont ybicon-infosign"></span>确定删除此书册吗？</p>
+        <p class="tips">提示：删除的书册可在回收站中找回</p>
+        <a class="ok" href="javascript:;">确定</a>
+        <a class="cancel" href="javascript:;">取消</a>
+    </div>
+</div>
+
+<!--底部导航-->
+<div class="footer_nav">
+    <ul>
+        <li>
+            <a href="index.html">
+                <span class="ybiconfont ybicon-home"></span>
+                <p>首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="ia_msg.html">
+                <span class="ybiconfont ybicon-message"></span>
+                <p>消息</p>
+            </a>
+        </li>
+        <li class="" id="open_new_option">
+            <a href="javascript:;">
+                <span class="new ybiconfont ybicon-plus"></span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="pc_mybookshelf.html">
+                <span class="ybiconfont ybicon-bookshelf"></span>
+                <p>书架</p>
+            </a>
+        </li>
+        <li>
+            <a href="pc_main.html">
+                <span class="ybiconfont ybicon-userthin"></span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--pop new content-->
+<div class="open_new_container">
+    <div class="new_option">
+        <ul>
+            <li class="new_ph">
+                <a href="booklist_photo.html">
+                    <img src="../img/m/icon/new_photo_book.png">
+                    <p>新建照片书</p>
+                </a>
+            </li>
+            <li class="new_ia">
+                <a href="booklist_ia.html">
+                    <img src="../img/m/icon/new_interact_book.png">
+                    <p>新建互动册</p>
+                </a>
+            </li>
+            <li class="join_ia">
+                <a href="ia_invitation_joinbook.html">
+                    <img src="../img/m/icon/join_interact_book.png">
+                    <p>加入互动册</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="close_btn"><a href="javascript:;">×</a></div>
+</div>
+
+<!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui  -mob-share-ui-theme" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo">
+            <p>新浪微博</p>
+        </li>
+        <li class="-mob-share-qzone">
+            <p>QQ空间</p>
+        </li>
+        <li class="-mob-share-qq">
+            <p>QQ好友</p>
+        </li>
+        <li class="-mob-share-douban">
+            <p>豆瓣</p>
+        </li>
+        <li class="-mob-share-weixin">
+            <p>微信</p>
+        </li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=a80bfb821574"></script>
+<!--MOB SHARE END-->
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="../js/m_main.js"></script>
+<script type="text/javascript" src="../js/m_base.js"></script>
+<script>
+    function initBookshelfSwiper(){
+        var bookshelfSwiper = new Swiper('.bookshelf_wrap .swiper-container', {
+            loop: false,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: false,
+            autoHeight: true,
+            paginationBulletRender: function (index, className) {
+                switch (index) {
+                    case 0: name='最近编辑';break;
+                    case 1: name='全部书册';break;
+                    case 2: name='回收站';break;
+                    default: name='';
+                }
+                return '<span class="' + className + '">' + name + '</span>';
+            },
+            onSlideChangeEnd: function(swiper){
+                var index = bookshelfSwiper.activeIndex- 1,
+                        width = $('.swiper-pagination-bullet').width(),
+                        left = (index)*(width);
+                $('.swiper-pagination').scrollLeft(left);
+            }
+        });
+
+        //删除书册
+        $('.btn_group .delete').on('touchend',function(){
+            var $this = $(this);
+            $('.pop_tips_box').removeClass('hidden');
+            $('.tips_con .ok').on('click',function(e){
+                $this.closest('.grid').remove();
+                $('.pop_tips_box').addClass('hidden');
+                e.stopPropagation();
+            });
+            $('.tips_con .cancel').on('click',function(e){
+                $('.pop_tips_box').addClass('hidden');
+                e.stopPropagation();
+            });
+        });
+
+        //复制书册
+        $('.btn_group .copy').on('click',function(e){
+            var $this = $(this);
+            $this.closest('.grid').clone('true').insertBefore($this.closest('.bookshelf').find('ul li:first'));
+            e.stopPropagation();
+        });
+    }
+
+    $(document).ready(function(){
+        $.remResizing();
+        initBookshelfSwiper();
+    })
+</script>
+</body>
+</html>

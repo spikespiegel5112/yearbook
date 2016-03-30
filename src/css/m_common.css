@@ -2098,3 +2098,32 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	font-size: 12px;
 	box-sizing: border-box;
 }
+
+/*~~~~~~~~~~common_editphoto_wrapper~~~~~~~~~~~*/
+
+.common_editphoto_wrapper{
+	width: 100%;
+	overflow: hidden;
+}
+.common_editphoto_wrapper img{
+    display: block;
+    width: 100%;
+}
+.common_eptools_wrapper a{
+	float: left;
+	margin: 0 0 0 1rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+.common_eptools_wrapper{
+	width: 100%;
+	background: rgba(0,0,0,0.5);
+	position: fixed;
+	bottom: 0;
+}
+.common_eptoolbar_wrapper li a{
+	display: block;
+}
+.common_epscrollbar_wrapper, .common_eptoolbar_wrapper{
+	height: 2rem;
+}

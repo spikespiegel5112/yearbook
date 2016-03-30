@@ -1108,24 +1108,24 @@
     }
 }
 
-.myorder .filter_order {
+.filter_order {
     text-align: right;
 }
 
-.myorder .filter_order a {
+.filter_order a {
     text-decoration: none;
 }
 
-.myorder .filter_order a:hover,
-.myorder .filter_order a:focus {
+.filter_order a:hover,
+.filter_order a:focus {
     color: #fff;
 }
 
-.myorder .filter_order ul {
+.filter_order ul {
     display: none;
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 32px;
     padding: 0 8px 10px;
     width: 115px;
     background-color: #fff;
@@ -1133,7 +1133,7 @@
     box-sizing: border-box;
 }
 
-.myorder .filter_order ul li {
+.filter_order ul li {
     position: relative;
     float: none;
     width: 100%;
@@ -1144,20 +1144,20 @@
     border-bottom: 1px dashed #999;
 }
 
-.myorder .filter_order ul li:before,
-.myorder .filter_order ul li:after {
+.filter_order ul li:before,
+.filter_order ul li:after {
     display: none;
 }
 
-.myorder .filter_order ul li a {
+.filter_order ul li a {
     display: block;
     font-size: 12px;
     text-decoration: none;
     color: #333;
 }
 
-.myorder .filter_order ul li a:hover,
-.myorder .filter_order ul li a:active {
+.filter_order ul li a:hover,
+.filter_order ul li a:active {
     background-color: #f6f6f6;
     color: #e7b54b;
 }
@@ -3365,6 +3365,10 @@
 
 }
 /*~~~~~~~~~~yb3.11 mybookshelf~~~~~~~~~~*/
+.bookshelf_wrap .swiper-container{
+    z-index: 0;
+}
+
 .bookshelf_wrap .swiper-pagination{
     position: relative;
     top: 0;
@@ -3374,6 +3378,7 @@
     overflow: hidden;
     white-space: nowrap;
     overflow-x: auto;
+    z-index: 0;
 }
 
 .bookshelf_wrap .swiper-pagination span {

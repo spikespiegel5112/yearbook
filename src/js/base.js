@@ -564,11 +564,14 @@
 		align: function(options) {
 			options = $.extend({
 				position: 'both',
+				container:'',
 				obstacleX: 0,
 				obstacleY: 0,
 				offsetY: 0
 			}, options);
-			var _this=this,
+			var _this = this,
+				thisWidth = _this.width(),
+				containerheight=$(options.container).height(),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//障碍物处理判断
@@ -579,7 +582,7 @@
 				for (var i = 0; i < options.obstacleX.length; i++) {
 					if ($(options.obstacleX[i]).is(':hidden')) {
 						sum += 0;
-					}else{
+					} else {
 						sum += $(options.obstacleX[i]).height();
 					}
 					sum += $(options.obstacleX[i]).height();
@@ -593,58 +596,68 @@
 				for (var i = 0; i < options.obstacleY.length; i++) {
 					if ($(options.obstacleY[i]).is(':hidden')) {
 						sum += 0;
-					}else{
+					} else {
 						sum += $(options.obstacleY[i]).height();
 					}
 				};
 				windowHeight = windowHeight - sum;
-				console.log('offsetY'+ options.offsetY);
+				console.log('offsetY' + options.offsetY);
 			}
 
-			switch(options.position){
+			switch (options.position) {
 				case 'both':
-					aligning(function(thisWidth,thisHeight) {
-						var marginY=(windowHeight - thisHeight) / 2;
-						if (marginY<=0) {
-							marginY=0;
+					aligning(function(thisWidth, thisHeight) {
+						if(options.container!=''){
+							var marginY = (containerheight - thisHeight) / 2;
+						}else{
+							var marginY = (windowHeight - thisHeight) / 2;
+						}
+						if (marginY <= 0) {
+							marginY = 0;
 						};
-						_this.css({
-							'margin': marginY +options.offsetY + 'px auto'
-						});
+						if (thisWidth <= windowWidth) {
+							_this.css({
+								'margin': marginY + options.offsetY + 'px auto'
+							});
+						} else {
+							_this.css({
+								'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
+							});
+						}
 					});
-				break;
+					break;
 				case 'top':
-					aligning(function(thisWidth,thisHeight) {
+					aligning(function(thisWidth, thisHeight) {
 						if ($(document).height() > $(window).height()) {
 							return;
 						} else {
 							_this.css({
-								'margin':(windowWidth-thisWidth)/2+' auto'
+								'margin': (windowWidth - thisWidth) / 2 + ' auto'
 							});
 						}
 					});
-				break;
+					break;
 				case 'right':
-					aligning(function(thisWidth,thisHeight) {
+					aligning(function(thisWidth, thisHeight) {
 						_this.css({
-							'margin': (windowHeight-thisHeight)/2+'px 0 0 '+(windowWidth-thisWidth)+'px'
+							'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 ' + (windowWidth - thisWidth) + 'px'
 						});
 					});
-				break;
+					break;
 				case 'bottom':
-					aligning(function(thisWidth,thisHeight) {
+					aligning(function(thisWidth, thisHeight) {
 						_this.css({
-							'margin': (windowHeight-thisHeight)+'px auto 0'
+							'margin': (windowHeight - thisHeight) + 'px auto 0'
 						});
 					});
-				break;
+					break;
 				case 'left':
-					aligning(function(thisWidth,thisHeight) {
+					aligning(function(thisWidth, thisHeight) {
 						_this.css({
-							'margin': (windowHeight-thisHeight)/2+'px 0 0 0'
+							'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 0'
 						});
 					});
-				break;
+					break;
 			}
 
 			function aligning(callback) {
@@ -653,9 +666,9 @@
 				$(window).resize(function() {
 					thisWidth = _this.outerWidth();
 					thisHeight = _this.outerHeight();
-					return callback(thisWidth,thisHeight)
+					return callback(thisWidth, thisHeight)
 				});
-				return callback(thisWidth,thisHeight);
+				return callback(thisWidth, thisHeight);
 			}
 		}
 	});
@@ -716,20 +729,20 @@
 				var windowWidth = $(window).width(),
 					windowHeight = $(window).height(),
 					factor = 0;
-					// alert(windowWidth)
-				if(options.minwidth==0){
+				// alert(windowWidth)
+				if (options.minwidth == 0) {
 					//alert('当当最小宽度等于0时')
 					bodyEl.css({
 						'width': windowWidth
 					});
 					factor = windowWidth / options.minwidth;
-				}else if (options.minwidth!=0&&windowWidth <= options.minwidth) {
+				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
 					//alert('当最小宽度不等于0且屏幕宽度小于等最小宽度时')
 					bodyEl.css({
 						'width': options.minwidth
 					});
-					factor=1;
-				}else if(options.maxwidth==0||windowWidth > options.minwidth&&windowWidth <= options.maxwidth){
+					factor = 1;
+				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
 					// alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					bodyEl.css({
 						'width': windowWidth
@@ -737,17 +750,17 @@
 					// factor = 2;
 					factor = windowWidth / options.minwidth;
 					//alert(factor = windowWidth / options.minwidth)
-				}else if(windowWidth > options.maxwidth){
+				} else if (windowWidth > options.maxwidth) {
 					//alert('当屏幕宽度大于最大宽度时')
 					bodyEl.css({
-						'margin':'0 auto',
+						'margin': '0 auto',
 						'width': options.maxwidth
 					});
-					factor=1
-				}else{
+					factor = 1
+				} else {
 					alert('abnormal')
 				}
-				htmlEl.css('font-size', options.fontsize*factor);
+				htmlEl.css('font-size', options.fontsize * factor);
 			}
 		}
 	});

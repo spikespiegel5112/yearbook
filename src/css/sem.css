@@ -58,6 +58,13 @@
 	width: 100%;
 	/*height: 200px;*/
 }
+.sem_mainlist_wrapper .sem_recommendicon_item{
+	font-size: 55px;
+	color: #ff464b;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
 .sem_parenting_container .sem_mainlist_wrapper li>a{
 	display: block;
 	width: 100%;
@@ -665,24 +672,27 @@
 	margin: 10px;
 	width: 150px;
 }
-
-.sem_photobook_container .sem_introduce_wrapper{
-	width: 335px;
-}
 .sem_photobook_wrapper{
 	margin: 0 auto;
 	width: 1150px;
 	position: relative;
 }
-.sem_photobook_wrapper .sem_introduce_wrapper{
+.sem_photobook_container .sem_introduce_wrapper{
 	left: 0;
 	bottom: 0;
 }
 .sem_introduce_wrapper{
+	padding: 10px;
+	width: 310px;
 	height: 700px;
-	background: #93c200;
+	background: #8cc04e;
 	position: absolute;
 	z-index: 1;
+}
+.sem_introduce_wrapper img{
+	display: block;
+	position: absolute;
+	bottom: 10px;
 }
 
 .sem_introduce_wrapper h2{
@@ -694,11 +704,27 @@
 }
 .sem_introduce_wrapper p{
 	margin: 0 auto;
-	width: 80%;
+	width: 90%;
 	color: #fff;
-	line-height: 34px;
-	font-size: 23px;
-	font-weight: normal;
+	line-height: 35px;
+	font-size: 25px;
+	font-weight: lighter;
+	font-family: 'microsoft yahei';
+}
+.sem_introduce_wrapper .quoteleft, .sem_introduce_wrapper .quoteright{
+	color: #a3ca75;
+	font-size: 60px;
+}
+.sem_introduce_wrapper .quoteleft{
+	position: absolute;
+}
+.sem_introduce_wrapper .quoteleft{
+	top: 80px;
+	left: 20px;
+}
+.sem_introduce_wrapper .quoteright{
+	float: right;
+	margin: 50px 20px 0 0;
 }
 .sem_tab_wrapper p, .sem_tab_wrapper ul{
 	float: left;
@@ -710,26 +736,31 @@
 }
 .sem_tab_wrapper li{
 	float: left;
-	background-color: #fff;
+	background-color: #f5f6f1;
+	border-top: 1px solid #ddd;
 }
 .sem_tab_wrapper li a{
 	display: block;
-	width: 103px;
+	width: 102px;
 	border-top: 3px solid transparent;
-	border-bottom: 3px solid #fff;
+	border-bottom: 3px solid #f5f6f1;
+	border-right: 1px solid #ddd;
 	text-align: center;
 	font-size: 19px;
 	line-height: 55px;
 }
+.sem_tab_wrapper li:first-child a{
+	border-left: 1px solid #ddd;
+}
 .sem_tab_wrapper li a:hover{
-	border-bottom: 3px solid #ddd;
-	background-color: #ddd;
+	border-bottom: 3px solid #fff;
+	background-color: #fff;
 	color: #80C132;
 }
 .sem_tab_wrapper .on a{
 	border-top: 3px solid #80C132;
-	border-bottom: 3px solid #ddd;
-	background-color: #ddd;
+	border-bottom: 3px solid #fff;
+	background-color: #fff;
 	color: #80C132;
 }
 .sem_photobook_wrapper .sem_tab_wrapper{
@@ -775,7 +806,7 @@
 }
 .sem_pptitle_wrapper label{
 	margin: 0 20px;
-	font-size: 20px;
+	font-size: 15px;
 	color: #ccc;
 }
 .sem_productprocess_wrapper ul{
@@ -791,6 +822,8 @@
 	display: block;
 	width: 90px;
 	height: 90px;
+	line-height: 90px;
+	font-size: 50px;
 	border-radius: 50%;
 	border-width:2px;
 	border-style: solid;
@@ -801,12 +834,13 @@
 	width: 100%;
 	text-align: center;
 	font-size: 20px;
-	color: #adadad;
+	color: #8cc04e;
 }
 .sem_productprocess_wrapper ul li div{
 	float: left;
 	width: 95px;
 	height: 100%;
+	color: #8cc04e;
 }
 .sem_productprocess_wrapper ul li p{
 	float: left;
@@ -819,6 +853,7 @@
 	display: inline-block;
 	border-radius: 50%;
 	vertical-align: middle;
+	background: #8cc04e;
 }
 .sem_productprocess_wrapper ul li p i{
 	margin: 0 5px;
@@ -828,40 +863,16 @@
 .sem_productprocess_wrapper ul li p strong{
 	width: 17px;
 	height: 17px;
-}
-.sem_productprocess_wrapper .choosetemplate{
-	color: #3d97ff;
-	
-}
-.sem_productprocess_wrapper .choosetemplate i, .sem_productprocess_wrapper .choosetemplate strong{
-	background: #3d97ff;
-}
-.sem_productprocess_wrapper .uploadphoto{
-	color: #fcba30;
-	
-}
-.sem_productprocess_wrapper .uploadphoto i, .sem_productprocess_wrapper .uploadphoto strong{
-	background: #fcba30;
+
 }
 
-.sem_productprocess_wrapper .onlinelayout{
-	color: #7774e5;
-	
+.sem_interactionbook_container{
+	background: #e4f4f6;
 }
-.sem_productprocess_wrapper .onlinelayout i, .sem_productprocess_wrapper .onlinelayout strong{
-	background: #7774e5;
-}
-
-.sem_productprocess_wrapper .printproduction{
-	color: #7ccfc2;
-	
-}
-.sem_productprocess_wrapper .printproduction i, .sem_productprocess_wrapper .printproduction strong{
-	background: #7ccfc2;
-}
-
-.sem_interactionbook_wrapper .sem_tab_wrapper{
-
+.sem_interactionbook_wrapper{
+	margin: 0 auto;
+	width: 1150px;
+	position: relative;
 }
 .sem_interactionbook_container .sem_mainlist_wrapper{
 	float: left;
@@ -874,26 +885,44 @@
 }
 
 .sem_interactionbook_container .sem_introduce_wrapper{
-	width: 335px;
-}
-.sem_interactionbook_wrapper{
-	margin: 0 auto;
-	width: 1150px;
-	position: relative;
-}
-.sem_interactionbook_wrapper .sem_introduce_wrapper{
 	right: 0;
 	bottom: 0;
+}
+.sem_interactionbook_container .sem_tab_wrapper li a{
+	padding: 0 70px;
 }
 .sem_pbiaproductdetail_container{
 	width: 100%;
 	background: #f2f3f7;
+}
+.sem_pbiaproductdetail_container .bordertop li{
+	float: left;
+	width: 20%;
+	height: 5px;
+}
+.sem_pbiaproductdetail_container .bordertop .border1{
+	background: #a4e4fc;
+}
+.sem_pbiaproductdetail_container .bordertop .border2{
+	background: #ecd9fc;
+}
+.sem_pbiaproductdetail_container .bordertop .border3{
+	background: #ffe2c3;
+}
+.sem_pbiaproductdetail_container .bordertop .border4{
+	background: #c5f3b5;
+}
+.sem_pbiaproductdetail_container .bordertop .border5{
+	background: #d4ffff;
 }
 .sem_pbiaproductdetail_wrapper{
 	margin: 0 auto;
 	padding: 70px 0;
 	width: 1150px;
 	overflow: hidden;
+}
+.sem_pbiaproductdetail_wrapper ul{
+	margin: 50px 0;
 }
 .sem_pbiaproductdetail_wrapper li{
 	float: left;
@@ -915,6 +944,7 @@
 .sem_pbiapdtitle_wrapper{
 	color: #fff;
 	font-size: 30px;
+	overflow: hidden;
 }
 .sem_pbiapdtitle_wrapper h5{
 	float: left;

@@ -20,9 +20,12 @@
 		<div class='common_editphoto_wrapper'>
 			<img class='common_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
 			<div class='common_eptools_wrapper'>
-				<div class='common_epscrollbar_wrapper'>
-					<a class='zoomout' href="javascript:;">zoom out</a>
-					<a class='zoomin' href="javascript:;">zoom in</a>
+				<div class='common_epzomming_wrapper'>
+					<a class='zoomout' href="javascript:;">-</a>
+					<div class='common_epscrollbar_item'>
+						<span></span>
+					</div>
+					<a class='zoomin' href="javascript:;">+</a>
 				</div>
 				<ul class='common_eptoolbar_wrapper'>
 					<li class='turnright'><a href="javascript:;">turn right</a></li>
@@ -39,18 +42,23 @@
 <script type="text/javascript">
 $(function() {
 	$('.common_epimage_item').align();
-
+	$.remResizing({
+		fontsize:20
+	})
 	var editphoto = function(options) {
 		var options = {
 
 			},
-			// degree=0,
-			scale=1,
-			image = $('.common_epimage_item').css('transition','transform 0.5s'),
+			degree = 0,
+			scale = 1,
+			image = $('.common_epimage_item').css('transition', 'transform 0.5s'),
 			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
 			tlBtn = $(".common_eptoolbar_wrapper .turnleft a"),
-			zoominBtn=$('.common_epscrollbar_wrapper .zoomin'),
-			zoomoutBtn=$('.common_epscrollbar_wrapper .zoomout');
+			zoominBtn = $('.common_epzomming_wrapper .zoomin'),
+			zoomoutBtn = $('.common_epzomming_wrapper .zoomout'),
+			zoomingSlider=$('.common_epscrollbar_item span');
+
+
 		trBtn.on('touchend', function() {
 			image.css(turning('right'));
 			// image.css({'transform': 'rotate(' + turning('right') + 'deg)'});
@@ -59,48 +67,58 @@ $(function() {
 		tlBtn.on('touchend', function() {
 			image.css(turning('left'));
 		});
-		function turning(direction){
-			var degree=0;
-			var closure=function(){
+		zoomingSlider.on('touchend', function(e){
+			console.log(e.touches)
+		});
+
+		function turning(direction) {
+			// var degree=0;
+			var closure = function() {
 				switch (direction) {
 					case 'right':
 						degree += 90;
 						console.log(degree)
-						cnntinue;
+						break;
 					case 'left':
 						degree -= 90;
-						cnntinue;
+						break;
+				}1
+				return {
+					'transform': 'rotate(' + degree + 'deg)'
 				}
-				// return degree;
-				return {'transform': 'rotate(' + degree + 'deg)'}
 			};
 			return closure();
 		}
-		zoomoutBtn.on('touchend',function(){
-			image.css(zooming('zoomout'));
-			console.log(zooming());
-		})
-		zoominBtn.on('touchend',function(){
-			image.css(zooming('zoomin'));
-		})
-		function zooming(direction){
-			var xaxis,yaxis;
-			return function(){
-				var unit=0.2;
-				switch (direction){
+
+		function zooming(direction) {
+			var xaxis, yaxis;
+			var closure = function() {
+				var unit = 0.2;
+				switch (direction) {
 					case 'zoomout':
-						scale-=unit;
-						if (scale<0.2) {
-							scale=0.2;
+						scale -= unit;
+						if (scale < 0.2) {
+							scale = 0.2;
 						};
 						break;
 					case 'zoomin':
-						scale+=unit;
+						scale += unit;
 						break;
 				}
-				return {'transform': 'scale(' + scale + ')'}
-			}();
+				return {
+					'transform': 'scale(' + scale + ')'
+				}
+			};
+			return closure();
 		}
+		zoomoutBtn.on('touchend', function() {
+			image.css(zooming('zoomout'));
+			console.log(zooming());
+		})
+		zoominBtn.on('touchend', function() {
+			image.css(zooming('zoomin'));
+		})
+
 	}()
 })
 </script>

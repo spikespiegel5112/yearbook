@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<!-- build:css ../css/m.all.min.css -->
+	<link rel="stylesheet" type="text/css" href="../css/m_reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/m_common.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459154853_012007.css">
+	<title>照片查看</title>
+</head>
+
+<body>
+	<div class='main_conatainer'>
+		<div class='common_editphoto_wrapper'>
+			<img class='common_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
+			<div class='common_eptools_wrapper'>
+				<div class='common_epscrollbar_wrapper'>
+					<a class='zoomout' href="javascript:;">zoom out</a>
+					<a class='zoomin' href="javascript:;">zoom in</a>
+				</div>
+				<ul class='common_eptoolbar_wrapper'>
+					<li class='turnright'><a href="javascript:;">turn right</a></li>
+					<li class='turnleft'><a href="javascript:;">turn left</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<!-- build:js js/all.js -->
+<script type="text/javascript" src="../js/m_base.js"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+$(function() {
+	$('.common_epimage_item').align();
+
+	var editphoto = function(options) {
+		var options = {
+
+			},
+			// degree=0,
+			scale=1,
+			image = $('.common_epimage_item').css('transition','transform 0.5s'),
+			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
+			tlBtn = $(".common_eptoolbar_wrapper .turnleft a"),
+			zoominBtn=$('.common_epscrollbar_wrapper .zoomin'),
+			zoomoutBtn=$('.common_epscrollbar_wrapper .zoomout');
+		trBtn.on('touchend', function() {
+			image.css(turning('right'));
+			// image.css({'transform': 'rotate(' + turning('right') + 'deg)'});
+			// image.style.transform(rotate)=css;
+		});
+		tlBtn.on('touchend', function() {
+			image.css(turning('left'));
+		});
+		function turning(direction){
+			var degree=0;
+			var closure=function(){
+				switch (direction) {
+					case 'right':
+						degree += 90;
+						console.log(degree)
+						cnntinue;
+					case 'left':
+						degree -= 90;
+						cnntinue;
+				}
+				// return degree;
+				return {'transform': 'rotate(' + degree + 'deg)'}
+			};
+			return closure();
+		}
+		zoomoutBtn.on('touchend',function(){
+			image.css(zooming('zoomout'));
+			console.log(zooming());
+		})
+		zoominBtn.on('touchend',function(){
+			image.css(zooming('zoomin'));
+		})
+		function zooming(direction){
+			var xaxis,yaxis;
+			return function(){
+				var unit=0.2;
+				switch (direction){
+					case 'zoomout':
+						scale-=unit;
+						if (scale<0.2) {
+							scale=0.2;
+						};
+						break;
+					case 'zoomin':
+						scale+=unit;
+						break;
+				}
+				return {'transform': 'scale(' + scale + ')'}
+			}();
+		}
+	}()
+})
+</script>
+
+</html>

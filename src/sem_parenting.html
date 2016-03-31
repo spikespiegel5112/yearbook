@@ -312,6 +312,12 @@
 	function circle() {
 		var circleEl = '<i></i>',
 			windowWidth = $(window).width();
+
+        /*页面最小宽度1150px*/
+        if(windowWidth <= 1150){
+            windowWidth = 1150;
+        }
+
 		for (var i = 0; i <= windowWidth / 50 - 1; i++) {
 			circleEl += '<i></i>';
 		}

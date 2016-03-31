@@ -842,6 +842,7 @@
     height: 20px;
     text-align: center;
     border-radius: 0;
+    box-sizing: border-box;
 }
 
 .common_serialnumber_item li span {
@@ -2320,6 +2321,14 @@
 .receive_info .dispatching.unset h4,
 .receive_info .dispatching.unset ul{
     display: none;
+}
+
+.receive_info .dispatching ul li div{
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .receive_info .info h4{

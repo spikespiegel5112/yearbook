@@ -508,14 +508,16 @@
 }
 
 .bookshelf .grid .display{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 1;
-    float: left;
+    /*float: left;*/
     padding: 0 10px 0 15px;
 }
 
-.recycle_bin.bookshelf .grid .display,
-.recycle_bin.bookshelf .grid .describe{
+.bookshelf.recycle_bin .grid .display,
+.bookshelf.recycle_bin .grid .describe{
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
@@ -523,8 +525,27 @@
     filter: grayscale(100%);
     filter: gray; /* just for IE6-9 */
     pointer-events: none;
-    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     background-color: #ececec;
+}
+
+.recycle_bin .grid .mask{
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: rgba(104,104,104,.2);
+    opacity: 0;
+}
+
+.recycle_bin .grid .progress .percent .bar span{
+    background-color: #999;
+}
+
+.recycle_bin .grid .progress .sub.status span{
+    color: #666;
 }
 
 .bookshelf .grid .display a{
@@ -2639,12 +2660,12 @@ li.action div:hover {
 }
 
 .address_list .address {
-	width: 42%;
+	width: 41%;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     .address_list .address {
-        width: 40%;
+        width: 37%;
     }
 }
 

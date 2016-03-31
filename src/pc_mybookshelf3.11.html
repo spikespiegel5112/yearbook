@@ -1048,6 +1048,13 @@
             var rate = $('.bookshelf li').eq(i).find('.percent > span').text();
             $('.bookshelf li').eq(i).find('.percent .bar span').css('width',rate);
         }
+
+        //IE10以下回收站书册添加遮罩
+        if(window.attachEvent){
+            var maskDiv = '<div class="mask"></div>';
+            $('.bookshelf.recycle_bin .grid').prepend(maskDiv);
+            $('.bookshelf.recycle_bin .grid').find('.actions').css('z-index','3');
+        }
     }
 
     //搜索

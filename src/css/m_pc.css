@@ -842,6 +842,7 @@
     height: 20px;
     text-align: center;
     border-radius: 0;
+    box-sizing: border-box;
 }
 
 .common_serialnumber_item li span {
@@ -1108,24 +1109,24 @@
     }
 }
 
-.myorder .filter_order {
+.filter_order {
     text-align: right;
 }
 
-.myorder .filter_order a {
+.filter_order a {
     text-decoration: none;
 }
 
-.myorder .filter_order a:hover,
-.myorder .filter_order a:focus {
+.filter_order a:hover,
+.filter_order a:focus {
     color: #fff;
 }
 
-.myorder .filter_order ul {
+.filter_order ul {
     display: none;
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 32px;
     padding: 0 8px 10px;
     width: 115px;
     background-color: #fff;
@@ -1133,7 +1134,7 @@
     box-sizing: border-box;
 }
 
-.myorder .filter_order ul li {
+.filter_order ul li {
     position: relative;
     float: none;
     width: 100%;
@@ -1144,20 +1145,20 @@
     border-bottom: 1px dashed #999;
 }
 
-.myorder .filter_order ul li:before,
-.myorder .filter_order ul li:after {
+.filter_order ul li:before,
+.filter_order ul li:after {
     display: none;
 }
 
-.myorder .filter_order ul li a {
+.filter_order ul li a {
     display: block;
     font-size: 12px;
     text-decoration: none;
     color: #333;
 }
 
-.myorder .filter_order ul li a:hover,
-.myorder .filter_order ul li a:active {
+.filter_order ul li a:hover,
+.filter_order ul li a:active {
     background-color: #f6f6f6;
     color: #e7b54b;
 }
@@ -2107,9 +2108,10 @@
 
 .order_manage .account_wrap a{
     display: inline-block;
-    margin: 0 0 0 8px;
+    margin: 10px 0 0 8px;
     width: 80px;
     line-height: 37px;
+    font-size: 16px;
 }
 
 /*添加其他书册至订单*/
@@ -2307,6 +2309,10 @@
     display: block;
 }
 
+.receive_info .dispatching .default a{
+    display: block;
+}
+
 .receive_info .dispatching h4,
 .receive_info .dispatching ul{
     display: block;
@@ -2315,6 +2321,14 @@
 .receive_info .dispatching.unset h4,
 .receive_info .dispatching.unset ul{
     display: none;
+}
+
+.receive_info .dispatching ul li div{
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .receive_info .info h4{
@@ -3365,6 +3379,10 @@
 
 }
 /*~~~~~~~~~~yb3.11 mybookshelf~~~~~~~~~~*/
+.bookshelf_wrap .swiper-container{
+    z-index: 0;
+}
+
 .bookshelf_wrap .swiper-pagination{
     position: relative;
     top: 0;
@@ -3374,6 +3392,7 @@
     overflow: hidden;
     white-space: nowrap;
     overflow-x: auto;
+    z-index: 0;
 }
 
 .bookshelf_wrap .swiper-pagination span {
@@ -3506,6 +3525,7 @@
     color: #fff;
     text-align: center;
     background: rgba(0,0,0,.4);
+    box-sizing: border-box;
 }
 
 .bookshelf .grid .display.max .cover .rate{

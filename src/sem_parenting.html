@@ -43,7 +43,7 @@
 		<div class="cm_header_shadow"></div>
 	</div>
 	<!-- main -->
-	<div class='sem_parenting_container'>
+	<div class='sem_parenting_container cm_min_width'>
 		<div class='sem_banner_wrapper'>
 			<img src="img/banner/sem_banner_1_00000.jpg">
 		</div>
@@ -312,6 +312,12 @@
 	function circle() {
 		var circleEl = '<i></i>',
 			windowWidth = $(window).width();
+
+        /*页面最小宽度1150px*/
+        if(windowWidth <= 1150){
+            windowWidth = 1150;
+        }
+
 		for (var i = 0; i <= windowWidth / 50 - 1; i++) {
 			circleEl += '<i></i>';
 		}

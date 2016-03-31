@@ -29,9 +29,14 @@
             <span class="ybiconfont ybicon-backward3"></span>
         </a>
         <p>我的书架</p>
-        <!--<a class='right_btn search_btn' href='javascript:;'>
-            <span class="ybiconfont ybicon-search"></span>
-        </a>-->
+        <div class="filter_order right_btn">
+            <a class="search_status" href="javascript:;">全部<i class="icon-caret-down"></i></a>
+            <ul>
+                <li><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">显示我创建的</a></li>
+                <li><a href="javascript:;">显示我加入的</a></li>
+            </ul>
+        </div>
     </div>
     <div class="bookshelf_wrap">
         <div class="shelf_tab swiper-pagination"></div>
@@ -512,9 +517,36 @@
         });
     }
 
+    /*
+     * 筛选订单状态
+     * */
+    function filterBook(){
+        $('.search_status').on('click',function(e){
+            var $this = $(this);
+            if($this.next().is(':visible')){
+                $this.next().hide();
+                $this.find('i').removeClass('icon-caret-up').addClass('icon-caret-down');
+            }else{
+                $this.next().show()
+                $this.find('i').removeClass('icon-caret-down').addClass('icon-caret-up');
+            }
+
+            $(document).one('click',function(){
+                $('.filter_order ul').hide();
+            });
+            e.stopPropagation();
+        });
+        $('.filter_order ul li a').on('click',function(e){
+            $('.search_status').html($(this).html()+'<i class="icon-caret-down"></i>');
+            $(this).closest('ul').hide();
+            e.stopPropagation();
+        });
+    }
+
     $(document).ready(function(){
         $.remResizing();
         initBookshelfSwiper();
+        filterBook();
     })
 </script>
 </body>

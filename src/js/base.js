@@ -574,6 +574,10 @@
 				containerheight=$(options.container).height(),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
+			//container设置判断
+			if ($(options.container)!=null) {
+				windowWidth=$(options.container).width();
+			}
 			//障碍物处理判断
 			if (typeof options.obstacleX == 'number') {
 				windowWidth = windowWidth - options.obstacleX;

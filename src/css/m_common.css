@@ -2111,9 +2111,11 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 .common_eptools_wrapper a{
 	float: left;
-	margin: 0 0 0 1rem;
+	margin: 0 0.7rem;
 	height: 3rem;
 	line-height: 3rem;
+	font-size: 2rem;
+	color: #fff;
 }
 .common_eptools_wrapper{
 	width: 100%;
@@ -2124,6 +2126,23 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .common_eptoolbar_wrapper li a{
 	display: block;
 }
-.common_epscrollbar_wrapper, .common_eptoolbar_wrapper{
+.common_epzomming_wrapper, .common_eptoolbar_wrapper{
 	height: 2rem;
+}
+.common_epscrollbar_item{
+	float: left;
+	margin: 1.3rem 0 0 0;
+	width: 11rem;
+	height: 5px;
+	background-color: #fff;
+	position: relative;
+}
+.common_epscrollbar_item span{
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: -0.4rem;
+	background-color: #fff;
+	border-radius: 50%;
 }

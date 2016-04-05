@@ -575,7 +575,7 @@
 				containerheight = $(options.container).height(),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
-			// _this.attr('src', imgSrc + '?' + Date.parse(new Date()))
+			_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
 			
 			//container设置判断
 			if (options.container != '') {

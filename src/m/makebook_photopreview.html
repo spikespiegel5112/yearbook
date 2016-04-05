@@ -65,7 +65,9 @@ $(function() {
 			startPosY = 0,
 			sliderPosX=zoomingSlider.offset().left;
 
-		zoomingSlider.css('margin-left','%')
+		marginleft=epscrollbarWidth/2-25;
+		zoomingSlider.css('margin-left',marginleft);
+
 		trBtn.on('touchend', function() {
 			image.css(turning('right'));
 		});
@@ -79,17 +81,17 @@ $(function() {
 				marginleft-=20
 			}
 			
-			image.css(zooming(-0.2));
+			image.css(zooming(-0.1));
 			zoomingSlider.css('margin-left',marginleft);
 		});
 		zoominBtn.on('touchend', function() {
 			if (marginleft>$(window).width()*0.62) {
-				marginleft=$(window).width()*0.65;
+				marginleft=$(window).width()*0.62;
 			}else{
 				marginleft+=20
 			}
 			
-			image.css(zooming(0.2));
+			image.css(zooming(0.1));
 			zoomingSlider.css('margin-left',marginleft);
 		});
 		document.addEventListener('touchstart', eventHandler, false);
@@ -114,21 +116,20 @@ $(function() {
 						}else{
 							zoomingSlider.css('margin-left',marginleft);
 							if (true) {};
-							image.css(zooming(marginleft*0.01));
-							
+							image.css(zooming(marginleft/epscrollbarWidth));
+							console.log(marginleft/epscrollbarWidth)
 						}
 						console.log(marginleft)
 						break;
 				}		
 			}
 		}
-		function zooming(aaa) {
+		function zooming(scale,unit) {
 			var xaxis, yaxis;
 			var closure = function() {
-				var unit = 0.2;
-					scale=aaa;
+					// scale+=unit;
 				return {
-					'transform': 'scale(' + scale + ')'
+					'transform': 'scale(' + scale*2+unit + ')'
 				}
 			};
 			console.log(closure())
@@ -148,7 +149,7 @@ $(function() {
 						break;
 				}
 				return cssSettings({
-						scale:null,
+						scale:scale,
 						rotate:degree
 					});
 			};

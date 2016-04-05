@@ -17,7 +17,11 @@
 	<!-- endbuild -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 </head>
-
+<style>
+	.sem_mainlist_wrapper li img {
+		height: 165px;
+	}
+</style>
 <body>
 	<!--头部导航-->
 	<div class="cm_header_nav">
@@ -342,23 +346,7 @@
 		$('.sem_banner_wrapper img').align({
 			container: '.sem_banner_wrapper'
 		});
-		semgraduationbook();
 	});
-
-	function semgraduationbook() {
-		var listImgHeight=$('.sem_mainlist_wrapper li img').height();
-		var bookshelfContainer=$('.sem_bookshelf_container');
-		bookshelfContainer.each(function(){
-			$(this).find('img').each(function(index){
-				var totalOffset=50,
-					eachOffset=70,
-					top=(listImgHeight+eachOffset)*(index+1)+totalOffset;
-				$(this).css('top',top)
-			})
-		})
-		console.log(listImgHeight);
-
-	}
 	</script>
 </body>
 

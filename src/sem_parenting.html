@@ -309,7 +309,9 @@
     <!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
-		$('.sem_banner_wrapper img').align();
+		$('.sem_banner_wrapper img').align({
+			container:'.sem_banner_wrapper'
+		});
 		circle();
 	});
 

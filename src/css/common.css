@@ -1221,13 +1221,20 @@ input {
 }
 
 .footer .footer_list {
-    background: url('../img/footer_wx.png') no-repeat 100% 0;
     float: right;
     height: 100px;
-    padding-right: 120px;
-    margin: 15px 40px 0 0
+    margin: 15px 20px 0 0
 }
-
+.footer .footer_qrcode_wrapper{
+    float: right;
+    margin: 0 0 0 10px;
+    width: 100px;
+    height: 100px;
+}
+.footer_listleft_wrapper{
+    float: left;
+    margin: 0 10px;
+}
 .footer .footer_list .ft_nav {
     display: block;
     height: 20px;
@@ -1283,8 +1290,9 @@ input {
 }
 
 .footer .footer_list .ft_shares a.x83 {
+    display: inline-block;
     width: 83px;
-    margin-top: 3px;
+    line-height: 50px;
     background: none;
 }
 
@@ -1421,6 +1429,7 @@ label.error, div.error{
     display: block;
     margin: 10px 0;
     width: 100%;
+    cursor: pointer;
 }
 
 .all_loadmore a:hover {

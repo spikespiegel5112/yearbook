@@ -10,7 +10,7 @@
 }
 .sem_banner_wrapper img{
 	display: block;
-	width: 100%;
+	/*width: 100%;*/
 }
 .sem_title_wrapper{
 	width: 100%;
@@ -1058,9 +1058,21 @@
 	width: 90%;
 }
 .sem_graduationbook_wrapper .sem_recommendicon_item{
-	top: 110px;
+	top: 130px;
 	left: 100px;
 	border-radius: 50%;
+	z-index: 0;
+}
+.sem_graduationbook_wrapper .sem_recommendicon_item label{
+	display: block;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	border-radius: 50%;
+	background: #fff;
+	top: 13px;
+	left: 14px;
+	z-index: -1;
 }
 .sem_graduationbook_wrapper .sem_bookshelf_container img:first-child{
 	top: 285px;
@@ -1082,6 +1094,9 @@
 }
 .sem_graduationbook_wrapper .all_loadmore a{
 	color: #8cc04e;
+}
+.sem_graduationbook_wrapper .all_loadmore a:hover{
+	color: #83b038;
 }
 .sem_graduationbook_wrapper .all_loadmore a:active{
 	box-shadow: 2px 2px 10px #232323 inset
@@ -1127,5 +1142,16 @@
 .sem_iabookfooter_container .footer_list .ft_nav a{
 	color: #fff!important;
 }
+.sem_iabookfooter_container .footer_list .ft_copyright{
+	color: #fff;
+}
 
-
+.sem_iabookfooter_container .footer_list .ft_shares a{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	background-color: rgba(255,255,255,0.5);
+}
+.sem_iabookfooter_container .footer_list .ft_shares a.x83{
+	line-height: 0;
+}

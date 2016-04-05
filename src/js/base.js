@@ -575,7 +575,7 @@
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//container设置判断
-			if ($(options.container)!=null) {
+			if (options.container!='') {
 				windowWidth=$(options.container).width();
 			}
 			//障碍物处理判断

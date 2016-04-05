@@ -56,7 +56,9 @@ $(function() {
 			tlBtn = $(".common_eptoolbar_wrapper .turnleft a"),
 			zoominBtn = $('.common_epzomming_wrapper .zoomin'),
 			zoomoutBtn = $('.common_epzomming_wrapper .zoomout'),
-			zoomingSlider = $('.common_epscrollbar_item span'),
+			epscrollbar=$('.common_epscrollbar_item'),
+			epscrollbarWidth=epscrollbar.width(),
+			zoomingSlider = epscrollbar.find('span'),
 			// zoomingSlider=document.getElementsByClassName('.common_epscrollbar_item span'),
 			startPosX = 0,
 			startPosY = 0,
@@ -71,6 +73,13 @@ $(function() {
 		tlBtn.on('touchend', function() {
 			image.css(turning('left'));
 		});
+		zoomoutBtn.on('touchend', function() {
+			image.css(zooming('zoomout'));
+			console.log(zooming());
+		});
+		zoominBtn.on('touchend', function() {
+			image.css(zooming('zoomin'));
+		});
 
 		function eventHandler(e) {
 			e.preventDefault();
@@ -83,13 +92,18 @@ $(function() {
 							console.log(startPosX)
 						break;
 					case 'touchmove':
-						var movingPosX=touch.pageX;
-							
+						var movingPosX=touch.pageX,
+							marginleft=movingPosX-sliderPosX
+						if (marginleft<0) {
+							marginleft=0;
+						}else if(marginleft>epscrollbarWidth){
+							marginleft=epscrollbarWidth
+						}else{
+							zoomingSlider.css('margin-left',marginleft);
 
-						zoomingSlider.css('margin-left',movingPosX-sliderPosX)
-						console.log(sliderPosX)
-
-
+							console.log(sliderPosX)
+						}
+						break;
 				}		
 			};
 			
@@ -138,13 +152,7 @@ $(function() {
 			};
 			return closure();
 		}
-		zoomoutBtn.on('touchend', function() {
-			image.css(zooming('zoomout'));
-			console.log(zooming());
-		})
-		zoominBtn.on('touchend', function() {
-			image.css(zooming('zoomin'));
-		})
+		
 
 	}()
 })

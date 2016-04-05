@@ -23,6 +23,7 @@
 				<div class='common_epzomming_wrapper'>
 					<a class='zoomout' href="javascript:;">-</a>
 					<div class='common_epscrollbar_item'>
+						<label></label>
 						<span></span>
 					</div>
 					<a class='zoomin' href="javascript:;">+</a>
@@ -57,30 +58,42 @@ $(function() {
 			zoominBtn = $('.common_epzomming_wrapper .zoomin'),
 			zoomoutBtn = $('.common_epzomming_wrapper .zoomout'),
 			epscrollbar=$('.common_epscrollbar_item'),
-			epscrollbarWidth=epscrollbar.width(),
+			epscrollbarWidth=epscrollbar.find('label').width(),
 			zoomingSlider = epscrollbar.find('span'),
-			// zoomingSlider=document.getElementsByClassName('.common_epscrollbar_item span'),
+			marginleft=0,
 			startPosX = 0,
 			startPosY = 0,
 			sliderPosX=zoomingSlider.offset().left;
 
-
+		zoomingSlider.css('margin-left','%')
 		trBtn.on('touchend', function() {
 			image.css(turning('right'));
-			// image.css({'transform': 'rotate(' + turning('right') + 'deg)'});
-			// image.style.transform(rotate)=css;
 		});
 		tlBtn.on('touchend', function() {
 			image.css(turning('left'));
 		});
 		zoomoutBtn.on('touchend', function() {
-			image.css(zooming('zoomout'));
-			console.log(zooming());
+			if (marginleft<0) {
+				marginleft=0;
+			}else{
+				marginleft-=20
+			}
+			
+			image.css(zooming(-0.2));
+			zoomingSlider.css('margin-left',marginleft);
 		});
 		zoominBtn.on('touchend', function() {
-			image.css(zooming('zoomin'));
+			if (marginleft>$(window).width()*0.62) {
+				marginleft=$(window).width()*0.65;
+			}else{
+				marginleft+=20
+			}
+			
+			image.css(zooming(0.2));
+			zoomingSlider.css('margin-left',marginleft);
 		});
-
+		document.addEventListener('touchstart', eventHandler, false);
+		document.addEventListener('touchmove', eventHandler, false);
 		function eventHandler(e) {
 			e.preventDefault();
 			var touch = e.touches[0];
@@ -89,7 +102,7 @@ $(function() {
 				switch (e.type) {
 					case 'touchstart':
 						startPosX = touch.pageX;
-							console.log(startPosX)
+							console.log(startPosX);
 						break;
 					case 'touchmove':
 						var movingPosX=touch.pageX,
@@ -100,17 +113,27 @@ $(function() {
 							marginleft=epscrollbarWidth
 						}else{
 							zoomingSlider.css('margin-left',marginleft);
-
-							console.log(sliderPosX)
+							if (true) {};
+							image.css(zooming(marginleft*0.01));
+							
 						}
+						console.log(marginleft)
 						break;
 				}		
-			};
-			
+			}
 		}
-		document.addEventListener('touchstart', eventHandler, false);
-		document.addEventListener('touchmove', eventHandler, false);
-
+		function zooming(aaa) {
+			var xaxis, yaxis;
+			var closure = function() {
+				var unit = 0.2;
+					scale=aaa;
+				return {
+					'transform': 'scale(' + scale + ')'
+				}
+			};
+			console.log(closure())
+			return closure();
+		}
 
 		function turning(direction) {
 			// var degree=0;
@@ -124,34 +147,28 @@ $(function() {
 						degree -= 90;
 						break;
 				}
-				return {
-					'transform': 'rotate(' + degree + 'deg)'
-				}
+				return cssSettings({
+						scale:null,
+						rotate:degree
+					});
 			};
 			return closure();
+		}
+		function cssSettings(options){
+			options={
+				scale:0,
+				rotate:0
+			}
+			return function(){
+				return {
+					'transform':'scale('+scale+')',
+					'transform':'rotate('+rotate+'deg)'
+				}
+
+			}
 		}
 
-		function zooming(direction) {
-			var xaxis, yaxis;
-			var closure = function() {
-				var unit = 0.2;
-				switch (direction) {
-					case 'zoomout':
-						scale -= unit;
-						if (scale < 0.2) {
-							scale = 0.2;
-						};
-						break;
-					case 'zoomin':
-						scale += unit;
-						break;
-				}
-				return {
-					'transform': 'scale(' + scale + ')'
-				}
-			};
-			return closure();
-		}
+		
 		
 
 	}()

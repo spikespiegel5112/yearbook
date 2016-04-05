@@ -133,13 +133,22 @@
 		align: function(options) {
 			options = $.extend({
 				position: 'both',
+				container: '',
 				obstacleX: 0,
 				obstacleY: 0,
 				offsetY: 0
 			}, options);
-			var _this=this,
+
+			var _this = this,
+				imgSrc = _this.attr('src'),
+				containerheight = $(options.container).height(),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
+			_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
+			//container设置判断
+			if (options.container != '') {
+				windowWidth = $(options.container).width();
+			}
 			//障碍物处理判断
 			if (typeof options.obstacleX == 'number') {
 				windowWidth = windowWidth - options.obstacleX;
@@ -148,7 +157,7 @@
 				for (var i = 0; i < options.obstacleX.length; i++) {
 					if ($(options.obstacleX[i]).is(':hidden')) {
 						sum += 0;
-					}else{
+					} else {
 						sum += $(options.obstacleX[i]).height();
 					}
 					sum += $(options.obstacleX[i]).height();
@@ -162,69 +171,85 @@
 				for (var i = 0; i < options.obstacleY.length; i++) {
 					if ($(options.obstacleY[i]).is(':hidden')) {
 						sum += 0;
-					}else{
+					} else {
 						sum += $(options.obstacleY[i]).height();
 					}
 				};
 				windowHeight = windowHeight - sum;
-				console.log('offsetY'+ options.offsetY);
+				console.log('offsetY' + options.offsetY);
 			}
 
-			switch(options.position){
-				case 'both':
-					aligning(function(thisWidth,thisHeight) {
-						var marginY=(windowHeight - thisHeight) / 2;
-						if (marginY<=0) {
-							marginY=0;
-						};
-						_this.css({
-							'margin': marginY +options.offsetY + 'px auto'
+			// _this.load(function() {
+				var thisWidth = _this.width;
+				switch (options.position) {
+					case 'both':
+						aligning(function(thisWidth, thisHeight) {
+							if (options.container != '') {
+								var marginY = (containerheight - thisHeight) / 2;
+							} else {
+								console.log(windowHeight)
+								var marginY = (windowHeight - thisHeight) / 2;
+							}
+							if (marginY <= 0) {
+								marginY = 0;
+							};
+							console.log(thisWidth)
+							if (thisWidth <= windowWidth) {
+								_this.css({
+									'margin': marginY + options.offsetY + 'px auto'
+								});
+							} else {
+								_this.css({
+									'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
+								});
+							}
 						});
-					});
-				break;
-				case 'top':
-					aligning(function(thisWidth,thisHeight) {
-						if ($(document).height() > $(window).height()) {
-							return;
-						} else {
+						break;
+					case 'top':
+						aligning(function(thisWidth, thisHeight) {
+							if ($(document).height() > $(window).height()) {
+								return;
+							} else {
+								_this.css({
+									'margin': (windowWidth - thisWidth) / 2 + ' auto'
+								});
+							}
+						});
+						break;
+					case 'right':
+						aligning(function(thisWidth, thisHeight) {
 							_this.css({
-								'margin':(windowWidth-thisWidth)/2+' auto'
+								'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 ' + (windowWidth - thisWidth) + 'px'
 							});
-						}
-					});
-				break;
-				case 'right':
-					aligning(function(thisWidth,thisHeight) {
-						_this.css({
-							'margin': (windowHeight-thisHeight)/2+'px 0 0 '+(windowWidth-thisWidth)+'px'
 						});
-					});
-				break;
-				case 'bottom':
-					aligning(function(thisWidth,thisHeight) {
-						_this.css({
-							'margin': (windowHeight-thisHeight)+'px auto 0'
+						break;
+					case 'bottom':
+						aligning(function(thisWidth, thisHeight) {
+							_this.css({
+								'margin': (windowHeight - thisHeight) + 'px auto 0'
+							});
 						});
-					});
-				break;
-				case 'left':
-					aligning(function(thisWidth,thisHeight) {
-						_this.css({
-							'margin': (windowHeight-thisHeight)/2+'px 0 0 0'
+						break;
+					case 'left':
+						aligning(function(thisWidth, thisHeight) {
+							_this.css({
+								'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 0'
+							});
 						});
-					});
-				break;
-			}
+						break;
+				}
+			// })
 
 			function aligning(callback) {
 				var thisWidth = _this.outerWidth(),
 					thisHeight = _this.outerHeight();
+
 				$(window).resize(function() {
 					thisWidth = _this.outerWidth();
 					thisHeight = _this.outerHeight();
-					return callback(thisWidth,thisHeight)
+					return callback(thisWidth, thisHeight)
 				});
-				return callback(thisWidth,thisHeight);
+				return callback(thisWidth, thisHeight);
 			}
 		}
 	});

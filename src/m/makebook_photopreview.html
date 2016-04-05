@@ -18,19 +18,22 @@
 <body>
 	<div class='main_conatainer'>
 		<div class='common_editphoto_wrapper'>
-			<img class='common_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
+			<div class='common_epeditarea_wrapper'>
+				<img class='common_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
+			</div>
 			<div class='common_eptools_wrapper'>
 				<div class='common_epzomming_wrapper'>
 					<a class='zoomout' href="javascript:;">-</a>
 					<div class='common_epscrollbar_item'>
-						<label></label>
 						<span></span>
+						<label></label>
 					</div>
 					<a class='zoomin' href="javascript:;">+</a>
 				</div>
 				<ul class='common_eptoolbar_wrapper'>
 					<li class='turnright'><a href="javascript:;">turn right</a></li>
 					<li class='turnleft'><a href="javascript:;">turn left</a></li>
+					<li class='reset'><a href="javascript:;">reset</a></li>
 				</ul>
 			</div>
 		</div>
@@ -42,31 +45,36 @@
 <!-- endbuild -->
 <script type="text/javascript">
 $(function() {
-	$('.common_epimage_item').align();
+
+	$('.common_editphoto_wrapper').css('height',568);
+	$('.common_epeditarea_wrapper').align();
+	$('.common_epimage_item').align({
+		container:'.common_epeditarea_wrapper'
+	});
 	$.remResizing({
 		fontsize: 20
 	})
 	var editphoto = function(options) {
-		var options = {
-
-			},
-			degree = 0,
-			scale = 1,
+		var options = $.extend({
+				scale: 0.5,
+				rotate: 0
+			}, options),
 			image = $('.common_epimage_item').css('transition', 'transform 0.5s'),
 			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
 			tlBtn = $(".common_eptoolbar_wrapper .turnleft a"),
 			zoominBtn = $('.common_epzomming_wrapper .zoomin'),
 			zoomoutBtn = $('.common_epzomming_wrapper .zoomout'),
-			epscrollbar=$('.common_epscrollbar_item'),
-			epscrollbarWidth=epscrollbar.find('label').width(),
+			resetbtn = $('.common_eptoolbar_wrapper .reset'),
+			epscrollbar = $('.common_epscrollbar_item'),
+			epscrollbarWidth = epscrollbar.find('label').width(),
 			zoomingSlider = epscrollbar.find('span'),
-			marginleft=0,
+			marginleft = 0,
 			startPosX = 0,
 			startPosY = 0,
-			sliderPosX=zoomingSlider.offset().left;
+			sliderPosX = zoomingSlider.offset().left,
+			marginleft = epscrollbarWidth / 2;
 
-		marginleft=epscrollbarWidth/2-25;
-		zoomingSlider.css('margin-left',marginleft);
+		zoomingSlider.css('margin-left', marginleft);
 
 		trBtn.on('touchend', function() {
 			image.css(turning('right'));
@@ -75,103 +83,82 @@ $(function() {
 			image.css(turning('left'));
 		});
 		zoomoutBtn.on('touchend', function() {
-			if (marginleft<0) {
-				marginleft=0;
-			}else{
-				marginleft-=20
+			marginleft -= epscrollbarWidth / 2 / 5
+			if (marginleft <= 0) {
+				marginleft = 0;
 			}
-			
-			image.css(zooming(-0.1));
-			zoomingSlider.css('margin-left',marginleft);
+			options.scale = marginleft / epscrollbarWidth;
+			image.css(cssSettings(options));
+			zoomingSlider.css('margin-left', marginleft);
 		});
 		zoominBtn.on('touchend', function() {
-			if (marginleft>$(window).width()*0.62) {
-				marginleft=$(window).width()*0.62;
-			}else{
-				marginleft+=20
+			marginleft += epscrollbarWidth / 2 / 5;
+			if (marginleft >= epscrollbarWidth - 10) {
+				marginleft = epscrollbarWidth - 10;
 			}
-			
-			image.css(zooming(0.1));
-			zoomingSlider.css('margin-left',marginleft);
+			options.scale = marginleft / epscrollbarWidth;
+			image.css(cssSettings(options));
+			zoomingSlider.css('margin-left', marginleft);
 		});
+		resetbtn.on('touchend', function(){
+			options.scale=0.5;
+			options.rotate=0;
+			image.css(cssSettings(options));
+			zoomingSlider.css('margin-left', epscrollbarWidth / 2);
+		})
 		document.addEventListener('touchstart', eventHandler, false);
 		document.addEventListener('touchmove', eventHandler, false);
+
 		function eventHandler(e) {
 			e.preventDefault();
 			var touch = e.touches[0];
-				
+
 			if ($(e.target).closest(zoomingSlider).length > 0) {
 				switch (e.type) {
 					case 'touchstart':
 						startPosX = touch.pageX;
-							console.log(startPosX);
+						console.log(startPosX);
 						break;
 					case 'touchmove':
-						var movingPosX=touch.pageX,
-							marginleft=movingPosX-sliderPosX
-						if (marginleft<0) {
-							marginleft=0;
-						}else if(marginleft>epscrollbarWidth){
-							marginleft=epscrollbarWidth
-						}else{
-							zoomingSlider.css('margin-left',marginleft);
-							if (true) {};
-							image.css(zooming(marginleft/epscrollbarWidth));
-							console.log(marginleft/epscrollbarWidth)
+						var movingPosX = touch.pageX;
+						marginleft = movingPosX - sliderPosX
+						if (marginleft <= 0) {
+							marginleft = 0;
+						} else if (marginleft > epscrollbarWidth - 10) {
+							marginleft = epscrollbarWidth - 10
+						} else {
+							zoomingSlider.css('margin-left', marginleft);
+							options.scale = marginleft / epscrollbarWidth;
+							image.css(cssSettings(options));
 						}
-						console.log(marginleft)
 						break;
-				}		
-			}
-		}
-		function zooming(scale,unit) {
-			var xaxis, yaxis;
-			var closure = function() {
-					// scale+=unit;
-				return {
-					'transform': 'scale(' + scale*2+unit + ')'
 				}
-			};
-			console.log(closure())
-			return closure();
+			}
 		}
 
 		function turning(direction) {
-			// var degree=0;
-			var closure = function() {
-				switch (direction) {
-					case 'right':
-						degree += 90;
-						console.log(degree)
-						break;
-					case 'left':
-						degree -= 90;
-						break;
-				}
-				return cssSettings({
-						scale:scale,
-						rotate:degree
-					});
-			};
-			return closure();
-		}
-		function cssSettings(options){
-			options={
-				scale:0,
-				rotate:0
+			switch (direction) {
+				case 'right':
+					options.rotate += 90;
+					break;
+				case 'left':
+					options.rotate -= 90;
+					break;
 			}
-			return function(){
-				return {
-					'transform':'scale('+scale+')',
-					'transform':'rotate('+rotate+'deg)'
-				}
-
-			}
+			return cssSettings(options)
 		}
 
-		
-		
-
+		function cssSettings(options) {
+			var options = $.extend({
+				scale: 0,
+				rotate: 0
+			}, options),
+			cssObj={
+				'transform': 'scale(' + options.scale * 2 + ') rotate(' + options.rotate + 'deg)'
+			}
+			console.log(cssObj)
+			return cssObj;
+		}
 	}()
 })
 </script>

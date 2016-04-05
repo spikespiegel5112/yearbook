@@ -14,7 +14,7 @@
 }
 .sem_title_wrapper{
 	width: 100%;
-	height: 400px;
+	/*height: 400px;*/
 	position: relative;
 }
 .sem_title_wrapper img{
@@ -57,6 +57,7 @@
 	display: block;
 	width: 100%;
 	height: 165px;
+	max-height: 200px;
 }
 .sem_mainlist_wrapper .sem_recommendicon_item{
 	font-size: 55px;
@@ -71,6 +72,9 @@
 	width: 100%;
 	height: 100%;
 	background: url(../img/sem/sem_bookbg_1_00000.jpg);
+}
+.sem_parenting_container .sem_mainlist_wrapper{
+	padding: 0 0 160px 0;
 }
 .sem_mainlist_wrapper li div{
 	margin: 10px 0;
@@ -224,6 +228,7 @@
 	width: 100%;
 	position: relative;
 	background-image: url(../img/sem/sem_boat_bg.jpg);
+	background-color: #fff;
 	background-position: bottom;
 	background-repeat: no-repeat;
 }
@@ -455,7 +460,7 @@
 	width: 100%;
 	background: url(../img/sem/sem_tourism_banner_00000.jpg);
 }
-.sem_parenting_container 
+
 .sem_tourism_container .sem_mainlist_wrapper li>a{
 	display: block;
 	width: 100%;
@@ -488,7 +493,12 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-
+.sem_tourism_container .sem_mainlist_wrapper{
+	padding: 0 0 160px 0;
+}
+.sem_tourism_container .sem_mainlist_wrapper ul{
+	min-height: 100px;
+}
 .sem_tourism_container .sem_mainlist_wrapper li{
 	border-radius: 10px;
 	box-shadow: none;
@@ -679,6 +689,7 @@
 	float: right;
 	padding: 20px 0;
 	width: 780px;
+	min-height: 515px;
 }
 .sem_photobook_container .sem_mainlist_wrapper li{
 	margin: 10px;
@@ -891,6 +902,7 @@
 .sem_interactionbook_container .sem_mainlist_wrapper{
 	float: left;
 	width: 780px;
+	min-height: 515px;
 }
 .sem_interactionbook_container .sem_mainlist_wrapper li{
 	margin: 10px;

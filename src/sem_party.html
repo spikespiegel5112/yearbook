@@ -463,31 +463,13 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src='assets/js/masonry.pkgd.min.js'></script>
 	<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
+    <!-- build:js js/all.js -->
+    <script type="text/javascript" src="js/base.js"></script>
+    <!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
-		circle();
+        $('.sem_banner_wrapper img').align();
 	});
-
-	function circle() {
-		var circleEl = '<i></i>',
-			windowWidth = $(window).width();
-		for (var i = 0; i <= windowWidth / 50-1; i++) {
-			circleEl += '<i></i>';
-		}
-		circleEl = '<div>' + circleEl + '</div>';
-		circleEl = $(circleEl);
-		circleEl.find('i').css({
-			'display': 'inline-block',
-			'width': 50,
-			'height': 50,
-			'border-radius': '50%',
-			'background-color': '#a8e7ec',
-			'position': 'relative',
-			'bottom': '30px'
-		});
-
-		$('.sem_listbg_item').append(circleEl);
-	}
 	</script>
 </body>
 

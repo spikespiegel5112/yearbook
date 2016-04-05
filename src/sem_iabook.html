@@ -339,14 +339,25 @@
 	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
+		$('.sem_banner_wrapper img').align({
+			container: '.sem_banner_wrapper'
+		});
 		semgraduationbook();
 	});
 
 	function semgraduationbook() {
-		var imgEl = $('.sem_banner_wrapper img');
-		imgEl.align({
-			container: '.sem_banner_wrapper'
-		});
+		var listImgHeight=$('.sem_mainlist_wrapper li img').height();
+		var bookshelfContainer=$('.sem_bookshelf_container');
+		bookshelfContainer.each(function(){
+			$(this).find('img').each(function(index){
+				var totalOffset=50,
+					eachOffset=70,
+					top=(listImgHeight+eachOffset)*(index+1)+totalOffset;
+				$(this).css('top',top)
+			})
+		})
+		console.log(listImgHeight);
+
 	}
 	</script>
 </body>

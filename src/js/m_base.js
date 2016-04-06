@@ -134,6 +134,7 @@
 			options = $.extend({
 				position: 'both',
 				container: '',
+				isImage:false,
 				obstacleX: 0,
 				obstacleY: 0,
 				offsetY: 0
@@ -144,8 +145,9 @@
 				containerheight = $(options.container).height(),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
-			_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
-			//container设置判断
+			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
+			console.log(containerheight)
+				//container设置判断
 			if (options.container != '') {
 				windowWidth = $(options.container).width();
 			}
@@ -178,8 +180,15 @@
 				windowHeight = windowHeight - sum;
 				console.log('offsetY' + options.offsetY);
 			}
+			if (options.isImage) {
+				_this.load(function() {
+					checkPosition();
+				});
+			}else{
+				checkPosition();
+			}
 
-			// _this.load(function() {
+			function checkPosition() {
 				var thisWidth = _this.width;
 				switch (options.position) {
 					case 'both':
@@ -192,6 +201,7 @@
 							if (marginY <= 0) {
 								marginY = 0;
 							};
+							console.log(thisWidth)
 							if (thisWidth <= windowWidth) {
 								_this.css({
 									'margin': marginY + options.offsetY + 'px auto'
@@ -236,7 +246,7 @@
 						});
 						break;
 				}
-			// })
+			}
 
 			function aligning(callback) {
 				var thisWidth = _this.outerWidth(),

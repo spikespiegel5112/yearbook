@@ -68,6 +68,7 @@ $(function() {
 			epscrollbar = $('.common_epscrollbar_item'),
 			epscrollbarWidth = epscrollbar.find('label').width(),
 			zoomingSlider = epscrollbar.find('span'),
+			photoImg=$('.common_epimage_item'),
 			marginleft = 0,
 			startPosX = 0,
 			startPosY = 0,
@@ -114,12 +115,12 @@ $(function() {
 			var touch = e.touches[0];
 
 			if ($(e.target).closest(zoomingSlider).length > 0) {
-				switch (e.type) {
-					case 'touchstart':
-						startPosX = touch.pageX;
-						console.log(startPosX);
-						break;
-					case 'touchmove':
+				// switch (e.type) {
+				// 	case 'touchstart':
+				// 		startPosX = touch.pageX;
+				// 		console.log(startPosX);
+				// 		break;
+				// 	case 'touchmove':
 						var movingPosX = touch.pageX;
 						marginleft = movingPosX - sliderPosX
 						if (marginleft <= 0) {
@@ -131,8 +132,30 @@ $(function() {
 							options.scale = marginleft / epscrollbarWidth;
 							image.css(cssSettings(options));
 						}
-						break;
+						//break;
+				// }
+			}else if($(e.target).closest(photoImg).length > 0){
+				var startPosX = 0,
+					endPosX=0;
+
+				switch (e.type){
+					case 'touchstart':
+						startPosX=touch.clientX;
+						
+					break;
+					case 'touchmove':
+						e.preventDefault;
+						endPosX=touch.clientX;
+						offsetPosX=endPosX-startPosX;
+						photoImg.css({
+							'position':'relative',
+							'left':offsetPosX
+						})
+						console.log('start '+startPosX)
+						console.log('moving '+endPosX)
+					break;
 				}
+				
 			}
 		}
 

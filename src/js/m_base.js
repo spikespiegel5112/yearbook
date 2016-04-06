@@ -187,13 +187,11 @@
 							if (options.container != '') {
 								var marginY = (containerheight - thisHeight) / 2;
 							} else {
-								console.log(windowHeight)
 								var marginY = (windowHeight - thisHeight) / 2;
 							}
 							if (marginY <= 0) {
 								marginY = 0;
 							};
-							console.log(thisWidth)
 							if (thisWidth <= windowWidth) {
 								_this.css({
 									'margin': marginY + options.offsetY + 'px auto'
@@ -335,7 +333,6 @@
 					factor=1;
 				//当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时
 				}else if(options.maxwidth==0||windowWidth > options.minwidth&&windowWidth <= options.maxwidth){
-					console.log('aaa')
 					bodyEl.css({
 						'width': windowWidth
 					});

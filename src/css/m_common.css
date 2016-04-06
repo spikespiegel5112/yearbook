@@ -2104,6 +2104,15 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .common_editphoto_wrapper{
 	width: 100%;
 	overflow: hidden;
+	background-color: #222;
+}
+.common_epeditarea_wrapper{
+	margin: 0 auto;
+	width: 100%;
+	height: 320px;
+	position: relative;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.5);
 }
 .common_editphoto_wrapper img{
     display: block;
@@ -2137,6 +2146,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 .common_eptoolbar_wrapper li a{
 	display: block;
+}
+.common_eptoolbar_wrapper .turnright a{
+	transform: rotateY(180deg);
 }
 .common_epzomming_wrapper, .common_eptoolbar_wrapper{
 	height: 2rem;

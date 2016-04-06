@@ -318,6 +318,7 @@
 
 /*help center coupon*/
 .content .in_describe {
+    padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -354,6 +355,10 @@
     text-indent: 2em;
 }
 
+.in_describe p{
+    text-indent: 2em;
+}
+
 .in_describe p a {
     color: #45a6de;
     text-decoration: underline;
@@ -362,6 +367,12 @@
     display: block;
     width: 100%;
     height: auto;
+}
+
+.in_describe p img[alt="footer_wx.png"]{
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 2em;
 }
 
 .in_describe p a img {

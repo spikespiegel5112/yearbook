@@ -131,13 +131,11 @@
 	$(function() {
 		doSubmit();
 		icheck();
-		if ($(window).width()<=1024) {
-			$.remResizing({
-				fontsize: 20,
-				aligncenter: false
-			});
-		};
-		
+		$.remResizing({
+			fontsize: 20,
+			maxwidth: 1024,
+			aligncenter: false
+		});
 		$('.common_login_wrapper').align();
 	});
 	</script>

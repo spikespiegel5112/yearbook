@@ -2665,7 +2665,7 @@ li.action div:hover {
 
 @media only screen and (max-width: 1024px) {
     .address_list .address {
-        width: 37%;
+        width: 35%;
     }
 }
 
@@ -2691,6 +2691,7 @@ li.action div:hover {
     text-align: center;
     font-size: 12px;
     color: #ff6600;
+    box-sizing: border-box;
 }
 
 .address_list label:hover{
@@ -2716,6 +2717,8 @@ li.action div:hover {
     border: 2px solid #f5a8a8;
     border-radius: 2px;
     cursor: default;
+    width: 60px;
+    box-sizing: border-box;
 }
 
 .personal_content_box .coupon .opd_coupon_wrapper label{

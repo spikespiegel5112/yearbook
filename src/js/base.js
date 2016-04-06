@@ -565,7 +565,7 @@
 			options = $.extend({
 				position: 'both',
 				container: '',
-				isImage:false,
+				isImage: false,
 				obstacleX: 0,
 				obstacleY: 0,
 				offsetY: 0
@@ -615,7 +615,7 @@
 				_this.load(function() {
 					checkPosition();
 				});
-			}else{
+			} else {
 				checkPosition();
 			}
 
@@ -735,7 +735,8 @@
 			options = $.extend({
 				fontsize: 16,
 				minwidth: 320,
-				maxwidth: 0
+				maxwidth: 0,
+				aligncenter: true
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -751,7 +752,7 @@
 					factor = 0;
 				// alert(windowWidth)
 				if (options.minwidth == 0) {
-					//alert('当当最小宽度等于0时')
+					//alert('当最小宽度等于0时')
 					bodyEl.css({
 						'width': windowWidth
 					});
@@ -763,7 +764,7 @@
 					});
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
-					// alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
+					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					bodyEl.css({
 						'width': windowWidth
 					});
@@ -772,10 +773,16 @@
 					//alert(factor = windowWidth / options.minwidth)
 				} else if (windowWidth > options.maxwidth) {
 					//alert('当屏幕宽度大于最大宽度时')
-					bodyEl.css({
-						'margin': '0 auto',
-						'width': options.maxwidth
-					});
+					if (!options.aligncenter) {
+						bodyEl.css({
+							'margin': '0 auto'
+						})
+					}else{
+						bodyEl.css({
+							'margin': '0 auto',
+							'width': options.maxwidth
+						})
+					}
 					factor = 1
 				} else {
 					alert('abnormal')

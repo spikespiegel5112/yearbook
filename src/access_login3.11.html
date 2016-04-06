@@ -128,26 +128,15 @@
 		});
 	}
 
-	function login() {
-		// $('.common_login_container').css({
-		// 		'height':$(window).height()
-		// 	})
-		// $(window).resize(function(){
-		// 	$('.common_login_container').css({
-		// 		'height':$(window).height()
-		// 	})
-		// })
-
-	}
-
 	$(function() {
 		doSubmit();
 		icheck();
-		login();
-		$.remResizing({
-			fontsize: 20,
-			maxwidth: 0
-		});
+		if ($(window).width()<=1024) {
+			$.remResizing({
+				fontsize: 20
+			});
+		};
+		
 		$('.common_login_wrapper').align();
 	});
 	</script>

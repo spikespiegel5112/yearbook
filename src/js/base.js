@@ -763,7 +763,7 @@
 					});
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
-					// alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
+					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					bodyEl.css({
 						'width': windowWidth
 					});

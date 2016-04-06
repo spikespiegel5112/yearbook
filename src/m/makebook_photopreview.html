@@ -31,10 +31,10 @@
 					<a class='zoomin' href="javascript:;">+</a>
 				</div>
 				<ul class='common_eptoolbar_wrapper'>
-					<li class='turnright'>
+					<li class='turnleft'>
 						<a class='ybiconfont ybicon-undo' href="javascript:;"></a>
 					</li>
-					<li class='turnleft'>
+					<li class='turnright'>
 						<a class='ybiconfont ybicon-undo' href="javascript:;"></a>
 					</li>
 					<li class='fitwidth'><a href="javascript:;">fit width</a></li>
@@ -60,15 +60,12 @@ $(function() {
 	$.remResizing({
 		fontsize: 20
 	})
-	var editphoto = function(options) {
+	var editphoto = function() {
 		var options = $.extend({
-				width: 0,
-				height: 0,
-				scale: 0.5,
+				scale: 1,
 				rotate: 0,
 				left: 0,
-				top: 0,
-				position: 'absolute'
+				top: 0
 			}, options),
 			image = $('.common_epimage_item').css('transition', 'transform 0.5s'),
 			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
@@ -83,7 +80,6 @@ $(function() {
 			epscrollbarWidth = epscrollbar.find('label').width(),
 			zoomingSlider = epscrollbar.find('span'),
 			photoImg = $('.common_epimage_item'),
-			marginleft = 0,
 			startPosX = 0,
 			startPosY = 0,
 			endPosX = 0,
@@ -92,25 +88,27 @@ $(function() {
 			sliderPosX = zoomingSlider.offset().left,
 			marginleft = epscrollbarWidth / 2;
 
-		zoomingSlider.css('margin-left', marginleft);
-		photoImg.css({
-			left: 0,
-			top: 0
-		})
+		var init = function() {
+			zoomingSlider.css('margin-left', marginleft);
+			photoImg.css(options)
+		}();
 
 		trBtn.on('touchend', function() {
-			image.css(turning('right'));
+			options.rotate += 90;
+			image.css(cssSettings(options));
 		});
 		tlBtn.on('touchend', function() {
-			image.css(turning('left'));
+			options.rotate -= 90;
+			image.css(cssSettings(options));
 		});
 		zoomoutBtn.on('touchend', function() {
 			marginleft -= epscrollbarWidth / 2 / 5
 			if (marginleft <= 0) {
 				marginleft = 0;
 			}
-			options.scale = marginleft / epscrollbarWidth;
-			image.css(cssSettings(options));
+			image.css(cssSettings({
+				'scale': Number(marginleft / epscrollbarWidth) * 2
+			}));
 			zoomingSlider.css('margin-left', marginleft);
 		});
 		zoominBtn.on('touchend', function() {
@@ -118,30 +116,28 @@ $(function() {
 			if (marginleft >= epscrollbarWidth - 10) {
 				marginleft = epscrollbarWidth - 10;
 			}
-			options.scale = marginleft / epscrollbarWidth;
-			image.css(cssSettings(options));
+			image.css(cssSettings({
+				'scale': Number(marginleft / epscrollbarWidth) * 2
+			}));
 			zoomingSlider.css('margin-left', marginleft);
 		});
 		rePositionBtn.on('touchend', function() {
-			var options = $.extend({
+			options = $.extend({
 				left: 0,
 				top: 0
 			}, options)
-			image.css(cssSettings(options));
-
+			image.css(options);
 		});
 		fitwidthBtn.on('touchend', function() {
 			options.scale = 0.5;
-			image.css(cssSettings(options));
 			zoomingSlider.css('margin-left', epscrollbarWidth / 2);
 		})
 		document.addEventListener('touchstart', eventHandler, false);
 		document.addEventListener('touchmove', eventHandler, false);
 
-		function eventHandler(e) {
-			e.preventDefault();
+		function eventHandler(e, options) {
+			e.preventDefault;
 			var touch = e.touches[0];
-
 			if ($(e.target).closest(zoomingSlider).length > 0) {
 				var movingPosX = touch.pageX;
 				marginleft = movingPosX - sliderPosX;
@@ -151,65 +147,49 @@ $(function() {
 					marginleft = epscrollbarWidth - 10
 				} else {
 					zoomingSlider.css('margin-left', marginleft);
-					var options=$.extend({
-						transform:'scale('+Number(1-marginleft / epscrollbarWidth)+')'
-					},options);
+					options = {
+						scale: Number(marginleft / epscrollbarWidth) * 2
+					}
 					console.log(options)
-					// options.scale = marginleft / epscrollbarWidth;
-					image.css(options);
+					image.css(cssSettings(options));
 				}
 			} else if ($(e.target).closest(photoImg).length > 0) {
 				switch (e.type) {
 					case 'touchstart':
 						startPosX = touch.pageX,
-						startPosY = touch.pageY,
-						photoImgLeft = Number(photoImg.css('left').replace('px', '')),
-						photoImgTop = Number(photoImg.css('top').replace('px', ''))
+							startPosY = touch.pageY,
+							photoImgLeft = Number(photoImg.css('left').replace('px', '')),
+							photoImgTop = Number(photoImg.css('top').replace('px', ''))
 						console.log(photoImgLeft)
-					break;
+						break;
 					case 'touchmove':
 						e.preventDefault;
 						endPosX = touch.pageX,
-						endPosY = touch.pageY,
-						offsetPosX = endPosX - startPosX,
-						offsetPosY = endPosY - startPosY;
-						var options=$.extend({
+							endPosY = touch.pageY,
+							offsetPosX = endPosX - startPosX,
+							offsetPosY = endPosY - startPosY;
+						options = $.extend({
 							position: 'relative',
 							left: offsetPosX + photoImgLeft,
 							top: offsetPosY + photoImgTop
-						},options)
+						}, options);
 						photoImg.css(options)
 						console.log('photoImgLeft ' + offsetPosX + photoImgLeft)
-					break;
+						break;
 				}
 			}
 		}
-
-		function turning(direction) {
-			var options = $.extend({
-				'transform': 'scale(' + options.scale * 2 + ') rotate(' + options.rotate + 'deg)',
-			}, options);
-			switch (direction) {
-				case 'right':
-					options.rotate += 90;
-					break;
-				case 'left':
-					options.rotate -= 90;
-					break;
-			}
-			return cssSettings(options)
-		}
-
-		function cssSettings(options) {
-			var options = $.extend({
-					// scale: 0,
-					// rotate: 0,
-					// left:0,
-					// top:0
-				}, options),
-				cssObj = options
-			console.log(cssObj)
-			return cssObj;
+		//某些必须集合多个参数的样式的设置模式
+		function cssSettings(config) {
+			options = $.extend(options, config);
+			var cssObj = options;
+			if (options.rotate || options.scale) {
+				var returncss = {
+					'transform': 'rotate(' + options.rotate + 'deg) scale(' + options.scale + ')'
+				}
+				console.log(options)
+				return returncss;
+			};
 		}
 	}()
 })

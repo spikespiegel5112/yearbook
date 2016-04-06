@@ -142,14 +142,14 @@
 
 			var _this = this,
 				imgSrc = _this.attr('src'),
-				containerheight = $(options.container).height(),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
-			console.log(containerheight)
-				//container设置判断
+			//container设置判断
 			if (options.container != '') {
+				containerheight = $(options.container).height(),
 				windowWidth = $(options.container).width();
+				console.log(containerheight)
 			}
 			//障碍物处理判断
 			if (typeof options.obstacleX == 'number') {

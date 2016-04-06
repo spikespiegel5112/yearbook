@@ -67,7 +67,7 @@ $(function() {
 				left: 0,
 				top: 0
 			}, options),
-			image = $('.common_epimage_item').css('transition', 'transform 0.5s'),
+			image = $('.common_epimage_item'),
 			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
 			tlBtn = $(".common_eptoolbar_wrapper .turnleft a"),
 			zoominBtn = $('.common_epzomming_wrapper .zoomin'),
@@ -89,6 +89,7 @@ $(function() {
 			marginleft = epscrollbarWidth / 2;
 
 		var init = function() {
+			image.css('transition', 'transform 0.5s');
 			zoomingSlider.css('margin-left', marginleft);
 			photoImg.css(options)
 		}();

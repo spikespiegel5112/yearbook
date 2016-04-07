@@ -151,7 +151,9 @@
 		activity_1602_1();
 	});
 	function activity_1602_1(){
-		$('.activity_banner_wrapper img').imgAlignCenter();
+		$('.activity_banner_wrapper img').align({
+			container:'.activity_banner_wrapper'
+		});
 	}
 	</script>
 </body>

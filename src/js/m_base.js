@@ -145,15 +145,12 @@
 				reload = false,
 				thisWidth = 0,
 				thisHeight = 0,
-
+				containerheight = 0,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
 
-			//container设置判断
-			if (options.container != '') {
-				windowWidth = $(options.container).width();
-			}
+
 			//当居中元素是img标签时，特殊处理！
 			if (_this.is('img')) {
 				//递归判断需要居中的图片是否加载完成，如果没有就重载
@@ -179,14 +176,17 @@
 				//缺省情况
 			} else {
 				//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
-				_this.each(function(index) {
-					var containerheight = $(options.container).eq(index).height();
-					checkPosition($(this), containerheight)
-				})
-
+				//container设置判断
+				if (options.container != '') {
+					_this.each(function(index) {
+						var containerheight = $(options.container).eq(index).height();
+						windowWidth = $(options.container).width();
+						checkPosition($(this));
+					})
+				}
 			}
 
-			function checkPosition(_this, containerheight) {
+			function checkPosition(_this) {
 				clearTimeout();
 				thisWidth = _this.outerWidth(),
 					thisHeight = _this.outerHeight();

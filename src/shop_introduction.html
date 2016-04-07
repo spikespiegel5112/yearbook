@@ -304,7 +304,9 @@
 	<script>
 	$(function(){
 		shopIntroduction();
-		$('.shop_banner_wrapper img').align();
+		$('.shop_banner_wrapper img').align({
+			container: '.shop_banner_wrapper'
+		});
 	});
 	function shopIntroduction(){
 		//设置表格背景颜色

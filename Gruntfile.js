@@ -24,7 +24,8 @@ module.exports = function(grunt) {
                 '<%= meta.srcPath %>css/makebook.css',
                 '<%= meta.srcPath %>css/staticize.css',
                 '<%= meta.srcPath %>css/tplshowcase.css',
-                '<%= meta.srcPath %>css/pc.css'
+                '<%= meta.srcPath %>css/pc.css',
+                '<%= meta.srcPath %>css/sem.css'
             ],
             wap : [
                 '<%= meta.srcPath %>css/m_reset.css',

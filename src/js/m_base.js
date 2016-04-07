@@ -183,6 +183,8 @@
 						windowWidth = $(options.container).width();
 						checkPosition($(this));
 					})
+				}else{
+					checkPosition(_this);
 				}
 			}
 

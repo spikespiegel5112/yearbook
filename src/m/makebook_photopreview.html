@@ -10,27 +10,38 @@
 	<!-- build:css ../css/m.all.min.css -->
 	<link rel="stylesheet" type="text/css" href="../css/m_reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/m_common.css">
+	<link rel="stylesheet" type="text/css" href="../css/m_makebook.css">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459505971_796465.css">
-	<title>照片查看</title>
+	<title>照片修改</title>
 </head>
 
 <body>
-	<div class='main_conatainer'>
-		<div class='common_editphoto_wrapper'>
-			<div class='common_epeditarea_wrapper'>
-				<img class='common_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
+	<div class='makebook_editphoto_conatainer viewmode_portrait'>
+		<div class="ybwechatheader_wrapper">
+			<a class='left_btn back_btn' href="javascript:;"><span class="ybiconfont ybicon-backward2"></span></a>
+			<div class="bp_barrageswitch_item">
+				<a href="javascript:;">
+					<div></div>
+				</a>
 			</div>
-			<div class='common_eptools_wrapper'>
-				<div class='common_epzomming_wrapper'>
-					<a class='zoomout' href="javascript:;">-</a>
-					<div class='common_epscrollbar_item'>
+			<p>照片修改</p>
+			<a class='action_btn right_btn' href="javascript:;">保存</a>
+		</div>
+		<div class='makebook_editphoto_wrapper'>
+			<div class='makebook_epeditarea_wrapper'>
+				<img class='makebook_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
+			</div>
+			<div class='makebook_eptools_wrapper'>
+				<div class='makebook_epzomming_wrapper'>
+					<!-- <a class='zoomout' href="javascript:;">-</a> -->
+					<div class='makebook_epscrollbar_item'>
 						<span></span>
 						<label></label>
 					</div>
-					<a class='zoomin' href="javascript:;">+</a>
+					<!-- <a class='zoomin' href="javascript:;">+</a> -->
 				</div>
-				<ul class='common_eptoolbar_wrapper'>
+				<ul class='makebook_eptoolbar_wrapper'>
 					<li class='turnleft'>
 						<a class='ybiconfont ybicon-undo' href="javascript:;"></a>
 					</li>
@@ -52,10 +63,10 @@
 <script type="text/javascript">
 $(function() {
 
-	$('.common_editphoto_wrapper').css('height', $(window).height(0));
-	$('.common_epeditarea_wrapper').align();
-	$('.common_epimage_item').align({
-		container: '.common_epeditarea_wrapper'
+	$('.makebook_editphoto_wrapper').css('height', $(window).height(0));
+	$('.makebook_epeditarea_wrapper').align();
+	$('.makebook_epimage_item').align({
+		container: '.makebook_epeditarea_wrapper'
 	});
 	$.remResizing({
 		fontsize: 20
@@ -67,19 +78,19 @@ $(function() {
 				left: 0,
 				top: 0
 			}, options),
-			image = $('.common_epimage_item').css('transition', 'transform 0.5s'),
-			trBtn = $(".common_eptoolbar_wrapper .turnright a"),
-			tlBtn = $(".common_eptoolbar_wrapper .turnleft a"),
-			zoominBtn = $('.common_epzomming_wrapper .zoomin'),
-			zoomoutBtn = $('.common_epzomming_wrapper .zoomout'),
-			reScaleBtn = $('.common_eptoolbar_wrapper .rescale'),
-			rePositionBtn = $('.common_eptoolbar_wrapper .reposition'),
-			fitwidthBtn = $('.common_eptoolbar_wrapper .fitwidth'),
-			fitheightBtn = $('.common_eptoolbar_wrapper .fitheight'),
-			epscrollbar = $('.common_epscrollbar_item'),
+			image = $('.makebook_epimage_item'),
+			trBtn = $(".makebook_eptoolbar_wrapper .turnright a"),
+			tlBtn = $(".makebook_eptoolbar_wrapper .turnleft a"),
+			zoominBtn = $('.makebook_epzomming_wrapper .zoomin'),
+			zoomoutBtn = $('.makebook_epzomming_wrapper .zoomout'),
+			reScaleBtn = $('.makebook_eptoolbar_wrapper .rescale'),
+			rePositionBtn = $('.makebook_eptoolbar_wrapper .reposition'),
+			fitwidthBtn = $('.makebook_eptoolbar_wrapper .fitwidth'),
+			fitheightBtn = $('.makebook_eptoolbar_wrapper .fitheight'),
+			epscrollbar = $('.makebook_epscrollbar_item'),
 			epscrollbarWidth = epscrollbar.find('label').width(),
 			zoomingSlider = epscrollbar.find('span'),
-			photoImg = $('.common_epimage_item'),
+			photoImg = $('.makebook_epimage_item'),
 			startPosX = 0,
 			startPosY = 0,
 			endPosX = 0,
@@ -89,6 +100,7 @@ $(function() {
 			marginleft = epscrollbarWidth / 2;
 
 		var init = function() {
+			image.css('transition', 'transform 0.5s');
 			zoomingSlider.css('margin-left', marginleft);
 			photoImg.css(options)
 		}();

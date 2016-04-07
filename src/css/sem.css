@@ -82,6 +82,7 @@
 
 .sem_mainlist_wrapper li div a{
 	display: block;
+	height: 20px;/*for IE9*/
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	word-wrap: break-word;
@@ -908,6 +909,9 @@
 	width: 1150px;
 	position: relative;
 }
+/*.sem_interactionbook_container .sem_banner_wrapper{
+	height: 280px;
+}*/
 .sem_interactionbook_container .sem_mainlist_wrapper{
 	float: left;
 	width: 780px;

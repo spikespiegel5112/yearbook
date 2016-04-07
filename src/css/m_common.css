@@ -2182,3 +2182,227 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	border-radius: 50%;
 	opacity: 0.5;
 }
+
+/*添加新订单*/
+
+.add_order_container{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+.add_order_container .new_order_wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 6px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.order_info .ot{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #333;
+}
+
+.order_info .ot .name{
+    display: inline-block;
+}
+
+.order_info .ot .name span{
+    display: inline-block;
+    max-width: 138px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.order_info .ot .sumprice{
+    float: right;
+    font-size: 18px;
+}
+
+.order_info .om{
+    position: relative;
+    padding: 5px 0 15px;
+    overflow: hidden;
+}
+
+.order_info .om .book{
+    float: left;
+    width: 85px;
+    height: 105px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.order_info .om .book img{
+    width: 100%;
+    height: 100%;
+}
+
+.order_info .om .bd_wrap{
+    margin-left: 10px;
+    padding-left: 90px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order_info .om .bd_wrap ul{
+    margin: 0;
+}
+
+.order_info .om .bd_wrap li > div{
+    font-size: 14px;
+    color: #999;
+    line-height: 25px;
+}
+
+.order_info .om .bd_wrap .ybcommon_counter_item{
+    margin: 5px 0 0;
+}
+
+.order_info .om .edit_order{
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.order_info .od_btn_wrap{
+    position: relative;
+    margin: 0;
+}
+
+.order_info .od_btn_wrap a{
+    margin-right: 12px;
+    font-size: 16px;
+    color: #999;
+}
+
+.order_info .om .edit_order:hover,
+.order_info .od_btn_wrap a:hover{
+    color: #70ca5d;
+}
+
+.order_info .od_btn_wrap a i{
+    margin-right: 3px;
+}
+
+.order_info .od_btn_wrap .delete{
+    float: right;
+}
+
+
+.order_manage .account_wrap{
+    position: fixed;
+    bottom: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 55px;
+    line-height:55px;
+    text-align: right;
+    background-color: #fff;
+    border-top: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+.om_btn_wrap{
+    position: relative;
+    margin: 10px auto;
+}
+
+.om_btn_wrap .om_btn{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #ff6600;
+    border-radius: 4px;
+}
+
+.om_btn_wrap .om_btn:hover{
+    background-color: #df610c;
+}
+
+.om_btn_wrap .om_btn:active{
+    background-color: #c9570a;
+}
+
+.new_order_wrap .om .cover{
+    float: left;
+}
+
+.order_info .om .cover .page_num{
+    padding: 6px 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.order_info .om .bd_wrap .style label{
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #999;
+
+}
+
+.order_info .om .bd_wrap .style .item {
+    position: relative;
+    margin: 0 0 8px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.order_info .om .bd_wrap .style.size .item{
+    width: 200px;
+}
+
+.order_info .om .bd_wrap .style.binding .item{
+    display: inline-block;
+    margin-right: 6px;
+    width: 95px;
+}
+
+.order_info .om .bd_wrap .style .item.selected{
+    border: 1px solid #ff6600;
+}
+
+.order_info .om .bd_wrap .style .item i{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 10px;
+    border-style: solid;
+    border-width: 12px;
+    border-color: transparent #ff6600 #ff6600 transparent;
+
+}
+
+.order_info .om .bd_wrap .style .item.selected i{
+    display: block;
+}

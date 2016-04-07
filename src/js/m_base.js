@@ -134,7 +134,7 @@
 			options = $.extend({
 				position: 'both',
 				container: '',
-				isImage:false,
+				isImage: false,
 				obstacleX: 0,
 				obstacleY: 0,
 				offsetY: 0
@@ -142,54 +142,55 @@
 
 			var _this = this,
 				imgSrc = _this.attr('src'),
+				reload = false,
+				thisWidth = 0,
+				thisHeight = 0,
+
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
+
 			//container设置判断
 			if (options.container != '') {
-				containerheight = $(options.container).height(),
 				windowWidth = $(options.container).width();
-				console.log(containerheight)
 			}
-			//障碍物处理判断
-			if (typeof options.obstacleX == 'number') {
-				windowWidth = windowWidth - options.obstacleX;
-			} else {
-				var sum = 0;
-				for (var i = 0; i < options.obstacleX.length; i++) {
-					if ($(options.obstacleX[i]).is(':hidden')) {
-						sum += 0;
-					} else {
-						sum += $(options.obstacleX[i]).height();
+			//当居中元素是img标签时，特殊处理！
+			if (_this.is('img')) {
+				//递归判断需要居中的图片是否加载完成，如果没有就重载
+				var checkImgLoading = function() {
+					_this.each(function(index) {
+						if ($(this).height() == 0) {
+							console.log('load failed ' + $(this).width())
+							reload = true;
+							return false;
+						} else {
+							var containerheight = $(options.container).eq(index).height();
+							checkPosition($(this), containerheight)
+						}
+					});
+					if (reload) {
+						reload = false;
+						setTimeout(function() {
+							checkImgLoading();
+						}, 100);
 					}
-					sum += $(options.obstacleX[i]).height();
-				};
-				windowWidth = windowWidth - sum;
-			}
-			if (typeof options.obstacleY == 'number') {
-				windowHeight = windowHeight - options.obstacleY;
+				}
+				checkImgLoading();
+				//缺省情况
 			} else {
-				var sum = 0;
-				for (var i = 0; i < options.obstacleY.length; i++) {
-					if ($(options.obstacleY[i]).is(':hidden')) {
-						sum += 0;
-					} else {
-						sum += $(options.obstacleY[i]).height();
-					}
-				};
-				windowHeight = windowHeight - sum;
-				console.log('offsetY' + options.offsetY);
-			}
-			if (options.isImage) {
-				_this.load(function() {
-					checkPosition();
-				});
-			}else{
-				checkPosition();
+				//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
+				_this.each(function(index) {
+					var containerheight = $(options.container).eq(index).height();
+					checkPosition($(this), containerheight)
+				})
+
 			}
 
-			function checkPosition() {
-				var thisWidth = _this.width;
+			function checkPosition(_this, containerheight) {
+				clearTimeout();
+				thisWidth = _this.outerWidth(),
+					thisHeight = _this.outerHeight();
+
 				switch (options.position) {
 					case 'both':
 						aligning(function(thisWidth, thisHeight) {
@@ -201,7 +202,9 @@
 							if (marginY <= 0) {
 								marginY = 0;
 							};
-							console.log(thisWidth)
+							// alert(_this.width())
+							console.log(thisWidth);
+							// console.log(containerheight);
 							if (thisWidth <= windowWidth) {
 								_this.css({
 									'margin': marginY + options.offsetY + 'px auto'
@@ -249,9 +252,8 @@
 			}
 
 			function aligning(callback) {
-				var thisWidth = _this.outerWidth(),
-					thisHeight = _this.outerHeight();
-
+				// var thisWidth = _this.outerWidth(),
+				// 	thisHeight = _this.outerHeight();
 				$(window).resize(function() {
 					thisWidth = _this.outerWidth();
 					thisHeight = _this.outerHeight();

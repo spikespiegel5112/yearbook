@@ -89,3 +89,279 @@
 	background-color: #fff;
 	border-radius: 50%;
 }
+/*列表模式*/
+.make_book_wrap{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.list_mode .page_wrap{
+    position: relative;
+    float: left;
+    margin: 5px 0;
+    padding: 15px 0;
+    width: 50%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.list_mode .page_wrap .page {
+    position: relative;
+    width: 9rem;
+    height: 12.5rem;
+}
+
+.list_mode .page_wrap:nth-child(odd) .page{
+    float: right;
+    padding-right: 5px;
+}
+
+.list_mode .page_wrap:nth-child(even) .page{
+    float: left;
+    padding-left: 5px;
+}
+
+.list_mode .page_wrap .page img{
+    /*display: block;
+    margin: 0 auto;*/
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    box-sizing: content-box;
+}
+
+.page_wrap .page .page_num{
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    padding: 0 5px 0 8px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #31b8d3;
+}
+
+.page_wrap:nth-child(odd) .page .page_num{
+    display: block;
+}
+
+.page_wrap .page .page_num::before{
+    content: " ";
+    position: absolute;
+    top: 24px;
+    left: 0;
+    border-style: solid;
+    border-width: 8px 0 0 8px;
+    border-color: #333 transparent transparent transparent;
+}
+
+.page_wrap .page .page_num::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    border-style: solid;
+    border-width: 12px 0 12px 12px;
+    border-color: transparent transparent transparent #31b8d3;
+}
+
+.page_wrap .page .btn_group{
+    display: none;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.page_wrap:nth-child(even) .page .btn_group{
+    display: block;
+}
+
+.page_wrap.cover .page .btn_group .delete{
+    opacity: 0;
+}
+
+.page_wrap .page .btn_group a{
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #71ca5e;
+    background-color: #fff;
+    border: 1px solid #71ca5e;
+    border-radius: 2px;
+}
+
+.page_wrap .page .btn_group a:hover,
+.page_wrap .page .btn_group a:active{
+    color: #e7b54b;
+    border: 1px solid #e7b54b;
+}
+
+.page_wrap .page .btn_group a i{
+    font-size: 14px;
+}
+
+.make_book_wrap > .btn_group{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    border-top: 2px solid #ddd;
+}
+
+.make_book_wrap > .btn_group a{
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    width: 40%;
+    font-size: 18px;
+    color: #f60;
+    background-color: #fff;
+    border: 1px solid #f60;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.make_book_wrap > .btn_group a.print{
+    color: #fff;
+    background-color: #f60;
+}
+
+.make_book_wrap > .btn_group a:active{
+    color: #fff;
+    background-color: #e55f06;
+}
+
+.delete_page_tips{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.delete_page_tips .tips{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -78px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 3px #333;
+    overflow: hidden;
+}
+
+.delete_page_tips .tips h2{
+    margin: 15px 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.delete_page_tips .tips p{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 2;
+    color: #000;
+}
+
+.delete_page_tips .tips .btn_group{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+}
+
+.delete_page_tips .tips .btn_group a{
+    float: left;
+    width: 50%;
+    font-size: 14px;
+    color: #666;
+    box-sizing: border-box;
+}
+
+.delete_page_tips .tips .btn_group a:first-child{
+    border-right: 1px solid #ddd;
+}
+
+.delete_page_tips .tips .btn_group a:active{
+    background-color: #ddd;
+}
+
+/*单页模式下编辑*/
+.edit_book_con{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("../img/m/makebook/makebook_bg.jpg") no-repeat 0;
+    background-size: cover;
+}
+
+.edit_book_con .ybwechatheader_wrapper{
+    background-color: #251f1c;
+}
+
+.edit_book_con .ybwechatheader_wrapper .print{
+    margin: 7px 0.5em;
+    height: 25px;
+    line-height: 25px;
+    background-color: #fe7100;
+    border-radius: 13px;
+}
+
+.make_book_wrap .single_mode{
+    position: relative;
+    margin: 5px auto;
+}
+
+.single_mode .tpl{
+    width: 24.75rem;
+    height: 16.875rem;
+    margin: 0 auto;
+}
+
+.single_mode .tpl .double_con{
+    width: 24.75rem;
+    height: 100%;
+    background: url("../img/m/makebook/innerpage_bg.jpg") no-repeat center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.single_mode .tpl .double_con .page{
+    position: relative;
+    float: left;
+    width: 11.875rem;
+    height: 16.875rem;
+    overflow: hidden;
+}
+
+.single_mode .tpl .double_con .page.left{
+    margin-left: .5rem;
+}
+
+/*.single_mode .tpl .double_con .page.left::before{
+    position: absolute;
+    left: -14px;
+    top: 0;
+    content: " ";
+    width: 14px;
+    height: 100%;
+    background: url("../img/m/makebook/innerpage_border.jpg") no-repeat;
+    background-size: cover;
+}*/

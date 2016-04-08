@@ -373,23 +373,7 @@
 				}
 				htmlEl.css('font-size', options.fontsize * factor);
 			}
-		},
-        uploadImgPath:function(selector){
-            $(selector).click(function(){
-                var optionsContainer = $('.select_upload_img');
-                optionsContainer.fadeIn('fast');
-
-                //关闭
-                optionsContainer.find('a').click(function(e){
-                    optionsContainer.find('a').each(function (e) {
-                        $(this).removeClass('selected');
-                    });
-                    $(this).addClass('selected');
-                    optionsContainer.fadeOut('fast');
-                })
-
-            });
-        }
+		}
 	});
 
 	/**

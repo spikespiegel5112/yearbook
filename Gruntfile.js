@@ -166,31 +166,31 @@ module.exports = function(grunt) {
                     src: '*.html',
                     dest: '<%= meta.distPath %>/'
                 },
-                {
-                    //复制WAPhtml文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: 'm/*.html',
-                    dest: '<%= meta.distPath %>/'
-                },{
-                    //复制图像文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: 'img/**/*',
-                    dest: '<%= meta.distPath %>/'
-                },{
-                    //复制css文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
-                    dest: '<%= meta.distPath %>/'
-                }, {
-                    //复制js文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: ['js/**/*.js', '!**/base.js'],
-                    dest: '<%= meta.distPath %>/'
-                }]
+                    {
+                        //复制WAPhtml文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: 'm/*.html',
+                        dest: '<%= meta.distPath %>/'
+                    },{
+                        //复制图像文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: 'img/**/*',
+                        dest: '<%= meta.distPath %>/'
+                    },{
+                        //复制css文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
+                        dest: '<%= meta.distPath %>/'
+                    }, {
+                        //复制js文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: ['js/**/*.js', '!**/base.js'],
+                        dest: '<%= meta.distPath %>/'
+                    }]
             }
         },
 

@@ -577,6 +577,7 @@
 				thisWidth = 0,
 				thisHeight = 0,
 				containerheight = 0,
+				timer,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
@@ -594,17 +595,27 @@
 						} else {
 							var containerheight = $(options.container).eq(index).height();
 							checkPosition($(this), containerheight)
+							console.log('第'+index+'张图片的高度:'+containerheight)
 						}
 					});
 					if (reload) {
 						reload = false;
-						setTimeout(function() {
-							checkImgLoading();
-						}, 100);
+						checkBrowser({
+							ie:function(){
+								timer=window.setTimeout(function() {
+									checkImgLoading();
+								}, 100);
+							},
+							other:function(){
+								timer=setTimeout(function() {
+									checkImgLoading();
+								}, 100);
+							}
+						})
 					}
 				}
 				checkImgLoading();
-				//缺省情况
+			//缺省情况
 			} else {
 				//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
 				//container设置判断
@@ -620,9 +631,18 @@
 			}
 
 			function checkPosition(_this) {
-				clearTimeout();
+				console.log('begin aligning')
+				checkBrowser({
+					ie:function(){
+						window.clearTimeout(timer);
+					},
+					other:function(){
+						clearTimeout(timer);
+					}
+				})
+				
 				thisWidth = _this.outerWidth(),
-					thisHeight = _this.outerHeight();
+				thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
@@ -693,6 +713,20 @@
 					return callback(thisWidth, thisHeight)
 				});
 				return callback(thisWidth, thisHeight);
+			}
+
+			function checkBrowser(callback){
+				callback=$.extend({
+					ie:function(){return;},
+					other:function(){return;}
+				},callback)
+				if(navigator.appName.indexOf("Explorer") > -1){
+					console.log('IE')
+					callback.ie();
+				}else{
+					console.log('other')
+					callback.other();
+				}
 			}
 		}
 	});

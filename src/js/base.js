@@ -577,6 +577,7 @@
 				thisWidth = 0,
 				thisHeight = 0,
 				containerheight = 0,
+				timer,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
@@ -598,9 +599,18 @@
 					});
 					if (reload) {
 						reload = false;
-						setTimeout(function() {
-							checkImgLoading();
-						}, 100);
+						checkBrowser({
+							ie:function(){
+								timer=window.setTimeout(function() {
+									checkImgLoading();
+								}, 100);
+							},
+							other:function(){
+								timer=setTimeout(function() {
+									checkImgLoading();
+								}, 100);
+							}
+						})
 					}
 				}
 				checkImgLoading();
@@ -620,7 +630,15 @@
 			}
 
 			function checkPosition(_this) {
-				clearTimeout();
+				checkBrowser({
+					ie:function(){
+						window.clearTimeout(timer);
+					},
+					other:function(){
+						clearTimeout(timer);
+					}
+				})
+				
 				thisWidth = _this.outerWidth(),
 					thisHeight = _this.outerHeight();
 
@@ -693,6 +711,20 @@
 					return callback(thisWidth, thisHeight)
 				});
 				return callback(thisWidth, thisHeight);
+			}
+
+			function checkBrowser(callback){
+				var callback=$.extend({
+					ie:function(){return;},
+					other:function(){return;}
+				},callback)
+				if(navigator.appName.indexOf("Explorer") > -1){
+					alert('IE')
+					callback.ie();
+				}else{
+					console.log('other')
+					callback.other();
+				}
 			}
 		}
 	});

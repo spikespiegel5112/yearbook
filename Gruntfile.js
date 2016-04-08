@@ -385,7 +385,8 @@ module.exports = function(grunt) {
     grunt.registerTask('compile-js', ['concat', 'uglify']);
     grunt.registerTask('compile', ['clean:all', 'useminPrepare', 'compile-js', 'compile-css', 'copy', 'usemin'/*,'px2rem'*/]);
     grunt.registerTask('build', ['compile']);
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('build2', ['clean:all', 'concat',/* 'uglify',*/ 'cssmin', 'clean:sourceMap', 'copy', 'usemin']);
+    grunt.registerTask('default', ['build2']);
     grunt.registerTask('publish', ['build', 'sftp-deploy']);
     grunt.registerTask('server', ['build',  'connect:srcServer', 'connect:distServer', 'watch']);
 

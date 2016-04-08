@@ -595,6 +595,7 @@
 						} else {
 							var containerheight = $(options.container).eq(index).height();
 							checkPosition($(this), containerheight)
+							console.log('第'+index+'张图片的高度:'+containerheight)
 						}
 					});
 					if (reload) {
@@ -614,7 +615,7 @@
 					}
 				}
 				checkImgLoading();
-				//缺省情况
+			//缺省情况
 			} else {
 				//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
 				//container设置判断
@@ -630,6 +631,7 @@
 			}
 
 			function checkPosition(_this) {
+				console.log('begin aligning')
 				checkBrowser({
 					ie:function(){
 						window.clearTimeout(timer);
@@ -640,7 +642,7 @@
 				})
 				
 				thisWidth = _this.outerWidth(),
-					thisHeight = _this.outerHeight();
+				thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
@@ -714,7 +716,7 @@
 			}
 
 			function checkBrowser(callback){
-				var callback=$.extend({
+				callback=$.extend({
 					ie:function(){return;},
 					other:function(){return;}
 				},callback)

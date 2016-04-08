@@ -719,7 +719,7 @@
 					other:function(){return;}
 				},callback)
 				if(navigator.appName.indexOf("Explorer") > -1){
-					alert('IE')
+					console.log('IE')
 					callback.ie();
 				}else{
 					console.log('other')

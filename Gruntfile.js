@@ -131,7 +131,7 @@ module.exports = function(grunt) {
                     banner: '<%= banner %>'
                 },
                 src: YBConfig.css.pc,
-                dest: '<%= meta.distPath %>css/all.min.css'
+                dest: '<%= meta.distPath %>css/all.css'
             },
             mcss: {
                 options: {
@@ -166,47 +166,31 @@ module.exports = function(grunt) {
                     src: '*.html',
                     dest: '<%= meta.distPath %>/'
                 },
-                {
-                    //复制WAPhtml文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: 'm/*.html',
-                    dest: '<%= meta.distPath %>/'
-                },{
-                    //复制图像文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: 'img/**/*',
-                    dest: '<%= meta.distPath %>/'
-                },
-                // {
-                //     //复制css文件
-                //     expand: true,
-                //     cwd: '<%= meta.srcPath %>',
-                //     src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
-                //     dest: '<%= meta.distPath %>/'
-                // }, {
-                //     //复制js文件
-                //     expand: true,
-                //     cwd: '<%= meta.srcPath %>',
-                //     src: ['js/**/*.js', '!**/base.js'],
-                //     dest: '<%= meta.distPath %>/'
-                // },
-                {
-                    //复制全部css文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: ['css/**/*.css'],
-                    dest: '<%= meta.distPath %>/'
-                }, 
-                {
-                    //复制全部js文件
-                    expand: true,
-                    cwd: '<%= meta.srcPath %>',
-                    src: ['js/**/*.js'],
-                    dest: '<%= meta.distPath %>/'
-                }
-                ]
+                    {
+                        //复制WAPhtml文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: 'm/*.html',
+                        dest: '<%= meta.distPath %>/'
+                    },{
+                        //复制图像文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: 'img/**/*',
+                        dest: '<%= meta.distPath %>/'
+                    },{
+                        //复制css文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: ['css/m_jquery.sureInput.css','css/m_welcome.css','css/activity/*.css'],
+                        dest: '<%= meta.distPath %>/'
+                    }, {
+                        //复制js文件
+                        expand: true,
+                        cwd: '<%= meta.srcPath %>',
+                        src: ['js/**/*.js', '!**/base.js'],
+                        dest: '<%= meta.distPath %>/'
+                    }]
             }
         },
 
@@ -401,8 +385,7 @@ module.exports = function(grunt) {
     grunt.registerTask('compile-js', ['concat', 'uglify']);
     grunt.registerTask('compile', ['clean:all', 'useminPrepare', 'compile-js', 'compile-css', 'copy', 'usemin'/*,'px2rem'*/]);
     grunt.registerTask('build', ['compile']);
-    grunt.registerTask('build2', ['clean:all', 'concat', /*'uglify', /*'cssmin', *//*'clean:sourceMap', */'copy', 'usemin']);
-    grunt.registerTask('default', ['build2']);
+    grunt.registerTask('default', ['build']);
     grunt.registerTask('publish', ['build', 'sftp-deploy']);
     grunt.registerTask('server', ['build',  'connect:srcServer', 'connect:distServer', 'watch']);
 

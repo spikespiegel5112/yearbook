@@ -2414,3 +2414,35 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 .order_info .om .bd_wrap .style .item.selected i{
     display: block;
 }
+
+/*common upload img wrap*/
+.select_upload_img{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.select_upload_img .options{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    bottom: 0;
+}
+
+.select_upload_img .options li a{
+    display: block;
+    font-size: 18px;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #333;
+    border-top: 1px solid #ddd;
+}
+
+.select_upload_img .options li a:active,
+.select_upload_img .options li a.selected{
+    background-color: #eee;
+}

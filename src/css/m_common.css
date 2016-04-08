@@ -2416,7 +2416,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 }
 
 /*common upload img wrap*/
-.select_upload_img{
+.cm_bottom_menu{
     display: none;
     position: fixed;
     top: 0;
@@ -2426,26 +2426,60 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     z-index: 99;
 }
 
-.select_upload_img .options{
+.cm_bottom_menu .options{
+    display: block;
     position: absolute;
     background: #fff;
     width: 100%;
-    bottom: 0;
 }
 
-.select_upload_img .options li{
+.cm_bottom_menu .options.active{
+    bottom: 0;
+    animation: transBottom .2s ease-in-out;
+    -webkit-animation: transBottom .2s ease-in-out;
+}
+
+.cm_bottom_menu .options.hide{
+    bottom: -156px;
+    animation: transTop .2s ease-in-out;
+    -webkit-animation: transTop .2s ease-in-out;
+}
+
+@-webkit-keyframes transBottom {
+    from {
+        opacity: 0;
+        bottom: -156px;
+    }
+    to {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@-webkit-keyframes transTop {
+    from {
+        opacity: 1;
+        bottom: 0;
+    }
+    to {
+        opacity: 0;
+        bottom: -156px;
+    }
+}
+
+.cm_bottom_menu .options li{
     display: block;
     position: relative;
 }
 
-.select_upload_img .options li .input_file{
+.cm_bottom_menu .options li .input_file{
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
 }
 
-.select_upload_img .options li a{
+.cm_bottom_menu .options li a{
     display: block;
     font-size: 18px;
     line-height: 2.5rem;
@@ -2454,8 +2488,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
     border-top: 1px solid #ddd;
 }
 
-.select_upload_img .options li a:active,
-.select_upload_img .options li a.selected{
+.cm_bottom_menu .options li a:active,
+.cm_bottom_menu .options li a.selected{
     background-color: #eee;
 }
 

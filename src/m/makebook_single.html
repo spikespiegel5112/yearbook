@@ -192,12 +192,12 @@
         </div>
 	</div>
 <!--选择上传路径-->
-<div class="select_upload_img">
+<div class="cm_bottom_menu">
     <div class="options">
         <ul>
-            <li><input class="input_file" type="file" value=""><a class="fromMobile selected" href="javascript:;">从手机上传</a></li>
-            <li><a class="fromYbalbum" href="javascript:;">从忆尔像册上传</a></li>
-            <li><a class="cancel" href="javascript:;">取消上传</a></li>
+            <li><input class="input_file" type="file" value=""><a class="selected" href="javascript:;">从手机上传</a></li>
+            <li><a class="" href="javascript:;">从忆尔像册上传</a></li>
+            <li><a class="" href="javascript:;">取消上传</a></li>
         </ul>
     </div>
 </div>
@@ -208,7 +208,7 @@
     $(document).ready(function(){
         remResizing();
         initEditBookWrap();
-        uploadImgPath('.uploadImg1')
+        popBottomMenu('.uploadImg1');
     });
 
     function initEditBookWrap(){
@@ -228,8 +228,6 @@
         //编辑图片
         $('.uploadImg1').each(function(){
             //进度遮罩
-            var maskWidth = $(this).prev().width();
-            var maskHeight = $(this).prev().height();
             $(this).before("<div class='loadPercent'><span>完成：<b>80%</b></span></div>");
 
             //点我编辑
@@ -255,10 +253,10 @@
         });*/
     }
 
-    function uploadImgPath(selector){
+    function popBottomMenu(selector){
         $(selector).click(function(){
-            var optionsContainer = $('.select_upload_img');
-            optionsContainer.fadeIn('fast');
+            var optionsContainer = $('.cm_bottom_menu');
+            optionsContainer.fadeIn('fast').find('.options').addClass('active').removeClass('hide');
 
             //关闭
             optionsContainer.find('a').click(function(e){
@@ -266,6 +264,7 @@
                     $(this).removeClass('selected');
                 });
                 $(this).addClass('selected');
+                optionsContainer.find('.options').addClass('hide').removeClass('active');
                 optionsContainer.fadeOut('fast');
             })
 

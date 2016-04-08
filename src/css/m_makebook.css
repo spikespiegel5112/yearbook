@@ -343,6 +343,18 @@
     box-sizing: border-box;
 }
 
+.single_mode .tpl .double_con::after{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -11px;
+    content: " ";
+    width: 22px;
+    height: 100%;
+    background: url(../img/m/makebook/inner_page_shadow.png) no-repeat 0;
+    background-size: cover;
+}
+
 .single_mode .tpl .double_con .page{
     position: relative;
     float: left;

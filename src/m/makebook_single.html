@@ -89,15 +89,15 @@
                                         </div>
                                         <div class="photo0_container">
                                             <span id="imgMask0" imgwidth="1324" imgheight="907" slotnum="0" slottype="mask" class="photoframe_common_property photoframe0"></span>
-                                            <img slottype="img" slotnum="0" class="img0" src="">
+                                            <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                         </div>
                                         <div class="photo1_container">
                                             <span id="imgMask1" imgwidth="498" imgheight="334" slotnum="1" slottype="mask" class="photoframe_common_property photoframe1"></span>
-                                            <img slottype="img" slotnum="1" class="img1" src="">
+                                            <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                         </div>
                                         <div class="photo2_container">
                                             <span id="imgMask2" imgwidth="389" imgheight="261" slotnum="2" slottype="mask" class="photoframe_common_property photoframe2"></span>
-                                            <img slottype="img" slotnum="2" class="img2" src="">
+                                            <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                         </div>
                                         <div class="content_container">
                                             <strong>
@@ -134,7 +134,7 @@
                                             </div>
                                         </div>
                                         <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-                                        <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="img1">
+                                        <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                     </div>
                                 </div>
                                 <div class="page right">
@@ -147,7 +147,7 @@
                                             </div>
                                         </div>
                                         <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-                                        <img slottype="img" slotnum="1" src="" class="img1">
+                                        <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
                                             </div>
                                         </div>
                                         <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-                                        <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="img1">
+                                        <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                     </div>
                                 </div>
                                 <div class="page right">
@@ -179,7 +179,7 @@
                                             </div>
                                         </div>
                                         <span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
-                                        <img slottype="img" slotnum="1" src="" class="img1">
+                                        <img slottype="img" slotnum="1" src="../img/m/makebook/upload_photo.png" class="uploadImg1">
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
 <div class="select_upload_img">
     <div class="options">
         <ul>
-            <li><a class="fromMobile selected" href="javascript:;">从手机上传</a></li>
+            <li><input class="input_file" type="file" value=""><a class="fromMobile selected" href="javascript:;">从手机上传</a></li>
             <li><a class="fromYbalbum" href="javascript:;">从忆尔像册上传</a></li>
             <li><a class="cancel" href="javascript:;">取消上传</a></li>
         </ul>
@@ -204,24 +204,75 @@
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
-<script type="text/javascript" src="../js/m_base.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         remResizing();
-        $.uploadImgPath('.uploadImg1')
+        initEditBookWrap();
+        uploadImgPath('.uploadImg1')
     });
-    var swiper = new Swiper('.single_mode', {
-        loop:false,
-        // 如果需要前进后退按钮
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        pagination : '.swiper-pagination',
-        paginationType : 'custom',
-        paginationCustomRender: function (swiper, current, total) {
-            return current + ' / ' + total;
-        }
-    });
-    var remResizing=function(options) {
+
+    function initEditBookWrap(){
+        //init swiper slide
+        var swiper = new Swiper('.single_mode', {
+            loop:false,
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            pagination : '.swiper-pagination',
+            paginationType : 'custom',
+            paginationCustomRender: function (swiper, current, total) {
+                return current + ' / ' + total;
+            }
+        });
+
+        //编辑图片
+        $('.uploadImg1').each(function(){
+            //进度遮罩
+            var maskWidth = $(this).prev().width();
+            var maskHeight = $(this).prev().height();
+            $(this).before("<div class='loadPercent'><span>完成：<b>80%</b></span></div>");
+
+            //点我编辑
+            $(this).before("<p class='clickEdit'><a href='javascript:;'>点我编辑</a></p>");
+            $(this).wrap("<div class='uploadImg' style='position: absolute;width: 100%;height: 100%;'></div>")
+        });
+
+
+       /* $slot.find('.uploadImg1').load(function(){
+
+            var innerUploadImgCss = $slot.attr('innerUploadImgCss');
+            var imgW = $slot.find('.uploadImg1').width();
+            var imgH = $slot.find('.uploadImg1').height();
+            var uW = (slotW - imgW)/2 < 0 ? 0 : (slotW - imgW)/2;
+            var uH = (slotH - imgH)/2 < 0 ? 0 : (slotH - imgH)/2;
+            $slot.find('.pixel_less').css({left : uW + "px"});
+            if (innerUploadImgCss != "" && typeof innerUploadImgCss != "undefined") {
+                var imgCss = $slot.find('.uploadImg1').attr('style') + innerUploadImgCss;
+                $slot.find('.uploadImg1').attr('style', imgCss);
+            } else {
+                $slot.find('.uploadImg1').css({left : uW + "px", top : uH + "px"});
+            }
+        });*/
+    }
+
+    function uploadImgPath(selector){
+        $(selector).click(function(){
+            var optionsContainer = $('.select_upload_img');
+            optionsContainer.fadeIn('fast');
+
+            //关闭
+            optionsContainer.find('a').click(function(e){
+                optionsContainer.find('a').each(function (e) {
+                    $(this).removeClass('selected');
+                });
+                $(this).addClass('selected');
+                optionsContainer.fadeOut('fast');
+            })
+
+        });
+    }
+
+    function remResizing(options) {
         options = $.extend({
             fontsize: 16,
             minwidth: 320,
@@ -239,61 +290,48 @@
         function sizeConstraint() {
             var windowWidth = $(window).width(),
                     windowHeight = $(window).height(),
-                    factor = 0;
-
-            // alert(windowWidth)
-            if (options.minwidth == 0) {
-                //alert('当最小宽度等于0时')
-                bodyEl.css({
-                    'width': windowWidth
-                });
-                factor = windowWidth / options.minwidth;
-            } else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
-                //alert('当最小宽度不等于0且屏幕宽度小于等最小宽度时')
-                bodyEl.css({
-                    'width': options.minwidth
-                });
-                factor = 1;
-            } else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
-                //alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
-                orientationSensor({
-                    portrait: function() {
+                    factor = 0,
+                    zoom = 0,
+                    originalWidth = 680,
+                    originalHeight = 964,
+                    portraitFactor = 0.7,
+                    landscapeFactor = 0.843;
+            orientationSensor({
+                portrait: function() {
+                    var center = windowWidth/2 + 'px ' +windowWidth/2+'px';
                         bodyEl.css({
-                            'width': windowWidth
-                        });
-                        // factor = 2;
-                        factor = windowWidth / options.minwidth;
-                        //alert(factor = windowWidth / options.minwidth)
-                    },
-                    landscape: function() {
-                        bodyEl.css({
-                            'width': windowHeight
-                        });
-                        // factor = 2;
-                        factor = windowHeight / options.minwidth;
-                        //alert(factor = windowWidth / options.minwidth)
-                    }
-                });
+                        'width': windowHeight,
+                        'height': windowWidth,
+                        'transform': 'rotate(90deg)',
+                        '-webkit-transform':'rotate(90deg)',
+                        'transform-origin':center
+                    });
+                    factor = windowWidth / options.minwidth;
+                    htmlEl.css('font-size', options.fontsize * factor);
 
-            } else if (windowWidth > options.maxwidth) {
-                //alert('当屏幕宽度大于最大宽度时')
-                if (!options.aligncenter) {
+                    //竖屏缩放书册内容
+                    var zoom = windowWidth * (landscapeFactor / originalHeight);
+                    $('.tpl .page >div').css(sizeArguObj(zoom));
+                },
+                landscape: function() {
                     bodyEl.css({
-                        'margin': '0 auto'
-                    })
-                }else{
-                    bodyEl.css({
-                        'margin': '0 auto',
-                        'width': options.maxwidth
-                    })
+                        'width': windowWidth,
+                        'height': windowHeight,
+                        'transform': 'rotate(0)',
+                        '-webkit-transform':'rotate(0)',
+                        'transform-origin': 'center center'
+                    });
+                    factor = windowHeight / options.minwidth;
+                    htmlEl.css('font-size', options.fontsize * factor);
+
+                    //横屏缩放书册内容
+                    var zoom = windowHeight * (landscapeFactor / originalHeight);
+                    $('.tpl .page >div').css(sizeArguObj(zoom));
                 }
-                factor = 1
-            } else {
-                alert('abnormal')
-            }
-            htmlEl.css('font-size', options.fontsize * factor);
+            });
+
         }
-    };
+    }
 
     //屏幕方向探测器
     function orientationSensor(callback) {
@@ -312,24 +350,6 @@
             }
         }
     }
-
-    var zoom = 0,
-            windowWidth = $(window).width(),
-            windowHeight = $(window).height(),
-            originalWidth = 680,
-            originalHeight = 964,
-            portraitFactor = 0.7,
-            landscapeFactor = 0.843;
-    orientationSensor({
-        portrait: function() {
-            var zoom = windowWidth * (landscapeFactor / originalHeight);
-            $('.tpl .page >div').css(sizeArguObj(zoom));
-        },
-        landscape: function() {
-            var zoom = windowHeight * (landscapeFactor / originalHeight);
-            $('.tpl .page >div').css(sizeArguObj(zoom));
-        }
-    });
 
     // 尺寸设定集
     function sizeArguObj(zoom) {

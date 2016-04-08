@@ -7,6 +7,8 @@
 .sem_banner_wrapper{
 	width: 100%;
 	overflow: hidden;
+	background-position: top center;
+	background-repeat: no-repeat;
 }
 .sem_banner_wrapper img{
 	display: block;
@@ -75,6 +77,9 @@
 .sem_parenting_container .sem_mainlist_wrapper{
 	padding: 0 0 160px 0;
 }
+.sem_parenting_container .sem_banner_wrapper{
+	height: 600px;
+}
 .sem_mainlist_wrapper li div{
 	margin: 10px 0;
 	position: relative;
@@ -82,7 +87,7 @@
 
 .sem_mainlist_wrapper li div a{
 	display: block;
-	height: 20px;/*for IE9*/
+	height: 20px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	word-wrap: break-word;
@@ -363,6 +368,12 @@
 .party_family_con .family_con{
 	background-color: #f1f1f1;
 }
+.party_family_con .party_con .sem_banner_wrapper{
+	height: 650px;
+}
+.party_family_con .family_con .sem_banner_wrapper{
+	height: 650px;
+}
 
 .party_family_con .party_con .sem_mainlist_wrapper,
 .party_family_con .family_con .sem_mainlist_wrapper{
@@ -552,8 +563,12 @@
 }
 /*~~~~~~~~~~sem_loveandportrait.html~~~~~~~~~~*/
 .sem_love_container{
-	background:url(../img/sem/sem_love_bg.jpg);
+	background:url(../img/sem/sem_love_bg.jpg) -35px -95px;
 	position: relative;
+}
+.sem_love_container .sem_banner_wrapper {
+	height: 800px;
+	background-size: 130%;
 }
 .sem_love_container .sem_banner_wrapper img{
 	width: 130%;
@@ -615,6 +630,7 @@
 	min-width: 1150px;
 }
 .sem_portrait_container .sem_banner_wrapper{
+	height: 800px;
 	position: relative;
 	z-index: 2;
 }
@@ -909,9 +925,9 @@
 	width: 1150px;
 	position: relative;
 }
-/*.sem_interactionbook_container .sem_banner_wrapper{
+.sem_interactionbook_container .sem_banner_wrapper{
 	height: 280px;
-}*/
+}
 .sem_interactionbook_container .sem_mainlist_wrapper{
 	float: left;
 	width: 780px;
@@ -1003,6 +1019,9 @@
 .sem_partybook_container .sem_banner_wrapper{
 	height: 440px;
 }
+.sem_graduationbook_container .sem_banner_wrapper{
+	border-bottom: 5px solid #8cc04e;
+}
 .sem_graduationbook_container .sem_mainlist_wrapper, 
 .sem_partybook_container .sem_mainlist_wrapper{
 	float: right;
@@ -1036,7 +1055,7 @@
 	box-shadow: 0px 10px rgba(0,0,0,0.3);
 }
 .sem_graduationbook_container{
-	border-top: 5px solid #8cc04e;
+	/*border-top: 5px solid #8cc04e;*/
 	background: url(../img/sem/sem_iabook_bg_1.jpg);
 }
 .sem_partybook_container{
@@ -1057,6 +1076,9 @@
 	content: '';
 	display: block;
 	clear: both;
+}
+.sem_graduationbook_wrapper .sem_banner_wrapper{
+
 }
 
 .sem_graduationbook_wrapper .sem_mainlist_wrapper li{

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/m_common.css">
 	<link rel="stylesheet" type="text/css" href="../css/m_makebook.css">
 	<!-- endbuild -->
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459505971_796465.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1460347319_6012216.css">
 	<title>照片修改</title>
 </head>
 
@@ -42,15 +42,24 @@
 					<!-- <a class='zoomin' href="javascript:;">+</a> -->
 				</div>
 				<ul class='makebook_eptoolbar_wrapper'>
+					<li class='originalsize'>
+						<a class='ybiconfont ybicon-originalsize' href="javascript:;"></a>
+					</li>
+					<li class='freesize'>
+						<a class='ybiconfont ybicon-freesize' href="javascript:;"></a>
+					</li>
 					<li class='turnleft'>
-						<a class='ybiconfont ybicon-undo' href="javascript:;"></a>
+						<a class='ybiconfont ybicon-anticlockwise' href="javascript:;"></a>
 					</li>
 					<li class='turnright'>
-						<a class='ybiconfont ybicon-undo' href="javascript:;"></a>
+						<a class='ybiconfont ybicon-clockwise' href="javascript:;"></a>
 					</li>
-					<li class='fitwidth'><a href="javascript:;">fit width</a></li>
-					<li class='fitheight'><a href="javascript:;">fit height</a></li>
-					<li class='reposition'><a href="javascript:;">reposition</a></li>
+					<li class='picture'>
+						<a class='ybiconfont ybicon-picture' href="javascript:;"></a>
+					</li>
+					<li class='trash'>
+						<a class='ybiconfont ybicon-trash2' href="javascript:;"></a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -58,19 +67,14 @@
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <!-- build:js js/all.js -->
-<script type="text/javascript" src="../js/m_base.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
 <!-- endbuild -->
 <script type="text/javascript">
 $(function() {
-
-	$('.makebook_editphoto_wrapper').css('height', $(window).height(0));
-	$('.makebook_epeditarea_wrapper').align();
-	$('.makebook_epimage_item').align({
-		container: '.makebook_epeditarea_wrapper'
-	});
 	$.remResizing({
 		fontsize: 20
 	})
+
 	var editphoto = function() {
 		var options = $.extend({
 				scale: 1,
@@ -78,7 +82,11 @@ $(function() {
 				left: 0,
 				top: 0
 			}, options),
+			windowWidth = $(window).width(),
+			windowHeight = $(window).height(),
 			image = $('.makebook_epimage_item'),
+			editphotoBg = $('.makebook_editphoto_wrapper'),
+			photoframe = $('.makebook_epeditarea_wrapper'),
 			trBtn = $(".makebook_eptoolbar_wrapper .turnright a"),
 			tlBtn = $(".makebook_eptoolbar_wrapper .turnleft a"),
 			zoominBtn = $('.makebook_epzomming_wrapper .zoomin'),
@@ -87,10 +95,12 @@ $(function() {
 			rePositionBtn = $('.makebook_eptoolbar_wrapper .reposition'),
 			fitwidthBtn = $('.makebook_eptoolbar_wrapper .fitwidth'),
 			fitheightBtn = $('.makebook_eptoolbar_wrapper .fitheight'),
+			originalsizeBtn = $('.makebook_eptoolbar_wrapper .originalsize'),
 			epscrollbar = $('.makebook_epscrollbar_item'),
 			epscrollbarWidth = epscrollbar.find('label').width(),
 			zoomingSlider = epscrollbar.find('span'),
 			photoImg = $('.makebook_epimage_item'),
+			imgRatio = 1.5,
 			startPosX = 0,
 			startPosY = 0,
 			endPosX = 0,
@@ -102,17 +112,36 @@ $(function() {
 		var init = function() {
 			image.css('transition', 'transform 0.5s');
 			zoomingSlider.css('margin-left', marginleft);
-			photoImg.css(options)
+			editphotoBg.css('height', windowHeight);
+			photoImg.css(options);
+			if (imgRatio > 1) {
+				photoframe.css('height', (windowWidth * 0.9) / imgRatio);
+			} else if (imgRatio > 0 && imgRatio < 1) {
+				photoframe.css('width', windowHeight * 0.9 * imgRatio + '%')
+			}
+			//先确定相框高度后再对图片进行居中操作
+			photoframe.align();
+			image.align({
+				container: '.makebook_epeditarea_wrapper'
+			});
 		}();
-
+		originalsizeBtn.on('touchend', function() {
+			image.css(cssSettings({
+				'scale': 1
+			}));
+			zoomingSlider.css('margin-left', epscrollbarWidth / 2);
+		});
+		//向右转
 		trBtn.on('touchend', function() {
 			options.rotate += 90;
 			image.css(cssSettings(options));
 		});
+		//向左转
 		tlBtn.on('touchend', function() {
 			options.rotate -= 90;
 			image.css(cssSettings(options));
 		});
+		//放大
 		zoomoutBtn.on('touchend', function() {
 			marginleft -= epscrollbarWidth / 2 / 5
 			if (marginleft <= 0) {
@@ -123,6 +152,7 @@ $(function() {
 			}));
 			zoomingSlider.css('margin-left', marginleft);
 		});
+		//缩小
 		zoominBtn.on('touchend', function() {
 			marginleft += epscrollbarWidth / 2 / 5;
 			if (marginleft >= epscrollbarWidth - 10) {
@@ -133,6 +163,7 @@ $(function() {
 			}));
 			zoomingSlider.css('margin-left', marginleft);
 		});
+		//重新归位
 		rePositionBtn.on('touchend', function() {
 			options = $.extend({
 				left: 0,
@@ -169,17 +200,17 @@ $(function() {
 				switch (e.type) {
 					case 'touchstart':
 						startPosX = touch.pageX,
-							startPosY = touch.pageY,
-							photoImgLeft = Number(photoImg.css('left').replace('px', '')),
-							photoImgTop = Number(photoImg.css('top').replace('px', ''))
+						startPosY = touch.pageY,
+						photoImgLeft = Number(photoImg.css('left').replace('px', '')),
+						photoImgTop = Number(photoImg.css('top').replace('px', ''))
 						console.log(photoImgLeft)
 						break;
 					case 'touchmove':
 						e.preventDefault;
 						endPosX = touch.pageX,
-							endPosY = touch.pageY,
-							offsetPosX = endPosX - startPosX,
-							offsetPosY = endPosY - startPosY;
+						endPosY = touch.pageY,
+						offsetPosX = endPosX - startPosX,
+						offsetPosY = endPosY - startPosY;
 						options = $.extend({
 							position: 'relative',
 							left: offsetPosX + photoImgLeft,

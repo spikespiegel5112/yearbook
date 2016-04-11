@@ -593,7 +593,7 @@
 							reload = true;
 							return false;
 						} else {
-							var containerheight = $(options.container).eq(index).height();
+							containerheight = $(options.container).eq(index).height();
 							checkPosition($(this), containerheight)
 							console.log('第'+index+'张图片的高度:'+containerheight)
 						}

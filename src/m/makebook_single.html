@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/m_common.css">
 	<link rel="stylesheet" type="text/css" href="../css/m_makebook.css">
 	<!-- endbuild -->
+	<link rel="stylesheet" href="../assets/css/font-awesome.css">
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459505971_796465.css">
 	<link rel="stylesheet" href="../assets/css/swiper.min.css">
 	<title>3.12 制作书册-单页编辑</title>
@@ -201,15 +202,106 @@
         </ul>
     </div>
 </div>
+<!--加载进度-->
+<div class="load_progress_wrap">
+    <div class="load" role="button" aria-label="Upload file"></div>
+    <a class="reload" href="javascript:;">
+        <span class="icon-refresh"></span>
+        <p>重新加载</p>
+    </a>
+</div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
+<!--弹性加载依赖-->
+<script src="../assets/js/tweenMax.min.js"></script>
+<script src="../assets/js/elastic-progress.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         remResizing();
         initEditBookWrap();
         popBottomMenu('.uploadImg1');
+        loadBookProgress();
     });
+
+    function loadBookProgress(){
+        var progress = new ElasticProgress($('.load_progress_wrap .load'),{
+            buttonSize: 60,
+            fontFamily: "Montserrat",
+            width: 240,
+            labelHeight:35,
+            barHeight: 6,
+            colorBg: "#fff",
+            colorFg: "#60e550",
+            textFail: "失败",
+            textComplete: "完成",
+            arrowHangOnFail: true
+        });
+
+        //开始加载
+        progress.open();
+
+        //加载中
+        progress.onOpen(function(){
+            //假进度加载
+            fakeLoading(progress,2);
+            //真实进度Methods：setValue,getValue
+            //progress.setValue(.5);
+        });
+
+        //加载完成
+        progress.onComplete(function() {
+            TweenMax.delayedCall(0.5, function() {
+                progress.close();
+                $('.load_progress_wrap').fadeOut();
+            })
+        });
+
+        //加载失败
+        progress.onFail(function() {
+            progress.close();
+            TweenMax.delayedCall(3, function() {
+                $('.reload').show().click(function(){
+                    progress.open();
+                    $(this).hide();
+                });
+            });
+        });
+
+        //进度值改变 或取消
+        progress.onChange(function(){});
+        progress.onCancel (function(){});
+    }
+
+    //设置加载百分比
+    function fakeLoading($obj, speed, failAt) {
+        if (typeof speed == "undefined") speed = 2;
+        if (typeof failAt == "undefined") failAt = -1;
+        var v = 0;
+        var l = function() {
+            if (failAt > -1) {
+                if (v >= failAt) {
+                    if (typeof $obj.jquery != "undefined") {
+                        $obj.ElasticProgress("fail");
+                    } else {
+                        $obj.fail();
+                    }
+                    return;
+                }
+            }
+            v += Math.pow(Math.random(), 2) * 0.1 * speed;
+
+            if (typeof $obj.jquery != "undefined") {
+                $obj.ElasticProgress("setValue", v);
+            } else {
+                $obj.setValue(v);
+            }
+            if (v < 1) {
+                TweenMax.delayedCall(0.05 + (Math.random() * 0.14), l)
+            }
+        };
+        l();
+    }
 
     function initEditBookWrap(){
         //init swiper slide

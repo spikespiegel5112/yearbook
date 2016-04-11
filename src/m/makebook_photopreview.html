@@ -45,7 +45,7 @@
 					<li class='originalsize'>
 						<a class='ybiconfont ybicon-originalsize' href="javascript:;"></a>
 					</li>
-					<li class='freesize'>
+					<li class='freesize reposition'>
 						<a class='ybiconfont ybicon-freesize' href="javascript:;"></a>
 					</li>
 					<li class='turnleft'>
@@ -71,170 +71,24 @@
 <!-- endbuild -->
 <script type="text/javascript">
 $(function() {
+	
+	$('.makebook_editphoto_wrapper').css('height', $(window).height());
 	$.remResizing({
 		fontsize: 20
-	})
+	});
 
-	var editphoto = function() {
-		var options = $.extend({
-				scale: 1,
-				rotate: 0,
-				left: 0,
-				top: 0
-			}, options),
-			windowWidth = $(window).width(),
-			windowHeight = $(window).height(),
-			image = $('.makebook_epimage_item'),
-			editphotoBg = $('.makebook_editphoto_wrapper'),
-			photoframe = $('.makebook_epeditarea_wrapper'),
-			trBtn = $(".makebook_eptoolbar_wrapper .turnright a"),
-			tlBtn = $(".makebook_eptoolbar_wrapper .turnleft a"),
-			zoominBtn = $('.makebook_epzomming_wrapper .zoomin'),
-			zoomoutBtn = $('.makebook_epzomming_wrapper .zoomout'),
-			reScaleBtn = $('.makebook_eptoolbar_wrapper .rescale'),
-			rePositionBtn = $('.makebook_eptoolbar_wrapper .reposition'),
-			fitwidthBtn = $('.makebook_eptoolbar_wrapper .fitwidth'),
-			fitheightBtn = $('.makebook_eptoolbar_wrapper .fitheight'),
-			originalsizeBtn = $('.makebook_eptoolbar_wrapper .originalsize'),
-			epscrollbar = $('.makebook_epscrollbar_item'),
-			epscrollbarWidth = epscrollbar.find('label').width(),
-			zoomingSlider = epscrollbar.find('span'),
-			photoImg = $('.makebook_epimage_item'),
-			imgRatio = 1.5,
-			startPosX = 0,
-			startPosY = 0,
-			endPosX = 0,
-			offsetPosX = 0,
-			offsetposY = 0,
-			sliderPosX = zoomingSlider.offset().left,
-			marginleft = epscrollbarWidth / 2;
-
-		var init = function() {
-			image.css('transition', 'transform 0.5s');
-			zoomingSlider.css('margin-left', marginleft);
-			editphotoBg.css('height', windowHeight);
-			photoImg.css(options);
-			if (imgRatio > 1) {
-				photoframe.css('height', (windowWidth * 0.9) / imgRatio);
-			} else if (imgRatio > 0 && imgRatio < 1) {
-				photoframe.css('width', windowHeight * 0.9 * imgRatio + '%')
-			}
-			//先确定相框高度后再对图片进行居中操作
-			photoframe.align();
-			image.align({
-				container: '.makebook_epeditarea_wrapper'
-			});
-		}();
-		originalsizeBtn.on('touchend', function() {
-			image.css(cssSettings({
-				'scale': 1
-			}));
-			zoomingSlider.css('margin-left', epscrollbarWidth / 2);
-		});
-		//向右转
-		trBtn.on('touchend', function() {
-			options.rotate += 90;
-			image.css(cssSettings(options));
-		});
-		//向左转
-		tlBtn.on('touchend', function() {
-			options.rotate -= 90;
-			image.css(cssSettings(options));
-		});
-		//放大
-		zoomoutBtn.on('touchend', function() {
-			marginleft -= epscrollbarWidth / 2 / 5
-			if (marginleft <= 0) {
-				marginleft = 0;
-			}
-			image.css(cssSettings({
-				'scale': Number(marginleft / epscrollbarWidth) * 2
-			}));
-			zoomingSlider.css('margin-left', marginleft);
-		});
-		//缩小
-		zoominBtn.on('touchend', function() {
-			marginleft += epscrollbarWidth / 2 / 5;
-			if (marginleft >= epscrollbarWidth - 10) {
-				marginleft = epscrollbarWidth - 10;
-			}
-			image.css(cssSettings({
-				'scale': Number(marginleft / epscrollbarWidth) * 2
-			}));
-			zoomingSlider.css('margin-left', marginleft);
-		});
-		//重新归位
-		rePositionBtn.on('touchend', function() {
-			options = $.extend({
-				left: 0,
-				top: 0
-			}, options)
-			image.css(options);
-		});
-		fitwidthBtn.on('touchend', function() {
-			options.scale = 0.5;
-			zoomingSlider.css('margin-left', epscrollbarWidth / 2);
-		})
-		document.addEventListener('touchstart', eventHandler, false);
-		document.addEventListener('touchmove', eventHandler, false);
-
-		function eventHandler(e, options) {
-			e.preventDefault;
-			var touch = e.touches[0];
-			if ($(e.target).closest(zoomingSlider).length > 0) {
-				var movingPosX = touch.pageX;
-				marginleft = movingPosX - sliderPosX;
-				if (marginleft <= 0) {
-					marginleft = 0;
-				} else if (marginleft > epscrollbarWidth - 10) {
-					marginleft = epscrollbarWidth - 10
-				} else {
-					zoomingSlider.css('margin-left', marginleft);
-					options = {
-						scale: Number(marginleft / epscrollbarWidth) * 2
-					}
-					console.log(options)
-					image.css(cssSettings(options));
-				}
-			} else if ($(e.target).closest(photoImg).length > 0) {
-				switch (e.type) {
-					case 'touchstart':
-						startPosX = touch.pageX,
-						startPosY = touch.pageY,
-						photoImgLeft = Number(photoImg.css('left').replace('px', '')),
-						photoImgTop = Number(photoImg.css('top').replace('px', ''))
-						console.log(photoImgLeft)
-						break;
-					case 'touchmove':
-						e.preventDefault;
-						endPosX = touch.pageX,
-						endPosY = touch.pageY,
-						offsetPosX = endPosX - startPosX,
-						offsetPosY = endPosY - startPosY;
-						options = $.extend({
-							position: 'relative',
-							left: offsetPosX + photoImgLeft,
-							top: offsetPosY + photoImgTop
-						}, options);
-						photoImg.css(options)
-						console.log('photoImgLeft ' + offsetPosX + photoImgLeft)
-						break;
-				}
-			}
-		}
-		//某些必须集合多个参数的样式的设置模式
-		function cssSettings(config) {
-			options = $.extend(options, config);
-			var cssObj = options;
-			if (options.rotate || options.scale) {
-				var returncss = {
-					'transform': 'rotate(' + options.rotate + 'deg) scale(' + options.scale + ')'
-				}
-				console.log(options)
-				return returncss;
-			};
-		}
-	}()
+	$.editphoto({
+		image: '.makebook_epimage_item',
+		photoframe: '.makebook_epeditarea_wrapper',
+		trBtn: '.makebook_eptoolbar_wrapper .turnright a',
+		tlBtn: '.makebook_eptoolbar_wrapper .turnleft a',
+		zoominBtn: '.makebook_epzomming_wrapper .zoomin',
+		zoomoutBtn: '.makebook_epzomming_wrapper .zoomout',
+		reScaleBtn: '.makebook_eptoolbar_wrapper .rescale',
+		rePositionBtn: '.makebook_eptoolbar_wrapper .reposition',
+		originalsizeBtn: '.makebook_eptoolbar_wrapper .originalsize',
+		epscrollbar: '.makebook_epscrollbar_item'
+	});
 })
 </script>
 

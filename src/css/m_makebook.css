@@ -8,6 +8,9 @@
 	/*margin: 0;*/
 	text-align: left;
 }
+.makebook_editphoto_conatainer .back_btn span{
+    font-size: 1rem;
+}
 .makebook_editphoto_wrapper{
 	width: 100%;
 	overflow: hidden;
@@ -15,7 +18,7 @@
 }
 .makebook_epeditarea_wrapper{
 	margin: 0 auto;
-	width: 100%;
+	width: 90%;
 	height: 320px;
 	position: relative;
 	overflow: hidden;
@@ -35,7 +38,7 @@
 	padding: 0 0.5rem;
 	height: 2rem;
 	line-height: 2rem;
-	font-size: 0.8rem;
+	font-size: 1.6rem;
 	color: #000;
 }
 .makebook_eptools_wrapper .zoomout{
@@ -55,8 +58,8 @@
 .makebook_eptoolbar_wrapper li a{
 	display: block;
 }
-.makebook_eptoolbar_wrapper .turnright a{
-	transform: rotateY(180deg);
+.makebook_eptoolbar_wrapper li a:hover{
+    color: #0bb34d;
 }
 .makebook_epzomming_wrapper, .makebook_eptoolbar_wrapper{
 	height: 2rem;

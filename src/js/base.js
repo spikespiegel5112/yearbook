@@ -593,21 +593,21 @@
 							reload = true;
 							return false;
 						} else {
-							var containerheight = $(options.container).eq(index).height();
+							containerheight = $(options.container).eq(index).height();
 							checkPosition($(this), containerheight)
-							console.log('第'+index+'张图片的高度:'+containerheight)
+							console.log('第' + index + '张图片的高度:' + containerheight)
 						}
 					});
 					if (reload) {
 						reload = false;
 						checkBrowser({
-							ie:function(){
-								timer=window.setTimeout(function() {
+							ie: function() {
+								timer = window.setTimeout(function() {
 									checkImgLoading();
 								}, 100);
 							},
-							other:function(){
-								timer=setTimeout(function() {
+							other: function() {
+								timer = setTimeout(function() {
 									checkImgLoading();
 								}, 100);
 							}
@@ -615,7 +615,7 @@
 					}
 				}
 				checkImgLoading();
-			//缺省情况
+				//缺省情况
 			} else {
 				//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
 				//container设置判断
@@ -625,7 +625,7 @@
 						windowWidth = $(options.container).width();
 						checkPosition($(this));
 					})
-				}else{
+				} else {
 					checkPosition(_this);
 				}
 			}
@@ -633,16 +633,16 @@
 			function checkPosition(_this) {
 				console.log('begin aligning')
 				checkBrowser({
-					ie:function(){
+					ie: function() {
 						window.clearTimeout(timer);
 					},
-					other:function(){
+					other: function() {
 						clearTimeout(timer);
 					}
 				})
-				
+
 				thisWidth = _this.outerWidth(),
-				thisHeight = _this.outerHeight();
+					thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
@@ -715,15 +715,17 @@
 				return callback(thisWidth, thisHeight);
 			}
 
-			function checkBrowser(callback){
-				callback=$.extend({
-					ie:function(){return;},
-					other:function(){return;}
-				},callback)
-				if(navigator.appName.indexOf("Explorer") > -1){
+			function checkBrowser(callback) {
+				callback = $.extend({
+					ie: function() {
+						return; },
+					other: function() {
+						return; }
+				}, callback)
+				if (navigator.appName.indexOf("Explorer") > -1) {
 					console.log('IE')
 					callback.ie();
-				}else{
+				} else {
 					console.log('other')
 					callback.other();
 				}
@@ -778,16 +780,27 @@
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
-				windowWidth = $(window).width();
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height();
 			sizeConstraint();
 			$(window).resize(function() {
 				sizeConstraint();
 			});
 
 			function sizeConstraint() {
-				var windowWidth = $(window).width(),
-					windowHeight = $(window).height(),
-					factor = 0;
+				orientationSensor({
+					portrait: function() {
+						windowWidth = $(window).width(),
+							windowHeight = $(window).height();
+						// alert(windowHeight)
+					},
+					landscape: function() {
+						windowHeight = $(window).width(),
+							windowWidth = $(window).height();
+						// alert(windowWidth)
+					}
+				})
+				var factor = 0;
 				// alert(windowWidth)
 				if (options.minwidth == 0) {
 					//alert('当最小宽度等于0时')
@@ -806,7 +819,8 @@
 					bodyEl.css({
 						'width': windowWidth
 					});
-					// factor = 2;
+					alert(windowWidth)
+						// factor = 2;
 					factor = windowWidth / options.minwidth;
 					//alert(factor = windowWidth / options.minwidth)
 				} else if (windowWidth > options.maxwidth) {
@@ -827,6 +841,194 @@
 				}
 				htmlEl.css('font-size', options.fontsize * factor);
 			}
+			//屏幕方向探测器
+			function orientationSensor(callback) {
+				var windowWidth = $(window).width(),
+					windowHeight = $(window).height();
+				if (typeof(callback) == 'undefined') {
+					callback = {
+						portrait: function() {},
+						landscape: function() {}
+					}
+				} else {
+					if (windowWidth < windowHeight) {
+						return callback.portrait();
+					} else {
+						return callback.landscape();
+					}
+				}
+			}
+		},
+		editphoto: function(config) {
+			var transformData = $.extend({
+					scale: 1,
+					rotate: 0,
+					left: 0,
+					top: 0,
+					position: ''
+				}, transformData),
+
+				config = $.extend({
+					image: '',
+					photoframe: '',
+					trBtn: '',
+					tlBtn: '',
+					zoominBtn: '',
+					zoomoutBtn: '',
+					reScaleBtn: '',
+					rePositionBtn: '',
+					originalsizeBtn: '',
+					epscrollbar: ''
+				}, config),
+
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
+				image = $('.makebook_epimage_item'),
+				epscrollbarWidth = $(config.epscrollbar).find('label').width(),
+				zoomingSlider = $(config.epscrollbar).find('span'),
+				frameRatio = 1.5, //相框宽高比,此值由被点击的槽位宽高比决定
+				startPosX = 0,
+				startPosY = 0,
+				imageTop = 0,
+				imageLeft = 0,
+				endPosX = 0,
+				endPosY = 0,
+				offsetPosX = 0,
+				offsetPosY = 0,
+				sliderPosX = zoomingSlider.offset().left,
+				marginleft = epscrollbarWidth / 2;
+
+			var init = function() {
+				image.css('transition', 'transform 0.5s');
+				zoomingSlider.css('margin-left', marginleft);
+
+				image.css(transformData);
+				if (frameRatio > 1) {
+					$(config.photoframe).css('height', (windowWidth * 0.9) / frameRatio);
+				} else if (frameRatio > 0 && frameRatio < 1) {
+					$(config.photoframe).css('width', windowHeight * 0.9 * frameRatio + '%')
+				}
+				//先确定相框高度后再对图片进行居中操作
+				$(config.photoframe).align();
+				image.align({
+					container: '.makebook_epeditarea_wrapper'
+				});
+			}();
+			$(config.originalsizeBtn).on('touchend', function() {
+				image.css(cssSettings({
+					'scale': 1
+				}));
+				zoomingSlider.css('margin-left', epscrollbarWidth / 2);
+			});
+			//向右转
+			$(config.trBtn).on('touchend', function() {
+				transformData.rotate += 90;
+				image.css(cssSettings(transformData));
+			});
+			//向左转
+			$(config.tlBtn).on('touchend', function() {
+				transformData.rotate -= 90;
+				image.css(cssSettings(transformData));
+			});
+			//放大
+			$(config.zoomoutBtn).on('touchend', function() {
+				marginleft -= epscrollbarWidth / 2 / 5
+				if (marginleft <= 0) {
+					marginleft = 0;
+				}
+				image.css(cssSettings({
+					'scale': Number(marginleft / epscrollbarWidth) * 2
+				}));
+				zoomingSlider.css('margin-left', marginleft);
+			});
+			//缩小
+			$(config.zoominBtn).on('touchend', function() {
+				marginleft += epscrollbarWidth / 2 / 5;
+				if (marginleft >= epscrollbarWidth - 10) {
+					marginleft = epscrollbarWidth - 10;
+				}
+				image.css(cssSettings({
+					'scale': Number(marginleft / epscrollbarWidth) * 2
+				}));
+				zoomingSlider.css('margin-left', marginleft);
+			});
+			//重新归位
+			$(config.rePositionBtn).on('touchend', function() {
+				transformData = $.extend({
+					left: 0,
+					top: 0
+				}, transformData)
+				image.css(transformData);
+			});
+			//适配相框宽度
+			// fitwidthBtn.on('touchend', function() {
+			//  transformData.scale = 0.5;
+			//  zoomingSlider.css('margin-left', epscrollbarWidth / 2);
+			// })
+			document.addEventListener('touchstart', eventHandler, false);
+			document.addEventListener('touchmove', eventHandler, false);
+
+			function eventHandler(e, transformData) {
+				e.preventDefault;
+				var touch = e.touches[0];
+				if ($(e.target).closest(zoomingSlider).length > 0) {
+					var movingPosX = touch.pageX;
+					marginleft = movingPosX - sliderPosX;
+					if (marginleft <= 0) {
+						marginleft = 0;
+					} else if (marginleft > epscrollbarWidth - 10) {
+						marginleft = epscrollbarWidth - 10
+					} else {
+						zoomingSlider.css('margin-left', marginleft);
+						transformData = {
+							scale: Number(marginleft / epscrollbarWidth) * 2
+						}
+						console.log(transformData)
+						image.css(cssSettings(transformData));
+					}
+				} else if ($(e.target).closest(image).length > 0) {
+					switch (e.type) {
+						case 'touchstart':
+							startPosX = touch.pageX,
+							startPosY = touch.pageY,
+							imageLeft = Number(image.css('left').replace('px', '')),
+							imageTop = Number(image.css('top').replace('px', ''))
+							console.log(imageLeft)
+							break;
+						case 'touchmove':
+							e.preventDefault;
+							endPosX = touch.pageX,
+							endPosY = touch.pageY,
+							offsetPosX = endPosX - startPosX;
+							offsetPosY = endPosY - startPosY;
+							var positioncss ={
+								position: 'relative',
+								left: offsetPosX + imageLeft,
+								top: offsetPosY + imageTop
+							};
+							
+							image.css(positioncss)
+							console.log(positioncss)
+							// console.log('top ' + transformData.top + ' left ' + transformData.left)
+							break;
+					}
+				}
+			}
+			//某些必须集合多个参数的样式的设置模式
+			function cssSettings(config) {
+				transformData = $.extend(transformData, config);
+				var cssObj = transformData;
+				if (transformData.rotate || transformData.scale) {
+					var returncss = {
+						'transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')'
+					}
+					console.log(transformData)
+					return returncss;
+				};
+			}
+			$('.action_btn').on('touchend', function() {
+				console.log(transformData)
+			})
 		}
 	});
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);

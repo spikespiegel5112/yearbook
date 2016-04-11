@@ -819,7 +819,7 @@
 					bodyEl.css({
 						'width': windowWidth
 					});
-					alert(windowWidth)
+					//alert(windowWidth)
 						// factor = 2;
 					factor = windowWidth / options.minwidth;
 					//alert(factor = windowWidth / options.minwidth)
@@ -870,22 +870,25 @@
 
 				config = $.extend({
 					image: '',
-					photoframe: '',
-					trBtn: '',
-					tlBtn: '',
-					zoominBtn: '',
-					zoomoutBtn: '',
-					reScaleBtn: '',
-					rePositionBtn: '',
-					originalsizeBtn: '',
-					epscrollbar: ''
+					tools:{
+						photoframe: '',
+						trBtn: '',
+						tlBtn: '',
+						zoominBtn: '',
+						zoomoutBtn: '',
+						reScaleBtn: '',
+						rePositionBtn: '',
+						originalsizeBtn: '',
+						epscrollbar: ''
+					}
+					
 				}, config),
 
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				image = $('.makebook_epimage_item'),
-				epscrollbarWidth = $(config.epscrollbar).find('label').width(),
-				zoomingSlider = $(config.epscrollbar).find('span'),
+				image = $(config.image),
+				epscrollbarWidth = $(config.tools.epscrollbar).find('label').width(),
+				zoomingSlider = $(config.tools.epscrollbar).find('span'),
 				frameRatio = 1.5, //相框宽高比,此值由被点击的槽位宽高比决定
 				startPosX = 0,
 				startPosY = 0,
@@ -895,43 +898,59 @@
 				endPosY = 0,
 				offsetPosX = 0,
 				offsetPosY = 0,
+				originalWidth=0,
+				originalHeight=0,
+				originalRatio=0,
+				saveRatio=0,
 				sliderPosX = zoomingSlider.offset().left,
-				marginleft = epscrollbarWidth / 2;
+				initMarginleft=0,
+				marginleft = 0;
 
 			var init = function() {
 				image.css('transition', 'transform 0.5s');
-				zoomingSlider.css('margin-left', marginleft);
-
 				image.css(transformData);
+				
+				
+				var imgObj=new Image;
+				imgObj.src=image.attr('src');
+				originalWidth=imgObj.width;
+				originalHeight=imgObj.height;
+				originalRatio=originalWidth/(windowWidth*0.9);
+				console.log(epscrollbarWidth);
+				initMarginleft=epscrollbarWidth/originalRatio;
+				zoomingSlider.css('margin-left', initMarginleft);
+
 				if (frameRatio > 1) {
-					$(config.photoframe).css('height', (windowWidth * 0.9) / frameRatio);
+					$(config.tools.photoframe).css('height', (windowWidth * 0.9) / frameRatio);
 				} else if (frameRatio > 0 && frameRatio < 1) {
-					$(config.photoframe).css('width', windowHeight * 0.9 * frameRatio + '%')
+					$(config.tools.photoframe).css('width', windowHeight * 0.9 * frameRatio + '%')
 				}
 				//先确定相框高度后再对图片进行居中操作
-				$(config.photoframe).align();
+				$(config.tools.photoframe).align();
 				image.align({
 					container: '.makebook_epeditarea_wrapper'
 				});
 			}();
-			$(config.originalsizeBtn).on('touchend', function() {
+			//原始尺寸
+			$(config.tools.originalsizeBtn).on('touchend', function() {
 				image.css(cssSettings({
-					'scale': 1
+					'scale': originalRatio
 				}));
-				zoomingSlider.css('margin-left', epscrollbarWidth / 2);
+				saveRatio=initMarginleft*originalRatio;
+				zoomingSlider.css('margin-left', saveRatio);
 			});
 			//向右转
-			$(config.trBtn).on('touchend', function() {
+			$(config.tools.trBtn).on('touchend', function() {
 				transformData.rotate += 90;
 				image.css(cssSettings(transformData));
 			});
 			//向左转
-			$(config.tlBtn).on('touchend', function() {
+			$(config.tools.tlBtn).on('touchend', function() {
 				transformData.rotate -= 90;
 				image.css(cssSettings(transformData));
 			});
 			//放大
-			$(config.zoomoutBtn).on('touchend', function() {
+			$(config.tools.zoomoutBtn).on('touchend', function() {
 				marginleft -= epscrollbarWidth / 2 / 5
 				if (marginleft <= 0) {
 					marginleft = 0;
@@ -942,7 +961,7 @@
 				zoomingSlider.css('margin-left', marginleft);
 			});
 			//缩小
-			$(config.zoominBtn).on('touchend', function() {
+			$(config.tools.zoominBtn).on('touchend', function() {
 				marginleft += epscrollbarWidth / 2 / 5;
 				if (marginleft >= epscrollbarWidth - 10) {
 					marginleft = epscrollbarWidth - 10;
@@ -953,7 +972,7 @@
 				zoomingSlider.css('margin-left', marginleft);
 			});
 			//重新归位
-			$(config.rePositionBtn).on('touchend', function() {
+			$(config.tools.rePositionBtn).on('touchend', function() {
 				transformData = $.extend({
 					left: 0,
 					top: 0
@@ -965,8 +984,7 @@
 			//  transformData.scale = 0.5;
 			//  zoomingSlider.css('margin-left', epscrollbarWidth / 2);
 			// })
-			document.addEventListener('touchstart', eventHandler, false);
-			document.addEventListener('touchmove', eventHandler, false);
+			
 
 			function eventHandler(e, transformData) {
 				e.preventDefault;
@@ -980,12 +998,18 @@
 						marginleft = epscrollbarWidth - 10
 					} else {
 						zoomingSlider.css('margin-left', marginleft);
-						transformData = {
+						// transformData = {
+						// 	scale: Number(marginleft / epscrollbarWidth) * 2
+						// }
+						transformData=$.extend({
 							scale: Number(marginleft / epscrollbarWidth) * 2
-						}
-						console.log(transformData)
+						}, transformData)
+						console.log(transformData);
 						image.css(cssSettings(transformData));
 					}
+					if (marginleft>saveRatio) {
+						console.log(marginleft+' '+saveRatio)
+					};
 				} else if ($(e.target).closest(image).length > 0) {
 					switch (e.type) {
 						case 'touchstart':
@@ -1006,9 +1030,14 @@
 								left: offsetPosX + imageLeft,
 								top: offsetPosY + imageTop
 							};
+							transformData=$.extend({
+								position: 'relative',
+								left: offsetPosX + imageLeft,
+								top: offsetPosY + imageTop
+							}, transformData)
 							
-							image.css(positioncss)
-							console.log(positioncss)
+							image.css(transformData)
+							console.log(transformData)
 							// console.log('top ' + transformData.top + ' left ' + transformData.left)
 							break;
 					}
@@ -1026,6 +1055,8 @@
 					return returncss;
 				};
 			}
+			document.addEventListener('touchstart', eventHandler, false);
+			document.addEventListener('touchmove', eventHandler, false);
 			$('.action_btn').on('touchend', function() {
 				console.log(transformData)
 			})

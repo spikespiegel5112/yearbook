@@ -373,6 +373,33 @@ module.exports = function(grunt) {
                 concurrency: 4,
                 progress: true
             }
+        },
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 8', 'ie 9']
+            },
+            css: {
+                    expand: true,
+                    cwd: '<%= meta.cssPath %>/',
+                    src: ['**/*.css'],
+                    dest: '<%= meta.cssPath %>/'
+                }
+        },
+        csslint:{
+            options:{
+                csslintrc:"./.csslintrc"
+            },
+            build:["<%= meta.cssPath %>/*.css"]
+        },
+        csscomb: {
+            options: {
+            },
+            css: {
+                expand: true,
+                cwd: '<%= meta.cssPath %>/',
+                src: ['**/*.css'],
+                dest: '<%= meta.cssPath %>/'
+            }
         }
     });
 
@@ -380,6 +407,9 @@ module.exports = function(grunt) {
         scope: 'devDependencies'
     });
     require('time-grunt')(grunt);
+
+    grunt.registerTask('css', ['autoprefixer', 'csscomb', 'csslint']);
+
     grunt.registerTask('cleanAll', ['clean']);
     grunt.registerTask('compile-css', ['cssmin', 'clean:sourceMap']);
     grunt.registerTask('compile-js', ['concat', 'uglify']);

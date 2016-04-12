@@ -398,9 +398,9 @@
 			return this;
 		},
 		showLoadingImg: function(options) {
-			var options = {
+			var options = $.extend({
 				loadmsg: '小忆拼命加载中'
-			}
+			}, options);
 			if ($('#index_loadingimg').length <= 0) {
 				$(document.body).prepend('<div id="index_loadingimg" class="loadingimg" style="display: none;"><span class="loadingimg_roundborder"><img src="img/dynamicloading_100_55.gif" /><label>' + options.loadmsg + '</label></span></div>');
 			}
@@ -582,56 +582,64 @@
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
 
-
-			//当居中元素是img标签时，特殊处理！
-			if (_this.is('img')) {
-				//递归判断需要居中的图片是否加载完成，如果没有就重载
-				var checkImgLoading = function() {
-					_this.each(function(index) {
-						if ($(this).height() == 0) {
-							console.log('load failed ' + $(this).width())
-							reload = true;
-							return false;
-						} else {
-							containerheight = $(options.container).eq(index).height();
-							checkPosition($(this), containerheight)
-							console.log('第' + index + '张图片的高度:' + containerheight)
-						}
-					});
-					if (reload) {
-						reload = false;
-						checkBrowser({
-							ie: function() {
-								timer = window.setTimeout(function() {
-									checkImgLoading();
-								}, 100);
-							},
-							other: function() {
-								timer = setTimeout(function() {
-									checkImgLoading();
-								}, 100);
+			aaa();
+			$(window).resize(function() {
+				aaa();
+			});
+			function aaa(){
+				//当居中元素是img标签时，特殊处理！
+				if (_this.is('img')) {
+					//递归判断需要居中的图片是否加载完成，如果没有就重载
+					var checkImgLoading = function() {
+						_this.each(function(index) {
+							if ($(this).height() == 0) {
+								console.log('load failed ' + $(this).width())
+								reload = true;
+								return false;
+							} else {
+								containerheight = $(options.container).eq(index).height();
+								checkPosition($(this), containerheight)
+								console.log('第' + index + '张图片的高度:' + containerheight)
 							}
+						});
+						if (reload) {
+							reload = false;
+							checkBrowser({
+								ie: function() {
+									timer = window.setTimeout(function() {
+										checkImgLoading();
+									}, 100);
+								},
+								other: function() {
+									timer = setTimeout(function() {
+										checkImgLoading();
+									}, 100);
+								}
+							})
+						}
+					}
+					checkImgLoading();
+					//缺省情况
+				} else {
+					//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
+					//container设置判断
+					if (options.container != '') {
+						_this.each(function(index) {
+							var containerheight = $(options.container).eq(index).height();
+							windowWidth = $(options.container).width();
+							checkPosition($(this));
+						})
+					} else {
+						checkPosition(_this);
+						$(window).resize(function() {
+							checkPosition(_this);
 						})
 					}
-				}
-				checkImgLoading();
-				//缺省情况
-			} else {
-				//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
-				//container设置判断
-				if (options.container != '') {
-					_this.each(function(index) {
-						var containerheight = $(options.container).eq(index).height();
-						windowWidth = $(options.container).width();
-						checkPosition($(this));
-					})
-				} else {
-					checkPosition(_this);
 				}
 			}
 
 			function checkPosition(_this) {
-				console.log('begin aligning')
+				// console.log('begin aligning')
 				checkBrowser({
 					ie: function() {
 						window.clearTimeout(timer);
@@ -650,15 +658,12 @@
 							if (options.container != '') {
 								var marginY = (containerheight - thisHeight) / 2;
 							} else {
-								var marginY = (windowHeight - thisHeight) / 2;
+								var marginY = ($(window).height() - thisHeight) / 2;
 							}
 							if (marginY <= 0) {
 								marginY = 0;
 							};
-							// alert(_this.width())
-							console.log(thisWidth);
-							// console.log(containerheight);
-							if (thisWidth <= windowWidth) {
+							if (thisWidth <= $(window).width()) {
 								_this.css({
 									'margin': marginY + options.offsetY + 'px auto'
 								});
@@ -705,8 +710,6 @@
 			}
 
 			function aligning(callback) {
-				// var thisWidth = _this.outerWidth(),
-				// 	thisHeight = _this.outerHeight();
 				$(window).resize(function() {
 					thisWidth = _this.outerWidth();
 					thisHeight = _this.outerHeight();
@@ -718,17 +721,45 @@
 			function checkBrowser(callback) {
 				callback = $.extend({
 					ie: function() {
-						return; },
+						return;
+					},
 					other: function() {
-						return; }
+						return;
+					}
 				}, callback)
 				if (navigator.appName.indexOf("Explorer") > -1) {
 					console.log('IE')
 					callback.ie();
 				} else {
-					console.log('other')
+					// console.log('other')
 					callback.other();
 				}
+			}
+			//屏幕方向探测器
+			function orientationSensor(callback) {
+				var windowWidth = $(window).width(),
+					windowHeight = $(window).height(),
+					orientation = '';
+				callback = $.extend({
+					portrait: function() {},
+					landscape: function() {},
+					orientationchange: function(windowWidth, windowHeight) {}
+				}, callback)
+
+				checkoritation();
+				$(window).resize(function() {
+					checkoritation();
+				});
+
+				function checkoritation() {
+					callback.orientationchange();
+					if (windowWidth < windowHeight) {
+						return callback.portrait();
+					} else {
+						return callback.landscape();
+					}
+				}
+				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		}
 	});
@@ -771,6 +802,33 @@
 				options.callback();
 			});
 		},
+		orientationSensor: function(callback) {
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
+				orientation = '';
+			callback = $.extend({
+				portrait: function() {},
+				landscape: function() {},
+				orientationchange: function(windowWidth, windowHeight) {
+
+				}
+			}, callback);
+
+			checkoritation();
+			$(window).resize(function() {
+				checkoritation();
+			});
+
+			function checkoritation() {
+				callback.orientationchange();
+				if (windowWidth < windowHeight) {
+					return callback.portrait();
+				} else {
+					return callback.landscape();
+				}
+			}
+			return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
+		},
 		remResizing: function(options) {
 			options = $.extend({
 				fontsize: 16,
@@ -788,18 +846,14 @@
 			});
 
 			function sizeConstraint() {
-				orientationSensor({
-					portrait: function() {
-						windowWidth = $(window).width(),
-							windowHeight = $(window).height();
-						// alert(windowHeight)
-					},
-					landscape: function() {
-						windowHeight = $(window).width(),
-							windowWidth = $(window).height();
-						// alert(windowWidth)
-					}
-				})
+				if (orientationSensor() == 'portrait') {
+					windowWidth = $(window).width(),
+						windowHeight = $(window).height();
+				} else {
+					windowHeight = $(window).width(),
+						windowWidth = $(window).height();
+				}
+
 				var factor = 0;
 				// alert(windowWidth)
 				if (options.minwidth == 0) {
@@ -809,10 +863,18 @@
 					});
 					factor = windowWidth / options.minwidth;
 				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
-					//alert('当最小宽度不等于0且屏幕宽度小于等最小宽度时')
-					bodyEl.css({
-						'width': options.minwidth
-					});
+					// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
+					if (orientationSensor() == 'portrait') {
+						bodyEl.css({
+							'width': options.minwidth,
+							'height': 'auto'
+						});
+					} else {
+						bodyEl.css({
+							'width': 'auto',
+							'height': options.minwidth
+						});
+					}
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
 					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
@@ -820,7 +882,7 @@
 						'width': windowWidth
 					});
 					//alert(windowWidth)
-						// factor = 2;
+					// factor = 2;
 					factor = windowWidth / options.minwidth;
 					//alert(factor = windowWidth / options.minwidth)
 				} else if (windowWidth > options.maxwidth) {
@@ -844,33 +906,41 @@
 			//屏幕方向探测器
 			function orientationSensor(callback) {
 				var windowWidth = $(window).width(),
-					windowHeight = $(window).height();
-				if (typeof(callback) == 'undefined') {
-					callback = {
-						portrait: function() {},
-						landscape: function() {}
-					}
-				} else {
-					if (windowWidth < windowHeight) {
-						return callback.portrait();
+					windowHeight = $(window).height(),
+					orientation = '';
+				checkoritation();
+				$(window).resize(function() {
+					checkoritation();
+				});
+
+				function checkoritation() {
+					if (typeof(callback) == 'undefined') {
+						callback = {
+							portrait: function() {},
+							landscape: function() {}
+						}
 					} else {
-						return callback.landscape();
+						if (windowWidth < windowHeight) {
+							return callback.portrait();
+						} else {
+							return callback.landscape();
+						}
 					}
 				}
+				console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
+				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		},
 		editphoto: function(config) {
-			var transformData = $.extend({
+			var transformData = {
 					scale: 1,
 					rotate: 0,
 					left: 0,
-					top: 0,
-					position: ''
-				}, {}),
-
+					top: 0
+				},
 				config = $.extend({
 					image: '',
-					tools:{
+					tools: {
 						photoframe: '',
 						trBtn: '',
 						tlBtn: '',
@@ -880,16 +950,16 @@
 						rePositionBtn: '',
 						originalsizeBtn: '',
 						epscrollbar: ''
-					}
-					
-				}, config),
-
-				windowWidth = $(window).width(),
+					},
+					destroy: false
+				}, config);
+			if (config.destroy==true) {
+				destroy();
+			};
+			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				image = $(config.image),
-				epscrollbarWidth = $(config.tools.epscrollbar).find('label').width(),
-				zoomingSlider = $(config.tools.epscrollbar).find('span'),
-				frameRatio = 1.5, //相框宽高比,此值由被点击的槽位宽高比决定
+				frameRatio = 1.2, //相框宽高比,此值由被点击的槽位宽高比决定
 				startPosX = 0,
 				startPosY = 0,
 				imageTop = 0,
@@ -898,45 +968,71 @@
 				endPosY = 0,
 				offsetPosX = 0,
 				offsetPosY = 0,
-				originalWidth=0,
-				originalHeight=0,
-				originalRatio=0,
-				saveRatio=0,
-				sliderPosX = zoomingSlider.offset().left,
-				initMarginleft=0,
+				originalWidth = 0,
+				originalHeight = 0,
+				originalRatio = 0,
+				saveRatio = 0,
+				epscrollbarWidth,
+				zoomingSlider,
+				sliderPosX,
+				initMarginleft = 0,
 				marginleft = 0;
 
-			var init = function() {
+			if (config.tools.epscrollbar != '') {
+				epscrollbarWidth = $(config.tools.epscrollbar).find('label').width(),
+				zoomingSlider = $(config.tools.epscrollbar).find('span'),
+				sliderPosX = zoomingSlider.offset().left;
+			} else {
+				return;
+			}
+
+			init();
+
+			function init() {
 				image.css('transition', 'transform 0.5s');
 				image.css(transformData);
-				
-				
-				var imgObj=new Image;
-				imgObj.src=image.attr('src');
-				originalWidth=imgObj.width;
-				originalHeight=imgObj.height;
-				originalRatio=originalWidth/(windowWidth*0.9);
-				console.log(epscrollbarWidth);
-				initMarginleft=epscrollbarWidth/originalRatio;
-				zoomingSlider.css('margin-left', initMarginleft);
-
-				if (frameRatio > 1) {
-					$(config.tools.photoframe).css('height', (windowWidth * 0.9) / frameRatio);
+				var photoframe = $(config.tools.photoframe);
+				if (frameRatio >= 1) {
+					photoframe.css({
+						width: $(window).width() * 0.9,
+						height: ($(window).width() * 0.9) / frameRatio
+					});
 				} else if (frameRatio > 0 && frameRatio < 1) {
-					$(config.tools.photoframe).css('width', windowHeight * 0.9 * frameRatio + '%')
+					photoframe.css({
+						width: $(window).height() * 0.6 * frameRatio,
+						height: $(window).height() * 0.6
+					})
+					if (photoframe.width() > $(window).width()) {
+						photoframe.css({
+							width: $(window).width(),
+							height: photoframe.height() * ($(window).width() / photoframe.width())
+						});
+						alert(photoframe.height());
+					};
 				}
+
+				//获取图片原始尺寸
+				var imgObj = new Image;
+				imgObj.src = image.attr('src');
+				originalWidth = imgObj.width;
+				originalHeight = imgObj.height;
+				originalRatio = originalWidth / (photoframe.width() * 0.9);
+
+				//根据图片原始宽度和屏幕宽度的比利算出滑块初始位置
+				initMarginleft = $(config.tools.epscrollbar).find('label').width() / originalRatio;
+				zoomingSlider.css('margin-left', initMarginleft);
 				//先确定相框高度后再对图片进行居中操作
 				$(config.tools.photoframe).align();
 				image.align({
 					container: '.makebook_epeditarea_wrapper'
 				});
-			}();
+			};
 			//原始尺寸
 			$(config.tools.originalsizeBtn).on('touchend', function() {
 				image.css(cssSettings({
 					'scale': originalRatio
 				}));
-				saveRatio=initMarginleft*originalRatio;
+				saveRatio = initMarginleft * originalRatio;
 				zoomingSlider.css('margin-left', saveRatio);
 			});
 			//向右转
@@ -973,7 +1069,7 @@
 			});
 			//重新归位
 			$(config.tools.rePositionBtn).on('touchend', function() {
-				transformData = $.extend(transformData,{
+				transformData = $.extend(transformData, {
 					left: 0,
 					top: 0
 				});
@@ -984,78 +1080,174 @@
 			//  transformData.scale = 0.5;
 			//  zoomingSlider.css('margin-left', epscrollbarWidth / 2);
 			// })
-			
-
-			function eventHandler(e, transformData) {
-				e.preventDefault;
-				var touch = e.touches[0];
-				if ($(e.target).closest(zoomingSlider).length > 0) {
-					var movingPosX = touch.pageX;
-					marginleft = movingPosX - sliderPosX;
-					if (marginleft <= 0) {
-						marginleft = 0;
-					} else if (marginleft > epscrollbarWidth - 10) {
-						marginleft = epscrollbarWidth - 10
-					} else {
-						zoomingSlider.css('margin-left', marginleft);
-						transformData = {
-							scale: Number(marginleft / epscrollbarWidth) * 2
-						}
-						// transformData=$.extend({
-						// 	scale: Number(marginleft / epscrollbarWidth) * 2
-						// }, transformData)
-						console.log('滑块操作后的 '+transformData);
-						image.css(cssSettings(transformData));
+			function sliderEvent(e){
+				var touch = e.originalEvent.touches[0];
+				var movingPosX = touch.pageX;
+				marginleft = movingPosX - sliderPosX;
+				if (marginleft <= 0) {
+					marginleft = 0;
+				} else if (marginleft > epscrollbarWidth - 10) {
+					marginleft = epscrollbarWidth - 10
+				} else {
+					zoomingSlider.css('margin-left', marginleft);
+					var scalecss = {
+						scale: Number(marginleft / epscrollbarWidth) * originalRatio
 					}
-					if (marginleft>saveRatio) {
-						//大于最低清晰度
-						//console.log(marginleft+' '+saveRatio)
-					};
-				} else if ($(e.target).closest(image).length > 0) {
-					switch (e.type) {
-						case 'touchstart':
-							startPosX = touch.pageX,
-							startPosY = touch.pageY,
-							imageLeft = Number(image.css('left').replace('px', '')),
-							imageTop = Number(image.css('top').replace('px', ''))
-							console.log(transformData)
-							break;
-						case 'touchmove':
-							e.preventDefault;
-							endPosX = touch.pageX,
-							endPosY = touch.pageY,
-							offsetPosX = endPosX - startPosX;
-							offsetPosY = endPosY - startPosY;
-							var positioncss ={
-								position: 'relative',
-								left: offsetPosX + imageLeft,
-								top: offsetPosY + imageTop
-							};
-
-							cssSettings(positioncss);
-							transformData=$.extend(transformData,positioncss)
-							image.css(transformData);
-							break;
-					}
+					image.css(cssSettings(scalecss));
+					console.log('滑块操作后的 ' + scalecss.scale);
 				}
+				if (marginleft > saveRatio) {
+					//大于最低清晰度
+					//console.log(marginleft+' '+saveRatio)
+				};
 			}
+			zoomingSlider.on('touchmove',function(e){
+
+				sliderEvent(e);
+			});
+			zoomingSlider.on('touchstart',function(e){
+				sliderEvent(e);
+			});
+			image.on('touchstart',function(e){
+				var touch = e.originalEvent.touches[0];
+				startPosX = touch.pageX,
+					startPosY = touch.pageY,
+					imageLeft = Number(image.css('left').replace('px', '')),
+					imageTop = Number(image.css('top').replace('px', ''))
+				console.log(transformData)
+			})
+			image.on('touchmove',function(e){
+				console.log('aaa')
+				var touch = e.originalEvent.touches[0];
+				e.preventDefault;
+				endPosX = touch.pageX,
+					endPosY = touch.pageY,
+					offsetPosX = endPosX - startPosX;
+				offsetPosY = endPosY - startPosY;
+				var positioncss = {
+					position: 'relative',
+					left: offsetPosX + imageLeft,
+					top: offsetPosY + imageTop
+				};
+
+				cssSettings(positioncss);
+				transformData = $.extend(transformData, positioncss)
+				image.css(transformData);
+			})
+			// function eventHandler(e, transformData) {
+			// 	function touchEvent(){
+			// 		var touch = e.touches[0];
+			// 	if ($(e.target).closest(zoomingSlider).length > 0) {
+			// 		var movingPosX = touch.pageX;
+			// 		marginleft = movingPosX - sliderPosX;
+			// 		if (marginleft <= 0) {
+			// 			marginleft = 0;
+			// 		} else if (marginleft > epscrollbarWidth - 10) {
+			// 			marginleft = epscrollbarWidth - 10
+			// 		} else {
+			// 			zoomingSlider.css('margin-left', marginleft);
+			// 			var scalecss = {
+			// 				scale: Number(marginleft / epscrollbarWidth) * originalRatio
+			// 			}
+			// 			image.css(cssSettings(scalecss));
+			// 			// transformData=$.extend({
+			// 			// 	scale: Number(marginleft / epscrollbarWidth) * 2
+			// 			// }, transformData)
+			// 			console.log('滑块操作后的 ' + scalecss.scale);
+			// 		}
+			// 		if (marginleft > saveRatio) {
+			// 			//大于最低清晰度
+			// 			//console.log(marginleft+' '+saveRatio)
+			// 		};
+			// 	} else if ($(e.target).closest(image).length > 0) {
+			// 		switch (e.type) {
+			// 			case 'touchstart':
+							
+			// 				break;
+			// 			case 'touchmove':
+							
+			// 				break;
+			// 		}
+			// 	}
+			// 	}
+			// 	e.preventDefault;
+			// 	var touch = e.touches[0];
+			// 	if ($(e.target).closest(zoomingSlider).length > 0) {
+			// 		var movingPosX = touch.pageX;
+			// 		marginleft = movingPosX - sliderPosX;
+			// 		if (marginleft <= 0) {
+			// 			marginleft = 0;
+			// 		} else if (marginleft > epscrollbarWidth - 10) {
+			// 			marginleft = epscrollbarWidth - 10
+			// 		} else {
+			// 			zoomingSlider.css('margin-left', marginleft);
+			// 			var scalecss = {
+			// 				scale: Number(marginleft / epscrollbarWidth) * originalRatio
+			// 			}
+			// 			image.css(cssSettings(scalecss));
+			// 			// transformData=$.extend({
+			// 			// 	scale: Number(marginleft / epscrollbarWidth) * 2
+			// 			// }, transformData)
+			// 			console.log('滑块操作后的 ' + scalecss.scale);
+			// 		}
+			// 		if (marginleft > saveRatio) {
+			// 			//大于最低清晰度
+			// 			//console.log(marginleft+' '+saveRatio)
+			// 		};
+			// 	} else if ($(e.target).closest(image).length > 0) {
+			// 		switch (e.type) {
+			// 			case 'touchstart':
+			// 				startPosX = touch.pageX,
+			// 					startPosY = touch.pageY,
+			// 					imageLeft = Number(image.css('left').replace('px', '')),
+			// 					imageTop = Number(image.css('top').replace('px', ''))
+			// 				console.log(transformData)
+			// 				break;
+			// 			case 'touchmove':
+			// 				e.preventDefault;
+			// 				endPosX = touch.pageX,
+			// 					endPosY = touch.pageY,
+			// 					offsetPosX = endPosX - startPosX;
+			// 				offsetPosY = endPosY - startPosY;
+			// 				var positioncss = {
+			// 					position: 'relative',
+			// 					left: offsetPosX + imageLeft,
+			// 					top: offsetPosY + imageTop
+			// 				};
+
+			// 				cssSettings(positioncss);
+			// 				transformData = $.extend(transformData, positioncss)
+			// 				image.css(transformData);
+			// 				break;
+			// 		}
+			// 	}
+			// }
 			//某些必须集合多个参数的样式的设置模式
 			function cssSettings(config) {
 				transformData = $.extend(transformData, config);
 				var cssObj = transformData;
 				if (transformData.rotate || transformData.scale) {
-					$.extend(transformData,{
+					$.extend(transformData, {
 						'transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')'
 					})
-					console.log(transformData)
+					console.log(transformData);
 					return transformData;
 				};
 			}
-			window.addEventListener('touchstart', eventHandler, false);
-			window.addEventListener('touchmove', eventHandler, false);
+			// var touchstartEvent=function(){
+			// 		window.addEventListener('touchstart', eventHandler, false);
+			// 	}(),
+			// 	touchmoveEvent=function(){
+			// 		window.addEventListener('touchmove', eventHandler, false);
+			// 	}()
 			$('.action_btn').on('touchend', function() {
-				console.log(transformData)
-			})
+				console.log(transformData);
+			});
+			function destroy(){
+				// touchstartEvent=null;
+				// touchmoveEvent=null;
+				// $('.action_btn').off();
+			}
 		}
 	});
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);

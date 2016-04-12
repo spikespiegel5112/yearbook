@@ -4,7 +4,7 @@
     position: relative;
     z-index: 4;
 
-    width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px 0 0 0;
 
@@ -33,7 +33,7 @@
     right: 0;
 
     width: 20px;
-    height: 20px;
+    height: 20px;
     margin: 0 0 0 10px;
     padding: 5px 0 0 0;
 
@@ -68,7 +68,7 @@
     left: -70px;
 
     width: 270px;
-    height: auto;
+    height: auto;
     margin: 10px 0 0 0;
     padding: 10px;
 
@@ -146,7 +146,7 @@
     z-index: 2;
     top: 0;
 
-    width: 320px;
+    width: 320px;
     margin: 0 auto;
     padding: 0 0 30px 0;
 
@@ -233,7 +233,7 @@
     position: relative;
     z-index: 1;
 
-    height: 100%;
+    height: 100%;
     margin: 2% 0 0 0;
 }
 
@@ -324,9 +324,8 @@
 .bmindex_main_wrapper .flipbook-viewport .page > div, .bp_preview_container .flipbook-viewport .page > div
 {
     -webkit-transform: scale(.58);
-       -moz-transform: scale(.58);
-    -webkit-transform-origin: top left;
-       -moz-transform-origin: top left;
+        -ms-transform: scale(.58);
+            transform: scale(.58);
 
     -ms-zoom: .58;
 }
@@ -334,18 +333,16 @@
 .bmindex_main_wrapper .flipbook-viewport .page > div, .bp_preview_container .flipbook-viewport .page > div
 {
     -webkit-transform: scale(.58);
-       -moz-transform: scale(.58);
-    -webkit-transform-origin: top left;
-       -moz-transform-origin: top left;
+        -ms-transform: scale(.58);
+            transform: scale(.58);
 
     -ms-zoom: .58;
 }
 .bmindex_main_wrapper .flipbook-viewport .hard > div, .bp_preview_container .flipbook-viewport .hard > div
 {
     -webkit-transform: scale(.6);
-       -moz-transform: scale(.6);
-    -webkit-transform-origin: top left;
-       -moz-transform-origin: top left;
+        -ms-transform: scale(.6);
+            transform: scale(.6);
 
     -ms-zoom: .6;
 }
@@ -354,25 +351,10 @@
     top: 8px;
 
     -webkit-transform: scale(.58);
-       -moz-transform: scale(.58);
+        -ms-transform: scale(.58);
+            transform: scale(.58);
 
     -ms-zoom: .58;
-}
-.bmindex_main_wrapper .flipbook-viewport .secondcover > div, .bp_preview_container .flipbook-viewport .secondcover > div
-{
-    -webkit-transform-origin: top right;
-       -moz-transform-origin: top right;
-}
-.bmindex_main_wrapper .flipbook-viewport .thirdcover > div, .bp_preview_container .flipbook-viewport .thirdcover > div
-{
-    -webkit-transform-origin: top left;
-       -moz-transform-origin: top left;
-}
-
-.bmindex_main_wrapper .flipbook-viewport .thirdcover > div, .bp_preview_container .flipbook-viewport .thirdcover > div
-{
-    -webkit-transform-origin: top left;
-       -moz-transform-origin: top left;
 }
 
 .flipbook-viewport .hard > div > div > div
@@ -451,7 +433,7 @@
 .bppreloadmask_logo_item
 {
     width: 75px;
-    height: 45px;
+    height: 45px;
     margin: 30% auto 30px;
 
     background: url(../img/sprite/imgsprite_yb3_wbl_00000.png);
@@ -460,7 +442,7 @@
 .bppreloadmask_prograssbar_item
 {
     width: 150px;
-    height: 2px;
+    height: 2px;
     margin: 0 auto;
 
     background: #999;
@@ -894,7 +876,7 @@
     z-index: 3;
 
     width: 860px;
-    height: 50px;
+    height: 50px;
     margin: 0 auto;
 }
 
@@ -942,7 +924,7 @@
     overflow: visible;
 
     width: 1070px;
-    height: auto;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -1066,7 +1048,7 @@
     position: relative;
 
     width: 6em;
-    height: 20px;
+    height: 20px;
     margin: 10px 0 10px 20px;
     padding: 0 8px 0 0;
 
@@ -1164,7 +1146,7 @@
 {
     overflow: visible;
 
-    width: 800px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -1175,7 +1157,7 @@
 
     overflow: hidden;
 
-    width: 140px;
+    width: 140px;
     height: 20px;
 
     white-space: nowrap;
@@ -1213,7 +1195,7 @@
     overflow: hidden;
 
     width: 140px;
-    height: 20px;
+    height: 20px;
     margin: 0;
 
     white-space: nowrap;
@@ -1226,7 +1208,7 @@
 {
     overflow: hidden;
 
-    width: 300px;
+    width: 300px;
     margin: 0 auto;
 
     text-align: center;
@@ -1293,7 +1275,7 @@
     top: 0;
     right: 10px;
 
-    width: 8em;
+    width: 8em;
     margin: 10px 20px;
     padding: 5px;
 
@@ -1370,7 +1352,7 @@
     font-weight: normal;
 
     box-sizing: border-box;
-    width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 30px 30px 15px 30px;
 }
@@ -1379,7 +1361,7 @@
     font-size: 20px;
     font-weight: normal;
 
-    width: 100%;
+    width: 100%;
     padding: 10px 0;
 }
 .bp_donate_wrapper h5
@@ -1627,7 +1609,7 @@
     line-height: 16px;
 
     width: 100%;
-    height: 16px;
+    height: 16px;
     margin: 0;
 
     background-color: #fff;
@@ -1662,8 +1644,6 @@
 
     width: 100%;
     height: 100%;
-
-    vertical-align: middle;
 
     border: 2px solid #df7262;
     border-radius: 5px;
@@ -2025,7 +2005,7 @@
     line-height: 36px;
 
     width: 75px;
-    height: 36px;
+    height: 36px;
     margin: 0;
     padding: 0;
 
@@ -2062,17 +2042,17 @@
 {
     font-size: 30px;
 
-    width: 200px;
+    width: 200px;
     margin: 40px auto;
 
     color: #ccc;
 }
 
-.comments_list .empty img, .bp_praise_wrapper .user_list .empty img
+/*.comments_list .empty img, .bp_praise_wrapper .user_list .empty img
 {
-/*	display: inline-block;
-	vertical-align: middle;*/
-}
+	display: inline-block;
+	vertical-align: middle;
+}*/
 
 .comments_list .empty span, .bp_praise_wrapper .user_list .empty span
 {
@@ -2468,25 +2448,14 @@
     width: 115px;
     height: 85px;
 
-    -webkit-transition: -webkit-transform .2s;
-       -moz-transition:    -moz-transform .2s;
-        -ms-transition:     -ms-transform .2s;
-         -o-transition:      -o-transform .2s;
-            transition:         transform .2s;
+    transition: -webkit-transform .2s;
+    transition:         transform .2s;
     -webkit-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
-    -webkit-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
-       -moz-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
         -ms-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
-         -o-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
             transform: translate3d(0px, 50px, 0px) scale(.1, .1);
 
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
+    border-radius: 5px;
     background: rgba(0, 0, 0, .5);
-
-         -o-border-radius: 5px;
-        -ms-border-radius: 5px;
 }
 
 .no-transition
@@ -2662,7 +2631,7 @@
 
 .turnjs-slider .ui-slider-horizontal
 {
-    width: 620px;
+    width: 620px;
     height: 8px;
     margin-left: 39px;
 }
@@ -2682,7 +2651,7 @@
 
     transition: opacity .2s;
 
-    opacity: .2;
+    opacity: .2;
     border: 1px solid white;
     background-color: black;
 }

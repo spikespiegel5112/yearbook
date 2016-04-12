@@ -161,10 +161,12 @@
     0%
     {
         -webkit-transform: translateX(0%);
+                transform: translateX(0%);
     }
     100%
     {
         -webkit-transform: translateX(60%);
+                transform: translateX(60%);
     }
 }
 
@@ -173,10 +175,12 @@
     0%
     {
         -webkit-transform: translateX(60%);
+                transform: translateX(60%);
     }
     100%
     {
         -webkit-transform: translateX(0%);
+                transform: translateX(0%);
     }
 }
 
@@ -265,7 +269,7 @@
     clear: both;
 
     width: 100%;
-    height: auto;
+    height: auto;
     margin: 15px 0 0;
 
     background-color: #f5f5f5;
@@ -327,7 +331,7 @@
 .bk_category .detail_step ul li div
 {
     width: 45px;
-    height: 45px;
+    height: 45px;
     margin: 25px auto 10px;
 
     background: url('../img/m/index/step_icons.png') no-repeat;
@@ -446,7 +450,7 @@
 
     width: 95%;
     max-width: 640px;
-    height: 140px;
+    height: 140px;
     margin: 0 auto;
 
     text-align: center;
@@ -593,7 +597,6 @@
 {
     font-size: 16px;
 
-    display: inline-block;
     float: left;
     overflow: hidden;
 
@@ -617,7 +620,7 @@
 .bask_book_slide .bd li .detail_info
 {
     box-sizing: border-box;
-    width: 100%;
+    width: 100%;
     margin: 0 0 10px;
     padding: 0 15px;
 }
@@ -683,7 +686,7 @@
 
 .stock_time div
 {
-    width: 280px;
+    width: 280px;
     margin: 0 auto;
 
     text-align: center;
@@ -787,7 +790,7 @@
 
 .footer.new .ft_service .yb_encyclopedia
 {
-    width: 90%;
+    width: 90%;
     margin: 0 auto 25px;
 
     text-align: center;

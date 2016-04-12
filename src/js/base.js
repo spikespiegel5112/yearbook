@@ -866,7 +866,7 @@
 					left: 0,
 					top: 0,
 					position: ''
-				}, transformData),
+				}, {}),
 
 				config = $.extend({
 					image: '',
@@ -973,10 +973,10 @@
 			});
 			//重新归位
 			$(config.tools.rePositionBtn).on('touchend', function() {
-				transformData = $.extend({
+				transformData = $.extend(transformData,{
 					left: 0,
 					top: 0
-				}, transformData)
+				});
 				image.css(transformData);
 			});
 			//适配相框宽度
@@ -998,17 +998,18 @@
 						marginleft = epscrollbarWidth - 10
 					} else {
 						zoomingSlider.css('margin-left', marginleft);
-						// transformData = {
-						// 	scale: Number(marginleft / epscrollbarWidth) * 2
-						// }
-						transformData=$.extend({
+						transformData = {
 							scale: Number(marginleft / epscrollbarWidth) * 2
-						}, transformData)
-						console.log(transformData);
+						}
+						// transformData=$.extend({
+						// 	scale: Number(marginleft / epscrollbarWidth) * 2
+						// }, transformData)
+						console.log('滑块操作后的 '+transformData);
 						image.css(cssSettings(transformData));
 					}
 					if (marginleft>saveRatio) {
-						console.log(marginleft+' '+saveRatio)
+						//大于最低清晰度
+						//console.log(marginleft+' '+saveRatio)
 					};
 				} else if ($(e.target).closest(image).length > 0) {
 					switch (e.type) {
@@ -1017,7 +1018,7 @@
 							startPosY = touch.pageY,
 							imageLeft = Number(image.css('left').replace('px', '')),
 							imageTop = Number(image.css('top').replace('px', ''))
-							console.log(imageLeft)
+							console.log(transformData)
 							break;
 						case 'touchmove':
 							e.preventDefault;
@@ -1030,15 +1031,10 @@
 								left: offsetPosX + imageLeft,
 								top: offsetPosY + imageTop
 							};
-							transformData=$.extend({
-								position: 'relative',
-								left: offsetPosX + imageLeft,
-								top: offsetPosY + imageTop
-							}, transformData)
-							
-							image.css(transformData)
-							console.log(transformData)
-							// console.log('top ' + transformData.top + ' left ' + transformData.left)
+
+							cssSettings(positioncss);
+							transformData=$.extend(transformData,positioncss)
+							image.css(transformData);
 							break;
 					}
 				}
@@ -1048,15 +1044,15 @@
 				transformData = $.extend(transformData, config);
 				var cssObj = transformData;
 				if (transformData.rotate || transformData.scale) {
-					var returncss = {
+					$.extend(transformData,{
 						'transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')'
-					}
+					})
 					console.log(transformData)
-					return returncss;
+					return transformData;
 				};
 			}
-			document.addEventListener('touchstart', eventHandler, false);
-			document.addEventListener('touchmove', eventHandler, false);
+			window.addEventListener('touchstart', eventHandler, false);
+			window.addEventListener('touchmove', eventHandler, false);
 			$('.action_btn').on('touchend', function() {
 				console.log(transformData)
 			})

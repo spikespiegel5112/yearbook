@@ -1,1010 +1,1339 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 /*~~~~~~~~~~interactivebooklist_wrapper~~~~~~~~~~*/
-.choosetype_wrapper {
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #ddd;
+.choosetype_wrapper
+{
     position: relative;
+
+    width: 100%;
+
+    border-top: 1px solid #ddd;
+    background: #fff;
 }
 
-.choosetype_wrapper ul {
+.choosetype_wrapper ul
+{
+    width: 100%;
     margin: 0 auto;
-    width: 100%;
+
     background-color: #fff;
 }
 
-.choosetype_wrapper ul li {
+.choosetype_wrapper ul li
+{
     float: left;
-    padding: 5px 0;
+
     width: 25%;
     height: 100px;
+    padding: 5px 0;
 }
 
-.choosetype_wrapper ul li span {
+.choosetype_wrapper ul li span
+{
+    line-height: 60px;
+
     display: block;
-    margin: 10px auto 5px;
+
     width: 60px;
     height: 60px;
+    margin: 10px auto 5px;
+
+    text-align: center;
+
     border-radius: 50%;
     background-color: #c0c0c0;
-    text-align: center;
-    line-height: 60px;
 }
 
-.choosetype_wrapper ul li span img {
+.choosetype_wrapper ul li span img
+{
     width: 40px;
     height: 40px;
+
     vertical-align: middle;
 }
 
-.choosetype_wrapper ul li .active {
+.choosetype_wrapper ul li .active
+{
     background: #afde70;
 }
 
-.choosetype_wrapper a {
+.choosetype_wrapper a
+{
     display: block;
+
     width: 100%;
     height: 100%;
 }
 
-.choosetype_wrapper ul li label {
-    display: block;
-    width: 100%;
+.choosetype_wrapper ul li label
+{
     font-size: 1em;
-    text-align: center;
-    color: #888;
     font-weight: normal;
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #888;
 }
 
-.choosetype_wrapper span {
+.choosetype_wrapper span
+{
     background-position-y: -88px;
 }
 
-.choosetype_wrapper .active span {
+.choosetype_wrapper .active span
+{
     background-color: #afde70;
 }
 
-.choosetype_wrapper .active label {
+.choosetype_wrapper .active label
+{
     color: #8fc04e;
 }
 
-.booklist_wrapper .choosetype_wrapper {
-    margin: 0 0 23px 0;
+.booklist_wrapper .choosetype_wrapper
+{
     overflow: hidden;
+
+    margin: 0 0 23px 0;
 }
 
-.booklist_wrapper .swiper-pagination {
-    width: 100%;
+.booklist_wrapper .swiper-pagination
+{
     position: absolute;
     top: 270px;
+
+    width: 100%;
 }
 
-.booklist_wrapper .swiper-pagination span {
+.booklist_wrapper .swiper-pagination span
+{
     margin: 0 0 0 10px;
 }
 
-.booklist_wrapper .choosetype_wrapper ul {
+.booklist_wrapper .choosetype_wrapper ul
+{
     border-left: 1px solid #ddd;
 }
 
-.booklist_wrapper .choosetype_wrapper ul:before {
+.booklist_wrapper .choosetype_wrapper ul:before
+{
     left: 30.5%;
 }
 
-.booklist_wrapper .choosetype_wrapper ul:after {
+.booklist_wrapper .choosetype_wrapper ul:after
+{
     left: 63.7%;
 }
 
-.booklist_wrapper .choosetype_wrapper ul li {
-    padding: 5px 0;
+.booklist_wrapper .choosetype_wrapper ul li
+{
     box-sizing: content-box;
-    width: 33%;
+    width: 33%;
+    padding: 5px 0;
+
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
 
-.booklist_wrapper .choosetype_wrapper ul li:before {
-    content: '';
+.booklist_wrapper .choosetype_wrapper ul li:before
+{
     position: absolute;
+
+    content: '';
 }
 
-.booklist_wrapper .choosetype_wrapper ul li span {
+.booklist_wrapper .choosetype_wrapper ul li span
+{
     display: block;
+
     width: 60px;
     height: 60px;
+
     background-color: #fff;
     background-image: url(../img/m/sprite/tpllisticons.png);
     background-size: 300px 120px;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .all span {
+.booklist_wrapper .choosetype_wrapper ul .all span
+{
     background-position: 0 -0;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .entertaining span {
+.booklist_wrapper .choosetype_wrapper ul .entertaining span
+{
     background-position: -60px -0;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .graduate span {
+.booklist_wrapper .choosetype_wrapper ul .graduate span
+{
     background-position: -120px -0;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .allimagebook span {
+.booklist_wrapper .choosetype_wrapper ul .allimagebook span
+{
     background-position: -180px 0;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .baby span {
+.booklist_wrapper .choosetype_wrapper ul .baby span
+{
     background-position: -240px -0;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .travel span {
+.booklist_wrapper .choosetype_wrapper ul .travel span
+{
     background-position: 0 -60px;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .love span {
+.booklist_wrapper .choosetype_wrapper ul .love span
+{
     background-position: -60px -60px;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .party span {
+.booklist_wrapper .choosetype_wrapper ul .party span
+{
     background-position: -120px -60px;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .portrait span {
+.booklist_wrapper .choosetype_wrapper ul .portrait span
+{
     background-position: -180px -60px;
 }
 
-.booklist_wrapper .choosetype_wrapper ul .family span {
+.booklist_wrapper .choosetype_wrapper ul .family span
+{
     background-position: -240px -60px;
 }
 
-.booklist_wrapper .mybookshelf_main_wrapper li a img {
+.booklist_wrapper .mybookshelf_main_wrapper li a img
+{
     background-position: -244px -362px;
 }
 
 /*~~~~~~~~~~book details~~~~~~~~~~*/
-.book_show_swiper {
+.book_show_swiper
+{
     position: relative;
-    padding: 0;
+
     width: 100%;
+    padding: 0;
+
     border-bottom: 1px solid #e5e5e5;
 }
 
-.book_show_swiper ul {
+.book_show_swiper ul
+{
     margin: 0;
 }
 
-.book_show_swiper .swiper-slide img {
+.book_show_swiper .swiper-slide img
+{
     display: block;
-    margin: 0 auto;
+
     max-width: 188px;
     max-height: 188px;
+    margin: 0 auto;
 }
 
-.book_show_swiper .swiper-slide a {
+.book_show_swiper .swiper-slide a
+{
     display: block;
-    margin: 0 auto;
+
     width: 188px;
     height: 188px;
+    margin: 0 auto;
+
     text-align: center;
 }
 
-.book_show_swiper .swiper-slide .cover img {
+.book_show_swiper .swiper-slide .cover img
+{
     position: relative;
     top: 18px;
     left: 18px;
+
     width: 150px;
     height: 166px;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active
+{
     opacity: 1;
     background: #77b775;
 }
 
 /*book standard*/
-.product_detail .standard .standard_info {
-    margin: 15px auto 0;
-    width: 100%;
+.product_detail .standard .standard_info
+{
     font-size: 14px;
+
+    width: 100%;
+    margin: 15px auto 0;
 }
 
-.standard .standard_info ul li {
+.standard .standard_info ul li
+{
+    line-height: 35px;
+
     display: inline-block;
-    margin: 0 auto;
+
+    box-sizing: border-box;
     width: 85%;
     height: 35px;
-    line-height: 35px;
+    margin: 0 auto;
+
     text-align: left;
+
     border-bottom: 1px dotted #c9c9c9;
-    box-sizing: border-box;
 }
 
-.standard .standard_info ul li label {
-    color: #8f8f8f;
+.standard .standard_info ul li label
+{
     font-weight: normal;
+
     margin-bottom: 0;
+
+    color: #8f8f8f;
 }
 
-.standard .standard_info ul li label::before {
+.standard .standard_info ul li label::before
+{
     display: inline-block;
-    margin: 0 8px 0 0;
-    content: " ";
+
     width: 10px;
     height: 10px;
-    background-color: #81d42f;
+    margin: 0 8px 0 0;
+
+    content: ' ';
     vertical-align: middle;
+
+    background-color: #81d42f;
 }
 
-.how_made img {
+.how_made img
+{
     display: block;
-    margin: 0 auto;
+
     width: 90%;
+    margin: 0 auto;
 }
 
 .pages_display .pages,
-.using_scene .scene_dis {
+.using_scene .scene_dis
+{
     margin: 40px auto 0;
 }
 
 .pages_display .pages .cover,
-.pages_display .pages .backcover {
+.pages_display .pages .backcover
+{
     position: relative;
-    margin: 50px auto;
+
     width: 221px;
     height: 301px;
-    background: url("../img/m/booklist/inner_page_cover_bg.png") no-repeat 0;
+    margin: 50px auto;
+
+    background: url('../img/m/booklist/inner_page_cover_bg.png') no-repeat 0;
     background-size: cover;
 }
 
 .pages_display .pages .cover img,
-.pages_display .pages .backcover img {
+.pages_display .pages .backcover img
+{
     position: absolute;
-    left: 0;
     top: -4px;
+    left: 0;
+
+    box-sizing: border-box;
     width: 213px;
     height: 301px;
+
     box-shadow: 0 0 3px #ccc;
-    box-sizing: border-box;
 }
 
-.pages_display .pages .backcover {
-    background: url("../img/m/booklist/inner_page_backcover_bg.png") no-repeat 0;
+.pages_display .pages .backcover
+{
+    background: url('../img/m/booklist/inner_page_backcover_bg.png') no-repeat 0;
     background-size: contain;
 }
 
-.pages_display .pages .backcover img {
+.pages_display .pages .backcover img
+{
     position: absolute;
     right: 0;
     left: auto;
 }
 
-.pages_display .pages .inner_page {
+.pages_display .pages .inner_page
+{
     position: relative;
+
     display: block;
-    margin: 50px auto;
+
     width: 310px;
     height: 217px;
-    background: url("../img/m/booklist/inner_page_bg.jpg") no-repeat 0;
+    margin: 50px auto;
+
+    background: url('../img/m/booklist/inner_page_bg.jpg') no-repeat 0;
     background-size: contain;
 }
 
-.pages_display .pages .inner_page::after {
+.pages_display .pages .inner_page::after
+{
     position: absolute;
     top: 3px;
     left: 50%;
-    margin-left: -11px;
-    content: " ";
+
     width: 22px;
     height: 212px;
-    background: url("../img/m/booklist/inner_page_shadow.png") no-repeat 0;
+    margin-left: -11px;
+
+    content: ' ';
+
+    background: url('../img/m/booklist/inner_page_shadow.png') no-repeat 0;
     background-size: cover;
 }
 
 .pages_display .pages .inner_page .left,
-.pages_display .pages .inner_page .right {
+.pages_display .pages .inner_page .right
+{
     float: left;
+
+    box-sizing: border-box;
+    width: 50%;
     margin-left: -1px;
     padding: 3px 0;
-    width: 50%;
-    box-sizing: border-box;
 }
 
-.pages_display .pages .inner_page .left {
+.pages_display .pages .inner_page .left
+{
     text-align: right;
 }
 
-.pages_display .pages .inner_page .right {
+.pages_display .pages .inner_page .right
+{
     text-align: left;
 }
 
-.pages_display .pages .inner_page img {
+.pages_display .pages .inner_page img
+{
     width: 150px;
     height: 212px;
 }
 
-.using_scene .scene_dis ul li {
+.using_scene .scene_dis ul li
+{
     display: block;
-    margin: 20px 5%;
+
     width: 95%;
+    margin: 20px 5%;
 }
 
-.using_scene .scene_dis ul li img {
+.using_scene .scene_dis ul li img
+{
     width: 100%;
 }
 
-.sizing_explain .size_info .item {
+.sizing_explain .size_info .item
+{
     display: block;
-    margin: 0 auto;
+
     width: 90%;
+    margin: 0 auto;
 }
 
-.sizing_explain .size_info .item img {
+.sizing_explain .size_info .item img
+{
     display: block;
-    margin: 15px auto;
+
     width: 202px;
     height: 232px;
+    margin: 15px auto;
 }
 
-.sizing_explain .size_info .item:first-child img {
+.sizing_explain .size_info .item:first-child img
+{
     width: 214px;
     height: 268px;
 }
 
-.sizing_explain .size_info .item p {
+.sizing_explain .size_info .item p
+{
     font-size: 14px;
+
     color: #666;
 }
 
 /*sold record*/
-.book_details_box .sold_record table {
+.book_details_box .sold_record table
+{
+    font-size: 12px;
+
     position: relative;
+
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    font-size: 12px;
+
     text-align: center;
 }
 
-.sold_record .table_head {
-    padding: 0;
-    color: #666;
-    height: 45px;
+.sold_record .table_head
+{
+    font-size: 12px;
     line-height: 45px;
-    font-size: 12px;
-    background-color: #eaeaea;
+
+    height: 45px;
+    padding: 0;
+
+    color: #666;
     border-bottom: 1px solid #c9c9c9;
+    background-color: #eaeaea;
 }
 
-.sold_record .table_head span {
+.sold_record .table_head span
+{
     float: left;
+
     width: 22%;
+
     text-align: center;
 }
 
-.sold_record .table_head span:last-child {
+.sold_record .table_head span:last-child
+{
     width: 34%;
 }
 
-.sold_record .table_main {
+.sold_record .table_main
+{
+    font-size: 12px;
+
     margin: 0 0 25px;
     padding: 0;
+
     color: #333;
-    font-size: 12px;
 }
 
-.sold_record .table_main table {
+.sold_record .table_main table
+{
     width: 100%;
 }
 
-.sold_record table tbody tr {
-    height: 45px;
+.sold_record table tbody tr
+{
     line-height: 45px;
+
+    height: 45px;
+
     border-bottom: 1px dotted #c9c9c9;
 }
 
-.sold_record table tbody tr:nth-child(even) {
+.sold_record table tbody tr:nth-child(even)
+{
     background-color: #f7f7f7;
 }
 
-.sold_record table tbody tr td {
+.sold_record table tbody tr td
+{
     width: 22%;
+
     text-align: center;
 }
 
-.sold_record table tbody tr td:last-child {
+.sold_record table tbody tr td:last-child
+{
     width: 34%;
 }
 
 /*user comments*/
 .book_details_box .user_comments,
-.book_details_box .consult {
+.book_details_box .consult
+{
+    font-size: 12px;
+
+    box-sizing: border-box;
+    width: 100%;
     margin: 0;
     padding: 0 35px;
-    width: 100%;
-    font-size: 12px;
+
     color: #666;
-    box-sizing: border-box;
 }
 
 .user_comments .table_main,
-.consult .table_main {
+.consult .table_main
+{
     margin: 0 0 20px;
 }
 
 .user_comments .table_main .com_item,
-.consult .table_main .com_item {
+.consult .table_main .com_item
+{
+    font-size: 12px;
+
     margin: 0;
     padding: 10px 15px;
+
     border-bottom: 1px dotted #c9c9c9;
-    font-size: 12px;
 }
 
 .user_comments .table_main .com_item .name,
-.user_comments .table_main .com_item .time {
+.user_comments .table_main .com_item .time
+{
+    line-height: 30px;
+
     display: block;
     float: left;
+
     height: 35px;
-    line-height: 30px;
 }
 
-.user_comments .table_main .com_item .time {
+.user_comments .table_main .com_item .time
+{
     float: right;
 }
 
-.user_comments .table_main .com_item .content {
+.user_comments .table_main .com_item .content
+{
     position: relative;
+
+    clear: both;
+
+    box-sizing: border-box;
     margin: 0 0 5px;
     padding: 10px;
+
     background-color: #f6f6f6;
-    clear: both;
-    box-sizing: border-box;
 }
 
-.user_comments .table_main .com_item .content::before {
-    display: block;
+.user_comments .table_main .com_item .content::before
+{
     position: absolute;
     top: -8px;
     left: 20px;
-    content: " ";
+
+    display: block;
+
     width: 0;
     height: 0;
+
+    content: ' ';
+
+    border-right: 8px solid transparent;
     border-bottom: 8px solid #f6f6f6;
     border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
 }
 
-.user_comments .table_main .com_item .content p {
-    color: #333;
+.user_comments .table_main .com_item .content p
+{
     line-height: 1.8em;
+
     word-break: break-all;
+
+    color: #333;
 }
 
-.user_comments .table_main .com_item .share p {
-    display: block;
-    height: 30px;
+.user_comments .table_main .com_item .share p
+{
     line-height: 30px;
+
+    display: block;
+
+    height: 30px;
+
     text-align: right;
 }
 
-.user_comments .table_main .com_item .share a {
+.user_comments .table_main .com_item .share a
+{
     color: #73bf28;
 }
 
 .user_comments .table_main .com_item .share a:hover,
-.user_comments .table_main .com_item .share a:active {
+.user_comments .table_main .com_item .share a:active
+{
     color: #e7b54b;
 }
 
 /*user comments bask_img*/
-.user_comments .com_item .bask_img {
+.user_comments .com_item .bask_img
+{
     position: relative;
+
     margin: 10px 0;
 }
 
-.com_item .bask_img .item {
+.com_item .bask_img .item
+{
     position: relative;
+
     display: inline-block;
     float: none;
-    margin: 0 4px 0 0;
-    padding: 0;
+
+    box-sizing: content-box;
     width: 40px;
     height: 40px;
+    margin: 0 4px 0 0;
+    padding: 0;
+
     border: 1px solid #ddd;
-    box-sizing: content-box;
 }
 
-.com_item .bask_img .item.cur {
+.com_item .bask_img .item.cur
+{
     position: relative;
-    border: 2px solid #9cd65d;
+
     box-sizing: content-box;
+
+    border: 2px solid #9cd65d;
 }
 
-.com_item .bask_img .item.cur::after {
+.com_item .bask_img .item.cur::after
+{
     position: absolute;
     bottom: -6px;
     left: 14px;
-    content: " ";
+
     width: 0;
     height: 0;
+
+    content: ' ';
+
     border-top: 6px solid #9cd65d;
-    border-left: 6px solid transparent;
     border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
 }
 
-.com_item .bask_img .item img {
+.com_item .bask_img .item img
+{
     width: 40px;
     height: 40px;
 }
 
-.com_item .bask_show {
+.com_item .bask_show
+{
     display: none;
 }
 
-.com_item .bask_show .img_show {
+.com_item .bask_show .img_show
+{
     position: relative;
+
     width: 100%;
+
     text-align: center;
+
     background-color: #fff;
 }
 
-.com_item .bask_show .img_show .center {
+.com_item .bask_show .img_show .center
+{
     max-width: 100%;
     max-height: 285px;
+
     vertical-align: middle;
 }
 
-.com_item .bask_show .img_show .left {
-    width: 33.3%;
+.com_item .bask_show .img_show .left
+{
     position: absolute;
-    left: 0;
     top: 0;
     bottom: 0;
+    left: 0;
+
+    width: 33.3%;
 }
 
-.com_item .bask_show .img_show .right {
-    width: 33.3%;
+.com_item .bask_show .img_show .right
+{
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
+
+    width: 33.3%;
 }
 
 /*consult*/
-.consult .table_main .com_item {
+.consult .table_main .com_item
+{
     margin: 0;
 }
 
 .consult .table_main .com_item .user,
-.consult .table_main .com_item .time {
+.consult .table_main .com_item .time
+{
+    line-height: 30px;
+
     display: inline-block;
+
+    height: 35px;
     margin: 0;
     padding: 0;
-    height: 35px;
-    line-height: 30px;
+
     color: #999;
 }
 
-.consult .table_main .com_item .time {
+.consult .table_main .com_item .time
+{
     float: right;
 }
 
-.consult .table_main .com_item .answer {
+.consult .table_main .com_item .answer
+{
     margin: 5px 0;
 }
 
 .consult .table_main .com_item .question p,
-.consult .table_main .com_item .answer p {
-    display: block;
-    margin-bottom: 0;
+.consult .table_main .com_item .answer p
+{
     line-height: 1.8em;
-    color: #333;
+
+    display: block;
+
+    margin-bottom: 0;
+
     word-break: break-all;
+
+    color: #333;
 }
 
-.consult .table_main .com_item .answer p {
-    color: #ff6600;
+.consult .table_main .com_item .answer p
+{
+    color: #f60;
 }
 
 /*tpl inner page*/
-.book_details_box .page_detail .caption {
+.book_details_box .page_detail .caption
+{
     margin: 20px auto 15px;
+
     text-align: center;
 }
 
-.book_details_box .page_detail img {
+.book_details_box .page_detail img
+{
     vertical-align: baseline;
 }
 
-.book_details_box .page_detail .caption img {
+.book_details_box .page_detail .caption img
+{
     width: 127px;
 }
 
-.book_details_box .page_detail .page_list {
-    padding: 0 10px;
-    width: 100%;
-    box-sizing: border-box;
+.book_details_box .page_detail .page_list
+{
     overflow: hidden;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
 }
 
-.book_details_box .page_detail .page_list li {
+.book_details_box .page_detail .page_list li
+{
     float: left;
+
+    box-sizing: border-box;
+    width: 50%;
     margin: 0;
     padding: 0 8px;
-    width: 50%;
-    box-sizing: border-box;
+
     text-align: center;
 }
 
-.book_details_box .page_detail .page_list li img {
-    margin: 0;
+.book_details_box .page_detail .page_list li img
+{
     width: 100%;
-    height: auto;
+    height: auto;
+    margin: 0;
+
     border: 1px solid #ddd;
 }
 
-.book_details_box .page_detail .page_list li h5 {
-    margin: 5px 0 15px;
+.book_details_box .page_detail .page_list li h5
+{
     font-size: 16px;
+
+    margin: 5px 0 15px;
+
     text-align: center;
 }
 
-.book_details_box .page_detail .more_pages a {
-    display: block;
-    text-align: center;
+.book_details_box .page_detail .more_pages a
+{
     font-size: 14px;
-    color: #666;
+
+    display: block;
+
     width: 60%;
     margin: 0 auto;
+
+    text-align: center;
+
+    color: #666;
     border-radius: 20px;
 }
 
-.book_details_box .page_detail .more_pages a:hover {
+.book_details_box .page_detail .more_pages a:hover
+{
     background: #f6f6f6;
 }
 
-.book_details_box .page_detail .more_pages span {
+.book_details_box .page_detail .more_pages span
+{
     margin: 0 5px;
+
     color: #81d42f;
 }
 
-.book_details_box .page_detail .more_pages i {
+.book_details_box .page_detail .more_pages i
+{
+    font-size: 24px;
+
     display: block;
+
     width: 23px;
     height: 20px;
     margin: 0 auto;
+
     /*background: url("../img/m/icon/next_btn2.png") no-repeat;*/
     color: #aeaeae;
-    font-size: 24px;
 }
 
 /*product detail*/
-.product_details_container {
+.product_details_container
+{
     margin-top: 20px;
 }
 
-.product_details_container .product_detail {
+.product_details_container .product_detail
+{
     width: 100%;
     margin: 0 auto;
+
     text-align: center;
 }
 
-.product_detail > div {
+.product_detail > div
+{
     margin: 20px 0 40px;
 }
 
 .product_detail div h2,
-.product_detail div h4 {
-    margin: 0;
+.product_detail div h4
+{
     font-size: 16px;
+
+    margin: 0;
+
     color: #777;
 }
 
-.product_detail div small {
+.product_detail div small
+{
     color: #a6a6a6;
 }
 
-.arrow_down_line {
+.arrow_down_line
+{
     position: relative;
+
     width: 85%;
-    border-top: 1px solid #d1d1d1;
     margin: 10px auto 20px;
+
+    border-top: 1px solid #d1d1d1;
 }
 
-.arrow_down_line::before {
+.arrow_down_line::before
+{
     position: absolute;
     left: 50%;
-    height: 13px;
+
     box-sizing: border-box;
+    height: 13px;
     margin-top: -1px;
     margin-left: -12px;
+
     content: ' ';
+
     border-top: 11px solid #f6f6f6;
-    border-left: 12px solid #d1d1d1;
     border-right: 12px solid #d1d1d1;
     border-bottom: 0;
+    border-left: 12px solid #d1d1d1;
 }
 
-.arrow_down_line::after {
+.arrow_down_line::after
+{
     position: absolute;
     left: 50%;
+
     margin-left: -13px;
+
     content: ' ';
+
     border-top: 12px solid transparent;
-    border-left: 13px solid #f6f6f6;
     border-right: 13px solid #f6f6f6;
+    border-left: 13px solid #f6f6f6;
 }
 
-.product_detail.new .arrow_down_line::before {
+.product_detail.new .arrow_down_line::before
+{
     border-top: 11px solid #fff;
 }
 
-.product_detail.new .arrow_down_line::after {
-    border-left: 13px solid #fff;
+.product_detail.new .arrow_down_line::after
+{
     border-right: 13px solid #fff;
+    border-left: 13px solid #fff;
 }
 
 /*cover details*/
-.cover .cover_info {
+.cover .cover_info
+{
     clear: both;
     overflow: hidden;
 }
 
-.cover .cover_info .item {
+.cover .cover_info .item
+{
     display: inline-block;
-    width: 49%;
     float: left;
+
+    width: 49%;
     margin: 0;
 }
 
-.cover .cover_info .item h4 {
+.cover .cover_info .item h4
+{
     margin: 10px 0;
+
     color: #666;
 }
 
-.cover .cover_info .item img {
-    margin: 0 0 8px 15px;
+.cover .cover_info .item img
+{
     width: 100%;
+    margin: 0 0 8px 15px;
 }
 
-.cover .cover_info .item p {
-    width: 90%;
+.cover .cover_info .item p
+{
     font-size: 14px;
     line-height: 2em;
+
+    width: 90%;
     margin: 0 auto;
+
     text-align: justify;
 }
 
 /*print details*/
-.print .print_info {
+.print .print_info
+{
     text-align: center;
 }
 
-.print .print_info .item {
+.print .print_info .item
+{
     position: relative;
+
     display: inline-block;
+
     width: 46%;
     margin: 0;
 }
 
-.print .print_info .item img {
-    margin: 15px auto 0;
+.print .print_info .item img
+{
     width: 100%;
+    margin: 15px auto 0;
 }
 
-.print .print_info h4 {
+.print .print_info h4
+{
     margin: 10px 0;
+
     color: #595959;
 }
 
-.print .print_info p {
+.print .print_info p
+{
     font-size: 14px;
     line-height: 2em;
 }
 
 /*binding detail*/
-.binding .binding_info {
-    margin: 15px auto;
+.binding .binding_info
+{
     width: 90%;
+    margin: 15px auto;
 }
 
-.binding .binding_info .describe {
+.binding .binding_info .describe
+{
     display: inline-block;
-    vertical-align: top;
-    text-align: center;
+
     width: 90%;
     margin: 0 auto;
+
+    text-align: center;
+    vertical-align: top;
 }
 
-.binding .binding_info .describe h4 {
+.binding .binding_info .describe h4
+{
+    line-height: 2em;
+
     color: #333;
-    line-height: 2em;
 }
 
-.binding .binding_info .describe h4 span {
+.binding .binding_info .describe h4 span
+{
     font-size: 14px;
 }
 
-.binding .binding_info .describe p {
+.binding .binding_info .describe p
+{
     font-size: 14px;
     line-height: 2em;
+
     text-align: justify;
 }
 
-.binding .binding_info img {
+.binding .binding_info img
+{
     width: 100%;
 }
 
-.binding .binding_info .binding_show {
+.binding .binding_info .binding_show
+{
     margin: 15px auto;
 }
 
 /*~~~~~~~~~~yb 3.9 photobooklist_wrapper~~~~~~~~~~*/
 .booklist_wrapper .photo_classify.swiper-pagination ,
-.booklist_wrapper .ia_classify.swiper-pagination {
+.booklist_wrapper .ia_classify.swiper-pagination
+{
     position: relative;
     top: 0;
-    margin: 0;
-    width: 100%;
-    background-color: #f6f6f6;
+
     overflow: hidden;
+
+    width: 100%;
+    margin: 0;
+
     white-space: nowrap;
+
+    background-color: #f6f6f6;
    /* height: 50px;*/
 }
 
-.booklist_wrapper .photo_classify.swiper-pagination{
+.booklist_wrapper .photo_classify.swiper-pagination
+{
     overflow-x: scroll;
 }
 
-.booklist_wrapper .photo_classify.swiper-pagination::-webkit-scrollbar{
+.booklist_wrapper .photo_classify.swiper-pagination::-webkit-scrollbar
+{
     width: 0;
 }
 
-.booklist_wrapper .photo_classify.swiper-pagination span{
-    margin: 0 0 5px;
-    width: 22%;
-    background: #fff;
-    color: #333;
-    opacity: 1;
-    display: inline-block;
-    border-radius: 0;
-    text-align: center;
-    line-height: 50px;
-    height: 50px;
+.booklist_wrapper .photo_classify.swiper-pagination span
+{
     font-size: 14px;
+    line-height: 50px;
+
+    display: inline-block;
+
+    width: 22%;
+    height: 50px;
+    margin: 0 0 5px;
+
+    text-align: center;
+
+    opacity: 1;
+    color: #333;
     border-bottom: 1px solid #d1d1d1;
+    border-radius: 0;
+    background: #fff;
 }
 
-.booklist_wrapper .ia_classify.swiper-pagination span{
-    margin: 0 0 10px;
-    width: 25%;
-    background: #fff;
-    color: #333;
-    opacity: 1;
-    display: inline-block;
-    border-radius: 0;
-    text-align: center;
-    line-height: 50px;
-    height: 50px;
+.booklist_wrapper .ia_classify.swiper-pagination span
+{
     font-size: 14px;
+    line-height: 50px;
+
+    display: inline-block;
+
+    width: 25%;
+    height: 50px;
+    margin: 0 0 10px;
+
+    text-align: center;
+
+    opacity: 1;
+    color: #333;
     border-bottom: 1px solid #d1d1d1;
+    border-radius: 0;
+    background: #fff;
 }
 
 .photo_classify.swiper-pagination span.swiper-pagination-bullet-active,
-.ia_classify.swiper-pagination span.swiper-pagination-bullet-active{
-    border-bottom: 2px solid #92c153;
+.ia_classify.swiper-pagination span.swiper-pagination-bullet-active
+{
     color: #92c153;
+    border-bottom: 2px solid #92c153;
 }
 
-.tpl_classify_con{
-    display: none;
+.tpl_classify_con
+{
     position: fixed;
-    left: 0;
+    z-index: 999;
     top: 0;
     right: 0;
     bottom: 0;
+    left: 0;
+
+    display: none;
+
     background: rgba(0,0,0,.6);
-    z-index: 999;
 }
 
-.tpl_classify_con .classify{
+.tpl_classify_con .classify
+{
     position: absolute;
     top: 50%;
     left: 5%;
-    margin-top: -50%;
-    width: 90%;
-    background-color: #ebebeb;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px #333;
+
     box-sizing: border-box;
+    width: 90%;
+    margin-top: -50%;
+
+    border: 1px solid #ddd;
+    background-color: #ebebeb;
+    box-shadow: 0 0 10px #333;
 }
 
-.tpl_classify_con .classify .close{
+.tpl_classify_con .classify .close
+{
     position: absolute;
-    right: 8px;
     top: 5px;
+    right: 8px;
 }
 
-.tpl_classify_con .classify > div{
+.tpl_classify_con .classify > div
+{
     width: 90%;
     margin: 30px auto 0;
 }
 
-.tpl_classify_con .classify h4{
-    margin: 15px 5px 5px;
+.tpl_classify_con .classify h4
+{
     font-size: 18px;
+
     clear: both;
+
+    margin: 15px 5px 5px;
 }
 
-.tpl_classify_con .classify ul{
+.tpl_classify_con .classify ul
+{
     overflow: hidden;
 }
 
-.tpl_classify_con .classify div li{
+.tpl_classify_con .classify div li
+{
+    line-height: 28px;
+
     float: left;
-    margin: 5px 4px;
+
+    box-sizing: border-box;
     width: 30%;
     height: 30px;
-    line-height: 28px;
+    margin: 5px 4px;
+
     text-align: center;
-    background-color: #fff;
+
     border: 1px solid #ddd;
-    box-sizing: border-box;
+    background-color: #fff;
 }
 
-.tpl_classify_con .classify div li a{
-    color: #333;
+.tpl_classify_con .classify div li a
+{
     font-size: 14px;
+
+    color: #333;
 }
 
-.booklist_wrapper .mybookshelf_main_wrapper .swiper-slide ul {
+.booklist_wrapper .mybookshelf_main_wrapper .swiper-slide ul
+{
     overflow: hidden;
 }
 
 /*photobook list of shop*/
-.shop_pbl_banner{
+.shop_pbl_banner
+{
     position: relative;
+
     width: 100%;
     height: 150px;
-    background: url("../img/m/banner/shop_photolist_bg.jpg") no-repeat center top;
-    background-size: cover;
+
     border-bottom: 4px solid #89c27e;
+    background: url('../img/m/banner/shop_photolist_bg.jpg') no-repeat center top;
+    background-size: cover;
 }
 
-.shop_pbl_banner .shop_logo{
+.shop_pbl_banner .shop_logo
+{
     position: absolute;
-    left: 30px;
     top: 30px;
+    left: 30px;
+
+    box-sizing: border-box;
     width: 89px;
     height: 89px;
-    background-color: #fff;
-    border-radius: 50%;
+
     border: 2px solid #ccc;
-    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
-.shop_pbl_banner .shop_logo img{
+.shop_pbl_banner .shop_logo img
+{
     width: 100%;
     height: 100%;
+
     border-radius: 50%;
 }
 
-.shop_pbl_banner .shop_name{
+.shop_pbl_banner .shop_name
+{
+    font-size: 24px;
+
     position: absolute;
     top: 30px;
     left: 120px;
-    padding: 10px;
-    font-size: 24px;
-    color: #fff;
-    max-width: 65%;
+
     overflow: hidden;
+
+    max-width: 65%;
+    margin: 20px 0;
+    padding: 10px;
+
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 20px 0;
+
+    color: #fff;
 }
 
-@media only screen and (max-width:320px) {
-    .shop_pbl_banner .shop_name{
+@media only screen and (max-width:320px)
+{
+    .shop_pbl_banner .shop_name
+    {
         max-width: 60%;
     }
 }

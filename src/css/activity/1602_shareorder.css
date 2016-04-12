@@ -1,92 +1,128 @@
-.main_container{
-	width: 100%;
-	background-color: #ff5645;
-	overflow: hidden;
+.main_container
+{
+    overflow: hidden;
+
+    width: 100%;
+
+    background-color: #ff5645;
 }
-.activity_banner_wrapper{
-	width: 100%;
-	overflow: hidden;
+.activity_banner_wrapper
+{
+    overflow: hidden;
+
+    width: 100%;
 }
 
-.activity_main_wrapper{
-	margin: 40px auto 80px;
-	width: 1240px;
-	height: 1320px;
-	border-radius: 15px;
-	background: url(../../img/activity/activity_1602_shareorder_bg_1_00000.png) #f8ecca no-repeat;
-	background-position: 50% 30%;
-	background-size: 85%;
-	position: relative;
-	box-shadow: 5px 5px 80px rgba(0,0,0,0.7);
+.activity_main_wrapper
+{
+    position: relative;
+
+    width: 1240px;
+    height: 1320px;
+    margin: 40px auto 80px;
+
+    border-radius: 15px;
+    background: url(../../img/activity/activity_1602_shareorder_bg_1_00000.png) #f8ecca no-repeat;
+    background-position: 50% 30%;
+    background-size: 85%;
+    box-shadow: 5px 5px 80px rgba(0,0,0,.7);
 }
-.activitydate{
-	display: inline;
-	position: absolute;
-	top: 83px;
-	left: 58%;
-	font-size: 24px;
-	color: #000;
+.activitydate
+{
+    font-size: 24px;
+
+    position: absolute;
+    top: 83px;
+    left: 58%;
+
+    display: inline;
+
+    color: #000;
 }
-.activitydescribe{
-	width: 725px;
-	position: absolute;
-	right: 170px;
-	top: 190px;
-	font-size: 18px;
-	line-height: 32px;
+.activitydescribe
+{
+    font-size: 18px;
+    line-height: 32px;
+
+    position: absolute;
+    top: 190px;
+    right: 170px;
+
+    width: 725px;
 }
-.activity_main_wrapper .share{
-	width: 670px;
-	margin: 0 auto;
-	position: relative;
-	top: 590px;
+.activity_main_wrapper .share
+{
+    position: relative;
+    top: 590px;
+
+    width: 670px;
+    margin: 0 auto;
 }
-.share li{
-	display: inline-block;
-	margin: 0 45px;
-	width: 115px;
-	height: 160px;
-	text-align: center;
+.share li
+{
+    display: inline-block;
+
+    width: 115px;
+    height: 160px;
+    margin: 0 45px;
+
+    text-align: center;
 } 
-.share li a span{
-	display: block;
-	width: 115px;
-	height: 115px;
-	background-image: url(../../img/sprite/socialicon_108_108_00000.png);
+.share li a span
+{
+    display: block;
+
+    width: 115px;
+    height: 115px;
+
+    background-image: url(../../img/sprite/socialicon_108_108_00000.png);
 }
-.share li a label{
-	display: block;
-	margin: 10px 0;
+.share li a label
+{
+    display: block;
+
+    margin: 10px 0;
 }
-.share li a:hover{
-	color: red;
+.share li a:hover
+{
+    color: red;
 }
-.share .wechat span{
-	background-position: 0 0;
+.share .wechat span
+{
+    background-position: 0 0;
 }
-.share .weibo span{
-	background-position: -125px 0;
+.share .weibo span
+{
+    background-position: -125px 0;
 }
-.share .qzone span{
-	background-position: -245px 0;
+.share .qzone span
+{
+    background-position: -245px 0;
 }
-.rules{
-	margin: 0 auto;
-	width: 875px;
-	line-height: 30px;
-	font-size: 18px;
-	position: relative;
-	top: 730px;
+.rules
+{
+    font-size: 18px;
+    line-height: 30px;
+
+    position: relative;
+    top: 730px;
+
+    width: 875px;
+    margin: 0 auto;
 }
-.qrcode{
-	width: 140px;
-	height: 140px;
-	position: absolute;
-	right: 165px;
-	bottom: 150px;
+.qrcode
+{
+    position: absolute;
+    right: 165px;
+    bottom: 150px;
+
+    width: 140px;
+    height: 140px;
 }
-.qrcode img{
-	display: block;
-	width: 100%;
-	height: 100%;
+.qrcode img
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
 }

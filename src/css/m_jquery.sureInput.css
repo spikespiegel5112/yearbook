@@ -1,97 +1,117 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 /* 用户发表留言框  */
-.user-input-commit-tool {
-    width: 94%;
-    height: 6em;
-
-    margin: 2%;
-    padding: .3em .5em;
+.user-input-commit-tool
+{
     font-size: .8em;
 
+    position: absolute;
+    z-index: 99999;
+
+    /*top: 50%;*/
+    display: none;
+
+    width: 94%;
+    height: 6em;
+    margin: 2%;
+    padding: .3em .5em;
+
+    border-radius: 10px;
     background-color: #f7f7f7;
     box-shadow: 0 0 5px #c3c3c3;
-    border-radius: 10px;
-
-    position: absolute;
-    /*top: 50%;*/
-
-    display: none;
-    z-index: 99999;
 }
 
 
-.user-input-commit-tool .user-input-wapper {
+.user-input-commit-tool .user-input-wapper
+{
     position: relative;
 }
 
-.user-input-commit-tool .user-input-group:before{
+.user-input-commit-tool .user-input-group:before
+{
     position: absolute;
     left: 1.8em;
-    content: "";
+
     width: 0;
     height: 0;
-    border-left: 1em solid transparent;
+
+    content: '';
+
     border-right: 1em  solid transparent;
+    border-left: 1em solid transparent;
 }
 
-.user-input-commit-tool .commit.user-input-group:before{
+.user-input-commit-tool .commit.user-input-group:before
+{
     position: absolute;
+    top: -2em;
     left: 23em;
-    top:-2em;
-    content: "";
+
     width: 0;
     height: 0;
-    border-left: 1em solid transparent;
+
+    content: '';
+
     border-right: 1em  solid transparent;
     border-bottom: 1em  solid #f7f7f7;
+    border-left: 1em solid transparent;
 }
 
-.user-input-commit-tool .user-input-group {
+.user-input-commit-tool .user-input-group
+{
     margin-top: 1em;
 }
 
-.user-input-commit-tool .user-input-group input {
+.user-input-commit-tool .user-input-group input
+{
     font-size: 1em;
 }
 
-.user-input-commit-tool .user-input-group span:hover {
+.user-input-commit-tool .user-input-group span:hover
+{
     background-color: #c3c3c3;
 }
 
 
-.user-input-commit-tool-multi {
-    width: 94%;
-    height: auto;
-
-    margin: 2%;
-    padding: 1.2em;
+.user-input-commit-tool-multi
+{
     font-size: .8em;
 
-    background-color: #f7f7f7;
-    box-shadow: 0 0 5px #c3c3c3;
-    border-radius: 10px;
-
     position: fixed;
+    z-index: 99999;
     top: 30%;
 
     display: none;
-    z-index: 99999;
+
+    width: 94%;
+    height: auto;
+    margin: 2%;
+    padding: 1.2em;
+
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 5px #c3c3c3;
 }
 
-.user-input-commit-tool-multi .user-input-textarea {
+.user-input-commit-tool-multi .user-input-textarea
+{
     text-align: center;
 }
 
-.user-input-commit-tool-multi .user-input-textarea textarea {
-    height: 10em;
+.user-input-commit-tool-multi .user-input-textarea textarea
+{
     font-size: 1em;
-    border: none; !important;
+
+    height: 10em;
+
+    border: none;
 }
 
-.user-input-commit-tool-multi .user-input-textarea a {
+.user-input-commit-tool-multi .user-input-textarea a
+{
+    font-size: 1em;
+
+    width: 30%;
     margin-top: 1em;
     margin-right: .5em;
-    width: 30%;
-    font-size: 1em;
 }

@@ -1,78 +1,104 @@
-@media (max-width:1024px){
-    .transition_btn{
-        transition: background-color 0.4s;
-        -webkit-transition: background-color 0.4s;
-        -moz-transition: background-color 0.4s;
+@media (max-width:1024px)
+{
+    .transition_btn
+    {
+        -webkit-transition: background-color .4s;
+           -moz-transition: background-color .4s;
+                transition: background-color .4s;
     }
-    .cm_header_nav{
+    .cm_header_nav
+    {
         display: none;
     }
-    .footer{
+    .footer
+    {
         display: none;
     }
-    .access_logininner_container{
+    .access_logininner_container
+    {
         width: 100%;
     }
-    .common_login_wrapper{
+    .common_login_wrapper
+    {
         width: 90%;
     }
-    .common_loginbtn_item{
-        margin: 0.5rem auto;
-        height: 1.5rem;
+    .common_loginbtn_item
+    {
+        font-size: .7rem;
         line-height: 1.5rem;
-        font-size: 0.7rem;
+
+        height: 1.5rem;
+        margin: .5rem auto;
     }
-    .common_logincheckbox_wrapper li{
+    .common_logincheckbox_wrapper li
+    {
         margin: 0;
     }
-    .common_logininput_wrapper li{
+    .common_logininput_wrapper li
+    {
         margin: 1rem 0;
         /*height: 1.5rem;*/
     }
-    .common_logininput_wrapper input{
-        padding: 0 0 0 17%;
-        width: 83%;
-        height: 1.5rem;
-        background-color: rgba(255,255,255,0);
+    .common_logininput_wrapper input
+    {
         font-size: 12px;
+
+        width: 83%;
+        height: 1.5rem;
+        padding: 0 0 0 17%;
+
+        background-color: rgba(255,255,255,0);
     }
-    .common_logininput_wrapper span{
-        width: 17%;
-        line-height: 1.5rem;
+    .common_logininput_wrapper span
+    {
         font-size: 1rem;
+        line-height: 1.5rem;
+
+        width: 17%;
     }
-    .common_loginheader_wrapper div span{
+    .common_loginheader_wrapper div span
+    {
         font-size: 2rem;
     }
-    .common_loginheader_wrapper div label{
-        font-size: 0.7rem;
+    .common_loginheader_wrapper div label
+    {
+        font-size: .7rem;
     }
-    .access_ssologin_wrapper div, .common_triplelap_wrapper span{
+    .access_ssologin_wrapper div, .common_triplelap_wrapper span
+    {
         margin: 0 auto;
     }
-    .access_ssologin_wrapper div{
-        padding: 0.2rem 0;
-        width: 60%;
+    .access_ssologin_wrapper div
+    {
+        width: 60%;
+        padding: .2rem 0;
+
         background: none;
     }
-    .common_triplelap_wrapper span{
-        background-color: rgba(255,255,255,0.8);
+    .common_triplelap_wrapper span
+    {
+        background-color: rgba(255,255,255,.8);
     }
-    .access_ssologin_wrapper p{
-        margin: 0.5rem 0;
+    .access_ssologin_wrapper p
+    {
+        margin: .5rem 0;
     }
 
-    .access_ssologin_wrapper ul{
+    .access_ssologin_wrapper ul
+    {
         width: 100%;
     }
-    .access_ssologin_wrapper ul li a span{
+    .access_ssologin_wrapper ul li a span
+    {
+        font-size: .9rem;
+        line-height: 1.5rem;
+
         width: 1.5rem;
         height: 1.5rem;
-        line-height: 1.5rem;
-        font-size: 0.9rem;
     }
-    .common_loginproviso_item{
-        margin: 0.5rem 0;
+    .common_loginproviso_item
+    {
+        margin: .5rem 0;
     }
     /*.common_triplelap_wrapper{
         bottom: -0.4rem;

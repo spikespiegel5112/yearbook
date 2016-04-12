@@ -1,401 +1,526 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 /*~~~~~~~~~~404 500~~~~~~~~~~*/
-.yb-error {
+.yb-error
+{
     width: 100%;
-    text-align: center;
     margin: 2em auto;
+
+    text-align: center;
 }
 
-.yb-error img {
+.yb-error img
+{
     width: 50%;
+
     vertical-align: baseline;
 }
 
-.yb-error p {
+.yb-error p
+{
     font-size: 1.5em;
+
     margin: 0;
 }
 
-.yb-error p.yb-error-sub {
+.yb-error p.yb-error-sub
+{
     font-size: 1em;
+
     width: 80%;
     margin: 0 auto;
 }
 
-.yb-error a.error-return, .yb-error a.error-btn {
+.yb-error a.error-return, .yb-error a.error-btn
+{
+    line-height: 2em;
+
     display: block;
+
     width: 30%;
     height: 2em;
-    line-height: 2em;
-    text-align: center;
-    color: #fff;
-    background-color: #007ce5;
     margin: 2em auto;
+
+    text-align: center;
+
+    color: #fff;
     border-radius: 4px;
+    background-color: #007ce5;
 }
 
-.yb-error a.error-btn {
+.yb-error a.error-btn
+{
     margin-left: .3em;
 }
 
-.yb-error a.error-return:hover, .yb-error a.error-btn:hover, .yb-error a.error-return:focus, .yb-error a.error-btn:focus {
+.yb-error a.error-return:hover, .yb-error a.error-btn:hover, .yb-error a.error-return:focus, .yb-error a.error-btn:focus
+{
     color: black;
     background-color: #c3c3c3;
 }
 
-.yb-error a.error-return span, .yb-error a.error-btn span {
+.yb-error a.error-return span, .yb-error a.error-btn span
+{
     margin-right: .5em;
-    -moz-transform: scaleX(-1);
+
     -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
 }
 
-.yb-error .yb-500-btn {
-    margin: 0 18%;
+.yb-error .yb-500-btn
+{
     width: 100%;
+    margin: 0 18%;
 }
 
 /*~~~~~~~~~~login and register~~~~~~~~~~*/
 
-.login-index {
-    background: url("../img/m/access/yb-bg.jpg") no-repeat;
-    height: 100%;
+.login-index
+{
     position: relative;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+
+    height: 100%;
     min-height: 100%;
+
+    background: url('../img/m/access/yb-bg.jpg') no-repeat;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
-.logo {
-    background: url("../img/m/sprite/img_sprite_00000.png") no-repeat;
+.logo
+{
     width: 235px;
     height: 50px;
     margin: 4em auto;
+
+    background: url('../img/m/sprite/img_sprite_00000.png') no-repeat;
 }
 
-.login-register {
+.login-register
+{
     margin: 2em auto;
 }
 
-.login-register a:hover {
+.login-register a:hover
+{
     color: #0888e6;
 }
 
-.login-red, .login-find-ps {
+.login-red, .login-find-ps
+{
     color: #fff;
 }
 
-.login-find-ps {
+.login-find-ps
+{
     float: right;
 }
 
-.third-login {
-    text-align: center;
+.third-login
+{
     margin: 2em auto;
+
+    text-align: center;
 }
 
-.login-info {
+.login-info
+{
     color: #fff;
 }
 
-.third-login ul {
+.third-login ul
+{
     margin: 0 auto;
 }
 
-.third-login p {
+.third-login p
+{
     font-size: 1em;
+
     margin-bottom: 10px;
 }
 
-.third-login ul li {
+.third-login ul li
+{
     margin: 0 auto;
     padding: 0;
 }
 
-.third-login ul li a {
+.third-login ul li a
+{
+    line-height: 2.5em;
+
     display: block;
+
     width: 4.5em;
     height: 2.5em;
-    color: #fff;
-    line-height: 2.5em;
-}
 
-.third-login ul li a:hover {
     color: #fff;
 }
 
-.third-login .btn {
+.third-login ul li a:hover
+{
+    color: #fff;
+}
+
+.third-login .btn
+{
     padding: 1px;
 }
 
-.btn-weibo {
-    background-color: #ff5555;
+.btn-weibo
+{
+    background-color: #f55;
 }
 
-.btn-renren {
+.btn-renren
+{
     background-color: #448aca;
 }
 
-.btn-qq {
-    background-color: #7ecef4
+.btn-qq
+{
+    background-color: #7ecef4;
 }
 
-.btn-wechat {
+.btn-wechat
+{
     background-color: #50a000;
 }
 
 
-.third-login span.ybiconfont{
+.third-login span.ybiconfont
+{
     font-size: 20px;
     line-height: 34px;
+
     margin-right: 2px;
+
     vertical-align: middle;
 }
 
-.third-login span.icon-qq{
+.third-login span.icon-qq
+{
     font-size: 18px;
 }
 
-.clear-padding {
+.clear-padding
+{
     margin: 0;
     padding: 0;
 }
 
-.service-protocol {
-    color: #fff;
-    margin: 1em auto;
+.service-protocol
+{
     width: 100%;
+    margin: 1em auto;
+
     text-align: center;
+
+    color: #fff;
 }
 
 /*~~~~~~~~~~sso~~~~~~~~~~*/
-.sso_dialogue_wrapper {
-    margin: 0 auto;
+.sso_dialogue_wrapper
+{
     width: 95%;
     height: 20px;
+    margin: 0 auto;
 }
 
-.sso_avatar_item {
-    display: block;
-    margin: 30px auto;
-    width: 30%;
+.sso_avatar_item
+{
     position: relative;
+
+    display: block;
+
+    width: 30%;
+    margin: 30px auto;
 }
 
-.sso_avatar_item img {
+.sso_avatar_item img
+{
     display: block;
+
     width: 100%;
+
     border-radius: 50%;
 }
 
-.sso_avatar_item span {
+.sso_avatar_item span
+{
+    font-size: 20px;
+    line-height: 30px;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
     display: block;
+
     width: 30px;
     height: 30px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius: 100%;
-    color: #fff;
+
     text-align: center;
-    line-height: 30px;
-    font-size: 20px;
+
+    color: #fff;
+    border-radius: 100%;
 }
 
-.sso_avatar_item span.ybicon-wechatsolid{
+.sso_avatar_item span.ybicon-wechatsolid
+{
     background-color: #50a000;
 }
 
-.sso_avatar_item span.ybicon-qqsolid{
+.sso_avatar_item span.ybicon-qqsolid
+{
     background-color: #7ecef4;
 }
 
-.sso_avatar_item span.ybicon-weibosina{
-    background-color: #ff5555;
+.sso_avatar_item span.ybicon-weibosina
+{
+    background-color: #f55;
 }
 
-.sso_nickname_item {
-    display: block;
-    width: 100%;
-    text-align: center;
+.sso_nickname_item
+{
     font-size: 1.2em;
-}
 
-.sso_btn_wrapper {
-    padding: 0 0 50px 0;
-    width: 100%;
-}
-
-.sso_btn_wrapper a {
     display: block;
-    margin: 3.5em auto 1em;
-    padding: 0.4em 0;
-    width: 80%;
-    border: 1px solid #7bba33;
-    text-align: center;
-    font-size: 13px;
-}
 
-.sso_solid_btn {
-    background-color: #7bba33;
-    color: #fff;
-}
-
-.sso_btn_wrapper .sso_hollow_btn {
-    background: #fff;
-    color: #7bba33;
-    position: relative;
-    top: 0;
-    z-index: 222;
-}
-
-.sso_btn_wrapper .sso_hollow_btn.active {
-    top: 160px;
-    -webkit-transition: top 0.5s;
-    -moz-transition: top 0.5s;
-    -ms-transition: top 0.5s;
-}
-
-.sso_login_wrapper {
-    opacity: 0;
     width: 100%;
-    bottom: 90px;
-    right: 0;
+
+    text-align: center;
+}
+
+.sso_btn_wrapper
+{
+    width: 100%;
+    padding: 0 0 50px 0;
+}
+
+.sso_btn_wrapper a
+{
+    font-size: 13px;
+
+    display: block;
+
+    width: 80%;
+    margin: 3.5em auto 1em;
+    padding: .4em 0;
+
+    text-align: center;
+
+    border: 1px solid #7bba33;
+}
+
+.sso_solid_btn
+{
+    color: #fff;
+    background-color: #7bba33;
+}
+
+.sso_btn_wrapper .sso_hollow_btn
+{
+    position: relative;
+    z-index: 222;
+    top: 0;
+
+    color: #7bba33;
+    background: #fff;
+}
+
+.sso_btn_wrapper .sso_hollow_btn.active
+{
+    top: 160px;
+
+    -webkit-transition: top .5s;
+       -moz-transition: top .5s;
+        -ms-transition: top .5s;
+}
+
+.sso_login_wrapper
+{
     position: relative;
     z-index: -1;
+    right: 0;
+    bottom: 90px;
+
+    width: 100%;
+
+    opacity: 0;
 }
 
-.sso_login_wrapper.active {
+.sso_login_wrapper.active
+{
     z-index: 0;
+
+    -webkit-transition: opacity .5s .5s;
+       -moz-transition: opacity .5s .5s;
+        -ms-transition: opacity .5s .5s;
+
     opacity: 1;
-    -webkit-transition: opacity 0.5s 0.5s;
-    -moz-transition: opacity 0.5s 0.5s;
-    -ms-transition: opacity 0.5s 0.5s
 }
 
-.sso_login_wrapper ul {
-    margin: 1em auto;
+.sso_login_wrapper ul
+{
     width: 80%;
+    margin: 1em auto;
 }
 
-.sso_login_wrapper ul li {
-    margin: 30px 0;
-    height: 50px;
+.sso_login_wrapper ul li
+{
     position: relative;
+
+    height: 50px;
+    margin: 30px 0;
 }
 
-.sso_login_wrapper ul li label {
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0.8em;
+.sso_login_wrapper ul li label
+{
+    font-size: .8em;
     font-weight: normal;
+
+    display: inline-block;
+
+    margin: 0;
+
+    vertical-align: middle;
 }
 
-.sso_login_wrapper ul li > div {
+.sso_login_wrapper ul li > div
+{
+    position: relative;
+
     display: block;
-    margin: 10px 0;
+
     width: 100%;
     height: 100%;
-    background-color: #faffbd;
+    margin: 10px 0;
+
     border: 1px solid #ccc;
-    position: relative;
+    background-color: #faffbd;
 }
 
-.sso_login_wrapper ul li input {
+.sso_login_wrapper ul li input
+{
+    font-family: 'Microsoft yahei';
+    font-size: 1em;
+
+    position: absolute;
+
     display: block;
-    padding: 0 0 0 1%;
+
     width: 99%;
     height: 2em;
-    background-color: #faffbd;
+    padding: 0 0 0 1%;
+
     border: none;
+    background-color: #faffbd;
+}
+
+.sso_login_wrapper ul li input::-webkit-input-placeholder
+{
+    color: #ccc;
+}
+
+.sso_login_wrapper ul li input::-moz-input-placeholder
+{
+    color: #ccc;
+}
+
+.sso_login_wrapper ul li input::-ms-input-placeholder
+{
+    color: #ccc;
+}
+
+.sso_login_wrapper ul li div span
+{
+    font-size: 11px;
+
     position: absolute;
-    font-size: 1em;
-    font-family: 'Microsoft yahei';
-}
+    z-index: 1;
+    top: 10px;
+    left: 10px;
 
-.sso_login_wrapper ul li input::-webkit-input-placeholder {
-    color: #ccc;
-}
-
-.sso_login_wrapper ul li input::-moz-input-placeholder {
-    color: #ccc;
-}
-
-.sso_login_wrapper ul li input::-ms-input-placeholder {
-    color: #ccc;
-}
-
-.sso_login_wrapper ul li div span {
     display: block;
+
     width: 1em;
     height: 1em;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-size: 11px;
+
     color: #bbb;
-    z-index: 1;
 }
 
-.sso_avatar_item .wechat {
-    background-position: 2px -70px;
+.sso_avatar_item .wechat
+{
     background-color: #019916;
+    background-position: 2px -70px;
 }
 
-.sso_avatar_item .qq {
-    background-position: 3px -43px;
+.sso_avatar_item .qq
+{
     background-color: #00adef;
+    background-position: 3px -43px;
 }
 
-.sso_avatar_item .weibo {
-    background-position: 2px 7px;
+.sso_avatar_item .weibo
+{
     background-color: #ff414e;
+    background-position: 2px 7px;
 }
 
 /*~~~~~~~~~~find password~~~~~~~~~~*/
-.choose-way > div {
-    border: 1px solid #3c3c3c;
+.choose-way > div
+{
     margin: 1em;
     padding: 1em;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
+
+    border: 1px solid #3c3c3c;
     border-radius: 1em;
 }
 
-.choose-way > div.not-support {
-    border-color: #D4D4D4;
+.choose-way > div.not-support
+{
+    border-color: #d4d4d4;
 }
 
-.choose-way > div.not-support a {
-    color: #D4D4D4;
+.choose-way > div.not-support a
+{
+    color: #d4d4d4;
 }
 
-.choose-way > div.support a {
+.choose-way > div.support a
+{
     color: #3c3c3c;
 }
 
-.choose-way p {
+.choose-way p
+{
+    font-size: .875em;
+
     margin-bottom: 10px;
-    font-size: 0.875em;
 }
 
-.choose-way img {
+.choose-way img
+{
     vertical-align: baseline;
 }
 
-.change-ps .id_code {
-    width: 35%;
+.change-ps .id_code
+{
     float: left;
+
+    width: 35%;
 }
 
-.id_code_img {
+.id_code_img
+{
     float: left;
-    margin: 0 1em;
+
     width: 5em;
     height: 2em;
+    margin: 0 1em;
 }

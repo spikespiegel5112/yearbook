@@ -330,7 +330,8 @@ input
 {
     font-size: 13px;
 
-    min-width: 4em;
+    min-width: 4em;
+
     padding: 5px 15px;
 
     text-align: center;
@@ -6573,4 +6574,76 @@ nav .pagination li a:active
 {
     border: 1px solid #e7b54b;
     background-color: #e7b54b;
+}
+
+.ybarticle_crumbs_wrapper
+{
+    padding: 25px 0;
+}
+
+.ybarticle_crumbs_wrapper:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
+
+.ybarticle_crumbs_wrapper ul li
+{
+    font-family: 'songti';
+
+    float: left;
+}
+
+.ybarticle_crumbs_wrapper ul li a
+{
+    font-size: 13px;
+
+    color: #666;
+}
+
+.ybarticle_crumbs_wrapper ul li a:hover
+{
+    text-decoration: underline;
+}
+
+.ybarticle_crumbs_wrapper ul li span
+{
+    font-size: 12px;
+    line-height: 13px;
+
+    display: inline-block;
+
+    margin: 0 8px;
+}
+
+.ybarticle_articleguide_wrapper
+{
+    overflow: hidden;
+
+    margin: 20px 0;
+}
+
+.ybarticle_articleguide_wrapper ul li,
+.ybarticle_articleguide_wrapper ul li a
+{
+    font-size: 14px;
+
+    color: #999;
+}
+
+.ybarticle_articleguide_wrapper ul li a:hover
+{
+    text-decoration: underline;
+}
+
+.ybarticle_articleguide_wrapper .prev
+{
+    float: left;
+}
+
+.ybarticle_articleguide_wrapper .next
+{
+    float: right;
 }

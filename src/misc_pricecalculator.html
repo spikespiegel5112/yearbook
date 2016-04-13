@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.11.1-书价计算器</title>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459411789_462414.css" type="text/css" media="all">
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/misc.css" type="text/css" media="all">
+	<!-- endbuild -->
+</head>
+
+<body>
+	<!--头部导航-->
+	<div class="yb_cm_header index cm_min_width">
+		<!--只用于首页添加class:index-->
+		<div class="shortcut_container">
+			<div class="shortcut">
+				<p class="login_info">
+					<span class="welcome_info">
+						<span>忆尔欢迎您！</span>
+					<a target="_top" class="" href="javascript:;" title="">赵小鱼</a>
+					</span>
+					<span class="welcome_info">
+						<a class="logout" target="_top" href="javascript:;">退出</a>
+					</span>
+				</p>
+				<ul class="quick_menu">
+					<li>
+						<a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+					</li>
+					<li>
+						<a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+					</li>
+					<li>
+						<a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+					</li>
+					<li>
+						<a href="javascript:;">帮助中心</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main_nav">
+			<div class="header_con">
+				<div class="logo">
+					<a href="index.html"><img src="img/logo.png"></a>
+					<div class="yb_slogan">
+						<img src="img/index/yb_slogan.png">
+					</div>
+				</div>
+				<div class="yb_menu">
+					<a class="menu_hd" href="javascript:;"><i class="ybiconfont ybicon-user"></i>我的忆尔<b class="icon-caret-down"></b></a>
+					<div class="menu_bd">
+						<div class="menu_bd_panel">
+							<a href="pc_mybookshelf.html"><i class="ybiconfont ybicon-bookshelf"></i>我的书架</a>
+							<a href="pc_myorder_list.html"><i class="ybiconfont ybicon-orderlist"></i>我的订单</a>
+							<a href="pc_myMessage.html"><i class="ybiconfont ybicon-message"></i>我的消息</a>
+							<a href="pc_shop_admin.html"><i class="ybiconfont ybicon-shop"></i>我的店铺</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="nav">
+				<div class="inner_con">
+					<div class="all_menu">
+						<a class="menu_hd" href="javascript:;">全部商品分类<b class="icon-caret-down"></b></a>
+						<div class="menu_bd">
+							<div class="menu_bd_panel">
+								<ul>
+									<li>
+										<h1 class="caption photo_book">照片书分类</h1>
+									</li>
+									<li>
+										<a href="javascript:;">亲子照片书</a>
+									</li>
+									<li>
+										<a href="javascript:;">旅行照片书</a>
+									</li>
+									<li>
+										<a href="javascript:;">家庭聚会照片书</a>
+									</li>
+									<li>
+										<a href="javascript:;">爱情写真照片书</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<h1 class="caption team_book">团队册分类</h1>
+									</li>
+									<li>
+										<a href="javascript:;">毕业纪念册</a>
+									</li>
+									<li>
+										<a href="javascript:;">聚会纪念册</a>
+									</li>
+									<li>
+										<a href="javascript:;">团队活动册</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<h1 class="caption photo">照片冲印</h1>
+									</li>
+									<li>
+										<a href="javascript:;">普通照片冲印</a>
+									</li>
+									<li>
+										<a href="javascript:;">拍立得照片冲印</a>
+									</li>
+									<li>
+										<a href="javascript:;">证件照冲印</a>
+									</li>
+								</ul>
+							</div>
+							<div class="classify_ad">
+								<a class="ad" href="javascript:;">
+									<img src="img/index/classify_ad.jpg" alt="用心的礼物，给最爱的人">
+								</a>
+							</div>
+						</div>
+					</div>
+					<nav>
+						<a class="active" href="index.html">首页</a>
+						<a href="index.html">照片书</a>
+						<a href="index.html">团队册</a>
+						<a href="index.html">照片冲印</a>
+						<a href="index.html">促销活动</a>
+						<a href="index.html">使用指南</a>
+						<a href="index.html">开店赚钱</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='main_container pricecalculator_main_container'>
+		<div class='common_crumbs_wrapper'>
+			<ul>
+				<li>
+					<a href="javascript:;">首页</a>
+				</li>
+				<li>
+					<span>&gt</span>
+					<a href="javascript:;">书价计算器</a>
+				</li>
+			</ul>
+		</div>
+		<div class='pricecalculator_main_wrapper'>
+			<div class='pricecalculator_setting_wrapper'>
+				<h5>书页数量</h5>
+				<p class='pricecalculator_describe_item'>纪念册总共页面数量，最少为20页，每加一页价格也会有所增加。</p>
+				<div class='pricecalculator_countor_wrapper'>
+					<label>页数</label>
+					<input type='text'>
+					<div class='common_slider_wrapper'>
+						<span class='slider'></span>
+						<label class='axis'></label>
+					</div>
+				</div>
+				<h5>尺寸选择</h5>
+				<p class='pricecalculator_describe_item'>
+					总共2种尺寸可供选择，大本尺寸175mm×248mm，小本尺寸145mm×210mm。
+				</p>
+				<div class='pricecalculator_coverselector_wrapper'>
+					<ul>
+						<li>
+							<a class='active' href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="img/default/cover_css.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="img/default/cover_css.jpg">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<h5>装订选择</h5>
+				<p class='pricecalculator_describe_item'>
+					总共3种尺寸可供选择，平装（软封面），精装（硬封面），蝴蝶装（硬面+蝴蝶装订）。
+				</p>
+				<div class='pricecalculator_coverselector_wrapper'>
+					<ul>
+						<li>
+							<a class='active' href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="img/default/cover_css.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="img/default/cover_css.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="img/default/cover_css.jpg">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<h5>纪念册本数</h5>
+				<p class='pricecalculator_describe_item'>
+					需要下单的纪念册数量，数量＞20本联系客服询问优惠折扣。
+				</p>
+				<div class='pricecalculator_countor_wrapper'>
+					<label>页数</label>
+					<input type='text'>
+					<div class='common_slider_wrapper'>
+						<span class='slider'></span>
+						<label class='axis'></label>
+					</div>
+				</div>
+			</div>
+			<div class='pricecalculator_result_wrapper'>
+				<h5>书价计算器</h5>
+				<h6>页面/配件（数量）</h6>
+				<ul class='pricecalculator_resultindicator_wrapper'>
+					<li>
+						<label>每本书单价</label>
+						<span>￥101.1</span>
+					</li>
+					<li>
+						<label>纪念册本数</label>
+						<span>x1</span>
+					</li>
+					<li>
+						<label>总价</label>
+						<span>￥101.1</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--底部-->
+	<div class="footer">
+		<div class="footer_info">
+			<a href='javascript:;'></a>
+			<div class="footer_title">
+				<div>忆尔-在线DIY纪念册平台</div>
+				<p>专业在线制作电子书册平台</p>
+				<p>DIY出独一无二的青春纪念册</p>
+			</div>
+		</div>
+		<div class="footer_list">
+			<div class="ft_nav">
+				<a href='javascript:;'>客服电话 400 0610 127</a>
+				<a href='javascript:;'>客服QQ</a>
+				<a href='javascript:;'>客服邮箱</a>
+				<a href='javascript:;'>关于我们</a>
+			</div>
+			<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+			<div class="ft_shares">
+				<a href='javascript:;' class="x83"><img src="img/hy_83x30.png"></a>
+				<a href='javascript:;'><img src="img/footer_wb_btn.png"></a>
+				<a href='javascript:;'><img src="img/footer_qq_btn.png"></a>
+				<a href='javascript:;'><img src="img/footer_wx_btn.png"></a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript">
+	$(function() {});
+	</script>
+</body>
+
+</html>

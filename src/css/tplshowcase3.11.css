@@ -1,0 +1,234 @@
+@charset 'utf-8';
+.tplshowcase_wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.tplshowcase_con{
+    margin: 0 auto;
+    width: 1150px;
+}
+
+.tplshowcase_con .tpl_tab{
+    position: relative;
+    margin: 20px 0;
+    padding-bottom: 5px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.tplshowcase_con .tpl_tab .classify{
+    position: relative;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    color: #333;
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddddda #ddddda #ededed #ddddda;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+
+.tpl_tab .classify ul{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+}
+
+.tpl_tab .classify li{
+    float: left;
+    width: 80px;
+    text-align: center;
+}
+
+.tpl_tab .classify li a{
+    padding: 3px 10px;
+    font-size: 15px;
+    color: #333;
+    border-radius: 4px;
+}
+
+.tpl_tab .classify li.on a,
+.tpl_tab .classify li a:hover{
+    color: #fff;
+    background-color: #b2d265;
+}
+
+.tpl_tab .selected_tpl{
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #aaa;
+    border-left: 1px solid #ddddda;
+    border-right: 1px solid #ddddda;
+}
+
+.tpl_tab .selected_tpl > span{
+    display: inline-block;
+    vertical-align: top;
+    width: 126px;
+    text-align: right;
+    font-size: 18px;
+    line-height: 60px;
+    color: #333;
+}
+
+.selected_tpl .tpl_label{
+    display: inline-block;
+}
+
+.selected_tpl .tpl_label .option{
+    float: left;
+    position: relative;
+    margin: 15px 10px;
+    padding: 0 5px;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #9ac600;
+    border: 1px solid #9ac600;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.selected_tpl .tpl_label .option a{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #9ac600;
+    border-radius: 100%;
+}
+
+.tplshowcase_list_wrapper {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.tplshowcase_list_wrapper:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+
+
+.tplshowcase_list_wrapper .singleimg {
+    width: 235px;
+}
+
+.tplshowcase_list_wrapper .doubleimg {
+    width: 470px;
+}
+
+.tplshowcase_list_item {
+    float: left;
+
+    margin: 0 0 30px 0;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+.tplshowcase_list_item > a {
+    position: relative;
+
+    float: left;
+    overflow: hidden;
+
+    height: 100%;
+}
+
+.tplshowcase_list_item > a:after {
+    display: block;
+    clear: both;
+    overflow: hidden;
+
+    content: '';
+}
+
+.tplshowcase_list_item > a img {
+    float: left;
+
+    width: 235px;
+    height: 350px;
+}
+
+.tplshowcase_list_item > a span {
+    position: absolute;
+    top: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.tplshowcase_list_item > a span:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.tplshowcase_desc_item {
+    font-size: 12px;
+    line-height: 1.35em;
+
+    padding: 10px;
+
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.tplshowcase_social_wrapper {
+    font-size: 14px;
+
+    padding: 5px 10px;
+}
+
+.tplshowcase_social_wrapper li {
+    display: inline-block;
+}
+
+.tplshowcase_social_wrapper li a {
+    display: inline-block;
+    overflow: hidden;
+
+    color: #8c7e7e;
+}
+
+.tplshowcase_social_wrapper li a i {
+    margin: 0 5px;
+}
+
+.tplshowcase_social_wrapper li a span {
+    display: inline-block;
+
+    width: 3em;
+}
+
+.tplshowcase_social_wrapper .share {
+    display: inline-block;
+}

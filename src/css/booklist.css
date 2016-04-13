@@ -2799,11 +2799,21 @@
     content: '';
 }
 
+.tplshowcase_list_item .img div{
+    display: block!important;
+}
+
 .tplshowcase_list_item.doubleimg .img img
 {
     float: left;
-
+    display: block;
     width: 50%;
+}
+
+.fancybox-inner div img{
+    float: left;
+    display: block;
+    width: 409px;
 }
 
 .tplshowcase_list_item.singleimg .img img

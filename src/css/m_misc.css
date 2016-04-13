@@ -1,0 +1,169 @@
+@charset 'utf-8';
+.pricecalculator_main_wrapper
+{
+    overflow: hidden;
+
+    width: 100%;
+}
+.pricecalculator_main_wrapper .static_crumbs_wrapper
+{
+    margin: 1rem 0;
+}
+.pricecalculator_setting_wrapper
+{
+    width: 90%;
+    padding: 5%;
+
+    border: 1px solid #dbdad9;
+}
+.pricecalculator_setting_wrapper h5
+{
+    font-size: .9rem;
+
+    margin: 0 0 .75rem 0;
+
+    color: #ff4c53;
+}
+.pricecalculator_describe_item
+{
+    font-size: .6rem;
+
+    margin: 0 0 .75rem 0;
+
+    color: #999;
+}
+.pricecalculator_countor_wrapper
+{
+    width: 90%;
+    margin: 0 0 1rem 0;
+    padding: 5%;
+
+    border: 1px solid #dcdbda;
+    background-color: #f7f7f7;
+}
+.pricecalculator_countor_wrapper label, .pricecalculator_countor_wrapper input
+{
+    font-size: .6rem;
+
+    display: inline-block;
+
+    height: 1rem;
+
+    text-align: center;
+
+    color: #333;
+}
+.pricecalculator_countor_wrapper label
+{
+    width: 2rem;
+}
+.pricecalculator_countor_wrapper input
+{
+    width: 2rem;
+
+    border: 1px solid #dbdad9;
+}
+.pricecalculator_countor_wrapper .common_slider_wrapper
+{
+    float: right;
+
+    width: 8rem;
+}
+.pricecalculator_coverselector_wrapper
+{
+    overflow: hidden;
+
+    margin: 0 0 40px 0;
+    padding: .5rem 0;
+}
+.pricecalculator_coverselector_wrapper li
+{
+    float: left;
+
+    width: 7rem;
+    height: 7rem;
+    margin: 0 1px;
+}
+.pricecalculator_bindingselector_wrapper li
+{
+    width: 4.6rem;
+    height: 4.6rem;
+}
+.pricecalculator_coverselector_wrapper li p
+{
+    line-height: .8rem;
+
+    margin: .1rem 0 0 0;
+
+    text-align: center;
+
+    color: #666;
+}
+.pricecalculator_coverselector_wrapper li a
+{
+    font-size: 14px;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid #dddddc;
+    background-color: #f7f7f7;
+}
+.pricecalculator_coverselector_wrapper li .active
+{
+    border: 1px solid #ff4c53;
+    background-color: #fff;
+}
+.pricecalculator_coverselector_wrapper li .active p
+{
+    color: #ff4c53;
+}
+.pricecalculator_coverselector_wrapper li a img
+{
+    display: block;
+
+    width: 40%;
+    height: auto;
+    margin: .2rem auto 0;
+}
+.pricecalculator_result_wrapper
+{
+    line-height: 1.8rem;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 1.8rem;
+    padding: .5rem 0;
+
+    color: #fff;
+    background-color: #86c187;
+}
+.pricecalculator_unitprice_item
+{
+    line-height: 1.8rem;
+
+    float: left;
+
+    height: 1.8rem;
+    margin: 0 .5rem;
+}
+.pricecalculator_unitprice_item .unitprice:before, .pricecalculator_result_item .totalprice:before
+{
+    content: '￥';
+}
+.pricecalculator_result_item
+{
+    line-height: 1.8rem;
+
+    float: right;
+
+    height: 1.8rem;
+    margin: 0 .4rem;
+}
+.pricecalculator_result_item label
+{
+    font-size: 1.3rem;
+}

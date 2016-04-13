@@ -1,8 +1,12 @@
-@media (max-width:1024px)
-{
+@media (max-width:1024px){   
+    label.error, div.error{
+        font-size: 0.4rem!important;
+    }
     .transition_btn
     {
         transition: background-color .4s;
+        -webkit-transition: background-color .4s;
+        -moz-transition: background-color .4s;
     }
     .cm_header_nav
     {
@@ -18,31 +22,36 @@
     }
     .common_login_wrapper
     {
-        width: 90%;
+        width: 15rem;
     }
     .common_loginbtn_item
     {
         font-size: .7rem;
         line-height: 1.5rem;
 
-        height: 1.5rem;
+        height: 1.5rem;
+
         margin: .5rem auto;
     }
     .common_logincheckbox_wrapper li
     {
-        margin: 0;
+        margin: 0 0.2rem;
     }
     .common_logininput_wrapper li
     {
-        margin: 1rem 0;
+        margin: 0.8rem 0;
         /*height: 1.5rem;*/
+    }
+    .common_logincheckbox_wrapper a{
+        font-size: 0.4rem;
     }
     .common_logininput_wrapper input
     {
-        font-size: 12px;
+        font-size: 0.6rem;
 
         width: 83%;
-        height: 1.5rem;
+        height: 1.5rem;
+
         padding: 0 0 0 17%;
 
         background-color: rgba(255,255,255,0);
@@ -62,13 +71,17 @@
     {
         font-size: .7rem;
     }
+    .common_logincheckbox_wrapper label{
+        font-size: 0.4rem;
+    }
     .access_ssologin_wrapper div, .common_triplelap_wrapper span
     {
         margin: 0 auto;
     }
     .access_ssologin_wrapper div
     {
-        width: 60%;
+        width: 60%;
+
         padding: .2rem 0;
 
         background: none;
@@ -79,7 +92,8 @@
     }
     .access_ssologin_wrapper p
     {
-        margin: .5rem 0;
+        margin: 0.3rem 0;
+        font-size: 0.4rem;
     }
 
     .access_ssologin_wrapper ul
@@ -96,7 +110,11 @@
     }
     .common_loginproviso_item
     {
+        font-size: 0.4rem;
         margin: .5rem 0;
+    }
+    .common_loginproviso_item a{
+        font-size: 0.4rem;
     }
     /*.common_triplelap_wrapper{
         bottom: -0.4rem;

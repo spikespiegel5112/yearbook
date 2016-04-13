@@ -941,15 +941,15 @@
 				config = $.extend({
 					image: '',
 					tools: {
-						photoframe: '',
-						trBtn: '',
-						tlBtn: '',
-						zoominBtn: '',
-						zoomoutBtn: '',
+						photoFrame: '',
+						turnRightBtn: '',
+						turnLeftBtn: '',
+						zoomInBtn: '',
+						zoomOutBtn: '',
 						reScaleBtn: '',
 						rePositionBtn: '',
-						originalsizeBtn: '',
-						epscrollbar: ''
+						originalSizeBtn: '',
+						scrollBar: ''
 					},
 					destroy: false
 				}, config);
@@ -978,9 +978,9 @@
 				initMarginleft = 0,
 				marginleft = 0;
 
-			if (config.tools.epscrollbar != '') {
-				epscrollbarWidth = $(config.tools.epscrollbar).find('label').width(),
-				zoomingSlider = $(config.tools.epscrollbar).find('span'),
+			if (config.tools.scrollBar != '') {
+				epscrollbarWidth = $(config.tools.scrollBar).find('label').width(),
+				zoomingSlider = $(config.tools.scrollBar).find('span'),
 				sliderPosX = zoomingSlider.offset().left*transformData.scale;
 				//	sliderPosX=(windowWidth-(windowWidth*0.8))/2;
 			} else {
@@ -992,7 +992,7 @@
 			function init() {
 				image.css('transition', 'transform 0.5s');
 				image.css(transformData);
-				var photoframe = $(config.tools.photoframe);
+				var photoframe = $(config.tools.photoFrame);
 				if (frameRatio >= 1) {
 					photoframe.css({
 						width: $(window).width() * 0.9,
@@ -1020,32 +1020,32 @@
 				originalRatio = originalWidth / (photoframe.width() * 0.9);
 
 				if (windowWidth<windowHeight) {
-						$(config.tools.epscrollbar).css('width', windowWidth);
+						$(config.tools.scrollBar).css('width', windowWidth);
 					}else{
-						$(config.tools.epscrollbar).css('width', windowHeight);
+						$(config.tools.scrollBar).css('width', windowHeight);
 					}
 				$(window).resize(function(){
 					if (windowWidth<windowHeight) {
-						$(config.tools.epscrollbar).css('width', windowWidth);
+						$(config.tools.scrollBar).css('width', windowWidth);
 					}else{
-						$(config.tools.epscrollbar).css('width', windowHeight);
+						$(config.tools.scrollBar).css('width', windowHeight);
 					}
 				})
 				
 				//根据图片原始宽度和屏幕宽度的比利算出滑块初始位置
-				// initMarginleft = $(config.tools.epscrollbar).find('label').width() / originalRatio;		
+				// initMarginleft = $(config.tools.scrollBar).find('label').width() / originalRatio;		
 				// zoomingSlider.css('margin-left', initMarginleft);
 
 				initMarginleft=1/originalRatio;
 				zoomingSlider.css('margin-left', (initMarginleft*100)+'%');
 				//先居中相框再居中图片
-				$(config.tools.photoframe).align();
+				$(config.tools.photoFrame).align();
 				image.align({
 					container: '.makebook_epeditarea_wrapper'
 				});
 			};
 			//原始尺寸
-			$(config.tools.originalsizeBtn).on('touchend', function() {
+			$(config.tools.originalSizeBtn).on('touchend', function() {
 				image.css(cssSettings({
 					'scale': originalRatio
 				}));
@@ -1053,12 +1053,12 @@
 				zoomingSlider.css('margin-left', '80%');
 			});
 			//向右转
-			$(config.tools.trBtn).on('touchend', function() {
+			$(config.tools.turnRightBtn).on('touchend', function() {
 				transformData.rotate += 90;
 				image.css(cssSettings(transformData));
 			});
 			//向左转
-			$(config.tools.tlBtn).on('touchend', function() {
+			$(config.tools.turnLeftBtn).on('touchend', function() {
 				transformData.rotate -= 90;
 				image.css(cssSettings(transformData));
 			});

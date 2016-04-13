@@ -761,6 +761,45 @@
 				}
 				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
+		},
+		//滑块拖动控件
+		slider: function(options) {
+			options = $.extend({
+				density:100,
+				axisX: ''
+			},options);
+			var $this = $(this);
+			var slider = $('.common_slider_wrapper .slider');
+			var isMousedown = false,
+				offsetLeft = 0;
+			var startX = 0,
+				axisWidth=$(options.axisX).width(),
+				sliderWidth=$this.width(),
+				unitWidth=axisWidth/options.density,
+				progress=0,
+				index=0;
+			offsetLeft = $this.offset().left;
+			$this.each(function(i){
+				$this.eq(i).on('mousedown', function(e) {
+					isMousedown = true;
+					startX = e.clientX;
+					index=i;
+				});
+			});
+			$(document).on('mousemove', function(e) {
+				var _this = slider;
+				if (isMousedown) {
+					var moveX = e.clientX - offsetLeft;
+					if (e.clientX<offsetLeft+axisWidth-sliderWidth&&e.clientX>offsetLeft) {
+						_this.eq(index).css('margin-left', moveX);
+					};
+					console.log(moveX)
+				}
+			});
+			$(document).on('mouseup', function() {
+				isMousedown = false;
+				console.log(isMousedown)
+			});
 		}
 	});
 

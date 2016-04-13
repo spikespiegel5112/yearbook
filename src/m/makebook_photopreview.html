@@ -30,7 +30,7 @@
 		</div>
 		<div class='makebook_editphoto_wrapper'>
 			<div class='makebook_epeditarea_wrapper'>
-				<img class='makebook_epimage_item' src="../img/m/banner/yb_banner_activity_3_00000.jpg">
+				<img class='makebook_epimage_item' src="../img/banner/photo_list_banner02.jpg">
 			</div>
 			<div class='makebook_eptools_wrapper'>
 				<div class='makebook_epzomming_wrapper'>
@@ -66,32 +66,41 @@
 	</div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.mobile.custom.min.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="../js/base.js"></script>
 <!-- endbuild -->
 <script type="text/javascript">
 $(function() {
-	
-	$('.makebook_editphoto_wrapper').css('height', $(window).height());
 	$.remResizing({
-		fontsize: 20
+			fontsize: 20
+		});
+	var init=function(windowWidth){
+		$.editphoto({
+			destroy:true
+		});
+		$.editphoto({
+			image: '.makebook_epimage_item',
+			tools:{
+				photoframe: '.makebook_epeditarea_wrapper',
+				trBtn: '.makebook_eptoolbar_wrapper .turnright a',
+				tlBtn: '.makebook_eptoolbar_wrapper .turnleft a',
+				zoominBtn: '.makebook_epzomming_wrapper .zoomin',
+				zoomoutBtn: '.makebook_epzomming_wrapper .zoomout',
+				reScaleBtn: '.makebook_eptoolbar_wrapper .rescale',
+				rePositionBtn: '.makebook_eptoolbar_wrapper .reposition',
+				originalsizeBtn: '.makebook_eptoolbar_wrapper .originalsize',
+				epscrollbar: '.makebook_epscrollbar_item',
+				windowWidth:windowWidth
+			}
+		});
+	}
+	init();
+	//监听翻转事件
+	$(window).on("orientationchange", function(event) {
+		init();
 	});
-
-	$.editphoto({
-		image: '.makebook_epimage_item',
-		tools:{
-			photoframe: '.makebook_epeditarea_wrapper',
-			trBtn: '.makebook_eptoolbar_wrapper .turnright a',
-			tlBtn: '.makebook_eptoolbar_wrapper .turnleft a',
-			zoominBtn: '.makebook_epzomming_wrapper .zoomin',
-			zoomoutBtn: '.makebook_epzomming_wrapper .zoomout',
-			reScaleBtn: '.makebook_eptoolbar_wrapper .rescale',
-			rePositionBtn: '.makebook_eptoolbar_wrapper .reposition',
-			originalsizeBtn: '.makebook_eptoolbar_wrapper .originalsize',
-			epscrollbar: '.makebook_epscrollbar_item'
-		}
-		
-	});
+	
 })
 </script>
 

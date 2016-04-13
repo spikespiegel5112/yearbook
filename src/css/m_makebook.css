@@ -38,8 +38,8 @@
 	float: left;
 	padding: 0 0.5rem;
 	height: 2rem;
-	line-height: 2rem;
-	font-size: 0.8rem;
+	line-height: 2.4rem;
+	font-size: 1.4rem;
 	color: #000;
 }
 .makebook_eptools_wrapper .zoomout{
@@ -57,18 +57,21 @@
 }
 
 .makebook_eptoolbar_wrapper li a{
-	display: block;
+	display: inline-block;
 }
 .makebook_eptoolbar_wrapper .turnright a{
 	transform: rotateY(180deg);
 }
 .makebook_epzomming_wrapper, .makebook_eptoolbar_wrapper{
-	height: 2rem;
+	height: 2.6rem;
 	overflow: hidden;
-	
 }
 .makebook_eptoolbar_wrapper{
+    text-align: center;
 	background-color: #ffffff;
+}
+.makebook_eptoolbar_wrapper li{
+    display: inline-block;
 }
 .makebook_epscrollbar_item{
 	margin: 1rem auto 0;

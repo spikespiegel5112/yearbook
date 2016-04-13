@@ -846,13 +846,8 @@
 			});
 
 			function sizeConstraint() {
-				if (orientationSensor() == 'portrait') {
-					windowWidth = $(window).width(),
-						windowHeight = $(window).height();
-				} else {
-					windowHeight = $(window).width(),
-						windowWidth = $(window).height();
-				}
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height();
 
 				var factor = 0;
 				// alert(windowWidth)

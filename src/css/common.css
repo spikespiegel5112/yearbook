@@ -314,35 +314,32 @@ input
 {
     padding: 5px 10px;
 
-    background: -webkit-linear-gradient(top, #fff, #eee);
-    background: -moz-linear-gradient(top, #fff, #eee);
-    background: -ms-linear-gradient(top, #fff, #eee);
-    border-radius: 5px;
-    border: 1px solid #ccc;
     color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: -ms-linear-gradient(top, #fff, #eee);
 }
 
 .common_btn:active
 {
-    background: -webkit-linear-gradient(top, #eee, #fff);
-    background: -moz-linear-gradient(top, #eee, #fff);
-    background: -ms-linear-gradient(top, #eee, #fff);
     color: #555;
+    background: -ms-linear-gradient(top, #eee, #fff);
 }
 
 .gradient_btn
 {
+    font-size: 13px;
+
+    min-width: 4em;
     padding: 5px 15px;
-    min-width: 4em;
-    background: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
-    background: -moz-linear-gradient(top, #fff 0, #f2f2f2 100%);
+
+    text-align: center;
+
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     background: -ie-linear-gradient(top, #fff 0, #f2f2f2 100%);
     background: -o-linear-gradient(top, #fff 0, #f2f2f2 100%);
-    border: 1px solid #ccc;
-    text-align: center;
-    border-radius: 5px;
-    color: #222;
-    font-size: 13px;
 }
 
 .gradient_btn:hover
@@ -352,9 +349,7 @@ input
 
 .gradient_btn:active
 {
-    background: linear-gradient(top, #f2f2f2 0, #fff 100%);
-    background: -webkit-linear-gradient(top, #f2f2f2 0, #fff 100%);
-    background: -moz-linear-gradient(top, #f2f2f2 0, #fff 100%);
+    background:    linear-gradient(top, #f2f2f2 0, #fff 100%);
     background: -ie-linear-gradient(top, #f2f2f2 0, #fff 100%);
     background: -o-linear-gradient(top, #f2f2f2 0, #fff 100%);
 }

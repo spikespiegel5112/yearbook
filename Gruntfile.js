@@ -417,7 +417,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build2',['clean', /*'useminPrepare',*/ /*'clean:sourceMap', */'concat','copy',/* 'uglify',*/ 'cssmin', 'usemin']);
     // grunt.registerTask('default', ['build']);
     grunt.registerTask('default', ['build2']);
-    grunt.registerTask('publish', ['build', 'sftp-deploy']);
+    grunt.registerTask('publish', ['build2', 'sftp-deploy']);
     grunt.registerTask('server', ['build',  'connect:srcServer', 'connect:distServer', 'watch']);
 
     grunt.event.on('watch', function(action, filepath, target) {

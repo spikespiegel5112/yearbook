@@ -8,19 +8,19 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.11-书册空间</title>
+	<title>忆尔3.11-模板展厅</title>
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459411789_462414.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/tplshowcase3.11.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/booklist.css" type="text/css" media="all">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
 	
 </head>
 
-<body style="min-width: 1280px">
+<body style="min-width: 1280px"><!--模板展厅陈列4列模板所需宽度-->
 	<!--头部导航-->
     <div class="yb_cm_header index cm_min_width"><!--只用于首页添加class:index-->
         <div class="shortcut_container">
@@ -169,6 +169,19 @@
                             <li><a href="javascript:;">全景照片</a></li>
                             <li><a href="javascript:;">通讯录</a></li>
                         </ul>
+                        <div class="filter_panel">
+                            <h5 class="dropdown_menu"><i class="icon-angle-down"></i><span>排序: 点击</span></h5>
+                            <div class="dropdown_box">
+                                <ul class="options">
+                                    <li class="current"><a href="javascript:;">全部</a></li>
+                                    <li><a href="javascript:;">热门</a></li>
+                                    <li><a href="javascript:;">推荐</a></li>
+                                    <li><a href="javascript:;">图文</a></li>
+                                    <li><a href="javascript:;">封面</a></li>
+                                    <li><a href="javascript:;">封底</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="selected_tpl">
                         <span>已选择模板：</span>
@@ -186,225 +199,2082 @@
                                 <a class="delete" href="javascript:;">×</a>
                             </div>
                         </div>
+                        <a class="make_book" href="javascript:;">生成书册<i class="icon-book"></i></a>
                     </div>
                 </div>
                 <div class="bd">
-                    <ul class="tplshowcase_list_wrapper grid">
-                        <li class="tplshowcase_list_item doubleimg">
-                            <div class="tpl_info">
-                                <span class="type">图</span>
-                                <a class="num" href="javascript:;">图文页_01</a>
-                                <a class="chose" href="javascript:;">选择</a>
+                    <ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <a class="img" href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='actbar'>
-                                <a class='praise' href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a>
-                                <a class='comment' href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a>
-                                <a class='share' href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
                             </div>
                         </li>
-                        <li class="tplshowcase_list_item doubleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <div class='claerfloat'></div>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-                        <li class="tplshowcase_list_item doubleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <div class='claerfloat'></div>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-                        <li class="tplshowcase_list_item doubleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <div class='claerfloat'></div>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-                        <li class="tplshowcase_list_item doubleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <div class='claerfloat'></div>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-
-                        <li class="tplshowcase_list_item doubleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <div class='claerfloat'></div>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a class="img" href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="tplshowcase_list_item singleimg">
-                            <a href="img/default/left_big.jpg">
-                                <img src="img/default/left.jpg">
-                                <span></span>
-                            </a>
-                            <div class='clearfloat'></div>
-                            <p class='tplshowcase_desc_item'>
-                                A Mexican bride in traditional feather headdress via @NOVICA
-                            </p>
-                            <ul class='tplshowcase_social_wrapper'>
-                                <li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li>
-                                <li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li>
-                                <li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li>
-                            </ul>
+                        <li>
+                            <div class="tplshowcase_list_wrapper">
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_01"><!--id 为模板编号-->
+                                            <img src="img/default/inner_page_backcover.jpg">
+                                            <img src="img/default/inner_page_cover.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_02">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_03">
+                                            <img src="img/default/pages05.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_04">
+                                            <img src="img/default/pages01.jpg">
+                                            <img src="img/default/pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item doubleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_05">
+                                            <img src="img/default/inner_pages01.jpg">
+                                            <img src="img/default/inner_pages02.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tplshowcase_list_item singleimg">
+                                    <div class="tpl_info">
+                                        <span class="tpl_type">图</span>
+                                        <a class="num" href="javascript:;">图文页_01</a>
+                                        <a class="chose" href="javascript:;">选择</a>
+                                    </div>
+                                    <a class="img" href="javascript:;">
+                                        <div id="text_06">
+                                            <img src="img/default/pages06.jpg">
+                                            <span></span>
+                                        </div>
+                                    </a>
+                                    <ul class='actbar'>
+                                        <li class='praise'><a href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>1</span></a></li>
+                                        <li class='comment'><a href='javascript:;'><i class='ybiconfont ybicon-commenthollow'></i><span>2</span></a></li>
+                                        <li class='share'>
+                                            <a href='javascript:;'><i class='ybiconfont ybicon-sharehollow'></i></a>
+                                            <div class='common_sharelist_wrapper'>
+                                                <ul>
+                                                    <li class='weibo'>
+                                                        <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='qzone'>
+                                                        <a class='ybiconfont ybicon-qzone' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='wechat'>
+                                                        <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                                                    </li>
+                                                    <li class='renren'>
+                                                        <a class='ybiconfont ybicon-renren' href="javascript:;"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='loadmore_item'>
+                                <div class='loadmore_inner'>
+                                    <img src="img/loading.gif" width='24' height='24'>
+                                    <p>正在加载</p>
+                                </div>
+                            </div>
                         </li>
                     </ul>
-                    <div class='loadmore_item'>
-                        <div class='loadmore_inner'>
-                            <img src="img/loading.gif" width='24' height='24'>
-                            <p>正在加载</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -438,12 +2308,51 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src='assets/js/masonry.pkgd.min.js'></script>
 	<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
+    <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
 	<script type="text/javascript">
 	$(function() {
-		waterfall();
-		scrollLoad();
+        tplShowCaseSlide();
+        //waterfall();
+		//scrollLoad();
 		fancybox();
+        choseTpl();
+        filterPanel();
 	});
+
+    function tplShowCaseSlide(){
+        //banner 居中
+        $(".agb_bannermain_wrapper li img").imgAlignCenter()
+        jQuery(".tplshowcase_con").slide({
+            titCell: ".hd > ul > li",
+            mainCell: ".bd ul",
+            trigger: "click",
+            pnLoop: false,
+            autoPlay: false,
+            endFun:function(){
+                waterfall();
+                scrollLoad();
+            }
+        });
+    }
+
+    function filterPanel(){
+        $('.dropdown_box li a').click(function(){
+            $(this).closest('.filter_panel').find('.dropdown_menu span').text("排序："+$(this).text());
+            $(this).parent().addClass('current').siblings().removeClass('current');
+        });
+    }
+
+    //选择模板
+    function choseTpl(){
+        $('.tplshowcase_con').on('click',' .tpl_info .chose',function(){
+            if($(this).text() =="选择"){
+                $(this).text("已选").addClass('active');
+            }else{
+                $(this).text("选择").removeClass('active');
+            }
+        });
+    }
 
 	function waterfall() {
 		$('.tplshowcase_list_wrapper').masonry({
@@ -454,17 +2363,22 @@
 	}
 
 	function fancybox() {
-		$(".tplshowcase_list_item a").fancybox({
-
-		});
+		$(".tplshowcase_list_item .img").each(function(){
+            var fancyHref = '#'+$(this).find('div').attr('id');
+            $(this).fancybox({
+                type:'inline',
+                href:fancyHref
+            });
+        })
 	}
 
 	function scrollLoad() {
-		var tplscWrapper = $('.tplshowcase_list_wrapper');
+        var activeIndex = $('.classify li.on').index();
+		var tplscWrapper = $('.tplshowcase_list_wrapper').eq(activeIndex);
 		var availHeight = $(window).height();
 		var loadFlag = false;
 		var loadmoreEl = $('.loadmore_inner');
-		var tplscLi="<li class='tplshowcase_list_item singleimg'><a href='img/default/left_big.jpg'><img src='img/default/left.jpg'><span></span></a><div class='clearfloat'></div><p class='tplshowcase_desc_item'>A Mexican bride in traditional feather headdress via @NOVICA</p><ul class='tplshowcase_social_wrapper'><li class='share'><a href='javascript:;'><span><i class='icon-share'></i>1</span></a></li><li class='praise'><a href='javascript:;'><span><i class='ybiconfont ybicon-heartsolid'></i>2</span></a></li><li class='message'><a href='javascript:;'><span><i class='icon-comments'></i>3</span></a></li></ul></li>";
+		var tplscLi='<li class="tplshowcase_list_item singleimg"><div class="tpl_info"><span class="tpl_type">图</span><a class="num" href="javascript:;">图文页_01</a><a class="chose" href="javascript:;">选择</a></div><a class="img" href="javascript:;"><div id="cover_01"><img src="img/default/left.jpg"><span></span></div></a><ul class="actbar"> <li class="praise"><a href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>1</span></a></li><li class="comment"><a href="javascript:;"><i class="ybiconfont ybicon-commenthollow"></i><span>2</span></a></li><li class="share"><a href="javascript:;"><i class="ybiconfont ybicon-sharehollow"></i></a><div class="common_sharelist_wrapper"> <ul> <li class="weibo"> <a class="ybiconfont ybicon-weibosina" href="javascript:;"></a> </li><li class="qzone"><a class="ybiconfont ybicon-qzone" href="javascript:;"></a></li><li class="wechat"> <a class="ybiconfont ybicon-wechatsolid" href="javascript:;"></a></li><li class="renren"><a class="ybiconfont ybicon-renren" href="javascript:;"></a></li></ul></div></li></ul></li>';
 		
 		$(window).scroll(function() {
 			var scrollTop = $(window).scrollTop();

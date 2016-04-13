@@ -959,7 +959,7 @@
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				image = $(config.image),
-				frameRatio = 1.2, //相框宽高比,此值由被点击的槽位宽高比决定
+				frameRatio = 0.9, //相框宽高比,此值由被点击的槽位宽高比决定
 				startPosX = 0,
 				startPosY = 0,
 				imageTop = 0,
@@ -981,7 +981,8 @@
 			if (config.tools.epscrollbar != '') {
 				epscrollbarWidth = $(config.tools.epscrollbar).find('label').width(),
 				zoomingSlider = $(config.tools.epscrollbar).find('span'),
-				sliderPosX = zoomingSlider.offset().left;
+				// sliderPosX = zoomingSlider.offset().left;
+				sliderPosX=(windowWidth-(windowWidth*0.8))/2;
 			} else {
 				return;
 			}
@@ -1018,10 +1019,24 @@
 				originalHeight = imgObj.height;
 				originalRatio = originalWidth / (photoframe.width() * 0.9);
 
+				if (windowWidth<windowHeight) {
+						$(config.tools.epscrollbar).css('width', windowWidth);
+					}else{
+						$(config.tools.epscrollbar).css('width', windowHeight);
+					}
+				$(window).resize(function(){
+					if (windowWidth<windowHeight) {
+						$(config.tools.epscrollbar).css('width', windowWidth);
+					}else{
+						$(config.tools.epscrollbar).css('width', windowHeight);
+					}
+				})
+				
 				//根据图片原始宽度和屏幕宽度的比利算出滑块初始位置
-				initMarginleft = $(config.tools.epscrollbar).find('label').width() / originalRatio;
-				zoomingSlider.css('margin-left', initMarginleft);
-				//先确定相框高度后再对图片进行居中操作
+				//initMarginleft = $(config.tools.epscrollbar).find('label').width() / originalRatio;
+				initMarginleft=1/originalRatio;
+				zoomingSlider.css('margin-left', (initMarginleft*100)+'%');
+				//先居中相框再居中图片
 				$(config.tools.photoframe).align();
 				image.align({
 					container: '.makebook_epeditarea_wrapper'
@@ -1033,7 +1048,7 @@
 					'scale': originalRatio
 				}));
 				saveRatio = initMarginleft * originalRatio;
-				zoomingSlider.css('margin-left', saveRatio);
+				zoomingSlider.css('margin-left', '80%');
 			});
 			//向右转
 			$(config.tools.trBtn).on('touchend', function() {
@@ -1083,145 +1098,89 @@
 			function sliderEvent(e){
 				var touch = e.originalEvent.touches[0];
 				var movingPosX = touch.pageX;
-				marginleft = movingPosX - sliderPosX;
+				
+				marginleft = ((movingPosX-(windowWidth-(windowWidth*0.8))/2)/windowWidth)*0.8;
+				
+				// console.log("windowWidth: "+windowWidth+' sliderPosX: '+sliderPosX+' movingPosX: '+movingPosX)
+				// if(windowWidth<windowHeight){
+				// 		marginleft = (movingPosX/windowWidth) - (sliderPosX/windowWidth);
+				// 	}else{
+				// 		marginleft = (movingPosX/windowHeight) - (sliderPosX/windowHeight);
+				// 	}
+				$(window).resize(function(){
+					if(windowWidth<windowHeight){
+						marginleft = (movingPosX/windowWidth) - (sliderPosX/windowWidth);
+					}else{
+						marginleft = (movingPosX/windowWidth) - (sliderPosX/windowHeight);
+					}
+				})
+				
+				
 				if (marginleft <= 0) {
+					console.log('<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0<0')
 					marginleft = 0;
-				} else if (marginleft > epscrollbarWidth - 10) {
-					marginleft = epscrollbarWidth - 10
+				} else if (marginleft >= 0.8) {
+					marginleft = 0.8
 				} else {
-					zoomingSlider.css('margin-left', marginleft);
+					zoomingSlider.css('margin-left', (marginleft*100)+'%');
 					var scalecss = {
-						scale: Number(marginleft / epscrollbarWidth) * originalRatio
+						scale: marginleft * originalRatio
 					}
 					image.css(cssSettings(scalecss));
-					console.log('滑块操作后的 ' + scalecss.scale);
+					// console.log('滑块操作后的 ' + scalecss.scale);
+					console.log('滑块操作后的marginleft: ' + marginleft);
 				}
 				if (marginleft > saveRatio) {
 					//大于最低清晰度
 					//console.log(marginleft+' '+saveRatio)
 				};
 			}
-			zoomingSlider.on('touchmove',function(e){
-
-				sliderEvent(e);
-			});
 			zoomingSlider.on('touchstart',function(e){
 				sliderEvent(e);
 			});
+			zoomingSlider.on('touchmove',function(e){
+				console.log(windowWidth)
+				sliderEvent(e);
+			});
 			image.on('touchstart',function(e){
+				console.log('image touchstart')
 				var touch = e.originalEvent.touches[0];
 				startPosX = touch.pageX,
-					startPosY = touch.pageY,
-					imageLeft = Number(image.css('left').replace('px', '')),
-					imageTop = Number(image.css('top').replace('px', ''))
+				startPosY = touch.pageY,
+				imageLeft = Number(image.css('left').replace('px', '')),
+				imageTop = Number(image.css('top').replace('px', ''))
 				console.log(transformData)
-			})
-			image.on('touchmove',function(e){
-				console.log('aaa')
-				var touch = e.originalEvent.touches[0];
-				e.preventDefault;
-				endPosX = touch.pageX,
-					endPosY = touch.pageY,
-					offsetPosX = endPosX - startPosX;
-				offsetPosY = endPosY - startPosY;
-				var positioncss = {
-					position: 'relative',
-					left: offsetPosX + imageLeft,
-					top: offsetPosY + imageTop
-				};
-
-				cssSettings(positioncss);
-				transformData = $.extend(transformData, positioncss)
-				image.css(transformData);
-			})
-			// function eventHandler(e, transformData) {
-			// 	function touchEvent(){
-			// 		var touch = e.touches[0];
-			// 	if ($(e.target).closest(zoomingSlider).length > 0) {
-			// 		var movingPosX = touch.pageX;
-			// 		marginleft = movingPosX - sliderPosX;
-			// 		if (marginleft <= 0) {
-			// 			marginleft = 0;
-			// 		} else if (marginleft > epscrollbarWidth - 10) {
-			// 			marginleft = epscrollbarWidth - 10
-			// 		} else {
-			// 			zoomingSlider.css('margin-left', marginleft);
-			// 			var scalecss = {
-			// 				scale: Number(marginleft / epscrollbarWidth) * originalRatio
-			// 			}
-			// 			image.css(cssSettings(scalecss));
-			// 			// transformData=$.extend({
-			// 			// 	scale: Number(marginleft / epscrollbarWidth) * 2
-			// 			// }, transformData)
-			// 			console.log('滑块操作后的 ' + scalecss.scale);
-			// 		}
-			// 		if (marginleft > saveRatio) {
-			// 			//大于最低清晰度
-			// 			//console.log(marginleft+' '+saveRatio)
-			// 		};
-			// 	} else if ($(e.target).closest(image).length > 0) {
-			// 		switch (e.type) {
-			// 			case 'touchstart':
-							
-			// 				break;
-			// 			case 'touchmove':
-							
-			// 				break;
-			// 		}
-			// 	}
-			// 	}
-			// 	e.preventDefault;
-			// 	var touch = e.touches[0];
-			// 	if ($(e.target).closest(zoomingSlider).length > 0) {
-			// 		var movingPosX = touch.pageX;
-			// 		marginleft = movingPosX - sliderPosX;
-			// 		if (marginleft <= 0) {
-			// 			marginleft = 0;
-			// 		} else if (marginleft > epscrollbarWidth - 10) {
-			// 			marginleft = epscrollbarWidth - 10
-			// 		} else {
-			// 			zoomingSlider.css('margin-left', marginleft);
-			// 			var scalecss = {
-			// 				scale: Number(marginleft / epscrollbarWidth) * originalRatio
-			// 			}
-			// 			image.css(cssSettings(scalecss));
-			// 			// transformData=$.extend({
-			// 			// 	scale: Number(marginleft / epscrollbarWidth) * 2
-			// 			// }, transformData)
-			// 			console.log('滑块操作后的 ' + scalecss.scale);
-			// 		}
-			// 		if (marginleft > saveRatio) {
-			// 			//大于最低清晰度
-			// 			//console.log(marginleft+' '+saveRatio)
-			// 		};
-			// 	} else if ($(e.target).closest(image).length > 0) {
-			// 		switch (e.type) {
-			// 			case 'touchstart':
-			// 				startPosX = touch.pageX,
-			// 					startPosY = touch.pageY,
-			// 					imageLeft = Number(image.css('left').replace('px', '')),
-			// 					imageTop = Number(image.css('top').replace('px', ''))
-			// 				console.log(transformData)
-			// 				break;
-			// 			case 'touchmove':
-			// 				e.preventDefault;
-			// 				endPosX = touch.pageX,
-			// 					endPosY = touch.pageY,
-			// 					offsetPosX = endPosX - startPosX;
-			// 				offsetPosY = endPosY - startPosY;
-			// 				var positioncss = {
-			// 					position: 'relative',
-			// 					left: offsetPosX + imageLeft,
-			// 					top: offsetPosY + imageTop
-			// 				};
-
-			// 				cssSettings(positioncss);
-			// 				transformData = $.extend(transformData, positioncss)
-			// 				image.css(transformData);
-			// 				break;
-			// 		}
-			// 	}
-			// }
+			});
+			function eventHandler(e, transformData){
+				if ($(e.target).closest(image).length > 0) {
+					var touch = e.touches[0];
+					switch (e.type) {
+						case 'touchstart':
+							startPosX = touch.pageX,
+							startPosY = touch.pageY,
+							imageLeft = Number(image.css('left').replace('px', '')),
+							imageTop = Number(image.css('top').replace('px', ''))
+							break;
+						case 'touchmove':
+							console.log('image touchmove')
+							e.preventDefault;
+							endPosX = touch.pageX,
+							endPosY = touch.pageY,
+							offsetPosX = endPosX - startPosX;
+							offsetPosY = endPosY - startPosY;
+							var positioncss = {
+								position: 'relative',
+								left: offsetPosX + imageLeft,
+								top: offsetPosY + imageTop
+							};
+							cssSettings(positioncss);
+							transformData = $.extend(transformData, positioncss)
+							image.css(transformData);
+							break;
+					}
+				}
+			}
+			
 			//某些必须集合多个参数的样式的设置模式
 			function cssSettings(config) {
 				transformData = $.extend(transformData, config);
@@ -1234,12 +1193,12 @@
 					return transformData;
 				};
 			}
-			// var touchstartEvent=function(){
-			// 		window.addEventListener('touchstart', eventHandler, false);
-			// 	}(),
-			// 	touchmoveEvent=function(){
-			// 		window.addEventListener('touchmove', eventHandler, false);
-			// 	}()
+			var touchstartEvent=function(){
+					window.addEventListener('touchstart', eventHandler, false);
+				}(), 
+				touchmoveEvent=function(){
+					window.addEventListener('touchmove', eventHandler, false);
+				}()
 			$('.action_btn').on('touchend', function() {
 				console.log(transformData);
 			});

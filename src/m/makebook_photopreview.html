@@ -75,7 +75,7 @@ $(function() {
 	$.remResizing({
 			fontsize: 20
 		});
-	var init=function(){
+	var init=function(windowWidth){
 		$.editphoto({
 			destroy:true
 		});
@@ -90,7 +90,8 @@ $(function() {
 				reScaleBtn: '.makebook_eptoolbar_wrapper .rescale',
 				rePositionBtn: '.makebook_eptoolbar_wrapper .reposition',
 				originalsizeBtn: '.makebook_eptoolbar_wrapper .originalsize',
-				epscrollbar: '.makebook_epscrollbar_item'
+				epscrollbar: '.makebook_epscrollbar_item',
+				windowWidth:windowWidth
 			}
 		});
 	}

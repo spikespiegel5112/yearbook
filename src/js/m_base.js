@@ -320,31 +320,62 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
-				aligncenter: true
+				aligncenter: true,
+				forcePortrait:false,
+				forceLandescape:false
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
-				windowWidth = $(window).width();
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height();
+
 			sizeConstraint();
+
 			$(window).resize(function() {
 				sizeConstraint();
 			});
 
 			function sizeConstraint() {
-				var windowWidth = $(window).width(),
-					windowHeight = $(window).height(),
-					factor = 0;
+				if(options.forcePortrait){
+					orientationSensor({
+						portrait:function(){
+							windowWidth = $(window).width(),
+							windowHeight = $(window).height();
+						},
+						landscape:function(){
+							windowWidth = $(window).height(),
+							windowHeight = $(window).width();
+						}
+					});
+				}else if(options.forceLandescape){
+					orientationSensor({
+						portrait:function(){
+							windowWidth = $(window).width(),
+							windowHeight = $(window).height();
+						},
+						landscape:function(){
+							windowWidth = $(window).height(),
+							windowHeight = $(window).width();
+						}
+					});
+				}else{
+					windowWidth = $(window).width(),
+					windowHeight = $(window).height();
+				}
+
+				var factor = 0;
 				// alert(windowWidth)
 				if (options.minwidth == 0) {
 					//alert('当最小宽度等于0时')
 					bodyEl.css({
 						'width': windowWidth
 					});
-					factor = windowWidth / options.minwidth;
+					factor = 1;
 				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
-					//alert('当最小宽度不等于0且屏幕宽度小于等最小宽度时')
+					// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
 					bodyEl.css({
-						'width': options.minwidth
+						'width': options.minwidth,
+						'height': 'auto'
 					});
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
@@ -352,6 +383,7 @@
 					bodyEl.css({
 						'width': windowWidth
 					});
+					//alert(windowWidth)
 					// factor = 2;
 					factor = windowWidth / options.minwidth;
 					//alert(factor = windowWidth / options.minwidth)
@@ -361,7 +393,7 @@
 						bodyEl.css({
 							'margin': '0 auto'
 						})
-					}else{
+					} else {
 						bodyEl.css({
 							'margin': '0 auto',
 							'width': options.maxwidth
@@ -372,6 +404,33 @@
 					alert('abnormal')
 				}
 				htmlEl.css('font-size', options.fontsize * factor);
+			}
+			//屏幕方向探测器
+			function orientationSensor(callback) {
+				var windowWidth = $(window).width(),
+					windowHeight = $(window).height(),
+					orientation = '';
+				checkoritation();
+				$(window).resize(function() {
+					checkoritation();
+				});
+
+				function checkoritation() {
+					if (typeof(callback) == 'undefined') {
+						callback = {
+							portrait: function() {},
+							landscape: function() {}
+						}
+					} else {
+						if (windowWidth < windowHeight) {
+							return callback.portrait();
+						} else {
+							return callback.landscape();
+						}
+					}
+				}
+				console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
+				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		}
 	});

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>忆尔3.11.1-书价计算器</title>
+	<!-- build:css ../css/m.all.min.css -->
+	<link rel="stylesheet" type="text/css" href="../css/m_reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/m_common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/m_misc.css" />
+	<!-- endbuild -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459411789_462414.css" type="text/css" media="all" />
+</head>
+
+<body class="bg-efeff4">
+	<div class='ybwechatheader_wrapper'>
+		<a class='left_btn back_btn' href='javascript:;'>
+			<span class="ybiconfont ybicon-backward1"></span>
+		</a>
+		<p>&nbsp;</p>
+	</div>
+	<div class='main_container pricecalculator_main_container'>
+		<div class='pricecalculator_main_wrapper'>
+			<div class='pricecalculator_setting_wrapper'>
+				<h5>书页数量</h5>
+				<p class='pricecalculator_describe_item'>纪念册总共页面数量，最少为20页，每加一页价格也会有所增加。</p>
+				<div class='pricecalculator_countor_wrapper'>
+					<label>页数</label>
+					<input type='text'>
+					<div class='common_slider_wrapper'>
+						<span class='slider'></span>
+						<label class='axis'></label>
+					</div>
+				</div>
+				<h5>纪念册本数</h5>
+				<p class='pricecalculator_describe_item'>
+					需要下单的纪念册数量，数量＞20本联系客服询问优惠折扣。
+				</p>
+				<div class='pricecalculator_countor_wrapper'>
+					<label>页数</label>
+					<input type='text'>
+					<div class='common_slider_wrapper'>
+						<span class='slider'></span>
+						<label class='axis'></label>
+					</div>
+				</div>
+				<h5>尺寸选择</h5>
+				<p class='pricecalculator_describe_item'>
+					总共2种尺寸可供选择，大本尺寸175mm×248mm，小本尺寸145mm×210mm。
+				</p>
+				<div class='pricecalculator_coverselector_wrapper'>
+					<ul>
+						<li>
+							<a class='active' href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="../img/default/cover_css.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<p>大本尺寸</p>
+								<p>172mm x 248mm</p>
+								<img src="../img/default/cover_css.jpg">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<h5>装订选择</h5>
+				<p class='pricecalculator_describe_item'>
+					总共3种尺寸可供选择，平装（软封面），精装（硬封面），蝴蝶装（硬面+蝴蝶装订）。
+				</p>
+				<div class='pricecalculator_coverselector_wrapper pricecalculator_bindingselector_wrapper'>
+					<ul>
+						<li>
+							<a class='active' href="javascript:;">
+								<p>大本尺寸</p>
+								<img src="../img/default/cover_css.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<p>大本尺寸</p>
+								<img src="../img/default/cover_css.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<p>大本尺寸</p>
+								<img src="../img/default/cover_css.jpg">
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class='pricecalculator_result_wrapper'>
+				<div class='pricecalculator_unitprice_item'>
+					<span>单价:</span>
+					<label class='unitprice'>192.00</label>
+					<span>*</span>
+					<label class='countor'>1</label>
+				</div>
+				<div class='pricecalculator_result_item'>
+					<span>合计:</span>
+					<label class='totalprice'>192.00</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+<!-- build:js js/all.js -->
+<script type="text/javascript" src="../js/base.js"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+$(function() {
+	$.remResizing({
+		fontsize: 20
+	})
+})
+</script>
+
+</html>

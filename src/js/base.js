@@ -834,7 +834,7 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
-				aligncenter: true,
+				aligncenter: false,
 				keepportrait:false,
 				keeplandscape:false
 			}, options);
@@ -911,7 +911,7 @@
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
-							'width': windowWidth
+							'width': options.maxwidth
 						})
 					}
 					//alert(windowWidth)

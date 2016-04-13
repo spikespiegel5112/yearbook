@@ -834,20 +834,48 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
-				aligncenter: true
+				aligncenter: true,
+				forcePortrait:false,
+				forceLandescape:false
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
+
 			sizeConstraint();
+
 			$(window).resize(function() {
 				sizeConstraint();
 			});
 
 			function sizeConstraint() {
-				windowWidth = $(window).width(),
-				windowHeight = $(window).height();
+				if(options.forcePortrait){
+					orientationSensor({
+						portrait:function(){
+							windowWidth = $(window).width(),
+							windowHeight = $(window).height();
+						},
+						landscape:function(){
+							windowWidth = $(window).height(),
+							windowHeight = $(window).width();
+						}
+					});
+				}else if(options.forceLandescape){
+					orientationSensor({
+						portrait:function(){
+							windowWidth = $(window).width(),
+							windowHeight = $(window).height();
+						},
+						landscape:function(){
+							windowWidth = $(window).height(),
+							windowHeight = $(window).width();
+						}
+					});
+				}else{
+					windowWidth = $(window).width(),
+					windowHeight = $(window).height();
+				}
 
 				var factor = 0;
 				// alert(windowWidth)
@@ -856,20 +884,13 @@
 					bodyEl.css({
 						'width': windowWidth
 					});
-					factor = windowWidth / options.minwidth;
+					factor = 1;
 				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
 					// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
-					if (orientationSensor() == 'portrait') {
-						bodyEl.css({
-							'width': options.minwidth,
-							'height': 'auto'
-						});
-					} else {
-						bodyEl.css({
-							'width': 'auto',
-							'height': options.minwidth
-						});
-					}
+					bodyEl.css({
+						'width': options.minwidth,
+						'height': 'auto'
+					});
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
 					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')

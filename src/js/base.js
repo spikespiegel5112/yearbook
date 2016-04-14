@@ -440,7 +440,7 @@
 					onchange: function() {}
 				};
 			if (options) {
-				$.extend(config, options)
+				$.extend(config, options);
 			};
 			init($this);
 			$.each($this, function(index) {
@@ -764,20 +764,24 @@
 			}
 		},
 		//滑块拖动控件
-		slider: function(options) {
-			options = $.extend({
+		slider: function(options, callback) {
+			var config = $.extend({
 				density: 100,
-				axisx: ''
+				offset: 0,
+				axisx: '',
+				progress: ''
 			}, options);
+
 			var $this = $(this),
 				isMousedown = false,
 				offsetLeft = 0,
 				startX = 0,
-				axisWidth = $(options.axisx).width(),
+				axisWidth = $(config.axisx).width(),
 				sliderWidth = $this.width(),
-				unitWidth = axisWidth / options.density,
+				unitWidth = axisWidth / config.density,
 				progress = 0,
-				index = 0;
+				index = 0,
+				progress = 0;
 			offsetLeft = $this.offset().left;
 
 			var touchStart, touchMove, touchEnd;
@@ -785,13 +789,17 @@
 			touchMove = isMobile() ? 'touchmove' : 'mousemove';
 			touchEnd = isMobile() ? 'touchend' : 'mouseup';
 
+
+			if (typeof config.offset == 'string') {
+				config.offset = Number($(config.offset).val());
+			}
+
 			$this.each(function(i) {
 				$this.eq(i).on(touchStart, function(e) {
 					isMousedown = true;
 					if (isMobile()) {
 						var touch = e.originalEvent.touches[0];
 						startX = touch.clientX;
-						console.log(startX);
 					} else {
 						startX = e.clientX;
 					}
@@ -804,7 +812,6 @@
 					if (isMobile()) {
 						var touch = e.originalEvent.touches[0];
 						var moveX = touch.clientX - offsetLeft;
-						console.log(moveX);
 						if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft) {
 							_this.eq(index).css('margin-left', moveX);
 						};
@@ -814,12 +821,32 @@
 							_this.eq(index).css('margin-left', moveX);
 						};
 					}
-					console.log(moveX);
+					if (moveX < 0) {
+						progress = 0;
+					} else if (moveX > axisWidth) {
+						progress = axisWidth;
+					} else {
+						progress = moveX;
+					}
+					progress = progress * (config.density / axisWidth) + config.offset;
+					console.log(progress);
 				}
 			});
+			if (typeof options == 'string') {
+				switch (options) {
+					case 'progress':
+						return progress;
+						break;
+					case 'onchange':
+						if (progress) {};
+						callback();
+						break;
+					default:
+						alert('dsds')
+				}
+			};
 			$(document).on(touchEnd, function() {
 				isMousedown = false;
-				console.log(isMousedown)
 			});
 
 			function isMobile() {

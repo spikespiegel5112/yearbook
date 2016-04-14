@@ -92,9 +92,9 @@
     margin: 0 1px;
 }
 .pricecalculator_coverselector_wrapper li p
-{
-    line-height: 27px;
-
+{   
+    margin: 10px 0 15px 0;
+    min-height: 20px;
     text-align: center;
 
     color: #666;
@@ -111,12 +111,12 @@
     border: 1px solid #dddddc;
     background-color: #f7f7f7;
 }
-.pricecalculator_coverselector_wrapper li .active
+.pricecalculator_coverselector_wrapper .active a
 {
     border: 1px solid #ff4c53;
     background-color: #fff;
 }
-.pricecalculator_coverselector_wrapper li .active p
+.pricecalculator_coverselector_wrapper .active a p
 {
     color: #ff4c53;
 }
@@ -124,7 +124,7 @@
 {
     display: block;
 
-    margin: 10px auto 0;
+    margin: 0 auto 0;
 }
 .pricecalculator_result_wrapper
 {

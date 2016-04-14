@@ -766,14 +766,13 @@
 		slider: function(options) {
 			options = $.extend({
 				density:100,
-				axisX: ''
+				axisx: ''
 			},options);
-			var $this = $(this);
-			var slider = $('.common_slider_wrapper .slider');
-			var isMousedown = false,
-				offsetLeft = 0;
-			var startX = 0,
-				axisWidth=$(options.axisX).width(),
+			var $this = $(this),
+				isMousedown = false,
+				offsetLeft = 0,
+				startX = 0,
+				axisWidth=$(options.axisx).width(),
 				sliderWidth=$this.width(),
 				unitWidth=axisWidth/options.density,
 				progress=0,
@@ -787,7 +786,7 @@
 				});
 			});
 			$(document).on('mousemove', function(e) {
-				var _this = slider;
+				var _this = $this;
 				if (isMousedown) {
 					var moveX = e.clientX - offsetLeft;
 					if (e.clientX<offsetLeft+axisWidth-sliderWidth&&e.clientX>offsetLeft) {

@@ -22,7 +22,7 @@
 		<a class='left_btn back_btn' href='javascript:;'>
 			<span class="ybiconfont ybicon-backward1"></span>
 		</a>
-		<p>&nbsp;</p>
+		<p>书价计算器</p>
 	</div>
 	<div class='main_container pricecalculator_main_container'>
 		<div class='pricecalculator_main_wrapper'>
@@ -31,7 +31,7 @@
 				<p class='pricecalculator_describe_item'>纪念册总共页面数量，最少为20页，每加一页价格也会有所增加。</p>
 				<div class='pricecalculator_countor_wrapper'>
 					<label>页数</label>
-					<input type='text'>
+					<input type='text' value='20'>
 					<div class='common_slider_wrapper'>
 						<span class='slider'></span>
 						<label class='axis'></label>
@@ -101,7 +101,6 @@
 						</li>
 					</ul>
 				</div>
-				
 			</div>
 			<div class='pricecalculator_result_wrapper'>
 				<div class='pricecalculator_unitprice_item'>
@@ -128,8 +127,13 @@ $(function() {
 		fontsize: 20
 	});
 	$('.common_slider_wrapper .slider').slider({
+		density:40,
+		offset:'.pricecalculator_countor_wrapper input',
 		axisx: '.common_slider_wrapper'
 	});
+	$('.common_slider_wrapper .slider').slider('onchange',function(){
+		// alert('aaa')
+	})
 	$('.pricecalculator_coverselector_wrapper li').on('touchend', function(){
 		$this=$(this);
 		$this.addClass('active').siblings().removeClass('active');

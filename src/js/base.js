@@ -769,9 +769,10 @@
 				density: 100,
 				offset: 0,
 				axisx: '',
-				progress: ''
+				progress: '',
+				returnto:false
 			}, options);
-
+			callback=function(){};
 			var $this = $(this),
 				isMousedown = false,
 				offsetLeft = 0,
@@ -781,17 +782,22 @@
 				unitWidth = axisWidth / config.density,
 				progress = 0,
 				index = 0,
-				progress = 0;
-			offsetLeft = $this.offset().left;
+				progress = 0,
+				oldProgress=0;
+			var offsetLeft = $this.offset().left;
 
 			var touchStart, touchMove, touchEnd;
 			touchStart = isMobile() ? 'touchstart' : 'mousedown';
 			touchMove = isMobile() ? 'touchmove' : 'mousemove';
 			touchEnd = isMobile() ? 'touchend' : 'mouseup';
 
-
 			if (typeof config.offset == 'string') {
-				config.offset = Number($(config.offset).val());
+				
+				$(config.offset).each(function(index){
+					config.offset=[];
+					config.offset[index]=Number($(this).eq(index).val())
+					console.log(config.offset[index]);
+				})
 			}
 
 			$this.each(function(i) {
@@ -810,8 +816,9 @@
 				var _this = $this;
 				if (isMousedown) {
 					if (isMobile()) {
-						var touch = e.originalEvent.touches[0];
-						var moveX = touch.clientX - offsetLeft;
+						
+						var touch = e.originalEvent.touches[0],
+							moveX = touch.clientX - offsetLeft;
 						if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft) {
 							_this.eq(index).css('margin-left', moveX);
 						};
@@ -829,22 +836,10 @@
 						progress = moveX;
 					}
 					progress = progress * (config.density / axisWidth) + config.offset;
-					console.log(progress);
+					$(config.returnto).eq(index).val(Math.floor(progress))
 				}
 			});
-			if (typeof options == 'string') {
-				switch (options) {
-					case 'progress':
-						return progress;
-						break;
-					case 'onchange':
-						if (progress) {};
-						callback();
-						break;
-					default:
-						alert('dsds')
-				}
-			};
+			
 			$(document).on(touchEnd, function() {
 				isMousedown = false;
 			});
@@ -861,6 +856,9 @@
 					bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile",
 					bIsWebview = sUserAgent.match(/webview/i) == "webview";
 				return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
+			}
+			function aaa(bbb){
+				callback();
 			}
 		}
 	});

@@ -127,13 +127,11 @@ $(function() {
 		fontsize: 20
 	});
 	$('.common_slider_wrapper .slider').slider({
-		density:40,
-		offset:'.pricecalculator_countor_wrapper input',
-		axisx: '.common_slider_wrapper'
+		density:123,
+		offset:20,
+		axisx: '.common_slider_wrapper',
+		returnto:'.pricecalculator_countor_wrapper input'
 	});
-	$('.common_slider_wrapper .slider').slider('onchange',function(){
-		// alert('aaa')
-	})
 	$('.pricecalculator_coverselector_wrapper li').on('touchend', function(){
 		$this=$(this);
 		$this.addClass('active').siblings().removeClass('active');

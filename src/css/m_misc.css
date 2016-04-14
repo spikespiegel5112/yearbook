@@ -40,9 +40,11 @@
 
     border: 1px solid #dcdbda;
     background-color: #f7f7f7;
+    overflow: hidden;
 }
 .pricecalculator_countor_wrapper label, .pricecalculator_countor_wrapper input
 {
+    float: left;
     font-size: 0.6rem;
 
     display: inline-block;
@@ -87,10 +89,13 @@
 .pricecalculator_bindingselector_wrapper li
 {
     width: 4.6rem;
-    height: 4.6rem;
+    height: 5.6rem;
+}
+.pricecalculator_bindingselector_wrapper li img{
 }
 .pricecalculator_coverselector_wrapper li p
 {
+    height: 1.5rem;
     font-size: .4rem;
     line-height: .8rem;
 
@@ -112,12 +117,12 @@
     border: 1px solid #dddddc;
     background-color: #f7f7f7;
 }
-.pricecalculator_coverselector_wrapper li .active
+.pricecalculator_coverselector_wrapper .active a
 {
     border: 1px solid #ff4c53;
     background-color: #fff;
 }
-.pricecalculator_coverselector_wrapper li .active p
+.pricecalculator_coverselector_wrapper .active a p
 {
     color: #ff4c53;
 }
@@ -125,7 +130,7 @@
 {
     display: block;
 
-    width: 40%;
+    width: 100%;
     height: auto;
     margin: .2rem auto 0;
 }

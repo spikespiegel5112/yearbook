@@ -582,15 +582,16 @@
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
 
-			aaa();
+			initAligning();
 			$(window).resize(function() {
-				aaa();
+				initAligning();
 			});
-			function aaa(){
+
+			function initAligning() {
 				//当居中元素是img标签时，特殊处理！
 				if (_this.is('img')) {
 					//递归判断需要居中的图片是否加载完成，如果没有就重载
-					var checkImgLoading = function() {
+					var checkImageLoaded = function() {
 						_this.each(function(index) {
 							if ($(this).height() == 0) {
 								console.log('load failed ' + $(this).width())
@@ -607,18 +608,18 @@
 							checkBrowser({
 								ie: function() {
 									timer = window.setTimeout(function() {
-										checkImgLoading();
+										checkImageLoaded();
 									}, 100);
 								},
 								other: function() {
 									timer = setTimeout(function() {
-										checkImgLoading();
+										checkImageLoaded();
 									}, 100);
 								}
 							})
 						}
 					}
-					checkImgLoading();
+					checkImageLoaded();
 					//缺省情况
 				} else {
 					//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
@@ -765,40 +766,75 @@
 		//滑块拖动控件
 		slider: function(options) {
 			options = $.extend({
-				density:100,
+				density: 100,
 				axisx: ''
-			},options);
+			}, options);
 			var $this = $(this),
 				isMousedown = false,
 				offsetLeft = 0,
 				startX = 0,
-				axisWidth=$(options.axisx).width(),
-				sliderWidth=$this.width(),
-				unitWidth=axisWidth/options.density,
-				progress=0,
-				index=0;
+				axisWidth = $(options.axisx).width(),
+				sliderWidth = $this.width(),
+				unitWidth = axisWidth / options.density,
+				progress = 0,
+				index = 0;
 			offsetLeft = $this.offset().left;
-			$this.each(function(i){
-				$this.eq(i).on('mousedown', function(e) {
+
+			var touchStart, touchMove, touchEnd;
+			touchStart = isMobile() ? 'touchstart' : 'mousedown';
+			touchMove = isMobile() ? 'touchmove' : 'mousemove';
+			touchEnd = isMobile() ? 'touchend' : 'mouseup';
+
+			$this.each(function(i) {
+				$this.eq(i).on(touchStart, function(e) {
 					isMousedown = true;
-					startX = e.clientX;
-					index=i;
+					if (isMobile()) {
+						var touch = e.originalEvent.touches[0];
+						startX = touch.clientX;
+						console.log(startX);
+					} else {
+						startX = e.clientX;
+					}
+					index = i;
 				});
 			});
-			$(document).on('mousemove', function(e) {
+			$(document).on(touchMove, function(e) {
 				var _this = $this;
 				if (isMousedown) {
-					var moveX = e.clientX - offsetLeft;
-					if (e.clientX<offsetLeft+axisWidth-sliderWidth&&e.clientX>offsetLeft) {
-						_this.eq(index).css('margin-left', moveX);
-					};
-					console.log(moveX)
+					if (isMobile()) {
+						var touch = e.originalEvent.touches[0];
+						var moveX = touch.clientX - offsetLeft;
+						console.log(moveX);
+						if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft) {
+							_this.eq(index).css('margin-left', moveX);
+						};
+					} else {
+						var moveX = e.clientX - offsetLeft;
+						if (e.clientX < offsetLeft + axisWidth - sliderWidth && e.clientX > offsetLeft) {
+							_this.eq(index).css('margin-left', moveX);
+						};
+					}
+					console.log(moveX);
 				}
 			});
-			$(document).on('mouseup', function() {
+			$(document).on(touchEnd, function() {
 				isMousedown = false;
 				console.log(isMousedown)
 			});
+
+			function isMobile() {
+				var sUserAgent = navigator.userAgent.toLowerCase(),
+					bIsIpad = sUserAgent.match(/ipad/i) == "ipad",
+					bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os",
+					bIsMidp = sUserAgent.match(/midp/i) == "midp",
+					bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4",
+					bIsUc = sUserAgent.match(/ucweb/i) == "ucweb",
+					bIsAndroid = sUserAgent.match(/android/i) == "android",
+					bIsCE = sUserAgent.match(/windows ce/i) == "windows ce",
+					bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile",
+					bIsWebview = sUserAgent.match(/webview/i) == "webview";
+				return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
+			}
 		}
 	});
 
@@ -873,8 +909,8 @@
 				minwidth: 320,
 				maxwidth: 0,
 				aligncenter: false,
-				keepportrait:false,
-				keeplandscape:false
+				keepportrait: false,
+				keeplandscape: false
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -888,31 +924,31 @@
 			});
 
 			function sizeConstraint() {
-				if(options.keepportrait){
+				if (options.keepportrait) {
 					orientationSensor({
-						portrait:function(){
+						portrait: function() {
 							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
-						landscape:function(){
+						landscape: function() {
 							windowWidth = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
-				}else if(options.keeplandscape){
+				} else if (options.keeplandscape) {
 					orientationSensor({
-						portrait:function(){
+						portrait: function() {
 							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
-						landscape:function(){
+						landscape: function() {
 							windowWidth = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
-				}else{
+				} else {
 					windowWidth = $(window).width(),
-					windowHeight = $(window).height();
+						windowHeight = $(window).height();
 				}
 
 				var factor = 0;
@@ -1024,7 +1060,7 @@
 					},
 					destroy: false
 				}, config);
-			if (config.destroy==true) {
+			if (config.destroy == true) {
 				destroy();
 			};
 			var windowWidth = $(window).width(),
@@ -1051,8 +1087,8 @@
 
 			if (config.tools.scrollBar != '') {
 				epscrollbarWidth = $(config.tools.scrollBar).find('label').width(),
-				zoomingSlider = $(config.tools.scrollBar).find('span'),
-				sliderPosX = zoomingSlider.offset().left*transformData.scale;
+					zoomingSlider = $(config.tools.scrollBar).find('span'),
+					sliderPosX = zoomingSlider.offset().left * transformData.scale;
 				//	sliderPosX=(windowWidth-(windowWidth*0.8))/2;
 			} else {
 				return;
@@ -1090,25 +1126,25 @@
 				originalHeight = imgObj.height;
 				originalRatio = originalWidth / (photoframe.width() * 0.9);
 
-				if (windowWidth<windowHeight) {
+				if (windowWidth < windowHeight) {
+					$(config.tools.scrollBar).css('width', windowWidth);
+				} else {
+					$(config.tools.scrollBar).css('width', windowHeight);
+				}
+				$(window).resize(function() {
+					if (windowWidth < windowHeight) {
 						$(config.tools.scrollBar).css('width', windowWidth);
-					}else{
-						$(config.tools.scrollBar).css('width', windowHeight);
-					}
-				$(window).resize(function(){
-					if (windowWidth<windowHeight) {
-						$(config.tools.scrollBar).css('width', windowWidth);
-					}else{
+					} else {
 						$(config.tools.scrollBar).css('width', windowHeight);
 					}
 				})
-				
+
 				//根据图片原始宽度和屏幕宽度的比利算出滑块初始位置
 				// initMarginleft = $(config.tools.scrollBar).find('label').width() / originalRatio;		
 				// zoomingSlider.css('margin-left', initMarginleft);
 
-				initMarginleft=1/originalRatio;
-				zoomingSlider.css('margin-left', (initMarginleft*100)+'%');
+				initMarginleft = 1 / originalRatio;
+				zoomingSlider.css('margin-left', (initMarginleft * 100) + '%');
 				//先居中相框再居中图片
 				$(config.tools.photoFrame).align();
 				image.align({
@@ -1163,21 +1199,22 @@
 				});
 				image.css(transformData);
 			});
-			function sliderEvent(e){
+
+			function sliderEvent(e) {
 				var touch = e.originalEvent.touches[0];
 				var movingPosX = touch.pageX;
-				
+
 				// marginleft = ((movingPosX-(windowWidth-(windowWidth*0.8))/2)/windowWidth)*0.8;
-				marginleft = (movingPosX/windowWidth) - (sliderPosX/windowWidth);
+				marginleft = (movingPosX / windowWidth) - (sliderPosX / windowWidth);
 				// console.log("windowWidth: "+windowWidth+' sliderPosX: '+sliderPosX+' movingPosX: '+movingPosX)				
-				
+
 				if (marginleft <= 0) {
 					//console.log('<0')
 					marginleft = 0;
 				} else if (marginleft >= 0.8) {
 					marginleft = 0.8
 				} else {
-					zoomingSlider.css('margin-left', (marginleft*100)+'%');
+					zoomingSlider.css('margin-left', (marginleft * 100) + '%');
 					var scalecss = {
 						scale: marginleft * originalRatio
 					}
@@ -1189,38 +1226,39 @@
 					//console.log(marginleft+' '+saveRatio)
 				};
 			}
-			zoomingSlider.on('touchstart',function(e){
+			zoomingSlider.on('touchstart', function(e) {
 				sliderEvent(e);
 			});
-			zoomingSlider.on('touchmove',function(e){
+			zoomingSlider.on('touchmove', function(e) {
 				console.log(windowWidth)
 				sliderEvent(e);
 			});
-			image.on('touchstart',function(e){
+			image.on('touchstart', function(e) {
 				console.log('image touchstart')
 				var touch = e.originalEvent.touches[0];
 				startPosX = touch.pageX,
-				startPosY = touch.pageY,
-				imageLeft = Number(image.css('left').replace('px', '')),
-				imageTop = Number(image.css('top').replace('px', ''))
+					startPosY = touch.pageY,
+					imageLeft = Number(image.css('left').replace('px', '')),
+					imageTop = Number(image.css('top').replace('px', ''))
 				console.log(transformData)
 			});
-			function eventHandler(e, transformData){
+
+			function eventHandler(e, transformData) {
 				if ($(e.target).closest(image).length > 0) {
 					var touch = e.touches[0];
 					switch (e.type) {
 						case 'touchstart':
 							startPosX = touch.pageX,
-							startPosY = touch.pageY,
-							imageLeft = Number(image.css('left').replace('px', '')),
-							imageTop = Number(image.css('top').replace('px', ''))
+								startPosY = touch.pageY,
+								imageLeft = Number(image.css('left').replace('px', '')),
+								imageTop = Number(image.css('top').replace('px', ''))
 							break;
 						case 'touchmove':
 							console.log('image touchmove')
 							e.preventDefault;
 							endPosX = touch.pageX,
-							endPosY = touch.pageY,
-							offsetPosX = endPosX - startPosX;
+								endPosY = touch.pageY,
+								offsetPosX = endPosX - startPosX;
 							offsetPosY = endPosY - startPosY;
 							var positioncss = {
 								position: 'relative',
@@ -1234,7 +1272,7 @@
 					}
 				}
 			}
-			
+
 			//某些必须集合多个参数的样式的设置模式
 			function cssSettings(config) {
 				transformData = $.extend(transformData, config);
@@ -1247,18 +1285,19 @@
 					return transformData;
 				};
 			}
-			var touchstartEvent=function(){
+			var touchstartEvent = function() {
 					window.addEventListener('touchstart', eventHandler, false);
-				}(), 
-				touchmoveEvent=function(){
+				}(),
+				touchmoveEvent = function() {
 					window.addEventListener('touchmove', eventHandler, false);
 				}()
 			$('.action_btn').on('touchend', function() {
 				console.log(transformData);
 			});
-			function destroy(){
-				touchstartEvent=null;
-				touchmoveEvent=null;
+
+			function destroy() {
+				touchstartEvent = null;
+				touchmoveEvent = null;
 				$('.action_btn').off();
 			}
 		}

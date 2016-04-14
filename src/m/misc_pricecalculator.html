@@ -55,18 +55,22 @@
 				</p>
 				<div class='pricecalculator_coverselector_wrapper'>
 					<ul>
-						<li>
-							<a class='active' href="javascript:;">
-								<p>大本尺寸</p>
-								<p>172mm x 248mm</p>
-								<img src="../img/default/cover_css.jpg">
+						<li class='active'>
+							<a href="javascript:;">
+								<p>
+									大本尺寸<br>
+									175mm x 248mm
+								</p>
+								<img src="../img/default/pricecalculator_bigsize_00000.png">
 							</a>
 						</li>
 						<li>
 							<a href="javascript:;">
-								<p>大本尺寸</p>
-								<p>172mm x 248mm</p>
-								<img src="../img/default/cover_css.jpg">
+								<p>
+									小本尺寸<br>
+									145mm x 210mm
+								</p>
+								<img src="../img/default/pricecalculator_smallsize_00000.png">
 							</a>
 						</li>
 					</ul>
@@ -77,22 +81,22 @@
 				</p>
 				<div class='pricecalculator_coverselector_wrapper pricecalculator_bindingselector_wrapper'>
 					<ul>
-						<li>
-							<a class='active' href="javascript:;">
-								<p>大本尺寸</p>
-								<img src="../img/default/cover_css.jpg">
+						<li class='active'>
+							<a href="javascript:;">
+								<p>平装（软封面）</p>
+								<img src="../img/default/pricecalculator_paperback_00000.png">
 							</a>
 						</li>
 						<li>
 							<a href="javascript:;">
-								<p>大本尺寸</p>
-								<img src="../img/default/cover_css.jpg">
+								<p>精装（硬封面）</p>
+								<img src="../img/default/pricecalculator_hardcover_00000.png">
 							</a>
 						</li>
 						<li>
 							<a href="javascript:;">
-								<p>大本尺寸</p>
-								<img src="../img/default/cover_css.jpg">
+								<p>蝴蝶装（硬面+蝴蝶装订）</p>
+								<img src="../img/default/pricecalculator_butterflybinding_00000.png">
 							</a>
 						</li>
 					</ul>
@@ -122,6 +126,13 @@
 $(function() {
 	$.remResizing({
 		fontsize: 20
+	});
+	$('.common_slider_wrapper .slider').slider({
+		axisx: '.common_slider_wrapper'
+	});
+	$('.pricecalculator_coverselector_wrapper li').on('touchend', function(){
+		$this=$(this);
+		$this.addClass('active').siblings().removeClass('active');
 	})
 })
 </script>

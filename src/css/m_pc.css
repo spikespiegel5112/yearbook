@@ -1468,79 +1468,6 @@
     }
 }
 
-.filter_order
-{
-    text-align: right;
-}
-
-.filter_order a
-{
-    text-decoration: none;
-}
-
-.filter_order a:hover,
-.filter_order a:focus
-{
-    color: #fff;
-}
-
-.filter_order ul
-{
-    position: absolute;
-    top: 32px;
-    right: 0;
-
-    display: none;
-
-    box-sizing: border-box;
-    width: 115px;
-    padding: 0 8px 10px;
-
-    border: 1px solid #ccc;
-    background-color: #fff;
-}
-
-.filter_order ul li
-{
-    line-height: 30px;
-
-    position: relative;
-
-    float: none;
-
-    width: 100%;
-    height: 30px;
-
-    text-align: center;
-
-    color: #333;
-    border-bottom: 1px dashed #999;
-}
-
-.filter_order ul li:before,
-.filter_order ul li:after
-{
-    display: none;
-}
-
-.filter_order ul li a
-{
-    font-size: 12px;
-
-    display: block;
-
-    text-decoration: none;
-
-    color: #333;
-}
-
-.filter_order ul li a:hover,
-.filter_order ul li a:active
-{
-    color: #e7b54b;
-    background-color: #f6f6f6;
-}
-
 .myorder .order_head
 {
     font-weight: bold;
@@ -2640,8 +2567,9 @@
     margin: 10px 0 0 8px;
 }
 
-/*添加其他书册至订单*/
-.add_book_container
+/*添加新订单*/
+
+.add_order_container
 {
     position: fixed;
     z-index: 99;
@@ -2654,11 +2582,11 @@
 
     background: rgba(0,0,0,.6);
 }
-
-.add_book_container .finished_book_wrap
+.add_order_container .new_order_wrap
 {
     position: absolute;
     bottom: 0;
+    left: 0;
 
     box-sizing: border-box;
     width: 100%;
@@ -2667,57 +2595,222 @@
     background-color: #fff;
 }
 
-.finished_book_wrap h4
+.order_info .ot
 {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 35px;
 
-    margin: 10px 0;
+    position: relative;
+
+    width: 100%;
+    height: 35px;
+    margin: 0;
+    padding: 0;
 
     color: #333;
 }
 
-.finished_book_wrap .book_list .swiper-slide
+.order_info .ot .name
+{
+    display: inline-block;
+}
+
+.order_info .ot .name span
+{
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 138px;
+
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.order_info .ot .sumprice
+{
+    font-size: 18px;
+
+    float: right;
+}
+
+.order_info .om
+{
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 5px 0 15px;
+}
+
+.order_info .om .book
 {
     float: left;
 
     box-sizing: border-box;
-    width: 100px;
-    padding: 5px 10px;
+    width: 85px;
+    height: 105px;
+    padding: 4px;
 
-    text-align: center;
+    border: 1px solid #ccc;
 }
 
-.finished_book_wrap .book_list .bookcover
-{
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    box-sizing: border-box;
-    width: 80px;
-    height: 100px;
-    margin: 0 auto 5px;
-
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.finished_book_wrap .book_list .bookcover.selected
-{
-    border: 2px solid #99c141;
-}
-
-.finished_book_wrap .book_list .bookcover img
+.order_info .om .book img
 {
     width: 100%;
     height: 100%;
 }
 
-.finished_book_wrap .book_list .bookcover span
+.order_info .om .bd_wrap
+{
+    box-sizing: border-box;
+    width: 100%;
+    margin-left: 10px;
+    padding-left: 90px;
+}
+
+.order_info .om .bd_wrap ul
+{
+    margin: 0;
+}
+
+.order_info .om .bd_wrap li > div
+{
+    font-size: 14px;
+    line-height: 25px;
+
+    color: #999;
+}
+
+.order_info .om .bd_wrap .ybcommon_counter_item
+{
+    margin: 5px 0 0;
+}
+
+.order_info .om .edit_order
+{
+    font-size: 24px;
+
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+
+    color: #ccc;
+}
+
+.order_info .od_btn_wrap
+{
+    position: relative;
+
+    margin: 0;
+}
+
+.order_info .od_btn_wrap a
+{
+    font-size: 16px;
+
+    margin-right: 12px;
+
+    color: #999;
+}
+
+.order_info .om .edit_order:hover,
+.order_info .od_btn_wrap a:hover
+{
+    color: #70ca5d;
+}
+
+.order_info .od_btn_wrap a i
+{
+    margin-right: 3px;
+}
+
+.order_info .od_btn_wrap .delete
+{
+    float: right;
+}
+
+
+.order_manage .account_wrap
+{
+    line-height: 55px;
+
+    position: fixed;
+    bottom: 0;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 55px;
+    padding: 0 10px;
+
+    text-align: right;
+
+    border-top: 2px solid #ccc;
+    background-color: #fff;
+}
+
+.new_order_wrap .om .cover
+{
+    float: left;
+}
+
+.order_info .om .cover .page_num
 {
     font-size: 12px;
-    line-height: 12px;
+
+    padding: 6px 0;
+
+    text-align: center;
+}
+
+.order_info .om .bd_wrap .style label
+{
+    font-size: 14px;
+
+    display: block;
+
+    margin-bottom: 0;
+
+    color: #999;
+}
+
+.order_info .om .bd_wrap .style .item
+{
+    font-size: 14px;
+
+    position: relative;
+
+    box-sizing: border-box;
+    margin: 0 0 8px;
+
+    text-align: center;
+
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.order_info .om .bd_wrap .style.size .item
+{
+    width: 200px;
+}
+
+.order_info .om .bd_wrap .style.binding .item
+{
+    display: inline-block;
+
+    width: 95px;
+    margin-right: 6px;
+}
+
+.order_info .om .bd_wrap .style .item.selected
+{
+    border: 1px solid #f60;
+}
+
+.order_info .om .bd_wrap .style .item i
+{
+    font-size: 12px;
+    line-height: 10px;
 
     position: absolute;
     right: 0;
@@ -2729,41 +2822,15 @@
     height: 0;
 
     color: #fff;
-    border-width: 13px;
+    border-width: 12px;
     border-style: solid;
-    border-color: transparent #99c141 #99c141 transparent;
+    border-color: transparent #f60 #f60 transparent;
 }
 
-.finished_book_wrap .book_list .bookcover.selected span
+.order_info .om .bd_wrap .style .item.selected i
 {
     display: block;
 }
-
-.finished_book_wrap .book_list .name
-{
-    font-size: 12px;
-    line-height: 20px;
-
-    overflow: hidden;
-
-    max-width: 100%;
-    margin: 0;
-
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    color: #000;
-}
-
-.finished_book_wrap .book_list .number
-{
-    font-size: 12px;
-
-    color: #333;
-}
-
-
 
 /*~~~~~~~~~~ yb3.11 confirm receive info ~~~~~~~~~~*/
 .order_manage .receive_info

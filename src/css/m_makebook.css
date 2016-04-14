@@ -208,7 +208,7 @@
     padding: 0 5px 0 8px;
 
     color: #fff;
-    background-color: #31b8d3;
+    background-color: #89c27e;
 }
 
 .page_wrap:nth-child(odd) .page .page_num
@@ -239,36 +239,14 @@
 
     border-width: 12px 0 12px 12px;
     border-style: solid;
-    border-color: transparent transparent transparent #31b8d3;
+    border-color: transparent transparent transparent #89c27e;
 }
 
-.page_wrap .page .btn_group
-{
-    position: absolute;
-    bottom: 8px;
-
-    display: none;
-
-    width: 100%;
-
-    text-align: center;
-}
-
-.page_wrap:nth-child(even) .page .btn_group
-{
-    display: block;
-}
-
-.page_wrap.cover .page .btn_group .delete
-{
-    opacity: 0;
-}
-
-.page_wrap .page .btn_group a
+.page_wrap .page  a
 {
     font-size: 14px;
 
-    display: inline-block;
+    display: none;
 
     margin: 0 3px;
     padding: 0 5px;
@@ -279,14 +257,41 @@
     background-color: #fff;
 }
 
-.page_wrap .page .btn_group a:hover,
-.page_wrap .page .btn_group a:active
+.page_wrap:nth-child(even) .page a
+{
+    display: inline-block;
+}
+
+.page_wrap .page .delete{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #71ca5e;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 100%;
+    margin: 0;
+    font-size: 18px;
+}
+
+.page_wrap .page .change{
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+}
+
+.page_wrap .page .change:hover,
+.page_wrap .page .change:active
 {
     color: #e7b54b;
     border: 1px solid #e7b54b;
 }
 
-.page_wrap .page .btn_group a i
+.page_wrap .page a i
 {
     font-size: 14px;
 }
@@ -418,6 +423,35 @@
 .delete_page_tips .tips .btn_group a:active
 {
     background-color: #ddd;
+}
+
+.add_page_container{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.add_page_container .add_page{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.add_page_container .add_page label{
+    font-size: 14px;
+    line-height: 35px;
+}
+
+.add_page_container .add_page .ybcommon_counter_item{
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /*��ҳģʽ�±༭*/

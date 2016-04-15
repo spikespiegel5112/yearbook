@@ -131,13 +131,13 @@ $(function() {
 		$this.addClass('active').siblings().removeClass('active');
 	});
 
-	$('.common_slider_wrapper .slider').slider({
+	$('.common_slider_wrapper .slider').sliderControl({
 		density: 20,
 		offset: '.pricecalculator_countor_wrapper input',
 		axisx: '.common_slider_wrapper',
 		returnto: '.pricecalculator_countor_wrapper input'
 	});
-	$('.common_slider_wrapper .slider').slider('onmove',function(){
+	$('.common_slider_wrapper .slider').sliderControl('onchange',function(){
 		var value1=$('.pricecalculator_countor_wrapper input').eq(0).val();
 		var value2=$('.pricecalculator_countor_wrapper input').eq(1).val();
 		console.log(value1);

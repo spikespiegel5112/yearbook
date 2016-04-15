@@ -765,7 +765,7 @@
 			}
 		},
 		//滑块拖动控件
-		slider: function(options, callback) {
+		sliderControl: function(options, callback) {
 			var config = $.extend({
 				density: 100,
 				offset: 0,
@@ -784,7 +784,7 @@
 				index = 0,
 				progress = 0,
 				oldProgress = 0,
-				offsetVal = []
+				offsetVal = [];
 			var offsetLeft = _this.offset().left;
 
 			var touchStart, touchMove, touchEnd;
@@ -796,10 +796,8 @@
 				$(config.offset).each(function(i) {
 					offsetVal[i] = Number($(this).val());
 					index = i;
-					// console.log(config.offset);
 				});
 			} else if (typeof config.offset == 'number') {
-				//console.log(typeof config.offset)
 				offsetVal[0] = config.offset;
 			}
 
@@ -836,10 +834,10 @@
 							progress = moveX;
 						}
 						progress = progress * (config.density / axisWidth) + offsetVal[i];
-						$(config.returnto).eq(index).val(Math.floor(progress))
+						$(config.returnto).eq(index).val(Math.floor(progress));
 						if (typeof options == 'string') {
 							switch (options) {
-								case 'onmove':
+								case 'onchange':
 									callback();
 									break;
 							}
@@ -851,26 +849,29 @@
 
 			$(config.returnto).each(function(i) {
 				var $this = $(this),
-					initVal = $this.val();
+					initVal = Number($this.val());
 				if ($this.is('input')) {
+					var isFirefox = 0;
+					if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
+						$this.attr('autocomplete', 'off')
+					}
 					$this.keyup(function() {
-
-						var value = $(this).val();
-						console.log(value)
-						if (value > Number(config.density + initVal)) {
-							value = config.density;
-							console.log(Number(config.density) + Number(initVal))
-						} else if (value < 0) {
-							value = 0
+						var value = Number($(this).val());
+						if (value > config.density + initVal) {
+							value = config.density + initVal;
+							/*console.log(Number(config.density) + Number(initVal));*/
+						} else if (value < 0||value<initVal) {
+							value = initVal;
+						} else if (isNaN(value)) {
+							value = config.density + initVal;
 						}
-						// String(value).replace(/^[0-9]*/,'');
 						$(this).val(value);
-						_this.css('margin-left', value * (axisWidth / config.density)) - offsetVal[i];
-					})
+						_this.eq(i).css('margin-left', (value - offsetVal[i]) * (axisWidth / config.density));
+					});
 				}
 			})
 
-			_this.on(touchEnd, function() {
+			$(document).on(touchEnd, function() {
 				isMousedown = false;
 			});
 

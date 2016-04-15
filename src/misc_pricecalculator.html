@@ -158,7 +158,7 @@
 				<p class='pricecalculator_describe_item'>纪念册总共页面数量，最少为20页，每加一页价格也会有所增加。</p>
 				<div class='pricecalculator_countor_wrapper'>
 					<label>页数</label>
-					<input type='text' value='20'>
+					<input type='text' autocomplete="off" value='20'>
 					<div class='common_slider_wrapper'>
 						<span class='slider'></span>
 						<label class='axis'></label>
@@ -222,7 +222,7 @@
 				</p>
 				<div class='pricecalculator_countor_wrapper'>
 					<label>本数</label>
-					<input type='text' value='1'>
+					<input type='text' autocomplete="off" value='1'>
 					<div class='common_slider_wrapper'>
 						<span class='slider'></span>
 						<label class='axis'></label>
@@ -285,13 +285,13 @@
 			$this = $(this);
 			$this.addClass('active').siblings().removeClass('active');
 		})
-		$('.common_slider_wrapper .slider').slider({
+		$('.common_slider_wrapper .slider').sliderControl({
 			density: 20,
 			offset: '.pricecalculator_countor_wrapper input',
 			axisx: '.common_slider_wrapper',
 			returnto: '.pricecalculator_countor_wrapper input'
 		});
-		$('.common_slider_wrapper .slider').slider('onmove',function(){
+		$('.common_slider_wrapper .slider').sliderControl('onmove',function(){
 			var value1=$('.pricecalculator_countor_wrapper input').eq(0).val();
 			var value2=$('.pricecalculator_countor_wrapper input').eq(1).val();
 		})

@@ -795,10 +795,8 @@
 				$(config.offset).each(function(i) {
 					offsetVal[i] = Number($(this).val());
 					index = i;
-					// console.log(config.offset);
 				});
 			} else if (typeof config.offset == 'number') {
-				//console.log(typeof config.offset)
 				offsetVal[0] = config.offset;
 			}
 
@@ -838,7 +836,7 @@
 						$(config.returnto).eq(index).val(Math.floor(progress));
 						if (typeof options == 'string') {
 							switch (options) {
-								case 'onmove':
+								case 'onchange':
 									callback();
 									break;
 							}
@@ -851,7 +849,6 @@
 			$(config.returnto).each(function(i) {
 				var $this = $(this),
 					initVal = Number($this.val());
-
 				if ($this.is('input')) {
 					var isFirefox = 0;
 					if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
@@ -861,14 +858,14 @@
 						var value = Number($(this).val());
 						if (value > config.density + initVal) {
 							value = config.density + initVal;
-							console.log(Number(config.density) + Number(initVal));
-						} else if (value < 0) {
-							value = 0;
+							/*console.log(Number(config.density) + Number(initVal));*/
+						} else if (value < 0||value<initVal) {
+							value = initVal;
 						} else if (isNaN(value)) {
 							value = config.density + initVal;
 						}
 						$(this).val(value);
-						_this.css('margin-left', (value - offsetVal[i]) * (axisWidth / config.density));
+						_this.eq(i).css('margin-left', (value - offsetVal[i]) * (axisWidth / config.density));
 					});
 				}
 			})

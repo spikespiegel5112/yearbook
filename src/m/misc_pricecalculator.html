@@ -42,8 +42,8 @@
 					需要下单的纪念册数量，数量＞20本联系客服询问优惠折扣。
 				</p>
 				<div class='pricecalculator_countor_wrapper'>
-					<label>页数</label>
-					<input type='text' value='20'>
+					<label>本数</label>
+					<input type='text' value='1'>
 					<div class='common_slider_wrapper'>
 						<span class='slider'></span>
 						<label class='axis'></label>
@@ -129,16 +129,19 @@ $(function() {
 	$('.pricecalculator_coverselector_wrapper li').on('touchend', function() {
 		$this = $(this);
 		$this.addClass('active').siblings().removeClass('active');
-	})
+	});
+
 	$('.common_slider_wrapper .slider').slider({
-		density: 123,
-		offset: 20,
+		density: 20,
+		offset: '.pricecalculator_countor_wrapper input',
 		axisx: '.common_slider_wrapper',
 		returnto: '.pricecalculator_countor_wrapper input'
 	});
 	$('.common_slider_wrapper .slider').slider('onmove',function(){
 		var value1=$('.pricecalculator_countor_wrapper input').eq(0).val();
 		var value2=$('.pricecalculator_countor_wrapper input').eq(1).val();
+		console.log(value1);
+		console.log(value2);
 	});
 })
 </script>

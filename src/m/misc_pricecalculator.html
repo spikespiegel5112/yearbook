@@ -58,8 +58,8 @@
 						<li class='active'>
 							<a href="javascript:;">
 								<p>
-									大本尺寸<br>
-									175mm x 248mm
+									大本尺寸
+									<br> 175mm x 248mm
 								</p>
 								<img src="../img/default/pricecalculator_bigsize_00000.png">
 							</a>
@@ -67,8 +67,8 @@
 						<li>
 							<a href="javascript:;">
 								<p>
-									小本尺寸<br>
-									145mm x 210mm
+									小本尺寸
+									<br> 145mm x 210mm
 								</p>
 								<img src="../img/default/pricecalculator_smallsize_00000.png">
 							</a>
@@ -126,18 +126,20 @@ $(function() {
 	$.remResizing({
 		fontsize: 20
 	});
-	$('.common_slider_wrapper .slider').slider({
-		density:40,
-		offset:'.pricecalculator_countor_wrapper input',
-		axisx: '.common_slider_wrapper'
-	});
-	$('.common_slider_wrapper .slider').slider('onchange',function(){
-		// alert('aaa')
-	})
-	$('.pricecalculator_coverselector_wrapper li').on('touchend', function(){
-		$this=$(this);
+	$('.pricecalculator_coverselector_wrapper li').on('touchend', function() {
+		$this = $(this);
 		$this.addClass('active').siblings().removeClass('active');
 	})
+	$('.common_slider_wrapper .slider').slider({
+		density: 123,
+		offset: 20,
+		axisx: '.common_slider_wrapper',
+		returnto: '.pricecalculator_countor_wrapper input'
+	});
+	$('.common_slider_wrapper .slider').slider('onmove',function(){
+		var value1=$('.pricecalculator_countor_wrapper input').eq(0).val();
+		var value2=$('.pricecalculator_countor_wrapper input').eq(1).val();
+	});
 })
 </script>
 

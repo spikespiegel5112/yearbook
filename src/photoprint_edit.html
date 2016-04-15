@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.12-照片冲印-编辑</title>
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/photoprint.css" type="text/css" media="all">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1460348402_2979512.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
+</head>
+<body>
+	<!--头部导航-->
+    <div class="yb_cm_header book_space cm_min_width"><!--用于书册空间class:book_space-->
+        <div class="shortcut_container">
+            <div class="shortcut">
+                <div class="yb_logo">
+                    <img src="img/logo.png">
+                    <!--3.12 照片印刷-->
+                    <a href="javascript:;">照片印刷</a>
+                </div>
+                <div class="nav_bar">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a class="active" href="booklist_photo.html">照片书</a></li>
+                        <li><a href="javascript:;">团队册</a></li>
+                        <li><a href="javascript:;">照片冲印</a></li>
+                        <li><a href="activity_1603.html">促销活动</a></li>
+                        <li><a href="static_instruction_entrance.html">使用指南</a></li>
+                        <li><a href="pc_shop_admin.html">开店赚钱</a></li>
+                    </ul>
+                </div>
+                <ul class="quick_menu">
+                    <li>
+                        <div class="yb_menu">
+                            <a class="menu_hd" href="javascript:;">我的忆尔<b class="icon-caret-down"></b></a>
+                            <div class="menu_bd">
+                                <div class="menu_bd_panel">
+                                    <a href="pc_mybookshelf.html">我的书架</a>
+                                    <a href="pc_myorder_list.html">我的订单</a>
+                                    <a href="pc_myMessage.html">我的消息</a>
+                                    <a href="pc_shop_admin.html">我的店铺</a>
+                                    <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-turnoff"></i>退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮助中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	<!-- main -->
+	<div class="main_container">
+        <div class="pp_edit_con">
+            <div class="edit_wrap">
+                <div class="al_head">
+                    <a class="yblogo" href="javascript:;"><img src="img/photoprint/photoprint_logo.png" alt="忆尔"></a>
+                    <a class="btn edit_online" href="makebook_chaptermake.html">照片冲印</a>
+                    <div class="progress_bar">
+                        <ul>
+                            <li class="cur">
+                                <div><span>1</span><i class="ybiconfont ybicon-ok"></i></div>
+                                <p>上传照片</p>
+                            </li>
+                            <li class="">
+                                <div><span>2</span><i class="ybiconfont ybicon-ok"></i></div>
+                                <p>编辑照片</p>
+                            </li>
+                            <li>
+                                <div><span>3</span><i class="ybiconfont ybicon-ok"></i></div>
+                                <p>下单冲印</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="photo_options">
+                    <div class="paper">
+                        <label>选择相纸：</label>
+                        <ul>
+                            <li class="option select"><a href="javascript:;">富士绒面</a></li>
+                            <li class="option"><a href="javascript:;">富士光面</a></li>
+                            <li class="option"><a href="javascript:;">柯达绒面</a></li>
+                            <li class="option"><a href="javascript:;">柯达光面</a></li>
+                            <li class="option"><a href="javascript:;">拍立得绒面</a></li>
+                            <li class="option"><a href="javascript:;">拍立得光面</a></li>
+                        </ul>
+                        <span class="des">[相纸区别]</span>
+                    </div>
+                    <div class="size">
+                        <label>选择尺寸：</label>
+                        <ul>
+                            <li class="option select">
+                                <div>5寸￥<span>0.35</span>/张</div>
+                                <div>(<span>10</span>)张</div>
+                            </li>
+                            <li class="option">
+                                <div>5寸￥<span>0.35</span>/张</div>
+                                <div>(<span>0</span>)张</div>
+                            </li>
+                            <li class="option">
+                                <div>大5寸￥<span>0.35</span>/张</div>
+                                <div>(<span>0</span>)张</div>
+                            </li>
+                            <li class="option">
+                                <div>6寸￥<span>0.35</span>/张</div>
+                                <div>(<span>0</span>)张</div>
+                            </li>
+                            <li class="option">
+                                <div>7寸￥<span>0.35</span>/张</div>
+                                <div>(<span>0</span>)张</div>
+                            </li>
+                            <li class="option">
+                                <div>8寸￥<span>0.35</span>/张</div>
+                                <div>(<span>0</span>)张</div>
+                            </li>
+                            <li class="option">
+                                <div>10寸￥<span>0.35</span>/张</div>
+                                <div>(<span>0</span>)张</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="photo_edit">
+                    <div class="actbar">
+                        <label><input id="checkAllPhoto" type="checkbox" name="checkAll">全选</label>
+                        <span>已选中<b>12</b>张图片</span>
+                        <a class="btn" href="javascript:;"><i class="icon-magic"></i>批量修改</a>
+                        <a class="btn delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>批量删除</a>
+                        <a class="btn add" href="javascript:;"><i class="ybiconfont ybicon-plus"></i>添加照片</a>
+                    </div>
+                    <div class="img_con">
+                        <ul>
+                            <li>
+                                <div class="img">
+                                    <a class="check select" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ablum_photo02.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='45'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/cartoon001.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <span class="check ybiconfont ybicon-ok"></span>
+                                    <div class="ybcommon_queryicon_item warn" style="display: none">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ia_vote_ex_img1.jpg">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check select" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ablum_photo02.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='45'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/cartoon001.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <span class="check ybiconfont ybicon-ok"></span>
+                                    <div class="ybcommon_queryicon_item warn" style="display: none">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ia_vote_ex_img1.jpg">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check select" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ablum_photo02.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='45'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/cartoon001.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <span class="check ybiconfont ybicon-ok"></span>
+                                    <div class="ybcommon_queryicon_item warn" style="display: none">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ia_vote_ex_img1.jpg">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check select" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ablum_photo02.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='45'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/cartoon001.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <span class="check ybiconfont ybicon-ok"></span>
+                                    <div class="ybcommon_queryicon_item warn" style="display: none">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ia_vote_ex_img1.jpg">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check select" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ablum_photo02.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='45'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <a class="check" href="javascript:;">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                    </a>
+                                    <div class="ybcommon_queryicon_item warn">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/cartoon001.png">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <span class="check ybiconfont ybicon-ok"></span>
+                                    <div class="ybcommon_queryicon_item warn" style="display: none">
+                                        <span class="ybiconfont ybicon-alert1"></span>
+                                        <div>
+                                            <p>像素不足像素不足……</p>
+                                        </div>
+                                    </div>
+                                    <img src="img/default/ia_vote_ex_img1.jpg">
+                                </div>
+                                <div class="act_btns">
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                    <div class='ybcommon_counter_item'>
+                                        <a href="javascript:;">-</a>
+                                        <input type='text' value='0'>
+                                        <a href="javascript:;">+</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="order_wrap">
+                <h4>我的订单</h4>
+                <div class="order_info">
+                    <table class="">
+                        <thead>
+                        <tr>
+                            <th>规格</th>
+                            <th>单价</th>
+                            <th>数量</th>
+                            <th>总价</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><div>富士光面大5寸</div></td>
+                            <td><span>￥0.45</span></td>
+                            <td><span>12</span></td>
+                            <td><span>￥5.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士绒面5寸</div></td>
+                            <td><span>￥0.55</span></td>
+                            <td><span>92</span></td>
+                            <td><span>￥50.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>柯达绒面10寸</div></td>
+                            <td><span>￥0.65</span></td>
+                            <td><span>10</span></td>
+                            <td><span>￥6.5</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="confirm_order">
+                    <ul>
+                        <li>数量：已选择（<span>124</span>张）</li>
+                        <li>运费：<span>￥0.00</span></li>
+                        <li>小计：<span>￥69.00</span></li>
+                    </ul>
+                    <a class="opd_confirm" href="javascript:;">确认下单</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- html end-->
+	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
+    <script type="text/javascript" src="assets/js/icheck.js"></script>
+    <!-- build:js js/all.js -->
+    <script type="text/javascript" src="js/base.js"></script>
+    <!-- endbuild -->
+	<script>
+		$(document).ready(function(){
+            editPhotoConWidth();
+            $('.ybcommon_counter_item').priceCalculator();
+            changeButtonCss();
+            chosePhoto();
+            chosePhotoOption();
+            ybcommonqueryicon();
+		});
+
+        //渲染控件样式
+        function changeButtonCss() {
+            $("input[type=radio],input[type=checkbox]").iCheck({
+                checkboxClass: 'icheckbox_minimal-green',
+                radioClass: 'iradio_minimal-green',
+                increaseArea: '20%'
+            });
+        }
+
+        //hover问号显示信息提示
+        function ybcommonqueryicon(){
+            $('.ybcommon_queryicon_item').hover(function() {
+                $(this).find('div').show();
+            }, function() {
+                $(this).find('div').hide();
+            });
+        }
+
+		function editPhotoConWidth(){
+			var docH = $(window).height();
+			$('body').css({'height':'100%','min-height':'100%'});
+			$('html').css({'height':'100%','min-height':'100%','overflow':'auto','overflow-y':'hidden'});
+			$('.main_container .pp_edit_con').css('height',docH -32);
+			$('.pp_edit_con .img_con').css('height',docH -283);
+            $(window).resize(function(){
+                editPhotoConWidth();
+            })
+		}
+
+
+        //选择照片
+        function chosePhoto(){
+            $('.photo_edit .img_con li .check').click(function(){
+                $(this).toggleClass('select');
+            });
+
+            //全选
+            $('#checkAllPhoto').on('ifChecked',function(){
+                $('.photo_edit .check').addClass('select');
+            });
+
+            $('#checkAllPhoto').on('ifUnchecked',function(){
+                $('.photo_edit .check').removeClass('select');
+            });
+
+            //删除
+            $('.photo_edit .actbar .delete').click(function(){
+                art.dialog({
+                    title: "删除照片",
+                    lock: true,
+                    icon:"warning",
+                    content: "确定删除所选照片吗？",
+                    okVal: '确 定',
+                    ok: function() {},
+                    cancelVal: '取消',
+                    cancel: function() {}
+                });
+            })
+        }
+
+        //选择相纸、尺寸
+        function chosePhotoOption(){
+            $('.photo_options .option').click(function(){
+                $(this).addClass('select').siblings().removeClass('select');
+            });
+        }
+
+
+	</script>
+</body>
+
+</html>

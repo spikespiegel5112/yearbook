@@ -1,0 +1,439 @@
+.pp_edit_con{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.pp_edit_con .edit_wrap{
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 81%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.pp_edit_con .edit_wrap .al_head{
+    min-width: 100%;
+}
+
+.pp_edit_con .edit_wrap .photo_options{
+    position: relative;
+    width: 100%;
+}
+
+.edit_wrap .photo_options div{
+    position: relative;
+    margin: 10px 0;
+    padding: 0 20px;
+    height: 42px;
+}
+
+.edit_wrap .photo_options div label{
+    float: left;
+    font-size: 16px;
+    color: #000;
+}
+
+.edit_wrap .photo_options div ul{
+    float: left;
+}
+
+.edit_wrap .photo_options .option{
+    display: inline-block;
+    margin: 0 2px;
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px dashed #ddd;
+    cursor: pointer;
+}
+
+.edit_wrap .photo_options .option a{
+    color: #333;
+    font-size: 16px;
+}
+
+.photo_options .paper{
+    line-height: 40px;
+    border-bottom: 2px solid #ff696a;
+}
+
+.photo_options .paper .des{
+    float: left;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #0088ff;
+    cursor: pointer;
+}
+
+.photo_options .size .option.select{
+    color: #ff696a;
+    border: 1px solid #ff696a;
+}
+
+.photo_options .paper .option.select{
+    height: 36px;
+    border: 1px solid #ff696a;
+    background-color: #ff696a;
+}
+
+.photo_options .paper .option.select a{
+    color: #fff;
+}
+
+.photo_options .size{
+    line-height: 30px;
+}
+
+.photo_options .size .option{
+    height: 36px;
+}
+
+.photo_options .size .option div{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    height: 18px;
+    line-height: 18px;
+}
+
+.pp_edit_con .edit_wrap .photo_edit{
+    position: relative;
+    margin: 10px;
+    border: 1px solid #ddd;
+}
+
+.edit_wrap .photo_edit .actbar{
+    position: relative;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #efefef;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+}
+
+.photo_edit .actbar label{
+    float: left;
+    font-size: 14px;
+    color: #000;
+}
+
+.photo_edit .actbar label div{
+    margin-right: 5px;
+}
+
+.photo_edit .actbar span{
+    float: left;
+    margin: 0 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.photo_edit .actbar span b{
+    margin: 0 5px;
+    color: #ff696a;
+    font-size: 14px;
+}
+
+.photo_edit .actbar .btn{
+    float: left;
+    margin: 4px 0 0 10px;
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    color: #666;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.photo_edit .actbar .btn:hover{
+    color: #ff6600;
+    border: 1px solid #ff6600;
+}
+
+.photo_edit .actbar .btn i{
+    margin-right: 5px;
+}
+
+.photo_edit .actbar .add{
+    color: #fff;
+    background-color: #ff6600;
+    border: 1px solid #ff6600;
+}
+
+.photo_edit .actbar .add:hover{
+    color: #fff;
+    background-color: #df5d06;
+}
+
+.edit_wrap .photo_edit .img_con{
+    position: relative;
+    margin: 0;
+    padding: 20px 0 0 15px;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.photo_edit .img_con ul{
+    width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.photo_edit .img_con ul li{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px 10px 0;
+    padding: 5px;
+    width: 137px;
+    /*height: 126px;*/
+    cursor: pointer;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.img_con ul li .img{
+    position: relative;
+    width: 125px;
+    height: 125px;
+    line-height: 122px;
+    text-align: center;
+    background-color: #eee;
+}
+
+.img_con ul li .img img{
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.photo_edit .img_con li .check{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background-color: #fff;
+    border: 2px solid #90c132;
+    box-sizing: border-box;
+}
+
+.photo_edit .img_con li .check.select{
+    background-color: #90c132;
+}
+
+.photo_edit .img_con li .check span{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.photo_edit .img_con li .check.select span{
+    display: block;
+}
+
+.photo_edit .img_con li .warn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px
+}
+
+.photo_edit .img_con li .warn span{
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: rgba(255,105,106,.8);
+}
+
+.img_con li .warn div{
+    left: -108px;
+    top: 25px;
+    text-align: center;
+}
+
+.photo_edit .img_con li .act_btns{
+    display: block;
+    position: relative;
+    margin: 5px 0 0;
+    padding: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+
+.photo_edit .img_con li .act_btns .delete{
+    color: #999;
+    font-size: 18px;
+}
+
+.photo_edit .img_con li .act_btns .delete:hover{
+    color: #90c132;
+}
+
+.img_con li .act_btns .ybcommon_counter_item{
+    float: right;
+    width: 75px;
+    height: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.img_con li .act_btns .ybcommon_counter_item a{
+    width: 19px;
+    line-height: 16px;
+}
+
+.pp_edit_con .order_wrap{
+    position: relative;
+    float: right;
+    width: 19%;
+    height: 100%;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 -1px 3px rgba(0,0,0,.3);
+}
+
+.pp_edit_con .order_wrap h4{
+    position: relative;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pp_edit_con .order_wrap .order_info{
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.pp_edit_con .order_wrap .order_info table{
+    width: 100%;
+    text-align: center;
+}
+
+.pp_edit_con .order_wrap .order_info thead{
+    font-size: 14px;
+    color: #333;
+    height: 35px;
+    line-height: 35px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.pp_edit_con .order_wrap .order_info tbody{
+    font-size: 12px;
+    color: #333;
+}
+
+.pp_edit_con .order_wrap .order_info tbody tr{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dotted #dfdfdf;
+}
+
+.pp_edit_con .order_wrap .order_info td{
+    width: 15%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pp_edit_con .order_wrap .order_info tr td:nth-child(1){
+    text-align: left;
+    width: 40%;
+    padding: 0 0 0 10px;
+}
+
+.pp_edit_con .order_wrap .order_info tr td:nth-child(4){
+    color: #ff696b;
+}
+
+.pp_edit_con .order_wrap .order_info tr td:nth-child(5){
+    width: 10%;
+}
+
+.order_wrap .order_info tr td .delete{
+    display: none;
+    color: #999;
+}
+
+.order_wrap .order_info tr:hover .delete{
+    display: block;
+}
+
+.pp_edit_con .order_wrap .confirm_order{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.pp_edit_con .confirm_order li{
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+}
+
+.pp_edit_con .confirm_order li:last-child{
+    font-size: 14px;
+    color: #000;
+    line-height: 35px;
+}
+
+.pp_edit_con .confirm_order li:nth-child(2) span{
+    color: #ff696a;
+}
+
+.pp_edit_con .confirm_order li:last-child span{
+    font-size: 22px;
+    color: #f00;
+}
+
+.pp_edit_con .confirm_order .opd_confirm{
+    float: right;
+    font-size: 16px;
+    line-height: 40px;
+    width: 90%;
+    height: 40px;
+    margin: 10px auto 0;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #f60;
+}
+
+.pp_edit_con .confirm_order .opd_confirm:hover{
+    background-color: #df5d06;
+}

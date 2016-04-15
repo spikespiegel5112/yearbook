@@ -1398,6 +1398,24 @@ input
     padding: 5px 10px 5px 0;
 }
 
+.yb_cm_header .shortcut .yb_logo a{
+    vertical-align: top;
+    line-height: 21px;
+    color: #999;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.yb_cm_header .shortcut .yb_logo a::before{
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 1px;
+    height: 12px;
+    content: ' ';
+    background-color: #ccc;
+}
+
 .yb_cm_header .shortcut .yb_logo img
 {
     width: 113px;
@@ -6723,4 +6741,51 @@ nav .pagination li a:active
 }
 .common_slider_wrapper .slider:active{
     background-color: #bbb;
+}
+/*~~~~~autolayout header~~~~~*/
+.al_head
+{
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1150px;
+    height: 75px;
+
+    color: #333;
+    background-color: #fff;
+}
+
+.al_head .yblogo
+{
+    line-height: 75px;
+
+    float: left;
+
+    padding: 0 20px 0 25px;
+}
+
+.al_head .yblogo img
+{
+    vertical-align: middle;
+}
+
+.al_head .edit_online
+{
+    font-size: 25px;
+    line-height: 75px;
+
+    float: left;
+
+    margin: 0 25px 0 0;
+
+    color: #666;
+}
+
+.al_head .progress_bar
+{
+    float: right;
 }

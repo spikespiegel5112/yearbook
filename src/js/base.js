@@ -446,7 +446,7 @@
 			$.each($this, function(index) {
 				var $this = $(this),
 					counterEl = $this.find('input');
-				$this.find('a').on('click', function() {
+				$this.find('a').on('click', function(e) {
 					var counter = counterEl.val();
 					switch ($(this).index()) {
 						case 0:
@@ -459,6 +459,7 @@
 							counter++;
 							break;
 					}
+                    e.stopPropagation();
 					counterEl.val(counter);
 					setter(index, counter);
 					config.onchange();

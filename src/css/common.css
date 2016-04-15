@@ -5073,6 +5073,26 @@ nav .pagination li a:active
 	height: 250px;*/
 }
 
+.server_online_main_im .calculator{
+    display: block;
+    position: absolute;
+    top: 159px;
+    right: 0;
+    width: 40px;
+    background-color: #70ca5d;
+    text-align: center;
+    border-top: 1px solid #fff;
+    border-radius: 0 0 0 4px;
+    z-index: 1;
+}
+
+.server_online_main_im .calculator span{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: transparent url('../img/sprite/yb_toolbar_icons.png') no-repeat 0 -384px;
+}
+
 .server_online_main_im .qq_a
 {
     font-size: 14px;
@@ -5152,6 +5172,8 @@ nav .pagination li a:active
 .server_online_main_im .im_main
 {
     display: none;
+    position: relative;
+    z-index: 2;
 
     border: 1px solid #62b651;
     border-radius: 10px;

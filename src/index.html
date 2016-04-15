@@ -601,10 +601,11 @@
 	</div>
 
 	<!--10.10 add QQ online server yb < 3.10-->
-	<div class="server_online_main_im hidden" id="server_online_main_im">
+	<div class="server_online_main_im " id="server_online_main_im">
 		<div id="open_im" class="open_im">
 			<div></div>
 		</div>
+        <a class="calculator" href="javascript:;"><span></span></a>
 		<div class="im_main" id="im_main">
 			<div id="close_im" class="close_im"><a href="javascript:void(0);" title="点击关闭">&nbsp;</a></div>
 			<a href="javascript:;" class="im_qq qq_a" title="在线QQ客服">
@@ -639,7 +640,7 @@
 	</div>
 
     <!--yb3.11 yb-global-toolbar-->
-    <div id="yb_global_toolbar">
+    <div id="yb_global_toolbar" style="display: none">
         <div class="yb_toolbar_wrap">
             <div class="yb_toolbar">
                 <div class="yb_toolbar_tabs">
@@ -1035,7 +1036,7 @@
 		icheck();
         ybGlobalToolBar();
 		$.globalhint();//全局提示框，用来提示更换浏览器，提示切换移动端oc端
-		//qqServer();
+		qqServer();
 		//CloseYbNotice();
 		$('.nav_login a:eq(0)').loginPopupDialog();
 		$(".bask_book_slide").slide({

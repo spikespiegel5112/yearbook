@@ -8,13 +8,19 @@
 .photoprint_indexmain_wrapper{
 	margin: 0 auto;
 	width: 1200px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 	bottom: 35px;
 }
 .photoprint_printtypetab_wrapper{
 	width: 100%;
-	overflow: hidden;
+	height: 138px;
+	/*overflow: hidden;*/
+}
+.photoprint_printtypetab_wrapper:after{
+	content: '';
+	display: block;
+	clear: both;
 }
 .photoprint_printtypetab_wrapper li{
 	float: left;
@@ -23,10 +29,31 @@
 	text-align: center;
 	background-color: #eeeeee
 }
-.photoprint_printtypetab_wrapper .active{
-	background-color: #fff;
+.photoprint_printtypetab_wrapper .fujisuede{
+	border-top: 5px solid #09aeee;
 }
-.photoprint_printtypetab_wrapper label{
+.photoprint_printtypetab_wrapper .fujiglaze{
+	border-top: 5px solid #f54775;
+}
+.photoprint_printtypetab_wrapper .kodaksuede{
+	border-top: 5px solid #fdf01b;
+}
+.photoprint_printtypetab_wrapper .kodakglaze{
+	border-top: 5px solid #000;
+}
+.photoprint_printtypetab_wrapper .active, .photoprint_printtypetab_wrapper .active:hover{
+	height: 139px;
+	background-color: #fff;
+	position: relative;
+	bottom: 5px;
+}
+.photoprint_printtypetab_wrapper li:hover{
+	background-color: #ddd;
+	transition:all 0.5s;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+}
+.photoprint_printtypetab_wrapper span{
 	display: block;
 	margin: 20px 0;
 	font-size: 25px;

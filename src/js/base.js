@@ -812,26 +812,28 @@
 					}
 					index = i;
 				});
-				_this.parent().eq(i).on(touchMove, function(e) {
+				// _this.parent().eq(i).on(touchMove, function(e) {
+				$(document).on(touchMove, function(e) {
 					if (isMousedown) {
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0],
 								moveX = touch.pageX - offsetLeft;
 							if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', moveX);
+								_this.eq(index).css('margin-left', moveX-sliderWidth/2);
 							};
 						} else {
 							var moveX = e.pageX - offsetLeft;
 							if (e.clientX < offsetLeft + axisWidth - sliderWidth && e.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', moveX);
+								_this.eq(index).css('margin-left', (moveX-sliderWidth/2));
 							};
 						}
 						if (moveX < 0) {
 							progress = 0;
-						} else if (moveX > axisWidth) {
-							progress = axisWidth;
+						} else if (moveX > axisWidth+sliderWidth) {
+							// alert('aaa')
+							progress = axisWidth+sliderWidth;
 						} else {
-							progress = moveX;
+							progress = moveX+sliderWidth;
 						}
 						progress = progress * (config.density / axisWidth) + offsetVal[i];
 						$(config.returnto).eq(index).val(Math.floor(progress));
@@ -1118,7 +1120,7 @@
 			if (config.destroy == true) {
 				destroy();
 			};
-
+			
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				image = $(config.image),
@@ -1135,17 +1137,23 @@
 				originalHeight = 0,
 				originalRatio = 0,
 				saveRatio = 0,
-
+				epscrollbarWidth,
+				zoomingSlider,
+				sliderPosX,
 				initMarginleft = 0,
 				marginleft = 0;
 
-
-			var epscrollbarWidth = $(config.tools.scrollBar).find('label').width(),
+			if (config.tools.scrollBar != '') {
+				epscrollbarWidth = $(config.tools.scrollBar).find('label').width(),
 				zoomingSlider = $(config.tools.scrollBar).find('span'),
 				sliderPosX = zoomingSlider.offset().left * transformData.scale;
+				//	sliderPosX=(windowWidth-(windowWidth*0.8))/2;
+			}else {
+				return;
+			}
 
 			init();
-
+			
 			function init() {
 				image.css('transition', 'transform 0.5s');
 				image.css(transformData);
@@ -1265,7 +1273,6 @@
 						}
 				}
 			};
-
 			function sliderEvent(e) {
 				var touch = e.originalEvent.touches[0];
 				var movingPosX = touch.pageX;

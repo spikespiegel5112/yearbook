@@ -433,9 +433,7 @@
 			var $this = $(this);
 			$this.addClass('active').siblings().removeClass('active');
 			var classname = $this.attr('class').replace(' active', '');
-			replacedata(paperprice, classname);
-
-			function replacedata(data, classname) {
+			var replacedata=function(data, classname) {
 				$('.photoprint_speclist_wrapper').eq(0).find('tbody tr').each(function(i) {
 					var $this = $(this);
 					switch (classname) {
@@ -454,6 +452,7 @@
 					}
 				});
 			}
+			replacedata(paperprice, classname);
 		});
 	});
 	</script>

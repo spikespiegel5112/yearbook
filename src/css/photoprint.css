@@ -447,7 +447,7 @@
 }
 /*’’∆¨≥Â”° µØ≥ˆ≤„*/
 .edit_pop_container{
-    /*display: none;*/
+    display: none;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -780,6 +780,7 @@
 }
 /*ÃÌº”’’∆¨*/
 .edit_pop_container .add_img_wrap{
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -787,6 +788,10 @@
     width: 885px;
     height: 546px;
     background-color: #fff;
+}
+
+.edit_pop_container.add .add_img_wrap{
+    display: block;
 }
 
 .edit_pop_container .add_img_wrap::before{

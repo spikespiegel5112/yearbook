@@ -1088,6 +1088,11 @@
                 popbox.fadeIn('fast').addClass('multiple');
             });
 
+            //添加照片
+            $('.photo_edit .actbar .add').click(function(){
+                popbox.fadeIn('fast').addClass('add');
+            });
+
             //关闭弹出
             popbox.find('.close').click(function(){
                 popbox.fadeOut('fast').removeClass('single multiple');
@@ -1095,7 +1100,7 @@
 
             //取消
             popbox.find('.btns .cancel').click(function(){
-                popbox.fadeOut('fast').removeClass('single multiple');
+                popbox.fadeOut('fast').removeClass('single multiple add');
             });
         }
 

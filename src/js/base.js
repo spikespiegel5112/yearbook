@@ -869,7 +869,7 @@
 						_this.eq(i).css('margin-left', (value - offsetVal[i]) * (axisWidth / config.density));
 					});
 				}
-			})
+			});
 
 			$(document).on(touchEnd, function() {
 				isMousedown = false;

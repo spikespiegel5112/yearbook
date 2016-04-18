@@ -145,30 +145,30 @@
 		<div class='photoprint_indexmain_wrapper'>
 			<div class='photoprint_index_wrapper'>
 				<ul class='photoprint_printtypetab_wrapper'>
-					<li>
+					<li class='fujisuede'>
 						<a href="javascript:;">
-							<label>富士绒面</label>
+							<span>富士绒面</span>
 							<p>富士的绿色和肤色更适合东方人
 								<br>非常适合人像冲印</p>
 						</a>
 					</li>
-					<li class='active'>
+					<li class='fujiglaze active'>
 						<a href="javascript:;">
-							<label>富士光面</label>
+							<span>富士光面</span>
 							<p>色彩亮丽鲜艳
 								<br>清晰度要高一些</p>
 						</a>
 					</li>
-					<li>
+					<li class='kodaksuede'>
 						<a href="javascript:;">
-							<label>柯达绒面</label>
+							<span>柯达绒面</span>
 							<p>色彩柔和，还原真实
 								<br>降低影像颗粒感</p>
 						</a>
 					</li>
-					<li>
+					<li class='kodakglaze'>
 						<a href="javascript:;">
-							<label>柯达光面</label>
+							<span>柯达光面</span>
 							<p>特殊涂层 鲜艳长久
 								<br>影像逼真、清晰</p>
 						</a>
@@ -329,10 +329,12 @@
 			</div>
 			<div class='photoprint_advantage_wrapper'>
 				<p class='one'>
-					材质,尺寸,数量任意选择<br>轻松裁剪,一键美化
+					材质,尺寸,数量任意选择
+					<br>轻松裁剪,一键美化
 				</p>
 				<p class='two'>
-					48小时闪电发货<br>全国统一配送
+					48小时闪电发货
+					<br>全国统一配送
 				</p>
 			</div>
 		</div>
@@ -419,7 +421,39 @@
 	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
-
+		var paperprice = {
+			price: {
+				fujisuede: [1, 2, 3, 4, 5, 6, 7],
+				kodakglaze: [7, 6, 5, 4, 3, 2, 1],
+				fujiglaze: [7, 6, 5, 4, 3, 2, 1],
+				kodaksuede: [1, 2, 3, 4, 5, 6, 7]
+			}
+		};
+		$('.photoprint_printtypetab_wrapper li').click(function() {
+			var $this = $(this);
+			$this.addClass('active').siblings().removeClass('active');
+			var classname = $this.attr('class').replace(' active', '');
+			var replacedata=function(data, classname) {
+				$('.photoprint_speclist_wrapper').eq(0).find('tbody tr').each(function(i) {
+					var $this = $(this);
+					switch (classname) {
+						case 'fujisuede':
+							$this.find('td').eq(3).text('￥ ' + data.price.fujisuede[i]);
+							break;
+						case 'kodakglaze':
+							$this.find('td').eq(3).text('￥ ' + data.price.kodakglaze[i]);
+							break;
+						case 'fujiglaze':
+							$this.find('td').eq(3).text('￥ ' + data.price.fujiglaze[i]);
+							break;
+						case 'kodaksuede':
+							$this.find('td').eq(3).text('￥ ' + data.price.kodaksuede[i]);
+							break;
+					}
+				});
+			}
+			replacedata(paperprice, classname);
+		});
 	});
 	</script>
 </body>

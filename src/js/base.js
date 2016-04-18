@@ -459,7 +459,7 @@
 							counter++;
 							break;
 					}
-                    e.stopPropagation();
+					e.stopPropagation();
 					counterEl.val(counter);
 					setter(index, counter);
 					config.onchange();
@@ -812,26 +812,28 @@
 					}
 					index = i;
 				});
-				_this.parent().eq(i).on(touchMove, function(e) {
+				// _this.parent().eq(i).on(touchMove, function(e) {
+				$(document).on(touchMove, function(e) {
 					if (isMousedown) {
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0],
 								moveX = touch.pageX - offsetLeft;
 							if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', moveX);
+								_this.eq(index).css('margin-left', moveX-sliderWidth/2);
 							};
 						} else {
 							var moveX = e.pageX - offsetLeft;
 							if (e.clientX < offsetLeft + axisWidth - sliderWidth && e.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', moveX);
+								_this.eq(index).css('margin-left', (moveX-sliderWidth/2));
 							};
 						}
 						if (moveX < 0) {
 							progress = 0;
-						} else if (moveX > axisWidth) {
-							progress = axisWidth;
+						} else if (moveX > axisWidth+sliderWidth) {
+							// alert('aaa')
+							progress = axisWidth+sliderWidth;
 						} else {
-							progress = moveX;
+							progress = moveX+sliderWidth;
 						}
 						progress = progress * (config.density / axisWidth) + offsetVal[i];
 						$(config.returnto).eq(index).val(Math.floor(progress));
@@ -860,7 +862,7 @@
 						if (value > config.density + initVal) {
 							value = config.density + initVal;
 							/*console.log(Number(config.density) + Number(initVal));*/
-						} else if (value < 0||value<initVal) {
+						} else if (value < 0 || value < initVal) {
 							value = initVal;
 						} else if (isNaN(value)) {
 							value = config.density + initVal;
@@ -1092,30 +1094,33 @@
 			}
 		},
 		editphoto: function(config) {
+			var initConfig = config;
 			var transformData = {
-					scale: 1,
-					rotate: 0,
-					left: 0,
-					top: 0
+				scale: 1,
+				rotate: 0,
+				left: 0,
+				top: 0
+			}
+
+			var config = $.extend({
+				image: '',
+				tools: {
+					photoFrame: '',
+					turnRightBtn: '',
+					turnLeftBtn: '',
+					zoomInBtn: '',
+					zoomOutBtn: '',
+					reScaleBtn: '',
+					rePositionBtn: '',
+					originalSizeBtn: '',
+					scrollBar: ''
 				},
-				config = $.extend({
-					image: '',
-					tools: {
-						photoFrame: '',
-						turnRightBtn: '',
-						turnLeftBtn: '',
-						zoomInBtn: '',
-						zoomOutBtn: '',
-						reScaleBtn: '',
-						rePositionBtn: '',
-						originalSizeBtn: '',
-						scrollBar: ''
-					},
-					destroy: false
-				}, config);
+				destroy: false
+			}, config);
 			if (config.destroy == true) {
 				destroy();
 			};
+			
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				image = $(config.image),
@@ -1140,19 +1145,20 @@
 
 			if (config.tools.scrollBar != '') {
 				epscrollbarWidth = $(config.tools.scrollBar).find('label').width(),
-					zoomingSlider = $(config.tools.scrollBar).find('span'),
-					sliderPosX = zoomingSlider.offset().left * transformData.scale;
+				zoomingSlider = $(config.tools.scrollBar).find('span'),
+				sliderPosX = zoomingSlider.offset().left * transformData.scale;
 				//	sliderPosX=(windowWidth-(windowWidth*0.8))/2;
-			} else {
+			}else {
 				return;
 			}
 
 			init();
-
+			
 			function init() {
 				image.css('transition', 'transform 0.5s');
 				image.css(transformData);
 				var photoframe = $(config.tools.photoFrame);
+
 				if (frameRatio >= 1) {
 					photoframe.css({
 						width: $(window).width() * 0.9,
@@ -1253,6 +1259,20 @@
 				image.css(transformData);
 			});
 
+			if (initConfig == 'transformData') {
+				alert('aaa')
+				switch (config) {
+					case 'transformData':
+						alert('aaa');
+						return {
+							'transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')',
+							'-webkit-transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')',
+							'position': 'absolute',
+							'left': transformData.left,
+							'top': transformData.top
+						}
+				}
+			};
 			function sliderEvent(e) {
 				var touch = e.originalEvent.touches[0];
 				var movingPosX = touch.pageX;
@@ -1307,7 +1327,6 @@
 								imageTop = Number(image.css('top').replace('px', ''))
 							break;
 						case 'touchmove':
-							console.log('image touchmove')
 							e.preventDefault;
 							endPosX = touch.pageX,
 								endPosY = touch.pageY,
@@ -1333,8 +1352,8 @@
 				if (transformData.rotate || transformData.scale) {
 					$.extend(transformData, {
 						'transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')'
-					})
-					console.log(transformData);
+					});
+					// console.log(transformData);
 					return transformData;
 				};
 			}
@@ -1353,6 +1372,7 @@
 				touchmoveEvent = null;
 				$('.action_btn').off();
 			}
+
 		}
 	});
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);

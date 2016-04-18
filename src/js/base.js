@@ -567,9 +567,8 @@
 				position: 'both',
 				container: '',
 				isImage: false,
-				obstacleX: 0,
-				obstacleY: 0,
-				offsetY: 0
+				offsetX: 0,
+				offsetY: 0,
 			}, options);
 
 			var _this = this,
@@ -627,7 +626,7 @@
 					//container设置判断
 					if (options.container != '') {
 						_this.each(function(index) {
-							var containerheight = $(options.container).eq(index).height();
+							containerheight = $(options.container).eq(index).height();
 							windowWidth = $(options.container).width();
 							checkPosition($(this));
 						})
@@ -652,7 +651,7 @@
 				})
 
 				thisWidth = _this.outerWidth(),
-					thisHeight = _this.outerHeight();
+				thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
@@ -669,9 +668,15 @@
 								_this.css({
 									'margin': marginY + options.offsetY + 'px auto'
 								});
+								if (options.offsetX!=0) {
+									alert((windowWidth - thisWidth) / 2 + options.offsetX)
+									_this.css({
+										'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2+'px'
+									});
+								};
 							} else {
 								_this.css({
-									'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
+									'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetX+'px'
 								});
 							}
 						});

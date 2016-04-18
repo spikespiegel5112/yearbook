@@ -144,7 +144,7 @@
                     <div class="actbar">
                         <label><input id="checkAllPhoto" type="checkbox" name="checkAll">全选</label>
                         <span>已选中<b>12</b>张图片</span>
-                        <a class="btn" href="javascript:;"><i class="icon-magic"></i>批量修改</a>
+                        <a class="btn multiple" href="javascript:;"><i class="icon-magic"></i>批量修改</a>
                         <a class="btn delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>批量删除</a>
                         <a class="btn add" href="javascript:;"><i class="ybiconfont ybicon-plus"></i>添加照片</a>
                     </div>
@@ -523,10 +523,470 @@
             </div>
         </div>
     </div>
+    <!--弹出部分-->
+    <div class="edit_pop_container">
+        <!--单张照片编辑-->
+        <div class="edit_img_wrap">
+            <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+            <h4 class="title">单张照片编辑</h4>
+            <div class="edit_img_con">
+                <div class="img_box">
+                    <img src="img/default/book_manage_topic_img1.jpg">
+                    <div class="range" draggable="true">
+                        <p><i class="ybiconfont ybicon-alert1"></i>红色区域为实际冲洗范围</p>
+                    </div>
+                </div>
+                <div class="standard">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><span>规格</span></th>
+                            <th><span>数量</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span>5寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>大5寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>6寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>大6寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>7寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>8寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>10寸</span></td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="btns">
+                        <a class="cancel" href="javascript:;">取消</a>
+                        <a class="ok" href="javascript:;">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--批量修改-->
+        <div class="modify_wrap">
+            <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+            <h4 class="title">批量修改照片</h4>
+            <div class="selected">
+                <span>已选中<b>12</b>张</span>
+                <span>大5寸</span>
+                <span>规格照片</span>
+            </div>
+            <div class="modify_con">
+                <p class="tips"><i class="ybiconfont ybicon-alert1"></i>有<span>2</span>张照片分辨率过低，可能会影响冲印质量。</p>
+                <div class="standard">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><span>规格</span></th>
+                            <th><span>数量</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>5寸</option>
+                                    <option>大5寸</option>
+                                    <option>6寸</option>
+                                    <option>大6寸</option>
+                                    <option>7寸</option>
+                                    <option>8寸</option>
+                                    <option>10寸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div class='ybcommon_counter_item'>
+                                    <a href="javascript:;">-</a>
+                                    <input type='text' value='0'>
+                                    <a href="javascript:;">+</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="btns">
+                        <a class="ok" href="javascript:;">确定</a>
+                        <a class="cancel" href="javascript:;">取消</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--添加照片-->
+        <div class="add_img_wrap">
+            <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+            <h4 class="title">添加冲印照片</h4>
+            <div class="add_img_con">
+                <ul class="hd">
+                    <li class="on"><a href="javascript:;">本地上传照片</a></li>
+                    <li><a href="javascript:;">已上传的照片</a></li>
+                </ul>
+                <div class="bd">
+                    <ul>
+                        <li class="tab_con">
+                            <ul class="uploading">
+                                <li>
+                                    <a class="upload_btn" href="javascript:;">
+                                        <div class="ybiconfont ybicon-upload"></div>
+                                        <p>上传照片</p>
+                                    </a>
+                                </li>
+                                <li class="select">
+                                    <a class="img" href="javascript:;">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>100%</b></span>
+                                        </div>
+                                    </a>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <img src="img/default/album_cover01_.jpg">
+                                        <span class="ybiconfont ybicon-ok"></span>
+                                        <div class="progress">
+                                            <span>上传：<b>80%</b></span>
+                                        </div>
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                            </ul>
+                            <div class="tab_bt">
+                                <p class="cm_fl">已选择<span>3</span>张照片（上传失败的照片不会被添加）</p>
+                                <div class="btns cm_fr">
+                                    <a class="cancel" href="javascript:;">取消</a>
+                                    <a class="ok" href="javascript:;">确定</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tab_con">
+                            <ul class="uploaded">
+                                <li>
+                                    <div class="img">
+                                        <a class="check select" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <div class="img">
+                                        <a class="check" href="javascript:;">
+                                            <span class="ybiconfont ybicon-ok"></span>
+                                        </a>
+                                        <img src="img/default/ia_vote_ex_img1.jpg">
+                                    </div>
+                                    <h5>IMG_1178.jpg</h5>
+                                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
+                                </li>
+                            </ul>
+                            <div class="tab_bt">
+                                <div class="btns">
+                                    <a class="add cm_fl" href="javascript:;">添加照片</a>
+                                    <a class="ok cm_fr" href="javascript:;">确定</a>
+                                    <a class="cancel cm_fr" href="javascript:;">取消</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- html end-->
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
     <script type="text/javascript" src="assets/js/icheck.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
     <!-- build:js js/all.js -->
     <script type="text/javascript" src="js/base.js"></script>
     <!-- endbuild -->
@@ -538,6 +998,7 @@
             chosePhoto();
             chosePhotoOption();
             ybcommonqueryicon();
+            popEditContainer();
 		});
 
         //渲染控件样式
@@ -607,6 +1068,36 @@
             });
         }
 
+        //弹出部分
+        function popEditContainer(){
+            jQuery(".add_img_con").slide({
+                mainCell: ".bd > ul",
+                trigger: "click",
+                pnLoop: false,
+                autoPlay: false
+            });
+
+            //编辑单张照片
+            var popbox = $('.edit_pop_container');
+            $('.img_con li img').click(function(){
+                popbox.fadeIn('fast').addClass('single');
+            });
+
+            //批量修改
+            $('.photo_edit .actbar .multiple').click(function(){
+                popbox.fadeIn('fast').addClass('multiple');
+            });
+
+            //关闭弹出
+            popbox.find('.close').click(function(){
+                popbox.fadeOut('fast').removeClass('single multiple');
+            });
+
+            //取消
+            popbox.find('.btns .cancel').click(function(){
+                popbox.fadeOut('fast').removeClass('single multiple');
+            });
+        }
 
 	</script>
 </body>

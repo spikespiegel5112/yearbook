@@ -2968,10 +2968,30 @@
 
 .tplshowcase_list_item .actbar .share:hover .common_sharelist_wrapper
 {
-    top: 3px;
-    left: 52px;
+    top: 45px;
+    left: -51px;
 
     display: block;
+    padding: 8px;
+    width: 152px;
+    min-height: 45px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .tplshowcase_list_item .actbar .share:hover .common_sharelist_wrapper{
+        left: -100px;
+    }
+
+    .tplshowcase_wrapper .tplshowcase_list_item .actbar .share .common_sharelist_wrapper::before,
+    .tplshowcase_wrapper .tplshowcase_list_item .actbar .share .common_sharelist_wrapper::after{
+        left: 118px;
+    }
+}
+
+.tplshowcase_list_item .actbar .share .common_sharelist_wrapper li,
+.tplshowcase_list_item .actbar .share .common_sharelist_wrapper a{
+    width: 26px;
+    height: 26px;
 }
 
 .tplshowcase_list_item .actbar a i
@@ -3184,7 +3204,7 @@
     display: block;
 }
 
-.tplshowcase_detail .actbar .share .common_sharelist_wrapper::before
+.tplshowcase_wrapper .actbar .share .common_sharelist_wrapper::before
 {
     position: absolute;
     z-index: 1;
@@ -3201,7 +3221,7 @@
     border-left: 9px solid transparent;
 }
 
-.tplshowcase_detail .actbar .share .common_sharelist_wrapper::after
+.tplshowcase_wrapper .actbar .share .common_sharelist_wrapper::after
 {
     position: absolute;
     top: -18px;

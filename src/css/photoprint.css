@@ -1033,6 +1033,7 @@
 }
 
 
+/*~~~~~~~~~~photoprint_homepage.html~~~~~~~~~~*/
 .photoprint_index_container{
 	background-color: #e1e0d1;
 }
@@ -1096,30 +1097,44 @@
 .photoprint_printtypetab_wrapper p{
 	font-size: 13px;
 }
-.photoprint_printtypecontent_wrapper{
+.photoprint_normalprint_wrapper{
 	width: 96%;
 	margin: 0 0 25px 0;
 	padding: 2%;
 	background-color: #fff;
 	border: 1px solid #ddd;
 }
-.photoprint_printtypecontent_wrapper:last-child{
+.photoprint_polaroidprint_wrapper{
+	width: 96%;
+	margin: 0 0 25px 0;
+	padding: 2%;
+	border: 1px solid #ddd;
 	background-color: #eeeeee;
 	border-top: 2px solid #60a897;
 }
 .photoprint_sizehint_wrapper{
 	float: left;
 	padding: 18px;
+	position: relative;
 }
-.photoprint_sizehint_wrapper p, .photoprint_sizehint_wrapper img{
+
+.photoprint_sizehint_wrapper h6{
 	float: left;
-}
-.photoprint_sizehint_wrapper p{
 	width: 70px;
 	font-size: 26px;
 	line-height: 29px;
 	font-weight: bold;
 	color: #cccccc;
+	text-align: center;
+}
+.photoprint_shframe_wrapper img, .photoprint_polaroidframe_wrapper img{
+	display: block;
+	width: auto;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
 }
 .photoprint_speclist_wrapper{
 	float: left;
@@ -1133,6 +1148,11 @@
 	height: 40px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
+}
+.photoprint_speclist_wrapper table tbody .active{
+	cursor:pointer;
+	background-color: #eeeeee;
+	border-bottom: 1px solid #fa4574;
 }
 .photoprint_speclist_wrapper table thead{
 	background-color: #666666;
@@ -1232,3 +1252,170 @@
 .photoprint_index_container .footer_menu_container{
 	background: #8cc04e;
 }
+.photoprint_shgraph_wrapper{
+	float: left;
+	width: 480px;
+	height: 380px;
+	position: relative;
+}
+.photoprint_shframe_wrapper{
+	width: 450px;
+	height: 360px;
+	position: relative;
+	overflow: hidden;
+}
+.photoprint_polaroidframe_wrapper{
+	width: 525px;
+	height: 350px;
+	position: relative;
+	overflow: hidden;
+	background-color: #fff;
+}
+.photoprint_shframe_wrapper>div{
+	background-color: rgba(0,0,0,0.05);
+	border: 1px solid #ccc;
+}
+.photoprint_polaroidframe_wrapper>div{
+	background-color: #fff;
+	border: 1px solid #ddd;
+	box-shadow: 3px 3px 10px #666;
+}
+.photoprint_polaroidframe_wrapper>div>div{
+	margin: 20px 0 25px 20px;
+	background-color: #e8e8e8;
+	position: absolute;
+	bottom: 0;f
+}
+.photoprint_shframe_wrapper>div, .photoprint_polaroidframe_wrapper>div{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	z-index: 1;
+}
+.photoprint_shframe_wrapper>div label{
+	margin: 10px;
+	font-size: 12px;
+	color: #999;
+	z-index: 2;
+}
+.photoprint_shframe_wrapper .normal_teninch8r{
+	width: 450px;
+	height: 360px;
+}
+.photoprint_shframe_wrapper .normal_eightinch6r{
+	width: 360px;
+	height: 270px;
+}
+.photoprint_shframe_wrapper .normal_seveninch5r{
+	width: 315px;
+	height: 225px;
+}
+.photoprint_shframe_wrapper .normal_sixinch4d{
+	width: 270px;
+	height: 205px;
+}
+.photoprint_shframe_wrapper .normal_sixinch4r{
+	width: 270px;
+	height: 180px;
+}
+.photoprint_shframe_wrapper .normal_fiveinch3r{
+	width: 220px;
+	height: 160px;
+}
+.photoprint_shframe_wrapper .normal_fiveinch3d{
+	width: 220px;
+	height: 160px;
+}
+
+.photoprint_polaroidframe_wrapper .polaroid_threeinch4d{
+	width: 260px;
+	height: 205px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_fourinch4r{
+	width: 350px;
+	height: 260px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_fiveinch{
+	width: 440px;
+	height: 310px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_sixinch{
+	width: 525px;
+	height: 350px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_threeinch4d div{
+	width: 200px;
+	height: 165px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_fourinch4r div{
+	width: 285px;
+	height: 205px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_fiveinch div{
+	width: 360px;
+	height: 255px;
+}
+.photoprint_polaroidframe_wrapper .polaroid_sixinch div{
+	width: 415px;
+	height: 300px;
+}
+.photoprint_polaroidframe_wrapper label{
+	position: absolute;
+}
+.photoprint_shtagging_wrapper{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+.photoprint_shtagging_wrapper li {	
+	position: absolute;
+}
+.photoprint_shtagging_wrapper li span{
+	display: block;
+	background-color: #bbb;
+}
+.photoprint_shtagging_wrapper .vertical{
+	width: 13px;
+	height: 158px;
+	border-top: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	right: 18px;
+	bottom: 20px;
+	text-align: right;
+}
+.photoprint_shtagging_wrapper .vertical span{
+	margin: 0 auto;
+	width: 1px;
+	height: 100%;
+	line-height: 100%;
+	position: absolute;
+	left: 6px;
+}
+.photoprint_shtagging_wrapper .horizonal{
+	width: 217px;
+	height: 13px;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	right: 31px;
+	bottom: 7px;
+	line-height: 30px;
+	text-align: center;
+}
+.photoprint_shtagging_wrapper .horizonal span{
+	width: 100%;
+	height: 1px;
+	bottom: 6px;
+	position: absolute;
+}
+.photoprint_shtagging_wrapper p{
+	min-width: 40px;
+	font-size: 12px;
+	
+}
+
+
+
+

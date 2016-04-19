@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.11.1-书价计算器</title>
+	<title>忆尔3.11.1-照片冲印首页</title>
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1460348402_2979512.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
@@ -174,10 +174,45 @@
 						</a>
 					</li>
 				</ul>
-				<div class='photoprint_printtypecontent_wrapper'>
+				<div class='photoprint_normalprint_wrapper'>
 					<div class='photoprint_sizehint_wrapper'>
-						<p>尺寸示意</p>
-						<img src="img/photoprint/photoprint_sizehint_ratio_00000.png">
+						<h6>尺寸示意</h6>
+						<div class='photoprint_shgraph_wrapper'>
+							<div class='photoprint_shframe_wrapper'>
+								<div class='normal_teninch8r'>
+									<label>10寸（8R）</label>
+								</div>
+								<div class='normal_eightinch6r'>
+									<label>8寸（6R）</label>
+								</div>
+								<div class='normal_seveninch5r'>
+									<label>7寸（5R）</label>
+								</div>
+								<div class='normal_sixinch4d'>
+									<label>大6寸（4D）</label>
+								</div>
+								<div class='normal_sixinch4r'>
+									<label>6寸（4R）</label>
+								</div>
+								<div class='normal_fiveinch3d'>
+									<label>大5寸（3D）</label>
+								</div>
+								<div class='normal_fiveinch3r'>
+									<label>5寸（3R）</label>
+								</div>
+								<img src="img/default/photoprint_sizesample.jpg">
+							</div>
+							<ul class='photoprint_shtagging_wrapper'>
+								<li class='vertical'>
+									<span></span>
+									<p></p>
+								</li>
+								<li class='horizonal'>
+									<span></span>
+									<p></p>
+								</li>
+							</ul>
+						</div>
 					</div>
 					<div class='photoprint_speclist_wrapper'>
 						<table>
@@ -252,7 +287,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class='photoprint_printtypecontent_wrapper'>
+				<div class='photoprint_polaroidprint_wrapper'>
 					<div class='photoprint_polaroidintro_wrapper'>
 						<img src="img/photoprint/photoprint_polaroidintro_00000.png">
 						<p>
@@ -262,7 +297,25 @@
 						</p>
 					</div>
 					<div class='photoprint_sizehint_wrapper'>
-						<img src="img/photoprint/photoprint_sizehint_creditcard_00000.png">
+						<div class='photoprint_polaroidframe_wrapper'>
+							<div class='polaroid_sixinch'>
+								<label>6寸</label>
+								<div></div>
+							</div>
+							<div class='polaroid_fiveinch'>
+								<label>5寸</label>
+								<div></div>
+							</div>
+							<div class='polaroid_fourinch4r'>
+								<label>4寸</label>
+								<div></div>
+							</div>
+							<div class='polaroid_threeinch4d'>
+								<label>3寸</label>
+								<div></div>
+							</div>
+							<img src="img/default/photoprint_sizesample.jpg">
+						</div>
 					</div>
 					<div class='photoprint_speclist_wrapper'>
 						<table>
@@ -270,52 +323,29 @@
 								<tr>
 									<td>规格</td>
 									<td>英寸</td>
-									<td>最佳像素</td>
 									<td>价格</td>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>5寸（3R）</td>
-									<td>5x3.5</td>
-									<td>1200x840以上</td>
-									<td>￥ 0.35</td>
-								</tr>
-								<tr>
-									<td>大5寸（3D）</td>
-									<td>5x3.5</td>
-									<td>1200x840以上</td>
-									<td>￥ 0.45</td>
-								</tr>
-								<tr>
-									<td>6寸（4R）</td>
+									<td>3寸拍立得</td>
 									<td>6x4</td>
-									<td>1400x960以上</td>
-									<td>￥ 0.55</td>
-								</tr>
-								<tr>
-									<td>大6寸（4D）</td>
-									<td>6x4</td>
-									<td>1400x960以上</td>
 									<td>￥ 0.65</td>
 								</tr>
 								<tr>
-									<td>7寸（5R）</td>
-									<td>7x5</td>
-									<td>1680x1200以上</td>
-									<td>￥ 0.75</td>
+									<td>4寸拍立得</td>
+									<td>6x4</td>
+									<td>￥ 0.55</td>
 								</tr>
 								<tr>
-									<td>8寸（6R）</td>
-									<td>8x6</td>
-									<td>1920x1440以上</td>
-									<td>￥ 0.85</td>
+									<td>5寸拍立得</td>
+									<td>5x3.5</td>
+									<td>￥ 0.45</td>
 								</tr>
 								<tr>
-									<td>10寸（8R）</td>
-									<td>8x10</td>
-									<td>3000x2400以上</td>
-									<td>￥ 0.95</td>
+									<td>6寸拍立得</td>
+									<td>5x3.5</td>
+									<td>￥ 0.35</td>
 								</tr>
 							</tbody>
 						</table>
@@ -421,40 +451,101 @@
 	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
+		pricetab();
+		sizehint();
+	});
+
+	function sizehint() {
+		var photoframe = $('.photoprint_shframe_wrapper>div'),
+			imageUrl = $('.photoprint_shgraph_wrapper img').attr('src'),
+			normalFrameEl = $('.photoprint_shframe_wrapper div'),
+			polaroidFrameEl = $('.photoprint_polaroidframe_wrapper>div'),
+			normalCatelogEl = $('.photoprint_normalprint_wrapper table tbody tr'),
+			polaroidCatelogEl = $('.photoprint_polaroidprint_wrapper table tbody tr'),
+			normaltaggingVertiEl = $('.photoprint_normalprint_wrapper .vertical'),
+			normaltaggingHorilEl = $('.photoprint_normalprint_wrapper .horizonal'),
+			polaroidtaggingVertiEl = $('.photoprint_polaroidprint_wrapper .vertical'),
+			polaroidtaggingHorilEl = $('.photoprint_polaroidprint_wrapper .horizonal'),
+			normalSizeInfo = {
+				vertical: [12.7, 12.7, 15.2, 15.2, 12.7, 15.2, 20.3],
+				horizonal: [8.9, 9.52, 10.2, 11.4, 17.8, 20.3, 25.4]
+			},
+			polaroidSizeInfo = {
+				vertical: [3.5, 6, 7, 8, 9, 10],
+				horizonal: [5, 6, 7, 8, 9, 10]
+			}
+
+		normalFrameEl.each(function() {
+			$(this).css({
+				'background-image': 'url(' + imageUrl + ')',
+				'background-position': 'bottom right'
+			});
+		});
+		normalCatelogEl.hover(function() {
+			var index = $(this).index(),
+				length = index,
+				thisFrameEl = normalFrameEl.eq(index);
+			$(this).addClass('active').siblings().removeClass('active');
+			thisFrameEl.css({
+				'background-image': 'url(' + imageUrl + ')',
+				'z-index': 1
+			});
+			thisFrameEl.siblings('div').css({
+				'background-image': 'none',
+				'z-index': 0
+			});
+			normaltaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(normalSizeInfo.vertical[index] + ' cm')
+			normaltaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(normalSizeInfo.horizonal[index] + ' cm');
+			console.log($('.photoprint_shtagging_wrapper').height())
+			$('.photoprint_shtagging_wrapper .vertical p').align({
+				container: '.photoprint_shtagging_wrapper li'
+			});
+		});
+
+		polaroidFrameEl.each(function() {
+			$(this).find('div').css({
+				'background-image': 'url(' + imageUrl + ')',
+				'background-position': 'bottom right'
+			});
+		});
+		polaroidCatelogEl.hover(function() {
+			var index = $(this).index(),
+				length = index;
+			$(this).addClass('active').siblings().removeClass('active');
+			polaroidFrameEl.eq(index).css({
+				'z-index': 1
+			})
+			polaroidFrameEl.eq(index).siblings('div').css({
+				'z-index': 0
+			});
+
+		});
+	}
+
+
+	function pricetab() {
 		var paperprice = {
 			price: {
 				fujisuede: [1, 2, 3, 4, 5, 6, 7],
-				kodakglaze: [7, 6, 5, 4, 3, 2, 1],
 				fujiglaze: [7, 6, 5, 4, 3, 2, 1],
-				kodaksuede: [1, 2, 3, 4, 5, 6, 7]
+				kodaksuede: [1, 2, 3, 4, 5, 6, 7],
+				kodakglaze: [7, 6, 5, 4, 3, 2, 1]
 			}
 		};
+		//tab切换价格数据
 		$('.photoprint_printtypetab_wrapper li').click(function() {
 			var $this = $(this);
 			$this.addClass('active').siblings().removeClass('active');
 			var classname = $this.attr('class').replace(' active', '');
-			var replacedata=function(data, classname) {
+			var replacedata = function(data, classname) {
 				$('.photoprint_speclist_wrapper').eq(0).find('tbody tr').each(function(i) {
 					var $this = $(this);
-					switch (classname) {
-						case 'fujisuede':
-							$this.find('td').eq(3).text('￥ ' + data.price.fujisuede[i]);
-							break;
-						case 'kodakglaze':
-							$this.find('td').eq(3).text('￥ ' + data.price.kodakglaze[i]);
-							break;
-						case 'fujiglaze':
-							$this.find('td').eq(3).text('￥ ' + data.price.fujiglaze[i]);
-							break;
-						case 'kodaksuede':
-							$this.find('td').eq(3).text('￥ ' + data.price.kodaksuede[i]);
-							break;
-					}
+					$this.find('td').eq(3).text('￥ ' + data.price[classname][i]);
 				});
 			}
 			replacedata(paperprice, classname);
 		});
-	});
+	}
 	</script>
 </body>
 

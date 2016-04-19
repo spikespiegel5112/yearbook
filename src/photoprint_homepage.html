@@ -484,8 +484,7 @@
 			polaroidSizeInfo = {
 				vertical: [6.35, 7.6, 8.9, 10.2],
 				horizonal: [8.9, 10.2, 12.7, 15.2]
-				
-			}
+			};
 
 		normalFrameEl.each(function(i) {
 			var $this=$(this),
@@ -495,7 +494,6 @@
 				'background-position': 'bottom right',
 				'z-index':(normalFrameLength-i)
 			});
-			
 		});
 		normalCatelogEl.hover(function() {
 			var index = $(this).index(),
@@ -526,11 +524,6 @@
 			$this.css({
 				'z-index': (thisLength - i)
 			});
-			// if (i<1) {
-			// 	$this.css({
-			// 		'opacity': 0
-			// 	});
-			// };
 		});
 		polaroidCatelogEl.hover(function() {
 			var $this = $(this),
@@ -550,9 +543,7 @@
 				container: '.photoprint_polaroidprint_wrapper .photoprint_shtagging_wrapper li'
 			});
 		});
-
 	}
-
 
 	function pricetab() {
 		var paperprice = {

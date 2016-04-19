@@ -692,8 +692,8 @@
                                         <p>上传照片</p>
                                     </a>
                                 </li>
-                                <li class="select">
-                                    <a class="img" href="javascript:;">
+                                <li>
+                                    <a class="img select" href="javascript:;">
                                         <img src="img/default/album_cover01_.jpg">
                                         <span class="ybiconfont ybicon-ok"></span>
                                         <div class="progress">
@@ -970,10 +970,9 @@
                                 </li>
                             </ul>
                             <div class="tab_bt">
-                                <div class="btns">
-                                    <a class="add cm_fl" href="javascript:;">添加照片</a>
-                                    <a class="ok cm_fr" href="javascript:;">确定</a>
-                                    <a class="cancel cm_fr" href="javascript:;">取消</a>
+                                <div class="btns cm_fr">
+                                    <a class="cancel" href="javascript:;">取消</a>
+                                    <a class="ok" href="javascript:;">确定</a>
                                 </div>
                             </div>
                         </li>
@@ -1070,13 +1069,6 @@
 
         //弹出部分
         function popEditContainer(){
-            jQuery(".add_img_con").slide({
-                mainCell: ".bd > ul",
-                trigger: "click",
-                pnLoop: false,
-                autoPlay: false
-            });
-
             //编辑单张照片
             var popbox = $('.edit_pop_container');
             $('.img_con li img').click(function(){
@@ -1089,8 +1081,31 @@
             });
 
             //添加照片
+            jQuery(".add_img_con").slide({
+                mainCell: ".bd > ul",
+                trigger: "click",
+                pnLoop: false,
+                autoPlay: false
+            });
+
             $('.photo_edit .actbar .add').click(function(){
                 popbox.fadeIn('fast').addClass('add');
+            });
+
+            //选择所添加的照片
+            $('.uploaded .img .check').click(function(){
+                $(this).toggleClass('select');
+            });
+
+            //上传进度
+            $('.uploading .progress').each(function(){
+                var upPercent = $(this).find('b').text();
+                var height = 125 * (1 - parseFloat(upPercent)/100);
+                $(this).css('height',height);
+            });
+
+            $('.uploading .img').click(function(){
+                $(this).toggleClass('select');
             });
 
             //关闭弹出

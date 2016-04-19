@@ -1330,15 +1330,15 @@
 
 .photoprint_polaroidframe_wrapper .polaroid_threeinch4d{
 	width: 260px;
-	height: 205px;
+	height: 200px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_fourinch4r{
 	width: 350px;
-	height: 260px;
+	height: 255px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_fiveinch{
 	width: 440px;
-	height: 310px;
+	height: 305px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_sixinch{
 	width: 525px;
@@ -1346,7 +1346,7 @@
 }
 .photoprint_polaroidframe_wrapper .polaroid_threeinch4d div{
 	width: 200px;
-	height: 165px;
+	height: 150px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_fourinch4r div{
 	width: 285px;
@@ -1361,6 +1361,9 @@
 	height: 300px;
 }
 .photoprint_polaroidframe_wrapper label{
+    margin: 5px;
+    color: #999;
+    font-size: 14px;
 	position: absolute;
 }
 .photoprint_shtagging_wrapper{
@@ -1379,7 +1382,6 @@
 }
 .photoprint_shtagging_wrapper .vertical{
 	width: 13px;
-	height: 158px;
 	border-top: 1px solid #bbb;
 	border-bottom: 1px solid #bbb;
 	right: 18px;
@@ -1395,8 +1397,6 @@
 	left: 6px;
 }
 .photoprint_shtagging_wrapper .horizonal{
-	width: 217px;
-	height: 13px;
 	border-left: 1px solid #bbb;
 	border-right: 1px solid #bbb;
 	right: 31px;
@@ -1413,9 +1413,24 @@
 .photoprint_shtagging_wrapper p{
 	min-width: 40px;
 	font-size: 12px;
-	
 }
-
+.photoprint_normalprint_wrapper .photoprint_shtagging_wrapper .horizonal{
+    width: 217px;
+    height: 13px;
+}
+.photoprint_normalprint_wrapper .photoprint_shtagging_wrapper .vertical{
+    height: 158px;
+}
+.photoprint_polaroidprint_wrapper .photoprint_shtagging_wrapper .horizonal{
+    width: 266px;
+    height: 13px;
+}
+.photoprint_polaroidprint_wrapper .photoprint_shtagging_wrapper .vertical{
+    height: 197px;
+}
+.photoprint_polaroidprint_wrapper .photoprint_shtagging_wrapper .horizonal{
+    right: 36px;
+}
 
 
 

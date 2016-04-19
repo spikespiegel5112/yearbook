@@ -298,24 +298,34 @@
 					</div>
 					<div class='photoprint_sizehint_wrapper'>
 						<div class='photoprint_polaroidframe_wrapper'>
-							<div class='polaroid_sixinch'>
-								<label>6寸</label>
-								<div></div>
-							</div>
-							<div class='polaroid_fiveinch'>
-								<label>5寸</label>
+							<div class='polaroid_threeinch4d'>
+								<label>3寸</label>
 								<div></div>
 							</div>
 							<div class='polaroid_fourinch4r'>
 								<label>4寸</label>
 								<div></div>
 							</div>
-							<div class='polaroid_threeinch4d'>
-								<label>3寸</label>
+							<div class='polaroid_fiveinch'>
+								<label>5寸</label>
+								<div></div>
+							</div>
+							<div class='polaroid_sixinch'>
+								<label>6寸</label>
 								<div></div>
 							</div>
 							<img src="img/default/photoprint_sizesample.jpg">
 						</div>
+						<ul class='photoprint_shtagging_wrapper'>
+							<li class='vertical'>
+								<span></span>
+								<p></p>
+							</li>
+							<li class='horizonal'>
+								<span></span>
+								<p></p>
+							</li>
+						</ul>
 					</div>
 					<div class='photoprint_speclist_wrapper'>
 						<table>
@@ -483,7 +493,6 @@
 		});
 		normalCatelogEl.hover(function() {
 			var index = $(this).index(),
-				length = index,
 				thisFrameEl = normalFrameEl.eq(index);
 			$(this).addClass('active').siblings().removeClass('active');
 			thisFrameEl.css({
@@ -494,32 +503,45 @@
 				'background-image': 'none',
 				'z-index': 0
 			});
-			normaltaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(normalSizeInfo.vertical[index] + ' cm')
+			normaltaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(normalSizeInfo.vertical[index] + ' cm');
 			normaltaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(normalSizeInfo.horizonal[index] + ' cm');
-			console.log($('.photoprint_shtagging_wrapper').height())
 			$('.photoprint_shtagging_wrapper .vertical p').align({
 				container: '.photoprint_shtagging_wrapper li'
 			});
 		});
 
-		polaroidFrameEl.each(function() {
-			$(this).find('div').css({
+		polaroidFrameEl.each(function(i) {
+			var $this = $(this),
+				thisLength = polaroidFrameEl.length;
+			$this.find('div').css({
 				'background-image': 'url(' + imageUrl + ')',
 				'background-position': 'bottom right'
 			});
+			$this.css({
+				'z-index': (thisLength - i)
+			});
+			// if (i<1) {
+			// 	$this.css({
+			// 		'opacity': 0
+			// 	});
+			// };
 		});
 		polaroidCatelogEl.hover(function() {
-			var index = $(this).index(),
-				length = index;
-			$(this).addClass('active').siblings().removeClass('active');
+			var $this = $(this),
+				length = $this.length,
+				index = $this.index(),
+				thisFrameEl = polaroidFrameEl.eq(index);
+			$this.addClass('active').siblings().removeClass('active');
 			polaroidFrameEl.eq(index).css({
-				'z-index': 1
+				'opacity': 1
 			})
-			polaroidFrameEl.eq(index).siblings('div').css({
-				'z-index': 0
+			polaroidFrameEl.eq(index).prev('div').css({
+				'opacity': 0
 			});
-
+			polaroidtaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(normalSizeInfo.vertical[index] + ' cm')
+			polaroidtaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(normalSizeInfo.horizonal[index] + ' cm');
 		});
+
 	}
 
 

@@ -3239,6 +3239,21 @@
     border-radius: 8px;
 }
 
+.order_list li li.illustration.photo img{
+    width: 125px;
+    height: 125px;
+    border: 2px solid #ddd;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+.order_list li li.illustration.photo h5{
+    font-size: 12px;
+    color: #666;
+}
+.order_list li li.illustration.photo h5 span{
+    margin: 0 4px;
+}
+
 li.action ul li
 {
     line-height: 45px;
@@ -3421,6 +3436,13 @@ li.action div:hover
     padding: 5px 0;
 }
 
+.order_details .opd_checklist_wrapper td .img span{
+    display: block;
+    padding: 5px 0;
+    font-size: 28px;
+    color: #ff696a;
+}
+
 .order_details .opd_checklist_wrapper td .book.photo span
 {
     font-size: 30px;
@@ -3435,7 +3457,7 @@ li.action div:hover
     color: #70ca5d;
 }
 
-.order_details .opd_product_info div
+.order_details .opd_product_info .cover
 {
     width: 90px;
     height: 115px;
@@ -4300,6 +4322,68 @@ li.action div:hover
 	top: 5px;
 	right: 55px;
 }*/
+.photoprint .opd_checklist_wrapper thead tr th:nth-child(1){
+    width: 220px;
+}
+.photoprint .order_details thead tr th:nth-child(1){
+    width: 110px;
+}
+.photoprint .opd_product_info{
+    overflow: hidden;
+}
+.photoprint .opd_product_info .photo{
+    float: left;
+    margin: 5px 15px 5px 20px;
+    width: 86px;
+    height: 86px;
+    border: 2px solid #ddd;
+}
+.photoprint .order_details .opd_product_info .photo,
+.photoprint .order_details .opd_product_info .config{
+    float: none;
+    margin: 5px auto;
+}
+.photoprint .order_details .opd_product_info .config{
+    line-height: 20px;
+    height: 20px;
+    margin: 0;
+}
+.photoprint .opd_product_info .config{
+    float: left;
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #666;
+    height: 35px;
+    line-height: 35px;
+}
+.photoprint .opd_product_info .config span{
+    margin: 0 4px;
+}
+.photoprint .opd_sketch_item select{
+    display: block;
+    text-align: center;
+    width: 92px;
+    margin: 3px auto;
+}
+.photoprint td .price{
+    margin: 10px auto;
+    height: 35px;
+    line-height: 35px;
+    color: #f00;
+}
+.photoprint td:nth-child(4) .price{
+    color: #ff696a;
+}
+.photoprint .opd_checklist_wrapper .ybcommon_counter_item{
+    margin: 20px auto;
+}
+.photoprint .opd_actions div,
+.photoprint .order_details td .txt span{
+    display: block;
+    margin: 10px auto;
+    height: 35px;
+    line-height: 35px;
+}
 
 .opd_checklist_wrapper,
 .opd_checklist_wrapper table
@@ -4409,7 +4493,7 @@ li.action div:hover
     text-overflow: ellipsis;
 }
 
-.opd_product_info div
+.opd_product_info .cover
 {
     line-height: 125px;
 

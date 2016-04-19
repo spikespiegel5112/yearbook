@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>3.12 照片冲印-确认订单</title>
+	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1460348402_2979512.css" type="text/css" media="all">
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/pc.css" type="text/css" media="all">
+	<!-- endbuild -->
+</head>
+
+<body>
+	<!--头部导航-->
+    <div class="yb_cm_header cm_min_width">
+        <div class="shortcut_container">
+            <div class="shortcut">
+                <p class="login_info">
+                    <span class="welcome_info">
+                        <span>忆尔欢迎您！</span>
+                        <a target="_top" class="" href="javascript:;" title="">登录</a>
+                    </span>
+                    <span class="welcome_info">
+                        <a class="" target="_top" href="javascript:;">注册</a>
+                    </span>
+                </p>
+                <ul class="quick_menu">
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮助中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main_nav">
+            <div class="header_con">
+                <div class="logo">
+                    <a href="index.html"><img src="img/cm_header_logo.png"></a>
+                </div>
+                <div class="yb_menu">
+                    <a class="menu_hd" href="javascript:;"><i class="ybiconfont ybicon-user"></i>我的忆尔<b class="icon-caret-down"></b></a>
+                    <div class="menu_bd">
+                        <div class="menu_bd_panel">
+                            <a href="pc_mybookshelf.html"><i class="ybiconfont ybicon-bookshelf"></i>我的书架</a>
+                            <a href="pc_myorder_list.html"><i class="ybiconfont ybicon-orderlist"></i>我的订单</a>
+                            <a href="pc_myMessage.html"><i class="ybiconfont ybicon-message"></i>我的消息</a>
+                            <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-shop"></i>我的店铺</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="booklist_photo.html">照片书</a></li>
+                        <li><a href="javascript:;">团队册</a></li>
+                        <li><a class="active" href="javascript:;">照片冲印</a></li>
+                        <li><a href="activity_1603.html">促销活动</a></li>
+                        <li><a href="static_instruction_entrance.html">使用指南</a></li>
+                        <li><a href="pc_shop_admin.html">开店赚钱</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cm_header_shadow"></div>
+    </div>
+    <div class="main_container create_order photoprint"><!--确认订单-照片冲印 class:photoprint-->
+        <div class='opd_wrapper'>
+            <div class="opd_title">
+                <h1><span></span>我的订单</h1>
+                <div class="progress_bar">
+                    <ul>
+                        <li class="cur">
+                            <div><span>1</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>配置&优惠券</p>
+                        </li>
+                        <li class="">
+                            <div><span>2</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>填写收货地址</p>
+                        </li>
+                        <li>
+                            <div><span>3</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>在线支付</p>
+                        </li>
+                        <li>
+                            <div><span>4</span><i class="ybiconfont ybicon-ok"></i></div>
+                            <p>等待收货</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class='opd_checklist_wrapper'>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>商品信息</th>
+                        <th>相纸选择</th>
+                        <th>尺寸选择</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>总价</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="opd_product_info">
+                                <div class="photo"><img src="img/default/photoprint_default.jpg"></div>
+                                <div class="config"><span>5寸</span><span>富士光面</span><span>*2</span></div>
+                                <div class="config"><span>5寸</span><span>富士绒面</span><span>*3</span></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option>富士光面</option>
+                                    <option>富士绒面</option>
+                                    <option>柯达光面</option>
+                                    <option>柯达绒面</option>
+                                    <option>拍立得光面</option>
+                                    <option>拍立得绒面</option>
+                                </select>
+                            </div>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option>富士光面</option>
+                                    <option>富士绒面</option>
+                                    <option>柯达光面</option>
+                                    <option>柯达绒面</option>
+                                    <option>拍立得光面</option>
+                                    <option>拍立得绒面</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option>5寸</option>
+                                    <option>大5寸</option>
+                                    <option>6寸</option>
+                                    <option>大6寸</option>
+                                    <option>7寸</option>
+                                    <option>8寸</option>
+                                    <option>10寸</option>
+                                </select>
+                            </div>
+                            <div class='opd_sketch_item'>
+                                <select>
+                                    <option>5寸</option>
+                                    <option>大5寸</option>
+                                    <option>6寸</option>
+                                    <option>大6寸</option>
+                                    <option>7寸</option>
+                                    <option>8寸</option>
+                                    <option>10寸</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class='opd_unitprice_item'>
+                            <div class="price">￥0.45</div>
+                            <div class="price">￥0.55</div>
+                        </td>
+                        <td>
+                            <div class='ybcommon_counter_item'>
+                                <a href="javascript:;">-</a>
+                                <input type='text' value='2'>
+                                <a href="javascript:;">+</a>
+                            </div>
+                            <div class='ybcommon_counter_item'>
+                                <a href="javascript:;">-</a>
+                                <input type='text' value='3'>
+                                <a href="javascript:;">+</a>
+                            </div>
+                        </td>
+                        <td class="opd_summaraize_item">
+                            <div class="price"><span>￥</span><label>0.90</label></div>
+                            <div class="price"><span>￥</span><label>1.65</label></div>
+                        </td>
+                        <td>
+                            <div class="opd_actions">
+                                <div class="eidt"><a href="javascript:;"><i class="ybiconfont ybicon-pencil"></i>编辑</a></div>
+                                <div class="delete"><a href="javascript:;"><i class="ybiconfont ybicon-trash"></i>移除</a></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='opd_summarize_wrapper'>
+                <div class='opd_preferential_wrapper'>
+                    <div class='opd_coupon_wrapper'>
+                        <div>
+                            <label>选择我的优惠券</label>
+                            <select>
+                                <option>满50减10</option>
+                                <option>满100减20</option>
+                                <option>满200减40</option>
+                                <option>满400减80</option>
+                                <option>满500减100</option>
+                                <option>满5000减1000</option>
+                                <option>一二三四五六七八九十一二三四五</option>
+                            </select>
+                            <a class='common_btn' href="javascript:;">我要兑换优惠券</a>
+                        </div>
+                        <div>
+                            <div class='ybcommon_queryicon_item'>
+                                <span class='ybiconfont ybicon-querysolid'></span>
+                                <div>
+                                    <p>
+                                        关注忆尔公众号领取优惠券
+                                    </p>
+                                    <a class='ybcommon_qimoredetail_btn' href="static_hc_coupon.html" target='_blank'>查看详情</a>
+                                </div>
+                            </div>
+                            <label>兑换我的优惠券</label>
+                            <ul class='common_serialnumber_item'>
+                                <li>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                                <li>
+                                    <span>-</span>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                                <li>
+                                    <span>-</span>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                                <li>
+                                    <span>-</span>
+                                    <input type='text' maxlength='4'>
+                                </li>
+                            </ul>
+                            <a class='common_btn' href="javascript:;">确认</a>
+                        </div>
+                    </div>
+                    <div class='opd_privilege_wrapper'>
+                        <p><a class="ybiconfont ybicon-down1" href="javascript:;"></a>已享受的优惠</p>
+                        <ul style="display: none">
+                            <li>
+                                <label>[活动]</label><span>全场书册免费包邮配送</span>
+                            </li>
+                            <li>
+                                <span>满50减10</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='opd_subtotal_wrapper'>
+                    <ul>
+                        <li class='opd_mercprice_item'>
+                            <label>商品金额：</label>
+                            <strong>
+                                ￥<span>5.10</span>
+                            </strong>
+                        </li>
+                        <li class='opd_privprice_item'>
+                            <label>优惠金额：</label>
+                            <strong>
+                                ￥<span>0.00</span>
+                            </strong>
+                        </li>
+                    </ul>
+                    <div class='opd_subtotalprice_item'>
+                        <label>合计：</label>
+                        <strong>
+                            ￥<span>5.10</span>
+                        </strong>
+                    </div>
+                    <div class='opd_confirmbtn_wrapper'>
+                        <a class='opd_confirm_item' href="pc_order_fillorderinfo.html">确认下单</a>
+                    </div>
+                </div>
+                <div class='clearfloat'></div>
+            </div>
+            <!--活动推送ad-->
+            <div class="activity_push_wrap">
+                <a href="activity_1602_shareorder.html">
+                    <img src="img/default/activity_push01.jpg" alt="晒单赢现金红包">
+                </a>
+            </div>
+        </div>
+    </div>
+	<!--底部-->
+	<div class="footer new cm_min_width">
+		<div class="ft_service">
+			<div class="contact cm_fl">
+				<dl>
+					<dt>客服QQ：</dt>
+					<dd><a href="javascript:;">4000610127</a></dd>
+					<dt>客服电话：</dt>
+					<dd><a href="javascript:;">400-061-0127</a></dd>
+					<dt>在线时间：</dt>
+					<dd>周一~周日 9:00-22:00</dd>
+					<dt>官方微信：</dt>
+					<dd>
+						<div>
+							<img src="img/footer_wx.png" alt="官方微信">
+							<p>关注微信公众号
+								<br><span>领取优惠券</span></p>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="ft_nav cm_fl">
+				<dl class="forel1">
+					<dt>关于忆尔</dt>
+					<dd>
+						<div><a target="_blank" href="static_hc_story.html">忆尔的故事</a></div>
+						<div><a target="_blank" href="static_hc_callme.html">联系我们</a></div>
+						<div><a target="_blank" href="static_hc_secret.html">用户隐私条款</a></div>
+						<div><a target="_blank" href="static_hc_feedback.html">意见反馈</a></div>
+					</dd>
+				</dl>
+				<dl class="forel2">
+					<dt>购买指南</dt>
+					<dd>
+						<div><a target="_blank" href="static_hc_course.html">制作教程</a></div>
+						<div><a target="_blank" href="static_hc_question.html">常见问题</a></div>
+						<div><a target="_blank" href="static_hc_coupon.html">优惠券使用</a></div>
+					</dd>
+				</dl>
+				<dl class="forel3">
+					<dt>支付及配送</dt>
+					<dd>
+						<div><a target="_blank" href="static_hc_payway.html">支付方式</a></div>
+						<div><a target="_blank" href="static_hc_dispatching.html">配送方式</a></div>
+						<div><a target="_blank" href="static_hc_service.html">质量保证</a></div>
+						<div><a target="_blank" href="static_hc_invoice.html">发票说明</a></div>
+					</dd>
+				</dl>
+			</div>
+			<div class="yb_encyclopedia cm_fl">
+				<h4>忆尔百科</h4>
+				<ul>
+					<li>
+						<a href="javascript:;">如何制作一本照片书？</a>
+					</li>
+					<li>
+						<a href="javascript:;">什么叫互动册？</a>
+					</li>
+					<li>
+						<a href="javascript:;">大学毕业册应该如何制作？</a>
+					</li>
+					<li>
+						<a href="javascript:;">同学聚会是我们都做些什么？</a>
+					</li>
+					<li>
+						<a href="javascript:;">如何制作一本照片书？</a>
+					</li>
+					<li>
+						<a href="javascript:;">什么叫互动册？</a>
+					</li>
+					<li>
+						<a href="javascript:;">大学毕业册应该如何制作？</a>
+					</li>
+					<li>
+						<a href="javascript:;">同学聚会是我们都做些什么？</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ft_copyright">
+			<p>Copyright 2015 网上经营许可证号：苏ICP备11087253号-2</p>
+			<div><a href="static_hc_company_profile.html">北京众志和达数据计算有限公司</a></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3'></script>
+	<script type="text/javascript" src='assets/js/jquery.SuperSlide.2.1.2.js'></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		orderConfirm();
+		$('.ybcommon_counter_item').priceCalculator();
+		serialNumber();
+		ybcommonqueryicon();
+	})
+
+	function orderConfirm() {
+		//已享受的优惠的下拉效果
+		var flag = false;
+		$('.opd_privilege_wrapper p a').click(function() {
+			var $this = $(this);
+
+			if (flag) {
+                $this.removeClass('ybicon-up1').addClass('ybicon-down1');
+				$('.opd_privilege_wrapper ul').stop().slideUp();
+				flag = false;
+			} else {
+				$this.addClass('ybicon-up1').removeClass('ybicon-down1');
+				$('.opd_privilege_wrapper ul').stop().slideDown();
+				flag = true;
+			}
+		});
+
+        //删除订单
+        $('.opd_actions .delete').click(function(){
+            var $this = $(this);
+            art.dialog({
+                title: '删除照片',
+                lock : true,
+                icon: 'warning',
+                content: '确认删除此照片？',
+                okValue: '确 定',
+                ok: function() {
+                    if(!($this.closest('tbody').find('tr').length == 1)){
+                        $this.closest('tr').remove();
+                    }
+                },
+                cancelValue: '取消',
+                cancel: function() {}
+            });
+        });
+	}
+
+	function serialNumber() {
+		var serialnumEl = $('.common_serialnumber_item');
+		// serialnumEl.find('input').each(function() {
+			serialnumEl.find('input').keyup(function() {
+				var $this = $(this),
+					thisParentEl = $this.parent(),
+					index=thisParentEl.index();
+				switch (index) {
+					case 0:
+						if ($this.val().length >= 4) {
+							alert(serialnumEl.find('li').eq(index+1).html())
+							serialnumEl.find('li').eq(index+1).focus(function(){
+								alert('aaa')
+							});
+						}
+					break;
+				}
+			})
+		// })
+	}
+	//hover问号显示信息提示
+	function ybcommonqueryicon(){
+		$('.ybcommon_queryicon_item').hover(function() {
+			$(this).find('div').show();
+		}, function() {
+			$(this).find('div').hide();
+		});
+	}
+	</script>
+</body>
+
+</html>

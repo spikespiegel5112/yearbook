@@ -477,12 +477,13 @@
 			polaroidtaggingVertiEl = $('.photoprint_polaroidprint_wrapper .vertical'),
 			polaroidtaggingHorilEl = $('.photoprint_polaroidprint_wrapper .horizonal'),
 			normalSizeInfo = {
-				vertical: [12.7, 12.7, 15.2, 15.2, 12.7, 15.2, 20.3],
-				horizonal: [8.9, 9.52, 10.2, 11.4, 17.8, 20.3, 25.4]
+				vertical: [8.9, 9.52, 10.2, 11.4, 12.7, 15.2, 20.3],
+				horizonal: [12.7, 12.7, 15.2, 15.2, 17.8, 20.3, 25.4]
 			},
 			polaroidSizeInfo = {
-				vertical: [3.5, 6, 7, 8, 9, 10],
-				horizonal: [5, 6, 7, 8, 9, 10]
+				vertical: [6.35, 7.6, 8.9, 10.2],
+				horizonal: [8.9, 10.2, 12.7, 15.2]
+				
 			}
 
 		normalFrameEl.each(function() {
@@ -538,8 +539,11 @@
 			polaroidFrameEl.eq(index).prev('div').css({
 				'opacity': 0
 			});
-			polaroidtaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(normalSizeInfo.vertical[index] + ' cm')
-			polaroidtaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(normalSizeInfo.horizonal[index] + ' cm');
+			polaroidtaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(polaroidSizeInfo.vertical[index] + ' cm')
+			polaroidtaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(polaroidSizeInfo.horizonal[index] + ' cm');
+			polaroidtaggingVertiEl.find('p').align({
+				container: '.photoprint_polaroidprint_wrapper .photoprint_shtagging_wrapper li'
+			});
 		});
 
 	}

@@ -476,6 +476,7 @@
 			normaltaggingHorilEl = $('.photoprint_normalprint_wrapper .horizonal'),
 			polaroidtaggingVertiEl = $('.photoprint_polaroidprint_wrapper .vertical'),
 			polaroidtaggingHorilEl = $('.photoprint_polaroidprint_wrapper .horizonal'),
+			normalFrameLength=normalFrameEl.length,
 			normalSizeInfo = {
 				vertical: [8.9, 9.52, 10.2, 11.4, 12.7, 15.2, 20.3],
 				horizonal: [12.7, 12.7, 15.2, 15.2, 17.8, 20.3, 25.4]
@@ -486,11 +487,15 @@
 				
 			}
 
-		normalFrameEl.each(function() {
-			$(this).css({
+		normalFrameEl.each(function(i) {
+			var $this=$(this),
+				length=$this.length;
+			$this.css({
 				'background-image': 'url(' + imageUrl + ')',
-				'background-position': 'bottom right'
+				'background-position': 'bottom right',
+				'z-index':(normalFrameLength-i)
 			});
+			
 		});
 		normalCatelogEl.hover(function() {
 			var index = $(this).index(),

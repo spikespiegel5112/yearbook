@@ -232,7 +232,6 @@
     $(document).ready(function(){
         remResizing();
         initEditBookWrap();
-        popBottomMenu('.uploadImg1');
         loadBookProgress();
     });
 
@@ -335,7 +334,10 @@
         //编辑图片
         $('.uploadImg1').each(function(){
             //进度遮罩
-            $(this).before("<div class='loadPercent'><span>完成：<b>80%</b></span></div>");
+            $(this).before("<div class='loadPercent'><div class='mask'></div><span>完成：<b>20%</b></span></div>");
+            var upPercent = $(this).siblings().find('span b').text();
+            var height = (1 - parseFloat(upPercent)/100)*100 +'%';
+            $(this).siblings().find('.mask').css('height',height);
 
             //点我编辑
             $(this).before("<p class='clickEdit'><a href='javascript:;'>点我编辑</a></p>");
@@ -360,22 +362,26 @@
         });*/
     }
 
-    function popBottomMenu(selector){
-        $(selector).click(function(){
-            var optionsContainer = $('.cm_bottom_menu');
-            optionsContainer.fadeIn('fast').find('.options').addClass('active').removeClass('hide');
+    $('.uploadImg1').on('touchend',function(){
+        showFooterMenu();
+    });
 
-            //关闭
-            optionsContainer.find('a').click(function(e){
-                optionsContainer.find('a').each(function (e) {
-                    $(this).removeClass('selected');
-                });
-                $(this).addClass('selected');
-                optionsContainer.find('.options').addClass('hide').removeClass('active');
-                optionsContainer.fadeOut('fast');
-            })
+    function showFooterMenu(selector){
+        var optionsContainer = $('.cm_bottom_menu');
+        optionsContainer.fadeIn('fast').find('.options').addClass('active').removeClass('hide');
+        optionsContainer.find('a').click(function(e){
+            optionsContainer.find('a').each(function (e) {
+                $(this).removeClass('selected');
+            });
+            $(this).addClass('selected');
+            hideFooterMenu();
+        })
+    }
 
-        });
+    function hideFooterMenu(){
+        var optionsContainer = $('.cm_bottom_menu');
+        optionsContainer.find('.options').addClass('hide').removeClass('active');
+        optionsContainer.fadeOut('fast');
     }
 
     function remResizing(options) {

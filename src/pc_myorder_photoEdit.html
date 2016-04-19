@@ -840,86 +840,14 @@
             $(this).find('div').hide();
         });
 
-        $('.opd_sketch_item select').change(function() {
-            $this = $(this);
-            switch ($this.closest('td').index()) {
-                case 2:
-                    var selected = $this.find('option:selected'),
-                            relatedImgEl = $this.parent().find('img'),
-                            realterTextEl = $this.parent().find('.ybcommon_queryicon_item div p');
-                    switch (selected.val()) {
-                        case '别致小装（145mm×210mm）':
-                            relatedImgEl.attr('src', 'img/pc/min_size.png');
-                            realterTextEl.text('书册尺寸宽14.5cm，长21.0cm');
-                            break;
-                        case '气派大装（175mm×248mm）':
-                            relatedImgEl.attr('src', 'img/pc/max_size.png');
-                            realterTextEl.text('书册尺寸宽17.5cm，长s24.8cm');
-                            break;
-                    }
-                    break;
-                case 3:
-                    var selected = $this.find('option:selected'),
-                            relatedImgEl = $this.parent().find('img'),
-                            realterTextEl = $this.parent().find('.ybcommon_queryicon_item div p');
-                    switch (selected.val()) {
-                        case '平装（软）':
-                            relatedImgEl.attr('src', 'img/pc/paperback.png');
-                            realterTextEl.text('书册采用包装为胶装覆膜');
-                            break;
-                        case '精装（硬）':
-                            relatedImgEl.attr('src', 'img/pc/hardcover01.png');
-                            realterTextEl.text('书册采用包装为精装硬壳覆膜');
-                            break;
-                        case '蝴蝶装':
-                            relatedImgEl.attr('src', 'img/pc/butterflycover.png');
-                            realterTextEl.text('书册采用包装为精装硬壳覆膜，装订方式为蝴蝶装');
-                            break;
-                    }
-                    break;
-            }
-        });
-
-        //更换书册
-        $('.change_book').click(function(){
-            jQuery(".booklist_wrap").slide({
-                titCell: ".hd ul",
-                mainCell: ".bd ul",
-                autoPage: true,
-                effect: "left",
-                vis: 5,
-                trigger: "click",
-                scroll:5,
-                pnLoop:true
-            });
-            art.dialog({
-                title: '更换书册至订单',
-                lock : true,
-                content: document.querySelector('.load_obp_box')
-            });
-
-            //选择目标书册
-            $('.booklist li .bookcover').click(function(){
-                $('.booklist li .bookcover').each(function(){
-                    $(this).removeClass('selected');
-                });
-                $(this).addClass('selected');
-            })
-        });
-
-        //新增订单
-        $('.opd_actions .add').click(function(){
-            $(this).closest('tr').clone(true).insertBefore('.opd_checklist_wrapper tbody tr:first');
-        });
-
         //删除订单
         $('.opd_actions .delete').click(function(){
             var $this = $(this);
             art.dialog({
-                title: '删除书册',
+                title: '删除照片',
                 lock : true,
                 icon: 'warning',
-                content: '确认删除此书册？',
+                content: '确认删除此照片？',
                 okValue: '确 定',
                 ok: function() {
                     if(!($this.closest('tbody').find('tr').length == 1)){
@@ -946,7 +874,7 @@
 		addNewAddress();
 		citySelector();
 		deleteAddress();
-		commonInvoice();
+		//commonInvoice();
         orderConfirm();
         setDefaultAddress();
         $('.ybcommon_counter_item').priceCalculator();

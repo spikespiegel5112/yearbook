@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.11.1-照片冲印首页</title>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1460348402_2979512.css" type="text/css" media="all">
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/m_common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/m_photoprint.css" type="text/css" media="all">
+	<!-- endbuild -->
+</head>
+
+<body>
+	<div class='ybwechatheader_wrapper'>
+		<a class='left_btn back_btn' href='javascript:;'>
+			<span class="ybiconfont ybicon-backward1"></span>
+		</a>
+		<p>照片冲印</p>
+	</div>
+	<div class='main_container'>
+		<div class='photoprint_banner_wrapper'>
+			<img src="../img/m/banner/photoprint_index_banner.jpg">
+		</div>
+		<div class='photoprint_speclist_wrapper'>
+			<table>
+				<thead>
+					<tr>
+						<td>相纸材质</td>
+						<td>冲印尺寸</td>
+						<td>价格</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class='papertype' rowspan='7'>富士光面</td>
+						<td>5寸（3R）</td>
+						<td>￥ 0.35</td>
+					</tr>
+					<tr>
+						<td>大5寸（3D）</td>
+						<td>￥ 0.40</td>
+					</tr>
+					<tr>
+						<td>6寸（4R）</td>
+						<td>￥ 0.45</td>
+					</tr>
+					<tr>
+						<td>大6寸（4D）</td>
+						<td>￥ 0.50</td>
+					</tr>
+					<tr>
+						<td>7寸（5R）</td>
+						<td>￥ 0.90</td>
+					</tr>
+					<tr>
+						<td>8寸（6R）</td>
+						<td>￥ 1.80</td>
+					</tr>
+					<tr>
+						<td>10寸（8R）</td>
+						<td>￥ 5.00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class='photoprint_speclist_wrapper'>
+			<table>
+				<thead>
+					<tr>
+						<td>相纸材质</td>
+						<td>冲印尺寸</td>
+						<td>价格</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class='papertype' rowspan='7'>柯达绒面</td>
+						<td>5寸（3R）</td>
+						<td>￥ 0.38</td>
+					</tr>
+					<tr>
+						<td>大5寸（3D）</td>
+						<td>￥ 0.42</td>
+					</tr>
+					<tr>
+						<td>6寸（4R）</td>
+						<td>￥ 0.50</td>
+					</tr>
+					<tr>
+						<td>大6寸（4D）</td>
+						<td>￥ 0.60</td>
+					</tr>
+					<tr>
+						<td>7寸（5R）</td>
+						<td>￥ 1.20</td>
+					</tr>
+					<tr>
+						<td>8寸（6R）</td>
+						<td>￥ 3.00</td>
+					</tr>
+					<tr>
+						<td>10寸（8R）</td>
+						<td>￥ 5.00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class='photoprint_speclist_wrapper'>
+			<table>
+				<thead>
+					<tr>
+						<td>相纸材质</td>
+						<td>冲印尺寸</td>
+						<td>价格</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class='papertype' rowspan='2'>拍立得</td>
+						<td>5寸（3R）</td>
+						<td>￥ 0.6</td>
+					</tr>
+					<tr>
+						<td>6寸（4R）</td>
+						<td>￥ 0.65</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class='common_loadmore_item'>
+			<a href="javascript:;">点击查看更多</a>
+		</div>
+		<div class='photoprint_produce_wrapper'>
+			<a href="javascript:;">立即制作</a>
+		</div>
+	</div>
+	<script type="text/javascript" src='../assets/js/jquery.min.js'></script>
+	<!-- build:js js/all.js -->
+	<script type="text/javascript" src="../js/m_base.js"></script>
+	<!-- endbuild -->
+	<script type="text/javascript">
+	$(function() {
+		$.remResizing({
+			fontsize: 20
+		});
+		init();
+	})
+
+	function init() {
+		var listEl = $('.photoprint_speclist_wrapper');
+		listEl.each(function(i) {
+			if (i > 0) {
+				listEl.eq(i).hide();
+			};
+		});
+		$('.common_loadmore_item').on('touchend', function() {
+			var $this = $(this);
+			listEl.each(function(i) {
+				if ($(this).is(':hidden')) {
+					$(this).show();
+					return false;
+				};
+				if (i == listEl.length - 2) {
+					$this.text('已加载完毕');
+				};
+			})
+		})
+	}
+	</script>
+</body>
+
+</html>

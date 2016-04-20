@@ -320,9 +320,9 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
-				aligncenter: true,
-				keepportrait:false,
-				keeplandscape:false
+				aligncenter: false,
+				keepportrait: false,
+				keeplandscape: false
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -336,31 +336,31 @@
 			});
 
 			function sizeConstraint() {
-				if(options.keepportrait){
+				if (options.keepportrait) {
 					orientationSensor({
-						portrait:function(){
+						portrait: function() {
 							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
-						landscape:function(){
+						landscape: function() {
 							windowWidth = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
-				}else if(options.keeplandscape){
+				} else if (options.keeplandscape) {
 					orientationSensor({
-						portrait:function(){
+						portrait: function() {
 							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
-						landscape:function(){
+						landscape: function() {
 							windowWidth = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
-				}else{
+				} else {
 					windowWidth = $(window).width(),
-					windowHeight = $(window).height();
+						windowHeight = $(window).height();
 				}
 
 				var factor = 0;
@@ -397,7 +397,7 @@
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
-							'width': windowWidth
+							'width': options.maxwidth
 						})
 					}
 					//alert(windowWidth)

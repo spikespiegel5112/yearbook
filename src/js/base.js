@@ -800,10 +800,12 @@
 			if (typeof config.offset == 'string') {
 				$(config.offset).each(function(i) {
 					offsetVal[i] = Number($(this).val());
-					index = i;
+					// index = i;
 				});
 			} else if (typeof config.offset == 'number') {
-				offsetVal[0] = config.offset;
+				_this.each(function(i) {
+					offsetVal[i] = config.offset;
+				});
 			}
 
 			_this.each(function(i) {
@@ -819,11 +821,12 @@
 				});
 				// _this.parent().eq(i).on(touchMove, function(e) {
 				$(document).on(touchMove, function(e) {
+					console.log(offsetVal[i])
 					if (isMousedown) {
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0],
 								moveX = touch.pageX - offsetLeft;
-							if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft) {
+							if (touch.clientX < offsetLeft + axisWidth - sliderWidth/2 && touch.clientX > offsetLeft) {
 								_this.eq(index).css('margin-left', moveX-sliderWidth/2);
 							};
 						} else {
@@ -834,14 +837,14 @@
 						}
 						if (moveX < 0) {
 							progress = 0;
-						} else if (moveX > axisWidth+sliderWidth) {
-							// alert('aaa')
-							progress = axisWidth+sliderWidth;
+						} else if (moveX > axisWidth) {
+							progress = axisWidth;
 						} else {
-							progress = moveX+sliderWidth;
+							progress = moveX;
 						}
-						progress = progress * (config.density / axisWidth) + offsetVal[i];
+						progress = progress * (config.density / axisWidth) + offsetVal[index];
 						$(config.returnto).eq(index).val(Math.floor(progress));
+						console.log(progress)
 						if (typeof options == 'string') {
 							switch (options) {
 								case 'onchange':

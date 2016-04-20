@@ -44,7 +44,7 @@
 .edit_wrap .photo_options .option{
     display: inline-block;
     margin: 0 2px;
-    width: 105px;
+    width: 120px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -382,8 +382,9 @@
 
 .pp_edit_con .order_wrap .order_info tr td:nth-child(1){
     text-align: left;
-    width: 40%;
-    padding: 0 0 0 10px;
+    width: 46%;
+    padding: 0 0 0 8px;
+    white-space: nowrap;
 }
 
 .pp_edit_con .order_wrap .order_info tr td:nth-child(4){
@@ -538,39 +539,69 @@
 
 .edit_img_con .img_box .range{
     position: absolute;
-    left: 0;
-    top: 0;
-    margin: 0 50px;
-    width: 260px;
-    height: 100%;
     background: transparent;
     border: 2px solid #ff696a;
     box-sizing: border-box;
     cursor: move;
 }
 
-.edit_img_con .img_box .range::before,
-.edit_img_con .img_box .range::after{
+.edit_img_con .img_box .vertical{
+    left: 0;
+    top: 0;
+    margin: 0 52px;
+    width: 256px;
+    height: 100%;
+}
+
+.edit_img_con .img_box .vertical::before,
+.edit_img_con .img_box .vertical::after{
     content: " ";
     position: absolute;
-    top: 0;
+    top: -2px;
     width: 100px;
-    height: 100%;
+    height: 360px;
     background: rgba(0,0,0,.4);
 }
 
-.edit_img_con .img_box .range::before{
-    left: -100px;
+.edit_img_con .img_box .vertical::before{
+    left: -102px;
 }
 
-.edit_img_con .img_box .range::after{
-    right: -100px;
+.edit_img_con .img_box .vertical::after{
+    right: -102px;
+}
+
+.edit_img_con .img_box .horizontal{
+    left: 0;
+    top: 0;
+    margin: 52px 0;
+    width: 100%;
+    height: 256px;
+}
+
+.edit_img_con .img_box .horizontal::before,
+.edit_img_con .img_box .horizontal::after{
+    content: " ";
+    position: absolute;
+    left: -2px;
+    width: 360px;
+    height: 100px;
+    background: rgba(0,0,0,.4);
+}
+
+.edit_img_con .img_box .horizontal::before{
+    top: -102px;
+}
+
+.edit_img_con .img_box .horizontal::after{
+    bottom: -102px;
 }
 
 .edit_img_con .img_box .range p{
     position: absolute;
     bottom: 0;
-    left: 45px;
+    left: 50%;
+    margin-left: -86px;
     width: 170px;
     height: 22px;
     line-height: 22px;
@@ -588,9 +619,21 @@
 .edit_pop_container .edit_img_con .standard{
     float: right;
     margin: 0;
-    padding: 0 20px 0 25px;
+    padding: 0 10px 0 20px;
     width: 250px;
     box-sizing: border-box;
+}
+
+.edit_pop_container .standard .paper{
+    padding-left: 5px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #333;
+}
+
+.edit_pop_container .standard .paper select{
+    width: 125px;
+    height: 25px;
 }
 
 .edit_pop_container .standard table{
@@ -598,8 +641,8 @@
 }
 
 .edit_pop_container .standard tr{
-    height: 36px;
-    line-height: 36px;
+    height: 32px;
+    line-height: 32px;
     font-size: 16px;
     color: #333;
     border-bottom: 1px solid #ddd;

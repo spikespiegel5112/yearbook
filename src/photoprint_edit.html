@@ -532,11 +532,25 @@
             <div class="edit_img_con">
                 <div class="img_box">
                     <img src="img/default/book_manage_topic_img1.jpg">
-                    <div class="range" draggable="true">
+                    <div class="range vertical hidden" draggable="true"><!--竖向照片class:vertical-->
+                        <p><i class="ybiconfont ybicon-alert1"></i>红色区域为实际冲洗范围</p>
+                    </div>
+                    <div class="range horizontal" draggable="true"><!--横向照片：class:horizontal-->
                         <p><i class="ybiconfont ybicon-alert1"></i>红色区域为实际冲洗范围</p>
                     </div>
                 </div>
                 <div class="standard">
+                    <div class="paper">
+                        <label>相纸选择：</label>
+                        <select>
+                            <option>富士绒面</option>
+                            <option>富士光面</option>
+                            <option>柯达绒面</option>
+                            <option>柯达光面</option>
+                            <option>拍立得绒面（20）</option>
+                            <option>拍立得光面</option>
+                        </select>
+                    </div>
                     <table>
                         <thead>
                         <tr>

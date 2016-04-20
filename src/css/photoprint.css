@@ -28,7 +28,7 @@
     position: relative;
     margin: 10px 0;
     padding: 0 20px;
-    height: 42px;
+    overflow: hidden;
 }
 
 .edit_wrap .photo_options div label{
@@ -43,13 +43,22 @@
 
 .edit_wrap .photo_options .option{
     display: inline-block;
-    margin: 0 2px;
-    width: 120px;
+    margin: 0;
+    width: 128px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     border: 1px dashed #ddd;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+    .edit_wrap .photo_options .paper .option{
+        width: 105px;
+    }
+    .edit_wrap .photo_options .size ul{
+        width: 90%;
+    }
 }
 
 .edit_wrap .photo_options .option a{
@@ -184,6 +193,12 @@
     width: 100%;
     background-color: #fff;
     box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1024px) {
+    .edit_wrap .photo_edit .img_con{
+        max-height: 442px;
+    }
 }
 
 .photo_edit .img_con ul{
@@ -393,6 +408,15 @@
 
 .pp_edit_con .order_wrap .order_info tr td:nth-child(5){
     width: 10%;
+}
+
+@media only screen and (max-width: 1024) {
+    .pp_edit_con .order_wrap .order_info tr td:nth-child(1) div{
+        max-width: 90px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .order_wrap .order_info tr td .delete{
@@ -799,8 +823,8 @@
 }
 
 .modify_con .standard tr{
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
 }
 
 .modify_con .standard td select{
@@ -810,12 +834,12 @@
 }
 
 .modify_con .standard .btns{
-    margin: 40px 0 20px;
+    margin: 20px 0;
 }
 
 .modify_con .standard .btns a{
-    height: 40px;
-    line-height: 40px;
+    height: 35px;
+    line-height: 35px;
 }
 
 .modify_con .standard .btns .cancel{

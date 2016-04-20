@@ -2532,6 +2532,12 @@
     background-color: #fff;
 }
 
+.order_manage.photoprint .order_list .order_info{
+    margin: 0;
+    border-top: 0;
+    border-bottom: 1px solid #ddd;
+}
+
 .order_manage .account_wrap .price
 {
     font-size: 20px;
@@ -2634,6 +2640,10 @@
     float: right;
 }
 
+.photoprint .order_info .ot .sumprice{
+    color: #f00;
+}
+
 .order_info .om
 {
     position: relative;
@@ -2643,7 +2653,8 @@
     padding: 5px 0 15px;
 }
 
-.order_info .om .book
+.order_info .om .book,
+.order_info .om .photo
 {
     float: left;
 
@@ -2655,7 +2666,13 @@
     border: 1px solid #ccc;
 }
 
-.order_info .om .book img
+.order_info .om .photo{
+    width: 105px;
+    height: 105px;
+}
+
+.order_info .om .book img,
+.order_info .om .photo img
 {
     width: 100%;
     height: 100%;
@@ -2668,6 +2685,10 @@
     margin-left: 10px;
     padding-left: 90px;
 }
+.photoprint .order_info .om .bd_wrap{
+    padding-left: 105px;
+}
+
 
 .order_info .om .bd_wrap ul
 {
@@ -2696,6 +2717,18 @@
     bottom: 14px;
 
     color: #ccc;
+}
+
+.photoprint .order_info .om .edit_order{
+    bottom: 48px;
+}
+
+.photoprint .order_info .om .delete{
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+    color: #ccc;
+    font-size: 16px;
 }
 
 .order_info .od_btn_wrap
@@ -2743,7 +2776,7 @@
     height: 55px;
     padding: 0 10px;
 
-    text-align: right;
+    text-align: left;
 
     border-top: 2px solid #ccc;
     background-color: #fff;
@@ -2830,6 +2863,46 @@
 .order_info .om .bd_wrap .style .item.selected i
 {
     display: block;
+}
+
+/*编辑照片冲印订单*/
+.edit_order_container{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+    background: rgba(0,0,0,.6);
+}
+
+.edit_order_container .pp_edit_wrap{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 6px 6px 0 0;
+}
+
+.edit_order_container .pp_edit_wrap .select_item .title{
+    margin: 10px 5px 5px;
+}
+
+.edit_order_container .pp_edit_wrap .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #666;
+    opacity: 1;
+    z-index: 1;
+}
+
+.edit_order_container .pp_edit_wrap .close:hover{
+    color: #f60;
 }
 
 /*~~~~~~~~~~ yb3.11 confirm receive info ~~~~~~~~~~*/

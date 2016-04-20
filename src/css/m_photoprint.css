@@ -67,78 +67,6 @@
     box-sizing: border-box;
 }
 
-.pp_edit_wrap .select_item .title{
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 16px;
-    color: #999;
-    font-weight: normal;
-}
-
-.select_item .title span{
-    color: #333;
-}
-
-.pp_edit_wrap .select_item .option{
-    position: relative;
-    display: inline-block;
-    margin: 5px 2px;
-    width: 105px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
-    text-align: center;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 320px) {
-    .pp_edit_wrap .select_item .option{
-        margin: 5px 0;
-        width: 95px;
-        font-size: 13px;
-    }
-}
-
-.pp_edit_wrap .select_item.size .option{
-    height: 36px;
-}
-
-.pp_edit_wrap .select_item.size .option div{
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
-    height: 18px;
-    line-height: 18px;
-}
-
-.pp_edit_wrap .select_item .option.select{
-    border: 1px solid #ff696a;
-}
-
-.pp_edit_wrap .select_item .option i{
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #fff;
-    width: 0;
-    height: 0;
-    font-size: 12px;
-    line-height: 10px;
-    border-width: 12px;
-    border-style: solid;
-    border-color: transparent #ff696a #ff696a transparent;
-}
-
-.pp_edit_wrap .select_item .option.select i{
-    display: block;
-}
-
-.select_item .option a {
-    color: #333;
-}
-
 .select_item .upload_list{
     position: relative;
     margin: 0 auto;
@@ -264,7 +192,7 @@
     background-color: #fff;
 }
 
-.pp_edit_wrap .account_wrap .price {
+.account_wrap .price {
     float: left;
     text-align: left;
     line-height: 20px;
@@ -273,43 +201,134 @@
     color: #333;
 }
 
-.pp_edit_wrap .account_wrap .price li:first-child{
+.account_wrap .price li:first-child{
     font-size: 14px;
     color: #666;
 }
 
-.pp_edit_wrap .account_wrap .price span{
+.account_wrap .price span{
     margin-right: 5px;
 }
 
-.pp_edit_wrap .account_wrap .price label{
+.account_wrap .price label{
     font-weight: normal;
 }
 
-.pp_edit_wrap .account_wrap .price li:nth-child(2) span{
+.account_wrap .price li:nth-child(2) span{
     color: #f00;
 }
 
-.pp_edit_wrap .account_wrap .price li:nth-child(2) b{
+.account_wrap .price li:nth-child(2) b{
     font-size: 24px;
 }
 
-.pp_edit_wrap .account_wrap .om_btn_wrap {
+.pp_edit_wrap .account_wrap .om_btn_wrap ,
+.bill_confirm_con .account_wrap .om_btn_wrap {
     float: right;
     margin: 0;
 }
 
-.pp_edit_wrap .account_wrap a {
+.pp_edit_wrap .account_wrap a ,
+.bill_confirm_con .account_wrap a {
     font-size: 16px;
     line-height: 37px;
     display: inline-block;
     width: auto;
     padding: 0 10px;
     margin: 10px 0 0 8px;
+    min-width: 80px;
 }
 
 .pp_edit_wrap .account_wrap .disable{
     pointer-events: none;
     background-color: #cfcfcd;
     cursor: default;
+}
+
+.bill_confirm_con{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.bill_confirm_con .confirm_con{
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.bill_confirm_con .confirm_con .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #666;
+    opacity: 1;
+}
+
+.bill_confirm_con .confirm_con .close:hover{
+    color: #f60;
+}
+
+.bill_confirm_con .confirm_con h4{
+    float: left;
+    padding-left: 10px;
+    margin: 0;
+    color: #000;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.bill_confirm_con .confirm_con .des{
+    padding-left: 10px;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000;
+    clear: both;
+    background-color: #eee;
+}
+
+.bill_confirm_con .confirm_con .list{
+    width: 100%;
+}
+
+.confirm_con .list tr{
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.confirm_con .list tr td{
+    width: 21%;
+}
+
+.confirm_con .list tr td:first-child{
+    width: 30%;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.confirm_con .list tr td:nth-child(2){
+    width: 28%;
+}
+
+.bill_confirm_con .account_wrap{
+    position: relative;
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+    height: 60px;
+    overflow: hidden;
 }

@@ -59,7 +59,7 @@
                     <i class="ybiconfont ybicon-ok"></i>
                 </li>
                 <li class="option">
-                    <div>大5寸￥<span>0.35</span>/张</div>
+                    <div>大5寸(3D)￥<span>0.35</span>/张</div>
                     <div>(<span>0</span>)张</div>
                     <i class="ybiconfont ybicon-ok"></i>
                 </li>
@@ -178,17 +178,17 @@
                 <p>还没有上传任何照片，<br>上传后冲印</p>
             </div>
             <div class="om_btn_wrap">
-                <!--未上传照片按钮disable-->
-                <a class="om_btn disable" href="javascript:;">下单冲印</a>
+                <!--未上传照片按钮a标签addClass:disable-->
+                <a class="om_btn create_order" href="javascript:;">下单冲印</a>
             </div>
         </div>
     </div>
 </div>
 <!--冲印清单确认-->
-<div class="bill_confirm_con hidden">
+<div class="bill_confirm_con">
     <div class="confirm_con">
         <a class="close ybiconfont ybicon-closebtn" href="javascript:;"></a>
-        <h3>冲印清单确认</h3>
+        <h4>冲印清单确认</h4>
         <p class="des">普通照片冲印<span>12</span>张，拍立得<span>3</span>张</p>
         <table class="list">
             <tr>
@@ -198,27 +198,27 @@
                 <td><span>¥0.35</span></td>
             </tr>
             <tr>
-                <td><span>富士光面</span></td>
+                <td><span>富士绒面</span></td>
                 <td><span>5寸</span></td>
                 <td><span>2张</span></td>
                 <td><span>¥0.35</span></td>
             </tr>
             <tr>
-                <td><span>富士光面</span></td>
+                <td><span>柯达光面</span></td>
                 <td><span>5寸</span></td>
                 <td><span>2张</span></td>
                 <td><span>¥0.35</span></td>
             </tr>
             <tr>
-                <td><span>富士光面</span></td>
-                <td><span>5寸</span></td>
+                <td><span>拍立得绒面</span></td>
+                <td><span>大5寸（3D）</span></td>
                 <td><span>2张</span></td>
                 <td><span>¥0.35</span></td>
             </tr>
         </table>
         <div class="account_wrap">
             <div class="price">
-                <ul class="hidden">
+                <ul class="">
                     <li>
                         <label>单张：</label><span><b>￥0.35</b></span>
                         <label>冲印：</label><span><b>2</b>张</span>
@@ -235,5 +235,65 @@
         </div>
     </div>
 </div>
+<!--选择上传路径-->
+<div class="cm_bottom_menu">
+    <div class="options">
+        <ul>
+            <li><input class="input_file" type="file" value=""><a class="selected" href="javascript:;">从手机上传</a></li>
+            <li><a class="" href="javascript:;">从忆尔像册上传</a></li>
+            <li><a class="" href="javascript:;">取消上传</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        createOrder();
+        setPhotoOptions();
+    });
+    //上传照片弹出选择上传路径
+    $('.upload_btn').on('touchend',function(){
+        showFooterMenu();
+    });
+
+    function showFooterMenu(selector){
+        var optionsContainer = $('.cm_bottom_menu');
+        optionsContainer.fadeIn('fast').find('.options').addClass('active').removeClass('hide');
+        optionsContainer.find('a').click(function(e){
+            optionsContainer.find('a').each(function (e) {
+                $(this).removeClass('selected');
+            });
+            $(this).addClass('selected');
+            hideFooterMenu();
+        })
+    }
+
+    function hideFooterMenu(){
+        var optionsContainer = $('.cm_bottom_menu');
+        optionsContainer.find('.options').addClass('hide').removeClass('active');
+        optionsContainer.fadeOut('fast');
+    }
+
+    //立即下单弹出确认清单列表
+    function createOrder(){
+        var listCon = $('.bill_confirm_con');
+        $('.create_order').on('touchend',function(){
+            listCon.fadeIn('fast');
+
+        });
+
+        listCon.find('.close').click(function(e){
+            listCon.fadeOut('fast');
+            e.stopPropagation();
+        })
+    }
+
+    //选择照片相纸、尺寸
+    function setPhotoOptions(){
+        $('.select_item .option').click(function(){
+            $(this).addClass('select').siblings().removeClass('select');
+        });
+    }
+</script>
 </body>
 </html>

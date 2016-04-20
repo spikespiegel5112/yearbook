@@ -1479,6 +1479,18 @@
     border-bottom: 1px dotted #aaa;
 }
 
+.myorder .photoprint .order_head{
+    background-color: #f3f8f2;
+    border-bottom: 0;
+}
+
+.myorder .photoprint .order_footer{
+    margin: 0 10px;
+    padding: 0;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+}
+
 .myorder .orderinfo .order_num
 {
     float: left;
@@ -1546,6 +1558,23 @@
     }
 }
 
+.myorder .photoprint .order_footer .order_btns{
+    float: none;
+}
+
+.myorder .photoprint .order_btns a{
+    padding: 0 5px;
+    margin: 8px 4px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+
+.myorder .photoprint .order_btns .go_pay{
+    background-color: #f60;
+    color: #fff;
+    border: 1px solid #f60;
+}
+
 .myorder .order_btns .go_pay
 {
     color: #ff7e00;
@@ -1586,6 +1615,38 @@
     vertical-align: top;
 
     border: 1px solid #cfcfcf;
+}
+.orderinfo.photoprint .product table{
+    width: 95%;
+}
+.orderinfo.photoprint .product table td{
+    vertical-align: top;
+}
+.photoprint .order_confirm{
+    display: block;
+    margin: 0 5px;
+}
+.photoprint .order_confirm label{
+    float: left;
+    line-height: 20px;
+}
+.photoprint .order_confirm li{
+    height: 20px;
+    line-height: 20px;
+    padding-left: 38px;
+}
+
+.photoprint .opd_orderinfoprice_item{
+    vertical-align: top;
+    width: 15%;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.orderinfo.photoprint  .product .opd_productimg_item img{
+    width: 105px;
+    height: 105px;
+    border: 2px solid #cfcfcf;
 }
 
 .orderinfo .product td div
@@ -2536,6 +2597,11 @@
     margin: 0;
     border-top: 0;
     border-bottom: 1px solid #ddd;
+}
+
+.order_manage.photoprint .order_list .order_info:first-child{
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
 }
 
 .order_manage .account_wrap .price

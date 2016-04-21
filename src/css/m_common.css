@@ -768,6 +768,14 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 	color: #fff;
 }
 
+.ybwechatheader_wrapper .upload_btn span
+{
+    font-size: 24px;
+    line-height: 40px;
+
+    color: #fff;
+}
+
 /*.ybwechatheader_wrapper .search_btn span{
 	color: #fff;
 	font-size: 24px;
@@ -3195,6 +3203,11 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 	}
 }
 
+.cm_bottom_menu .options ul{
+    position: relative;
+    margin: 0;
+}
+
 .cm_bottom_menu .options li
 {
 	position: relative;
@@ -3214,8 +3227,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
 .cm_bottom_menu .options li a
 {
-	font-size: 18px;
-	line-height: 2.5rem;
+	font-size: 12px;
+	line-height: 2rem;
 
 	display: block;
 
@@ -3272,9 +3285,10 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 	font-size: 2rem;
 
 	position: absolute;
-	top: 50%;
+	/*top: 50%;*/
 
 	width: 100%;
+    height: 100%;
 
 	text-align: center;
 
@@ -3323,4 +3337,79 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 	display: inline-block;
 	width: 100%;
 	color: #000;
+}
+/*photoprint select option*/
+.pp_edit_wrap .select_item{
+    position: relative;
+    overflow: hidden;
+}
+.pp_edit_wrap .select_item .title{
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #999;
+    font-weight: normal;
+}
+
+.select_item .title span{
+    color: #333;
+}
+
+.pp_edit_wrap .select_item .option{
+    position: relative;
+    float: left;
+    margin: 5px 2px;
+    width: 114px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 320px) {
+    .pp_edit_wrap .select_item .option{
+        margin: 5px;
+        font-size: 14px;
+    }
+}
+
+.pp_edit_wrap .select_item.size .option{
+    height: 36px;
+}
+
+.pp_edit_wrap .select_item.size .option div{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    height: 18px;
+    line-height: 18px;
+}
+
+.pp_edit_wrap .select_item .option.select{
+    border: 1px solid #ff696a;
+}
+
+.pp_edit_wrap .select_item .option i{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    width: 0;
+    height: 0;
+    font-size: 12px;
+    line-height: 10px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent #ff696a #ff696a transparent;
+}
+
+.pp_edit_wrap .select_item .option.select i{
+    display: block;
+}
+
+.pp_edit_wrap .select_item .option a {
+    color: #333;
 }

@@ -48,3 +48,287 @@
     text-align: center;
     line-height: 2rem;
 }
+
+.pp_edit_wrap{
+    position: relative;
+    margin: 15px 0;
+    padding: 0 0 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+
+.pp_edit_wrap .select_item{
+    position: relative;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.select_item .upload_list{
+    position: relative;
+    margin: 0 auto;
+    height: 290px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.select_item .upload_list li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 4px;
+    margin: 5px 0 5px 0;
+    width: 95px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.upload_list li:first-child {
+    height: 122px;
+    background-color: #fff;
+    border: 2px dashed #dfdfdd;
+}
+
+.upload_list li .upload_btn {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.upload_list li .upload_btn .ybicon-upload {
+    padding: 30px 0 15px;
+    font-size: 50px;
+    color: #ccc;
+}
+
+.upload_list li .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 85px;
+    cursor: pointer;
+}
+
+.upload_list li .img.select {
+    border: 2px solid #00b8ee;
+    box-sizing: border-box;
+}
+
+.upload_list li .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.upload_list li .img > span {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    border-width: 18px;
+    border-style: solid;
+    border-color: transparent #00b8ee #00b8ee transparent;
+}
+
+.upload_list li .img.select > span{
+    display: block;
+}
+
+.upload_list li .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.upload_list li h5 {
+    float: left;
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #333;
+    height: 25px;
+    line-height: 25px;
+    max-width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.upload_list li .delete {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    line-height: 25px;
+    color: #333;
+}
+
+.upload_list li .delete:hover{
+    color: #00b8ee;
+}
+
+.pp_edit_wrap .account_wrap{
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    text-align: right;
+    border-top: 2px solid #ccc;
+    background-color: #fff;
+}
+
+.account_wrap .price {
+    float: left;
+    text-align: left;
+    line-height: 20px;
+    padding: 5px 0 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.account_wrap .price li:first-child{
+    font-size: 14px;
+    color: #666;
+}
+
+.account_wrap .price span{
+    margin-right: 5px;
+}
+
+.account_wrap .price label{
+    font-weight: normal;
+}
+
+.account_wrap .price li:nth-child(2) span{
+    color: #f00;
+}
+
+.account_wrap .price li:nth-child(2) b{
+    font-size: 24px;
+}
+
+.pp_edit_wrap .account_wrap .om_btn_wrap ,
+.bill_confirm_con .account_wrap .om_btn_wrap {
+    float: right;
+    margin: 0;
+}
+
+.pp_edit_wrap .account_wrap a ,
+.bill_confirm_con .account_wrap a {
+    font-size: 16px;
+    line-height: 37px;
+    display: inline-block;
+    width: auto;
+    padding: 0 10px;
+    margin: 10px 0 0 8px;
+    min-width: 80px;
+}
+
+.pp_edit_wrap .account_wrap .disable{
+    pointer-events: none;
+    background-color: #cfcfcd;
+    cursor: default;
+}
+
+.bill_confirm_con{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.bill_confirm_con .confirm_con{
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.bill_confirm_con .confirm_con .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #666;
+    opacity: 1;
+}
+
+.bill_confirm_con .confirm_con .close:hover{
+    color: #f60;
+}
+
+.bill_confirm_con .confirm_con h4{
+    float: left;
+    padding-left: 10px;
+    margin: 0;
+    color: #000;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.bill_confirm_con .confirm_con .des{
+    padding-left: 10px;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000;
+    clear: both;
+    background-color: #eee;
+}
+
+.bill_confirm_con .confirm_con .list{
+    width: 100%;
+}
+
+.confirm_con .list tr{
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.confirm_con .list tr td{
+    width: 21%;
+}
+
+.confirm_con .list tr td:first-child{
+    width: 30%;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.confirm_con .list tr td:nth-child(2){
+    width: 28%;
+}
+
+.bill_confirm_con .account_wrap{
+    position: relative;
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+    height: 60px;
+    overflow: hidden;
+}

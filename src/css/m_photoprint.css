@@ -70,7 +70,7 @@
 .select_item .upload_list{
     position: relative;
     margin: 0 auto;
-    height: 290px;
+    max-height: 290px;
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
@@ -133,7 +133,8 @@
     width: 0;
     height: 0;
     color: #fff;
-    border-width: 18px;
+    line-height: 10px;
+    border-width: 13px;
     border-style: solid;
     border-color: transparent #00b8ee #00b8ee transparent;
 }
@@ -150,9 +151,12 @@
     height: 100%;
     background: rgba(0,0,0,.6);
     text-align: center;
-    line-height: 80px;
+    line-height: 85px;
     color: #fff;
     font-size: 12px;
+    overflow: visible;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .upload_list li h5 {

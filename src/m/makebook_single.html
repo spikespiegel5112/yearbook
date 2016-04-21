@@ -20,14 +20,16 @@
 
 <body>
 	<div class='main_conatainer edit_book_con'><!--单页书册编辑class:edit_book-->
-        <div class="ybwechatheader_wrapper">
+        <!--<div class="ybwechatheader_wrapper">
             <a class='left_btn left_angle' href='javascript:;'>
                 <span class="ybiconfont ybicon-backward3"></span>
             </a>
             <p>《<span>时光不老我们不散</span>》<span class="swiper-pagination">P1-P2</span></p>
             <a class="right_btn print" href="javascript:;">打印</a>
-        </div>
+        </div>-->
         <div class="make_book_wrap">
+            <a class="back" href="javascript:;">返回</a>
+            <a class="print" href="javascript:;">打印</a>
             <div class="single_mode">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
@@ -424,6 +426,9 @@
                     //竖屏缩放书册内容
                     var zoom = windowWidth * (landscapeFactor / originalHeight);
                     $('.tpl .page >div').css(sizeArguObj(zoom));
+                    var tplHeight = $('.single_mode').height();
+                    var marginTop = (windowWidth - tplHeight)/2;
+                    $('.single_mode').css('margin-top',marginTop);
                 },
                 landscape: function() {
                     bodyEl.css({
@@ -439,6 +444,9 @@
                     //横屏缩放书册内容
                     var zoom = windowHeight * (landscapeFactor / originalHeight);
                     $('.tpl .page >div').css(sizeArguObj(zoom));
+                    var tplHeight = $('.single_mode').height();
+                    var marginTop = (windowHeight - tplHeight)/2;
+                    $('.single_mode').css('margin-top',marginTop);
                 }
             });
 

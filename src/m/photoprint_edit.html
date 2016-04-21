@@ -24,7 +24,7 @@
 <body class="bg_f6f6f6">
 <div class="main_container has_footer_nav">
     <div class="ybwechatheader_wrapper">
-        <a class="left_btn left_angle" href="javascript:;">
+        <a class="left_btn left_angle" href="photoprint_homepage.html">
             <span class="ybiconfont ybicon-backward3"></span>
         </a>
 
@@ -110,7 +110,7 @@
                         <img src="../img/m/default/ia_vote_ex_img1.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
-                            <span>上传：<b>100%</b></span>
+                            <span>上传：<b>80%</b></span>
                         </div>
                     </a>
                     <h5>IMG_1178.jpg</h5>
@@ -121,7 +121,7 @@
                         <img src="../img/m/default/ia_vote_ex_img1.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
-                            <span>上传：<b>100%</b></span>
+                            <span>上传：<b>20%</b></span>
                         </div>
                     </a>
                     <h5>IMG_1178.jpg</h5>
@@ -132,7 +132,7 @@
                         <img src="../img/m/default/ia_vote_ex_img1.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
-                            <span>上传：<b>100%</b></span>
+                            <span>上传：<b>0%</b></span>
                         </div>
                     </a>
                     <h5>IMG_1178.jpg</h5>
@@ -143,7 +143,7 @@
                         <img src="../img/m/default/ia_vote_ex_img1.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
-                            <span>上传：<b>100%</b></span>
+                            <span>上传：<b>0%</b></span>
                         </div>
                     </a>
                     <h5>IMG_1178.jpg</h5>
@@ -154,7 +154,7 @@
                         <img src="../img/m/default/ia_vote_ex_img1.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
-                            <span>上传：<b>100%</b></span>
+                            <span>上传：<b>0%</b></span>
                         </div>
                     </a>
                     <h5>IMG_1178.jpg</h5>
@@ -230,7 +230,7 @@
             </div>
             <div class="om_btn_wrap">
                 <!--未上传照片按钮disable-->
-                <a class="om_btn" href="javascript:;">确定</a>
+                <a class="om_btn" href="photoprint_order_confirm.html">确定</a>
             </div>
         </div>
     </div>
@@ -250,6 +250,7 @@
     $(document).ready(function(){
         createOrder();
         setPhotoOptions();
+        uploadImgProgress();
     });
     //上传照片弹出选择上传路径
     $('.upload_btn').on('touchend',function(){
@@ -277,9 +278,9 @@
     //立即下单弹出确认清单列表
     function createOrder(){
         var listCon = $('.bill_confirm_con');
-        $('.create_order').on('touchend',function(){
+        $('.create_order').on('click',function(e){
             listCon.fadeIn('fast');
-
+            e.stopPropagation();
         });
 
         listCon.find('.close').click(function(e){
@@ -292,6 +293,19 @@
     function setPhotoOptions(){
         $('.select_item .option').click(function(){
             $(this).addClass('select').siblings().removeClass('select');
+        });
+
+        $('.upload_list .img').click(function(){
+            $(this).toggleClass('select');
+        });
+    }
+
+    //上传照片进度
+    function uploadImgProgress(){
+        $('.upload_list .progress').each(function(){
+            var upPercent = $(this).find('b').text();
+            var height = (1 - parseFloat(upPercent)/100)*100 +'%';
+            $(this).css('height',height);
         });
     }
 </script>

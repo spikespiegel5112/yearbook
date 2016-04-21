@@ -1286,30 +1286,27 @@
 }
 .sem_pbiapdtitle_wrapper
 {
+    height: 60px;
     font-size: 30px;
 
     overflow: hidden;
 
     color: #fff;
 }
-.sem_pbiapdtitle_wrapper h5
+.sem_pbiapdtitle_wrapper h5, .sem_pbiapdtitle_wrapper h6
 {
     float: left;
-
-    padding: 10px 30px ;
-
+    padding: 0 30px ;
+    height: 60px;
+    line-height: 60px;
+}
+.sem_pbiapdtitle_wrapper h5{
     background: #8cc04e;
 }
 .sem_pbiapdtitle_wrapper h6
 {
-    float: left;
-
-    width: 275px;
-    padding: 10px 30px ;
-
     background: #ccc;
 }
-
 
 
 .sem_graduationbook_container .sem_banner_wrapper,

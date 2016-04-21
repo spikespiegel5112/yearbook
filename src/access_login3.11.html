@@ -21,7 +21,7 @@
 
 <body>
 	<!--登录表单-->
-	<div class="access_login_container">
+	<div class="access_login_container" style='background-image:url(img/access/login_bg.jpg)'>
 		<div class='common_login_wrapper'>
 			<div class='common_loginheader_wrapper'>
 				<div>
@@ -128,6 +128,16 @@
 		});
 	}
 
+	function backgroundTransition(){
+		var bgRoute=['img/access/login_bg.jpg', 'img/bm_bg_00000.jpg']，
+			bgLength=bgRoute.length,
+			index=0,
+			bgContainerEl=$('.access_login_container');
+		var timer=setInterval(function(){
+			bgContainerEl.css('background-image',)
+		},1000)
+	}
+
 	$(function() {
 		doSubmit();
 		icheck();
@@ -138,6 +148,7 @@
 			keepportrait: true
 		});
 		$('.common_login_wrapper').align();
+		backgroundTransition();
 	});
 	</script>
 </body>

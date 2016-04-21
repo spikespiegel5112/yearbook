@@ -129,13 +129,27 @@
 	}
 
 	function backgroundTransition(){
-		var bgRoute=['img/access/login_bg.jpg', 'img/bm_bg_00000.jpg']，
+		var bgRoute=['img/access/login_bg.jpg', 'img/bm_bg_00000.jpg', 'img/footer_menu_bg_1_00000.jpg'],
 			bgLength=bgRoute.length,
 			index=0,
+			//最短时间
+			minTime=1,
+			//最长时间
+			maxTime=5,
+			//转场时间
+			transitTime=2,
 			bgContainerEl=$('.access_login_container');
 		var timer=setInterval(function(){
-			bgContainerEl.css('background-image',)
-		},1000)
+			if (index==bgLength) {
+				index=0;
+			};
+			bgContainerEl.css({
+				'background-image':'url('+bgRoute[index]+')',
+				transition:'background-image '+transitTime+'s'
+			});
+			index++;
+			console.log(minTime+Math.random()*maxTime);
+		},minTime*1000+(Math.random()*maxTime*1000));
 	}
 
 	$(function() {

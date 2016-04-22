@@ -1451,7 +1451,7 @@
                             }
                             index++;
                         }, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));
-                    };  
+                    };
                 });
             });
 			function getVendorPrefix() {
@@ -1460,8 +1460,8 @@
 			        vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'],
 			        i = 0;
 
-			    while (i < vendor.length) {
-			        if (typeof style[vendor[i] + 'Transition'] === 'string') {
+			    for (var i=0;i < vendor.length;i++) {
+					if (typeof style[vendor[i] + 'Transition'] === 'string') {
 			            return vendor[i];
 			        }
 			        i++;

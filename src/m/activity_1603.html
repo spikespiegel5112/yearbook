@@ -11,17 +11,17 @@
 	<title>忆尔-分销介绍页</title>
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1459411789_462414.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/common.css" type="text/css" media="all">
 	<!-- endbuild -->
-	<link rel="stylesheet" href="css/activity/1603.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/activity/1603.css" type="text/css" media="all">
 </head>
 
 <body>
 	<!--头部导航-->
 	<div class="cm_header_nav">
 		<div class="logo">
-			<a href="index.html"><img src="img/logo.png"></a>
+			<a href="index.html"><img src="../img/logo.png"></a>
 		</div>
 		<div class="nav">
 			<ul>
@@ -152,9 +152,9 @@
 		</div>
 	</div>
 	<!--主要内容-->
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<!-- build:js js/all.js -->
-	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="../js/base.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(function(){
@@ -162,6 +162,9 @@
 			fontsize:20,
 			minwidth:1150
 		})
+		if(navigator.userAgent.indexOf('UCBrowser') > -1) {
+			alert('aaa')
+		}
 	});
 	</script>
 </body>

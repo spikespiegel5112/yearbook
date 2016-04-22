@@ -780,17 +780,16 @@
             }, options);
             var _this = $(this),
                 isMousedown = false,
-                offsetLeft = 0,
+                offsetLeft = _this.offset().left,
                 startX = 0,
                 axisWidth = $(config.axisx).width(),
                 sliderWidth = _this.width(),
                 unitWidth = axisWidth / config.density,
-                progress = 0,
                 index = 0,
                 progress = 0,
                 oldProgress = 0,
-                offsetVal = [];
-            var offsetLeft = _this.offset().left;
+                offsetVal = [],
+                container=_this.parent();
 
             var touchStart, touchMove, touchEnd;
             touchStart = isMobile() ? 'touchstart' : 'mousedown';
@@ -820,7 +819,8 @@
                     index = i;
                 });
                 // _this.parent().eq(i).on(touchMove, function(e) {
-                $(document).on(touchMove, function(e) {
+                container.on(touchMove, function(e) {
+                	e.stopPropagation();
                     console.log(offsetVal[i])
                     if (isMousedown) {
                         if (isMobile()) {
@@ -1423,7 +1423,7 @@
                 $(this).load(function() {
                     imgCounter++;
                     console.log(imgCounter)
-                    if (imgCounter == bgLength - 1) {
+                    if (imgCounter == bgLength) {
                         console.log('imgReady');
                         container.append()
                         var timer = setInterval(function() {
@@ -1451,23 +1451,22 @@
                             }
                             index++;
                         }, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));
-                    };
-
-                    function getVendorPrefix() {
-                        var body = document.body || document.documentElement,
-                            style = body.style,
-                            vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'],
-                            i = 0;
-
-                        while (i < vendor.length) {
-                            if (typeof style[vendor[i] + 'Transition'] === 'string') {
-                                return vendor[i];
-                            }
-                            i++;
-                        }
-                    }
+                    };  
                 });
             });
+			function getVendorPrefix() {
+			    var body = document.body || document.documentElement,
+			        style = body.style,
+			        vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'],
+			        i = 0;
+
+			    while (i < vendor.length) {
+			        if (typeof style[vendor[i] + 'Transition'] === 'string') {
+			            return vendor[i];
+			        }
+			        i++;
+			    }
+			}
         }
     });
     $('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);

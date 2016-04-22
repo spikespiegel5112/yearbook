@@ -81,15 +81,14 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    padding: 4px;
-    margin: 5px 0 5px 0;
+    padding: 0;
+    margin: 5px 0;
     width: 95px;
-    border: 1px solid #ddd;
     box-sizing: border-box;
 }
 
 .upload_list li:first-child {
-    height: 122px;
+    height: 95px;
     background-color: #fff;
     border: 2px dashed #dfdfdd;
 }
@@ -102,7 +101,7 @@
 }
 
 .upload_list li .upload_btn .ybicon-upload {
-    padding: 30px 0 15px;
+    padding: 25px 0 15px;
     font-size: 50px;
     color: #ccc;
 }
@@ -111,8 +110,9 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 85px;
+    height: 95px;
     cursor: pointer;
+    border: 1px solid #ddd;
 }
 
 .upload_list li .img.select {
@@ -125,7 +125,7 @@
     height: 100%;
 }
 
-.upload_list li .img > span {
+.upload_list li .img .ybicon-ok {
     display: none;
     position: absolute;
     right: 0;
@@ -139,8 +139,24 @@
     border-color: transparent #00b8ee #00b8ee transparent;
 }
 
-.upload_list li .img.select > span{
+.upload_list li .img.select .ybicon-ok{
     display: block;
+}
+
+.upload_list li .img .num{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 4px;
+    min-width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(255,255,255,.5);
+    z-index: 1;
+    box-sizing: border-box;
 }
 
 .upload_list li .progress {
@@ -149,9 +165,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.4);
     text-align: center;
-    line-height: 85px;
+    line-height: 95px;
     color: #fff;
     font-size: 12px;
     overflow: visible;
@@ -194,6 +210,7 @@
     text-align: right;
     border-top: 2px solid #ccc;
     background-color: #fff;
+    z-index: 9;
 }
 
 .account_wrap .price {
@@ -335,4 +352,230 @@
     border-top: 1px solid #ddd;
     height: 60px;
     overflow: hidden;
+}
+
+.edit_img_wrap{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.edit_img_wrap .img_config{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.img_config .name{
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    line-height: 35px;
+}
+.img_config .img_box{
+    position: relative;
+    padding: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    line-height: 178px;
+    background-color: #666;
+    overflow: hidden;
+}
+
+.img_config .img_box img{
+    vertical-align: middle;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.img_config .img_box .range{
+    position: absolute;
+    background: transparent;
+    border: 2px solid #ff696a;
+    box-sizing: border-box;
+    cursor: move;
+}
+
+.img_config .img_box .vertical{
+    left: 50%;
+    top: 0;
+    margin: 0 0 0 -63px;
+    width: 126px;
+    height: 100%;
+}
+
+.img_config .img_box .vertical::before,
+.img_config .img_box .vertical::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 180px;
+    background: rgba(0,0,0,.4);
+}
+
+.img_config .img_box .vertical::before{
+    left: -152px;
+}
+
+.img_config .img_box .vertical::after{
+    right: -152px;
+}
+
+.img_config .img_box .horizontal{
+    left: 50%;
+    top: 0;
+    margin: 0 0 0 -150px;
+    width: 300px;
+    height: 180px;
+}
+
+.img_config .img_box .horizontal::before,
+.img_config .img_box .horizontal::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+}
+
+.img_config .img_box .horizontal::before{
+    left: -102px;
+}
+
+.img_config .img_box .horizontal::after{
+    right: -102px;
+}
+
+.img_config .img_box .range p{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin: 0 0 0 -86px;
+    width: 170px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #ff696a;
+    background: #fff;
+    border: 1px solid #ff696a;
+    z-index: 1;
+}
+.img_config .img_box .range p i{
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.img_config .standard{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.img_config .standard table{
+    width: 100%;
+    text-align: center;
+}
+
+.img_config .standard th{
+    text-align: center;
+}
+
+.img_config .standard th:nth-child(1),
+.img_config .standard th:nth-child(2){
+    width: 35%;
+}
+
+.img_config .standard th:nth-child(3){
+    width: 20%;
+}
+
+.img_config .standard th:nth-child(4){
+    width: 10%;
+}
+
+.img_config .standard tr{
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.img_config .standard table td{
+    font-size: 12px;
+}
+
+.img_config .standard select{
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #333;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.img_config .standard .ybcommon_counter_item{
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #ccc;
+}
+
+.img_config .standard .ybcommon_counter_item a {
+    color: #fff;
+}
+
+.img_config .standard .ybcommon_counter_item input {
+    border: 0;
+}
+
+.img_config .standard .ybicon-trash{
+    color: #ccc;
+}
+
+.img_config .standard .ybicon-plus{
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 25px;
+    height: 30px;
+    color: #f60;
+    text-align: center;
+    background-color: #eee;
+    border-right: 1px solid #ddd;
+    border-radius: 0 2px 2px 0;
+}
+
+.img_config .standard .om_btn_wrap{
+    text-align: center;
+}
+
+.img_config .standard .om_btn_wrap .om_btn{
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid #f60;
+}
+
+.img_config .standard .om_btn_wrap .cancel{
+    width: 25%;
+    margin-right: 20px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.img_config .standard .om_btn_wrap .ok{
+    width: 50%;
 }

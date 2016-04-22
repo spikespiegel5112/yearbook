@@ -96,76 +96,67 @@
                 </li>
                 <li>
                     <a class="img select" href="javascript:;">
-                        <img src="../img/m/default/ia_vote_ex_img1.jpg">
+                        <img src="../img/m/default/lovely_girl.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
                             <span>上传：<b>100%</b></span>
                         </div>
+                        <!--打印张数-->
+                        <span class="num">1</span>
                     </a>
-                    <h5>IMG_1178.jpg</h5>
-                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
                 <li>
                     <a class="img" href="javascript:;">
-                        <img src="../img/m/default/ia_vote_ex_img1.jpg">
+                        <img src="../img/m/default/lovely_girl.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                        <div class="progress">
+                            <span>上传：<b>100%</b></span>
+                        </div>
+                        <span class="num">12</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="img" href="javascript:;">
+                        <img src="../img/m/default/lovely_girl.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
                             <span>上传：<b>80%</b></span>
                         </div>
                     </a>
-                    <h5>IMG_1178.jpg</h5>
-                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
                 <li>
                     <a class="img" href="javascript:;">
-                        <img src="../img/m/default/ia_vote_ex_img1.jpg">
+                        <img src="../img/m/default/lovely_girl.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
                             <span>上传：<b>20%</b></span>
                         </div>
                     </a>
-                    <h5>IMG_1178.jpg</h5>
-                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
                 <li>
                     <a class="img" href="javascript:;">
-                        <img src="../img/m/default/ia_vote_ex_img1.jpg">
+                        <img src="../img/m/default/lovely_girl.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
                             <span>上传：<b>0%</b></span>
                         </div>
                     </a>
-                    <h5>IMG_1178.jpg</h5>
-                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
                 <li>
                     <a class="img" href="javascript:;">
-                        <img src="../img/m/default/ia_vote_ex_img1.jpg">
+                        <img src="../img/m/default/lovely_girl.jpg">
                         <span class="ybiconfont ybicon-ok"></span>
                         <div class="progress">
                             <span>上传：<b>0%</b></span>
                         </div>
                     </a>
-                    <h5>IMG_1178.jpg</h5>
-                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
-                </li>
-                <li>
-                    <a class="img" href="javascript:;">
-                        <img src="../img/m/default/ia_vote_ex_img1.jpg">
-                        <span class="ybiconfont ybicon-ok"></span>
-                        <div class="progress">
-                            <span>上传：<b>0%</b></span>
-                        </div>
-                    </a>
-                    <h5>IMG_1178.jpg</h5>
-                    <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
             </ul>
         </div>
         <div class="account_wrap">
             <div class="price">
                 <!--已上传照片-->
-                <ul class="hidden">
+                <ul class="">
                     <li>
                         <label>单张：</label><span><b>￥0.35</b></span>
                         <label>冲印：</label><span><b>2</b>张</span>
@@ -175,11 +166,86 @@
                     </li>
                 </ul>
                 <!--未上传照片-->
-                <p>还没有上传任何照片，<br>上传后冲印</p>
+                <p class="hidden">还没有上传任何照片，<br>上传后冲印</p>
             </div>
             <div class="om_btn_wrap">
                 <!--未上传照片按钮a标签addClass:disable-->
                 <a class="om_btn create_order" href="javascript:;">下单冲印</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--单张照片编辑-->
+<div class="edit_img_wrap">
+    <div class="img_config">
+        <h4 class="name">QQ图片20160422104002.jpg</h4>
+        <div class="img_box">
+            <img src="../img/m/default/bell_tower.jpg">
+            <div class="range vertical " draggable="true"><!--竖向照片class:vertical-->
+                <p><i class="ybiconfont ybicon-alert1"></i>红色区域为实际冲洗范围</p>
+            </div>
+            <div class="range horizontal hidden" draggable="true"><!--横向照片：class:horizontal-->
+                <p><i class="ybiconfont ybicon-alert1"></i>红色区域为实际冲洗范围</p>
+            </div>
+        </div>
+        <div class="standard">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th><span>相纸</span></th>
+                    <th><span>规格</span></th>
+                    <th><span>数量</span></th>
+                    <th><span></span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <select>
+                            <option>富士绒面</option>
+                            <option>富士光面</option>
+                            <option>柯达绒面</option>
+                            <option>柯达光面</option>
+                            <option>拍立得绒面（20）</option>
+                            <option>拍立得光面</option>
+                        </select>
+                    </td>
+                    <td><span>5寸</span></td>
+                    <td>
+                        <div class='ybcommon_counter_item'>
+                            <a href="javascript:;">-</a>
+                            <input type='text' value='0'>
+                            <a href="javascript:;">+</a>
+                        </div>
+                    </td>
+                    <td><span class="ybiconfont ybicon-trash"></span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select>
+                            <option>富士绒面</option>
+                            <option>富士光面</option>
+                            <option>柯达绒面</option>
+                            <option>柯达光面</option>
+                            <option>拍立得绒面（20）</option>
+                            <option>拍立得光面</option>
+                        </select>
+                    </td>
+                    <td><span>大5寸（3D）</span></td>
+                    <td>
+                        <div class='ybcommon_counter_item'>
+                            <a href="javascript:;">-</a>
+                            <input type='text' value='0'>
+                            <a href="javascript:;">+</a>
+                        </div>
+                    </td>
+                    <td><span class="ybiconfont ybicon-plus"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="om_btn_wrap">
+                <a class="om_btn cancel" href="javascript:;">取消</a>
+                <a class="om_btn ok" href="javascript:;">确定修改</a>
             </div>
         </div>
     </div>
@@ -251,6 +317,7 @@
         createOrder();
         setPhotoOptions();
         uploadImgProgress();
+        showEditImgConfig();
     });
     //上传照片弹出选择上传路径
     $('.upload_btn').on('touchend',function(){
@@ -306,6 +373,25 @@
             var upPercent = $(this).find('b').text();
             var height = (1 - parseFloat(upPercent)/100)*100 +'%';
             $(this).css('height',height);
+        });
+    }
+
+    //弹出单张照片编辑
+    function showEditImgConfig(){
+        var imgConfigBox = $('.edit_img_wrap');
+        $('.upload_list li img').click(function(){
+            imgConfigBox.fadeIn('fast').addClass('single');
+        });
+
+        //点击遮罩区域关闭
+        imgConfigBox.on('click', function (e) {
+            if ($(e.target).closest('.img_config').length == 0) {
+                imgConfigBox.fadeOut('fast');
+            }
+        });
+        //取消关闭
+        imgConfigBox.find('.cancel').click(function(){
+            imgConfigBox.fadeOut('fast');
         });
     }
 </script>

@@ -651,7 +651,7 @@
 				})
 
 				thisWidth = _this.outerWidth(),
-				thisHeight = _this.outerHeight();
+					thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
@@ -668,15 +668,15 @@
 								_this.css({
 									'margin': marginY + options.offsetY + 'px auto'
 								});
-								if (options.offsetX!=0) {
+								if (options.offsetX != 0) {
 									alert((windowWidth - thisWidth) / 2 + options.offsetX)
 									_this.css({
-										'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2+'px'
+										'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
 									});
 								};
 							} else {
 								_this.css({
-									'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetX+'px'
+									'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetX + 'px'
 								});
 							}
 						});
@@ -826,13 +826,13 @@
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0],
 								moveX = touch.pageX - offsetLeft;
-							if (touch.clientX < offsetLeft + axisWidth - sliderWidth/2 && touch.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', moveX-sliderWidth/2);
+							if (touch.clientX < offsetLeft + axisWidth - sliderWidth / 2 && touch.clientX > offsetLeft) {
+								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 							};
 						} else {
 							var moveX = e.pageX - offsetLeft;
 							if (e.clientX < offsetLeft + axisWidth - sliderWidth && e.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', (moveX-sliderWidth/2));
+								_this.eq(index).css('margin-left', (moveX - sliderWidth / 2));
 							};
 						}
 						if (moveX < 0) {
@@ -1128,7 +1128,7 @@
 			if (config.destroy == true) {
 				destroy();
 			};
-			
+
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				image = $(config.image),
@@ -1153,15 +1153,15 @@
 
 			if (config.tools.scrollBar != '') {
 				epscrollbarWidth = $(config.tools.scrollBar).find('label').width(),
-				zoomingSlider = $(config.tools.scrollBar).find('span'),
-				sliderPosX = zoomingSlider.offset().left * transformData.scale;
-				//	sliderPosX=(windowWidth-(windowWidth*0.8))/2;
-			}else {
+					zoomingSlider = $(config.tools.scrollBar).find('span'),
+					sliderPosX = zoomingSlider.offset().left * transformData.scale;
+				//  sliderPosX=(windowWidth-(windowWidth*0.8))/2;
+			} else {
 				return;
 			}
 
 			init();
-			
+
 			function init() {
 				image.css('transition', 'transform 0.5s');
 				image.css(transformData);
@@ -1207,7 +1207,7 @@
 				})
 
 				//根据图片原始宽度和屏幕宽度的比利算出滑块初始位置
-				// initMarginleft = $(config.tools.scrollBar).find('label').width() / originalRatio;		
+				// initMarginleft = $(config.tools.scrollBar).find('label').width() / originalRatio;        
 				// zoomingSlider.css('margin-left', initMarginleft);
 
 				initMarginleft = 1 / originalRatio;
@@ -1281,13 +1281,14 @@
 						}
 				}
 			};
+
 			function sliderEvent(e) {
 				var touch = e.originalEvent.touches[0];
 				var movingPosX = touch.pageX;
 
 				// marginleft = ((movingPosX-(windowWidth-(windowWidth*0.8))/2)/windowWidth)*0.8;
 				marginleft = (movingPosX / windowWidth) - (sliderPosX / windowWidth);
-				// console.log("windowWidth: "+windowWidth+' sliderPosX: '+sliderPosX+' movingPosX: '+movingPosX)				
+				// console.log("windowWidth: "+windowWidth+' sliderPosX: '+sliderPosX+' movingPosX: '+movingPosX)               
 
 				if (marginleft <= 0) {
 					//console.log('<0')
@@ -1380,7 +1381,76 @@
 				touchmoveEvent = null;
 				$('.action_btn').off();
 			}
+		},
+		imageTransition: function(options) {
+			var config = $.extend({
+				mintime: 2,
+				maxtime: 2,
+				transittime: 1,
+				bgcontainer: '',
+				imagesrc: []
+			}, options);
+			var bgLength = config.imagesrc.length,
+				index = 0,
+				imgReady = false,
+				imgCounter = 0,
+				bgcontainer = $(config.bgcontainer),
+				ffbgcontainerClass='ffbgcontainer',
+				ffbgcontainerEl=$('<div></div>').addClass(ffbgcontainerClass).css({
+					width:'100%',
+					height:'100%',
+					position:'absolute',
+					left:0,
+					top:0
+				})
 
+			config.mintime = (config.mintime < config.transittime * 2) ? config.transittime * 2 : config.mintime;
+			config.maxtime = (config.maxtime < config.mintime) ? config.mintime : config.maxtime;
+			//加载所有图片
+			for (var i = 0; i < bgLength; i++) {
+				var imgEl = $('<img/>').attr('src', config.imagesrc[i]).css('position', 'absolute').addClass('transition_bg').hide();
+				bgcontainer.append(imgEl);
+			}
+			bgcontainer.append(ffbgcontainerEl);
+			var bgImg = $('.transition_bg'),
+				bhImgWidth=bgImg.width(),
+				bhImgHeight=bgImg.height();
+			ffbgcontainerEl.append(bgImg);
+			//检查每个图片是否加载完成
+			bgImg.each(function(index) {
+				$(this).load(function() {
+					imgCounter++;
+					console.log(imgCounter)
+					if (imgCounter == bgLength - 1) {
+						console.log('imgReady');
+						bgcontainer.append()
+						var timer = setInterval(function() {
+							console.log(Math.random() * (config.maxtime - config.mintime) * 1000)
+							if (index == bgLength) {
+								index = 0;
+							};
+							var ua = navigator.userAgent,
+								isChrome = ua.indexOf('Chrome') > -1,
+								isFirefox = ua.indexOf('Firefox') > -1;
+							if (isChrome) {
+								bgcontainer.css({
+									'background-image': 'url(' + config.imagesrc[index] + ')',
+									'-webkit-transition': 'background-image ' + config.transittime + 's'
+								});
+							} else {
+								bgImg.eq(index - 1).fadeOut(config.transittime * 1000);
+								bgImg.eq(index).fadeIn(config.transittime * 1000);
+								bgImg.eq(index).css({
+									top:($(window).height()-bhImgHeight)/2,
+									left:($(window).width()-bhImgWidth)/2
+								});
+								console.log($('.'+ffbgcontainerClass).height())
+							}
+							index++;
+						}, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));
+					};
+				});
+			});
 		}
 	});
 	$('.manage_tab').toolsSlide('.bannerslider_container', '.manage_tab .bannerslider_inner', '.manage_tab .bs_arrowbtn_left', '.manage_tab .bs_arrowbtn_right', 40);
@@ -1389,7 +1459,7 @@
 	$('.bannerslider_wrapper').toolsSlide('.bannerslider_wrapper', '.ybbanner_wrapper .bannerslider_inner', '.ybbanner_wrapper .bs_arrowbtn_left', '.ybbanner_wrapper .bs_arrowbtn_right', 40);
 
 	// setTimeout(function(){
-	// 	$('.ybbanner_wrapper').loading('destroy');
+	//  $('.ybbanner_wrapper').loading('destroy');
 	// },5000)
 	// $('.ybindex_carousel_wrapper').carousel();
 

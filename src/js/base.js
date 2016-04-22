@@ -1430,10 +1430,6 @@
 							if (index == bgLength) {
 								index = 0;
 							};
-							var ua = navigator.userAgent,
-								isChrome = ua.indexOf('Chrome') > -1,
-								isSafari = ua.indexOf('Safari') > -1,
-								isFirefox = ua.indexOf('Firefox') > -1;
 							if (getVendorPrefix() == 'webkit') {
 								container.css({
 									'background-image': 'url(' + config.imagesrc[index] + ')',

@@ -1441,7 +1441,6 @@
                                     '-webkit-transition': 'background-image ' + config.transittime + 's'
                                 });
                             } else {
-                            	alert('else')
                                 bgImg.eq(index - 1).fadeOut(config.transittime * 1000);
                                 bgImg.eq(index).fadeIn(config.transittime * 1000);
                                 console.log($('.' + ffimgcontainerClass).height());
@@ -1450,20 +1449,17 @@
                                     left: (windowWidth - bgImgWidth) / 2
                                 });
                             }
-
                             index++;
                         }, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));
                     };
 
                     function getVendorPrefix() {
-                        // 使用body是为了避免在还需要传入元素
                         var body = document.body || document.documentElement,
                             style = body.style,
                             vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'],
                             i = 0;
 
                         while (i < vendor.length) {
-                            // 此处进行判断是否有对应的内核前缀
                             if (typeof style[vendor[i] + 'Transition'] === 'string') {
                                 return vendor[i];
                             }

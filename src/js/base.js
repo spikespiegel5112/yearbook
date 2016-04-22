@@ -1425,7 +1425,6 @@
 					console.log(imgCounter)
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
-						container.append()
 						var timer = setInterval(function() {
 							console.log(Math.random() * (config.maxtime - config.mintime) * 1000)
 							if (index == bgLength) {
@@ -1458,14 +1457,12 @@
 			function getVendorPrefix() {
 				var body = document.body || document.documentElement,
 					style = body.style,
-					vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'],
-					i = 0;
+					vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'];
 
 				for (var i = 0; i < vendor.length; i++) {
 					if (typeof style[vendor[i] + 'Transition'] === 'string') {
 						return vendor[i];
 					}
-					i++;
 				}
 			}
 		}

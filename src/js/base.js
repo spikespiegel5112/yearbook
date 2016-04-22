@@ -1387,16 +1387,16 @@
 				mintime: 2,
 				maxtime: 2,
 				transittime: 1,
-				bgcontainer: '',
+				container: '',
 				imagesrc: []
 			}, options);
 			var bgLength = config.imagesrc.length,
 				index = 0,
 				imgReady = false,
 				imgCounter = 0,
-				bgcontainer = $(config.bgcontainer),
-				ffbgcontainerClass='ffbgcontainer',
-				ffbgcontainerEl=$('<div></div>').addClass(ffbgcontainerClass).css({
+				container = $(config.container),
+				ffimgcontainerClass='ffimgcontainer',
+				ffimgcontainerEl=$('<div></div>').addClass(ffimgcontainerClass).css({
 					width:'100%',
 					height:'100%',
 					position:'absolute',
@@ -1409,13 +1409,15 @@
 			//加载所有图片
 			for (var i = 0; i < bgLength; i++) {
 				var imgEl = $('<img/>').attr('src', config.imagesrc[i]).css('position', 'absolute').addClass('transition_bg').hide();
-				bgcontainer.append(imgEl);
+				container.append(imgEl);
 			}
-			bgcontainer.append(ffbgcontainerEl);
+			container.append(ffimgcontainerEl);
 			var bgImg = $('.transition_bg'),
 				bhImgWidth=bgImg.width(),
-				bhImgHeight=bgImg.height();
-			ffbgcontainerEl.append(bgImg);
+				bhImgHeight=bgImg.height(),
+				windowWidth=$(window).width(),
+				windowHeight=$(window).height();
+			ffimgcontainerEl.append(bgImg);
 			//检查每个图片是否加载完成
 			bgImg.each(function(index) {
 				$(this).load(function() {
@@ -1423,7 +1425,7 @@
 					console.log(imgCounter)
 					if (imgCounter == bgLength - 1) {
 						console.log('imgReady');
-						bgcontainer.append()
+						container.append()
 						var timer = setInterval(function() {
 							console.log(Math.random() * (config.maxtime - config.mintime) * 1000)
 							if (index == bgLength) {
@@ -1433,7 +1435,7 @@
 								isChrome = ua.indexOf('Chrome') > -1,
 								isFirefox = ua.indexOf('Firefox') > -1;
 							if (isChrome) {
-								bgcontainer.css({
+								container.css({
 									'background-image': 'url(' + config.imagesrc[index] + ')',
 									'-webkit-transition': 'background-image ' + config.transittime + 's'
 								});
@@ -1441,10 +1443,10 @@
 								bgImg.eq(index - 1).fadeOut(config.transittime * 1000);
 								bgImg.eq(index).fadeIn(config.transittime * 1000);
 								bgImg.eq(index).css({
-									top:($(window).height()-bhImgHeight)/2,
-									left:($(window).width()-bhImgWidth)/2
+									top:(windowHeight-bhImgHeight)/2,
+									left:(windowWidth-bhImgWidth)/2
 								});
-								console.log($('.'+ffbgcontainerClass).height())
+								console.log($('.'+ffimgcontainerClass).height())
 							}
 							index++;
 						}, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));

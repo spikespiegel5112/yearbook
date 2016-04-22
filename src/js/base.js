@@ -1394,6 +1394,7 @@
 				index = 0,
 				imgReady = false,
 				imgCounter = 0,
+				randomPeriod=1000,
 				container = $(config.container),
 				ffimgcontainerClass = 'ffimgcontainer',
 				ffimgcontainerEl = $('<div></div>').addClass(ffimgcontainerClass).css({
@@ -1426,7 +1427,8 @@
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
 						var timer = setInterval(function() {
-							console.log(Math.random() * (config.maxtime - config.mintime) * 1000)
+							randomPeriod=config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
+							console.log(randomPeriod);
 							if (index == bgLength) {
 								index = 0;
 							};

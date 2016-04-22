@@ -1398,21 +1398,28 @@ input
     padding: 5px 10px 5px 0;
 }
 
-.yb_cm_header .shortcut .yb_logo a{
-    vertical-align: top;
-    line-height: 21px;
-    color: #999;
-    font-weight: bold;
+.yb_cm_header .shortcut .yb_logo a
+{
     font-size: 14px;
+    font-weight: bold;
+    line-height: 21px;
+
+    vertical-align: top;
+
+    color: #999;
 }
 
-.yb_cm_header .shortcut .yb_logo a::before{
+.yb_cm_header .shortcut .yb_logo a::before
+{
     position: absolute;
     top: 5px;
     left: 3px;
+
     width: 1px;
     height: 12px;
+
     content: ' ';
+
     background-color: #ccc;
 }
 
@@ -1895,8 +1902,9 @@ label.error, div.error
 .all_loadmore .ybicon-mouse
 {
     font-size: 50px;
-    display: block;
     line-height: 50px;
+
+    display: block;
 
     text-align: center;
 }
@@ -2606,10 +2614,10 @@ button.select
 
 .common_logininput_wrapper li
 {
-    height: 70px;
     position: relative;
 
-    width: 100%;
+    width: 100%;
+    height: 70px;
     margin: 30px 0 10px 0;
 }
 
@@ -5075,23 +5083,31 @@ nav .pagination li a:active
 	height: 250px;*/
 }
 
-.server_online_main_im .calculator{
-    display: block;
+.server_online_main_im .calculator
+{
     position: absolute;
+    z-index: 1;
     top: 159px;
     right: 0;
+
+    display: block;
+
     width: 40px;
-    background-color: #70ca5d;
+
     text-align: center;
+
     border-top: 1px solid #fff;
     border-radius: 0 0 0 4px;
-    z-index: 1;
+    background-color: #70ca5d;
 }
 
-.server_online_main_im .calculator span{
+.server_online_main_im .calculator span
+{
     display: inline-block;
+
     width: 35px;
     height: 35px;
+
     background: transparent url('../img/sprite/yb_toolbar_icons.png') no-repeat 0 -384px;
 }
 
@@ -5173,9 +5189,10 @@ nav .pagination li a:active
 
 .server_online_main_im .im_main
 {
-    display: none;
     position: relative;
     z-index: 2;
+
+    display: none;
 
     border: 1px solid #62b651;
     border-radius: 10px;
@@ -6761,10 +6778,12 @@ nav .pagination li a:active
     border-radius: 3px;
     background-color: #f7f7f7;
 }
-.common_slider_wrapper .slider:hover{
+.common_slider_wrapper .slider:hover
+{
     background-color: #eee;
 }
-.common_slider_wrapper .slider:active{
+.common_slider_wrapper .slider:active
+{
     background-color: #bbb;
 }
 /*~~~~~autolayout header~~~~~*/

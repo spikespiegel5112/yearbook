@@ -1479,16 +1479,20 @@
     border-bottom: 1px dotted #aaa;
 }
 
-.myorder .photoprint .order_head{
-    background-color: #f3f8f2;
+.myorder .photoprint .order_head
+{
     border-bottom: 0;
+    background-color: #f3f8f2;
 }
 
-.myorder .photoprint .order_footer{
+.myorder .photoprint .order_footer
+{
+    overflow: hidden;
+
     margin: 0 10px;
     padding: 0;
+
     border-top: 1px solid #ddd;
-    overflow: hidden;
 }
 
 .myorder .orderinfo .order_num
@@ -1558,23 +1562,27 @@
     }
 }
 
-.myorder .photoprint .order_footer .order_btns{
+.myorder .photoprint .order_footer .order_btns
+{
     float: none;
 }
 
-.myorder .photoprint .order_btns a{
-    padding: 0 5px;
-    margin: 8px 4px;
+.myorder .photoprint .order_btns a
+{
     width: auto;
     min-width: 60px;
+    margin: 8px 4px;
+    padding: 0 5px;
+
     border: 1px solid #ddd;
     border-radius: 2px;
 }
 
-.myorder .photoprint .order_btns .go_pay{
-    background-color: #f60;
+.myorder .photoprint .order_btns .go_pay
+{
     color: #fff;
     border: 1px solid #f60;
+    background-color: #f60;
 }
 
 .myorder .order_btns .go_pay
@@ -1618,47 +1626,64 @@
 
     border: 1px solid #cfcfcf;
 }
-.orderinfo.photoprint .product table{
+.orderinfo.photoprint .product table
+{
     width: 95%;
 }
-.orderinfo.photoprint .product table td{
+.orderinfo.photoprint .product table td
+{
     vertical-align: top;
 }
-.photoprint .order_confirm{
+.photoprint .order_confirm
+{
     display: block;
+
     margin: 0 5px;
 }
-.photoprint .order_confirm label{
+.photoprint .order_confirm label
+{
+    line-height: 20px;
+
     float: left;
-    line-height: 20px;
 }
-.photoprint .order_confirm li{
-    height: 20px;
+.photoprint .order_confirm li
+{
     line-height: 20px;
+
+    height: 20px;
     padding-left: 40px;
+
     text-align: left;
 }
 
-.photoprint .opd_orderinfoprice_item{
-    vertical-align: top;
-    width: 15%;
+.photoprint .opd_orderinfoprice_item
+{
     font-size: 14px;
     font-weight: bold;
     line-height: 20px;
+
+    width: 15%;
+
+    vertical-align: top;
 }
-.orderinfo.photoprint  .product .opd_productimg_item img{
+.orderinfo.photoprint  .product .opd_productimg_item img
+{
+    box-sizing: border-box;
     width: 98px;
     height: 98px;
+
     border: 2px solid #cfcfcf;
-    box-sizing: border-box;
 }
 
-@media only screen and (max-width: 320px) {
-    .orderinfo.photoprint  .product .opd_productimg_item img{
+@media only screen and (max-width: 320px)
+{
+    .orderinfo.photoprint  .product .opd_productimg_item img
+    {
         width: 65px;
         height: 65px;
     }
-    .photoprint .order_confirm{
+    .photoprint .order_confirm
+    {
         margin: 0 0 0 5px;
     }
 }
@@ -2607,14 +2632,18 @@
     background-color: #fff;
 }
 
-.order_manage.photoprint .order_list .order_info{
+.order_manage.photoprint .order_list .order_info
+{
     margin: 0;
+
     border-top: 0;
     border-bottom: 1px solid #ddd;
 }
 
-.order_manage.photoprint .order_list .order_info:first-child{
+.order_manage.photoprint .order_list .order_info:first-child
+{
     margin-top: 10px;
+
     border-top: 1px solid #ddd;
 }
 
@@ -2720,7 +2749,8 @@
     float: right;
 }
 
-.photoprint .order_info .ot .sumprice{
+.photoprint .order_info .ot .sumprice
+{
     color: #f00;
 }
 
@@ -2746,7 +2776,8 @@
     border: 1px solid #ccc;
 }
 
-.order_info .om .photo{
+.order_info .om .photo
+{
     width: 105px;
     height: 105px;
 }
@@ -2765,7 +2796,8 @@
     margin-left: 10px;
     padding-left: 90px;
 }
-.photoprint .order_info .om .bd_wrap{
+.photoprint .order_info .om .bd_wrap
+{
     padding-left: 105px;
 }
 
@@ -2799,16 +2831,20 @@
     color: #ccc;
 }
 
-.photoprint .order_info .om .edit_order{
+.photoprint .order_info .om .edit_order
+{
     bottom: 48px;
 }
 
-.photoprint .order_info .om .delete{
+.photoprint .order_info .om .delete
+{
+    font-size: 16px;
+
     position: absolute;
     right: 10px;
     bottom: 14px;
+
     color: #ccc;
-    font-size: 16px;
 }
 
 .order_info .od_btn_wrap
@@ -2946,42 +2982,54 @@
 }
 
 /*编辑照片冲印订单*/
-.edit_order_container{
-    display: none;
+.edit_order_container
+{
     position: fixed;
+    z-index: 99;
     top: 0;
     bottom: 0;
+
+    display: none;
+
     width: 100%;
-    z-index: 99;
+
     background: rgba(0,0,0,.6);
 }
 
-.edit_order_container .pp_edit_wrap{
+.edit_order_container .pp_edit_wrap
+{
     position: absolute;
     bottom: 0;
     left: 0;
+
+    box-sizing: border-box;
     width: 100%;
     padding: 0 10px 10px;
-    box-sizing: border-box;
-    background-color: #fff;
+
     border-radius: 6px 6px 0 0;
+    background-color: #fff;
 }
 
-.edit_order_container .pp_edit_wrap .select_item .title{
+.edit_order_container .pp_edit_wrap .select_item .title
+{
     margin: 10px 5px 5px;
 }
 
-.edit_order_container .pp_edit_wrap .close{
+.edit_order_container .pp_edit_wrap .close
+{
+    font-size: 18px;
+
     position: absolute;
+    z-index: 1;
     top: 10px;
     right: 10px;
-    font-size: 18px;
-    color: #666;
+
     opacity: 1;
-    z-index: 1;
+    color: #666;
 }
 
-.edit_order_container .pp_edit_wrap .close:hover{
+.edit_order_container .pp_edit_wrap .close:hover
+{
     color: #f60;
 }
 

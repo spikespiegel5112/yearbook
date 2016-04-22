@@ -781,10 +781,10 @@
 }
 .sem_portrait_container .sem_banner_wrapper
 {
-    min-width: 1150px;
     position: relative;
     z-index: 2;
 
+    min-width: 1150px;
     height: 800px;
 }
 .sem_portrait_container .sem_mainlist_wrapper li > a
@@ -1286,21 +1286,25 @@
 }
 .sem_pbiapdtitle_wrapper
 {
-    height: 60px;
     font-size: 30px;
 
     overflow: hidden;
+
+    height: 60px;
 
     color: #fff;
 }
 .sem_pbiapdtitle_wrapper h5, .sem_pbiapdtitle_wrapper h6
 {
-    float: left;
-    padding: 0 30px ;
-    height: 60px;
     line-height: 60px;
+
+    float: left;
+
+    height: 60px;
+    padding: 0 30px ;
 }
-.sem_pbiapdtitle_wrapper h5{
+.sem_pbiapdtitle_wrapper h5
+{
     background: #8cc04e;
 }
 .sem_pbiapdtitle_wrapper h6
@@ -1363,11 +1367,13 @@
 .sem_graduationbook_container
 {
     min-width: 1150px;
+
     background: url(../img/sem/sem_iabook_bg_1.jpg);
 }
 .sem_partybook_container
 {
     min-width: 1150px;
+
     border-top: 5px solid #00c1d1;
     background: url(../img/sem/sem_iabook_bg_2.jpg);
 }

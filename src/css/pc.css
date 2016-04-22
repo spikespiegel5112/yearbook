@@ -678,7 +678,6 @@
         -ms-filter: grayscale(100%);
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
-    -webkit-filter: gray;
             filter: gray; /* just for IE6-9 */
 }
 
@@ -3239,18 +3238,23 @@
     border-radius: 8px;
 }
 
-.order_list li li.illustration.photo img{
+.order_list li li.illustration.photo img
+{
+    box-sizing: border-box;
     width: 125px;
     height: 125px;
+
     border: 2px solid #ddd;
     border-radius: 0;
-    box-sizing: border-box;
 }
-.order_list li li.illustration.photo h5{
+.order_list li li.illustration.photo h5
+{
     font-size: 12px;
+
     color: #666;
 }
-.order_list li li.illustration.photo h5 span{
+.order_list li li.illustration.photo h5 span
+{
     margin: 0 4px;
 }
 
@@ -3436,10 +3440,14 @@ li.action div:hover
     padding: 5px 0;
 }
 
-.order_details .opd_checklist_wrapper td .img span{
-    display: block;
-    padding: 5px 0;
+.order_details .opd_checklist_wrapper td .img span
+{
     font-size: 28px;
+
+    display: block;
+
+    padding: 5px 0;
+
     color: #ff696a;
 }
 
@@ -4322,67 +4330,93 @@ li.action div:hover
 	top: 5px;
 	right: 55px;
 }*/
-.photoprint .opd_checklist_wrapper thead tr th:nth-child(1){
+.photoprint .opd_checklist_wrapper thead tr th:nth-child(1)
+{
     width: 220px;
 }
-.photoprint .order_details thead tr th:nth-child(1){
+.photoprint .order_details thead tr th:nth-child(1)
+{
     width: 110px;
 }
-.photoprint .opd_product_info{
+.photoprint .opd_product_info
+{
     overflow: hidden;
 }
-.photoprint .opd_product_info .photo{
+.photoprint .opd_product_info .photo
+{
     float: left;
-    margin: 5px 15px 5px 20px;
+
     width: 86px;
     height: 86px;
+    margin: 5px 15px 5px 20px;
+
     border: 2px solid #ddd;
 }
 .photoprint .order_details .opd_product_info .photo,
-.photoprint .order_details .opd_product_info .config{
+.photoprint .order_details .opd_product_info .config
+{
     float: none;
+
     margin: 5px auto;
 }
-.photoprint .order_details .opd_product_info .config{
+.photoprint .order_details .opd_product_info .config
+{
     line-height: 20px;
+
     height: 20px;
     margin: 0;
 }
-.photoprint .opd_product_info .config{
-    float: left;
-    margin: 10px 0 0;
+.photoprint .opd_product_info .config
+{
     font-size: 12px;
-    color: #666;
-    height: 35px;
     line-height: 35px;
+
+    float: left;
+
+    height: 35px;
+    margin: 10px 0 0;
+
+    color: #666;
 }
-.photoprint .opd_product_info .config span{
+.photoprint .opd_product_info .config span
+{
     margin: 0 4px;
 }
-.photoprint .opd_sketch_item select{
+.photoprint .opd_sketch_item select
+{
     display: block;
-    text-align: center;
+
     width: 92px;
     margin: 3px auto;
+
+    text-align: center;
 }
-.photoprint td .price{
-    margin: 10px auto;
-    height: 35px;
+.photoprint td .price
+{
     line-height: 35px;
+
+    height: 35px;
+    margin: 10px auto;
+
     color: #f00;
 }
-.photoprint td:nth-child(4) .price{
+.photoprint td:nth-child(4) .price
+{
     color: #ff696a;
 }
-.photoprint .opd_checklist_wrapper .ybcommon_counter_item{
+.photoprint .opd_checklist_wrapper .ybcommon_counter_item
+{
     margin: 20px auto;
 }
 .photoprint .opd_actions div,
-.photoprint .order_details td .txt span{
-    display: block;
-    margin: 10px auto;
-    height: 35px;
+.photoprint .order_details td .txt span
+{
     line-height: 35px;
+
+    display: block;
+
+    height: 35px;
+    margin: 10px auto;
 }
 
 .opd_checklist_wrapper,

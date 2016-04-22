@@ -264,23 +264,29 @@
     display: inline-block;
 }
 
-.page_wrap .page .delete{
+.page_wrap .page .delete
+{
+    font-size: 18px;
+    line-height: 18px;
+
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #71ca5e;
-    color: #fff;
+
     width: 20px;
     height: 20px;
-    padding: 0;
-    text-align: center;
-    line-height: 18px;
-    border-radius: 100%;
     margin: 0;
-    font-size: 18px;
+    padding: 0;
+
+    text-align: center;
+
+    color: #fff;
+    border-radius: 100%;
+    background-color: #71ca5e;
 }
 
-.page_wrap .page .change{
+.page_wrap .page .change
+{
     position: absolute;
     right: 10px;
     bottom: 8px;
@@ -427,32 +433,42 @@
     background-color: #ddd;
 }
 
-.add_page_container{
-    display: none;
+.add_page_container
+{
     position: fixed;
+    z-index: 99;
     top: 0;
     bottom: 0;
+
+    display: none;
+
     width: 100%;
+
     background: rgba(0,0,0,.6);
-    z-index: 99;
 }
 
-.add_page_container .add_page{
+.add_page_container .add_page
+{
     position: absolute;
     bottom: 0;
-    padding: 10px;
-    width: 100%;
-    background-color: #fff;
+
     box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+
+    background-color: #fff;
 }
 
-.add_page_container .add_page label{
+.add_page_container .add_page label
+{
     font-size: 14px;
     line-height: 35px;
 }
 
-.add_page_container .add_page .ybcommon_counter_item{
+.add_page_container .add_page .ybcommon_counter_item
+{
     display: inline-block;
+
     vertical-align: middle;
 }
 
@@ -478,24 +494,30 @@
 .edit_book_con .make_book_wrap .print,
 .edit_book_con .make_book_wrap .back
 {
-    position: absolute;
+    font-size: .5rem;
     line-height: 1.2rem;
+
+    position: absolute;
     top: .5rem;
+
+    width: 2.5rem;
     height: 1.2rem;
     margin: 0;
-    width: 2.5rem;
-    color: #fff;
-    font-size: .5rem;
+
     text-align: center;
+
+    color: #fff;
     border-radius: 13px;
     background-color: #fe7100;
 }
 
-.edit_book_con .make_book_wrap .back{
+.edit_book_con .make_book_wrap .back
+{
     left: 10px;
 }
 
-.edit_book_con .make_book_wrap .print{
+.edit_book_con .make_book_wrap .print
+{
     right: 10px;
 }
 

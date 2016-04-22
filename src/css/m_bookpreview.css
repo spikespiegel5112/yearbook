@@ -374,9 +374,9 @@
 
 .flipbook_wrapper .flipbook .page-wrapper
 {
-    perspective: 3500px;
+            perspective: 3500px;
     -webkit-perspective: 3500px;
-    -moz-perspective: 3500px;
+       -moz-perspective: 3500px;
 }
 
 .flipbook-viewport .page
@@ -389,9 +389,9 @@
 {
     -ms-transition: -ms-box-shadow .5s;
 
-    box-shadow: 0 0 20px #ccc;
+        box-shadow: 0 0 20px #ccc;
 
-    -o-box-shadow: 0 0 20px #ccc;
+     -o-box-shadow: 0 0 20px #ccc;
     -ms-box-shadow: 0 0 20px #ccc;
 }
 
@@ -696,8 +696,8 @@
 
     content: '';
     -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 
     border-width: 0 .5em 1.2rem .5rem;
     border-style: solid;

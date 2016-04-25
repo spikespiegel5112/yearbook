@@ -29,14 +29,17 @@
             <span class="ybiconfont ybicon-backward3"></span>
         </a>
         <p>我的书架</p>
-        <div class="filter_order right_btn">
+        <div class="right_btn">
+            <a href="javascript:;">批量打印</a>
+        </div>
+        <!--<div class="filter_order right_btn">
             <a class="search_status" href="javascript:;">全部<i class="icon-caret-down"></i></a>
             <ul>
                 <li><a href="javascript:;">全部</a></li>
                 <li><a href="javascript:;">显示我创建的</a></li>
                 <li><a href="javascript:;">显示我加入的</a></li>
             </ul>
-        </div>
+        </div>-->
     </div>
     <div class="bookshelf_wrap">
         <div class="shelf_tab swiper-pagination"></div>
@@ -547,10 +550,17 @@
         });
     }
 
+    //选择批量打印
+    function bulkOrders(){
+        $('.swiper-slide-active .grid .describe').on('click',function(e){
+            $(this).closest('li').toggleClass('selected');
+        })
+    }
     $(document).ready(function(){
         $.remResizing();
         initBookshelfSwiper();
         filterBook();
+        bulkOrders();
     })
 </script>
 </body>

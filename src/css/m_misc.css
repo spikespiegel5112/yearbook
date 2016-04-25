@@ -11,10 +11,9 @@
 }
 .pricecalculator_setting_wrapper
 {
-    width: 90%;
+    width: 100%;
     padding: 5%;
-
-    border: 1px solid #dbdad9;
+    box-sizing: border-box;
 }
 .pricecalculator_setting_wrapper h5
 {
@@ -153,7 +152,7 @@
     float: left;
 
     height: 1.8rem;
-    margin: 0 .5rem;
+    margin: 0 0 0 10px;
 }
 .pricecalculator_unitprice_item .unitprice:before, .pricecalculator_result_item .totalprice:before
 {
@@ -170,9 +169,9 @@
 }
 .pricecalculator_result_item label
 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 .pricecalculator_unitprice_item label, .pricecalculator_result_wrapper span
 {
-    font-size: .8rem;
+    font-size: .7rem;
 }

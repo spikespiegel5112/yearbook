@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/jquery-ui-datepicker.min.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/cangas.datepicker.css" type="text/css" media="all">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1460348402_2979512.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1461548173_4969952.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/common.css">
@@ -83,11 +83,24 @@
 						<input id="end_date" class="form-control" type="text" value="" placeholder="">
 						<button type="button" class="btn query">查询</button>
 					</div>
+                    <div class="status_query">
+                        <label>类型：</label>
+                        <select class="choose_status">
+                            <option>全部</option>
+                            <option>书册</option>
+                            <option>照片冲印</option>
+                        </select>
+                    </div>
 					<div class="status_query">
+                        <label>状态：</label>
 						<select class="choose_status">
-							<option>已完成</option>
-							<option>制作中</option>
+							<option>全部</option>
+							<option>已下单</option>
 							<option>未付款</option>
+							<option>已付款</option>
+							<option>制作中</option>
+							<option>已发货</option>
+							<option>已完成</option>
 							<option>已取消</option>
 						</select>
 					</div>

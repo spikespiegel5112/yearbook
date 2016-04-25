@@ -1592,10 +1592,25 @@
     line-height: 75px;
     color: #489451;
     font-size: 22px;
+    z-index: 1;
 }
-.sem_iabookintrotab_wrapper a:hover{
+.sem_iabookintrotab_wrapper .active a{
     background-color: #8cc04e;
     color: #fff;
+    position: relative;
+}
+.sem_iabookintrotab_wrapper .active a:after{
+    content: '';
+    display: inline-block;
+    text-align: center;
+    width: 0;
+    height: 0;
+    border-color: #8cc04e transparent transparent transparent;
+    border-style: solid;
+    border-width: 17px 15px 0 15px;
+    position: absolute;
+    bottom: -16px;
+    left: 46%;
 }
 .sem_iabook_container .sem_mainlist_wrapper li{
     margin: 10px;
@@ -1633,11 +1648,13 @@
 }
 .sem_iabookintromain_wrapper .party{
     display: none;
-    background-color: #f8fdfd;
+    background-color: #e8f6e9;
+    background-image: url(../img/sem/sem_iabook_party_00000.png);
 }
 .sem_iabookintromain_wrapper .activity{
     display: none;
-    background-color: #f8fdfd;
+    background-color: #fceffe;
+    background-image: url(../img/sem/sem_iabook_activity_00000.png);
 }
 .sem_iabookintromain_wrapper .graduate .sem_iabookdesc_item{
     color: #8cc04e
@@ -1673,6 +1690,32 @@
 .sem_iabook_container .sem_mainlist_wrapper{
     padding: 0 0 50px 0;
     width: 1150px;
+    position: relative;
+    overflow: visible;
+    background-color: #fff;
+}
+.sem_iabook_container .sem_mainlist_wrapper:before, .sem_iabook_container .sem_mainlist_wrapper:after{
+    content: '';
+    display: block;
+    width: 68%;
+    height: 60px;
+    position: absolute;
+    bottom: 60px;
+    z-index: -1;
+}
+.sem_iabook_container .sem_mainlist_wrapper:before{
+
+    right: 15px;
+    box-shadow: 5px 60px 25px #555;
+    transform:rotate(2.5deg);
+}
+.sem_iabook_container .sem_mainlist_wrapper:after{
+    
+    
+    left: 15px;
+    box-shadow: -5px 60px 25px #555;
+    transform:rotate(-2.5deg);
+    
 }
 .sem_iabook_container .sem_title_wrapper{
     margin: 30px auto 20px;
@@ -1681,6 +1724,13 @@
 .sem_iabook_container .sem_mainlist_wrapper li div span{
     color: red;
     text-align: center;
+    font-size: 17px;
+}
+.sem_iabook_container .sem_mainlist_wrapper li div span label{
+    font-size: 12px;
+    position: relative;
+    left: 5px;
+    bottom: 5px;
 }
 .sem_iabook_container .sem_mainlist_wrapper li div a{
     margin: 30px auto 10px;
@@ -1696,6 +1746,10 @@
     border-radius: 2px;
     color: #8cc04e;
     font-size: 15px;
+}
+.sem_iabook_container .sem_moretpl_btn:active{
+    background-color: #8cc04e;
+    color: #fff;
 }
 .sem_iabookprocedure{
     margin: 0 auto;
@@ -1723,8 +1777,11 @@
     display: inline-block;
     width: 160px;
     height: 160px;
+    line-height: 160px;
     background-color: #5cb3b3;
     border-radius: 50%;
+    font-size: 70px;
+    color: #fff;
 }
 .sem_iabookprocedure li label{
     display: block;
@@ -1748,13 +1805,14 @@
     overflow: hidden;
 }
 .sem_iabookservice_wrapper h6{
+    margin: 30px 0 0 0;
     font-size: 45px;
     font-weight: bold;
     color: #fff;
     text-shadow:2px 2px 6px #555;
 }
 .sem_iabookservice_wrapper div{
-    margin: 0 auto;
+    margin: 30px auto 0;
     width: 520px;
     overflow: hidden;
 }
@@ -1762,30 +1820,47 @@
     float: left;
     width: 170px;
     height: 170px;
+    font-size: 110px;
+    color: #fff;
 }
 .sem_iabookservice_wrapper div p{
     float: left;
-    margin: 40px 0 0 0;
+    margin: 10px 0 0 0;
     padding: 10px;
     background-color: #e6f8f9;
     font-size: 23px;
+    position: relative;
+}
+.sem_iabookservice_wrapper div p:before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 8px 30px 8px ;
+    border-style: solid;
+    border-color: transparent transparent #e6f8f9 transparent;
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    -webkit-transform: rotate(-110deg);
+    -moz-transform: rotate(-110deg);
+    -ms-transform: rotate(-110deg);
 }
 .sem_iabookservice_wrapper a{
-    display: block;
-    margin: 0 auto;
+    float: left;
 }
 .sem_iabookservice_wrapper a{
     display: inline-block;
     color: #fff;
-    margin: 10px 0;
-    padding: 10px 70px;
+    margin: 30px 0;
+    padding: 12px 75px;
     background-color: #ff9735;
     font-size: 20px;
     border-radius: 30px;
-    box-shadow: 0 -1px 0 #000, 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    box-shadow: 1px 1px 5px #08c, 1px 1px 0 #68a;
-    box-shadow: -2px 0 1px #db6, 2px 0 1px #6bd;
-    box-shadow: -1px -1px 0 #ccc, -1px -1px 3px #ccc, 1px 1px 0 #444, 1px 1px 3px #444;
+    box-shadow: -3px -3px 7px #C0500D inset, -3px -3px 7px #C0500D inset, 1px 1px 10px #FEFEFE inset, 1px 1px 10px #FEFEFE inset;
+}
+.sem_iabookservice_wrapper a:active{
+    box-shadow: -3px -3px 7px #FF8238 inset, -3px -3px 7px #A47B63 inset, 1px 1px 10px #A47B63 inset, 1px 1px 10px #A47B63 inset;
 }
 
 

@@ -43,17 +43,19 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class='common_empty_item'>
+                    <div class='common_empty_item hidden'>
                         <span class="ybiconfont ybicon-box"></span>
                         <div>
                             没有浏览过书册
                         </div>
                     </div>
-                    <div class="bookshelf hidden">
+                    <div class="bookshelf ">
                         <ul>
-                            <li class="grid">
+                            <!--选中class:selected 书册类别class:team photo templet 给到grid-->
+                            <li class="grid team selected">
+                                <span class="ybiconfont ybicon-ok"></span>
                                 <div class="display max"><!--大小尺寸class: max or min-->
-                                    <span class="type team">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
+                                    <span class="type">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -83,9 +85,10 @@
                                     <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
                                 </div>
                             </li>
-                            <li class="grid">
+                            <li class="grid photo selected">
+                                <span class="ybiconfont ybicon-ok"></span>
                                 <div class="display min">
-                                    <span class="type photo">照片书</span>
+                                    <span class="type ">照片书</span>
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -115,9 +118,10 @@
                                     <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
                                 </div>
                             </li>
-                            <li class="grid">
+                            <li class="grid templet selected">
+                                <span class="ybiconfont ybicon-ok"></span>
                                 <div class="display max">
-                                    <span class="type templet">模板</span>
+                                    <span class="type">模板</span>
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -160,9 +164,9 @@
                     </div>
                     <div class="bookshelf">
                         <ul>
-                            <li class="grid">
+                            <li class="grid team">
                                 <div class="display max"><!--大小尺寸class: max or min-->
-                                    <span class="type team">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
+                                    <span class="type">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -192,9 +196,9 @@
                                     <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
                                 </div>
                             </li>
-                            <li class="grid">
+                            <li class="grid photo">
                                 <div class="display min">
-                                    <span class="type photo">照片书</span>
+                                    <span class="type">照片书</span>
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -224,9 +228,9 @@
                                     <a class="delete" href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除</a>
                                 </div>
                             </li>
-                            <li class="grid">
+                            <li class="grid templet">
                                 <div class="display max">
-                                    <span class="type templet">模板</span>
+                                    <span class="type">模板</span>
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -270,9 +274,9 @@
                     </div>
                     <div class="bookshelf recycle_bin">
                         <ul>
-                            <li class="grid">
+                            <li class="grid team">
                                 <div class="display max"><!--大小尺寸class: max or min-->
-                                    <span class="type team">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
+                                    <span class="type">团队册</span><!--书册类型：互动册:team,照片书:photo,模板：templet-->
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -300,9 +304,9 @@
                                     <a class="revert" href="javascript:;"><i class="ybiconfont ybicon-reply"></i>还原</a>
                                 </div>
                             </li>
-                            <li class="grid">
+                            <li class="grid photo">
                                 <div class="display min">
-                                    <span class="type photo">照片书</span>
+                                    <span class="type ">照片书</span>
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">
@@ -330,9 +334,9 @@
                                     <a class="revert" href="javascript:;"><i class="ybiconfont ybicon-reply"></i>还原</a>
                                 </div>
                             </li>
-                            <li class="grid">
+                            <li class="grid templet">
                                 <div class="display max">
-                                    <span class="type templet">模板</span>
+                                    <span class="type ">模板</span>
                                     <a href="javascript:;">
                                         <span class="size"></span>
                                         <div class="cover">

@@ -1362,6 +1362,44 @@
     color: #ff3404;
 }
 
+.order_management .filter_wrap{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.order_management .filter_wrap .filter_order{
+    position: relative;
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.order_management .filter_wrap .filter_order:first-child{
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.order_management .filter_wrap .filter_order a{
+    color: #333;
+}
+
+.filter_wrap .filter_order label{
+    font-weight: bold;
+    margin: 0;
+}
+
+.order_management .filter_wrap .filter_order ul{
+    position: absolute;
+    left: 50%;
+    margin-left: -58px;
+    z-index: 9;
+}
+
 .order_management .orderinfo .info
 {
     font-size: 12px;
@@ -1476,23 +1514,7 @@
 
     padding: 0 10px;
 
-    border-bottom: 1px dotted #aaa;
-}
-
-.myorder .photoprint .order_head
-{
-    border-bottom: 0;
     background-color: #f3f8f2;
-}
-
-.myorder .photoprint .order_footer
-{
-    overflow: hidden;
-
-    margin: 0 10px;
-    padding: 0;
-
-    border-top: 1px solid #ddd;
 }
 
 .myorder .orderinfo .order_num
@@ -1516,19 +1538,14 @@
 
     overflow: hidden;
 
-    padding: 0 10px;
-
-    border-top: 1px dotted #aaa;
+    margin: 0 10px;
+    padding: 0;
+    border-top: 1px solid #ddd;
 }
 
 .myorder .order_footer .order_time
 {
     float: left;
-}
-
-.myorder .order_footer .order_btns
-{
-    float: right;
 }
 
 .myorder .order_btns a
@@ -1539,36 +1556,12 @@
     display: inline-block;
 
     box-sizing: border-box;
-    width: 70px;
     height: 25px;
-    margin: 0 0 0 5px;
 
     text-align: center;
     text-decoration: none;
 
     color: #666;
-    border: 1px solid #adadad;
-    border-radius: 4px;
-}
-
-@media only screen and (max-width: 320px)
-{
-    .myorder .order_footer .order_btns a
-    {
-        font-size: 12px;
-
-        width: 60px;
-        margin: 0;
-    }
-}
-
-.myorder .photoprint .order_footer .order_btns
-{
-    float: none;
-}
-
-.myorder .photoprint .order_btns a
-{
     width: auto;
     min-width: 60px;
     margin: 8px 4px;
@@ -1578,16 +1571,21 @@
     border-radius: 2px;
 }
 
-.myorder .photoprint .order_btns .go_pay
+@media only screen and (max-width: 320px)
 {
-    color: #fff;
-    border: 1px solid #f60;
-    background-color: #f60;
+    .myorder .order_footer .order_btns a
+    {
+        font-size: 12px;
+
+        width: 60px;
+    }
 }
 
 .myorder .order_btns .go_pay
 {
-    color: #ff7e00;
+    color: #fff;
+    border: 1px solid #f60;
+    background-color: #f60;
 }
 
 .myorder .order_btns .change,
@@ -1626,11 +1624,11 @@
 
     border: 1px solid #cfcfcf;
 }
-.orderinfo.photoprint .product table
+.orderinfo .product.photoprint table
 {
     width: 95%;
 }
-.orderinfo.photoprint .product table td
+.orderinfo .product.photoprint table td
 {
     vertical-align: top;
 }
@@ -1642,31 +1640,21 @@
 }
 .photoprint .order_confirm label
 {
+    display: block;
     line-height: 20px;
-
-    float: left;
+    text-align: left;
+    margin: 0;
+    font-size: 14px;
 }
 .photoprint .order_confirm li
 {
     line-height: 20px;
 
     height: 20px;
-    padding-left: 40px;
-
     text-align: left;
 }
 
-.photoprint .opd_orderinfoprice_item
-{
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 20px;
-
-    width: 15%;
-
-    vertical-align: top;
-}
-.orderinfo.photoprint  .product .opd_productimg_item img
+.orderinfo  .product.photoprint .opd_productimg_item img
 {
     box-sizing: border-box;
     width: 98px;
@@ -1677,7 +1665,7 @@
 
 @media only screen and (max-width: 320px)
 {
-    .orderinfo.photoprint  .product .opd_productimg_item img
+    .orderinfo  .product.photoprint .opd_productimg_item img
     {
         width: 65px;
         height: 65px;
@@ -1751,14 +1739,18 @@
 
 .opd_orderinfoprice_item
 {
-    font-size: 18px;
 
-    width: 20%;
 
     text-align: right;
-    vertical-align: middle;
 
     color: #ff3404;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+
+    width: 15%;
+
+    vertical-align: top;
 }
 
 .opd_paymentsuccess_wrapper, .opd_paymentfailed_wrapper
@@ -4564,6 +4556,50 @@
     background-color: #fff;
 }
 
+.bookshelf .team.selected{
+    border: 2px solid #3498db;
+    border-radius: 2px;
+}
+
+.bookshelf .photo.selected{
+    border: 2px solid #fa0;
+    border-radius: 2px;
+}
+
+.bookshelf .templet.selected{
+    border: 2px solid #ff5220;
+    border-radius: 2px;
+}
+
+.bookshelf .grid .ybicon-ok{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    line-height: 10px;
+    border-style: solid;
+    border-width: 15px;
+}
+
+.bookshelf .team .ybicon-ok{
+    border-color: transparent #3498db #3498db transparent ;
+}
+
+.bookshelf .photo .ybicon-ok{
+    border-color: transparent #fa0 #fa0 transparent ;
+}
+
+.bookshelf .templet .ybicon-ok{
+    border-color: transparent #ff5220 #ff5220 transparent ;
+}
+
+.bookshelf .grid.selected .ybicon-ok{
+    display: block;
+}
+
 .bookshelf .grid .type
 {
     font-size: .75rem;
@@ -4605,17 +4641,17 @@
     border-bottom: .625rem solid #ececec;
 }
 
-.bookshelf .grid .type.team
+.bookshelf .team .type
 {
     background-color: #3498db;
 }
 
-.bookshelf .grid .type.photo
+.bookshelf .photo .type
 {
     background-color: #fa0;
 }
 
-.bookshelf .grid .type.templet
+.bookshelf .templet .type
 {
     height: 3.125rem;
 

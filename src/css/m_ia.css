@@ -4184,9 +4184,9 @@
 {
     position: relative;
 
-    display: inline-block;
+    float: left;
 
-    width: 31%;
+    width: 32%;
     height: 100px;
     margin: 10px 2px 0;
 
@@ -4232,8 +4232,12 @@
     color: #9e9e9e;
 }
 
-.uploadphoto_main_wrapper li .delete
+.closebutton_img
 {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 18px;
+
     position: absolute;
     z-index: 1;
     top: -5px;
@@ -4247,22 +4251,17 @@
 
     text-align: center;
 
+    /*transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);*/
     border: 2px solid #555;
     border-radius: 100%;
     background: rgba(255, 255, 255, .7);
 }
 
-.uploadphoto_main_wrapper li .delete a
+.closebutton_img span
 {
     font-size: 12px;
-    display: block;
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    border: 0;
-    border-radius: 100%;
-    color: #333;
-    line-height: 24px;
 }
 
 .uploadphoto_main_wrapper li .progressbar

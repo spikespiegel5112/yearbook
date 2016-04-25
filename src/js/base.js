@@ -1395,6 +1395,8 @@
 				imgReady = false,
 				imgCounter = 0,
 				randomPeriod=1000,
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
 				container = $(config.container),
 				ffimgcontainerClass = 'ffimgcontainer',
 				ffimgcontainerEl = $('<div></div>').addClass(ffimgcontainerClass).css({
@@ -1413,11 +1415,8 @@
 				container.append(imgEl);
 			}
 			container.append(ffimgcontainerEl);
-			var bgImg = $('.transition_bg'),
-				bgImgWidth = bgImg.width(),
-				bgImgHeight = bgImg.height(),
-				windowWidth = $(window).width(),
-				windowHeight = $(window).height();
+			var bgImg = $('.transition_bg');
+				
 			ffimgcontainerEl.append(bgImg);
 			//检查每个图片是否加载完成
 			bgImg.each(function(index) {
@@ -1426,6 +1425,8 @@
 					console.log(imgCounter)
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
+						var bgImgWidth = bgImg.width(),
+							bgImgHeight = bgImg.height();
 						var timer = setInterval(function() {
 							randomPeriod=config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							console.log(randomPeriod);

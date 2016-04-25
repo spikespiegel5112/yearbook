@@ -281,7 +281,7 @@
     display: inline-block;
 
     box-sizing: border-box;
-    width: 85%;
+    width: 92%;
     height: 35px;
     margin: 0 auto;
 
@@ -290,9 +290,16 @@
     border-bottom: 1px dotted #c9c9c9;
 }
 
+@media only screen and (max-width: 320px){
+    .standard .standard_info ul li{
+        font-size: 12px;
+    }
+}
+
 .standard .standard_info ul li label
 {
     font-weight: normal;
+    font-size: 14px;
 
     margin-bottom: 0;
 

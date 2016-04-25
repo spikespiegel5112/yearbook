@@ -1108,10 +1108,12 @@
         //全选
         $('.check_all input[type=checkbox]').on('ifChecked',function(){
             $('.bookshelf:visible .grid input').iCheck('check');
+            $('.printings').removeClass('disabled');
         });
 
         $('.check_all input[type=checkbox]').on('ifUnchecked',function(){
             $('.bookshelf:visible .grid input').iCheck('uncheck');
+            $('.printings').addClass('disabled');
         });
 
         //有选中书册 激活批量下单按钮

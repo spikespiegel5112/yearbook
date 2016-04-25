@@ -143,21 +143,26 @@
 				</div>
 				<div class="bookshelf_wrap">
                     <div class="filter_wrap">
+                        <label class="check_all"><input type="checkbox" name="checkBook" value="">全选</label>
                         <div class="filter_group hd">
                             <a class="on" href="javascript:;">最近编辑</a>
                             <a href="javascript:;">全部书册</a>
                             <a href="javascript:;">回收站</a>
                         </div>
-                        <a class="new_book" href="javascript:;">创建新书册</a>
+                        <div class="btns">
+                            <a class="new_book" href="javascript:;">创建新书册</a>
+                            <a class="printings disabled" href="javascript:;">批量下单印刷</a>
+                        </div>
                     </div>
                     <div class="bd">
                         <div class="bookshelf">
-                            <div class='pc_empty_item'>
+                            <div class='pc_empty_item hidden'>
                                 <span class='avatar_1'></span>
                                 <label>您最近没有编辑的书册！</label>
                             </div>
-                            <ul class="hidden">
+                            <ul class="">
                                 <li class="grid">
+                                    <input type="checkbox" name="checkBook" value="">
                                     <div class="display max">
                                         <a href="javascript:;">
                                             <span class="size"></span>
@@ -226,6 +231,7 @@
                                     </div>
                                 </li>
                                 <li class="grid">
+                                    <input type="checkbox" name="checkBook" value="">
                                     <div class="display min">
                                         <a href="javascript:;">
                                             <span class="size"></span>
@@ -294,6 +300,7 @@
                                     </div>
                                 </li>
                                 <li class="grid">
+                                    <input type="checkbox" name="checkBook" value="">
                                     <div class="display max">
                                         <a href="javascript:;">
                                             <span class="size"></span>
@@ -380,6 +387,7 @@
                             </div>
                             <ul class="">
                                 <li class="grid">
+                                    <input type="checkbox" name="checkBook" value="">
                                     <div class="display max">
                                         <a href="javascript:;">
                                             <span class="size"></span>
@@ -448,6 +456,7 @@
                                     </div>
                                 </li>
                                 <li class="grid">
+                                    <input type="checkbox" name="checkBook" value="">
                                     <div class="display min">
                                         <a href="javascript:;">
                                             <span class="size"></span>
@@ -516,6 +525,7 @@
                                     </div>
                                 </li>
                                 <li class="grid">
+                                    <input type="checkbox" name="checkBook" value="">
                                     <div class="display max">
                                         <a href="javascript:;">
                                             <span class="size"></span>
@@ -1093,6 +1103,25 @@
         })
     }
 
+    //批量下单
+    function bulkOrders(){
+        //全选
+        $('.check_all input[type=checkbox]').on('ifChecked',function(){
+            $('.bookshelf:visible .grid input').iCheck('check');
+            $('.printings').removeClass('disabled');
+        });
+
+        $('.check_all input[type=checkbox]').on('ifUnchecked',function(){
+            $('.bookshelf:visible .grid input').iCheck('uncheck');
+            $('.printings').addClass('disabled');
+        });
+
+        //有选中书册 激活批量下单按钮
+        $('.bookshelf:visible .grid input').on('ifChecked',function(){
+            $('.printings').removeClass('disabled');
+        });
+    }
+
     $(document).ready(function() {
 		joinBycode();
 		del_book();
@@ -1100,6 +1129,7 @@
         bookCompletionRate();
         extendedSearch();
         editBookName();
+        bulkOrders();
 	});
 	</script>
 </body>

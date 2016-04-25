@@ -823,10 +823,13 @@
 					e.stopPropagation();
 					console.log(offsetVal[i])
 					if (isMousedown) {
+						progress = progress * (config.density / axisWidth) + offsetVal[index];
+						$(config.returnto).eq(index).val(Math.floor(progress));
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0],
 								moveX = touch.pageX - offsetLeft;
 							if (touch.clientX < offsetLeft + axisWidth - sliderWidth / 2 && touch.clientX > offsetLeft) {
+								// _this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 							};
 						} else {
@@ -842,8 +845,7 @@
 						} else {
 							progress = moveX;
 						}
-						progress = progress * (config.density / axisWidth) + offsetVal[index];
-						$(config.returnto).eq(index).val(Math.floor(progress));
+						
 						console.log(progress)
 						if (typeof options == 'string') {
 							switch (options) {
@@ -1395,6 +1397,8 @@
 				imgReady = false,
 				imgCounter = 0,
 				randomPeriod=1000,
+				windowWidth = $(window).width(),
+				windowHeight = $(window).height(),
 				container = $(config.container),
 				ffimgcontainerClass = 'ffimgcontainer',
 				ffimgcontainerEl = $('<div></div>').addClass(ffimgcontainerClass).css({
@@ -1423,9 +1427,7 @@
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
 						var bgImgWidth = bgImg.width(),
-							bgImgHeight = bgImg.height(),
-							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+							bgImgHeight = bgImg.height();
 						var timer = setInterval(function() {
 							randomPeriod=config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							console.log(randomPeriod);

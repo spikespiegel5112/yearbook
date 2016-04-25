@@ -383,7 +383,7 @@
 .personal_content_box .tool_wrap .yb_menu
 {
     position: relative;
-    z-index: 99;
+    z-index: 9;
 
     display: inline-block;
 
@@ -590,6 +590,11 @@
     margin-left: 15px;
 }
 
+.bookshelf_wrap .filter_wrap .check_all{
+    float: left;
+    margin-left: 10px;
+}
+
 .bookshelf_wrap .filter_group a
 {
     font-size: 16px;
@@ -607,21 +612,26 @@
     color: #90c132;
 }
 
-.bookshelf_wrap .filter_wrap .new_book
+.bookshelf_wrap .filter_wrap .btns
 {
     font-size: 18px;
     line-height: 36px;
-
     float: right;
+}
 
+.bookshelf_wrap .filter_wrap .btns a{
+    display: inline-block;
     width: 145px;
     height: 36px;
-    margin: 12px 2px 12px 25px;
+    margin: 12px 10px 12px 0;
 
     text-align: center;
 
     color: #fff;
     border-radius: 4px;
+}
+
+.bookshelf_wrap .filter_wrap .btns .new_book{
     background-color: #ff696a;
 }
 
@@ -633,6 +643,16 @@
 .bookshelf_wrap .filter_wrap .new_book:active
 {
     background-color: #d45b5c;
+}
+
+.bookshelf_wrap .filter_wrap .btns .printings{
+    background-color: #90c132;
+}
+
+.bookshelf_wrap .filter_wrap .btns .printings.disabled{
+    background-color: #c9c9c9;
+    cursor: default;
+    pointer-events: none;
 }
 
 .bookshelf_wrap .bookshelf
@@ -655,6 +675,13 @@
     box-shadow: 0 1px 0 #fff;
 }
 
+.bookshelf_wrap .bookshelf .grid .icheckbox_minimal-green{
+    position: absolute;
+    top: 71px;
+    left: 10px;
+    background-color: #fff;
+}
+
 .bookshelf .grid .display
 {
     position: absolute;
@@ -663,7 +690,7 @@
     left: 0;
 
     /*float: left;*/
-    padding: 0 10px 0 15px;
+    margin: 0 10px 0 30px;
 }
 
 .bookshelf.recycle_bin .grid .display,
@@ -770,10 +797,10 @@
     height: 145px;
 }
 
-.bookshelf .grid .display:hover .size
+/*.bookshelf .grid .display:hover .size
 {
-    display: block;
-}
+    display: block;/!*NEWYB-1847*!/
+}*/
 
 .bookshelf .grid .display.max .size
 {
@@ -829,7 +856,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 160px;
-    padding: 22px 65px 0 188px;
+    padding: 22px 65px 0 193px;
 }
 
 .bookshelf .grid .describe .info
@@ -2403,9 +2430,10 @@
 {
     display: inline-block;
 
-    width: 160px;
+    width: 100px;
     height: 25px;
     padding: 3px;
+    text-align: center;
 
     background: #f5f6f7;
 }

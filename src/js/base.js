@@ -823,10 +823,13 @@
 					e.stopPropagation();
 					console.log(offsetVal[i])
 					if (isMousedown) {
+						progress = progress * (config.density / axisWidth) + offsetVal[index];
+						$(config.returnto).eq(index).val(Math.floor(progress));
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0],
 								moveX = touch.pageX - offsetLeft;
 							if (touch.clientX < offsetLeft + axisWidth - sliderWidth / 2 && touch.clientX > offsetLeft) {
+								// _this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 							};
 						} else {
@@ -842,8 +845,7 @@
 						} else {
 							progress = moveX;
 						}
-						progress = progress * (config.density / axisWidth) + offsetVal[index];
-						$(config.returnto).eq(index).val(Math.floor(progress));
+						
 						console.log(progress)
 						if (typeof options == 'string') {
 							switch (options) {

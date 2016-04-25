@@ -127,8 +127,7 @@ $(function() {
 		fontsize: 20
 	});
 	$('.pricecalculator_coverselector_wrapper li').on('touchend', function() {
-		$this = $(this);
-		$this.addClass('active').siblings().removeClass('active');
+		$(this).addClass('active').siblings().removeClass('active');
 	});
 
 	$('.common_slider_wrapper .slider').sliderControl({

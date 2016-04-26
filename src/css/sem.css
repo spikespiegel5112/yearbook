@@ -1343,7 +1343,7 @@
 
 .sem_graduationbook_container .sem_banner_wrapper, .sem_partybook_container .sem_banner_wrapper, .sem_iabook_container .sem_banner_wrapper
 {
-    height: 440px;
+    height: 420px;
 }
 .sem_graduationbook_container .sem_banner_wrapper
 {
@@ -1606,6 +1606,7 @@
 .sem_iabookintrotab_wrapper{
     width: 100%;
     height: 75px;
+    border-bottom: 1px solid #c4e1bf;
 }
 .sem_iabookintrotab_wrapper li{
     float: left;
@@ -1698,15 +1699,11 @@
     display: none;
     background-image: url(../img/sem/sem_iabook_activity_00000.png);
 }
-.sem_iabookintromain_wrapper .graduate .sem_iabookdesc_item{
+.sem_iabookintromain_wrapper .sem_iabookdesc_item{
     color: #8cc04e
 }
-.sem_iabookintromain_wrapper .party .sem_iabookdesc_item{
-    color: #489451;
-}
-.sem_iabookintromain_wrapper .activity .sem_iabookdesc_item{
-    color: #a67fac;
-}
+
+
 
 .sem_productadvence_wrapper{
     margin: 0 20px 0 0;
@@ -1788,7 +1785,7 @@
     line-height: 40px;
     background-color: #fff;
     border: 2px solid #8cc04e;
-    border-radius: 2px;
+    border-radius: 6px;
     color: #8cc04e;
     font-size: 15px;
 }

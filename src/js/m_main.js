@@ -219,7 +219,11 @@
                 top: phT
             }, 300, function() {});
             $('.new_option ul .join_ia').animate({
-                left: midLeft,
+                left: iaL,
+                top: jiaT
+            }, 300, function() {});
+            $('.new_option ul .new_photo').animate({
+                left: phL,
                 top: jiaT
             }, 300, function() {});
         });

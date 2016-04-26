@@ -1411,10 +1411,10 @@
 
     box-sizing: border-box;
     width: 100%;
-    margin: 20px 0;
+    margin: 10px 0;
 
     color: #666;
-    border-top: 1px solid #dcdcdc;
+    /*border-top: 1px solid #dcdcdc;*/
     border-bottom: 1px solid #dcdcdc;
     background-color: #fff;
 }
@@ -1532,6 +1532,18 @@
     color: #ff3404;
 }
 
+.myorder .orderinfo .order_time{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: right;
+    height: 25px;
+    line-height: 26px;
+    float: none!important;
+    background-color: #efeff4;
+    border-bottom: 1px solid #dcdcdc;
+}
+
 .myorder .order_footer
 {
     font-weight: bold;
@@ -1548,22 +1560,25 @@
     float: left;
 }
 
+.myorder .order_btns{
+    text-align: center;
+}
+
 .myorder .order_btns a
 {
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 12px;
+    line-height: 28px;
 
     display: inline-block;
 
     box-sizing: border-box;
-    height: 25px;
+    height: 28px;
 
     text-align: center;
     text-decoration: none;
 
     color: #666;
-    width: auto;
-    min-width: 60px;
+    width: 70px;
     margin: 8px 4px;
     padding: 0 5px;
 
@@ -1575,9 +1590,8 @@
 {
     .myorder .order_footer .order_btns a
     {
-        font-size: 12px;
-
-        width: 60px;
+        min-width: 60px;
+        width: auto;
     }
 }
 
@@ -1628,9 +1642,10 @@
 {
     width: 95%;
 }
-.orderinfo .product.photoprint table td
+.orderinfo .product table td
 {
     vertical-align: top;
+    text-align: center;
 }
 .photoprint .order_confirm
 {
@@ -1678,7 +1693,7 @@
 
 .orderinfo .product td div
 {
-    text-align: center;
+    text-align: left;
 }
 
 .orderinfo .product td div a

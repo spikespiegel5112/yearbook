@@ -1418,7 +1418,6 @@
 			}
 			container.append(ffimgcontainerEl);
 			var bgImg = $('.transition_bg');
-				
 			ffimgcontainerEl.append(bgImg);
 			//检查每个图片是否加载完成
 			bgImg.each(function(index) {
@@ -1443,11 +1442,11 @@
 							} else {
 								bgImg.eq(index - 1).fadeOut(config.transittime * 1000);
 								bgImg.eq(index).fadeIn(config.transittime * 1000);
-								console.log($('.' + ffimgcontainerClass).height());
 								bgImg.eq(index).css({
 									top: (windowHeight - bgImgHeight) / 2,
 									left: (windowWidth - bgImgWidth) / 2
 								});
+								console.log(bgImgHeight);
 							}
 							index++;
 						}, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));

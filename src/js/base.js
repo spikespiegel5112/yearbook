@@ -1428,6 +1428,7 @@
 						console.log('imgReady');
 						var bgImgWidth = bgImg.width(),
 							bgImgHeight = bgImg.height();
+							console.log(bgImgWidth);
 						var timer = setInterval(function() {
 							randomPeriod=config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							console.log(randomPeriod);

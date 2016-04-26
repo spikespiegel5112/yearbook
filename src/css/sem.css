@@ -460,6 +460,10 @@
 {
     background: url('../img/sem/sem_footer_party_00000.jpg') no-repeat;
     background-size: cover;
+    color: #fff;
+}
+.party_family_con .footer_menu_container a{
+    color: #fff;
 }
 
 .party_con .sem_moretpl_btn
@@ -687,6 +691,10 @@
 {
     background: url(../img/sem/sem_footer_tourism_00000.jpg);
     background-position: center;
+    color: #fff;
+}
+.footer_menu_container.sem_tourism a{
+    color: #fff;
 }
 /*~~~~~~~~~~sem_loveandportrait.html~~~~~~~~~~*/
 .sem_love_container
@@ -862,10 +870,27 @@
 {
     background: url(../img/sem/sem_footer_love_00000.jpg);
     background-position: center;
+    color: #fff;
+}
+.footer_menu_container.sem_love a{
+    color: #fff;
 }
 .footer_menu_container.sem_photoiabook
 {
     background: #86b751;
+    color: #fff;
+}
+.footer_menu_container.sem_photoiabook a{
+    color: #fff;
+}
+.footer_menu_container.sem_parenting
+{
+    background: url(../img/footer_menu_bg_1_00000.jpg);
+    color: #fff;
+}
+.footer_menu_container.sem_parenting a
+{
+    color: #fff;
 }
 .sem_portrait_container .sem_deliverguarantee_wrapper h5
 {
@@ -1620,11 +1645,24 @@
     margin: 10px;
     width: 190px;
     box-shadow:none;
+    
 }
 .sem_iabook_container .sem_mainlist_wrapper li a img{
     display: block;
     width: 100%;
     box-shadow: 0px 10px 20px #888;
+    position: relative;
+    bottom: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.sem_iabook_container .sem_mainlist_wrapper li a img:hover{
+    position: relative;
+    bottom: 7px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
 }
 .sem_iabookintromain_wrapper{
     width: 100%;
@@ -1647,17 +1685,14 @@
     text-align: center;
 }
 .sem_iabookintromain_wrapper .graduate{
-    background-color: #f8fdfd;
     background-image: url(../img/sem/sem_iabook_graduate_00000.png);
 }
 .sem_iabookintromain_wrapper .party{
     display: none;
-    background-color: #e8f6e9;
     background-image: url(../img/sem/sem_iabook_party_00000.png);
 }
 .sem_iabookintromain_wrapper .activity{
     display: none;
-    background-color: #fceffe;
     background-image: url(../img/sem/sem_iabook_activity_00000.png);
 }
 .sem_iabookintromain_wrapper .graduate .sem_iabookdesc_item{
@@ -1867,7 +1902,12 @@
 .sem_iabookservice_wrapper a:active{
     box-shadow: -3px -3px 7px #FF8238 inset, -3px -3px 7px #A47B63 inset, 1px 1px 10px #A47B63 inset, 1px 1px 10px #A47B63 inset;
 }
-
+.sem_iabook_container .sem_mainlistul_wrapper ul{
+    display: none;
+}
+.sem_iabook_container .sem_mainlistul_wrapper ul:first-child{
+    display: block;
+} 
 
 
 

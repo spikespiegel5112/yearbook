@@ -1650,11 +1650,13 @@
 .sem_iabook_container .sem_mainlist_wrapper li a img{
     display: block;
     width: 100%;
+    height: 260px;
     box-shadow: 0px 10px 20px #888;
     position: relative;
     bottom: 0;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
     transition: all 0.2s;
 }
 .sem_iabook_container .sem_mainlist_wrapper li a img:hover{
@@ -1662,6 +1664,7 @@
     bottom: 7px;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
     transition: all 0.2s;
 }
 .sem_iabookintromain_wrapper{
@@ -1743,18 +1746,20 @@
     z-index: -1;
 }
 .sem_iabook_container .sem_mainlist_wrapper:before{
-
     right: 15px;
     box-shadow: 5px 60px 25px #555;
+    -webkit-transform:rotate(2.5deg);
+    -moz-transform:rotate(2.5deg);
+    -ms-transform:rotate(2.5deg);
     transform:rotate(2.5deg);
 }
 .sem_iabook_container .sem_mainlist_wrapper:after{
-    
-    
     left: 15px;
     box-shadow: -5px 60px 25px #555;
+    -webkit-transform:rotate(-2.5deg);
+    -moz-transform:rotate(-2.5deg);
+    -ms-transform:rotate(-2.5deg);
     transform:rotate(-2.5deg);
-    
 }
 .sem_iabook_container .sem_title_wrapper{
     margin: 30px auto 20px;

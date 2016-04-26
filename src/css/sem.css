@@ -1718,7 +1718,7 @@
 }
 .sem_productadvence_wrapper p{
     line-height: 30px;
-    font-size: 16px;
+    font-size: 15px;
     color: #666666;
 }
 .sem_productadvence_wrapper h6{
@@ -1792,6 +1792,7 @@
     color: #fff;
 }
 .sem_iabookprocedure{
+    padding: 0 0 40px 0;
     margin: 0 auto;
     width: 900px;
 }
@@ -1842,7 +1843,18 @@
     width: 100%;
     background-color: #80c1bf;
     text-align: center;
-    overflow: hidden;
+}
+.sem_iabookservice_wrapper:before{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 25px 25px;
+    border-color: transparent transparent #80c1bf transparent;
+    position: relative;
+    bottom: 25px;
 }
 .sem_iabookservice_wrapper h6{
     margin: 30px 0 0 0;

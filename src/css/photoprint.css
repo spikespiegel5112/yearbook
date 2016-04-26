@@ -1861,21 +1861,22 @@
     border: 1px solid #ccc;
     background-color: rgba(0,0,0,.05);
 }
-.photoprint_polaroidframe_wrapper > div
-{
-    border: 1px solid #ddd;
 
-    background-color: #fff;
-    box-shadow: 3px 3px 10px #666;
-}
-.photoprint_polaroidframe_wrapper > div > div
+.photoprint_polaroidframe_wrapper > div
 {
     position: absolute;
     bottom: 0;
 
-    margin: 20px 0 25px 20px;
+    border: 1px solid #ccc;
+    background-color: rgba(0,0,0,.05);
 
-    background-color: #e8e8e8;
+    box-shadow: 3px 3px 10px #666;
+}
+.photoprint_polaroidframe_wrapper > div div{
+    margin: 7.4% 9%;
+    width: 74%;
+    height: 81%;
+
 }
 .photoprint_shframe_wrapper > div, .photoprint_polaroidframe_wrapper > div
 {
@@ -1934,17 +1935,17 @@
 
 .photoprint_polaroidframe_wrapper .polaroid_threeinch4d
 {
-    width: 260px;
+    width: 280px;
     height: 200px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_fourinch4r
 {
-    width: 350px;
+    width: 342px;
     height: 255px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_fiveinch
 {
-    width: 440px;
+    width: 435px;
     height: 305px;
 }
 .photoprint_polaroidframe_wrapper .polaroid_sixinch
@@ -1952,7 +1953,7 @@
     width: 525px;
     height: 350px;
 }
-.photoprint_polaroidframe_wrapper .polaroid_threeinch4d div
+/*.photoprint_polaroidframe_wrapper .polaroid_threeinch4d div
 {
     width: 200px;
     height: 150px;
@@ -1971,7 +1972,7 @@
 {
     width: 415px;
     height: 300px;
-}
+}*/
 .photoprint_polaroidframe_wrapper label
 {
     font-size: 14px;

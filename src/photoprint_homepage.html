@@ -515,12 +515,12 @@
 		polaroidFrameEl.each(function(i) {
 			var $this = $(this),
 				thisLength = polaroidFrameEl.length;
-			$this.find('div').css({
-				'background-image': 'url(' + imageUrl + ')',
-				'background-position': 'bottom right'
-			});
+			// $this.css({
+			// 	'background-image': 'url(' + imageUrl + ')',
+			// 	'background-position': 'bottom right'
+			// });
 			$this.css({
-				'z-index': (thisLength - i)
+				'z-index': i
 			});
 		});
 		polaroidCatelogEl.hover(function() {
@@ -529,11 +529,23 @@
 				index = $this.index(),
 				thisFrameEl = polaroidFrameEl.eq(index);
 			$this.addClass('active').siblings().removeClass('active');
-			polaroidFrameEl.eq(index).css({
-				'opacity': 1
-			})
-			polaroidFrameEl.eq(index).prev('div').css({
-				'opacity': 0
+			thisFrameEl.css({
+				'background-color':'#fff',
+				'z-index': 1
+			});
+			thisFrameEl.siblings().css({
+				'background-color':'rgba(0,0,0,.05)',
+				'z-index': 0
+			});
+			thisFrameEl.find('div').css({
+				'background-image': 'url(' + imageUrl + ')',
+				'background-position':'right bottom',
+				'z-index': 1
+			});
+			thisFrameEl.siblings().find('div').css({
+				'background-image': 'none',
+				'background-position':'right bottom',
+				'z-index': 0
 			});
 			polaroidtaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(polaroidSizeInfo.vertical[index] + ' cm')
 			polaroidtaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(polaroidSizeInfo.horizonal[index] + ' cm');

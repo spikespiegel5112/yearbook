@@ -18,7 +18,7 @@
     float: left;
 
     box-sizing: border-box;
-    width: 80%;
+    width: 100%;
     padding-top: 2px;
 
     border-right: 1px solid #d9d9d9;
@@ -1260,7 +1260,7 @@
 
 .right_content_container
 {
-    display: inline-block;
+    display: none;
 
     width: 18%;
     padding: 25px 0 0 15px;
@@ -4689,22 +4689,59 @@ li.action div:hover
 
 .opd_actions .share:hover .common_sharelist_wrapper
 {
-    top: -10px;
-    right: -152px;
+    top: 30px;
+    left: -23px;
 
     display: block;
 
-    width: 162px;
+    width: 154px;
+}
+
+.opd_actions .share .common_sharelist_wrapper::before{
+    position: absolute;
+    z-index: 1;
+    top: -17px;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid #fff;
+}
+
+.opd_actions .share .common_sharelist_wrapper::after{
+    position: absolute;
+    z-index: 0;
+    top: -18px;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid #ddd;
 }
 
 .opd_actions .share .common_sharelist_wrapper ul li
 {
-    width: 25px;
+    width: 26px;
+    height: 26px;
+    margin: 0 6px 0 0;
+}
+
+.opd_actions .share .common_sharelist_wrapper ul li:last-child{
+    margin: 0;
 }
 
 .opd_actions .share .common_sharelist_wrapper ul li a
 {
     font-size: 24px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
 }
 
 .opd_actions .preview img

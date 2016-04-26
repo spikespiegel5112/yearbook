@@ -782,12 +782,13 @@
 				isMousedown = false,
 				offsetLeft = _this.offset().left,
 				startX = 0,
+				startY=0,
 				axisWidth = $(config.axisx).width(),
 				sliderWidth = _this.width(),
 				unitWidth = axisWidth / config.density,
 				index = 0,
 				progress = 0,
-				oldProgress = 0,
+				returned = false,
 				offsetVal = [],
 				container = _this.parent();
 
@@ -799,7 +800,6 @@
 			if (typeof config.offset == 'string') {
 				$(config.offset).each(function(i) {
 					offsetVal[i] = Number($(this).val());
-					// index = i;
 				});
 			} else if (typeof config.offset == 'number') {
 				_this.each(function(i) {
@@ -812,32 +812,36 @@
 					isMousedown = true;
 					if (isMobile()) {
 						var touch = e.originalEvent.touches[0];
-						startX = touch.clientX;
 					} else {
-						startX = e.clientX;
+						var touch = e;
 					}
+					var startX = touch.clientX,
+						startY=touch.clientY;
+						console.log(startX)
 					index = i;
 				});
-				// _this.parent().eq(i).on(touchMove, function(e) {
 				container.on(touchMove, function(e) {
-					e.stopPropagation();
-					console.log(offsetVal[i])
+					// e.stopPropagation();
+					// console.log(offsetVal[i])
 					if (isMousedown) {
-						progress = progress * (config.density / axisWidth) + offsetVal[index];
-						$(config.returnto).eq(index).val(Math.floor(progress));
+						if (!returned) {
+							progress = progress * (config.density / axisWidth) + offsetVal[index];
+							$(config.returnto).eq(index).val(Math.floor(progress));
+							returned=true;
+						};
 						if (isMobile()) {
-							var touch = e.originalEvent.touches[0],
-								moveX = touch.pageX - offsetLeft;
-							if (touch.clientX < offsetLeft + axisWidth - sliderWidth / 2 && touch.clientX > offsetLeft) {
-								// _this.eq(index).css('margin-left', moveX - sliderWidth / 2);
-								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
-							};
+							var touch = e.originalEvent.touches[0];
 						} else {
-							var moveX = e.pageX - offsetLeft;
-							if (e.clientX < offsetLeft + axisWidth - sliderWidth && e.clientX > offsetLeft) {
-								_this.eq(index).css('margin-left', (moveX - sliderWidth / 2));
+							var touch = e;
+						}
+						var moveX = touch.pageX - offsetLeft;
+						if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft){
+							if (returned) {
+								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
+								returned =false;
 							};
 						}
+						
 						if (moveX < 0) {
 							progress = 0;
 						} else if (moveX > axisWidth) {
@@ -871,7 +875,6 @@
 						var value = Number($(this).val());
 						if (value > config.density + initVal) {
 							value = config.density + initVal;
-							/*console.log(Number(config.density) + Number(initVal));*/
 						} else if (value < 0 || value < initVal) {
 							value = initVal;
 						} else if (isNaN(value)) {

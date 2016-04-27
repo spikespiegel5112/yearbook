@@ -821,9 +821,9 @@
 					index = i;
 				});
 				container.on(touchMove, function(e) {
-					e.stopPropagation();
+					e.preventDefault();
+					// e.stopPropagation();
 					// alert('aaa')
-					// console.log(offsetVal[i])
 					if (isMousedown) {
 						if (!returned) {
 							progress = progress * (config.density / axisWidth) + offsetVal[index];
@@ -886,7 +886,7 @@
 				}
 			});
 
-			container.on(touchEnd, function() {
+			$(document).on(touchEnd, function() {
 				isMousedown = false;
 			});
 

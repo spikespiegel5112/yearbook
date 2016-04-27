@@ -820,7 +820,7 @@
 						console.log(startX)
 					index = i;
 				});
-				container.on(touchMove, function(e) {
+				$(document).on(touchMove, function(e) {
 					// e.stopPropagation();
 					// console.log(offsetVal[i])
 					if (isMousedown) {
@@ -839,12 +839,12 @@
 							if (returned) {
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								returned =false;
-							};
+							}
 						}
 						
 						if (moveX < 0) {
 							progress = 0;
-						} else if (moveX > axisWidth) {
+						} else if (moveX >= axisWidth) {
 							progress = axisWidth;
 						} else {
 							progress = moveX;

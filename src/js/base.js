@@ -820,8 +820,9 @@
 						console.log(startX)
 					index = i;
 				});
-				$(document).on(touchMove, function(e) {
-					// e.stopPropagation();
+				container.on(touchMove, function(e) {
+					e.stopPropagation();
+					// alert('aaa')
 					// console.log(offsetVal[i])
 					if (isMousedown) {
 						if (!returned) {
@@ -835,7 +836,7 @@
 							var touch = e;
 						}
 						var moveX = touch.pageX - offsetLeft;
-						if (touch.clientX < offsetLeft + axisWidth - sliderWidth && touch.clientX > offsetLeft){
+						if (touch.clientX < offsetLeft + axisWidth+sliderWidth/2 && touch.clientX > offsetLeft){
 							if (returned) {
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								returned =false;
@@ -846,11 +847,10 @@
 							progress = 0;
 						} else if (moveX >= axisWidth) {
 							progress = axisWidth;
+							console.log(offsetLeft)
 						} else {
 							progress = moveX;
 						}
-						
-						console.log(progress)
 						if (typeof options == 'string') {
 							switch (options) {
 								case 'onchange':
@@ -886,7 +886,7 @@
 				}
 			});
 
-			$(document).on(touchEnd, function() {
+			container.on(touchEnd, function() {
 				isMousedown = false;
 			});
 

@@ -489,7 +489,91 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><div>富士光面大5寸</div></td>
+                            <td><div>富士光面大5寸（3D）</div></td>
+                            <td><span>￥0.45</span></td>
+                            <td><span>12</span></td>
+                            <td><span>￥5.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士绒面5寸</div></td>
+                            <td><span>￥0.55</span></td>
+                            <td><span>92</span></td>
+                            <td><span>￥50.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>柯达绒面10寸</div></td>
+                            <td><span>￥0.65</span></td>
+                            <td><span>10</span></td>
+                            <td><span>￥6.5</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士光面大5寸（3D）</div></td>
+                            <td><span>￥0.45</span></td>
+                            <td><span>12</span></td>
+                            <td><span>￥5.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士绒面5寸</div></td>
+                            <td><span>￥0.55</span></td>
+                            <td><span>92</span></td>
+                            <td><span>￥50.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>柯达绒面10寸</div></td>
+                            <td><span>￥0.65</span></td>
+                            <td><span>10</span></td>
+                            <td><span>￥6.5</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士光面大5寸（3D）</div></td>
+                            <td><span>￥0.45</span></td>
+                            <td><span>12</span></td>
+                            <td><span>￥5.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士绒面5寸</div></td>
+                            <td><span>￥0.55</span></td>
+                            <td><span>92</span></td>
+                            <td><span>￥50.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>柯达绒面10寸</div></td>
+                            <td><span>￥0.65</span></td>
+                            <td><span>10</span></td>
+                            <td><span>￥6.5</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士光面大5寸（3D）</div></td>
+                            <td><span>￥0.45</span></td>
+                            <td><span>12</span></td>
+                            <td><span>￥5.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士绒面5寸</div></td>
+                            <td><span>￥0.55</span></td>
+                            <td><span>92</span></td>
+                            <td><span>￥50.4</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>柯达绒面10寸</div></td>
+                            <td><span>￥0.65</span></td>
+                            <td><span>10</span></td>
+                            <td><span>￥6.5</span></td>
+                            <td><a class="delete ybiconfont ybicon-failure" href="javascript:;"></a></td>
+                        </tr>
+                        <tr>
+                            <td><div>富士光面大5寸（3D）</div></td>
                             <td><span>￥0.45</span></td>
                             <td><span>12</span></td>
                             <td><span>￥5.4</span></td>
@@ -1044,11 +1128,16 @@
         }
 
 		function editPhotoConWidth(){
-			var docH = $(window).height();
-			$('body').css({'height':'100%','min-height':'100%'});
-			$('html').css({'height':'100%','min-height':'100%','overflow':'auto','overflow-y':'hidden'});
-			$('.main_container .pp_edit_con').css('height',docH -32);
-			$('.pp_edit_con .img_con').css('height',docH -283);
+			var docH = $(window).height(),
+                docW = $(window).width();
+			$('body').css({'height':'100%','min-height':'100%','overflow-y':'hidden'});
+			$('html').css({'height':docH,'min-height':'100%','overflow-y':'hidden'});
+            $('.main_container .pp_edit_con').css('height',docH -32);
+            if(docW < 1150){
+                $('.pp_edit_con .img_con').css('height',docH -319);
+            }else{
+                $('.pp_edit_con .img_con').css('height',docH -283);
+            }
             $(window).resize(function(){
                 editPhotoConWidth();
             })

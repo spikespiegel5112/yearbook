@@ -1638,14 +1638,19 @@
 
     border: 1px solid #cfcfcf;
 }
-.orderinfo .product.photoprint table
-{
-    width: 95%;
-}
+
 .orderinfo .product table td
 {
     vertical-align: top;
     text-align: center;
+}
+.orderinfo .product table td:first-child{
+    width: 110px;
+}
+@media only screen and (max-width: 320px){
+    .orderinfo .product table td:first-child{
+        width: 90px;
+    }
 }
 .photoprint .order_confirm
 {

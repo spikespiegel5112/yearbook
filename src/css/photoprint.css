@@ -1515,12 +1515,13 @@
     background-color: #e1e0d1;
     
 }
-.footer.photoprint_index_container a, .footer.photoprint_index_container li, .footer.photoprint_index_container .footer_menu_item{
+.footer.photoprint_index_container a, .footer.photoprint_index_container li, .footer.photoprint_index_container .footer_menu_item, .footer.photoprint_index_container p{
     color: #fff;
 }
 .photoprint_indexbanner_container
 {
     width: 100%;
+    min-width: 1150px;
     height: 470px;
 }
 .photoprint_indexmain_wrapper
@@ -1529,7 +1530,7 @@
     position: relative;
     bottom: 35px;
 
-    width: 1200px;
+    width: 1150px;
 
     margin: 0 auto;
 }
@@ -1661,7 +1662,7 @@
 {
     float: left;
 
-    width: 480px;
+    width: 450px;
     margin: 0 30px;
 }
 .photoprint_speclist_wrapper table
@@ -1726,7 +1727,7 @@
 {
     float: left;
 
-    width: 480px;
+    width: 440px;
 }
 .photoprint_paperfeature_wrapper li
 {
@@ -1781,6 +1782,10 @@
     margin: 10px 0 0 0;
 
     color: #fa4574;;
+}
+.photoprint_polaroidintro_wrapper img{
+    display: block;
+    width: 100%;
 }
 .photoprint_printprocess_wrapper
 {

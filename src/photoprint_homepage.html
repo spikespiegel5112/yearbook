@@ -295,6 +295,7 @@
 						</p>
 					</div>
 					<div class='photoprint_sizehint_wrapper'>
+						<img class='photoprint_comparesample_item' src="img/photoprint/comparedwithcreditcard_00000.png">
 						<div class='photoprint_polaroidframe_wrapper'>
 							<div class='polaroid_threeinch4d'>
 								<label>3寸</label>
@@ -474,7 +475,7 @@
 			normaltaggingHorilEl = $('.photoprint_normalprint_wrapper .horizonal'),
 			polaroidtaggingVertiEl = $('.photoprint_polaroidprint_wrapper .vertical'),
 			polaroidtaggingHorilEl = $('.photoprint_polaroidprint_wrapper .horizonal'),
-			normalFrameLength=normalFrameEl.length,
+			normalFrameLength = normalFrameEl.length,
 			normalSizeInfo = {
 				vertical: [8.9, 9.52, 10.2, 11.4, 12.7, 15.2, 20.3],
 				horizonal: [12.7, 12.7, 15.2, 15.2, 17.8, 20.3, 25.4]
@@ -485,12 +486,12 @@
 			};
 
 		normalFrameEl.each(function(i) {
-			var $this=$(this),
-				length=$this.length;
+			var $this = $(this),
+				length = $this.length;
 			$this.css({
 				'background-image': 'url(' + imageUrl + ')',
 				'background-position': 'bottom right',
-				'z-index':(normalFrameLength-i)
+				'z-index': (normalFrameLength - i)
 			});
 		});
 		normalCatelogEl.hover(function() {
@@ -501,7 +502,7 @@
 				'background-image': 'url(' + imageUrl + ')',
 				'z-index': 1
 			});
-			thisFrameEl.siblings('div').css({
+			thisFrameEl.siblings().css({
 				'background-image': 'none',
 				'z-index': 0
 			});
@@ -515,12 +516,13 @@
 		polaroidFrameEl.each(function(i) {
 			var $this = $(this),
 				thisLength = polaroidFrameEl.length;
-			// $this.css({
-			// 	'background-image': 'url(' + imageUrl + ')',
-			// 	'background-position': 'bottom right'
-			// });
 			$this.css({
-				'z-index': i
+				'background-color': '#fff',
+				'z-index': (thisLength - i)
+			});
+			$this.find('div').css({
+				'background-image': 'url(' + imageUrl + ')',
+				'background-position': 'right bottom'
 			});
 		});
 		polaroidCatelogEl.hover(function() {
@@ -528,24 +530,21 @@
 				length = $this.length,
 				index = $this.index(),
 				thisFrameEl = polaroidFrameEl.eq(index);
+			$('.photoprint_comparesample_item').hide();
 			$this.addClass('active').siblings().removeClass('active');
 			thisFrameEl.css({
-				'background-color':'#fff',
+				'background-color': '#fff',
 				'z-index': 1
 			});
 			thisFrameEl.siblings().css({
-				'background-color':'rgba(0,0,0,.05)',
+				'background-color': 'rgba(0,0,0,0.1)',
 				'z-index': 0
 			});
 			thisFrameEl.find('div').css({
-				'background-image': 'url(' + imageUrl + ')',
-				'background-position':'right bottom',
-				'z-index': 1
+				'background-image': 'url(' + imageUrl + ')'
 			});
 			thisFrameEl.siblings().find('div').css({
-				'background-image': 'none',
-				'background-position':'right bottom',
-				'z-index': 0
+				'background-image': 'none'
 			});
 			polaroidtaggingVertiEl.css('height', thisFrameEl.height()).find('p').text(polaroidSizeInfo.vertical[index] + ' cm')
 			polaroidtaggingHorilEl.css('width', thisFrameEl.width()).find('p').text(polaroidSizeInfo.horizonal[index] + ' cm');
@@ -569,13 +568,10 @@
 			var $this = $(this);
 			$this.addClass('active').siblings().removeClass('active');
 			var classname = $this.attr('class').replace(' active', '');
-			var replacedata = function(data, classname) {
-				$('.photoprint_speclist_wrapper').eq(0).find('tbody tr').each(function(i) {
-					var $this = $(this);
-					$this.find('td').eq(3).text('￥ ' + data.price[classname][i]);
-				});
-			}
-			replacedata(paperprice, classname);
+			$('.photoprint_speclist_wrapper').eq(0).find('tbody tr').each(function(i) {
+				var $this = $(this);
+				$this.find('td').eq(3).text('￥ ' + paperprice.price[classname][i]);
+			});
 		});
 	}
 	</script>

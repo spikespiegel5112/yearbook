@@ -821,9 +821,6 @@
 					index = i;
 				});
 				container.on(touchMove, function(e) {
-					e.preventDefault();
-					// e.stopPropagation();
-					// alert('aaa')
 					if (isMousedown) {
 						if (!returned) {
 							progress = progress * (config.density / axisWidth) + offsetVal[index];
@@ -836,13 +833,16 @@
 							var touch = e;
 						}
 						var moveX = touch.pageX - offsetLeft;
+						//在滑动滑块的时候阻止默认事件
+						if (moveX-startX!=0) {
+							e.preventDefault();
+						}
 						if (touch.clientX < offsetLeft + axisWidth+sliderWidth/2 && touch.clientX > offsetLeft){
 							if (returned) {
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								returned =false;
 							}
 						}
-						
 						if (moveX < 0) {
 							progress = 0;
 						} else if (moveX >= axisWidth) {

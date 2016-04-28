@@ -127,6 +127,7 @@ $(function() {
 	$.remResizing({
 		fontsize: 20
 	});
+	//重载一下css避免UC浏览器的bug
 	// $('head').append($('link'));
 	$('.pricecalculator_coverselector_wrapper li').on('touchend', function() {
 		$(this).addClass('active').siblings().removeClass('active');

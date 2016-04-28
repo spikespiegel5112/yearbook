@@ -246,9 +246,7 @@
         })
         $(this).closest('li').addClass('active');
         var Url = $(this).attr('loadUrl');
-        $('.toolbar_expend div').load(Url,'a:1',function(){
-            console.log('success')
-        })
+        $('.toolbar_expend .content').load(Url)
 
         //click其他地方关闭aside区域
         $(document).on('click',function(e){

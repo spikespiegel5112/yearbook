@@ -841,10 +841,6 @@
 							if (returned) {
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								returned =false;
-								$('.ybwechatheader_wrapper').text(function(){
-									var date=new Date;
-									return _this.eq(index).css('margin-left');
-								})
 							}
 						}
 						if (moveX < 0) {

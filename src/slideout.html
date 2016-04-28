@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <title>3.13 侧栏弹出</title>
+    <!-- build:css css/all.min.css -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1461579052_8254325.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+    <style>
+        .main_container{
+            position: relative;
+        }
+        .main_container aside{
+            background-color: #34495e;
+            position: absolute;
+            left: -1150px;
+            top: 32px;
+            height: 100%;
+            box-sizing: border-box;
+            padding-top: 90px;
+            z-index: 30;
+            width: 1150px;
+        }
+        .main_container aside.close{
+            width: 70px;
+            left: 0px;
+        }
+        .content_wrapper{
+            position: relative;
+            width: 100%;
+            min-height: 850px;
+        }
+
+        .toolbar_nav{
+            position: absolute;
+            right: 0;
+            width: 70px;
+            background-color: #47657f;
+        }
+
+        .toolbar_nav .fixed_menu li{
+            display: block;
+            width: 100%;
+            height: 90px;
+            text-align: center;
+            line-height: 90px;
+            border-bottom: 1px solid #3f5a75;
+            box-sizing: border-box;
+        }
+
+        .toolbar_nav .fixed_menu li:first-child{
+            border-top: 1px solid #3f5a75;
+        }
+
+        .fixed_menu li:hover,
+        .fixed_menu li.active{
+            background-color: #4a91bb;
+        }
+
+        .fixed_menu li .icon{
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .fixed_menu li:hover .icon{
+            display: none;
+        }
+
+        .fixed_menu li .text{
+            display: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .fixed_menu li:hover .text{
+            display: block;
+        }
+
+        .toolbar_expend{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #333;
+            background: #eceff4;
+            height: 100%;
+            width: 1080px;
+        }
+
+        aside.close .toolbar_expend{
+            display: none;
+        }
+
+        .slide_mask{
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 32px;
+            left: 0;
+            background: rgba(0,0,0,.6);
+            z-index: 25;
+        }
+    </style>
+</head>
+<body>
+<div class="main_container">
+    <div class="yb_cm_header book_space cm_min_width">
+        <div class="shortcut_container">
+            <div class="shortcut">
+                <div class="yb_logo">
+                    <img src="img/logo.png">
+                </div>
+                <div class="nav_bar">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a class="active" href="booklist_photo.html">照片书</a></li>
+                        <li><a href="javascript:;">团队册</a></li>
+                        <li><a href="javascript:;">照片冲印</a></li>
+                        <li><a href="activity_1603.html">促销活动</a></li>
+                        <li><a href="static_instruction_entrance.html">使用指南</a></li>
+                        <li><a href="pc_shop_admin.html">开店赚钱</a></li>
+                    </ul>
+                </div>
+                <ul class="quick_menu">
+                    <li>
+                        <div class="yb_menu">
+                            <a class="menu_hd" href="javascript:;">我的忆尔<b class="icon-caret-down"></b></a>
+                            <div class="menu_bd">
+                                <div class="menu_bd_panel">
+                                    <a href="pc_mybookshelf.html">我的书架</a>
+                                    <a href="pc_myorder_list.html">我的订单</a>
+                                    <a href="pc_myMessage.html">我的消息</a>
+                                    <a href="pc_shop_admin.html">我的店铺</a>
+                                    <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-turnoff"></i>退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮助中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slide_mask"></div>
+    <aside id="panel" class="close">
+        <nav class="toolbar_nav">
+            <ul class="fixed_menu">
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class="ybiconfont ybicon-pencil icon"></em>
+                        <em class="text">编辑</em>
+                    </a>
+                </li>
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class="ybiconfont ybicon-picture icon"></em>
+                        <em class="text">照片</em>
+                    </a>
+                </li>
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class="ybiconfont ybicon-editform icon"></em>
+                        <em class="text">伙伴</em>
+                    </a>
+                </li>
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class="icon-plane icon"></em>
+                        <em class="text">编辑</em>
+                    </a>
+                </li>
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class="ybiconfont ybicon-envelope icon"></em>
+                        <em class="text">编辑</em>
+                    </a>
+                </li>
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class="ybiconfont ybicon-bookopened icon"></em>
+                        <em class="text">编辑</em>
+                    </a>
+                </li>
+                <li>
+                    <a class="js-slideout-toggle" href="javascript:;">
+                        <em class=" icon-link icon"></em>
+                        <em class="text">编辑</em>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="toolbar_expend">
+            <div class="">
+                aside内容
+            </div>
+        </div>
+    </aside>
+    <div id="menu" class="content_wrapper">
+        <div style="width: 100%;text-align: right">书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容书册内容</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/slideout.min.js"></script>
+<script>
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 1150
+    });
+
+    $('.fixed_menu li a').on('click', function(e) {
+        slideout.open();
+        $('aside').removeClass('close');
+        $('.slide_mask').fadeIn();
+        $('.fixed_menu li').each(function(){
+            $(this).removeClass('active');
+        })
+        $(this).closest('li').addClass('active');
+        $(document).on('click',function(e){
+            if ($(e.target).closest('#panel').length == 0) {
+                slideout.close();
+                $('aside').addClass('close');
+                $('.slide_mask').fadeOut();
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -908,13 +908,13 @@
 
 	$.extend({
 		os:function(){
+			alert('aaa')
 			var ua=navigator.userAgent;
 			this.prototype={
 				mobile:function(){
 					return 'aaa';
 					// return ua.match(/AppleWebKit.*Mobile.*/);
 				}
-
 			}
 		},
 		globalhint: function() {

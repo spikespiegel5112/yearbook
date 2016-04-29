@@ -291,7 +291,7 @@
 			axisx: '.common_slider_wrapper',
 			returnto: '.pricecalculator_countor_wrapper input'
 		});
-		$('.common_slider_wrapper .slider').sliderControl('onchange',function(){
+		$('.common_slider_wrapper .slider').sliderControl('onmove',function(){
 			var value1=$('.pricecalculator_countor_wrapper input').eq(0).val();
 			var value2=$('.pricecalculator_countor_wrapper input').eq(1).val();
 		})

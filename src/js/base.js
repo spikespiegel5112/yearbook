@@ -853,7 +853,7 @@
 						}
 						if (typeof options == 'string') {
 							switch (options) {
-								case 'onchange':
+								case 'onmove':
 									callback();
 									break;
 							}

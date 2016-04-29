@@ -907,16 +907,6 @@
 	});
 
 	$.extend({
-		os:function(){
-			var ua=navigator.userAgent;
-			this.prototype={
-				mobile:function(){
-					return 'aaa';
-					// return ua.match(/AppleWebKit.*Mobile.*/);
-				}
-
-			}
-		},
 		globalhint: function() {
 			$('.globalhint_close_btn').click(function() {
 				$('.globalhint_wrapper').fadeOut('fast');

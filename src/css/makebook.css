@@ -5605,10 +5605,12 @@
 }
 .makebook_choosetype_wrapper{
 	margin: 0 auto;
-	padding: 20px;
+	padding: 20px 20px 50px 20px;
 	box-sizing: border-box;
 	width: 1150px;
 	box-shadow: 0px 0px 5px #ccc;
+	background-color: #fff;
+	overflow: hidden;
 }
 .makebook_choosetype_wrapper>ul>li{
 	width: 350px;
@@ -5652,15 +5654,18 @@
 	transition:all 0.1s;
 }
 .makebook_choosetype_wrapper>ul{
+	padding: 0 0 30px 0;
 	overflow: hidden;
 }
 .makebook_choosetype_wrapper>ul>li{
 	float: left;
 	margin: 0 10px;
+	padding: 0 0 30px 0;
 }
 .makebook_choosetype_wrapper li .title{
-	padding: 10px 15px;
-	font-size: 20px;
+	padding: 30px 15px 10px 15px;
+	font-size: 22px;
+	font-weight: bold;
 }
 .makebook_choosetype_wrapper .tips{
 	padding: 0 10px 15px 10px;

@@ -9,7 +9,6 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <title>忆尔3.13-团队册详细配置</title>
-
     <!-- build:css css/all.min.css -->
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -19,145 +18,301 @@
 </head>
 
 <body>
-<!--头部导航-->
-<div class="cm_header_nav">
-    <div class="logo">
-        <a href="index.html"><img src="img/logo.png"></a>
-    </div>
-    <div class="nav">
-        <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="booklist_photo.html">照片书</a></li>
-            <li><a href="booklist_ia.html">互动册</a></li>
-            <li><a href="pc_mybookshelf.html">个人中心</a></li>
-            <li><a href="static_instruction_entrance.html">使用指南</a></li>
-        </ul>
-    </div>
-	<div class="nav_login">
-		<span class='ybiconfont ybicon-user'></span>
-		<ul>
-			<li><a href="access_login.html" class="active">登录</a></li>
-			<li><a href="access_register.html">注册</a></li>
-		</ul>
-	</div>
-</div>
-<div class="cm_header_shadow"></div>
-<!--banner-->
-<div class="tpl_banner cm_min_width">
-    <p class="sentence_1">创建忆尔书册</p>
-
-    <div class="wrapper">
-        <ul>
-            <li class="step1">
-                <h2>1</h2>
-
-                <p><a href="makebook_step_1.html">选择模板</a></p>
-            </li>
-            <li class="step2">
-                <h2 class="act">2</h2>
-
-                <p><a href="makebook_step_2.html">基本信息</a></p>
-            </li>
-            <li class="step3">
-                <h2>3</h2>
-
-                <p><a href="makebook_step_3.html">完成创建</a></p>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- tab -->
-<div class="tab">
-    <div class="wrapper">
-        <ol>
-            <li>
-                <img src="img/makebook/tpl_tab_btn5.png">
-
-                <p>输入书册基本信息</p>
-            </li>
-
-        </ol>
-    </div>
-    <div class="tab_shadow"></div>
-</div>
-<!-- main -->
-<div class="create_main create_form cm_min_width">
-    <div class="con">
-        <div class="module_title_item">
-            <span class="form_icon"></span>
-            <h5><a href="makebook_step_1.html">重新选择模板</a></h5>
-
-            <div class="dash">
-                <div class="dash_92c153"></div>
+    <!--头部导航-->
+    <div class="yb_cm_header index cm_min_width">
+        <!--只用于首页添加class:index-->
+        <div class="shortcut_container">
+            <div class="shortcut">
+                <p class="login_info">
+                    <span class="welcome_info">
+                        <span>忆尔欢迎您！</span>
+                    <a target="_top" class="" href="javascript:;" title="">赵小鱼</a>
+                    </span>
+                    <span class="welcome_info">
+                        <a class="logout" target="_top" href="javascript:;">退出</a>
+                    </span>
+                </p>
+                <ul class="quick_menu">
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮助中心</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="form_main">
+        <div class="main_nav">
+            <div class="header_con">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.png"></a>
+                    <div class="yb_slogan">
+                        <img src="img/index/yb_slogan.png">
+                    </div>
+                </div>
+                <div class="yb_menu">
+                    <a class="menu_hd" href="javascript:;"><i class="ybiconfont ybicon-user"></i>我的忆尔<b class="icon-caret-down"></b></a>
+                    <div class="menu_bd">
+                        <div class="menu_bd_panel">
+                            <a href="pc_mybookshelf.html"><i class="ybiconfont ybicon-bookshelf"></i>我的书架</a>
+                            <a href="pc_myorder_list.html"><i class="ybiconfont ybicon-orderlist"></i>我的订单</a>
+                            <a href="pc_myMessage.html"><i class="ybiconfont ybicon-message"></i>我的消息</a>
+                            <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-shop"></i>我的店铺</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="inner_con">
+                    <div class="all_menu">
+                        <a class="menu_hd" href="javascript:;">全部商品分类<b class="icon-caret-down"></b></a>
+                        <div class="menu_bd">
+                            <div class="menu_bd_panel">
+                                <ul>
+                                    <li>
+                                        <h1 class="caption photo_book">照片书分类</h1>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">亲子照片书</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">旅行照片书</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">家庭聚会照片书</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">爱情写真照片书</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <h1 class="caption team_book">团队册分类</h1>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">毕业纪念册</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">聚会纪念册</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">团队活动册</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <h1 class="caption photo">照片冲印</h1>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">普通照片冲印</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">拍立得照片冲印</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">证件照冲印</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="classify_ad">
+                                <a class="ad" href="javascript:;">
+                                    <img src="img/index/classify_ad.jpg" alt="用心的礼物，给最爱的人">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <a class="active" href="index.html">首页</a>
+                        <a href="index.html">照片书</a>
+                        <a href="index.html">团队册</a>
+                        <a href="index.html">照片冲印</a>
+                        <a href="index.html">促销活动</a>
+                        <a href="index.html">使用指南</a>
+                        <a href="index.html">开店赚钱</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main -->
+    <div class='main_container bg_f5f5f5'>
+        <div class='makebook_progress_wrapper'>
             <ul>
-                <form id="commentForm">
-                    <li>
-                        <div class="form_main_label">学校名:</div>
-                        <div class="cm_fl">
-                            <input class="data required" id="sname" name="schoolName" placeholder="" type="text">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="form_main_label">班级名:</div>
-                        <div class="cm_fl">
-                            <input class="data required" id="cname" name="className" placeholder="" type="text">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="form_main_label">书册名:</div>
-                        <div class="cm_fl">
-                            <input class="data required" id="bname" name="bookName" placeholder="" type="text">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="form_main_label">毕业日:</div>
-                        <div class="cm_fl">
-                            <input class="data required" id="day" name="leaveDay" placeholder="" type="text">
-                        </div>
-                    </li>
-                </form>
+                <li class='active'>
+                    <div class='makebook_progressbar_wrapper'>
+                        <span class='progressbar_head'></span>
+                        <span class='progressbar_middle'></span>
+                    </div>
+                    <div class='title'>
+                        <label>1</label>
+                        <p>选择团队场景</p>
+                    </div>
+                </li>
+                <li>
+                    <div class='makebook_progressbar_wrapper'>
+                        <span class='progressbar_middle'></span>
+                    </div>
+                    <div class='title'>
+                        <label>2</label>
+                        <p>配置团队册</p>
+                    </div>
+                </li>
+                <li>
+                    <div class='makebook_progressbar_wrapper'>
+                        <span class='progressbar_middle'></span>
+                    </div>
+                    <div class='title'>
+                        <label>3</label>
+                        <p>选择合适模板</p>
+                    </div>
+                </li>
+                <li>
+                    <div class='makebook_progressbar_wrapper'>
+                        <span class='progressbar_middle'></span>
+                    </div>
+                    <div class='title'>
+                        <label>4</label>
+                        <p>上传图片文字内容</p>
+                    </div>
+                </li>
+                <li>
+                    <div class='makebook_progressbar_wrapper'>
+                        <span class='progressbar_head'></span>
+                    </div>
+                    <div class='title'>
+                        <label>5</label>
+                        <p>完成制作下单冲印</p>
+                    </div>
+                </li>
             </ul>
         </div>
-        <div class="next_btn"><a href="#" class="yb_book_btn">完成创建</a></div>
+        <div class='makebook_choosetype_wrapper'>
+            <h6>选择团队册群体</h6>
+            <ul>
+                <li class='graduatebook'>
+                    <div class='bookcover'>
+                        <img src="img/makebook/makebook_choosetype_ia_graduate_00000.jpg">
+                        <div>
+                            <a href="javascript:;">
+                                下一步
+                            </a>
+                        </div>
+                    </div>
+                    <div class='title'>毕业纪念册</div>
+                    <ul class='tips'>
+                        <li>
+                            校园留念
+                        </li>
+                        <li>
+                            同学赠言
+                        </li>
+                        <li>
+                            毕业纪念
+                        </li>
+                        <li>
+                            …
+                        </li>
+                    </ul>
+                </li>
+                <li class='party'>
+                    <div class='bookcover'>
+                        <img src="img/makebook/makebook_choosetype_ia_party_00000.jpg">
+                        <div>
+                            <a href="javascript:;">
+                                下一步
+                            </a>
+                        </div>
+                    </div>
+                    <div class='title'>聚会纪念册</div>
+                    <ul class='tips'>
+                        <li>
+                            同学聚会
+                        </li>
+                        <li>
+                            周年聚会
+                        </li>
+                        <li>
+                            朋友聚会
+                        </li>
+                        <li>
+                            战友聚会
+                        </li>
+                        <li>
+                            …
+                        </li>
+                    </ul>
+                </li>
+                <li class='team'>
+                    <div class='bookcover'>
+                        <img src="img/makebook/makebook_choosetype_ia_team_00000.jpg">
+                        <div>
+                            <a href="javascript:;">
+                                下一步
+                            </a>
+                        </div>
+                    </div>
+                    <div class='title'>毕业纪念册</div>
+                    <ul class='tips'>
+                        <li>
+                            拓展活动
+                        </li>
+                        <li>
+                            团队郊游
+                        </li>
+                        <li>
+                            群体活动
+                        </li>
+                        <li>
+                            公司年会
+                        </li>
+                        <li>
+                            …
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-<!--底部-->
-<div class="footer">
-		<div class="footer_info">
-			<a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="javascript:;"></a>
-			<div class="footer_title">
-				<div>忆尔-在线DIY纪念册平台</div>
-				<p>专业在线制作电子书册平台</p>
-				<p>DIY出独一无二的青春纪念册</p>
-			</div>
-		</div>
-		<div class="footer_list">
-			<div class='footer_qrcode_wrapper'>
-				<img src="img/footer_wx.png">
-			</div>
-			<div class='footer_listleft_wrapper'>
-				<div class="ft_nav">
-					<a href="javascript:;">客服电话 400 0610 127</a>
-					<a href="javascript:;">客服QQ</a>
-					<a href="javascript:;">客服邮箱</a>
-					<a href="javascript:;">关于我们</a>
-				</div>
-				<p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
-				<div class="ft_shares">
-					<a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
-					<a class='ybiconfont ybicon-weibotencent' href="javascript:;"></a>
-					<a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
-					<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
-				</div>
-			</div>
-		</div>
-	</div>
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
-<script>
+    <!--底部-->
+    <div class="footer">
+        <div class="footer_info">
+            <a class="common_yblogoshort_item ybiconfont ybicon-yblogoshort" href="javascript:;"></a>
+            <div class="footer_title">
+                <div>忆尔-在线DIY纪念册平台</div>
+                <p>专业在线制作电子书册平台</p>
+                <p>DIY出独一无二的青春纪念册</p>
+            </div>
+        </div>
+        <div class="footer_list">
+            <div class='footer_qrcode_wrapper'>
+                <img src="img/footer_wx.png">
+            </div>
+            <div class='footer_listleft_wrapper'>
+                <div class="ft_nav">
+                    <a href="javascript:;">客服电话 400 0610 127</a>
+                    <a href="javascript:;">客服QQ</a>
+                    <a href="javascript:;">客服邮箱</a>
+                    <a href="javascript:;">关于我们</a>
+                </div>
+                <p class="ft_copyright">苏ICP备11087253号-2 \ © 2014 无锡众志和达数据计算股份有限公司</p>
+                <div class="ft_shares">
+                    <a href="javascript:;" class="x83"><img src="img/hy_83x30.png"></a>
+                    <a class='ybiconfont ybicon-weibotencent' href="javascript:;"></a>
+                    <a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+                    <a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+    <script>
     function validateForm() {
         //validate方法参数可选
         return $('#commentForm').validate({
@@ -179,16 +334,16 @@
     }
 
     function doSubmit() { //点击登录触发验证
-        $('.next_btn').click(function () {
+        $('.next_btn').click(function() {
             if (validateForm()) {
                 document.form1.submit()
             }
         });
     }
-    $(function () {
+    $(function() {
         doSubmit();
     });
-</script>
+    </script>
 </body>
 
 </html>

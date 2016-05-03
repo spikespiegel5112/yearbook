@@ -1,0 +1,610 @@
+.team_edit_container {
+    position: relative;
+    width: 100%;
+    background: url("../img/makebook/team/iabook_edit_bg.jpg") no-repeat 0;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.team_edit_container aside {
+    background-color: #34495e;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 90px;
+    z-index: 30;
+    width: 1150px;
+    left: -1150px;
+}
+
+.team_edit_container aside.close {
+    width: 70px;
+    left: 0;
+}
+
+.team_edit_container aside .nav_bar {
+    position: absolute;
+    right: 0;
+    width: 70px;
+    background-color: #486480;
+}
+
+.nav_bar .fixed_menu li {
+    display: block;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    border-bottom: 1px solid #405972;
+    box-sizing: border-box;
+}
+
+.nav_bar .fixed_menu li:first-child {
+    border-top: 1px solid #405972;
+}
+
+.nav_bar .fixed_menu li:hover,
+.nav_bar .fixed_menu li.active {
+    background-color: #4991bc;
+}
+
+.fixed_menu li .icon {
+    font-size: 28px;
+    color: #fff;
+}
+
+.fixed_menu li:hover .icon {
+    display: none;
+}
+
+.fixed_menu li .text {
+    display: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.fixed_menu li:hover .text {
+    display: block;
+}
+
+.toolbar_expend {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #333;
+    background: #eceff4;
+    height: 100%;
+    width: 1080px;
+    overflow: auto;
+}
+
+.team_edit_container aside.close .toolbar_expend {
+    display: none;
+}
+
+.toolbar_expend .content {
+    position: relative;
+}
+
+.team_edit_container .slide_mask{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 25;
+}
+
+.team_edit_container .edit_content{
+    position: relative;
+    width: 100%;
+    padding-left: 70px;
+    margin: 0;
+    box-sizing: border-box;
+}
+.edit_content .tool_bar{
+    position: relative;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px #999;
+    box-sizing: border-box;
+}
+.edit_content .tool_bar .grid{
+    float: left;
+    padding: 15px 10px;
+    height: 100%;
+    border-right: 1px dashed #e6e6e6;
+    box-sizing: border-box;
+}
+.edit_content .tool_bar .grid:last-child{
+    border-right: 0;
+}
+.edit_content .tool_bar .grid li{
+    display: inline-block;
+    padding: 0 8px;
+}
+.edit_content .tool_bar .grid li i{
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    color: #929292;
+    line-height: 35px;
+}
+.edit_content .tool_bar .grid li span{
+    font-size: 12px;
+    color: #666;
+}
+.edit_content .tool_bar .grid li a:hover i,
+.edit_content .tool_bar .grid li a:hover span{
+    color: #90c132;
+}
+.edit_content .tool_bar .book_info{
+    padding: 5px 10px;
+}
+.edit_content .book_info .cover{
+    position: relative;
+    float: left;
+    padding: 3px 3px 0 0;
+    width: 54px;
+    height: 76px;
+    background: url('../img/pc/book_bg_min.png') no-repeat 0 0;
+    background-size: cover;
+}
+.edit_content .book_info .cover img {
+    width: 100%;
+    height: 100%;
+}
+.edit_content .book_info .cover .type {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 3px;
+    width: 23px;
+    height: 58px;
+    background: url('../img/pc/label_team.png') no-repeat 0 top;
+}
+.edit_content .book_info .name{
+    padding-left: 67px;
+}
+.edit_content .book_info .name h4{
+    font-size: 14px;
+    color: #333;
+    line-height: 40px;
+}
+.edit_content .book_info .progress {
+    font-size: 12px;
+    width: 110px;
+    color: #333;
+}
+.edit_content .book_info .progress a {
+    display: block;
+    color: #666;
+}
+.edit_content .book_info .progress .percent > div {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+}
+.edit_content .book_info .progress .percent span {
+    display: inline-block;
+    margin-bottom: 4px;
+    width: 60px;
+    text-align: center;
+}
+
+.grid .progress .percent
+{
+    overflow: hidden;
+
+    margin: 0 0 10px;
+}
+
+.grid .progress .percent > div
+{
+    display: block;
+    float: left;
+
+    box-sizing: border-box;
+    padding: 14px 0 0 0;
+}
+
+.grid .progress .percent span
+{
+    display: inline-block;
+
+    width: 60px;
+
+    text-align: center;
+}
+
+.grid .progress .percent .bar
+{
+    display: inline-block;
+    float: none;
+
+    width: 60px;
+    height: 5px;
+    padding: 0;
+
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+.grid .progress .percent .bar span
+{
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: 5px;
+    background-color: #90c132;
+}
+.edit_content .tool_bar .print{
+    float: right;
+}
+
+.edit_content .tool_bar .print a{
+    display: block;
+    margin: 12px 0 0;
+    width: 145px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    background-color: #43b05d;
+}
+.edit_content .tool_bar .print a i{
+    font-size: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.edit_content .tool_bar .print a:hover{
+    background-color: #36a552;
+}
+.edit_content .list_mode{
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.edit_content .list_mode .item{
+    position: relative;
+    padding: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid rgba(94,94,94,.2);
+}
+.list_mode .item .name{
+    display: block;
+    margin: 20px 0 10px;
+    height: 35px;
+    line-height: 35px;
+}
+.list_mode .item .name span{
+    display: inline-block;
+    margin-right: 1px;
+    width: 82px;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #4990bb;
+}
+.list_mode .item .name a{
+    display: inline-block;
+    width: 35px;
+    height: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4990bb;
+}
+.list_mode .item .name a:hover{
+    background-color: #397fa9;
+}
+.list_mode .item .page_list{
+    position: relative;
+    width: 100%;
+    padding: 10px 100px 0 0;
+    box-sizing: border-box;
+}
+.list_mode .page_list .cover,
+.list_mode .page_list .backcover{
+    width: 151px;
+    margin: 0 0 10px;
+}
+
+.list_mode .page_list .figure{
+    position: relative;
+    width: 100%;
+    height: 205px;
+    box-sizing: border-box;
+}
+
+.page_list .cover .figure{
+    padding: 3px 3px 0 0;
+    background: url("../img/makebook/team/cover_bg.png") no-repeat 0;
+    background-size: cover;
+}
+.page_list .backcover .figure{
+    padding: 3px 0 0 3px;
+    background: url("../img/makebook/team/backcover_bg.png") no-repeat 0;
+    background-size: cover;
+}
+.page_list .figure img{
+    position: absolute;
+    top: -3px;
+    width: 145px;
+    height: 205px;
+}
+.page_list .cover .figure img{
+    left: 0;
+}
+.page_list .backcover .figure img{
+    right: 0;
+}
+
+.list_mode .page_list .double{
+    display: inline-block;
+    width: 294px;
+    margin: 0 25px 10px 0;
+}
+@media only screen and (max-width: 1024px) {
+    .list_mode .page_list .double{
+        margin: 0 19px 10px 0;
+    }
+}
+.page_list .double .figure{
+    padding: 3px;
+    background: url("../img/makebook/team/doublepage_bg.png") no-repeat;
+    background-size: cover;
+}
+.page_list .double .figure::after{
+    content: " ";
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    margin-left: -7px;
+    width: 15px;
+    height: 199px;
+    background: url("../img/makebook/team/dhoublepage_shadow.png") no-repeat 0;
+    z-index: 1;
+}
+
+.page_list .double .figure img{
+    top: 0;
+    width: 144px;
+    height: 199px;
+}
+
+.page_list .double .left,
+.page_list .double .right {
+    position: relative;
+    width: 50%;
+}
+.page_list .double .left{
+    float: left;
+}
+.page_list .double .right{
+    float: right;
+}
+.page_list .figure .delete{
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #578fbe;
+    text-align: center;
+    background: rgba(255,255,255,.6);
+    z-index: 9;
+}
+.page_list .double .figure .delete{
+    top: 0;
+}
+.page_list .figure .delete:hover{
+    color: #00b7ee;
+    background: #fff;
+}
+.list_mode .page_list h4{
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    line-height: 35px;
+    color: #333;
+}
+.list_mode .page_list .double h4 {
+    float: left;
+    width: 50%;
+}
+
+.list_mode .page_list .add_page{
+    display: inline-block;
+    vertical-align: top;
+    width: 145px;
+    height: 205px;
+    text-align: center;
+    border: 1px dashed #2d251a;
+}
+.page_list .add_page a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+}
+.page_list .add_page a:hover{
+    color: #fff;
+}
+.page_list .add_page a i{
+    display: block;
+    padding: 75px 0 15px;
+}
+
+.edit_content .list_mode .tips{
+    font-size: 12px;
+    color: #333;
+}
+
+.edit_content .list_mode .tips i{
+    font-size: 14px;
+    color: #333;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.edit_content .list_mode .tips,
+.sort_chapter{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.sort_chapter a{
+    display: block;
+    margin: 0 0 10px;
+    width: 85px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0,0,0,.3);
+    border-radius: 4px;
+}
+.sort_chapter a i{
+    font-size: 12px;
+    margin-right: 3px;
+}
+.sort_chapter a:hover{
+    background: rgba(0,0,0,.76);
+}
+.edit_content .single_mode{
+    position: relative;
+    width: 100%;
+}
+.edit_content .single_mode .main{
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+}
+.single_mode .main .cur_page{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin: 30px 0 0;
+    line-height: 40px;
+}
+.single_mode .main .icon-angle-left ,
+.single_mode .main .icon-angle-right {
+    position: absolute;
+    z-index: 1;
+    top: 320px;
+    color: #e8e8e8;
+    font-size: 4.5em;
+}
+.single_mode .main .icon-angle-left{
+    left: 0;
+}
+.single_mode .main .icon-angle-right {
+    right: 0;
+}
+.single_mode .main .icon-angle-left:hover,
+.single_mode .main .icon-angle-right:hover {
+    color: #31b8d3;
+}
+.single_mode .main .tpl {
+    width: 680px;
+    height: 964px;
+    margin: 60px auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.single_mode .main .tpl.cover,
+.single_mode .main .tpl.back_cover {
+    position: relative;
+    width: 705px;
+    height: 964px;
+    margin: 60px auto;
+    border: 0;
+    background: url('../img/booklist/inner_page_cover_bg.png') no-repeat 0;
+    background-size: cover;
+}
+.single_mode .main .tpl.back_cover {
+    background: url('../img/booklist/inner_page_backcover_bg.png') no-repeat 0;
+    background-size: cover;
+}
+.single_mode .main .tpl .inner_page {
+    position: absolute;
+    width: 680px;
+    height: 964px;
+    box-shadow: 0 0 3px #ccc;
+}
+.single_mode .main .tpl.cover .inner_page {
+    top: -11px;
+    left: 0;
+}
+.single_mode .main .tpl.back_cover .inner_page {
+    top: -11px;
+    right: 0;
+}
+.single_mode .main .tpldouble.double {
+    position: relative;
+    box-sizing: border-box;
+    width: 860px;
+    height: 600px;
+    margin: 40px auto;
+    padding: 10px 20px;
+    border: 0;
+    background: url('../img/booklist/inner_page_bg.jpg') no-repeat 0;
+    background-size: contain;
+}
+
+.single_mode .main .tpldouble .split_tips {
+    font-size: 14px;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    display: none;
+    margin-left: -145px;
+    padding: 6px 10px;
+    color: #666;
+}
+.single_mode .main .tpldouble.spread .split_tips {
+    display: block;
+}
+.single_mode .main .tpldouble .tplleft, .tplright {
+    float: left;
+}
+.single_mode .main .tpldouble.double::after {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 44px;
+    height: 580px;
+    margin-left: -22px;
+    content: ' ';
+    background: url('../img/booklist/inner_page_shadow.png') no-repeat 0;
+}
+.single_mode .main .tpl.single {
+    position: relative;
+    width: 705px;
+    height: 986px;
+    margin: 60px auto;
+    border: 0;
+    background: url('../img/booklist/inner_page_single_bg.jpg') no-repeat 0;
+    background-size: cover;
+}
+.single_mode .main .tpl.single .inner_page {
+    top: 12px;
+    left: 8px;
+}

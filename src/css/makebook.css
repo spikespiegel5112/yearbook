@@ -5603,23 +5603,31 @@
 	background: -moz-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 }
-.makebook_choosetype_wrapper{
+
+.makebook_step_wrapper{
 	margin: 0 auto 40px;
 	padding: 20px 20px 50px 20px;
 	box-sizing: border-box;
 	width: 1150px;
 	box-shadow: 0px 0px 5px #ccc;
 	background-color: #fff;
+	border-radius: 10px;
 	overflow: hidden;
 }
-.makebook_choosetype_wrapper>ul>li{
+.makebook_choosetype_wrapper>li{
 	width: 350px;
 	box-shadow: 0 0 10px #999;
 }
-.makebook_choosetype_wrapper h6{
+.makebook_steptitle_item{
+	display: inline-block;
 	margin: 20px 0;
 	font-size: 23px;
 	color: #555;
+}
+.makebook_steptitle_wrapper .back{
+	float: right;
+	margin: 20px 0;
+	line-height: 30px;
 }
 .makebook_choosetype_wrapper .bookcover{
 	position: relative;
@@ -5654,11 +5662,11 @@
 	color: rgba(0,0,0,0.8);
 	transition:all 0.1s;
 }
-.makebook_choosetype_wrapper>ul{
+.makebook_choosetype_wrapper{
 	padding: 0 0 30px 0;
 	overflow: hidden;
 }
-.makebook_choosetype_wrapper>ul>li{
+.makebook_choosetype_wrapper>li{
 	float: left;
 	margin: 0 10px;
 	padding: 0 0 30px 0;
@@ -5700,6 +5708,47 @@
 .makebook_choosetype_wrapper .team .title{
 	color: #4fafcd;
 }
+/*~~~~~~~~~~makebook_step2_3.13.html~~~~~~~~~~*/
+.makebook_recommend_wrapper{
+	border-top: 2px solid #ddd;
+}
+.makebook_recommend_wrapper li{
+	padding: 10px 0;
+}
+.makebook_stepcomponentlist_wrapper{
+	float: left;
+	width: 80%;
+}
+.makebook_bookcomponent_item .type{
+	float: left;
+	margin: 0 30px 0 20px;
+}
+.makebook_bookcomponent_item .type span{
+	display: block;
+	height: 80px;
+}
+.makebook_bookcomponent_item .type label{
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: #333;
+}
+
+.makebook_bookcomponent_item a{
+	display: block;
+	width: 70%;
+	overflow: hidden;
+}
+.makebook_bookcomponent_item p{
+	float: left;
+	margin: 50px 0 0 0;
+}
+.makebook_stepaddcomponent_wrapper{
+	float: left;
+	width: 20%;
+}
+
+
 
 
 

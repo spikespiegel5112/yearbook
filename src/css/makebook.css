@@ -5612,6 +5612,11 @@
 	background-color: #fff;
 	overflow: hidden;
 }
+.makebook_choosetype_wrapper:after{
+	content: '';
+	display: block;
+	margin: 20px 0;
+}
 .makebook_choosetype_wrapper>ul>li{
 	width: 350px;
 	box-shadow: 0 0 10px #999;
@@ -5624,6 +5629,7 @@
 .makebook_choosetype_wrapper .bookcover{
 	position: relative;
 	overflow: hidden;
+	height: 260px;
 }
 .makebook_choosetype_wrapper .bookcover div{
 	width: 100%;
@@ -5677,7 +5683,7 @@
 	min-width: 70px;
 	border-radius: 15px;
 	border: 1px solid #aaa;
-	font-size: 18px;
+	font-size: 16px;
 	color: #aaa;
 	text-align: center;
 }

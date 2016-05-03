@@ -5502,26 +5502,42 @@
 }
 .makebook_progress_wrapper li{
 	float: left;
-	width: 200px;
+	width: 180px;
 	position: relative;
 }
 
-.makebook_progress_wrapper li label{
+.makebook_progress_wrapper li .title{	
+	width: 100px;
+	color: #fff;
+	position: relative;
+	left: -60px;
+	z-index: 1;
+}
+.makebook_progress_wrapper li .title label{
 	display: block;
 	margin: 0 auto;
 	width: 45px;
 	height: 45px;
-	border: 2px solid #fff;
-	background-color: #82bd53;
-	text-align: center;
-	line-height: 45px;
-	color: #fff;
-	position: relative;
-	z-index: 1;
 	border-radius: 50%;
 	border: 2px solid #fff;
+	border: 2px solid #fff;
+	background-color: #d5d5d5;
+	text-align: center;
+	line-height: 45px;
 	box-shadow: 1px 1px 3px #555 inset;
-	text-shadow: 2px 2px 3px #555;
+}
+.makebook_progress_wrapper .active .title label{
+	background-color: #82bd53;
+}
+.makebook_progress_wrapper li:first-child{
+	width: 280px;
+}
+.makebook_progress_wrapper li:first-child .title{
+	position: relative;
+	left: 50px;
+}
+.makebook_progress_wrapper li .title p{
+	color: #d5d5d5
 }
 
 .makebook_progressbar_wrapper{
@@ -5529,6 +5545,8 @@
 	height: 20px;
 	position: absolute;
 	top: 15px;
+	
+	overflow: hidden;
 }
 .makebook_progressbar_wrapper span{
 	display: inline-block;
@@ -5545,7 +5563,7 @@
 .makebook_progress_wrapper li>label{
 	background-color: #d5d5d5;
 }
-.makebook_progress_wrapper .active>p{
+.makebook_progress_wrapper .active .title p{
 	color: #82bd53;
 }
 .makebook_progress_wrapper .active>label{
@@ -5553,8 +5571,8 @@
 }
 .makebook_progress_wrapper li .progressbar_head{
 	width: 100px;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-radius: 30px;
+	border-radius: 30px;
 }
 .makebook_progress_wrapper li .progressbar_middle{
 	width: 200px;
@@ -5572,7 +5590,13 @@
 	background: -moz-repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
 	background: -ms-repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
 }
-.makebook_progress_wrapper .progressbar_head, .makebook_progress_wrapper .progressbar_middle{
+.makebook_progress_wrapper .progressbar_head{
+	background: repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 20%, #ebebeb 21%, #ebebeb 40%);
+	background: -webkit-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 20%, #ebebeb 21%, #ebebeb 40%);
+	background: -moz-repebebebebebebeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 20%, #ebebeb 21%, #ebebeb 40%);
+	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 20%, #ebebeb 21%, #ebebeb 40%);
+}
+.makebook_progress_wrapper .progressbar_middle{
 	width: 200px;
 	background: repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -webkit-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
@@ -5580,5 +5604,104 @@
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 }
 .makebook_choosetype_wrapper{
-	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 1150px;
+	box-shadow: 0px 0px 5px #ccc;
 }
+.makebook_choosetype_wrapper>ul>li{
+	width: 350px;
+	box-shadow: 0 0 10px #999;
+}
+.makebook_choosetype_wrapper h6{
+	margin: 20px 0;
+	font-size: 23px;
+	color: #555;
+}
+.makebook_choosetype_wrapper .bookcover{
+	position: relative;
+	overflow: hidden;
+}
+.makebook_choosetype_wrapper .bookcover div{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: -200px;
+	text-align: center;
+	line-height: 255px;
+	font-size: 20px;
+	background-color: rgba(0,0,0,0.5);
+	opacity: 0;
+}
+.makebook_choosetype_wrapper .active div{
+	opacity: 1;
+	bottom: 0;
+	transition:all 0.3s;
+}
+.makebook_choosetype_wrapper .bookcover div a{
+	padding: 15px 70px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	transition:all 0.1s;
+}
+.makebook_choosetype_wrapper .bookcover div a:active{
+	background-color: rgba(255,255,255,0.5);
+	color: rgba(0,0,0,0.8);
+	transition:all 0.1s;
+}
+.makebook_choosetype_wrapper>ul{
+	overflow: hidden;
+}
+.makebook_choosetype_wrapper>ul>li{
+	float: left;
+	margin: 0 10px;
+}
+.makebook_choosetype_wrapper li .title{
+	padding: 10px 15px;
+	font-size: 20px;
+}
+.makebook_choosetype_wrapper .tips{
+	padding: 0 10px 15px 10px;
+}
+.makebook_choosetype_wrapper .tips li{
+	display: inline-block;
+	margin: 5px 4px;
+	padding: 2px 12px;
+	min-width: 70px;
+	border-radius: 15px;
+	border: 1px solid #aaa;
+	font-size: 18px;
+	color: #aaa;
+	text-align: center;
+}
+.makebook_choosetype_wrapper .graduatebook {
+	border-bottom: 3px solid #8cc04e;
+}
+.makebook_choosetype_wrapper .graduatebook .title{
+	color: #8cc04e;
+}
+.makebook_choosetype_wrapper .party {
+	border-bottom: 3px solid #ff9735;
+}
+.makebook_choosetype_wrapper .party .title{
+	color: #ff9735;
+}
+.makebook_choosetype_wrapper .team {
+	border-bottom: 3px solid #4fafcd;
+}
+.makebook_choosetype_wrapper .team .title{
+	color: #4fafcd;
+}
+
+
+
+
+
+
+
+
+
+
+

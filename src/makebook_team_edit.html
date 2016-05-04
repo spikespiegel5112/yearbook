@@ -1,351 +1,864 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="keywords" content="">
-	<title>忆尔3.13-团队册制作-编辑</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <title>忆尔3.13-团队册制作-编辑</title>
 
-	<!-- build:css css/all.min.css -->
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/makebook_team.css" type="text/css" media="all">
-	<!-- endbuild -->
-	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+    <!-- build:css css/all.min.css -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/makebook_team.css" type="text/css" media="all">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1461579052_8254325.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 </head>
-<body>
-	<div class="main_container">
-        <!--yb3.11 nav-->
-        <div class="yb_cm_header book_space cm_min_width"><!--用于书册空间class:book_space-->
-            <div class="shortcut_container">
-                <div class="shortcut">
-                    <div class="yb_logo">
-                        <img src="img/logo.png">
-                    </div>
-                    <div class="nav_bar">
-                        <ul>
-                            <li><a href="index.html">首页</a></li>
-                            <li><a class="active" href="booklist_photo.html">照片书</a></li>
-                            <li><a href="javascript:;">团队册</a></li>
-                            <li><a href="javascript:;">照片冲印</a></li>
-                            <li><a href="activity_1603.html">促销活动</a></li>
-                            <li><a href="static_instruction_entrance.html">使用指南</a></li>
-                            <li><a href="pc_shop_admin.html">开店赚钱</a></li>
-                        </ul>
-                    </div>
-                    <ul class="quick_menu">
-                        <li>
-                            <div class="yb_menu">
-                                <a class="menu_hd" href="javascript:;">我的忆尔<b class="icon-caret-down"></b></a>
-                                <div class="menu_bd">
-                                    <div class="menu_bd_panel">
-                                        <a href="pc_mybookshelf.html">我的书架</a>
-                                        <a href="pc_myorder_list.html">我的订单</a>
-                                        <a href="pc_myMessage.html">我的消息</a>
-                                        <a href="pc_shop_admin.html">我的店铺</a>
-                                        <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-turnoff"></i>退出</a>
-                                    </div>
+<body style="min-width: 1280px">
+<div class="main_container">
+    <!--yb3.11 nav-->
+    <div class="yb_cm_header book_space cm_min_width"><!--用于书册空间class:book_space-->
+        <div class="shortcut_container">
+            <div class="shortcut">
+                <div class="yb_logo">
+                    <img src="img/logo.png">
+                </div>
+                <div class="nav_bar">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a class="active" href="booklist_photo.html">照片书</a></li>
+                        <li><a href="javascript:;">团队册</a></li>
+                        <li><a href="javascript:;">照片冲印</a></li>
+                        <li><a href="activity_1603.html">促销活动</a></li>
+                        <li><a href="static_instruction_entrance.html">使用指南</a></li>
+                        <li><a href="pc_shop_admin.html">开店赚钱</a></li>
+                    </ul>
+                </div>
+                <ul class="quick_menu">
+                    <li>
+                        <div class="yb_menu">
+                            <a class="menu_hd" href="javascript:;">我的忆尔<b class="icon-caret-down"></b></a>
+
+                            <div class="menu_bd">
+                                <div class="menu_bd_panel">
+                                    <a href="pc_mybookshelf.html">我的书架</a>
+                                    <a href="pc_myorder_list.html">我的订单</a>
+                                    <a href="pc_myMessage.html">我的消息</a>
+                                    <a href="pc_shop_admin.html">我的店铺</a>
+                                    <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-turnoff"></i>退出</a>
                                 </div>
                             </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮助中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="team_edit_container">
+        <div class="slide_mask"></div>
+        <aside id="panel" class="close">
+            <nav class="nav_bar">
+                <ul class="fixed_menu">
+                    <li>
+                        <a class="" loadUrl="access_login.html">
+                            <em class="ybiconfont ybicon-pencil icon"></em>
+                            <em class="text">编辑</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="-toggle" loadUrl="ia_albumlist.html">
+                            <em class="ybiconfont ybicon-picture icon"></em>
+                            <em class="text">照片</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" loadUrl="ia_friend.html">
+                            <em class="ybiconfont ybicon-editform icon"></em>
+                            <em class="text">伙伴</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" loadUrl="makebook_autolayout.html">
+                            <em class="icon-plane icon"></em>
+                            <em class="text">编辑</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" loadUrl="makebook_autolayout.html">
+                            <em class="ybiconfont ybicon-envelope icon"></em>
+                            <em class="text">编辑</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" loadUrl="makebook_autolayout.html">
+                            <em class="ybiconfont ybicon-bookopened icon"></em>
+                            <em class="text">编辑</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" loadUrl="makebook_autolayout.html">
+                            <em class=" icon-link icon"></em>
+                            <em class="text">编辑</em>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="toolbar_expend">
+                <div class="content">
+                    aside内容
+                </div>
+            </div>
+        </aside>
+        <div id="menu" class="edit_content">
+            <div class="tool_bar">
+                <div class="grid book_info">
+                    <div class="cover">
+                        <img src="img/default/bookshelf_book01.jpg">
+                        <span class="type photo"></span>
+                    </div>
+                    <div class="name">
+                        <h4>《毕业纪念册》</h4>
+
+                        <div class="progress">
+                            <a class="percent">
+                                <div>完成率：</div>
+                                <span>90%</span>
+
+                                <div class="bar"><span style="width: 90%;"></span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-addchapter"></i><span>添加章节</span></a>
                         </li>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-addpage"></i><span>添加页面</span></a>
                         </li>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-friend"></i><span>邀请协作者</span></a>
                         </li>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-replacetpl"></i><span>更换模板</span></a>
                         </li>
                         <li>
-                            <a href="javascript:;">帮助中心</a>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>自动排版</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>照片缺失页</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>文字缺失页</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid print">
+                    <a href="javascript:;"><i class="ybiconfont ybicon-printer"></i>下单打印</a>
+                </div>
+            </div>
+            <div class="list_mode hidden">
+                <div class="item">
+                    <p class="tips"><i class="ybiconfont ybicon-alert1"></i>提示：章节内拖动书页位置即可调整页码顺序</p>
+
+                    <div class="name"><span>封面章节</span><a class="ybiconfont ybicon-feedback edit"
+                                                          href="javascript:;"></a></div>
+                    <ul class="page_list">
+                        <li class="cover">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <img src="img/default/inner_page_cover.jpg">
+                                <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                            </div>
+                            <h4>封面</h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="sort_chapter">
+                        <a href="javascript:;"><i class="icon-arrow-up"></i>章节上移</a>
+                        <a href="javascript:;"><i class="icon-arrow-down"></i>章节下移</a>
+                        <a href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除章节</a>
+                    </div>
+                    <div class="name"><span>图文章节</span><a class="ybiconfont ybicon-feedback edit"
+                                                          href="javascript:;"></a></div>
+                    <ul class="page_list">
+                        <li class="double">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <div class="left">
+                                    <img src="img/default/inner_pages01.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/inner_pages02.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                            </div>
+                            <h4>第<span>1</span>页</h4>
+                            <h4>第<span>2</span>页</h4>
+                        </li>
+                        <li class="double">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <div class="left">
+                                    <img src="img/default/inner_pages01.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/inner_pages02.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                            </div>
+                            <h4>第<span>3</span>页</h4>
+                            <h4>第<span>4</span>页</h4>
+                        </li>
+                        <li class="double">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <div class="left">
+                                    <img src="img/default/inner_pages01.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/inner_pages02.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                            </div>
+                            <h4>第<span>5</span>页</h4>
+                            <h4>第<span>6</span>页</h4>
+                        </li>
+                        <li class="double">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <div class="left">
+                                    <img src="img/default/inner_pages01.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/inner_pages02.jpg">
+                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                                </div>
+                            </div>
+                            <h4>第<span>7</span>页</h4>
+                            <h4>第<span>8</span>页</h4>
+                        </li>
+                        <li class="add_page">
+                            <a href="javascript:;"><i class="ybiconfont ybicon-plus"></i>
+
+                                <p>添加页面</p></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="name"><span>封底章节</span><a class="ybiconfont ybicon-feedback edit"
+                                                          href="javascript:;"></a></div>
+                    <ul class="page_list">
+                        <li class="backcover">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <img src="img/default/inner_page_backcover.jpg">
+                                <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                            </div>
+                            <h4>封底</h4>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="team_edit_container">
-            <div class="slide_mask"></div>
-            <aside id="panel" class="close">
-                <nav class="nav_bar">
-                    <ul class="fixed_menu">
+            <div class="single_mode">
+                <div class="chapter_list">
+                    <a class="back_list_mode" href="javascript:;"><i class="ybiconfont ybicon-backward2"></i>返回章节列表</a>
+                    <ul>
                         <li>
-                            <a class="" loadUrl="access_login.html">
-                                <em class="ybiconfont ybicon-pencil icon"></em>
-                                <em class="text">编辑</em>
+                            <h5 class="chapter_name">封面</h5>
+                            <a class="thumb single" href="javascript:;">
+                                <img src="img/default/inner_page_cover.jpg">
+                                <span class="page_num">封面</span>
                             </a>
                         </li>
                         <li>
-                            <a class="-toggle" loadUrl="ia_albumlist.html">
-                                <em class="ybiconfont ybicon-picture icon"></em>
-                                <em class="text">照片</em>
+                            <h5 class="chapter_name">扉页章节</h5>
+                            <a class="thumb double" href="javascript:;">
+                                <div class="left">
+                                    <img src="img/default/pages01.jpg">
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/pages02.jpg">
+                                </div>
+                                <span class="page_num">P1~2</span>
                             </a>
                         </li>
                         <li>
-                            <a class="" loadUrl="ia_friend.html">
-                                <em class="ybiconfont ybicon-editform icon"></em>
-                                <em class="text">伙伴</em>
+                            <h5 class="chapter_name">目录章节</h5>
+                            <a class="thumb single" href="javascript:;">
+                                <img src="img/default/1_2.jpg">
+                                <span class="page_num">P3</span>
                             </a>
                         </li>
                         <li>
-                            <a class="" loadUrl="makebook_autolayout.html">
-                                <em class="icon-plane icon"></em>
-                                <em class="text">编辑</em>
+                            <h5 class="chapter_name">图文章节</h5>
+                            <a class="thumb double select" href="javascript:;">
+                                <div class="left">
+                                    <img src="img/default/pages03.jpg">
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/pages04.jpg">
+                                </div>
+                                <span class="page_num">P4~5</span>
                             </a>
                         </li>
                         <li>
-                            <a class="" loadUrl="makebook_autolayout.html">
-                                <em class="ybiconfont ybicon-envelope icon"></em>
-                                <em class="text">编辑</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" loadUrl="makebook_autolayout.html">
-                                <em class="ybiconfont ybicon-bookopened icon"></em>
-                                <em class="text">编辑</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" loadUrl="makebook_autolayout.html">
-                                <em class=" icon-link icon"></em>
-                                <em class="text">编辑</em>
+                            <h5 class="chapter_name">图文章节</h5>
+                            <a class="thumb double" href="javascript:;">
+                                <div class="left">
+                                    <img src="img/default/pages05.jpg">
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/pages06.jpg">
+                                </div>
+                                <span class="page_num">P6~7</span>
                             </a>
                         </li>
                     </ul>
-                </nav>
-                <div class="toolbar_expend">
-                    <div class="content">
-                        aside内容
+                </div>
+                <div class="edit_area">
+                    <div class="cur_page">第<span>1~2</span>页</div>
+                    <i class="icon-angle-left icon-4x cm_cp prev"></i>
+                    <i class="icon-angle-right icon-4x cm_cp next"></i>
+                    <!--单页 封面-->
+                    <div class="tpl cover hidden">
+                        <div class="inner_page">
+                            <img src="img/default/tpl_small.jpg">
+                        </div>
+                    </div>
+                    <!--单页 封底-->
+                    <div class="tpl back_cover hidden">
+                        <div class="inner_page">
+                            <img src="img/default/tpl_small.jpg">
+                        </div>
+                    </div>
+                    <!--内页 双页-->
+                    <div class="tpldouble double spread">
+                        <div class="split_tips">
+                            <p>提示：请尽量避免在中间分隔线处上传头像!</p>
+                        </div>
+                        <div class="double_con">
+                            <div class="tplleft"><img src="img/default/pages03.jpg"></div>
+                            <div class="tplright"><img src="img/default/pages04.jpg"></div>
+                        </div>
+                    </div>
+                    <!--内页 单页-->
+                    <div class="tpl single hidden">
+                        <div class="inner_page">
+                            <img src="img/default/tpl_small.jpg">
+                        </div>
                     </div>
                 </div>
-            </aside>
-            <div id="menu" class="edit_content">
-                <div class="tool_bar">
-                    <div class="grid book_info">
-                        <div class="cover">
-                            <img src="img/default/bookshelf_book01.jpg">
-                            <span class="type photo"></span>
-                        </div>
-                        <div class="name">
-                            <h4>《毕业纪念册》</h4>
-                            <div class="progress">
-                                <a class="percent">
-                                    <div>完成率：</div>
-                                    <span>90%</span>
-                                    <div class="bar"><span style="width: 90%;"></span></div>
-                                </a>
-                            </div>
-                        </div>
+                <div class="resource_list">
+                    <div class="res_tab">
+                        <ul>
+                            <li class="on">照片</li>
+                            <li>互动</li>
+                            <li>模板</li>
+                            <li >评论</li>
+                        </ul>
                     </div>
-                    <div class="grid">
+                    <div class="res_tab_con">
                         <ul>
                             <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-addchapter"></i><span>添加章节</span></a>
+                                <div class="actbar">
+                                    <label class="cm_cp">
+                                        <input type="checkbox" name="used">隐藏已经入册照片
+                                    </label>
+                                    <a class="cm_fr" href="javascript:;"><i class="icon-cloud-upload"></i>上传更多</a>
+                                </div>
+                                <div class="picture_list">
+                                    <ul>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li class="select">
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                        <li>
+                                            <span class="icon-check"></span>
+                                            <img src="img/default/building.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tpl_pagination clear">
+                                    <ul>
+                                        <li class="prev">
+                                            <a href="javascript:;">
+                                                <span>上一页</span>
+                                            </a>
+                                        </li>
+                                        <li class="cur"><input type="text" value="1">
+
+                                            <p class="cm_fl">/ 2</p></li>
+                                        <li class="next">
+                                            <a href="javascript:;">
+                                                <span>下一页</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tpl_num_tips">已上传<span>133</span>张照片</div>
+                                </div>
                             </li>
                             <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-addpage"></i><span>添加页面</span></a>
+                                <div class="actbar topic">
+                                    <label>参与的话题（<span>10</span>）</label>
+                                    <a class="cm_fr" href="javascript:;"><i class="icon-random"></i>换一批</a>
+                                </div>
+                                <div class="topic_list">
+                                    <div class="bd">
+                                        <ul>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/topic_default_img.png">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="topic_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <a class="topic_fig" href="javascript:;" >
+                                                        <img src="img/default/palace.jpg">
+                                                    </a>
+                                                    <div class="topic_des">
+                                                        <h5>对于忆尔的成长，你最...</h5>
+                                                        <p class="desc">我说：团队很给力，大家很用...</p>
+                                                        <div class="actbar">
+                                                            <div><i class="icon-user"></i><span>5</span></div>
+                                                            <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
+                                                            <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="hd">
+                                        <a class="prev ybiconfont ybicon-backward2" href="javascript:;"></a>
+                                        <ul></ul>
+                                        <a class="next ybiconfont ybicon-forward2" href="javascript:;"></a>
+                                    </div>
+                                </div>
+                                <div class="actbar message">
+                                    <label>收到赠言（<span>5</span>）</label>
+                                    <a class="cm_fr" href="javascript:;"><i class="icon-random"></i>换一批</a>
+                                </div>
+                                <div class="message_list">
+                                    <div class="bd">
+                                        <ul>
+                                            <li>
+                                                <div class="msg_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                    <h5 class="name">TEST1</h5>
+                                                    <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                    <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                    <div class="time">2016-4-29 10:00</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="msg_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                    <h5 class="name">TEST1</h5>
+                                                    <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                    <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                    <div class="time">2016-4-29 10:00</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="msg_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                    <h5 class="name">TEST1</h5>
+                                                    <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                    <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                    <div class="time">2016-4-29 10:00</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="msg_item">
+                                                    <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
+                                                    <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                    <h5 class="name">TEST1</h5>
+                                                    <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                    <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                    <div class="time">2016-4-29 10:00</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="hd">
+                                        <a class="prev ybiconfont ybicon-backward2" href="javascript:;"></a>
+                                        <ul></ul>
+                                        <a class="next ybiconfont ybicon-forward2" href="javascript:;"></a>
+                                    </div>
+                                </div>
                             </li>
+                            <li></li>
                             <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-friend"></i><span>邀请协作者</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-replacetpl"></i><span>更换模板</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>自动排版</span></a>
+                                <div class="comment_list">
+                                    <ul>
+                                        <li>
+                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                            <h5 class="name">TEST1</h5>
+                                            <div class="time">2016-4-29  11:00</div>
+                                            <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                            <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
+                                        </li>
+                                        <li>
+                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                            <h5 class="name">TEST1</h5>
+                                            <div class="time">2016-4-29  11:00</div>
+                                            <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                            <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
+                                        </li>
+                                        <li>
+                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                            <h5 class="name">TEST1</h5>
+                                            <div class="time">2016-4-29  11:00</div>
+                                            <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                            <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
+                                        </li>
+                                        <li>
+                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                            <h5 class="name">TEST1</h5>
+                                            <div class="time">2016-4-29  11:00</div>
+                                            <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                            <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tpl_pagination clear">
+                                    <ul>
+                                        <li class="prev">
+                                            <a href="javascript:;">
+                                                <span>上一页</span>
+                                            </a>
+                                        </li>
+                                        <li class="cur"><input type="text" value="1">
+
+                                            <p class="cm_fl">/ 2</p></li>
+                                        <li class="next">
+                                            <a href="javascript:;">
+                                                <span>下一页</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="comment_input">
+                                    <label>发布评论</label>
+                                    <textarea></textarea>
+                                    <button type="button">评论</button>
+                                </div>
                             </li>
                         </ul>
-                    </div>
-                    <div class="grid">
-                        <ul>
-                            <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>照片缺失页</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>文字缺失页</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid print">
-                        <a href="javascript:;"><i class="ybiconfont ybicon-printer"></i>下单打印</a>
-                    </div>
-                </div>
-                <div class="list_mode hidden">
-                    <div class="item">
-                        <p class="tips"><i class="ybiconfont ybicon-alert1"></i>提示：章节内拖动书页位置即可调整页码顺序</p>
-                        <div class="name"><span>封面章节</span><a class="ybiconfont ybicon-feedback edit" href="javascript:;"></a></div>
-                        <ul class="page_list">
-                            <li class="cover">
-                                <div class="figure" title="拖动排序，双击可编辑">
-                                    <img src="img/default/inner_page_cover.jpg">
-                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                </div>
-                                <h4>封面</h4>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item">
-                        <div class="sort_chapter">
-                            <a href="javascript:;"><i class="icon-arrow-up"></i>章节上移</a>
-                            <a href="javascript:;"><i class="icon-arrow-down"></i>章节下移</a>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-trash"></i>删除章节</a>
-                        </div>
-                        <div class="name"><span>图文章节</span><a class="ybiconfont ybicon-feedback edit" href="javascript:;"></a></div>
-                        <ul class="page_list">
-                            <li class="double">
-                                <div class="figure" title="拖动排序，双击可编辑">
-                                    <div class="left">
-                                        <img src="img/default/inner_pages01.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                    <div class="right">
-                                        <img src="img/default/inner_pages02.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                </div>
-                                <h4>第<span>1</span>页</h4>
-                                <h4>第<span>2</span>页</h4>
-                            </li>
-                            <li class="double">
-                                <div class="figure" title="拖动排序，双击可编辑">
-                                    <div class="left">
-                                        <img src="img/default/inner_pages01.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                    <div class="right">
-                                        <img src="img/default/inner_pages02.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                </div>
-                                <h4>第<span>3</span>页</h4>
-                                <h4>第<span>4</span>页</h4>
-                            </li>
-                            <li class="double">
-                                <div class="figure" title="拖动排序，双击可编辑">
-                                    <div class="left">
-                                        <img src="img/default/inner_pages01.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                    <div class="right">
-                                        <img src="img/default/inner_pages02.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                </div>
-                                <h4>第<span>5</span>页</h4>
-                                <h4>第<span>6</span>页</h4>
-                            </li>
-                            <li class="double">
-                                <div class="figure" title="拖动排序，双击可编辑">
-                                    <div class="left">
-                                        <img src="img/default/inner_pages01.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                    <div class="right">
-                                        <img src="img/default/inner_pages02.jpg">
-                                        <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                    </div>
-                                </div>
-                                <h4>第<span>7</span>页</h4>
-                                <h4>第<span>8</span>页</h4>
-                            </li>
-                            <li class="add_page">
-                                <a href="javascript:;"><i class="ybiconfont ybicon-plus"></i><p>添加页面</p></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item">
-                        <div class="name"><span>封底章节</span><a class="ybiconfont ybicon-feedback edit" href="javascript:;"></a></div>
-                        <ul class="page_list">
-                            <li class="backcover">
-                                <div class="figure" title="拖动排序，双击可编辑">
-                                    <img src="img/default/inner_page_backcover.jpg">
-                                    <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
-                                </div>
-                                <h4>封底</h4>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="single_mode">
-                    <div class="main">
-                        <div class="cur_page">第<span>1~2</span>页</div>
-                        <i class="icon-angle-left icon-4x cm_cp prev"></i>
-                        <i class="icon-angle-right icon-4x cm_cp next"></i>
-                        <!--单页 封面-->
-                        <div class="tpl cover hidden">
-                            <div class="inner_page">
-                                <img src="img/default/tpl_small.jpg">
-                            </div>
-                        </div>
-                        <!--单页 封底-->
-                        <div class="tpl back_cover hidden">
-                            <div class="inner_page">
-                                <img src="img/default/tpl_small.jpg">
-                            </div>
-                        </div>
-                        <!--内页 双页-->
-                        <div class="tpldouble double spread">
-                            <div class="split_tips">
-                                <p>提示：请尽量避免在中间分隔线处上传头像!</p>
-                            </div>
-                            <div class="double_con">
-                                <div class="tplleft"><img src="img/default/left_tiny.jpg"></div>
-                                <div class="tplright"><img src="img/default/right_tiny.jpg"></div>
-                            </div>
-                        </div>
-                        <!--内页 单页-->
-                        <div class="tpl single hidden">
-                            <div class="inner_page">
-                                <img src="img/default/tpl_small.jpg">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- html end-->
+</div>
+<!-- html end-->
 
-	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
-    <script type="text/javascript" src="assets/js/slideout.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            //初始化slideOut
-            var slideout = new Slideout({
-                'panel': document.getElementById('panel'),
-                'menu': document.getElementById('menu'),
-                'padding': 1150
+<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+<script type="text/javascript" src="assets/js/slideout.min.js"></script>
+<script type="text/javascript" src="assets/js/icheck.js"></script>
+<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
+<script>
+    $(document).ready(function () {
+        changeButtonCss();
+        asideSlideOut();
+        resourceTab();
+    });
+
+    //渲染控件样式
+    function changeButtonCss() {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
+
+    function asideSlideOut() {
+        //初始化slideOut
+        var slideout = new Slideout({
+            'panel': document.getElementById('panel'),
+            'menu': document.getElementById('menu'),
+            'padding': 1150
+        });
+
+
+        //点击nav调出aside区域
+        $('.fixed_menu li a').on('click', function (e) {
+            slideout.open();
+            $('aside').removeClass('close');
+            $('.slide_mask').show();
+            /*应用fadeIn 快速打开关闭jquery.easing.def报错*/
+            $('.fixed_menu li').each(function () {
+                $(this).removeClass('active');
+            })
+            $(this).closest('li').addClass('active');
+            var Url = $(this).attr('loadUrl');
+            $('.toolbar_expend .content').load(Url);
+
+            //click其他地方关闭aside区域
+            $(document).on('click', function (e) {
+                if ($(e.target).closest('#panel').length == 0) {
+                    slideout.close();
+                    $('aside').addClass('close');
+                    $('.slide_mask').hide();
+                }
             });
+        });
+    }
 
-
-            //点击nav调出aside区域
-            $('.fixed_menu li a').on('click', function(e) {
-                slideout.open();
-                $('aside').removeClass('close');
-                $('.slide_mask').show();/*应用fadeIn 快速打开关闭jquery.easing.def报错*/
-                $('.fixed_menu li').each(function(){
-                    $(this).removeClass('active');
-                })
-                $(this).closest('li').addClass('active');
-                var Url = $(this).attr('loadUrl');
-                $('.toolbar_expend .content').load(Url);
-
-                //click其他地方关闭aside区域
-                $(document).on('click',function(e){
-                    if ($(e.target).closest('#panel').length == 0) {
-                        slideout.close();
-                        $('aside').addClass('close');
-                        $('.slide_mask').hide();
-                    }
+    //资源tab
+    function resourceTab() {
+        jQuery(".resource_list").slide({
+            mainCell: ".res_tab_con ul",
+            titCell: ".res_tab li",
+            prevCell: "",
+            nextCell: "",
+            trigger: "click",
+            pnLoop: false,
+            autoPlay: false,
+            startFun: function(){
+                //话题
+                jQuery('.topic_list').slide({
+                    mainCell: ".bd ul",
+                    titCell: ".hd ul",
+                    trigger: "click",
+                    pnLoop: false,
+                    autoPlay: false,
+                    autoPage:true,
+                    effect:"top",
+                    vis:3,
+                    scroll:3
                 });
-            });
-        })
+                //赠言
+                jQuery('.message_list').slide({
+                    mainCell: ".bd ul",
+                    titCell: ".hd ul",
+                    trigger: "click",
+                    pnLoop: false,
+                    autoPlay: false,
+                    autoPage:true,
+                    effect:"left",
+                    vis:1,
+                    scroll:1
+                });
+            }
+        });
 
-    </script>
+        var resHeight = $('.single_mode .resource_list').height();
+        $('.resource_list .res_tab_con').height(resHeight-75);
+    }
+</script>
 </body>
 
 </html>

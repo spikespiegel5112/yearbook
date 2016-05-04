@@ -195,37 +195,106 @@
 		<div class='makebook_step_wrapper'>
 			<div class='makebook_steptitle_wrapper'>
 				<h6 class='makebook_steptitle_item'>推荐章节组合 - 毕业册</h6>
-				<a class='back' href="javascript:;"><span></span>返回上一步</a>
+				<a class='back' href="javascript:;"><span class='ybiconfont ybicon-reply'></span>返回上一步</a>
 			</div>
 			<div class='makebook_recommend_wrapper'>
 				<ul class='makebook_stepcomponentlist_wrapper'>
 					<li class='makebook_bookcomponent_item'>
-						<a href="javascript:;">
-							<div class='type'>
-								<span></span>
-								<label>封面/封底</label>
-							</div>
-							<p class='description'>描述：可设置封面模板中的照片及文字。</p>
-						</a>
+						<div class='type'>
+							<span class='ybiconfont ybicon-'></span>
+							<label>封面/封底</label>
+						</div>
+						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+						<ul class='tools'>
+							<li>
+								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							</li>
+						</ul>
+					</li>
+					<li class='makebook_bookcomponent_item'>
+						<div class='type'>
+							<span class='ybiconfont ybicon-'></span>
+							<label>扉页</label>
+						</div>
+						<p class='description'>
+							描述：可设置封面模板中的照片及文字。可设置封面模板中的照片及文字。可设置封面模板中的照片及文字。
+							<br> 可设置封面模板中的照片及文字。
+						</p>
+						<ul class='tools'>
+							<li>
+								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							</li>
+						</ul>
+					</li>
+					<li class='makebook_bookcomponent_item'>
+						<div class='type'>
+							<span class='ybiconfont ybicon-'></span>
+							<label>目录</label>
+						</div>
+						<p class='description'>
+							描述：可设置封面模板中的照片及文字。可设置封面模板中的照片及文字。可设置封面模板中的照片及文字。
+							<br> 可设置封面模板中的照片及文字。
+						</p>
+						<ul class='tools'>
+							<li>
+								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							</li>
+						</ul>
+					</li>
+					<li class='makebook_bookcomponent_item'>
+						<div class='type'>
+							<span class='ybiconfont ybicon-'></span>
+							<label>图文章节</label>
+						</div>
+						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+						<ul class='tools'>
+							<li>
+								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							</li>
+						</ul>
+					</li>
+					<li class='makebook_bookcomponent_item'>
+						<div class='type'>
+							<span class='ybiconfont ybicon-'></span>
+							<label>个人章节</label>
+						</div>
+						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+						<ul class='tools'>
+							<li>
+								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							</li>
+						</ul>
+					</li>
+					<li class='makebook_bookcomponent_item'>
+						<div class='type'>
+							<span class='ybiconfont ybicon-'></span>
+							<label>全页照片</label>
+						</div>
+						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+						<ul class='tools'>
+							<li>
+								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+							</li>
+						</ul>
 					</li>
 				</ul>
-				<div class='makebook_stepaddcomponent_wrapper'>
-					<h6>可添加章节：</h6>
-					<ul>
-						<li>
-							<ul>
-								<li><a href="javascript:;"><span>+</span>封面/封底</a></li>
-								<li><a href="javascript:;"><span>+</span>目录</a></li>
-							</ul>
-						</li>
-						<li>
-							<ul>
-								<li><a href="javascript:;"><span>+</span>扉页</a></li>
-								<li><a href="javascript:;"><span>+</span>图文章节</a></li>
-							</ul>
-						</li>
+				<div class='makebook_componentstack_wrapper'>
+					<h6>书册章节：</h6>
+					<div class='inoperable'>
+						<label>封面/封底</label>
+					</div>
+					<ul class='operable'>
+						<li><a href="javascript:;"><span>-</span>扉页</a></li>
+						<li><a href="javascript:;"><span>-</span>图文章节</a></li>
+					</ul>
+					<ul class='addable'>
+						<li><a href="javascript:;"><span>+</span>扉页</a></li>
+						<li><a href="javascript:;"><span>+</span>图文章节</a></li>
 					</ul>
 				</div>
+			</div>
+			<div class='makebook_neststepbtn_item'>
+				<a href="javascript:;">下一步</a>
 			</div>
 		</div>
 	</div>
@@ -261,10 +330,9 @@
 		</div>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
-	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
 	<script type="text/javascript">
 	$(function() {
-		$('.makebook_recommend_wrapper a').hover(function(){
+		$('.makebook_recommend_wrapper a').hover(function() {
 			$(this).siblings().removeClass('active').end().addClass('active');
 		})
 	})

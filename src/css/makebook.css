@@ -6047,7 +6047,7 @@
 }
 .makebook_setupinvitcard_wrapper .share>a{
 	float: left;
-	margin: 40px;
+	margin: 30px 40px;
 	padding: 10px 20px;
 	border: 1px solid #ccc;
 	border-radius: 6px;
@@ -6062,20 +6062,56 @@
 	box-shadow: 2px 2px 5px #ccc inset;
 	transition: all 0.05s;
 }
-.makebook_setupinvitcard_wrapper .share div{
+.makebook_setupinvitcard_wrapper .share>div{
 	float: left;
-	margin: 50px 0 0 100px;
+	margin: 30px 0 0 100px;
+}
+.makebook_setupinvitcard_wrapper .share>div>div{
+	float: left;
+	margin: 0 20px;
+	color: #ccc;
+	text-align: center;
+}
+.makebook_setupinvitcard_wrapper .share>div>div span{
+	display: block;
+	font-size: 40px;
+}
+.makebook_setupinvitcard_wrapper .share>div>div label{
+	font-size: 13px;
+}
+.makebook_setupinvitcard_wrapper .share>div ul{
+	float: left;
+
 }
 .makebook_setupinvitcard_wrapper .share div li{
 	float: left;
+	margin: 0 5px;
+		height: 40px;
 }
 .makebook_setupinvitcard_wrapper .share div li a{
-	padding: 10px;
+	display: block;
+	padding: 7px;
 	color: #fff;
-	font-size: 20px;
+	font-size: 28px;
 	background-color: red;
 	border-radius: 50%;
 }
+.makebook_setupinvitcard_wrapper .share .wechat{
+	background-color: #00ca5a;
+}
+.makebook_setupinvitcard_wrapper .share .moments{
+	background-color: #26d6fb;
+}
+.makebook_setupinvitcard_wrapper .share .qzone{
+	background-color: #ffa23d;
+}
+.makebook_setupinvitcard_wrapper .share .renren{
+	background-color: #0773be;
+}
+.makebook_setupinvitcard_wrapper .share .weibo{
+	background-color: #e92246;
+}
+
 
 
 

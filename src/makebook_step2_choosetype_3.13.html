@@ -10,7 +10,7 @@
 	<meta name="keywords" content="">
 	<title>忆尔3.13-选择团队册群体</title>
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462356385_59595.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462373368_2192485.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -239,7 +239,7 @@
 						<h6>收集的基本信息</h6>
 						<ul class='personalinfo'>
 							<li>
-								<input id='name' type='checkbox'>
+								<input class='disabled' id='name' type='checkbox'>
 								<label for='name'>姓名</label>
 							</li>
 							<li>
@@ -368,7 +368,7 @@
 							<a href="javascript:;">修改邀请卡</a>
 							<div>
 								<div>
-									<span class='ybiconfont ybicon-vote'></span>
+									<span class='ybiconfont ybicon-mail'></span>
 									<label>立即分享</label>
 								</div>
 								<ul>
@@ -435,11 +435,22 @@
 	$('.makebook_choosemethod_wrapper li').click(function(){
 		$(this).siblings().removeClass('active').end().addClass('active');
 	});
-	$("input[type=radio],input[type=checkbox]").iCheck({
-			checkboxClass: 'icheckbox_minimal-green',
-			radioClass: 'iradio_minimal-green',
-			increaseArea: '20%'
-		});
+	$("input[type=radio],input[type=checkbox]").iCheck('disable');
+	$('.makebook_setupinvitcard_wrapper .share a').click(function(){
+		var $this=$(this);
+		$this.toggleClass('active');
+		if ($this.hasClass('active')) {
+			$("input[type=radio],input[type=checkbox]").iCheck({
+				checkboxClass: 'icheckbox_minimal-green',
+				radioClass: 'iradio_minimal-green',
+				increaseArea: '20%',
+			});
+		}else{
+			$("input[type=radio],input[type=checkbox]").iCheck('disable');
+		}
+	})
+	
+	
 	</script>
 </body>
 

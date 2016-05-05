@@ -2029,6 +2029,8 @@ label.error, div.error
     text-align: center;
 
     color: #a8a8a8;
+    font-size: 14px;
+    line-height: 2;
 }
 
 .pc_empty_item .avatar_1
@@ -6920,4 +6922,48 @@ nav .pagination li a:active
 .footer_menu_container .copyright a:hover
 {
     color: #eee;
+}
+/*yb 弹出层*/
+.edit_pop_container
+{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+
+    display: none;
+
+    width: 100%;
+
+    background: rgba(0,0,0,.6);
+}
+.edit_pop_container .close
+{
+    font-size: 18px;
+
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 15px;
+
+    color: #333;
+}
+
+.edit_pop_container .close:hover
+{
+    color: #f60;
+}
+
+.edit_pop_container .title
+{
+    font-size: 16px;
+    font-weight: bold;
+
+    position: relative;
+
+    margin: 0;
+    padding: 10px 15px;
+
+    color: #333;
+    border-bottom: 1px solid #ddd;
 }

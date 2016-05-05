@@ -4,6 +4,7 @@
     background: url("../img/makebook/team/iabook_edit_bg.jpg") no-repeat 0;
     background-size: cover;
     overflow: hidden;
+    height: 850px;
 }
 
 .team_edit_container aside {
@@ -102,9 +103,20 @@
 .team_edit_container .edit_content {
     position: relative;
     width: 100%;
+    height: inherit;
     padding-left: 70px;
     margin: 0;
     box-sizing: border-box;
+}
+
+.team_edit_container .edit_content.list .list_mode,
+.team_edit_container .edit_content.single .single_mode{
+    display: block;
+}
+
+.team_edit_container .edit_content.single .list_mode,
+.team_edit_container .edit_content.list .single_mode{
+    display: none;
 }
 
 .edit_content .tool_bar {
@@ -132,8 +144,92 @@
 }
 
 .edit_content .tool_bar .grid li {
+    position: relative;
     display: inline-block;
     padding: 0 8px;
+}
+
+.edit_content .tool_bar .grid li a{
+    display: block;
+    border-radius: 4px;
+    padding: 2px 5px 4px;
+}
+
+.tool_bar .grid li .ybcommon_queryicon_item {
+    position: absolute;
+    top: 44px;
+    left: 30px;
+    display: none;
+    width: 55px;
+    height: 0;
+    cursor: default;
+}
+
+.tool_bar .grid li .ybcommon_queryicon_item div{
+    display: block;
+}
+
+.edit_content .tool_bar .grid li:hover .ybcommon_queryicon_item{
+    display: block;
+}
+
+.tool_bar .grid li .page_list{
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    top: 65px;
+    left: -11px;
+    width: 100%;
+}
+
+.tool_bar .grid li:hover .page_list{
+    display: block;
+}
+
+.tool_bar .grid li .page_list .arrow {
+    position: absolute;
+    top: -8px;
+    left: 48px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #ddd;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.tool_bar .grid li .page_list .arrow:after {
+    position: absolute;
+    top: 1px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-bottom: 8px solid #fff;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.tool_bar .grid li .page_list ul {
+    z-index: 1;
+    overflow-y: auto;
+    width: 100%;
+    height: 200px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.tool_bar .grid li .page_list li {
+    line-height: 30px;
+    display: block;
+    height: 30px;
+    text-align: left;
+    border-bottom: 1px dashed #ddd;
+}
+
+.tool_bar .grid li .page_list li a {
+    display: block;
+    color: #666;
 }
 
 .edit_content .tool_bar .grid li i {
@@ -195,7 +291,7 @@
 
 .edit_content .book_info .progress {
     font-size: 12px;
-    width: 110px;
+    width: 135px;
     color: #333;
 }
 
@@ -291,6 +387,7 @@
     width: 100%;
     padding: 0 15px;
     box-sizing: border-box;
+    height: inherit;
 }
 
 .edit_content .list_mode .item {
@@ -533,17 +630,28 @@
     background: rgba(0, 0, 0, .76);
 }
 
-.edit_content .single_mode {
+.edit_content > .single_mode {
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: inherit;
 }
 
 .edit_content .single_mode .edit_area {
     position: relative;
-    width: 960px;
+    float: left;
+    width: 69%;
     padding-bottom: 100px;
+    margin: 0;
+}
+
+.single_mode .edit_area .inner_page{
+    position: relative;
+    display: block;
     margin: 0 auto;
+    width: 100%;
+    min-width: 860px;
+    max-width: 980px;
 }
 
 .single_mode .edit_area .cur_page {
@@ -560,14 +668,15 @@
     top: 320px;
     color: #e8e8e8;
     font-size: 4.5em;
+    z-index: 1;
 }
 
 .single_mode .edit_area .icon-angle-left {
-    left: 0;
+    left: 20px;
 }
 
 .single_mode .edit_area .icon-angle-right {
-    right: 0;
+    right: 20px;
 }
 
 .single_mode .edit_area .icon-angle-left:hover,
@@ -674,9 +783,9 @@
 }
 
 .single_mode .chapter_list {
-    position: absolute;
-    left: 0;
-    width: 155px;
+    position: relative;
+    float: left;
+    width: 11.5%;
     height: 100%;
     background-color: #223241;
     overflow: hidden;
@@ -786,12 +895,12 @@
 }
 
 .single_mode .resource_list {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 480px;
+    position: relative;
+    float: right;
+    width: 19.5%;
     height: 100%;
     background-color: #fff;
+    z-index: 0;
 }
 
 .resource_list .res_tab {
@@ -803,9 +912,9 @@
 
 .resource_list .res_tab li {
     float: left;
-    width: 110px;
-    height: 55px;
-    line-height: 55px;
+    width: 25%;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     font-size: 14px;
     color: #333;
@@ -817,12 +926,15 @@
     cursor: pointer;
 }
 
-.resource_list .res_tab li.on,
-.resource_list .res_tab li:hover {
+.resource_list .res_tab li.on{
     box-shadow: 0 -3px 0 #5db8f1;
     border-bottom: 0;
     border-top: 0;
     color: #4991bc;
+}
+
+.resource_list .res_tab li:hover{
+    color: #90c132;
 }
 
 .resource_list .res_tab_con {
@@ -878,7 +990,9 @@
     width: 100%;
     box-sizing: border-box;
 }
-
+.res_tab_con .picture_list .hover_box{
+    top: 0;
+}
 .res_tab_con .picture_list li {
     position: relative;
     float: left;
@@ -895,6 +1009,7 @@
     max-width: 104px;
     max-height: 85px;
     vertical-align: middle;
+    cursor: move;
 }
 
 .res_tab_con .picture_list li span {
@@ -974,7 +1089,7 @@
     display: block;
     padding: 0;
     margin: 0 auto;
-    width: 450px;
+    width: 90%;
     height: 112px;
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
@@ -1044,25 +1159,29 @@
     font-size: 12px;
     margin-right: 5px;
 }
-.topic_des .actbar .add,
-.message_list .msg_item .add{
+.topic_des .actbar .cm_team_btn,
+.msg_item .cm_team_btn{
     float: right;
-    width: 95px;
+}
+.cm_team_btn{
+    display: inline-block;
+    width: auto;
+    padding: 0 6px;
     height: 30px;
     line-height: 30px;
     text-align: center;
-    color: #fff;
+    color: #fff!important;
     font-size: 12px;
     background-color: #38d08a;
     border-radius: 4px;
+    white-space: nowrap;
 }
-.topic_des .actbar .add i,
-.message_list .msg_item .add i{
+
+.cm_team_btn i{
     font-size: 16px;
     vertical-align: middle;
 }
-.topic_des .actbar .add:hover,
-.message_list .msg_item .add:hover{
+.cm_team_btn:hover{
     color: #fff;
     background-color: #43b05d;
 }
@@ -1121,7 +1240,7 @@
     position: relative;
     padding: 12px 15px 10px 30px;
     margin: 0 auto;
-    width: 450px;
+    width: 95%;
     height: 185px;
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -1259,7 +1378,7 @@
 }
 .res_tab_con .comment_input textarea{
     display: block;
-    width: 450px;
+    width: 90%;
     height: 90px;
     margin: 0 auto;
     resize: none;
@@ -1284,6 +1403,260 @@
 
 .res_tab_con .chaptermake_tpl ul{
     position: relative;
-    width: 428px;
+    width: 90%;
     margin: 0 auto;
+}
+.edit_pop_container .add_chapter_con{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -213px 0 0 -408px;
+    width: 815px;
+    height: 425px;
+    background-color: #fff;
+}
+.edit_pop_container .add_chapter_con:before{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 835px;
+    height: 445px;
+    content: ' ';
+    border-radius: 8px;
+    background-color: rgba(255,255,255,.4);
+}
+.add_chapter_con > label{
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+}
+.add_chapter_con .tpl_chapter_list{
+    position: relative;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.tpl_chapter_list .hd a{
+    position: absolute;
+    top: 68px;
+    color: #999;
+}
+.tpl_chapter_list .hd a:hover{
+    color: #90c132;
+}
+.tpl_chapter_list .prev{
+    left: 10px;
+}
+.tpl_chapter_list .next{
+    right: 10px;
+}
+.tpl_chapter_list li {
+    position: relative;
+    margin: 10px 8px;
+    float: left;
+    width: 135px;
+    height: 135px;
+    text-align: center;
+    border: 1px dashed #ddd;
+    cursor: pointer;
+}
+.tpl_chapter_list li.select,
+.tpl_chapter_list li:hover{
+    border: 1px solid #90c132;
+}
+.tpl_chapter_list li span{
+    display: block;
+    padding: 25px 0 10px;
+    font-size: 54px;
+    color: #bdbdbc;
+}
+.tpl_chapter_list li h5{
+    font-size: 14px;
+    color: #666;
+}
+
+.tpl_chapter_list li i{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    line-height: 18px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent #90c132 #90c132 transparent;
+}
+
+.tpl_chapter_list li.select i{
+    display: block;
+}
+
+.add_chapter_con .tpl_desc{
+    position: relative;
+    padding: 0 20px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+.add_chapter_con .tpl_desc label{
+    float: left;
+}
+.add_chapter_con .tpl_desc p{
+    display: block;
+    padding-left: 102px;
+}
+.add_chapter_con .tpl_caption{
+    position: relative;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+.add_chapter_con .tpl_caption label{
+    display: inline-block;
+    margin: 15px 0;
+    padding: 0 0 0 20px;
+}
+.add_chapter_con .tpl_caption input{
+    display: inline-block;
+    padding: 0 6px;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #cdcdcd;
+    box-shadow: inset 0 0 3px #aaa;
+    border-radius: 2px;
+}
+.add_chapter_con .action_bar{
+    position: absolute;
+    bottom: 0;
+    padding: 0 20px;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #d2d2d2;
+    box-sizing: border-box;
+}
+.add_chapter_con .action_bar .add_section_sbbtn{
+    float: right;
+}
+
+/*left slide content*/
+.aside_content{
+    position: relative;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+    height: auto;
+    background-color: #eceff4;
+    box-sizing: border-box;
+}
+.aside_content .res_tab{
+    z-index: 1;
+}
+
+.aside_content .res_tab_con{
+    position: relative;
+    width: 100%;
+    margin: -1px 0 0;
+    background-color: #fff;
+    border: 1px solid #e8ecf0;
+    border-left: 0;
+    z-index: 0;
+}
+.aside_content .res_tab_con .al_photo_list{
+    position: relative;
+    width: 100%;
+}
+
+.aside_content .al_photo_list li{
+    position: relative;
+    display: inline-block;
+    margin: 10px 8px;
+    padding: 6px 5px 0;
+    width: 240px;
+    text-align: center;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px -2px rgba(0,0,0,.3);
+    box-sizing: border-box;
+}
+.aside_content .al_photo_list li .actbar{
+    margin: 0;
+    padding: 0;
+}
+.al_photo_list li .actbar span{
+    max-width: 152px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.al_photo_list li .actbar a{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.al_photo_list li .actbar .ybicon-commentsolid{
+    font-size: 12px;
+}
+.al_photo_list li .img{
+    position: relative;
+    width: 228px;
+    height: 188px;
+    margin: 0 auto;
+}
+.al_photo_list li .img img{
+    width: 100%;
+    height: 100%;
+}
+.al_photo_list li .img .btn_bg{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(132,209,148,.7);
+}
+.al_photo_list li .img:hover .btn_bg{
+    display: block;
+}
+.al_photo_list li .img .btn_bg a {
+    font-size: 16px;
+    line-height: 36px;
+    display: block;
+    box-sizing: border-box;
+    width: 135px;
+    height: 40px;
+    margin: 74px auto;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+}
+.al_photo_list li .img:hover .btn_bg a {
+    -webkit-animation: viewBtnSlideUp .2s ease;
+    animation: viewBtnSlideUp .2s ease;
+}
+
+@keyframes viewBtnSlideUp
+{
+    from
+    {
+        margin-top: 246px;
+
+        opacity: 0;
+    }
+    to
+    {
+        margin-top: 140px;
+
+        opacity: 1;
+    }
 }

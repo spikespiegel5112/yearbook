@@ -9,7 +9,8 @@
 	<meta name="author" content="">
 	<meta name="keywords" content="">
 	<title>忆尔3.13-选择团队册群体</title>
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462373368_2192485.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462414917_7311904.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -201,19 +202,25 @@
 				<ul class='makebook_stepcomponentlist_wrapper'>
 					<li class='makebook_bookcomponent_item'>
 						<div class='type'>
-							<span class='ybiconfont ybicon-'></span>
+							<span class='ybiconfont ybicon-cover'></span>
 							<label>封面/封底</label>
 						</div>
 						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
 						<ul class='tools'>
 							<li>
-								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+								<a class='preview ybiconfont ybicon-eyeopen' href="#fancybox_cover">
+									<div class='makebook_fancyboxframe_double' id='fancybox_cover'>
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+									</div>
+								</a>
 							</li>
 						</ul>
 					</li>
 					<li class='makebook_bookcomponent_item'>
 						<div class='type'>
-							<span class='ybiconfont ybicon-'></span>
+							<i class='ybiconfont ybicon-iconframe'></i>
+							<span class='ybiconfont ybicon-text'></span>
 							<label>扉页</label>
 						</div>
 						<p class='description'>
@@ -222,13 +229,18 @@
 						</p>
 						<ul class='tools'>
 							<li>
-								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+								<a class='preview ybiconfont ybicon-eyeopen' href="#fancybox_flyleaf">
+									<div class='makebook_fancyboxframe_single' id='fancybox_flyleaf'>
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+									</div>
+								</a>
 							</li>
 						</ul>
 					</li>
 					<li class='makebook_bookcomponent_item'>
 						<div class='type'>
-							<span class='ybiconfont ybicon-'></span>
+							<i class='ybiconfont ybicon-iconframe'></i>
+							<span class='ybiconfont ybicon-category'></span>
 							<label>目录</label>
 						</div>
 						<p class='description'>
@@ -237,43 +249,66 @@
 						</p>
 						<ul class='tools'>
 							<li>
-								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+								<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
+								<a class='preview ybiconfont ybicon-eyeopen' href="#fancybox_category">
+									<div class='makebook_fancyboxframe_single' id='fancybox_category'>
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+									</div>
+								</a>
 							</li>
 						</ul>
 					</li>
 					<li class='makebook_bookcomponent_item'>
 						<div class='type'>
-							<span class='ybiconfont ybicon-'></span>
+							<i class='ybiconfont ybicon-iconframe'></i>
+							<span class='ybiconfont ybicon-drawingtext'></span>
 							<label>图文章节</label>
 						</div>
 						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
 						<ul class='tools'>
 							<li>
-								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+								<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
+								<a class='preview ybiconfont ybicon-eyeopen' href="#fancybox_imagetext">
+									<div class='makebook_fancyboxframe_single' id='fancybox_imagetext'>
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+									</div>
+								</a>
 							</li>
 						</ul>
 					</li>
 					<li class='makebook_bookcomponent_item'>
 						<div class='type'>
-							<span class='ybiconfont ybicon-'></span>
+							<i class='ybiconfont ybicon-iconframe'></i>
+							<span class='ybiconfont ybicon-resume'></span>
 							<label>个人章节</label>
 						</div>
 						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
 						<ul class='tools'>
 							<li>
-								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+								<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
+								<a class='preview ybiconfont ybicon-eyeopen' href="#fancybox_personal">
+									<div class='makebook_fancyboxframe_single' id='fancybox_personal'>
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+									</div>
+								</a>
 							</li>
 						</ul>
 					</li>
 					<li class='makebook_bookcomponent_item'>
 						<div class='type'>
-							<span class='ybiconfont ybicon-'></span>
+							<i class='ybiconfont ybicon-iconframe'></i>
+							<span class='ybiconfont ybicon-photo'></span>
 							<label>全页照片</label>
 						</div>
 						<p class='description'>描述：可设置封面模板中的照片及文字。</p>
 						<ul class='tools'>
 							<li>
-								<a class='ybiconfont ybicon-eyeopen' href="javascript:;"></a>
+								<a class='ybiconfont ybicon-trash' href="javascript:;"></a>
+								<a class='preview ybiconfont ybicon-eyeopen' href="#fancybox_photo">
+									<div class='makebook_fancyboxframe_single' id='fancybox_photo'>
+										<img class='fancybox-image' src="img/default/left_big.jpg">
+									</div>
+								</a>
 							</li>
 						</ul>
 					</li>
@@ -330,11 +365,13 @@
 		</div>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
 	<script type="text/javascript">
 	$(function() {
-		$('.makebook_recommend_wrapper a').hover(function() {
+		$('.makebook_bookcomponent_item').hover(function() {
 			$(this).siblings().removeClass('active').end().addClass('active');
-		})
+		});
+		$('.makebook_bookcomponent_item .preview').fancybox({});
 	})
 	</script>
 </body>

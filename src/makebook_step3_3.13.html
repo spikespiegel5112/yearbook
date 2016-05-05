@@ -195,63 +195,80 @@
 		</div>
 		<div class='makebook_step_wrapper'>
 			<div class='makebook_steptitle_wrapper'>
-				<h6 class='makebook_steptitle_item'>团队册详细配置</h6>
-				<p class='description'>（填写您的需求,我们将为您做出更好的数据分析和过滤选项）</p>
+				<h6 class='makebook_steptitle_item'>推荐模板列表</h6>
+				<p class='description'>（根据您的配置，忆尔推荐了5套模板供您选择）</p>
 				<a class='back' href="javascript:;"><span class='ybiconfont ybicon-reply'></span>返回上一步</a>
 			</div>
-			<div class='makebook_preparation_wrapper sem_mainlist_wrapper'>
-				<div class='sem_mainlistul_wrapper'>
-					<ul>
-						<li>
-							<a href="javascript:;">
-								<img src="img/sem/sem_iabook_cover_1.jpg">
-							</a>
+			<div class='makebook_preparation_wrapper'>
+				<ul>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_iabook_cover_1.jpg">
+						</a>
+						<div class='title'>
 							<div>
-								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
-								<span>40.40<label>起</label></span>
+								<a class='' href="javascript:;">
+									<i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+									<i>》</i>
+								</a>
+								<a class='' href='javascript:;'>[预览]</a>
 							</div>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<img src="img/sem/sem_iabook_cover_1.jpg">
+							<span>40.40<label>起</label></span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_iabook_cover_1.jpg">
+						</a>
+						<div class='title'>
+							<a class='sem_bookname_item' href="javascript:;">
+								<i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i>
+								<span>[预览]</span>
 							</a>
-							<div>
-								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
-								<span>40.40<label>起</label></span>
-							</div>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<img src="img/sem/sem_iabook_cover_1.jpg">
+							<span>40.40<label>起</label></span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_iabook_cover_1.jpg">
+						</a>
+						<div class='title'>
+							<a class='sem_bookname_item' href="javascript:;">
+								<i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i>
+								<span>[预览]</span>
 							</a>
-							<div>
-								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
-								<span>40.40<label>起</label></span>
-							</div>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<img src="img/sem/sem_iabook_cover_1.jpg">
+							<span>40.40<label>起</label></span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_iabook_cover_1.jpg">
+						</a>
+						<div class='title'>
+							<a class='sem_bookname_item' href="javascript:;">
+								<i>《</i>
+								<label>我的成长日记我的成长日记我的成长日记我的成长日记</label><i>》</i>
+								<span>[预览]</span>
 							</a>
-							<div>
-								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
-								<span>40.40<label>起</label></span>
-							</div>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<img src="img/sem/sem_iabook_cover_1.jpg">
+							<span>40.40<label>起</label></span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/sem/sem_iabook_cover_1.jpg">
+						</a>
+						<div class='title'>
+							<a class='sem_bookname_item' href="javascript:;">
+								<i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i>
+								<span>[预览]</span>
 							</a>
-							<div>
-								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
-								<span>40.40<label>起</label></span>
-							</div>
-						</li>
-					</ul>
-				</div>
+							<span>40.40<label>起</label></span>
+						</div>
+					</li>
+				</ul>
 			</div>
-			<div class='makebook_neststepbtn_item'>
-				<a class='active' href="javascript:;">完成配置</a>
+			<div class='all_loadmore'>
+				<a href="javascript:;">都不满意？查看更多&nbsp&gt</a>
 			</div>
 		</div>
 	</div>
@@ -287,95 +304,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
-	<script type="text/javascript" src="assets/js/icheck.js"></script>
 	<script type="text/javascript">
-	$(function() {
-		chooseMethod();
-		icheck();
-		setup();
-	})
-
-	//切换单人多人制作
-	function chooseMethod() {
-		$('.makebook_choosemethod_wrapper li').click(function() {
-			var $this = $(this);
-			$this.siblings().removeClass('active').end().addClass('active');
-			if ($this.index() == 1) {
-				$('.makebook_setupinvitcard_container').show();
-			} else {
-				$('.makebook_setupinvitcard_container').hide();
-			}
-		});
-	}
-	//初始化icheck
-	function icheck(selector) {
-		var inputEl = $("input[type=radio],input[type=checkbox]");
-
-		if (selector == null) {
-			inputEl.iCheck({
-				checkboxClass: 'icheckbox_minimal-green',
-				radioClass: 'iradio_minimal-green',
-				increaseArea: '20%'
-			});
-			inputEl.iCheck('disable');
-		} else {
-			var inputEl = $(selector);
-			inputEl.iCheck({
-				checkboxClass: 'icheckbox_minimal-green',
-				radioClass: 'iradio_minimal-green',
-				increaseArea: '20%'
-			});
-		}
-	}
-	//多人制作内的交互
-	function setup() {
-		var inputEl = $("input[type=radio],input[type=checkbox]"),
-			setupEl = $('.makebook_setupinvitcard_wrapper'),
-			resetandsaveEl = $('.makebook_setupinvitcard_wrapper .resetandsave'),
-			shareEl = $('.makebook_setupinvitcard_wrapper .share'),
-			customTextInput = $('.makebook_iccustomoption_wrapper input')
-		customTextInput.attr('disabled', 'disabled');
-		//点击修改邀请卡
-		shareEl.children('a').click(function() {
-			var $this = $(this);
-			if ($this.hasClass('active')) {
-				$this.removeClass('active');
-			};
-			customTextInput.removeAttr('disabled');
-			inputEl.removeClass('active');
-			inputEl.iCheck('enable');
-			setupEl.addClass('active');
-			resetandsaveEl.show();
-			$this.parent().hide();
-		});
-		//点击保存
-		$('.makebook_setupinvitcard_wrapper .resetandsave .save').click(function() {
-			var inputEl = $("input[type=radio],input[type=checkbox]");
-			resetandsaveEl.hide();
-			customTextInput.attr('disabled', 'disabled');
-			inputEl.iCheck('disable');
-			setupEl.removeClass('active');
-			shareEl.show();
-			resetandsaveEl.hide();
-		});
-		//点击重置
-		$('.makebook_setupinvitcard_wrapper .resetandsave .reset').click(function() {
-			var inputEl = $("input[type=radio],input[type=checkbox]");
-			inputEl.val(""); 
-		});
-		//点击添加自定义收集内容
-		$('.makebook_addcustomption_btn').click(function() {
-			var customTextEl = $(this).prev(),
-				index = 0,
-				personalinfoEl = $('.makebook_setupinvitcard_wrapper .personalinfo');
-			if (customTextEl.val() == '' || !setupEl.hasClass('active')) {
-				return;
-			}
-			var newCustomption = $("<li><input type='checkbox'/><label>" + customTextEl.val() + "</label></li>").addClass('newCustomption').appendTo(personalinfoEl);
-			icheck('.newCustomption');
-			customTextEl.val('');
-		});
-	}
 	</script>
 </body>
 

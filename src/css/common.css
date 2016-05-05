@@ -1855,26 +1855,31 @@ label.error, div.error
 
 .all_loadmore
 {
-    bottom: 5%;
 
-    padding: 30px 0;
+    /*padding: 30px 0;*/
 
     text-align: center;
 }
 
 .all_loadmore a
 {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 30px;
 
     display: block;
 
-    width: 10em;
+    width: 165px;
     margin: 0 auto;
-    padding: 5px;
+    padding: 15px 5px;
 
-    color: #000;
+    color: #999;
     border-radius: 5px;
+    transition: all 0.3s;
+}
+.all_loadmore a:hover
+{
+    color: #222;
+    transition: all 0.3s;
 }
 
 .all_loadmore span
@@ -1897,10 +1902,7 @@ label.error, div.error
     cursor: pointer;
 }
 
-.all_loadmore a:hover
-{
-    color: #222;
-}
+
 
 .all_loadmore a:active
 {
@@ -6921,3 +6923,4 @@ nav .pagination li a:active
 {
     color: #eee;
 }
+

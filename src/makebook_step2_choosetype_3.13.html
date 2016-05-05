@@ -10,7 +10,7 @@
 	<meta name="keywords" content="">
 	<title>忆尔3.13-选择团队册群体</title>
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462356385_59595.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462373368_2192485.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -204,7 +204,7 @@
 					<label>请选择</label>
 				</div>
 				<ul class='makebook_choosemethod_wrapper'>
-					<li>
+					<li class='single'>
 						<span class='icon ybiconfont ybicon-friend'></span>
 						<div class='description'>
 							<h6>单人独立制作</h6>
@@ -212,7 +212,7 @@
 						</div>
 						<span class='mark ybiconfont ybicon-ok'></span>
 					</li>
-					<li>
+					<li class='multiple'>
 						<span class='icon ybiconfont ybicon-friend'></span>
 						<div class='description'>
 							<h6>多人共同制作</h6>
@@ -235,11 +235,11 @@
 						<label>设置邀请卡</label>
 						<p>（邀请卡可以很方便的帮助您收集到小伙伴们的近况信息，分享给小伙伴填写完成后，小伙伴就自动加入书册可以一起制作并互动了。）</p>
 					</div>
-					<div class='makebook_setupinvitcard_wrapper'>
+					<form class='makebook_setupinvitcard_wrapper'>
 						<h6>收集的基本信息</h6>
 						<ul class='personalinfo'>
 							<li>
-								<input id='name' type='checkbox'>
+								<input class='disabled' id='name' type='checkbox'>
 								<label for='name'>姓名</label>
 							</li>
 							<li>
@@ -307,7 +307,7 @@
 							<label>自定义收集内容：</label>
 							<div>
 								<input type='text'>
-								<a href="javascript:;">+</a>
+								<a class='makebook_addcustomption_btn' href="javascript:;">+</a>
 							</div>
 						</div>
 						<ul class='personaloption'>
@@ -364,11 +364,15 @@
 								</ul>
 							</li>
 						</ul>
+						<div class='resetandsave'>
+							<a class='reset' href="javascript:;">重置</a>
+							<a class='save' href="javascript:;">保存</a>
+						</div>
 						<div class='share'>
 							<a href="javascript:;">修改邀请卡</a>
 							<div>
 								<div>
-									<span class='ybiconfont ybicon-vote'></span>
+									<span class='ybiconfont ybicon-mail'></span>
 									<label>立即分享</label>
 								</div>
 								<ul>
@@ -390,11 +394,11 @@
 								</ul>
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 			<div class='makebook_neststepbtn_item'>
-				<a href="javascript:;">下一步</a>
+				<a class='active' href="javascript:;">完成配置</a>
 			</div>
 		</div>
 	</div>
@@ -432,14 +436,93 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
 	<script type="text/javascript">
-	$('.makebook_choosemethod_wrapper li').click(function(){
-		$(this).siblings().removeClass('active').end().addClass('active');
-	});
-	$("input[type=radio],input[type=checkbox]").iCheck({
-			checkboxClass: 'icheckbox_minimal-green',
-			radioClass: 'iradio_minimal-green',
-			increaseArea: '20%'
+	$(function() {
+		chooseMethod();
+		icheck();
+		setup();
+	})
+
+	//切换单人多人制作
+	function chooseMethod() {
+		$('.makebook_choosemethod_wrapper li').click(function() {
+			var $this = $(this);
+			$this.siblings().removeClass('active').end().addClass('active');
+			if ($this.index() == 1) {
+				$('.makebook_setupinvitcard_container').show();
+			} else {
+				$('.makebook_setupinvitcard_container').hide();
+			}
 		});
+	}
+	//初始化icheck
+	function icheck(selector) {
+		var inputEl = $("input[type=radio],input[type=checkbox]");
+
+		if (selector == null) {
+			inputEl.iCheck({
+				checkboxClass: 'icheckbox_minimal-green',
+				radioClass: 'iradio_minimal-green',
+				increaseArea: '20%'
+			});
+			inputEl.iCheck('disable');
+		} else {
+			var inputEl = $(selector);
+			inputEl.iCheck({
+				checkboxClass: 'icheckbox_minimal-green',
+				radioClass: 'iradio_minimal-green',
+				increaseArea: '20%'
+			});
+		}
+	}
+	//多人制作内的交互
+	function setup() {
+		var inputEl = $("input[type=radio],input[type=checkbox]"),
+			setupEl = $('.makebook_setupinvitcard_wrapper'),
+			resetandsaveEl = $('.makebook_setupinvitcard_wrapper .resetandsave'),
+			shareEl = $('.makebook_setupinvitcard_wrapper .share'),
+			customTextInput = $('.makebook_iccustomoption_wrapper input')
+		customTextInput.attr('disabled', 'disabled');
+		//点击修改邀请卡
+		shareEl.children('a').click(function() {
+			var $this = $(this);
+			if ($this.hasClass('active')) {
+				$this.removeClass('active');
+			};
+			customTextInput.removeAttr('disabled');
+			inputEl.removeClass('active');
+			inputEl.iCheck('enable');
+			setupEl.addClass('active');
+			resetandsaveEl.show();
+			$this.parent().hide();
+		});
+		//点击保存
+		$('.makebook_setupinvitcard_wrapper .resetandsave .save').click(function() {
+			var inputEl = $("input[type=radio],input[type=checkbox]");
+			resetandsaveEl.hide();
+			customTextInput.attr('disabled', 'disabled');
+			inputEl.iCheck('disable');
+			setupEl.removeClass('active');
+			shareEl.show();
+			resetandsaveEl.hide();
+		});
+		//点击重置
+		$('.makebook_setupinvitcard_wrapper .resetandsave .reset').click(function() {
+			var inputEl = $("input[type=radio],input[type=checkbox]");
+			inputEl.val(""); 
+		});
+		//点击添加自定义收集内容
+		$('.makebook_addcustomption_btn').click(function() {
+			var customTextEl = $(this).prev(),
+				index = 0,
+				personalinfoEl = $('.makebook_setupinvitcard_wrapper .personalinfo');
+			if (customTextEl.val() == '' || !setupEl.hasClass('active')) {
+				return;
+			}
+			var newCustomption = $("<li><input type='checkbox'/><label>" + customTextEl.val() + "</label></li>").addClass('newCustomption').appendTo(personalinfoEl);
+			icheck('.newCustomption');
+			customTextEl.val('');
+		});
+	}
 	</script>
 </body>
 

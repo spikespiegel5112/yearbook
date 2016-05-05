@@ -5877,6 +5877,9 @@
 	color: #fff;
 	transition: all 0.3s;
 }
+.makebook_neststepbtn_item .active{
+
+}
 .makebook_preparation_wrapper{
 	margin: 0 auto;
 	padding: 40px 0;
@@ -5961,6 +5964,9 @@
 	box-shadow: none;
 	font-size: 16px;
 }
+.makebook_setupinvitcard_container{
+	display: none;
+}
 .makebook_setupinvitcard_wrapper{
 	margin: 40px auto;
 	padding: 60px 0 0 0;
@@ -5969,6 +5975,10 @@
 	border: 1px solid #cccccc;
 	border-left: 5px solid #cccccc;
 	overflow: hidden;
+}
+.makebook_setupinvitcard_wrapper.active{
+	border-left: 5px solid #90c132;
+	background-color: #fff;
 }
 .makebook_setupinvitcard_wrapper h6{
 	color: #666;
@@ -5987,6 +5997,25 @@
 .makebook_setupinvitcard_wrapper li label{
 	margin: 0 5px;
 	font-size: 14px;
+}
+.makebook_setupinvitcard_wrapper .resetandsave{
+	display: none;
+	margin: 30px 40px;
+}
+.makebook_setupinvitcard_wrapper .resetandsave a{
+	margin: 0 10px 0 0;
+	padding: 5px 10px;
+	border-radius: 6px;
+	font-size: 14px;
+}
+.makebook_setupinvitcard_wrapper .resetandsave .reset{
+	border: 1px solid #ccc;
+	color: #999;
+	background-color: #eee;
+}
+.makebook_setupinvitcard_wrapper .resetandsave .save{
+	background-color: #90c132;
+	color: #fff;
 }
 .makebook_iccustomoption_wrapper{
 	padding: 0 0 0 50px;
@@ -6018,6 +6047,13 @@
 	border-left: 1px solid #ccc;
 	font-size: 30px;
 }
+.makebook_iccustomoption_wrapper a:hover{
+	background-color: #dfdfdf;
+}
+.makebook_iccustomoption_wrapper a:active{
+	box-shadow: 2px 2px 5px #ccc inset;
+	line-height: 35px;
+}
 .makebook_iccustomoption_wrapper label{
 	float: left;
 	line-height: 35px;
@@ -6047,7 +6083,7 @@
 }
 .makebook_setupinvitcard_wrapper .share>a{
 	float: left;
-	margin: 40px;
+	margin: 30px 40px;
 	padding: 10px 20px;
 	border: 1px solid #ccc;
 	border-radius: 6px;
@@ -6062,26 +6098,157 @@
 	box-shadow: 2px 2px 5px #ccc inset;
 	transition: all 0.05s;
 }
-.makebook_setupinvitcard_wrapper .share div{
+.makebook_setupinvitcard_wrapper .share>div{
 	float: left;
-	margin: 50px 0 0 100px;
+	margin: 20px 0 0 100px;
+}
+.makebook_setupinvitcard_wrapper .share>div>div{
+	float: left;
+	margin: 0 20px;
+	color: #ccc;
+	text-align: center;
+}
+.makebook_setupinvitcard_wrapper .share>div>div span{
+	display: block;
+	font-size: 40px;
+}
+.makebook_setupinvitcard_wrapper .share>div>div label{
+	font-size: 13px;
+}
+.makebook_setupinvitcard_wrapper .share>div ul{
+	float: left;
+	margin: 5px 0 0 0;
 }
 .makebook_setupinvitcard_wrapper .share div li{
 	float: left;
+	margin: 0 5px;
+	width: 40px;
+		height: 40px;
 }
 .makebook_setupinvitcard_wrapper .share div li a{
-	padding: 10px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
 	color: #fff;
-	font-size: 20px;
-	background-color: red;
+	font-size: 28px;
 	border-radius: 50%;
+	text-align: center;
+}
+.makebook_setupinvitcard_wrapper .share .wechat{
+	background-color: #00ca5a;
+}
+.makebook_setupinvitcard_wrapper .share .moments{
+	background-color: #26d6fb;
+}
+.makebook_setupinvitcard_wrapper .share .qzone{
+	background-color: #ffa23d;
+}
+.makebook_setupinvitcard_wrapper .share .renren{
+	background-color: #0773be;
+}
+.makebook_setupinvitcard_wrapper .share .weibo{
+	background-color: #e92246;
+}
+.makebook_step_wrapper .sem_mainlist_wrapper li{
+    margin: 5px;
+    width: 190px;
+    box-shadow:none;
+}
+.sem_mainlist_wrapper li
+{
+	/*overflow: hidden;*/
+    position: relative;
+
+    float: left;
+
+    width: 200px;
+    margin: 15px;
+    padding: 10px;
+
+    background-color: #fff;
+    box-shadow: 0 0 15px #aaa;
+}
+.sem_mainlist_wrapper li img
+{
+    display: block;
+
+    width: 100%;
+}
+.sem_mainlist_wrapper .sem_recommendicon_item
+{
+    font-size: 55px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+
+    color: #ff464b;
+}
+.sem_mainlist_wrapper li div
+{
+    position: relative;
+
+    margin: 10px 0;
 }
 
+.sem_mainlist_wrapper li div a
+{
+    display: block;
 
+    height: 20px;
 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.sem_mainlist_wrapper li div span
+{
+    font-size: 12px;
 
+    display: block;
 
+    color: #999;
+}
 
+.sem_iabook_container .sem_mainlist_wrapper li a img{
+    display: block;
+    width: 100%;
+    height: 260px;
+    box-shadow: 0px 10px 20px #888;
+    position: relative;
+    bottom: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.sem_iabook_container .sem_mainlist_wrapper li a img:hover{
+    position: relative;
+    bottom: 7px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.sem_iabook_container .sem_mainlist_wrapper li div span{
+    color: red;
+    text-align: center;
+    font-size: 17px;
+}
+.sem_iabook_container .sem_mainlist_wrapper li div span label{
+    font-size: 12px;
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+}
+.sem_iabook_container .sem_mainlist_wrapper li div a{
+    margin: 30px auto 10px;
+    font-size: 15px;
+    font-style: normal;
+}
 
 
 

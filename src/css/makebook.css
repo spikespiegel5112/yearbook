@@ -5634,6 +5634,7 @@
 .makebook_steptitle_wrapper{
 	overflow: hidden;
 	padding: 20px 0;
+	background-color: #fff;
 }
 .makebook_steptitle_wrapper .back{
 	float: right;
@@ -5976,12 +5977,8 @@
 	border: 2px solid #8cc04e;
 	background-color: #fff;
 }
-.makebook_choosemethod_wrapper li .mark{
-	display: none;
-}
-.makebook_choosemethod_wrapper .active .mark{
+.makebook_mark_item{
 	display: block;
-	color: #fff;
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -5989,8 +5986,15 @@
 	height: 0;
 	border-style: solid;
 	border-width: 20px;
-	border-color: transparent #8cc04e #8cc04e transparent;
+	
 	color: #fff;
+}
+.makebook_choosemethod_wrapper li .makebook_mark_item{
+	display: none;
+}
+.makebook_choosemethod_wrapper .active .makebook_mark_item{
+	color: #fff;
+	border-color: transparent #8cc04e #8cc04e transparent;
 }
 .makebook_choosemethod_wrapper .active .icon{
 	color: #8cc04e;
@@ -6360,6 +6364,73 @@
 	color: rgba(0,0,0,0.8);
 	transition:all 0.1s;
 }
+
+/*~~~~~~~~~~makebook_step_popup.html~~~~~~~~~~*/
+.makebook_steppopup_wrapper{
+	background-color: #ddd;
+	overflow: hidden;
+}
+.makebook_steppopup_wrapper>ul{
+	border: 10px solid rgba(255,255,255,0.5);
+	border-radius: 6px;
+}
+.makebook_steppopup_wrapper	>li{
+	padding: 30px;
+	background-color: #fff;
+}
+.makebook_steppopup_wrapper .makebook_steptitle_item{
+	font-size: 18px;
+}
+.makebook_steppopup_wrapper .makebook_stepdesc_wrapper{
+	margin: 0 0 0 10px;
+}
+.makebook_spchoosetype_wrapper{
+	margin: 0 auto;
+	width: 600px;
+}
+.makebook_spchoosetype_wrapper>ul>li{
+	width: 180px;
+}
+.makebook_spchoosetype_wrapper>ul>li .title{
+	display: inline-block;
+	width: 180px;
+	height: 180px;
+	border: 1px dashed #bbbbbb;
+	text-align: center;
+	line-height: 180px;
+	position: relative;
+}
+.makebook_spchoosetype_wrapper>ul>li .title:hover{
+	border: 1px solid #999999;
+}
+.makebook_spchoosetype_wrapper .tips li{
+	display: inline-block;
+	margin: 3px 0px;
+	padding: 1px 3px;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+	font-size: 12px;
+	color: #aaa;
+	text-align: center;
+}
+.makebook_spchoosetype_wrapper .tips{
+	margin: 30px 0 0 0;
+}
+.makebook_spchoosetype_wrapper .tips li:last-child{
+	border: 0;
+}
+.makebook_spchoosetype_wrapper .makebook_mark_item{
+	display: none;
+}
+.makebook_spchoosetype_wrapper>ul>li>a:hover .makebook_mark_item{
+	display: block;
+	color: #fff;
+	border-color: transparent #8cc04e #8cc04e transparent;
+}
+.makebook_spchoosetype_wrapper .makebook_mark_item{
+	
+}
+
 
 
 

@@ -5625,9 +5625,11 @@
 	box-shadow: 0 0 10px #999;
 }
 .makebook_steptitle_item{
-	float: left;
-	font-size: 23px;
-	color: #555;
+	display: inline-block;
+	padding: 0 0 0 20px;
+	font-size: 25px;
+	color: #666;
+	vertical-align: middle;
 }
 .makebook_steptitle_wrapper{
 	overflow: hidden;
@@ -5642,16 +5644,37 @@
 	float: left;
 	margin: 0 10px;
 	font-size: 20px;
-	line-height: 35px;
+	line-height: 29px;
 }
-.makebook_steptitle_wrapper .description{
-	float: left;
-	margin: 4px 10px 0 10px;
+.makebook_stepdesc_wrapper{
+	display: inline-block;
+	margin: 0 10px 0 30px;
 	padding: 3px 10px;
 	color: #999;
 	background-color: #fff8e8;
 	border: 1px solid #dfdfde;
 	font-size: 13px;
+	vertical-align: middle;
+	position: relative;
+}
+.makebook_stepdesc_wrapper:before, .makebook_stepdesc_wrapper:after{
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	position: absolute;
+	top: 6px;
+}
+.makebook_stepdesc_wrapper:before{
+	border-width: 5px 9px 5px 0;
+	border-color: transparent #999 transparent transparent;
+	left: -10px;
+}
+.makebook_stepdesc_wrapper:after{
+	border-width: 5px 9px 5px 0;
+	border-color: transparent #fff8e8 transparent transparent;
+	left: -9px;
 }
 .makebook_choosetype_wrapper .bookcover{
 	position: relative;
@@ -5749,6 +5772,7 @@
 }
 .makebook_stepcomponentlist_wrapper{
 	float: left;
+	margin: 10px 0 0 0;
 	padding: 0 20px 50px 0;
 	width: 78%;
 	border-right: 1px solid #dddddd;
@@ -5789,7 +5813,7 @@
 	text-align: center;
 	font-weight: bold;
 	color: #666;
-	font-size: 15px;
+	font-size: 14px;
 }
 .makebook_bookcomponent_item .tools{
 	display: none;
@@ -5963,22 +5987,28 @@
 	border-color: transparent #8cc04e #8cc04e transparent;
 	color: #fff;
 }
+.makebook_choosemethod_wrapper .active .icon{
+	color: #8cc04e;
+}
+.makebook_choosemethod_wrapper .active .description h6{
+	color: #8cc04e;
+}
 .makebook_choosemethod_wrapper .icon{
 	float: left;
 	margin: 10px 0;
 	width: 100px;
 	text-align: center;
 	font-size: 70px;
-	color: #999;
+	color: #cccccc;
 }
 .makebook_choosemethod_wrapper .description{
 	display: inline-block;
-	width: 375px;
+	width: 390px;
 }
 .makebook_choosemethod_wrapper .description h6{
 	margin: 0 0 10px 0;
 	font-size: 20px;
-	color: #8cc04e;
+	color: #ccc;
 }
 .makebook_choosemethod_wrapper .description p{
 	font-size: 14px;
@@ -5986,8 +6016,10 @@
 }
 .makebook_stepsubtitle_item label {
 	display: inline-block;
+	padding: 0 0 0 20px;
 	font-size: 18px;
 	color: #333;
+	vertical-align: middle;
 }
 .makebook_stepsubtitle_item p{
 	display: inline-block;

@@ -142,7 +142,7 @@
 		</div>
 	</div>
 	<!-- main -->
-	<div class='main_container bg_f5f5f5'>
+	<div class='main_container bg_f5f5f5 sem_iabook_container'>
 		<div class='makebook_progress_wrapper'>
 			<ul>
 				<li class='active'>
@@ -199,202 +199,55 @@
 				<p class='description'>（填写您的需求,我们将为您做出更好的数据分析和过滤选项）</p>
 				<a class='back' href="javascript:;"><span class='ybiconfont ybicon-reply'></span>返回上一步</a>
 			</div>
-			<div class='makebook_preparation_wrapper'>
-				<div class='makebook_stepsubtitle_item'>
-					<label>请选择</label>
-				</div>
-				<ul class='makebook_choosemethod_wrapper'>
-					<li class='single'>
-						<span class='icon ybiconfont ybicon-friend'></span>
-						<div class='description'>
-							<h6>单人独立制作</h6>
-							<p>团队册的编辑者只有一个人，需要独自上传编辑整本书的照片、文字以及团队成员资料等相关信息</p>
-						</div>
-						<span class='mark ybiconfont ybicon-ok'></span>
-					</li>
-					<li class='multiple'>
-						<span class='icon ybiconfont ybicon-friend'></span>
-						<div class='description'>
-							<h6>多人共同制作</h6>
-							<p>团队册的编辑者可以为多人或所有团队成员，团队成员成为书册编辑者后可对书册的照片、文字、个人资料、通讯录等页面进行编辑</p>
-						</div>
-						<span class='mark ybiconfont ybicon-ok'></span>
-					</li>
-				</ul>
-				<div class='makebook_stepsubtitle_item'>
-					<label>请选择</label>
-					<p>（您的书册章节中包含个人风采章节，设置团队成员数量后，会对应的生成相同数量的个人页。）</p>
-				</div>
-				<div class='makebook_teamnumber_wrapper'>
-					<label>团队册人数</label>
-					<input type='text'>
-					<label>（人）</label>
-				</div>
-				<div class='makebook_setupinvitcard_container'>
-					<div class='makebook_stepsubtitle_item'>
-						<label>设置邀请卡</label>
-						<p>（邀请卡可以很方便的帮助您收集到小伙伴们的近况信息，分享给小伙伴填写完成后，小伙伴就自动加入书册可以一起制作并互动了。）</p>
-					</div>
-					<form class='makebook_setupinvitcard_wrapper'>
-						<h6>收集的基本信息</h6>
-						<ul class='personalinfo'>
-							<li>
-								<input class='disabled' id='name' type='checkbox'>
-								<label for='name'>姓名</label>
-							</li>
-							<li>
-								<input id='gender' type='checkbox'>
-								<label for='gender'>性别</label>
-							</li>
-							<li>
-								<input id='birthday' type='checkbox'>
-								<label for='birthday'>生日</label>
-							</li>
-							<li>
-								<input id='marriage' type='checkbox'>
-								<label for='marriage'>婚姻状况</label>
-							</li>
-							<li>
-								<input id='occupation' type='checkbox'>
-								<label for='occupation'>职业</label>
-							</li>
-							<li>
-								<input id='cellphone' type='checkbox'>
-								<label for='cellphone'>手机</label>
-							</li>
-							<li>
-								<input id='school' type='checkbox'>
-								<label for='school'>学校</label>
-							</li>
-							<li>
-								<input id='education' type='checkbox'>
-								<label for='education'>学历</label>
-							</li>
-							<li>
-								<input id='admissiondate' type='checkbox'>
-								<label for='admissiondate'>入学时间</label>
-							</li>
-							<li>
-								<input id='graduatedate' type='checkbox'>
-								<label for='graduatedate'>毕业时间</label>
-							</li>
-							<li>
-								<input id='qq' type='checkbox'>
-								<label for='qq'>QQ</label>
-							</li>
-							<li>
-								<input id='wechat' type='checkbox'>
-								<label for='wechat'>微信</label>
-							</li>
-							<li>
-								<input id='weibo' type='checkbox'>
-								<label for='weibo'>微博</label>
-							</li>
-							<li>
-								<input id='favor' type='checkbox'>
-								<label for='favor'>爱好</label>
-							</li>
-							<li>
-								<input id='livingplace' type='checkbox'>
-								<label for='livingplace'>现居地</label>
-							</li>
-							<li>
-								<input id='workplace' type='checkbox'>
-								<label for='workplace'>工作地点</label>
-							</li>
-						</ul>
-						<div class='makebook_iccustomoption_wrapper'>
-							<label>自定义收集内容：</label>
+			<div class='makebook_preparation_wrapper sem_mainlist_wrapper'>
+				<div class='sem_mainlistul_wrapper'>
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<img src="img/sem/sem_iabook_cover_1.jpg">
+							</a>
 							<div>
-								<input type='text'>
-								<a class='makebook_addcustomption_btn' href="javascript:;">+</a>
+								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
+								<span>40.40<label>起</label></span>
 							</div>
-						</div>
-						<ul class='personaloption'>
-							<li>
-								<label>是否收集好友照片：</label>
-								<ul>
-									<li>
-										<input type='radio' name='photo'>
-										<label>是</label>
-									</li>
-									<li>
-										<input type='radio' name='photo'>
-										<label>否</label>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<label>是否发起话题讨论：</label>
-								<ul>
-									<li>
-										<input type='radio' name='topic'>
-										<label>是</label>
-									</li>
-									<li>
-										<input type='radio' name='topic'>
-										<label>否</label>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<label>是否发起投票选举：</label>
-								<ul>
-									<li>
-										<input type='radio' name='vote'>
-										<label>是</label>
-									</li>
-									<li>
-										<input type='radio' name='vote'>
-										<label>否</label>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<label>是否需要赠言功能：</label>
-								<ul>
-									<li>
-										<input type='radio' name='message'>
-										<label>是</label>
-									</li>
-									<li>
-										<input type='radio' name='message'>
-										<label>否</label>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<div class='resetandsave'>
-							<a class='reset' href="javascript:;">重置</a>
-							<a class='save' href="javascript:;">保存</a>
-						</div>
-						<div class='share'>
-							<a href="javascript:;">修改邀请卡</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/sem/sem_iabook_cover_1.jpg">
+							</a>
 							<div>
-								<div>
-									<span class='ybiconfont ybicon-mail'></span>
-									<label>立即分享</label>
-								</div>
-								<ul>
-									<li>
-										<a class='wechat ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
-									</li>
-									<li>
-										<a class='moments ybiconfont ybicon-moments' href="javascript:;"></a>
-									</li>
-									<li>
-										<a class='qzone ybiconfont ybicon-qzone' href="javascript:;"></a>
-									</li>
-									<li>
-										<a class='renren ybiconfont ybicon-renren' href="javascript:;"></a>
-									</li>
-									<li>
-										<a class='weibo ybiconfont ybicon-weibosina' href="javascript:;"></a>
-									</li>
-								</ul>
+								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
+								<span>40.40<label>起</label></span>
 							</div>
-						</div>
-					</form>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/sem/sem_iabook_cover_1.jpg">
+							</a>
+							<div>
+								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
+								<span>40.40<label>起</label></span>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/sem/sem_iabook_cover_1.jpg">
+							</a>
+							<div>
+								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
+								<span>40.40<label>起</label></span>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="img/sem/sem_iabook_cover_1.jpg">
+							</a>
+							<div>
+								<a class='sem_bookname_item' href="javascript:;"><i>《</i>我的成长日记我的成长日记我的成长日记我的成长日记<i>》</i></a>
+								<span>40.40<label>起</label></span>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class='makebook_neststepbtn_item'>

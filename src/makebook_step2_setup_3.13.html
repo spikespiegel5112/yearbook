@@ -8,9 +8,9 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<title>忆尔3.13-选择团队册群体</title>
+	<title>忆尔3.13-团队册详细配置</title>
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
-	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462373368_2192485.css" type="text/css" media="all">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462413074_5720255.css" type="text/css" media="all">
 	<!-- build:css css/all.min.css -->
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
@@ -145,7 +145,7 @@
 	<div class='main_container bg_f5f5f5'>
 		<div class='makebook_progress_wrapper'>
 			<ul>
-				<li class='active'>
+				<li class='actived'>
 					<div class='makebook_progressbar_wrapper'>
 						<span class='progressbar_head'></span>
 						<span class='progressbar_middle'></span>
@@ -155,7 +155,7 @@
 						<p>选择团队场景</p>
 					</div>
 				</li>
-				<li>
+				<li class='active'>
 					<div class='makebook_progressbar_wrapper'>
 						<span class='progressbar_middle'></span>
 					</div>
@@ -184,7 +184,7 @@
 				</li>
 				<li>
 					<div class='makebook_progressbar_wrapper'>
-						<span class='progressbar_head'></span>
+						<span class='progressbar_tail'></span>
 					</div>
 					<div class='title'>
 						<label>5</label>
@@ -196,7 +196,7 @@
 		<div class='makebook_step_wrapper'>
 			<div class='makebook_steptitle_wrapper'>
 				<h6 class='makebook_steptitle_item'>团队册详细配置</h6>
-				<p class='description'>（填写您的需求,我们将为您做出更好的数据分析和过滤选项）</p>
+				<p class='description'>填写您的需求,我们将为您做出更好的数据分析和过滤选项</p>
 				<a class='back' href="javascript:;"><span class='ybiconfont ybicon-reply'></span>返回上一步</a>
 			</div>
 			<div class='makebook_preparation_wrapper'>
@@ -204,8 +204,8 @@
 					<label>请选择</label>
 				</div>
 				<ul class='makebook_choosemethod_wrapper'>
-					<li class='single'>
-						<span class='icon ybiconfont ybicon-friend'></span>
+					<li class='single active'>
+						<span class='icon ybiconfont ybicon-person'></span>
 						<div class='description'>
 							<h6>单人独立制作</h6>
 							<p>团队册的编辑者只有一个人，需要独自上传编辑整本书的照片、文字以及团队成员资料等相关信息</p>
@@ -222,7 +222,7 @@
 					</li>
 				</ul>
 				<div class='makebook_stepsubtitle_item'>
-					<label>请选择</label>
+					<label>设置人数</label>
 					<p>（您的书册章节中包含个人风采章节，设置团队成员数量后，会对应的生成相同数量的个人页。）</p>
 				</div>
 				<div class='makebook_teamnumber_wrapper'>
@@ -448,9 +448,9 @@
 			var $this = $(this);
 			$this.siblings().removeClass('active').end().addClass('active');
 			if ($this.index() == 1) {
-				$('.makebook_setupinvitcard_container').show();
+				$('.makebook_setupinvitcard_container').stop().slideDown();
 			} else {
-				$('.makebook_setupinvitcard_container').hide();
+				$('.makebook_setupinvitcard_container').stop().slideUp();
 			}
 		});
 	}
@@ -484,7 +484,8 @@
 		customTextInput.attr('disabled', 'disabled');
 		//点击修改邀请卡
 		shareEl.children('a').click(function() {
-			var $this = $(this);
+			var $this = $(this),
+				inputEl = $("input[type=radio],input[type=checkbox]");
 			if ($this.hasClass('active')) {
 				$this.removeClass('active');
 			};

@@ -916,12 +916,14 @@
 }
 
 .res_tab_con .tpl_pagination ul {
+    width: 100%;
     overflow: hidden;
     margin: 10px auto;
     text-align: center;
 }
 
 .res_tab_con .tpl_pagination ul li {
+    float: none;
     margin-right: 5px;
     padding: 0 6px;
     height: 25px;
@@ -1278,4 +1280,10 @@
 .res_tab_con .comment_input button:hover,
 .res_tab_con .comment_input button:active{
     background-color: #43b05d;
+}
+
+.res_tab_con .chaptermake_tpl ul{
+    position: relative;
+    width: 428px;
+    margin: 0 auto;
 }

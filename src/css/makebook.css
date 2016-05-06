@@ -5491,8 +5491,7 @@
 	border-left: 9px solid transparent;
 }
 
-
-/*~~~~~~~~~~~makebook_step1_3.13.html~~~~~~~~~~~*/
+/*~~~~~~~~~~~进度条进度指示器~~~~~~~~~~~*/
 .makebook_progress_wrapper{
 	margin: 0 auto;
 	padding: 60px 0;
@@ -5583,14 +5582,19 @@
 .makebook_progress_wrapper li .progressbar_middle{
 	width: 200px;
 }
-.makebook_progress_wrapper .progressbar_head, .makebook_progress_wrapper .actived .progressbar_middle{
+.makebook_progress_wrapper .progressbar_head{
 	background: repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 	background: -webkit-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 	background: -moz-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 	background: -ms-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 }
+.makebook_progress_wrapper .actived .progressbar_middle{
+	background: repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+	background: -webkit-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+	background: -moz-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+	background: -ms-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+}
 .makebook_progress_wrapper .active .progressbar_middle{
-	width: 200px;
 	background: repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
 	background: -webkit-repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
 	background: -moz-repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
@@ -5603,22 +5607,93 @@
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 20%, #ebebeb 21%, #ebebeb 40%);
 }
 .makebook_progress_wrapper .progressbar_middle{
-	width: 200px;
 	background: repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -webkit-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -moz-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 }
+/*~~~~~~~~~~数字步骤指示器~~~~~~~~~~*/
+.makebook_stepindicator_container{
+	margin: 0 auto;
+	width: 1150px;
+	position: relative;
+}
+.makebook_stepindicator_wrapper{
+	position: absolute;
+	left: -43px;
+	top: 30px;
+	z-index: 1;
+}
+.makebook_stepindicator_wrapper .indicator{
+	width: 85px;
+	height: 85px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	text-align: center;
+	border-radius: 50%;
+	color: #cccccc;
+}
+.makebook_stepindicator_wrapper .indicator label{
+	position: relative;
+	top: 15px;
+	font-size: 30px;
+	letter-spacing: -4px;
+	font-weight: lighter;
+}
+.makebook_stepindicator_wrapper .indicator label:first-child{
+	color: #ff8630;
+}
+.makebook_stepindicator_wrapper .indicator p{
+	line-height: 45px;
+	font-size: 12px;
+}
+.makebook_stepindicator_wrapper ul{
+	margin: 20px 0 0 0;
+}
+.makebook_stepindicator_wrapper ul li{
+	font-size: 12px;
+	text-align: center;	
+}
+.makebook_stepindicator_wrapper ul .active span{
+	background-color: #ff8630;
+	color: #fff;
+	border: 1px solid #ff8630;
+}
+.makebook_stepindicator_wrapper ul .active label{
+	color: #000;
+}
+.makebook_stepindicator_wrapper ul li span{
+	display: block;
+	margin: 0 auto;
+	width: 17px;
+	height: 17px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	text-align: center;
+	line-height: 17px;
+	border-radius: 50%;
+	color: #ddd;
+}
+.makebook_stepindicator_wrapper ul li label{
+	display: block;
+	margin: 0 0 15px 0;
+	color: #999999;
+}
 
+
+
+
+
+/*~~~~~~~~~~makebook_step1_3.13.html~~~~~~~~~~*/
 .makebook_step_wrapper{
-	margin: 0 auto 40px;
+	margin: 50px auto;
 	padding: 20px 20px 20px 20px;
 	box-sizing: border-box;
 	width: 1150px;
 	box-shadow: 0px -2px 8px #ccc;
 	background-color: #fff;
 	border-radius: 10px;
-	overflow: hidden;
+	position: relative;
 }
 .makebook_choosetype_wrapper>li{
 	width: 350px;
@@ -5784,23 +5859,25 @@
 .makebook_bookcomponent_item {
 	position: relative;	
 }
-.makebook_bookcomponent_item .type i{
-	display: block;
-	width: 100%;
-	font-size: 66px;
-	text-align: center;
-	line-height: 40px;
-	opacity: 0.8;
-	position: absolute;
-	top: 23px;
-	color: #8cc04e;
-}
-.makebook_bookcomponent_item .type{
-	float: left;
+.makebook_compicon_item{
 	margin: 0 5px;
+	width: 80px;
 	position: relative;
 }
-.makebook_bookcomponent_item .type span{
+.makebook_compicon_item i{
+	display: block;
+	width: 100%;
+	line-height: 80px;
+	font-size: 66px;
+	text-align: center;
+	opacity: 0.8;
+	color: #8cc04e;
+}
+.makebook_compicon_item .frame{
+	position: absolute;
+}
+
+.makebook_compicon_item span{
 	display: block;
 	height: 80px;
 	line-height: 80px;
@@ -5808,11 +5885,15 @@
 	font-size:35px;
 	color: #8cc04e;
 }
-.makebook_bookcomponent_item .type .ybicon-cover{
+.makebook_compicon_item .ybicon-cover{
 	font-size: 66px;
+}
+.makebook_bookcomponent_item .type{
+	float: left;
 }
 .makebook_bookcomponent_item .type label{
 	display: block;
+	margin: 0 auto
 	width: 80px;
 	text-align: center;
 	font-weight: bold;
@@ -6034,7 +6115,7 @@
 	display: inline-block;
 	font-size: 13px;
 	color: #999;
-	border-radius: 6px;
+	border-radius: 3px;
 }
 .makebook_teamnumber_wrapper {
 	margin: 30px;
@@ -6370,65 +6451,122 @@
 	background-color: #ddd;
 	overflow: hidden;
 }
-.makebook_steppopup_wrapper>ul{
-	border: 10px solid rgba(255,255,255,0.5);
-	border-radius: 6px;
-}
-.makebook_steppopup_wrapper	>li{
+.makebook_steppopup_wrapper	>div{
 	padding: 30px;
 	background-color: #fff;
+	border: 10px solid rgba(153,153,153,0.5);
+	border-radius: 10px;
+	position: relative;
 }
 .makebook_steppopup_wrapper .makebook_steptitle_item{
+	padding: 0 0 0 10px;
 	font-size: 18px;
+	color: #333;
+	font-weight: bold;
 }
 .makebook_steppopup_wrapper .makebook_stepdesc_wrapper{
 	margin: 0 0 0 10px;
+}
+.makebook_spchoosetype_wrapper .makebook_steptitle_wrapper{
+	padding: 0 0 30px 0;
 }
 .makebook_spchoosetype_wrapper{
 	margin: 0 auto;
 	width: 600px;
 }
-.makebook_spchoosetype_wrapper>ul>li{
-	width: 180px;
+.makebook_splist_wrapper{
+	overflow: hidden;
 }
-.makebook_spchoosetype_wrapper>ul>li .title{
-	display: inline-block;
+.makebook_splist_wrapper>li{
+	float: left;
+	margin: 7px;
+	width: 186px;
+}
+.makebook_splist_wrapper>li .title{
+	display: block;
+	margin: 2px;
 	width: 180px;
 	height: 180px;
 	border: 1px dashed #bbbbbb;
 	text-align: center;
-	line-height: 180px;
 	position: relative;
+	color: #bbbbbb;
 }
-.makebook_spchoosetype_wrapper>ul>li .title:hover{
+.makebook_splist_wrapper>.active .title, .makebook_splist_wrapper>.active .title:hover{
+	margin: 0;
+	border: 3px solid #90c132;
+}
+
+.makebook_splist_wrapper .title:hover{
 	border: 1px solid #999999;
 }
-.makebook_spchoosetype_wrapper .tips li{
+.makebook_splist_wrapper .title .makebook_compicon_item{
+	display: block;
+	margin: 35px auto 0;
+	height: 80px;
+}
+.makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i{
+	color: #90c132;
+}
+.makebook_splist_wrapper .makebook_compicon_item span{
+	font-size: 30px;
+	color: #999999;
+}
+.makebook_splist_wrapper .makebook_compicon_item .frame{
+	color: #999999;
+}
+
+.makebook_splist_wrapper .title label{
+	display: block;
+/*	margin: 10px 0;*/
+	cursor: pointer;
+	text-align: center;
+}
+.makebook_splist_wrapper .makebook_mark_item{
+	display: none;
+	line-height: 16px;
+}
+.makebook_splist_wrapper .active .makebook_mark_item{
+	display: block;
+	
+	color: #fff;
+	border-color: transparent #90c132 #90c132 transparent;
+}
+.makebook_splist_wrapper .title:hover .makebook_mark_item{
+	display: block;
+	color: #fff;
+	border-color: transparent #999 #999 transparent;
+}
+.makebook_splist_wrapper .active .title:hover .makebook_mark_item{
+	border-color: transparent #90c132 #90c132 transparent;
+}
+
+.makebook_splist_wrapper .tips li{
 	display: inline-block;
 	margin: 3px 0px;
 	padding: 1px 3px;
 	border-radius: 5px;
-	border: 1px solid #aaa;
+	border: 1px solid #ddd;
 	font-size: 12px;
-	color: #aaa;
+	color: #999;
 	text-align: center;
 }
-.makebook_spchoosetype_wrapper .tips{
+.makebook_splist_wrapper .tips{
 	margin: 30px 0 0 0;
 }
-.makebook_spchoosetype_wrapper .tips li:last-child{
+.makebook_splist_wrapper .tips li:last-child{
 	border: 0;
 }
-.makebook_spchoosetype_wrapper .makebook_mark_item{
-	display: none;
-}
-.makebook_spchoosetype_wrapper>ul>li>a:hover .makebook_mark_item{
-	display: block;
+.makebook_spclosebtn_item{
+	padding: 5px;
+	background-color: #666666;
 	color: #fff;
-	border-color: transparent #8cc04e #8cc04e transparent;
+	position: absolute;
+	top: 0;
+	right: -26px;
 }
-.makebook_spchoosetype_wrapper .makebook_mark_item{
-	
+.makebook_spassemble_wrapper{
+	width: 840px;
 }
 
 

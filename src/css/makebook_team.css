@@ -649,7 +649,7 @@
     left: 211px;
 }
 
-.single_mode .edit_area .inner_page{
+.single_mode .edit_area .page_display{
     position: relative;
     display: block;
     margin: 0 auto;
@@ -660,7 +660,7 @@
     text-align: center;
     color: #fff;
     font-size: 24px;
-    margin: 0 0 30px;
+    margin: 0;
     line-height: 40px;
 }
 
@@ -729,7 +729,7 @@
     box-sizing: border-box;
     width: 860px;
     height: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 10px 20px;
     border: 0;
     background: url('../img/booklist/inner_page_bg.jpg') no-repeat 0;
@@ -942,7 +942,6 @@
     background-color: #fff;
     z-index: 0;
     box-shadow: -1px 0 1px #ddd;
-    overflow-y: auto;
     transition: right .5s;
 }
 
@@ -955,6 +954,7 @@
     padding: 20px 0 0;
     overflow: hidden;
     background-color: #eceff4;
+    z-index: 1;
 }
 
 .resource_list .res_tab li {
@@ -985,14 +985,15 @@
 }
 
 .resource_list .res_tab_con {
-    position: relative;
-    clear: both;
+    position: absolute;
+    top: 0;
     margin: 0;
-    padding: 0;
+    padding-top: 65px;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
     background-color: #fff;
-    z-index: 9;
+    z-index: 0;
 }
 
 .resource_list .res_tab_con .actbar {
@@ -1038,7 +1039,7 @@
     box-sizing: border-box;
 }
 .res_tab_con .picture_list .hover_box{
-    top: 0;
+    top: -120px;
 }
 .res_tab_con .picture_list li {
     position: relative;

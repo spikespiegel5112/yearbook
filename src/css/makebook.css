@@ -5859,23 +5859,25 @@
 .makebook_bookcomponent_item {
 	position: relative;	
 }
-.makebook_bookcomponent_item .type i{
-	display: block;
-	width: 100%;
-	font-size: 66px;
-	text-align: center;
-	line-height: 40px;
-	opacity: 0.8;
-	position: absolute;
-	top: 23px;
-	color: #8cc04e;
-}
-.makebook_bookcomponent_item .type{
-	float: left;
+.makebook_compicon_item{
 	margin: 0 5px;
+	width: 80px;
 	position: relative;
 }
-.makebook_bookcomponent_item .type span{
+.makebook_compicon_item i{
+	display: block;
+	width: 100%;
+	line-height: 80px;
+	font-size: 66px;
+	text-align: center;
+	opacity: 0.8;
+	color: #8cc04e;
+}
+.makebook_compicon_item .frame{
+	position: absolute;
+}
+
+.makebook_compicon_item span{
 	display: block;
 	height: 80px;
 	line-height: 80px;
@@ -5883,11 +5885,15 @@
 	font-size:35px;
 	color: #8cc04e;
 }
-.makebook_bookcomponent_item .type .ybicon-cover{
+.makebook_compicon_item .ybicon-cover{
 	font-size: 66px;
+}
+.makebook_bookcomponent_item .type{
+	float: left;
 }
 .makebook_bookcomponent_item .type label{
 	display: block;
+	margin: 0 auto
 	width: 80px;
 	text-align: center;
 	font-weight: bold;
@@ -6473,8 +6479,8 @@
 }
 .makebook_splist_wrapper>li{
 	float: left;
-	margin: 10px;
-	width: 180px;
+	margin: 7px;
+	width: 186px;
 }
 .makebook_splist_wrapper>li .title{
 	display: block;
@@ -6491,22 +6497,30 @@
 	border: 3px solid #90c132;
 }
 
-.makebook_splist_wrapper>li .title:hover{
+.makebook_splist_wrapper .title:hover{
 	border: 1px solid #999999;
 }
-.makebook_splist_wrapper .title div{
-	display: inline-block;
-	margin: 30px 0 0 0;
-	vertical-align: middle;
-}
-.makebook_splist_wrapper .title div span{
+.makebook_splist_wrapper .title .makebook_compicon_item{
 	display: block;
-	font-size: 80px;
+	margin: 35px auto 0;
+	height: 80px;
 }
-.makebook_splist_wrapper .title div label{
+.makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i{
+	color: #90c132;
+}
+.makebook_splist_wrapper .makebook_compicon_item span{
+	font-size: 30px;
+	color: #999999;
+}
+.makebook_splist_wrapper .makebook_compicon_item .frame{
+	color: #999999;
+}
+
+.makebook_splist_wrapper .title label{
 	display: block;
-	margin: 10px 0 0 0;
+/*	margin: 10px 0;*/
 	cursor: pointer;
+	text-align: center;
 }
 .makebook_splist_wrapper .makebook_mark_item{
 	display: none;

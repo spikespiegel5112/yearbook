@@ -5864,7 +5864,7 @@
 	width: 80px;
 	position: relative;
 }
-.makebook_compicon_item i{
+.makebook_compicon_item .frame{
 	display: block;
 	width: 100%;
 	line-height: 80px;
@@ -5873,21 +5873,19 @@
 	opacity: 0.8;
 	color: #8cc04e;
 }
-.makebook_compicon_item .frame{
-	position: absolute;
-}
 
 .makebook_compicon_item span{
 	display: block;
+	width: 100%;
 	height: 80px;
 	line-height: 80px;
 	text-align: center;
-	font-size:35px;
+	font-size:30px;
 	color: #8cc04e;
+	position: absolute;
+	top: 0
 }
-.makebook_compicon_item .ybicon-cover{
-	font-size: 66px;
-}
+
 .makebook_bookcomponent_item .type{
 	float: left;
 }
@@ -6509,22 +6507,29 @@
 	color: #90c132;
 }
 .makebook_splist_wrapper .makebook_compicon_item span{
-	font-size: 30px;
 	color: #999999;
 }
 .makebook_splist_wrapper .makebook_compicon_item .frame{
 	color: #999999;
 }
+.makebook_splist_wrapper .actived .makebook_compicon_item .frame, .makebook_splist_wrapper .actived .title label{
+	color: #fff;
+}
 
 .makebook_splist_wrapper .title label{
 	display: block;
-/*	margin: 10px 0;*/
 	cursor: pointer;
 	text-align: center;
 }
 .makebook_splist_wrapper .makebook_mark_item{
 	display: none;
 	line-height: 16px;
+}
+.makebook_splist_wrapper .actived{
+	background-color: #90c132;
+}
+.makebook_splist_wrapper .actived .makebook_mark_item .frame{
+	color: #fff;
 }
 .makebook_splist_wrapper .active .makebook_mark_item{
 	display: block;

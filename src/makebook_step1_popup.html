@@ -43,13 +43,57 @@
 								···
 							</li>
 						</ul>
-
+					</li>
+					<li class='graduatebook'>
+						<a class='title' href='javascript:;'>毕业纪念册
+						<span class='makebook_mark_item ybiconfont ybicon-ok'></span></a>
+						<ul class='tips'>
+							<li>
+								同学聚会
+							</li>
+							<li>
+								周年聚会
+							</li>
+							<li>
+								朋友聚会
+							</li>
+							<li>
+								战友聚会
+							</li>
+							<li>
+								···
+							</li>
+						</ul>
+					</li>
+					<li class='graduatebook'>
+						<a class='title' href='javascript:;'>毕业纪念册
+						<span class='makebook_mark_item ybiconfont ybicon-ok'></span></a>
+						<ul class='tips'>
+							<li>
+								拓展活动
+							</li>
+							<li>
+								团队郊游
+							</li>
+							<li>
+								群体活动
+							</li>
+							<li>
+								公司年会
+							</li>
+							<li>
+								···
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<!-- build:js js/all.js -->
+	<script type="text/javascript" src="js/base.js"></script>
+	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
 		bg();
@@ -68,6 +112,10 @@
 				'background-color': '#999'
 			});
 		}
+		$('.makebook_spchoosetype_wrapper').align();
+		$('.makebook_spchoosetype_wrapper>ul>li').click(function() {
+			$(this).addClass('active').siblings().removeClass('active')
+		})
 	}
 	</script>
 </body>

@@ -5584,14 +5584,19 @@
 .makebook_progress_wrapper li .progressbar_middle{
 	width: 200px;
 }
-.makebook_progress_wrapper .progressbar_head, .makebook_progress_wrapper .actived .progressbar_middle{
+.makebook_progress_wrapper .progressbar_head{
 	background: repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 	background: -webkit-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 	background: -moz-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 	background: -ms-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 20%, #4da9c7 21%, #4da9c7 40%);
 }
+.makebook_progress_wrapper .actived .progressbar_middle{
+	background: repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+	background: -webkit-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+	background: -moz-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+	background: -ms-repeating-linear-gradient(-45deg,#70b8cf 0%, #70b8cf 10%, #4da9c7 11%, #4da9c7 20%);
+}
 .makebook_progress_wrapper .active .progressbar_middle{
-	width: 200px;
 	background: repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
 	background: -webkit-repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
 	background: -moz-repeating-linear-gradient(-45deg,#99c970 0%, #99c970 10%, #82bd53 11%, #82bd53 20%);
@@ -5604,7 +5609,6 @@
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 20%, #ebebeb 21%, #ebebeb 40%);
 }
 .makebook_progress_wrapper .progressbar_middle{
-	width: 200px;
 	background: repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -webkit-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -moz-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
@@ -6049,7 +6053,7 @@
 	display: inline-block;
 	font-size: 13px;
 	color: #999;
-	border-radius: 6px;
+	border-radius: 3px;
 }
 .makebook_teamnumber_wrapper {
 	margin: 30px;
@@ -6392,18 +6396,31 @@
 .makebook_steppopup_wrapper	>li{
 	padding: 30px;
 	background-color: #fff;
+	border: 10px solid rgba(0,0,0,0.5);
+	border-radius: 10px;
 }
 .makebook_steppopup_wrapper .makebook_steptitle_item{
+	padding: 0 0 0 10px;
 	font-size: 18px;
+	color: #333;
+	font-weight: bold;
 }
 .makebook_steppopup_wrapper .makebook_stepdesc_wrapper{
 	margin: 0 0 0 10px;
+}
+.makebook_spchoosetype_wrapper .makebook_steptitle_wrapper{
+	padding: 0 0 30px 0;
 }
 .makebook_spchoosetype_wrapper{
 	margin: 0 auto;
 	width: 600px;
 }
+.makebook_spchoosetype_wrapper>ul{
+	overflow: hidden;
+}
 .makebook_spchoosetype_wrapper>ul>li{
+	float: left;
+	margin: 0 10px;
 	width: 180px;
 }
 .makebook_spchoosetype_wrapper>ul>li .title{
@@ -6418,14 +6435,33 @@
 .makebook_spchoosetype_wrapper>ul>li .title:hover{
 	border: 1px solid #999999;
 }
+.makebook_spchoosetype_wrapper>ul>.active .title{
+	border: 1px solid #90c132;
+}
+.makebook_spchoosetype_wrapper .makebook_mark_item{
+	display: none;
+	line-height: 16px;
+}
+.makebook_spchoosetype_wrapper .active .makebook_mark_item{
+	display: block;
+	
+	color: #fff;
+	border-color: transparent #90c132 #90c132 transparent;
+}
+.makebook_spchoosetype_wrapper>ul>li>a:hover .makebook_mark_item{
+	display: block;
+	color: #fff;
+	border-color: transparent #999 #999 transparent;
+}
+
 .makebook_spchoosetype_wrapper .tips li{
 	display: inline-block;
 	margin: 3px 0px;
 	padding: 1px 3px;
 	border-radius: 5px;
-	border: 1px solid #aaa;
+	border: 1px solid #999;
 	font-size: 12px;
-	color: #aaa;
+	color: #999;
 	text-align: center;
 }
 .makebook_spchoosetype_wrapper .tips{
@@ -6434,14 +6470,8 @@
 .makebook_spchoosetype_wrapper .tips li:last-child{
 	border: 0;
 }
-.makebook_spchoosetype_wrapper .makebook_mark_item{
-	display: none;
-}
-.makebook_spchoosetype_wrapper>ul>li>a:hover .makebook_mark_item{
-	display: block;
-	color: #fff;
-	border-color: transparent #8cc04e #8cc04e transparent;
-}
+
+
 .makebook_spchoosetype_wrapper .makebook_mark_item{
 	
 }

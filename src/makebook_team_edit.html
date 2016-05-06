@@ -1802,7 +1802,7 @@
 
     //资源tab
     function resourceTab() {
-        jQuery(".resource_list").slide({
+        $(".resource_list").slide({
             mainCell: ".res_tab_con ul",
             titCell: ".res_tab li",
             prevCell: "",
@@ -1812,7 +1812,7 @@
             autoPlay: false,
             startFun: function(){
                 //话题
-                jQuery('.topic_list').slide({
+                $('.topic_list').slide({
                     mainCell: ".bd ul",
                     titCell: ".hd ul",
                     trigger: "click",
@@ -1824,7 +1824,7 @@
                     scroll:3
                 });
                 //赠言
-                jQuery('.message_list').slide({
+                $('.message_list').slide({
                     mainCell: ".bd ul",
                     titCell: ".hd ul",
                     trigger: "click",

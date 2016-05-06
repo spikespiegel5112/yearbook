@@ -1,16 +1,13 @@
 .team_edit_container {
     position: relative;
     width: 100%;
-    background: url("../img/makebook/team/iabook_edit_bg.jpg") no-repeat 0;
-    background-size: cover;
     overflow: hidden;
-    height: 850px;
 }
 
 .team_edit_container aside {
     background-color: #34495e;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 32px;
     height: 100%;
     box-sizing: border-box;
     padding-top: 90px;
@@ -34,9 +31,9 @@
 .nav_bar .fixed_menu li {
     display: block;
     width: 100%;
-    height: 90px;
+    height: 70px;
     text-align: center;
-    line-height: 90px;
+    line-height: 70px;
     border-bottom: 1px solid #405972;
     box-sizing: border-box;
 }
@@ -91,22 +88,26 @@
 
 .team_edit_container .slide_mask {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: 32px;
     left: 0;
     background: rgba(0, 0, 0, .6);
     z-index: 25;
 }
 
 .team_edit_container .edit_content {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 122px 0 0;
     width: 100%;
-    height: inherit;
-    padding-left: 70px;
+    height: 100%;
     margin: 0;
     box-sizing: border-box;
+    background: url("../img/makebook/team/iabook_edit_bg.jpg") no-repeat 0;
+    background-size: cover;
 }
 
 .team_edit_container .edit_content.list .list_mode,
@@ -120,9 +121,11 @@
 }
 
 .edit_content .tool_bar {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 32px;
     margin: 0;
-    padding: 0 10px;
+    padding: 0 10px 0 80px;
     width: 100%;
     height: 90px;
     background-color: #fff;
@@ -638,45 +641,41 @@
 }
 
 .edit_content .single_mode .edit_area {
-    position: relative;
-    float: left;
-    width: 69%;
-    padding-bottom: 100px;
-    margin: 0;
+    position: absolute;
+    height: 100%;
+    padding: 20px 20% 20px 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    left: 211px;
 }
 
 .single_mode .edit_area .inner_page{
     position: relative;
     display: block;
     margin: 0 auto;
-    width: 100%;
     min-width: 860px;
-    max-width: 980px;
 }
 
 .single_mode .edit_area .cur_page {
     text-align: center;
     color: #fff;
     font-size: 24px;
-    margin: 30px 0 0;
+    margin: 0 0 30px;
     line-height: 40px;
+}
+
+.single_mode .edit_area .cur_page label{
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .single_mode .edit_area .icon-angle-left,
 .single_mode .edit_area .icon-angle-right {
-    position: absolute;
-    top: 320px;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 25px;
     color: #e8e8e8;
-    font-size: 4.5em;
-    z-index: 1;
-}
-
-.single_mode .edit_area .icon-angle-left {
-    left: 20px;
-}
-
-.single_mode .edit_area .icon-angle-right {
-    right: 20px;
+    font-size: 42px;
 }
 
 .single_mode .edit_area .icon-angle-left:hover,
@@ -730,7 +729,7 @@
     box-sizing: border-box;
     width: 860px;
     height: 600px;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 10px 20px;
     border: 0;
     background: url('../img/booklist/inner_page_bg.jpg') no-repeat 0;
@@ -771,7 +770,7 @@
     position: relative;
     width: 705px;
     height: 986px;
-    margin: 60px auto;
+    margin: 0 auto;
     border: 0;
     background: url('../img/booklist/inner_page_single_bg.jpg') no-repeat 0;
     background-size: cover;
@@ -783,13 +782,20 @@
 }
 
 .single_mode .chapter_list {
-    position: relative;
-    float: left;
-    width: 11.5%;
+    position: absolute;
+    padding-left: 70px;
+    box-sizing: border-box;
+    width: 211px;
     height: 100%;
     background-color: #223241;
     overflow: hidden;
     overflow-y: auto;
+    left: 0;
+    transition: left .5s;
+}
+
+.single_mode .chapter_list.shrink{
+    left: -136px;
 }
 
 .chapter_list .back_list_mode {
@@ -894,13 +900,54 @@
     border-color: transparent transparent transparent #31b8d3;
 }
 
+.single_mode .chapter_shrink,
+.single_mode .resource_shrink{
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    width: 42px;
+    height: 38px;
+    z-index: 2;
+    text-align: center;
+    line-height: 38px;
+    box-sizing: border-box;
+}
+.single_mode .chapter_shrink{
+    color: #fff;
+    left: 211px;
+    background: #213341;
+    border-radius: 0 4px 4px 0;
+    transition: left .5s;
+}
+.single_mode .chapter_shrink.active{
+    left: 75px;
+}
+.single_mode .resource_shrink{
+    color: #5b5b5b;
+    right: 20%;
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+    box-shadow: -1px 0 2px #ddd;
+    transition: right .5s;
+}
+.single_mode .resource_shrink.active{
+    right: .5%;
+}
 .single_mode .resource_list {
-    position: relative;
-    float: right;
-    width: 19.5%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
     height: 100%;
     background-color: #fff;
     z-index: 0;
+    box-shadow: -1px 0 1px #ddd;
+    overflow-y: auto;
+    transition: right .5s;
+}
+
+.single_mode .resource_list.shrink{
+    right: -19.5%;
 }
 
 .resource_list .res_tab {
@@ -912,7 +959,7 @@
 
 .resource_list .res_tab li {
     float: left;
-    width: 25%;
+    width: 24%;
     height: 45px;
     line-height: 45px;
     text-align: center;
@@ -996,17 +1043,17 @@
 .res_tab_con .picture_list li {
     position: relative;
     float: left;
-    margin: 0 5px 10px;
-    height: 96px;
-    width: 106px;
+    margin: 0 2.5% 10px;
+    height: 90px;
+    width: 28%;
     text-align: center;
-    line-height: 90px;
+    line-height: 84px;
     border: 1px solid #d9dfe5;
     box-sizing: border-box;
 }
 
 .res_tab_con .picture_list li img {
-    max-width: 104px;
+    max-width: 100%;
     max-height: 85px;
     vertical-align: middle;
     cursor: move;
@@ -1114,7 +1161,7 @@
 }
 .topic_list li .topic_fig{
     float: left;
-    width: 136px;
+    width: 28%;
     height: 110px;
 }
 .topic_list li .topic_fig img{
@@ -1125,7 +1172,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding-left: 145px;
+    padding-left: 28%;
     box-sizing: border-box;
 }
 .topic_list li .topic_des h5{

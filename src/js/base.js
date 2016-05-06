@@ -571,9 +571,10 @@
 				offsetY: 0,
 			}, options);
 
-			var _this = this,
-				imgSrc = _this.attr('src'),
+			var that = this,
+				imgSrc = that.attr('src'),
 				reload = false,
+				container = $(options.container),
 				thisWidth = 0,
 				thisHeight = 0,
 				containerheight = 0,
@@ -589,17 +590,18 @@
 
 			function initAligning() {
 				//当居中元素是img标签时，特殊处理！
-				if (_this.is('img')) {
+				if (that.is('img')) {
 					//递归判断需要居中的图片是否加载完成，如果没有就重载
 					var checkImageLoaded = function() {
-						_this.each(function(index) {
-							if ($(this).height() == 0) {
+						that.each(function(index) {
+							var $this = $(this);
+							if ($this.height() == 0) {
 								console.log('load failed ' + $(this).width())
 								reload = true;
 								return false;
 							} else {
-								containerheight = $(options.container).eq(index).height();
-								checkPosition($(this), containerheight)
+								containerheight = container.eq(index).height();
+								checkPosition($this, containerheight)
 								console.log('第' + index + '张图片的高度:' + containerheight)
 							}
 						});
@@ -625,15 +627,23 @@
 					//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
 					//container设置判断
 					if (options.container != '') {
-						_this.each(function(index) {
-							containerheight = $(options.container).eq(index).height();
-							windowWidth = $(options.container).width();
+						that.each(function(index) {
+							containerheight = container.eq(index).height();
+							windowWidth = container.width();
 							checkPosition($(this));
 						})
 					} else {
-						checkPosition(_this);
-						$(window).resize(function() {
-							checkPosition(_this);
+						that.each(function(index) {
+							var $this = $(this);
+							if ($this.is(':hidden')) {
+								return true
+							} else {
+								checkPosition($this);
+								$(window).resize(function() {
+									checkPosition($this);
+								})
+							}
+
 						})
 					}
 				}
@@ -718,8 +728,8 @@
 
 			function aligning(callback) {
 				$(window).resize(function() {
-					thisWidth = _this.outerWidth();
-					thisHeight = _this.outerHeight();
+					thisWidth = that.outerWidth();
+					thisHeight = that.outerHeight();
 					return callback(thisWidth, thisHeight)
 				});
 				return callback(thisWidth, thisHeight);
@@ -782,7 +792,7 @@
 				isMousedown = false,
 				offsetLeft = _this.offset().left,
 				startX = 0,
-				startY=0,
+				startY = 0,
 				axisWidth = $(config.axisx).width(),
 				sliderWidth = _this.width(),
 				unitWidth = axisWidth / config.density,
@@ -816,8 +826,8 @@
 						var touch = e;
 					}
 					var startX = touch.clientX,
-						startY=touch.clientY;
-						console.log(startX)
+						startY = touch.clientY;
+					console.log(startX)
 					index = i;
 				});
 				container.on(touchMove, function(e) {
@@ -825,7 +835,7 @@
 						if (!returned) {
 							progress = progress * (config.density / axisWidth) + offsetVal[index];
 							$(config.returnto).eq(index).val(Math.floor(progress));
-							returned=true;
+							returned = true;
 						};
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0];
@@ -834,13 +844,13 @@
 						}
 						var moveX = touch.pageX - offsetLeft;
 						//在滑动滑块的时候阻止默认事件
-						if (moveX-startX!=0) {
+						if (moveX - startX != 0) {
 							e.preventDefault();
 						}
-						if (touch.clientX < offsetLeft + axisWidth+sliderWidth/2 && touch.clientX > offsetLeft){
+						if (touch.clientX < offsetLeft + axisWidth + sliderWidth / 2 && touch.clientX > offsetLeft) {
 							if (returned) {
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
-								returned =false;
+								returned = false;
 							}
 						}
 						if (moveX < 0) {
@@ -1399,7 +1409,7 @@
 				index = 0,
 				imgReady = false,
 				imgCounter = 0,
-				randomPeriod=1000,
+				randomPeriod = 1000,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				container = $(config.container),
@@ -1431,9 +1441,9 @@
 						console.log('imgReady');
 						var bgImgWidth = bgImg.width(),
 							bgImgHeight = bgImg.height();
-							console.log(bgImgWidth);
+						console.log(bgImgWidth);
 						var timer = setInterval(function() {
-							randomPeriod=config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
+							randomPeriod = config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							console.log(randomPeriod);
 							if (index == bgLength) {
 								index = 0;
@@ -1482,4 +1492,3 @@
 	// $('.ybindex_carousel_wrapper').carousel();
 
 })(jQuery, window);
-

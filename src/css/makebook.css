@@ -5493,6 +5493,7 @@
 
 
 /*~~~~~~~~~~~makebook_step1_3.13.html~~~~~~~~~~~*/
+/*~~~~~~~~~~~进度条进度指示器~~~~~~~~~~~*/
 .makebook_progress_wrapper{
 	margin: 0 auto;
 	padding: 60px 0;
@@ -5609,9 +5610,23 @@
 	background: -moz-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 }
+/*~~~~~~~~~~数字步骤指示器~~~~~~~~~~*/
+.makebook_stepindicator_wrapper{
+	position: absolute;
+
+}
+.makebook_stepindicator_wrapper .indicator{
+	width: 85px;
+	height: 85px;
+}
+
+
+
+
+
 
 .makebook_step_wrapper{
-	margin: 0 auto 40px;
+	margin: 50px auto;
 	padding: 20px 20px 20px 20px;
 	box-sizing: border-box;
 	width: 1150px;

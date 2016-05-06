@@ -193,8 +193,7 @@
 				</li>
 			</ul>
 		</div> -->
-
-		<div class='makebook_step_wrapper'>
+		<div class='makebook_stepindicator_container'>
 			<div class='makebook_stepindicator_wrapper'>
 				<div class='indicator'>
 					<label>1</label>
@@ -203,20 +202,22 @@
 					<p>配置团队册</p>
 				</div>
 				<ul>
-					<li>
+					<li class='active'>
 						<span>1</span>
 						<label>选择场景</label>
 					</li>
 					<li>
 						<span>1</span>
-						<label>选择场景</label>
+						<label>配置书册</label>
 					</li>
 					<li>
 						<span>1</span>
-						<label>选择场景</label>
+						<label>选择模板</label>
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div class='makebook_step_wrapper'>
 			<div class='makebook_steptitle_wrapper'>
 				<h6 class='makebook_steptitle_item'>选择团队册群体</h6>
 			</div>
@@ -225,7 +226,7 @@
 					<div class='bookcover'>
 						<img src="img/makebook/makebook_choosetype_ia_graduate_00000.jpg">
 						<div>
-							<a href="javascript:;">
+							<a href="makebook_step2_3.13.html">
 								下一步
 							</a>
 						</div>
@@ -250,7 +251,7 @@
 					<div class='bookcover'>
 						<img src="img/makebook/makebook_choosetype_ia_party_00000.jpg">
 						<div>
-							<a href="javascript:;">
+							<a href="makebook_step2_3.13.html">
 								下一步
 							</a>
 						</div>
@@ -278,7 +279,7 @@
 					<div class='bookcover'>
 						<img src="img/makebook/makebook_choosetype_ia_team_00000.jpg">
 						<div>
-							<a href="javascript:;">
+							<a href="makebook_step2_3.13.html">
 								下一步
 							</a>
 						</div>
@@ -339,7 +340,7 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript">
 	$(function() {
-		$('.makebook_choosetype_wrapper li').hover(function(){
+		$('.makebook_choosetype_wrapper li').hover(function() {
 			$(this).siblings().removeClass('active').end().addClass('active');
 		})
 	})

@@ -5491,8 +5491,6 @@
 	border-left: 9px solid transparent;
 }
 
-
-/*~~~~~~~~~~~makebook_step1_3.13.html~~~~~~~~~~~*/
 /*~~~~~~~~~~~进度条进度指示器~~~~~~~~~~~*/
 .makebook_progress_wrapper{
 	margin: 0 auto;
@@ -5615,20 +5613,78 @@
 	background: -ms-repeating-linear-gradient(-45deg,#e4e4e4 0%, #e4e4e4 10%, #ebebeb 11%, #ebebeb 20%);
 }
 /*~~~~~~~~~~数字步骤指示器~~~~~~~~~~*/
+.makebook_stepindicator_container{
+	margin: 0 auto;
+	width: 1150px;
+	position: relative;
+}
 .makebook_stepindicator_wrapper{
 	position: absolute;
-
+	left: -43px;
+	top: 30px;
+	z-index: 1;
 }
 .makebook_stepindicator_wrapper .indicator{
 	width: 85px;
 	height: 85px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	text-align: center;
+	border-radius: 50%;
+	color: #cccccc;
+}
+.makebook_stepindicator_wrapper .indicator label{
+	position: relative;
+	top: 15px;
+	font-size: 30px;
+	letter-spacing: -4px;
+	font-weight: lighter;
+}
+.makebook_stepindicator_wrapper .indicator label:first-child{
+	color: #ff8630;
+}
+.makebook_stepindicator_wrapper .indicator p{
+	line-height: 45px;
+	font-size: 12px;
+}
+.makebook_stepindicator_wrapper ul{
+	margin: 20px 0 0 0;
+}
+.makebook_stepindicator_wrapper ul li{
+	font-size: 12px;
+	text-align: center;	
+}
+.makebook_stepindicator_wrapper ul .active span{
+	background-color: #ff8630;
+	color: #fff;
+	border: 1px solid #ff8630;
+}
+.makebook_stepindicator_wrapper ul .active label{
+	color: #000;
+}
+.makebook_stepindicator_wrapper ul li span{
+	display: block;
+	margin: 0 auto;
+	width: 17px;
+	height: 17px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	text-align: center;
+	line-height: 17px;
+	border-radius: 50%;
+	color: #ddd;
+}
+.makebook_stepindicator_wrapper ul li label{
+	display: block;
+	margin: 0 0 15px 0;
+	color: #999999;
 }
 
 
 
 
 
-
+/*~~~~~~~~~~makebook_step1_3.13.html~~~~~~~~~~*/
 .makebook_step_wrapper{
 	margin: 50px auto;
 	padding: 20px 20px 20px 20px;
@@ -5637,7 +5693,7 @@
 	box-shadow: 0px -2px 8px #ccc;
 	background-color: #fff;
 	border-radius: 10px;
-	overflow: hidden;
+	position: relative;
 }
 .makebook_choosetype_wrapper>li{
 	width: 350px;

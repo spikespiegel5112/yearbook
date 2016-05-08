@@ -5711,18 +5711,22 @@
 	padding: 20px 0;
 	background-color: #fff;
 }
-.makebook_steptitle_wrapper .back{
+.makebook_stepbacklink_item{
 	float: right;
 	margin: 10px 20px 0 0;
 	line-height: 30px;
 	color: #999;
-	font-size: 14px;
+	font-size: 18px;
 }
-.makebook_steptitle_wrapper .back span{
+.makebook_stepbacklink_item span{
 	float: left;
 	margin: 0 10px;
 	font-size: 20px;
 	line-height: 29px;
+	color: #ccc;
+}
+.makebook_stepbacklink_item:hover{
+	text-decoration: underline;
 }
 .makebook_stepdesc_wrapper{
 	display: inline-block;
@@ -6167,23 +6171,24 @@
 .makebook_setupinvitcard_wrapper li label{
 	margin: 0 5px;
 	font-size: 14px;
+	color: #666;
 }
-.makebook_setupinvitcard_wrapper .resetandsave{
+.makebook_resetandsave_wrapper{
 	display: none;
 	margin: 30px 40px;
 }
-.makebook_setupinvitcard_wrapper .resetandsave a{
+.makebook_resetandsave_wrapper a{
 	margin: 0 10px 0 0;
 	padding: 5px 10px;
 	border-radius: 6px;
 	font-size: 14px;
 }
-.makebook_setupinvitcard_wrapper .resetandsave .reset{
+.makebook_resetandsave_wrapper .reset{
 	border: 1px solid #ccc;
 	color: #999;
 	background-color: #eee;
 }
-.makebook_setupinvitcard_wrapper .resetandsave .save{
+.makebook_resetandsave_wrapper .save{
 	background-color: #90c132;
 	color: #fff;
 }
@@ -6261,13 +6266,13 @@
 	display: inline-block;
 	margin: 0 10px;
 }
-.makebook_setupinvitcard_wrapper .share{
+.makebook_setupshare_wrapper{
 	margin: 60px 0 0 0;
 	width: 100%;
 	background-color: #fff;
 	overflow: hidden;
 }
-.makebook_setupinvitcard_wrapper .share>a{
+.makebook_setupshare_wrapper>a{
 	float: left;
 	margin: 30px 40px;
 	padding: 10px 20px;
@@ -6276,42 +6281,42 @@
 	color: #8cc04e;
 	transition: all 0.1s;
 }
-.makebook_setupinvitcard_wrapper .share>a:hover{
+.makebook_setupshare_wrapper>a:hover{
 	color: #599E07;
 	transition: all 0.3s;
 }
-.makebook_setupinvitcard_wrapper .share>a:active{
+.makebook_setupshare_wrapper>a:active{
 	box-shadow: 2px 2px 5px #ccc inset;
 	transition: all 0.05s;
 }
-.makebook_setupinvitcard_wrapper .share>div{
+.makebook_setupshare_wrapper>div{
 	float: left;
 	margin: 20px 0 0 100px;
 }
-.makebook_setupinvitcard_wrapper .share>div>div{
+.makebook_setupshare_wrapper>div>div{
 	float: left;
 	margin: 0 20px;
 	color: #ccc;
 	text-align: center;
 }
-.makebook_setupinvitcard_wrapper .share>div>div span{
+.makebook_setupshare_wrapper>div>div span{
 	display: block;
 	font-size: 40px;
 }
-.makebook_setupinvitcard_wrapper .share>div>div label{
+.makebook_setupshare_wrapper>div>div label{
 	font-size: 13px;
 }
-.makebook_setupinvitcard_wrapper .share>div ul{
+.makebook_setupshare_wrapper>div ul{
 	float: left;
-	margin: 5px 0 0 0;
+	margin: 5px 0 0 30px;
 }
-.makebook_setupinvitcard_wrapper .share div li{
+.makebook_setupshare_wrapper div li{
 	float: left;
 	margin: 0 5px;
 	width: 40px;
 	height: 40px;
 }
-.makebook_setupinvitcard_wrapper .share div li a{
+.makebook_setupshare_wrapper div li a{
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -6321,19 +6326,19 @@
 	border-radius: 50%;
 	text-align: center;
 }
-.makebook_setupinvitcard_wrapper .share .wechat{
+.makebook_setupshare_wrapper .wechat{
 	background-color: #00ca5a;
 }
-.makebook_setupinvitcard_wrapper .share .moments{
+.makebook_setupshare_wrapper .moments{
 	background-color: #26d6fb;
 }
-.makebook_setupinvitcard_wrapper .share .qzone{
+.makebook_setupshare_wrapper .qzone{
 	background-color: #ffa23d;
 }
-.makebook_setupinvitcard_wrapper .share .renren{
+.makebook_setupshare_wrapper .renren{
 	background-color: #0773be;
 }
-.makebook_setupinvitcard_wrapper .share .weibo{
+.makebook_setupshare_wrapper .weibo{
 	background-color: #e92246;
 }
 .makebook_step_wrapper .sem_mainlist_wrapper li{
@@ -6450,14 +6455,19 @@
 	overflow: hidden;
 }
 .makebook_steppopup_wrapper	>div{
-	padding: 30px;
 	background-color: #fff;
 	border: 10px solid rgba(153,153,153,0.5);
 	border-radius: 10px;
 	position: relative;
 }
+.makebook_spmain_wrapper{
+	padding: 30px;
+}
+.makebook_steppopup_wrapper .makebook_steptitle_wrapper{
+	padding: 0 0 20px 0;
+}
 .makebook_steppopup_wrapper .makebook_steptitle_item{
-	padding: 0 0 0 10px;
+	padding: 0;
 	font-size: 18px;
 	color: #333;
 	font-weight: bold;
@@ -6469,8 +6479,7 @@
 	padding: 0 0 30px 0;
 }
 .makebook_spchoosetype_wrapper{
-	margin: 0 auto;
-	width: 600px;
+	width: 660px;
 }
 .makebook_splist_wrapper{
 	overflow: hidden;
@@ -6483,7 +6492,7 @@
 .makebook_splist_wrapper>li .title{
 	display: block;
 	margin: 2px;
-	width: 180px;
+	width: 100%;
 	height: 180px;
 	border: 1px dashed #bbbbbb;
 	text-align: center;
@@ -6525,11 +6534,12 @@
 	display: none;
 	line-height: 16px;
 }
-.makebook_splist_wrapper .actived{
+.makebook_splist_wrapper .actived a{
 	background-color: #90c132;
 }
-.makebook_splist_wrapper .actived .makebook_mark_item .frame{
-	color: #fff;
+.makebook_splist_wrapper .actived .makebook_mark_item{
+	display: block;
+	border-color: transparent #a6cc5b #a6cc5b transparent 
 }
 .makebook_splist_wrapper .active .makebook_mark_item{
 	display: block;
@@ -6545,7 +6555,11 @@
 .makebook_splist_wrapper .active .title:hover .makebook_mark_item{
 	border-color: transparent #90c132 #90c132 transparent;
 }
+.makebook_splist_wrapper .tips{
+	margin: 30px 0 0 0;
 
+	color: #999;
+}
 .makebook_splist_wrapper .tips li{
 	display: inline-block;
 	margin: 3px 0px;
@@ -6553,14 +6567,14 @@
 	border-radius: 5px;
 	border: 1px solid #ddd;
 	font-size: 12px;
-	color: #999;
 	text-align: center;
 }
-.makebook_splist_wrapper .tips{
-	margin: 30px 0 0 0;
-}
+
 .makebook_splist_wrapper .tips li:last-child{
 	border: 0;
+}
+.makebook_splist_wrapper .tips p{
+	font-size: 14px;
 }
 .makebook_spclosebtn_item{
 	padding: 5px;
@@ -6571,10 +6585,94 @@
 	right: -26px;
 }
 .makebook_spassemble_wrapper{
-	width: 840px;
+	width: 860px;
+}
+.makebook_spnav_wapper{
+	width: 100%;
+	padding: 20px 30px;
+	background-color: #eee;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.makebook_spnav_wapper .makebook_stepbacklink_item{
+	float: left;
+}
+.makebook_spnextlink_btn{
+	float: right;
+	padding: 5px 25px;
+	min-width: 60px;
+	border: 2px solid #ff8800;
+	color: #ff8800;
+	text-align: center;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.makebook_spchoosemethod_wrapper{
+	width: 690px;
+}
+.makebook_spchoosemethod_wrapper ul li{
+	margin: 0 27px 40px 27px;
+	width: 260px;
 }
 
+.makebook_spchoosemethod_wrapper .makebook_teamnumber_wrapper{
+	margin: 10px 30px;
+}
+.makebook_spsetup_wrapper{
+	width: 840px;
+}
+.makebook_spsetup_wrapper .makebook_setupinvitcard_wrapper{
+	margin: 10px 0 0 0;
+	padding: 30px 0;
+}
+.makebook_spsetup_wrapper .personalinfo li{
+	margin: 10px 0;
+	width: 100px;
+}
+.makebook_spsetup_wrapper .personalinfo , .makebook_spsetup_wrapper .personaloption{
+	padding: 10px 0 10px 80px;
+}
+.makebook_spsetup_wrapper .makebook_iccustomoption_wrapper{
+	padding: 10px 0 10px 80px
+}
+.makebook_spsetup_wrapper .makebook_resetandsave_wrapper{
+	display: block;
+	margin: 20px 0 0 0;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper{
+	margin: 0;
 
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>a{
+	margin: 30px 0;
+	padding: 5px;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div>div{
+	margin: 0;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div>div>span{
+	float: left;
+	margin: 6px 0 0 80px;
+	font-size: 35px;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div>div label{
+	float: left;
+	margin: 8px 0 0 0;
+	width: 2em;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div li{
+	width: 30px;
+	height: 30px;
+	
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div li a{
+	font-size: 25px;
+	color: #ababab;
+	background: none;
+}
+.makebook_sprecommend_wrapper{
+	width: 940px;
+}
 
 
 

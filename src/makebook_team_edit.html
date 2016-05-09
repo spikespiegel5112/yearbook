@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
     <!-- endbuild -->
     <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462414917_7311904.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462777338_6646955.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 </head>
@@ -86,38 +86,55 @@
                     <li>
                         <a class="-toggle" loadUrl="makebook_team_photos.html">
                             <em class="ybiconfont ybicon-picture icon"></em>
-                            <em class="text">照片</em>
+                            <em class="text">相册</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="ia_friend.html">
-                            <em class="ybiconfont ybicon-editform icon"></em>
-                            <em class="text">伙伴</em>
+                            <em class="ybiconfont ybicon-partner icon"></em>
+                            <em class="text">小伙伴</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
                             <em class="icon-plane icon"></em>
-                            <em class="text">编辑</em>
+                            <em class="text">互动</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
-                            <em class="ybiconfont ybicon-envelope icon"></em>
-                            <em class="text">编辑</em>
+                            <em class="ybiconfont ybicon-mail icon"></em>
+                            <em class="text">邀请卡</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
                             <em class="ybiconfont ybicon-bookopened icon"></em>
-                            <em class="text">编辑</em>
+                            <em class="text">邀请卡</em>
                         </a>
                     </li>
-                    <li>
-                        <a class="" loadUrl="makebook_autolayout.html">
-                            <em class=" icon-link icon"></em>
-                            <em class="text">编辑</em>
+                    <li class="share">
+                        <a class="" href="javascript:;">
+                            <em class="ybiconfont ybicon-sharehollow icon"></em>
+                            <em class="text">分享</em>
                         </a>
+                        <div class="common_sharelist_wrapper">
+                            <!--<label>分享到：</label>-->
+                            <ul>
+                                <li>
+                                    <a class="weibo ybiconfont ybicon-weibosina" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <a class="qzone ybiconfont ybicon-qzone" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <a class="wechat ybiconfont ybicon-wechatsolid" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <a class="renren ybiconfont ybicon-renren" href="javascript:;"></a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -130,36 +147,25 @@
         <div id="menu" class="edit_content single"><!--list 章节列表模式 single 单页编辑模式-->
             <div class="tool_bar">
                 <div class="grid book_info">
-                    <div class="cover">
-                        <img src="img/default/bookshelf_book01.jpg">
-                        <span class="type photo"></span>
-                    </div>
                     <div class="name">
                         <h4>《毕业纪念册》</h4>
-
-                        <div class="progress">
-                            <a class="percent">
-                                <div>完成率：</div>
-                                <span>90%</span>
-
-                                <div class="bar"><span style="width: 90%;"></span></div>
-                            </a>
-                        </div>
+                        <!--完成百分比-->
+                        <span>90%</span>
                     </div>
                 </div>
                 <div class="grid">
                     <ul class="list_mode">
                         <li>
-                            <a class="add_chapter_btn" href="javascript:;"><i class="ybiconfont ybicon-addchapter"></i><span>添加章节</span></a>
+                            <a class="add_chapter_btn" href="javascript:;"><i class="ybiconfont ybicon-addchapter"></i></a>
                         </li>
                         <li>
-                            <a class="add_page_btn" href="javascript:;"><i class="ybiconfont ybicon-addpage"></i><span>添加页面</span></a>
+                            <a class="add_page_btn" href="javascript:;"><i class="ybiconfont ybicon-addpage"></i></a>
                         </li>
                         <li>
-                            <a class="" href="javascript:;"><i class="ybiconfont ybicon-addfriend"></i><span>邀请协作者</span></a>
+                            <a class="" href="javascript:;"><i class="ybiconfont ybicon-addfriend"></i></a>
                         </li>
                         <li>
-                            <a class="change_tpl_btn" href="javascript:;"><i class="ybiconfont ybicon-replacetpl"></i><span>更换模板</span></a>
+                            <a class="change_tpl_btn" href="javascript:;"><i class="ybiconfont ybicon-replacetpl"></i></a>
                             <div class="ybcommon_queryicon_item">
                                 <div>
                                     <p>请在推荐模板中选择合适的模板并点击’更换模板‘</p>
@@ -167,21 +173,21 @@
                             </div>
                         </li>
                         <li>
-                            <a class="auto_layout" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>自动排版</span></a>
+                            <a class="auto_layout" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i></a>
                         </li>
                     </ul>
                     <ul class="single_mode">
                         <li>
-                            <a class="add_page_btn" href="javascript:;"><i class="ybiconfont ybicon-addpage"></i><span>添加页面</span></a>
+                            <a class="add_page_btn" href="javascript:;"><i class="ybiconfont ybicon-addpage"></i></a>
                         </li>
                         <li>
-                            <a class="auto_layout" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>自动排版</span></a>
+                            <a class="auto_layout" href="javascript:;"><i class="ybiconfont ybicon-autolayout"></i></a>
                         </li>
                         <li>
-                            <a class="view_sample_btn" href="javascript:;"><i class="ybiconfont ybicon-forexample"></i><span>参考示例</span></a>
+                            <a class="view_sample_btn" href="javascript:;"><i class="ybiconfont ybicon-forexample"></i></a>
                         </li>
                         <li>
-                            <a class="save_page_btn disable" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>保存页面</span></a>
+                            <a class="save_page_btn disable" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i></a>
                             <div class="ybcommon_queryicon_item">
                                 <div>
                                     <p>拖动改变页面顺序，或者双击页码编辑页码后保存修改结果</p>
@@ -193,7 +199,7 @@
                 <div class="grid">
                     <ul>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>照片缺失页</span></a>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i></a>
                             <div class="page_list">
                                 <ul>
                                     <li>
@@ -241,7 +247,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>文字缺失页</span></a>
+                            <a href="javascript:;"><i class="ybiconfont ybicon-txt"></i></a>
                             <div class="page_list">
                                 <ul>
                                     <li>
@@ -973,37 +979,42 @@
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="扉页">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-text"></span>
                         <h5>扉页</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="目录">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-category"></span>
                         <h5>目录</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li class="select" describe="可选项，加入书册的小伙伴每人对应有一章属于自己的个人页，显示自己的详细资料和近况。">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-drawingtext"></span>
                         <h5>图文章节</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="个人，可选">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-resume"></span>
                         <h5>个人章节</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="全景照片">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-picture"></span>
                         <h5>全景照片</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="激扬文字">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-text"></span>
                         <h5>激扬文字</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
+                    <li describe="邀请卡">
+                        <span class="ybiconfont ybicon-profile"></span>
+                        <h5>邀请卡</h5>
+                        <i class="ybiconfont ybicon-ok"></i>
+                    </li>
                     <li describe="自定义">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-iconframe"></span>
                         <h5>自定义</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
@@ -1577,7 +1588,7 @@
 
 
         //点击nav调出aside区域
-        $('.fixed_menu li a').on('click', function (e) {
+        $('.fixed_menu li:lt(6)').find('a').on('click', function (e) {
             slideout.open();
             $('aside').removeClass('close');
             $('.slide_mask').show();

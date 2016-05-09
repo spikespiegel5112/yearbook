@@ -10,7 +10,7 @@
     top: 32px;
     height: 100%;
     box-sizing: border-box;
-    padding-top: 90px;
+    padding-top: 50px;
     z-index: 30;
     width: 1150px;
     left: -1150px;
@@ -24,11 +24,12 @@
 .team_edit_container aside .nav_bar {
     position: absolute;
     right: 0;
-    width: 70px;
+    width: 100%;
     background-color: #486480;
 }
 
-.nav_bar .fixed_menu li {
+.nav_bar .fixed_menu > li {
+    position: relative;
     display: block;
     width: 100%;
     height: 70px;
@@ -38,22 +39,48 @@
     box-sizing: border-box;
 }
 
-.nav_bar .fixed_menu li:first-child {
+.nav_bar .fixed_menu > li:first-child {
     border-top: 1px solid #405972;
 }
 
-.nav_bar .fixed_menu li:hover,
-.nav_bar .fixed_menu li.active {
+.nav_bar .fixed_menu > li:hover,
+.nav_bar .fixed_menu > li.active {
     background-color: #4991bc;
 }
 
 .fixed_menu li .icon {
+    display: inline-block;
+    vertical-align: middle;
     font-size: 28px;
     color: #fff;
+    width: 40px;
+    height: 45px;
+    background: url("../img/icon/toolbar_icons.png") no-repeat;
 }
 
 .fixed_menu li:hover .icon {
     display: none;
+}
+.fixed_menu li .edit{
+    background-position: 0 0;
+}
+.fixed_menu li .album{
+    background-position: -40px 0;
+}
+.fixed_menu li .friend{
+    background-position: -80px 0;
+}
+.fixed_menu li .interact{
+    background-position: -120px 0;
+}
+.fixed_menu li .invitcard{
+    background-position: -160px 0;
+}
+.fixed_menu li .preview{
+    background-position: -200px 0;
+}
+.fixed_menu li .share_btn{
+    background-position: -240px 0;
 }
 
 .fixed_menu li .text {
@@ -63,6 +90,15 @@
 }
 
 .fixed_menu li:hover .text {
+    display: block;
+}
+
+.nav_bar .fixed_menu li.share .common_sharelist_wrapper {
+    right: -195px;
+    top: 10px;
+}
+
+.nav_bar .fixed_menu li.share:hover .common_sharelist_wrapper{
     display: block;
 }
 
@@ -101,7 +137,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 122px 0 0;
+    padding: 82px 0 0;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -125,18 +161,18 @@
     left: 0;
     top: 32px;
     margin: 0;
-    padding: 0 10px 0 80px;
+    padding: 0 10px 0 70px;
     width: 100%;
-    height: 90px;
+    height: 50px;
     background-color: #fff;
     box-shadow: 0 1px 1px #999;
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 5;
 }
 
 .edit_content .tool_bar .grid {
     float: left;
-    padding: 15px 10px;
+    padding: 4px 10px 3px;
     height: 100%;
     border-right: 1px dashed #e6e6e6;
     box-sizing: border-box;
@@ -156,13 +192,13 @@
     display: block;
     margin: 0;
     border-radius: 4px;
-    padding: 2px 5px 4px;
+    padding: 4px 5px;
 }
 
 .tool_bar .grid li .ybcommon_queryicon_item {
     position: absolute;
-    top: 44px;
-    left: 30px;
+    top: 28px;
+    left: 22px;
     display: none;
     width: 55px;
     height: 0;
@@ -181,9 +217,9 @@
     display: none;
     position: absolute;
     font-size: 12px;
-    top: 65px;
-    left: -11px;
-    width: 100%;
+    top: 44px;
+    left: -25px;
+    width: 80px;
 }
 
 .tool_bar .grid li:hover .page_list{
@@ -193,7 +229,7 @@
 .tool_bar .grid li .page_list .arrow {
     position: absolute;
     top: -8px;
-    left: 48px;
+    left: 45px;
     width: 0;
     height: 0;
     border-bottom: 8px solid #ddd;
@@ -231,17 +267,52 @@
     border-bottom: 1px dashed #ddd;
 }
 
-.tool_bar .grid li .page_list li a {
-    display: block;
-    color: #666;
-}
-
-.edit_content .tool_bar .grid li i {
-    display: block;
+.tool_bar .grid li a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
     text-align: center;
     font-size: 28px;
-    color: #929292;
-    line-height: 35px;
+    color: #999;
+    background: url("../img/icon/toolbar_icons.png") no-repeat;
+}
+.tool_bar .grid li a:hover{
+    background-color: #f6f6f6;
+}
+.tool_bar .grid li .ybicon-addfriend{
+    font-size: 32px;
+}
+.tool_bar .grid li .ybicon-addpage{
+    font-size: 30px;
+}
+.tool_bar .grid li .add_chapter_btn{
+    background-position: 0 -47px;
+}
+.tool_bar .grid li .add_page_btn{
+    background-position: -40px -48px;
+}
+.tool_bar .grid li .add_friend_btn{
+    background-position: -80px -48px;
+}
+.tool_bar .grid li .change_tpl_btn{
+    background-position: -120px -48px;
+}
+.tool_bar .grid li .auto_layout{
+    background-position: -160px -48px;
+}
+.tool_bar .grid li .view_sample_btn{
+    background-position: -200px -48px;
+}
+.tool_bar .grid li .save_page_btn{
+    background-position: -240px -48px;
+}
+.tool_bar .grid li .incomplete_picture{
+    background-position: -280px -48px;
+}
+.tool_bar .grid li .incomplete_text{
+    background-position: -320px -48px;
 }
 
 .edit_content .tool_bar .grid li span {
@@ -251,11 +322,7 @@
 
 .edit_content .tool_bar .grid li a:hover i,
 .edit_content .tool_bar .grid li a:hover span {
-    color: #90c132;
-}
-
-.edit_content .tool_bar .book_info {
-    padding: 5px 10px;
+    color: #666;
 }
 
 .edit_content .book_info .cover {
@@ -283,82 +350,21 @@
     background: url('../img/pc/label_team.png') no-repeat 0 top;
 }
 
-.edit_content .book_info .name {
-    padding-left: 67px;
-}
-
 .edit_content .book_info .name h4 {
+    float: left;
     font-size: 14px;
     color: #333;
     line-height: 40px;
-}
-
-.edit_content .book_info .progress {
-    font-size: 12px;
-    width: 135px;
-    color: #333;
-}
-
-.edit_content .book_info .progress a {
-    display: block;
-    color: #666;
-}
-
-.edit_content .book_info .progress .percent > div {
-    display: block;
-    float: left;
-    box-sizing: border-box;
-}
-
-.edit_content .book_info .progress .percent span {
-    display: inline-block;
-    margin-bottom: 4px;
-    width: 60px;
-    text-align: center;
-}
-
-.grid .progress .percent {
+    max-width: 125px;
     overflow: hidden;
-
-    margin: 0 0 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-
-.grid .progress .percent > div {
-    display: block;
+.edit_content .book_info .name span{
     float: left;
-
-    box-sizing: border-box;
-    padding: 14px 0 0 0;
-}
-
-.grid .progress .percent span {
-    display: inline-block;
-
-    width: 60px;
-
-    text-align: center;
-}
-
-.grid .progress .percent .bar {
-    display: inline-block;
-    float: none;
-
-    width: 60px;
-    height: 5px;
-    padding: 0;
-
-    border-radius: 5px;
-    background-color: #ccc;
-}
-
-.grid .progress .percent .bar span {
-    display: block;
-
-    width: 0;
-    height: 100%;
-
-    border-radius: 5px;
-    background-color: #90c132;
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
 }
 
 .edit_content .tool_bar .print {
@@ -367,7 +373,7 @@
 
 .edit_content .tool_bar .print a {
     display: block;
-    margin: 12px 0 0;
+    margin: 3px 0 0;
     width: 145px;
     height: 35px;
     line-height: 35px;
@@ -412,6 +418,7 @@
 
 .list_mode .item .name span {
     display: inline-block;
+    vertical-align: middle;
     margin-right: 1px;
     width: 82px;
     height: 100%;
@@ -423,6 +430,7 @@
 
 .list_mode .item .name a {
     display: inline-block;
+    vertical-align: middle;
     width: 35px;
     height: 100%;
     text-align: center;
@@ -1468,6 +1476,7 @@
     width: 90%;
     margin: 0 auto;
 }
+
 .edit_pop_container .yb_pop_wrap{
     position: absolute;
     top: 50%;

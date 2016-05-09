@@ -5713,10 +5713,10 @@
 }
 .makebook_stepbacklink_item{
 	float: right;
-	margin: 10px 20px 0 0;
+	margin: 0 20px 0 0;
 	line-height: 30px;
 	color: #999;
-	font-size: 18px;
+	font-size: 16px;
 }
 .makebook_stepbacklink_item span{
 	float: left;
@@ -6061,7 +6061,7 @@
 	background-color: #fff;
 }
 .makebook_mark_item{
-	display: block;
+	display: none;
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -6072,10 +6072,8 @@
 	
 	color: #fff;
 }
-.makebook_choosemethod_wrapper li .makebook_mark_item{
-	display: none;
-}
-.makebook_choosemethod_wrapper .active .makebook_mark_item{
+.active .makebook_mark_item{
+	display: block;
 	color: #fff;
 	border-color: transparent #8cc04e #8cc04e transparent;
 }
@@ -6167,6 +6165,9 @@
 	margin: 15px 0 15px 30px;
 	width: 140px;
 	color: #333;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .makebook_setupinvitcard_wrapper li label{
 	margin: 0 5px;
@@ -6178,6 +6179,7 @@
 	margin: 30px 40px;
 }
 .makebook_resetandsave_wrapper a{
+	display: inline-block;
 	margin: 0 10px 0 0;
 	padding: 5px 10px;
 	border-radius: 6px;
@@ -6361,8 +6363,9 @@
 .makebook_recommend_wrapper{
 	margin: 30px 0;
 	width: 100%;
+	overflow: hidden;
 }
-.makebook_recommend_wrapper>ul{
+.makebook_recommendlist_wrapper{
 	margin: 0 0 50px 0;
 	width: 100%;
 	overflow: hidden;
@@ -6371,11 +6374,13 @@
 	float: left;
 	margin: 0 13px;
 	width: 196px;
+	cursor: pointer;
 }
 
 .makebook_recommend_wrapper .title{
 	display: block;
 	margin: 20px 0 5px 0;
+	overflow: hidden;
 }
 .makebook_recommend_wrapper .title i{
 	display: inline-block;
@@ -6423,7 +6428,11 @@
 .makebook_recommend_wrapper .bookcover{
 	position: relative;
 	overflow: hidden;
-	height: 260px;
+/*	height: 260px;*/
+}
+.makebook_recommend_wrapper .bookcover img{
+	display: block;
+	width: 100%;
 }
 .makebook_recommend_wrapper .bookcover div{
 	width: 100%;
@@ -6450,6 +6459,9 @@
 }
 
 /*~~~~~~~~~~makebook_step_popup.html~~~~~~~~~~*/
+.makebook_steppopup_container{
+	background-color: #ddd;
+}
 .makebook_steppopup_wrapper{
 	background-color: #ddd;
 	overflow: hidden;
@@ -6502,6 +6514,9 @@
 .makebook_splist_wrapper>.active .title, .makebook_splist_wrapper>.active .title:hover{
 	margin: 0;
 	border: 3px solid #90c132;
+}
+.makebook_splist_wrapper .active .tips{
+	color: #999;
 }
 
 .makebook_splist_wrapper .title:hover{
@@ -6557,8 +6572,7 @@
 }
 .makebook_splist_wrapper .tips{
 	margin: 30px 0 0 0;
-
-	color: #999;
+	color: #cccccc;
 }
 .makebook_splist_wrapper .tips li{
 	display: inline-block;
@@ -6636,7 +6650,6 @@
 	padding: 10px 0 10px 80px
 }
 .makebook_spsetup_wrapper .makebook_resetandsave_wrapper{
-	display: block;
 	margin: 20px 0 0 0;
 }
 .makebook_spsetup_wrapper .makebook_setupshare_wrapper{
@@ -6673,6 +6686,75 @@
 .makebook_sprecommend_wrapper{
 	width: 940px;
 }
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
+	width: 145px;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .title .bookname{
+	width: 100%;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .pages{
+	margin: 0 10px 0 20px;
+	font-size: 12px;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .info{
+	text-align: left;
+}
+.makebook_recommend_wrapper .bookcover{
+	border: 2px solid transparent;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .bookcover{
+	border: 2px solid #ccc;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper>.active .bookcover{
+	border: 2px solid #8cc04e;
+}
 
-
+.makebook_spprogress_wrapper {
+	margin: 20px auto;
+	width: 320px;
+	height: 20px;
+}
+.makebook_spprogress_wrapper li{
+	float: left;
+}
+.makebook_spprogressbar_wrapper{
+	display: block;
+}
+.makebook_spprogress_wrapper .actived .progressbar_head{
+	background-color: rgba(144,193,59,0.8);
+}
+.makebook_spprogress_wrapper .active .progressbar_head{
+	background-color: #fff;
+	position: relative;
+}
+.makebook_spprogress_wrapper .active .progressbar_head i{
+	display: block;
+	background-color: rgba(255,255,255,0.5);
+	width: 100%;
+	height: 100%;
+	padding: 8px;
+	border-radius: 50%;
+	position: absolute;
+	left: -8px;
+	top: -8px;
+}
+.makebook_spprogress_wrapper .progressbar_head{
+	float: left;
+	width: 15px;
+	height: 15px;
+	line-height: 20px;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0.5);
+}
+.makebook_spprogress_wrapper .progressbar_middle{
+	float: left;
+	margin: 6px 0 0 0;
+	width: 50px;
+	height: 4px;
+	line-height: 20px;
+	background-color: rgba(0,0,0,0.5);
+}
+.makebook_spprogress_wrapper .actived .progressbar_middle{
+	background-color: rgba(144,193,59,0.8);
+}
 

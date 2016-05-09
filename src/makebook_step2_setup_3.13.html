@@ -502,14 +502,13 @@
 	function setup() {
 		var inputEl = $("input[type=radio],input[type=checkbox]"),
 			setupEl = $('.makebook_setupinvitcard_wrapper'),
-			resetandsaveEl = $('.makebook_setupinvitcard_wrapper .resetandsave'),
-			shareEl = $('.makebook_setupinvitcard_wrapper .share'),
-			customTextInput = $('.makebook_iccustomoption_wrapper input')
+			resetandsaveEl = $('.makebook_resetandsave_wrapper'),
+			shareEl = $('.makebook_setupshare_wrapper'),
+			customTextInput = $('.makebook_iccustomoption_wrapper input');
 		customTextInput.attr('disabled', 'disabled');
 		//点击修改邀请卡
 		shareEl.children('a').click(function() {
-			var $this = $(this),
-				inputEl = $("input[type=radio],input[type=checkbox]");
+			var $this = $(this);
 			if ($this.hasClass('active')) {
 				$this.removeClass('active');
 			};
@@ -521,8 +520,7 @@
 			$this.parent().hide();
 		});
 		//点击保存
-		$('.makebook_setupinvitcard_wrapper .resetandsave .save').click(function() {
-			var inputEl = $("input[type=radio],input[type=checkbox]");
+		$('.makebook_resetandsave_wrapper .save').click(function() {
 			resetandsaveEl.hide();
 			customTextInput.attr('disabled', 'disabled');
 			inputEl.iCheck('disable');

@@ -5653,6 +5653,7 @@
 	margin: 20px 0 0 0;
 	position: relative;
 	top: -70px;
+	opacity: 0;
 	transform-origin:center 0;
 	transform: scaleY(0.2);
 	transition: all 0.4s;
@@ -5663,6 +5664,7 @@
 }
 .makebook_stepindicator_wrapper:hover>ul{
 	top:0;
+	opacity: 1;
 	transition: top 0.2s;
 	transform: scaleY(1);
 	-ms-transition: top 0.2s;
@@ -6381,7 +6383,11 @@
 }
 .makebook_recommend_wrapper{
 	margin: 30px 0;
-	width: 100%;
+	overflow: hidden;
+}
+.makebook_recommend_wrapper ul{
+	float: left;
+	width: 817px;
 	overflow: hidden;
 }
 .makebook_recommendlist_wrapper{
@@ -6391,11 +6397,42 @@
 }
 .makebook_recommend_wrapper li{
 	float: left;
-	margin: 0 13px;
+	margin: 0 12px;
 	width: 196px;
 	cursor: pointer;
 }
-
+.makebook_recommend_wrapper li:first-child{
+	margin: 0 10px 0 0;
+}
+.makebook_recommend_wrapper li:last-child{
+	margin: 0 0 0 10px;
+}
+.makebook_recommend_wrapper>a{
+	float: left;
+	width: 40px;
+	height: 200px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 200px;
+	font-size: 40px;
+	color: #dddddd;
+	transition: background-color 0.3s;
+}
+.makebook_recommend_wrapper>a:active{
+	background-color: #666;
+}
+.makebook_recommend_wrapper>a:hover{
+	background-color: #ebebeb;
+	transition: background-color 0.3s;
+}
+.makebook_recommend_wrapper .left{
+	border-top-left-radius:7px;
+	border-bottom-left-radius:7px;
+}
+.makebook_recommend_wrapper .right{
+	border-top-right-radius:7px;
+	border-bottom-right-radius:7px;
+}
 .makebook_recommend_wrapper .title{
 	display: block;
 	margin: 20px 0 5px 0;
@@ -6447,6 +6484,7 @@
 .makebook_recommend_wrapper .bookcover{
 	position: relative;
 	overflow: hidden;
+	border: 2px solid transparent;
 /*	height: 260px;*/
 }
 .makebook_recommend_wrapper .bookcover img{
@@ -6493,7 +6531,7 @@
 	position: relative;
 }
 .makebook_spmain_wrapper{
-	padding: 20px 30px;
+	padding: 20px;
 }
 .makebook_steppopup_wrapper .makebook_steptitle_wrapper{
 	padding: 0 0 20px 0;
@@ -6518,8 +6556,8 @@
 }
 .makebook_splist_wrapper>li{
 	float: left;
-	margin: 7px;
-	width: 186px;
+	margin: 10px;
+	width: 185px;
 }
 .makebook_splist_wrapper>li .title{
 	display: block;
@@ -6709,9 +6747,7 @@
 .makebook_sprecommend_wrapper{
 	width: 940px;
 }
-.makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
-	width: 145px;
-}
+
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper .title .bookname{
 	width: 100%;
 }
@@ -6722,19 +6758,32 @@
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper .info{
 	text-align: left;
 }
-.makebook_recommend_wrapper .bookcover{
-	border: 2px solid transparent;
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
+	width: 145px;
+	
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li .bookcover{
+	box-shadow: none;
+	transition: all 0.3s;
 }
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .bookcover{
 	border: 2px solid #999;
 	box-shadow: 0 0 8px #999;
+	transition: all 0.3s;
 }
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active .backcover, .makebook_sprecommend_wrapper .makebook_recommend_wrapper .active:hover .backcover{
+	border: 2px solid #8cc04e;
+	box-shadow: 0 0 8px #999;
+}
+
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .makebook_mark_item{
 	display: block;
-	border-color: transparent #999999 #999999 transparent
+	border-color: transparent #999999 #999999 transparent;
+	
 }
-.makebook_sprecommend_wrapper .makebook_recommend_wrapper>.active .bookcover{
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active .bookcover{
 	border: 2px solid #8cc04e;
+	box-shadow: 0 0 3px #999;
 }
 
 .makebook_spprogress_container{

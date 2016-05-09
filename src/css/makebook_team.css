@@ -24,7 +24,7 @@
 .team_edit_container aside .nav_bar {
     position: absolute;
     right: 0;
-    width: 70px;
+    width: 100%;
     background-color: #486480;
 }
 
@@ -49,12 +49,38 @@
 }
 
 .fixed_menu li .icon {
+    display: inline-block;
+    vertical-align: middle;
     font-size: 28px;
     color: #fff;
+    width: 40px;
+    height: 45px;
+    background: url("../img/icon/toolbar_icons.png") no-repeat;
 }
 
 .fixed_menu li:hover .icon {
     display: none;
+}
+.fixed_menu li .edit{
+    background-position: 0 0;
+}
+.fixed_menu li .album{
+    background-position: -40px 0;
+}
+.fixed_menu li .friend{
+    background-position: -80px 0;
+}
+.fixed_menu li .interact{
+    background-position: -120px 0;
+}
+.fixed_menu li .invitcard{
+    background-position: -160px 0;
+}
+.fixed_menu li .preview{
+    background-position: -200px 0;
+}
+.fixed_menu li .share_btn{
+    background-position: -240px 0;
 }
 
 .fixed_menu li .text {
@@ -241,12 +267,7 @@
     border-bottom: 1px dashed #ddd;
 }
 
-.tool_bar .grid li .page_list li a {
-    display: block;
-    color: #666;
-}
-
-.tool_bar .grid li i {
+.tool_bar .grid li a {
     display: inline-block;
     vertical-align: middle;
     width: 32px;
@@ -255,6 +276,10 @@
     text-align: center;
     font-size: 28px;
     color: #999;
+    background: url("../img/icon/toolbar_icons.png") no-repeat;
+}
+.tool_bar .grid li a:hover{
+    background-color: #f6f6f6;
 }
 .tool_bar .grid li .ybicon-addfriend{
     font-size: 32px;
@@ -262,6 +287,34 @@
 .tool_bar .grid li .ybicon-addpage{
     font-size: 30px;
 }
+.tool_bar .grid li .add_chapter_btn{
+    background-position: 0 -47px;
+}
+.tool_bar .grid li .add_page_btn{
+    background-position: -40px -48px;
+}
+.tool_bar .grid li .add_friend_btn{
+    background-position: -80px -48px;
+}
+.tool_bar .grid li .change_tpl_btn{
+    background-position: -120px -48px;
+}
+.tool_bar .grid li .auto_layout{
+    background-position: -160px -48px;
+}
+.tool_bar .grid li .view_sample_btn{
+    background-position: -200px -48px;
+}
+.tool_bar .grid li .save_page_btn{
+    background-position: -240px -48px;
+}
+.tool_bar .grid li .incomplete_picture{
+    background-position: -280px -48px;
+}
+.tool_bar .grid li .incomplete_text{
+    background-position: -320px -48px;
+}
+
 .edit_content .tool_bar .grid li span {
     font-size: 12px;
     color: #666;
@@ -1423,6 +1476,7 @@
     width: 90%;
     margin: 0 auto;
 }
+
 .edit_pop_container .yb_pop_wrap{
     position: absolute;
     top: 50%;

@@ -5632,6 +5632,7 @@
 	text-align: center;
 	border-radius: 50%;
 	color: #cccccc;
+	cursor: pointer;
 }
 .makebook_stepindicator_wrapper .indicator label{
 	position: relative;
@@ -5639,6 +5640,7 @@
 	font-size: 30px;
 	letter-spacing: -4px;
 	font-weight: lighter;
+	cursor: pointer;
 }
 .makebook_stepindicator_wrapper .indicator label:first-child{
 	color: #ff8630;
@@ -5649,7 +5651,24 @@
 }
 .makebook_stepindicator_wrapper ul{
 	margin: 20px 0 0 0;
+	position: relative;
+	top: -70px;
+	transform-origin:center 0;
+	transform: scaleY(0.2);
+	transition: all 0.4s;
+	-ms-transform-origin:center 0;
+	-ms-transform: scaleY(0.2);
+	-ms-transition: all 0.4s;
+	z-index: -1;
 }
+.makebook_stepindicator_wrapper:hover>ul{
+	top:0;
+	transition: top 0.2s;
+	transform: scaleY(1);
+	-ms-transition: top 0.2s;
+	-ms-transform: scaleY(1);
+}
+
 .makebook_stepindicator_wrapper ul li{
 	font-size: 12px;
 	text-align: center;	
@@ -6707,7 +6726,12 @@
 	border: 2px solid transparent;
 }
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .bookcover{
-	border: 2px solid #ccc;
+	border: 2px solid #999;
+	box-shadow: 0 0 8px #999;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .makebook_mark_item{
+	display: block;
+	border-color: transparent #999999 #999999 transparent
 }
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper>.active .bookcover{
 	border: 2px solid #8cc04e;

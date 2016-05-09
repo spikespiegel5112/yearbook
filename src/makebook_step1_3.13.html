@@ -347,16 +347,6 @@
 		$('.makebook_choosetype_wrapper li').hover(function() {
 			$(this).siblings().removeClass('active').end().addClass('active');
 		});
-		$('.makebook_stepindicator_wrapper .indicator').click(function() {
-			var $this=$(this),
-				indicatorList=$this.siblings();
-			if (thisParent.hasClass('active')) {
-				thisParent.removeClass('active');
-			}else{
-				thisParent.addClass('active')	
-			}
-			$('.makebook_stepindicator_wrapper ul').animate('top', 0)
-		})
 	}
 	</script>
 </body>

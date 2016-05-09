@@ -629,6 +629,10 @@
 			progressbarLiEl.eq(index-1).siblings().removeClass('active').end().addClass('active').removeClass('actived');
 			popupWrapperEl.align();
 		});
+		//点击关闭
+		$('.makebook_spclosebtn_item').click(function(){
+			$('.makebook_steppopup_wrapper').detach();
+		})
 	}
 	//初始化icheck
 	function icheck(selector) {

@@ -514,8 +514,8 @@
                 <div class="resource_list">
                     <div class="res_tab">
                         <ul>
-                            <li>照片</li>
-                            <li class="on">互动</li>
+                            <li class="on">照片</li>
+                            <li>互动</li>
                             <li>模板</li>
                             <li >评论</li>
                         </ul>
@@ -794,7 +794,7 @@
                                 <div class="tpl">
                                     <div class="actbar topic">
                                         <label>请选择模板（<span>155</span>）</label>
-                                        <a class="cm_fr" href="javascript:;"><i class="icon-tasks"></i>高级筛选</a>
+                                        <a class="cm_fr ad_filter" href="javascript:;"><i class="icon-tasks"></i>高级筛选</a>
                                     </div>
                                     <div class="chaptermake_tpl">
                                         <ul>
@@ -955,8 +955,8 @@
 </div>
 <!--弹出层-->
 <!--添加章节-->
-<div ia="addChapterCon" class="edit_pop_container">
-    <div class="add_chapter_con">
+<div id="addChapterCon" class="edit_pop_container">
+    <div class="add_chapter_con yb_pop_wrap">
         <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
         <h4 class="title">批量修改照片</h4>
         <label>选择章节类型：</label>
@@ -1021,6 +1021,39 @@
         <div class="action_bar">
             <label><input type="checkbox" name="">是否在目录中显示</label>
             <a href="javascript:;" class="yb_book_btn add_section_sbbtn">确认添加</a>
+        </div>
+    </div>
+</div>
+<!--高级筛选-->
+<div id="advancedFilter" class="edit_pop_container">
+    <div class="advanced_filter yb_pop_wrap">
+        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+        <h4 class="title">高级筛选</h4>
+        <div class="filter_options">
+            <form>
+                <div class="option">
+                    <span>图片数量：</span><input type="text" placeholder="" value="">
+                    <span>文本数量：</span><input type="text" placeholder="" value="">
+                </div>
+                <div class="option">
+                    <span>展示方式：</span>
+                    <label><input type="radio" name="display" checked="checked">全部</label>
+                    <label><input type="radio" name="display">单页</label>
+                    <label><input type="radio" name="display">双页</label>
+                </div>
+                <div class="option">
+                    <span>包含互动：</span>
+                    <label><input type="radio" name="interact" checked="checked">全部</label>
+                    <label><input type="radio" name="interact">包含</label>
+                    <label><input type="radio" name="interact">不包含</label>
+                </div>
+                <div class="option">
+                    <label>模板编号：<input type="text" placeholder="" value=""></label>
+                </div>
+            </form>
+        </div>
+        <div class="action_bar">
+            <a href="javascript:;" class="yb_book_btn">搜索</a>
         </div>
     </div>
 </div>
@@ -1521,6 +1554,8 @@
         //添加章节
         addChapter();
         determineWindowSize();
+        //列表、编辑模式切换
+        swichPageMode();
     });
 
     //渲染控件样式
@@ -1565,7 +1600,7 @@
         });
     }
 
-    //判断窗口大小，大于1440执行回调1，小于等于1440执行回调2，小于等于1280执行回调3
+    //判断窗口大小，小于等于1280折叠侧栏
     function determineWindowSize(size) {
         $('.yb_cm_header').css('z-index','6');
         var winWidth = $(window).width();
@@ -1628,6 +1663,18 @@
         });
     }
 
+    function swichPageMode(){
+        //返回章节列表
+        $('.back_list_mode').click(function(){
+            $('.team_edit_container .edit_content').removeClass('single').addClass('list');
+        })
+        //双击章节列表图片跳转到单页模式
+        $('.page_list .figure').dblclick(function(){
+            $('.team_edit_container .edit_content').removeClass('list').addClass('single');
+        })
+    }
+
+
     //资源tab
     function resourceTab() {
         $(".resource_list").slide({
@@ -1646,6 +1693,15 @@
             $(this).find('.interact_des').delay(500).fadeIn();
         },function(){
             $(this).find('.interact_des').fadeOut();
+        });
+
+        //模板-高级筛选
+        $('.ad_filter').click(function(){
+            $('#advancedFilter').fadeIn('fast');
+
+            $('.advanced_filter .close').click(function(){
+                $('#advancedFilter').fadeOut('fast');
+            })
         });
 
         //模板选中事件
@@ -1835,7 +1891,7 @@
     //添加章节
     function addChapter(){
         $('.add_chapter_btn').click(function(){
-            $('.edit_pop_container').fadeIn('fast');
+            $('#addChapterCon').fadeIn('fast');
             jQuery(".tpl_chapter_list").slide({
                 mainCell: ".bd ul",
                 titCell: ".hd a",
@@ -1849,8 +1905,8 @@
             });
         });
 
-        $('.edit_pop_container .close').click(function(){
-            $('.edit_pop_container').fadeOut('fast');
+        $('.add_chapter_con .close').click(function(){
+            $('#addChapterCon').fadeOut('fast');
         })
 
         //选择章节
@@ -1865,6 +1921,7 @@
             $('.tpl_caption input').val(tplCaption);
         })
     }
+
 </script>
 </body>
 

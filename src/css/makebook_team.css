@@ -10,7 +10,6 @@
     top: 32px;
     height: 100%;
     box-sizing: border-box;
-    padding-top: 50px;
     z-index: 30;
     width: 1150px;
     left: -1150px;
@@ -24,8 +23,9 @@
 .team_edit_container aside .nav_bar {
     position: absolute;
     right: 0;
-    width: 100%;
-    background-color: #486480;
+    width: 70px;
+    padding-top: 50px;
+    background-color: #34495e;
 }
 
 .nav_bar .fixed_menu > li {
@@ -35,6 +35,7 @@
     height: 70px;
     text-align: center;
     line-height: 70px;
+    background-color: #486480;
     border-bottom: 1px solid #405972;
     box-sizing: border-box;
 }
@@ -188,11 +189,56 @@
     padding: 0 8px;
 }
 
-.edit_content .tool_bar .grid li a{
-    display: block;
+.tool_bar .grid li a {
+    display: inline-block;
+    vertical-align: middle;
     margin: 0;
-    border-radius: 4px;
     padding: 4px 5px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 28px;
+    color: #999;
+    background: url("../img/icon/toolbar_icons.png") no-repeat;
+    border-radius: 4px;
+    opacity: .75;
+}
+.tool_bar .grid li a:hover{
+    opacity: 1;
+}
+.tool_bar .grid li .ybicon-addfriend{
+    font-size: 32px;
+}
+.tool_bar .grid li .ybicon-addpage{
+    font-size: 30px;
+}
+.tool_bar .grid li .add_chapter_btn{
+    background-position: 0 -47px;
+}
+.tool_bar .grid li .add_page_btn{
+    background-position: -40px -48px;
+}
+.tool_bar .grid li .add_friend_btn{
+    background-position: -80px -48px;
+}
+.tool_bar .grid li .change_tpl_btn{
+    background-position: -120px -48px;
+}
+.tool_bar .grid li .auto_layout{
+    background-position: -160px -48px;
+}
+.tool_bar .grid li .view_sample_btn{
+    background-position: -200px -48px;
+}
+.tool_bar .grid li .save_page_btn{
+    background-position: -240px -48px;
+}
+.tool_bar .grid li .incomplete_picture{
+    background-position: -280px -48px;
+}
+.tool_bar .grid li .incomplete_text{
+    background-position: -320px -48px;
 }
 
 .tool_bar .grid li .ybcommon_queryicon_item {
@@ -266,65 +312,15 @@
     text-align: left;
     border-bottom: 1px dashed #ddd;
 }
-
-.tool_bar .grid li a {
-    display: inline-block;
-    vertical-align: middle;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    text-align: center;
-    font-size: 28px;
-    color: #999;
-    background: url("../img/icon/toolbar_icons.png") no-repeat;
-}
-.tool_bar .grid li a:hover{
-    background-color: #f6f6f6;
-}
-.tool_bar .grid li .ybicon-addfriend{
-    font-size: 32px;
-}
-.tool_bar .grid li .ybicon-addpage{
-    font-size: 30px;
-}
-.tool_bar .grid li .add_chapter_btn{
-    background-position: 0 -47px;
-}
-.tool_bar .grid li .add_page_btn{
-    background-position: -40px -48px;
-}
-.tool_bar .grid li .add_friend_btn{
-    background-position: -80px -48px;
-}
-.tool_bar .grid li .change_tpl_btn{
-    background-position: -120px -48px;
-}
-.tool_bar .grid li .auto_layout{
-    background-position: -160px -48px;
-}
-.tool_bar .grid li .view_sample_btn{
-    background-position: -200px -48px;
-}
-.tool_bar .grid li .save_page_btn{
-    background-position: -240px -48px;
-}
-.tool_bar .grid li .incomplete_picture{
-    background-position: -280px -48px;
-}
-.tool_bar .grid li .incomplete_text{
-    background-position: -320px -48px;
-}
-
-.edit_content .tool_bar .grid li span {
+.tool_bar .grid li .page_list li a{
     font-size: 12px;
+    display: inline;
     color: #666;
+    opacity: 1;
 }
-
-.edit_content .tool_bar .grid li a:hover i,
-.edit_content .tool_bar .grid li a:hover span {
-    color: #666;
+.tool_bar .grid li .page_list li a:hover{
+    color: #31b8d3;
 }
-
 .edit_content .book_info .cover {
     position: relative;
     float: left;
@@ -960,6 +956,18 @@
     right: -19.5%;
 }
 
+@media  screen and (max-width:1280px) {
+    .single_mode .resource_list{
+        width: 28%;
+    }
+    .single_mode .resource_list.shrink{
+        right: -27.5%;
+    }
+    .single_mode .resource_shrink {
+        right: 28%;
+    }
+}
+
 .resource_list .res_tab {
     position: relative;
     padding: 20px 0 0;
@@ -1348,7 +1356,20 @@
     height: 56px;
 }
 
-.res_tab_con .comment_list .header{
+.comment .comment_list{
+    position: relative;
+    width: 100%;
+}
+.comment .comment_list li{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 25px 0;
+    border-bottom: 1px solid #eaeeef;
+    box-sizing: border-box;
+}
+.comment .comment_list .header{
+    float: left;
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
@@ -1358,38 +1379,12 @@
     overflow: hidden;
 }
 
-.res_tab_con .comment_list .header img{
+.comment .comment_list .header img{
     width: 100%;
     height: 100%;
 }
 
-.res_tab_con .comment_list li .content{
-    position: relative;
-    margin: 10px 0;
-    height: 66px;
-    font-size: 12px;
-    color: #666;
-    line-height: 24px;
-    word-break: break-all;
-    overflow: hidden;
-}
-
-.res_tab_con .comment_list{
-    position: relative;
-    width: 100%;
-}
-.res_tab_con .comment_list li{
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 15px 25px 0;
-    border-bottom: 1px solid #eaeeef;
-    box-sizing: border-box;
-}
-.res_tab_con .comment_list .header{
-    float: left;
-}
-.res_tab_con .comment_list .name{
+.comment .comment_list .name{
     display: block;
     width: 100%;
     max-width: 150px;
@@ -1400,13 +1395,13 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.res_tab_con .comment_list .time{
+.comment .comment_list .time{
     display: block;
     line-height: 20px;
     font-size: 12px;
     color: #999;
 }
-.res_tab_con .comment_list .praise{
+.comment .comment_list .praise{
     position: absolute;
     top: 15px;
     right: 25px;
@@ -1414,24 +1409,31 @@
     font-size: 12px;
     color: #999;
 }
-.res_tab_con .comment_list .praise i{
+.comment .comment_list .praise i{
     font-size: 14px;
     vertical-align: middle;
     margin-right: 5px;
 }
-.res_tab_con .comment_list li .content{
+.comment .comment_list li .content{
     height: auto;
     max-height: 44px;
+    position: relative;
+    margin: 10px 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 24px;
+    word-break: break-all;
+    overflow: hidden;
 }
-.res_tab_con > ul{
+.comment > ul{
     position: relative;
     height: 100%;
 }
-.res_tab_con > ul > li{
+.comment > ul > li{
     position: relative;
     height: inherit;
 }
-.res_tab_con .comment_input{
+.comment .comment_input{
     position: relative;
     bottom: 0;
     left: 0;
@@ -1439,21 +1441,21 @@
     height: 190px;
     background-color: #f1f1f1;
 }
-.res_tab_con .comment_input label{
+.comment .comment_input label{
     display: block;
     padding: 0 15px;
     line-height: 35px;
     font-size: 12px;
     color: #4d4d4d;
 }
-.res_tab_con .comment_input textarea{
+.comment .comment_input textarea{
     display: block;
     width: 90%;
     height: 90px;
     margin: 0 auto;
     resize: none;
 }
-.res_tab_con .comment_input button{
+.comment .comment_input button{
     float: right;
     margin: 10px 15px;
     width: 80px;
@@ -1466,8 +1468,8 @@
     background-color: #70ca5d;
     border: 1px solid #70ca5d;
 }
-.res_tab_con .comment_input button:hover,
-.res_tab_con .comment_input button:active{
+.comment .comment_input button:hover,
+.comment .comment_input button:active{
     background-color: #43b05d;
 }
 
@@ -1688,27 +1690,137 @@
 .aside_content .res_tab{
     z-index: 1;
 }
-
+.aside_content .res_tab li.on{
+    background-color: #fff;
+}
+.aside_content .res_tab .add_album{
+    display: inline-block;
+    width: 70px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    background-color: #fcfeff;
+    border-top: 1px solid #d9dfe5;
+    border-right: 1px solid #d9dfe5;
+    border-bottom: 1px solid #d9dfe5;
+    box-sizing: border-box;
+}
+.aside_content .res_tab .add_album:hover{
+    color: #90c132;
+}
 .aside_content .res_tab_con{
     position: relative;
     width: 100%;
+    padding: 0 10px;
     margin: -1px 0 0;
     background-color: #fff;
     border: 1px solid #e8ecf0;
     border-left: 0;
     z-index: 0;
 }
+.action_wrap{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.action_wrap .yb_team_btn{
+    float: right;
+    margin: 10px 0 10px 10px;
+}
+.yb_team_btn{
+    font-size: 14px;
+    line-height: 35px;
+    display: block;
+    min-width: 56px;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    background: #4f9ed4;
+}
+.yb_team_btn:hover{
+    background: #e7b54b;
+}
+.cm_team_btn{
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #53c16b;
+    border-radius: 4px;
+}
+.cm_team_btn:hover{
+    background-color: #41ae59;
+}
+.cm_team_btn i{
+    font-size: 14px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.yb_team_pagination{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+.yb_team_pagination ul{
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    background: linear-gradient(#fff,#f3f3f3);
+    border-radius: 20px;
+    box-shadow: 0 1px 1px #aaa;
+    overflow: hidden;
+}
+.yb_team_pagination li{
+    float: left;
+}
+.yb_team_pagination li a{
+    float: left;
+    width: 38px;
+    text-align: center;
+    font-size: 15px;
+    color: #7e7e7e;
+    border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #fff;
+}
+.yb_team_pagination li a.active{
+    color: #e72b18;
+}
+.yb_team_pagination li a:hover{
+    background-color: #f3f3f3;
+}
+.yb_team_pagination li .prev{
+    padding-left: 6px;
+    border-left: 0;
+}
+.yb_team_pagination li .next{
+    padding-right: 6px;
+    border-right: 0;
+}
+.yb_team_pagination li a i{
+    font-size: 15px;
+}
 .aside_content .res_tab_con .al_photo_list{
     position: relative;
     width: 100%;
 }
 
-.aside_content .al_photo_list li{
+/*.aside_content .al_photo_list li{
     position: relative;
     display: inline-block;
     margin: 10px 8px;
-    padding: 6px 5px 0;
+    padding: 6px 0 0;
     width: 240px;
+    height: 225px;
     text-align: center;
     background-color: #f6f6f6;
     border-radius: 4px;
@@ -1717,7 +1829,7 @@
 }
 .aside_content .al_photo_list li .actbar{
     margin: 0;
-    padding: 0;
+    padding: 0 6px;
 }
 .al_photo_list li .actbar span{
     max-width: 152px;
@@ -1734,6 +1846,7 @@
 }
 .al_photo_list li .img{
     position: relative;
+    display: block;
     width: 228px;
     height: 188px;
     margin: 0 auto;
@@ -1754,7 +1867,7 @@
 .al_photo_list li .img:hover .btn_bg{
     display: block;
 }
-.al_photo_list li .img .btn_bg a {
+.al_photo_list li .img .btn_bg span {
     font-size: 16px;
     line-height: 36px;
     display: block;
@@ -1767,11 +1880,78 @@
     border: 2px solid #fff;
     border-radius: 4px;
 }
-.al_photo_list li .img:hover .btn_bg a {
+.al_photo_list li .img:hover .btn_bg span {
+    -webkit-animation: viewBtnSlideUp .2s ease;
+    animation: viewBtnSlideUp .2s ease;
+}*/
+.aside_content .al_photo_list .img{
+    position: relative;
+    display: inline-block;
+    margin: 10px 8px;
+    padding: 6px 0 0;
+    width: 240px;
+    height: 225px;
+    text-align: center;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px -2px rgba(0,0,0,.3);
+    box-sizing: border-box;
+}
+.al_photo_list .img img{
+    width: 228px;
+    height: 188px;
+}
+.al_photo_list .img .actbar{
+    margin: 0;
+    padding: 0 6px;
+    line-height: 25px;
+    height: 25px;
+}
+.al_photo_list .img .actbar h5{
+    max-width: 152px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.al_photo_list .img .actbar span{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.al_photo_list .img .actbar span:hover{
+    color: #90c132;
+}
+.al_photo_list .img .actbar .ybicon-commentsolid{
+    font-size: 12px;
+}
+.al_photo_list .img .btn_bg{
+    display: none;
+    position: absolute;
+    width: 228px;
+    height: 188px;
+    top: 6px;
+    left: 6px;
+    background: rgba(132,209,148,.7);
+}
+.al_photo_list .img:hover .btn_bg{
+    display: block;
+}
+.al_photo_list .img .btn_bg span {
+    font-size: 16px;
+    line-height: 36px;
+    display: block;
+    box-sizing: border-box;
+    width: 135px;
+    height: 40px;
+    margin: 74px auto;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+}
+.al_photo_list .img:hover .btn_bg span {
     -webkit-animation: viewBtnSlideUp .2s ease;
     animation: viewBtnSlideUp .2s ease;
 }
-
 @keyframes viewBtnSlideUp
 {
     from

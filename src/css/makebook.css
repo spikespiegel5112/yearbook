@@ -6781,11 +6781,13 @@
 	border-color: transparent #999999 #999999 transparent;
 	
 }
-.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active .bookcover{
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active .bookcover, .makebook_sprecommend_wrapper .makebook_recommend_wrapper .active:hover .bookcover{
 	border: 2px solid #8cc04e;
-	box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 8px #999;
 }
-
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active:hover .makebook_mark_item{
+	border-color: transparent #8cc04e #8cc04e transparent;
+}
 .makebook_spprogress_container{
 	width: 100%;
 }

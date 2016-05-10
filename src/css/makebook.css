@@ -5632,6 +5632,7 @@
 	text-align: center;
 	border-radius: 50%;
 	color: #cccccc;
+	cursor: pointer;
 }
 .makebook_stepindicator_wrapper .indicator label{
 	position: relative;
@@ -5639,6 +5640,7 @@
 	font-size: 30px;
 	letter-spacing: -4px;
 	font-weight: lighter;
+	cursor: pointer;
 }
 .makebook_stepindicator_wrapper .indicator label:first-child{
 	color: #ff8630;
@@ -5649,7 +5651,26 @@
 }
 .makebook_stepindicator_wrapper ul{
 	margin: 20px 0 0 0;
+	position: relative;
+	top: -70px;
+	opacity: 0;
+	transform-origin:center 0;
+	transform: scaleY(0.2);
+	transition: all 0.4s;
+	-ms-transform-origin:center 0;
+	-ms-transform: scaleY(0.2);
+	-ms-transition: all 0.4s;
+	z-index: -1;
 }
+.makebook_stepindicator_wrapper:hover>ul{
+	top:0;
+	opacity: 1;
+	transition: top 0.2s;
+	transform: scaleY(1);
+	-ms-transition: top 0.2s;
+	-ms-transform: scaleY(1);
+}
+
 .makebook_stepindicator_wrapper ul li{
 	font-size: 12px;
 	text-align: center;	
@@ -5660,7 +5681,7 @@
 	border: 1px solid #ff8630;
 }
 .makebook_stepindicator_wrapper ul .active label{
-	color: #000;
+	color: #666;
 }
 .makebook_stepindicator_wrapper ul li span{
 	display: block;
@@ -5711,18 +5732,22 @@
 	padding: 20px 0;
 	background-color: #fff;
 }
-.makebook_steptitle_wrapper .back{
+.makebook_stepbacklink_item{
 	float: right;
-	margin: 10px 20px 0 0;
+	margin: 0 20px 0 0;
 	line-height: 30px;
 	color: #999;
-	font-size: 14px;
+	font-size: 16px;
 }
-.makebook_steptitle_wrapper .back span{
+.makebook_stepbacklink_item span{
 	float: left;
 	margin: 0 10px;
 	font-size: 20px;
 	line-height: 29px;
+	color: #ccc;
+}
+.makebook_stepbacklink_item:hover{
+	text-decoration: underline;
 }
 .makebook_stepdesc_wrapper{
 	display: inline-block;
@@ -5864,7 +5889,7 @@
 	width: 80px;
 	position: relative;
 }
-.makebook_compicon_item i{
+.makebook_compicon_item .frame{
 	display: block;
 	width: 100%;
 	line-height: 80px;
@@ -5873,21 +5898,19 @@
 	opacity: 0.8;
 	color: #8cc04e;
 }
-.makebook_compicon_item .frame{
-	position: absolute;
-}
 
 .makebook_compicon_item span{
 	display: block;
+	width: 100%;
 	height: 80px;
 	line-height: 80px;
 	text-align: center;
-	font-size:35px;
+	font-size:30px;
 	color: #8cc04e;
+	position: absolute;
+	top: 0
 }
-.makebook_compicon_item .ybicon-cover{
-	font-size: 66px;
-}
+
 .makebook_bookcomponent_item .type{
 	float: left;
 }
@@ -6059,7 +6082,7 @@
 	background-color: #fff;
 }
 .makebook_mark_item{
-	display: block;
+	display: none;
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -6070,10 +6093,8 @@
 	
 	color: #fff;
 }
-.makebook_choosemethod_wrapper li .makebook_mark_item{
-	display: none;
-}
-.makebook_choosemethod_wrapper .active .makebook_mark_item{
+.active .makebook_mark_item{
+	display: block;
 	color: #fff;
 	border-color: transparent #8cc04e #8cc04e transparent;
 }
@@ -6165,27 +6186,32 @@
 	margin: 15px 0 15px 30px;
 	width: 140px;
 	color: #333;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .makebook_setupinvitcard_wrapper li label{
 	margin: 0 5px;
 	font-size: 14px;
+	color: #666;
 }
-.makebook_setupinvitcard_wrapper .resetandsave{
+.makebook_resetandsave_wrapper{
 	display: none;
 	margin: 30px 40px;
 }
-.makebook_setupinvitcard_wrapper .resetandsave a{
+.makebook_resetandsave_wrapper a{
+	display: inline-block;
 	margin: 0 10px 0 0;
 	padding: 5px 10px;
 	border-radius: 6px;
 	font-size: 14px;
 }
-.makebook_setupinvitcard_wrapper .resetandsave .reset{
+.makebook_resetandsave_wrapper .reset{
 	border: 1px solid #ccc;
 	color: #999;
 	background-color: #eee;
 }
-.makebook_setupinvitcard_wrapper .resetandsave .save{
+.makebook_resetandsave_wrapper .save{
 	background-color: #90c132;
 	color: #fff;
 }
@@ -6263,13 +6289,13 @@
 	display: inline-block;
 	margin: 0 10px;
 }
-.makebook_setupinvitcard_wrapper .share{
+.makebook_setupshare_wrapper{
 	margin: 60px 0 0 0;
 	width: 100%;
 	background-color: #fff;
 	overflow: hidden;
 }
-.makebook_setupinvitcard_wrapper .share>a{
+.makebook_setupshare_wrapper>a{
 	float: left;
 	margin: 30px 40px;
 	padding: 10px 20px;
@@ -6278,42 +6304,42 @@
 	color: #8cc04e;
 	transition: all 0.1s;
 }
-.makebook_setupinvitcard_wrapper .share>a:hover{
+.makebook_setupshare_wrapper>a:hover{
 	color: #599E07;
 	transition: all 0.3s;
 }
-.makebook_setupinvitcard_wrapper .share>a:active{
+.makebook_setupshare_wrapper>a:active{
 	box-shadow: 2px 2px 5px #ccc inset;
 	transition: all 0.05s;
 }
-.makebook_setupinvitcard_wrapper .share>div{
+.makebook_setupshare_wrapper>div{
 	float: left;
 	margin: 20px 0 0 100px;
 }
-.makebook_setupinvitcard_wrapper .share>div>div{
+.makebook_setupshare_wrapper>div>div{
 	float: left;
 	margin: 0 20px;
 	color: #ccc;
 	text-align: center;
 }
-.makebook_setupinvitcard_wrapper .share>div>div span{
+.makebook_setupshare_wrapper>div>div span{
 	display: block;
 	font-size: 40px;
 }
-.makebook_setupinvitcard_wrapper .share>div>div label{
+.makebook_setupshare_wrapper>div>div label{
 	font-size: 13px;
 }
-.makebook_setupinvitcard_wrapper .share>div ul{
+.makebook_setupshare_wrapper>div ul{
 	float: left;
-	margin: 5px 0 0 0;
+	margin: 5px 0 0 30px;
 }
-.makebook_setupinvitcard_wrapper .share div li{
+.makebook_setupshare_wrapper div li{
 	float: left;
 	margin: 0 5px;
 	width: 40px;
 	height: 40px;
 }
-.makebook_setupinvitcard_wrapper .share div li a{
+.makebook_setupshare_wrapper div li a{
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -6323,19 +6349,19 @@
 	border-radius: 50%;
 	text-align: center;
 }
-.makebook_setupinvitcard_wrapper .share .wechat{
+.makebook_setupshare_wrapper .wechat{
 	background-color: #00ca5a;
 }
-.makebook_setupinvitcard_wrapper .share .moments{
+.makebook_setupshare_wrapper .moments{
 	background-color: #26d6fb;
 }
-.makebook_setupinvitcard_wrapper .share .qzone{
+.makebook_setupshare_wrapper .qzone{
 	background-color: #ffa23d;
 }
-.makebook_setupinvitcard_wrapper .share .renren{
+.makebook_setupshare_wrapper .renren{
 	background-color: #0773be;
 }
-.makebook_setupinvitcard_wrapper .share .weibo{
+.makebook_setupshare_wrapper .weibo{
 	background-color: #e92246;
 }
 .makebook_step_wrapper .sem_mainlist_wrapper li{
@@ -6357,22 +6383,60 @@
 }
 .makebook_recommend_wrapper{
 	margin: 30px 0;
-	width: 100%;
+	overflow: hidden;
 }
-.makebook_recommend_wrapper>ul{
+.makebook_recommend_wrapper ul{
+	float: left;
+	width: 817px;
+	overflow: hidden;
+}
+.makebook_recommendlist_wrapper{
 	margin: 0 0 50px 0;
 	width: 100%;
 	overflow: hidden;
 }
 .makebook_recommend_wrapper li{
 	float: left;
-	margin: 0 13px;
+	margin: 0 12px;
 	width: 196px;
+	cursor: pointer;
 }
-
+.makebook_recommend_wrapper li:first-child{
+	margin: 0 10px 0 0;
+}
+.makebook_recommend_wrapper li:last-child{
+	margin: 0 0 0 10px;
+}
+.makebook_recommend_wrapper>a{
+	float: left;
+	width: 40px;
+	height: 200px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 200px;
+	font-size: 40px;
+	color: #dddddd;
+	transition: background-color 0.3s;
+}
+.makebook_recommend_wrapper>a:active{
+	background-color: #666;
+}
+.makebook_recommend_wrapper>a:hover{
+	background-color: #ebebeb;
+	transition: background-color 0.3s;
+}
+.makebook_recommend_wrapper .left{
+	border-top-left-radius:7px;
+	border-bottom-left-radius:7px;
+}
+.makebook_recommend_wrapper .right{
+	border-top-right-radius:7px;
+	border-bottom-right-radius:7px;
+}
 .makebook_recommend_wrapper .title{
 	display: block;
 	margin: 20px 0 5px 0;
+	overflow: hidden;
 }
 .makebook_recommend_wrapper .title i{
 	display: inline-block;
@@ -6420,7 +6484,12 @@
 .makebook_recommend_wrapper .bookcover{
 	position: relative;
 	overflow: hidden;
-	height: 260px;
+	border: 2px solid transparent;
+/*	height: 260px;*/
+}
+.makebook_recommend_wrapper .bookcover img{
+	display: block;
+	width: 100%;
 }
 .makebook_recommend_wrapper .bookcover div{
 	width: 100%;
@@ -6447,19 +6516,28 @@
 }
 
 /*~~~~~~~~~~makebook_step_popup.html~~~~~~~~~~*/
+.makebook_steppopup_container{
+	background-color: #ddd;
+}
 .makebook_steppopup_wrapper{
 	background-color: #ddd;
 	overflow: hidden;
 }
-.makebook_steppopup_wrapper	>div{
-	padding: 30px;
+.makebook_steppopuplist_wrapper	>div{
+	margin: 0 auto;
 	background-color: #fff;
 	border: 10px solid rgba(153,153,153,0.5);
 	border-radius: 10px;
 	position: relative;
 }
+.makebook_spmain_wrapper{
+	padding: 20px;
+}
+.makebook_steppopup_wrapper .makebook_steptitle_wrapper{
+	padding: 0 0 20px 0;
+}
 .makebook_steppopup_wrapper .makebook_steptitle_item{
-	padding: 0 0 0 10px;
+	padding: 0;
 	font-size: 18px;
 	color: #333;
 	font-weight: bold;
@@ -6471,21 +6549,20 @@
 	padding: 0 0 30px 0;
 }
 .makebook_spchoosetype_wrapper{
-	margin: 0 auto;
-	width: 600px;
+	width: 660px;
 }
 .makebook_splist_wrapper{
 	overflow: hidden;
 }
 .makebook_splist_wrapper>li{
 	float: left;
-	margin: 7px;
-	width: 186px;
+	margin: 10px;
+	width: 185px;
 }
 .makebook_splist_wrapper>li .title{
 	display: block;
 	margin: 2px;
-	width: 180px;
+	width: 100%;
 	height: 180px;
 	border: 1px dashed #bbbbbb;
 	text-align: center;
@@ -6495,6 +6572,9 @@
 .makebook_splist_wrapper>.active .title, .makebook_splist_wrapper>.active .title:hover{
 	margin: 0;
 	border: 3px solid #90c132;
+}
+.makebook_splist_wrapper .active .tips{
+	color: #999;
 }
 
 .makebook_splist_wrapper .title:hover{
@@ -6509,22 +6589,30 @@
 	color: #90c132;
 }
 .makebook_splist_wrapper .makebook_compicon_item span{
-	font-size: 30px;
 	color: #999999;
 }
 .makebook_splist_wrapper .makebook_compicon_item .frame{
 	color: #999999;
 }
+.makebook_splist_wrapper .actived .makebook_compicon_item .frame, .makebook_splist_wrapper .actived .title label{
+	color: #fff;
+}
 
 .makebook_splist_wrapper .title label{
 	display: block;
-/*	margin: 10px 0;*/
 	cursor: pointer;
 	text-align: center;
 }
 .makebook_splist_wrapper .makebook_mark_item{
 	display: none;
 	line-height: 16px;
+}
+.makebook_splist_wrapper .actived a{
+	background-color: #90c132;
+}
+.makebook_splist_wrapper .actived .makebook_mark_item{
+	display: block;
+	border-color: transparent #a6cc5b #a6cc5b transparent 
 }
 .makebook_splist_wrapper .active .makebook_mark_item{
 	display: block;
@@ -6540,7 +6628,10 @@
 .makebook_splist_wrapper .active .title:hover .makebook_mark_item{
 	border-color: transparent #90c132 #90c132 transparent;
 }
-
+.makebook_splist_wrapper .tips{
+	padding: 30px 0 0 0;
+	color: #cccccc;
+}
 .makebook_splist_wrapper .tips li{
 	display: inline-block;
 	margin: 3px 0px;
@@ -6548,14 +6639,14 @@
 	border-radius: 5px;
 	border: 1px solid #ddd;
 	font-size: 12px;
-	color: #999;
 	text-align: center;
 }
-.makebook_splist_wrapper .tips{
-	margin: 30px 0 0 0;
-}
+
 .makebook_splist_wrapper .tips li:last-child{
 	border: 0;
+}
+.makebook_splist_wrapper .tips p{
+	font-size: 14px;
 }
 .makebook_spclosebtn_item{
 	padding: 5px;
@@ -6566,8 +6657,249 @@
 	right: -26px;
 }
 .makebook_spassemble_wrapper{
+	width: 860px;
+}
+.makebook_spassemble_wrapper .makebook_splist_wrapper{
+	padding: 0 0 10px 0;
+}
+.makebook_spnav_wapper{
+	width: 100%;
+	padding: 20px 30px;
+	background-color: #eee;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.makebook_spnav_wapper .makebook_stepbacklink_item{
+	float: left;
+}
+.makebook_spnextlink_btn{
+	float: right;
+	padding: 5px 25px;
+	min-width: 60px;
+	border: 2px solid #ff8800;
+	color: #ff8800;
+	text-align: center;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.makebook_spchoosemethod_wrapper{
+	width: 690px;
+}
+.makebook_spchoosemethod_wrapper ul li{
+	margin: 0 27px 40px 27px;
+	width: 260px;
+}
+
+.makebook_spchoosemethod_wrapper .makebook_teamnumber_wrapper{
+	margin: 10px 30px;
+}
+.makebook_spsetup_wrapper{
 	width: 840px;
 }
+.makebook_spsetup_wrapper .makebook_setupinvitcard_wrapper{
+	margin: 10px 0 0 0;
+	padding: 30px 0;
+}
+.makebook_spsetup_wrapper .personalinfo li{
+	margin: 10px 0;
+	width: 115px;
+}
+.makebook_spsetup_wrapper .personalinfo , .makebook_spsetup_wrapper .personaloption{
+	padding: 10px 0 10px 80px;
+}
+.makebook_spsetup_wrapper .makebook_iccustomoption_wrapper{
+	padding: 10px 0 10px 80px
+}
+.makebook_spsetup_wrapper .makebook_resetandsave_wrapper{
+	margin: 20px 0 0 0;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper{
+	margin: 0;
+
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>a{
+	margin: 30px 0;
+	padding: 5px;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div>div{
+	margin: 0;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div>div>span{
+	float: left;
+	margin: 6px 0 0 80px;
+	font-size: 35px;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div>div label{
+	float: left;
+	margin: 8px 0 0 0;
+	width: 2em;
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div li{
+	width: 30px;
+	height: 30px;
+	
+}
+.makebook_spsetup_wrapper .makebook_setupshare_wrapper>div li a{
+	font-size: 25px;
+	color: #ababab;
+	background: none;
+}
+.makebook_sprecommend_wrapper{
+	width: 940px;
+}
+
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .title .bookname{
+	width: 100%;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .pages{
+	margin: 0 10px 0 20px;
+	font-size: 12px;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .info{
+	text-align: left;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
+	width: 145px;
+	
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li .bookcover{
+	box-shadow: none;
+	transition: all 0.3s;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .bookcover{
+	border: 2px solid #999;
+	box-shadow: 0 0 8px #999;
+	transition: all 0.3s;
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active .backcover, .makebook_sprecommend_wrapper .makebook_recommend_wrapper .active:hover .backcover{
+	border: 2px solid #8cc04e;
+	box-shadow: 0 0 8px #999;
+}
+
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper li:hover .makebook_mark_item{
+	display: block;
+	border-color: transparent #999999 #999999 transparent;
+	
+}
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .active .bookcover{
+	border: 2px solid #8cc04e;
+	box-shadow: 0 0 3px #999;
+}
+
+.makebook_spprogress_container{
+	width: 100%;
+}
+.makebook_spprogress_wrapper {
+	margin: 30px auto 10px;
+	width: 320px;
+	height: 20px;
+}
+.makebook_spprogress_wrapper li{
+	float: left;
+}
+.makebook_spprogressbar_wrapper{
+	display: block;
+}
+.makebook_spprogress_wrapper .actived .progressbar_head{
+	background-color: rgba(144,193,59,0.8);
+}
+.makebook_spprogress_wrapper .active .progressbar_head{
+	background-color: #fff;
+	position: relative;
+}
+.makebook_spprogress_wrapper .active .progressbar_head i{
+	display: block;
+	background-color: rgba(255,255,255,0.5);
+	width: 100%;
+	height: 100%;
+	padding: 8px;
+	border-radius: 50%;
+	position: absolute;
+	left: -8px;
+	top: -8px;
+}
+.makebook_spprogress_wrapper .progressbar_head{
+	float: left;
+	width: 15px;
+	height: 15px;
+	line-height: 20px;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0.5);
+}
+.makebook_spprogress_wrapper .progressbar_middle{
+	float: left;
+	margin: 6px 0 0 0;
+	width: 50px;
+	height: 4px;
+	line-height: 20px;
+	background-color: rgba(0,0,0,0.5);
+}
+.makebook_spprogress_wrapper .actived .progressbar_middle{
+	background-color: rgba(144,193,59,0.8);
+}
+.makebook_sphint_wrapper{
+	font-size: 14px;
+	color: #999999;
+}
+.makebook_sphint_wrapper span{
+	color: #ccc;
+	vertical-align: middle;
+	max-height: 100%;
+}
+.makebook_sphint_wrapper p{
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

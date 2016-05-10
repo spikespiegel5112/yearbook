@@ -340,10 +340,14 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript">
 	$(function() {
+		makebookStep1();
+	});
+
+	function makebookStep1() {
 		$('.makebook_choosetype_wrapper li').hover(function() {
 			$(this).siblings().removeClass('active').end().addClass('active');
-		})
-	})
+		});
+	}
 	</script>
 </body>
 

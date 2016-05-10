@@ -6160,9 +6160,56 @@
 .makebook_setupinvitcard_container{
 	display: none;
 }
+.makebook_checktag_item{
+	min-width: 90px;
+	font-size: 15px;
+	overflow: hidden;
+}
+.makebook_checktag_item a{
+	display: block;
+	padding: 5px 10px;
+	border: 1px dashed #999;
+	text-align: center;
+	position: relative;
+	transition: all 0.2s;
+}
+.makebook_checktag_item a:hover{
+	border: 1px solid #999;
+	transition: all 0.2s;
+}
+.makebook_checktag_item.active a{
+	border: 1px solid #8cc04e;
+	transition: all 0.2s;
+}
+.makebook_checktag_item span{
+	display: block;
+	line-height: 2px;
+	position: absolute;
+	right: 0;
+	bottom: -6px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 12px;
+	border-color: transparent #8cc04e #8cc04e transparent;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	opacity: 0;
+	transition: all 0.2s;
+}
+
+.makebook_checktag_item.active span{
+	
+	opacity: 1;
+	transition: all 0.2s;
+}
+.makebook_checktag_item label{
+	cursor: pointer;
+}
 .makebook_setupinvitcard_wrapper{
 	margin: 40px auto;
-	padding: 60px 0 0 0;
+	padding: 30px 0 0 0;
 	width: 100%;
 	background-color: #fcfcfc;
 	border: 1px solid #cccccc;
@@ -6183,17 +6230,17 @@
 }
 .makebook_setupinvitcard_wrapper .personalinfo li{
 	float: left;
-	margin: 15px 0 15px 30px;
-	width: 140px;
-	color: #333;
+	margin: 15px 0 0 24px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
 }
 .makebook_setupinvitcard_wrapper li label{
+	display: inline-block;
 	margin: 0 5px;
 	font-size: 14px;
 	color: #666;
+	vertical-align: middle;
 }
 .makebook_resetandsave_wrapper{
 	display: none;
@@ -6281,6 +6328,7 @@
 .makebook_setupinvitcard_wrapper .personaloption ul{
 	display: inline-block;
 	margin: 0 0 0 20px;
+	vertical-align: middle;
 }
 .makebook_setupinvitcard_wrapper .personaloption li{
 	margin: 10px 0;
@@ -6608,9 +6656,14 @@
 	line-height: 16px;
 }
 .makebook_splist_wrapper .actived a{
+	margin: 0;
 	background-color: #90c132;
+	border: 2px solid #90c132;
 }
-.makebook_splist_wrapper .actived .makebook_mark_item{
+.makebook_splist_wrapper .actived .title:hover{
+	border: 2px solid #90c132;
+}
+.makebook_splist_wrapper .actived .makebook_mark_item, .makebook_splist_wrapper .actived .title:hover .makebook_mark_item{
 	display: block;
 	border-color: transparent #a6cc5b #a6cc5b transparent 
 }
@@ -6701,14 +6754,12 @@
 	padding: 30px 0;
 }
 .makebook_spsetup_wrapper .personalinfo li{
-	margin: 10px 0;
+	margin: 10px 15px;
 	width: 115px;
 }
-.makebook_spsetup_wrapper .personalinfo , .makebook_spsetup_wrapper .personaloption{
-	padding: 10px 0 10px 80px;
-}
-.makebook_spsetup_wrapper .makebook_iccustomoption_wrapper{
-	padding: 10px 0 10px 80px
+
+.makebook_spsetup_wrapper .personalinfo, .makebook_spsetup_wrapper .personaloption, .makebook_spsetup_wrapper .makebook_iccustomoption_wrapper{
+	padding: 10px 0 10px 50px;
 }
 .makebook_spsetup_wrapper .makebook_resetandsave_wrapper{
 	margin: 20px 0 0 0;

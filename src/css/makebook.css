@@ -5883,66 +5883,102 @@
 
 
 /*~~~~~~~~~~makebook_aside_friendlist.html~~~~~~~~~~*/
+.makebook_joinedfriend_wrapper{
+	border-left: 1px solid #b8c4cf;
+}
+.makebook_friendhint_wrapper{
+	overflow: hidden;
+}
+.makebook_friendhint_wrapper p{
+	display: inline-block;
+	color: #999;
+	font-size: 14px;
+}
+.makebook_friendhint_wrapper ul{
+	float: right;
+}
+.makebook_friendhint_wrapper ul{
+
+}
 .makebook_asidefriend_wrapper{
 	margin: 15px;
 	padding: 10px;
 }
 .makebook_asidefriendtab_wrapper{
 	height: 58px;
+	font-size: 0;
+	border-bottom: 1px solid #b8c4cf;
 }
 .makebook_asidefriendtab_wrapper ul{
 	display: inline-block;
 }
-.makebook_asidefriendtab_wrapper>a{
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	position: relative;
-	bottom: 3px;
 
-}
-.makebook_asidefriendtab_wrapper li {
-	float: left;
+.makebook_asidefriendtab_wrapper li, .makebook_asidefriendtab_wrapper >a {
+	display: inline-block;
 	background-color: #fff;
 	position: relative;
 	top: 3px;
-	border-top: 1px solid #b8c4cf;`
+	border-top: 1px solid #b8c4cf;
+	vertical-align: top;
+	font-size: 15px;
+	text-align: center;
+}
+.makebook_asidefriendtab_wrapper .plus{
+
+	padding: 0 0 5px 0;
+	width: 70px;
+	height: 49px;
+	bottom: 3px;
+	border-right: 1px solid #b8c4cf;
+}
+.makebook_asidefriendtab_wrapper .plus span{
+	display: inline-block;
+	margin: 17px 0 0 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #b7c4cf;
+	color: #fff;
 }
 .makebook_asidefriendtab_wrapper .active{
+	height: 55px;
 	border-top: 3px solid #55b9ec;
 	z-index: 2;
 	top: 1px;
 }
+
 .makebook_asidefriendtab_wrapper li a{
-	display: block;
+	display: inline-block;
 	min-width: 280px;
-	height: 55px;
+	height: 54px;
 	line-height: 55px;
 	text-align: center;
 	border-right: 1px solid #b8c4cf;
 	color: #4392b8;
+	font-size: 15px;
+}
+.makebook_asidefriendtab_wrapper li:first-child a{
+	border-left: 1px solid #b8c4cf;
 }
 .makebook_asidefriendtab_wrapper li .plus{
 	display: block;
 	min-width: 55px;
 	text-align: center;
-	line-height: 55px;
-	vertical-align: middle;
 }
 .makebook_asidefriendtab_wrapper li .plus span{
 	display: inline-block;
-	padding: 5px;
-	width: 10px;
-	height: 10px;
+	margin: 17px 0 0 0;
+	width: 20px;
+	height: 20px;
 	background-color: #b8c4cf;
 	border-radius: 50%;
 	color: #fff;
 	font-size: 20px;
-	vertical-align: middle;
+	line-height: 17px;
 }
 .makebook_firendlist_wrapper{
 	overflow: hidden;
-	border: 1px solid #b8c4cf;
+/*	border: 1px solid #b8c4cf;*/
 	position: relative;
 	z-index: 1;
 }

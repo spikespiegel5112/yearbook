@@ -1841,7 +1841,7 @@
 {
     overflow: hidden;
 
-    width: 1200px;
+    width: 1018px;
     min-height: 818px;
     margin: 0 auto 0;
 
@@ -1953,8 +1953,8 @@
 
 .votelist_member ul li
 {
-    width: 110px;
-    height: 125px;
+    width: 120px;
+    height: 150px;
 }
 
 .vote_list ul li:after
@@ -1970,9 +1970,9 @@
 
     display: block;
     overflow: hidden;
-
-    width: 100%;
-    height: 80px;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
 }
 
 .vote_list_join_cover
@@ -2035,16 +2035,16 @@
 
 .vote_list .choosen_icon span
 {
-    font-size: 70px;
+    font-size: 60px;
 
     display: block;
 
-    width: 70px;
-    height: 70px;
-    margin: 7px auto;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
 
     opacity: .8;
-    color: #ffad00;
+    color: #fff;
 }
 
 .vote_list ul li img
@@ -3372,108 +3372,120 @@
     display: inline-block;
 }
 
-.friend_ul {
+.friend_ul
+{
     padding: 10px 0 0 8px;
 }
-/*~~~~~~~~~此部分样式已转移到makebook.css~~~~~~~~~~*/
-/*
-.friend_ul>li {
+
+.friend_ul li
+{
     position: relative;
+
     float: left;
-    padding: 5px 0;
-    min-width: 260px;
+
+    width: 310px;
     margin: 10px;
-    border: 1px solid #ddd;
+
+    border: 1px solid #f0f0f0;
 }
-.friend_ul>li:hover{
-    box-shadow: 0 0 3px #bbb;
-}
-.friend_ul>li:hover .trash{
-    display: block;
-}
-.friend_ul>li .trash{
-    display: none;
-    position: absolute;
-    top:10px;
-    right: 10px;
-    color: #969696;
-}
-.friend_ul>li .trash:hover{
-    color: #333;
-}
-.friend_ul>li .pop {
+
+.friend_ul li .pop
+{
     font-size: 14px;
     line-height: 25px;
+
     position: absolute;
     top: 8px;
     left: 8px;
+
     width: 25px;
     height: 25px;
+
     text-align: center;
+
     color: #fff;
     border-radius: 50%;
     background-color: #40acf7;
 }
 
-.friend_ul>li .pop.friend_create {
+.friend_ul li .pop.friend_create
+{
     background-color: #ed4b49;
 }
 
-.friend_ul>li .pop.friend_manage {
+.friend_ul li .pop.friend_manage
+{
     background-color: #8cd419;
 }
 
-.friend_ul>li .message_btn {
+.friend_ul li .message_btn
+{
     position: absolute;
     top: 3px;
     right: 5px;
 }
 
-.friend_ul>li .message_btn a {
+.friend_ul li .message_btn a
+{
     font-size: 12px;
+
     color: #fec43c;
 }
 
-.friend_ul>li .friend_head {
+.friend_ul li .friend_head
+{
     float: left;
-    width: 70px;
-    height: 70px;
-    margin: 10px;
+
+    width: 90px;
+    height: 90px;
+    margin: 15px;
+
     border-radius: 5px;
+
     -khtml-border-radius: 5px;
 }
 
-.friend_ul>li .friend_info {
+.friend_ul li .friend_info
+{
     font-size: 12px;
     line-height: 28px;
-    color: #999;
-}
-.friend_ul>li .friend_info li{
-    font-size: 12px;
-    line-height: 18px;
-}
 
-.friend_ul>li .friend_info .info1 {
-    font-size: 14px;
     color: #666;
 }
 
-.friend_ul>li .friend_info .info1 span {
+.friend_ul li .friend_info .info1
+{
+    font-size: 14px;
+
+    margin-top: 5px;
+
+    color: #000;
+}
+
+.friend_ul li .friend_info .info1 span
+{
     font-size: 13px;
+
     margin-left: 5px;
 }
-
-.friend_ul>li .friend_info .info1 .ybicon-male {
+.friend_ul li .friend_info .info1 .ybicon-male
+{
     color: #53bdf9;
 }
-
-.friend_ul>li .friend_info .info1 .ybicon-female {
+.friend_ul li .friend_info .info1 .ybicon-female
+{
     color: #f36ea6;
 }
 
-.friend_ul>li .friend_info .info1 span.color_b {
+.friend_ul li .friend_info .info1 span.color_b
+{
     color: #53b5ec;
-}*/
+}
+
+.friend_ul li .friend_head
+{
+    cursor: pointer;
+}
 
 .partner_info_container
 {

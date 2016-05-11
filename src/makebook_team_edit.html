@@ -96,7 +96,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="" loadUrl="makebook_autolayout.html">
+                        <a class="" loadUrl="makebook_team_interact.html">
                             <em class="interact icon"></em>
                             <em class="text">互动</em>
                         </a>
@@ -110,7 +110,7 @@
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
                             <em class="preview icon"></em>
-                            <em class="text">邀请卡</em>
+                            <em class="text">预览</em>
                         </a>
                     </li>
                     <li class="share">
@@ -403,7 +403,7 @@
                 </div>
             </div>
             <div class="single_mode">
-                <a class="chapter_shrink icon-arrow-left" href="javascript:;"></a>
+                <a class="chapter_shrink ybiconfont ybicon-tableft" href="javascript:;"></a>
                 <div class="chapter_list">
                     <a class="back_list_mode" href="javascript:;"><i class="ybiconfont ybicon-backward2"></i>返回章节列表</a>
                     <ul>
@@ -516,7 +516,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="resource_shrink icon-arrow-right" href="javascript:;"></a>
+                <a class="resource_shrink ybiconfont ybicon-tabright" href="javascript:;"></a>
                 <div class="resource_list">
                     <div class="res_tab">
                         <ul>
@@ -618,9 +618,9 @@
                                                         <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
                                                             <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
-                                                            <div class="users">
+                                                            <div class="record">
                                                                 <p>发起于：<span>30天前</span></p>
-                                                                <div>
+                                                                <div class="actors">
                                                                     <label>参与者：</label>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
@@ -640,9 +640,9 @@
                                                         <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
                                                             <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
-                                                            <div class="users">
+                                                            <div class="record">
                                                                 <p>发起于：<span>30天前</span></p>
-                                                                <div>
+                                                                <div class="actors">
                                                                     <label>参与者：</label>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
@@ -662,9 +662,9 @@
                                                         <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
                                                             <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
-                                                            <div class="users">
+                                                            <div class="record">
                                                                 <p>发起于：<span>30天前</span></p>
-                                                                <div>
+                                                                <div class="actors">
                                                                     <label>参与者：</label>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
@@ -684,9 +684,9 @@
                                                         <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
                                                             <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
-                                                            <div class="users">
+                                                            <div class="record">
                                                                 <p>发起于：<span>30天前</span></p>
-                                                                <div>
+                                                                <div class="actors">
                                                                     <label>参与者：</label>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
                                                                     <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
@@ -912,14 +912,14 @@
                                                 <div class="header"><img src="img/default/default_head.jpg"></div>
                                                 <h5 class="name">TEST1</h5>
                                                 <div class="time">2016-4-29  11:00</div>
-                                                <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                                <a class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></a>
                                                 <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
                                             </li>
                                             <li>
                                                 <div class="header"><img src="img/default/default_head.jpg"></div>
                                                 <h5 class="name">TEST1</h5>
                                                 <div class="time">2016-4-29  11:00</div>
-                                                <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                                <a class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></a>
                                                 <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
                                             </li>
                                         </ul>
@@ -1567,6 +1567,7 @@
         determineWindowSize();
         //列表、编辑模式切换
         swichPageMode();
+        setEditAreaWidth();
     });
 
     //渲染控件样式
@@ -1611,13 +1612,21 @@
         });
     }
 
-    //判断窗口大小，小于等于1280折叠侧栏
-    function determineWindowSize(size) {
+    function setEditAreaWidth(){
         $('.yb_cm_header').css('z-index','6');
         var winWidth = $(window).width();
         var editAreaWidth = winWidth-211-winWidth*0.2;
         $('.edit_area').width(editAreaWidth);
         $('.edit_area .page_display ').width(editAreaWidth);
+
+        $(window).resize(function(){
+            setEditAreaWidth();
+        });
+    }
+
+    //判断窗口大小，小于等于1280折叠侧栏
+    function determineWindowSize(size) {
+        var winWidth = $(window).width();
         if (winWidth <= 1280) {
             winWidth = 1280;
             setTimeout(function(){
@@ -1629,9 +1638,7 @@
             },3000)
         }
 
-        $(window).resize(function(){
-            determineWindowSize();
-        });
+
     }
 
     asideConShrink('chapter_shrink','chapter_list');

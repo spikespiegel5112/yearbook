@@ -2954,10 +2954,22 @@
 
 .tpl_pagination ul
 {
-	overflow: hidden;
+    width: 100%;
+    overflow: hidden;
+    margin: 10px auto;
+    text-align: center;
+}
 
-	width: 185px;
-	margin: 10px auto;
+.tpl_pagination ul li {
+    float: none;
+    margin-right: 5px;
+    padding: 0 6px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #ddd;
 }
 
 .tpl_pagination ul li.prev

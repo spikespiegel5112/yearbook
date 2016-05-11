@@ -1252,19 +1252,25 @@
     line-height: 1.8;
     height: 40px;
 }
-.interact_des .users p,
-.interact_des .users div label{
+.interact_des .record{
+    position: relative;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.interact_des .record p,
+.interact_des .record div label{
     float: left;
     font-size: 12px;
     color: #999;
     line-height: 30px;
 }
-.interact_des .users div{
+.interact_des .record .actors{
     float: right;
     width: 200px;
 }
 
-.interact_des .users div a{
+.interact_des .record .actors a{
     position: relative;
     float: left;
     width: 30px;
@@ -1272,7 +1278,7 @@
     line-height: 30px;
     margin: 0 4px;
 }
-.interact_des .users div a span{
+.interact_des .record .actors a span{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1285,18 +1291,20 @@
     border-radius: 100%;
     background: rgba(0,0,0,.6);
 }
-.interact_des .users div a img{
+.interact_des .record .actors a img{
     width: 100%;
     height: 100%;
     border-radius: 100%;
 }
-.interact_des .header{
+.message .interact_des .header{
     position: absolute;
     left: 20px;
     top: -24px;
+    box-shadow: 0 -1px 3px #aaa;
+}
+.interact_des .header{
     width: 55px;
     height: 55px;
-    box-shadow: 0 -1px 3px #aaa;
     border-radius: 100%;
 }
 .interact_des .header img{
@@ -1304,7 +1312,7 @@
     height: 100%;
     border-radius: 100%;
 }
-.interact_des .name{
+.message .interact_des .name{
     position: relative;
     margin: -8px 0 10px;
     width: 100%;
@@ -1424,7 +1432,27 @@
     font-size: 12px;
     color: #999;
 }
-.comment .comment_list .praise i{
+.comment .comment_list .praise.active,
+.comment .comment_list .praise:hover{
+    color: #f00;
+}
+.comment .comment_list .delete{
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 75px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #999;
+}
+.comment .comment_list li:hover .delete{
+    display: block;
+}
+.comment .comment_list .delete:hover{
+    color: #31b8d3;
+}
+.comment .comment_list .praise i,
+.comment .comment_list .delete i{
     font-size: 14px;
     vertical-align: middle;
     margin-right: 5px;
@@ -1981,4 +2009,332 @@
 
         opacity: 1;
     }
+}
+/*aside interact wrapper*/
+.res_tab_con .interact{
+    position: relative;
+    width: 100%;
+}
+.res_tab_con .action_wrap{
+    padding: 20px 10px 10px;
+}
+.res_tab_con .action_wrap > a{
+    display: inline-block;
+    color: #666;
+    font-size: 16px;
+    line-height: 40px;
+}
+.res_tab_con .action_wrap a i{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.res_tab_con .action_wrap a:hover{
+    color: #31b8d3;
+}
+.res_tab_con .action_wrap .tips{
+    float: right;
+    font-size: 12px;
+    color: #999;
+    line-height: 40px;
+}
+.action_wrap .new_interact{
+    display: inline-block;
+    width: 194px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #666;
+    background-color: #fdfdff;
+    border: 1px dashed #dedde2;
+    border-radius: 2px;
+}
+.action_wrap a.new_interact:hover{
+    color: #000;
+    background-color: #f6f6f6;
+}
+.action_wrap .new_interact i{
+    color: #bdc1ca;
+}
+.action_wrap .interact_sort{
+    float: right;
+    margin: 10px 0;
+}
+.interact .interact_list > ul > li{
+    display: block;
+    position: relative;
+    margin: 0 0 15px;
+    border: 1px solid #f2f4f8;
+}
+.interact_list .interact_des{
+    position: relative;
+    width: 100%;
+    padding: 10px 0 0;
+    box-sizing: border-box;
+}
+.interact .interact_des h5{
+    padding: 0 15px;
+    font-size: 18px;
+    color: #333;
+    line-height: 35px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+.interact .interact_list .interact_des .desc{
+    padding: 0 0 6px;
+    margin: 0 15px 10px;
+    line-height: 2;
+    height: auto;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #f2f4f8;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.interact.detail .interact_list .interact_des .desc{
+    height: auto;
+    white-space: normal;
+}
+.interact .interact_des .record{
+    padding: 5px 15px;
+}
+.interact_des .record .action{
+    float: left;
+}
+.interact_des .record .action a{
+    margin-right: 45px;
+    font-size: 16px;
+    color: #666;
+}
+.interact_des .record .action a i{
+    margin-right: 5px;
+}
+
+.interact_des .record .action .praise i{
+    color: #f95553;
+    font-size: 18px;
+}
+.interact_des .record .action .comment:hover i{
+    color: #31b8d3;
+}
+.interact_des .foot{
+    position: relative;
+    padding: 8px 15px;
+    margin: 10px 0 0;
+    width: 100%;
+    height: 56px;
+    background-color: #f7f8fd;
+    border-top: 1px solid #f2f4f8;
+    box-sizing: border-box;
+}
+.interact_des .foot .header{
+    float: left;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+}
+.interact_des .foot textarea{
+    float: left;
+    width: 75%;
+    border: 0;
+    resize: none;
+    font-size: 14px;
+    color: #666;
+    line-height: 35px;
+    height: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    background: transparent;
+    text-overflow: ellipsis;
+}
+.interact_des .foot .yb_book_btn{
+    float: right;
+    padding: 0;
+    width: 85px;
+    height: 35px;
+    margin: 2px 0;
+    border: 0;
+    border-radius: 0;
+}
+.actor_comment_list{
+    position: relative;
+    width: 100%;
+    margin: 10px 0 0;
+}
+.actor_comment_list .comment_list{
+    max-height: 450px;
+    overflow-y: auto;
+}
+.actor_comment_list .comment_list li{
+    border-bottom: 0;
+    border-top: 1px solid #eaeeef;
+}
+.actor_comment_list .comment_list .name{
+    margin: 0;
+}
+.actor_comment_list .comment_list li .content{
+    border-bottom: 0;
+}
+.vote .vote_list_wrap{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.vote_list_wrap li{
+    position: relative;
+    float: left;
+    margin: 5px 1% 15px;
+    padding: 22px 0 0;
+    width: 31%;
+    height: 210px;
+    box-sizing: border-box;
+}
+.vote_list_wrap li .item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f8fd;
+    border: 1px solid #e6e7e9;
+}
+.vote_list_wrap li .item .header{
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    margin-left: -25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: 2px solid #eee;
+    overflow: hidden;
+}
+.vote_list_wrap .item .header img{
+    width: 100%;
+    height: 100%;
+}
+.vote_list_wrap .item .vote_fig{
+    width: 100%;
+    height: 145px;
+}
+.vote_list_wrap .item .vote_fig img{
+    width: 100%;
+    height: 100%;
+}
+.vote_list_wrap .item .vote_info{
+    position: absolute;
+    bottom: 43px;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background: rgba(85,191,103,.8);
+}
+.vote_list_wrap .item .vote_info label{
+    float: left;
+    margin: 7px 0;
+    width: 33%;
+    height: 26px;
+    line-height: 26px;
+    border-right: 1px solid #fff;
+}
+.item .vote_info label:last-child{
+    border-right: 0;
+}
+.vote_list_wrap .item .theme{
+    float: left;
+    font-size: 14px;
+    color: #333;
+    line-height: 40px;
+    padding: 0 10px;
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.vote_list_wrap .item .join_vote{
+    float: right;
+    margin: 9px 10px;
+    width: 68px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #e6e7e9;
+    border-radius: 2px;
+}
+.vote_list_wrap .item .join_vote:hover{
+    background-color: #31b8d3;
+    color: #fff;
+}
+.interact_des .vote_title{
+    position: relative;
+    overflow: hidden;
+}
+.interact_des .vote_title .tips{
+    float: left;
+    font-size: 12px;
+    color: #31b8d3;
+    line-height: 35px;
+}
+.interact_des .vote_title .delete{
+    float: left;
+    margin: 0 15px;
+    color: #666;
+    font-size: 14px;
+    line-height: 35px;
+}
+.interact_des .vote_title .time{
+    float: right;
+    font-size: 12px;
+    line-height: 35px;
+    margin-right: 25px;
+}
+.vote.detail .interact_list .interact_des .desc{
+    border-bottom: 0;
+}
+.interact_des .record .vote_form_btn3{
+    margin: 0;
+}
+.interact_des .record .view_result{
+    background-color: #40acf7;
+}
+.interact_des .record .view_result:hover{
+    background-color: #e7b54b;
+}
+.vote.detail .interact_des .record{
+    padding: 10px 15px 0 30px;
+    border-top: 1px solid #eaeeef;
+}
+.interact_list .vote_option{
+    position: relative;
+    width: 100%;
+    max-height: 290px;
+    overflow-y: auto;
+    border-top: 1px solid #eaeeef;
+}
+.interact_list .vote_option > label{
+    display: block;
+    padding: 0 15px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    color: #666;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #eaeeef;
+}
+.vote_option .vote_list_result{
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+.vote_option .vote_list_result table{
+    width: 100%;
+    margin: 0;
 }

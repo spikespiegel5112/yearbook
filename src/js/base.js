@@ -430,6 +430,65 @@
 				});
 			});
 		},
+		popup:function(options){
+			options=$.extend({
+				closebtn:'',
+				maskopacity:0,
+				noborder:false,
+				noalign:false
+			},options);
+			var $this=$(this),
+				popupWrapperEl=$('<div></div>').addClass('commonPopupWrapper'),
+				popupContainerEl=$('<div></div>').addClass('commonPopupContainer'),
+				contentWidth=$this.width();
+			$('body').append(popupContainerEl.append(popupWrapperEl));
+			popupWrapperEl.css({
+				width:contentWidth,
+				border:'10px solid rgba(153,153,153,0.5)',
+				'border-radius':10
+			});
+			popupContainerEl.css({
+				display:'block',
+				position:'fixed',
+				top:0,
+				left:0,
+				'z-index':99999,
+				width:$(window).width(),
+				height:$(window).height(),
+				background:'rgba(0,0,0,'+options.maskopacity+')'
+			});
+			popupContainerEl.resize(function(){
+				popupContainerEl.css({
+					width:$(window).width(),
+					height:$(window).height(),
+				});
+			});
+			popupWrapperEl.append($this);
+			$this.css({
+				display:'block'
+
+			});
+			popupWrapperEl.css({
+				display:'block',
+				opacity:1
+			});
+			if (popupWrapperEl.height()>$(window).height()-200) {
+				popupWrapperEl.css({
+					width: ($this.width()+15),
+					height: ($(window).height()-100),
+					overflow:'auto'
+				});
+
+			};
+			if (!options.noalign) {
+				popupWrapperEl.align();
+			}
+			if (options.closebtn!='') {
+				$(options.closebtn).one('click', function(){
+					popupContainerEl.hide();
+				});
+			};
+		},
 		priceCalculator: function(options) {
 			var $this = $(this),
 				totalPriceArr = [],

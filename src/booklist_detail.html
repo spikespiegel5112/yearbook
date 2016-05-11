@@ -1498,8 +1498,7 @@
 		</div>
 	</div>
 	<!--登录表单-->
-	<div class="common_login_container">
-		<div class='common_login_wrapper'>
+	<div class='common_login_wrapper'>
 			<div class='common_loginheader_wrapper'>
 				<div>
 					<span class='ybiconfont ybicon-yblogoshort'></span>
@@ -1567,7 +1566,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	<!--引导页 结束-->
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
@@ -1584,7 +1582,14 @@
 		slideslideslide();
 		icheck();
 		ybcommonqueryicon();
-		$('.auto_edit').loginPopupDialog();
+		// $('.auto_edit').loginPopupDialog();
+		$('.auto_edit').click(function(){
+			$('.common_login_wrapper').popup({
+				closebtn:'.common_loginheader_wrapper>a',
+				maskopacity:0.1
+			});
+		})
+		
 		$('.book_details_box .basic_info .book_img .bd li').showLoadingImg();
 		$('.ybcommon_counter_item').priceCalculator();
 	});

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
     <!-- endbuild -->
     <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462414917_7311904.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462777338_6646955.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 </head>
@@ -79,45 +79,62 @@
                 <ul class="fixed_menu">
                     <li>
                         <a class="" loadUrl="access_login.html">
-                            <em class="ybiconfont ybicon-pencil icon"></em>
+                            <em class="edit icon"></em>
                             <em class="text">编辑</em>
                         </a>
                     </li>
                     <li>
                         <a class="-toggle" loadUrl="makebook_team_photos.html">
-                            <em class="ybiconfont ybicon-picture icon"></em>
-                            <em class="text">照片</em>
+                            <em class="album icon"></em>
+                            <em class="text">相册</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="ia_friend.html">
-                            <em class="ybiconfont ybicon-editform icon"></em>
-                            <em class="text">伙伴</em>
+                            <em class="friend icon"></em>
+                            <em class="text">小伙伴</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
-                            <em class="icon-plane icon"></em>
-                            <em class="text">编辑</em>
+                            <em class="interact icon"></em>
+                            <em class="text">互动</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
-                            <em class="ybiconfont ybicon-envelope icon"></em>
-                            <em class="text">编辑</em>
+                            <em class="invitcard icon"></em>
+                            <em class="text">邀请卡</em>
                         </a>
                     </li>
                     <li>
                         <a class="" loadUrl="makebook_autolayout.html">
-                            <em class="ybiconfont ybicon-bookopened icon"></em>
-                            <em class="text">编辑</em>
+                            <em class="preview icon"></em>
+                            <em class="text">邀请卡</em>
                         </a>
                     </li>
-                    <li>
-                        <a class="" loadUrl="makebook_autolayout.html">
-                            <em class=" icon-link icon"></em>
-                            <em class="text">编辑</em>
+                    <li class="share">
+                        <a class="" href="javascript:;">
+                            <em class="share_btn icon"></em>
+                            <em class="text">分享</em>
                         </a>
+                        <div class="common_sharelist_wrapper">
+                            <!--<label>分享到：</label>-->
+                            <ul>
+                                <li>
+                                    <a class="weibo ybiconfont ybicon-weibosina" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <a class="qzone ybiconfont ybicon-qzone" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <a class="wechat ybiconfont ybicon-wechatsolid" href="javascript:;"></a>
+                                </li>
+                                <li>
+                                    <a class="renren ybiconfont ybicon-renren" href="javascript:;"></a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -130,36 +147,25 @@
         <div id="menu" class="edit_content single"><!--list 章节列表模式 single 单页编辑模式-->
             <div class="tool_bar">
                 <div class="grid book_info">
-                    <div class="cover">
-                        <img src="img/default/bookshelf_book01.jpg">
-                        <span class="type photo"></span>
-                    </div>
                     <div class="name">
                         <h4>《毕业纪念册》</h4>
-
-                        <div class="progress">
-                            <a class="percent">
-                                <div>完成率：</div>
-                                <span>90%</span>
-
-                                <div class="bar"><span style="width: 90%;"></span></div>
-                            </a>
-                        </div>
+                        <!--完成百分比-->
+                        <span>90%</span>
                     </div>
                 </div>
                 <div class="grid">
                     <ul class="list_mode">
                         <li>
-                            <a class="add_chapter_btn" href="javascript:;"><i class="ybiconfont ybicon-addchapter"></i><span>添加章节</span></a>
+                            <a class="add_chapter_btn" href="javascript:;"></a>
                         </li>
                         <li>
-                            <a class="add_page_btn" href="javascript:;"><i class="ybiconfont ybicon-addpage"></i><span>添加页面</span></a>
+                            <a class="add_page_btn" href="javascript:;"></a>
                         </li>
                         <li>
-                            <a class="" href="javascript:;"><i class="ybiconfont ybicon-addfriend"></i><span>邀请协作者</span></a>
+                            <a class="add_friend_btn" href="javascript:;"></a>
                         </li>
                         <li>
-                            <a class="change_tpl_btn" href="javascript:;"><i class="ybiconfont ybicon-replacetpl"></i><span>更换模板</span></a>
+                            <a class="change_tpl_btn" href="javascript:;"></a>
                             <div class="ybcommon_queryicon_item">
                                 <div>
                                     <p>请在推荐模板中选择合适的模板并点击’更换模板‘</p>
@@ -167,21 +173,21 @@
                             </div>
                         </li>
                         <li>
-                            <a class="auto_layout" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>自动排版</span></a>
+                            <a class="auto_layout" href="javascript:;"></a>
                         </li>
                     </ul>
                     <ul class="single_mode">
                         <li>
-                            <a class="add_page_btn" href="javascript:;"><i class="ybiconfont ybicon-addpage"></i><span>添加页面</span></a>
+                            <a class="add_page_btn" href="javascript:;"></a>
                         </li>
                         <li>
-                            <a class="auto_layout" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>自动排版</span></a>
+                            <a class="auto_layout" href="javascript:;"></a>
                         </li>
                         <li>
-                            <a class="view_sample_btn" href="javascript:;"><i class="ybiconfont ybicon-forexample"></i><span>参考示例</span></a>
+                            <a class="view_sample_btn" href="javascript:;"></a>
                         </li>
                         <li>
-                            <a class="save_page_btn disable" href="javascript:;"><i class="ybiconfont ybicon-softdisc"></i><span>保存页面</span></a>
+                            <a class="save_page_btn disable" href="javascript:;"></a>
                             <div class="ybcommon_queryicon_item">
                                 <div>
                                     <p>拖动改变页面顺序，或者双击页码编辑页码后保存修改结果</p>
@@ -193,7 +199,7 @@
                 <div class="grid">
                     <ul>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>照片缺失页</span></a>
+                            <a class="incomplete_picture" href="javascript:;"></a>
                             <div class="page_list">
                                 <ul>
                                     <li>
@@ -241,7 +247,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="javascript:;"><i class="ybiconfont ybicon-photo"></i><span>文字缺失页</span></a>
+                            <a class="incomplete_text" href="javascript:;"></a>
                             <div class="page_list">
                                 <ul>
                                     <li>
@@ -600,141 +606,93 @@
                                         <label>参与的话题（<span>10</span>）</label>
                                         <a class="cm_fr" href="javascript:;"><i class="icon-random"></i>换一批</a>
                                     </div>
-                                    <div class="topic_list">
+                                    <div class="interact_list">
                                         <div class="bd">
                                             <ul>
                                                 <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/topic_default_img.png">
-                                                        </a>
-                                                        <div class="topic_des">
+                                                    <div class="item">
+                                                        <div class="type">话题</div>
+                                                        <h4 class="caption">对于忆尔的成长，你最大的感触是什么？</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                            <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
+                                                            <div class="users">
+                                                                <p>发起于：<span>30天前</span></p>
+                                                                <div>
+                                                                    <label>参与者：</label>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
+                                                    <div class="item">
+                                                        <div class="type">话题</div>
+                                                        <h4 class="caption">对于忆尔的成长，你最大的感触是什么？</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                            <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
+                                                            <div class="users">
+                                                                <p>发起于：<span>30天前</span></p>
+                                                                <div>
+                                                                    <label>参与者：</label>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
+                                                    <div class="item">
+                                                        <div class="type">话题</div>
+                                                        <h4 class="caption">对于忆尔的成长，你最大的感触是什么？</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="add" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                            <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
+                                                            <div class="users">
+                                                                <p>发起于：<span>30天前</span></p>
+                                                                <div>
+                                                                    <label>参与者：</label>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
+                                                    <div class="item">
+                                                        <div class="type">话题</div>
+                                                        <h4 class="caption">对于忆尔的成长，你最大的感触是什么？</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
                                                             <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
-                                                            <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
-                                                            <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
-                                                            <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="topic_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <a class="topic_fig" href="javascript:;" >
-                                                            <img src="img/default/palace.jpg">
-                                                        </a>
-                                                        <div class="topic_des">
-                                                            <h5>对于忆尔的成长，你最...</h5>
-                                                            <p class="desc">我说：团队很给力，大家很用...</p>
-                                                            <div class="actbar">
-                                                                <div><i class="icon-user"></i><span>5</span></div>
-                                                                <div><i class="ybiconfont ybicon-commentsolid"></i><span>11</span></div>
-                                                                <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
+                                                            <p class="desc">我说：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
+                                                            <div class="users">
+                                                                <p>发起于：<span>30天前</span></p>
+                                                                <div>
+                                                                    <label>参与者：</label>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"><span>+42</span></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                    <a href="javascript:;"><img src="img/default/partner_head01.png"></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -743,7 +701,11 @@
                                         </div>
                                         <div class="hd">
                                             <a class="prev ybiconfont ybicon-backward2" href="javascript:;"></a>
-                                            <ul></ul>
+                                            <ul>
+                                                <li class="on">1</li>
+                                                <li>2</li>
+                                                <li>3</li>
+                                            </ul>
                                             <a class="next ybiconfont ybicon-forward2" href="javascript:;"></a>
                                         </div>
                                     </div>
@@ -757,54 +719,74 @@
                                         <label>收到赠言（<span>5</span>）</label>
                                         <a class="cm_fr" href="javascript:;"><i class="icon-random"></i>换一批</a>
                                     </div>
-                                    <div class="message_list">
+                                    <div class="interact_list">
                                         <div class="bd">
                                             <ul>
                                                 <li>
-                                                    <div class="msg_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <div class="header"><img src="img/default/default_head.jpg"></div>
-                                                        <h5 class="name">TEST1</h5>
-                                                        <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                        <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-                                                        <div class="time">2016-4-29 10:00</div>
+                                                    <div class="item">
+                                                        <div class="type">赠言</div>
+                                                        <h4 class="caption">王大丫说：测试团队中每个成员都很棒，认真负责，加油...</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
+                                                            <div class="header"><img src="img/default/personal_head.png"></div>
+                                                            <h5 class="name">TEST1</h5>
+                                                            <p class="desc">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            <div class="time">2016-4-29 10:00</div>
+                                                        </div>
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="msg_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <div class="header"><img src="img/default/default_head.jpg"></div>
-                                                        <h5 class="name">TEST1</h5>
-                                                        <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                        <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-                                                        <div class="time">2016-4-29 10:00</div>
+                                                    <div class="item">
+                                                        <div class="type">赠言</div>
+                                                        <h4 class="caption">王大丫说：测试团队中每个成员都很棒，认真负责，加油...</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
+                                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                            <h5 class="name">TEST1</h5>
+                                                            <p class="desc">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            <div class="time">2016-4-29 10:00</div>
+                                                        </div>
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="msg_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <div class="header"><img src="img/default/default_head.jpg"></div>
-                                                        <h5 class="name">TEST1</h5>
-                                                        <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                        <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-                                                        <div class="time">2016-4-29 10:00</div>
+                                                    <div class="item">
+                                                        <div class="type">赠言</div>
+                                                        <h4 class="caption">王大丫说：测试团队中每个成员都很棒，认真负责，加油...</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
+                                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                            <h5 class="name">TEST1</h5>
+                                                            <p class="desc">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            <div class="time">2016-4-29 10:00</div>
+                                                        </div>
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="msg_item">
-                                                        <a class="ybiconfont ybicon-add2 delete" href="javascript:;"></a>
-                                                        <div class="header"><img src="img/default/default_head.jpg"></div>
-                                                        <h5 class="name">TEST1</h5>
-                                                        <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-add2"></i>添加至书页</a>
-                                                        <p class="content">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-                                                        <div class="time">2016-4-29 10:00</div>
+                                                    <div class="item">
+                                                        <div class="type">赠言</div>
+                                                        <h4 class="caption">王大丫说：测试团队中每个成员都很棒，认真负责，加油...</h4>
+                                                        <a class="ybiconfont ybicon-add2" href="javascript:;"></a>
+                                                        <a class="ybiconfont ybicon-eyeopen" href="javascript:;"></a>
+                                                        <div class="interact_des">
+                                                            <div class="header"><img src="img/default/default_head.jpg"></div>
+                                                            <h5 class="name">TEST1</h5>
+                                                            <p class="desc">最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            <div class="time">2016-4-29 10:00</div>
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="hd">
                                             <a class="prev ybiconfont ybicon-backward2" href="javascript:;"></a>
-                                            <ul></ul>
+                                            <ul>
+                                                <li class="on">1</li>
+                                                <li>2</li>
+                                                <li>3</li>
+                                            </ul>
                                             <a class="next ybiconfont ybicon-forward2" href="javascript:;"></a>
                                         </div>
                                     </div>
@@ -818,7 +800,7 @@
                                 <div class="tpl">
                                     <div class="actbar topic">
                                         <label>请选择模板（<span>155</span>）</label>
-                                        <a class="cm_fr" href="javascript:;"><i class="icon-tasks"></i>高级筛选</a>
+                                        <a class="cm_fr ad_filter" href="javascript:;"><i class="icon-tasks"></i>高级筛选</a>
                                     </div>
                                     <div class="chaptermake_tpl">
                                         <ul>
@@ -979,8 +961,8 @@
 </div>
 <!--弹出层-->
 <!--添加章节-->
-<div ia="addChapterCon" class="edit_pop_container">
-    <div class="add_chapter_con">
+<div id="addChapterCon" class="edit_pop_container">
+    <div class="add_chapter_con yb_pop_wrap">
         <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
         <h4 class="title">批量修改照片</h4>
         <label>选择章节类型：</label>
@@ -997,37 +979,42 @@
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="扉页">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-text"></span>
                         <h5>扉页</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="目录">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-category"></span>
                         <h5>目录</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li class="select" describe="可选项，加入书册的小伙伴每人对应有一章属于自己的个人页，显示自己的详细资料和近况。">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-drawingtext"></span>
                         <h5>图文章节</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="个人，可选">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-resume"></span>
                         <h5>个人章节</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="全景照片">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-picture"></span>
                         <h5>全景照片</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
                     <li describe="激扬文字">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-text"></span>
                         <h5>激扬文字</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
+                    <li describe="邀请卡">
+                        <span class="ybiconfont ybicon-profile"></span>
+                        <h5>邀请卡</h5>
+                        <i class="ybiconfont ybicon-ok"></i>
+                    </li>
                     <li describe="自定义">
-                        <span class="ybiconfont ybicon-cover"></span>
+                        <span class="ybiconfont ybicon-iconframe"></span>
                         <h5>自定义</h5>
                         <i class="ybiconfont ybicon-ok"></i>
                     </li>
@@ -1045,6 +1032,39 @@
         <div class="action_bar">
             <label><input type="checkbox" name="">是否在目录中显示</label>
             <a href="javascript:;" class="yb_book_btn add_section_sbbtn">确认添加</a>
+        </div>
+    </div>
+</div>
+<!--高级筛选-->
+<div id="advancedFilter" class="edit_pop_container">
+    <div class="advanced_filter yb_pop_wrap">
+        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+        <h4 class="title">高级筛选</h4>
+        <div class="filter_options">
+            <form>
+                <div class="option">
+                    <span>图片数量：</span><input type="text" placeholder="" value="">
+                    <span>文本数量：</span><input type="text" placeholder="" value="">
+                </div>
+                <div class="option">
+                    <span>展示方式：</span>
+                    <label><input type="radio" name="display" checked="checked">全部</label>
+                    <label><input type="radio" name="display">单页</label>
+                    <label><input type="radio" name="display">双页</label>
+                </div>
+                <div class="option">
+                    <span>包含互动：</span>
+                    <label><input type="radio" name="interact" checked="checked">全部</label>
+                    <label><input type="radio" name="interact">包含</label>
+                    <label><input type="radio" name="interact">不包含</label>
+                </div>
+                <div class="option">
+                    <label>模板编号：<input type="text" placeholder="" value=""></label>
+                </div>
+            </form>
+        </div>
+        <div class="action_bar">
+            <a href="javascript:;" class="yb_book_btn">搜索</a>
         </div>
     </div>
 </div>
@@ -1545,6 +1565,8 @@
         //添加章节
         addChapter();
         determineWindowSize();
+        //列表、编辑模式切换
+        swichPageMode();
     });
 
     //渲染控件样式
@@ -1566,7 +1588,7 @@
 
 
         //点击nav调出aside区域
-        $('.fixed_menu li a').on('click', function (e) {
+        $('.fixed_menu li:lt(6)').find('a').on('click', function (e) {
             slideout.open();
             $('aside').removeClass('close');
             $('.slide_mask').show();
@@ -1589,7 +1611,7 @@
         });
     }
 
-    //判断窗口大小，大于1440执行回调1，小于等于1440执行回调2，小于等于1280执行回调3
+    //判断窗口大小，小于等于1280折叠侧栏
     function determineWindowSize(size) {
         $('.yb_cm_header').css('z-index','6');
         var winWidth = $(window).width();
@@ -1652,6 +1674,18 @@
         });
     }
 
+    function swichPageMode(){
+        //返回章节列表
+        $('.back_list_mode').click(function(){
+            $('.team_edit_container .edit_content').removeClass('single').addClass('list');
+        })
+        //双击章节列表图片跳转到单页模式
+        $('.page_list .figure').dblclick(function(){
+            $('.team_edit_container .edit_content').removeClass('list').addClass('single');
+        })
+    }
+
+
     //资源tab
     function resourceTab() {
         $(".resource_list").slide({
@@ -1662,32 +1696,23 @@
             trigger: "click",
             pnLoop: false,
             autoPlay: false,
-            startFun: function(){
-                //话题
-                $('.topic_list').slide({
-                    mainCell: ".bd ul",
-                    titCell: ".hd ul",
-                    trigger: "click",
-                    pnLoop: false,
-                    autoPlay: false,
-                    autoPage:true,
-                    effect:"top",
-                    vis:3,
-                    scroll:3
-                });
-                //赠言
-                $('.message_list').slide({
-                    mainCell: ".bd ul",
-                    titCell: ".hd ul",
-                    trigger: "click",
-                    pnLoop: false,
-                    autoPlay: false,
-                    autoPage:true,
-                    effect:"left",
-                    vis:1,
-                    scroll:1
-                });
-            }
+        });
+
+
+        //hover 显示话题、赠言信息
+        $('.interact_list .item').hover(function(){
+            $(this).find('.interact_des').delay(500).fadeIn();
+        },function(){
+            $(this).find('.interact_des').fadeOut();
+        });
+
+        //模板-高级筛选
+        $('.ad_filter').click(function(){
+            $('#advancedFilter').fadeIn('fast');
+
+            $('.advanced_filter .close').click(function(){
+                $('#advancedFilter').fadeOut('fast');
+            })
         });
 
         //模板选中事件
@@ -1877,7 +1902,7 @@
     //添加章节
     function addChapter(){
         $('.add_chapter_btn').click(function(){
-            $('.edit_pop_container').fadeIn('fast');
+            $('#addChapterCon').fadeIn('fast');
             jQuery(".tpl_chapter_list").slide({
                 mainCell: ".bd ul",
                 titCell: ".hd a",
@@ -1891,8 +1916,8 @@
             });
         });
 
-        $('.edit_pop_container .close').click(function(){
-            $('.edit_pop_container').fadeOut('fast');
+        $('.add_chapter_con .close').click(function(){
+            $('#addChapterCon').fadeOut('fast');
         })
 
         //选择章节
@@ -1907,6 +1932,7 @@
             $('.tpl_caption input').val(tplCaption);
         })
     }
+
 </script>
 </body>
 

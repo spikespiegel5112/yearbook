@@ -6007,7 +6007,7 @@
 	position: relative;
 	z-index: 1;
 }
-.makebook_firendlist_wrapper>li {
+.makebook_invitnamecard_item {
     position: relative;
     float: left;
     padding: 5px 0;
@@ -6015,23 +6015,23 @@
     margin: 10px 5px;
     border: 1px solid #ddd;
 }
-.makebook_firendlist_wrapper>li:hover{
+.makebook_invitnamecard_item:hover{
     box-shadow: 0 0 3px #bbb;
 }
-.makebook_firendlist_wrapper>li:hover .trash{
+.makebook_invitnamecard_item:hover .trash{
     display: block;
 }
-.makebook_firendlist_wrapper>li .trash{
+.makebook_invitnamecard_item .trash{
     display: none;
     position: absolute;
     top:10px;
     right: 10px;
     color: #969696;
 }
-.makebook_firendlist_wrapper>li .trash:hover{
+.makebook_invitnamecard_item .trash:hover{
     color: #333;
 }
-.makebook_firendlist_wrapper>li .pop {
+.makebook_invitnamecard_item .pop {
     font-size: 14px;
     line-height: 25px;
     position: absolute;
@@ -6045,26 +6045,26 @@
     background-color: #40acf7;
 }
 
-.makebook_firendlist_wrapper>li .pop.friend_create {
+.makebook_invitnamecard_item .pop.friend_create {
     background-color: #ed4b49;
 }
 
-.makebook_firendlist_wrapper>li .pop.friend_manage {
+.makebook_invitnamecard_item .pop.friend_manage {
     background-color: #8cd419;
 }
 
-.makebook_firendlist_wrapper>li .message_btn {
+.makebook_invitnamecard_item .message_btn {
     position: absolute;
     top: 3px;
     right: 5px;
 }
 
-.makebook_firendlist_wrapper>li .message_btn a {
+.makebook_invitnamecard_item .message_btn a {
     font-size: 12px;
     color: #fec43c;
 }
 
-.makebook_firendlist_wrapper>li .friend_head {
+.makebook_invitnamecard_item .friend_head {
     float: left;
     width: 70px;
     height: 70px;
@@ -6075,35 +6075,36 @@
     background-image: url(../img/user_default_head.png);
 }
 
-.makebook_firendlist_wrapper>li .friend_info {
+.makebook_invitnamecard_item .friend_info {
     font-size: 12px;
     line-height: 28px;
     color: #999;
+    background-image: url(../img/makebook/invitenamecard_bg.jpg);
 }
-.makebook_firendlist_wrapper>li .friend_info li{
+.makebook_invitnamecard_item .friend_info li{
     font-size: 12px;
     line-height: 18px;
 }
 
-.makebook_firendlist_wrapper>li .friend_info .info1 {
+.makebook_invitnamecard_item .friend_info .info1 {
     font-size: 14px;
     color: #666;
 }
 
-.makebook_firendlist_wrapper>li .friend_info .info1 span {
+.makebook_invitnamecard_item .friend_info .info1 span {
     font-size: 13px;
     margin-left: 5px;
 }
 
-.makebook_firendlist_wrapper>li .friend_info .info1 .ybicon-male {
+.makebook_invitnamecard_item .friend_info .info1 .ybicon-male {
     color: #53bdf9;
 }
 
-.makebook_firendlist_wrapper>li .friend_info .info1 .ybicon-female {
+.makebook_invitnamecard_item .friend_info .info1 .ybicon-female {
     color: #f36ea6;
 }
 
-.makebook_firendlist_wrapper>li .friend_info .info1 span.color_b {
+.makebook_invitnamecard_item .friend_info .info1 span.color_b {
     color: #53b5ec;
 }
 
@@ -6159,9 +6160,19 @@
 	padding: 5px;
 	background-color: #84c453;
 	color: #efefef;
+	text-align: center;
+	border-radius: 4px;
 }
 .makebook_friendbtn_item a:hover{
 	background-color: #3E8F00;
+}
+.makebook_friendbtn_item .faded{
+	color: #999;
+	background-color: #eeeeee;
+}
+.makebook_friendbtn_item .faded:hover{
+	color: #666;
+	background-color: #ccc;
 }
 .makebook_fdinfo_wrapper{
 	margin: 10px 0;
@@ -6285,8 +6296,12 @@
 	color: #666;
 }
 .makebook_asidefriendmain_wrapper .makebook_setupinvitcard_wrapper{
-	margin: 0 auto;
+	margin: 0 auto 20px;
 	width: 95%;
+}
+.makebook_asidesetupinvit_wrapper .makebook_friendbtn_item{
+	padding: 0 50px;
+	text-align: right;
 }
 
 

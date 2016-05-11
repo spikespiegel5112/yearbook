@@ -5883,37 +5883,54 @@
 
 
 /*~~~~~~~~~~makebook_aside_friendlist.html~~~~~~~~~~*/
-.makebook_joinedfriend_wrapper{
+.makebook_joinedfriend_wrapper, .makebook_friendintro_wrapper{
 	border-left: 1px solid #b8c4cf;
+	border-right: 1px solid #b8c4cf;
+	border-bottom: 1px solid #b8c4cf;
 }
 .makebook_friendhint_wrapper{
+	padding: 20px 10px;
 	overflow: hidden;
 }
 .makebook_friendhint_wrapper p{
 	display: inline-block;
+	margin: 0 0 0 20px;
 	color: #999;
 	font-size: 14px;
 }
 .makebook_friendhint_wrapper ul{
 	float: right;
+	font-size: 0;
 }
-.makebook_friendhint_wrapper ul{
+.makebook_friendhint_wrapper li{
+	display: inline-block;
+	margin: 0 5px;
+	
+	background-color: #489fcf;
 
+}
+.makebook_friendhint_wrapper li a{
+	display: inline-block;
+	padding: 10px 15px;
+	color: #fff;
+	font-size: 13px;
 }
 .makebook_asidefriend_wrapper{
 	margin: 15px;
 	padding: 10px;
+	width: 1100px;
 }
 .makebook_asidefriendtab_wrapper{
 	height: 58px;
 	font-size: 0;
 	border-bottom: 1px solid #b8c4cf;
+	position: relative;
 }
 .makebook_asidefriendtab_wrapper ul{
 	display: inline-block;
 }
 
-.makebook_asidefriendtab_wrapper li, .makebook_asidefriendtab_wrapper >a {
+.makebook_asidefriendtab_wrapper ul li, .makebook_asidefriendtab_wrapper >a {
 	display: inline-block;
 	background-color: #fff;
 	position: relative;
@@ -5924,21 +5941,32 @@
 	text-align: center;
 }
 .makebook_asidefriendtab_wrapper .plus{
-
+	border-top: 1px solid #b8c4cf;
 	padding: 0 0 5px 0;
 	width: 70px;
 	height: 49px;
 	bottom: 3px;
 	border-right: 1px solid #b8c4cf;
 }
+.makebook_asidefriendtab_wrapper .invitfriend{
+	color: #999;
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	font-size: 14px;
+}
+.makebook_asidefriendtab_wrapper .invitfriend:hover a{
+	color: #418FB9;
+}
 .makebook_asidefriendtab_wrapper .plus span{
 	display: inline-block;
-	margin: 17px 0 0 0;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	background-color: #b7c4cf;
-	color: #fff;
+	margin: 15px 0 0 0;
+	width: 25px;
+	height: 25px;
+	line-height: 23px;
+	color: #b7c4cf;
+	font-size: 23px;
+	text-align: center;
 }
 .makebook_asidefriendtab_wrapper .active{
 	height: 55px;
@@ -5954,7 +5982,7 @@
 	line-height: 55px;
 	text-align: center;
 	border-right: 1px solid #b8c4cf;
-	color: #4392b8;
+	color: #999;
 	font-size: 15px;
 }
 .makebook_asidefriendtab_wrapper li:first-child a{
@@ -5977,6 +6005,7 @@
 	line-height: 17px;
 }
 .makebook_firendlist_wrapper{
+	height: 500px;
 	overflow: hidden;
 /*	border: 1px solid #b8c4cf;*/
 	position: relative;
@@ -5987,7 +6016,7 @@
     float: left;
     padding: 5px 0;
     min-width: 260px;
-    margin: 10px;
+    margin: 10px 5px;
     border: 1px solid #ddd;
 }
 .makebook_firendlist_wrapper>li:hover{
@@ -6046,6 +6075,8 @@
     margin: 10px;
     border-radius: 5px;
     -khtml-border-radius: 5px;
+    cursor: pointer;
+    background-image: url(../img/user_default_head.png);
 }
 
 .makebook_firendlist_wrapper>li .friend_info {
@@ -6079,3 +6110,202 @@
 .makebook_firendlist_wrapper>li .friend_info .info1 span.color_b {
     color: #53b5ec;
 }
+
+.makebook_waytoinvit_wrapper li{
+	margin: 20px;
+	padding: 20px;
+	height: 100px;
+	font-size: 13px;
+	color: #333;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+.makebook_waytoinvit_wrapper li:hover{
+	border: 1px solid #dddddd;
+	background-color: #fcfeff;
+}
+.makebook_waytoinvit_wrapper li a, .makebook_waytoinvit_wrapper li span{
+	color: #489fcf;
+}
+.makebook_waytoinvit_wrapper li a:hover{
+	color: #418FB9;
+}
+.makebook_waytoinvit_wrapper li h6{
+	margin: 0 0 10px 0;
+}
+.makebook_frienddetail_wrapper{
+	display: none;
+	width: 660px;
+	background-color: #fff;
+}
+.makebook_fdblock_wrapper{
+	padding: 10px 20px;
+	border-top: 1px solid #d2d2d2;
+	color: #333;
+	font-size: 13px;
+}
+.makebook_frienddetail_wrapper .maintitle{
+	display: inline-block;
+	font-size: 19px;
+}
+.makebook_frienddetail_wrapper .closebtn{
+	float: right;
+	font-size: 25px;
+}
+.makebook_friendbtn_item{
+	text-align: center;
+	font-size: 18px;
+	margin: 20px 0;
+}
+.makebook_friendbtn_item a{
+	display: inline-block;
+	min-width: 160px;
+	padding: 5px;
+	background-color: #84c453;
+	color: #efefef;
+}
+.makebook_friendbtn_item a:hover{
+	background-color: #3E8F00;
+}
+.makebook_fdinfo_wrapper{
+	margin: 10px 0;
+	overflow: hidden;
+}
+.makebook_fdinfo_wrapper li{
+	float: left;
+	width: 50%;
+	font-size: 13px;
+	line-height: 25px;
+}
+.makebook_fdblock_wrapper .subtitle{
+	
+	line-height: 35px;
+}
+.makebook_fdphoto_wrapper{
+	overflow: hidden;
+}
+.makebook_fdphoto_wrapper li{
+	float: left;
+	margin: 10px 14px;
+	padding: 5px;
+	width: 115px;
+	height: 115px;
+	overflow: hidden;
+	border: 1px dashed #dddddd;
+}
+.makebook_fdphoto_wrapper li img{
+	width: 100%;
+}
+.makebook_fdtopic_wrapper li{
+	padding: 5px 0;
+	border-bottom: 1px dashed #dddddd;
+	line-height: 25px;
+}
+.makebook_fdtopic_wrapper li:last-child{
+	border: none;
+}
+.makebook_fdtopic_wrapper p{
+	font-size: 13px;
+}
+.makebook_asidefriendmain_wrapper>.active{
+	display: block;
+}
+
+
+.static_pagination_wrapper
+{
+    overflow: hidden;
+
+    width: 370px;
+    margin: 20px auto;
+}
+.static_pagination_wrapper ul
+{
+    float: left;
+    overflow: hidden;
+}
+.static_pagination_wrapper li
+{
+    float: left;
+
+    margin: 0 5px;
+}
+.static_pagination_wrapper li a, .static_turnpage_btn
+{
+    line-height: 30px;
+
+    display: block;
+
+    min-width: 15px;
+    padding: 0 6px;
+
+    text-align: center;
+
+    color: #ffa349;
+    border: 1px solid #ffa349;
+    background-color: #fff;
+}
+.static_pagination_wrapper li .active, .static_pagination_wrapper a:hover
+{
+    color: #fff;
+    background-color: #ffa349;
+}
+.static_turnpage_btn
+{
+    float: left;
+
+    margin: 0 5px;
+}
+.makebook_inportexcalmain_wrapper{
+	width: 100%;
+}
+.makebook_inportexcalmain_wrapper .downloadsample{
+	display: block;
+	margin: 0 auto;
+	height: 20px;
+	color: #67aad4;
+	text-align: center;
+}
+.makebook_inportexcalmain_wrapper .inportform{
+	margin: 50px auto;
+}
+.makebook_inportexcalmain_wrapper .inportform input{
+	display: block;
+	margin: 30px auto 10px;
+	width: 150px;
+	text-align: center;
+}
+.makebook_inportexcalmain_wrapper .inportform label{
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

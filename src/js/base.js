@@ -464,10 +464,22 @@
 				});
 			});
 			popupWrapperEl.append($this);
+			$this.css({
+				display:'block'
+
+			});
 			popupWrapperEl.css({
 				display:'block',
-				opacity:1,
+				opacity:1
 			});
+			if (popupWrapperEl.height()>$(window).height()-200) {
+				popupWrapperEl.css({
+					width: ($this.width()+15),
+					height: ($(window).height()-100),
+					overflow:'auto'
+				});
+
+			};
 			if (!options.noalign) {
 				popupWrapperEl.align();
 			}

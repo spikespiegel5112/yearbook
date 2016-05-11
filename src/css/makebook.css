@@ -5883,11 +5883,6 @@
 
 
 /*~~~~~~~~~~makebook_aside_friendlist.html~~~~~~~~~~*/
-.makebook_joinedfriend_wrapper, .makebook_friendintro_wrapper{
-	border-left: 1px solid #b8c4cf;
-	border-right: 1px solid #b8c4cf;
-	border-bottom: 1px solid #b8c4cf;
-}
 .makebook_friendhint_wrapper{
 	padding: 20px 10px;
 	overflow: hidden;
@@ -5954,6 +5949,7 @@
 	top: 20px;
 	right: 10px;
 	font-size: 14px;
+
 }
 .makebook_asidefriendtab_wrapper .invitfriend:hover a{
 	color: #418FB9;
@@ -6207,6 +6203,13 @@
 .makebook_fdtopic_wrapper p{
 	font-size: 13px;
 }
+.makebook_asidefriendmain_wrapper{
+	min-height: 500px;
+	border-left: 1px solid #b8c4cf;
+	border-right: 1px solid #b8c4cf;
+	border-bottom: 1px solid #b8c4cf;
+	overflow: hidden;
+}
 .makebook_asidefriendmain_wrapper>.active{
 	display: block;
 }
@@ -6280,6 +6283,10 @@
 	text-align: center;
 	font-size: 12px;
 	color: #666;
+}
+.makebook_asidefriendmain_wrapper .makebook_setupinvitcard_wrapper{
+	margin: 0 auto;
+	width: 95%;
 }
 
 

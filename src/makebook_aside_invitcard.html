@@ -19,6 +19,7 @@
 	<!-- <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all"> -->
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/simeditor/simditor.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -40,7 +41,7 @@
 		<div class='makebook_asidefriendmain_wrapper'>
 			<div class='makebook_asidesetupinvit_wrapper'>
 				<div class='makebook_friendhint_wrapper'>
-					<p>邀请卡可以很方便的帮助您收集到小伙伴们的近况信息，分享给小伙伴填写完成后，小伙伴就自动加入书册可以一起制作并互动了.</p>
+					<p>邀请卡可以很方便的帮助您收集到小伙伴们的近况信息，分享给小伙伴填写完成后，小伙伴就自动加入书册可以一起制作并互动了。</p>
 				</div>
 				<div class="makebook_setupinvitcard_wrapper">
 					<h6>收集的基本信息</h6>
@@ -150,74 +151,74 @@
 					</ul>
 					<div class="makebook_iccustomoption_wrapper">
 						<label>自定义收集内容：</label>
-						<div>
+						<div class='common_custonoption_item'>
 							<input type="text">
-							<a class="makebook_addcustomption_btn" href="javascript:;">+</a>
+							<a class="add" href="javascript:;">+</a>
 						</div>
 					</div>
 					<ul class="personaloption">
-						<li>
+						<li class='collectphoto'>
 							<label>邀请卡是否收集好友照片：</label>
 							<ul>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='yes' href="javascript:;">
 										<label>是的</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='no' href="javascript:;">
 										<label>不需要</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li class='topic'>
 							<label>邀请卡是否发起话题讨论：</label>
 							<ul>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='yes' href="javascript:;">
 										<label>是的</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='no' href="javascript:;">
 										<label>不需要</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li class='vote'>
 							<label>邀请卡是否发起投票选举：</label>
 							<ul>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='yes' href="javascript:;">
 										<label>是的</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='no' href="javascript:;">
 										<label>不需要</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li class='message'>
 							<label>邀请卡是否需要赠言功能：</label>
 							<ul>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='yes' href="javascript:;">
 										<label>是的</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
 								</li>
 								<li class="makebook_checktag_item radio">
-									<a href="javascript:;">
+									<a class='no' href="javascript:;">
 										<label>不需要</label>
 										<span class="ybiconfont ybicon-ok"></span>
 									</a>
@@ -230,207 +231,547 @@
 					<a class='faded' href="javascript:;">重置</a>
 					<a href="javascript:;">保存设置</a>
 				</div>
-			</div>
-
-			<div class='makebook_inportexcal_wrapper'>
-				<div class='makebook_friendhint_wrapper'>
-					<p>提示：加入多少个小伙伴就必须有同等数量的个人页</p>
+				<!-- 发表赠言弹窗 -->
+				<div class='makebook_pushlishmessage_wrapper'>
+					<div class='makebook_fdblock_wrapper'>
+						<h5 class='maintitle'>发表赠言</h5>
+						<a class='closebtn ybiconfont ybicon-closebtn' href='javascript:;'></a>
+					</div>
+					<div class='makebook_editor_wrapper'>
+						<textarea></textarea>
+					</div>
+					<div class='makebook_crowdselector_wrapper'>
+						<span class='at'>@</span>
+						<div class='menu'>
+							<div class='common_custonoption_item'>
+								<input type="text">
+								<a class="add" href="javascript:;">+</a>
+							</div>
+							<select>
+								<option>张三</option>
+								<option>张三</option>
+								<option>张三</option>
+								<option>张三</option>
+								<option>张三</option>
+								<option>张三</option>
+								<option>张三</option>
+								<option>张三</option>
+							</select>
+						</div>
+						<ul class='checkbox'>
+							<li>
+								<input id='all' type='checkbox'>
+								<label for='all'>全选</label>
+							</li>
+							<li>
+								<input id='male' type='checkbox'>
+								<label for='male'>全体男生</label>
+							</li>
+							<li>
+								<input id='female' type='checkbox'>
+								<label for='female'>全体女生</label>
+							</li>
+						</ul>
+					</div>
+					<div class="makebook_spnav_wapper">
+						<a class="makebook_stepbacklink_item" href="javascript:;"><span class="ybiconfont ybicon-reply"></span>返回上一步</a>
+						<a class="makebook_spnextlink_btn" href="javascript:;">下一步</a>
+					</div>
 				</div>
-				<ul class='makebook_firendlist_wrapper'>
+				<!-- 创建投票弹窗 -->
+				<div class='makebook_initiatevote_wrapper'>
+					<div class='makebook_fdblock_wrapper'>
+						<h5 class='maintitle'>创建投票</h5>
+						<a class='closebtn ybiconfont ybicon-closebtn' href='javascript:;'></a>
+					</div>
+					<ul class='makebook_voteoption_wrapper'>
+						<li>
+							<label>投票主题</label>
+							<div class='form'>
+								<input class='textoption' type='text'>
+							</div>
+						</li>
+						<li>
+							<label>投票类型</label>
+							<div class='form'>
+								<ul>
+									<li>
+										<input id='normal' type='radio' name='votetype'>
+										<label for='normal'>普通投票</label>
+									</li>
+									<li>
+										<input id='member' type='radio' name='votetype'>
+										<label for='member'>成员投票</label>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<label>投票选项</label>
+							<div class='form'>
+								<div class='common_custonoption_item'>
+									<input type="text">
+									<a class="add" href="javascript:;">+</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label>投票模式</label>
+							<div class='form'>
+								<ul>
+									<li>
+										<input id='singlevote' type='radio' name='votemode'>
+										<label for='singlevote'>单选</label>
+									</li>
+									<li>
+										<input id='multiplevote' type='radio' name='votemode'>
+										<label for='multiplevote'>多选</label>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<label>投票描述</label>
+							<div class='form'>
+								<textarea></textarea>
+								<div>
+									<input type='checkbox'>
+									<label>匿名投票</label>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="makebook_spnav_wapper">
+						<a class="makebook_stepbacklink_item" href="javascript:;"><span class="ybiconfont ybicon-reply"></span>返回上一步</a>
+						<a class="makebook_spnextlink_btn" href="javascript:;">下一步</a>
+					</div>
+				</div>
+			</div>
+			<div class='makebook_importexcal_wrapper'>
+				<div class='makebook_friendhint_wrapper'>
+					<p>邀请卡加入的好友将自动拥有一张个人页，收集的个人信息将自动保存在页面内，其他互动内容可以在个人页、投票页内使用。</p>
+				</div>
+				<ul class='makebook_friendlist_wrapper'>
 					<li class='makebook_invitnamecard_item'>
-						<div class="pop friend_create">创</div>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-male"></span>
+								<div class="pop friend_create">创</div>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'>
+							<!-- <img src="img/makebook/invitenamecard_bg.png"> -->
+						</div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-female"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-female"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-male"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
-					</li>
-					<li class='makebook_invitnamecard_item'>
-						<div class="pop friend_create">创</div>
-						<img src="img/default/ablum_photo02.png" class="friend_head">
-						<div class="friend_info">
-							<div class="info1">
-								李冰
-								<span class="ybiconfont ybicon-male"></span>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
 							</div>
 							<ul>
-								<li>生日:1990-07-09</li>
-								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
-					</li>
-					<li class='makebook_invitnamecard_item'>
-						<img src="img/default/ablum_photo02.png" class="friend_head">
-						<div class="friend_info">
-							<div class="info1">
-								李冰
-								<span class="ybiconfont ybicon-female"></span>
-							</div>
-							<ul>
-								<li>生日:1990-07-09</li>
-								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
-							</ul>
-						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-female"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-male"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
-					</li>
-					<li class='makebook_invitnamecard_item'>
-						<div class="pop friend_create">创</div>
-						<img src="img/default/ablum_photo02.png" class="friend_head">
-						<div class="friend_info">
-							<div class="info1">
-								李冰
-								<span class="ybiconfont ybicon-male"></span>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
 							</div>
 							<ul>
-								<li>生日:1990-07-09</li>
-								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
-					</li>
-					<li class='makebook_invitnamecard_item'>
-						<img src="img/default/ablum_photo02.png" class="friend_head">
-						<div class="friend_info">
-							<div class="info1">
-								李冰
-								<span class="ybiconfont ybicon-female"></span>
-							</div>
-							<ul>
-								<li>生日:1990-07-09</li>
-								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
-							</ul>
-						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-female"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 					<li class='makebook_invitnamecard_item'>
 						<img src="img/default/ablum_photo02.png" class="friend_head">
 						<div class="friend_info">
 							<div class="info1">
 								李冰
-								<span class="ybiconfont ybicon-male"></span>
 							</div>
 							<ul>
 								<li>生日:1990-07-09</li>
 								<li>电话:13910033300</li>
-								<li>邮箱:bing.li@163.com</li>
 							</ul>
 						</div>
-						<a class='trash ybiconfont ybicon-trash' href='javascript:;'></a>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'>
+							<img src="img/makebook/invitenamecard_bg.png">
+						</div>
+						<div class='backplane'></div>
+					</li>
+					<li class='makebook_invitnamecard_item'>
+						<img src="img/default/ablum_photo02.png" class="friend_head">
+						<div class="friend_info">
+							<div class="info1">
+								李冰
+							</div>
+							<ul>
+								<li>生日:1990-07-09</li>
+								<li>电话:13910033300</li>
+							</ul>
+						</div>
+						<div class='socialinfo'>
+							<div class='email'>
+								<label>E-mail：</label>
+								<span>xianyou.li@soulinfo.com</span>
+							</div>
+							<ul>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+								<li>
+									<label class='ybiconfont ybicon-photo'></label>
+									<span>2</span>
+								</li>
+							</ul>
+						</div>
+						<div class='bg'></div>
+						<div class='backplane'></div>
 					</li>
 				</ul>
+				<div class='makebook_frienddetail_wrapper'>
+					<div class='makebook_fdblock_wrapper'>
+						<h5 class='maintitle'>小伙伴详情</h5>
+						<a class='closebtn ybiconfont ybicon-closebtn' href='javascript:;'></a>
+					</div>
+					<div class='makebook_fdblock_wrapper'>
+						<h6 class='subtitle'>基本资料</h6>
+						<ul class='makebook_fdinfo_wrapper'>
+							<li>
+								<label>姓名：</label>
+								<span>张三</span>
+							</li>
+							<li>
+								<label>邮箱：</label>
+								<span>1221@123.com</span>
+							</li>
+							<li>
+								<label>爱好：</label>
+								<span>打球</span>
+							</li>
+							<li>
+								<label>生日：</label>
+								<span>1900-03-20</span>
+							</li>
+							<li>
+								<label>手机：</label>
+								<span>1221123123</span>
+							</li>
+						</ul>
+					</div>
+					<div class='makebook_fdblock_wrapper'>
+						<h6 class='subtitle'>上传的照片</h6>
+						<ul class='makebook_fdphoto_wrapper'>
+							<li><img src="img/default/ablum_photo03.jpg"></li>
+							<li><img src="img/default/ablum_photo03.jpg"></li>
+							<li><img src="img/default/ablum_photo03.jpg"></li>
+							<li><img src="img/default/ablum_photo03.jpg"></li>
+						</ul>
+					</div>
+					<div class='makebook_fdblock_wrapper'>
+						<h6 class='subtitle'>参与的话题</h6>
+						<ul class='makebook_fdtopic_wrapper'>
+							<li>
+								<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+								<p>
+									<label><a href="javascirpt:;">普京</a>回复：</label>
+									加油喔。
+								</p>
+							</li>
+							<li>
+								<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+								<p>
+									未参与话题
+								</p>
+							</li>
+							<li>
+								<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+								<p>
+									<label><a href="javascirpt:;">普京</a>回复：</label>
+									加油喔。
+								</p>
+							</li>
+							<li>
+								<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+								<p>
+									未参与话题
+								</p>
+							</li>
+						</ul>
+						<div class='closebtn2'>
+							<a href="javascript:;">关闭</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<!-- html end-->
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/simditor/module.min.js"></script>
+	<script type="text/javascript" src="assets/js/simditor/hotkeys.min.js"></script>
+	<script type="text/javascript" src="assets/js/simditor/simditor.min.js"></script>
+	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/icheck.js"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(function() {
+		var editor = new Simditor({
+			textarea: $('.makebook_editor_wrapper textarea'),
+			toolbarFloat:false
+		});
+		// $('.makebook_crowdselector_wrapper .menu select').chosen({
+		// 	disable_search_threshold: 5 ,
+		// 	width:'110px'
+		// });
+		$("input[type=radio],input[type=checkbox]").iCheck({
+			checkboxClass: 'icheckbox_minimal-green',
+			radioClass: 'iradio_minimal-green',
+			increaseArea: '20%'
+		});
+		init();
+		setup();
+		checktag();
+	});
+	//init
+	function init() {
 		$('.makebook_asidefriendmain_wrapper>div').eq(0).show().siblings().hide();
 		$('.makebook_asidefriendtab_wrapper li').click(function() {
 			var $this = $(this),
@@ -438,21 +779,31 @@
 				friendmainEl = $('.makebook_asidefriendmain_wrapper');
 			$this.addClass('active').siblings().removeClass('active');
 			friendmainEl.children().eq(index).addClass('active').siblings().removeClass('active')
-			friendmainEl.find('.active').show().siblings().hide();
+			friendmainEl.children('.active').show().siblings().hide();
 		});
 
-		$('.makebook_waytoinvit_wrapper li').click(function() {
-
-		})
-		$('.makebook_firendlist_wrapper .friend_head').click(function() {
+		//点击名片弹出详情
+		$('.makebook_invitnamecard_item').click(function() {
 			$('.makebook_frienddetail_wrapper').popup({
-				closebtn: '.makebook_frienddetail_wrapper .closebtn, .makebook_frienddetail_wrapper .makebook_friendbtn_item a',
+				closebtn: '.makebook_stepbacklink_item',
 				maskopacity: 0.1
 			});
 		});
-		setup();
-		checktag();
-	});
+		//发起投票选举
+		$('.makebook_setupinvitcard_wrapper .personaloption .vote .yes').click(function() {
+			$('.makebook_initiatevote_wrapper').popup({
+				closebtn: '.makebook_stepbacklink_item',
+				maskopacity: 0.1
+			});
+		});
+		//发起话题讨论
+		$('.makebook_setupinvitcard_wrapper .personaloption .message .yes').click(function() {
+			$('.makebook_pushlishmessage_wrapper').popup({
+				closebtn: '.makebook_stepbacklink_item',
+				maskopacity: 0.1
+			});
+		});
+	}
 	//多人制作内的交互
 	function setup() {
 		var inputEl = $("input[type=radio],input[type=checkbox]"),
@@ -460,14 +811,14 @@
 			resetandsaveEl = $('.makebook_resetandsave_wrapper'),
 			shareEl = $('.makebook_setupshare_wrapper'),
 			checktagEl = $('.makebook_checktag_item');
-			setupEl.addClass('active');
+		setupEl.addClass('active');
 		//点击重置
 		$('.makebook_friendbtn_item .faded').click(function() {
-			$('.makebook_checktag_item').removeClass('active')
+			$('.makebook_checktag_item').removeClass('active');
 			$('.newCustomption').detach();
 		});
 		//点击添加自定义收集内容
-		$('.makebook_addcustomption_btn').click(function() {
+		$('.add').click(function() {
 			var customTextEl = $(this).prev(),
 				index = 0,
 				personalinfoEl = $('.makebook_setupinvitcard_wrapper .personalinfo');

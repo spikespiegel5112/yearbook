@@ -5137,56 +5137,15 @@
 
 .makebook_iccustomoption_wrapper div {
 	float: left;
-	width: 250px;
-	height: 35px;
-	position: relative;
+	
 }
 
 .makebook_iccustomoption_wrapper:focus div {
 	border-color: #57c5f7;
 }
 
-.makebook_iccustomoption_wrapper input {
-	float: left;
-	padding: 0 7px;
-	width: 230px;
-	height: 100%;
-	z-index: 1;
-	border: 1px solid #cccccc;
-	border-radius: 6px;
-	overflow: hidden;
-}
 
-.makebook_iccustomoption_wrapper input:focus {
-	border-color: #57c5f7;
-	box-shadow: 0 0 5px #57c5f7;
-	transition: box-shadow 0.3s;
-}
 
-.makebook_iccustomoption_wrapper a {
-	display: block;
-	margin: 1px 0 0 0;
-	width: 45px;
-	height: 35px;
-	line-height: 32px;
-	text-align: center;
-	color: #999;
-	background-color: #eeeeee;
-	font-size: 30px;
-	position: absolute;
-	right: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-
-.makebook_iccustomoption_wrapper a:hover {
-	background-color: #dfdfdf;
-}
-
-.makebook_iccustomoption_wrapper a:active {
-	box-shadow: 2px 2px 5px #ccc inset;
-	line-height: 35px;
-}
 
 .makebook_iccustomoption_wrapper label {
 	float: left;
@@ -5990,6 +5949,9 @@
 	z-index: 2;
 	top: 1px;
 }
+.makebook_asidefriendtab_wrapper .active a{
+	color: #333;
+}
 
 .makebook_asidefriendtab_wrapper li a{
 	display: inline-block;
@@ -5998,7 +5960,7 @@
 	line-height: 55px;
 	text-align: center;
 	border-right: 1px solid #b8c4cf;
-	color: #999;
+	color: #55b9ea;
 	font-size: 15px;
 }
 .makebook_asidefriendtab_wrapper li:first-child a{
@@ -6020,8 +5982,9 @@
 	font-size: 20px;
 	line-height: 17px;
 }
-.makebook_firendlist_wrapper{
-	height: 500px;
+.makebook_friendlist_wrapper{
+	padding: 0 0 20px 0;
+	min-height: 500px;
 	overflow: hidden;
 /*	border: 1px solid #b8c4cf;*/
 	position: relative;
@@ -6030,15 +5993,33 @@
 .makebook_invitnamecard_item {
 	position: relative;
 	float: left;
-	padding: 5px 0;
-	width: 310px;
-	height: 180px;
-	margin: 10px 5px;
-	background-image: url(../img/makebook/invitenamecard_bg.jpg);
+	margin: 20px 23px;
+	width: 320px;
+	height: 190px;
+	cursor: pointer;
 }
-/*.makebook_invitnamecard_item:hover{
-	box-shadow: 0 0 3px #bbb;
-}*/
+.makebook_invitnamecard_item .bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-image: url(../img/makebook/invitenamecard_bg.png);
+}
+.makebook_invitnamecard_item .backplane{
+	content: '';
+	display: block;
+	width: 305px;
+	height: 180px;
+	background: #fff;
+	box-shadow: 0 3px 10px #999;
+	position: absolute;
+	top: 4px;
+	left: 6px;
+	z-index: 0;
+	transform:rotate(-2deg);
+}
 .makebook_invitnamecard_item:hover .trash{
 	display: block;
 }
@@ -6059,8 +6040,8 @@
 	position: relative;
 	bottom: 8px;
 	right: 0;
-	width: 18px;
-	height: 18px;
+	width: 20px;
+	height: 20px;
 	text-align: center;
 	color: #fff;
 	border-radius: 50%;
@@ -6097,28 +6078,33 @@
 	background-image: url(../img/user_default_head.png);
 	transform: rotate(-2deg);
 	position: absolute;
-	bottom: 85px;
+	bottom: 75px;
+	z-index: 2;
 }
 
 .makebook_invitnamecard_item .friend_info {
+	padding: 0 0 10px 0;
 	width: 100%;
+	min-height: 110px;
 	font-size: 12px;
 	line-height: 28px;
 	color: #999;
-	
+	border-bottom: 1px solid #e8e8e8;
+	z-index: 2;
+	position: relative;
 }
 .makebook_invitnamecard_item .friend_info ul{
-	margin: 0 0 0 150px;
+	margin: 0 0 0 140px;
 }
 .makebook_invitnamecard_item .friend_info li{
 	font-size: 12px;
-	line-height: 18px;
+	line-height: 22px;
 	color: #333;
 }
 
 .makebook_invitnamecard_item .friend_info .info1 {
 	display: inline-block;
-	margin: 15px 0 7px 150px;
+	margin: 15px 0 10px 140px;
 	font-size: 23px;
 	color: #666;
 	position: relative;
@@ -6145,6 +6131,24 @@
 
 .makebook_invitnamecard_item .friend_info .info1 span.color_b {
 	color: #53b5ec;
+}
+.makebook_invitnamecard_item .socialinfo{
+	padding: 5px 0 0 20px;
+	font-size: 12px;
+	color: #999999;
+	z-index: 2;
+	position: relative;
+}
+.makebook_invitnamecard_item .socialinfo ul{
+	padding: 10px 0 0 0;
+	overflow: hidden;
+}
+.makebook_invitnamecard_item .socialinfo ul li{
+	float: left;
+	margin: 0 15px 0 0;
+}
+.makebook_invitnamecard_item .socialinfo ul li label{
+	color: #bac7d1;
 }
 .makebook_invitnamecard_item .contact_info{
 	margin: 10px 0;
@@ -6185,7 +6189,7 @@
 	color: #333;
 	font-size: 13px;
 }
-.makebook_frienddetail_wrapper .maintitle{
+.makebook_fdblock_wrapper .maintitle{
 	display: inline-block;
 	font-size: 19px;
 }
@@ -6340,16 +6344,81 @@
 	color: #666;
 }
 .makebook_asidefriendmain_wrapper .makebook_setupinvitcard_wrapper{
-	margin: 0 auto 20px;
+	margin: 20px auto;
 	width: 95%;
 }
 .makebook_asidesetupinvit_wrapper .makebook_friendbtn_item{
 	padding: 0 50px;
 	text-align: right;
 }
-
-
-
+.makebook_editor_wrapper{
+	margin: 0 auto;
+	width: 95%;
+}
+.makebook_editor_wrapper textarea{
+	display: block;
+	margin: 20px auto;
+	padding: 10px;
+	width: 92%;
+	min-height:120px; 
+}
+.makebook_pushlishmessage_wrapper{
+	display: none;
+	width: 700px;
+	background-color: #fff;
+}
+.makebook_crowdselector_wrapper{
+	word-spacing: 100%;
+	padding: 20px;
+}
+.makebook_crowdselector_wrapper .at{
+	display: inline-block;
+}
+.makebook_crowdselector_wrapper .menu{
+	display: inline-block;
+}
+.makebook_crowdselector_wrapper .menu .common_custonoption_item{
+	display: inline-block;
+}
+.makebook_crowdselector_wrapper .checkbox{
+	display: inline-block;
+}
+.makebook_crowdselector_wrapper .checkbox li{
+	display: inline-block;
+}
+.makebook_initiatevote_wrapper{
+	width: 450px;
+	background: #fff;
+}
+.makebook_voteoption_wrapper{
+	padding: 25px;
+}
+.makebook_voteoption_wrapper li{
+	display: inline-block;
+	margin: 7px 0;
+	font-size: 14px;
+}
+.makebook_voteoption_wrapper li label{
+	display: inline-block;
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+.makebook_voteoption_wrapper li .form{
+	display: inline-block;
+	vertical-align: middle;
+}
+.makebook_voteoption_wrapper li .form .textoption{
+	padding: 0 10px;
+	width: 300px;
+	height: 30px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+.makebook_voteoption_wrapper li .form  textarea{
+	padding: 10px;
+	width: 300px;
+	height: 140px;
+}
 
 
 

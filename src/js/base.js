@@ -472,9 +472,9 @@
 				display:'block',
 				opacity:1
 			});
-			if (popupWrapperEl.height()>$(window).height()-200) {
+			if (popupWrapperEl.height()>$(window).height()-20) {
 				popupWrapperEl.css({
-					width: ($this.width()+15),
+					width: ($this.outerWidth()+15),
 					height: ($(window).height()-100),
 					overflow:'auto'
 				});

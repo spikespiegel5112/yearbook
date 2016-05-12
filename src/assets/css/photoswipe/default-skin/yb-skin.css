@@ -171,14 +171,16 @@
 
  */
 .pswp__counter,
-.pswp__share-modal {
+.pswp__share-modal,
+.pswp__comment-modal {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-.pswp__share-modal {
+.pswp__share-modal,
+.pswp__comment-modal {
     display: block;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -195,7 +197,8 @@
     will-change: opacity;
 }
 
-.pswp__share-modal--hidden {
+.pswp__share-modal--hidden,
+.pswp__comment-modal--hidden {
     display: none;
 }
 
@@ -242,11 +245,13 @@
     border-radius: 0 0 2px 2px;
 }
 
-.pswp__share-modal--fade-in {
+.pswp__share-modal--fade-in,
+.pswp__comment-modal--fade-in {
     opacity: 1;
 }
 
-.pswp__share-modal--fade-in .pswp__share-tooltip {
+.pswp__share-modal--fade-in .pswp__share-tooltip,
+.pswp__comment-modal--fade-in .comment {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -295,6 +300,40 @@ a.pswp__share--download:hover {
     background: #DDD;
 }
 
+.pswp__comment-modal .comment{
+    z-index: 1620;
+    position: absolute;
+    background: #FFF;
+    top: 56px;
+    border-radius: 2px;
+    display: block;
+    width: 310px;
+    right: 88px;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+}
+
+.pswp__comment-modal .comment::before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    border: 6px solid transparent;
+    border-bottom-color: #FFF;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
 /*
 
 	3. Index indicator ("1 of X" counter)

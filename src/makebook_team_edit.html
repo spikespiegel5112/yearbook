@@ -1607,6 +1607,9 @@
                     slideout.close();
                     $('aside').addClass('close');
                     $('.slide_mask').hide();
+                    $('.fixed_menu li').each(function () {
+                        $(this).removeClass('active');
+                    })
                 }
             });
         });

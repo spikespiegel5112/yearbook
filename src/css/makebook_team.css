@@ -1106,26 +1106,26 @@
     color: #666;
 }
 
-.res_tab_con .hd{
+.res_tab_con .interact_list .hd{
     text-align: center;
     margin: 0 0 5px;
 }
 
-.res_tab_con .hd a{
+.res_tab_con .interact_list .hd a{
     margin: 0 5px;
     font-size: 14px;
     color: #c7c7c7;
     vertical-align: middle;
 }
 
-.res_tab_con .hd ul {
+.res_tab_con .interact_list .hd ul {
     display: inline-block;
     vertical-align: middle;
     overflow: hidden;
     zoom: 1;
 }
 
-.res_tab_con .hd li {
+.res_tab_con .interact_list .hd li {
     float: left;
     padding: 0;
     width: 8px;
@@ -1138,11 +1138,11 @@
     border-radius: 100%;
 }
 
-.res_tab_con .hd li:last-child{
+.res_tab_con .interact_list .hd li:last-child{
     margin-right: 0;
 }
 
-.res_tab_con .hd li.on {
+.res_tab_con .interact_list .hd li.on {
     background: #38d08a;
 }
 
@@ -1327,61 +1327,14 @@
     height: 56px;
 }
 
-.pswp__comment-modal{
-    display: none;
-    background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    position: absolute;
-    z-index: 1600;
-    opacity: 0;
-    -webkit-transition: opacity 0.25s ease-out;
-    transition: opacity 0.25s ease-out;
-    -webkit-backface-visibility: hidden;
-    will-change: opacity;
-}
-
-.pswp__comment-modal .comment{
-    z-index: 1620;
-    position: absolute;
-    background: #FFF;
-    top: 56px;
-    border-radius: 2px;
-    display: block;
-    width: 310px;
-    right: 88px;
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    -webkit-transform: translateY(6px);
-    -ms-transform: translateY(6px);
-    transform: translateY(6px);
-    -webkit-transition: -webkit-transform 0.25s;
-    transition: transform 0.25s;
-    -webkit-backface-visibility: hidden;
-    will-change: transform;
-}
-
-.pswp__comment-modal .comment_list::before{
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: -12px;
-    right: 15px;
-    border: 6px solid transparent;
-    border-bottom-color: #FFF;
-    -webkit-pointer-events: none;
-    -moz-pointer-events: none;
-    pointer-events: none;
-}
-
 .comment .comment_list{
     position: relative;
     width: 100%;
+
+}
+.pswp__comment-modal .comment .comment_list{
+    max-height: 310px;
+    overflow-y: auto;
 }
 .comment .comment_list li{
     position: relative;
@@ -2018,17 +1971,17 @@
 .res_tab_con .action_wrap{
     padding: 20px 10px 10px;
 }
-.res_tab_con .action_wrap > a{
+.res_tab_con .action_wrap .back{
     display: inline-block;
     color: #666;
     font-size: 16px;
     line-height: 40px;
 }
-.res_tab_con .action_wrap a i{
+.res_tab_con .action_wrap .back i{
     margin-right: 5px;
     vertical-align: middle;
 }
-.res_tab_con .action_wrap a:hover{
+.res_tab_con .action_wrap .back:hover{
     color: #31b8d3;
 }
 .res_tab_con .action_wrap .tips{
@@ -2181,6 +2134,59 @@
 .actor_comment_list .comment_list li .content{
     border-bottom: 0;
 }
+.edit_pop_container .create_topiclist{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -270px 0 0 -310px;
+    width: 620px;
+    height: 540px;
+}
+.edit_pop_container .create_topiclist::before{
+    width: 640px;
+    height: 560px;
+}
+.edit_pop_container .create_topiclist ul,
+.edit_pop_container .create_votelist > ul{
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+}
+.edit_pop_container .create_topiclist ul li{
+    margin: 10px 0;
+}
+.edit_pop_container .yb_book_btn{
+    margin: 10px 0;
+}
+.edit_pop_container .create_votelist{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -310px;
+    width: 620px;
+    height: 580px;
+}
+.edit_pop_container .create_votelist::before{
+    width: 640px;
+    height: 600px;
+}
+.edit_pop_container .create_votelist > ul{
+    max-height: 530px;
+    overflow-y: auto;
+}
+.edit_pop_container .create_votelist ul li{
+    margin: 10px 0;
+    width: 100%;
+}
+.edit_pop_container .member_voteoption_wrapper ul{
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    overflow-y: auto;
+}
+.edit_pop_container .create_votelist .voteoption_wrapper ul li{
+    margin: 0;
+}
 .vote .vote_list_wrap{
     position: relative;
     width: 100%;
@@ -2212,12 +2218,15 @@
     border-radius: 100%;
     border: 2px solid #eee;
     overflow: hidden;
+    z-index: 1;
 }
 .vote_list_wrap .item .header img{
     width: 100%;
     height: 100%;
 }
 .vote_list_wrap .item .vote_fig{
+    position: relative;
+    display: block;
     width: 100%;
     height: 145px;
 }
@@ -2337,4 +2346,56 @@
 .vote_option .vote_list_result table{
     width: 100%;
     margin: 0;
+}
+.edit_pop_container .vote_result_con{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -143px 0 0 -408px;
+    width: 815px;
+    height: 305px;
+    color: #333;
+    background-color: #fff;
+}
+.edit_pop_container .vote_result_con::before{
+    width: 835px;
+    height: 325px;
+}
+.vote_result_con .voteresult_dialog_wrapper{
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.vote_result_con .voteresult_dialog_wrapper h5{
+    padding: 0 0 15px;
+    border-bottom: 1px solid #ddd;
+}
+.vote_result_con .voteresult_dialog_wrapper ul{
+    max-height: 150px;
+    overflow-y: auto;
+}
+.vote_result_con .voteresult_main_wrapper li{
+    margin: 8px 5px;
+}
+.interact .leavewall_con{
+    padding: 25px 10px 0;
+}
+.interact .leavewall_con textarea{
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+}
+.interact .leavewall_con .operate {
+    float: right;
+    width: auto;
+}
+.interact .leavewall_con .tips{
+    float: left;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+    line-height: 30px;
 }

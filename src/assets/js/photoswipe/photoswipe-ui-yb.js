@@ -291,7 +291,7 @@ var PhotoSwipeUI_Default =
 
 		},
         _updateCommentCon = function() {
-            console.log('show comment')
+            //console.log('show comment')
         },
 		_hasCloseClass = function(target) {
 			for(var  i = 0; i < _options.closeElClasses.length; i++) {

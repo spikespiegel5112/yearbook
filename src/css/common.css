@@ -6945,7 +6945,8 @@ nav .pagination li a:active
 
     background: rgba(0,0,0,.6);
 }
-.edit_pop_container .close
+.edit_pop_container .close,
+.yb_pop_wrap .close
 {
     font-size: 18px;
 
@@ -6957,12 +6958,14 @@ nav .pagination li a:active
     color: #333;
 }
 
-.edit_pop_container .close:hover
+.edit_pop_container .close:hover,
+.yb_pop_wrap .close:hover
 {
     color: #f60;
 }
 
-.edit_pop_container .title
+.edit_pop_container .title,
+.yb_pop_wrap .title
 {
     font-size: 16px;
     font-weight: bold;
@@ -6974,4 +6977,12 @@ nav .pagination li a:active
 
     color: #333;
     border-bottom: 1px solid #ddd;
+}
+.yb_pop_wrap::before{
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.4);
 }

@@ -27,7 +27,7 @@
             <ul>
                 <li>团队话题（<span>10</span>）</li>
                 <li class="on">团队投票（<span>10</span>）</li>
-                <li>团队赠言（<span>10</span>）</li>
+                <li>团队留言墙（<span>10</span>）</li>
             </ul>
         </div>
         <div class="res_tab_con">
@@ -36,7 +36,7 @@
                 <li>
                     <div class="interact detail topic">
                         <div class="action_wrap">
-                            <a class="" href="makebook_aside_interact.html"><i class="ybiconfont ybicon-backward2"></i>返回话题列表</a>
+                            <a class="back" href="makebook_aside_interact.html"><i class="ybiconfont ybicon-backward2"></i>返回话题列表</a>
 
                             <p class="tips">提示：发布的评论内容可添加至您的个人页</p>
                         </div>
@@ -156,7 +156,7 @@
                 <li>
                     <div class="interact detail vote">
                         <div class="action_wrap">
-                            <a class="" href="makebook_aside_interact.html"><i class="ybiconfont ybicon-backward2"></i>返回投票列表</a>
+                            <a class="back" href="makebook_aside_interact.html"><i class="ybiconfont ybicon-backward2"></i>返回投票列表</a>
 
                             <p class="tips">提示：进行的投票可添加至您的投票页</p>
                         </div>
@@ -450,13 +450,376 @@
                         </div>
                     </div>
                 </li>
-                <li></li>
+                <li>
+                    <div class="interact leavewall">
+                        <div class="leavewall_con">
+                            <textarea id="leavewall_con_text" name="" rows="6" placeholder="随便说点什么吧!"></textarea>
+                            <p class="tips">提示：收到的赠言可以添加至自己的个人页中哦！</p>
+                            <div class="operate">
+                                <div class='lw_choosefriend_wrapper'>
+                                    <p class="cm_fl">@</p>
+                                    <select class='lw_choosefriendlist_wrapper' data-placeholder="选择小伙伴……">
+                                        <option></option>
+                                        <option>张三</option>
+                                        <option>李四</option>
+                                        <option>王五</option>
+                                        <option>aaa</option>
+                                        <option>bbb</option>
+                                        <option>ccc</option>
+                                        <option>ddd</option>
+                                        <option>eee</option>
+                                        <option>fff</option>
+                                        <option>ggg</option>
+                                    </select>
+                                </div>
+                                <div class="cm_fl lw_btn">
+                                    <a href="javascript:;" class="yb_book_btn">发表赠言</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideTxtBox">
+                            <div class="hd">
+                                <ul>
+                                    <li class='on'>赠言广场<span class="badge">9</span></li>
+                                </ul>
+                            </div>
+                            <div class="bd">
+                                <ul>
+                                    <div id="container" class="leavewall_con">
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到;而是因为我们失去了信心，有些事情才显得难以做到;而是因为我们失去了信心，有些事情才显得难以做到</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                        <div class="item">
+                                            <div class="user_head">
+                                                <img src="img/default/user_img4.jpg">
+                                            </div>
+                                            <div class="user_message">
+                                                <div class="message_info">
+                                                    <h4>张三</h4>
+                                                    <p>不是因为有些事情难以做到，我们才失去信心;而是因为我们失去了信心，有些事情才显得难以做到。</p>
+                                                    <p class="txt_r">来自 李四</p>
+                                                </div>
+                                                <div class="message_btn">
+                                                    <ul>
+                                                        <li class="m_b_li1">
+                                                            <a href="javascript:;" class="ybiconfont ybybiconfont ybicon-envelope cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">回赠</a>
+                                                        </li>
+                                                        <li class="m_b_li2">
+                                                            <a href="javascript:;" class="ybiconfont ybicon-failure cm_fl"></a>
+                                                            <a href="javascript:;" class="cm_fl cm_ml_5">删除</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="item_arrow"></div>
+                                        </div>
+                                        <!-- item end -->
+                                    </div>
+                                    <div class='all_loadmore'>
+                                        <a href="javascript:;">加载更多<span></span></a>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc_empty_item hidden">
+                        <span class='resource'></span>
+                        <label>还没有赠言</label>
+                    </div>
+                </li>
             </ul>
+        </div>
+    </div>
+</div>
+<!--查看投票详情-->
+<div id="viewVoteResult" class="edit_pop_container">
+    <div class="vote_result_con yb_pop_wrap">
+        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+        <h4 class="title">查看投票详情</h4>
+        <div class='voteresult_dialog_wrapper'>
+            <h5>选项：王五</h5>
+            <div class='voteresult_main_wrapper'>
+                <p>投此选项的共有（<span>3</span>）人</p>
+                <ul>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/book_step_one.png">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/book_step_one.png">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                            <label>2015 05-11 11:45</label>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
+<script type="text/javascript" src='assets/js/jquery.masonry.min.js'></script>
+<script type="text/javascript" src='assets/js/chosen.jquery.min.js'></script>
 <script>
     (function(){
         $(".aside_content .resource_list").slide({
@@ -466,17 +829,31 @@
             nextCell: "",
             trigger: "click",
             pnLoop: false,
-            autoPlay: false
+            autoPlay: false,
+            endFun: function(){
+                //话题 投票排序
+                $(".choose_sort").chosen({
+                    disable_search_threshold: 10,
+                    width: '110px'
+                });
+                //赠言chosen插件多选,点击选择小伙伴打开弹窗列表
+                $(".lw_choosefriendlist_wrapper").chosen({
+                    no_results_text: '没有找到这个小伙伴：',
+                    width: '200px'
+                });
+                //瀑布流插件
+                $('#container').masonry({
+                    // options
+                    itemSelector: '.item',
+                    columnWidth: 240
+                });
+            }
         });
-        /*$(".choose_sort").chosen({
-            disable_search_threshold: 10,
-            width: '110px'
-        });*/
 
         //普通投票 结果
         normalResult();
-        //成员投票 结果
-
+        //查看投票详情
+        showResultDetail()
     })();
 
     function normalResult() {
@@ -526,6 +903,15 @@
                 });
             }
         });
+    }
+
+    function showResultDetail(){
+        $('.view_result').click(function(){
+            $('#viewVoteResult').fadeIn('fast');
+        });
+        $('.vote_result_con .close').click(function(){
+            $('#viewVoteResult').fadeOut('fast');
+        })
     }
 </script>
 </body>

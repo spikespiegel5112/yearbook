@@ -2181,6 +2181,59 @@
 .actor_comment_list .comment_list li .content{
     border-bottom: 0;
 }
+.edit_pop_container .create_topiclist{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -270px 0 0 -310px;
+    width: 620px;
+    height: 540px;
+}
+.edit_pop_container .create_topiclist::before{
+    width: 640px;
+    height: 560px;
+}
+.edit_pop_container .create_topiclist ul,
+.edit_pop_container .create_votelist > ul{
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+}
+.edit_pop_container .create_topiclist ul li{
+    margin: 10px 0;
+}
+.edit_pop_container .yb_book_btn{
+    margin: 10px 0;
+}
+.edit_pop_container .create_votelist{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -310px;
+    width: 620px;
+    height: 580px;
+}
+.edit_pop_container .create_votelist::before{
+    width: 640px;
+    height: 600px;
+}
+.edit_pop_container .create_votelist > ul{
+    max-height: 530px;
+    overflow-y: auto;
+}
+.edit_pop_container .create_votelist ul li{
+    margin: 10px 0;
+    width: 100%;
+}
+.edit_pop_container .member_voteoption_wrapper ul{
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    overflow-y: auto;
+}
+.edit_pop_container .create_votelist .voteoption_wrapper ul li{
+    margin: 0;
+}
 .vote .vote_list_wrap{
     position: relative;
     width: 100%;

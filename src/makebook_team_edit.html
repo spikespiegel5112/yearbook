@@ -72,13 +72,13 @@
             </div>
         </div>
     </div>
-    <div class="team_edit_container">
+    <div class="team_edit_container "><!--1280下class:min_screen-->
         <div class="slide_mask"></div>
         <aside id="panel" class="close">
             <nav class="nav_bar">
                 <ul class="fixed_menu">
-                    <li>
-                        <a class="" loadUrl="">
+                    <li class="active">
+                        <a class="" href="makebook_team_edit.html">
                             <em class="edit icon"></em>
                             <em class="text">编辑</em>
                         </a>
@@ -108,7 +108,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="" loadUrl="bp_main.html">
+                        <a class="" href="bp_main.html">
                             <em class="preview icon"></em>
                             <em class="text">预览</em>
                         </a>
@@ -123,16 +123,28 @@
                             <!--<label>分享到：</label>-->
                             <ul>
                                 <li>
-                                    <a class="weibo ybiconfont ybicon-weibosina" href="javascript:;"></a>
+                                    <a class="wechat" href="javascript:;">
+                                        <i class="ybiconfont ybicon-wechatsolid"></i>
+                                        <span>微信</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="qzone ybiconfont ybicon-qzone" href="javascript:;"></a>
+                                    <a class="qzone" href="javascript:;">
+                                        <i class="ybiconfont ybicon-qzone"></i>
+                                        <span>QQ空间</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="wechat ybiconfont ybicon-wechatsolid" href="javascript:;"></a>
+                                    <a class="weibo" href="javascript:;">
+                                        <i class="ybiconfont ybicon-weibosina"></i>
+                                        <span>微博</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="renren ybiconfont ybicon-renren" href="javascript:;"></a>
+                                    <a class="QQ" href="javascript:;">
+                                        <i class="ybiconfont ybicon-qqsolid"></i>
+                                        <span>QQ</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -145,28 +157,39 @@
                 </div>
             </div>
         </aside>
-        <div id="menu" class="edit_content single"><!--list 章节列表模式 single 单页编辑模式-->
+        <div id="menu" class="edit_content single"><!--list 章节列表模式 single 单页编辑模式 -->
             <div class="tool_bar">
                 <div class="grid book_info">
+                    <div class="cover">
+                        <img src="img/default/bookshelf_book01.jpg">
+                        <span class="type team"></span>
+                    </div>
                     <div class="name">
                         <h4>《毕业纪念册》</h4>
                         <!--完成百分比-->
                         <span>90%</span>
                     </div>
+                    <div class="progress">
+                        <div class="percent">
+                            <label>完成率：</label>
+                            <span>90%</span>
+                            <div class="bar"><span style="width: 90%;"></span></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="grid">
                     <ul class="list_mode">
                         <li>
-                            <a class="add_chapter_btn" href="javascript:;"></a>
+                            <a class="add_chapter_btn" href="javascript:;"><i></i><span>添加章节</span></a>
                         </li>
                         <li>
-                            <a class="add_page_btn" href="javascript:;"></a>
+                            <a class="add_page_btn" href="javascript:;"><i></i><span>添加页面</span></a>
                         </li>
                         <li>
-                            <a class="add_friend_btn" href="javascript:;"></a>
+                            <a class="add_friend_btn" href="javascript:;"><i></i><span>邀请协作者</span></a>
                         </li>
                         <li>
-                            <a class="change_tpl_btn" href="javascript:;"></a>
+                            <a class="change_tpl_btn" href="javascript:;"><i></i><span>更换模板</span></a>
 
                             <div class="ybcommon_queryicon_item">
                                 <div>
@@ -175,21 +198,21 @@
                             </div>
                         </li>
                         <li>
-                            <a class="auto_layout" href="javascript:;"></a>
+                            <a class="auto_layout" href="javascript:;"><i></i><span>自动排版</span></a>
                         </li>
                     </ul>
                     <ul class="single_mode">
                         <li>
-                            <a class="add_page_btn" href="javascript:;"></a>
+                            <a class="add_page_btn" href="javascript:;"><i></i><span>添加页面</span></a>
                         </li>
                         <li>
-                            <a class="auto_layout" href="javascript:;"></a>
+                            <a class="auto_layout" href="javascript:;"><i></i><span>自动排版</span></a>
                         </li>
                         <li>
-                            <a class="view_sample_btn" href="javascript:;"></a>
+                            <a class="view_sample_btn" href="javascript:;"><i></i><span>参考示例</span></a>
                         </li>
                         <li>
-                            <a class="save_page_btn disable" href="javascript:;"></a>
+                            <a class="save_page_btn disable" href="javascript:;"><i></i><span>保存书页</span></a>
 
                             <div class="ybcommon_queryicon_item">
                                 <div>
@@ -202,7 +225,7 @@
                 <div class="grid">
                     <ul>
                         <li>
-                            <a class="incomplete_picture" href="javascript:;"></a>
+                            <a class="incomplete_picture" href="javascript:;"><i></i><span>缺失照片</span></a>
 
                             <div class="page_list">
                                 <ul>
@@ -251,7 +274,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="incomplete_text" href="javascript:;"></a>
+                            <a class="incomplete_text" href="javascript:;"><i></i><span>缺失文字</span></a>
 
                             <div class="page_list">
                                 <ul>
@@ -2032,8 +2055,6 @@
         //添加章节、页面、自动排版等
         editBookToolbarEvents();
         determineWindowSize();
-        //列表、编辑模式切换
-        swichPageMode();
         setEditAreaWidth();
     });
 
@@ -2051,12 +2072,15 @@
         var slideout = new Slideout({
             'panel': document.getElementById('panel'),
             'menu': document.getElementById('menu'),
-            'padding': 1150
+            'padding': 1150,
+            'duration': 800,
+            'fx': 'ease',
+            'side': 'left'
         });
 
 
         //点击nav调出aside区域
-        $('.fixed_menu li:lt(6)').find('a').on('click', function (e) {
+        $('.fixed_menu li:lt(5):gt(0)').find('a').on('click', function (e) {
             slideout.open();
             $('aside').removeClass('close');
             $('.slide_mask').show();
@@ -2069,14 +2093,18 @@
             $('.toolbar_expend .content').load(Url);
 
             //click其他地方关闭aside区域
-            $(document).on('click', function (e) {
+            $('.team_edit_container').on('click', function (e) {
                 if ($(e.target).closest('#panel').length == 0) {
                     slideout.close();
-                    $('aside').addClass('close');
-                    $('.slide_mask').hide();
-                    $('.fixed_menu li').each(function () {
-                        $(this).removeClass('active');
-                    })
+                    slideout.on('close', function() {
+                        $('.slide_mask').fadeOut('fast');
+                        $('aside').addClass('close');
+
+                        $('.fixed_menu li').each(function () {
+                            $(this).removeClass('active');
+                            $('.fixed_menu li').eq(0).addClass('active');
+                        })
+                    });
                 }
             });
         });
@@ -2099,6 +2127,8 @@
         var winWidth = $(window).width();
         if (winWidth <= 1280) {
             winWidth = 1280;
+            //1280下缩减工具栏
+            $('.team_edit_container').addClass('min_screen');
             setTimeout(function () {
                 $('.chapter_shrink').addClass('active');
                 $('.resource_shrink').addClass('active');
@@ -2151,18 +2181,6 @@
         });
     }
 
-    function swichPageMode() {
-        //返回章节列表
-        $('.back_list_mode').click(function () {
-            $('.team_edit_container .edit_content').removeClass('single').addClass('list');
-        });
-        //双击章节列表图片跳转到单页模式
-        $('.page_list .figure').dblclick(function () {
-            $('.team_edit_container .edit_content').removeClass('list').addClass('single');
-        })
-    }
-
-
     //资源tab
     function resourceTab() {
         //照片hover放大镜
@@ -2181,9 +2199,9 @@
 
         //hover 显示话题、赠言信息
         $('.interact_list .item').hover(function () {
-            $(this).find('.interact_des').delay(500).fadeIn();
+            $(this).find('.interact_des').stop().delay(300).fadeIn('100');
         }, function () {
-            $(this).find('.interact_des').fadeOut();
+            $(this).find('.interact_des').stop().fadeOut('100');
         });
 
         //模板-高级筛选
@@ -2311,6 +2329,15 @@
 
     //添加章节、页面、更换模板、分配协作者、修改章节配置
     function editBookToolbarEvents() {
+        //返回章节列表
+        $('.back_list_mode').click(function () {
+            $('.team_edit_container .edit_content').removeClass('single').addClass('list');
+        });
+        //双击章节列表图片跳转到单页模式
+        $('.page_list .figure').dblclick(function () {
+            $('.team_edit_container .edit_content').removeClass('list').addClass('single');
+        })
+
         //添加章节
         $('.add_chapter_btn').click(function () {
             $('.add_chapter_con').popup({

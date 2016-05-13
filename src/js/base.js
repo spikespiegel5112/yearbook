@@ -467,7 +467,6 @@
 			popupWrapperEl.append($this);
 			$this.css({
 				display:'block'
-
 			});
 			popupWrapperEl.css({
 				display:'block',

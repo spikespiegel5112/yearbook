@@ -5086,7 +5086,7 @@
 
 .makebook_setupinvitcard_wrapper .personalinfo li {
 	float: left;
-	margin: 15px 0 0 24px;
+	margin: 15px 0 0 22px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -5874,15 +5874,16 @@
 .makebook_friendhint_wrapper li{
 	display: inline-block;
 	margin: 0 5px;
-	
-	background-color: #489fcf;
-
 }
 .makebook_friendhint_wrapper li a{
 	display: inline-block;
 	padding: 10px 15px;
 	color: #fff;
 	font-size: 13px;
+	background-color: #489fcf;
+}
+.makebook_friendhint_wrapper li a:hover{
+	background-color: #387EA4;
 }
 .makebook_asidefriend_wrapper{
 	padding: 10px 15px 30px 15px;
@@ -6286,6 +6287,7 @@
 }
 .makebook_asidefriendmain_wrapper>.active{
 	display: block;
+	opacity: 1;
 	background-color: #fff;
 }
 

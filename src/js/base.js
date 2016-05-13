@@ -491,7 +491,6 @@
 						thisParent.append($this.hide());
 					});
 				});
-
 			};
 		},
 		priceCalculator: function(options) {

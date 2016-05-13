@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-	<!-- <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all"> -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 </head>
@@ -444,7 +444,6 @@
 								</p>
 							</li>
 						</ul>
-						
 					</div>
 					<div class="makebook_friendbtn_item">
 						<a href="javascript:;">关闭</a>
@@ -472,15 +471,20 @@
 				</div>
 				<ul class='makebook_waytoinvite_wrapper'>
 					<li>
-						<h6><span class='ybiconfont ybicon-'></span>通过邀请链接</h6>
-						<p>毕业册《高三毕业》邀请链接为<a href="javascript:;">www.yearbook.com.cn/invitation/227e9b029c33</a>，可以复制给QQ群，微博，论坛中的好友，请他(她)来一起共建美好回忆。</p>
+						<h6><span class='ybiconfont ybicon-invitelink'></span>通过邀请链接</h6>
+						<p>毕业册《高三毕业》邀请链接为<a href="javascript:;">www.yearbook.com.cn/invitation/227e9b029c33</a>，可以复制给QQ群，微博，论坛中的好友，请他(她)来一起共建美好回忆。
+							<br> 将链接分享至：
+							<a class='ybiconfont ybicon-weibosina' href="javascript:;"></a>
+							<a class='ybiconfont ybicon-qqsolid' href="javascript:;"></a>
+							<a class='ybiconfont ybicon-wechatsolid' href="javascript:;"></a>
+						</p>
 					</li>
 					<li>
-						<h6><span class='ybiconfont ybicon-'></span>通过邀请码</h6>
+						<h6><span class='ybiconfont ybicon-barcode'></span>通过邀请码</h6>
 						<p>毕业册《高三毕业》邀请码为<span>029c33</span>，可以将此邀请码告诉给您的好友们，只要登录忆尔后在个人中心-我的书架中输入此邀请码加入书册。</p>
 					</li>
 					<li>
-						<h6><span class='ybiconfont ybicon-'></span>通过邀请卡</h6>
+						<h6><span class='ybiconfont ybicon-invitationcard'></span>通过邀请卡</h6>
 						<p>你可以发送一张邀请卡给您的好友们，他们只需填写完您设置的信息就可以直接加入书册，立即前往<a href="javascript:;">设置邀请卡</a>。</p>
 					</li>
 				</ul>
@@ -507,16 +511,10 @@
 		//点击名片弹出详情
 		$('.makebook_invitnamecard_item').click(function() {
 			$('.makebook_frienddetail_wrapper').popup({
-				closebtn: '.makebook_friendbtn_item a',
-				maskopacity: 0.1
-			});
-		});
-		$('.makebook_friendlist_wrapper .friend_head').click(function() {
-			$('.makebook_frienddetail_wrapper').popup({
 				closebtn: '.makebook_friendbtn_item a, .makebook_fdblock_wrapper .closebtn',
 				maskopacity: 0.1
 			});
-		})
+		});
 	})
 	</script>
 </body>

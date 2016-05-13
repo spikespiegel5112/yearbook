@@ -5862,6 +5862,7 @@
 }
 .makebook_friendhint_wrapper p{
 	display: inline-block;
+	width: 820px;
 	margin: 0 0 0 20px;
 	color: #999;
 	font-size: 14px;
@@ -5884,8 +5885,7 @@
 	font-size: 13px;
 }
 .makebook_asidefriend_wrapper{
-	margin: 15px;
-	padding: 10px;
+	padding: 10px 15px 30px 15px;
 	width: 1030px;
 }
 .makebook_asidefriendtab_wrapper{
@@ -6159,14 +6159,24 @@
 	border: 1px solid transparent;
 	cursor: pointer;
 }
+.makebook_waytoinvite_wrapper li h6 span{
+	display: inline-block;
+	margin: 0 10px 0 0;
+	color: #000;
+	font-size: 25px;
+	vertical-align: middle;
+}
 .makebook_waytoinvite_wrapper li:hover{
 	border: 1px solid #dddddd;
 	background-color: #fcfeff;
 }
-.makebook_waytoinvite_wrapper li a, .makebook_waytoinvite_wrapper li span{
+.makebook_waytoinvite_wrapper li:hover h6 span{
+	color: #83c453;
+}
+.makebook_waytoinvite_wrapper li a, .makebook_waytoinvite_wrapper li p span{
 	color: #489fcf;
 }
-.makebook_waytoinvite_wrapper li a:hover{
+.makebook_waytoinvite_wrapper li a:hover, .makebook_waytoinvite_wrapper li p .ybiconfont:hover{
 	color: #418FB9;
 }
 .makebook_waytoinvite_wrapper li h6{
@@ -6177,6 +6187,15 @@
 	width: 660px;
 	background-color: #fff;
 	overflow: hidden;
+}
+.makebook_waytoinvite_wrapper li p{
+	line-height: 30px;
+}
+.makebook_waytoinvite_wrapper li p .ybiconfont{
+	display: inline-block;
+	margin: 0 5px;
+	font-size: 25px;
+	color: #666666;
 }
 .makebook_fdblock_wrapper{
 	padding: 10px 20px;
@@ -6427,6 +6446,7 @@
 }
 .makebook_invitcardinfo_wrapper .title{
 	margin: 110px 0 10px;
+	padding: 0;
 	text-align: center;
 	font-size: 16px;
 	color: #aace68;
@@ -6436,7 +6456,7 @@
 	padding: 10px 0;
 	width: 75%;
 	border-bottom: 1px dashed #999;
-	color: #666;
+	color: #999;
 }
 .makebook_icilist_wrapper li h5{
 	display: inline-block;
@@ -6456,8 +6476,17 @@
 	display: block;
 	margin: 0 0 0 10px;
 }
+.makebook_icbasicinfo_wrapper li a{
+	color: #55b9ec;
+}
+.makebook_icbasicinfo_wrapper li a:hover{
+	color: #387C9E;
+}
 .makebook_invitcardinfo_wrapper .common_share_wrapper{
 	margin: 160px 0 0 0;
+}
+.makebook_invitcardinfo_container{
+	display: none;
 }
 
 

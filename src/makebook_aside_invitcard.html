@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-	<!-- <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all"> -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/simeditor/simditor.css" type="text/css" media="all">
@@ -39,6 +39,85 @@
 			</span>
 		</div>
 		<div class='makebook_asidefriendmain_wrapper'>
+			<div class='makebook_invitcardinfo_wrapper'>
+				<h6 class='title'>
+					《美好时光》邀请卡
+				</h6>
+				<ul class='makebook_icilist_wrapper'>
+					<li>
+						<h5>想要收集的基本信息：</h5>
+						<ul class='makebook_icbasicinfotag_wrapper'>
+							<li>
+								姓名
+							</li>
+							<li>
+								姓名
+							</li>
+							<li>
+								姓名
+							</li>
+							<li>
+								姓名
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h5>必须上传照片的数量：</h5>
+						<ul class='makebook_icbasicinfo_wrapper'>
+							<li>
+								3张
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h5>讨论的话题：</h5>
+						<ul class='makebook_icbasicinfo_wrapper'>
+							<li>
+								姓名
+							</li>
+							<li>
+								姓名
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h5>发起的投票：</h5>
+						<ul class='makebook_icbasicinfo_wrapper'>
+							<li>
+								姓名
+							</li>
+							<li>
+								姓名
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h5>发起的投票：</h5>
+						<ul class='makebook_icbasicinfo_wrapper'>
+							<li>
+								姓名
+							</li>
+							<li>
+								姓名
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="common_share_wrapper">
+					<p>将书册分享至:</p>
+					<div class="share_btn">
+						<ul>
+							<li><img src="img/icon/create_done_btn1.png"></li>
+							<li><img src="img/icon/create_done_btn2.png"></li>
+							<!--<li><img src="img/icon/create_done_btn3.png"></li>-->
+							<li><img src="img/icon/create_done_btn4.png"></li>
+							<li><img src="img/icon/create_done_btn5.png"></li>
+							<li><img src="img/icon/create_done_btn6.png"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
 			<div class='makebook_asidesetupinvit_wrapper'>
 				<div class='makebook_friendhint_wrapper'>
 					<p>邀请卡可以很方便的帮助您收集到小伙伴们的近况信息，分享给小伙伴填写完成后，小伙伴就自动加入书册可以一起制作并互动了。</p>
@@ -733,9 +812,10 @@
 								</p>
 							</li>
 						</ul>
-						<div class='closebtn2'>
-							<a href="javascript:;">关闭</a>
-						</div>
+						
+					</div>
+					<div class="makebook_friendbtn_item">
+						<a href="javascript:;">关闭</a>
 					</div>
 				</div>
 			</div>
@@ -785,7 +865,7 @@
 		//点击名片弹出详情
 		$('.makebook_invitnamecard_item').click(function() {
 			$('.makebook_frienddetail_wrapper').popup({
-				closebtn: '.makebook_stepbacklink_item',
+				closebtn: '.makebook_friendbtn_item a',
 				maskopacity: 0.1
 			});
 		});

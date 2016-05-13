@@ -1641,7 +1641,7 @@
     box-shadow: inset 0 0 3px #aaa;
     border-radius: 2px;
 }
-.add_chapter_con .action_bar{
+.yb_pop_wrap .action_bar{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -1654,10 +1654,193 @@
     border-top: 1px solid #d2d2d2;
     box-sizing: border-box;
 }
-.add_chapter_con .action_bar .add_section_sbbtn{
+.yb_pop_wrap .action_bar .add_section_sbbtn{
     float: right;
+    margin: 20px 0;
 }
+/*更换模板*/
+.change_tpl_con{
+    display: none;
+    position: relative;
+    width: 925px;
+    height: 465px;
+    background-color: #fff;
+}
+.change_tpl_con .tips{
+    position: relative;
+    padding: 0 15px;
+    font-size: 12px;
+    color: #666;
+    line-height: 35px;
+}
+.change_tpl_con .pagemakeBox{
+    margin: 0;
+    padding: 0 10px;
+}
+.change_tpl_con .chaptermake_tpl ul li{
+    margin: 5px 4px 10px;
+}
+/*添加页面*/
+.add_page_con{
+    display: none;
+    position: relative;
+    width: 815px;
+    height: 425px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+.add_page_con .target_chapter{
+    position: relative;
+    line-height: 45px;
+    padding: 5px 15px;
+}
+.add_page_con .page_tpl_list{
+    position: relative;
+    padding: 5px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.add_page_con .page_tpl_list ul{
+    overflow: hidden;
+    position: relative;
+    width: 726px;
+    margin: 0 auto;
+}
+.page_tpl_list li{
+    float: left;
+    position: relative;
+    margin: 15px 12px;
+    width: 95px;
+    height: 130px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.page_tpl_list li:hover,
+.page_tpl_list li.select{
+    border: 1px solid #90c132;
+}
+.page_tpl_list li img{
+    width: 100%;
+    height: 100%;
+}
+.page_tpl_list li span{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    line-height: 10px;
+    border-style: solid;
+    border-width: 16px;
+    border-color: transparent #90c132 #90c132 transparent;
+}
+.page_tpl_list li.select span{
+    display: block;
+}
+.page_tpl_list .hd a{
+    position: absolute;
+    top: 85px;
+    font-size: 24px;
+    color: rgba(153,153,153,.6);
+}
+.page_tpl_list .hd a:hover{
+    color: #90c132;
+}
+.page_tpl_list .hd .prev{
+    left: 20px;
+}
+.page_tpl_list .hd .next{
+    right: 20px;
+}
+.add_page_con .page_num{
+    position: relative;
+    margin: 10px 0;
+    padding: 0 15px;
+}
+.add_page_con .page_num .ybcommon_counter_item{
+    display: inline-block;
+    vertical-align: middle;
+}
+.assign_actors_con{
+    display: none;
+    position: relative;
+    width: 740px;
+    height: 335px;
+    background-color: #fff;
+}
+.assign_actors_con .choose_way{
+    position: relative;
+    padding: 0 5px;
+    margin: 10px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+.assign_actors_con .choose_way:last-child{
+    border-bottom: 0;
+}
+.assign_actors_con p{
+    line-height: 35px;
+}
+.assign_actors_con .choose_way h4{
+    font-size: 16px;
+    line-height: 40px;
+}
+.assign_actors_con .choose_way .choose_partner{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 30px 25px;
+}
+.assign_actors_con .choose_way .yb_book_btn{
+    display: inline-block;
+    width: 85px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: top;
+    font-size: 14px;
+}
+.assign_actors_con .choose_way .book_link{
+    display: block;
+    margin: 0 30px;
+    color: #90c132;
+    text-decoration: underline;
+    word-break: break-all;
+}
+.assign_actors_con .choose_way .tips{
+    margin: 0 30px;
+}
+.chapter_config_con{
+    display: none;
+    position: relative;
+    width: 740px;
+    height: 255px;
+    background-color: #fff;
 
+}
+.chapter_config_con .chapter_config {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    line-height: 45px;
+}
+.chapter_config_con .chapter_config input{
+    display: inline-block;
+    padding: 0 6px;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #cdcdcd;
+    box-shadow: inset 0 0 3px #aaa;
+    border-radius: 2px;
+}
+.chapter_config_con .chapter_config div:last-child label{
+    padding-left: 46px;
+}
 /*left slide content*/
 .aside_content{
     position: relative;

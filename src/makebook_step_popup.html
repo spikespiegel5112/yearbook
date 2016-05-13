@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
 	<!-- endbuild -->
+	<link rel="stylesheet" href="css/mediaquery.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -646,6 +647,10 @@
 		setup();
 		recommend();
 		checktag();
+		$.remResizing({
+			minwidth:1024,
+			fontsize:20
+		})
 	});
 
 	//弹窗相关事件操作
@@ -653,7 +658,7 @@
 		var popupwindowEl = $('.makebook_steppopuplist_wrapper>div'),
 			popupWrapperEl = $('.makebook_steppopup_wrapper'),
 			progressbarLiEl = $('.makebook_spprogress_wrapper li');
-		popupwindowEl.eq(0).show().siblings().hide();
+		popupwindowEl.eq(3).show().siblings().hide();
 		popupWrapperEl.align();
 		//点选方块
 		$('.makebook_splist_wrapper>li a').click(function() {

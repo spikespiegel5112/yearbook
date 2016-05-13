@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-	<!-- 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all"> -->
+	<!-- <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462939875_1754544.css" type="text/css" media="all"> -->
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 </head>
@@ -375,14 +375,14 @@
 						<li><a href="javascript:;" class="next"><i class="ybiconfont ybicon-forward2"></i></a></li>
 					</ul>
 				</div>
-				<div class='makebook_frienddetail_wrapper'>
-					<div class='makebook_fdblock_wrapper'>
-						<h5 class='maintitle'>小伙伴详情</h5>
-						<a class='closebtn ybiconfont ybicon-closebtn' href='javascript:;'></a>
+				<div class="makebook_frienddetail_wrapper">
+					<div class="makebook_fdblock_wrapper">
+						<h5 class="maintitle">小伙伴详情</h5>
+						<a class="closebtn ybiconfont ybicon-closebtn" href="javascript:;"></a>
 					</div>
-					<div class='makebook_fdblock_wrapper'>
-						<h6 class='subtitle'>基本资料</h6>
-						<ul class='makebook_fdinfo_wrapper'>
+					<div class="makebook_fdblock_wrapper">
+						<h6 class="subtitle">基本资料</h6>
+						<ul class="makebook_fdinfo_wrapper">
 							<li>
 								<label>姓名：</label>
 								<span>张三</span>
@@ -405,18 +405,18 @@
 							</li>
 						</ul>
 					</div>
-					<div class='makebook_fdblock_wrapper'>
-						<h6 class='subtitle'>上传的照片</h6>
-						<ul class='makebook_fdphoto_wrapper'>
+					<div class="makebook_fdblock_wrapper">
+						<h6 class="subtitle">上传的照片</h6>
+						<ul class="makebook_fdphoto_wrapper">
 							<li><img src="img/default/ablum_photo03.jpg"></li>
 							<li><img src="img/default/ablum_photo03.jpg"></li>
 							<li><img src="img/default/ablum_photo03.jpg"></li>
 							<li><img src="img/default/ablum_photo03.jpg"></li>
 						</ul>
 					</div>
-					<div class='makebook_fdblock_wrapper'>
-						<h6 class='subtitle'>参与的话题</h6>
-						<ul class='makebook_fdtopic_wrapper'>
+					<div class="makebook_fdblock_wrapper">
+						<h6 class="subtitle">参与的话题</h6>
+						<ul class="makebook_fdtopic_wrapper">
 							<li>
 								<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
 								<p>
@@ -444,9 +444,10 @@
 								</p>
 							</li>
 						</ul>
-						<div class='closebtn2'>
-							<a href="javascript:;">关闭</a>
-						</div>
+						
+					</div>
+					<div class="makebook_friendbtn_item">
+						<a href="javascript:;">关闭</a>
 					</div>
 				</div>
 			</div>
@@ -503,12 +504,16 @@
 			friendmainEl.find('.active').show().siblings().hide();
 		});
 
-		$('.makebook_waytoinvite_wrapper li').click(function() {
-
-		})
+		//点击名片弹出详情
+		$('.makebook_invitnamecard_item').click(function() {
+			$('.makebook_frienddetail_wrapper').popup({
+				closebtn: '.makebook_friendbtn_item a',
+				maskopacity: 0.1
+			});
+		});
 		$('.makebook_friendlist_wrapper .friend_head').click(function() {
 			$('.makebook_frienddetail_wrapper').popup({
-				closebtn: '.makebook_frienddetail_wrapper .closebtn, .makebook_frienddetail_wrapper .closebtn2 a',
+				closebtn: '.makebook_friendbtn_item a, .makebook_fdblock_wrapper .closebtn',
 				maskopacity: 0.1
 			});
 		})

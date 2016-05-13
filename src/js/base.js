@@ -438,6 +438,7 @@
 				noalign:false
 			},options);
 			var $this=$(this),
+				thisParent=$this.parent(),
 				popupWrapperEl=$('<div></div>').addClass('commonPopupWrapper'),
 				popupContainerEl=$('<div></div>').addClass('commonPopupContainer'),
 				contentWidth=$this.width();
@@ -484,9 +485,13 @@
 				popupWrapperEl.align();
 			}
 			if (options.closebtn!='') {
-				$(options.closebtn).one('click', function(){
-					popupContainerEl.hide();
+				$(options.closebtn).each(function(){
+					$(this).one('click', function(){
+						popupContainerEl.detach();
+						thisParent.append($this.hide());
+					});
 				});
+
 			};
 		},
 		priceCalculator: function(options) {

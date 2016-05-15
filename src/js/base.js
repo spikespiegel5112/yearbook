@@ -1048,6 +1048,8 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
+				responsewidth: 0,
+				responseheight: 0,
 				aligncenter: false,
 				keepportrait: false,
 				keeplandscape: false
@@ -1057,10 +1059,13 @@
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 
-			sizeConstraint();
-
-			$(window).resize(function() {
+			if ($(window).width()<options.responsewidth||$(window).height()<options.responseheight) {
 				sizeConstraint();
+			};
+			$(window).resize(function() {
+				if ($(window).width()<options.responsewidth||$(window).height()<options.responseheight) {
+					sizeConstraint();
+				};
 			});
 
 			function sizeConstraint() {
@@ -1106,9 +1111,9 @@
 				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
 					// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
 					if (!options.aligncenter) {
-						bodyEl.css({
-							'margin': '0 auto'
-						})
+						// bodyEl.css({
+						// 	'margin': '0 auto'
+						// })
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
@@ -1119,9 +1124,9 @@
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
 					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					if (!options.aligncenter) {
-						bodyEl.css({
-							'margin': '0 auto'
-						})
+						// bodyEl.css({
+						// 	'margin': '0 auto'
+						// })
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
@@ -1135,9 +1140,9 @@
 				} else if (windowWidth > options.maxwidth) {
 					//alert('当屏幕宽度大于最大宽度时')
 					if (!options.aligncenter) {
-						bodyEl.css({
-							'margin': '0 auto'
-						})
+						// bodyEl.css({
+						// 	'margin': '0 auto'
+						// })
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
@@ -1174,7 +1179,7 @@
 						}
 					}
 				}
-				console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
+				//console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
 				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		},

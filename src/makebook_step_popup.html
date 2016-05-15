@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
 	<!-- endbuild -->
+	<link rel="stylesheet" href="css/mediaquery.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -646,6 +647,28 @@
 		setup();
 		recommend();
 		checktag();
+		resize();
+		function resize(){
+			$(window).resize(function(){
+				var rem;
+				if ($(window).height()<550) {
+					rem=$.remResizing({
+						fontsize:20,
+						minwidth:10,
+						maxwidth:200,
+						responseheight:780,
+						keepportrait:true
+					});
+				}else{
+					console.log('aaa')
+					rem=null;
+					$('html').css('font-size','0')
+				}
+				
+			});
+		}
+		
+		
 	});
 
 	//弹窗相关事件操作

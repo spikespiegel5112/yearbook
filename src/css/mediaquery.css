@@ -131,8 +131,89 @@
         bottom: 0.7rem;
     }*/
 }
-@media (max-height:550px){
+@media (max-height:900px){
+    .makebook_spchoosetype_wrapper{
+        width: 39rem;
+    }
+    .makebook_spchoosetype_wrapper .makebook_steptitle_wrapper{
+        padding: 0 0 1.5rem 0;
+    }
     .makebook_spmain_wrapper{
         padding: 1rem;
+    }
+    .makebook_splist_wrapper>li{
+        margin: 0.5rem;
+        width: 11rem;
+    }
+    .makebook_splist_wrapper>li .title{
+        height: 9rem;
+    }
+    .makebook_splist_wrapper .title .makebook_compicon_item{
+        margin: 1.75rem auto 0;
+        height: 4rem;
+    }
+    .makebook_compicon_item{
+        width: 6rem;
+    }
+    .makebook_compicon_item .frame{
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    .makebook_splist_wrapper .tips li{
+        margin: 0.1rem 0;
+        padding: 1px 0.1rem;
+        font-size: 0.5rem;
+    }
+    .makebook_splist_wrapper .makebook_compicon_item span{
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+    .makebook_spsetup_wrapper .makebook_setupinvitcard_wrapper{
+        margin: 0.5rem 0 0 0;
+        padding: 1.5rem 0;
+    }
+    .makebook_checktag_item{
+        min-width: 4.5rem;
+        font-size: 0.75rem;
+    }
+    .makebook_checktag_item a{
+        padding: 0.2rem 0.5em;
+    }
+    .makebook_setupinvitcard_wrapper .personalinfo li{
+        margin: 0.75rem 0 0 1rem;
+    }
+    .makebook_setupinvitcard_wrapper .personaloption li{
+        margin: 0.5rem 0 0 0;
+    }
+    .makebook_spsetup_wrapper .personalinfo, .makebook_spsetup_wrapper .personaloption, .makebook_spsetup_wrapper .makebook_iccustomoption_wrapper{
+        padding: 0.5rem 0 0.5rem 2.5rem;
+    }
+    .makebook_spsetup_wrapper .makebook_setupshare_wrapper>a{
+        margin: 1.5rem 0;
+    }
+    .makebook_setupshare_wrapper>div{
+        margin: 1rem 0 0 5rem;
+    }
+    .makebook_spnav_wapper{
+        padding: 1rem 1.5rem;
+    }
+    .makebook_spnextlink_btn{
+        padding: 0.2rem 1.4rem;
+    }
+    .makebook_spsetup_wrapper .makebook_resetandsave_wrapper{
+        margin: 1rem 0 0 0;
+    }
+    .makebook_spprogress_wrapper{
+        margin: 1.5rem auto 0.5rem;
+        width: 19rem;
+        height: 1rem;
+    }
+    .makebook_spprogress_wrapper .progressbar_head{
+        width: 0.75rem;
+        height: 0.75rem;
+        line-height: 1rem;
+    }
+    .makebook_spprogress_wrapper .progressbar_middle{
+        margin: 0.3rem 0 0 0;
     }
 }

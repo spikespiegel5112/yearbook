@@ -1061,16 +1061,10 @@
 			if (options.minwidth<=0) {
 				options.minwidth=1;
 			};
-			if ($(window).width()<options.responsewidth||$(window).height()<options.responseheight) {
-				// alert('aaa')
-				sizeConstraint();
-			};
+			sizeConstraint();
+			
 			$(window).resize(function() {
-				if ($(window).width()<options.responsewidth||$(window).height()<options.responseheight) {
-					sizeConstraint();
-				}else{
-					htmlEl.css('font-size','')
-				}
+				sizeConstraint();
 			});
 
 			function sizeConstraint() {
@@ -1100,7 +1094,9 @@
 					windowWidth = $(window).width(),
 					windowHeight = $(window).height();
 				}
-
+				console.log(windowWidth)
+				if (windowWidth<options.responseborder||windowHeight<options.responseheight) {
+				};
 				var factor = 0;
 				// alert(windowWidth)
 				if (options.minwidth == 0) {
@@ -1127,7 +1123,7 @@
 					}
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
-					alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
+					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					if (!options.aligncenter) {
 						// bodyEl.css({
 						// 	'margin': '0 auto'
@@ -1139,8 +1135,8 @@
 						})
 					}
 					if (options.responseborder>0) {
-						alert('aaa')
 						factor = windowWidth / options.responseborder;
+						console.log(factor)
 					}else{
 						factor = windowWidth / options.minwidth;
 					}
@@ -1158,7 +1154,7 @@
 							'width': options.maxwidth
 						})
 					}
-					factor = 1
+					factor = 1;
 				} else {
 					alert('abnormal')
 				}

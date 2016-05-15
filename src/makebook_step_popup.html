@@ -649,22 +649,12 @@
 		checktag();
 		resize();
 		function resize(){
-			$(window).resize(function(){
-				var rem;
-				if ($(window).height()<550) {
-					rem=$.remResizing({
-						fontsize:20,
-						minwidth:0,
-						maxwidth:840,
-						responseborder:780,
-						keepportrait:true
-					});
-				}else{
-					console.log('aaa')
-					rem=null;
-					$('html').css('font-size','0')
-				}
-				
+			$.remResizing({
+				fontsize:20,
+				minwidth:0,
+				maxwidth:840,
+				responseborder:910,
+				keeplandscape:true
 			});
 		}
 		
@@ -676,7 +666,7 @@
 		var popupwindowEl = $('.makebook_steppopuplist_wrapper>div'),
 			popupWrapperEl = $('.makebook_steppopup_wrapper'),
 			progressbarLiEl = $('.makebook_spprogress_wrapper li');
-		popupwindowEl.eq(0).show().siblings().hide();
+		popupwindowEl.eq(3).show().siblings().hide();
 		popupWrapperEl.align();
 		//点选方块
 		$('.makebook_splist_wrapper>li a').click(function() {

@@ -1048,8 +1048,7 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
-				responsewidth: 0,
-				responseheight: 0,
+				responseborder: 0,
 				aligncenter: false,
 				keepportrait: false,
 				keeplandscape: false
@@ -1059,13 +1058,19 @@
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 
+			if (options.minwidth<=0) {
+				options.minwidth=1;
+			};
 			if ($(window).width()<options.responsewidth||$(window).height()<options.responseheight) {
+				// alert('aaa')
 				sizeConstraint();
 			};
 			$(window).resize(function() {
 				if ($(window).width()<options.responsewidth||$(window).height()<options.responseheight) {
 					sizeConstraint();
-				};
+				}else{
+					htmlEl.css('font-size','')
+				}
 			});
 
 			function sizeConstraint() {
@@ -1073,27 +1078,27 @@
 					orientationSensor({
 						portrait: function() {
 							windowWidth = $(window).width(),
-								windowHeight = $(window).height();
+							windowHeight = $(window).height();
 						},
 						landscape: function() {
 							windowWidth = $(window).height(),
-								windowHeight = $(window).width();
+							windowHeight = $(window).width();
 						}
 					});
 				} else if (options.keeplandscape) {
 					orientationSensor({
 						portrait: function() {
 							windowWidth = $(window).width(),
-								windowHeight = $(window).height();
+							windowHeight = $(window).height();
 						},
 						landscape: function() {
 							windowWidth = $(window).height(),
-								windowHeight = $(window).width();
+							windowHeight = $(window).width();
 						}
 					});
 				} else {
 					windowWidth = $(window).width(),
-						windowHeight = $(window).height();
+					windowHeight = $(window).height();
 				}
 
 				var factor = 0;
@@ -1122,7 +1127,7 @@
 					}
 					factor = 1;
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
-					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
+					alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					if (!options.aligncenter) {
 						// bodyEl.css({
 						// 	'margin': '0 auto'
@@ -1133,10 +1138,14 @@
 							'width': options.maxwidth
 						})
 					}
-					//alert(windowWidth)
-					// factor = 2;
-					factor = windowWidth / options.minwidth;
-					//alert(factor = windowWidth / options.minwidth)
+					if (options.responseborder>0) {
+						alert('aaa')
+						factor = windowWidth / options.responseborder;
+					}else{
+						factor = windowWidth / options.minwidth;
+					}
+					
+					console.log(windowWidth)
 				} else if (windowWidth > options.maxwidth) {
 					//alert('当屏幕宽度大于最大宽度时')
 					if (!options.aligncenter) {

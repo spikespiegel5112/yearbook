@@ -24,8 +24,12 @@
     position: absolute;
     right: 0;
     width: 70px;
-    padding-top: 50px;
+    padding-top: 90px;
     background-color: #34495e;
+}
+
+.min_screen aside .nav_bar{
+    padding-top: 50px;
 }
 
 .nav_bar .fixed_menu > li {
@@ -95,14 +99,67 @@
 }
 
 .nav_bar .fixed_menu li.share .common_sharelist_wrapper {
-    right: -195px;
-    top: 10px;
+    right: -275px;
+    top: -10px;
+    width: 275px;
+    height: 92px;
+    border-radius: 0;
+    background: rgba(94,168,209,.8);
+    color: #fff;
+    border: 0;
+}
+
+.nav_bar .fixed_menu li.share:hover{
+    background-color: #243342;
 }
 
 .nav_bar .fixed_menu li.share:hover .common_sharelist_wrapper{
     display: block;
 }
 
+.fixed_menu .common_sharelist_wrapper::before{
+    top: 35px;
+    left: -15px;
+    border-right: 15px solid rgba(94,168,209,.8);
+}
+.fixed_menu .common_sharelist_wrapper::after{
+    display: none;
+}
+
+.fixed_menu .common_sharelist_wrapper ul li{
+    float: none;
+    display: inline-block;
+    height: 70px;
+    width: auto;
+    margin: 0 10px;
+}
+
+.fixed_menu .common_sharelist_wrapper ul li a{
+    color: #fff;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+}
+.fixed_menu .common_sharelist_wrapper ul li a i{
+    display: block;
+    font-size: 30px;
+    padding: 8px 0 0;
+}
+.common_sharelist_wrapper ul li a .ybicon-qqsolid{
+    font-size: 28px;
+}
+.fixed_menu .common_sharelist_wrapper .wechat:hover{
+    color: #97e23f;
+}
+.fixed_menu .common_sharelist_wrapper .qzone:hover{
+    color: #ffd074;
+}
+.fixed_menu .common_sharelist_wrapper .weibo:hover{
+    color: #d8282a;
+}
+.fixed_menu .common_sharelist_wrapper .QQ:hover{
+    color: #217dc6;
+}
 .toolbar_expend {
     display: block;
     position: absolute;
@@ -138,13 +195,17 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 82px 0 0;
+    padding: 122px 0 0;
     width: 100%;
     height: 100%;
     margin: 0;
     box-sizing: border-box;
     background: url("../img/makebook/team/iabook_edit_bg.jpg") no-repeat 0;
     background-size: cover;
+}
+
+.team_edit_container.min_screen .edit_content{
+    padding: 82px 0 0;
 }
 
 .team_edit_container .edit_content.list .list_mode,
@@ -164,16 +225,21 @@
     margin: 0;
     padding: 0 10px 0 70px;
     width: 100%;
-    height: 50px;
+    height: 90px;
     background-color: #fff;
     box-shadow: 0 1px 1px #999;
     box-sizing: border-box;
     z-index: 5;
 }
 
+.min_screen .edit_content .tool_bar{
+    height: 50px;
+}
+
 .edit_content .tool_bar .grid {
+    position: relative;
     float: left;
-    padding: 4px 10px 3px;
+    padding: 5px 10px;
     height: 100%;
     border-right: 1px dashed #e6e6e6;
     box-sizing: border-box;
@@ -183,68 +249,79 @@
     border-right: 0;
 }
 
+.edit_content .tool_bar .grid > ul{
+    margin: 10px 0;
+}
+
+.min_screen .edit_content .tool_bar .grid ul{
+    margin: 0;
+}
+
 .edit_content .tool_bar .grid li {
     position: relative;
     display: inline-block;
     padding: 0 8px;
 }
 
-.tool_bar .grid li a {
+.tool_bar .grid li a{
     display: inline-block;
     vertical-align: middle;
     margin: 0;
-    padding: 4px 5px;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
+    padding: 0 5px 4px;
     text-align: center;
-    font-size: 28px;
+    font-size: 12px;
     color: #999;
-    background: url("../img/icon/toolbar_icons.png") no-repeat;
     border-radius: 4px;
+    width: 58px;
+    box-sizing: border-box;
+}
+.min_screen .edit_content .tool_bar .grid > ul > li > a span{
+    display: none;
+}
+.tool_bar .grid li a i{
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+    height: 36px;
+    line-height: 32px;
+    background: url("../img/icon/toolbar_icons.png") no-repeat;
     opacity: .75;
 }
-.tool_bar .grid li a:hover{
+.tool_bar .grid li a:hover i{
     opacity: 1;
 }
-.tool_bar .grid li .ybicon-addfriend{
-    font-size: 32px;
-}
-.tool_bar .grid li .ybicon-addpage{
-    font-size: 30px;
-}
-.tool_bar .grid li .add_chapter_btn{
+.tool_bar .grid li .add_chapter_btn i{
     background-position: 0 -47px;
 }
-.tool_bar .grid li .add_page_btn{
+.tool_bar .grid li .add_page_btn i{
     background-position: -40px -48px;
 }
-.tool_bar .grid li .add_friend_btn{
+.tool_bar .grid li .add_friend_btn i{
     background-position: -80px -48px;
 }
-.tool_bar .grid li .change_tpl_btn{
+.tool_bar .grid li .change_tpl_btn i{
     background-position: -120px -48px;
 }
-.tool_bar .grid li .auto_layout{
+.tool_bar .grid li .auto_layout i{
     background-position: -160px -48px;
 }
-.tool_bar .grid li .view_sample_btn{
+.tool_bar .grid li .view_sample_btn i{
     background-position: -200px -48px;
 }
-.tool_bar .grid li .save_page_btn{
+.tool_bar .grid li .save_page_btn i{
     background-position: -240px -48px;
 }
-.tool_bar .grid li .incomplete_picture{
+.tool_bar .grid li .incomplete_picture i{
     background-position: -280px -48px;
 }
-.tool_bar .grid li .incomplete_text{
+.tool_bar .grid li .incomplete_text i{
     background-position: -320px -48px;
 }
 
 .tool_bar .grid li .ybcommon_queryicon_item {
     position: absolute;
-    top: 28px;
-    left: 22px;
+    bottom: 12px;
+    left: 32px;
     display: none;
     width: 55px;
     height: 0;
@@ -263,8 +340,8 @@
     display: none;
     position: absolute;
     font-size: 12px;
-    top: 44px;
-    left: -25px;
+    top: 45px;
+    left: -16px;
     width: 80px;
 }
 
@@ -330,6 +407,9 @@
     background: url('../img/pc/book_bg_min.png') no-repeat 0 0;
     background-size: cover;
 }
+.min_screen .edit_content .book_info .cover{
+    display: none;
+}
 
 .edit_content .book_info .cover img {
     width: 100%;
@@ -346,21 +426,77 @@
     background: url('../img/pc/label_team.png') no-repeat 0 top;
 }
 
+.edit_content .book_info .progress {
+    font-size: 12px;
+    position: absolute;
+    top: 45px;
+    left: 75px;
+    width: 120px;
+    color: #666;
+}
+.min_screen .edit_content .book_info .progress{
+    display: none;
+}
+
+.edit_content .book_info .progress .percent {
+    display: block;
+    color: #666;
+    overflow: hidden;
+    margin: 0 0 10px;
+}
+.edit_content .book_info .progress .percent > label {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    padding: 8px 0 0 0;
+}
+.edit_content .book_info .progress .percent span {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}
+.edit_content .book_info .progress .percent .bar {
+    display: inline-block;
+    float: none;
+    width: 60px;
+    height: 5px;
+    padding: 0;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+.edit_content .progress .percent .bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #90c132;
+}
+
+.edit_content .book_info .name{
+    float: left;
+    min-width: 120px;
+}
+
 .edit_content .book_info .name h4 {
     float: left;
     font-size: 14px;
     color: #333;
     line-height: 40px;
-    max-width: 125px;
+    max-width: 135px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .edit_content .book_info .name span{
+    display: none;
     float: left;
     font-size: 12px;
     color: #666;
     line-height: 40px;
+}
+
+.min_screen .edit_content .book_info .name span{
+    display: block;
 }
 
 .edit_content .tool_bar .print {
@@ -369,13 +505,17 @@
 
 .edit_content .tool_bar .print a {
     display: block;
-    margin: 3px 0 0;
+    margin: 22px 0 0;
     width: 145px;
     height: 35px;
     line-height: 35px;
     text-align: center;
     color: #fff;
     background-color: #43b05d;
+}
+
+.min_screen .edit_content .tool_bar .print a{
+    margin: 3px 0 0;
 }
 
 .edit_content .tool_bar .print a i {
@@ -1641,7 +1781,7 @@
     box-shadow: inset 0 0 3px #aaa;
     border-radius: 2px;
 }
-.add_chapter_con .action_bar{
+.yb_pop_wrap .action_bar{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -1654,10 +1794,193 @@
     border-top: 1px solid #d2d2d2;
     box-sizing: border-box;
 }
-.add_chapter_con .action_bar .add_section_sbbtn{
+.yb_pop_wrap .action_bar .add_section_sbbtn{
     float: right;
+    margin: 20px 0;
 }
+/*更换模板*/
+.change_tpl_con{
+    display: none;
+    position: relative;
+    width: 925px;
+    height: 465px;
+    background-color: #fff;
+}
+.change_tpl_con .tips{
+    position: relative;
+    padding: 0 15px;
+    font-size: 12px;
+    color: #666;
+    line-height: 35px;
+}
+.change_tpl_con .pagemakeBox{
+    margin: 0;
+    padding: 0 10px;
+}
+.change_tpl_con .chaptermake_tpl ul li{
+    margin: 5px 4px 10px;
+}
+/*添加页面*/
+.add_page_con{
+    display: none;
+    position: relative;
+    width: 815px;
+    height: 425px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+.add_page_con .target_chapter{
+    position: relative;
+    line-height: 45px;
+    padding: 5px 15px;
+}
+.add_page_con .page_tpl_list{
+    position: relative;
+    padding: 5px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.add_page_con .page_tpl_list ul{
+    overflow: hidden;
+    position: relative;
+    width: 726px;
+    margin: 0 auto;
+}
+.page_tpl_list li{
+    float: left;
+    position: relative;
+    margin: 15px 12px;
+    width: 95px;
+    height: 130px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.page_tpl_list li:hover,
+.page_tpl_list li.select{
+    border: 1px solid #90c132;
+}
+.page_tpl_list li img{
+    width: 100%;
+    height: 100%;
+}
+.page_tpl_list li span{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    line-height: 10px;
+    border-style: solid;
+    border-width: 16px;
+    border-color: transparent #90c132 #90c132 transparent;
+}
+.page_tpl_list li.select span{
+    display: block;
+}
+.page_tpl_list .hd a{
+    position: absolute;
+    top: 85px;
+    font-size: 24px;
+    color: rgba(153,153,153,.6);
+}
+.page_tpl_list .hd a:hover{
+    color: #90c132;
+}
+.page_tpl_list .hd .prev{
+    left: 20px;
+}
+.page_tpl_list .hd .next{
+    right: 20px;
+}
+.add_page_con .page_num{
+    position: relative;
+    margin: 10px 0;
+    padding: 0 15px;
+}
+.add_page_con .page_num .ybcommon_counter_item{
+    display: inline-block;
+    vertical-align: middle;
+}
+.assign_actors_con{
+    display: none;
+    position: relative;
+    width: 740px;
+    height: 335px;
+    background-color: #fff;
+}
+.assign_actors_con .choose_way{
+    position: relative;
+    padding: 0 5px;
+    margin: 10px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+.assign_actors_con .choose_way:last-child{
+    border-bottom: 0;
+}
+.assign_actors_con p{
+    line-height: 35px;
+}
+.assign_actors_con .choose_way h4{
+    font-size: 16px;
+    line-height: 40px;
+}
+.assign_actors_con .choose_way .choose_partner{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 30px 25px;
+}
+.assign_actors_con .choose_way .yb_book_btn{
+    display: inline-block;
+    width: 85px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: top;
+    font-size: 14px;
+}
+.assign_actors_con .choose_way .book_link{
+    display: block;
+    margin: 0 30px;
+    color: #90c132;
+    text-decoration: underline;
+    word-break: break-all;
+}
+.assign_actors_con .choose_way .tips{
+    margin: 0 30px;
+}
+.chapter_config_con{
+    display: none;
+    position: relative;
+    width: 740px;
+    height: 255px;
+    background-color: #fff;
 
+}
+.chapter_config_con .chapter_config {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    line-height: 45px;
+}
+.chapter_config_con .chapter_config input{
+    display: inline-block;
+    padding: 0 6px;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #cdcdcd;
+    box-shadow: inset 0 0 3px #aaa;
+    border-radius: 2px;
+}
+.chapter_config_con .chapter_config div:last-child label{
+    padding-left: 46px;
+}
 /*left slide content*/
 .aside_content{
     position: relative;

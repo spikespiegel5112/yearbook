@@ -654,7 +654,7 @@
 	function resize() {
 		$.remResizing({
 			fontsize: 20,
-			threshold: 680,
+			threshold: 850,
 			basedonnarrow: true
 		});
 
@@ -670,7 +670,7 @@
 		var popupwindowEl = $('.makebook_steppopuplist_wrapper>div'),
 			popupWrapperEl = $('.makebook_steppopup_wrapper'),
 			progressbarLiEl = $('.makebook_spprogress_wrapper li');
-		popupwindowEl.eq(0).show().siblings().hide();
+		popupwindowEl.eq(3).show().siblings().hide();
 		popupWrapperEl.align();
 		//点选方块
 		$('.makebook_splist_wrapper>li a').click(function() {

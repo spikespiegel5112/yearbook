@@ -1181,11 +1181,12 @@
 				baseline: 320,
 				threshold: 0,
 				basedonnarrow: false,
+				basedonwide: false,
 				aligncenter: false
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
-				windowWidth = $(window).width(),
+				frontline = $(window).width(),
 				windowHeight = $(window).height();
 
 			if (options.baseline <= 0) {
@@ -1200,38 +1201,39 @@
 				if (options.basedonnarrow) {
 					orientationSensor({
 						portrait: function() {
-							windowWidth = $(window).width(),
+							frontline = $(window).width(),
 							windowHeight = $(window).height();
 						},
 						landscape: function() {
-							windowWidth = $(window).height(),
+							frontline = $(window).height(),
 							windowHeight = $(window).width();
 						}
 					});
 				} else {
-					windowWidth = $(window).width(),
+					frontline = $(window).width(),
 					windowHeight = $(window).height();
 				}
 				
-				if (windowWidth < options.threshold || windowHeight < options.responseheight) {};
+				if (frontline < options.threshold || windowHeight < options.responseheight) {};
 				var factor = 0;
 				if (options.baseline == 0) {
 					//alert('当最小宽度等于0时')
 					factor = 1;
-				} else if (windowWidth <= options.baseline) {
+				} else if (frontline <= options.baseline) {
 					//alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
 					factor = 1;
-				} else if (windowWidth > options.baseline && windowWidth <= options.threshold || options.threshold == 0) {
+				} else if (frontline > options.baseline && frontline <= options.threshold || options.threshold == 0) {
 					//alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
 					if (options.threshold > 0 && options.basedonnarrow) {
-						factor = options.baseline / windowWidth;
+						factor = frontline / options.threshold;
 					} else {
-						factor = windowWidth / options.baseline;
+						alert('aaa')
+						factor = frontline / options.baseline;
 					}
-					console.log(windowWidth)
+					console.log(frontline)
 					console.log(options.baseline)
-				} else if (windowWidth > options.threshold) {
-					//alert('当屏幕宽度大于最大宽度时')
+				} else if (frontline > options.threshold) {
+					alert('当屏幕宽度大于最大宽度时')
 					factor = 1;
 				}
 				if (options.aligncenter) {
@@ -1268,7 +1270,7 @@
 						}
 					}
 				}
-				//console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
+				//console.log((frontline < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
 				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		},

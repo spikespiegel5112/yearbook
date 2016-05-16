@@ -5637,6 +5637,14 @@
 	box-sizing: border-box;
 }
 
+.create_topic_con .makebook_spnav_wapper,
+.create_vote_con .makebook_spnav_wapper,
+.create_leave_msg .makebook_spnav_wapper{
+    padding: 13px;
+    position: absolute;
+    bottom: 0;
+}
+
 .makebook_spnav_wapper .makebook_stepbacklink_item {
 	float: left;
 }
@@ -5650,6 +5658,36 @@
 	text-align: center;
 	border-radius: 3px;
 	background-color: #fff;
+}
+
+.makebook_save_btn{
+    float: right;
+    padding: 5px 10px;
+    border: 1px solid #84c453;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #84c453;
+}
+
+.makebook_save_btn:hover{
+    background-color: #3E8F00;
+    border: 1px solid #3E8F00;
+}
+
+.makebook_reset_btn{
+    float: right;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    color: #333;
+    text-align: center;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.makebook_reset_btn:hover{
+    background-color: #ccc;
 }
 
 .makebook_spchoosemethod_wrapper {
@@ -6208,9 +6246,11 @@
 	display: inline-block;
 	font-size: 19px;
 }
-.makebook_frienddetail_wrapper .closebtn{
+
+.makebook_frienddetail_wrapper .closebtn,
+.makebook_fdblock_wrapper .closebtn{
 	float: right;
-	font-size: 25px;
+	font-size: 24px;
 }
 .makebook_friendbtn_item{
 	text-align: center;
@@ -6380,6 +6420,57 @@
 	width: 92%;
 	min-height:120px; 
 }
+.makebook_topic_wrapper{
+    display: none;
+    width: 535px;
+    background-color: #fff;
+}
+.makebook_topic_wrapper .create_topiclist ul {
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.makebook_topic_wrapper .create_topiclist ul li {
+    margin: 8px 0;
+    overflow: hidden;
+}
+.makebook_topic_wrapper .create_topiclist ul li p {
+    margin: 70px 30px 0 0;
+    color: #777;
+}
+.makebook_topic_wrapper .create_topiclist ul li p.lp2 {
+    margin: 10px 30px 0 0;
+    color: #777;
+}
+.makebook_topic_wrapper .create_topiclist ul li input {
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 400px;
+    max-width: none !important;
+    padding: 12px 10px 11px !important;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 2px !important;
+    box-shadow: inset 0 1px 3px #ddd;
+}
+.makebook_topic_wrapper .create_topiclist ul li textarea {
+    font-size: inherit;
+    line-height: 1.4285714285714;
+    overflow-y: auto;
+    box-sizing: border-box;
+    width: 400px;
+    height: auto;
+    padding: 4px 5px;
+    vertical-align: baseline;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px #ccc;
+    resize: none;
+}
 .makebook_pushlishmessage_wrapper{
 	display: none;
 	width: 700px;
@@ -6406,7 +6497,7 @@
 }
 .makebook_initiatevote_wrapper{
 	display: none;
-	width: 450px;
+	width: 620px;
 	background: #fff;
 }
 .makebook_voteoption_wrapper{
@@ -6421,6 +6512,17 @@
 	display: inline-block;
 	margin: 0 10px 0 0;
 	vertical-align: middle;
+}
+.makebook_voteoption_wrapper .multiple .common_custonoption_item{
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+}
+.multiple .common_custonoption_item .add{
+    width: 30px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 25px;
 }
 .makebook_voteoption_wrapper li .form{
 	display: inline-block;

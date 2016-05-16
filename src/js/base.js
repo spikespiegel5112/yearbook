@@ -430,62 +430,62 @@
 				});
 			});
 		},
-		popup:function(options){
-			options=$.extend({
-				closebtn:'',
-				maskopacity:0,
-				noborder:false,
-				noalign:false
-			},options);
-			var $this=$(this),
-				thisParent=$this.parent(),
-				popupWrapperEl=$('<div></div>').addClass('commonPopupWrapper'),
-				popupContainerEl=$('<div></div>').addClass('commonPopupContainer'),
-				contentWidth=$this.width();
+		popup: function(options) {
+			options = $.extend({
+				closebtn: '',
+				maskopacity: 0,
+				noborder: false,
+				noalign: false
+			}, options);
+			var $this = $(this),
+				thisParent = $this.parent(),
+				popupWrapperEl = $('<div></div>').addClass('commonPopupWrapper'),
+				popupContainerEl = $('<div></div>').addClass('commonPopupContainer'),
+				contentWidth = $this.width();
 			$('body').append(popupContainerEl.append(popupWrapperEl));
 			popupWrapperEl.css({
-				width:contentWidth,
-				border:'10px solid rgba(153,153,153,0.5)',
-				'border-radius':10
+				width: contentWidth,
+				border: '10px solid rgba(153,153,153,0.5)',
+				'border-radius': 10
 			});
 			popupContainerEl.css({
-				display:'block',
-				position:'fixed',
-				top:0,
-				left:0,
-				'z-index':99999,
-				width:$(window).width(),
-				height:$(window).height(),
-				background:'rgba(0,0,0,'+options.maskopacity+')'
+				display: 'block',
+				position: 'fixed',
+				top: 0,
+				left: 0,
+				'z-index': 99999,
+				width: $(window).width(),
+				height: $(window).height(),
+				background: 'rgba(0,0,0,' + options.maskopacity + ')'
 			});
-			popupContainerEl.resize(function(){
+			popupContainerEl.resize(function() {
 				popupContainerEl.css({
-					width:$(window).width(),
-					height:$(window).height(),
+					width: $(window).width(),
+					height: $(window).height(),
 				});
 			});
 			popupWrapperEl.append($this);
 			$this.css({
-				display:'block'
+				display: 'block'
 			});
 			popupWrapperEl.css({
-				display:'block',
-				opacity:1
+				display: 'block',
+				opacity: 1
 			});
-			if (popupWrapperEl.height()>$(window).height()-20) {
+			if (popupWrapperEl.height() > $(window).height() - 20) {
 				popupWrapperEl.css({
-					width: ($this.outerWidth()+15),
-					height: ($(window).height()-100),
-					overflow:'auto'
+					width: ($this.outerWidth() + 15),
+					height: ($(window).height() - 100),
+					overflow: 'auto'
 				});
 
 			};
 			if (!options.noalign) {
 				popupWrapperEl.align();
 			}
-			if (options.closebtn!='') {
-				$(options.closebtn).each(function(){
-					$(this).one('click', function(){
+			if (options.closebtn != '') {
+				$(options.closebtn).each(function() {
+					$(this).one('click', function() {
 						popupContainerEl.detach();
 						thisParent.append($this.hide());
 					});
@@ -1048,7 +1048,6 @@
 				fontsize: 16,
 				minwidth: 320,
 				maxwidth: 0,
-				responseborder: 0,
 				aligncenter: false,
 				keepportrait: false,
 				keeplandscape: false
@@ -1057,12 +1056,7 @@
 				bodyEl = $('body'),
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
-
-			if (options.minwidth<=0) {
-				options.minwidth=1;
-			};
 			sizeConstraint();
-			
 			$(window).resize(function() {
 				sizeConstraint();
 			});
@@ -1072,31 +1066,28 @@
 					orientationSensor({
 						portrait: function() {
 							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
 						landscape: function() {
 							windowWidth = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
 				} else if (options.keeplandscape) {
 					orientationSensor({
 						portrait: function() {
 							windowWidth = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
 						landscape: function() {
 							windowWidth = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
 				} else {
 					windowWidth = $(window).width(),
-					windowHeight = $(window).height();
+						windowHeight = $(window).height();
 				}
-				console.log(windowWidth)
-				if (windowWidth<options.responseborder||windowHeight<options.responseheight) {
-				};
 				var factor = 0;
 				// alert(windowWidth)
 				if (options.minwidth == 0) {
@@ -1112,9 +1103,9 @@
 				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
 					// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
 					if (!options.aligncenter) {
-						// bodyEl.css({
-						// 	'margin': '0 auto'
-						// })
+						bodyEl.css({
+							'margin': '0 auto'
+						})
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
@@ -1125,36 +1116,32 @@
 				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
 					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
 					if (!options.aligncenter) {
-						// bodyEl.css({
-						// 	'margin': '0 auto'
-						// })
+						bodyEl.css({
+							'margin': '0 auto'
+						})
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
 							'width': options.maxwidth
 						})
 					}
-					if (options.responseborder>0) {
-						factor = windowWidth / options.responseborder;
-						console.log(factor)
-					}else{
-						factor = windowWidth / options.minwidth;
-					}
-					
-					console.log(windowWidth)
+					//alert(windowWidth)
+					// factor = 2;
+					factor = windowWidth / options.minwidth;
+					//alert(factor = windowWidth / options.minwidth)
 				} else if (windowWidth > options.maxwidth) {
 					//alert('当屏幕宽度大于最大宽度时')
 					if (!options.aligncenter) {
-						// bodyEl.css({
-						// 	'margin': '0 auto'
-						// })
+						bodyEl.css({
+							'margin': '0 auto'
+						})
 					} else {
 						bodyEl.css({
 							'margin': '0 auto',
 							'width': options.maxwidth
 						})
 					}
-					factor = 1;
+					factor = 1
 				} else {
 					alert('abnormal')
 				}
@@ -1184,10 +1171,11 @@
 						}
 					}
 				}
-				//console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
+				console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
 				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		},
+		
 		editphoto: function(config) {
 			var initConfig = config;
 			var transformData = {

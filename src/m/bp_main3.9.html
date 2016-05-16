@@ -659,7 +659,7 @@
 	<script type="text/javascript" src="../assets/js/iSlider.plugin.zoompic.js"></script>
 	<script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
 
-	<script type="text/javascript" src="../js/m_base.js"></script>
+	<script type="text/javascript" src="../js/base.js"></script>
 
 	<script>
 		var LOG = function() {
@@ -669,7 +669,7 @@
 		$(function() {
 			bookpreviewInit();
 			barrageSwitcher();
-			collideLoading();
+			// collideLoading();
 			
 		});
 		function bookpreviewInit() {
@@ -808,9 +808,14 @@
 				portraitHeader=$('.ybwechatheader_wrapper, .bp_barrageswitch_item'),
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				sendcommentEl=$('.bp_sendcomment_item');
+			// $.remResizing({
+			// 	fontsize: 20,
+			// 	maxwidth:640
+			// });
 			$.remResizing({
 				fontsize: 20,
-				maxwidth:640
+				threshold: 640,
+				basedonnarrow: true
 			});
 			$('.main_container').removeClass('viewmode_landscape').addClass('viewmode_portrait');
 			$('.flipbook-viewport').css({
@@ -922,7 +927,9 @@
 				resizeBtn=$('.bp_photoslider_wrapper .bp_resizebtn_item'),
 				commentInputEl = $('.bp_sendcomment_item');
 			$.remResizing({
-				fontsize:20
+				fontsize: 20,
+				threshold: 640,
+				basedonnarrow: true
 			});
 			$('.flipbook-viewport').css({
 				'height': windowHeight

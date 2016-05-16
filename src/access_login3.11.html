@@ -151,10 +151,16 @@
 		icheck();
 		$.remResizing({
 			fontsize: 20,
-			maxwidth: 1024,
-			aligncenter: false,
-			keepportrait: true
+			baseline: 640,
+			threshold: 1024
 		});
+
+		// $.remResizing({
+		// 	fontsize: 20,
+		// 	maxwidth:1024,
+		// 	aligncenter: false
+		// });
+
 		$('.common_login_wrapper').align();
 		backgroundTransition();
 	});

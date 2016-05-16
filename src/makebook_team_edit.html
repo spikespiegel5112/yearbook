@@ -22,56 +22,6 @@
 </head>
 <body style="min-width: 1280px">
 <div class="main_container">
-    <!--yb3.11 nav-->
-    <div class="yb_cm_header book_space cm_min_width"><!--用于书册空间class:book_space-->
-        <div class="shortcut_container">
-            <div class="shortcut">
-                <div class="yb_logo">
-                    <img src="img/logo.png">
-                </div>
-                <div class="nav_bar">
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a class="active" href="booklist_photo.html">照片书</a></li>
-                        <li><a href="javascript:;">团队册</a></li>
-                        <li><a href="javascript:;">照片冲印</a></li>
-                        <li><a href="activity_1603.html">促销活动</a></li>
-                        <li><a href="static_instruction_entrance.html">使用指南</a></li>
-                        <li><a href="pc_shop_admin.html">开店赚钱</a></li>
-                    </ul>
-                </div>
-                <ul class="quick_menu">
-                    <li>
-                        <div class="yb_menu">
-                            <a class="menu_hd" href="javascript:;">我的忆尔<b class="icon-caret-down"></b></a>
-
-                            <div class="menu_bd">
-                                <div class="menu_bd_panel">
-                                    <a href="pc_mybookshelf.html">我的书架</a>
-                                    <a href="pc_myorder_list.html">我的订单</a>
-                                    <a href="pc_myMessage.html">我的消息</a>
-                                    <a href="pc_shop_admin.html">我的店铺</a>
-                                    <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-turnoff"></i>退出</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">帮助中心</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="team_edit_container "><!--1280下class:min_screen-->
         <div class="slide_mask"></div>
         <aside id="panel" class="close">
@@ -158,6 +108,56 @@
             </div>
         </aside>
         <div id="menu" class="edit_content single"><!--list 章节列表模式 single 单页编辑模式 -->
+            <!--yb3.11 nav-->
+            <div class="yb_cm_header book_space cm_min_width"><!--用于书册空间class:book_space-->
+                <div class="shortcut_container">
+                    <div class="shortcut">
+                        <div class="yb_logo">
+                            <img src="img/logo.png">
+                        </div>
+                        <div class="nav_bar">
+                            <ul>
+                                <li><a href="index.html">首页</a></li>
+                                <li><a class="active" href="booklist_photo.html">照片书</a></li>
+                                <li><a href="javascript:;">团队册</a></li>
+                                <li><a href="javascript:;">照片冲印</a></li>
+                                <li><a href="activity_1603.html">促销活动</a></li>
+                                <li><a href="static_instruction_entrance.html">使用指南</a></li>
+                                <li><a href="pc_shop_admin.html">开店赚钱</a></li>
+                            </ul>
+                        </div>
+                        <ul class="quick_menu">
+                            <li>
+                                <div class="yb_menu">
+                                    <a class="menu_hd" href="javascript:;">我的忆尔<b class="icon-caret-down"></b></a>
+
+                                    <div class="menu_bd">
+                                        <div class="menu_bd_panel">
+                                            <a href="pc_mybookshelf.html">我的书架</a>
+                                            <a href="pc_myorder_list.html">我的订单</a>
+                                            <a href="pc_myMessage.html">我的消息</a>
+                                            <a href="pc_shop_admin.html">我的店铺</a>
+                                            <a href="pc_shop_admin.html"><i class="ybiconfont ybicon-turnoff"></i>退出</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="ybiconfont ybicon-wechatsolid"></i>微信</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="ybiconfont ybicon-star"></i>收藏</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="ybiconfont ybicon-tell"></i>400-0610-127</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">帮助中心</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="tool_bar">
                 <div class="grid book_info">
                     <div class="cover">
@@ -2032,6 +2032,109 @@
         <label><input type="radio" name="postion" value="chapterend">章节尾部</label>
     </div>
 </div>
+<!--gallery must have class:pswp element 因全屏显示转移至主页面内-->
+<div id="gallery" class="pswp hidden" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--comment" title="comment"></button>
+
+                <button class="pswp__button pswp__button--fs" title="comment"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="pswp__loading-indicator"><div class="pswp__loading-indicator__line"></div></div> -->
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip">
+                    <!-- <a href="#" class="pswp__share--facebook"></a>
+                    <a href="#" class="pswp__share--twitter"></a>
+                    <a href="#" class="pswp__share--pinterest"></a>
+                    <a href="#" download class="pswp__share--download"></a> -->
+                </div>
+            </div>
+
+            <!--yb comment-->
+            <div class="pswp__comment-modal pswp__comment-modal--hidden pswp__single-tap">
+                <div class="comment">
+                    <div class="comment_list">
+                        <ul>
+                            <li>
+                                <div class="header"><img src="img/default/default_head.jpg"></div>
+                                <h5 class="name">TEST1</h5>
+                                <div class="time">2016-4-29  11:00</div>
+                                <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
+                            </li>
+                            <li>
+                                <div class="header"><img src="img/default/default_head.jpg"></div>
+                                <h5 class="name">TEST1</h5>
+                                <div class="time">2016-4-29  11:00</div>
+                                <div class="praise" href="javascript:;"><i class="ybiconfont ybicon-praise"></i><span>16</span></div>
+                                <p class="content">东北现在不论是环境还是经济都被破坏的太厉害了，人口在流逝，经济在衰退，气候环境越来越差，不容易啊！</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tpl_pagination clear">
+                        <ul>
+                            <li class="prev">
+                                <a href="javascript:;">
+                                    <span>上一页</span>
+                                </a>
+                            </li>
+                            <li class="cur"><input type="text" value="1">
+
+                                <p class="cm_fl">/ 2</p></li>
+                            <li class="next">
+                                <a href="javascript:;">
+                                    <span>下一页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comment_input">
+                        <label>发布评论</label>
+                        <textarea></textarea>
+                        <button type="button">评论</button>
+                    </div>
+                </div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- html end-->
 
 <script type="text/javascript" src='assets/js/jquery.min.js'></script>
@@ -2055,7 +2158,6 @@
         //添加章节、页面、自动排版等
         editBookToolbarEvents();
         determineWindowSize();
-        setEditAreaWidth();
     });
 
     //渲染控件样式
@@ -2110,21 +2212,12 @@
         });
     }
 
-    function setEditAreaWidth() {
-        $('.yb_cm_header').css('z-index', '6');
-        var winWidth = $(window).width();
-        var editAreaWidth = winWidth - 211 - winWidth * 0.2;
-        $('.edit_area').width(editAreaWidth);
-        $('.edit_area .page_display ').width(editAreaWidth);
-
-        $(window).resize(function () {
-            setEditAreaWidth();
-        });
-    }
 
     //判断窗口大小，小于等于1280折叠侧栏
     function determineWindowSize(size) {
-        var winWidth = $(window).width();
+        var winWidth = $(window).width(),
+       editAreaWidth = winWidth - 211 - winWidth * 0.2;
+        $('.edit_area .page_display ').width(editAreaWidth);
         if (winWidth <= 1280) {
             winWidth = 1280;
             //1280下缩减工具栏
@@ -2134,7 +2227,7 @@
                 $('.resource_shrink').addClass('active');
                 $('.chapter_list').addClass('shrink');
                 $('.resource_list').addClass('shrink');
-                $('.edit_area').css({'left': 75, 'width': winWidth - 75, 'padding-right': '0.5%'});
+                $('.edit_area').css({'padding': '0 0.5% 0 60px'});
             }, 3000)
         }
 
@@ -2152,27 +2245,31 @@
                 $('.' + btn).removeClass('active');
                 if (btn == 'chapter_shrink') {
                     if ($('.resource_shrink').hasClass('active')) {
-                        $('.edit_area').css({'left': 211, 'width': winWidth - 211, 'padding-right': '0.5%'});
+                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'211px'});
                     } else {
-                        $('.edit_area').css({'left': 211, 'width': winWidth - 211, 'padding-right': '20%'});
+                        $('.edit_area').css({'padding-right': '20%','padding-left':'211px'});
                     }
                 } else {
                     if ($('.chapter_shrink').hasClass('active')) {
-                        $('.edit_area').css({'left': 75, 'width': winWidth - 75, 'padding-right': '20%'});
+                        $('.edit_area').css({'padding-right': '20%','padding-left':'75px'});
                     } else {
-                        $('.edit_area').css({'left': 211, 'width': winWidth - 211, 'padding-right': '20%'});
+                        $('.edit_area').css({'padding-right': '20%','padding-left':'211px'});
                     }
                 }
             } else {
                 $('.' + shrinkBox).addClass('shrink');
                 $('.' + btn).addClass('active');
                 if (btn == 'chapter_shrink') {
-                    $('.edit_area').css({'left': 75, 'width': winWidth - 75});
+                    if ($('.resource_shrink').hasClass('active')) {
+                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'75px'});
+                    } else {
+                        $('.edit_area').css({'padding-right': '20%','padding-left':'75px'});
+                    }
                 } else {
                     if ($('.chapter_shrink').hasClass('active')) {
-                        $('.edit_area').css({'left': 75, 'width': winWidth - 75, 'padding-right': '0.5%'});
+                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'75px'});
                     } else {
-                        $('.edit_area').css({'left': 211, 'width': winWidth - 211, 'padding-right': '0.5%'});
+                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'211px'});
                     }
                 }
             }
@@ -2198,10 +2295,15 @@
 
 
         //hover 显示话题、赠言信息
-        $('.interact_list .item').hover(function () {
-            $(this).find('.interact_des').stop().delay(300).fadeIn('100');
-        }, function () {
-            $(this).find('.interact_des').stop().fadeOut('100');
+        $('.interact_list .item').mouseover(function(){
+            var _this = $(this);
+            b=setTimeout(function(){
+                _this.find('.interact_des').fadeIn();
+            },200) ;
+        }).mouseout(function(){
+            var _this = $(this);
+            clearTimeout(b);
+            _this.find('.interact_des').fadeOut('fast');
         });
 
         //模板-高级筛选

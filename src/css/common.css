@@ -5609,7 +5609,7 @@ nav .pagination li a:active
 
 
 /*分页插件样式*/
-
+/*默认黄色风格*/
 .turn_btn > a,
 .turn_btn > span
 {
@@ -5661,8 +5661,70 @@ nav .pagination li a:active
     border: 1px solid #999;
     background-color: #fff;
 }
+/*绿色*/
+.yb_pagination_green{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
 
+.yb_pagination_green .turn_btn > a,
+.yb_pagination_green .turn_btn > span
+{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
 
+    display: inline-block;
+
+    height: 30px;
+    margin: 0 3px;
+    padding: 0 10px;
+
+    text-align: center;
+
+    color: #fff;
+    border: 0;
+    background-color: #ccc;
+    border-radius: 2px;
+}
+.yb_pagination_green .turn_btn > a
+{
+    border: 0;
+}
+
+.yb_pagination_green .turn_btn > span
+{
+    cursor: default;
+}
+
+.yb_pagination_green .turn_btn > span.current
+{
+    color: #fff;
+    border: 0;
+    background-color: #91c131;
+}
+
+.yb_pagination_green .turn_btn > span.current.prev,
+.yb_pagination_green .turn_btn > span.current.next
+{
+    display: none;
+}
+
+.yb_pagination_green .turn_btn > span.prev,
+.yb_pagination_green .turn_btn > span.next
+{
+    color: #fff;
+    background-color: #ccc;
+}
+
+.yb_pagination_green .turn_btn > a.prev:hover,
+.yb_pagination_green .turn_btn > a.next:hover
+{
+    color: #fff;
+    background-color: #999;
+}
 /*yb3.11 yb_global_toolbar*/
 
 .yb_toolbar_wrap

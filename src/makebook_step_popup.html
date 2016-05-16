@@ -647,10 +647,16 @@
 		setup();
 		recommend();
 		checktag();
-		$.remResizing({
-			minwidth:1024,
-			fontsize:20
-		})
+		resize();
+		function resize(){
+			$.remResizing({
+				fontsize:20,
+				minwidth:0,
+				maxwidth:840,
+				responseborder:910,
+				keeplandscape:true
+			});
+		}
 	});
 
 	//弹窗相关事件操作

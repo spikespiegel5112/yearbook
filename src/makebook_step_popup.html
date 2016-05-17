@@ -655,7 +655,8 @@
 		$.remResizing({
 			fontsize: 20,
 			threshold: 860,
-			basedonnarrow: true
+			basedonnarrow: true,
+			dropoff: true
 		});
 	}
 
@@ -664,14 +665,14 @@
 		var popupwindowEl = $('.makebook_steppopuplist_wrapper>div'),
 			popupWrapperEl = $('.makebook_steppopup_wrapper'),
 			progressbarLiEl = $('.makebook_spprogress_wrapper li');
-		popupwindowEl.eq(3).show().siblings().hide();
+		popupwindowEl.eq(0).show().addClass('active').siblings().hide();
 		popupWrapperEl.align();
 		//点选方块
 		$('.makebook_splist_wrapper>li a').click(function() {
 			var $this = $(this),
 				thisParent = $(this).parent();
 			if ($this.closest('.makebook_spchoosetype_wrapper').length > 0) {
-				popupwindowEl.eq(1).show().siblings().hide();
+				popupwindowEl.prev().removeClass('active').end().eq(1).addClass('active').show().siblings().hide();
 				progressbarLiEl.eq(1).siblings().removeClass('active').end().addClass('active').prev().addClass('actived');
 				popupWrapperEl.align();
 			} else {
@@ -684,7 +685,7 @@
 		$('.makebook_spnextlink_btn').click(function() {
 			var $this = $(this),
 				index = $this.closest('.makebook_steppopuplist_wrapper>div').index();
-			popupwindowEl.eq(index + 1).show().siblings().hide();
+			popupwindowEl.eq(index + 1).addClass('active').show().siblings().hide();
 			progressbarLiEl.eq(index + 1).siblings().removeClass('active').end().addClass('active').prev().addClass('actived');
 			popupWrapperEl.align();
 		});
@@ -692,7 +693,7 @@
 		$('.makebook_stepbacklink_item').click(function() {
 			var $this = $(this),
 				index = $this.closest('.makebook_steppopuplist_wrapper>div').index();
-			popupwindowEl.eq(index - 1).show().siblings().hide();
+			popupwindowEl.eq(index - 1).show().addClass('active').siblings().hide();
 			progressbarLiEl.eq(index - 1).siblings().removeClass('active').end().addClass('active').removeClass('actived');
 			popupWrapperEl.align();
 		});

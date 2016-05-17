@@ -5466,6 +5466,20 @@
 	border-radius: 10px;
 	position: relative;
 }
+.makebook_steppopuplist_wrapper > .active{
+	display: block;
+	opacity: 1;
+	/*transition: opacity 0.5s;*/
+	animation: popup 1s;
+}
+@keyframes popup{
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+.makebook_steppopuplist_wrapper > .animate{
+	opacity: 1;
+	
+}
 
 .makebook_spmain_wrapper {
 	padding: 20px;

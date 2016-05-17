@@ -220,13 +220,13 @@
 }
 
 .edit_content .yb_cm_header{
-    position: absolute;
+    position: fixed;
     top: 0;
-    z-index: 6;
+    z-index: 35;
 }
 
 .edit_content .tool_bar {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 32px;
     margin: 0;
@@ -804,7 +804,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px 20% 20px 220px;
+    padding: 10px 20% 0px 220px;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -2273,7 +2273,7 @@
 }
 .res_tab_con .action_wrap .back i{
     margin-right: 5px;
-    vertical-align: middle;
+    font-size: 18px;
 }
 .res_tab_con .action_wrap .back:hover{
     color: #31b8d3;
@@ -2366,12 +2366,12 @@
 }
 
 .interact_des .record .action .praise i{
-    color: #f95553;
+    /*color: #f95553;*/
     font-size: 18px;
 }
-.interact_des .record .action .comment:hover i{
+/*.interact_des .record .action .comment:hover i{
     color: #31b8d3;
-}
+}*/
 .interact_des .foot{
     position: relative;
     padding: 8px 15px;
@@ -2459,12 +2459,12 @@
     display: none;
     position: relative;
     width: 620px;
-    height: 580px;
+    height: 590px;
     background-color: #fff;
     overflow: hidden;
 }
 .create_vote_con .create_votelist > ul{
-    max-height: 530px;
+    /*max-height: 530px;*/
     overflow-y: auto;
 }
 .create_vote_con.invitation_card .create_votelist > ul{

@@ -158,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tool_bar">
+            <div class="tool_bar cm_min_width">
                 <div class="grid book_info">
                     <div class="cover">
                         <img src="img/default/bookshelf_book01.jpg">
@@ -522,13 +522,13 @@
                             </div>
                         </div>
                         <!--单页 封底-->
-                        <div class="tpl back_cover hidden">
+                        <div class="tpl back_cover ">
                             <div class="inner_page">
                                 <img src="img/default/tpl_small.jpg">
                             </div>
                         </div>
                         <!--内页 双页-->
-                        <div class="tpldouble double ">
+                        <div class="tpldouble double hidden"><!--跨页提示spread-->
                             <div class="split_tips">
                                 <p>提示：请尽量避免在中间分隔线处上传头像!</p>
                             </div>
@@ -2124,8 +2124,8 @@
 <script type="text/javascript" src='assets/js/jquery.min.js'></script>
 <script type="text/javascript" src="assets/js/slideout.min.js"></script>
 <script type="text/javascript" src="assets/js/icheck.js"></script>
-<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
 <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
+<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
 <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
@@ -2200,6 +2200,7 @@
     //判断窗口大小，小于等于1280折叠侧栏
     function determineWindowSize(size) {
         var winWidth = $(window).width(),
+           winHeight = $(window).height(),
        editAreaWidth = winWidth - 220 - winWidth * 0.2;
         $('.edit_area .page_display ').width(editAreaWidth);
         if (winWidth <= 1280) {
@@ -2215,6 +2216,10 @@
             }, 3000)
         }
 
+        if(winHeight <855){
+            $('.team_edit_container .edit_content').css({'position':'relative','height':'855'});
+            $('.single_mode, .list_mode').height('733');
+        }
 
     }
 

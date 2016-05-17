@@ -24,8 +24,8 @@
                             <label>还没有上传过照片</label>
                         </div>
                         <div class="album_gallery">
-                            <a class="img" href="img/default/palace.jpg" data-size="1600x1600" data-med="img/default/palace.jpg" data-med-size="1024x1024">
-                                <img src="img/default/palace.jpg">
+                            <a class="img" href="img/login/1.jpg" data-size="1600x1600" data-med="img/login/1.jpg" data-med-size="1024x1024">
+                                <img src="img/login/1.jpg">
                                 <!--图片名称必须位于img后-->
                                 <h5>3.10-PC-分销...</h5>
                                 <div class="btn_bg">
@@ -492,7 +492,11 @@
                     captionEl.children[0].innerHTML = item.title +  '<br/><small>Photo: ' + item.author + '</small>';
                     return true;
                 },*/
+                captionEl: true,
+                closeOnScroll: true,
+                zoomEl: true,
                 fullscreenEl: false,
+                counterEl: true,
                 shareButtons: [
                     {id:'weibo', label:'新浪微博', url:'http://service.weibo.com/share/share.php?url={{}}'},
                     {id:'qzone', label:'QQ空间', url:'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?utl={{}}'},

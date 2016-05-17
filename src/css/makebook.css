@@ -6221,14 +6221,22 @@
 .makebook_waytoinvite_wrapper li h6{
 	margin: 0 0 10px 0;
 }
-.makebook_frienddetail_wrapper{
+.friend_detail_wrapper{
     position: relative;
-	display: none;
-	width: 660px;
-    height: 540px;
-	background-color: #fff;
+    display: none;
+    width: 660px;
+    height: 580px;
+    background-color: #fff;
+}
+.makebook_frienddetail_wrapper{
+    position: absolute;
+    top: 0;
+    height: inherit;
+    padding-top: 42px;
 	overflow: hidden;
     overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 0;
 }
 .makebook_waytoinvite_wrapper li p{
 	line-height: 30px;
@@ -6246,6 +6254,9 @@
 	color: #333;
 	font-size: 13px;
     box-sizing: border-box;
+}
+.friend_detail_wrapper .makebook_fdblock_wrapper:first-of-type{
+    border-top: 0;
 }
 .makebook_fdblock_wrapper .maintitle{
 	display: inline-block;
@@ -6393,13 +6404,48 @@
 }
 .makebook_inportexcalmain_wrapper .inportform{
 	margin: 20px auto 50px;
+    text-align: center;
 }
 .makebook_inportexcalmain_wrapper .inportform input{
-	display: block;
+	display: inline-block;
 	margin: 30px auto 10px;
-	width: 168px;
+	width: 300px;
+    height: 30px;
+    line-height: 30px;
 	text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
+.inportform .file_btn {
+    display: inline-block;
+    width: 55px;
+    height: 30px;
+    position: relative;
+}
+.inportform .file_btn input{
+    width: 55px;
+    height: 30px;
+    overflow: hidden;
+    opacity: 0;
+    vertical-align: middle;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+}
+.inportform .file_btn button{
+    width: 55px;
+    height: 30px;
+    padding: 0;
+    background-color: #84c453;
+    color: #fff;
+    border: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
 .makebook_inportexcalmain_wrapper .inportform label{
 	display: block;
 	text-align: center;

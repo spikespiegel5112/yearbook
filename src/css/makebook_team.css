@@ -348,7 +348,7 @@
     position: absolute;
     font-size: 12px;
     top: 62px;
-    left: -15px;
+    left: -9px;
     width: 80px;
 }
 
@@ -388,7 +388,7 @@
     z-index: 1;
     overflow-y: auto;
     width: 100%;
-    height: 200px;
+    height: 195px;
     padding: 0 10px;
     border: 1px solid #ddd;
     background-color: #fff;
@@ -443,7 +443,7 @@
     position: absolute;
     top: 45px;
     left: 75px;
-    width: 120px;
+    width: 160px;
     color: #666;
 }
 .min_screen .edit_content .book_info .progress{
@@ -486,7 +486,7 @@
 
 .edit_content .book_info .name{
     float: left;
-    min-width: 120px;
+    min-width: 160px;
 }
 
 .edit_content .book_info .name h4 {
@@ -699,7 +699,7 @@
     color: #578fbe;
     text-align: center;
     background: rgba(255, 255, 255, .6);
-    z-index: 9;
+    z-index: 1;
 }
 
 .page_list .double .figure .delete {
@@ -804,7 +804,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px 20% 20px 211px;
+    padding: 20px 20% 20px 220px;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -945,17 +945,18 @@
     position: absolute;
     padding-left: 70px;
     box-sizing: border-box;
-    width: 211px;
+    width: 220px;
     height: 100%;
     background-color: #223241;
     overflow: hidden;
     overflow-y: auto;
     left: 0;
     transition: left .5s;
+    z-index: 1;
 }
 
 .single_mode .chapter_list.shrink{
-    left: -136px;
+    left: -145px;
 }
 
 .chapter_list .back_list_mode {
@@ -969,8 +970,13 @@
 }
 
 .chapter_list .back_list_mode i {
-    font-size: 12px;
+    font-size: 14px;
     margin-right: 5px;
+    opacity: .5;
+}
+
+.chapter_list .back_list_mode:hover{
+    color: #31b8d3;
 }
 
 .single_mode .chapter_list li {
@@ -1074,7 +1080,7 @@
 }
 .single_mode .chapter_shrink{
     color: #fff;
-    left: 211px;
+    left: 220px;
     background: #213341;
     border-radius: 0 4px 4px 0;
     transition: left .5s;
@@ -1431,7 +1437,6 @@
 }
 .interact_des .record .actors{
     float: right;
-    width: 200px;
 }
 
 .interact_des .record .actors a{
@@ -1657,7 +1662,7 @@
 }
 .advanced_filter .action_bar{
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
     right: 15px;
 }
 .advanced_filter .action_bar .yb_book_btn{
@@ -1678,7 +1683,7 @@
     height: 48px;
     line-height: 48px;
     box-sizing: border-box;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px solid #ddd;
 }
 .filter_options .option input[type="text"]{
     width: 70px;
@@ -1811,7 +1816,7 @@
     box-shadow: inset 0 0 3px #aaa;
     border-radius: 2px;
 }
-.yb_pop_wrap .action_bar{
+.add_chapter_con .action_bar{
     position: absolute;
     bottom: 0;
     right: 0;

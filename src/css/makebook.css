@@ -4822,12 +4822,12 @@
 
 .makebook_componentstack_wrapper .operable a span {
 	color: #999;
-	border: 1px solid #999;
+	/*border: 1px solid #999;*/
 }
 
 .makebook_componentstack_wrapper .addable a span {
-	color: #fff;
-	background-color: #8cc04e;
+	color: #8cc04e;
+	/*background-color: #8cc04e;*/
 }
 
 .makebook_componentstack_wrapper a span {
@@ -5303,16 +5303,18 @@
 
 .makebook_recommend_wrapper li {
 	float: left;
-	margin: 0 12px;
+	margin: 0 10px;
 	width: 196px;
 	cursor: pointer;
 }
-
-.makebook_recommend_wrapper li:first-child {
+.makebook_step_wrapper .makebook_recommend_wrapper li{
+    margin: 0 12px;
+}
+.makebook_spmain_wrapper .makebook_recommend_wrapper li:first-child {
 	margin: 0 10px 0 0;
 }
 
-.makebook_recommend_wrapper li:last-child {
+.makebook_spmain_wrapper .makebook_recommend_wrapper li:last-child {
 	margin: 0 0 0 10px;
 }
 
@@ -5378,7 +5380,7 @@
 }
 
 .makebook_recommend_wrapper .title .preview:hover {
-	color: #999;
+	color: #f60;
 }
 
 .makebook_recommend_wrapper .info {
@@ -5641,6 +5643,12 @@
 	box-sizing: border-box;
 }
 
+.yb_pop_wrap .makebook_spnav_wapper{
+    padding: 13px;
+    position: absolute;
+    bottom: 0;
+}
+
 .makebook_spnav_wapper .makebook_stepbacklink_item {
 	float: left;
 }
@@ -5660,6 +5668,36 @@
 	background-color: #ff8800;
 	color: #fff;
 	transition:all 0.3s;
+}
+
+.makebook_save_btn{
+    float: right;
+    padding: 5px 10px;
+    border: 1px solid #84c453;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #84c453;
+}
+
+.makebook_save_btn:hover{
+    background-color: #3E8F00;
+    border: 1px solid #3E8F00;
+}
+
+.makebook_reset_btn{
+    float: right;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    color: #333;
+    text-align: center;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.makebook_reset_btn:hover{
+    background-color: #ccc;
 }
 
 .makebook_spchoosemethod_wrapper {
@@ -5876,6 +5914,7 @@
 	margin: 0 0 0 20px;
 	color: #999;
 	font-size: 14px;
+    line-height: 35px;
 }
 .makebook_friendhint_wrapper ul{
 	float: right;
@@ -5895,10 +5934,10 @@
 .makebook_friendhint_wrapper li a:hover{
 	background-color: #387EA4;
 }
-.makebook_asidefriend_wrapper{
+/*.makebook_asidefriend_wrapper{
 	padding: 10px 15px 30px 15px;
 	width: 1030px;
-}
+}*/
 .makebook_asidefriendtab_wrapper{
 	height: 58px;
 	font-size: 0;
@@ -6088,8 +6127,9 @@
 }
 
 .makebook_invitnamecard_item .friend_info {
+    margin: 0 0 0 5px;
 	padding: 0 0 10px 0;
-	width: 100%;
+	width: 96%;
 	min-height: 110px;
 	font-size: 12px;
 	line-height: 28px;
@@ -6193,11 +6233,22 @@
 .makebook_waytoinvite_wrapper li h6{
 	margin: 0 0 10px 0;
 }
+.friend_detail_wrapper{
+    position: relative;
+    display: none;
+    width: 660px;
+    height: 580px;
+    background-color: #fff;
+}
 .makebook_frienddetail_wrapper{
-	display: none;
-	width: 660px;
-	background-color: #fff;
+    position: absolute;
+    top: 0;
+    height: inherit;
+    padding-top: 42px;
 	overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 0;
 }
 .makebook_waytoinvite_wrapper li p{
 	line-height: 30px;
@@ -6209,18 +6260,25 @@
 	color: #666666;
 }
 .makebook_fdblock_wrapper{
+    width: 100%;
 	padding: 10px 20px;
 	border-top: 1px solid #d2d2d2;
 	color: #333;
 	font-size: 13px;
+    box-sizing: border-box;
+}
+.friend_detail_wrapper .makebook_fdblock_wrapper:first-of-type{
+    border-top: 0;
 }
 .makebook_fdblock_wrapper .maintitle{
 	display: inline-block;
 	font-size: 19px;
 }
-.makebook_frienddetail_wrapper .closebtn{
+
+.makebook_frienddetail_wrapper .closebtn,
+.makebook_fdblock_wrapper .closebtn{
 	float: right;
-	font-size: 25px;
+	font-size: 24px;
 }
 .makebook_friendbtn_item{
 	text-align: center;
@@ -6289,9 +6347,9 @@
 }
 .makebook_asidefriendmain_wrapper{
 	min-height: 500px;
-	border-left: 1px solid #b8c4cf;
+	/*border-left: 1px solid #b8c4cf;
 	border-right: 1px solid #b8c4cf;
-	border-bottom: 1px solid #b8c4cf;
+	border-bottom: 1px solid #b8c4cf;*/
 	overflow: hidden;
 	background: #fff;
 }
@@ -6358,13 +6416,48 @@
 }
 .makebook_inportexcalmain_wrapper .inportform{
 	margin: 20px auto 50px;
+    text-align: center;
 }
 .makebook_inportexcalmain_wrapper .inportform input{
-	display: block;
+	display: inline-block;
 	margin: 30px auto 10px;
-	width: 150px;
+	width: 300px;
+    height: 30px;
+    line-height: 30px;
 	text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
+.inportform .file_btn {
+    display: inline-block;
+    width: 55px;
+    height: 30px;
+    position: relative;
+}
+.inportform .file_btn input{
+    width: 55px;
+    height: 30px;
+    overflow: hidden;
+    opacity: 0;
+    vertical-align: middle;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+}
+.inportform .file_btn button{
+    width: 55px;
+    height: 30px;
+    padding: 0;
+    background-color: #84c453;
+    color: #fff;
+    border: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
 .makebook_inportexcalmain_wrapper .inportform label{
 	display: block;
 	text-align: center;
@@ -6379,7 +6472,7 @@
 	padding: 0 50px;
 	text-align: right;
 }
-.makebook_editor_wrapper{
+/*.makebook_editor_wrapper{
 	margin: 0 auto;
 	width: 95%;
 }
@@ -6390,7 +6483,58 @@
 	width: 92%;
 	min-height:120px; 
 }
-.makebook_pushlishmessage_wrapper{
+.makebook_topic_wrapper{
+    display: none;
+    width: 535px;
+    background-color: #fff;
+}
+.makebook_topic_wrapper .create_topiclist ul {
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.makebook_topic_wrapper .create_topiclist ul li {
+    margin: 8px 0;
+    overflow: hidden;
+}
+.makebook_topic_wrapper .create_topiclist ul li p {
+    margin: 70px 30px 0 0;
+    color: #777;
+}
+.makebook_topic_wrapper .create_topiclist ul li p.lp2 {
+    margin: 10px 30px 0 0;
+    color: #777;
+}
+.makebook_topic_wrapper .create_topiclist ul li input {
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 400px;
+    max-width: none !important;
+    padding: 12px 10px 11px !important;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 2px !important;
+    box-shadow: inset 0 1px 3px #ddd;
+}
+.makebook_topic_wrapper .create_topiclist ul li textarea {
+    font-size: inherit;
+    line-height: 1.4285714285714;
+    overflow-y: auto;
+    box-sizing: border-box;
+    width: 400px;
+    height: auto;
+    padding: 4px 5px;
+    vertical-align: baseline;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px #ccc;
+    resize: none;
+}*/
+/*.makebook_pushlishmessage_wrapper{
 	display: none;
 	width: 700px;
 	background-color: #fff;
@@ -6413,10 +6557,10 @@
 }
 .makebook_crowdselector_wrapper .checkbox li{
 	display: inline-block;
-}
-.makebook_initiatevote_wrapper{
+}*/
+/*.makebook_initiatevote_wrapper{
 	display: none;
-	width: 450px;
+	width: 620px;
 	background: #fff;
 }
 .makebook_voteoption_wrapper{
@@ -6431,6 +6575,17 @@
 	display: inline-block;
 	margin: 0 10px 0 0;
 	vertical-align: middle;
+}
+.makebook_voteoption_wrapper .multiple .common_custonoption_item{
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+}
+.multiple .common_custonoption_item .add{
+    width: 30px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 25px;
 }
 .makebook_voteoption_wrapper li .form{
 	display: inline-block;
@@ -6447,7 +6602,7 @@
 	padding: 10px;
 	width: 300px;
 	height: 140px;
-}
+}*/
 .makebook_invitcardinfo_wrapper{
 	margin: 20px auto;
 	width: 690px;

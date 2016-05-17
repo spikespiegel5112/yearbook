@@ -17,6 +17,12 @@ input
     outline: none;
 }
 
+input:focus,
+textarea:focus{
+    border-color: #57c5f7!important;
+    box-shadow: 0 0 5px #57c5f7!important;
+    transition: box-shadow 0.3s;
+}
 
 /*~~~~~~~~~~iconfont~~~~~~~~~~*/
 
@@ -5603,7 +5609,7 @@ nav .pagination li a:active
 
 
 /*分页插件样式*/
-
+/*默认黄色风格*/
 .turn_btn > a,
 .turn_btn > span
 {
@@ -5655,8 +5661,70 @@ nav .pagination li a:active
     border: 1px solid #999;
     background-color: #fff;
 }
+/*绿色*/
+.yb_pagination_green{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
 
+.yb_pagination_green .turn_btn > a,
+.yb_pagination_green .turn_btn > span
+{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
 
+    display: inline-block;
+
+    height: 30px;
+    margin: 0 3px;
+    padding: 0 10px;
+
+    text-align: center;
+
+    color: #fff;
+    border: 0;
+    background-color: #ccc;
+    border-radius: 2px;
+}
+.yb_pagination_green .turn_btn > a
+{
+    border: 0;
+}
+
+.yb_pagination_green .turn_btn > span
+{
+    cursor: default;
+}
+
+.yb_pagination_green .turn_btn > span.current
+{
+    color: #fff;
+    border: 0;
+    background-color: #91c131;
+}
+
+.yb_pagination_green .turn_btn > span.current.prev,
+.yb_pagination_green .turn_btn > span.current.next
+{
+    display: none;
+}
+
+.yb_pagination_green .turn_btn > span.prev,
+.yb_pagination_green .turn_btn > span.next
+{
+    color: #fff;
+    background-color: #ccc;
+}
+
+.yb_pagination_green .turn_btn > a.prev:hover,
+.yb_pagination_green .turn_btn > a.next:hover
+{
+    color: #fff;
+    background-color: #999;
+}
 /*yb3.11 yb_global_toolbar*/
 
 .yb_toolbar_wrap
@@ -6951,7 +7019,7 @@ nav .pagination li a:active
     font-size: 18px;
 
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 10px;
     right: 15px;
 
@@ -6977,6 +7045,8 @@ nav .pagination li a:active
 
     color: #333;
     border-bottom: 1px solid #ddd;
+    z-index: 1;
+    background-color: #fff;
 }
 
 .yb_pop_wrap::before{

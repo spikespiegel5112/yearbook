@@ -84,23 +84,6 @@
 		},
 		//联系我们浮动菜单
 		suspendMenu: function(offset) {
-			/*var popupEl=$('.cus_popup_item');
-			var popopFlag=false;
-			$('.contactus_suspend_item .more_btn').click(function() {
-				var $this = $(this);
-				if ($this.find('span').hasClass('rotateto225')) {
-					$('.cus_popup_wrapper>div').fadeOut();
-					$this.find('span').removeClass('rotateto225').addClass('rotatefrom225');
-					$this.prev().stop().animate({
-						height: '0'
-					});
-				} else {
-					$this.find('span').removeClass('rotatefrom225').addClass('rotateto225');
-					$this.prev().stop().animate({
-						height: '320px'
-					});
-				}
-			});*/
 			$(window).scroll(function() {
 				var scrollTop = $(window).scrollTop();
 				if (scrollTop > 300) {
@@ -115,33 +98,16 @@
 				}, 200);
 			});
 			$('#suggest_btn').click(function() {
-					art.dialog({
-						title: '意见反馈',
-						lock: true,
-						content: document.querySelector('.feedback_container_float'),
-						okVal: '发送',
-						ok: function() {},
-						cancelVal: '取消',
-						cancel: function() {},
-					});
-				})
-				/*$('.cus_tool_wrapper li').click(function(){
-					var $this=$(this);
-					var index=$this.index();
-					var thisPopupEl=$('.cus_popup_wrapper .cus_popup_item').eq(index);
-					if($('.cus_popup_wrapper .cus_popup_item').eq(index).is(':visible')){
-						thisPopupEl.hide();
-						popopFlag=false;
-					}else{
-						popupEl.hide();
-						$this.find('a').addClass('active').end().siblings().find('a').removeClass('active');
-						thisPopupEl.show().css('margin-top',80*index+55);
-						popopFlag=true;
-					}
+				art.dialog({
+					title: '意见反馈',
+					lock: true,
+					content: document.querySelector('.feedback_container_float'),
+					okVal: '发送',
+					ok: function() {},
+					cancelVal: '取消',
+					cancel: function() {},
 				});
-				$('.cus_suggestion_submit_wrapper>input[type=submit]').click(function(){
-					$('.cus_popup_wrapper .cus_popup_item').eq(3).hide();
-				});*/
+			})
 		},
 		//banner双向滑动效果
 		toolsSlide: function(bsContainer, bsInner, arrowLeft, arrowRight, liPadding) {
@@ -1043,138 +1009,6 @@
 			}
 			return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 		},
-		remResizing_old: function(options) {
-			options = $.extend({
-				fontsize: 16,
-				minwidth: 320,
-				maxwidth: 0,
-				aligncenter: false,
-				keepportrait: false,
-				keeplandscape: false
-			}, options);
-			var htmlEl = $('html'),
-				bodyEl = $('body'),
-				windowWidth = $(window).width(),
-				windowHeight = $(window).height();
-			sizeConstraint();
-			$(window).resize(function() {
-				sizeConstraint();
-			});
-
-			function sizeConstraint() {
-				if (options.keepportrait) {
-					orientationSensor({
-						portrait: function() {
-							windowWidth = $(window).width(),
-								windowHeight = $(window).height();
-						},
-						landscape: function() {
-							windowWidth = $(window).height(),
-								windowHeight = $(window).width();
-						}
-					});
-				} else if (options.keeplandscape) {
-					orientationSensor({
-						portrait: function() {
-							windowWidth = $(window).width(),
-								windowHeight = $(window).height();
-						},
-						landscape: function() {
-							windowWidth = $(window).height(),
-								windowHeight = $(window).width();
-						}
-					});
-				} else {
-					windowWidth = $(window).width(),
-						windowHeight = $(window).height();
-				}
-				var factor = 0;
-				// alert(windowWidth)
-				if (options.minwidth == 0) {
-					//alert('当最小宽度等于0时')
-					if (!options.aligncenter) {
-						return;
-					} else {
-						bodyEl.css({
-							'width': windowWidth
-						});
-					}
-					factor = 1;
-				} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
-					// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
-					if (!options.aligncenter) {
-						bodyEl.css({
-							'margin': '0 auto'
-						})
-					} else {
-						bodyEl.css({
-							'margin': '0 auto',
-							'width': options.minwidth,
-						})
-					}
-					factor = 1;
-				} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
-					//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
-					if (!options.aligncenter) {
-						bodyEl.css({
-							'margin': '0 auto'
-						})
-					} else {
-						bodyEl.css({
-							'margin': '0 auto',
-							'width': options.maxwidth
-						})
-					}
-					//alert(windowWidth)
-					// factor = 2;
-					factor = windowWidth / options.minwidth;
-					//alert(factor = windowWidth / options.minwidth)
-				} else if (windowWidth > options.maxwidth) {
-					//alert('当屏幕宽度大于最大宽度时')
-					if (!options.aligncenter) {
-						bodyEl.css({
-							'margin': '0 auto'
-						})
-					} else {
-						bodyEl.css({
-							'margin': '0 auto',
-							'width': options.maxwidth
-						})
-					}
-					factor = 1
-				} else {
-					alert('abnormal')
-				}
-				htmlEl.css('font-size', options.fontsize * factor);
-			}
-			//屏幕方向探测器
-			function orientationSensor(callback) {
-				var windowWidth = $(window).width(),
-					windowHeight = $(window).height(),
-					orientation = '';
-				checkoritation();
-				$(window).resize(function() {
-					checkoritation();
-				});
-
-				function checkoritation() {
-					if (typeof(callback) == 'undefined') {
-						callback = {
-							portrait: function() {},
-							landscape: function() {}
-						}
-					} else {
-						if (windowWidth < windowHeight) {
-							return callback.portrait();
-						} else {
-							return callback.landscape();
-						}
-					}
-				}
-				console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
-				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
-			}
-		},
 		remResizing: function(options) {
 			options = $.extend({
 				fontsize: 16,
@@ -1182,6 +1016,7 @@
 				threshold: 0,
 				basedonnarrow: false,
 				basedonwide: false,
+				dropoff: false,
 				aligncenter: false
 			}, options);
 			var htmlEl = $('html'),
@@ -1193,7 +1028,7 @@
 				options.baseline = 1;
 			};
 			sizeConstraint();
-			$(window).on('resize',function() {
+			$(window).on('resize', function() {
 				sizeConstraint();
 			});
 
@@ -1202,18 +1037,18 @@
 					orientationSensor({
 						portrait: function() {
 							frontline = $(window).width(),
-							windowHeight = $(window).height();
+								windowHeight = $(window).height();
 						},
 						landscape: function() {
 							frontline = $(window).height(),
-							windowHeight = $(window).width();
+								windowHeight = $(window).width();
 						}
 					});
 				} else {
 					frontline = $(window).width(),
-					windowHeight = $(window).height();
+						windowHeight = $(window).height();
 				}
-				
+
 				if (frontline < options.threshold || windowHeight < options.responseheight) {};
 				var factor = 0;
 				if (options.baseline == 0) {
@@ -1224,27 +1059,37 @@
 					factor = 1;
 				} else if (frontline > options.baseline && frontline <= options.threshold || options.threshold == 0) {
 					//alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
-					if (options.threshold > 0 && options.basedonnarrow) {
-						factor = frontline / options.threshold;
-					} else {
-						alert('aaa')
-						factor = frontline / options.baseline;
+					if (options.threshold > 0) {
+						if (options.basedonnarrow) {
+							factor = frontline / options.threshold;
+						} else {
+							factor = frontline / options.baseline;
+						}
 					}
 					console.log(frontline)
 					console.log(options.baseline)
 				} else if (frontline > options.threshold) {
-					alert('当屏幕宽度大于最大宽度时')
-					factor = 1;
-				}
-				if (options.aligncenter) {
-					bodyEl.css({
-						margin: '0 auto',
-						width: options.threshold
-					});
-				} else {
-					bodyEl.css('margin',0);
+					//alert('当屏幕宽度大于最大宽度时')
+					factor = options.threshold / options.baseline;
+					if (options.aligncenter) {
+						bodyEl.css({
+							margin: '0 auto',
+							width: options.threshold
+						});
+					} else {
+						bodyEl.css('margin', 0);
+					}
+					// if (options.dropoff) {
+					// 	alert('dsadas')
+					// 	htmlEl.css('font-size', 'none');
+					// 	return;
+					// };
 				}
 				htmlEl.css('font-size', options.fontsize * factor);
+				if (options.dropoff && frontline > options.threshold) {
+					// alert('dsadas')
+					htmlEl.css('font-size','')
+				};
 			}
 			//屏幕方向探测器
 			function orientationSensor(callback) {
@@ -1274,6 +1119,138 @@
 				return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
 			}
 		},
+		// remResizing_old: function(options) {
+		// 	options = $.extend({
+		// 		fontsize: 16,
+		// 		minwidth: 320,
+		// 		maxwidth: 0,
+		// 		aligncenter: false,
+		// 		keepportrait: false,
+		// 		keeplandscape: false
+		// 	}, options);
+		// 	var htmlEl = $('html'),
+		// 		bodyEl = $('body'),
+		// 		windowWidth = $(window).width(),
+		// 		windowHeight = $(window).height();
+		// 	sizeConstraint();
+		// 	$(window).resize(function() {
+		// 		sizeConstraint();
+		// 	});
+
+		// 	function sizeConstraint() {
+		// 		if (options.keepportrait) {
+		// 			orientationSensor({
+		// 				portrait: function() {
+		// 					windowWidth = $(window).width(),
+		// 						windowHeight = $(window).height();
+		// 				},
+		// 				landscape: function() {
+		// 					windowWidth = $(window).height(),
+		// 						windowHeight = $(window).width();
+		// 				}
+		// 			});
+		// 		} else if (options.keeplandscape) {
+		// 			orientationSensor({
+		// 				portrait: function() {
+		// 					windowWidth = $(window).width(),
+		// 						windowHeight = $(window).height();
+		// 				},
+		// 				landscape: function() {
+		// 					windowWidth = $(window).height(),
+		// 						windowHeight = $(window).width();
+		// 				}
+		// 			});
+		// 		} else {
+		// 			windowWidth = $(window).width(),
+		// 				windowHeight = $(window).height();
+		// 		}
+		// 		var factor = 0;
+		// 		// alert(windowWidth)
+		// 		if (options.minwidth == 0) {
+		// 			//alert('当最小宽度等于0时')
+		// 			if (!options.aligncenter) {
+		// 				return;
+		// 			} else {
+		// 				bodyEl.css({
+		// 					'width': windowWidth
+		// 				});
+		// 			}
+		// 			factor = 1;
+		// 		} else if (options.minwidth != 0 && windowWidth <= options.minwidth) {
+		// 			// alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
+		// 			if (!options.aligncenter) {
+		// 				bodyEl.css({
+		// 					'margin': '0 auto'
+		// 				})
+		// 			} else {
+		// 				bodyEl.css({
+		// 					'margin': '0 auto',
+		// 					'width': options.minwidth,
+		// 				})
+		// 			}
+		// 			factor = 1;
+		// 		} else if (options.maxwidth == 0 || windowWidth > options.minwidth && windowWidth <= options.maxwidth) {
+		// 			//alert('当屏幕宽度大于最小宽度且小于最大宽度，或没有最大宽度时')
+		// 			if (!options.aligncenter) {
+		// 				bodyEl.css({
+		// 					'margin': '0 auto'
+		// 				})
+		// 			} else {
+		// 				bodyEl.css({
+		// 					'margin': '0 auto',
+		// 					'width': options.maxwidth
+		// 				})
+		// 			}
+		// 			//alert(windowWidth)
+		// 			// factor = 2;
+		// 			factor = windowWidth / options.minwidth;
+		// 			//alert(factor = windowWidth / options.minwidth)
+		// 		} else if (windowWidth > options.maxwidth) {
+		// 			//alert('当屏幕宽度大于最大宽度时')
+		// 			if (!options.aligncenter) {
+		// 				bodyEl.css({
+		// 					'margin': '0 auto'
+		// 				})
+		// 			} else {
+		// 				bodyEl.css({
+		// 					'margin': '0 auto',
+		// 					'width': options.maxwidth
+		// 				})
+		// 			}
+		// 			factor = 1
+		// 		} else {
+		// 			alert('abnormal')
+		// 		}
+		// 		htmlEl.css('font-size', options.fontsize * factor);
+		// 	}
+		// 	//屏幕方向探测器
+		// 	function orientationSensor(callback) {
+		// 		var windowWidth = $(window).width(),
+		// 			windowHeight = $(window).height(),
+		// 			orientation = '';
+		// 		checkoritation();
+		// 		$(window).resize(function() {
+		// 			checkoritation();
+		// 		});
+
+		// 		function checkoritation() {
+		// 			if (typeof(callback) == 'undefined') {
+		// 				callback = {
+		// 					portrait: function() {},
+		// 					landscape: function() {}
+		// 				}
+		// 			} else {
+		// 				if (windowWidth < windowHeight) {
+		// 					return callback.portrait();
+		// 				} else {
+		// 					return callback.landscape();
+		// 				}
+		// 			}
+		// 		}
+		// 		console.log((windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape')
+		// 		return (windowWidth < windowHeight) ? orientation = 'portrait' : orientation = 'landscape';
+		// 	}
+		// },
 		editphoto: function(config) {
 			var initConfig = config;
 			var transformData = {

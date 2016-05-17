@@ -1156,6 +1156,10 @@
     cursor: pointer;
 }
 
+.resource_list .res_tab li.add{
+    width: 70px;
+}
+
 .resource_list .res_tab li.on{
     box-shadow: 0 -3px 0 #5db8f1;
     border-bottom: 0;
@@ -1229,7 +1233,7 @@
     box-sizing: border-box;
 }
 .res_tab_con .picture_list .hover_box{
-    top: -120px;
+    top: -44px;
 }
 .res_tab_con .picture_list li {
     position: relative;
@@ -1831,7 +1835,7 @@
 }
 .yb_pop_wrap .action_bar .add_section_sbbtn{
     float: right;
-    margin: 20px 0;
+    margin: 20px;
 }
 /*¸ü»»Ä£°å*/
 .change_tpl_con{
@@ -2190,10 +2194,14 @@
     -webkit-animation: viewBtnSlideUp .2s ease;
     animation: viewBtnSlideUp .2s ease;
 }*/
+.aside_content .al_photo_list .album_gallery{
+    position: relative;
+    overflow: hidden;
+}
 .aside_content .al_photo_list .img{
     position: relative;
-    display: inline-block;
-    margin: 10px 8px;
+    float: left;
+    margin: 10px 5px;
     padding: 6px 0 0;
     width: 240px;
     height: 225px;
@@ -2431,6 +2439,9 @@
     max-height: 450px;
     overflow-y: auto;
 }
+.detail.vote .actor_comment_list .comment_list{
+    max-height: 190px;
+}
 .actor_comment_list .comment_list li{
     border-bottom: 0;
     border-top: 1px solid #eaeeef;
@@ -2634,7 +2645,7 @@
 .interact_list .vote_option{
     position: relative;
     width: 100%;
-    max-height: 290px;
+    max-height: 170px;
     overflow-y: auto;
     border-top: 1px solid #eaeeef;
 }

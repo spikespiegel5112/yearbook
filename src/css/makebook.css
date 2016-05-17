@@ -5900,7 +5900,7 @@
 }
 .makebook_friendhint_wrapper p{
 	display: inline-block;
-	width: 820px;
+	max-width: 818px;
 	margin: 0 0 0 20px;
 	color: #999;
 	font-size: 14px;
@@ -6342,6 +6342,12 @@
 	border-bottom: 1px solid #b8c4cf;*/
 	overflow: hidden;
 	background: #fff;
+    height: inherit;
+    padding: 65px 0 32px;
+    position: fixed;
+    width: 1040px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 .makebook_asidefriendmain_wrapper>.active{
 	display: block;

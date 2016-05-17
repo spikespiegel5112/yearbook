@@ -99,7 +99,7 @@
 }
 
 .nav_bar .fixed_menu li.share .common_sharelist_wrapper {
-    right: -275px;
+    right: -290px;
     top: -10px;
     width: 275px;
     height: 92px;
@@ -198,6 +198,7 @@
     padding: 122px 0 0;
     width: 100%;
     height: 100%;
+    min-width: 1280px;
     margin: 0;
     box-sizing: border-box;
     background: url("../img/makebook/team/iabook_edit_bg.jpg") no-repeat 0;
@@ -218,8 +219,14 @@
     display: none;
 }
 
+.edit_content .yb_cm_header{
+    position: fixed;
+    top: 0;
+    z-index: 35;
+}
+
 .edit_content .tool_bar {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 32px;
     margin: 0;
@@ -272,7 +279,7 @@
     font-size: 12px;
     color: #999;
     border-radius: 4px;
-    width: 58px;
+    width: auto;
     box-sizing: border-box;
 }
 .min_screen .edit_content .tool_bar .grid > ul > li > a span{
@@ -340,9 +347,14 @@
     display: none;
     position: absolute;
     font-size: 12px;
-    top: 45px;
-    left: -16px;
+    top: 62px;
+    left: -9px;
     width: 80px;
+}
+
+.min_screen .tool_bar .grid li .page_list{
+    top: 45px;
+    left: -19px;
 }
 
 .tool_bar .grid li:hover .page_list{
@@ -376,7 +388,7 @@
     z-index: 1;
     overflow-y: auto;
     width: 100%;
-    height: 200px;
+    height: 195px;
     padding: 0 10px;
     border: 1px solid #ddd;
     background-color: #fff;
@@ -431,7 +443,7 @@
     position: absolute;
     top: 45px;
     left: 75px;
-    width: 120px;
+    width: 160px;
     color: #666;
 }
 .min_screen .edit_content .book_info .progress{
@@ -474,7 +486,7 @@
 
 .edit_content .book_info .name{
     float: left;
-    min-width: 120px;
+    min-width: 160px;
 }
 
 .edit_content .book_info .name h4 {
@@ -687,7 +699,7 @@
     color: #578fbe;
     text-align: center;
     background: rgba(255, 255, 255, .6);
-    z-index: 9;
+    z-index: 1;
 }
 
 .page_list .double .figure .delete {
@@ -789,11 +801,12 @@
 
 .edit_content .single_mode .edit_area {
     position: absolute;
+    left: 0;
+    width: 100%;
     height: 100%;
-    padding: 20px 20% 20px 0;
+    padding: 10px 20% 0px 220px;
     box-sizing: border-box;
     overflow-y: auto;
-    left: 211px;
 }
 
 .single_mode .edit_area .page_display{
@@ -932,17 +945,18 @@
     position: absolute;
     padding-left: 70px;
     box-sizing: border-box;
-    width: 211px;
+    width: 220px;
     height: 100%;
     background-color: #223241;
     overflow: hidden;
     overflow-y: auto;
     left: 0;
     transition: left .5s;
+    z-index: 1;
 }
 
 .single_mode .chapter_list.shrink{
-    left: -136px;
+    left: -145px;
 }
 
 .chapter_list .back_list_mode {
@@ -956,8 +970,13 @@
 }
 
 .chapter_list .back_list_mode i {
-    font-size: 12px;
+    font-size: 14px;
     margin-right: 5px;
+    opacity: .5;
+}
+
+.chapter_list .back_list_mode:hover{
+    color: #31b8d3;
 }
 
 .single_mode .chapter_list li {
@@ -1061,13 +1080,15 @@
 }
 .single_mode .chapter_shrink{
     color: #fff;
-    left: 211px;
+    left: 220px;
     background: #213341;
     border-radius: 0 4px 4px 0;
     transition: left .5s;
 }
 .single_mode .chapter_shrink.active{
     left: 75px;
+    transform: rotate(180deg);
+    border-radius: 4px 0 0 4px;
 }
 .single_mode .resource_shrink{
     color: #5b5b5b;
@@ -1079,6 +1100,9 @@
 }
 .single_mode .resource_shrink.active{
     right: .5%;
+    transform: rotate(180deg);
+    border-radius: 0 4px 4px 0;
+    box-shadow: 1px 0 2px #ddd;
 }
 .single_mode .resource_list {
     position: absolute;
@@ -1132,6 +1156,10 @@
     cursor: pointer;
 }
 
+.resource_list .res_tab li.add{
+    width: 70px;
+}
+
 .resource_list .res_tab li.on{
     box-shadow: 0 -3px 0 #5db8f1;
     border-bottom: 0;
@@ -1153,6 +1181,12 @@
     box-sizing: border-box;
     background-color: #fff;
     z-index: 0;
+}
+
+.resource_list .res_tab_con > ul,
+.resource_list .res_tab_con > ul > li{
+    position: relative;
+    height: inherit;
 }
 
 .resource_list .res_tab_con .actbar {
@@ -1199,7 +1233,7 @@
     box-sizing: border-box;
 }
 .res_tab_con .picture_list .hover_box{
-    top: -120px;
+    top: -44px;
 }
 .res_tab_con .picture_list li {
     position: relative;
@@ -1407,7 +1441,6 @@
 }
 .interact_des .record .actors{
     float: right;
-    width: 200px;
 }
 
 .interact_des .record .actors a{
@@ -1467,6 +1500,11 @@
     height: 56px;
 }
 
+.res_tab_con .comment{
+    position: relative;
+    height: inherit;
+}
+
 .comment .comment_list{
     position: relative;
     width: 100%;
@@ -1477,6 +1515,7 @@
     overflow-y: auto;
 }
 .pswp__comment-modal .comment .comment_input{
+    position: relative;
     border-radius: 0 0 2px 2px;
 }
 .comment .comment_list li{
@@ -1573,7 +1612,7 @@
     height: inherit;
 }
 .comment .comment_input{
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -1627,7 +1666,7 @@
 }
 .advanced_filter .action_bar{
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
     right: 15px;
 }
 .advanced_filter .action_bar .yb_book_btn{
@@ -1648,7 +1687,7 @@
     height: 48px;
     line-height: 48px;
     box-sizing: border-box;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px solid #ddd;
 }
 .filter_options .option input[type="text"]{
     width: 70px;
@@ -1781,7 +1820,7 @@
     box-shadow: inset 0 0 3px #aaa;
     border-radius: 2px;
 }
-.yb_pop_wrap .action_bar{
+.add_chapter_con .action_bar{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -1796,7 +1835,7 @@
 }
 .yb_pop_wrap .action_bar .add_section_sbbtn{
     float: right;
-    margin: 20px 0;
+    margin: 20px;
 }
 /*¸ü»»Ä£°å*/
 .change_tpl_con{
@@ -1983,19 +2022,29 @@
 }
 /*left slide content*/
 .aside_content{
-    position: relative;
+    position: fixed;
     margin: 0;
     padding: 0 20px 32px;
-    width: 100%;
-    height: auto;
+    width: 1080px;
+    height: 100%;
     background-color: #eceff4;
     box-sizing: border-box;
 }
+.aside_content .resource_list{
+    position: relative;
+    height: inherit;
+}
 .aside_content .res_tab{
     z-index: 1;
+    position: absolute;
+    width: 100%;
+}
+.aside_content .res_tab li:first-child{
+    border-left: 1px solid #d9dfe5;
 }
 .aside_content .res_tab li.on{
     background-color: #fff;
+    border-left: 0;
 }
 .aside_content .res_tab .add_album{
     display: inline-block;
@@ -2015,14 +2064,16 @@
     color: #90c132;
 }
 .aside_content .res_tab_con{
-    position: relative;
+    position: absolute;
     width: 100%;
-    padding: 0 10px;
+    padding: 65px 10px 0;
     margin: -1px 0 0;
     background-color: #fff;
     border: 1px solid #e8ecf0;
     border-left: 0;
     z-index: 0;
+    height: inherit;
+    overflow-y: auto;
 }
 .action_wrap{
     position: relative;
@@ -2067,52 +2118,7 @@
     margin-right: 5px;
     vertical-align: middle;
 }
-.yb_team_pagination{
-    position: relative;
-    width: 100%;
-    margin: 20px 0;
-    text-align: center;
-}
-.yb_team_pagination ul{
-    position: relative;
-    display: inline-block;
-    height: 40px;
-    line-height: 40px;
-    box-sizing: border-box;
-    background: linear-gradient(#fff,#f3f3f3);
-    border-radius: 20px;
-    box-shadow: 0 1px 1px #aaa;
-    overflow: hidden;
-}
-.yb_team_pagination li{
-    float: left;
-}
-.yb_team_pagination li a{
-    float: left;
-    width: 38px;
-    text-align: center;
-    font-size: 15px;
-    color: #7e7e7e;
-    border-right: 1px solid #e0e0e0;
-    border-left: 1px solid #fff;
-}
-.yb_team_pagination li a.active{
-    color: #e72b18;
-}
-.yb_team_pagination li a:hover{
-    background-color: #f3f3f3;
-}
-.yb_team_pagination li .prev{
-    padding-left: 6px;
-    border-left: 0;
-}
-.yb_team_pagination li .next{
-    padding-right: 6px;
-    border-right: 0;
-}
-.yb_team_pagination li a i{
-    font-size: 15px;
-}
+
 .aside_content .res_tab_con .al_photo_list{
     position: relative;
     width: 100%;
@@ -2188,10 +2194,14 @@
     -webkit-animation: viewBtnSlideUp .2s ease;
     animation: viewBtnSlideUp .2s ease;
 }*/
+.aside_content .al_photo_list .album_gallery{
+    position: relative;
+    overflow: hidden;
+}
 .aside_content .al_photo_list .img{
     position: relative;
-    display: inline-block;
-    margin: 10px 8px;
+    float: left;
+    margin: 10px 5px;
     padding: 6px 0 0;
     width: 240px;
     height: 225px;
@@ -2205,28 +2215,20 @@
     width: 228px;
     height: 188px;
 }
-.al_photo_list .img .actbar{
+.al_photo_list .img h5{
     margin: 0;
     padding: 0 6px;
     line-height: 25px;
     height: 25px;
-}
-.al_photo_list .img .actbar h5{
-    max-width: 152px;
+    max-width: 100%;
+    font-size: 12px;
+    color: #666;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    box-sizing: border-box;
 }
-.al_photo_list .img .actbar span{
-    font-size: 14px;
-    margin-left: 10px;
-}
-.al_photo_list .img .actbar span:hover{
-    color: #90c132;
-}
-.al_photo_list .img .actbar .ybicon-commentsolid{
-    font-size: 12px;
-}
+
 .al_photo_list .img .btn_bg{
     display: none;
     position: absolute;
@@ -2287,7 +2289,7 @@
 }
 .res_tab_con .action_wrap .back i{
     margin-right: 5px;
-    vertical-align: middle;
+    font-size: 18px;
 }
 .res_tab_con .action_wrap .back:hover{
     color: #31b8d3;
@@ -2305,6 +2307,7 @@
     line-height: 40px;
     text-align: center;
     color: #666;
+    font-size: 14px;
     background-color: #fdfdff;
     border: 1px dashed #dedde2;
     border-radius: 2px;
@@ -2314,7 +2317,10 @@
     background-color: #f6f6f6;
 }
 .action_wrap .new_interact i{
+    font-size: 20px;
     color: #bdc1ca;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 .action_wrap .interact_sort{
     float: right;
@@ -2376,12 +2382,12 @@
 }
 
 .interact_des .record .action .praise i{
-    color: #f95553;
+    /*color: #f95553;*/
     font-size: 18px;
 }
-.interact_des .record .action .comment:hover i{
+/*.interact_des .record .action .comment:hover i{
     color: #31b8d3;
-}
+}*/
 .interact_des .foot{
     position: relative;
     padding: 8px 15px;
@@ -2399,12 +2405,13 @@
     height: 40px;
     border: 1px solid #ddd;
 }
-.interact_des .foot textarea{
+.interact_des .foot input{
     float: left;
+    margin-top: 4px;
     width: 75%;
     border: 0;
     resize: none;
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
     line-height: 35px;
     height: 35px;
@@ -2432,6 +2439,9 @@
     max-height: 450px;
     overflow-y: auto;
 }
+.detail.vote .actor_comment_list .comment_list{
+    max-height: 190px;
+}
 .actor_comment_list .comment_list li{
     border-bottom: 0;
     border-top: 1px solid #eaeeef;
@@ -2446,7 +2456,7 @@
     display: none;
     position: relative;
     width: 620px;
-    height: 540px;
+    height: 465px;
     background-color: #fff;
 }
 .create_topic_con .create_topiclist ul,
@@ -2455,8 +2465,11 @@
     margin: 0;
     padding: 0 15px;
 }
-.yb_pop_wrap .create_topiclist ul li{
-    margin: 8px 0;
+.create_topic_con .create_topiclist ul li p{
+    margin: 50px 30px 0 0;
+}
+.create_topic_con .create_topiclist ul li textarea{
+    height: 120px;
 }
 .yb_pop_wrap .yb_book_btn{
     margin: 10px 0;
@@ -2465,12 +2478,16 @@
     display: none;
     position: relative;
     width: 620px;
-    height: 580px;
+    height: 590px;
     background-color: #fff;
+    overflow: hidden;
 }
 .create_vote_con .create_votelist > ul{
-    max-height: 530px;
+    /*max-height: 530px;*/
     overflow-y: auto;
+}
+.create_vote_con.invitation_card .create_votelist > ul{
+    max-height: 490px;
 }
 .create_vote_con .create_votelist ul li{
     margin: 10px 0;
@@ -2597,11 +2614,17 @@
     font-size: 14px;
     line-height: 35px;
 }
-.interact_des .vote_title .time{
+.interact_des .vote_title .time
+{
     float: right;
     font-size: 12px;
     line-height: 35px;
     margin-right: 25px;
+}
+.topic .interact_des > .time{
+    position: absolute;
+    right: 15px;
+    top: 20px;
 }
 .vote.detail .interact_list .interact_des .desc{
     border-bottom: 0;
@@ -2622,7 +2645,7 @@
 .interact_list .vote_option{
     position: relative;
     width: 100%;
-    max-height: 290px;
+    max-height: 170px;
     overflow-y: auto;
     border-top: 1px solid #eaeeef;
 }
@@ -2698,10 +2721,11 @@
     color: #999;
     line-height: 30px;
 }*/
-.interact .message_list{
+.interact.leavewall .message_list{
     position: relative;
     width: 100%;
     overflow: hidden;
+    padding-bottom: 80px;
 }
 .interact .message_list .item{
     position: relative;
@@ -2792,13 +2816,17 @@
 .message_list .item .from span{
     margin-left: 8px;
 }
-.leave_msg{
+.leavewall .leave_msg{
     display: block;
-    position: relative;
+    position: fixed;
+    left: 20px;
+    bottom: 32px;
     padding: 15px 0;
-    width: 100%;
+    width: 1040px;
+    background-color: #fff;
     border-top: 1px solid #e8ecf0;
     text-align: center;
+    box-sizing: border-box;
 }
 .create_leave_msg {
     display: none;
@@ -2827,6 +2855,15 @@
     width: 96%;
     margin: 0 auto 20px;
     height: 190px;
+}
+.create_leave_msg .simditor{
+    width: 96%;
+    margin: 0 auto;
+}
+.create_leave_msg .simditor .simditor-body,
+.create_leave_msg .editor-style{
+    min-height: 160px;
+    box-sizing: border-box;
 }
 .create_leave_msg .lw_btn{
     border-top: 1px solid #ddd;

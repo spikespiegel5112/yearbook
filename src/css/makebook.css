@@ -5299,18 +5299,20 @@
 
 .makebook_recommend_wrapper li {
 	float: left;
-	margin: 0 12px;
+	margin: 0 10px;
 	width: 196px;
 	cursor: pointer;
 }
-
-/*.makebook_recommend_wrapper li:first-child {
+.makebook_step_wrapper .makebook_recommend_wrapper li{
+    margin: 0 12px;
+}
+.makebook_spmain_wrapper .makebook_recommend_wrapper li:first-child {
 	margin: 0 10px 0 0;
 }
 
-.makebook_recommend_wrapper li:last-child {
+.makebook_spmain_wrapper .makebook_recommend_wrapper li:last-child {
 	margin: 0 0 0 10px;
-}*/
+}
 
 .makebook_recommend_wrapper>a {
 	float: left;

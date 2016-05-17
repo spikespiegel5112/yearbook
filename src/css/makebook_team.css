@@ -2018,16 +2018,22 @@
 }
 /*left slide content*/
 .aside_content{
-    position: relative;
+    position: fixed;
     margin: 0;
     padding: 0 20px 32px;
-    width: 100%;
-    height: auto;
+    width: 1080px;
+    height: 100%;
     background-color: #eceff4;
     box-sizing: border-box;
 }
+.aside_content .resource_list{
+    position: relative;
+    height: inherit;
+}
 .aside_content .res_tab{
     z-index: 1;
+    position: absolute;
+    width: 100%;
 }
 .aside_content .res_tab li:first-child{
     border-left: 1px solid #d9dfe5;
@@ -2054,14 +2060,16 @@
     color: #90c132;
 }
 .aside_content .res_tab_con{
-    position: relative;
+    position: absolute;
     width: 100%;
-    padding: 0 10px;
+    padding: 65px 10px 0;
     margin: -1px 0 0;
     background-color: #fff;
     border: 1px solid #e8ecf0;
     border-left: 0;
     z-index: 0;
+    height: inherit;
+    overflow-y: auto;
 }
 .action_wrap{
     position: relative;
@@ -2702,10 +2710,11 @@
     color: #999;
     line-height: 30px;
 }*/
-.interact .message_list{
+.interact.leavewall .message_list{
     position: relative;
     width: 100%;
     overflow: hidden;
+    padding-bottom: 80px;
 }
 .interact .message_list .item{
     position: relative;
@@ -2796,13 +2805,17 @@
 .message_list .item .from span{
     margin-left: 8px;
 }
-.leave_msg{
+.leavewall .leave_msg{
     display: block;
-    position: relative;
+    position: fixed;
+    left: 20px;
+    bottom: 32px;
     padding: 15px 0;
-    width: 100%;
+    width: 1040px;
+    background-color: #fff;
     border-top: 1px solid #e8ecf0;
     text-align: center;
+    box-sizing: border-box;
 }
 .create_leave_msg {
     display: none;

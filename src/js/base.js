@@ -1056,7 +1056,12 @@
 					factor = 1;
 				} else if (frontline <= options.baseline) {
 					//alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
-					factor = 1;
+					if (options.basedonnarrow) {
+						factor = options.baseline / options.threshold;
+					}else{
+						factor = 1;
+					}
+					
 				} else if (frontline > options.baseline && frontline <= options.threshold || options.threshold == 0) {
 					//alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
 					if (options.threshold > 0) {

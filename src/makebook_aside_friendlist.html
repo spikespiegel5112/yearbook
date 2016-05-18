@@ -384,9 +384,7 @@
                         <a class="next sNext"> &gt; </a>
                     </div>
                 </div>
-                <div class="yb_pop_wrap friend_detail_wrapper">
-                    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-                    <h4 class="title">创建话题</h4>
+                <div class="friend_detail_wrapper">
                     <div class="makebook_frienddetail_wrapper">
                         <div class="makebook_fdblock_wrapper">
                             <h6 class="subtitle">基本资料</h6>
@@ -511,6 +509,7 @@
 
 	<!-- html end-->
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb313"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
@@ -528,10 +527,11 @@
 
 		//点击名片弹出详情
 		$('.makebook_invitnamecard_item').click(function() {
-			$('.friend_detail_wrapper').popup({
-				closebtn: '.makebook_friendbtn_item a, .friend_detail_wrapper .close',
-				maskopacity: 0.6
-			});
+            art.dialog({
+                title: "小伙伴详情",
+                lock: true,
+                content: document.querySelector('.friend_detail_wrapper')
+            })
 		});
 	})
 	</script>

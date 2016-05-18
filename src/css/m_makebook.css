@@ -2,774 +2,994 @@
 /*~~~~~~~~~~makebook_editphoto_wrapper~~~~~~~~~~~*/
 .makebook_editphoto_conatainer .ybwechatheader_wrapper
 {
-    position: fixed;
+	position: fixed;
 
-    background-color: #1b1b1b;
+	background-color: #1b1b1b;
 }
 .makebook_editphoto_conatainer.viewmode_portrait p
 {
 	/*float: left;*/
 	/*margin: 0;*/
-    text-align: left;
+	text-align: left;
 }
 .makebook_editphoto_conatainer .back_btn span
 {
-    font-size: 1rem;
+	font-size: 1rem;
 }
 .makebook_editphoto_wrapper
 {
-    position: relative;
+	position: relative;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    width: 100%;
+	width: 100%;
 
-    background-color: #232226;
+	background-color: #232226;
 }
 .makebook_epeditarea_wrapper
 {
-    position: relative;
+	position: relative;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    width: auto;
-    height: auto;
-    margin: 0 auto;
+	width: auto;
+	height: auto;
+	margin: 0 auto;
 
-    background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,.5);
 }
 .makebook_editphoto_wrapper img
 {
-    display: block;
+	display: block;
 
-    width: 100%;
+	width: 100%;
 }
 .makebook_eptools_wrapper
 {
-    position: fixed;
-    bottom: 0;
+	position: fixed;
+	bottom: 0;
 
-    width: 100%;
+	width: 100%;
 }
 .makebook_eptools_wrapper a
 {
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
 
-    float: left;
+	float: left;
 
-    height: 2rem;
-    padding: 0 .5rem;
+	height: 2rem;
+	padding: 0 .5rem;
 
-    color: #000;
+	color: #000;
 }
 .makebook_eptools_wrapper .zoomout
 {
-    position: absolute;
-    z-index: 2;
-    left: 0;
+	position: absolute;
+	z-index: 2;
+	left: 0;
 
-    margin: 0 10px;
+	margin: 0 10px;
 }
 .makebook_eptools_wrapper .zoomin
 {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: 0;
 
-    margin: 0 10px;
+	margin: 0 10px;
 }
 
 .makebook_eptoolbar_wrapper li a
 {
-    display: inline-block;
+	display: inline-block;
 }
 .makebook_epzomming_wrapper, .makebook_eptoolbar_wrapper
 {
-    overflow: hidden;
+	overflow: hidden;
 
-    height: 2.6rem;
+	height: 2.6rem;
 }
 .makebook_eptoolbar_wrapper
 {
-    text-align: center;
+	text-align: center;
 
-    background-color: #fff;
+	background-color: #fff;
 }
 .makebook_eptoolbar_wrapper li
 {
-    display: inline-block;
+	display: inline-block;
 }
 .makebook_epscrollbar_item
 {
-    position: relative;
+	position: relative;
 
-    width: 100%;
-    height: 2px;
-    margin: 1rem auto 0;
+	width: 100%;
+	height: 2px;
+	margin: 1rem auto 0;
 }
 .makebook_epscrollbar_item label
 {
-    display: block;
+	display: block;
 
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
 
-    background-color: #fff;
+	background-color: #fff;
 }
 .makebook_epscrollbar_item span
 {
-    position: absolute;
-    top: -.5rem;
-    left: 8%;
+	position: absolute;
+	top: -.5rem;
+	left: 8%;
 
-    display: block;
+	display: block;
 
-    width: 1rem;
-    height: 1rem;
+	width: 1rem;
+	height: 1rem;
 
-    border-radius: 50%;
-    background-color: #fff;
+	border-radius: 50%;
+	background-color: #fff;
 }
 /*�б�ģʽ*/
 .make_book_wrap
 {
-    position: relative;
+	position: relative;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .list_mode .page_wrap
 {
-    position: relative;
+	position: relative;
 
-    float: left;
+	float: left;
 
-    box-sizing: border-box;
-    width: 50%;
-    margin: 5px 0;
-    padding: 15px 0;
+	box-sizing: border-box;
+	width: 50%;
+	margin: 5px 0;
+	padding: 15px 0;
 
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    background-color: #fff;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
 }
 
 .list_mode .page_wrap .page
 {
-    position: relative;
+	position: relative;
 
-    width: 9rem;
-    height: 12.5rem;
+	width: 9rem;
+	height: 12.5rem;
 }
 
 .list_mode .page_wrap:nth-child(odd) .page
 {
-    float: right;
+	float: right;
 
-    padding-right: 5px;
+	padding-right: 5px;
 }
 
 .list_mode .page_wrap:nth-child(even) .page
 {
-    float: left;
+	float: left;
 
-    padding-left: 5px;
+	padding-left: 5px;
 }
 
 .list_mode .page_wrap .page img
 {
-    box-sizing: content-box;
-    /*display: block;
-    margin: 0 auto;*/
-    width: 100%;
-    height: 100%;
+	box-sizing: content-box;
+	/*display: block;
+	margin: 0 auto;*/
+	width: 100%;
+	height: 100%;
 
-    border: 1px solid #ddd;
+	border: 1px solid #ddd;
 }
 
 .page_wrap .page .page_num
 {
-    font-size: 14px;
-    line-height: 24px;
+	font-size: 14px;
+	line-height: 24px;
 
-    position: absolute;
-    top: 5px;
-    left: -8px;
+	position: absolute;
+	top: 5px;
+	left: -8px;
 
-    display: none;
+	display: none;
 
-    height: 24px;
-    padding: 0 5px 0 8px;
+	height: 24px;
+	padding: 0 5px 0 8px;
 
-    color: #fff;
-    background-color: #89c27e;
+	color: #fff;
+	background-color: #89c27e;
 }
 
 .page_wrap:nth-child(odd) .page .page_num
 {
-    display: block;
+	display: block;
 }
 
 .page_wrap .page .page_num::before
 {
-    position: absolute;
-    top: 24px;
-    left: 0;
+	position: absolute;
+	top: 24px;
+	left: 0;
 
-    content: ' ';
+	content: ' ';
 
-    border-width: 8px 0 0 8px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
+	border-width: 8px 0 0 8px;
+	border-style: solid;
+	border-color: #333 transparent transparent transparent;
 }
 
 .page_wrap .page .page_num::after
 {
-    position: absolute;
-    top: 0;
-    right: -12px;
+	position: absolute;
+	top: 0;
+	right: -12px;
 
-    content: ' ';
+	content: ' ';
 
-    border-width: 12px 0 12px 12px;
-    border-style: solid;
-    border-color: transparent transparent transparent #89c27e;
+	border-width: 12px 0 12px 12px;
+	border-style: solid;
+	border-color: transparent transparent transparent #89c27e;
 }
 
 .page_wrap .page  a
 {
-    font-size: 14px;
+	font-size: 14px;
 
-    display: none;
+	display: none;
 
-    margin: 0 3px;
-    padding: 0 5px;
+	margin: 0 3px;
+	padding: 0 5px;
 
-    color: #71ca5e;
-    border: 1px solid #71ca5e;
-    border-radius: 2px;
-    background-color: #fff;
+	color: #71ca5e;
+	border: 1px solid #71ca5e;
+	border-radius: 2px;
+	background-color: #fff;
 }
 
 .page_wrap:nth-child(even) .page a
 {
-    display: inline-block;
+	display: inline-block;
 }
 
 .page_wrap .page .delete
 {
-    font-size: 18px;
-    line-height: 18px;
+	font-size: 18px;
+	line-height: 18px;
 
-    position: absolute;
-    top: -8px;
-    right: -8px;
+	position: absolute;
+	top: -8px;
+	right: -8px;
 
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    padding: 0;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
 
-    text-align: center;
+	text-align: center;
 
-    color: #fff;
-    border-radius: 100%;
-    background-color: #71ca5e;
+	color: #fff;
+	border-radius: 100%;
+	background-color: #71ca5e;
 }
 
 .page_wrap .page .change
 {
-    position: absolute;
-    right: 10px;
-    bottom: 8px;
+	position: absolute;
+	right: 10px;
+	bottom: 8px;
 }
 
 .page_wrap .page .change:hover,
 .page_wrap .page .change:active
 {
-    color: #e7b54b;
-    border: 1px solid #e7b54b;
+	color: #e7b54b;
+	border: 1px solid #e7b54b;
 }
 
 .page_wrap .page a i
 {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .make_book_wrap > .btn_group
 {
-    position: fixed;
-    bottom: 0;
+	position: fixed;
+	bottom: 0;
 
-    width: 100%;
+	width: 100%;
 
-    text-align: center;
+	text-align: center;
 
-    border-top: 2px solid #ddd;
-    background-color: #fff;
+	border-top: 2px solid #ddd;
+	background-color: #fff;
 }
 
 .make_book_wrap > .btn_group a
 {
-    font-size: 18px;
+	font-size: 18px;
 
-    display: inline-block;
+	display: inline-block;
 
-    box-sizing: border-box;
-    width: 40%;
-    margin: 10px;
-    padding: 5px 10px;
+	box-sizing: border-box;
+	width: 40%;
+	margin: 10px;
+	padding: 5px 10px;
 
-    color: #f60;
-    border: 1px solid #f60;
-    border-radius: 4px;
-    background-color: #fff;
+	color: #f60;
+	border: 1px solid #f60;
+	border-radius: 4px;
+	background-color: #fff;
 }
 
 .make_book_wrap > .btn_group a.print
 {
-    color: #fff;
-    background-color: #f60;
+	color: #fff;
+	background-color: #f60;
 }
 
 .make_book_wrap > .btn_group a:active
 {
-    color: #fff;
-    background-color: #e55f06;
+	color: #fff;
+	background-color: #e55f06;
 }
 
 .delete_page_tips
 {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    bottom: 0;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	bottom: 0;
 
-    display: none;
+	display: none;
 
-    width: 100%;
+	width: 100%;
 
-    background: rgba(0,0,0,.6);
+	background: rgba(0,0,0,.6);
 }
 
 .delete_page_tips .tips
 {
-    position: absolute;
-    top: 50%;
-    left: 10%;
+	position: absolute;
+	top: 50%;
+	left: 10%;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    width: 80%;
-    margin-top: -78px;
+	width: 80%;
+	margin-top: -78px;
 
-    text-align: center;
+	text-align: center;
 
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 0 3px #333;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0 0 3px #333;
 }
 
 .delete_page_tips .tips h2
 {
-    font-size: 24px;
+	font-size: 24px;
 
-    margin: 15px 0 10px;
+	margin: 15px 0 10px;
 
-    color: #333;
+	color: #333;
 }
 
 .delete_page_tips .tips p
 {
-    font-size: 14px;
-    line-height: 2;
+	font-size: 14px;
+	line-height: 2;
 
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 
-    color: #000;
+	color: #000;
 }
 
 .delete_page_tips .tips .btn_group
 {
-    line-height: 40px;
+	line-height: 40px;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    width: 100%;
-    height: 40px;
+	width: 100%;
+	height: 40px;
 
-    border-top: 1px solid #ddd;
-    border-radius: 0 0 8px 8px;
-    background-color: #eee;
+	border-top: 1px solid #ddd;
+	border-radius: 0 0 8px 8px;
+	background-color: #eee;
 }
 
 .delete_page_tips .tips .btn_group a
 {
-    font-size: 14px;
+	font-size: 14px;
 
-    float: left;
+	float: left;
 
-    box-sizing: border-box;
-    width: 50%;
+	box-sizing: border-box;
+	width: 50%;
 
-    color: #666;
+	color: #666;
 }
 
 .delete_page_tips .tips .btn_group a:first-child
 {
-    border-right: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 
 .delete_page_tips .tips .btn_group a:active
 {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 .add_page_container
 {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    bottom: 0;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	bottom: 0;
 
-    display: none;
+	display: none;
 
-    width: 100%;
+	width: 100%;
 
-    background: rgba(0,0,0,.6);
+	background: rgba(0,0,0,.6);
 }
 
 .add_page_container .add_page
 {
-    position: absolute;
-    bottom: 0;
+	position: absolute;
+	bottom: 0;
 
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
 
-    background-color: #fff;
+	background-color: #fff;
 }
 
 .add_page_container .add_page label
 {
-    font-size: 14px;
-    line-height: 35px;
+	font-size: 14px;
+	line-height: 35px;
 }
 
 .add_page_container .add_page .ybcommon_counter_item
 {
-    display: inline-block;
+	display: inline-block;
 
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 /*��ҳģʽ�±༭*/
 .edit_book_con
 {
-    position: fixed;
+	position: fixed;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    width: inherit;
-    height: 100%;
+	width: inherit;
+	height: 100%;
 
-    background: url('../img/m/makebook/makebook_bg.jpg') no-repeat 0;
-    background-size: cover;
+	background: url('../img/m/makebook/makebook_bg.jpg') no-repeat 0;
+	background-size: cover;
 }
 
 .edit_book_con .ybwechatheader_wrapper
 {
-    background-color: #251f1c;
+	background-color: #251f1c;
 }
 
 .edit_book_con .make_book_wrap .print,
 .edit_book_con .make_book_wrap .back
 {
-    font-size: .5rem;
-    line-height: 1.2rem;
+	font-size: .5rem;
+	line-height: 1.2rem;
 
-    position: absolute;
-    top: .5rem;
+	position: absolute;
+	top: .5rem;
 
-    width: 2.5rem;
-    height: 1.2rem;
-    margin: 0;
+	width: 2.5rem;
+	height: 1.2rem;
+	margin: 0;
 
-    text-align: center;
+	text-align: center;
 
-    color: #fff;
-    border-radius: 13px;
-    background-color: #fe7100;
+	color: #fff;
+	border-radius: 13px;
+	background-color: #fe7100;
 }
 
 .edit_book_con .make_book_wrap .back
 {
-    left: 10px;
+	left: 10px;
 }
 
 .edit_book_con .make_book_wrap .print
 {
-    right: 10px;
+	right: 10px;
 }
 
 .make_book_wrap .single_mode
 {
-    position: relative;
+	position: relative;
 
-    margin-left: auto;
+	margin-left: auto;
 }
 
 .single_mode .tpl
 {
-    position: relative;
+	position: relative;
 
-    width: 24.75rem;
-    height: 16.875rem;
-    margin: 0 auto;
+	width: 24.75rem;
+	height: 16.875rem;
+	margin: 0 auto;
 }
 
 .single_mode .tpl .double_con
 {
-    position: relative;
+	position: relative;
 
-    box-sizing: border-box;
-    width: 24.75rem;
-    height: 100%;
+	box-sizing: border-box;
+	width: 24.75rem;
+	height: 100%;
 }
 
 .single_mode .tpl.cover .double_con
 {
-    width: 24.25rem;
-    margin: 0 auto;
+	width: 24.25rem;
+	margin: 0 auto;
 
-    background-color: #ccc;
+	background-color: #ccc;
 }
 
 .single_mode .tpl.double .double_con
 {
-    background: #fff url('../img/m/makebook/innerpage_bg.jpg') no-repeat center;
-    background-size: cover;
+	background: #fff url('../img/m/makebook/innerpage_bg.jpg') no-repeat center;
+	background-size: cover;
 }
 
 .single_mode .tpl .double_con::after
 {
-    position: absolute;
-    top: 0;
-    left: 50%;
+	position: absolute;
+	top: 0;
+	left: 50%;
 
-    width: 1.5rem;
-    height: 100%;
-    margin-left: -1.5rem;
+	width: 1.5rem;
+	height: 100%;
+	margin-left: -1.5rem;
 
-    content: ' ';
+	content: ' ';
 }
 
 .single_mode .tpl.cover .double_con::before
 {
-    position: absolute;
-    bottom: -.875rem;
-    left: 50%;
+	position: absolute;
+	bottom: -.875rem;
+	left: 50%;
 
-    width: .625rem;
-    height: 1rem;
-    margin-left: -.45rem;
+	width: .625rem;
+	height: 1rem;
+	margin-left: -.45rem;
 
-    content: ' ';
+	content: ' ';
 
-    background: url(../img/m/makebook/ribbon.png) no-repeat 0;
-    background-size: cover;
+	background: url(../img/m/makebook/ribbon.png) no-repeat 0;
+	background-size: cover;
 }
 
 .single_mode .tpl.cover .double_con::after
 {
-    width: 2.375rem;
-    height: 16.875rem;
-    margin-left: -.9rem;
+	width: 2.375rem;
+	height: 16.875rem;
+	margin-left: -.9rem;
 
-    background: url(../img/m/makebook/cover_spine.png) no-repeat 0;
-    background-size: cover;
+	background: url(../img/m/makebook/cover_spine.png) no-repeat 0;
+	background-size: cover;
 }
 
 .single_mode .tpl.double .double_con::after
 {
-    background: url(../img/m/makebook/inner_page_shadow.png) no-repeat 0;
-    background-size: cover;
+	background: url(../img/m/makebook/inner_page_shadow.png) no-repeat 0;
+	background-size: cover;
 }
 
 .single_mode .tpl .double_con .page
 {
-    position: relative;
+	position: relative;
 
-    float: left;
-    overflow: hidden;
+	float: left;
+	overflow: hidden;
 
-    width: 11.875rem;
-    height: 16.875rem;
+	width: 11.875rem;
+	height: 16.875rem;
 }
 
 .single_mode .tpl .double_con .page.left
 {
-    margin-left: .5rem;
+	margin-left: .5rem;
 }
 
 .single_mode .tpl.cover .double_con .page.left
 {
-    margin-left: .25rem;
+	margin-left: .25rem;
 }
 
 .single_mode .swiper-button-prev,
 .single_mode .swiper-button-next
 {
-    margin-top: -32px;
-    padding: 10px;
+	margin-top: -32px;
+	padding: 10px;
 
-    background-color: rgba(0,0,0,.6);
+	background-color: rgba(0,0,0,.6);
 }
 
 .single_mode .swiper-button-prev
 {
-    left: 0;
+	left: 0;
 
-    border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
 }
 
 .single_mode .swiper-button-next
 {
-    right: 0;
+	right: 0;
 
-    border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
 }
 
 .edit_book_con .swiper-pagination
 {
-    position: relative;
+	position: relative;
 
-    display: inline-block;
+	display: inline-block;
 }
 
 .clickEdit
 {
-    font-size: 1rem;
-    line-height: 3rem;
+	font-size: 1rem;
+	line-height: 3rem;
 
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 45%;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 45%;
 
-    display: none;
+	display: none;
 
-    margin-top: -1.5rem;
-    padding: 0 10px;
+	margin-top: -1.5rem;
+	padding: 0 10px;
 
-    white-space: nowrap;
+	white-space: nowrap;
 
-    color: #fff;
-    border-radius: 8px;
-    background-color: rgba(0,0,0,.5);
+	color: #fff;
+	border-radius: 8px;
+	background-color: rgba(0,0,0,.5);
 }
 
 .clickEdit a
 {
-    color: #fff;
+	color: #fff;
 }
 
 .clickEdit::before
 {
-    position: absolute;
-    top: 1rem;
-    left: -1.75rem;
+	position: absolute;
+	top: 1rem;
+	left: -1.75rem;
 
-    width: 1rem;
-    height: 1rem;
+	width: 1rem;
+	height: 1rem;
 
-    content: ' ';
+	content: ' ';
 
-    border-radius: 100%;
-    background-color: #fe7100;
+	border-radius: 100%;
+	background-color: #fe7100;
 }
 
 .clickEdit::after
 {
-    position: absolute;
-    top: .75rem;
-    left: -.75rem;
+	position: absolute;
+	top: .75rem;
+	left: -.75rem;
 
-    width: 0;
-    height: 0;
+	width: 0;
+	height: 0;
 
-    content: ' ';
+	content: ' ';
 
-    border-width: .8rem .8rem .8rem 0;
-    border-style: solid;
-    border-color: transparent rgba(0,0,0,.7) transparent transparent;
+	border-width: .8rem .8rem .8rem 0;
+	border-style: solid;
+	border-color: transparent rgba(0,0,0,.7) transparent transparent;
 }
 
 /*���ؽ�����*/
 .load_progress_wrap
 {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
 
-    display: block;
+	display: block;
 
-    width: 100%;
+	width: 100%;
 
-    background: rgba(0,0,0,1);
+	background: rgba(0,0,0,1);
 }
 
 .load_progress_wrap .load
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 
-    margin: -30px 0 0 -120px ;
+	margin: -30px 0 0 -120px ;
 }
 
 .load_progress_wrap .reload
 {
-    font-size: 14px;
+	font-size: 14px;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 
-    display: none;
+	display: none;
 
-    width: 60px;
-    margin: -30px 0 0 -30px;
+	width: 60px;
+	margin: -30px 0 0 -30px;
 
-    text-align: center;
+	text-align: center;
 
-    color: #fff;
+	color: #fff;
 }
 
 .load_progress_wrap .reload span
 {
-    font-size: 36px;
-    line-height: 60px;
+	font-size: 36px;
+	line-height: 60px;
 
-    display: block;
+	display: block;
 
-    width: 100%;
-    height: 60px;
+	width: 100%;
+	height: 60px;
 
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
 
-    border-radius: 100%;
-    background-color: #70ca5d;
+	border-radius: 100%;
+	background-color: #70ca5d;
 }
+/*~~~~~~~~~~定制流程选择群体booklist_ia3.9.html~~~~~~~~~~*/
+.makebook_choosetype_container{
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	z-index: 11;
+	overflow: auto;
+}
+.makebook_choosetype_wrapper .maintitle{
+	margin: 2.5rem 0;
+	text-align: center;
+	color: #fff;
+	font-size: 1.5rem;
+}
+.makebook_choosetype_wrapper .maintitle span{
+	font-size: 1.7rem;
+}
+.makebook_choosetype_wrapper .subtitle{
+	margin: 0 0 1rem 0;
+	text-align: center;
+	color: #fff;
+	font-size: 1rem;
+}
+.makebook_choosetype_wrapper .subtitle span{
+	display: inline-block;
+	margin: 0 1rem;
+	width: 3rem;
+	height: 1px;
+	background-color: #fff;
+	vertical-align: middle;
+}
+.makebook_splist_wrapper {
+	overflow: hidden;
+	text-align: center;
+}
+
+.makebook_splist_wrapper>li {
+	display: inline-block;
+	margin: 10px;
+	width: 4rem;
+	height: 4rem;
+}
+
+.makebook_splist_wrapper>li .title {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #fff;
+	text-align: center;
+	position: relative;
+	color: #fff;
+}
+
+.makebook_splist_wrapper>.active .title {
+	border: 2px solid #62c878;
+}
+
+.makebook_splist_wrapper .active .tips {
+	color: #999;
+}
+
+
+
+.makebook_splist_wrapper .title .makebook_compicon_item {
+	display: inline-block;
+	height: 2.5rem;
+	vertical-align: middle;
+	font-size: 1rem;
+}
+
+.makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i, .makebook_splist_wrapper .active div label{
+	color: #62c878;
+}
+
+.makebook_splist_wrapper .makebook_compicon_item span {
+	color: #fff;
+}
+
+.makebook_splist_wrapper .makebook_compicon_item .frame {
+	display: inline-block;
+	margin: 1rem 0 0 0;
+	color: #fff;
+	vertical-align: middle;
+	font-size: 2.2rem;
+}
+
+.makebook_splist_wrapper .actived .makebook_compicon_item .frame,
+.makebook_splist_wrapper .actived .title label {
+	color: #fff;
+}
+
+.makebook_splist_wrapper .title label {
+	display: block;
+	cursor: pointer;
+	text-align: center;
+	font-size: 0.5rem;
+}
+
+.makebook_splist_wrapper .makebook_mark_item {
+	display: none;
+	line-height: 0.7rem;
+	font-size: 0.4rem;
+}
+
+.makebook_splist_wrapper .actived a {
+	margin: 0;
+	background-color: #90c132;
+	border: 2px solid #90c132;
+}
+
+/*.makebook_splist_wrapper .title:hover {
+	border: 1px solid #999999;
+}*/
+
+.makebook_splist_wrapper .actived .title:hover {
+	border: 2px solid #90c132;
+}
+
+.makebook_splist_wrapper .actived .makebook_mark_item,
+.makebook_splist_wrapper .actived .title:hover .makebook_mark_item {
+	display: block;
+	border-color: transparent #a6cc5b #a6cc5b transparent
+}
+
+.makebook_splist_wrapper .active .makebook_mark_item {
+	display: block;
+	color: #fff;
+	border-color: transparent #62c878 #62c878 transparent;
+}
+
+/*.makebook_splist_wrapper .title:hover .makebook_mark_item {
+	display: block;
+	color: #fff;
+	border-color: transparent #999 #999 transparent;
+}*/
+
+
+.makebook_splist_wrapper .tips {
+	padding: 30px 0 0 0;
+	color: #cccccc;
+}
+
+.makebook_splist_wrapper .tips li {
+	display: inline-block;
+	margin: 3px 0px;
+	padding: 1px 3px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	text-align: center;
+}
+
+.makebook_splist_wrapper .tips li:last-child {
+	border: 0;
+}
+
+.makebook_splist_wrapper .tips p {
+	font-size: 14px;
+}
+.makebook_choosetype_wrapper .makebook_splist_wrapper{
+	padding: 0 0 0.5rem 0;
+	border-bottom: 1px solid #bfbfbf;
+}
+.makebook_choosetype_wrapper .makebook_splist_wrapper .active:after{
+	content: '';
+	display: block;
+	margin: 0.4rem auto 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0.4rem 0.4rem 0.4rem;
+	border-color: transparent transparent #fff transparent;
+}
+.makebook_mark_item {
+	display: none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0.7rem;
+	color: #fff;
+}
+
+.active .makebook_mark_item {
+	display: block;
+	color: #fff;
+	border-color: transparent #8cc04e #8cc04e transparent;
+}
+
+.makebook_typedescribe_wrapper li{
+	padding: 1rem;
+	width: 100%;
+	color: #fff;
+	box-sizing: border-box;
+}
+.makebook_typedescribe_wrapper li p{
+	font-size: 0.5rem;
+}
+.makebook_choosetype_wrapper .makebook_typedescribe_wrapper{
+	min-height: 4rem;
+	border-bottom: 1px solid #bfbfbf;
+}
+.makebook_choosetype_wrapper .makebook_typedescribe_wrapper li{
+	display: none;
+}
+.makebook_choosetype_wrapper .makebook_typedescribe_wrapper .active{
+	display: block;
+}
+.makebook_choosetype_wrapper .button{
+	display: block;
+	margin: 2rem auto 0.5rem;
+}
+
+
+
+
+

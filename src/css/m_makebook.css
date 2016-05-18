@@ -805,7 +805,7 @@
 	background-color: #fff;
 	vertical-align: middle;
 }
-.makebook_splist_wrapper {
+{
 	overflow: hidden;
 	text-align: center;
 }
@@ -831,28 +831,54 @@
 	border: 2px solid #62c878;
 }
 
-.makebook_splist_wrapper .active .tips {
+.active .tips {
 	color: #999;
 }
 
 
-
-.makebook_splist_wrapper .title .makebook_compicon_item {
-	display: inline-block;
-	height: 2.5rem;
-	vertical-align: middle;
-	font-size: 1rem;
+.makebook_bookcomponent_item{
+	padding: 0.3rem;
+	width: 100%;
+	border-bottom: 1px solid #d6d6d6;
+	
+	box-sizing: border-box;
 }
 
-.makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i, .makebook_splist_wrapper .active div label{
+.makebook_bookcomponent_item .description{
+	width: 75%;
+	color: #8b8b8b;
+}
+.makebook_bookcomponent_item .makebook_switcher_item{
+	float: right;
+}
+.makebook_switcher_item{
+	display: inline-block;
+	width: 3rem;
+	background-color: #dddddd;
+	border-radius: 0.1rem;
+}
+.makebook_switcher_item>span{
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	font-size: 0.4rem;
+}
+.makebook_compicon_item {
+	display: inline-block;
+	font-size: 0.8rem;
+	color: #404040;
+}
+
+.active .makebook_compicon_item span, .active .makebook_compicon_item i, .active div label{
 	color: #62c878;
 }
 
-.makebook_splist_wrapper .makebook_compicon_item span {
+.makebook_compicon_item span {
 	color: #fff;
 }
 
-.makebook_splist_wrapper .makebook_compicon_item .frame {
+.makebook_compicon_item .frame {
 	display: inline-block;
 	margin: 1rem 0 0 0;
 	color: #fff;
@@ -860,63 +886,63 @@
 	font-size: 2.2rem;
 }
 
-.makebook_splist_wrapper .actived .makebook_compicon_item .frame,
-.makebook_splist_wrapper .actived .title label {
+.actived .makebook_compicon_item .frame,
+.actived .title label {
 	color: #fff;
 }
 
-.makebook_splist_wrapper .title label {
+.title label {
 	display: block;
 	cursor: pointer;
 	text-align: center;
 	font-size: 0.5rem;
 }
 
-.makebook_splist_wrapper .makebook_mark_item {
+.makebook_mark_item {
 	display: none;
 	line-height: 0.7rem;
 	font-size: 0.4rem;
 }
 
-.makebook_splist_wrapper .actived a {
+.actived a {
 	margin: 0;
 	background-color: #90c132;
 	border: 2px solid #90c132;
 }
 
-/*.makebook_splist_wrapper .title:hover {
+/*.title:hover {
 	border: 1px solid #999999;
 }*/
 
-.makebook_splist_wrapper .actived .title:hover {
+.actived .title:hover {
 	border: 2px solid #90c132;
 }
 
-.makebook_splist_wrapper .actived .makebook_mark_item,
-.makebook_splist_wrapper .actived .title:hover .makebook_mark_item {
+.actived .makebook_mark_item,
+.actived .title:hover .makebook_mark_item {
 	display: block;
 	border-color: transparent #a6cc5b #a6cc5b transparent
 }
 
-.makebook_splist_wrapper .active .makebook_mark_item {
+.active .makebook_mark_item {
 	display: block;
 	color: #fff;
 	border-color: transparent #62c878 #62c878 transparent;
 }
 
-/*.makebook_splist_wrapper .title:hover .makebook_mark_item {
+/*.title:hover .makebook_mark_item {
 	display: block;
 	color: #fff;
 	border-color: transparent #999 #999 transparent;
 }*/
 
 
-.makebook_splist_wrapper .tips {
+.tips {
 	padding: 30px 0 0 0;
 	color: #cccccc;
 }
 
-.makebook_splist_wrapper .tips li {
+.tips li {
 	display: inline-block;
 	margin: 3px 0px;
 	padding: 1px 3px;
@@ -926,18 +952,18 @@
 	text-align: center;
 }
 
-.makebook_splist_wrapper .tips li:last-child {
+.tips li:last-child {
 	border: 0;
 }
 
-.makebook_splist_wrapper .tips p {
+.tips p {
 	font-size: 14px;
 }
 .makebook_choosetype_wrapper .makebook_splist_wrapper{
 	padding: 0 0 0.5rem 0;
 	border-bottom: 1px solid #bfbfbf;
 }
-.makebook_choosetype_wrapper .makebook_splist_wrapper .active:after{
+.makebook_choosetype_wrapper .active:after{
 	content: '';
 	display: block;
 	margin: 0.4rem auto 0;
@@ -989,6 +1015,7 @@
 	margin: 2rem auto 0.5rem;
 }
 
+/*~~~~~~~~~~makebook_step2_3.13.html~~~~~~~~~~*/
 
 
 

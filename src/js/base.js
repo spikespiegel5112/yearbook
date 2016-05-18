@@ -1049,33 +1049,24 @@
 						windowHeight = $(window).height();
 				}
 
-				if (frontline < options.threshold || windowHeight < options.responseheight) {};
 				var factor = 0;
 				if (options.baseline == 0) {
 					//alert('当最小宽度等于0时')
 					factor = 1;
 				} else if (frontline <= options.baseline) {
 					//alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
-					if (options.basedonnarrow) {
-						factor = options.baseline / options.threshold;
-					}else{
-						factor = 1;
-					}
+					factor = options.baseline / frontline
 					
 				} else if (frontline > options.baseline && frontline <= options.threshold || options.threshold == 0) {
 					//alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
-					if (options.threshold > 0) {
-						if (options.basedonnarrow) {
-							factor = frontline / options.threshold;
-						} else {
-							factor = frontline / options.baseline;
-						}
+					if (options.threshold >= 0) {
+						factor = frontline / options.baseline;
 					}
 					console.log(frontline)
-					console.log(options.baseline)
 				} else if (frontline > options.threshold) {
 					//alert('当屏幕宽度大于最大宽度时')
-					factor = options.threshold / options.baseline;
+					factor = frontline / options.threshold;
+					
 					if (options.aligncenter) {
 						bodyEl.css({
 							margin: '0 auto',

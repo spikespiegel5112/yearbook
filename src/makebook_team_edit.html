@@ -1060,9 +1060,9 @@
 </div>
 <!--弹出层-->
 <!--添加章节-->
-<div class="add_chapter_con yb_pop_wrap">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">添加章节</h4>
+<div class="add_chapter_con">
+    <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+    <h4 class="title">添加章节</h4>-->
     <label>选择章节类型：</label>
 
     <div class="tpl_chapter_list">
@@ -1135,9 +1135,9 @@
     </div>
 </div>
 <!--更换模板-->
-<div class="yb_pop_wrap change_tpl_con">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">更换选中的页面模板</h4>
+<div class="change_tpl_con">
+   <!-- <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+    <h4 class="title">更换选中的页面模板</h4>-->
 
     <p class="tips">亲，小忆为您推荐了一下模板，请挑选一个您喜欢的吧！</p>
 
@@ -1530,10 +1530,9 @@
     </div>
 </div>
 <!--添加页面-->
-<div class="yb_pop_wrap add_page_con">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">添加页面至具体章节</h4>
-
+<div class= "add_page_con">
+    <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+    <h4 class="title">添加页面至具体章节</h4>-->
     <div class="target_chapter">
         <label>选择添加页面的章节：</label>
         <select class="choose_chapter">
@@ -1602,10 +1601,9 @@
     </div>
 </div>
 <!--指定协作者-->
-<div class="yb_pop_wrap assign_actors_con">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">指定书册协作者</h4>
-
+<div class="assign_actors_con">
+   <!-- <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+    <h4 class="title">指定书册协作者</h4>-->
     <div class="choose_way">
         <p>您可以通过2种途径选择协作者一起进行编辑制作：</p>
         <h4>一、从小伙伴中选择</h4>
@@ -1629,10 +1627,9 @@
     </div>
 </div>
 <!--修改章节配置-->
-<div class="yb_pop_wrap chapter_config_con">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">修改章节配置-<span>青春章节</span></h4>
-
+<div class="chapter_config_con">
+    <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+    <h4 class="title">修改章节配置-<span>青春章节</span></h4>-->
     <div class="chapter_config">
         <div>
             <label>名称：</label>
@@ -1647,10 +1644,9 @@
     </div>
 </div>
 <!--高级筛选-->
-<div class="advanced_filter yb_pop_wrap">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">高级筛选</h4>
-
+<div class="advanced_filter">
+    <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+    <h4 class="title">高级筛选</h4>-->
     <div class="filter_options">
         <form>
             <div class="option">
@@ -2124,9 +2120,9 @@
 <script type="text/javascript" src='assets/js/jquery.min.js'></script>
 <script type="text/javascript" src="assets/js/slideout.min.js"></script>
 <script type="text/javascript" src="assets/js/icheck.js"></script>
-<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
-<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
+<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3.13"></script>
 <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
@@ -2297,10 +2293,11 @@
 
         //模板-高级筛选
         $('.ad_filter').click(function () {
-            $('.advanced_filter').popup({
-                closebtn: '.advanced_filter .close',
-                maskopacity: 0.6
-            });
+            art.dialog({
+                title: "高级筛选",
+                lock: true,
+                content: document.querySelector('.advanced_filter'),
+            })
         });
 
         //模板选中事件
@@ -2431,76 +2428,86 @@
 
         //添加章节
         $('.add_chapter_btn').click(function () {
-            $('.add_chapter_con').popup({
-                closebtn: '.add_chapter_con .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: '添加章节',
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.add_chapter_con'),
+                init: function(){
+                    $(".tpl_chapter_list").slide({
+                        mainCell: ".bd ul",
+                        titCell: ".hd a",
+                        prevCell: "",
+                        nextCell: "",
+                        trigger: "click",
+                        pnLoop: false,
+                        autoPlay: false,
+                        vis: 5,
+                        effect: 'left'
+                    });
+                }
             });
 
-            jQuery(".tpl_chapter_list").slide({
-                mainCell: ".bd ul",
-                titCell: ".hd a",
-                prevCell: "",
-                nextCell: "",
-                trigger: "click",
-                pnLoop: false,
-                autoPlay: false,
-                vis: 5,
-                effect: 'left'
+            //选择章节
+            $('.tpl_chapter_list li').click(function () {
+                $('.tpl_chapter_list li').each(function () {
+                    $(this).removeClass('select');
+                })
+                $(this).addClass('select');
+                var tplDescribe = $(this).attr('describe'),
+                        tplCaption = $(this).find('h5').text();
+                $('.tpl_desc p').text(tplDescribe);
+                $('.tpl_caption input').val(tplCaption);
             });
         });
 
-        //选择章节
-        $('.tpl_chapter_list li').click(function () {
-            $('.tpl_chapter_list li').each(function () {
-                $(this).removeClass('select');
-            })
-            $(this).addClass('select');
-            var tplDescribe = $(this).attr('describe'),
-                    tplCaption = $(this).find('h5').text();
-            $('.tpl_desc p').text(tplDescribe);
-            $('.tpl_caption input').val(tplCaption);
-        });
 
         //更换模板
         $('.change_tpl_btn').click(function () {
-            $('.change_tpl_con').popup({
-                closebtn: '.change_tpl_con .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: '更换选中的页面模板',
+                lock: true,
+                content: document.querySelector('.change_tpl_con'),
             });
-        });
 
-        $('.pagemakeBox_tpl ul li').click(function () { //点击更换模板按钮
-            $('.pagemakeBox_tpl ul li').each(function (i) {
-                /*$(this).find('.default_book').addClass('hidden');*/
-                $(this).find('.cover').addClass('hidden');
+            $('.pagemakeBox_tpl ul li').click(function () { //点击更换模板按钮
+                $('.pagemakeBox_tpl ul li').each(function (i) {
+                    /*$(this).find('.default_book').addClass('hidden');*/
+                    $(this).find('.cover').addClass('hidden');
+                });
+                /*$(this).find('.default_book').removeClass('hidden');*/
+                $(this).find('.cover').removeClass('hidden');
             });
-            /*$(this).find('.default_book').removeClass('hidden');*/
-            $(this).find('.cover').removeClass('hidden');
         });
 
         //添加页面
         $('.add_page_btn').click(function () {
-            $('.add_page_con').popup({
-                closebtn: '.add_page_con .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: '添加页面至具体章节',
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.add_page_con'),
+                init: function(){
+                    //选择所添加的章节
+                    $('.choose_chapter').chosen({
+                        width: '200px'
+                    });
+                    //添加数量
+                    $('.ybcommon_counter_item').priceCalculator();
+                    //单页模板slide
+                    $('.page_tpl_list').slide({
+                        mainCell: ".bd ul",
+                        autoPage: true,
+                        pnLoop: false,
+                        effect: "left",
+                        autoPlay: false,
+                        vis: 6,
+                        scroll: 6,
+                        trigger: "click"
+                    });
+                }
             });
-            //选择所添加的章节
-            $('.choose_chapter').chosen({
-                width: '200px'
-            });
-            //添加数量
-            $('.ybcommon_counter_item').priceCalculator();
-            //单页模板slide
-            $('.page_tpl_list').slide({
-                mainCell: ".bd ul",
-                autoPage: true,
-                pnLoop: false,
-                effect: "left",
-                autoPlay: false,
-                vis: 6,
-                scroll: 6,
-                trigger: "click"
-            });
+
             //选择模板 边框绿色
             $('.page_tpl_list li').click(function () {
                 $(this).addClass('select').siblings().removeClass('select')
@@ -2509,21 +2516,25 @@
 
         //分配协作者
         $('.add_friend_btn').click(function () {
-            $('.assign_actors_con').popup({
-                closebtn: '.assign_actors_con .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: '指定书册协作者',
+                lock: true,
+                content: document.querySelector('.assign_actors_con'),
+                init: function(){
+                    $('.choose_partner select').chosen({
+                        width: "200px"
+                    })
+                }
             });
-
-            $('.choose_partner select').chosen({
-                width: "200px"
-            })
         });
 
         //修改章节配置
         $('.list_mode .item .edit').click(function () {
-            $('.chapter_config_con').popup({
-                closebtn: '.chapter_config_con .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: "修改章节配置",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.chapter_config_con')
             })
         });
 
@@ -2533,20 +2544,24 @@
                 title: '照片自动排版',
                 lock: true,
                 content: document.getElementById('auto_layout_container'),
+                okVal:"确定",
+                cancelVal:"取消",
+                init: function(){
+                    $('.select_photo').chosen({
+                        disable_search_threshold: 5,
+                        width: '100px'
+                    });
+                }
             });
-        });
-        $('.select_photo').chosen({
-            disable_search_threshold: 5,
-            width: '100px'
-        });
-        $('.photo_box .uploaded li').click(function () {
-            if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected')
-            } else {
-                $(this).addClass('selected');
-            }
-        })
 
+            $('.photo_box .uploaded li').click(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                } else {
+                    $(this).addClass('selected');
+                }
+            })
+        });
     }
 
 </script>

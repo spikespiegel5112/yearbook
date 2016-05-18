@@ -739,9 +739,9 @@
 </div>
 <!--查看投票详情-->
 <div id="viewVoteResult" class="edit_pop_container">
-    <div class="vote_result_con yb_pop_wrap">
-        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-        <h4 class="title">查看投票详情</h4>
+    <div class="vote_result_con">
+        <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+        <h4 class="title">查看投票详情</h4>-->
         <div class='voteresult_dialog_wrapper'>
             <h5>选项：王五</h5>
             <div class='voteresult_main_wrapper'>
@@ -820,6 +820,7 @@
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
 <script type="text/javascript" src='assets/js/jquery.masonry.min.js'></script>
 <script type="text/javascript" src='assets/js/chosen.jquery.min.js'></script>
+<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3.13'></script>
 <script>
     (function(){
         $(".aside_content .resource_list").slide({
@@ -907,10 +908,11 @@
 
     function showResultDetail(){
         $('.view_result').click(function(){
-            $('#viewVoteResult').fadeIn('fast');
-        });
-        $('.vote_result_con .close').click(function(){
-            $('#viewVoteResult').fadeOut('fast');
+            art.dialog({
+                title: "查看投票详情",
+                lock: true,
+                content: document.querySelector('.voteresult_dialog_wrapper')
+            })
         })
     }
 </script>

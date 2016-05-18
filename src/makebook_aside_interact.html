@@ -468,10 +468,8 @@
     </div>
 </div>
 <!--弹出 创建话题-->
-<div class="yb_pop_wrap create_topic_con">
+<div class="create_topic_con">
     <div class="create_topiclist ">
-        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-        <h4 class="title">创建话题</h4>
         <ul>
            <!-- <li>
                 <p class="cm_fl">选择封面</p>
@@ -505,10 +503,8 @@
     </div>
 </div>
 <!--弹出 创建投票-->
-<div class="yb_pop_wrap create_vote_con">
+<div class="create_vote_con">
     <div class="create_votelist ">
-        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-        <h4 class="title">创建投票</h4>
         <ul>
             <li>
                 <p class="cm_fl lp1">选择图标</p>
@@ -629,9 +625,7 @@
     </div>
 </div>
 <!--弹出 留言-->
-<div class="create_leave_msg yb_pop_wrap">
-    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-    <h4 class="title">发表留言</h4>
+<div class="create_leave_msg">
     <div class="leavewall_con ">
         <div class="operate">
             <div class='lw_choosefriend_wrapper'>
@@ -659,9 +653,11 @@
     </div>
 </div>
 <script type="text/javascript" src='assets/js/jquery.min.js'></script>
-<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
 <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 <script type="text/javascript" src='assets/js/jquery.masonry.min.js'></script>
+<script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb3.13'></script>
+<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
+<script type="text/javascript" src="assets/js/icheck.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
@@ -697,27 +693,35 @@
 
         //弹出创建话题
         $('.new_topic').click(function(){
-            $('.create_topic_con').popup({
-                closebtn: '.create_topic_con .close',
-                maskopacity: 0.6
-            });
+            art.dialog({
+                title: "新建一个话题",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.create_topic_con')
+            })
         });
 
         //弹出创建投票
         $('.new_vote').click(function(){
-            $('.create_vote_con').popup({
-                closebtn: '.create_vote_con .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: "新建一个投票",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.create_vote_con'),
+                init: function(){
+                    changeButtonCss();
+                    voteSwitcher.init();
+                }
             });
-            changeButtonCss();
-            voteSwitcher.init();
         });
 
         //留言
         $('.leave_msg a').click(function(){
-            $('.create_leave_msg').popup({
-                closebtn: '.create_leave_msg .close',
-                maskopacity: 0.6
+            art.dialog({
+                title: "发表留言",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.create_leave_msg')
             })
         })
     })();

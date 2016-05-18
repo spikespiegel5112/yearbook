@@ -329,10 +329,8 @@
                     </div>
                 </div>
                 <!--创建话题弹窗-->
-                <div class="yb_pop_wrap create_topic_con">
+                <div class="create_topic_con">
                     <div class="create_topiclist ">
-                        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-                        <h4 class="title">创建话题</h4>
                         <ul>
                             <!-- <li>
                                  <p class="cm_fl">选择封面</p>
@@ -368,9 +366,7 @@
                     </div>
                 </div>
                 <!-- 发表赠言弹窗 -->
-                <div class="create_leave_msg yb_pop_wrap">
-                    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-                    <h4 class="title">发表留言</h4>
+                <div class="create_leave_msg">
                     <div class="leavewall_con ">
                         <div class="operate">
                             <div class='lw_choosefriend_wrapper'>
@@ -401,10 +397,8 @@
                     </div>
                 </div>
                 <!-- 创建投票弹窗 -->
-                <div class="yb_pop_wrap create_vote_con invitation_card">
+                <div class="create_vote_con invitation_card">
                     <div class="create_votelist ">
-                        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-                        <h4 class="title">创建投票</h4>
                         <ul>
                             <li>
                                 <p class="cm_fl lp1">选择图标</p>
@@ -844,9 +838,7 @@
                         <div class='backplane'></div>
                     </li>
                 </ul>
-                <div class="yb_pop_wrap friend_detail_wrapper">
-                    <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
-                    <h4 class="title">创建话题</h4>
+                <div class="friend_detail_wrapper">
                     <div class="makebook_frienddetail_wrapper">
                         <div class="makebook_fdblock_wrapper">
                             <h6 class="subtitle">基本资料</h6>
@@ -930,7 +922,7 @@
 	<script type="text/javascript" src="assets/js/simditor/simditor.min.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
+    <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3.13"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
@@ -954,57 +946,92 @@
 
 		//点击名片弹出详情
 		$('.makebook_invitnamecard_item').click(function() {
-			$('.friend_detail_wrapper').popup({
-				closebtn: '.makebook_friendbtn_item a, .friend_detail_wrapper .close',
-				maskopacity: 0.6
-			});
+            art.dialog({
+                title: "小伙伴详情",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.friend_detail_wrapper')
+            })
 		});
         //发起话题讨论
         $('.makebook_setupinvitcard_wrapper .personaloption .topic .yes').click(function() {
-            var _this = $(this)
-            $('.create_topic_con').popup({
-                closebtn: '.makebook_stepbacklink_item, .create_topic_con .close',
-                maskopacity: 0.6
+            var _this = $(this);
+            art.dialog({
+                title: "新建一个话题",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.create_topic_con'),
+                close:function(){
+                    _this.parent().removeClass('active');
+                }
             });
 
-            $('.create_topic_con .makebook_stepbacklink_item,.create_topic_con .close').click(function(){
+            $('.create_topic_con .makebook_stepbacklink_item').click(function(){
+                var list = art.dialog.list;
+                for (var i in list) {
+                    list[i].close();
+                };
                 _this.parent().removeClass('active');
             })
         });
 		//发起投票选举
 		$('.makebook_setupinvitcard_wrapper .personaloption .vote .yes').click(function() {
             var _this = $(this)
-			$('.create_vote_con').popup({
-				closebtn: '.makebook_stepbacklink_item, .create_vote_con .close',
-				maskopacity: 0.6
-			});
-            voteSwitcher.init();
-            $('.create_vote_con .makebook_stepbacklink_item,.create_vote_con .close').click(function(){
+            art.dialog({
+                title: "新建一个投票",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.create_vote_con'),
+                init: function(){
+                    voteSwitcher.init();
+                },
+                close: function (){
+                    _this.parent().removeClass('active');
+                }
+            });
+
+            $('.create_vote_con .makebook_stepbacklink_item').click(function(){
+                var list = art.dialog.list;
+                for (var i in list) {
+                    list[i].close();
+                };
                 _this.parent().removeClass('active');
             })
+
 		});
 		//发起赠言
 		$('.makebook_setupinvitcard_wrapper .personaloption .message .yes').click(function() {
             var _this = $(this)
-			$('.create_leave_msg').popup({
-				closebtn: '.makebook_stepbacklink_item, .create_leave_msg .close',
-				maskopacity: 0.6
-			});
-
-            $(".lw_choosefriendlist_wrapper").chosen({
-                no_results_text: '没有找到这个小伙伴：',
-                width: '200px'
+            art.dialog({
+                title: "发表赠言",
+                lock: true,
+                padding: 0,
+                content: document.querySelector('.create_leave_msg'),
+                init: function(){
+                    //初始化编辑器
+                    var editor = new Simditor({
+                        textarea: $('.leavewall_con textarea'),
+                        toolbarFloat: false
+                    });
+                    $(".lw_choosefriendlist_wrapper").chosen({
+                        no_results_text: '没有找到这个小伙伴：',
+                        width: '200px'
+                    });
+                },
+                close: function (){
+                    _this.parent().removeClass('active');
+                }
             });
 
-            $('.create_leave_msg .makebook_stepbacklink_item,.create_leave_msg .close').click(function(){
+            $('.create_leave_msg .makebook_stepbacklink_item').click(function(){
+                var list = art.dialog.list;
+                for (var i in list) {
+                    list[i].close();
+                };
                 _this.parent().removeClass('active');
             })
 		});
-		//初始化编辑器
-		var editor = new Simditor({
-			textarea: $('.leavewall_con textarea'),
-			toolbarFloat: false
-		});
+
 		//初始化icheck
 		$("input[type=radio],input[type=checkbox]").iCheck({
 			checkboxClass: 'icheckbox_minimal-green',

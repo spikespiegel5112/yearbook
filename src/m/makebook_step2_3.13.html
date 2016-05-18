@@ -35,7 +35,7 @@
 						<div class='makebook_compicon_item'>
 							<label>封面/封底</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -48,7 +48,7 @@
 						<div class='makebook_compicon_item'>
 							<label>扉页</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -61,7 +61,7 @@
 						<div class='makebook_compicon_item'>
 							<label>目录</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -74,7 +74,7 @@
 						<div class='makebook_compicon_item'>
 							<label>图文章节</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -87,7 +87,7 @@
 						<div class='makebook_compicon_item'>
 							<label>图文章节</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -100,7 +100,7 @@
 						<div class='makebook_compicon_item'>
 							<label>个人章节</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -113,7 +113,7 @@
 						<div class='makebook_compicon_item'>
 							<label>投票章节</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -126,7 +126,7 @@
 						<div class='makebook_compicon_item'>
 							<label>全页照片</label>
 						</div>
-						<div class='makebook_switcher_item off'>
+						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -150,7 +150,7 @@ $(function() {
 });
 
 function makebook_step2() {
-	$('.makebook_switcher_item').on('touchend', function() {
+	$('.common_switcher_item').on('touchend', function() {
 		var $this = $(this);
 		if ($this.hasClass('off')) {
 			$this.removeClass('off').addClass('on');

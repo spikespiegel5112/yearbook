@@ -3199,16 +3199,17 @@
             basedonnarrow: true,
             dropoff: true
         });
+    }
 
+    //弹窗相关事件操作
+    function stepPopup() {
+        //模糊背景
         if (!!window.ActiveXObject || "ActiveXObject" in window){
             $('.makebook_steppopup_container').addClass('blur_bg')
         }else{
             $('.main_container').addClass('cm_gaussianblur')
         }
-    }
 
-    //弹窗相关事件操作
-    function stepPopup() {
         var popupwindowEl = $('.makebook_steppopuplist_wrapper>div'),
                 popupWrapperEl = $('.makebook_steppopup_wrapper'),
                 progressbarLiEl = $('.makebook_spprogress_wrapper li');

@@ -840,34 +840,39 @@
 	padding: 0.3rem;
 	width: 100%;
 	border-bottom: 1px solid #d6d6d6;
-	
 	box-sizing: border-box;
+	position: relative;
 }
-
+.makebook_stepcomponentlist_wrapper{
+	margin: 0 0 2rem 0;
+	box-shadow: 0px 4px 3px #bbb;
+}
+.makebook_bookcomponent_item>div{
+	height: 1.5rem;
+}
 .makebook_bookcomponent_item .description{
-	width: 75%;
+	width: 13rem;
 	color: #8b8b8b;
+	font-size: 0.65rem;
 }
-.makebook_bookcomponent_item .makebook_switcher_item{
+.makebook_bookcomponent_item .common_switcher_item{
 	float: right;
 }
-.makebook_switcher_item{
-	display: inline-block;
-	width: 3rem;
-	background-color: #dddddd;
-	border-radius: 0.1rem;
+.makebook_bookcomponent_item .common_slider_wrapper{
+	width: 10rem;
+	position: absolute;
+	top: 1rem;
+	right: 0.5rem;
 }
-.makebook_switcher_item>span{
-	display: inline-block;
-	width: 0.5rem;
-	height: 0.5rem;
-	border-radius: 50%;
-	font-size: 0.4rem;
-}
+
+
 .makebook_compicon_item {
 	display: inline-block;
 	font-size: 0.8rem;
 	color: #404040;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 0.8rem;
 }
 
 .active .makebook_compicon_item span, .active .makebook_compicon_item i, .active div label{

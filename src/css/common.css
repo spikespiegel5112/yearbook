@@ -1081,7 +1081,7 @@ textarea:focus{
 .main_nav .header_con .yb_menu
 {
     position: absolute;
-    z-index: 99;
+    z-index: 9;
     top: 21px;
     right: 15px;
 
@@ -3056,7 +3056,7 @@ button.select
 .globalhint_wrapper
 {
     position: fixed;
-    z-index: 9;
+    z-index: 999;
     top: 0;
 
     overflow: hidden;
@@ -5899,7 +5899,7 @@ nav .pagination li a:active
 
 .yb_toolbar .yb_toolbar_footer
 {
-    position: relative;
+    position: absolute;
     top: 100%;
     bottom: -1px;
     left: -35px;
@@ -5910,6 +5910,7 @@ nav .pagination li a:active
 
     border-radius: 3px 3px 0 0;
     background-color: #363636;
+    z-index: 2;
 }
 
 .yb_toolbar.active .yb_toolbar_footer,

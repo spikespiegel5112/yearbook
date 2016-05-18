@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 </head>
 <body style="min-width: 1280px">
-<div class="main_container cm_gaussianblur">
+<div class="main_container">
     <div class="team_edit_container "><!--1280下class:min_screen-->
         <div class="slide_mask"></div>
         <aside id="panel" class="close">
@@ -2117,7 +2117,7 @@
     </div>
 </div>
 <!--分布定制团队册-->
-<div class="makebook_steppopup_container" style="position: fixed;width: 100%;height:100%;top:0;left:0;z-index:9999;overflow: hidden;">
+<div class="makebook_steppopup_container">
     <div class='makebook_steppopup_wrapper' >
         <div class='makebook_steppopuplist_wrapper'>
             <div class='makebook_spchoosetype_wrapper'>
@@ -2758,11 +2758,6 @@
         //添加章节、页面、自动排版等
         editBookToolbarEvents();
         determineWindowSize();
-        stepPopup();
-        setup();
-        recommend();
-        checktag();
-        resize();
     });
 
     //渲染控件样式
@@ -3191,7 +3186,11 @@
 
     //分布定制相关事件
     $(function() {
-
+        stepPopup();
+        setup();
+        recommend();
+        checktag();
+        resize();
     });
     function resize() {
         $.remResizing({
@@ -3200,6 +3199,12 @@
             basedonnarrow: true,
             dropoff: true
         });
+
+        if (!!window.ActiveXObject || "ActiveXObject" in window){
+            $('.makebook_steppopup_container').addClass('blur_bg')
+        }else{
+            $('.main_container').addClass('cm_gaussianblur')
+        }
     }
 
     //弹窗相关事件操作
@@ -3241,7 +3246,7 @@
         });
         //点击关闭
         $('.makebook_spclosebtn_item').click(function() {
-            $('.makebook_steppopup_container').detach();
+            $('.makebook_steppopup_container').detach().removeClass('blur_bg');
             $('.main_container').removeClass('cm_gaussianblur');
         })
     }

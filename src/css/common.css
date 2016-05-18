@@ -7132,9 +7132,12 @@ nav .pagination li a:active
     height: 50px;
 }
 .cm_gaussianblur{
-    -webkit-filter: blur(3px);
-    -moz-fliter: blur(3px);
-    -o-fliter: blur(3px);
-    -ms-fliter: blur(3px);
-    filter: blur(3px);
+    -webkit-filter: blur(6px);
+    -moz-fliter: blur(6px);
+    -o-fliter: blur(6px);
+    filter: blur(6px);
+}
+.blur_bg{
+    background: url("../img/makebook/blur_bg.jpg") no-repeat 0 0!important;
+    background-size: cover;
 }

@@ -313,6 +313,14 @@ label.error
     background: -ie-linear-gradient(top, #f2f2f2 0, #fff 100%);
     background: -o-linear-gradient(top, #f2f2f2 0, #fff 100%);
 }
+.common_closebtn_item{
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+}
 /*~~~~~~~~~~线性过渡色按钮~~~~~~~~~~*/
 .transitionbtn_68c96c
 {
@@ -3331,8 +3339,10 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
     border: 1px solid #c6c6c6;
     border-radius: 3px;
-    background-color: #f7f7f7;
-   /* background-color: rgba(0,0,0,0.2);*/
+    background: linear-gradient(top, #efefef, #e9e9e9);
+    background: -moz-linear-gradient(top, #efefef, #e9e9e9);
+    background: -webkit-linear-gradient(top, #efefef, #e9e9e9);
+    box-shadow: 0 -1.5px 3px rgba(0,0,0,0.2) inset;
 }
 .common_loadmore_item
 {
@@ -3456,4 +3466,60 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 .pp_edit_wrap .select_item .option a
 {
     color: #333;
+}
+
+/*~~~~~~~~~~common_switcher_item~~~~~~~~~~*/
+.common_switcher_item{
+    display: inline-block;
+    padding: 0.2rem;
+    width: 2.5rem;
+    height: 1rem;
+    background-color: #dddddd;
+    border-radius: 0.2rem;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.common_switcher_item>span{
+    display: inline-block;
+    margin: 0.1rem 0.2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    line-height: 0.9rem;
+    border-radius: 50%;
+    font-size: 0.4rem;
+    text-align: center;
+}
+.common_switcher_item .slider{
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    z-index: 1;
+    border-radius: 0.2rem;
+    transition: all 0.2s;
+}
+.common_switcher_item.off {
+    background-color: #dddddd;
+}
+.common_switcher_item.off .slider{
+    left: 0.2rem;
+}
+.common_switcher_item.on {
+    background-color: #69c96d;
+} 
+.common_switcher_item.on .slider{
+    left: 1.7rem;
+} 
+.common_switcher_item .check{
+    float: left;
+    background-color: #fff;
+    color: #69c96d;
+}
+.common_switcher_item .cross{
+    float: right;
+    background-color: #999999;
+    color: #dddddd;
 }

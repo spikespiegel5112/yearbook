@@ -449,6 +449,57 @@
 		</div>
 		<div class="close_btn"><a href="javascript:;">×</a></div>
 	</div>
+	<div class='makebook_choosetype_container'>
+		<div class='makebook_choosetype_wrapper'>
+			<a class='ybiconfont ybicon-closebtn common_closebtn_item' href="javascript:;"></a>
+			<h6 class='maintitle'>
+				<span class='ybiconfont ybicon-iabook'></span>
+				互动册制作
+			</h6>
+			<h5 class='subtitle'><span></span>请选择群体<span></span></h5>
+			<ul class='makebook_splist_wrapper'>
+				<li>
+					<a class='title' href='javascript:;'>
+						<div class='makebook_compicon_item'>
+							<i class='frame ybiconfont ybicon-doctorcap'></i>
+						</div>
+						<label>毕业册</label>
+						<span class='makebook_mark_item ybiconfont ybicon-ok'></span>
+					</a>
+				</li>
+				<li>
+					<a class='title' href='javascript:;'>
+						<div class='makebook_compicon_item'>
+							<i class='frame ybiconfont ybicon-party'></i>
+						</div>
+						<label>扉页</label>
+						<span class='makebook_mark_item ybiconfont ybicon-ok'></span>
+					</a>
+				</li>
+				<li>
+					<a class='title' href='javascript:;'>
+						<div class='makebook_compicon_item'>
+							<i class='frame ybiconfont ybicon-team'></i>
+						</div>
+						<label>目录</label>
+						<span class='makebook_mark_item ybiconfont ybicon-ok'></span>
+					</a>
+				</li>
+			</ul>
+			<ul class='makebook_typedescribe_wrapper'>
+				<li>
+					<p>我们毕业了，要说再见了，以后没有你们陪伴，我们都要慢慢学会习惯。文字太轻，回忆太重，一本毕业纪念册，留住那段我们念念不忘的日子。</p>
+				</li>
+				<li>
+					<p>光阴似箭，岁月如梭。时间让我们各奔东西，但请记住我们在一起的美好时光，一本聚会纪念册记录下聚会时的点点滴滴、精彩瞬间。</p>
+				</li>
+				<li>
+					<p>每次团队活动是如此的精彩，但又是如此的短暂，相聚之后，互道珍重，又要各奔东西，一本团队活动册记录下相聚时的美妙时光。</p>
+				</li>
+			</ul>
+			<a href="#" class="btn-full button button-rounded">下一步</a>
+		</div>
+	</div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/swiper.jquery.min.js"></script>
@@ -462,6 +513,7 @@ $(function() {
 	$.remResizing({
 		'fontsize': 20
 	});
+	begintomake();
 });
 
 function choosetemplate() {
@@ -590,6 +642,28 @@ function loadMoreTpl() {
 		}
 	});
 
+}
+
+function begintomake() {
+	$('.mybookshelf_main_wrapper label').on('touchend', function(){
+		$('.makebook_choosetype_container').show();
+	})
+	$('.common_closebtn_item').on('touchend', function(){
+		$('.makebook_choosetype_container').hide();
+	})
+	$('.makebook_choosetype_container').height($(window).height());
+	//点选方块
+	$('.makebook_splist_wrapper>li a').on('touchend', function() {
+		var $this = $(this),
+			thisParent = $(this).parent(),
+			index=thisParent.index();
+		$('.button').addClass('button-highlight');
+		if (!thisParent.hasClass('actived')) {
+			thisParent.addClass('active').siblings().removeClass('active')
+		}
+		$('.makebook_typedescribe_wrapper li').eq(index).addClass('active').siblings().removeClass('active');
+	});
+	
 }
 </script>
 

@@ -21,7 +21,7 @@
 </head>
 
 <body class='bg_f6f6f6'>
-	<div class="main_container booklist_wrapper has_footer_nav">
+	<div class="main_container booklist_wrapper">
 		<div class="ybwechatheader_wrapper">
 			<a class="left_btn back_btn" href="javascript:;">
 				<span class="ybiconfont ybicon-backward1"></span>
@@ -66,7 +66,6 @@
 		<div class='makebook_stepmainbtn_wrapper'>
 			<a href="javascript:;" class="btn-full button button-rounded button-highlight">下一步</a>
 		</div>
-		
 	</div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
@@ -104,8 +103,12 @@ function makebook_step2() {
 			} else {
 				thissubtitleEl.hide();
 			}
-
 		}
+	})
+	$('.makebook_stepmainbtn_wrapper').align({
+		container: '.main_container',
+		position: 'bottom',
+		ignore: '.makebook_stepcomponentlist_wrapper, .ybwechatheader_wrapper'
 	})
 }
 </script>

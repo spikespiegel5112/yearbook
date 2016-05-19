@@ -887,6 +887,11 @@
 	font-size: 0.8rem;
 	line-height: 1.5rem;
 }
+.makebook_bookcomponent_item .subtitle h6{
+	display: inline-block;
+	font-size: 0.8rem;
+	line-height: 1.5rem;
+}
 
 .makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i, .makebook_splist_wrapper .active .title label{
 	color: #62c878;
@@ -947,7 +952,7 @@
 	border-color: transparent #a6cc5b #a6cc5b transparent
 }
 
-.active .makebook_mark_item {
+.active>.makebook_mark_item {
 	display: block;
 	color: #fff;
 	border-color: transparent #62c878 #62c878 transparent;
@@ -1082,33 +1087,46 @@
 }
 .makebook_invitcardinfo_wrapper{
 	margin: 10px auto;
-	width: 15rem;
-	height: 25rem;
+	width: 14rem;
+	height: 23rem;
 	background-image: url(../img/m/makebook/invitcardevelop.png);
 	background-size: contain;
 	background-repeat: no-repeat;
-	overflow: hidden;
+	background-position: center;
 	font-size: 13px;
-	
+	position: relative;
 }
 .makebook_invitcardinfo_wrapper .title{
-	margin: 3rem 0 0.5rem;
-	padding: 0;
+	padding: 3rem 0 0 0.5rem;
 	text-align: center;
 	font-size: 0.8rem;
 	color: #aace68;
 }
-
+.makebook_invitcardinfo_wrapper .common_share_wrapper{
+	margin: 2.5rem auto 0;
+	width: 90%;
+}
+.makebook_invitcardinfo_wrapper .closebutton_img{
+	left: 0;
+	top: -8px;
+}
+.makebook_invitcardinfo_wrapper .edit{
+	position: absolute;
+	top: 1.2rem;
+	right: 2rem;
+	color: #008bf7;
+	font-size: 0.71rem;
+}
 .makebook_icilist_wrapper{
-	margin: 0 auto;
-	width: 100%;
-	height: 12.5rem;
+	margin: 0.5rem auto 0;
+	width: 10.5rem;
+	height: 11rem;
 	overflow: auto;
 }
 .makebook_icilist_wrapper>li{
 	margin: 0 auto;
 	padding: 0.5rem 0;
-	width: 11rem;
+	width: 100%;
 	border-bottom: 1px dashed #999;
 	color: #999;
 }
@@ -1137,9 +1155,6 @@
 .makebook_icbasicinfo_wrapper li a:hover{
 	color: #387C9E;
 }
-.makebook_invitcardinfo_wrapper .common_share_wrapper{
-	margin: 2rem auto 0;
-	width: 90%;
-}
+
 
 

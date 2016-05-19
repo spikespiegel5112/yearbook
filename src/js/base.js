@@ -595,8 +595,9 @@
 				position: 'both',
 				container: '',
 				isImage: false,
-				offsetX: 0,
-				offsetY: 0,
+				offsetx: 0,
+				offsety: 0,
+				ignore: ''
 			}, options);
 
 			var that = this,
@@ -607,6 +608,10 @@
 				thisHeight = 0,
 				containerheight = 0,
 				timer,
+				offsety=0,
+				ignorex=0,
+				ignorey=0,
+				ignoreArr=[],
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
@@ -617,6 +622,13 @@
 			});
 
 			function initAligning() {
+				if (typeof options.ignore === 'string') {
+					ignoreArr=options.ignore.split(',');
+					for(var i=0;i<ignoreArr.length;i++){
+						ignorex+=$(ignoreArr[i]).width();
+						ignorey+=$(ignoreArr[i]).height();
+					}
+				}
 				//当居中元素是img标签时，特殊处理！
 				if (that.is('img')) {
 					//递归判断需要居中的图片是否加载完成，如果没有就重载
@@ -704,17 +716,17 @@
 							};
 							if (thisWidth <= $(window).width()) {
 								_this.css({
-									'margin': marginY + options.offsetY + 'px auto'
+									'margin': marginY + offsety - ignorey + 'px auto'
 								});
 								if (options.offsetX != 0) {
 									alert((windowWidth - thisWidth) / 2 + options.offsetX)
 									_this.css({
-										'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
+										'margin': marginY + offsety - ignorey + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
 									});
 								};
 							} else {
 								_this.css({
-									'margin': marginY + options.offsetY + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetX + 'px'
+									'margin': marginY + offsety - ignorey + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetX + 'px'
 								});
 							}
 						});
@@ -740,7 +752,7 @@
 					case 'bottom':
 						aligning(function(thisWidth, thisHeight) {
 							_this.css({
-								'margin': (windowHeight - thisHeight) + 'px auto 0'
+								'margin': (windowHeight - thisHeight + offsety - ignorey ) + 'px auto 0'
 							});
 						});
 						break;

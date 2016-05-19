@@ -3588,7 +3588,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 /*~~~~~~~~~~~common_share_wrapper~~~~~~~~~~~*/
 .common_share_wrapper
 {
-    margin: 10px 0;
+    margin: 0.5rem 0;
 
     text-align: center;
 }
@@ -3597,17 +3597,17 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     display: inline-block;
 
-    margin: 0 3px;
+    margin: 0 0.1rem;
     
     cursor: pointer;
 
 }
 .common_share_wrapper .share_btn li a{
     display: block;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    font-size: 22px;
+    width: 1.7rem;
+    height: 1.7rem;
+    line-height: 1.75rem;
+    font-size: 1.01rem;
     color: #fff;
     border-radius: 50%;
 }
@@ -3632,8 +3632,35 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
 .common_share_wrapper p
 {
+    padding: 0 0 0 0.2rem;
     text-align: left;
-    line-height: 50px;
+    line-height: 1rem;
+    height: 1.5rem;
+}
+/*~~~~~~~~~~closebutton_img~~~~~~~~~~*/
+.closebutton_img
+{
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: -5px;
 
-    height: 50px;
+    display: block;
+
+    box-sizing: border-box;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    /*border: 1px solid #555;*/
+    border-radius: 100%;
+    background-color: #666666;
+    color: #fff;
+}
+
+.closebutton_img span
+{
+    font-size: 19px;
 }

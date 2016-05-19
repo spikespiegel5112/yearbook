@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ch">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>配置书册</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1463564724_3359158.css" type="text/css" media="all" />
+	<!-- build:css ../css/m.all.min.css -->
+	<link rel="stylesheet" href="../css/m_reset.css" type="text/css" />
+	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
+	<link rel="stylesheet" href="../css/m_booklist.css" type="text/css" />
+	<link rel="stylesheet" href="../css/m_makebook.css" type="text/css" />
+	<!-- endbuild -->
+</head>
+
+<body class='bg_f6f6f6'>
+	<div class="main_container booklist_wrapper has_footer_nav">
+		<div class="ybwechatheader_wrapper">
+			<a class="left_btn back_btn" href="javascript:;">
+				<span class="ybiconfont ybicon-backward1"></span>
+			</a>
+			<p>配置书册</p>
+		</div>
+		<ul class='makebook_stepcomponentlist_wrapper'>
+			<li class='makebook_bookcomponent_item'>
+				<div class='title'>
+					<h6>多人制作</h6>
+					<div class='common_switcher_item off multipalmake'>
+						<div class='slider'></div>
+						<span class='check ybiconfont ybicon-ok'></span>
+						<span class='cross ybiconfont ybicon-cross'></span>
+					</div>
+				</div>
+				<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+				<div class='subtitle setupinvitcard'>
+					<h6>设置邀请卡</h6>
+					<div class='common_switcher_item off'>
+						<div class='slider'></div>
+						<span class='check ybiconfont ybicon-ok'></span>
+						<span class='cross ybiconfont ybicon-cross'></span>
+					</div>
+				</div>
+			</li>
+			<li class='makebook_bookcomponent_item'>
+				<div class='title'>
+					<h6>团队人数</h6>
+					<div class='common_slider_wrapper'>
+						<span class='slider'>
+								<label></label>
+								<i></i>
+								<label></label>
+							</span>
+						<label class='axis'></label>
+					</div>
+				</div>
+				<p class='description'><span class='teamcount'>32</span>人</p>
+			</li>
+		</ul>
+		<div class='makebook_stepmainbtn_wrapper'>
+			<a href="javascript:;" class="btn-full button button-rounded button-highlight">下一步</a>
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript">
+$(function() {
+	$.remResizing({
+		fontsize: 20
+	});
+	$('.common_slider_wrapper .slider').sliderControl({
+		density: 31,
+		offset: 1,
+		axisx: '.common_slider_wrapper',
+		returnto: '.makebook_bookcomponent_item .teamcount'
+	});
+	makebook_step2();
+});
+
+function makebook_step2() {
+	$('.common_switcher_item').on('touchend', function() {
+		var $this = $(this),
+			thisParentEl = $this.closest('.makebook_bookcomponent_item');
+		if ($this.hasClass('off')) {
+			$this.removeClass('off').addClass('on');
+		} else if ($this.hasClass('on')) {
+			$this.removeClass('on').addClass('off');
+		}
+		//打开关闭设置邀请卡选项
+
+		if ($this.hasClass('multipalmake')) {
+			var thissubtitleEl = thisParentEl.find('.setupinvitcard');
+			thissubtitleEl.hide()
+			if (thissubtitleEl.is(':hidden') && $this.hasClass('on')) {
+				thissubtitleEl.show();
+			} else {
+				thissubtitleEl.hide();
+			}
+
+		}
+	})
+}
+</script>
+
+</html>

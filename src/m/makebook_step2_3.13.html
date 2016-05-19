@@ -21,7 +21,7 @@
 </head>
 
 <body class='bg_f6f6f6'>
-	<div class="main_container booklist_wrapper has_footer_nav">
+	<div class="main_container">
 		<div class="ybwechatheader_wrapper">
 			<a class="left_btn back_btn" href="javascript:;">
 				<span class="ybiconfont ybicon-backward1"></span>
@@ -31,36 +31,19 @@
 		<div class='makebook_assemble_wrapper'>
 			<ul class='makebook_stepcomponentlist_wrapper'>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>封面/封底</label>
-						</div>
+					<div class='title'>
+						<h6>封面/封底</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
 						</div>
 					</div>
-					<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+					<p class='description'>忆尔为您提供多种封面模板供选择。</p>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>扉页</label>
-						</div>
-						<div class='common_switcher_item off'>
-							<div class='slider'></div>
-							<span class='check ybiconfont ybicon-ok'></span>
-							<span class='cross ybiconfont ybicon-cross'></span>
-						</div>
-					</div>
-					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
-				</li>
-				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>目录</label>
-						</div>
+					<div class='title'>
+						<h6>扉页</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
@@ -70,10 +53,8 @@
 					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>图文章节</label>
-						</div>
+					<div class='title'>
+						<h6>目录</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
@@ -83,10 +64,8 @@
 					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>图文章节</label>
-						</div>
+					<div class='title'>
+						<h6>图文章节</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
@@ -96,10 +75,8 @@
 					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>个人章节</label>
-						</div>
+					<div class='title'>
+						<h6>图文章节</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
@@ -109,10 +86,8 @@
 					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>投票章节</label>
-						</div>
+					<div class='title'>
+						<h6>个人章节</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
@@ -122,10 +97,19 @@
 					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
-						<div class='makebook_compicon_item'>
-							<label>全页照片</label>
+					<div class='title'>
+						<h6>投票章节</h6>
+						<div class='common_switcher_item off'>
+							<div class='slider'></div>
+							<span class='check ybiconfont ybicon-ok'></span>
+							<span class='cross ybiconfont ybicon-cross'></span>
 						</div>
+					</div>
+					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
+				</li>
+				<li class='makebook_bookcomponent_item'>
+					<div class='title'>
+						<h6>全页照片</h6>
 						<div class='common_switcher_item off'>
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
@@ -135,7 +119,9 @@
 					<p class='description'>书翻开后的第一页，也可放轩于每个章节前，用来分割章节，多种样式可选择。</p>
 				</li>
 			</ul>
-			<a href="javascript:;" class="btn-full button button-rounded button-highlight">下一步</a>
+			<div class='makebook_stepmainbtn_wrapper'>
+				<a href="javascript:;" class="btn-full button button-rounded button-highlight">下一步</a>
+			</div>
 		</div>
 	</div>
 </body>

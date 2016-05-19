@@ -734,6 +734,18 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
 .ybwechatheader_wrapper .action_btn
 {
+    line-height: 24px;
+
+    height: 24px;
+    margin: 8px;
+    padding: 0 12px;
+
+    border-radius: 13px;
+    border: 1px solid #fff;
+}
+
+.ybwechatheader_wrapper .orange_btn
+{
     line-height: 26px;
 
     height: 26px;
@@ -3522,4 +3534,106 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     float: right;
     background-color: #999999;
     color: #dddddd;
+}
+/*~~~~~~~~~~common_custonoption_item~~~~~~~~~~*/
+.common_custonoption_item{
+    width: 14rem;
+    height: 1.75rem;
+    position: relative;
+}
+
+.common_custonoption_item a {
+    display: block;
+    margin: 1px 0 0 0;
+    width: 2.02rem;
+    height: 1.65rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: #999;
+    background-color: #eeeeee;
+    font-size: 1rem;
+    position: absolute;
+    right: 1px;
+    top: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.common_custonoption_item a:hover {
+    background-color: #dfdfdf;
+}
+
+.common_custonoption_item a:active {
+    box-shadow: 2px 2px 5px #ccc inset;
+    line-height: 1.75rem;
+}
+.common_custonoption_item input {
+    display: inline-block;
+    padding: 0 0 0 0.4rem;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border: 1px solid #cccccc;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    box-sizing:border-box;
+}
+
+.common_custonoption_item input:focus {
+    border-color: #57c5f7;
+    box-shadow: 0 0 5px #57c5f7;
+    transition: box-shadow 0.3s;
+}
+
+/*~~~~~~~~~~~common_share_wrapper~~~~~~~~~~~*/
+.common_share_wrapper
+{
+    margin: 10px 0;
+
+    text-align: center;
+}
+
+.common_share_wrapper .share_btn li
+{
+    display: inline-block;
+
+    margin: 0 3px;
+    
+    cursor: pointer;
+
+}
+.common_share_wrapper .share_btn li a{
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 50%;
+}
+.common_share_wrapper .share_btn li .qq{
+    background-color: #00a3ef;
+}
+.common_share_wrapper .share_btn li .wechat{
+    background-color: #00c769;
+}
+.common_share_wrapper .share_btn li .weibosina{
+    background-color: #ef1d4a;
+}
+.common_share_wrapper .share_btn li .moments{
+    background-color: #00d7f4;
+}
+.common_share_wrapper .share_btn li .qzone{
+    background-color: #ffa051;
+}
+.common_share_wrapper .share_btn li .renren{
+    background-color: #1f78b0;
+}
+
+.common_share_wrapper p
+{
+    text-align: left;
+    line-height: 50px;
+
+    height: 50px;
 }

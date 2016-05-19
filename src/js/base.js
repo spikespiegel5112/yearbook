@@ -1030,7 +1030,8 @@
 				basedonnarrow: false,
 				basedonwide: false,
 				dropoff: false,
-				aligncenter: false
+				aligncenter: false,
+				inward: false
 			}, options);
 			var htmlEl = $('html'),
 				bodyEl = $('body'),
@@ -1071,9 +1072,13 @@
 					factor = options.baseline / frontline
 
 				} else if (frontline > options.baseline && frontline <= options.threshold || options.threshold == 0) {
-					//alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
+					// alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
 					if (options.threshold >= 0) {
-						factor = frontline / options.baseline;
+						if (options.inward) {
+							factor = options.baseline / frontline;
+						}else{
+							factor = frontline / options.baseline;
+						}
 					}
 					console.log(frontline)
 				} else if (frontline > options.threshold) {

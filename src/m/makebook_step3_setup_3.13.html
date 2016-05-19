@@ -31,7 +31,7 @@
 		<div class='makebook_assemble_wrapper'>
 			<ul class='makebook_stepcomponentlist_wrapper'>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
+					<div class='title'>
 						<div class='makebook_compicon_item'>
 							<label>多人制作</label>
 						</div>
@@ -42,9 +42,19 @@
 						</div>
 					</div>
 					<p class='description'>描述：可设置封面模板中的照片及文字。</p>
+					<div class='subtitle'>
+						<div class='makebook_compicon_item'>
+							<label>设置邀请卡</label>
+						</div>
+						<div class='common_switcher_item off'>
+							<div class='slider'></div>
+							<span class='check ybiconfont ybicon-ok'></span>
+							<span class='cross ybiconfont ybicon-cross'></span>
+						</div>
+					</div>
 				</li>
 				<li class='makebook_bookcomponent_item'>
-					<div class='type'>
+					<div class='title'>
 						<div class='makebook_compicon_item'>
 							<label>团队人数</label>
 						</div>
@@ -57,7 +67,7 @@
 							<label class='axis'></label>
 						</div>
 					</div>
-					<p class='description'>32人</p>
+					<p class='description'><span class='teamcount'>32</span>人</p>
 				</li>
 			</ul>
 			<a href="javascript:;" class="btn-full button button-rounded button-highlight">下一步</a>
@@ -72,10 +82,10 @@ $(function() {
 		'fontsize': 20
 	});
 	$('.common_slider_wrapper .slider').sliderControl({
-		density: 20,
-		offset: '.pricecalculator_countor_wrapper input',
+		density: 31,
+		offset: 1,
 		axisx: '.common_slider_wrapper',
-		returnto: '.pricecalculator_countor_wrapper input'
+		returnto: '.makebook_bookcomponent_item .teamcount'
 	});
 	makebook_step2();
 });

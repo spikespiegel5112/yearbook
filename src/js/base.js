@@ -816,6 +816,7 @@
 				progress: '',
 				returnto: false
 			}, options);
+
 			var _this = $(this),
 				isMousedown = false,
 				offsetLeft = _this.offset().left,
@@ -829,11 +830,12 @@
 				returned = false,
 				offsetVal = [],
 				container = _this.parent();
-
 			var touchStart, touchMove, touchEnd;
 			touchStart = isMobile() ? 'touchstart' : 'mousedown';
 			touchMove = isMobile() ? 'touchmove' : 'mousemove';
 			touchEnd = isMobile() ? 'touchend' : 'mouseup';
+
+			config.density += 1;
 
 			if (typeof config.offset == 'string') {
 				$(config.offset).each(function(i) {
@@ -842,10 +844,12 @@
 			} else if (typeof config.offset == 'number') {
 				_this.each(function(i) {
 					offsetVal[i] = config.offset;
+					$(config.returnto).val(offsetVal[i]);
+					
 				});
 			}
-
 			_this.each(function(i) {
+				//_this.css('margin-left', -sliderWidth / 2);
 				_this.eq(i).on(touchStart, function(e) {
 					isMousedown = true;
 					if (isMobile()) {
@@ -855,16 +859,11 @@
 					}
 					var startX = touch.clientX,
 						startY = touch.clientY;
-					console.log(startX)
 					index = i;
 				});
 				container.on(touchMove, function(e) {
 					if (isMousedown) {
-						if (!returned) {
-							progress = progress * (config.density / axisWidth) + offsetVal[index];
-							$(config.returnto).eq(index).val(Math.floor(progress));
-							returned = true;
-						};
+						
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0];
 						} else {
@@ -875,19 +874,30 @@
 						if (moveX - startX != 0) {
 							e.preventDefault();
 						}
-						if (touch.clientX < offsetLeft + axisWidth + sliderWidth / 2 && touch.clientX > offsetLeft) {
+						if (touch.clientX < offsetLeft + axisWidth && touch.clientX > offsetLeft) {
 							if (returned) {
 								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								returned = false;
 							}
 						}
+						if (!returned) {
+							progress = progress * (config.density / axisWidth) + offsetVal[index];
+							if (progress >= config.density + offsetVal[index]) {
+								progress = config.density + offsetVal[index] - 1;
+							};
+							if ($(config.returnto).eq(index).is('input')) {
+								$(config.returnto).eq(index).val(Math.floor(progress));
+							} else {
+								$(config.returnto).eq(index).html(Math.floor(progress));
+							}
+							returned = true;
+						};
 						if (moveX < 0) {
 							progress = 0;
 						} else if (moveX >= axisWidth) {
 							progress = axisWidth;
-							console.log(offsetLeft)
 						} else {
-							progress = moveX;
+							progress = moveX + 1;
 						}
 						if (typeof options == 'string') {
 							switch (options) {
@@ -921,6 +931,9 @@
 						$(this).val(value);
 						_this.eq(i).css('margin-left', (value - offsetVal[i]) * (axisWidth / config.density));
 					});
+				} else {
+					var value = Number($(this).val());
+					$(this).html(value);
 				}
 			});
 
@@ -1056,7 +1069,7 @@
 				} else if (frontline <= options.baseline) {
 					//alert('当最小宽度不等于0且屏幕宽度小于等于最小宽度时')
 					factor = options.baseline / frontline
-					
+
 				} else if (frontline > options.baseline && frontline <= options.threshold || options.threshold == 0) {
 					//alert('当屏幕宽度大于最小宽度且小于等于最大宽度，或没有最大宽度时')
 					if (options.threshold >= 0) {
@@ -1066,7 +1079,7 @@
 				} else if (frontline > options.threshold) {
 					//alert('当屏幕宽度大于最大宽度时')
 					factor = frontline / options.threshold;
-					
+
 					if (options.aligncenter) {
 						bodyEl.css({
 							margin: '0 auto',
@@ -1084,7 +1097,7 @@
 				htmlEl.css('font-size', options.fontsize * factor);
 				if (options.dropoff && frontline > options.threshold) {
 					// alert('dsadas')
-					htmlEl.css('font-size','')
+					htmlEl.css('font-size', '')
 				};
 			}
 			//屏幕方向探测器

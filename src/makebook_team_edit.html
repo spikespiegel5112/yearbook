@@ -29,7 +29,7 @@
             <nav class="nav_bar">
                 <ul class="fixed_menu">
                     <li class="active">
-                        <a class="" href="makebook_team_edit.html">
+                        <a class="" href="javascript:;">
                             <em class="edit icon"></em>
                             <em class="text">编辑</em>
                         </a>
@@ -2809,6 +2809,20 @@
                     });
                 }
             });
+
+            //点击编辑关闭aside
+            $('.fixed_menu li').eq(0).click(function(){
+                slideout.close();
+                slideout.on('close', function() {
+                    $('.slide_mask').fadeOut('fast');
+                    $('aside').addClass('close');
+
+                    $('.fixed_menu li').each(function () {
+                        $(this).removeClass('active');
+                        $('.fixed_menu li').eq(0).addClass('active');
+                    })
+                });
+            })
         });
     }
 

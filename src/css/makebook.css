@@ -4505,6 +4505,21 @@
 	background-color: #fff;
 }
 
+.makebook_steptitle_wrapper a{
+    float: right;
+    font-size: 14px;
+    color: #999;
+    line-height: 25px;
+}
+
+.makebook_steptitle_wrapper a i{
+    font-size: 14px;
+}
+
+.makebook_steptitle_wrapper a:hover{
+    color: #ff8800;
+}
+
 .makebook_stepbacklink_item {
 	float: right;
 	margin: 0 20px 0 0;
@@ -5542,6 +5557,7 @@
 .makebook_splist_wrapper>.active .title:hover {
 	margin: 0;
 	border: 3px solid #90c132;
+    box-sizing: content-box;
 }
 
 .makebook_splist_wrapper .active .tips {
@@ -5633,6 +5649,7 @@
 	border: 1px solid #ddd;
 	font-size: 12px;
 	text-align: center;
+    color: #999;
 }
 
 .makebook_splist_wrapper .tips li:last-child {

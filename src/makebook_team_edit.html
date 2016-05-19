@@ -2206,7 +2206,7 @@
                     </ul>
                 </div>
             </div>
-            <div class='makebook_spassemble_wrapper'>
+            <div class='makebook_spassemble_wrapper hidden'>
                 <a class='makebook_spclosebtn_item ybiconfont ybicon-closebtn'></a>
                 <div class='makebook_spmain_wrapper'>
                     <div class='makebook_steptitle_wrapper'>
@@ -2317,7 +2317,7 @@
                     <a class='makebook_spnextlink_btn' href="javascript:;">下一步</a>
                 </div>
             </div>
-            <div class='makebook_spchoosemethod_wrapper'>
+            <div class='makebook_spchoosemethod_wrapper hidden'>
                 <a class='makebook_spclosebtn_item ybiconfont ybicon-closebtn'></a>
                 <div class='makebook_spmain_wrapper'>
                     <div class='makebook_steptitle_wrapper'>
@@ -2371,7 +2371,7 @@
                     <a class='makebook_spnextlink_btn' href="javascript:;">下一步</a>
                 </div>
             </div>
-            <div class='makebook_spsetup_wrapper'>
+            <div class='makebook_spsetup_wrapper hidden'>
                 <a class='makebook_spclosebtn_item ybiconfont ybicon-closebtn'></a>
                 <div class='makebook_spmain_wrapper'>
                     <div class='makebook_steptitle_wrapper'>
@@ -2598,12 +2598,13 @@
                     <a class='makebook_spnextlink_btn' href="javascript:;">下一步</a>
                 </div>
             </div>
-            <div class='makebook_sprecommend_wrapper'>
+            <div class='makebook_sprecommend_wrapper hidden'>
                 <a class='makebook_spclosebtn_item ybiconfont ybicon-closebtn'></a>
                 <div class='makebook_spmain_wrapper'>
                     <div class='makebook_steptitle_wrapper'>
                         <h6 class='makebook_steptitle_item'>推荐模板列表</h6>
                         <p class='makebook_stepdesc_wrapper'>根据您的配置，忆尔推荐了5套模板供您选择</p>
+                        <a href="booklist_ia.html">都不满意？查看更多<i class="ybiconfont ybicon-forward2"></i></a>
                     </div>
                     <div class='makebook_recommend_wrapper'>
                         <a class='left ybiconfont ybicon-backward2' href="javascript:;"></a>
@@ -3209,9 +3210,9 @@
     function resize() {
         $.remResizing({
             fontsize: 20,
-            threshold: 0,
+            threshold: 860,
             basedonnarrow: true,
-            dropoff: true
+            inward: true
         });
     }
 

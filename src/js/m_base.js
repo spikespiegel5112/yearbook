@@ -466,17 +466,17 @@
 		window.StringToken.NULL = '\000';
 		this.index = -1;
 		this.more = function() {
-			return val && this.index < val.length - 1;
+			return val && this._index < val.length - 1;
 		};
 		this.next = function() {
 			if (this.more()) {
-				return val.charAt(++this.index);
+				return val.charAt(++this._index);
 			}
 			return StringToken.NULL;
 		};
 		this.back = function() {
-			if (this.index > 0)
-				this.index--;
+			if (this._index > 0)
+				this._index--;
 		};
 		this.setIndex = function(index) {
 			this.index = index;

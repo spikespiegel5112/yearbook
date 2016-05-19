@@ -720,8 +720,13 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     font-size: 29px;
     line-height: 42px;
-
     color: #fff;
+}
+
+.ybwechatheader_wrapper .add_btn .ybicon-plus
+{
+    font-size: 26px;
+    font-weight: bold;
 }
 
 .ybwechatheader_wrapper .back_btn span
@@ -768,11 +773,10 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     color: #fff;
 }
 
-.ybwechatheader_wrapper .left_angle span
+.ybwechatheader_wrapper .back_btn .ybicon-backward3
 {
     font-size: 26px;
     line-height: 40px;
-
     color: #fff;
 }
 
@@ -1232,6 +1236,11 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     background-size: cover;
 }
 
+.common_empty_item .resource{
+    width: 235px;
+    height: 169px;
+    background: url("../img/icon/empty_resource.png");
+}
 /*~~~~~~~~~~footer nav~~~~~~~~~~*/
 .footer
 {
@@ -2345,10 +2354,14 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     line-height: 60px;
 
-    width: 50%;
+    width: 65%;
     height: 100%;
 
     text-align: center;
+}
+
+.more_fun_wrapper .cm_fr.edit{
+    width: 35%;
 }
 
 .more_fun_wrapper .cm_fr a
@@ -2360,27 +2373,22 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     text-decoration: none;
 
     color: #fff;
-    background: #df4622;
+    background: #f60;
 }
 
 .more_fun_wrapper .cm_fr a:hover
 {
-    background: #b02b1b;
+    background: #f40;
 }
 
 .more_fun_wrapper .edit a
 {
-    background: #e7b838;
+    background: #333;
 }
 
 .more_fun_wrapper .edit a:hover
 {
-    background: #daad34;
-}
-
-.more_fun_wrapper .edit a:active
-{
-    background: #cea430;
+    background: #000;
 }
 
 /*more product info*/
@@ -3522,4 +3530,14 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     float: right;
     background-color: #999999;
     color: #dddddd;
+}
+.add_tobook_tips p {
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    color: #333;
+    background-color: #ffdbd3;
 }

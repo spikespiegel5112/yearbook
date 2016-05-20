@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>互动-民主选举-创建</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_ia.css" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463455972_838859.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-switch.min.css" type="text/css" media="all"/>
+</head>
+<body>
+<div class="main_container">
+    <div class='ybwechatheader_wrapper'>
+        <a class='left_btn back_btn' href='ia_vote_create_member3.13.html'>
+            <span class="ybiconfont ybicon-backward3"></span>
+        </a>
+        <p>成员选择</p>
+        <a class='right_btn add_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-ok"></span>
+        </a>
+    </div>
+    <div class="create_vote_con">
+        <div class="option item">
+            <label class="lb">全体成员</label>
+            <span class="ybiconfont ybicon-ok"></span>
+        </div>
+        <div class="option item">
+            <label class="lb">男生</label>
+            <span class="ybiconfont ybicon-ok"></span>
+        </div>
+        <div class="option item">
+            <label class="lb">女生</label>
+            <span class="ybiconfont ybicon-ok"></span>
+        </div>
+        <div class="option item custom">
+            <label class="lb">自定义</label>
+            <span class="ybiconfont ybicon-ok"></span>
+        </div>
+    </div>
+</div>
+<!--成员列表-->
+<div class="yb_pop_wrap">
+    <div class="member_list_wrap">
+        <div class="member_list">
+            <ul>
+                <li class="select">
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+                <li>
+                    <div class="header">
+                        <img src="../img/m/default/user_header01.jpg">
+                        <span class="ybiconfont ybicon-ok"></span>
+                    </div>
+                    <h5 class="name">王小丫</h5>
+                </li>
+            </ul>
+        </div>
+        <div class="om_btn_wrap">
+            <a class="om_btn" href="javascript:;">确认</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script>
+    $('.create_vote_con .option').on('click',function(){
+        $('.create_vote_con .option').each(function(){
+            $(this).removeClass('select');
+        });
+        $(this).addClass('select');
+        if($(this).hasClass('custom')){
+            var memberList = $('.yb_pop_wrap');
+            memberList.fadeIn('fast');
+
+            $('.member_list li').on('click',function(){
+                if($(this).hasClass('select')){
+                    $(this).removeClass('select');
+                }else{
+                    $(this).addClass('select');
+                }
+            });
+
+            memberList.on('click', function (e) {
+                if ($(e.target).closest('.member_list_wrap').length == 0) {
+                    memberList.fadeOut('fast');
+                }
+            });
+        }
+    })
+</script>
+</body>
+</html>

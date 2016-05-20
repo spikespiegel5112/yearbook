@@ -189,5 +189,87 @@
         </div>
     </div>
 </div>
+<!--投票结果详情-->
+<div class="yb_pop_wrap">
+    <div class="vote_result_con">
+        <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
+        <h4 class="title">投票详情</h4>
+        <div class='voteresult_dialog_wrapper'>
+            <h5>选项：王五</h5>
+            <div class='voteresult_main_wrapper'>
+                <p>投此选项的共有（<span>3</span>）人</p>
+                <ul>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/book_step_one.png">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/book_step_one.png">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='voteresult_avatar_item'>
+                            <img src="../img/default/vote_result_avatar_50_50_00000.jpg">
+                        </div>
+                        <div class='voteresult_desc_item'>
+                            <span>李四</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script>
+
+    //查看投票结果详情
+    $('.view_result').click(function(){
+        $('.yb_pop_wrap').fadeIn('fast');
+        $('.yb_pop_wrap .close').click(function(){
+            $('.yb_pop_wrap').fadeOut('fast');
+        })
+    });
+</script>
 </body>
 </html>

@@ -8281,6 +8281,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 }
 
 .yb_pop_wrap{
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -8295,12 +8296,15 @@ a.ia-vote-add-choose-num span.ybiconfont
     top: 10px;
     opacity: 1;
     color: #999;
+    z-index: 1;
+    font-size: 15px;
 }
 .yb_pop_wrap .title{
+    position: relative;
     margin: 0;
     height: 40px;
     line-height: 40px;
-    padding: 0 25px 0 10px;
+    padding: 0 25px 0 0;
     color: #333;
     font-weight: 700;
     font-size: 16px;
@@ -8310,26 +8314,55 @@ a.ia-vote-add-choose-num span.ybiconfont
     position: absolute;
     top: 50%;
     left: 5%;
+    margin-top: -139px;
     width: 90%;
+    padding: 0 10px;
     background-color: #fff;
     border-radius: 6px;
+    box-sizing: border-box;
+}
+.voteresult_dialog_wrapper{
+    position: relative;
 }
 .voteresult_dialog_wrapper h5 {
-    padding: 0 0 25px;
-    border-bottom: 1px solid #000;
+    margin: 0;
+    line-height: 35px;
+    color: #333;
+    border-top: 1px solid #ddd;
 }
 .voteresult_main_wrapper p {
-    padding: 10px 0;
+    padding: 0;
+    margin: 0;
+}
+.voteresult_main_wrapper ul{
+    position: relative;
+    overflow: hidden;
+    max-height: 176px;
+    overflow-y: auto;
 }
 .voteresult_main_wrapper li {
     float: left;
-    margin: 8px;
+    margin: 8px 5px 0;
+    width: 56px;
 }
 .voteresult_avatar_item {
-    float: left;
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
 }
+.voteresult_avatar_item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+.voteresult_desc_item {
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
 
 .vote_des .record {
     padding: 10px 15px;
@@ -8510,5 +8543,264 @@ a.ia-vote-add-choose-num span.ybiconfont
     text-overflow: ellipsis;
     border-radius: 18px;
 }
+/*create vote*/
+.create_vote_con{
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+}
+.create_vote_con .item{
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    line-height: 35px;
+}
+.create_vote_con .item .lb{
+    float: left;
+    font-size: 14px;
+    color: #333;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+.create_vote_con .item .input_group{
+    position: relative;
+    padding-left: 45px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.vote_type,
+.vote_mode{
+    line-height: 35px;
+    background-color: #eee;
+}
+.vote_type a,
+.vote_mode a,
+.vote_options a{
+    float: right;
+    color: #333;
+}
+.vote_type a i,
+.vote_mode a i,
+.vote_options a i{
+    font-size: 14px;
+    color: #666;
+    margin-left: 5px;
+}
 
+.create_vote_con a:hover,
+.create_vote_con a:active{
+    color: #70ca5d;
+}
+.vote_theme textarea,
+.vote_theme input{
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 5px 10px;
+    line-height: 25px;
+    word-wrap: break-word;
+    border: 1px solid #ccc;
+}
 
+.vote_theme input{
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.vote_options .common_custonoption_item {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 10px;
+}
+.vote_options .common_custonoption_item input{
+    height: 35px;
+}
+
+.vote_options .common_custonoption_item a {
+    width: 45px;
+    height: 33px;
+    line-height: 28px;
+    font-size: 30px;
+    background-color: #eee;
+    border-radius: 0 5px 5px 0;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}
+
+.vote_options .common_custonoption_item .reduce{
+    display: none;
+    font-size: 32px;
+    line-height: 26px;
+}
+.vote_options .common_custonoption_item:hover .reduce{
+    display: block;
+}
+.vote_fig .lb{
+    margin-top: 18px ;
+}
+.vote_fig .file{
+    position: relative;
+
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    border: 1px dashed #ddd;
+}
+.vote_fig .file input[type="file"]{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+.vote_fig .file .add_file{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #999;
+    font-size: 22px;
+    background-color: #fff;
+}
+.vote_anonymous{
+    line-height: 35px;
+}
+.vote_anonymous .ia-vote-checkbox{
+    float: right;
+}
+.create_vote_con .option span{
+    display: none;
+    float: right;
+    color: #70ca5d;
+}
+.create_vote_con .option.select span,
+.create_vote_con .option.select .vote_option_num{
+    display: block;
+}
+.vote_option_num{
+    display: none;
+    position: relative;
+    clear: both;
+}
+.vote_option_num p{
+    float: left;
+    color: #999;
+    margin: 10px 0 0 ;
+}
+.vote_option_num p input{
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    width: 25px;
+    text-align: center;
+    margin: 0 5px;
+}
+.vote_option_num a{
+    float: left;
+    margin-left: 25px;
+    color: #999;
+}
+.vote_option_num a:hover{
+    color: #70ca5d;
+}
+.create_vote_con .error{
+    position: relative;
+    margin-bottom: 0;
+    line-height: 20px;
+}
+.create_vote_con .vote_theme .error{
+    top: -10px;
+}
+.create_vote_con .vote_fig .error{
+    left: 45px;
+}
+.member_list_wrap{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.member_list{
+    position: relative;
+    width: 100%;
+    max-height: 176px;
+    overflow-y: auto;
+}
+.vote_options .member_list{
+    background-color: #f6f6f6;
+    margin: 0 -10px -5px;
+    width: auto;
+    clear: both;
+}
+.member_list li{
+    float: left;
+    width: 25%;
+    margin: 8px 0 0;
+}
+.member_list li .header{
+    position: relative;
+    margin: 0 auto;
+    width: 55px;
+    height: 55px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.member_list li .header img{
+    width: 100%;
+    height: 100%;
+}
+
+.member_list li.select .header{
+    border: 1px solid #70ca5d;
+}
+
+.member_list li .header .ybicon-ok{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    line-height: 10px;
+    border-style: solid;
+    font-size: 12px;
+    color: #fff;
+    border-color: transparent #70ca5d #70ca5d transparent;
+}
+.member_list li.select .header .ybicon-ok{
+    display: block;
+}
+
+.member_list li .header .ybicon-trash{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 55px;
+    background: rgba(0,0,0,.6);
+    border-radius: 4px;
+    color: #ddd;
+}
+.member_list li .header:hover .ybicon-trash{
+    display: block;
+}
+.member_list li .name{
+    margin: 5px 0;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

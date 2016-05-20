@@ -191,7 +191,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                     <li>
@@ -200,7 +199,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                     <li>
@@ -209,7 +207,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                     <li>
@@ -218,7 +215,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                     <li>
@@ -227,7 +223,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                     <li>
@@ -236,7 +231,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                     <li>
@@ -245,7 +239,6 @@
                         </div>
                         <div class='voteresult_desc_item'>
                             <span>李四</span>
-                            <label>2015 05-11 11:45</label>
                         </div>
                     </li>
                 </ul>
@@ -302,12 +295,11 @@
         });
 
         $('.view_result').click(function(){
-            art.dialog({
-                title: "查看投票详情",
-                lock: true,
-                content: document.querySelector('.voteresult_dialog_wrapper')
+            $('.yb_pop_wrap').fadeIn('fast');
+            $('.yb_pop_wrap .close').click(function(){
+                $('.yb_pop_wrap').fadeOut('fast');
             })
-        })
+        });
     }
 </script>
 </body>

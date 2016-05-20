@@ -1205,15 +1205,23 @@
 }
 
 /*~~~~~~~~~~makebook_invitcardinfo_wrapper~~~~~~~~~~*/
-.makebook_invitcardinfo_container
-{
-    position: fixed;
-    z-index: 2;
-    top: 0;
-
-    display: none;
-
-    width: 100%;
+.makebook_invitcardinfo_container{
+	display: none;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+.makebook_invitcardinfo_wrapper{
+	margin: 10px auto;
+	width: 15rem;
+	height: 23rem;
+	background-image: url(../img/m/makebook/invitcardevelop.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-size: 13px;
+	position: relative;
 }
 .makebook_invitcardinfo_wrapper
 {
@@ -1675,24 +1683,23 @@
 	line-height: 1.25rem;
 	border-bottom: 1px solid #ececec;
 }
-.makebook_fdinfo_wrapper li label, .makebook_fdinfo_wrapper li .notset {
-    font-weight: lighter;
-    color: #999;
+.makebook_fdinfo_wrapper li label, .makebook_fdinfo_wrapper li .notset{
+	font-weight: lighter;
+	color: #999;
 }
 .makebook_fdphoto_wrapper
 {
     display: inline-block;
 }
-
-.makebook_fdphoto_wrapper li {
-    display: inline-block;
-    margin: 0.2rem;
-    width: 2.7rem;
-    height: 2.7rem;
-    overflow: hidden;
-    border: 1px dashed #dddddd;
-    vertical-align: middle;
-    position: relative;
+.makebook_fdphoto_wrapper li{
+	display: inline-block;
+	margin: 0.2rem;
+	width: 2.7rem;
+	height: 2.7rem;
+	overflow: hidden;
+	border: 1px dashed #dddddd;
+	vertical-align: middle;
+	position: relative;
 }
 .makebook_fdphoto_wrapper li img
 {
@@ -1719,6 +1726,7 @@
 .makebook_fdtopic_wrapper p a{
 	color: #a1c2cf;
 }
+
 .makebook_friendbtn_item{
 	font-size: 0.9rem;
 	margin: 1rem 0;
@@ -1743,13 +1751,7 @@
 	background-color: #64c978;
 	color: #efefef;
 }
-.makebook_friendbtn_item .faded
-{
-    color: #999;
-    background-color: #eee;
-}
-.makebook_friendbtn_item .faded:hover
-{
-    color: #666;
-    background-color: #ccc;
+.makebook_friendbtn_item .faded{
+	color: #999;
+	background-color: #eeeeee;
 }

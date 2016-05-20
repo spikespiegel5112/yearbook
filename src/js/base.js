@@ -594,7 +594,7 @@
 			options = $.extend({
 				position: 'both',
 				container: '',
-				isImage: false,
+				isimage: false,
 				offsetx: 0,
 				offsety: 0,
 				ignore: ''
@@ -606,11 +606,11 @@
 				container = $(options.container),
 				thisWidth = 0,
 				thisHeight = 0,
-				containerheight = 0,
+				containerHeight = 0,
 				timer,
-				offsety=0,
-				ignorex=0,
-				ignorey=0,
+				offsetY=0,
+				ignoreX=0,
+				ignoreY=0,
 				ignoreArr=[],
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
@@ -625,8 +625,8 @@
 				if (typeof options.ignore === 'string') {
 					ignoreArr=options.ignore.split(',');
 					for(var i=0;i<ignoreArr.length;i++){
-						ignorex+=$(ignoreArr[i]).width();
-						ignorey+=$(ignoreArr[i]).height();
+						ignoreX+=$(ignoreArr[i]).width();
+						ignoreY+=$(ignoreArr[i]).height();
 					}
 				}
 				//当居中元素是img标签时，特殊处理！
@@ -640,9 +640,9 @@
 								reload = true;
 								return false;
 							} else {
-								containerheight = container.eq(index).height();
-								checkPosition($this, containerheight)
-								console.log('第' + index + '张图片的高度:' + containerheight)
+								containerHeight = container.eq(index).height();
+								checkPosition($this, containerHeight)
+								console.log('第' + index + '张图片的高度:' + containerHeight)
 							}
 						});
 						if (reload) {
@@ -668,7 +668,7 @@
 					//container设置判断
 					if (options.container != '') {
 						that.each(function(index) {
-							containerheight = container.eq(index).height();
+							containerHeight = container.eq(index).height();
 							windowWidth = container.width();
 							checkPosition($(this));
 						})
@@ -707,7 +707,7 @@
 					case 'both':
 						aligning(function(thisWidth, thisHeight) {
 							if (options.container != '') {
-								var marginY = (containerheight - thisHeight) / 2;
+								var marginY = (containerHeight - thisHeight) / 2;
 							} else {
 								var marginY = ($(window).height() - thisHeight) / 2;
 							}
@@ -715,18 +715,20 @@
 								marginY = 0;
 							};
 							if (thisWidth <= $(window).width()) {
-								_this.css({
-									'margin': marginY + offsety - ignorey + 'px auto'
-								});
-								if (options.offsetX != 0) {
-									// alert((windowWidth - thisWidth) / 2 + options.offsetX)
+								if (options.offsetx != 0) {
+									console.log(options.offsetx)
+									// alert((windowWidth - thisWidth) / 2 + options.offsetx)
 									_this.css({
-										'margin': marginY + offsety - ignorey + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
+										'margin': marginY + offsetY - ignoreY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
 									});
-								};
+								}else{
+									_this.css({
+										'margin': marginY + offsetY - ignoreY + 'px auto'
+									});
+								}
 							} else {
 								_this.css({
-									'margin': marginY + offsety - ignorey + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetX + 'px'
+									'margin': marginY + offsetY - ignoreY + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetx + 'px'
 								});
 							}
 						});
@@ -752,7 +754,7 @@
 					case 'bottom':
 						aligning(function(thisWidth, thisHeight) {
 							_this.css({
-								'margin': (windowHeight - thisHeight + offsety - ignorey ) + 'px auto 0'
+								'margin': (windowHeight - thisHeight + offsetY - ignoreY ) + 'px auto 0'
 							});
 						});
 						break;

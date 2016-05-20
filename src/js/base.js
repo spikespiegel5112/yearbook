@@ -672,6 +672,7 @@
 							var $this = $(this);
 							containerHeight = container.eq(index).height();
 							containerWdith = container.eq(index).width();
+							console.log(containerHeight)
 							if ($this.is(':hidden')) {
 								return true
 							} else {
@@ -679,13 +680,13 @@
 							}
 						});
 					}else{
+
 						containerWdith = $(window).width();
 						containerHeight = $(window).height();
 						that.each(function(index){
 							var $this = $(this);
 							if ($this.is(':hidden')) {
 								return true
-
 							} else {
 								checkPosition($this);
 							}
@@ -704,31 +705,29 @@
 					}
 				})
 
-				thisWidth = _this.outerWidth(),
-				thisHeight = _this.outerHeight();
+				var thisWidth = _this.outerWidth(),
+					thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
-						aligning(function(thisWidth, thisHeight) {
-							console.log('aaa')
-							var marginY = (containerHeight - thisHeight) / 2;
-							if (thisWidth <= $(window).width()) {
-								if (options.offsetx != 0) {
-									_this.css({
-										'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + + offsetX - ignoreX + 'px'
-									});
-									console.log(thisWidth)
-								}else{
-									_this.css({
-										'margin': marginY + offsetY - ignoreY + 'px auto'
-									});
-								}
-							} else {
+						var marginY = (containerHeight - thisHeight) / 2;
+						// console.log(marginY)
+						if (thisWidth <= $(window).width()) {
+							if (options.offsetx != 0) {
 								_this.css({
-									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + options.offsetx + 'px'
+									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + + offsetX - ignoreX + 'px'
+								});
+								console.log(thisWidth)
+							}else{
+								_this.css({
+									'margin': marginY + offsetY - ignoreY + 'px auto'
 								});
 							}
-						});
+						} else {
+							_this.css({
+								'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + options.offsetx + 'px'
+							});
+						}
 						break;
 					case 'top':
 						aligning(function(thisWidth, thisHeight) {

@@ -8091,7 +8091,7 @@ a.ia-vote-add-choose-num span.ybiconfont
     position: relative;
     overflow-y: auto;
     margin: 0 auto 10px;
-    padding: 0 10px 5px;
+    padding: 0;
     width: 90%;
     box-sizing: border-box;
     border-radius: 6px;
@@ -8101,15 +8101,19 @@ a.ia-vote-add-choose-num span.ybiconfont
 .vote_member_option > label{
     display: block;
     margin: 5px 0;
-    padding: 0 5px;
+    padding: 0 15px;
     height: 30px;
     line-height: 30px;
     font-size: 14px;
     color: #666;
     font-weight: normal;
 }
+.vote_member_option > label{
+    padding: 0 5px;
+}
 .vote_normal_list{
     position: relative;
+    padding: 0 10px;
     width: 100%;
     max-height: 105px;
     overflow-y: auto;
@@ -8163,7 +8167,7 @@ a.ia-vote-add-choose-num span.ybiconfont
     box-sizing: border-box;
     border-radius: 4px;
 }
-.vote_member_list li{
+.vote_member_list.result li{
     height: 165px;
 }
 .vote_member_list li a {
@@ -8231,6 +8235,101 @@ a.ia-vote-add-choose-num span.ybiconfont
     font-weight: 100;
 }
 
+.vote_list_result{
+    position: relative;
+    margin: 8px 0;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.vote_list_result table {
+    line-height: 40px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.vote_list_result table tr {
+    cursor: pointer;
+}
+.vote_list_result table tr th{
+    background-color: #f7f7f7;
+}
+.vote_list_result table tr .rank {
+    width: 14%;
+}
+.vote_list_result table tr .name {
+    width: 31%;
+}
+
+.vote_list_result table tr .votes {
+    width: 15%;
+}
+.vote_list_result .progressbar {
+    position: relative;
+    float: left;
+    width: 70%;
+    height: 14px;
+    margin: 8px 5px 0 0;
+    border: 1px solid #c7c7c7;
+    background: #fff;
+}
+.vote_list_result .progressbar label {
+    float: left;
+    width: 20%;
+    height: 100%;
+    background: #8cd419;
+}
+
+.yb_pop_wrap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+}
+.yb_pop_wrap .close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 1;
+    color: #999;
+}
+.yb_pop_wrap .title{
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 25px 0 10px;
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.yb_pop_wrap .vote_result_con{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.voteresult_dialog_wrapper h5 {
+    padding: 0 0 25px;
+    border-bottom: 1px solid #000;
+}
+.voteresult_main_wrapper p {
+    padding: 10px 0;
+}
+.voteresult_main_wrapper li {
+    float: left;
+    margin: 8px;
+}
+.voteresult_avatar_item {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
 
 .vote_des .record {
     padding: 10px 15px;

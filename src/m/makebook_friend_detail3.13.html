@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>个人详情</title>
+	<!-- build:css ../css/m.all.min.css -->
+	<link rel="stylesheet" href="../css/m_reset.css" type="text/css" />
+	<link rel="stylesheet" href="../css/m_common.css" type="text/css" />
+	<link rel="stylesheet" href="../css/m_makebook.css" type="text/css" />
+	<!-- endbuild -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1463455972_838859.css" type="text/css" media="all" />
+</head>
+
+<body>
+	<div class='ybwechatheader_wrapper'>
+		<a class='left_btn back_btn' href='javascript:;'>
+			<span class="ybiconfont ybicon-backward1"></span>
+		</a>
+		<p>个人详情</p>
+		<a class='right_btn add_btn' href='javascript:;'><span class="ybiconfont ybicon-add2"></span></a>
+	</div>
+	<div class='main_container'>
+		<div class='makebook_friendavatar_wrapper'>
+			<div class='avatar'>
+				<img src="../img/default/ablum_photo02.png">
+				<h6>李冰冰</h6>
+			</div>
+			<img class='bg' src="../img/default/ablum_photo02.png">
+		</div>
+		<div class="friend_detail_wrapper" style="display: block;">
+			<div class="makebook_frienddetail_wrapper">
+				<div class="makebook_fdblock_wrapper">
+					<h6 class="subtitle">基本资料</h6>
+					<ul class="makebook_fdinfo_wrapper">
+						<li>
+							<label>姓名：</label>
+							<span>张三</span>
+						</li>
+						<li>
+							<label>邮箱：</label>
+							<span>1221@123.com</span>
+						</li>
+						<li>
+							<label>爱好：</label>
+							<span>打球</span>
+						</li>
+						<li>
+							<label>生日：</label>
+							<span>1900-03-20</span>
+						</li>
+						<li>
+							<label>手机：</label>
+							<span>1221123123</span>
+						</li>
+						<li>
+							<label>手机：</label>
+							<ul class="makebook_fdphoto_wrapper">
+								<li><img src="../img/default/photoprint_sizesample.jpg"></li>
+								<li><img src="../img/default/photoprint_sizesample.jpg"></li>
+								<li><img src="../img/default/photoprint_sizesample.jpg"></li>
+								<li><img src="../img/default/1_5.jpg"></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="makebook_fdblock_wrapper">
+					<h6 class="subtitle">参与的话题</h6>
+					<ul class="makebook_fdtopic_wrapper">
+						<li>
+							<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+							<p>
+								<label><a href="javascirpt:;">普京</a>回复：</label>
+								加油喔。
+							</p>
+						</li>
+						<li>
+							<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+							<p>
+								未参与话题
+							</p>
+						</li>
+						<li>
+							<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+							<p>
+								<label><a href="javascirpt:;">普京</a>回复：</label>
+								加油喔。
+							</p>
+						</li>
+						<li>
+							<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+							<p>
+								未参与话题
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="makebook_friendbtn_item">
+					<a class='leavemessage' href="javascript:;">给他留言</a>
+					<a class='participate' href="javascript:;">参与话题</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user invitation card content-->
+	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/base.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$.remResizing({
+			fontsize: 20
+		});
+		$('.makebook_fdphoto_wrapper li img').align({
+			container: '.makebook_fdphoto_wrapper li',
+			isimage: true
+		})
+	})
+	</script>
+</body>
+
+</html>

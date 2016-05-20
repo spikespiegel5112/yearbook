@@ -606,6 +606,7 @@
 				container = $(options.container),
 				thisWidth = 0,
 				thisHeight = 0,
+				containerWdith = 0,
 				containerHeight = 0,
 				timer,
 				offsetY=0,
@@ -623,10 +624,10 @@
 
 			function initAligning() {
 				if (typeof options.ignore === 'string') {
-					ignoreArr=options.ignore.split(',');
-					for(var i=0;i<ignoreArr.length;i++){
-						ignoreX+=$(ignoreArr[i]).width();
-						ignoreY+=$(ignoreArr[i]).height();
+					ignoreArr = options.ignore.split(',');
+					for (var i = 0; i < ignoreArr.length; i++) {
+						ignoreX += $(ignoreArr[i]).width();
+						ignoreY += $(ignoreArr[i]).height();
 					}
 				}
 				//当居中元素是img标签时，特殊处理！
@@ -642,7 +643,7 @@
 							} else {
 								containerHeight = container.eq(index).height();
 								checkPosition($this, containerHeight)
-								console.log('第' + index + '张图片的高度:' + containerHeight)
+								console.log('第' + index + '张图片的高度:' + containerHeight);
 							}
 						});
 						if (reload) {
@@ -662,35 +663,38 @@
 						}
 					}
 					checkImageLoaded();
-					//缺省情况
+				//缺省情况
 				} else {
 					//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
 					//container设置判断
 					if (options.container != '') {
 						that.each(function(index) {
-							containerHeight = container.eq(index).height();
-							windowWidth = container.width();
-							checkPosition($(this));
-						})
-					} else {
-						that.each(function(index) {
 							var $this = $(this);
+							containerHeight = container.eq(index).height();
+							containerWdith = container.eq(index).width();
 							if ($this.is(':hidden')) {
 								return true
 							} else {
 								checkPosition($this);
-								$(window).resize(function() {
-									checkPosition($this);
-								})
 							}
+						});
+					}else{
+						containerWdith = $(window).width();
+						containerHeight = $(window).height();
+						that.each(function(index){
+							var $this = $(this);
+							if ($this.is(':hidden')) {
+								return true
 
-						})
+							} else {
+								checkPosition($this);
+							}
+						});
 					}
 				}
 			}
 
 			function checkPosition(_this) {
-				// console.log('begin aligning')
 				checkBrowser({
 					ie: function() {
 						window.clearTimeout(timer);
@@ -701,26 +705,19 @@
 				})
 
 				thisWidth = _this.outerWidth(),
-					thisHeight = _this.outerHeight();
+				thisHeight = _this.outerHeight();
 
 				switch (options.position) {
 					case 'both':
 						aligning(function(thisWidth, thisHeight) {
-							if (options.container != '') {
-								var marginY = (containerHeight - thisHeight) / 2;
-							} else {
-								var marginY = ($(window).height() - thisHeight) / 2;
-							}
-							if (marginY <= 0) {
-								marginY = 0;
-							};
+							console.log('aaa')
+							var marginY = (containerHeight - thisHeight) / 2;
 							if (thisWidth <= $(window).width()) {
 								if (options.offsetx != 0) {
-									console.log(options.offsetx)
-									// alert((windowWidth - thisWidth) / 2 + options.offsetx)
 									_this.css({
-										'margin': marginY + offsetY - ignoreY + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
+										'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + + offsetX - ignoreX + 'px'
 									});
+									console.log(thisWidth)
 								}else{
 									_this.css({
 										'margin': marginY + offsetY - ignoreY + 'px auto'
@@ -728,7 +725,7 @@
 								}
 							} else {
 								_this.css({
-									'margin': marginY + offsetY - ignoreY + 'px ' + (windowWidth - thisWidth) / 2 + options.offsetx + 'px'
+									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + options.offsetx + 'px'
 								});
 							}
 						});
@@ -739,7 +736,7 @@
 								return;
 							} else {
 								_this.css({
-									'margin': (windowWidth - thisWidth) / 2 + ' auto'
+									'margin': (containerWdith - thisWidth) / 2 + ' auto'
 								});
 							}
 						});
@@ -747,7 +744,7 @@
 					case 'right':
 						aligning(function(thisWidth, thisHeight) {
 							_this.css({
-								'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 ' + (windowWidth - thisWidth) + 'px'
+								'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 ' + (containerWdith - thisWidth) + 'px'
 							});
 						});
 						break;
@@ -769,11 +766,8 @@
 			}
 
 			function aligning(callback) {
-				$(window).resize(function() {
-					thisWidth = that.outerWidth();
-					thisHeight = that.outerHeight();
-					return callback(thisWidth, thisHeight)
-				});
+				thisWidth = that.outerWidth();
+				thisHeight = that.outerHeight();
 				return callback(thisWidth, thisHeight);
 			}
 

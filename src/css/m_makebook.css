@@ -1419,14 +1419,13 @@
 	background-color: #eeeeee;
 }
 .makebook_fdinfo_wrapper{
-	margin: 10px 0;
 	overflow: hidden;
 }
-.makebook_fdinfo_wrapper li{
-	float: left;
+.makebook_fdinfo_wrapper>li{
 	width: 100%;
-	font-size: 13px;
-	line-height: 25px;
+	padding: 0 0.5rem;
+	font-size: 0.6rem;
+	line-height: 1.25rem;
 	border-bottom: 1px solid #ececec;
 }
 .makebook_fdinfo_wrapper li label{
@@ -1436,10 +1435,10 @@
 	display: inline-block;
 }
 .makebook_fdphoto_wrapper li{
-	float: left;
+	display: inline-block;
 	margin: 0.2rem;
-	width: 3rem;
-	height: 3rem;
+	width: 2.7rem;
+	height: 2.7rem;
 	overflow: hidden;
 	border: 1px dashed #dddddd;
 	vertical-align: middle;
@@ -1450,14 +1449,18 @@
 	width: 100%;
 }
 .makebook_fdtopic_wrapper li{
-	padding: 5px 0;
+	padding: 0.5rem 0.25rem;
 	border-bottom: 1px dashed #dddddd;
 	line-height: 25px;
 }
 .makebook_fdtopic_wrapper li:last-child{
 	border: none;
 }
+.makebook_fdtopic_wrapper h6{
+	margin: 0;
+}
 .makebook_fdtopic_wrapper p{
+	margin: 0;
 	font-size: 13px;
 }
 
@@ -1468,21 +1471,28 @@
 
 
 .makebook_friendbtn_item{
-	text-align: center;
-	font-size: 18px;
-	margin: 20px 0;
+	font-size: 0.9rem;
+	margin: 1rem 0;
+	padding: 0 0.22rem;
 }
 .makebook_friendbtn_item a{
 	display: inline-block;
-	min-width: 160px;
-	padding: 5px;
-	background-color: #84c453;
-	color: #efefef;
+	padding: 0.25rem 2rem;
+	min-width: 6.5rem;
 	text-align: center;
 	border-radius: 4px;
 }
+
 .makebook_friendbtn_item a:hover{
 	background-color: #3E8F00;
+}
+.makebook_friendbtn_item .leavemessage{
+	border: 1px solid #64c978;
+	color: #64c978;
+}
+.makebook_friendbtn_item .participate{
+	background-color: #64c978;
+	color: #efefef;
 }
 .makebook_friendbtn_item .faded{
 	color: #999;

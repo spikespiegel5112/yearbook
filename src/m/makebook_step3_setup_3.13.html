@@ -269,7 +269,8 @@
 <script type="text/javascript">
 $(function() {
     $.remResizing({
-        fontsize: 20
+        fontsize: 20,
+        basedonnarrow: true
     });
     makebook_step2();
     checktag();
@@ -298,8 +299,9 @@ function makebook_step2() {
     $('.makebook_invitcardinfo_wrapper .edit').click(function(){
     	$('.makebook_invitcardinfo_container').hide();
     })
-    $('.ybwechatheader_wrapper').click(function(){
+    $('.ybwechatheader_wrapper .action_btn').click(function(){
     	$('.makebook_invitcardinfo_container').show();
+        $('.makebook_invitcardinfo_wrapper').align();
     })
 }
 //选项标签的操作

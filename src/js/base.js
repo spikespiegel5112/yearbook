@@ -719,7 +719,7 @@
 									'margin': marginY + offsety - ignorey + 'px auto'
 								});
 								if (options.offsetX != 0) {
-									alert((windowWidth - thisWidth) / 2 + options.offsetX)
+									// alert((windowWidth - thisWidth) / 2 + options.offsetX)
 									_this.css({
 										'margin': marginY + offsety - ignorey + 'px ' + (windowWidth - thisWidth) / 2 + 'px'
 									});

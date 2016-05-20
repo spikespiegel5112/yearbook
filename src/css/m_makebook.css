@@ -821,6 +821,7 @@
 	text-align: center;
 	position: relative;
 	color: #fff;
+	vertical-align: middle;
 }
 
 .makebook_splist_wrapper>.active .title {
@@ -873,7 +874,6 @@
 	margin: 0.3rem 0 0 0;
 	padding: 0.3rem 0.3rem 0 0.3rem;
 	width: 100%;
-	border-top: 1px dashed #d6d6d6;
 	box-sizing: border-box;
 }
 .makebook_bookcomponent_item .subtitle label{
@@ -898,11 +898,13 @@
 }
 .makebook_compicon_item {
 	display: inline-block;
+/*	margin: 0.2rem 0 0 0;*/
 	font-size: 0.8rem;
 	color: #404040;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 1.5rem;
+	line-height: 2rem;
+	vertical-align: middle;
 }
 
 .makebook_compicon_item span {
@@ -911,7 +913,7 @@
 
 .makebook_compicon_item .frame {
 	display: block;
-	margin: 0.8rem 0 0 0;
+	margin: 0.5rem 0 0 0;
 	color: #fff;
 	vertical-align: middle;
 	font-size: 1.8rem;
@@ -921,6 +923,7 @@
 
 .makebook_splist_wrapper .title label {
 	display: block;
+/*	margin: 0.5rem 0 0 0;*/
 	cursor: pointer;
 	text-align: center;
 	font-size: 0.5rem;
@@ -1015,18 +1018,22 @@
 }
 
 /*~~~~~~~~~~makebook_step3_setup_3.13.html~~~~~~~~~~*/
+.makebook_checktag_wrapper{
+	overflow: hidden;
+}
 .makebook_checktag_item {
-	display: inline-block;
+	float: left;
 	min-width: 4.5rem;
 	font-size: 0.75rem;
-	overflow: hidden;
 	background-color: #fff;
+	overflow: hidden;
 }
 
 .makebook_checktag_item a {
 	display: block;
-	padding: 0.2rem 0.5em;
-	border: 1px dashed #999;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	border: 1px solid #999;
 	text-align: center;
 	position: relative;
 	transition: all 0.2s;
@@ -1046,16 +1053,16 @@
 	display: block;
 	line-height: 0.1rem;
 	position: absolute;
-	right: 0;
-	bottom: -6px;
+	right: -0.3rem;
+	bottom: -0.4rem;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0.6rem;
+	border-width: 0.8rem;
 	border-color: transparent #8cc04e #8cc04e transparent;
 	color: #fff;
 	text-align: center;
-	font-size:0.3rem;
+	font-size:0.5rem;
 	opacity: 0;
 	transition: all 0.2s;
 }
@@ -1072,7 +1079,7 @@
 	color: #bbb;
 }
 .makebook_checktag_wrapper .makebook_checktag_item{
-	margin: 0.1rem 0.2rem;
+	margin: 0.2rem 0.3rem;
 }
 .makebook_iccustomoption_wrapper .common_custonoption_item{
 	margin: 0.5rem auto;
@@ -1080,6 +1087,7 @@
 
 /*~~~~~~~~~~makebook_invitcardinfo_wrapper~~~~~~~~~~*/
 .makebook_invitcardinfo_container{
+	display: none;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -1108,7 +1116,7 @@
 }
 .makebook_invitcardinfo_wrapper .closebutton_img{
 	left: 0;
-	top: -8px;
+	top: -0.4rem;
 }
 .makebook_invitcardinfo_wrapper .edit{
 	position: absolute;
@@ -1129,17 +1137,22 @@
 	width: 100%;
 	border-bottom: 1px dashed #999;
 	color: #999;
+	font-size: 0.4rem;
 }
 .makebook_icilist_wrapper li h5{
 	display: inline-block;
+	font-size: 0.4rem;
 }
 .makebook_icbasicinfotag_wrapper li{
 	display: inline-block;
 	margin: 0.25rem 0;
 	padding: 0 0.5rem;
+	height: 1rem;
+	line-height: 1rem;
 	background: #eeeeee;
 	color: #1e1e1e;
 	border-radius: 1rem;
+	font-size: 0.5rem;
 }
 .makebook_icbasicinfo_wrapper{
 	display: inline-block;
@@ -1148,6 +1161,7 @@
 .makebook_icbasicinfo_wrapper li{
 	display: block;
 	margin: 0 0 0 0.5rem;
+
 }
 .makebook_icbasicinfo_wrapper li a{
 	color: #55b9ec;

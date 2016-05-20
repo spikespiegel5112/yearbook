@@ -2,1088 +2,1206 @@
 /*~~~~~~~~~~makebook_editphoto_wrapper~~~~~~~~~~~*/
 .makebook_editphoto_conatainer .ybwechatheader_wrapper
 {
-	position: fixed;
+    position: fixed;
 
-	background-color: #1b1b1b;
+    background-color: #1b1b1b;
 }
 .makebook_editphoto_conatainer.viewmode_portrait p
 {
 	/*float: left;*/
 	/*margin: 0;*/
-	text-align: left;
+    text-align: left;
 }
 .makebook_editphoto_conatainer .back_btn span
 {
-	font-size: 1rem;
+    font-size: 1rem;
 }
 .makebook_editphoto_wrapper
 {
-	position: relative;
+    position: relative;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	width: 100%;
+    width: 100%;
 
-	background-color: #232226;
+    background-color: #232226;
 }
 .makebook_epeditarea_wrapper
 {
-	position: relative;
+    position: relative;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	width: auto;
-	height: auto;
-	margin: 0 auto;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
 
-	background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.5);
 }
 .makebook_editphoto_wrapper img
 {
-	display: block;
+    display: block;
 
-	width: 100%;
+    width: 100%;
 }
 .makebook_eptools_wrapper
 {
-	position: fixed;
-	bottom: 0;
+    position: fixed;
+    bottom: 0;
 
-	width: 100%;
+    width: 100%;
 }
 .makebook_eptools_wrapper a
 {
-	font-size: 1.4rem;
-	line-height: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
 
-	float: left;
+    float: left;
 
-	height: 2rem;
-	padding: 0 .5rem;
+    height: 2rem;
+    padding: 0 .5rem;
 
-	color: #000;
+    color: #000;
 }
 .makebook_eptools_wrapper .zoomout
 {
-	position: absolute;
-	z-index: 2;
-	left: 0;
+    position: absolute;
+    z-index: 2;
+    left: 0;
 
-	margin: 0 10px;
+    margin: 0 10px;
 }
 .makebook_eptools_wrapper .zoomin
 {
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	right: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
 
-	margin: 0 10px;
+    margin: 0 10px;
 }
 
 .makebook_eptoolbar_wrapper li a
 {
-	display: inline-block;
+    display: inline-block;
 }
 .makebook_epzomming_wrapper, .makebook_eptoolbar_wrapper
 {
-	overflow: hidden;
+    overflow: hidden;
 
-	height: 2.6rem;
+    height: 2.6rem;
 }
 .makebook_eptoolbar_wrapper
 {
-	text-align: center;
+    text-align: center;
 
-	background-color: #fff;
+    background-color: #fff;
 }
 .makebook_eptoolbar_wrapper li
 {
-	display: inline-block;
+    display: inline-block;
 }
 .makebook_epscrollbar_item
 {
-	position: relative;
+    position: relative;
 
-	width: 100%;
-	height: 2px;
-	margin: 1rem auto 0;
+    width: 100%;
+    height: 2px;
+    margin: 1rem auto 0;
 }
 .makebook_epscrollbar_item label
 {
-	display: block;
+    display: block;
 
-	width: 80%;
-	height: 100%;
-	margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
 
-	background-color: #fff;
+    background-color: #fff;
 }
 .makebook_epscrollbar_item span
 {
-	position: absolute;
-	top: -.5rem;
-	left: 8%;
+    position: absolute;
+    top: -.5rem;
+    left: 8%;
 
-	display: block;
+    display: block;
 
-	width: 1rem;
-	height: 1rem;
+    width: 1rem;
+    height: 1rem;
 
-	border-radius: 50%;
-	background-color: #fff;
+    border-radius: 50%;
+    background-color: #fff;
 }
 /*�б�ģʽ*/
 .make_book_wrap
 {
-	position: relative;
+    position: relative;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .list_mode .page_wrap
 {
-	position: relative;
+    position: relative;
 
-	float: left;
+    float: left;
 
-	box-sizing: border-box;
-	width: 50%;
-	margin: 5px 0;
-	padding: 15px 0;
+    box-sizing: border-box;
+    width: 50%;
+    margin: 5px 0;
+    padding: 15px 0;
 
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
 }
 
 .list_mode .page_wrap .page
 {
-	position: relative;
+    position: relative;
 
-	width: 9rem;
-	height: 12.5rem;
+    width: 9rem;
+    height: 12.5rem;
 }
 
 .list_mode .page_wrap:nth-child(odd) .page
 {
-	float: right;
+    float: right;
 
-	padding-right: 5px;
+    padding-right: 5px;
 }
 
 .list_mode .page_wrap:nth-child(even) .page
 {
-	float: left;
+    float: left;
 
-	padding-left: 5px;
+    padding-left: 5px;
 }
 
 .list_mode .page_wrap .page img
 {
-	box-sizing: content-box;
+    box-sizing: content-box;
 	/*display: block;
 	margin: 0 auto;*/
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	border: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 .page_wrap .page .page_num
 {
-	font-size: 14px;
-	line-height: 24px;
+    font-size: 14px;
+    line-height: 24px;
 
-	position: absolute;
-	top: 5px;
-	left: -8px;
+    position: absolute;
+    top: 5px;
+    left: -8px;
 
-	display: none;
+    display: none;
 
-	height: 24px;
-	padding: 0 5px 0 8px;
+    height: 24px;
+    padding: 0 5px 0 8px;
 
-	color: #fff;
-	background-color: #89c27e;
+    color: #fff;
+    background-color: #89c27e;
 }
 
 .page_wrap:nth-child(odd) .page .page_num
 {
-	display: block;
+    display: block;
 }
 
 .page_wrap .page .page_num::before
 {
-	position: absolute;
-	top: 24px;
-	left: 0;
+    position: absolute;
+    top: 24px;
+    left: 0;
 
-	content: ' ';
+    content: ' ';
 
-	border-width: 8px 0 0 8px;
-	border-style: solid;
-	border-color: #333 transparent transparent transparent;
+    border-width: 8px 0 0 8px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
 }
 
 .page_wrap .page .page_num::after
 {
-	position: absolute;
-	top: 0;
-	right: -12px;
+    position: absolute;
+    top: 0;
+    right: -12px;
 
-	content: ' ';
+    content: ' ';
 
-	border-width: 12px 0 12px 12px;
-	border-style: solid;
-	border-color: transparent transparent transparent #89c27e;
+    border-width: 12px 0 12px 12px;
+    border-style: solid;
+    border-color: transparent transparent transparent #89c27e;
 }
 
 .page_wrap .page  a
 {
-	font-size: 14px;
+    font-size: 14px;
 
-	display: none;
+    display: none;
 
-	margin: 0 3px;
-	padding: 0 5px;
+    margin: 0 3px;
+    padding: 0 5px;
 
-	color: #71ca5e;
-	border: 1px solid #71ca5e;
-	border-radius: 2px;
-	background-color: #fff;
+    color: #71ca5e;
+    border: 1px solid #71ca5e;
+    border-radius: 2px;
+    background-color: #fff;
 }
 
 .page_wrap:nth-child(even) .page a
 {
-	display: inline-block;
+    display: inline-block;
 }
 
 .page_wrap .page .delete
 {
-	font-size: 18px;
-	line-height: 18px;
+    font-size: 18px;
+    line-height: 18px;
 
-	position: absolute;
-	top: -8px;
-	right: -8px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
 
-	width: 20px;
-	height: 20px;
-	margin: 0;
-	padding: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
 
-	text-align: center;
+    text-align: center;
 
-	color: #fff;
-	border-radius: 100%;
-	background-color: #71ca5e;
+    color: #fff;
+    border-radius: 100%;
+    background-color: #71ca5e;
 }
 
 .page_wrap .page .change
 {
-	position: absolute;
-	right: 10px;
-	bottom: 8px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
 }
 
 .page_wrap .page .change:hover,
 .page_wrap .page .change:active
 {
-	color: #e7b54b;
-	border: 1px solid #e7b54b;
+    color: #e7b54b;
+    border: 1px solid #e7b54b;
 }
 
 .page_wrap .page a i
 {
-	font-size: 14px;
+    font-size: 14px;
 }
 
 .make_book_wrap > .btn_group
 {
-	position: fixed;
-	bottom: 0;
+    position: fixed;
+    bottom: 0;
 
-	width: 100%;
+    width: 100%;
 
-	text-align: center;
+    text-align: center;
 
-	border-top: 2px solid #ddd;
-	background-color: #fff;
+    border-top: 2px solid #ddd;
+    background-color: #fff;
 }
 
 .make_book_wrap > .btn_group a
 {
-	font-size: 18px;
+    font-size: 18px;
 
-	display: inline-block;
+    display: inline-block;
 
-	box-sizing: border-box;
-	width: 40%;
-	margin: 10px;
-	padding: 5px 10px;
+    box-sizing: border-box;
+    width: 40%;
+    margin: 10px;
+    padding: 5px 10px;
 
-	color: #f60;
-	border: 1px solid #f60;
-	border-radius: 4px;
-	background-color: #fff;
+    color: #f60;
+    border: 1px solid #f60;
+    border-radius: 4px;
+    background-color: #fff;
 }
 
 .make_book_wrap > .btn_group a.print
 {
-	color: #fff;
-	background-color: #f60;
+    color: #fff;
+    background-color: #f60;
 }
 
 .make_book_wrap > .btn_group a:active
 {
-	color: #fff;
-	background-color: #e55f06;
+    color: #fff;
+    background-color: #e55f06;
 }
 
 .delete_page_tips
 {
-	position: fixed;
-	z-index: 99;
-	top: 0;
-	bottom: 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
 
-	display: none;
+    display: none;
 
-	width: 100%;
+    width: 100%;
 
-	background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.6);
 }
 
 .delete_page_tips .tips
 {
-	position: absolute;
-	top: 50%;
-	left: 10%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	width: 80%;
-	margin-top: -78px;
+    width: 80%;
+    margin-top: -78px;
 
-	text-align: center;
+    text-align: center;
 
-	border-radius: 8px;
-	background-color: #fff;
-	box-shadow: 0 0 3px #333;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 3px #333;
 }
 
 .delete_page_tips .tips h2
 {
-	font-size: 24px;
+    font-size: 24px;
 
-	margin: 15px 0 10px;
+    margin: 15px 0 10px;
 
-	color: #333;
+    color: #333;
 }
 
 .delete_page_tips .tips p
 {
-	font-size: 14px;
-	line-height: 2;
+    font-size: 14px;
+    line-height: 2;
 
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 
-	color: #000;
+    color: #000;
 }
 
 .delete_page_tips .tips .btn_group
 {
-	line-height: 40px;
+    line-height: 40px;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	width: 100%;
-	height: 40px;
+    width: 100%;
+    height: 40px;
 
-	border-top: 1px solid #ddd;
-	border-radius: 0 0 8px 8px;
-	background-color: #eee;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    background-color: #eee;
 }
 
 .delete_page_tips .tips .btn_group a
 {
-	font-size: 14px;
+    font-size: 14px;
 
-	float: left;
+    float: left;
 
-	box-sizing: border-box;
-	width: 50%;
+    box-sizing: border-box;
+    width: 50%;
 
-	color: #666;
+    color: #666;
 }
 
 .delete_page_tips .tips .btn_group a:first-child
 {
-	border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 .delete_page_tips .tips .btn_group a:active
 {
-	background-color: #ddd;
+    background-color: #ddd;
 }
 
 .add_page_container
 {
-	position: fixed;
-	z-index: 99;
-	top: 0;
-	bottom: 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
 
-	display: none;
+    display: none;
 
-	width: 100%;
+    width: 100%;
 
-	background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.6);
 }
 
 .add_page_container .add_page
 {
-	position: absolute;
-	bottom: 0;
+    position: absolute;
+    bottom: 0;
 
-	box-sizing: border-box;
-	width: 100%;
-	padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
 
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .add_page_container .add_page label
 {
-	font-size: 14px;
-	line-height: 35px;
+    font-size: 14px;
+    line-height: 35px;
 }
 
 .add_page_container .add_page .ybcommon_counter_item
 {
-	display: inline-block;
+    display: inline-block;
 
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 /*��ҳģʽ�±༭*/
 .edit_book_con
 {
-	position: fixed;
+    position: fixed;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	width: inherit;
-	height: 100%;
+    width: inherit;
+    height: 100%;
 
-	background: url('../img/m/makebook/makebook_bg.jpg') no-repeat 0;
-	background-size: cover;
+    background: url('../img/m/makebook/makebook_bg.jpg') no-repeat 0;
+    background-size: cover;
 }
 
 .edit_book_con .ybwechatheader_wrapper
 {
-	background-color: #251f1c;
+    background-color: #251f1c;
 }
 
 .edit_book_con .make_book_wrap .print,
 .edit_book_con .make_book_wrap .back
 {
-	font-size: .5rem;
-	line-height: 1.2rem;
+    font-size: .5rem;
+    line-height: 1.2rem;
 
-	position: absolute;
-	top: .5rem;
+    position: absolute;
+    top: .5rem;
 
-	width: 2.5rem;
-	height: 1.2rem;
-	margin: 0;
+    width: 2.5rem;
+    height: 1.2rem;
+    margin: 0;
 
-	text-align: center;
+    text-align: center;
 
-	color: #fff;
-	border-radius: 13px;
-	background-color: #fe7100;
+    color: #fff;
+    border-radius: 13px;
+    background-color: #fe7100;
 }
 
 .edit_book_con .make_book_wrap .back
 {
-	left: 10px;
+    left: 10px;
 }
 
 .edit_book_con .make_book_wrap .print
 {
-	right: 10px;
+    right: 10px;
 }
 
 .make_book_wrap .single_mode
 {
-	position: relative;
+    position: relative;
 
-	margin-left: auto;
+    margin-left: auto;
 }
 
 .single_mode .tpl
 {
-	position: relative;
+    position: relative;
 
-	width: 24.75rem;
-	height: 16.875rem;
-	margin: 0 auto;
+    width: 24.75rem;
+    height: 16.875rem;
+    margin: 0 auto;
 }
 
 .single_mode .tpl .double_con
 {
-	position: relative;
+    position: relative;
 
-	box-sizing: border-box;
-	width: 24.75rem;
-	height: 100%;
+    box-sizing: border-box;
+    width: 24.75rem;
+    height: 100%;
 }
 
 .single_mode .tpl.cover .double_con
 {
-	width: 24.25rem;
-	margin: 0 auto;
+    width: 24.25rem;
+    margin: 0 auto;
 
-	background-color: #ccc;
+    background-color: #ccc;
 }
 
 .single_mode .tpl.double .double_con
 {
-	background: #fff url('../img/m/makebook/innerpage_bg.jpg') no-repeat center;
-	background-size: cover;
+    background: #fff url('../img/m/makebook/innerpage_bg.jpg') no-repeat center;
+    background-size: cover;
 }
 
 .single_mode .tpl .double_con::after
 {
-	position: absolute;
-	top: 0;
-	left: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
 
-	width: 1.5rem;
-	height: 100%;
-	margin-left: -1.5rem;
+    width: 1.5rem;
+    height: 100%;
+    margin-left: -1.5rem;
 
-	content: ' ';
+    content: ' ';
 }
 
 .single_mode .tpl.cover .double_con::before
 {
-	position: absolute;
-	bottom: -.875rem;
-	left: 50%;
+    position: absolute;
+    bottom: -.875rem;
+    left: 50%;
 
-	width: .625rem;
-	height: 1rem;
-	margin-left: -.45rem;
+    width: .625rem;
+    height: 1rem;
+    margin-left: -.45rem;
 
-	content: ' ';
+    content: ' ';
 
-	background: url(../img/m/makebook/ribbon.png) no-repeat 0;
-	background-size: cover;
+    background: url(../img/m/makebook/ribbon.png) no-repeat 0;
+    background-size: cover;
 }
 
 .single_mode .tpl.cover .double_con::after
 {
-	width: 2.375rem;
-	height: 16.875rem;
-	margin-left: -.9rem;
+    width: 2.375rem;
+    height: 16.875rem;
+    margin-left: -.9rem;
 
-	background: url(../img/m/makebook/cover_spine.png) no-repeat 0;
-	background-size: cover;
+    background: url(../img/m/makebook/cover_spine.png) no-repeat 0;
+    background-size: cover;
 }
 
 .single_mode .tpl.double .double_con::after
 {
-	background: url(../img/m/makebook/inner_page_shadow.png) no-repeat 0;
-	background-size: cover;
+    background: url(../img/m/makebook/inner_page_shadow.png) no-repeat 0;
+    background-size: cover;
 }
 
 .single_mode .tpl .double_con .page
 {
-	position: relative;
+    position: relative;
 
-	float: left;
-	overflow: hidden;
+    float: left;
+    overflow: hidden;
 
-	width: 11.875rem;
-	height: 16.875rem;
+    width: 11.875rem;
+    height: 16.875rem;
 }
 
 .single_mode .tpl .double_con .page.left
 {
-	margin-left: .5rem;
+    margin-left: .5rem;
 }
 
 .single_mode .tpl.cover .double_con .page.left
 {
-	margin-left: .25rem;
+    margin-left: .25rem;
 }
 
 .single_mode .swiper-button-prev,
 .single_mode .swiper-button-next
 {
-	margin-top: -32px;
-	padding: 10px;
+    margin-top: -32px;
+    padding: 10px;
 
-	background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.6);
 }
 
 .single_mode .swiper-button-prev
 {
-	left: 0;
+    left: 0;
 
-	border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
 }
 
 .single_mode .swiper-button-next
 {
-	right: 0;
+    right: 0;
 
-	border-radius: 6px 0 0 6px;
+    border-radius: 6px 0 0 6px;
 }
 
 .edit_book_con .swiper-pagination
 {
-	position: relative;
+    position: relative;
 
-	display: inline-block;
+    display: inline-block;
 }
 
 .clickEdit
 {
-	font-size: 1rem;
-	line-height: 3rem;
+    font-size: 1rem;
+    line-height: 3rem;
 
-	position: absolute;
-	z-index: 2;
-	top: 50%;
-	left: 45%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 45%;
 
-	display: none;
+    display: none;
 
-	margin-top: -1.5rem;
-	padding: 0 10px;
+    margin-top: -1.5rem;
+    padding: 0 10px;
 
-	white-space: nowrap;
+    white-space: nowrap;
 
-	color: #fff;
-	border-radius: 8px;
-	background-color: rgba(0,0,0,.5);
+    color: #fff;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,.5);
 }
 
 .clickEdit a
 {
-	color: #fff;
+    color: #fff;
 }
 
 .clickEdit::before
 {
-	position: absolute;
-	top: 1rem;
-	left: -1.75rem;
+    position: absolute;
+    top: 1rem;
+    left: -1.75rem;
 
-	width: 1rem;
-	height: 1rem;
+    width: 1rem;
+    height: 1rem;
 
-	content: ' ';
+    content: ' ';
 
-	border-radius: 100%;
-	background-color: #fe7100;
+    border-radius: 100%;
+    background-color: #fe7100;
 }
 
 .clickEdit::after
 {
-	position: absolute;
-	top: .75rem;
-	left: -.75rem;
+    position: absolute;
+    top: .75rem;
+    left: -.75rem;
 
-	width: 0;
-	height: 0;
+    width: 0;
+    height: 0;
 
-	content: ' ';
+    content: ' ';
 
-	border-width: .8rem .8rem .8rem 0;
-	border-style: solid;
-	border-color: transparent rgba(0,0,0,.7) transparent transparent;
+    border-width: .8rem .8rem .8rem 0;
+    border-style: solid;
+    border-color: transparent rgba(0,0,0,.7) transparent transparent;
 }
 
 /*���ؽ�����*/
 .load_progress_wrap
 {
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	bottom: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
 
-	display: block;
+    display: block;
 
-	width: 100%;
+    width: 100%;
 
-	background: rgba(0,0,0,1);
+    background: rgba(0,0,0,1);
 }
 
 .load_progress_wrap .load
 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-	margin: -30px 0 0 -120px ;
+    margin: -30px 0 0 -120px ;
 }
 
 .load_progress_wrap .reload
 {
-	font-size: 14px;
+    font-size: 14px;
 
-	position: absolute;
-	top: 50%;
-	left: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-	display: none;
+    display: none;
 
-	width: 60px;
-	margin: -30px 0 0 -30px;
+    width: 60px;
+    margin: -30px 0 0 -30px;
 
-	text-align: center;
+    text-align: center;
 
-	color: #fff;
+    color: #fff;
 }
 
 .load_progress_wrap .reload span
 {
-	font-size: 36px;
-	line-height: 60px;
+    font-size: 36px;
+    line-height: 60px;
 
-	display: block;
+    display: block;
 
-	width: 100%;
-	height: 60px;
+    width: 100%;
+    height: 60px;
 
-	-webkit-transform: rotate(90deg);
-		-ms-transform: rotate(90deg);
-			transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
 
-	border-radius: 100%;
-	background-color: #70ca5d;
+    border-radius: 100%;
+    background-color: #70ca5d;
 }
 /*~~~~~~~~~~定制流程选择群体booklist_ia3.9.html~~~~~~~~~~*/
-.makebook_choosetype_container{
-	width: 100%;
-	background-color: rgba(0,0,0,0.6);
-	position: fixed;
-	top: 0;
-	z-index: 11;
-	overflow: auto;
+.makebook_choosetype_container
+{
+    position: fixed;
+    z-index: 11;
+    top: 0;
+
+    overflow: auto;
+
+    width: 100%;
+
+    background-color: rgba(0,0,0,.6);
 }
-.makebook_choosetype_wrapper .maintitle{
-	margin: 2.5rem 0;
-	text-align: center;
-	color: #fff;
-	font-size: 1.5rem;
+.makebook_choosetype_wrapper .maintitle
+{
+    font-size: 1.5rem;
+
+    margin: 2.5rem 0;
+
+    text-align: center;
+
+    color: #fff;
 }
-.makebook_choosetype_wrapper .maintitle span{
-	font-size: 1.7rem;
+.makebook_choosetype_wrapper .maintitle span
+{
+    font-size: 1.7rem;
 }
-.makebook_choosetype_wrapper .subtitle{
-	margin: 0 0 1rem 0;
-	text-align: center;
-	color: #fff;
-	font-size: 1rem;
+.makebook_choosetype_wrapper .subtitle
+{
+    font-size: 1rem;
+
+    margin: 0 0 1rem 0;
+
+    text-align: center;
+
+    color: #fff;
 }
-.makebook_choosetype_wrapper .subtitle span{
-	display: inline-block;
-	margin: 0 1rem;
-	width: 3rem;
-	height: 1px;
-	background-color: #fff;
-	vertical-align: middle;
+.makebook_choosetype_wrapper .subtitle span
+{
+    display: inline-block;
+
+    width: 3rem;
+    height: 1px;
+    margin: 0 1rem;
+
+    vertical-align: middle;
+
+    background-color: #fff;
 }
 
-.makebook_splist_wrapper>li {
-	display: inline-block;
-	margin: 0.57rem;
-	width: 4rem;
-	height: 4rem;
+.makebook_splist_wrapper > li
+{
+    display: inline-block;
+
+    width: 4rem;
+    height: 4rem;
+    margin: .57rem;
 }
 
-.makebook_splist_wrapper>li .title {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	border: 2px solid #fff;
-	text-align: center;
-	position: relative;
-	color: #fff;
-	vertical-align: middle;
+.makebook_splist_wrapper > li .title
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    vertical-align: middle;
+
+    color: #fff;
+    border: 2px solid #fff;
 }
 
-.makebook_splist_wrapper>.active .title {
-	border: 2px solid #62c878;
+.makebook_splist_wrapper > .active .title
+{
+    border: 2px solid #62c878;
 }
 
-.makebook_splist_wrapper .active .tips {
-	color: #999;
+.makebook_splist_wrapper .active .tips
+{
+    color: #999;
 }
 
-.makebook_stepcomponentlist_wrapper{
-	background-color: #fff;
+.makebook_stepcomponentlist_wrapper
+{
+    background-color: #fff;
 }
-.makebook_bookcomponent_item{
-	padding: 0.3rem;
-	width: 100%;
-	border-bottom: 1px solid #d6d6d6;
-	box-sizing: border-box;
-	position: relative;
+.makebook_bookcomponent_item
+{
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: .3rem;
+
+    border-bottom: 1px solid #d6d6d6;
 }
-.makebook_stepmainbtn_wrapper{
-	margin: 1rem 0 0 0;
-	width: 100%;
-	padding: 1rem 0;
-	box-shadow: 0 -2px 5px #999;
-	background-color: #fff;
+.makebook_stepmainbtn_wrapper
+{
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 1rem 0;
+
+    background-color: #fff;
+    box-shadow: 0 -2px 5px #999;
 }
-.makebook_stepmainbtn_wrapper a{
-	display: block;
-	margin: 0 auto;
+.makebook_stepmainbtn_wrapper a
+{
+    display: block;
+
+    margin: 0 auto;
 }
 /*.makebook_bookcomponent_item>div{
 	height: 1.5rem;
 }*/
-.makebook_bookcomponent_item .description{
-	width: 13rem;
-	color: #8b8b8b;
-	font-size: 0.65rem;
+.makebook_bookcomponent_item .description
+{
+    font-size: .65rem;
+
+    width: 13rem;
+
+    color: #8b8b8b;
 }
-.makebook_bookcomponent_item .common_switcher_item{
-	float: right;
+.makebook_bookcomponent_item .common_switcher_item
+{
+    float: right;
 }
-.makebook_bookcomponent_item .common_slider_wrapper{
-	width: 10rem;
-	position: absolute;
-	top: 1rem;
-	right: 0.8rem;
+.makebook_bookcomponent_item .common_slider_wrapper
+{
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+
+    width: 10rem;
 }
-.makebook_bookcomponent_item .subtitle{
-	margin: 0.3rem 0 0 0;
-	padding: 0.3rem 0.3rem 0 0.3rem;
-	width: 100%;
-	box-sizing: border-box;
+.makebook_bookcomponent_item .subtitle
+{
+    box-sizing: border-box;
+    width: 100%;
+    margin: .3rem 0 0 0;
+    padding: .3rem .3rem 0 .3rem;
 }
-.makebook_bookcomponent_item .subtitle label{
-	font-size: 0.7rem;
+.makebook_bookcomponent_item .subtitle label
+{
+    font-size: .7rem;
 }
-.makebook_bookcomponent_item .setupinvitcard.subtitle{
-	display: none;
+.makebook_bookcomponent_item .setupinvitcard.subtitle
+{
+    display: none;
 }
-.makebook_bookcomponent_item .title h6{
-	display: inline-block;
-	font-size: 0.8rem;
-	line-height: 1.5rem;
+.makebook_bookcomponent_item .title h6
+{
+    font-size: .8rem;
+    line-height: 1.5rem;
+
+    display: inline-block;
 }
-.makebook_bookcomponent_item .subtitle h6{
-	display: inline-block;
-	font-size: 0.8rem;
-	line-height: 1.5rem;
+.makebook_bookcomponent_item .subtitle h6
+{
+    font-size: .8rem;
+    line-height: 1.5rem;
+
+    display: inline-block;
 }
 
-.makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i, .makebook_splist_wrapper .active .title label{
-	color: #62c878;
+.makebook_splist_wrapper .active .makebook_compicon_item span, .makebook_splist_wrapper .active .makebook_compicon_item i, .makebook_splist_wrapper .active .title label
+{
+    color: #62c878;
 }
-.makebook_compicon_item {
-	display: inline-block;
+.makebook_compicon_item
+{
 /*	margin: 0.2rem 0 0 0;*/
-	font-size: 0.8rem;
-	color: #404040;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 2rem;
-	vertical-align: middle;
+    font-size: .8rem;
+    line-height: 2rem;
+
+    display: inline-block;
+
+    text-align: center;
+    vertical-align: middle;
+
+    color: #404040;
+    border-radius: 50%;
 }
 
-.makebook_compicon_item span {
-	color: #fff;
+.makebook_compicon_item span
+{
+    color: #fff;
 }
 
-.makebook_compicon_item .frame {
-	display: block;
-	margin: 0.5rem 0 0 0;
-	color: #fff;
-	vertical-align: middle;
-	font-size: 1.8rem;
+.makebook_compicon_item .frame
+{
+    font-size: 1.8rem;
+
+    display: block;
+
+    margin: .5rem 0 0 0;
+
+    color: #fff;
 }
 
 
 
-.makebook_splist_wrapper .title label {
-	display: block;
+.makebook_splist_wrapper .title label
+{
+    font-size: .5rem;
+
+    display: block;
+
 /*	margin: 0.5rem 0 0 0;*/
-	cursor: pointer;
-	text-align: center;
-	font-size: 0.5rem;
+    cursor: pointer;
+    text-align: center;
 }
 
-.makebook_mark_item {
-	display: none;
-	line-height: 0.7rem;
-	font-size: 0.4rem;
+.makebook_mark_item
+{
+    font-size: .4rem;
+    line-height: .7rem;
+
+    display: none;
 }
 
-.makebook_splist_wrapper .actived a {
-	margin: 0;
-	background-color: #90c132;
-	border: 2px solid #90c132;
+.makebook_splist_wrapper .actived a
+{
+    margin: 0;
+
+    border: 2px solid #90c132;
+    background-color: #90c132;
 }
 
 /*.title:hover {
 	border: 1px solid #999999;
 }*/
 
-.makebook_splist_wrapper .actived .title:hover {
-	border: 2px solid #90c132;
+.makebook_splist_wrapper .actived .title:hover
+{
+    border: 2px solid #90c132;
 }
 
 .makebook_splist_wrapper .actived .makebook_mark_item,
-.makebook_splist_wrapper .actived .title:hover .makebook_mark_item {
-	display: block;
-	border-color: transparent #a6cc5b #a6cc5b transparent
+.makebook_splist_wrapper .actived .title:hover .makebook_mark_item
+{
+    display: block;
+
+    border-color: transparent #a6cc5b #a6cc5b transparent;
 }
 
-.active>.makebook_mark_item {
-	display: block;
-	color: #fff;
-	border-color: transparent #62c878 #62c878 transparent;
+.active > .makebook_mark_item
+{
+    display: block;
+
+    color: #fff;
+    border-color: transparent #62c878 #62c878 transparent;
 }
 
-.makebook_choosetype_wrapper .makebook_splist_wrapper{
-	padding: 0 0 0.5rem 0;
-	border-bottom: 1px solid #bfbfbf;
+.makebook_choosetype_wrapper .makebook_splist_wrapper
+{
+    padding: 0 0 .5rem 0;
+
+    border-bottom: 1px solid #bfbfbf;
 }
-.makebook_choosetype_wrapper .makebook_splist_wrapper .active:after{
-	content: '';
-	display: block;
-	margin: 0.4rem auto 0;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0 0.4rem 0.4rem 0.4rem;
-	border-color: transparent transparent #fff transparent;
+.makebook_choosetype_wrapper .makebook_splist_wrapper .active:after
+{
+    display: block;
+
+    width: 0;
+    height: 0;
+    margin: .4rem auto 0;
+
+    content: '';
+
+    border-width: 0 .4rem .4rem .4rem;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
 }
-.makebook_mark_item {
-	display: none;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0.7rem;
-	color: #fff;
+.makebook_mark_item
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    display: none;
+
+    width: 0;
+    height: 0;
+
+    color: #fff;
+    border-width: .7rem;
+    border-style: solid;
 }
 
-.active .makebook_mark_item {
-	display: block;
-	color: #fff;
-	border-color: transparent #8cc04e #8cc04e transparent;
+.active .makebook_mark_item
+{
+    display: block;
+
+    color: #fff;
+    border-color: transparent #8cc04e #8cc04e transparent;
 }
 
-.makebook_typedescribe_wrapper li{
-	padding: 1rem;
-	width: 100%;
-	color: #fff;
-	box-sizing: border-box;
+.makebook_typedescribe_wrapper li
+{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+
+    color: #fff;
 }
-.makebook_typedescribe_wrapper li p{
-	font-size: 0.5rem;
+.makebook_typedescribe_wrapper li p
+{
+    font-size: .5rem;
 }
-.makebook_choosetype_wrapper .makebook_typedescribe_wrapper{
-	min-height: 4rem;
-	border-bottom: 1px solid #bfbfbf;
+.makebook_choosetype_wrapper .makebook_typedescribe_wrapper
+{
+    min-height: 4rem;
+
+    border-bottom: 1px solid #bfbfbf;
 }
-.makebook_choosetype_wrapper .makebook_typedescribe_wrapper li{
-	display: none;
+.makebook_choosetype_wrapper .makebook_typedescribe_wrapper li
+{
+    display: none;
 }
-.makebook_choosetype_wrapper .makebook_typedescribe_wrapper .active{
-	display: block;
+.makebook_choosetype_wrapper .makebook_typedescribe_wrapper .active
+{
+    display: block;
 }
-.makebook_choosetype_wrapper .button{
-	display: block;
-	margin: 2rem auto 0.5rem;
+.makebook_choosetype_wrapper .button
+{
+    display: block;
+
+    margin: 2rem auto .5rem;
 }
 
 /*~~~~~~~~~~makebook_step3_setup_3.13.html~~~~~~~~~~*/
-.makebook_checktag_wrapper{
-	overflow: hidden;
-	text-align: left;
+.makebook_checktag_wrapper
+{
+    overflow: hidden;
+
+    text-align: left;
 }
-.makebook_checktag_item {
-	display: inline-block;
-	min-width: 4.3rem;
-	font-size: 0.75rem;
-	background-color: #fff;
-	overflow: hidden;
+.makebook_checktag_item
+{
+    font-size: .75rem;
+
+    display: inline-block;
+    overflow: hidden;
+
+    min-width: 4.3rem;
+
+    background-color: #fff;
 }
 
-.makebook_checktag_item a {
-	display: block;
-	height: 1.5rem;
-	line-height: 1.5rem;
-	border: 1px solid #999;
-	text-align: center;
-	position: relative;
-	transition: all 0.2s;
+.makebook_checktag_item a
+{
+    line-height: 1.5rem;
+
+    position: relative;
+
+    display: block;
+
+    height: 1.5rem;
+
+    transition: all .2s;
+    text-align: center;
+
+    border: 1px solid #999;
 }
 
-.makebook_checktag_item a:hover {
-	border: 1px solid #999;
-	transition: all 0.2s;
+.makebook_checktag_item a:hover
+{
+    transition: all .2s;
+
+    border: 1px solid #999;
 }
 
-.makebook_checktag_item.active a {
-	border: 1px solid #8cc04e;
-	transition: all 0.2s;
+.makebook_checktag_item.active a
+{
+    transition: all .2s;
+
+    border: 1px solid #8cc04e;
 }
 
-.makebook_checktag_item span {
-	display: block;
-	line-height: 0.1rem;
-	position: absolute;
-	right: -0.3rem;
-	bottom: -0.4rem;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0.8rem;
-	border-color: transparent #8cc04e #8cc04e transparent;
-	color: #fff;
-	text-align: center;
-	font-size:0.5rem;
-	opacity: 0;
-	transition: all 0.2s;
+.makebook_checktag_item span
+{
+    font-size: .5rem;
+    line-height: .1rem;
+
+    position: absolute;
+    right: -.3rem;
+    bottom: -.4rem;
+
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    transition: all .2s;
+    text-align: center;
+
+    opacity: 0;
+    color: #fff;
+    border-width: .8rem;
+    border-style: solid;
+    border-color: transparent #8cc04e #8cc04e transparent;
 }
 
-.makebook_checktag_item.active span {
-	opacity: 1;
-	transition: all 0.2s;
+.makebook_checktag_item.active span
+{
+    transition: all .2s;
+
+    opacity: 1;
 }
-.makebook_checktag_item label {
-	cursor: pointer;
-	font-size: 0.7rem;
+.makebook_checktag_item label
+{
+    font-size: .7rem;
+
+    cursor: pointer;
 }
-.makebook_checktag_item.disabled label{
-	color: #bbb;
+.makebook_checktag_item.disabled label
+{
+    color: #bbb;
 }
-.makebook_checktag_wrapper .makebook_checktag_item{
-	margin: 0.2rem 0.3rem;
+.makebook_checktag_wrapper .makebook_checktag_item
+{
+    margin: .2rem .3rem;
 }
-.makebook_iccustomoption_wrapper .common_custonoption_item{
-	margin: 0.5rem auto;
+.makebook_iccustomoption_wrapper .common_custonoption_item
+{
+    margin: .5rem auto;
 }
 
 /*~~~~~~~~~~makebook_invitcardinfo_wrapper~~~~~~~~~~*/
@@ -1105,318 +1223,454 @@
 	font-size: 13px;
 	position: relative;
 }
-.makebook_invitcardinfo_wrapper .title{
-	padding: 3rem 0 0 0.5rem;
-	text-align: center;
-	font-size: 0.8rem;
-	color: #aace68;
-}
-.makebook_invitcardinfo_wrapper .common_share_wrapper{
-	margin: 2.5rem auto 0;
-	width: 90%;
-}
-.makebook_invitcardinfo_wrapper .closebutton_img{
-	left: 0;
-	top: -0.4rem;
-}
-.makebook_invitcardinfo_wrapper .edit{
-	position: absolute;
-	top: 1.2rem;
-	right: 2rem;
-	color: #008bf7;
-	font-size: 0.71rem;
-}
-.makebook_icilist_wrapper{
-	margin: 0.5rem auto 0;
-	width: 10.5rem;
-	height: 11rem;
-	overflow: auto;
-}
-.makebook_icilist_wrapper>li{
-	margin: 0 auto;
-	padding: 0.5rem 0;
-	width: 100%;
-	border-bottom: 1px dashed #999;
-	color: #999;
-	font-size: 0.4rem;
-}
-.makebook_icilist_wrapper li h5{
-	display: inline-block;
-	font-size: 0.4rem;
-}
-.makebook_icbasicinfotag_wrapper li{
-	display: inline-block;
-	margin: 0.25rem 0;
-	padding: 0 0.5rem;
-	height: 1rem;
-	line-height: 1rem;
-	background: #eeeeee;
-	color: #1e1e1e;
-	border-radius: 1rem;
-	font-size: 0.5rem;
-}
-.makebook_icbasicinfo_wrapper{
-	display: inline-block;
-	vertical-align: top;
-}
-.makebook_icbasicinfo_wrapper li{
-	display: block;
-	margin: 0 0 0 0.5rem;
+.makebook_invitcardinfo_wrapper
+{
+    font-size: 13px;
 
+    position: relative;
+
+    width: 14rem;
+    height: 23rem;
+    margin: 10px auto;
+
+    background-image: url(../img/m/makebook/invitcardevelop.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
-.makebook_icbasicinfo_wrapper li a{
-	color: #55b9ec;
+.makebook_invitcardinfo_wrapper .title
+{
+    font-size: .8rem;
+
+    padding: 3rem 0 0 .5rem;
+
+    text-align: center;
+
+    color: #aace68;
 }
-.makebook_icbasicinfo_wrapper li a:hover{
-	color: #387C9E;
+.makebook_invitcardinfo_wrapper .common_share_wrapper
+{
+    width: 90%;
+    margin: 2.5rem auto 0;
+}
+.makebook_invitcardinfo_wrapper .closebutton_img
+{
+    top: -.4rem;
+    left: 0;
+}
+.makebook_invitcardinfo_wrapper .edit
+{
+    font-size: .71rem;
+
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+
+    color: #008bf7;
+}
+.makebook_icilist_wrapper
+{
+    overflow: auto;
+
+    width: 10.5rem;
+    height: 11rem;
+    margin: .5rem auto 0;
+}
+.makebook_icilist_wrapper > li
+{
+    font-size: .4rem;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: .5rem 0;
+
+    color: #999;
+    border-bottom: 1px dashed #999;
+}
+.makebook_icilist_wrapper li h5
+{
+    font-size: .4rem;
+
+    display: inline-block;
+}
+.makebook_icbasicinfotag_wrapper li
+{
+    font-size: .5rem;
+    line-height: 1rem;
+
+    display: inline-block;
+
+    height: 1rem;
+    margin: .25rem 0;
+    padding: 0 .5rem;
+
+    color: #1e1e1e;
+    border-radius: 1rem;
+    background: #eee;
+}
+.makebook_icbasicinfo_wrapper
+{
+    display: inline-block;
+
+    vertical-align: top;
+}
+.makebook_icbasicinfo_wrapper li
+{
+    display: block;
+
+    margin: 0 0 0 .5rem;
+}
+.makebook_icbasicinfo_wrapper li a
+{
+    color: #55b9ec;
+}
+.makebook_icbasicinfo_wrapper li a:hover
+{
+    color: #387c9e;
 }
 /*~~~~~~~~~~ia_friend3.13.html~~~~~~~~~~*/
 
-.makebook_friendlist_wrapper{
-    padding: 0 0 20px 0;
-    min-height: 500px;
-    overflow: hidden;
+.makebook_friendlist_wrapper
+{
 /*  border: 1px solid #b8c4cf;*/
     position: relative;
     z-index: 1;
+
+    overflow: hidden;
+
+    min-height: 500px;
+    padding: 0 0 20px 0;
 }
 
-.makebook_invitnamecard_item {
+.makebook_invitnamecard_item
+{
     position: relative;
-    margin: 0.7rem auto;
+
     width: 15.5rem;
     height: 5.5rem;
+    margin: .7rem auto;
+
     cursor: pointer;
 }
-.makebook_invitnamecard_item .bg{
-    width: 100%;
-    height: 100%;
+.makebook_invitnamecard_item .bg
+{
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
-    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
     background-image: url(../img/makebook/invitenamecard_bg.png);
     background-size: 100% 100%;
 }
-.makebook_invitnamecard_item .backplane{
-    content: '';
+.makebook_invitnamecard_item .backplane
+{
+    position: absolute;
+    z-index: 0;
+    top: .2rem;
+    left: .3rem;
+
     display: block;
+
     width: 15rem;
     height: 5rem;
+
+    content: '';
+    -webkit-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+
     background: #fff;
-    box-shadow: 0 0.2rem 1rem #999;
-    position: absolute;
-    top: 0.2rem;
-    left: 0.3rem;
-    z-index: 0;
-    transform:rotate(-2deg);
+    box-shadow: 0 .2rem 1rem #999;
 }
-.makebook_invitnamecard_item:hover .trash{
+.makebook_invitnamecard_item:hover .trash
+{
     display: block;
 }
-.makebook_invitnamecard_item .trash{
-    display: none;
+.makebook_invitnamecard_item .trash
+{
     position: absolute;
-    top:0.5rem;
-    right: 0.5rem;
+    top: .5rem;
+    right: .5rem;
+
+    display: none;
+
     color: #969696;
 }
-.makebook_invitnamecard_item .trash:hover{
+.makebook_invitnamecard_item .trash:hover
+{
     color: #333;
 }
 
-.makebook_invitnamecard_item .pop {
-    display: inline-block;
-    font-size: 0.3rem;
-    line-height: 0.8rem;
+.makebook_invitnamecard_item .pop
+{
+    font-size: .3rem;
+    line-height: .8rem;
+
     position: relative;
-    bottom: 0.6rem;
     right: 0;
-    width: 0.8rem;
-    height: 0.8rem;
+    bottom: .6rem;
+
+    display: inline-block;
+
+    width: .8rem;
+    height: .8rem;
+
     text-align: center;
+
     color: #fff;
     border-radius: 50%;
     background-color: #40acf7;
 }
 
-.makebook_invitnamecard_item .pop.friend_create {
+.makebook_invitnamecard_item .pop.friend_create
+{
     background-color: #ed4b49;
 }
 
-.makebook_invitnamecard_item .pop.friend_manage {
+.makebook_invitnamecard_item .pop.friend_manage
+{
     background-color: #8cd419;
 }
 
-.makebook_invitnamecard_item .message_btn {
+.makebook_invitnamecard_item .message_btn
+{
     position: absolute;
-    top: 0.2rem;
-    right: 0.25rem;
+    top: .2rem;
+    right: .25rem;
 }
 
-.makebook_invitnamecard_item .message_btn a {
-    font-size: 0.6rem;
+.makebook_invitnamecard_item .message_btn a
+{
+    font-size: .6rem;
+
     color: #fec43c;
 }
 
-.makebook_invitnamecard_item .friend_head {
+.makebook_invitnamecard_item .friend_head
+{
+    position: relative;
+    z-index: 2;
+
     display: inline-block;
+
     width: 4rem;
     height: 4rem;
-    margin: 0.5rem;
-    border: 0.2rem solid #fff;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.2rem 0.4rem #ccc;
+    margin: .5rem;
+
     cursor: pointer;
-    background-image: url(../img/user_default_head.png);
-    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
     vertical-align: top;
-    z-index: 2;
-    position: relative;
+
+    border: .2rem solid #fff;
+    border-radius: .25rem;
+    background-image: url(../img/user_default_head.png);
+    box-shadow: 0 .2rem .4rem #ccc;
 /*    position: absolute;
     bottom: 4rem;
     z-index: 2;*/
 }
 
-.makebook_invitnamecard_item .friend_info {
+.makebook_invitnamecard_item .friend_info
+{
+    font-size: .6rem;
+    line-height: 1.5rem;
+
+    position: relative;
+    z-index: 2;
+
     display: inline-block;
-    margin: 0 0 0 0.25rem;
-    padding: 0 0 0.5rem 0;
+
     width: 10rem;
     min-height: 5.5rem;
-    font-size: 0.6rem;
-    line-height: 1.5rem;
+    margin: 0 0 0 .25rem;
+    padding: 0 0 .5rem 0;
+
     color: #999;
     border-bottom: 1px solid #e8e8e8;
-    z-index: 2;
-    position: relative;
 }
-.makebook_invitnamecard_item .friend_info ul{
-/*    margin: 0 0 0 5.5rem;*/
-}
-.makebook_invitnamecard_item .friend_info li{
-    font-size: 0.6rem;
+/* .makebook_invitnamecard_item .friend_info ul
+{
+   margin: 0 0 0 5.5rem;
+}*/
+.makebook_invitnamecard_item .friend_info li
+{
+    font-size: .6rem;
     line-height: 1rem;
+
     color: #333;
 }
 
-.makebook_invitnamecard_item .friend_info .info1 {
-    display: inline-block;
-    margin: 0.7rem 0 0.4rem 0;
-    font-size: 0.9rem;
-    color: #666;
+.makebook_invitnamecard_item .friend_info .info1
+{
+    font-size: .9rem;
+
     position: relative;
+
+    display: inline-block;
+
+    margin: .7rem 0 .4rem 0;
+
+    color: #666;
 }
 
-.makebook_invitnamecard_item .friend_info .info1 .ybicon-male {
+.makebook_invitnamecard_item .friend_info .info1 .ybicon-male
+{
     color: #53bdf9;
 }
 
-.makebook_invitnamecard_item .friend_info .info1 .ybicon-female {
+.makebook_invitnamecard_item .friend_info .info1 .ybicon-female
+{
     color: #f36ea6;
 }
 
-.makebook_invitnamecard_item .friend_info .info1 span.color_b {
+.makebook_invitnamecard_item .friend_info .info1 span.color_b
+{
     color: #53b5ec;
 }
-.makebook_invitnamecard_item .socialinfo{
-    height: 1.1rem;
+.makebook_invitnamecard_item .socialinfo
+{
     font-size: 12px;
-    color: #999999;
-    z-index: 2;
+
     position: absolute;
+    z-index: 2;
     top: 0;
     right: 0;
+
+    height: 1.1rem;
+
+    color: #999;
 }
-.makebook_invitnamecard_item .socialinfo ul{
+.makebook_invitnamecard_item .socialinfo ul
+{
     overflow: hidden;
+
     text-align: right;
 }
-.makebook_invitnamecard_item .socialinfo ul li{
+.makebook_invitnamecard_item .socialinfo ul li
+{
     display: inline-block;
-    margin: 0 0.5rem 0 0;
+
+    margin: 0 .5rem 0 0;
+
     text-align: right;
 }
-.makebook_invitnamecard_item .socialinfo ul li label{
+.makebook_invitnamecard_item .socialinfo ul li label
+{
+    font-size: .6rem;
+
     color: #bac7d1;
-    font-size: 0.6rem;
 }
-.makebook_invitnamecard_item .contact_info{
-    margin: 0.5rem 0;
+.makebook_invitnamecard_item .contact_info
+{
+    margin: .5rem 0;
 }
-.makebook_invitnamecard_item .contact_info ul li{
+.makebook_invitnamecard_item .contact_info ul li
+{
     float: left;
 }
 
 /*~~~~~~~~~~ia_friend_detail3.13.html~~~~~~~~~~*/
-.makebook_friendavatar_wrapper{
-	width: 100%;
-	height: 8rem;
-	overflow: hidden;
+.makebook_friendavatar_wrapper
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: 8rem;
 }
-.makebook_friendavatar_wrapper .avatar {
-	text-align: center;
-	position: relative;
-	z-index: 1;
+.makebook_friendavatar_wrapper .avatar
+{
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
 }
-.makebook_friendavatar_wrapper .avatar img{
-	display: block;
-	margin: 1rem auto 0.5rem;
-	width: 5rem;
-	height: 5rem;
-	border-radius: 50%;
-	border: 0.1rem solid #fff;
-	box-shadow: -1px 1px 5px #999;
+.makebook_friendavatar_wrapper .avatar img
+{
+    display: block;
+
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem auto .5rem;
+
+    border: .1rem solid #fff;
+    border-radius: 50%;
+    box-shadow: -1px 1px 5px #999;
 }
-.makebook_friendavatar_wrapper .avatar h6{
-	color: #000;
-	font-size: 1rem;
-	text-shadow: 1px 1px #ccc;
+.makebook_friendavatar_wrapper .avatar h6
+{
+    font-size: 1rem;
+
+    color: #000;
+    text-shadow: 1px 1px #ccc;
 }
-.makebook_friendavatar_wrapper .bg{
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	-webkit-filter: blur(10px); /* Chrome, Opera */
+.makebook_friendavatar_wrapper .bg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-filter: blur(10px); /* Chrome, Opera */
        -moz-filter: blur(10px);
         -ms-filter: blur(10px);    
             filter: blur(10px);
 }
-.friend_detail_wrapper{
+.friend_detail_wrapper
+{
     position: relative;
+
     display: block;
+
     width: 100%;
     height: auto;
+
     background-color: #fff;
 }
 
-.makebook_fdblock_wrapper{
+.makebook_fdblock_wrapper
+{
+    font-size: 13px;
+
     width: 100%;
-	border-top: 1px solid #d2d2d2;
-	color: #333;
-	font-size: 13px;
+
+    color: #333;
+    border-top: 1px solid #d2d2d2;
 }
-.friend_detail_wrapper .makebook_fdblock_wrapper:first-of-type{
+.friend_detail_wrapper .makebook_fdblock_wrapper:first-of-type
+{
     border-top: 0;
 }
-.makebook_fdblock_wrapper .maintitle{
-	display: inline-block;
-	font-size: 19px;
+.makebook_fdblock_wrapper .maintitle
+{
+    font-size: 19px;
+
+    display: inline-block;
 }
 
 .makebook_frienddetail_wrapper .closebtn,
-.makebook_fdblock_wrapper .closebtn{
-	float: right;
-	font-size: 24px;
+.makebook_fdblock_wrapper .closebtn
+{
+    font-size: 24px;
+
+    float: right;
 }
-.makebook_fdblock_wrapper .subtitle{
-	padding: 0.5rem 0.3rem;
-	margin: 0;
-	line-height: 1rem;
-	background-color: #eeeeee;
+.makebook_fdblock_wrapper .subtitle
+{
+    line-height: 1rem;
+
+    margin: 0;
+    padding: .5rem .3rem;
+
+    background-color: #eee;
 }
 .makebook_fdinfo_wrapper{
 	overflow: hidden;
@@ -1432,8 +1686,9 @@
 	font-weight: lighter;
 	color: #999;
 }
-.makebook_fdphoto_wrapper{
-	display: inline-block;
+.makebook_fdphoto_wrapper
+{
+    display: inline-block;
 }
 .makebook_fdphoto_wrapper li{
 	display: inline-block;
@@ -1445,17 +1700,20 @@
 	vertical-align: middle;
 	position: relative;
 }
-.makebook_fdphoto_wrapper li img{
-	display: inline-block;
-	width: 100%;
+.makebook_fdphoto_wrapper li img
+{
+    display: inline-block;
+
+    width: 100%;
 }
 .makebook_fdtopic_wrapper li{
 	padding: 0.5rem 0.25rem;
 	border-bottom: 1px dashed #dddddd;
 	line-height: 25px;
 }
-.makebook_fdtopic_wrapper li:last-child{
-	border: none;
+.makebook_fdtopic_wrapper li:last-child
+{
+    border: none;
 }
 .makebook_fdtopic_wrapper h6{
 	margin: 0;
@@ -1467,7 +1725,6 @@
 .makebook_fdtopic_wrapper p a{
 	color: #a1c2cf;
 }
-
 
 
 
@@ -1501,8 +1758,4 @@
 .makebook_friendbtn_item .faded{
 	color: #999;
 	background-color: #eeeeee;
-}
-.makebook_friendbtn_item .faded:hover{
-	color: #666;
-	background-color: #ccc;
 }

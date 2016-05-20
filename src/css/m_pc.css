@@ -1362,42 +1362,58 @@
     color: #ff3404;
 }
 
-.order_management .filter_wrap{
+.order_management .filter_wrap
+{
+    line-height: 45px;
+
     position: relative;
+
     width: 100%;
     height: 45px;
-    line-height: 45px;
-    background-color: #fff;
+
     border-bottom: 1px solid #d1d1d1;
+    background-color: #fff;
 }
 
-.order_management .filter_wrap .filter_order{
-    position: relative;
-    float: left;
-    width: 50%;
-    text-align: center;
+.order_management .filter_wrap .filter_order
+{
     font-size: 14px;
+
+    position: relative;
+
+    float: left;
+
+    width: 50%;
+
+    text-align: center;
 }
 
-.order_management .filter_wrap .filter_order:first-child{
-    border-right: 1px solid #ddd;
+.order_management .filter_wrap .filter_order:first-child
+{
     box-sizing: border-box;
+
+    border-right: 1px solid #ddd;
 }
 
-.order_management .filter_wrap .filter_order a{
+.order_management .filter_wrap .filter_order a
+{
     color: #333;
 }
 
-.filter_wrap .filter_order label{
+.filter_wrap .filter_order label
+{
     font-weight: bold;
+
     margin: 0;
 }
 
-.order_management .filter_wrap .filter_order ul{
+.order_management .filter_wrap .filter_order ul
+{
     position: absolute;
-    left: 50%;
-    margin-left: -58px;
     z-index: 9;
+    left: 50%;
+
+    margin-left: -58px;
 }
 
 .order_management .orderinfo .info
@@ -1532,16 +1548,21 @@
     color: #ff3404;
 }
 
-.myorder .orderinfo .order_time{
-    width: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
-    text-align: right;
-    height: 25px;
+.myorder .orderinfo .order_time
+{
     line-height: 26px;
+
     float: none!important;
-    background-color: #efeff4;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 25px;
+    padding: 0 10px;
+
+    text-align: right;
+
     border-bottom: 1px solid #dcdcdc;
+    background-color: #efeff4;
 }
 
 .myorder .order_footer
@@ -1552,6 +1573,7 @@
 
     margin: 0 10px;
     padding: 0;
+
     border-top: 1px solid #ddd;
 }
 
@@ -1560,7 +1582,8 @@
     float: left;
 }
 
-.myorder .order_btns{
+.myorder .order_btns
+{
     text-align: center;
 }
 
@@ -1572,16 +1595,15 @@
     display: inline-block;
 
     box-sizing: border-box;
+    width: 70px;
     height: 28px;
+    margin: 8px 4px;
+    padding: 0 5px;
 
     text-align: center;
     text-decoration: none;
 
     color: #666;
-    width: 70px;
-    margin: 8px 4px;
-    padding: 0 5px;
-
     border: 1px solid #ddd;
     border-radius: 2px;
 }
@@ -1590,8 +1612,8 @@
 {
     .myorder .order_footer .order_btns a
     {
-        min-width: 60px;
         width: auto;
+        min-width: 60px;
     }
 }
 
@@ -1641,14 +1663,17 @@
 
 .orderinfo .product table td
 {
-    vertical-align: top;
     text-align: center;
+    vertical-align: top;
 }
-.orderinfo .product table td:first-child{
+.orderinfo .product table td:first-child
+{
     width: 110px;
 }
-@media only screen and (max-width: 320px){
-    .orderinfo .product table td:first-child{
+@media only screen and (max-width: 320px)
+{
+    .orderinfo .product table td:first-child
+    {
         width: 90px;
     }
 }
@@ -1660,17 +1685,21 @@
 }
 .photoprint .order_confirm label
 {
-    display: block;
-    line-height: 20px;
-    text-align: left;
-    margin: 0;
     font-size: 14px;
+    line-height: 20px;
+
+    display: block;
+
+    margin: 0;
+
+    text-align: left;
 }
 .photoprint .order_confirm li
 {
     line-height: 20px;
 
     height: 20px;
+
     text-align: left;
 }
 
@@ -1759,18 +1788,16 @@
 
 .opd_orderinfoprice_item
 {
-
-
-    text-align: right;
-
-    color: #ff3404;
     font-size: 14px;
     font-weight: bold;
     line-height: 20px;
 
     width: 15%;
 
+    text-align: right;
     vertical-align: top;
+
+    color: #ff3404;
 }
 
 .opd_paymentsuccess_wrapper, .opd_paymentfailed_wrapper
@@ -4567,6 +4594,7 @@
 
     display: block;
 
+    box-sizing: border-box;
     width: 100%;
     margin: 0 0 10px;
     padding: 0;
@@ -4574,50 +4602,61 @@
     border-top: 1px solid #d1d1d1;
     border-bottom: 1px solid #d1d1d1;
     background-color: #fff;
-    box-sizing: border-box;
 }
 
-.bookshelf .team.selected{
+.bookshelf .team.selected
+{
     border: 2px solid #3498db;
     border-radius: 2px;
 }
 
-.bookshelf .photo.selected{
+.bookshelf .photo.selected
+{
     border: 2px solid #fa0;
     border-radius: 2px;
 }
 
-.bookshelf .templet.selected{
+.bookshelf .templet.selected
+{
     border: 2px solid #ff5220;
     border-radius: 2px;
 }
 
-.bookshelf .grid .ybicon-ok{
-    display: none;
+.bookshelf .grid .ybicon-ok
+{
+    line-height: 10px;
+
     position: absolute;
     right: 0;
     bottom: 0;
+
+    display: none;
+
     width: 0;
     height: 0;
+
     color: #fff;
-    line-height: 10px;
-    border-style: solid;
     border-width: 15px;
+    border-style: solid;
 }
 
-.bookshelf .team .ybicon-ok{
+.bookshelf .team .ybicon-ok
+{
     border-color: transparent #3498db #3498db transparent ;
 }
 
-.bookshelf .photo .ybicon-ok{
+.bookshelf .photo .ybicon-ok
+{
     border-color: transparent #fa0 #fa0 transparent ;
 }
 
-.bookshelf .templet .ybicon-ok{
+.bookshelf .templet .ybicon-ok
+{
     border-color: transparent #ff5220 #ff5220 transparent ;
 }
 
-.bookshelf .grid.selected .ybicon-ok{
+.bookshelf .grid.selected .ybicon-ok
+{
     display: block;
 }
 

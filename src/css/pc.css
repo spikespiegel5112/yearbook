@@ -590,8 +590,10 @@
     margin-left: 15px;
 }
 
-.bookshelf_wrap .filter_wrap .check_all{
+.bookshelf_wrap .filter_wrap .check_all
+{
     float: left;
+
     margin-left: 10px;
 }
 
@@ -616,11 +618,14 @@
 {
     font-size: 18px;
     line-height: 36px;
+
     float: right;
 }
 
-.bookshelf_wrap .filter_wrap .btns a{
+.bookshelf_wrap .filter_wrap .btns a
+{
     display: inline-block;
+
     width: 145px;
     height: 36px;
     margin: 12px 10px 12px 0;
@@ -631,7 +636,8 @@
     border-radius: 4px;
 }
 
-.bookshelf_wrap .filter_wrap .btns .new_book{
+.bookshelf_wrap .filter_wrap .btns .new_book
+{
     background-color: #ff696a;
 }
 
@@ -645,14 +651,17 @@
     background-color: #d45b5c;
 }
 
-.bookshelf_wrap .filter_wrap .btns .printings{
+.bookshelf_wrap .filter_wrap .btns .printings
+{
     background-color: #90c132;
 }
 
-.bookshelf_wrap .filter_wrap .btns .printings.disabled{
-    background-color: #c9c9c9;
+.bookshelf_wrap .filter_wrap .btns .printings.disabled
+{
     cursor: default;
     pointer-events: none;
+
+    background-color: #c9c9c9;
 }
 
 .bookshelf_wrap .bookshelf
@@ -675,10 +684,12 @@
     box-shadow: 0 1px 0 #fff;
 }
 
-.bookshelf_wrap .bookshelf .grid .icheckbox_minimal-green{
+.bookshelf_wrap .bookshelf .grid .icheckbox_minimal-green
+{
     position: absolute;
     top: 71px;
     left: 10px;
+
     background-color: #fff;
 }
 
@@ -705,6 +716,7 @@
         -ms-filter: grayscale(100%);
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
+    -webkit-filter: gray;
             filter: gray; /* just for IE6-9 */
 }
 
@@ -872,8 +884,9 @@
 {
     font-size: 16px;
 
-    color: #333;
     display: inline-block;
+
+    color: #333;
 }
 
 .bookshelf .grid .describe .info .time
@@ -2434,6 +2447,7 @@
     width: 100px;
     height: 25px;
     padding: 3px;
+
     text-align: center;
 
     background: #f5f6f7;
@@ -4573,7 +4587,7 @@ li.action div:hover
 {
     /*width: 100%;
     height: 100%;*/
-    max-height:100px;
+    max-height: 100px;
 }
 
 .opd_product_info a
@@ -4699,32 +4713,40 @@ li.action div:hover
     width: 154px;
 }
 
-.opd_actions .share .common_sharelist_wrapper::before{
+.opd_actions .share .common_sharelist_wrapper::before
+{
     position: absolute;
     z-index: 1;
     top: -17px;
     left: 50%;
-    margin-left: -5px;
+
     width: 0;
     height: 0;
+    margin-left: -5px;
+
     content: ' ';
-    border-left: 9px solid transparent;
+
     border-right: 9px solid transparent;
     border-bottom: 9px solid #fff;
+    border-left: 9px solid transparent;
 }
 
-.opd_actions .share .common_sharelist_wrapper::after{
+.opd_actions .share .common_sharelist_wrapper::after
+{
     position: absolute;
     z-index: 0;
     top: -18px;
     left: 50%;
-    margin-left: -5px;
+
     width: 0;
     height: 0;
+    margin-left: -5px;
+
     content: ' ';
-    border-left: 9px solid transparent;
+
     border-right: 9px solid transparent;
     border-bottom: 9px solid #ddd;
+    border-left: 9px solid transparent;
 }
 
 .opd_actions .share .common_sharelist_wrapper ul li
@@ -4734,16 +4756,18 @@ li.action div:hover
     margin: 0 6px 0 0;
 }
 
-.opd_actions .share .common_sharelist_wrapper ul li:last-child{
+.opd_actions .share .common_sharelist_wrapper ul li:last-child
+{
     margin: 0;
 }
 
 .opd_actions .share .common_sharelist_wrapper ul li a
 {
     font-size: 24px;
+    line-height: 24px;
+
     width: 24px;
     height: 24px;
-    line-height: 24px;
 }
 
 .opd_actions .preview img

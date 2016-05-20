@@ -313,13 +313,18 @@ label.error
     background: -ie-linear-gradient(top, #f2f2f2 0, #fff 100%);
     background: -o-linear-gradient(top, #f2f2f2 0, #fff 100%);
 }
-.common_closebtn_item{
-    display: inline-block;
-    padding: 10px 15px;
+.common_closebtn_item
+{
     font-size: 20px;
-    color: #fff;
+
     position: absolute;
     top: 0;
+
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    color: #fff;
 }
 /*~~~~~~~~~~线性过渡色按钮~~~~~~~~~~*/
 .transitionbtn_68c96c
@@ -720,6 +725,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     font-size: 29px;
     line-height: 42px;
+
     color: #fff;
 }
 
@@ -750,8 +756,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     margin: 8px;
     padding: 0 12px;
 
-    border-radius: 13px;
     border: 1px solid #fff;
+    border-radius: 13px;
 }
 
 .ybwechatheader_wrapper .orange_btn
@@ -794,6 +800,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     font-size: 26px;
     line-height: 40px;
+
     color: #fff;
 }
 
@@ -1253,10 +1260,12 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     background-size: cover;
 }
 
-.common_empty_item .resource{
+.common_empty_item .resource
+{
     width: 235px;
     height: 169px;
-    background: url("../img/icon/empty_resource.png");
+
+    background: url('../img/icon/empty_resource.png');
 }
 /*~~~~~~~~~~footer nav~~~~~~~~~~*/
 .footer
@@ -2377,7 +2386,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     text-align: center;
 }
 
-.more_fun_wrapper .cm_fr.edit{
+.more_fun_wrapper .cm_fr.edit
+{
     width: 35%;
 }
 
@@ -3364,18 +3374,16 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     cursor: pointer;
 
     border: 1px solid #c6c6c6;
-    border-radius: 0.15rem;
-    background: linear-gradient(top, #efefef, #e9e9e9);
-    background: -moz-linear-gradient(top, #efefef, #e9e9e9);
+    border-radius: .15rem;
+    background:         linear-gradient(top, #efefef, #e9e9e9);
     background: -webkit-linear-gradient(top, #efefef, #e9e9e9);
-    box-shadow: 0 -0.09rem 0.07rem rgba(0,0,0,0.2) inset;
+    box-shadow: 0 -.09rem .07rem rgba(0,0,0,.2) inset;
 }
 .common_loadmore_item
 {
     font-size: .6rem;
 
     width: 100%;
-
     padding: .5rem 0;
 
     text-align: center;
@@ -3429,9 +3437,9 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
     cursor: pointer;
     text-align: center;
+    letter-spacing: -1px;
 
     border: 1px solid #ddd;
-    letter-spacing: -1px;
 }
 
 @media only screen and (max-width: 320px)
@@ -3495,115 +3503,153 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 }
 
 /*~~~~~~~~~~common_switcher_item~~~~~~~~~~*/
-.common_switcher_item{
+.common_switcher_item
+{
+    position: relative;
+
     display: inline-block;
-    padding: 0.2rem;
+
     width: 2.5rem;
     height: 1rem;
-    background-color: #dddddd;
-    border-radius: 0.2rem;
-    position: relative;
-    transition: background-color 0.3s;
+    padding: .2rem;
+
+    transition: background-color .3s;
+
+    border-radius: .2rem;
+    background-color: #ddd;
 }
 
-.common_switcher_item>span{
+.common_switcher_item > span
+{
+    font-size: .6rem;
+    line-height: .9rem;
+
     display: inline-block;
-    margin: 0.1rem 0.2rem;
-    width: 0.8rem;
-    height: 0.8rem;
-    line-height: 0.9rem;
-    border-radius: 50%;
-    font-size: 0.6rem;
+
+    width: .8rem;
+    height: .8rem;
+    margin: .1rem .2rem;
+
     text-align: center;
+
+    border-radius: 50%;
 }
-.common_switcher_item .slider{
+.common_switcher_item .slider
+{
+    position: absolute;
+    z-index: 1;
+    top: .2rem;
+    left: .2rem;
+
     width: 1rem;
     height: 1rem;
+
+    transition: all .2s;
+
+    border-radius: .2rem;
     background-color: #fff;
-    position: absolute;
-    top: 0.2rem;
-    left: 0.2rem;
-    z-index: 1;
-    border-radius: 0.2rem;
-    transition: all 0.2s;
 }
-.common_switcher_item.off {
-    background-color: #dddddd;
+.common_switcher_item.off
+{
+    background-color: #ddd;
 }
-.common_switcher_item.off .slider{
-    left: 0.2rem;
+.common_switcher_item.off .slider
+{
+    left: .2rem;
 }
-.common_switcher_item.on {
+.common_switcher_item.on
+{
     background-color: #69c96d;
 } 
-.common_switcher_item.on .slider{
+.common_switcher_item.on .slider
+{
     left: 1.7rem;
 } 
-.common_switcher_item .check{
+.common_switcher_item .check
+{
     float: left;
-    background-color: #fff;
-    color: #69c96d;
-}
-.common_switcher_item .cross{
-    float: right;
-    background-color: #999999;
-    color: #dddddd;
 
+    color: #69c96d;
+    background-color: #fff;
+}
+.common_switcher_item .cross
+{
+    float: right;
+
+    color: #ddd;
+    background-color: #999;
 }
 /*~~~~~~~~~~common_custonoption_item~~~~~~~~~~*/
-.common_custonoption_item{
+.common_custonoption_item
+{
+    position: relative;
+
     width: 14rem;
     height: 1.75rem;
-    position: relative;
 }
 
-.common_custonoption_item a {
+.common_custonoption_item a
+{
+    font-size: 1rem;
+    line-height: 1.8rem;
+
+    position: absolute;
+    top: 0;
+    right: 1px;
+
     display: block;
-    margin: 1px 0 0 0;
+
     width: 2.02rem;
     height: 1.66rem;
-    line-height: 1.8rem;
+    margin: 1px 0 0 0;
+
     text-align: center;
+
     color: #999;
-    background-color: #eeeeee;
-    font-size: 1rem;
-    position: absolute;
-    right: 1px;
-    top: 0;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    background-color: #eee;
 }
 
-.common_custonoption_item a:hover {
+.common_custonoption_item a:hover
+{
     background-color: #dfdfdf;
 }
 
-.common_custonoption_item a:active {
-    box-shadow: 2px 2px 5px #ccc inset;
+.common_custonoption_item a:active
+{
     line-height: 1.75rem;
+
+    box-shadow: 2px 2px 5px #ccc inset;
 }
-.common_custonoption_item input {
+.common_custonoption_item input
+{
+    z-index: 1;
+
     display: inline-block;
-    padding: 0 0 0 0.4rem;
+    overflow: hidden;
+
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    border: 1px solid #cccccc;
-    border-radius: 0.3rem;
-    overflow: hidden;
-    box-sizing:border-box;
+    padding: 0 0 0 .4rem;
+
+    border: 1px solid #ccc;
+    border-radius: .3rem;
 }
 
-.common_custonoption_item input:focus {
+.common_custonoption_item input:focus
+{
+    transition: box-shadow .3s;
+
     border-color: #57c5f7;
     box-shadow: 0 0 5px #57c5f7;
-    transition: box-shadow 0.3s;
 }
 
 /*~~~~~~~~~~~common_share_wrapper~~~~~~~~~~~*/
 .common_share_wrapper
 {
-    margin: 0.5rem 0;
+    margin: .5rem 0;
 
     text-align: center;
 }
@@ -3612,52 +3658,65 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     display: inline-block;
 
-    margin: 0 0.1rem;
-    
-    cursor: pointer;
+    margin: 0 .1rem;
 
+    cursor: pointer;
 }
-.common_share_wrapper .share_btn li a{
+.common_share_wrapper .share_btn li a
+{
+    font-size: 1.01rem;
+    line-height: 1.75rem;
+
     display: block;
+
     width: 1.7rem;
     height: 1.7rem;
-    line-height: 1.75rem;
-    font-size: 1.01rem;
+
     color: #fff;
     border-radius: 50%;
 }
-.common_share_wrapper .share_btn li .qq{
+.common_share_wrapper .share_btn li .qq
+{
     background-color: #00a3ef;
 }
-.common_share_wrapper .share_btn li .wechat{
+.common_share_wrapper .share_btn li .wechat
+{
     background-color: #00c769;
 }
-.common_share_wrapper .share_btn li .weibosina{
+.common_share_wrapper .share_btn li .weibosina
+{
     background-color: #ef1d4a;
 }
-.common_share_wrapper .share_btn li .moments{
+.common_share_wrapper .share_btn li .moments
+{
     background-color: #00d7f4;
 }
-.common_share_wrapper .share_btn li .qzone{
+.common_share_wrapper .share_btn li .qzone
+{
     background-color: #ffa051;
 }
-.common_share_wrapper .share_btn li .renren{
+.common_share_wrapper .share_btn li .renren
+{
     background-color: #1f78b0;
 }
 
 .common_share_wrapper p
 {
-    padding: 0 0 0 0.2rem;
-    text-align: left;
+    font-size: .5rem;
     line-height: 1rem;
-    height: 1.5rem;
-    font-size: 0.5rem;
+
+    height: 1.5rem;
+    padding: 0 0 0 .2rem;
+
+    text-align: left;
 }
 /*~~~~~~~~~~closebutton_img~~~~~~~~~~*/
 .closebutton_img
 {
     font-size: 20px;
     font-weight: normal;
+    line-height: 26px;
+
     position: absolute;
     z-index: 1;
     top: -5px;
@@ -3668,24 +3727,30 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     box-sizing: border-box;
     width: 26px;
     height: 26px;
-    line-height: 26px;
+
     text-align: center;
+
+    color: #fff;
     /*border: 1px solid #555;*/
     border-radius: 100%;
-    background-color: #666666;
-    color: #fff;
+    background-color: #666;
 }
 
-.closebutton_img span {
+.closebutton_img span
+{
     font-size: 19px;
 }
-.add_tobook_tips p {
+.add_tobook_tips p
+{
     font-size: 14px;
     line-height: 40px;
+
     height: 40px;
     margin: 0;
     padding: 0 10px;
+
     text-align: center;
+
     color: #333;
     background-color: #ffdbd3;
 }

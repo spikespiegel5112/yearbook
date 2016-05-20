@@ -18,19 +18,22 @@ input
 }
 
 input:focus,
-textarea:focus{
+textarea:focus
+{
+    transition: box-shadow .3s;
+
     border-color: #57c5f7!important;
     box-shadow: 0 0 5px #57c5f7!important;
-    transition: box-shadow 0.3s;
 }
 
 /*~~~~~~~~~~iconfont~~~~~~~~~~*/
 
 .main_container
 {
+    overflow: hidden;
+
     width: 100%;
     min-width: 1150px;
-    overflow: hidden;
 }
 .mask
 {
@@ -370,23 +373,23 @@ textarea:focus{
     width: 100px;
 
     -webkit-transition: background-color .4s;
-    -moz-transition: background-color .4s;
-    -ms-transition: background-color .4s;
+       -moz-transition: background-color .4s;
+        -ms-transition: background-color .4s;
     text-align: center;
 }
 
 .transition_btn:hover
 {
     -webkit-transition: background-color .4s;
-    -moz-transition: background-color .4s;
-    -ms-transition: background-color .4s;
+       -moz-transition: background-color .4s;
+        -ms-transition: background-color .4s;
 }
 
 .transition_btn:active
 {
     -webkit-transition: background-color .1s;
-    -moz-transition: background-color .1s;
-    -ms-transition: background-color .1s;
+       -moz-transition: background-color .1s;
+        -ms-transition: background-color .1s;
 
     box-shadow: 0 0 16px #555 inset;
 }
@@ -508,7 +511,8 @@ textarea:focus{
 {
     background-color: #a8e7ec;
 }
-.bg_f0f0f0{
+.bg_f0f0f0
+{
     background-color: #f0f0f0;
 }
 
@@ -1861,9 +1865,7 @@ label.error, div.error
 
 .all_loadmore
 {
-
     /*padding: 30px 0;*/
-
     text-align: center;
 }
 
@@ -1878,14 +1880,16 @@ label.error, div.error
     margin: 30px auto 0;
     padding: 15px 5px;
 
+    transition: color .3s;
+
     color: #999;
     border-radius: 5px;
-    transition: color 0.3s;
 }
 .all_loadmore a:hover
 {
+    transition: color .3s;
+
     color: #222;
-    transition: color 0.3s;
 }
 
 .all_loadmore span
@@ -2030,6 +2034,9 @@ label.error, div.error
 
 .pc_empty_item label
 {
+    font-size: 14px;
+    line-height: 2;
+
     display: block;
 
     width: 100%;
@@ -2037,8 +2044,6 @@ label.error, div.error
     text-align: center;
 
     color: #a8a8a8;
-    font-size: 14px;
-    line-height: 2;
 }
 
 .pc_empty_item .avatar_1
@@ -2050,10 +2055,12 @@ label.error, div.error
     background-size: cover;
 }
 
-.pc_empty_item .resource{
+.pc_empty_item .resource
+{
     width: 235px;
     height: 169px;
-    background: url("../img/icon/empty_resource.png");
+
+    background: url('../img/icon/empty_resource.png');
 }
 
 /* 覆盖时间控件插件样式 */
@@ -2640,7 +2647,6 @@ button.select
     position: relative;
 
     width: 100%;
-
     height: 70px;
     margin: 30px 0 10px 0;
 }
@@ -5662,10 +5668,13 @@ nav .pagination li a:active
     background-color: #fff;
 }
 /*绿色*/
-.yb_pagination_green{
+.yb_pagination_green
+{
     position: relative;
+
     width: 100%;
     margin: 20px 0;
+
     text-align: center;
 }
 
@@ -5686,8 +5695,8 @@ nav .pagination li a:active
 
     color: #fff;
     border: 0;
-    background-color: #ccc;
     border-radius: 2px;
+    background-color: #ccc;
 }
 .yb_pagination_green .turn_btn > a
 {
@@ -5900,6 +5909,7 @@ nav .pagination li a:active
 .yb_toolbar .yb_toolbar_footer
 {
     position: absolute;
+    z-index: 2;
     top: 100%;
     bottom: -1px;
     left: -35px;
@@ -5910,7 +5920,6 @@ nav .pagination li a:active
 
     border-radius: 3px 3px 0 0;
     background-color: #363636;
-    z-index: 2;
 }
 
 .yb_toolbar.active .yb_toolbar_footer,
@@ -6927,8 +6936,8 @@ nav .pagination li a:active
 {
     width: 100%;
     height: 400px;
-    color: #333;
 
+    color: #333;
 }
 .footer_menu_wrapper
 {
@@ -7040,73 +7049,93 @@ nav .pagination li a:active
     font-weight: bold;
 
     position: relative;
+    z-index: 1;
 
     margin: 0;
     padding: 10px 15px;
 
     color: #333;
     border-bottom: 1px solid #ddd;
-    z-index: 1;
     background-color: #fff;
 }
 
-.yb_pop_wrap::before{
-    content: " ";
+.yb_pop_wrap::before
+{
     position: absolute;
-    left: -10px;
     top: -10px;
+    left: -10px;
+
+    content: ' ';
+
     border-radius: 8px;
     background: rgba(255,255,255,.4);
 }
 
 /*~~~~~~~~~~common_custonoption_item~~~~~~~~~~*/
-.common_custonoption_item{
+.common_custonoption_item
+{
+    position: relative;
+
     width: 240px;
     height: 35px;
-    position: relative;
 }
 
-.common_custonoption_item a {
+.common_custonoption_item a
+{
+    font-size: 30px;
+    line-height: 32px;
+
+    position: absolute;
+    top: 0;
+    right: 1px;
+
     display: block;
-    margin: 1px 0 0 0;
+
     width: 45px;
     height: 33px;
-    line-height: 32px;
+    margin: 1px 0 0 0;
+
     text-align: center;
+
     color: #999;
-    background-color: #eeeeee;
-    font-size: 30px;
-    position: absolute;
-    right: 1px;
-    top: 0;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    background-color: #eee;
 }
 
-.common_custonoption_item a:hover {
+.common_custonoption_item a:hover
+{
     background-color: #dfdfdf;
 }
 
-.common_custonoption_item a:active {
-    box-shadow: 2px 2px 5px #ccc inset;
+.common_custonoption_item a:active
+{
     line-height: 35px;
+
+    box-shadow: 2px 2px 5px #ccc inset;
 }
-.common_custonoption_item input {
+.common_custonoption_item input
+{
+    z-index: 1;
+
     display: inline-block;
-    padding: 0 0 0 7px;
+    overflow: hidden;
+
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    border: 1px solid #cccccc;
+    padding: 0 0 0 7px;
+
+    border: 1px solid #ccc;
     border-radius: 6px;
-    overflow: hidden;
-    box-sizing:border-box;
 }
 
-.common_custonoption_item input:focus {
+.common_custonoption_item input:focus
+{
+    transition: box-shadow .3s;
+
     border-color: #57c5f7;
     box-shadow: 0 0 5px #57c5f7;
-    transition: box-shadow 0.3s;
 }
 /*~~~~~~~~~~~common_share_wrapper~~~~~~~~~~~*/
 .common_share_wrapper
@@ -7131,14 +7160,17 @@ nav .pagination li a:active
 
     height: 50px;
 }
-.cm_gaussianblur{
-    -webkit-filter: blur(6px);
-    -moz-fliter: blur(6px);
-    -o-fliter: blur(6px);
-    filter: blur(6px);
+.cm_gaussianblur
+{
     overflow: visible;
+
+    -moz-fliter: blur(6px);
+      -o-fliter: blur(6px);
+    -webkit-filter: blur(6px);
+            filter: blur(6px);
 }
-.blur_bg{
-    background: url("../img/makebook/blur_bg.jpg") no-repeat 0 0!important;
+.blur_bg
+{
+    background: url('../img/makebook/blur_bg.jpg') no-repeat 0 0!important;
     background-size: cover;
 }

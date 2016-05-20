@@ -1428,8 +1428,9 @@
 	line-height: 1.25rem;
 	border-bottom: 1px solid #ececec;
 }
-.makebook_fdinfo_wrapper li label{
+.makebook_fdinfo_wrapper li label, .makebook_fdinfo_wrapper li .notset{
 	font-weight: lighter;
+	color: #999;
 }
 .makebook_fdphoto_wrapper{
 	display: inline-block;
@@ -1463,6 +1464,9 @@
 	margin: 0;
 	font-size: 13px;
 }
+.makebook_fdtopic_wrapper p a{
+	color: #a1c2cf;
+}
 
 
 
@@ -1478,7 +1482,7 @@
 .makebook_friendbtn_item a{
 	display: inline-block;
 	padding: 0.25rem 2rem;
-	min-width: 6.5rem;
+	min-width: 3.5rem;
 	text-align: center;
 	border-radius: 4px;
 }

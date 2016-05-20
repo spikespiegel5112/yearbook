@@ -6473,6 +6473,7 @@
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset;
     resize: none;
+    box-sizing: border-box;
 }
 
 .ia-topic-new-wapper a
@@ -8515,7 +8516,7 @@ a.ia-vote-add-choose-num span.ybiconfont
     background-color: #eee;
     border-top: 1px solid #f2f4f8;
     box-sizing: border-box;
-    z-index: 9;
+    z-index: 1;
 }
 
 .comment .foot .header {
@@ -8911,4 +8912,153 @@ a.ia-vote-add-choose-num span.ybiconfont
     font-size: 12px;
     color: #999;
     line-height: 20px;
+}
+/*leavewall*/
+.main_container.leavewall{
+    background: url("../img/m/ia/wood_grain_bg.jpg") no-repeat 0;
+    background-size: cover;
+    min-height: 568px;
+}
+.leavewall_wrap{
+    position: relative;
+    width: 100%
+}
+.leavewall_wrap .message_list{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.message_list li{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    text-align: left;
+}
+.message_list li .item{
+    display: inline-block;
+    position: relative;
+    margin: 20px 0 0 20px;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px -2px rgba(0,0,0,.3);
+}
+.message_list .item .header{
+    position: absolute;
+    left: -20px;
+    top: -17px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.4);
+    z-index: 1;
+}
+.message_list .isaid{
+    text-align: right;
+}
+.message_list .isaid .item{
+    margin: 20px 20px 0 0;
+}
+.message_list .isaid .item .header{
+    right: -20px;
+    left: auto;
+}
+.message_list .item .header img{
+    width: 100%;
+    height: 100%;
+}
+.message_list .item .main_user{
+    float: left;
+    padding: 0;
+    margin: 8px 0 0 48px;
+    font-size: 14px;
+    color: #333;
+}
+.message_list .isaid .main_user{
+    float: right;
+    margin: 8px 48px 0 0;
+}
+.message_list .item .and_user{
+    float: left;
+    margin: 8px 0 0 10px;
+    font-size: 14px;
+    color: #08f;
+}
+.message_list .isaid .and_user{
+    float: right;
+}
+.message_list .item .main_user,
+.message_list .item .and_user{
+    max-width: 75px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.message_list .item .time{
+    float: right;
+    margin: 8px 10px 5px 0;
+    font-size: 12px;
+    line-height: 24px;
+    color: #999;
+}
+.message_list .isaid .item .time{
+    float: left;
+    margin: 8px 0 5px 10px;
+}
+.message_list .item .content{
+    position: relative;
+    margin: 0 10px 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    clear: both;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+.message_list .item .content::before{
+    content: " ";
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    border-left: 16px solid #ddd;
+    border-top: 12px solid transparent;
+}
+.message_list .item .content::after{
+    content: " ";
+    position: absolute;
+    top: -11px;
+    left: 29px;
+    border-left: 14px solid #eee;
+    border-top: 11px solid transparent;
+}
+.message_list .isaid .item .content::before{
+    right: 28px;
+    left: auto;
+    border-left: 0;
+    border-right: 16px solid #ddd;
+}
+.message_list .isaid .item .content::after{
+    right: 29px;
+    left: auto;
+    border-left: 0;
+    border-right: 14px solid #eee;
+}
+.message_list .item .content p{
+    display: inline;
+    word-break: break-all;
+    text-align: justify;
+    line-height: 20px;
+}
+.message_list .item .content a{
+    color: #08f;
+}
+.message_list .isaid .item .content a{
+    display: none;
 }

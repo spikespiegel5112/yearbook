@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>互动-赠言墙</title>
+    <!-- build:css ../css/m.all.min.css -->
+    <link rel="stylesheet" href="../css/m_reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_common.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/m_ia.css" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463455972_838859.css" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="../css/m_jquery.sureInput.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" type="text/css" media="all"/>
+</head>
+
+<body class="bg-fff">
+<div class="main_container leavewall">
+    <div class='ybwechatheader_wrapper'>
+        <a class='left_btn back_btn' href='javascript:;'>
+            <span class="ybiconfont ybicon-backward3"></span>
+        </a>
+        <p>赠言墙</p>
+        <a class="right_btn add_btn" href="javascript:;"><span class="ybiconfont ybicon-plus"></span></a>
+    </div>
+    <div class="leavewall_wrap">
+        <div class="add_tobook_tips">
+            <p>提示：收到的赠言可以添加至自己的个人页中哦!</p>
+        </div>
+        <div class='common_empty_item hidden'>
+            <span class="resource"></span>
+            <div>还没有话题，立即<a href="javascript:;">新建话题</a></div>
+        </div>
+        <div class="message_list">
+            <ul>
+                <li>
+                    <div class="item">
+                        <div class="header">
+                            <img src="../img/m/default/pig.jpg">
+                        </div>
+                        <span class="main_user">李宪游</span>
+                        <span class="and_user">@赵上华</span>
+                        <p class="time">05/16 14:05</p>
+                        <div class="content">
+                            <p>那些曾经以为念念不忘的事情就在我们念念不忘的过程里，被我们遗忘了。</p>
+                            <a href="javascript:;">【回复】</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="header">
+                            <img src="../img/m/default/girl.jpg">
+                        </div>
+                        <span class="main_user">李宪游</span>
+                        <span class="and_user">@赵上华</span>
+                        <p class="time">05/16 14:05</p>
+                        <div class="content">
+                            <p>被我们遗忘了。</p>
+                            <a href="javascript:;">【回复】</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="isaid">
+                    <div class="item">
+                        <div class="header">
+                            <img src="../img/m/default/tangpriest.jpg">
+                        </div>
+                        <span class="main_user">李宪游</span>
+                        <span class="and_user">@赵上华</span>
+                        <p class="time">05/16 14:05</p>
+                        <div class="content">
+                            <p>被我们遗忘了。</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="isaid">
+                    <div class="item">
+                        <div class="header">
+                            <img src="../img/m/default/tangpriest.jpg">
+                        </div>
+                        <span class="main_user">李宪游</span>
+                        <span class="and_user">@赵上华</span>
+                        <p class="time">05/16 14:05</p>
+                        <div class="content">
+                            <p>那些曾经以为念念不忘的事情就在我们念念不忘的过程里，被我们遗忘了。</p>
+                            <a href="javascript:;">【回复】</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="header">
+                            <img src="../img/m/default/pig.jpg">
+                        </div>
+                        <span class="main_user">李宪游</span>
+                        <span class="and_user">@赵上华</span>
+                        <p class="time">05/16 14:05</p>
+                        <div class="content">
+                            <p>那些曾经以为念念不忘的事情就在我们念念不忘的过程里，被我们遗忘了。</p>
+                            <a href="javascript:;">【回复】</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 用户发表留言之类的输入框 -->
+<div class='bp_sendcomment_container'>
+    <div class='bp_sendcomment_wrapper'>
+        <div class='bp_sendcommentbtn_wrapper'>
+            <a class='cancel' href="javascript:;">取消</a>
+            <a class='send' href="javascript:;">发送</a>
+        </div>
+        <div class='bp_commentavatar_item'>
+            <img src="../img/m/default/vote_result_avatar_100_100_00000.jpg">
+            <label>呆呆鱼呆呆鱼</label>
+        </div>
+        <textarea></textarea>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        setScreenMinHeight();
+        showLeaveMsgBox();
+    });
+    //set srceen min-height
+    function setScreenMinHeight(){
+        var winHeight = $(window).height();
+        $('.main_container.leavewall').css({'min-height':winHeight});
+
+        $(window).resize(function(){
+            setScreenMinHeight();
+        })
+    }
+
+    //留言
+    function showLeaveMsgBox(){
+        $('.leavewall .add_btn').on('touchend',function(){
+            $('.bp_sendcomment_container').show().css({'position':'fixed','bottom':'0','background':'rgba(0,0,0,.6)'});
+            $('.bp_sendcommentbtn_wrapper .cancel').on('touchend',function(){
+                $('.bp_sendcomment_container').hide();
+            });
+        })
+    }
+
+</script>
+</body>
+</html>

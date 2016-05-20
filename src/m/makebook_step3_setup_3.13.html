@@ -165,9 +165,9 @@
     </div>
     <div class='makebook_invitcardinfo_container'>
         <div class="makebook_invitcardinfo_wrapper">
-            <label class="closebutton_img">
+            <a class="closebutton_img" href='../m/makebook_step3_config_3.13.html'>
             	<span class="ybiconfont ybicon-closebtn"></span>
-            </label>
+            </a>
             <a  class='edit' href="javascript:;">修改</a>
             <h6 class="title">《美好时光》邀请卡</h6>
             <ul class="makebook_icilist_wrapper">
@@ -269,7 +269,8 @@
 <script type="text/javascript">
 $(function() {
     $.remResizing({
-        fontsize: 20
+        fontsize: 20,
+        basedonnarrow: true
     });
     makebook_step2();
     checktag();
@@ -298,8 +299,9 @@ function makebook_step2() {
     $('.makebook_invitcardinfo_wrapper .edit').click(function(){
     	$('.makebook_invitcardinfo_container').hide();
     })
-    $('.ybwechatheader_wrapper').click(function(){
+    $('.ybwechatheader_wrapper .action_btn').click(function(){
     	$('.makebook_invitcardinfo_container').show();
+        $('.makebook_invitcardinfo_wrapper').align();
     })
 }
 //选项标签的操作

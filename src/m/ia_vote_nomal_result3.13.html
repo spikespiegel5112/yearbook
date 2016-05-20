@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
     <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/green.css" type="text/css" media="all"/>
 </head>
 <body >
 <div class="main_container has_footer_nav">
@@ -25,7 +26,7 @@
         <a class='left_btn back_btn' href='javascript:;'>
             <span class="ybiconfont ybicon-backward3"></span>
         </a>
-        <p>投票详情</p>
+        <p>普通投票</p>
     </div>
     <div class="vote_detail_wrap">
         <div class="add_tobook_tips">
@@ -34,82 +35,67 @@
         <div class="vote_des">
             <a href="javascript:;"><h5 class="caption">【主题】听说，在忆尔里照片书和互动册更配哦~~<span class="time">发起于：<span>30天</span>前</span></h5></a>
             <p class="desc">投票描述：团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
-            <div class="vote_member_option">
-                <label>投票选项（<span>2</span>）:</label>
-                <!--成员投票 单选-->
-                <div class="vote_member_list result">
-                    <ul>
-                        <li class="">
-                            <a href="javascript:;">
-                                <img src="../img/default/vote_result_avatar_100_100_00000.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="../img/default/ia_vote_ex_img2.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="../img/default/cover_sun.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="../img/default/ia_vote_ex_img2.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="../img/default/ia_vote_ex_img1.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="../img/default/ia_vote_ex_img2.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="../img/default/ia_vote_ex_img2.jpg">
-                            </a>
-                            <p class="vote_title">张三</p>
-                            <div class="vote_info">
-                                <p class="vote_info_center">11</p>
-                                <label>目前票数</label>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="vote_nomal_option">
+                <!--普通投票 单选-->
+                <div class="vote_list_result">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th class='rank'>排名</th>
+                            <th class='name'>选项</th>
+                            <th class='radio'>比例</th>
+                            <th class='votes'>票数</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>张老师</td>
+                            <td>31</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>李老师</td>
+                            <td>15</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>张老师</td>
+                            <td>31</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>李老师</td>
+                            <td>15</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>张老师</td>
+                            <td>31</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>李老师</td>
+                            <td>15</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>张老师</td>
+                            <td>31</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>李老师</td>
+                            <td>15</td>
+                            <td>9</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="record">
@@ -186,6 +172,10 @@
                     </div>
                 </div>
             </div>
+            <div class="foot">
+                <div class="header"><img src="../img/default/user_header02.jpg"></div>
+                <input type="text" name="" placeholder="我也要说些什么……" value="">
+            </div>
         </div>
     </div>
 </div>
@@ -261,15 +251,60 @@
     </div>
 </div>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/icheck.js"></script>
 <script>
+    changeButtonCss();
+    //渲染控件样式
+    function changeButtonCss() {
+        $("input[type=radio],input[type=checkbox]").iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%'
+        });
+    }
 
-    //查看投票结果详情
-    $('.view_result').click(function(){
-        $('.yb_pop_wrap').fadeIn('fast');
-        $('.yb_pop_wrap .close').click(function(){
-            $('.yb_pop_wrap').fadeOut('fast');
-        })
-    });
+    normalResult()
+    function normalResult() {
+        var trEl = $('.vote_list_result tr');
+        trEl.each(function() {
+            var rankTdEl=$(this).find('td').eq(0);
+            var percentTdEl = $(this).find('td').eq(2);
+            var percentage = percentTdEl.text();
+            var progressbar = "<span class='progressbar'><label></label></span>";
+            $('.vote_list_result tr').each(function(){
+                $this=$(this);
+                var rankTdEl=$this.find('td').eq(0);
+                var trIndex=$(this).index();
+                rankTdEl.text(trIndex);
+            })
+            rankTdEl.text();
+            percentTdEl.prepend(progressbar).append('%');
+            percentTdEl.find('label').css('width', percentage + '%');
+
+            //获取选项的文本给每个此td添加到一个title属性上。
+            var tdEl2=$(this).find('td').eq(1);
+            var nameTitle=tdEl2.text();
+            tdEl2.attr('title',nameTitle);
+        });
+
+
+        trEl.click(function(){
+            $this=$(this);
+            if($this.hasClass('active')){
+                return;
+            }else if($this.index()!=0){
+                $this.siblings().removeClass('active');
+                $this.addClass('active')
+            }
+        });
+
+        $('.view_result').click(function(){
+            $('.yb_pop_wrap').fadeIn('fast');
+            $('.yb_pop_wrap .close').click(function(){
+                $('.yb_pop_wrap').fadeOut('fast');
+            })
+        });
+    }
 </script>
 </body>
 </html>

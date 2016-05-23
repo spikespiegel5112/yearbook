@@ -9308,8 +9308,6 @@ a.ia-vote-add-choose-num span.ybiconfont
 /*leavewall*/
 .main_container.leavewall
 {
-    min-height: 568px;
-
     background: url('../img/m/ia/wood_grain_bg.jpg') no-repeat 0;
     background-size: cover;
 }
@@ -9409,7 +9407,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 
     float: left;
 
-    margin: 8px 0 0 10px;
+    margin: 8px 0 0 5px;
 
     color: #08f;
 }
@@ -9422,19 +9420,19 @@ a.ia-vote-add-choose-num span.ybiconfont
 {
     overflow: hidden;
 
-    max-width: 75px;
+    max-width: 3.75rem;
 
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .message_list .item .time
 {
-    font-size: 12px;
-    line-height: 24px;
+    font-size: .6rem;
+    line-height: 1.2rem;
 
     float: right;
 
-    margin: 8px 10px 5px 0;
+    margin: 8px 10px 5px 5px;
 
     color: #999;
 }
@@ -9446,7 +9444,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 }
 .message_list .item .content
 {
-    font-size: 14px;
+    font-size: .7rem;
 
     position: relative;
 
@@ -9485,7 +9483,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 }
 .message_list .isaid .item .content::before
 {
-    right: 28px;
+    right: 1.4rem;
     left: auto;
 
     border-right: 16px solid #ddd;
@@ -9493,7 +9491,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 }
 .message_list .isaid .item .content::after
 {
-    right: 29px;
+    right: 1.45rem;
     left: auto;
 
     border-right: 14px solid #eee;
@@ -9501,7 +9499,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 }
 .message_list .item .content p
 {
-    line-height: 20px;
+    line-height: 1rem;
 
     display: inline;
 
@@ -9511,6 +9509,7 @@ a.ia-vote-add-choose-num span.ybiconfont
 .message_list .item .content a
 {
     color: #08f;
+    font-size: .7rem;
 }
 .message_list .isaid .item .content a
 {

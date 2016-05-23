@@ -42,7 +42,7 @@
                             <label>已投票数：<span>30</span></label>
                         </div>
                         <h4 class="theme">与众不同方可出奇制胜，谁最…</h4>
-                        <a class="join_vote" href="javascript:;">我要投票</a>
+                        <a class="join_vote" href="ia_vote_create_nomal3.13.html">我要投票</a>
                     </div>
                     <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
@@ -70,7 +70,7 @@
                             <label>已投票数：<span>30</span></label>
                         </div>
                         <h4 class="theme">与众不同方可出奇制胜，谁最…</h4>
-                        <a class="join_vote" href="javascript:;">我要投票</a>
+                        <a class="join_vote" href="ia_vote_create_member3.13.html">我要投票</a>
                     </div>
                     <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
@@ -84,7 +84,7 @@
                             <label>已投票数：<span>30</span></label>
                         </div>
                         <h4 class="theme">与众不同方可出奇制胜，谁最…</h4>
-                        <a class="join_vote" href="javascript:;">我要投票</a>
+                        <a class="join_vote" href="ia_vote_create_member3.13.html">我要投票</a>
                     </div>
                     <a class="delete ybiconfont ybicon-trash" href="javascript:;"></a>
                 </li>
@@ -99,19 +99,29 @@
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/touch/touch-0.2.14.min.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
 <script>
 
+    $(function() {
+        $.remResizing({
+            fontsize: 20,
+            basedonnarrow: true
+        });
+        showDeleteBtn();
+    });
     //当前投票向左滑动 显示删除按钮，向右滑动返回，其他归位
-    var target = $(".vote_list_wrap li");
-    touch.on(target, 'swipeleft', function(ev){
-        $(this).closest('li').addClass('active').siblings().removeClass('active');
-    });
-    touch.on(target, 'swiperight', function(ev){
-        $(this).closest('li').removeClass('active').siblings().removeClass('active');
-    });
-    touch.on(target,'tap',function(){
-        target.removeClass('active');
-    })
+    function showDeleteBtn(){
+        var target = $(".vote_list_wrap li");
+        touch.on(target, 'swipeleft', function(ev){
+            $(this).closest('li').addClass('active').siblings().removeClass('active');
+        });
+        touch.on(target, 'swiperight', function(ev){
+            $(this).closest('li').removeClass('active').siblings().removeClass('active');
+        });
+        touch.on(target,'tap',function(){
+            target.removeClass('active');
+        })
+    }
 
 </script>
 </html>

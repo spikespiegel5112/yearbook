@@ -172,10 +172,6 @@
                     </div>
                 </div>
             </div>
-            <div class="foot">
-                <div class="header"><img src="../img/default/user_header02.jpg"></div>
-                <input type="text" name="" placeholder="我也要说些什么……" value="">
-            </div>
         </div>
     </div>
 </div>
@@ -252,8 +248,15 @@
 </div>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/icheck.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
 <script>
-    changeButtonCss();
+    $(function() {
+        $.remResizing({
+            fontsize: 20,
+            basedonnarrow: true
+        });
+        changeButtonCss();
+    });
     //渲染控件样式
     function changeButtonCss() {
         $("input[type=radio],input[type=checkbox]").iCheck({

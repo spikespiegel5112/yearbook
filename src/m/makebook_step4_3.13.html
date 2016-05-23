@@ -236,12 +236,13 @@ $(function() {
 });
 
 function makebook_step4() {
-	$('.makebook_recommend_wrapper li').hover(function() {
-		$(this).siblings().removeClass('active').end().addClass('active');
-	});
 	var swiper = new Swiper('.makebook_recommend_wrapper', {
 		pagination: '.swiper-pagination',
 		loop: true
+	});
+	$('.makebook_recommend_wrapper li').on('touchend', function() {
+		$('.makebook_recommend_wrapper li').removeClass('active');
+		$(this).addClass('active');
 	});
 
 	// $('.makebook_stepmainbtn_wrapper').align({

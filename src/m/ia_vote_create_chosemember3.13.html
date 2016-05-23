@@ -134,31 +134,42 @@
     </div>
 </div>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
 <script>
-    $('.create_vote_con .option').on('click',function(){
-        $('.create_vote_con .option').each(function(){
-            $(this).removeClass('select');
+    $(function() {
+        $.remResizing({
+            fontsize: 20,
+            basedonnarrow: true
         });
-        $(this).addClass('select');
-        if($(this).hasClass('custom')){
-            var memberList = $('.yb_pop_wrap');
-            memberList.fadeIn('fast');
+        choseVoteMember();
+    });
 
-            $('.member_list li').on('click',function(){
-                if($(this).hasClass('select')){
-                    $(this).removeClass('select');
-                }else{
-                    $(this).addClass('select');
-                }
+    function choseVoteMember(){
+        $('.create_vote_con .option').on('click',function(){
+            $('.create_vote_con .option').each(function(){
+                $(this).removeClass('select');
             });
+            $(this).addClass('select');
+            if($(this).hasClass('custom')){
+                var memberList = $('.yb_pop_wrap');
+                memberList.fadeIn('fast');
 
-            memberList.on('click', function (e) {
-                if ($(e.target).closest('.member_list_wrap').length == 0) {
-                    memberList.fadeOut('fast');
-                }
-            });
-        }
-    })
+                $('.member_list li').on('click',function(){
+                    if($(this).hasClass('select')){
+                        $(this).removeClass('select');
+                    }else{
+                        $(this).addClass('select');
+                    }
+                });
+
+                memberList.on('click', function (e) {
+                    if ($(e.target).closest('.member_list_wrap').length == 0) {
+                        memberList.fadeOut('fast');
+                    }
+                });
+            }
+        })
+    }
 </script>
 </body>
 </html>

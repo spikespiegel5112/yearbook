@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" media="all">
     <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="../assets/css/bootstrap-switch.min.css" type="text/css" media="all"/>
 </head>
 <body>
 <div class="main_container">
@@ -44,13 +43,25 @@
     </div>
 </div>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
 <script>
-    $('.create_vote_con .option').on('click',function(){
-        $('.create_vote_con .option').each(function(){
-            $(this).removeClass('select');
+    $(function() {
+        $.remResizing({
+            fontsize: 20,
+            basedonnarrow: true
         });
-        $(this).addClass('select');
+        choseVoteType();
     });
+
+    function choseVoteType(){
+        $('.create_vote_con .option').on('click',function(){
+            $('.create_vote_con .option').each(function(){
+                $(this).removeClass('select');
+            });
+            $(this).addClass('select');
+        });
+    }
+
 </script>
 </body>
 </html>

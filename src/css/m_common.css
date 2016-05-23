@@ -3517,6 +3517,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
     border-radius: .2rem;
     background-color: #ddd;
+    box-sizing: content-box;
 }
 
 .common_switcher_item > span
@@ -3705,7 +3706,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     font-size: .5rem;
     line-height: 1rem;
 
-    height: 1.5rem;
+    height: 1.5rem;
+
     padding: 0 0 0 .2rem;
 
     text-align: left;

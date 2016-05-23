@@ -33,7 +33,7 @@
 				<li class='makebook_bookcomponent_item'>
 					<div class='title'>
 						<h6>封面/封底</h6>
-						<div class='common_switcher_item off'>
+						<div class='common_switcher_item on disabled'><!--必选class: on disabled-->
 							<div class='slider'></div>
 							<span class='check ybiconfont ybicon-ok'></span>
 							<span class='cross ybiconfont ybicon-cross'></span>
@@ -140,7 +140,7 @@ function makebook_step2() {
 		var $this = $(this);
 		if ($this.hasClass('off')) {
 			$this.removeClass('off').addClass('on');
-		}else if($this.hasClass('on')){
+		}else if($this.hasClass('on') && !$this.hasClass('disabled')){
 			$this.removeClass('on').addClass('off');
 		}
 		

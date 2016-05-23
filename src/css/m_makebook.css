@@ -1211,34 +1211,68 @@
 	position: fixed;
 	top: 0;
 	z-index: 2;
+    height: 100%;
+    background: rgba(0,0,0,.6);
 }
 .makebook_invitcardinfo_wrapper{
-	margin: 10px auto;
-	width: 15rem;
-	height: 23rem;
-	background-image: url(../img/m/makebook/invitcardevelop.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	/*margin: 10px auto;*/
+	width: 100%;
+	/*height: 23rem;*/
+	/*background: url(../img/m/makebook/envelope.png) no-repeat center bottom;
+	background-size: contain;*/
 	font-size: 13px;
-	position: relative;
+	position: absolute;
+    bottom: 0;
 }
-.makebook_invitcardinfo_wrapper{
-	margin: 10px auto;
-	width: 15rem;
-	height: 23rem;
-	background-image: url(../img/m/makebook/invitcardevelop.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	font-size: 13px;
-	position: relative;
+.makebook_invitcardinfo_container .makebook_invitcardinfo_wrapper{
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    margin: 0;
+}
+.makebook_invitcardinfo_container .makebook_invitcardinfo_wrapper.active{
+    bottom: 0;
+    transition: bottom .5s ease;
+}
+.makebook_invitcardinfo_wrapper .notepaper{
+    padding: 1.5rem .75rem 6.25rem;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #f0f6c6 url("../img/m/makebook/wavy_lace.png") no-repeat 0 0;
+    background-size: contain;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 3px 3px 5px -2px rgba(0,0,0,.4);
+}
+.notepaper .content_bg{
+    position: relative;
+    padding: .8rem .6rem 2rem;
+    border-radius: 12px;
+    background: #fff;
+}
+.notepaper .content_bg .content{
+    position: relative;
+    border: 1px dashed #bdc969;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 0;
+}
+.notepaper .content_bg .content::before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    margin-left: -1.05rem;
+    width: 2.1rem;
+    height: 1.65rem;
+    background: url("../img/m/makebook/bowknot.png") no-repeat 0 0;
+    background-size: contain;
+    z-index: 1;
 }
 .makebook_invitcardinfo_wrapper .title
 {
     font-size: .8rem;
 
-    padding: 3rem 0 0 .5rem;
+    padding: 2rem 0 0 .5rem;
 
     text-align: center;
 
@@ -1246,52 +1280,67 @@
 }
 .makebook_invitcardinfo_wrapper .common_share_wrapper
 {
-    width: 90%;
-    margin: 2.5rem auto 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    background: url(../img/m/makebook/envelope.png) no-repeat center bottom;
+    background-size: contain;
+    height: 9.25rem;
+    padding: 3.5rem .5rem 0;
+    box-sizing: border-box;
 }
 .makebook_invitcardinfo_wrapper .closebutton_img
 {
     top: -.4rem;
-    left: 0;
+    left: .5rem;
 }
 .makebook_invitcardinfo_wrapper .edit
 {
     font-size: .71rem;
 
     position: absolute;
-    top: 1.2rem;
-    right: 2rem;
+    top: .9rem;
+    right: 1.5rem;
 
     color: #008bf7;
+    z-index: 1;
 }
 .makebook_icilist_wrapper
 {
     overflow: auto;
 
-    width: 10.5rem;
+    width: 100%;
     height: 11rem;
     margin: .5rem auto 0;
+    padding: 0 .5rem;
+    box-sizing: border-box;
+}
+@media only screen and (max-height: 480px) {
+    .makebook_icilist_wrapper{
+        max-height: 7.5rem;
+    }
 }
 .makebook_icilist_wrapper > li
 {
-    font-size: .4rem;
+    font-size: .6rem;
 
     width: 100%;
     margin: 0 auto;
     padding: .5rem 0;
 
     color: #999;
-    border-bottom: 1px dashed #999;
+    border-bottom: 1px solid #ddd;
 }
 .makebook_icilist_wrapper li h5
 {
-    font-size: .4rem;
+    font-size: .6rem;
 
     display: inline-block;
 }
 .makebook_icbasicinfotag_wrapper li
 {
-    font-size: .5rem;
+    font-size: .6rem;
     line-height: 1rem;
 
     display: inline-block;
@@ -1380,6 +1429,8 @@
 
     background: #fff;
     box-shadow: 0 .2rem 1rem #999;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
 }
 .makebook_invitnamecard_item:hover .trash
 {
@@ -1423,7 +1474,7 @@
 
 .makebook_invitnamecard_item .pop.friend_create
 {
-    background-color: #ed4b49;
+    background-color: #ed5565;
 }
 
 .makebook_invitnamecard_item .pop.friend_manage
@@ -1487,7 +1538,7 @@
     padding: 0 0 .5rem 0;
 
     color: #999;
-    border-bottom: 1px solid #e8e8e8;
+    /*border-bottom: 1px solid #e8e8e8;*/
 }
 /* .makebook_invitnamecard_item .friend_info ul
 {
@@ -1498,7 +1549,7 @@
     font-size: .6rem;
     line-height: 1rem;
 
-    color: #333;
+    color: #666;
 }
 
 .makebook_invitnamecard_item .friend_info .info1
@@ -1511,7 +1562,7 @@
 
     margin: .7rem 0 .4rem 0;
 
-    color: #666;
+    color: #333;
 }
 
 .makebook_invitnamecard_item .friend_info .info1 .ybicon-male
@@ -1557,9 +1608,11 @@
 }
 .makebook_invitnamecard_item .socialinfo ul li label
 {
-    font-size: .6rem;
+    font-size: .8rem;
 
-    color: #bac7d1;
+    color: #b8c4d0;
+    margin-bottom: 0;
+    vertical-align: middle;
 }
 .makebook_invitnamecard_item .contact_info
 {
@@ -1664,7 +1717,7 @@
     line-height: 1rem;
 
     margin: 0;
-    padding: .5rem .3rem;
+    padding: .5rem;
 
     background-color: #eee;
 }
@@ -1704,7 +1757,7 @@
     width: 100%;
 }
 .makebook_fdtopic_wrapper li{
-	padding: 0.5rem 0.25rem;
+	padding: 0.5rem;
 	border-bottom: 1px dashed #dddddd;
 	line-height: 25px;
 }
@@ -1720,7 +1773,7 @@
 	font-size: 13px;
 }
 .makebook_fdtopic_wrapper p a{
-	color: #a1c2cf;
+	color: #4f9fd4;
 }
 
 .makebook_friendbtn_item{
@@ -1737,15 +1790,15 @@
 }
 
 .makebook_friendbtn_item a:hover{
-	background-color: #3E8F00;
+	background-color: #59b147;
 }
 .makebook_friendbtn_item .leavemessage{
-	border: 1px solid #64c978;
-	color: #64c978;
+	border: 1px solid #70ca5d;
+	color: #70ca5d;
 }
 .makebook_friendbtn_item .participate{
-	background-color: #64c978;
-	color: #efefef;
+	background-color: #70ca5d;
+	color: #fff;
 }
 .makebook_friendbtn_item .faded{
 	color: #999;

@@ -3518,6 +3518,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     border-radius: .2rem;
     background-color: #ddd;
     box-sizing: content-box;
+    line-height: 1rem;
+    text-align: center;
 }
 
 .common_switcher_item > span
@@ -3549,6 +3551,16 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
     border-radius: .2rem;
     background-color: #fff;
+}
+.common_switcher_item.on.disabled{
+    background-color: #b8e4ae;
+}
+.common_switcher_item.on.disabled .check{
+    float: none;
+}
+.common_switcher_item.on.disabled .slider,
+.common_switcher_item.on.disabled .cross{
+    display: none;
 }
 .common_switcher_item.off
 {

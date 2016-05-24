@@ -930,6 +930,24 @@
     float: right;
 }
 
+.list_mode .page_list .single{
+    display: inline-block;
+    width: 151px;
+    margin: 0 25px 0 10px;
+}
+
+.page_list .single .figure{
+    padding: 3px 5px 3px 3px;
+    background: url("../img/booklist/inner_page_single_bg.jpg") no-repeat 0;
+    background-size: contain;
+}
+
+.page_list .single .figure img{
+    top: 2px;
+    height: 201px;
+    width: 139px;
+}
+
 .page_list .figure .delete
 {
     line-height: 25px;
@@ -948,7 +966,8 @@
     background: rgba(255, 255, 255, .6);
 }
 
-.page_list .double .figure .delete
+.page_list .double .figure .delete,
+.page_list .single .figure .delete
 {
     top: 0;
 }

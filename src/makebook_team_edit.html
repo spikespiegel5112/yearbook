@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/mediaquery.css" type="text/css" media="all">
     <!-- endbuild -->
     <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463455972_838859.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463936352_3249972.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 </head>
@@ -368,6 +368,13 @@
                             <h4>第<span>1</span>页</h4>
                             <h4>第<span>2</span>页</h4>
                         </li>
+                        <li class="single">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <img src="img/default/inner_pages01.jpg">
+                                <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                            </div>
+                            <h4>个人</h4>
+                        </li>
                         <li class="double">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <div class="left">
@@ -409,6 +416,24 @@
                             </div>
                             <h4>第<span>7</span>页</h4>
                             <h4>第<span>8</span>页</h4>
+                        </li>
+                        <li class="add_page">
+                            <a href="javascript:;"><i class="ybiconfont ybicon-plus"></i>
+
+                                <p>添加页面</p></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="name"><span>个人章节</span><a class="ybiconfont ybicon-feedback edit"
+                                                          href="javascript:;"></a></div>
+                    <ul class="page_list">
+                        <li class="single">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <img src="img/default/inner_pages01.jpg">
+                                <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                            </div>
+                            <h4>个人</h4>
                         </li>
                         <li class="add_page">
                             <a href="javascript:;"><i class="ybiconfont ybicon-plus"></i>
@@ -466,6 +491,24 @@
                         <li>
                             <h5 class="chapter_name">图文章节</h5>
                             <a class="thumb double select" href="javascript:;">
+                                <div class="left">
+                                    <img src="img/default/pages03.jpg">
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/pages04.jpg">
+                                </div>
+                                <span class="page_num">P4~5</span>
+                            </a>
+                            <a class="thumb double" href="javascript:;">
+                                <div class="left">
+                                    <img src="img/default/pages03.jpg">
+                                </div>
+                                <div class="right">
+                                    <img src="img/default/pages04.jpg">
+                                </div>
+                                <span class="page_num">P4~5</span>
+                            </a>
+                            <a class="thumb double" href="javascript:;">
                                 <div class="left">
                                     <img src="img/default/pages03.jpg">
                                 </div>
@@ -2849,7 +2892,7 @@
 
         if(winHeight <855){
             $('.team_edit_container .edit_content').css({'position':'relative','height':'855'});
-            $('.single_mode, .list_mode').height('733');
+            $('.edit_content > .single_mode, .edit_content > .list_mode').height('733');
         }
 
     }

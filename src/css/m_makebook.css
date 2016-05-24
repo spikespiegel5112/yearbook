@@ -881,6 +881,18 @@
     background-color: #fff;
     box-shadow: 0 -3px 5px #999;
 }
+@media only screen and (min-height: 667px){
+    .booklist_wrapper .makebook_stepmainbtn_wrapper{
+        position: fixed;
+        bottom: 0;
+    }
+}
+@media only screen and (min-height: 736px){
+    .booklist_wrapper .makebook_stepmainbtn_wrapper{
+        position: fixed;
+        bottom: 0;
+    }
+}
 .makebook_stepmainbtn_wrapper a
 {
     display: block;
@@ -896,7 +908,11 @@
 
     width: 13rem;
 
-    color: #8b8b8b;
+    color: #999;
+}
+.makebook_bookcomponent_item .description.num{
+    width: 64px;
+    text-align: center;
 }
 .makebook_bookcomponent_item .common_switcher_item
 {
@@ -924,6 +940,8 @@
 .makebook_bookcomponent_item .setupinvitcard.subtitle
 {
     display: none;
+    border-top: 1px dashed #ddd;
+    padding: .5rem .3rem 0 0;
 }
 .makebook_bookcomponent_item .title h6
 {
@@ -1152,7 +1170,7 @@
 {
     transition: all .2s;
 
-    border: 1px solid #8cc04e;
+    border: 1px solid #70ca5d;
 }
 
 .makebook_checktag_item span
@@ -1176,7 +1194,7 @@
     color: #fff;
     border-width: .8rem;
     border-style: solid;
-    border-color: transparent #8cc04e #8cc04e transparent;
+    border-color: transparent #70ca5d #70ca5d transparent;
 }
 
 .makebook_checktag_item.active span
@@ -1359,11 +1377,18 @@
 
     vertical-align: top;
 }
+.ia_module .makebook_icbasicinfo_wrapper{
+    display: block;
+}
 .makebook_icbasicinfo_wrapper li
 {
     display: block;
 
     margin: 0 0 0 .5rem;
+    color: #333;
+}
+.ia_module .makebook_icbasicinfo_wrapper li{
+    margin: 0;
 }
 .makebook_icbasicinfo_wrapper li a
 {
@@ -1806,11 +1831,22 @@
 }
 
 /*~~~~~~~~~~makebook_step4_3.13.html~~~~~~~~~~*/
-
+.nominate_tips{
+    text-align: center;
+    font-size: .7rem;
+    margin: 0;
+    line-height: 1.75rem;
+    color: #999;
+}
+.nominate_tips span{
+    color: #ff696a;
+    font-size: .8rem;
+}
 .makebook_recommend_wrapper
 {
     overflow: hidden;
     position: relative;
+    margin: -10px 0 0;
 }
 
 .makebook_recommend_wrapper ul
@@ -1873,7 +1909,6 @@
     width: 100%;
     margin: 0 0 50px 0;
 }
-
 .makebook_recommend_wrapper li
 {
     display: inline-block;
@@ -1881,6 +1916,7 @@
     width: 5rem;
     height: 6rem;
     cursor: pointer;
+    /*cursor: pointer;*/
 }
 .makebook_step_wrapper .makebook_recommend_wrapper li
 {
@@ -1898,7 +1934,6 @@
 .makebook_recommend_wrapper .swiper-pagination{
     position: relative;
     bottom: 0;
-    
 }
 .makebook_recommend_wrapper .swiper-pagination span{
     background-color: #8cc04e;

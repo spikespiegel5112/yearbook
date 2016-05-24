@@ -811,6 +811,11 @@
     padding: 10px 100px 0 0;
 }
 
+.list_mode .page_list li{
+    display: inline-block;
+    vertical-align: top;
+}
+
 .list_mode .page_list .cover,
 .list_mode .page_list .backcover
 {
@@ -866,10 +871,8 @@
 
 .list_mode .page_list .double
 {
-    display: inline-block;
-
     width: 294px;
-    margin: 0 25px 10px 0;
+    margin: 0 18px 10px 0;
 }
 
 @media only screen and (max-width: 1024px)
@@ -930,6 +933,23 @@
     float: right;
 }
 
+.list_mode .page_list .single{
+    width: 147px;
+    margin: 0 18px 0 0;
+}
+
+.page_list .single .figure{
+    padding: 3px 5px 3px 3px;
+    background: url("../img/booklist/inner_page_single_bg.jpg") no-repeat 0;
+    background-size: contain;
+}
+
+.page_list .single .figure img{
+    top: 2px;
+    height: 201px;
+    width: 139px;
+}
+
 .page_list .figure .delete
 {
     line-height: 25px;
@@ -948,7 +968,8 @@
     background: rgba(255, 255, 255, .6);
 }
 
-.page_list .double .figure .delete
+.page_list .double .figure .delete,
+.page_list .single .figure .delete
 {
     top: 0;
 }
@@ -1359,6 +1380,10 @@
 
     box-sizing: border-box;
     height: 88px;
+    margin: 0 auto 10px;
+}
+
+.chapter_list li .thumb:last-child{
     margin: 0 auto;
 }
 
@@ -2810,6 +2835,22 @@
 
     width: 100%;
 }
+.aside_content .res_tab .album{
+    float: left;
+    max-width: 900px;
+    overflow: hidden;
+}
+.aside_content .res_tab .album ul{
+    white-space: nowrap;
+    height: 48px;
+    padding-top: 3px;
+    box-sizing: border-box;
+    width: auto;
+    transition: all .3s ease;
+}
+.aside_content .res_tab .album ul li{
+    width: 180px;
+}
 .aside_content .res_tab li:first-child
 {
     border-left: 1px solid #d9dfe5;
@@ -2819,25 +2860,33 @@
     border-left: 0;
     background-color: #fff;
 }
-.aside_content .res_tab .add_album
+.aside_content .res_tab .add_album,
+.aside_content .res_tab .turn_page
 {
     font-size: 14px;
     line-height: 45px;
 
-    display: inline-block;
-
+    margin-top: 3px;
+    float: left;
     box-sizing: border-box;
     width: 70px;
     height: 45px;
 
     text-align: center;
 
-    color: #333;
+    color: #666;
     border-top: 1px solid #d9dfe5;
     border-right: 1px solid #d9dfe5;
     border-bottom: 1px solid #d9dfe5;
     background-color: #fcfeff;
 }
+.aside_content .res_tab .turn_page{
+    display: none;
+}
+.aside_content .res_tab .turn_page a{
+    color: #666;
+}
+.aside_content .res_tab .turn_page a:hover,
 .aside_content .res_tab .add_album:hover
 {
     color: #90c132;
@@ -3802,6 +3851,15 @@
     text-overflow: ellipsis;
 
     color: #333;
+}
+.message_list .item .user_info .delete{
+    float: right;
+    color: #666;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.message_list .item .user_info .delete:hover{
+    color: #31b8d3;
 }
 .message_list .item .user_info .time
 {

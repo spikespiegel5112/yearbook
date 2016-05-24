@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/ia.css" type="text/css" media="all">
     <!-- endbuild -->
     <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463455972_838859.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463936352_3249972.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/photoswipe/photoswipe.css" type="text/css" media="all">
@@ -27,11 +27,22 @@
 <div class="aside_content">
     <div class="resource_list">
         <div class="res_tab">
-            <ul>
-                <li class="on">书册相册（<span>10</span>）</li>
-                <li>邀请卡相册</li>
-            </ul>
+            <div class="album">
+                <ul>
+                    <li class="on">书册相册（<span>10</span>）</li>
+                    <li>邀请卡相册1</li>
+                    <li>邀请卡相册2</li>
+                    <li>邀请卡相册3</li>
+                    <li>邀请卡相册4</li>
+                    <li>邀请卡相册5</li>
+                    <li>邀请卡相册6</li>
+                </ul>
+            </div>
             <a class="add_album" href="javascript:;"><i class="ybiconfont ybicon-add"></i></a>
+            <div class="turn_page">
+                <a class="prev ybiconfont ybicon-backward2" href="javascript:;"></a>
+                <a class="next ybiconfont ybicon-forward2" href="javascript:;"></a>
+            </div>
         </div>
         <div class="res_tab_con">
             <ul>
@@ -230,6 +241,11 @@
                         </div>
                     </div>
                 </li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
             </ul>
         </div>
     </div>
@@ -719,11 +735,25 @@
         jQuery(".aside_content .resource_list").slide({
             mainCell: ".res_tab_con ul",
             titCell: ".res_tab li",
-            prevCell: "",
-            nextCell: "",
+            prevCell: ".prev",
+            nextCell: ".next",
             trigger: "click",
             pnLoop: false,
-            autoPlay: false
+            autoPlay: false,
+            endFun: function(){
+                var albumNum = $('.res_tab .album ul li').length,
+                        albumTabWid = 180*albumNum;
+                if(albumNum > 5){
+                    $('.res_tab .turn_page').show();
+                    var index = $('.album li.on').index();
+                    if(index <= albumNum-5){
+                        left = -(index)*180;
+                    }else{
+                        left = -(albumNum-5)*180;
+                    }
+                    $('.album ul').css({'width':albumTabWid,'transform':'translateX('+left+'px)'});
+                }
+            }
         });
 
         $('.add_album, .edit_album').click(function () {

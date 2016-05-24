@@ -48,6 +48,8 @@
 	<div class='sem_iabook313_container'>
 		<div class='sem_banner_wrapper'>
 			<img src="img/banner/sem_iabook313banner_1_00000.png">
+			<img src="img/banner/sem_iabook313banner_2_00000.png">
+			<img src="img/banner/sem_iabook313banner_3_00000.png">
 		</div>
 		<div class='sem_iabook_wrapper'>
 			<div class='sem_iabookintro313_wrapper'>
@@ -401,12 +403,12 @@
 	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
-		
+
 		tab();
 		video();
 	});
 	//切换模板列表
-	function tab(){
+	function tab() {
 		var introLiEl = $('.sem_iabookintromain313_wrapper li'),
 			coverlistEl = $('.sem_iabook313_container .sem_mainlist_wrapper ul');
 		$('.sem_iabookintrotab313_wrapper li').hover(function() {
@@ -421,14 +423,14 @@
 
 	function video() {
 		var displayEl = $('.common_macbookscreen_comtainer'),
-			index=0,
-			videoEl=$('.common_macbookscreen_wrapper video');
+			index = 0,
+			videoEl = $('.common_macbookscreen_wrapper video');
 		$('.sem_iabookfeature313_wrapper li').hover(function() {
-			var $this=$(this);
+			var $this = $(this);
 			//伸出屏幕
 			displayEl.addClass('active');
 
-			index=$this.index();
+			index = $this.index();
 			$this.addClass('active').siblings().removeClass('active');
 			//切换视频
 			videoEl.siblings().hide().end().eq(index).show();

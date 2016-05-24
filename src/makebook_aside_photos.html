@@ -741,7 +741,8 @@
             pnLoop: false,
             autoPlay: false,
             endFun: function(){
-                var albumNum = $('.res_tab .album ul li').length;
+                var albumNum = $('.res_tab .album ul li').length,
+                        albumTabWid = 180*albumNum;
                 if(albumNum > 5){
                     $('.res_tab .turn_page').show();
                     var index = $('.album li.on').index();
@@ -750,7 +751,7 @@
                     }else{
                         left = -(albumNum-5)*180;
                     }
-                    $('.album ul').css('transform','translateX('+left+'px)');
+                    $('.album ul').css({'width':albumTabWid,'transform':'translateX('+left+'px)'});
                 }
             }
         });

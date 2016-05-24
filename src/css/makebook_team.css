@@ -1380,6 +1380,10 @@
 
     box-sizing: border-box;
     height: 88px;
+    margin: 0 auto 10px;
+}
+
+.chapter_list li .thumb:last-child{
     margin: 0 auto;
 }
 
@@ -3847,6 +3851,15 @@
     text-overflow: ellipsis;
 
     color: #333;
+}
+.message_list .item .user_info .delete{
+    float: right;
+    color: #666;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.message_list .item .user_info .delete:hover{
+    color: #31b8d3;
 }
 .message_list .item .user_info .time
 {

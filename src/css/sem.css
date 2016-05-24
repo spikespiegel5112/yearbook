@@ -41,7 +41,7 @@
 {
     position: relative;
 
-    overflow: hidden;
+    /*overflow: hidden;*/
 
     width: 1000px;
     height: auto;
@@ -55,6 +55,7 @@
 
     width: 100%;
     margin: 0 auto;
+    text-align: center;
 }
 .sem_mainlist_wrapper ul:after
 {
@@ -68,7 +69,7 @@
 	/*overflow: hidden;*/
     position: relative;
 
-    float: left;
+    display: inline-block;
 
     width: 200px;
     margin: 15px;
@@ -170,6 +171,10 @@
 
     color: #999;
 }
+.sem_mainlist_wrapper li .pages{
+    display: block;
+    font-size: 16px;
+}
 .sem_listbg_item
 {
     position: absolute;
@@ -206,7 +211,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-.sem_moretpl_btn
+.sem_moretpl_btn, .sem_main_btn
 {
     font-size: 30px;
     line-height: 60px;
@@ -226,11 +231,11 @@
     border-radius: 10px;
     background-color: #ee688f;
 }
-.sem_moretpl_btn:hover
+.sem_moretpl_btn:hover, .sem_main_btn:hover
 {
     background: #ea4978;
 }
-.sem_moretpl_btn:active
+.sem_moretpl_btn:active, .sem_main_btn:active
 {
     background: #ad4764;
 }
@@ -1346,7 +1351,7 @@
 }
 
 
-.sem_graduationbook_container .sem_banner_wrapper, .sem_partybook_container .sem_banner_wrapper, .sem_iabook_container .sem_banner_wrapper
+.sem_graduationbook_container .sem_banner_wrapper, .sem_partybook_container .sem_banner_wrapper, .sem_iabook312_container .sem_banner_wrapper
 {
     height: 420px;
 }
@@ -1600,12 +1605,15 @@
 
 
 /*~~~~~~~~~~sem_iabook.html~~~~~~~~~~*/
-.sem_iabook_container
+.sem_mainlistul_wrapper li>a{
+    display: inline-block;
+}
+.sem_iabook312_container
 {
     width: 100%;
     min-width: 1150px;
 }
-.sem_iabookintro_wrapper
+.sem_iabookintro312_wrapper
 {
     width: 1150px;
     margin: 0 auto;
@@ -1614,19 +1622,19 @@
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
 }
-.sem_iabookintrotab_wrapper
+.sem_iabook312_container .sem_iabookintrotab312_wrapper
 {
     width: 100%;
     height: 75px;
 }
-.sem_iabookintrotab_wrapper li
+.sem_iabook312_container .sem_iabookintrotab312_wrapper li
 {
     float: left;
 
     width: 383px;
     height: 75px;
 }
-.sem_iabookintrotab_wrapper a
+.sem_iabook312_container .sem_iabookintrotab312_wrapper a
 {
     font-size: 22px;
     line-height: 75px;
@@ -1643,14 +1651,14 @@
     color: #489451;
     background-color: #e3f4e3;
 }
-.sem_iabookintrotab_wrapper .active a
+.sem_iabook312_container .sem_iabookintrotab312_wrapper .active a
 {
     position: relative;
 
     color: #fff;
     background-color: #8cc04e;
 }
-.sem_iabookintrotab_wrapper .active a:after
+.sem_iabook312_container .sem_iabookintrotab312_wrapper .active a:after
 {
     position: absolute;
     bottom: -16px;
@@ -1668,14 +1676,14 @@
     border-style: solid;
     border-color: #8cc04e transparent transparent transparent;
 }
-.sem_iabook_container .sem_mainlist_wrapper li
+.sem_iabook312_container .sem_mainlist_wrapper li
 {
     width: 190px;
-    margin: 10px;
+    margin: 8px;
 
     box-shadow: none;
 }
-.sem_iabook_container .sem_mainlist_wrapper li a img
+.sem_iabook312_container .sem_mainlist_wrapper li a img
 {
     position: relative;
     bottom: 0;
@@ -1689,21 +1697,21 @@
 
     box-shadow: 0 10px 20px #888;
 }
-.sem_iabook_container .sem_mainlist_wrapper li a img:hover
+.sem_iabook312_container .sem_mainlist_wrapper li a img:hover
 {
     position: relative;
     bottom: 7px;
 
     transition: all .2s;
 }
-.sem_iabookintromain_wrapper
+.sem_iabookintromain312_wrapper
 {
     position: relative;
 
     width: 100%;
     height: 440px;
 }
-.sem_iabookintromain_wrapper li
+.sem_iabookintromain312_wrapper li
 {
     position: absolute;
     top: 0;
@@ -1714,7 +1722,7 @@
 
     background-position: center;
 }
-.sem_iabookintromain_wrapper li .sem_iabookdesc_item
+.sem_iabookintromain312_wrapper li .sem_iabookdesc_item
 {
     font-size: 15px;
 
@@ -1726,23 +1734,23 @@
 
     text-align: center;
 }
-.sem_iabookintromain_wrapper .graduate
+.sem_iabookintromain312_wrapper .graduate
 {
     background-image: url(../img/sem/sem_iabook_graduate_00000.png);
 }
-.sem_iabookintromain_wrapper .party
+.sem_iabookintromain312_wrapper .party
 {
     display: none;
 
     background-image: url(../img/sem/sem_iabook_party_00000.png);
 }
-.sem_iabookintromain_wrapper .activity
+.sem_iabookintromain312_wrapper .activity
 {
     display: none;
 
     background-image: url(../img/sem/sem_iabook_activity_00000.png);
 }
-.sem_iabookintromain_wrapper .sem_iabookdesc_item
+.sem_iabookintromain312_wrapper .sem_iabookdesc_item
 {
     color: #8cc04e;
 }
@@ -1777,7 +1785,7 @@
 
     color: #ff9735;
 }
-.sem_iabook_container .sem_mainlist_wrapper
+.sem_iabook312_container .sem_mainlist_wrapper
 {
     position: relative;
 
@@ -1791,7 +1799,7 @@
     border-left: 1px solid #ccc;
     background-color: #fff;
 }
-.sem_iabook_container .sem_mainlist_wrapper:before, .sem_iabook_container .sem_mainlist_wrapper:after
+.sem_iabook312_container .sem_mainlist_wrapper:before, .sem_iabook312_container .sem_mainlist_wrapper:after
 {
     position: absolute;
     z-index: -1;
@@ -1804,7 +1812,7 @@
 
     content: '';
 }
-.sem_iabook_container .sem_mainlist_wrapper:before
+.sem_iabook312_container .sem_mainlist_wrapper:before
 {
     right: 15px;
 
@@ -1814,7 +1822,7 @@
 
     box-shadow: 5px 60px 25px #555;
 }
-.sem_iabook_container .sem_mainlist_wrapper:after
+.sem_iabook312_container .sem_mainlist_wrapper:after
 {
     left: 15px;
 
@@ -1824,13 +1832,13 @@
 
     box-shadow: -5px 60px 25px #555;
 }
-.sem_iabook_container .sem_title_wrapper
+.sem_iabook312_container .sem_title_wrapper
 {
     width: 530px;
     margin: 0 auto 20px;
     padding: 30px 0 0 0;
 }
-.sem_iabook_container .sem_mainlist_wrapper li div span
+.sem_iabook312_container .sem_mainlist_wrapper li div span
 {
     font-size: 17px;
 
@@ -1838,7 +1846,7 @@
 
     color: red;
 }
-.sem_iabook_container .sem_mainlist_wrapper li div span label
+.sem_iabook312_container .sem_mainlist_wrapper li div span label
 {
     font-size: 12px;
 
@@ -1846,14 +1854,14 @@
     bottom: 5px;
     left: 5px;
 }
-.sem_iabook_container .sem_mainlist_wrapper li div a
+.sem_iabook312_container .sem_mainlist_wrapper li div a
 {
     font-size: 15px;
     font-style: normal;
 
     margin: 30px auto 10px;
 }
-.sem_iabook_container .sem_moretpl_btn
+.sem_iabook312_container .sem_moretpl_btn
 {
     font-size: 15px;
     line-height: 40px;
@@ -1867,18 +1875,18 @@
     border-radius: 6px;
     background-color: #fff;
 }
-.sem_iabook_container .sem_moretpl_btn:active
+.sem_iabook312_container .sem_moretpl_btn:active
 {
     color: #fff;
     background-color: #8cc04e;
 }
-.sem_iabookprocedure
+.sem_iabookprocedure312_wrapper
 {
     width: 900px;
     margin: 0 auto;
     padding: 0 0 40px 0;
 }
-.sem_iabookprocedure h6
+.sem_iabooktitle312_item
 {
     font-size: 35px;
 
@@ -1889,13 +1897,13 @@
 
     color: #000;
 }
-.sem_iabookprocedure ul
+.sem_iabookprocedure312_wrapper ul
 {
     overflow: hidden;
 
     width: 100%;
 }
-.sem_iabookprocedure li
+.sem_iabookprocedure312_wrapper li
 {
     position: relative;
 
@@ -1906,7 +1914,7 @@
 
     text-align: center;
 }
-.sem_iabookprocedure li span
+.sem_iabookprocedure312_wrapper li span
 {
     font-size: 70px;
     line-height: 160px;
@@ -1920,7 +1928,7 @@
     border-radius: 50%;
     background-color: #5cb3b3;
 }
-.sem_iabookprocedure li label
+.sem_iabookprocedure312_wrapper li label
 {
     display: block;
 
@@ -1929,7 +1937,7 @@
 
     color: #5cb3b3;
 }
-.sem_iabookprocedure li i
+.sem_iabookprocedure312_wrapper li i
 {
     font-size: 30px;
 
@@ -2051,14 +2059,344 @@
 {
     box-shadow: -3px -3px 7px #ff8238 inset, -3px -3px 7px #a47b63 inset, 1px 1px 10px #a47b63 inset, 1px 1px 10px #a47b63 inset;
 }
-.sem_iabook_container .sem_mainlistul_wrapper ul
+.sem_iabook312_container .sem_mainlistul_wrapper ul
 {
     display: none;
 }
-.sem_iabook_container .sem_mainlistul_wrapper ul:first-child
+.sem_iabook312_container .sem_mainlistul_wrapper ul:first-child
 {
     display: block;
 } 
+/*~~~~~~~~~~sem_iabook3.13.html~~~~~~~~~~*/
+.sem_iabookintrotab313_wrapper{
+
+}
+.sem_iabookintrotab313_wrapper li{
+    display: inline-block;
+    width: 33%;
+    height: 140px;
+    line-height: 140px;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+}
+.sem_iabookintrotab313_wrapper li a{
+    display: block;
+    color: #999;
+    font-weight: lighter;
+    opacity: 0.7;
+}
+.sem_iabookintrotab313_wrapper li span{
+    display: none;
+    border-color: transparent transparent #cccccc transparent;
+}
+.sem_iabookintrotab313_wrapper .active>span{
+    display: inline-block;
+}
+.sem_iabookintrotab313_wrapper li span i{
+    border-color: transparent transparent #f2f2f2 transparent;
+    top: 2px;
+    left: -15px;
+}
+.sem_iabookintrotab313_wrapper li a label{
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Apple LiGothic Medium, STHeiti Light, Microsoft YaHei';
+}
+.sem_iabookintrotab313_wrapper .active a{
+    color: #86b352;
+    opacity: 1;
+}
+.sem_iabookintrotab313_wrapper a .icon{
+    display: inline-block;
+    margin: 0 15px;
+}
+.sem_iabookintrotab313_wrapper li a .icon{
+    display: inline-block;
+    width: 75px;
+    height: 100px;
+    background-image: url(../img/sem/sem_iabook313_bookicons_00000.png);
+    vertical-align: middle;
+}
+
+.sem_iabookintrotab313_wrapper .graduate a .icon{
+    background-position: 0 0;
+}
+.sem_iabookintrotab313_wrapper .friend a span{
+    background-position: -100px 0;
+}
+.sem_iabookintrotab313_wrapper .team a span{
+    background-position: -195px 0;
+}
+.sem_iabookintrotab313_wrapper li>span, .sem_iabookintrotab313_wrapper li>span i{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.sem_iabook313_container .sem_iabooktitle_item{
+    color: #475659;
+    font-weight: lighter;
+    font-size: 30px;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    font-family: 'Apple LiGothic Medium, STHeiti Light, Microsoft YaHei';
+}
+.sem_iabookintromain313_wrapper{
+    width: 100%;
+    height: 140px;
+}
+.sem_iabookintromain313_wrapper>ul>li{
+    display: none;
+}
+.sem_iabookintromain313_wrapper .active{
+    display: block;
+}
+.sem_iabookintromain313_wrapper .sem_iabookdesc_item{
+    padding: 30px 0 60px 0;
+    min-height: 5rem;
+    text-align: center;
+    line-height: 40px;
+    font-size: 19px;
+    color: #999;
+}
+.sem_iabookintromain313_wrapper{
+    background-color: #f2f2f2;
+    border-top: 1px solid #cccccc;
+}
+.sem_iabook313_container .sem_mainlist_wrapper{
+    padding: 0;
+    width: 1150px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #bbb;
+}
+.sem_iabook313_container .sem_mainlist_wrapper li{
+    padding: 0;
+    width: 170px;
+    bottom: 40px;
+    box-shadow: none;
+}
+.sem_iabook313_container .sem_iabookintromain313_wrapper{
+    height: auto;
+    padding: 0 0 40px 0;
+}
+.sem_iabook313_container .sem_main_btn{
+    margin: 0 auto 0;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    border-radius: 3px;
+    border:1px solid #5bb458;
+    background-color: #89ce83;
+    position: relative;
+    top: 20px;
+}
+.sem_iabook313_container .sem_main_btn:hover{
+    background: #5D875A;
+    transition: all 0.2s;
+}
+.sem_iabookintrotab313_wrapper{
+    margin: 0 auto;
+    width: 1150px;
+}
+.sem_iabook313_container .sem_mainlistul_wrapper li>a{
+    box-shadow: 0 15px 20px #ddd;
+    border: 1px solid #c5c7c8;
+}
+.sem_iabook313_container .sem_mainlistul_wrapper li a img{
+    height: 240px;
+}
+.sem_iabook313_container .sem_mainlist_wrapper li div{
+    margin: 30px 0 0 0;
+    text-align: center;
+}
+.sem_iabook313_container .sem_mainlist_wrapper ul{
+    display: none;
+}
+.sem_iabook313_container .sem_mainlist_wrapper .active{
+    display: block;
+}
+.sem_iabook313_container .sem_mainlist_wrapper li .pages{
+    margin: 10px 0;
+    color: red;
+}
+.sem_iabook313_container .sem_mainlist_wrapper .make{
+    display: inline-block;
+    margin: 10px 0 0 0;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #989b9c;
+    border-radius: 4px;
+    color: #989b9c;
+}
+.sem_iabook313_container .sem_mainlist_wrapper .make:hover{
+    background: #989b9c;
+    color: #fff;
+    transition: all 0.2s;
+}
+.sem_iabookservice313_wrapper{
+    height: 440px;
+    background-color: #f8f8f8;
+}
+.sem_iabookservice313_wrapper .sem_main_btn{
+    margin: 0;
+}
+.sem_iabookservice313_wrapper .inner{
+    margin: 0 auto;
+    padding: 110px 0;
+    width: 800px;
+}
+.sem_iabookservice313_wrapper .inner div{
+    display: inline-block;
+    margin: 0 0 0 100px;
+    vertical-align: middle;
+}
+.sem_iabookservice313_wrapper .contactservice{
+    display: inline-block;
+    width: 210px;
+    height: 210px;
+    background: url(../img/icon/icon_contactservice_00000.png) no-repeat;
+    vertical-align: middle;
+}
+.sem_iabookservice313_wrapper p{
+    margin: 0 0 40px 0;
+    font-size: 30px;
+    color: #888888;
+    font-family: 'Apple LiGothic Medium, STHeiti Light, Microsoft YaHei';
+}
+.sem_iabookfeature313_wrapper{
+    text-align: center;
+}
+.sem_iabookfeature313_wrapper ul{
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto 40px;
+    width: 1150px;
+    font-size: 0;
+}
+.sem_iabookfeature313_wrapper ul li{
+    display: inline-block;
+    width: 380px;
+    text-align: center;
+    vertical-align: top;
+}
+.sem_iabookfeature313_wrapper ul .active span{
+    opacity: 1;
+    transition: all 0.2s
+}
+.sem_iabookfeature313_wrapper ul li a{
+    display: inline-block;
+}
+.sem_iabookfeature313_wrapper span{
+    display: block;
+    margin: 0 auto 35px;
+    width: 140px;
+    height: 90px;
+    background-image: url(../img/icon/sem_iabook_feature_icon_00000.png);
+    opacity: 0.7;
+}
+.sem_iabookfeature313_wrapper label{
+    display: block;
+    margin: 0 0 20px 0;
+    font-size: 23px;
+    color: #333;
+}
+.sem_iabookfeature313_wrapper p{
+    font-size: 14px;
+    line-height: 30px;
+    color: #666666;
+}
+.sem_iabookfeature313_wrapper .tplresource{
+    background-position: -10px 0;
+}
+.sem_iabookfeature313_wrapper .teamwork{
+    background-position: -150px 0;
+}
+.sem_iabookfeature313_wrapper .easytouse{
+    background-position: -300px 0;
+}
+.sem_iabookprocedure313_wrapper{
+    margin: 0 auto;
+    padding: 0 0 150px 0;
+    width: 100%;
+    position: relative;
+}
+.sem_iabookprocedure313_wrapper .common_macbookscreen_comtainer .common_macbookscreen_wrapper{
+    position: relative;
+    bottom: -500px;
+    z-index: 1;
+    transition: bottom 0.3s;
+}
+.sem_iabookprocedure313_wrapper .common_macbookscreen_comtainer.active .common_macbookscreen_wrapper{
+    bottom: 0;
+    transition: bottom 0.3s;
+}
+.sem_iabookprocedure313_wrapper .common_macbookscreen_comtainer:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    box-shadow: 0 0 60px #333;
+    position: absolute;
+    bottom: -20px;
+}
+.sem_iabookprocedure313_wrapper ul{
+    width: 100%;
+    height: 850px;
+}
+.sem_iabookprocedure313_wrapper ul li{
+    width: 100%;
+    height: 255px;
+}
+.sem_iabookprocedure313_wrapper ul li div{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 49%;
+}
+.sem_iabookprocedure313_wrapper ul li div h6{
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 300px;
+    border-bottom: 1px solid #b9b9b9;
+    font-size: 24px;
+    color: #333333;
+}
+.sem_iabookprocedure313_wrapper ul li div p{
+    margin: 20px 0 0 0;
+    font-size: 13px;
+    line-height: 25px;
+    color: #999;
+}
+.sem_iabookprocedure313_wrapper .axis{
+    width: 100%;
+    position: absolute;
+    top: 110px;
+    z-index: -1;
+}
+.sem_iabookprocedure313_wrapper .axis span{
+    display: block;
+    margin: 0 auto;
+    width: 55px;
+    height: 830px;
+    background: url(../img/sem/sem_iabook313axis_00000.png);
+}
+.sem_iabook313_container .sem_banner_wrapper{
+    display: block;
+    height: 400px;
+}
+.sem_iabook313_container .sem_banner_wrapper img{
+    display: block;
+    position: absolute;
+}
 
 
 

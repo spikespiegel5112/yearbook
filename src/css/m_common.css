@@ -2766,14 +2766,6 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     border-radius: 5px;
     background-color: #71cb5d;
 }
-
-.bp_sendcommentbtn_wrapper .cancel
-{
-    float: left;
-
-    color: #000;
-    background-color: #efefef;
-}
 .bp_sendcommentbtn_wrapper .send
 {
     float: right;
@@ -2784,8 +2776,11 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 }
 .bp_sendcommentbtn_wrapper .cancel
 {
-    color: #fff;
-    background-color: #aaa;
+    float: left;
+    color: #666;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
 }
 .bp_sendcommentbtn_wrapper .and_user{
     position: absolute;

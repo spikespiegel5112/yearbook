@@ -368,6 +368,13 @@
                             <h4>第<span>1</span>页</h4>
                             <h4>第<span>2</span>页</h4>
                         </li>
+                        <li class="single">
+                            <div class="figure" title="拖动排序，双击可编辑">
+                                <img src="img/default/inner_pages01.jpg">
+                                <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
+                            </div>
+                            <h4>个人</h4>
+                        </li>
                         <li class="double">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <div class="left">
@@ -2867,7 +2874,7 @@
 
         if(winHeight <855){
             $('.team_edit_container .edit_content').css({'position':'relative','height':'855'});
-            $('.single_mode, .list_mode').height('733');
+            $('.edit_content > .single_mode, .edit_content > .list_mode').height('733');
         }
 
     }

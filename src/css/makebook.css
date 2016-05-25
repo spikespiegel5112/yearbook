@@ -7042,14 +7042,16 @@
     overflow: hidden;
 
     margin: 30px 0;
+    position: relative;
 }
 
 .makebook_recommend_wrapper ul
 {
-    float: left;
+    /*float: left;*/
     overflow: hidden;
 
     width: 817px;
+    margin: 0 auto;
 }
 
 .makebook_recommendlist_wrapper
@@ -7073,7 +7075,7 @@
 {
     margin: 0 12px;
 }
-.makebook_spmain_wrapper .makebook_recommend_wrapper li:first-child
+/*.makebook_spmain_wrapper .makebook_recommend_wrapper li:first-child
 {
     margin: 0 10px 0 0;
 }
@@ -7081,14 +7083,15 @@
 .makebook_spmain_wrapper .makebook_recommend_wrapper li:last-child
 {
     margin: 0 0 0 10px;
-}
+}*/
 
 .makebook_recommend_wrapper > a
 {
     font-size: 40px;
     line-height: 200px;
 
-    float: left;
+    position: absolute;
+    top: 0;
 
     width: 40px;
     height: 200px;
@@ -7112,16 +7115,23 @@
     background-color: #ebebeb;
 }
 
-.makebook_recommend_wrapper .left
+.makebook_recommend_wrapper .prev
 {
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
+    left: 10px;
 }
 
-.makebook_recommend_wrapper .right
+.makebook_recommend_wrapper .prev.prevStop,
+.makebook_recommend_wrapper .next.nextStop{
+    display: none;
+}
+
+.makebook_recommend_wrapper .next
 {
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
+    right: 10px;
 }
 
 .makebook_recommend_wrapper .title
@@ -7177,7 +7187,21 @@
     text-align: center;
 }
 
-.makebook_recommend_wrapper .info .pages
+.makebook_sprecommend_wrapper .makebook_recommend_wrapper .info span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .6rem;
+    text-align: center;
+    color: #666;
+    /*border: 1px solid #ddd;*/
+    border-radius: 5px;
+    padding: .1rem;
+    margin: .1rem 0;
+    white-space: nowrap;
+    background-color: #e3f2f7;
+}
+
+/*.makebook_recommend_wrapper .info .pages
 {
     color: #aaa;
 }
@@ -7193,7 +7217,7 @@
 
     position: absolute;
     top: 0;
-}
+}*/
 
 .makebook_recommend_wrapper .active .bookcover div
 {

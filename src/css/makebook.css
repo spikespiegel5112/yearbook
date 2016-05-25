@@ -5369,7 +5369,7 @@
     border-top: 0;
 }
 
-#uploadIL .choose_img_con .img_con .photo_list
+.photo_box .choose_img_con .img_con .photo_list
 {
     overflow-x: hidden;
     overflow-y: auto;
@@ -7287,7 +7287,7 @@
 .makebook_steppopup_container
 {
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     top: 0;
     left: 0;
 
@@ -7370,6 +7370,18 @@
     padding: 0;
 
     color: #333;
+}
+
+.makebook_steppopup_wrapper .help{
+    float: right;
+    font-size: .7rem;
+    color: #999;
+}
+
+.makebook_steptitle_wrapper .help i{
+    font-size: .7rem;
+    vertical-align: middle;
+    margin-right: 3px;
 }
 
 .makebook_steppopup_wrapper .makebook_stepdesc_wrapper
@@ -7473,6 +7485,23 @@
 
     cursor: pointer;
     text-align: center;
+}
+
+.makebook_splist_wrapper .title .preview{
+    display: none;
+    position: absolute;
+    font-size: 20px;
+    right: 8px;
+    top: 2px;
+    color: #ccc;
+}
+
+.makebook_splist_wrapper .title:hover .preview{
+    display: block;
+}
+
+.makebook_splist_wrapper .title .preview:hover{
+    color: #f80;
 }
 
 .makebook_splist_wrapper .makebook_mark_item

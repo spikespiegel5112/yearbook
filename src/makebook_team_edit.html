@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463936352_3249972.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
 </head>
 <body style="min-width: 1280px">
 <div class="main_container">
@@ -1797,16 +1798,16 @@
 <!--添加照片-->
 <div id="uploadIL" class="auto_layout_container hidden">
     <div class="photo_box">
-        <div class="empty">
+        <div class="empty hidden">
             <img src="img/icon/empty_box_1_00000.png">
 
             <p class="tip">目前没有任何照片，还需添加100张照片</p>
             <a class="btn active" href="javascript:;">点击选择照片</a>
         </div>
         <!--结构同一键成书页面的上传中-->
-        <div class="choose_img_con hidden">
+        <div class="choose_img_con ">
             <div class="img_con">
-                <div class="uploading cm_fl"><!--完成上传添加class:finished .to_upload hidden-->
+                <div class="finished cm_fl"><!--完成上传添加class:finished .to_upload hidden-->
                     <div class="item new_up">
                         <div class="title">
                             <span class="cm_fl">已经上传的照片</span>
@@ -1866,7 +1867,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="to_upload cm_fr">
+                <div class="to_upload cm_fr hidden">
                     <div class="item">
                         <div class="title">
                             <p class="cm_fl">等待上传的照片(<span>30</span>)</p>
@@ -2215,7 +2216,7 @@
                         <li>
                             <a class='title' href='javascript:;'>
                                 <div class='makebook_compicon_item'>
-                                    <i class='frame ybiconfont ybicon-paty'></i>
+                                    <i class='frame ybiconfont ybicon-party'></i>
                                 </div>
                                 <label>聚会纪念册</label>
                                 <span class='makebook_mark_item ybiconfont ybicon-ok'></span>
@@ -2276,6 +2277,12 @@
                     <ul class='makebook_splist_wrapper'>
                         <li class='actived'>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_cover">
+                                        <div class='makebook_fancyboxframe_double' id='fancybox_cover'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div class='makebook_compicon_item'>
                                     <i class='frame ybiconfont ybicon-cover'></i>
                                 </div>
@@ -2285,6 +2292,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_flyleaf">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_flyleaf'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2297,6 +2309,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_category">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_category'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2309,6 +2326,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_imagetext">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_imagetext'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2321,6 +2343,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_personal">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_personal'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2333,6 +2360,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_address">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_address'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2345,6 +2377,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_photo">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_photo'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2356,7 +2393,12 @@
                             </a>
                         </li>
                         <li>
-                            <a class='title' href='javascript:;'>
+                            <a class='title'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_vote">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_vote'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2858,6 +2900,7 @@
 <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb313"></script>
 <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
@@ -3358,6 +3401,10 @@
                 }
             }
         });
+
+        //step2 点击预览
+        $('.makebook_splist_wrapper .title .preview').fancybox({});
+
         //点击下一步
         $('.makebook_spnextlink_btn').click(function() {
             var $this = $(this),

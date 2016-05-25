@@ -1918,6 +1918,7 @@
     margin: 0.5rem 0 0 0;
     width: 5rem;
     height: 6rem;
+    cursor: pointer;
     /*cursor: pointer;*/
 }
 .makebook_step_wrapper .makebook_recommend_wrapper li
@@ -2000,12 +2001,10 @@
     overflow: hidden;
 
     width: 100%;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #333;
-    display: block;
 }
 
 .makebook_recommend_wrapper .title .bookname:hover
@@ -2035,11 +2034,10 @@
 }
 .makebook_recommend_wrapper .info p{
     font-size: 0.6rem;
-    color: #999;
 }
 .makebook_recommend_wrapper .info .pages
 {
-    color: #ff696a;
+    color: red;
 }
 
 .makebook_recommend_wrapper .active .bookcover

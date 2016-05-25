@@ -216,43 +216,42 @@
 			}
 		},
 		carousel: function(options) {
-			var $this = $(this);
-			var thisUl = $this.find('ul');
-			var availWidth = $(window).width();
-			var liWidth = availWidth;
-			var carouselLi = $this.find('.ybindex_carousel_item');
-			var liLength = $this.find('li').length;
-			var liCount = 0;
-			var slideFlag = true;
-			var pagination = 0;
-			var paginationEl = $('.carousel_pagination_wrapper div')
-			var ulEl = function() {
-				return $('<ul>' + thisUl.html() + '</ul>');
+			var config={
+				container: '',
+				slide: '',
+				arrowleft: '',
+				arrowright: '',
+				pagination: ''
 			}
+			$.extend(config,options);
+			var $this = $(this),
+				thisUl = $this.find('ul'),
+				slideWidth = $this.width(),
+				liLength = $this.find('li').length,
+				liCount = 0,
+				slideFlag = true,
+				pagination = 0,
+				paginationEl = $(pagination),
+				ulEl = $('<ul>' + thisUl.html() + '</ul>');
 
-			carouselLi.css({
-				'width': liWidth
-			});
-			options = $.extend({
-				arrowLeft: 'carousel_arrow_left',
-				arrowRight: 'carousel_arrow_right',
-			}, options);
 			$this.css({
-				'width': liWidth,
-				'height': '550px',
-				'position': 'relative',
-				'overflow': 'hidden'
+				'width': slideWidth,
+				'position': 'relative'
 			});
-			for (var i = 0; i < 2; i++) {
-				$this.append(ulEl());
+			// for (var i = 0; i < 2; i++) {
+			// 	$this.append(ulEl());
+			// };
+			if (config.pagination!='') {
+				for (var i = liLength; i >= 0; i--) {
+					$('.carousel_pagination_wrapper div').css({
+						'width': 15 * (liLength * 2)
+					}).append('<a href="javascript:;"><span></span></a>');
+				};
+				paginationEl.find('a').eq(0).addClass('active');
 			};
-			for (var i = liLength; i >= 0; i--) {
-				$('.carousel_pagination_wrapper div').css({
-					'width': 15 * (liLength * 2)
-				}).append('<a href="javascript:;"><span></span></a>');
-			};
-			paginationEl.find('a').eq(0).addClass('active');
-			sortUl();
+			
+			
+			sortLi();
 			$this.children('a').click(function() {
 				if ($(this).index() == 0 && slideFlag == true) {
 					slideFlag == false;
@@ -289,20 +288,26 @@
 				}
 			})
 
-
-			function sortUl() {
-				for (var i = 0; i < $this.find('ul').length; i++) {
-					$this.find('ul').eq(i).css({
-						'width': liWidth * liLength,
+			function sortLi() {
+				for (var i = 0; i < $(config.slide).length; i++) {
+					$this.find(config.slide).eq(i).css({
 						'position': 'absolute',
-						'left': liWidth * liLength * (i - 1)
+						'left': slideWidth * liLength * (i - 1)
+					});
+				};
+			}
+			function sortUl() {
+				for (var i = 0; i < $(config.slide).length; i++) {
+					$this.find('ul').eq(i).css({
+						'width': slideWidth * liLength,
+						'position': 'absolute',
+						'left': slideWidth * liLength * (i - 1)
 					});
 				};
 				$this.find('ul').eq(0).addClass('prev');
 				$this.find('ul').eq(1).addClass('active');
 				$this.find('ul').eq(2).addClass('next');
 			}
-
 		},
 		loading: function(options) {
 			var $this = $(this);

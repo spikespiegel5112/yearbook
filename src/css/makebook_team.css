@@ -2064,10 +2064,14 @@
 .message .interact_des .name
 {
     position: relative;
-
+    float: left;
+    line-height: 20px;
     width: 100%;
-    margin: -8px 0 10px;
-    padding-left: 75px;
+    margin: -8px 0 15px 70px;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .interact_des .time
@@ -2076,9 +2080,57 @@
 
     color: #999;
 }
+
+.message .interact_des .time{
+    float: right;
+    margin: -8px 0 10px 75px;
+    line-height: 20px;
+}
 .message .interact_des .desc
 {
-    height: 56px;
+    font-size: 12px;
+    line-height: 1.8;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    max-height: 70px;
+    margin: 6px 0;
+    padding: 5px 13px;
+    word-break: break-all;
+    color: #666;
+    background-color: #f6f6f6;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.2);
+    clear: both;
+}
+
+.message .interact_des .desc p{
+    max-height: 65px;
+    overflow: hidden;
+}
+
+.message .interact_des .desc::before {
+    position: absolute;
+    top: -12px;
+    left: 75px;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #f6f6f6;
+    border-left: 12px solid transparent;
+}
+
+.message .interact_des .desc::after {
+    position: absolute;
+    top: -11px;
+    left: 76px;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid #f6f6f6;
+    border-left: 11px solid transparent;
 }
 
 .res_tab_con .comment

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463936352_3249972.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
 </head>
 <body style="min-width: 1280px">
 <div class="main_container">
@@ -850,11 +851,10 @@
                                                             <div class="header"><img
                                                                     src="img/default/personal_head.png"></div>
                                                             <h5 class="name">TEST1</h5>
-
-                                                            <p class="desc">
-                                                                最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-
                                                             <div class="time">2016-4-29 10:00</div>
+                                                            <div class="desc">
+                                                                <p>最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -869,11 +869,10 @@
                                                             <div class="header"><img src="img/default/default_head.jpg">
                                                             </div>
                                                             <h5 class="name">TEST1</h5>
-
-                                                            <p class="desc">
-                                                                最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-
                                                             <div class="time">2016-4-29 10:00</div>
+                                                            <div class="desc">
+                                                                <p>最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -888,11 +887,10 @@
                                                             <div class="header"><img src="img/default/default_head.jpg">
                                                             </div>
                                                             <h5 class="name">TEST1</h5>
-
-                                                            <p class="desc">
-                                                                最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-
                                                             <div class="time">2016-4-29 10:00</div>
+                                                            <div class="desc">
+                                                                <p>最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -907,11 +905,10 @@
                                                             <div class="header"><img src="img/default/default_head.jpg">
                                                             </div>
                                                             <h5 class="name">TEST1</h5>
-
-                                                            <p class="desc">
-                                                                最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
-
                                                             <div class="time">2016-4-29 10:00</div>
+                                                            <div class="desc">
+                                                                <p>最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事，最开心的事...</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -1797,16 +1794,16 @@
 <!--添加照片-->
 <div id="uploadIL" class="auto_layout_container hidden">
     <div class="photo_box">
-        <div class="empty">
+        <div class="empty hidden">
             <img src="img/icon/empty_box_1_00000.png">
 
             <p class="tip">目前没有任何照片，还需添加100张照片</p>
             <a class="btn active" href="javascript:;">点击选择照片</a>
         </div>
         <!--结构同一键成书页面的上传中-->
-        <div class="choose_img_con hidden">
+        <div class="choose_img_con ">
             <div class="img_con">
-                <div class="uploading cm_fl"><!--完成上传添加class:finished .to_upload hidden-->
+                <div class="finished cm_fl"><!--完成上传添加class:finished .to_upload hidden-->
                     <div class="item new_up">
                         <div class="title">
                             <span class="cm_fl">已经上传的照片</span>
@@ -1866,7 +1863,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="to_upload cm_fr">
+                <div class="to_upload cm_fr hidden">
                     <div class="item">
                         <div class="title">
                             <p class="cm_fl">等待上传的照片(<span>30</span>)</p>
@@ -2215,7 +2212,7 @@
                         <li>
                             <a class='title' href='javascript:;'>
                                 <div class='makebook_compicon_item'>
-                                    <i class='frame ybiconfont ybicon-paty'></i>
+                                    <i class='frame ybiconfont ybicon-party'></i>
                                 </div>
                                 <label>聚会纪念册</label>
                                 <span class='makebook_mark_item ybiconfont ybicon-ok'></span>
@@ -2276,6 +2273,12 @@
                     <ul class='makebook_splist_wrapper'>
                         <li class='actived'>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_cover">
+                                        <div class='makebook_fancyboxframe_double' id='fancybox_cover'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div class='makebook_compicon_item'>
                                     <i class='frame ybiconfont ybicon-cover'></i>
                                 </div>
@@ -2285,6 +2288,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_flyleaf">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_flyleaf'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2297,6 +2305,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_category">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_category'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2309,6 +2322,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_imagetext">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_imagetext'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2321,6 +2339,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_personal">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_personal'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2333,6 +2356,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_address">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_address'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2345,6 +2373,11 @@
                         </li>
                         <li>
                             <a class='title' href='javascript:;'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_photo">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_photo'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2356,7 +2389,12 @@
                             </a>
                         </li>
                         <li>
-                            <a class='title' href='javascript:;'>
+                            <a class='title'>
+                                    <span class='preview ybiconfont ybicon-eyeopen' href="#fancybox_vote">
+                                        <div class='makebook_fancyboxframe_single' id='fancybox_vote'>
+                                            <img class='fancybox-image' src="img/default/left_big.jpg">
+                                        </div>
+                                    </span>
                                 <div>
                                     <div class='makebook_compicon_item'>
                                         <i class='frame ybiconfont ybicon-iconframe'></i>
@@ -2668,90 +2706,143 @@
                         <a href="booklist_ia.html">都不满意？查看更多<i class="ybiconfont ybicon-forward2"></i></a>
                     </div>
                     <div class='makebook_recommend_wrapper'>
-                        <a class='left ybiconfont ybicon-backward2' href="javascript:;"></a>
-                        <ul>
-                            <li>
-                                <div class='bookcover'>
-                                    <img src="img/sem/sem_iabook_cover_1.jpg">
-                                    <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
-                                </div>
-                                <div class='title'>
-                                    <a class='bookname' href="javascript:;">
-                                        <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
-                                        <i>》</i>
-                                    </a>
-                                </div>
-                                <div class='info'>
-                                    <span class='pages'>22页</span>
-                                    <span class='price'>￥40.40<label>起</label></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class='bookcover'>
-                                    <img src="img/sem/sem_iabook_cover_1.jpg">
-                                    <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
-                                </div>
-                                <div class='title'>
-                                    <a class='bookname' href="javascript:;">
-                                        <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
-                                        <i>》</i>
-                                    </a>
-                                </div>
-                                <div class='info'>
-                                    <span class='pages'>22页</span>
-                                    <span class='price'>￥40.40<label>起</label></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class='bookcover'>
-                                    <img src="img/sem/sem_iabook_cover_1.jpg">
-                                    <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
-                                </div>
-                                <div class='title'>
-                                    <a class='bookname' href="javascript:;">
-                                        <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
-                                        <i>》</i>
-                                    </a>
-                                </div>
-                                <div class='info'>
-                                    <span class='pages'>22页</span>
-                                    <span class='price'>￥40.40<label>起</label></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class='bookcover'>
-                                    <img src="img/sem/sem_iabook_cover_1.jpg">
-                                    <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
-                                </div>
-                                <div class='title'>
-                                    <a class='bookname' href="javascript:;">
-                                        <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
-                                        <i>》</i>
-                                    </a>
-                                </div>
-                                <div class='info'>
-                                    <span class='pages'>22页</span>
-                                    <span class='price'>￥40.40<label>起</label></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class='bookcover'>
-                                    <img src="img/sem/sem_iabook_cover_1.jpg">
-                                    <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
-                                </div>
-                                <div class='title'>
-                                    <a class='bookname' href="javascript:;">
-                                        <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
-                                        <i>》</i>
-                                    </a>
-                                </div>
-                                <div class='info'>
-                                    <span class='pages'>22页</span>
-                                    <span class='price'>￥40.40<label>起</label></span>
-                                </div>
-                            </li>
-                        </ul>
-                        <a class='right ybiconfont ybicon-forward2' href="javascript:;"></a>
+                        <a class='prev ybiconfont ybicon-backward2' href="javascript:;"></a>
+                        <div class="bd">
+                            <ul>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                        <span>校园留念</span>
+                                        <span>校园留念</span>
+                                        <span>校园留念</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='bookcover'>
+                                        <img src="img/sem/sem_iabook_cover_1.jpg">
+                                        <span class="makebook_mark_item ybiconfont ybicon-ok"></span>
+                                    </div>
+                                    <div class='title'>
+                                        <a class='bookname' href="javascript:;">
+                                            <i>《</i> 我的成长日记我的成长日记我的成长日记我的成长日记
+                                            <i>》</i>
+                                        </a>
+                                    </div>
+                                    <div class='info'>
+                                        <span class='pages'>22页</span>
+                                        <span class='price'>￥40.40<label>起</label></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class='next ybiconfont ybicon-forward2' href="javascript:;"></a>
                     </div>
                 </div>
                 <div class='makebook_spnav_wapper'>
@@ -2805,6 +2896,7 @@
 <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb313"></script>
 <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
@@ -3305,6 +3397,10 @@
                 }
             }
         });
+
+        //step2 点击预览
+        $('.makebook_splist_wrapper .title .preview').fancybox({});
+
         //点击下一步
         $('.makebook_spnextlink_btn').click(function() {
             var $this = $(this),
@@ -3374,6 +3470,15 @@
     }
     //推荐书册部分
     function recommend() {
+        $('.makebook_recommend_wrapper').slide({
+            mainCell: ".bd ul",
+            autoPage: true,
+            effect: "left",
+            autoPlay: false,
+            pnLoop: false,
+            vis: 5,
+            scroll: 5
+        })
         $('.makebook_recommend_wrapper li').click(function() {
             $(this).siblings().removeClass('active').end().addClass('active');
         })

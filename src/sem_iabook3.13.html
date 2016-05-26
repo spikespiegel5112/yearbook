@@ -103,11 +103,13 @@
 					</li>
 					<li class='party'>
 						<p class='sem_iabookdesc_item'>
+							一场欢聚，种种欢乐<br>
 							一部聚会纪念册，尽融大家聚会的精彩，演绎欢聚时刻以及曾经的酸甜苦辣、悲欢情感。
 						</p>
 					</li>
 					<li class='activity'>
 						<p class='sem_iabookdesc_item'>
+							团队活动，留影成册<br>
 							一本团队活动册，记录每次团队活动中的点点滴滴，留住那些精彩的画面、难忘的瞬间。
 						</p>
 					</li>
@@ -420,24 +422,37 @@
 	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
-		tab();
+		iabook313();
 		video();
+		roundabout();
+	});
+	function roundabout(){
+		var introLiEl = $('.sem_iabookintrotab313_wrapper li');
 		$('.sem_iabookbanner313_wrapper>ul').roundabout({
 			minScale:0.8
 		});
-	});
+		$('.sem_iabookbanner313_wrapper>li').click(function(){
+			var index=$(this).index();
+			introLiEl.eq(index).addClass('active').siblings().removeClass('active');
+		});
+	}
 	//切换模板列表
-	function tab() {
+	function iabook313() {
 		var introLiEl = $('.sem_iabookintromain313_wrapper li'),
 			coverlistEl = $('.sem_iabook313_container .sem_mainlist_wrapper ul');
 		$('.sem_iabookintrotab313_wrapper li').hover(function() {
 			var $this = $(this),
 				index = $this.index();
-			$this.addClass('active').siblings().removeClass('active')
-				//introLiEl.addClass('active').siblings('li').removeClass('active');
+			$this.addClass('active').siblings().removeClass('active');
 			introLiEl.eq(index).show().siblings().hide();
 			coverlistEl.eq(index).show().siblings().hide();
 		});
+		$('.sem_mainlistul_wrapper li').hover(function() {
+			$(this).addClass('active').siblings('li').removeClass('active');
+		},function(){
+			$(this).removeClass('active')
+		})
+		
 	}
 
 	function video() {

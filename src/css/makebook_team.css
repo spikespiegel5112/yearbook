@@ -3541,6 +3541,13 @@
     position: absolute;
     bottom: 0;
 }
+.create_topic_con li .error,
+.create_vote_con li .error{
+    display: block;
+}
+.create_leave_msg label.error{
+    padding-left: 2%;
+}
 .create_vote_con
 {
     position: relative;
@@ -4091,7 +4098,7 @@
 
     width: 96%;
     height: 190px;
-    margin: 0 auto 20px;
+    margin: 0 auto;
 }
 .create_leave_msg .simditor
 {
@@ -4107,7 +4114,7 @@
 .create_leave_msg .lw_btn
 {
     padding: 10px 20px;
-
+    margin-top: 20px;
     border-top: 1px solid #ddd;
 }
 .create_leave_msg .lw_btn .yb_book_btn

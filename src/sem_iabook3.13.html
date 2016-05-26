@@ -292,7 +292,7 @@
 				</div>
 			</div>
 			<div class='sem_iabookprocedure313_wrapper'>
-				<h6 class='sem_iabooktitle_item'>互动册定制流程</h6>
+				<h6 class='sem_iabooktitle_item'>定制自己的团队册?</h6>
 				<div class='axis'><span></span></div>
 				<ul>
 					<li>
@@ -424,7 +424,6 @@
 	$(function() {
 		iabook313();
 		video();
-		roundabout();
 	});
 	//切换模板列表
 	function iabook313() {
@@ -450,10 +449,12 @@
 			$this.addClass('active').siblings().removeClass('active');
 			introLiEl.eq(index).show().siblings().hide();
 			coverlistEl.eq(index).show().siblings().hide();
+			//hover选项卡翻转到相应的banner里
 			bannerUlEl.roundabout('animateToChild', index);
 		});
+		//书册封面动画效果
 		$('.sem_mainlistul_wrapper li').hover(function() {
-			$(this).addClass('active').siblings('li').removeClass('active');
+			$(this).addClass('active');
 		},function(){
 			$(this).removeClass('active')
 		})
@@ -477,7 +478,7 @@
 				container: '.common_macbookscreen_wrapper .screen'
 			});
 		})
-		$(document).click(function(e) {
+		$('body').click(function(e) {
 			//点击视频区域和下方选项以外的区域收回屏幕并去掉列表高亮
 			if ($(e.target).closest('.common_macbookscreen_wrapper, .sem_iabookfeature313_wrapper ul li').length == 0) {
 				displayEl.removeClass('active');

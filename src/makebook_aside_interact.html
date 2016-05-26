@@ -497,18 +497,21 @@
                     <p class="cm_fl lp2">话题标题</p>
                     <div class="cm_fl">
                         <input class="data cm_fl required" id="ttitle" name="topicTitle" placeholder="请输入标题..." type="text">
+                        <label class="error">请填写话题标题</label>
                     </div>
                 </li>
                 <li>
                     <p class="cm_fl">话题描述</p>
                     <div class="cm_fl">
                         <textarea id="" name="" rows="8"></textarea>
+                        <label class="error">请填写话题描述</label>
                     </div>
                 </li>
                 <li>
                     <p class="cm_fl">自己想说</p>
                     <div class="cm_fl">
                         <textarea id="" name="" rows="8"></textarea>
+                        <label class="error">自己想说未填写</label>
                     </div>
                 </li>
             </form>
@@ -535,6 +538,7 @@
                     <p class="cm_fl lp2">投票主题</p>
                     <div class="cm_fl">
                         <input class="data cm_fl required" id="vtitle" name="voteTitle" placeholder="" type="text">
+                        <label class="error">请选择投标主题</label>
                     </div>
                 </li>
                 <li class='votetype_item'>
@@ -555,6 +559,7 @@
                             <li>
                                 <div class='voteoption_item'>
                                     <input placeholder='' type='text'>
+                                    <label class="error">请选择投标主题</label>
                                 </div>
                                 <a href="javascript:;"><i class="icon-plus-sign icon-large"></i></a>
                             </li>
@@ -602,6 +607,7 @@
                     <p class="cm_fl lp2">投票描述</p>
                     <div class="votedesc_wrapper">
                         <textarea class='required' maxlength='200' name='votedesc'></textarea>
+                        <label class="error">请选择投标主题</label>
                     </div>
                 </li>
                 <li>
@@ -666,6 +672,7 @@
             <p class="tips">提示：收到的赠言可以添加至自己的个人页中哦！</p>
         </div>
         <textarea id="leavewall_con_text" name="" rows="6" placeholder="随便说点什么吧!"></textarea>
+        <label class="error">请填写留言内容</label>
         <div class="lw_btn">
             <a href="javascript:;" class="yb_book_btn">确认发表</a>
         </div>

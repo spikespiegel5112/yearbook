@@ -8407,51 +8407,137 @@
 {
     float: left;
 }
+.makebook_waytoinvite_wrapper{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
 .makebook_waytoinvite_wrapper li
 {
-    font-size: 13px;
-
-    height: 100px;
-    margin: 20px;
-    padding: 20px;
-
-    cursor: pointer;
-
-    color: #333;
-    border: 1px solid transparent;
-}
-.makebook_waytoinvite_wrapper li h6 span
-{
-    font-size: 25px;
-
     display: inline-block;
-
-    margin: 0 10px 0 0;
-
+    vertical-align: top;
+    width: 240px;
+    margin: 20px 35px 0;
+}
+.makebook_waytoinvite_wrapper li .item{
+    padding: 20px;
+    width: 240px;
+    height: 240px;
+    background-color: #eceff4;
+    border: 2px solid #dadfe5;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.makebook_waytoinvite_wrapper li:hover .item
+{
+    background-color: #fff;
+}
+.makebook_waytoinvite_wrapper li .item span
+{
+    font-size: 98px;
+    display: block;
+    margin: 0 10px 10px 0;
+    color: #bac4ce;
+}
+.makebook_waytoinvite_wrapper li .item p{
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0 5px;
+}
+.makebook_waytoinvite_wrapper li .item a
+{
+    color: #08f;
+    font-size: 12px;
+    word-break: break-all;
+}
+.makebook_waytoinvite_wrapper li .tips{
+    display: block;
+    position: relative;
+    padding: 5px;
+    margin: 12px 0 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: bottom .5s ease;
+    bottom: 35px;
+    opacity: 0;
+    z-index: 1;
+}
+.makebook_waytoinvite_wrapper li .tips::before{
+    content: " ";
+    position: absolute;
+    top: -12px;
+    left: 40px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #f2f2f2;
+}
+.makebook_waytoinvite_wrapper li:hover .tips{
+    opacity: 1;
+    bottom: 0;
+}
+.makebook_waytoinvite_wrapper li .tips p{
+    position: relative;
+    padding: 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.8;
+    text-align: left;
+    background-color: #e8f4fb;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.makebook_waytoinvite_wrapper li .tips p::before,
+.makebook_waytoinvite_wrapper li .tips p::after{
+    content: " ";
+    position: absolute;
+    left: 36px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.makebook_waytoinvite_wrapper li .tips p::before{
+    top: -11px;
+    border-bottom: 10px solid #ccc;
+}
+.makebook_waytoinvite_wrapper li .tips p::after{
+    top: -10px;
+    border-bottom: 10px solid #e8f4fb;
+}
+.makebook_friendintro_wrapper .common_sharelist_wrapper{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 390px;
+    line-height: 50px;
+    height: 51px;
+    border-radius: 0;
+    text-align: center;
+    /*border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #e8e8e8;*/
+    background: url("../img/makebook/gradient_border.png") no-repeat center;
+    border: 0;
+}
+.makebook_friendintro_wrapper .common_sharelist_wrapper::before,
+.makebook_friendintro_wrapper .common_sharelist_wrapper::after{
+    display: none;
+}
+.makebook_friendintro_wrapper .common_sharelist_wrapper label{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+}
+.makebook_friendintro_wrapper .common_sharelist_wrapper ul{
+    display: inline-block;
     vertical-align: middle;
-
-    color: #000;
-}
-.makebook_waytoinvite_wrapper li:hover
-{
-    border: 1px solid #ddd;
-    background-color: #fcfeff;
-}
-.makebook_waytoinvite_wrapper li:hover h6 span
-{
-    color: #83c453;
-}
-.makebook_waytoinvite_wrapper li a, .makebook_waytoinvite_wrapper li p span
-{
-    color: #489fcf;
-}
-.makebook_waytoinvite_wrapper li a:hover, .makebook_waytoinvite_wrapper li p .ybiconfont:hover
-{
-    color: #418fb9;
-}
-.makebook_waytoinvite_wrapper li h6
-{
-    margin: 0 0 10px 0;
 }
 .friend_detail_wrapper
 {

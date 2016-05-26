@@ -47,7 +47,7 @@
 	<!-- main -->
 	<div class='sem_iabook313_container'>
 		<div class='sem_iabookbanner313_wrapper'>
-			<a class='leftarrow' href="javascript:;">-</a>
+			<!-- <a class='leftarrow' href="javascript:;">-</a> -->
 			<ul>
 				<li>
 					<a href="javascript:;">
@@ -64,18 +64,8 @@
 						<img src="img/banner/sem_iabook313banner_3_00000.png">
 					</a>
 				</li>
-				<!-- <li>
-						<a href="javascript:;">
-							<img src="img/banner/sem_iabook313banner_3_00000.png">
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;">
-							<img src="img/banner/sem_iabook313banner_3_00000.png">
-						</a>
-					</li> -->
 			</ul>
-			<a class='rightarrow' href="javascript:;">+</a>
+			<!-- <a class='rightarrow' href="javascript:;">+</a> -->
 		</div>
 		<div class='sem_iabook_wrapper'>
 			<div class='sem_iabookintro313_wrapper'>
@@ -424,162 +414,17 @@
 		</div>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript" src='assets/js/jquery.roundabout.min.js'></script>
 	<!-- build:js js/all.js -->
-	<!--<script type="text/javascript" src="js/base.js"></script>-->
+	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
 	<script type="text/javascript">
 	$(function() {
 		tab();
 		video();
-		$.fn.extend({
-			carousel: function(options) {
-				var config = {
-					container: '',
-					slide: '',
-					slidewidth: 0,
-					arrowleft: '',
-					arrowright: '',
-					pagination: ''
-				}
-				$.extend(config, options);
-				var $this = $(this),
-					thisWidth = $this.width(),
-					slideEl = $(config.slide),
-					liLength = $(config.slide).length,
-					liCount = 0,
-					slideFlag = true,
-					pagination = 0,
-					paginationEl = $(pagination),
-					loopCount = 0;
-
-				var queueWidth = thisWidth / 2,
-					carouselLength = 3,
-					queueCount = ~~(carouselLength / 2);
-
-				if (config.slidewidth == 0) {
-					var slideWidth = $(config.slide).width(),
-						slideheight = $(config.slide).height();
-				} else {
-					var slideWidth = config.slidewidth;
-				}
-				var unitScale = 1 / carouselLength,
-					unitOpacity = 1 / carouselLength,
-					unitLeft = slideWidth / carouselLength;
-
-				$(config.slide).css({
-					height: '100%'
-				})
-				$this.css({
-					position: 'relative',
-					overflow: 'hidden'
-				});
-
-				if (config.pagination != '') {
-					for (var i = liLength; i >= 0; i--) {
-						$('.carousel_pagination_wrapper div').css({
-							'width': 15 * (liLength * 2)
-						}).append('<a href="javascript:;"><span></span></a>');
-					};
-					paginationEl.find('a').eq(0).addClass('active');
-				};
-				$(config.slide).css({
-					width: slideWidth,
-					height: '100%',
-					position: 'absolute'
-				})
-				$(config.slide).each(function(i) {
-					$(this).addClass('active_' + i);
-					if (i <= queueCount) {
-						$(config.slide).eq(i).css({
-							left: i * unitLeft + unitLeft,
-							opacity: (liLength - queueCount) * unitOpacity,
-							'z-index': i,
-							// transform: 'scale(' + (queueCount - i) * unitScale + ')'
-						});
-					} else if (i > queueCount) {
-						$(config.slide).eq(i).css({
-							left: i * unitLeft + unitLeft,
-							opacity: (i - queueCount) * unitOpacity,
-							'z-index': i - queueCount - 1,
-							// transform: 'scale(' + (i - queueCount) * unitScale + ')'
-						});
-
-					}
-				})
-				$(config.slide).eq(queueCount).addClass('active');
-				$(config.arrowleft).click(function() {
-
-
-
-				})
-				$(config.arrowright).click(function() {
-					$(config.slide).each(function(i) {
-						var $this = $(this);
-						console.log('active_' + (liLength - 1 - loopCount))
-						if ($this.hasClass('active_' + (liLength - 1 - loopCount))) {
-							if (slideFlag) {
-								$this.stop().animate({
-									'left': '-=' + unitLeft * 2
-								}, 'fast', 'swing', function() {
-									slideFlag = true;
-								});
-							};
-
-						} else if (!$this.hasClass('active_' + (liLength - loopCount - 1))) {
-							if (slideFlag) {
-								$this.stop().animate({
-									'left': '+=' + unitLeft
-								}, 'fast', 'swing', function() {
-									slideFlag = true;
-								});
-							};
-
-						}
-					})
-
-					if (slideFlag) {
-						loopCount++;
-						if (loopCount == liLength) {
-							loopCount = 0;
-						};
-						sortLi();
-						slideFlag = false;
-					};
-
-				})
-
-				function sortLi() {
-					if (slideFlag) {
-						for (var i = 0; i <= liLength; i++) {
-							if (i <= queueCount) {
-								$(config.slide).eq(i).css({
-									// left: i * unitLeft + unitLeft,
-									opacity: (liLength - queueCount) * unitOpacity,
-									'z-index': i,
-									// transform: 'scale(' + (queueCount - i) * unitScale + ')'
-								});
-							} else if (i > queueCount) {
-								$(config.slide).eq(i).css({
-									// left: i * unitLeft + unitLeft,
-									opacity: (i - queueCount) * unitOpacity,
-									'z-index': i - queueCount - 1,
-									// transform: 'scale(' + (i - queueCount) * unitScale + ')'
-								});
-
-							}
-						};
-						slideFlag = false;
-					};
-				}
-
-			}
-		})
-		$('.sem_iabookbanner313_wrapper').carousel({
-			slide: '.sem_iabookbanner313_wrapper li',
-			slidewidth: 585,
-			arrowleft: '.sem_iabookbanner313_wrapper .leftarrow',
-			arrowright: '.sem_iabookbanner313_wrapper .rightarrow'
-		})
+		$('.sem_iabookbanner313_wrapper>ul').roundabout({
+			minScale:0.8
+		});
 	});
 	//切换模板列表
 	function tab() {

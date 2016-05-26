@@ -2649,7 +2649,7 @@
 
     display: none;
 
-    width: 925px;
+    width: 815px;
 
     background-color: #fff;
 }
@@ -2660,18 +2660,77 @@
     position: relative;
 
     margin-bottom: 10px;
-    padding: 0 15px;
+    padding: 0 15px 0 40px;
 
     color: #666;
 }
-.change_tpl_con .pagemakeBox
+.tpl_slide_wrap
 {
     margin: 0;
-    padding: 0 10px;
+    padding:0;
+    position: relative;
 }
-.change_tpl_con .chaptermake_tpl ul li
-{
-    margin: 5px 4px 10px;
+.tpl_slide_wrap .hd{
+    position: relative;
+}
+.tpl_slide_wrap .hd a{
+    position: absolute;
+    top: 0;
+    font-size: 40px;
+    z-index: 10;
+    height: 338px;
+    line-height: 338px;
+    background-color: #fff;
+    color: rgba(153,153,153,.6);
+}
+.tpl_slide_wrap .hd a:hover{
+    color: #90c132;
+}
+.tpl_slide_wrap .hd .prev{
+    left: -10px;
+}
+.tpl_slide_wrap .hd .next{
+    right: -10px;
+}
+.tpl_slide_wrap .chaptermake_tpl ul{
+    margin: 0 30px;
+    width: 756px;
+}
+.tpl_slide_wrap .chaptermake_tpl  li{
+    margin: 5px 10px 10px;
+}
+.tpl_slide_wrap .chaptermake_tpl  li .photo{
+    width: 106px;
+    height: 130px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+.tpl_slide_wrap .chaptermake_tpl  li:hover .photo,
+.tpl_slide_wrap .chaptermake_tpl  li.select .photo{
+    border: 1px solid #90c132;
+}
+.tpl_slide_wrap .chaptermake_tpl  li .ybicon-ok{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    line-height: 10px;
+    color: #fff;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent #90c132 #90c132 transparent;
+    z-index: 1;
+}
+.tpl_slide_wrap .chaptermake_tpl  li.select .ybicon-ok{
+    display: block;
+}
+.tpl_slide_wrap .action_bar .yb_book_btn{
+    float: right;
+}
+.tpl_slide_wrap > label{
+   padding-left: 40px;
 }
 /*����ҳ��*/
 .add_page_con
@@ -2693,9 +2752,9 @@
 
     position: relative;
 
-    padding: 0 15px;
+    padding: 0 15px 0 40px;
 }
-.add_page_con .page_tpl_list
+/*.add_page_con .page_tpl_list
 {
     position: relative;
 
@@ -2767,7 +2826,8 @@
 
     color: rgba(153,153,153,.6);
 }
-.page_tpl_list .hd a:hover
+.page_tpl_list .hd a:hover,
+.tpl_slide_wrap .hd a:hover
 {
     color: #90c132;
 }
@@ -2778,13 +2838,13 @@
 .page_tpl_list .hd .next
 {
     right: 20px;
-}
+}*/
 .add_page_con .page_num
 {
     position: relative;
 
     margin: 10px 0;
-    padding: 0 15px;
+    padding: 0 15px 0 40px;
 }
 .add_page_con .page_num .ybcommon_counter_item
 {

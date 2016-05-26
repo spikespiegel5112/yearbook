@@ -426,26 +426,31 @@
 		video();
 		roundabout();
 	});
-	function roundabout(){
-		var introLiEl = $('.sem_iabookintrotab313_wrapper li');
-		$('.sem_iabookbanner313_wrapper>ul').roundabout({
-			minScale:0.8
-		});
-		$('.sem_iabookbanner313_wrapper>li').click(function(){
-			var index=$(this).index();
-			introLiEl.eq(index).addClass('active').siblings().removeClass('active');
-		});
-	}
 	//切换模板列表
 	function iabook313() {
-		var introLiEl = $('.sem_iabookintromain313_wrapper li'),
-			coverlistEl = $('.sem_iabook313_container .sem_mainlist_wrapper ul');
+		var tabLiEl = $('.sem_iabookintrotab313_wrapper li'),
+			introLiEl = $('.sem_iabookintromain313_wrapper li'),
+			coverlistEl = $('.sem_iabook313_container .sem_mainlist_wrapper ul'),
+			bannerUlEl=$('.sem_iabookbanner313_wrapper>ul');
+		//翻转插件
+		bannerUlEl.roundabout({
+			minScale:0.8
+		});
+		//点击banner图片后切换下方列表
+		$('.sem_iabookbanner313_wrapper li').click(function(){
+			var index=$(this).index();
+			tabLiEl.eq(index).addClass('active').siblings().removeClass('active');
+			introLiEl.eq(index).show().siblings().hide();
+			coverlistEl.eq(index).show().siblings().hide();
+		});
+		//hover书册类型选项卡
 		$('.sem_iabookintrotab313_wrapper li').hover(function() {
 			var $this = $(this),
 				index = $this.index();
 			$this.addClass('active').siblings().removeClass('active');
 			introLiEl.eq(index).show().siblings().hide();
 			coverlistEl.eq(index).show().siblings().hide();
+			bannerUlEl.roundabout('animateToChild', index);
 		});
 		$('.sem_mainlistul_wrapper li').hover(function() {
 			$(this).addClass('active').siblings('li').removeClass('active');

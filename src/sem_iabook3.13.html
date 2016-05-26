@@ -46,10 +46,26 @@
 	</div>
 	<!-- main -->
 	<div class='sem_iabook313_container'>
-		<div class='sem_banner_wrapper'>
-			<img src="img/banner/sem_iabook313banner_1_00000.png">
-			<img src="img/banner/sem_iabook313banner_2_00000.png">
-			<img src="img/banner/sem_iabook313banner_3_00000.png">
+		<div class='sem_iabookbanner313_wrapper'>
+			<!-- <a class='leftarrow' href="javascript:;">-</a> -->
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<img src="img/banner/sem_iabook313banner_1_00000.png">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/banner/sem_iabook313banner_2_00000.png">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/banner/sem_iabook313banner_3_00000.png">
+					</a>
+				</li>
+			</ul>
+			<!-- <a class='rightarrow' href="javascript:;">+</a> -->
 		</div>
 		<div class='sem_iabook_wrapper'>
 			<div class='sem_iabookintro313_wrapper'>
@@ -398,6 +414,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+	<script type="text/javascript" src='assets/js/jquery.roundabout.min.js'></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
@@ -405,6 +422,9 @@
 	$(function() {
 		tab();
 		video();
+		$('.sem_iabookbanner313_wrapper>ul').roundabout({
+			minScale:0.8
+		});
 	});
 	//切换模板列表
 	function tab() {

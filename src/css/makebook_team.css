@@ -2859,15 +2859,11 @@
 .assign_actors_con
 {
     position: relative;
-
     display: none;
-
-    width: 740px;
-    height: 255px;
-
+    width: 690px;
     background-color: #fff;
 }
-.assign_actors_con .choose_way
+/*.assign_actors_con .choose_way
 {
     font-size: 14px;
 
@@ -2926,7 +2922,191 @@
 .assign_actors_con .choose_way .tips
 {
     margin: 0 30px;
+}*/
+.assign_actors_con .makebook_stepdesc_wrapper{
+    position: absolute;
+    top: -34px;
+    left: 115px;
 }
+.assign_actors_con .invitation_way{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.invitation_way .way{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 35px 25px;
+    width: 260px;
+}
+.invitation_way .way .item{
+    position: relative;
+    padding: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 180px;
+    border: 1px dashed #bbb;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.invitation_way .way .item h1{
+    position: relative;
+    margin: 15px 0 5px;
+    text-align: center;
+    color: #bbb;
+}
+.invitation_way .way .item h1 span{
+    font-size: 68px;
+}
+.invitation_way .way .item h1 i{
+    position: absolute;
+    top: 45px;
+    left: 78px;
+    font-size: 23px;
+    background-color: #fff;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 100%;
+}
+.invitation_way .way .item .ybicon-ok{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    line-height: 18px;
+    font-size: 22px;
+    border-width: 24px;
+    border-style: solid;
+    border-color: transparent #90c132 #90c132 transparent;
+}
+.invitation_way .way .item:hover,
+.invitation_way .way.select .item{
+    border: 3px solid #90c132;
+}
+.invitation_way .way.select .item .ybicon-ok{
+    display: block;
+}
+.invitation_way .way .item p{
+    font-size: 16px;
+    color: #bbb;
+}
+.invitation_way .way .aside{
+    display: block;
+    position: relative;
+    margin: 0 0 -35px;
+    padding: 10px 15px;
+    width: 690px;
+    height: 0;
+    text-align: left;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    transition: all .5s linear;
+    opacity: 0;
+    overflow: hidden;
+}
+.invitation_way .way:first-child .aside{
+    margin-left:-58px;
+}
+.invitation_way .way:last-child .aside{
+    margin-left:-372px;
+}
+.invitation_way .way.select .aside{
+    opacity: 1;
+    height: 288px;
+}
+.invitation_way .way .aside label{
+    font-size: 14px;
+    color: #999;
+}
+.invitation_way .way .aside p{
+    font-size: 14px;
+    color: #999;
+    margin: 20px 0 40px;
+}
+.invitation_way .way .aside .share_link{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 25px;
+    color: #08f;
+    word-break: break-all;
+}
+.invitation_way .aside .vis_share_wrap{
+    position: relative;
+    margin: 50px 0 0;
+}
+.way .aside .partner_list{
+    position: relative;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.partner_list li{
+    float: left;
+    margin: 10px ;
+    width: 60px;
+    opacity: .7;
+    cursor: pointer;
+}
+.partner_list li .header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e7e7e7;
+    box-sizing: border-box;
+}
+.partner_list li .header img{
+    width: 100%;
+    height: 100%;
+}
+.partner_list li .header span{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    line-height: 10px;
+    font-size: 12px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #90c132 #90c132 transparent;
+}
+.partner_list li:hover,
+.partner_list li.select{
+    opacity: 1;
+}
+.partner_list li:hover .header,
+.partner_list li.select .header{
+    border: 2px solid #90c132;
+}
+.partner_list li.select .header span{
+    display: block;
+}
+.partner_list li .name{
+    font-size: 12px;
+    color: #666;
+    max-width: 100%;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.way .aside .yb_book_btn{
+    margin: 5px auto;
+}
+
+
 .chapter_config_con
 {
     position: relative;

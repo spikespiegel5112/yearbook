@@ -391,7 +391,11 @@
     margin: 0 auto;
 
     opacity: .75;
-    background: url('../img/icon/toolbar_icons.png') no-repeat;
+    background: transparent url('../img/icon/toolbar_icons.png') no-repeat;
+}
+.tool_bar .grid li a.active{
+    background-color: #a0d350;
+    color: #fff;
 }
 .tool_bar .grid li a:hover i
 {
@@ -433,7 +437,13 @@
 {
     background-position: -320px -48px;
 }
-
+.tool_bar .grid li a.active i{
+    background-position-y: -93px ;
+}
+.tool_bar .grid li .add_chapter_btn.active i
+{
+    background-position: 0 -92px;
+}
 .tool_bar .grid li .ybcommon_queryicon_item
 {
     position: absolute;

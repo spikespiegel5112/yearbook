@@ -1986,7 +1986,7 @@
     <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
     <h4 class="title">高级筛选</h4>-->
     <div class="filter_options">
-        <form>
+       <!-- <form>
             <div class="option">
                 <span>图片数量：</span><input type="text" placeholder="" value="">
                 <span>文本数量：</span><input type="text" placeholder="" value="">
@@ -2006,6 +2006,49 @@
             <div class="option">
                 <label>模板编号：<input type="text" placeholder="" value=""></label>
             </div>
+        </form>-->
+        <form>
+            <div class="option">
+                <span>模板类型：</span>
+                <select id="tplType" name="tplSelect" style="margin-left: 10px;">
+                    <option value="NULL">选择</option>
+                    <option value="IMAGE_TEXT">图文</option>
+                    <option value="PANO">全景照片</option>
+                    <option value="COVER">封面</option>
+                    <option value="BACK_COVER">封底</option>
+                    <option value="PERSONAL">个人主页</option>
+                    <option value="CATALOGUE">章节目录</option>
+                    <option value="FLYLEAF">扉页&空白页</option>
+                    <option value="VOTE">投票页</option>
+                    <option value="PINDEX">通讯索引</option>
+                </select>
+                <span>模板编号：</span><input class="data required" name="tplCode" min=0 placeholder="" type="number">
+            </div>
+
+            <div class="option">
+                <span>风格筛选：</span>
+                <select id="styleSelect" name="styleSelect" >
+                    <option value="NULL">全部</option>
+                </select>
+            </div>
+            <div class="option">
+                <span>图片数量：</span><input type="number" name="imageNum" placeholder="" value="">
+                <span>文本数量：</span><input type="number" name="textNum" placeholder="" value="">
+            </div>
+            <div class="option">
+                <span>展示方式：</span>
+                <label><input type="radio"  value="null" name="needTwo" checked="checked">全部</label>
+                <label><input type="radio"  value="false" name="needTwo">单页</label>
+                <label><input type="radio"  value="true" name="needTwo">双页</label>
+            </div>
+            <div class="option">
+                <span>包含互动：</span>
+                <label><input type="radio" name="hasInteraction" value="null" checked="checked">全部</label>
+                <label><input type="radio" name="hasInteraction" value="true">包含</label>
+                <label><input type="radio" name="hasInteraction" value="false">不包含</label>
+            </div>
+
+
         </form>
     </div>
     <div class="action_bar">
@@ -3201,7 +3244,7 @@
             $(".edit_content > .list_mode, .chapter_list").mCustomScrollbar({
                 theme:"minimal-dark",
                 scrollbarPosition: "inside",
-                autoDraggerLength: false,
+                autoDraggerLength: true,
                 autoExpandScrollbar: true
             });
 
@@ -3378,6 +3421,12 @@
                 title: "高级筛选",
                 lock: true,
                 content: document.querySelector('.advanced_filter'),
+                init: function(){
+                    $(".advanced_filter .option select").chosen({
+                        no_results_text: '没有找到此风格：',
+                        width: '120px'
+                    });
+                }
             })
         });
 

@@ -355,8 +355,8 @@
                     </div>
                     <div class="name"><span>图文章节</span><a class="ybiconfont ybicon-feedback edit"
                                                           href="javascript:;"></a></div>
-                    <ul class="page_list">
-                        <li class="double">
+                    <ul class="page_list" id="sortable">
+                        <li class="double page-sortable">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <div class="left">
                                     <img src="img/default/inner_pages01.jpg">
@@ -370,14 +370,14 @@
                             <h4>第<span>1</span>页</h4>
                             <h4>第<span>2</span>页</h4>
                         </li>
-                        <li class="single">
+                        <li class="single page-sortable">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <img src="img/default/inner_pages01.jpg">
                                 <a href="javascript:;" class="ybiconfont ybicon-trash delete"></a>
                             </div>
                             <h4>个人</h4>
                         </li>
-                        <li class="double">
+                        <li class="double page-sortable">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <div class="left">
                                     <img src="img/default/inner_pages01.jpg">
@@ -391,7 +391,7 @@
                             <h4>第<span>3</span>页</h4>
                             <h4>第<span>4</span>页</h4>
                         </li>
-                        <li class="double">
+                        <li class="double page-sortable">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <div class="left">
                                     <img src="img/default/inner_pages01.jpg">
@@ -405,7 +405,7 @@
                             <h4>第<span>5</span>页</h4>
                             <h4>第<span>6</span>页</h4>
                         </li>
-                        <li class="double">
+                        <li class="double page-sortable">
                             <div class="figure" title="拖动排序，双击可编辑">
                                 <div class="left">
                                     <img src="img/default/inner_pages01.jpg">
@@ -3220,6 +3220,7 @@
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
@@ -3236,6 +3237,15 @@
         //添加章节、页面、自动排版等
         editBookToolbarEvents();
         determineWindowSize();
+
+        $( "#sortable" ).sortable({
+            placeholder: "sortable-bg",
+            items : '.page-sortable',
+            hoverClass: 'is-hovered',
+            handle : 'img',
+            forcePlaceholderSize: true
+        });
+        $( "#sortable" ).disableSelection();
     });
 
     //自定义滚动条

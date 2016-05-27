@@ -3577,13 +3577,14 @@
                     $(".tpl_chapter_list").slide({
                         mainCell: ".bd ul",
                         titCell: ".hd a",
-                        prevCell: "",
-                        nextCell: "",
+                        prevCell: "prev",
+                        nextCell: "next",
                         trigger: "click",
                         pnLoop: false,
                         autoPlay: false,
+                        effect: 'left',
                         vis: 5,
-                        effect: 'left'
+                        scroll: 5
                     });
                 }
             });

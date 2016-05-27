@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 <body style="min-width: 1280px">
-<div class="main_container">
+<div id="main_container" class="main_container">
     <div class="team_edit_container "><!--1280下class:min_screen-->
         <!--yb3.11 nav-->
         <div class="yb_cm_header book_space cm_min_width"><!--用于书册空间class:book_space-->
@@ -3175,11 +3176,13 @@
 <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
 <script>
     $(document).ready(function () {
+        customScrollBar();
         changeButtonCss();
         //左侧栏滑出
         asideSlideOut();
@@ -3192,6 +3195,18 @@
         determineWindowSize();
     });
 
+    //自定义滚动条
+    function customScrollBar(){
+        $(window).load(function(){
+            $(".edit_content > .list_mode, .chapter_list").mCustomScrollbar({
+                theme:"minimal-dark",
+                scrollbarPosition: "inside",
+                autoDraggerLength: false,
+                autoExpandScrollbar: true
+            });
+
+        });
+    }
     //渲染控件样式
     function changeButtonCss() {
         $("input[type=radio],input[type=checkbox]").iCheck({
@@ -3274,7 +3289,7 @@
                 $('.resource_shrink').addClass('active');
                 $('.chapter_list').addClass('shrink');
                 $('.resource_list').addClass('shrink');
-                $('.edit_area').css({'padding': '0 0.5% 0 60px'});
+                $('.edit_area').css({'padding': '0 0.3% 0 60px'});
             }, 3000)
         }
 
@@ -3296,7 +3311,7 @@
                 $('.' + btn).removeClass('active');
                 if (btn == 'chapter_shrink') {
                     if ($('.resource_shrink').hasClass('active')) {
-                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'220px'});
+                        $('.edit_area').css({'padding-right': '0.3%','padding-left':'220px'});
                     } else {
                         $('.edit_area').css({'padding-right': '20%','padding-left':'220px'});
                     }
@@ -3312,15 +3327,15 @@
                 $('.' + btn).addClass('active');
                 if (btn == 'chapter_shrink') {
                     if ($('.resource_shrink').hasClass('active')) {
-                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'75px'});
+                        $('.edit_area').css({'padding-right': '0.3%','padding-left':'75px'});
                     } else {
                         $('.edit_area').css({'padding-right': '20%','padding-left':'75px'});
                     }
                 } else {
                     if ($('.chapter_shrink').hasClass('active')) {
-                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'75px'});
+                        $('.edit_area').css({'padding-right': '0.3%','padding-left':'75px'});
                     } else {
-                        $('.edit_area').css({'padding-right': '0.5%','padding-left':'220px'});
+                        $('.edit_area').css({'padding-right': '0.3%','padding-left':'220px'});
                     }
                 }
             }

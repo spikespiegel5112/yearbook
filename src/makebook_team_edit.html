@@ -3240,8 +3240,8 @@
 
     //自定义滚动条
     function customScrollBar(){
-        $(window).load(function(){
-            $(".edit_content > .list_mode, .chapter_list").mCustomScrollbar({
+        $(document).ready(function(){
+            $(".edit_content > .list_mode, .chapter_list, .single_mode .edit_area").mCustomScrollbar({
                 theme:"minimal-dark",
                 scrollbarPosition: "inside",
                 autoDraggerLength: true,

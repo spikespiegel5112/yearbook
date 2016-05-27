@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/photoswipe/photoswipe.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/photoswipe/default-skin/yb-skin.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 <body>
 <div class="aside_content">
@@ -684,6 +685,7 @@
 <script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb313'></script>
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
 <script type="text/javascript" src="assets/js/icheck.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- build:js js/all.js -->
 <script type="text/javascript" src="js/base.js"></script>
 <!-- endbuild -->
@@ -766,7 +768,22 @@
                 content: document.querySelector('.create_leave_msg')
             })
         })
+
+        customScrollBar();
     })();
+
+    //自定义滚动条
+    function customScrollBar(){
+        $(document).ready(function(){
+            $(".res_tab_con").mCustomScrollbar({
+                theme:"minimal-dark",
+                scrollbarPosition: "inside",
+                autoDraggerLength: true,
+                autoExpandScrollbar: true
+            });
+
+        });
+    }
     //渲染控件样式
     function changeButtonCss() {
         $("input[type=radio],input[type=checkbox]").iCheck({

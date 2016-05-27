@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1464126730_9261143.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 <body>
 <div class="aside_content">
@@ -821,6 +822,7 @@
 <script type="text/javascript" src='assets/js/jquery.masonry.min.js'></script>
 <script type="text/javascript" src='assets/js/chosen.jquery.min.js'></script>
 <script type="text/javascript" src='assets/js/jquery.artDialog.js?skin=yb313'></script>
+<script type="text/javascript" src='assets/js/jquery.mCustomScrollbar.concat.min.js'></script>
 <script>
     (function(){
         $(".aside_content .resource_list").slide({
@@ -854,9 +856,21 @@
         //普通投票 结果
         normalResult();
         //查看投票详情
-        showResultDetail()
+        showResultDetail();
+        customScrollBar();
     })();
+    //自定义滚动条
+    function customScrollBar(){
+        $(document).ready(function(){
+            $(".res_tab_con, .comment .comment_list, .vote_option").mCustomScrollbar({
+                theme:"minimal-dark",
+                scrollbarPosition: "inside",
+                autoDraggerLength: true,
+                autoExpandScrollbar: true
+            });
 
+        });
+    }
     function normalResult() {
         var trEl = $('.vote_list_result tr');
         trEl.each(function() {

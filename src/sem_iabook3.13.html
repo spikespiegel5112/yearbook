@@ -329,17 +329,14 @@
 				<a class='sem_main_btn' href="javascript:;">开始定制</a>
 				<div class='common_macbookscreen_comtainer'>
 					<div class='common_macbookscreen_wrapper'>
+						
 						<div class='screen'>
-							<!-- <span></span> -->
-							<video src='img/video/20160518_140721.mp4' controls="controls"></video>
-							<video src='img/video/20160518_142156.mp4' controls="controls"></video>
-							<video src='img/video/20160518_144229.mp4' controls="controls"></video>
+							<video src='img/video/demonstration_template.mp4' controls="controls"></video>
+							<video src='img/video/demonstration_interaction.mp4' controls="controls"></video>
+							<video src='img/video/demonstration_edit.mp4' controls="controls"></video>
 						</div>
-						<ul class='bg'>
-							<li>
-								<img src="">
-							</li>
-						</ul>
+						<div class='frame'></div>
+						<div class='screenbg'></div>
 					</div>
 				</div>
 			</div>
@@ -430,7 +427,8 @@
 		var tabLiEl = $('.sem_iabookintrotab313_wrapper li'),
 			introLiEl = $('.sem_iabookintromain313_wrapper li'),
 			coverlistEl = $('.sem_iabook313_container .sem_mainlist_wrapper ul'),
-			bannerUlEl=$('.sem_iabookbanner313_wrapper>ul');
+			bannerUlEl=$('.sem_iabookbanner313_wrapper>ul'),
+			roundaboutFlag=true;
 		//翻转插件
 		bannerUlEl.roundabout({
 			minScale:0.8
@@ -446,11 +444,21 @@
 		$('.sem_iabookintrotab313_wrapper li').hover(function() {
 			var $this = $(this),
 				index = $this.index();
+				
 			$this.addClass('active').siblings().removeClass('active');
 			introLiEl.eq(index).show().siblings().hide();
 			coverlistEl.eq(index).show().siblings().hide();
-			//hover选项卡翻转到相应的banner里
-			bannerUlEl.roundabout('animateToChild', index);
+			if (roundaboutFlag==true) {
+				//hover选项卡翻转到相应的banner里
+				bannerUlEl.roundabout('animateToChild', index);
+				// roundaboutFlag=false;
+				// window.setTimeout(function(){
+				// 	roundaboutFlag=true;
+				// },1000)
+			};
+			
+			
+			
 		});
 		//书册封面动画效果
 		$('.sem_mainlistul_wrapper li').hover(function() {

@@ -7188,17 +7188,34 @@ nav .pagination li a:active
     margin: 0 auto;
     width: 930px;
     height: 580px;
-    background: url(../img/default/macbookairscreen_00000.png);
+   /* background: url(../img/default/macbookairscreen_00000.png);*/
     overflow: hidden;
 }
+.common_macbookscreen_wrapper .frame{
+    width: 930px;
+    height: 580px;
+    background: url(../img/default/macbookairscreen_00000.png);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.common_macbookscreen_wrapper .screenbg{
+    position: absolute;
+    width: 830px;
+    height: 530px;
+    background: #262629;
+    top: 55px;
+    left: 55px;
+}
 .common_macbookscreen_wrapper .screen{
-    margin: 53px auto 0;
-    width: 822px;
-    height: 517px;
-    border-radius: 5px;
+    margin: 54px auto 0;
+    width: 820px;
+    height: 514px;
+    /*border-radius: 5px;*/
     position: relative;
     cursor: pointer;
     overflow: hidden;
+    z-index: 2;
 }
 .common_macbookscreen_wrapper .screen video{
     display: block;

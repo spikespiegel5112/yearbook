@@ -81,7 +81,9 @@ textarea:focus
 {
     color: #666;
 }
-
+.zindex_999{
+    z-index: 999;
+}
 .cm_fl
 {
     float: left;
@@ -7201,11 +7203,14 @@ nav .pagination li a:active
 }
 .common_macbookscreen_wrapper .screenbg{
     position: absolute;
-    width: 830px;
-    height: 530px;
-    background: #262629;
+    width: 820px;
+    height: 514px;
+    /*background: #262629;*/
+    background: url(../img/default/macbookscreengloss_00000.png);
     top: 55px;
     left: 55px;
+    z-index: 3;
+    cursor: pointer;
 }
 .common_macbookscreen_wrapper .screen{
     margin: 54px auto 0;

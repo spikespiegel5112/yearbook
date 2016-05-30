@@ -468,23 +468,38 @@
     display: block;
 }
 
+.tool_bar .grid li .page_num{
+    position: absolute;
+    right: 17px;
+    top: -2px;
+    background-color: #999;
+    width: auto;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: xx-small;
+}
+
 .tool_bar .grid li .page_list
 {
     font-size: 12px;
 
     position: absolute;
     top: 62px;
-    left: -9px;
+    left: -13px;
 
     display: none;
 
-    width: 80px;
+    width: 90px;
 }
 
 .min_screen .tool_bar .grid li .page_list
 {
     top: 45px;
-    left: -19px;
+    left: -23px;
 }
 
 .tool_bar .grid li:hover .page_list
@@ -496,7 +511,7 @@
 {
     position: absolute;
     top: -8px;
-    left: 45px;
+    left: 50px;
 
     width: 0;
     height: 0;
@@ -504,6 +519,7 @@
     border-right: 8px solid transparent;
     border-bottom: 8px solid #ddd;
     border-left: 8px solid transparent;
+    z-index: 1;
 }
 
 .tool_bar .grid li .page_list .arrow:after

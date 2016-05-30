@@ -229,12 +229,12 @@
                     <ul>
                         <li>
                             <a class="incomplete_picture" href="javascript:;"><i></i><span>照片缺失页</span></a>
-
+                            <span class="page_num">30</span>
                             <div class="page_list">
                                 <ul>
                                     <li>
                                         <a href="javascript:;">
-                                            <span>第1页</span>
+                                            <span>第[32/33]页</span>
                                         </a>
                                     </li>
                                     <li>
@@ -278,7 +278,7 @@
                         </li>
                         <li>
                             <a class="incomplete_text" href="javascript:;"><i></i><span>文字缺失页</span></a>
-
+                            <span class="page_num">303</span>
                             <div class="page_list">
                                 <ul>
                                     <li>
@@ -3251,13 +3251,12 @@
     //自定义滚动条
     function customScrollBar(){
         $(document).ready(function(){
-            $(".edit_content > .list_mode, .chapter_list, .single_mode .edit_area").mCustomScrollbar({
+            $(".edit_content > .list_mode, .chapter_list, .single_mode .edit_area, .tool_bar .page_list ul").mCustomScrollbar({
                 theme:"minimal-dark",
                 scrollbarPosition: "inside",
                 autoDraggerLength: true,
                 autoExpandScrollbar: true
             });
-
         });
     }
     //渲染控件样式

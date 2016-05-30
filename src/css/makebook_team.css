@@ -3821,11 +3821,13 @@
     margin: 10px 0;
 }
 .create_topic_con .makebook_spnav_wapper,
-.create_vote_con .makebook_spnav_wapper,
 .create_leave_msg .makebook_spnav_wapper
 {
     position: absolute;
     bottom: 0;
+}
+.create_vote_con .makebook_spnav_wapper{
+    margin-bottom: -4px;
 }
 .create_topic_con li .error,
 .create_vote_con li .error{
@@ -3841,16 +3843,7 @@
     display: none;
 
     width: 620px;
-    height: 563px;
-}
-.create_vote_con .create_votelist > ul
-{
-    /*max-height: 530px;*/
-    overflow-y: auto;
-}
-.create_vote_con.invitation_card .create_votelist > ul
-{
-    max-height: 490px;
+    /*height: 563px;*/
 }
 .create_vote_con .create_votelist ul li
 {

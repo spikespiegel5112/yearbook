@@ -4128,6 +4128,7 @@
     opacity: 1!important;
     color: #666!important;
     background: rgba(255, 255, 255, .8)!important;
+    box-shadow: 0 0 5px #aaa;
 }
 
 .drag_con img
@@ -4138,7 +4139,48 @@
     height: auto!important;
     margin: 5px auto!important;
 }
-
+.drag_con.vote,
+.drag_con.message{
+    width: 200px!important;
+    height: 70px!important;
+    text-align: left;
+    box-sizing: border-box;
+}
+.drag_con .type{
+    position: absolute;
+    font-size: 14px;
+    line-height: 25px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    color: #fff;
+    border-radius: 13px;
+}
+.drag_con.vote .type{
+    background-color: #c3a43a;
+}
+.drag_con.message .type{
+    background-color: #5db8f1;
+}
+.drag_con .caption{
+    font-size: 14px;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 55px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+    box-sizing: border-box;
+}
+.drag_con .desc{
+    font-size: 12px;
+    line-height: 1.8;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .hover_box
 {
     position: absolute;

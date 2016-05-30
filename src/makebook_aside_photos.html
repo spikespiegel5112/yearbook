@@ -273,7 +273,7 @@
     </div>
 </div>
 <!--gallery must have class:pswp element 因全屏显示转移至主页面内-->
-<!--<div id="gallery" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="gallery" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="pswp__bg"></div>
 
     <div class="pswp__scroll-wrap">
@@ -284,21 +284,21 @@
             <div class="pswp__item"></div>
         </div>
 
-        <div class="pswp__ui pswp__ui&#45;&#45;hidden">
+        <div class="pswp__ui pswp__ui--hidden">
 
             <div class="pswp__top-bar">
 
                 <div class="pswp__counter"></div>
 
-                <button class="pswp__button pswp__button&#45;&#45;close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-                <button class="pswp__button pswp__button&#45;&#45;share" title="Share"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
 
-                <button class="pswp__button pswp__button&#45;&#45;comment" title="comment"></button>
+                <button class="pswp__button pswp__button--comment" title="comment"></button>
 
-                <button class="pswp__button pswp__button&#45;&#45;fs" title="comment"></button>
+                <button class="pswp__button pswp__button--fs" title="comment"></button>
 
-                <button class="pswp__button pswp__button&#45;&#45;zoom" title="Zoom in/out"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
@@ -310,19 +310,19 @@
             </div>
 
 
-            &lt;!&ndash; <div class="pswp__loading-indicator"><div class="pswp__loading-indicator__line"></div></div> &ndash;&gt;
+            <!-- <div class="pswp__loading-indicator"><div class="pswp__loading-indicator__line"></div></div> -->
 
-            <div class="pswp__share-modal pswp__share-modal&#45;&#45;hidden pswp__single-tap">
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                 <div class="pswp__share-tooltip">
-                    &lt;!&ndash; <a href="#" class="pswp__share&#45;&#45;facebook"></a>
-                    <a href="#" class="pswp__share&#45;&#45;twitter"></a>
-                    <a href="#" class="pswp__share&#45;&#45;pinterest"></a>
-                    <a href="#" download class="pswp__share&#45;&#45;download"></a> &ndash;&gt;
+                    <!-- <a href="#" class="pswp__share--facebook"></a>
+                    <a href="#" class="pswp__share--twitter"></a>
+                    <a href="#" class="pswp__share--pinterest"></a>
+                    <a href="#" download class="pswp__share--download"></a> -->
                 </div>
             </div>
 
-            &lt;!&ndash;yb comment&ndash;&gt;
-            <div class="pswp__comment-modal pswp__comment-modal&#45;&#45;hidden pswp__single-tap">
+            <!--yb comment-->
+            <div class="pswp__comment-modal pswp__comment-modal--hidden pswp__single-tap">
                 <div class="comment">
                     <div class="comment_list">
                         <ul>
@@ -366,15 +366,15 @@
                     </div>
                 </div>
             </div>
-            <button class="pswp__button pswp__button&#45;&#45;arrow&#45;&#45;left" title="Previous (arrow left)"></button>
-            <button class="pswp__button pswp__button&#45;&#45;arrow&#45;&#45;right" title="Next (arrow right)"></button>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
             <div class="pswp__caption">
                 <div class="pswp__caption__center">
                 </div>
             </div>
         </div>
     </div>
-</div>-->
+</div>
 <script type="text/javascript" src='assets/js/jquery.min.js'></script>
 <script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.2.js"></script>
 <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb3"></script>
@@ -602,6 +602,8 @@
                 fullscreenEl: false,
                 counterEl: true,
                 maxSpreadZoom: 1,
+                arrowKeys: false,
+                focus: false,
                 clickToCloseNonZoomable: false,
                 shareButtons: [
                     {id: 'weibo', label: '新浪微博', url: 'http://service.weibo.com/share/share.php?url={{}}'},
@@ -613,7 +615,10 @@
                     {id: 'wechat', label: '朋友圈', url: ''},
                     {id: 'renren', label: '人人', url: 'http://widget.renren.com/dialog/share?url={{}}'},
                     {id: 'download', label: '下载', url: '', download: true}
-                ]
+                ],
+                isClickableElement: function(){
+                    return el.tagName === 'A';
+                }
             };
 
 
@@ -732,7 +737,6 @@
             openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
         }
     };
-
 
     function previewPhoto() {
         //设置预览图片原始尺寸

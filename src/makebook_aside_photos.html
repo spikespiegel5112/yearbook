@@ -764,12 +764,9 @@
             endFun: function(){
                 var albumNum = $('.res_tab .album ul li').length,
                         albumTabWid = 180*albumNum;
-                console.log(albumNum);
-
                 if(albumNum >= 5){
                     $('.res_tab .turn_page').show();
                     var index = $('.album li.on').index();
-                    console.log(index);
                     if(index <= albumNum-5){
                         left = -(index)*180;
                     }else{

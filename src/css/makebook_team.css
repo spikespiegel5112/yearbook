@@ -788,7 +788,7 @@
     display: block;
 
     height: 35px;
-    margin: 20px 0 10px;
+    margin: 20px 0 10px 9px;
 }
 
 .list_mode .item .name span
@@ -841,13 +841,14 @@
 .list_mode .page_list li{
     display: inline-block;
     vertical-align: top;
+    margin: 0 9px 10px;
 }
 
 .list_mode .page_list .cover,
 .list_mode .page_list .backcover
 {
     width: 151px;
-    margin: 0 0 10px;
+    /*margin: 0 0 10px;*/
 }
 
 .list_mode .page_list .figure
@@ -899,16 +900,16 @@
 .list_mode .page_list .double
 {
     width: 294px;
-    margin: 0 18px 10px 0;
+    /*margin: 0 18px 10px 0;*/
 }
 
-@media only screen and (max-width: 1024px)
+/*@media only screen and (max-width: 1024px)
 {
-    .list_mode .page_list .double
+    .list_mode .page_list li
     {
-        margin: 0 19px 10px 0;
+        margin: 0 6px 10px;
     }
-}
+}*/
 
 .page_list .double .figure
 {
@@ -962,7 +963,7 @@
 
 .list_mode .page_list .single{
     width: 147px;
-    margin: 0 18px 0 0;
+    /*margin: 0 18px 0 0;*/
 }
 
 .page_list .single .figure{

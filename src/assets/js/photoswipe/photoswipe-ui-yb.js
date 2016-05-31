@@ -38,6 +38,7 @@ var PhotoSwipeUI_Default =
         _commentButton,
         _commentModal,
         _commentModalHidden = true,
+		_praiseButton,
 		_initalCloseOnScrollValue,
 		_isIdle,
 		_listen,
@@ -71,6 +72,7 @@ var PhotoSwipeUI_Default =
 			zoomEl: true,
 			shareEl: true,
 			commentEl: true,
+			praiseEl: true,
 			counterEl: true,
 			arrowEl: true,
 			preloaderEl: true,
@@ -549,7 +551,8 @@ var PhotoSwipeUI_Default =
             onTap: function() {
                 _toggleCommentModal();
             }
-        }
+        },
+
 
 	];
 

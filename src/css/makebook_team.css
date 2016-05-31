@@ -1391,7 +1391,7 @@
 .chapter_list li .chapter_name
 {
     font-size: 12px;
-    line-height: 30px;
+    line-height: 28px;
 
     display: block;
 
@@ -1404,6 +1404,11 @@
     color: #cbcbcb;
     border: 1px solid #5a6671;
     border-radius: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 6px;
+    box-sizing: border-box;
 }
 
 .chapter_list li .thumb

@@ -35,8 +35,8 @@
                     <li>邀请卡相册2</li>
                     <li>邀请卡相册3</li>
                     <li>邀请卡相册4</li>
-                    <li>邀请卡相册5</li>
-                    <li>邀请卡相册6</li>
+                    <!--<li>邀请卡相册5</li>-->
+                    <!--<li>邀请卡相册6</li>-->
                 </ul>
             </div>
             <a class="add_album" href="javascript:;"><i class="ybiconfont ybicon-add"></i></a>
@@ -293,8 +293,8 @@
                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
                 <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--praise" title="praise"></button>
+                <button class='pswp__button pswp__button--praise praise' id="imageIdForpraise" objid="" objtype='image' isdidlike='N'  href='javascript:;'><i class='ybiconfont ybicon-praise'></i><span>0</span></button>
+                <!--<button class="pswp__button pswp__button--praise" title="praise"></button>-->
 
                 <button class="pswp__button pswp__button--comment" title="comment"></button>
 
@@ -619,7 +619,7 @@
                     {id: 'renren', label: '人人', url: 'http://widget.renren.com/dialog/share?url={{}}'},
                     {id: 'download', label: '下载', url: '', download: true}
                 ],*/
-                isClickableElement: function(){
+                isClickableElement: function(el){
                     return el.tagName === 'A';
                 }
             };
@@ -764,9 +764,12 @@
             endFun: function(){
                 var albumNum = $('.res_tab .album ul li').length,
                         albumTabWid = 180*albumNum;
-                if(albumNum > 5){
+                console.log(albumNum);
+
+                if(albumNum >= 5){
                     $('.res_tab .turn_page').show();
                     var index = $('.album li.on').index();
+                    console.log(index);
                     if(index <= albumNum-5){
                         left = -(index)*180;
                     }else{

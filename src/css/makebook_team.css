@@ -3230,6 +3230,11 @@
 }
 .aside_content .res_tab .album ul li{
     width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 6px;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
 }
 .aside_content .res_tab li:first-child
 {

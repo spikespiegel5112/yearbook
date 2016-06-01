@@ -439,10 +439,19 @@
 }
 .tool_bar .grid li a.active i{
     background-position-y: -93px ;
+    opacity: 1;
 }
 .tool_bar .grid li .add_chapter_btn.active i
 {
     background-position: 0 -92px;
+}
+.tool_bar .grid li .refresh i
+{
+    background-position: -320px 0;
+}
+.tool_bar .grid li .refresh.active i
+{
+    background-position: -280px 0;
 }
 .tool_bar .grid li .ybcommon_queryicon_item
 {
@@ -483,24 +492,26 @@
     color: #fff;
     font-size: 12px;
 }
-
+.min_screen .tool_bar .grid li .page_num{
+    right: 10px;
+}
 .tool_bar .grid li .page_list
 {
     font-size: 12px;
 
     position: absolute;
     top: 62px;
-    left: -19px;
+    left: -22px;
 
     display: none;
 
-    width: 100px;
+    width: 130px!important;
 }
 
 .min_screen .tool_bar .grid li .page_list
 {
     top: 45px;
-    left: -28px;
+    left: -33px;
 }
 
 .tool_bar .grid li:hover .page_list
@@ -512,7 +523,7 @@
 {
     position: absolute;
     top: -8px;
-    left: 55px;
+    left: 58px;
 
     width: 0;
     height: 0;
@@ -551,6 +562,7 @@
 
     border: 1px solid #ddd;
     background-color: #fff;
+    box-sizing: border-box;
 }
 
 .tool_bar .grid li .page_list li
@@ -564,6 +576,8 @@
     text-align: left;
 
     border-bottom: 1px dashed #ddd;
+    padding: 0;
+    white-space: nowrap;
 }
 .tool_bar .grid li .page_list li a
 {
@@ -2778,6 +2792,7 @@
 .tpl_slide_wrap .chaptermake_tpl ul{
     margin: 0 30px;
     width: 756px;
+    min-height: 338px;
 }
 .tpl_slide_wrap .chaptermake_tpl  li{
     margin: 5px 10px 10px;
@@ -3912,16 +3927,23 @@
 .create_leave_msg label.error{
     padding-left: 2%;
 }
+.create_vote_con #votetype-error,
+.create_vote_con #votepattren-error{
+    position: absolute;
+    top: 18px;
+    white-space: nowrap;
+}
+.create_vote_con #votepattren-error{
+    top: 12px;
+}
 .create_vote_con .create_votelist ul .votetype_item{
     margin: 15px 0 0;
 }
-.create_vote_con .votepattern_wrapper{
+/*.create_vote_con .votepattern_wrapper{
     overflow: hidden;
-}
+}*/
 .create_vote_con .votepattern_wrapper > div{
-    line-height: 2em;
-     height: auto;
-    margin: 7px 0 0;
+    height: auto;
 }
 .create_vote_con
 {

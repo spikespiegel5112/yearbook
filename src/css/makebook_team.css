@@ -439,10 +439,19 @@
 }
 .tool_bar .grid li a.active i{
     background-position-y: -93px ;
+    opacity: 1;
 }
 .tool_bar .grid li .add_chapter_btn.active i
 {
     background-position: 0 -92px;
+}
+.tool_bar .grid li .refresh i
+{
+    background-position: -320px 0;
+}
+.tool_bar .grid li .refresh.active i
+{
+    background-position: -280px 0;
 }
 .tool_bar .grid li .ybcommon_queryicon_item
 {

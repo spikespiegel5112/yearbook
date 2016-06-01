@@ -483,24 +483,26 @@
     color: #fff;
     font-size: 12px;
 }
-
+.min_screen .tool_bar .grid li .page_num{
+    right: 10px;
+}
 .tool_bar .grid li .page_list
 {
     font-size: 12px;
 
     position: absolute;
     top: 62px;
-    left: -19px;
+    left: -22px;
 
     display: none;
 
-    width: 100px;
+    width: 130px!important;
 }
 
 .min_screen .tool_bar .grid li .page_list
 {
     top: 45px;
-    left: -28px;
+    left: -33px;
 }
 
 .tool_bar .grid li:hover .page_list
@@ -512,7 +514,7 @@
 {
     position: absolute;
     top: -8px;
-    left: 55px;
+    left: 58px;
 
     width: 0;
     height: 0;
@@ -551,6 +553,7 @@
 
     border: 1px solid #ddd;
     background-color: #fff;
+    box-sizing: border-box;
 }
 
 .tool_bar .grid li .page_list li
@@ -564,6 +567,8 @@
     text-align: left;
 
     border-bottom: 1px dashed #ddd;
+    padding: 0;
+    white-space: nowrap;
 }
 .tool_bar .grid li .page_list li a
 {

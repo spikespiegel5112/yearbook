@@ -1940,7 +1940,7 @@
 
     float: right;
 
-    width: 9%;
+    width: 11%;
 
     text-align: center;
 
@@ -1950,6 +1950,7 @@
 .interact_list li .item .ybicon-eyeopen
 {
     font-size: 18px;
+    line-height: 56px;
 }
 
 .interact_list li .caption
@@ -1960,7 +1961,7 @@
     float: left;
     overflow: hidden;
 
-    width: 60%;
+    width: 56%;
     padding-left: 50px;
 
     white-space: nowrap;
@@ -1968,6 +1969,13 @@
 
     color: #666;
 }
+.interact_list li:hover .item{
+    background: linear-gradient(#f6f6f6,#fff);
+}
+.interact_list li:hover .caption{
+    color: #333;
+}
+
 
 .interact_list li .item .interact_des
 {
@@ -3801,6 +3809,26 @@
 
     border: 0;
     border-radius: 0;
+}
+.vote .interact_list li .item .interact_des{
+    position: absolute;
+    top: -83px;
+    left: -415px;
+    display: none;
+    box-sizing: border-box;
+    width: 395px;
+    transition: left .5s ease-in-out .3s;
+    height: 210px;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+.vote .interact_list li .item .interact_des::after{
+    display: none;
+}
+.vote .interact_list .vote_list_wrap ul li{
+    width: 100%;
+    margin: 0;
 }
 .actor_comment_list
 {

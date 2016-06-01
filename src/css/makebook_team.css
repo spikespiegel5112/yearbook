@@ -844,6 +844,7 @@
 }
 
 .list_mode .page_list li{
+    position: relative;
     display: inline-block;
     vertical-align: top;
     margin: 0 9px 10px;
@@ -1382,7 +1383,7 @@
 .single_mode .chapter_list li
 {
     display: block;
-
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     padding: 5px 0;
@@ -4461,4 +4462,38 @@
     border: 2px dashed #eee;
     background-color: #ffe45c;
     height: 205px;
+}
+/*更换模板生成中*/
+
+.list_mode .page_list li .loadThumb,
+.single_mode .chapter_list ul li .loadThumb
+{
+    font-size: 12px;
+    line-height: 26px;
+    position: absolute;
+    width: 100%;
+    height: 28px;
+
+    text-align: center;
+
+    color: #a0d350;
+    background: rgba(20, 20, 20, .6) none repeat scroll 0 0;
+    z-index: 1;
+}
+.list_mode .page_list li .loadThumb{
+    top: 86px;
+}
+.list_mode .page_list li .loadThumb .loading
+{
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin: 5px 0;
+
+    border: 0 solid #d3d3d3;
+}
+
+.single_mode .chapter_list ul li .loadThumb
+{
+    top: 30px;
 }

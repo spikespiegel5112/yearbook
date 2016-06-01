@@ -3913,16 +3913,23 @@
 .create_leave_msg label.error{
     padding-left: 2%;
 }
+.create_vote_con #votetype-error,
+.create_vote_con #votepattren-error{
+    position: absolute;
+    top: 18px;
+    white-space: nowrap;
+}
+.create_vote_con #votepattren-error{
+    top: 12px;
+}
 .create_vote_con .create_votelist ul .votetype_item{
     margin: 15px 0 0;
 }
-.create_vote_con .votepattern_wrapper{
+/*.create_vote_con .votepattern_wrapper{
     overflow: hidden;
-}
+}*/
 .create_vote_con .votepattern_wrapper > div{
-    line-height: 2em;
-     height: auto;
-    margin: 7px 0 0;
+    height: auto;
 }
 .create_vote_con
 {

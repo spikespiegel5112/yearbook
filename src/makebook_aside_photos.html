@@ -35,7 +35,7 @@
                     <li>邀请卡相册2</li>
                     <li>邀请卡相册3</li>
                     <li>邀请卡相册4</li>
-                    <!--<li>邀请卡相册5</li>-->
+                    <li>邀请卡相册5</li>
                     <!--<li>邀请卡相册6</li>-->
                 </ul>
             </div>
@@ -764,7 +764,7 @@
             endFun: function(){
                 var albumNum = $('.res_tab .album ul li').length,
                         albumTabWid = 180*albumNum;
-                if(albumNum >= 5){
+                if(albumNum > 5){
                     $('.res_tab .turn_page').show();
                     var index = $('.album li.on').index();
                     if(index <= albumNum-5){
@@ -773,6 +773,8 @@
                         left = -(albumNum-5)*180;
                     }
                     $('.album ul').css({'width':albumTabWid,'transform':'translateX('+left+'px)'});
+                }else{
+                    $('.album ul').css({'width':albumTabWid,'transform':'translateX(0px)'});
                 }
             }
         });
@@ -783,6 +785,7 @@
                 lock: true,
                 content: document.querySelector('.creatalbum_window_form'),
                 ok: function () {
+                    $('.album ul').css({'transform':'translateX(0px)'});
                 },
                 cancelVal: '取消',
                 cancel: function () {

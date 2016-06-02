@@ -606,9 +606,9 @@
                 maxSpreadZoom: 1,
                 arrowKeys: false,
                 focus: false,
-                shareEl: false,
+                shareEl: true,
                 clickToCloseNonZoomable: false,
-                /*shareButtons: [
+                shareButtons: [
                     {id: 'weibo', label: '新浪微博', url: 'http://service.weibo.com/share/share.php?url={{}}'},
                     {
                         id: 'qzone',
@@ -618,7 +618,7 @@
                     {id: 'wechat', label: '朋友圈', url: ''},
                     {id: 'renren', label: '人人', url: 'http://widget.renren.com/dialog/share?url={{}}'},
                     {id: 'download', label: '下载', url: '', download: true}
-                ],*/
+                ],
                 isClickableElement: function(el){
                     return el.tagName === 'A';
                 }
@@ -763,7 +763,8 @@
             autoPlay: false,
             endFun: function(){
                 var albumNum = $('.res_tab .album ul li').length,
-                        albumTabWid = 180*albumNum;
+                        albumTabWid = 180*albumNum,
+                        left = 0;
                 if(albumNum > 5){
                     $('.res_tab .turn_page').show();
                     var index = $('.album li.on').index();
@@ -771,6 +772,9 @@
                         left = -(index)*180;
                     }else{
                         left = -(albumNum-5)*180;
+                    }
+                    if(left > 0){
+                        left = 0;
                     }
                     $('.album ul').css({'width':albumTabWid,'transform':'translateX('+left+'px)'});
                 }else{

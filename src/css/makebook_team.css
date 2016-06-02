@@ -2009,7 +2009,6 @@
     background-color: #fff;
     box-shadow: 0 0 10px #999;
 }
-
 .interact_list li .item .interact_des.active
 {
     left: -415px;
@@ -2236,6 +2235,11 @@
 
     width: 100%;
 }
+.resource_list .res_tab_con .comment .comment_list{
+    overflow-y: auto;
+
+    max-height: 425px;
+}
 .pswp__comment-modal .comment .comment_list
 {
     overflow-y: auto;
@@ -2256,7 +2260,7 @@
 
     box-sizing: border-box;
     width: 100%;
-    padding: 15px 25px 0;
+    padding: 15px 15px 0;
 
     border-bottom: 1px solid #eaeeef;
 }
@@ -3847,6 +3851,10 @@
     width: 100%;
     margin: 0;
 }
+.interact_des.ui-draggable-dragging{
+    background-color: #fff;
+    padding: 10px;
+}
 .actor_comment_list
 {
     position: relative;
@@ -3884,7 +3892,7 @@
     display: none;
 
     width: 620px;
-    height: 425px;
+    /*height: 425px;*/
 
     background-color: #fff;
 }
@@ -3896,7 +3904,7 @@
     margin: 0;
     padding: 0 15px;
 }
-.create_topic_con .create_topiclist ul li p
+.create_topic_con .create_topiclist form p
 {
     margin: 50px 30px 0 0;
 }
@@ -3930,10 +3938,12 @@
     padding-left: 2%;
 }
 .create_vote_con #votetype-error,
-.create_vote_con #votepattren-error{
+.create_vote_con #votepattren-error,
+.create_vote_con #membervoterange-error{
     position: absolute;
     top: 18px;
     white-space: nowrap;
+    margin: 0;
 }
 .create_vote_con #votepattren-error{
     top: 12px;
@@ -3941,9 +3951,14 @@
 .create_vote_con .create_votelist ul .votetype_item{
     margin: 15px 0 0;
 }
-/*.create_vote_con .votepattern_wrapper{
-    overflow: hidden;
-}*/
+.create_vote_con .create_votelist .voteoption_wrapper{
+    width: 475px;
+}
+.create_vote_con .membervoteoption_wrapper,
+.create_vote_con .membervoteoption_item{
+    overflow: visible;
+    height: 20px;
+}
 .create_vote_con .votepattern_wrapper > div{
     height: auto;
 }

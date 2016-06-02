@@ -3542,7 +3542,12 @@
 
         if(winHeight <855){
             $('.team_edit_container .edit_content').css({'position':'relative','height':'855'});
-            $('.edit_content > .single_mode, .edit_content > .list_mode').height('733');
+            //小屏下工具栏高50px,编辑内容加高40px
+            if(winWidth <= 1280){
+                $('.edit_content > .single_mode, .edit_content > .list_mode').height('773');
+            }else{
+                $('.edit_content > .single_mode, .edit_content > .list_mode').height('733');
+            }
         }
 
     }

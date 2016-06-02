@@ -6017,6 +6017,7 @@
     margin: 0 20px 0 0;
 
     color: #999;
+    white-space: nowrap;
 }
 
 .makebook_stepbacklink_item span
@@ -7328,7 +7329,8 @@
 
 .makebook_steppopup_container
 {
-    position: fixed;
+    position: absolute;
+
     z-index: 999;
     top: 0;
     left: 0;
@@ -7338,7 +7340,9 @@
     width: 100%;
     height: 100%;
 
-    /*background: rgba(0,0,0,.5);*/
+    background: rgba(0,0,0,0.5);
+    min-width: 1280px;
+    min-height: 855px;
 }
 
 .makebook_steppopup_wrapper
@@ -7616,11 +7620,6 @@
     color: #999;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.makebook_splist_wrapper .tips li:last-child
-{
-    border: 0;
 }
 
 .makebook_splist_wrapper .tips p

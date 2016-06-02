@@ -800,7 +800,8 @@
 			if ($('.makebook_sprecommend_wrapper').is(':visible') && swiperFlag) {
 				var myswiper = new Swiper('.swiper-container', {
 					slidesPerView: 'auto',
-					freemode: true
+                    nextButton: '.makebook_recommend_wrapper .next',
+                    prevButton: '.makebook_recommend_wrapper .prev'
 				})
 				swiperFlag = false;
 			};

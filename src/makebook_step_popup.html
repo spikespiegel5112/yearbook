@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<div class='makebook_steppopup_container main_container blur_bg'>
+	<div class='makebook_steppopup_container blur_bg'>
 		<div class='makebook_steppopup_wrapper'>
 			<div class='makebook_steppopuplist_wrapper'>
 				<div class='makebook_spchoosetype_wrapper'>
@@ -868,8 +868,7 @@
 	}
 	//选项标签的操作
 	function checktag() {
-		var checktagEl = $('.makebook_checktag_item'),
-			clickable = true;
+		var checktagEl = $('.makebook_checktag_item');
 		checktagEl.click(function() {
 			var $this = $(this);
 			if ($this.hasClass('disabled')) {

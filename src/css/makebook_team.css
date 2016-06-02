@@ -3935,10 +3935,12 @@
     padding-left: 2%;
 }
 .create_vote_con #votetype-error,
-.create_vote_con #votepattren-error{
+.create_vote_con #votepattren-error,
+.create_vote_con #membervoterange-error{
     position: absolute;
     top: 18px;
     white-space: nowrap;
+    margin: 0;
 }
 .create_vote_con #votepattren-error{
     top: 12px;
@@ -3946,9 +3948,14 @@
 .create_vote_con .create_votelist ul .votetype_item{
     margin: 15px 0 0;
 }
-/*.create_vote_con .votepattern_wrapper{
-    overflow: hidden;
-}*/
+.create_vote_con .create_votelist .voteoption_wrapper{
+    width: 475px;
+}
+.create_vote_con .membervoteoption_wrapper,
+.create_vote_con .membervoteoption_item{
+    overflow: visible;
+    height: 20px;
+}
 .create_vote_con .votepattern_wrapper > div{
     height: auto;
 }

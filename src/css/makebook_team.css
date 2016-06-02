@@ -1991,7 +1991,7 @@
 }
 
 
-.interact_list li .interact_des
+.interact_list li .item .interact_des
 {
     position: absolute;
     top: -35px;
@@ -2009,7 +2009,6 @@
     background-color: #fff;
     box-shadow: 0 0 10px #999;
 }
-
 .interact_list li .item .interact_des.active
 {
     left: -415px;
@@ -3851,6 +3850,9 @@
 .vote .interact_list .vote_list_wrap ul li{
     width: 100%;
     margin: 0;
+}
+.interact_des.ui-draggable-dragging{
+    background-color: #fff;
 }
 .actor_comment_list
 {

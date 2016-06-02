@@ -996,12 +996,13 @@
 							maxValLength = maxVal.toString().length;
 						if (inputValLength < minValLength) {
 							console.log(inputValLength)
-							for (var i = 1; i <= inputValLength; i++) {
-								if (inputVal < minValArr[minValLength - minValLength - i]) {
+							for (var i = 0; i < inputValLength; i++) {
+								if (inputVal > minValArr[minValLength - minValLength - i]) {
 									
+									inputVal=minValArr[minValLength - minValLength - i]
 								};
 							};
-
+							alert(minValArr[minValLength - minValLength - i])
 						};
 						console.log(minValArr[0])
 							// if (inputVal > config.density + initVal) {

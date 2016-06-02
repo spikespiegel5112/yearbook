@@ -136,8 +136,7 @@
         bottom: 0.7rem;
     }*/
 }
-@media (max-height:700px)
-{
+@media (max-height:1200px){
     .common_custonoption_item
     {
         width: 12rem;
@@ -271,6 +270,10 @@
     .makebook_spnextlink_btn
     {
         padding: .2rem 1.4rem;
+        font-size: 1rem;
+    }
+    .makebook_spsetup_wrapper{
+        width: 40rem;
     }
     .makebook_spsetup_wrapper .makebook_resetandsave_wrapper
     {
@@ -319,7 +322,7 @@
     }
     .makebook_spassemble_wrapper
     {
-        width: 50rem;
+        width: 40rem;
     }
     .makebook_spassemble_wrapper .makebook_splist_wrapper
     {
@@ -347,5 +350,11 @@
         font-size: .75rem;
 
         height: 1.5rem;
+    }
+    .makebook_sprecommend_wrapper{
+        width: 44rem;
+    }
+    .makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
+        width: 7rem;
     }
 }

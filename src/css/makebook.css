@@ -7082,6 +7082,7 @@
 
 .makebook_recommend_wrapper
 {
+    width: 100%;
     overflow: hidden;
 
     margin: 30px 0;
@@ -7090,11 +7091,12 @@
 
 .makebook_recommend_wrapper ul
 {
+    /*display: flex;*/
     /*float: left;*/
-    overflow: hidden;
-
-    width: 817px;
-    margin: 0 auto;
+    /*width: 80%;*/
+    /*width: 817px;*/
+    height: 270px;
+ /*   margin: 0 auto;*/
 }
 
 .makebook_recommendlist_wrapper
@@ -7103,8 +7105,13 @@
 
     width: 100%;
     margin: 0 0 50px 0;
+    font-size: 0;
 }
-
+.makebook_recommend_wrapper .swiper-container{
+    display: inline-block;
+    width: 85%;
+    vertical-align: middle;
+}
 .makebook_recommend_wrapper li
 {
     float: left;
@@ -7133,9 +7140,9 @@
     font-size: 40px;
     line-height: 200px;
 
-    position: absolute;
-    top: 0;
-
+/*    position: absolute;
+    top: 0;*/
+    display: inline-block;
     width: 40px;
     height: 200px;
 
@@ -7872,7 +7879,9 @@
 
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper li
 {
+
     width: 145px;
+    float: none;
 }
 
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper li .bookcover
@@ -7927,10 +7936,14 @@
     height: 20px;
     margin: 30px auto 10px;
 }
-
+.makebook_spprogress_wrapper ul{
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+}
 .makebook_spprogress_wrapper li
 {
-    float: left;
+    display: inline-block;
 }
 
 .makebook_spprogressbar_wrapper

@@ -527,13 +527,18 @@
 					totalprice: '',
 					onchange: function() {}
 				};
+			console.log(config.unitprice)
 			if (options) {
 				$.extend(config, options);
 			};
 			init($this);
 			$.each($this, function(index) {
-				var $this = $(this),
-					counterEl = $this.find('input');
+				var $this = $(this);
+				if ($this.is('input')) {
+					var counterEl=$this;
+				}else{
+					var counterEl = $this.find('input');
+				}
 				$this.find('a').on('click', function(e) {
 					var counter = counterEl.val();
 					switch ($(this).index()) {
@@ -566,23 +571,32 @@
 							}
 							break;
 						case 'keyup':
-							counter = counterEl.val();
+							counter = Number(counterEl.val());
+							alert(typeof counter)
 							setter(index, counter);
 							config.onchange();
 							fireOnchange(counterEl);
+
 							break;
 					}
 				})
 			});
 
 			function getUnitprice(index) {
-				var unitPrice = $(config.unitprice).eq(index).text().replace("￥", '');
+				if (typeof config.unitprice=='number') {
+					var unitPrice=config.unitprice;
+					
+				}else if(typeof config.unitprice=='string'){
+					var unitPrice = $(config.unitprice).eq(index).text().replace("￥", '');
+				}
 				return unitPrice;
 			}
 
-			function setter(index, counter) {
-				var result = getUnitprice(index) * counter;
+			function setter(index, ccc) {
+				alert(ccc)
+				var result = getUnitprice(index) * ccc;
 				$(config.subtotal).eq(index).html(parseFloat(result).toFixed(2));
+
 				totalprice(index, result)
 			}
 
@@ -987,35 +1001,55 @@
 					if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
 						$this.attr('autocomplete', 'off')
 					}
-					$this.keyup(function() {
-						var inputVal = Number($(this).val()),
-							inputValLength = inputVal.toString().length,
-							minValLength = initVal.toString().length,
-							minValArr = initVal.toString().split(''),
-							maxVal = minValLength + config.density,
-							maxValLength = maxVal.toString().length;
-						if (inputValLength < minValLength) {
-							console.log(inputValLength)
-							for (var i = 0; i < inputValLength; i++) {
-								if (inputVal > minValArr[minValLength - minValLength - i]) {
-									
-									inputVal=minValArr[minValLength - minValLength - i]
-								};
-							};
-							alert(minValArr[minValLength - minValLength - i])
-						};
-						console.log(minValArr[0])
-							// if (inputVal > config.density + initVal) {
-							//     console.log(value)
-							//     inputVal = config.density + initVal;
-							// } else if (inputVal < initVal) {
-							//     inputVal = initVal;
-							// } else if (isNaN(value)) {
-							//     inputVal = config.density + initVal;
-							// }
+					$this.focus(function(){
+						$(this).addClass('onfocus');
+					});
+					$this.blur(function() {
+						var inputVal = Number($(this).val());
+						if (inputVal >= config.density + initVal) {
+							console.log(value)
+							inputVal = config.density + initVal;
+						} else if (inputVal <= initVal) {
+							inputVal = initVal;
+						}else if (inputVal >= initVal&&inputVal<config.density + initVal){
+							inputVal = inputVal;
+						}else if (isNaN(value)) {
+							inputVal = config.density + initVal;
+						}
+
 						$(this).val(inputVal);
 						_this.eq(i).css('margin-left', (inputVal - offsetVal[i]) * (axisWidth / config.density));
-					});
+						$(this).removeClass('onfocus');
+					})
+					// $this.keyup(function() {
+					// 	var inputVal = Number($(this).val()),
+					// 		inputValLength = inputVal.toString().length,
+					// 		minValLength = initVal.toString().length,
+					// 		minValArr = initVal.toString().split(''),
+					// 		maxVal = minValLength + config.density,
+					// 		maxValLength = maxVal.toString().length;
+					// 	if (inputValLength < minValLength) {
+					// 		console.log(inputValLength)
+					// 		for (var i = 0; i < inputValLength; i++) {
+					// 			if (inputVal > minValArr[minValLength - minValLength - i]) {
+
+					// 				inputVal=minValArr[minValLength - minValLength - i]
+					// 			};
+					// 		};
+					// 		alert(minValArr[minValLength - minValLength - i])
+					// 	};
+					// 	console.log(minValArr[0])
+					// 		// if (inputVal > config.density + initVal) {
+					// 		//     console.log(value)
+					// 		//     inputVal = config.density + initVal;
+					// 		// } else if (inputVal < initVal) {
+					// 		//     inputVal = initVal;
+					// 		// } else if (isNaN(value)) {
+					// 		//     inputVal = config.density + initVal;
+					// 		// }
+					// 	$(this).val(inputVal);
+					// 	_this.eq(i).css('margin-left', (inputVal - offsetVal[i]) * (axisWidth / config.density));
+					// });
 				} else {
 					var value = Number($(this).val());
 					$(this).html(value);

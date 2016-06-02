@@ -240,7 +240,6 @@ var PhotoSwipeUI_Default =
 			if(!target.href) {
 				return false;
 			}
-
 			if( target.hasAttribute('download') ) {
 				return true;
 			}
@@ -257,6 +256,14 @@ var PhotoSwipeUI_Default =
                 _toggleCommentModal();
             }
 			
+			return false;
+		},
+		_commentEvent =function(e) {
+			e = e || window.event;
+			var target = e.target || e.srcElement;
+
+			$(target).focus();
+
 			return false;
 		},
 		_updateShareURLs = function() {
@@ -293,7 +300,7 @@ var PhotoSwipeUI_Default =
 
 		},
         _updateCommentCon = function() {
-            //console.log('show comment')
+			_commentModal.children[0].onclick = _commentEvent;
         },
 		_hasCloseClass = function(target) {
 			for(var  i = 0; i < _options.closeElClasses.length; i++) {

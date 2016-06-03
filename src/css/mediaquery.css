@@ -1,5 +1,20 @@
-@media (max-width:1024px)
-{
+@media (min-width:768px) and (orientation: portrait){
+    .makebook_spsetup_wrapper{
+        width: 40rem;
+    }
+    .makebook_spassemble_wrapper
+    {
+        width: 40rem;
+    }
+    .makebook_sprecommend_wrapper{
+        width: 44rem;
+    }
+    .makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
+        width: 6rem;
+        margin: 0 0.5rem;
+    }
+}
+@media (max-width:1024px){
     label.error, div.error
     {
         font-size: .4rem!important;
@@ -136,8 +151,7 @@
         bottom: 0.7rem;
     }*/
 }
-@media (max-height:700px)
-{
+@media (max-height:900px){
     .common_custonoption_item
     {
         width: 12rem;
@@ -271,6 +285,10 @@
     .makebook_spnextlink_btn
     {
         padding: .2rem 1.4rem;
+        font-size: 1rem;
+    }
+    .makebook_spsetup_wrapper{
+        width: 55rem;
     }
     .makebook_spsetup_wrapper .makebook_resetandsave_wrapper
     {
@@ -347,5 +365,12 @@
         font-size: .75rem;
 
         height: 1.5rem;
+    }
+    .makebook_sprecommend_wrapper{
+        width: 53rem;
+    }
+    .makebook_sprecommend_wrapper .makebook_recommend_wrapper li{
+        margin: 0 0.3rem;
+        width: 8rem;
     }
 }

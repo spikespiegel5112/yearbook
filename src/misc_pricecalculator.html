@@ -243,7 +243,7 @@
 					</li>
 					<li>
 						<label>总价</label>
-						<span>￥101.1</span>
+						<span class='totalpeice'>￥101.1</span>
 					</li>
 				</ul>
 			</div>
@@ -295,7 +295,13 @@
 			var value1=$('.pricecalculator_countor_wrapper input').eq(0).val();
 			var value2=$('.pricecalculator_countor_wrapper input').eq(1).val();
 		})
-		
+		$('.pricecalculator_countor_wrapper input').priceCalculator({
+			unitprice: 50,
+			totalprice: '.pricecalculator_resultindicator_wrapper .totalpeice',
+			onchange: function(){
+				
+			}
+		})
 	});
 	</script>
 </body>

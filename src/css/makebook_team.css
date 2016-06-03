@@ -3419,7 +3419,8 @@
 {
     background: #e7b54b;
 }
-.cm_team_btn
+.cm_team_btn,
+.cm_auto_btn
 {
     font-size: 14px;
     line-height: 45px;
@@ -3433,6 +3434,8 @@
 
     color: #fff;
     border-radius: 4px;
+}
+.cm_team_btn{
     background-color: #53c16b;
 }
 .cm_team_btn:hover
@@ -3441,13 +3444,37 @@
 }
 .cm_team_btn i
 {
-    font-size: 14px;
-
+    font-size: 16px;
+    display: inline-block;
     margin-right: 5px;
-
+    width: 16px;
+    height: 16px;
     vertical-align: middle;
+    background: transparent url("../img/icon/upload_icons.png") no-repeat -31px 0;
+    background-size: cover;
 }
-
+.cm_auto_btn{
+    background-color: #c0c153;
+}
+.cm_auto_btn:hover{
+    background-color: #acad3f;
+}
+.cm_auto_btn i{
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background: transparent url("../img/icon/upload_icons.png") no-repeat 0 0;
+    background-size: cover;
+}
+.cm_auto_btn.disable i{
+    background: transparent url("../img/icon/upload_icons.png") no-repeat -15px 0;
+    background-size: cover;
+}
+.res_tab_con .action_wrap .cm_auto_btn{
+    margin-left: 20px;
+}
 .aside_content .res_tab_con .al_photo_list
 {
     position: relative;

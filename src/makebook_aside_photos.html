@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 <body>
-<div class="aside_content">
+<div class="aside_content" style="position: fixed"><!--IE10.11bug 静态页面单独查看的class-->
     <div class="resource_list">
-        <div class="res_tab">
+        <div class="res_tab" style="top: 0">
             <div class="album">
                 <ul>
                     <li class="on">书册相册（<span>10</span>）</li>
@@ -45,11 +45,12 @@
                 <a class="next ybiconfont ybicon-forward2" href="javascript:;"></a>
             </div>
         </div>
-        <div class="res_tab_con">
+        <div class="res_tab_con" style="padding-top: 65px">
             <ul>
                 <li>
                     <div class="action_wrap">
-                        <a class="cm_team_btn" href="javascript:;"><i class="ybiconfont ybicon-upload"></i>上传照片</a>
+                        <a class="cm_team_btn" href="javascript:;"><i class=""></i>上传照片</a>
+                        <a class="cm_auto_btn" href="javascript:;"><i class=""></i>自动排版</a>
                         <a class="yb_team_btn delete_album" href="javascript:;">删除</a>
                         <a class="yb_team_btn edit_album" href="javascript:;">编辑</a>
                     </div>

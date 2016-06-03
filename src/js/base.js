@@ -532,8 +532,12 @@
 			};
 			init($this);
 			$.each($this, function(index) {
-				var $this = $(this),
-					counterEl = $this.find('input');
+				var $this = $(this);
+				if ($this.is('input')) {
+					var counterEl = $this;
+				} else {
+					var counterEl = $this.find('input');
+				}
 				$this.find('a').on('click', function(e) {
 					var counter = counterEl.val();
 					switch ($(this).index()) {
@@ -566,7 +570,7 @@
 							}
 							break;
 						case 'keyup':
-							counter = counterEl.val();
+							counter = Number(counterEl.val());
 							setter(index, counter);
 							config.onchange();
 							fireOnchange(counterEl);
@@ -576,22 +580,30 @@
 			});
 
 			function getUnitprice(index) {
-				var unitPrice = $(config.unitprice).eq(index).text().replace("￥", '');
+				if (typeof config.unitprice == 'number') {
+					var unitPrice = config.unitprice;
+
+				} else if (typeof config.unitprice == 'string') {
+					var unitPrice = $(config.unitprice).eq(index).text().replace("￥", '');
+				}
 				return unitPrice;
 			}
 
 			function setter(index, counter) {
 				var result = getUnitprice(index) * counter;
 				$(config.subtotal).eq(index).html(parseFloat(result).toFixed(2));
+
 				totalprice(index, result)
 			}
 
 			function totalprice(index, price) {
 				totalPriceArr[index] = price;
+
 				var totalPrice = 0;
 				for (var i = totalPriceArr.length - 1; i >= 0; i--) {
 					totalPrice += totalPriceArr[i];
 				};
+				//console.log(totalPriceArr[0])
 				$(config.totalprice).html(parseFloat(totalPrice).toFixed(2));
 			}
 
@@ -740,7 +752,6 @@
 							}
 						});
 					} else {
-
 						containerWdith = $(window).width();
 						containerHeight = $(window).height();
 						that.each(function(index) {
@@ -884,19 +895,20 @@
 				progress: ''
 			}, options);
 
-			var _this = $(this),
+			var that = $(this),
 				isMousedown = false,
-				offsetLeft = _this.offset().left,
+				offsetLeft = that.offset().left,
 				startX = 0,
 				startY = 0,
 				axisWidth = $(config.axisx).width(),
-				sliderWidth = _this.width(),
+				sliderWidth = that.width(),
 				unitWidth = axisWidth / config.density,
 				index = 0,
 				progress = 0,
 				returned = false,
 				offsetVal = [],
-				container = _this.parent();
+				container = that.parent(),
+				timer;
 
 			var touchStart, touchMove, touchEnd;
 			touchStart = isMobile() ? 'touchstart' : 'mousedown';
@@ -910,15 +922,15 @@
 					offsetVal[i] = Number($(this).val());
 				});
 			} else if (typeof config.offset == 'number') {
-				_this.each(function(i) {
+				that.each(function(i) {
 					offsetVal[i] = config.offset;
 					$(config.returnto).val(offsetVal[i]);
 
 				});
 			}
-			_this.each(function(i) {
-				//_this.css('margin-left', -sliderWidth / 2);
-				_this.eq(i).on(touchStart, function(e) {
+			that.each(function(i) {
+				//that.css('margin-left', -sliderWidth / 2);
+				that.eq(i).on(touchStart, function(e) {
 					isMousedown = true;
 					if (isMobile()) {
 						var touch = e.originalEvent.touches[0];
@@ -944,7 +956,7 @@
 						}
 						if (touch.clientX < offsetLeft + axisWidth && touch.clientX > offsetLeft) {
 							if (returned) {
-								_this.eq(index).css('margin-left', moveX - sliderWidth / 2);
+								that.eq(index).css('margin-left', moveX - sliderWidth / 2);
 								returned = false;
 							}
 						}
@@ -980,50 +992,53 @@
 			});
 
 			$(config.returnto).each(function(i) {
-				var $this = $(this),
-					initVal = Number($this.val());
-				if ($this.is('input')) {
+				var thisReturnto = $(this),
+					initVal = Number(thisReturnto.val()),
+					// inputVal = 0,
+					timer;
+				if (thisReturnto.is('input')) {
 					var isFirefox = 0;
 					if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
-						$this.attr('autocomplete', 'off')
+						thisReturnto.attr('autocomplete', 'off')
 					}
-					$this.keyup(function() {
-						var inputVal = Number($(this).val()),
-							inputValLength = inputVal.toString().length,
-							minValLength = initVal.toString().length,
-							minValArr = initVal.toString().split(''),
-							maxVal = minValLength + config.density,
-							maxValLength = maxVal.toString().length;
-						if (inputValLength < minValLength) {
-							console.log(inputValLength)
-							for (var i = 1; i <= inputValLength; i++) {
-								if (inputVal < minValArr[minValLength - minValLength - i]) {
-									
-								};
-							};
+					thisReturnto.keyup(function() {
+						clearTimeout(timer);
+						var $this = $(this),
+							inputVal = constrainInputVal(Number($(this).val()), initVal);
 
-						};
-						console.log(minValArr[0])
-							// if (inputVal > config.density + initVal) {
-							//     console.log(value)
-							//     inputVal = config.density + initVal;
-							// } else if (inputVal < initVal) {
-							//     inputVal = initVal;
-							// } else if (isNaN(value)) {
-							//     inputVal = config.density + initVal;
-							// }
-						$(this).val(inputVal);
-						_this.eq(i).css('margin-left', (inputVal - offsetVal[i]) * (axisWidth / config.density));
+						timer = setTimeout(function() {
+							$(this).val(inputVal);
+							that.eq(i).css('margin-left', (inputVal - offsetVal[i]) * (axisWidth / config.density));
+							$this.blur();
+						}, 1000);
 					});
 				} else {
 					var value = Number($(this).val());
 					$(this).html(value);
 				}
+				thisReturnto.blur(function() {
+					var inputVal = constrainInputVal(Number($(this).val()), initVal);
+					$(this).val(inputVal);
+					that.eq(i).css('margin-left', (inputVal - offsetVal[i]) * (axisWidth / config.density));
+				})
 			});
 
 			$(document).on(touchEnd, function() {
 				isMousedown = false;
 			});
+
+			function constrainInputVal(inputVal, initVal) {
+				if (inputVal <= initVal) {
+					inputVal = initVal;
+				} else if (inputVal > initVal && inputVal < config.density + initVal) {
+					inputVal = inputVal;
+				} else if (inputVal >= config.density + initVal) {
+					inputVal = config.density + initVal - 1
+				} else if (isNaN(value)) {
+					inputVal = initVal;
+				}
+				return inputVal;
+			}
 
 			function isMobile() {
 				var sUserAgent = navigator.userAgent.toLowerCase(),
@@ -1519,10 +1534,8 @@
 			});
 
 			if (initConfig == 'transformData') {
-				alert('aaa')
 				switch (config) {
 					case 'transformData':
-						alert('aaa');
 						return {
 							'transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')',
 							'-webkit-transform': 'rotate(' + transformData.rotate + 'deg) scale(' + transformData.scale + ')',

@@ -1692,8 +1692,8 @@
     background-color: #fff;
 }
 
-.resource_list .res_tab_con > ul,
-.resource_list .res_tab_con > ul > li
+.single_mode .resource_list .res_tab_con > ul,
+.single_mode .resource_list .res_tab_con > ul > li
 {
     position: relative;
 
@@ -3442,7 +3442,13 @@
 {
     background-color: #41ae59;
 }
-.cm_team_btn i
+.cm_team_btn .ybiconfont{
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.cm_team_btn .icon
 {
     font-size: 16px;
     display: inline-block;
@@ -3459,7 +3465,7 @@
 .cm_auto_btn:hover{
     background-color: #acad3f;
 }
-.cm_auto_btn i{
+.cm_auto_btn .icon{
     display: inline-block;
     vertical-align: middle;
     width: 16px;
@@ -3468,7 +3474,7 @@
     background: transparent url("../img/icon/upload_icons.png") no-repeat 0 0;
     background-size: cover;
 }
-.cm_auto_btn.disable i{
+.cm_auto_btn.disable .icon{
     background: transparent url("../img/icon/upload_icons.png") no-repeat -15px 0;
     background-size: cover;
 }

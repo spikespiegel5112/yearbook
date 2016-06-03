@@ -7084,7 +7084,7 @@
 {
     overflow: hidden;
 
-    margin: 30px 0;
+    margin: 10px 0;
     position: relative;
 }
 
@@ -7182,7 +7182,7 @@
     display: block;
     overflow: hidden;
 
-    margin: 20px 0 5px 0;
+    margin: 12px 0 8px;
 }
 
 .makebook_recommend_wrapper .title i
@@ -7233,13 +7233,13 @@
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper .info span{
     display: inline-block;
     vertical-align: middle;
-    font-size: .6rem;
+    font-size: 12px;
     text-align: center;
     color: #666;
     /*border: 1px solid #ddd;*/
     border-radius: 5px;
-    padding: .1rem;
-    margin: .1rem 0;
+    padding: 2px;
+    margin: 2px 0;
     white-space: nowrap;
     background-color: #e3f2f7;
 }
@@ -7344,7 +7344,10 @@
     min-width: 1280px;
     min-height: 855px;
 }
-
+.makebook_steppopup_container.blur_bg{
+    background: url('../img/makebook/blur_bg.jpg') no-repeat 0 0;
+    background-size: cover;
+}
 .makebook_steppopup_wrapper
 {
 	/*background-color: #ddd;*/
@@ -7856,6 +7859,7 @@
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper .title .bookname
 {
     width: 100%;
+    font-size: 13px;
 }
 
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper .pages
@@ -7868,8 +7872,28 @@
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper .info
 {
     text-align: left;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
 }
-
+.makebook_recommend_wrapper .preview_tpl{
+    display: block;
+    margin: 10px auto 0;
+    width: 90px;
+    height: 30px;
+    line-height: 28px;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.makebook_recommend_wrapper .preview_tpl:hover{
+    color: #fff;
+    background-color: #f80;
+    border: 1px solid #f80;
+}
 .makebook_sprecommend_wrapper .makebook_recommend_wrapper li
 {
     width: 145px;

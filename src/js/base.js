@@ -995,7 +995,6 @@
 			$(config.returnto).each(function(i) {
 				var thisReturnto = $(this),
 					initVal = Number(thisReturnto.val()),
-					// inputVal = 0,
 					timer;
 				if (thisReturnto.is('input')) {
 					var isFirefox = 0;

@@ -4583,13 +4583,16 @@ li.action div:hover
     background-color: #fff;
 }
 
-.opd_product_info div img
+.opd_product_info .cover img
 {
     width: 100%;
     height: 100%;
-    /*max-height: 100px;NEWYB-2139*/
+    /*NEWYB-2139*/
 }
-
+.opd_product_info .photo img{
+    max-width: 100px;
+    max-height: 125px;/*NEWYB-2016*/
+}
 .opd_product_info a
 {
     font-size: 12px;

@@ -721,7 +721,7 @@
 {
     font-size: 12px;
     line-height: 40px;
-
+    margin: 0 4px;
     display: none;
     float: left;
 
@@ -732,7 +732,20 @@
 {
     display: block;
 }
+.edit_content .book_info .name .edit_book{
+    display: none;
+    float: left;
+    line-height: 40px;
+    color: #333;
+    font-size: 16px;
+}
 
+.edit_content .book_info .name:hover .edit_book{
+    display: block;
+}
+.bannertitleedit_wrapper .book_name{
+    width: 400px;
+}
 .edit_content .tool_bar .print
 {
     float: right;

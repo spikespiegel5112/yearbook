@@ -170,7 +170,8 @@
                     <div class="name">
                         <h4>《毕业纪念册》</h4>
                         <!--完成百分比-->
-                        <span>90%</span>
+                        <span>90%</span><!--1280下的完成百分比-->
+                        <a class="edit_book ybiconfont ybicon-pencil" href="javascript:;"></a>
                     </div>
                     <div class="progress">
                         <div class="percent">
@@ -1368,6 +1369,28 @@
     </div>
 </div>
 <!--弹出层-->
+<!--编辑书册名称-->
+<div class='bannertitleedit_wrapper hidden'>
+    <ul>
+        <li>
+            <label>书册名称：</label>
+            <input class="book_name" type='text' placeholder="请输入新的书册名称">
+            <!--<label class="error">请输入书册名称。</label>-->
+        </li>
+        <!--<li>
+            <label>简介：</label>
+            <input type='text'>
+        </li>
+        <li>
+            <label>学校：</label>
+            <input type='text'>
+        </li>
+        <li>
+            <label>班级：</label>
+            <input type='text'>
+        </li>-->
+    </ul>
+</div>
 <!--添加章节-->
 <div class="add_chapter_con">
     <!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
@@ -3817,6 +3840,19 @@
         //双击章节列表图片跳转到单页模式
         $('.page_list .figure').dblclick(function () {
             $('.team_edit_container .edit_content').removeClass('list').addClass('single');
+        })
+
+        //编辑书册名称
+        $('.book_info .edit_book').click(function(){
+            art.dialog({
+                title: '修改书册名称',
+                lock: true,
+                content: document.querySelector('.bannertitleedit_wrapper'),
+                okVal:"确定",
+                ok:function(){},
+                cancelVal:"取消",
+                cancel:function(){}
+            });
         })
 
         //添加章节

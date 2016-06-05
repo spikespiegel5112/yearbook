@@ -4,7 +4,7 @@
     overflow: hidden;
 
     width: 100%;
-    min-width: 1150px;
+    min-width: 1200px;
 
     background-color: #f0f0f0;
 }
@@ -5372,7 +5372,6 @@ li.action div:hover
     box-sizing: border-box;
     width: 100%;
     margin: 20px auto;
-    padding: 0 20px 0 40px;
 }
 
 .opd_modeofpayment_wrapper > ul > li
@@ -5909,11 +5908,13 @@ li.action div:hover
 {
     overflow: hidden;
 
-    width: 65%;
+    width: 75%;
+    font-size: 0;
+    text-align: center;
 }
 .opd_donatepayoff_wrapper li, .opd_donatepayoff_wrapper li:first-child
 {
-    float: left;
+    display: inline-block;
 
     margin: 0 15px;
 }

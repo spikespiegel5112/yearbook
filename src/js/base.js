@@ -678,7 +678,7 @@
 				container = $(options.container),
 				thisWidth = 0,
 				thisHeight = 0,
-				containerWdith = 0,
+				containerWidth = 0,
 				containerHeight = 0,
 				timer,
 				offsetY = 0,
@@ -713,8 +713,9 @@
 								reload = true;
 								return false;
 							} else {
+								containerWidth = container.eq(index).width();
 								containerHeight = container.eq(index).height();
-								checkPosition($this, containerHeight)
+								checkPosition($this)
 								console.log('第' + index + '张图片的高度:' + containerHeight);
 							}
 						});
@@ -743,7 +744,7 @@
 						that.each(function(index) {
 							var $this = $(this);
 							containerHeight = container.eq(index).height();
-							containerWdith = container.eq(index).width();
+							containerWidth = container.eq(index).width();
 							console.log(containerHeight)
 							if ($this.is(':hidden')) {
 								return true
@@ -752,7 +753,7 @@
 							}
 						});
 					} else {
-						containerWdith = $(window).width();
+						containerWidth = $(window).width();
 						containerHeight = $(window).height();
 						that.each(function(index) {
 							var $this = $(this);
@@ -786,7 +787,7 @@
 						if (thisWidth <= $(window).width()) {
 							if (options.offsetx != 0) {
 								_this.css({
-									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + +offsetX - ignoreX + 'px'
+									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWidth - thisWidth) / 2 +offsetX - ignoreX + 'px'
 								});
 								console.log(thisWidth)
 							} else {
@@ -796,7 +797,7 @@
 							}
 						} else {
 							_this.css({
-								'margin': marginY + offsetY - ignoreY + 'px ' + (containerWdith - thisWidth) / 2 + options.offsetx + 'px'
+								'margin': marginY + offsetY - ignoreY + 'px ' + ((containerWidth - thisWidth) / 2 + options.offsetx )+ 'px'
 							});
 						}
 						break;
@@ -806,7 +807,7 @@
 								return;
 							} else {
 								_this.css({
-									'margin': (containerWdith - thisWidth) / 2 + ' auto'
+									'margin': (containerWidth - thisWidth) / 2 + ' auto'
 								});
 							}
 						});
@@ -814,7 +815,7 @@
 					case 'right':
 						aligning(function(thisWidth, thisHeight) {
 							_this.css({
-								'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 ' + (containerWdith - thisWidth) + 'px'
+								'margin': (windowHeight - thisHeight) / 2 + 'px 0 0 ' + (containerWidth - thisWidth) + 'px'
 							});
 						});
 						break;
@@ -994,7 +995,6 @@
 			$(config.returnto).each(function(i) {
 				var thisReturnto = $(this),
 					initVal = Number(thisReturnto.val()),
-					// inputVal = 0,
 					timer;
 				if (thisReturnto.is('input')) {
 					var isFirefox = 0;

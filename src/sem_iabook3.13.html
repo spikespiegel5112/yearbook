@@ -479,6 +479,9 @@
 			</div>
 		</div>
 	</div>
+	<div class='sem_bookpreview_wrapper'>
+
+	</div>
 	<!--底部-->
 	<div class="footer">
 		<div class="footer_info">
@@ -520,6 +523,15 @@
 		iabook313();
 		video();
 	});
+	function bookpreview(){
+		var flipbooks=[
+			'flipbookpages/1',
+			'flipbookpages/2',
+		];
+		$('.sem_mainlistul_wrapper li').click(function(){
+			
+		})
+	}
 	//切换模板列表
 	function iabook313() {
 		var tabLiEl = $('.sem_iabookintrotab313_wrapper li'),
@@ -550,7 +562,6 @@
 				//hover选项卡翻转到相应的banner里
 				bannerUlEl.roundabout('animateToChild', index);
 			};
-
 		});
 		//书册封面动画效果
 		$('.sem_mainlistul_wrapper li').hover(function() {

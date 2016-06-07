@@ -611,39 +611,41 @@
 				'flipbookpages/2'
 			],
 			bookIdx = 1,
-			bookpreviewWrapperEl=$('.sem_bookpreview_wrapper'),
-			coverlistEl=$('.sem_mainlistul_wrapper li'),
-			animateTime=1;
+			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
+			coverlistEl = $('.sem_mainlistul_wrapper li'),
+			coverOffset = coverlistEl.offset(),
+			animateTime = 1;
 
+		// $('.flipbook_wrapper').css({
+		// 	transform: 'scale(0.415,0.415)'
+		// })
 		coverlistEl.click(function() {
-			var index=$(this).index();
-			bookpreviewWrapperEl.show();
+			var index = $(this).index();
+			bookpreviewWrapperEl.css({
+				visibility:'visible'
+			})
 			$(this).find('img').css({
 				bottom: 15,
 			});
-			$('.flipbook_wrapper').css({
-				transform: function(index){
-					return 'translate(0,-69px)scale(0.415,0.415)'
-				}
-			})
-			$('.flipbook_wrapper').css({
-				transform: function(index){
-					return 'translate(-2px,39px)scale(1,1)'
-				},
-				transition: 'all 1s'
-			})
+			console.log(coverOffset.left * index - bookpreviewWrapperEl.width() * 0.415)
+			$('.flipbook_wrapper').transform('translate(' + Number(coverOffset.left * index - bookpreviewWrapperEl.width() * 0.415) + 'px, 0) scale(0.415,0.415)').css({
+					transition: 'all 1s'
+				})
+			$('.flipbook_wrapper').transform('translate(0,0)scale(1,1)')
 
 		});
-		bookpreviewWrapperEl.find('.closebtn').click(function(){
+		bookpreviewWrapperEl.find('.closebtn').click(function() {
 			coverlistEl.removeClass('active');
 			$('.flipbook_wrapper').css({
-				transform: function(index){
+				transform: function(index) {
 					return 'translate(-2px,-54px)scale(0.415,0.415)'
 				}
 			});
-			setTimeout(function(){
-				bookpreviewWrapperEl.fadeOut();
-			}, 1000*animateTime);
+			setTimeout(function() {
+				bookpreviewWrapperEl.css({
+					visibility: 'hidden'
+				});
+			}, 1000 * animateTime);
 		});
 		loadApp();
 

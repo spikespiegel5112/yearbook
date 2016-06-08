@@ -1886,31 +1886,31 @@
 
 }
 .sem_bookpreview_wrapper{
-   /* display: none;*/
-   visibility: hidden;
+    display: none;
+   /*visibility: hidden;*/
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 1;
     overflow: hidden;
 }
 .sem_bookpreview_wrapper.active{
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.7);
     transition:all 1s;
 }
 .sem_bookpreview_wrapper .closebtn{
     position: absolute;
     top: 15px;
     right: 15px;
-    color: #999;
+    color: #fff;
     font-size: 20px;
 }
 .sem_bookpreview_wrapper .closebtn:hover{
     color: #333;
 }
 .sem_bookpreview_wrapper .flipbook_wrapper{
-    /*margin: 30px auto 0;*/
+    margin-top: 0;
     width: 815px;
     height: 575px;
     opacity: 1;
@@ -1924,8 +1924,8 @@
     /*transform: scale(1,1);
     transition: all 1s;*/
 }
-.sem_bookpreview_wrapper .flipbook_wrapper .flipbook{
-
+.sem_bookpreview_wrapper .flipbook_wrapper > a{
+    opacity: 0;
 }
 .sem_bookpreview_wrapper .page > div
 {

@@ -611,55 +611,63 @@
 				'flipbookpages/2'
 			],
 			bookIdx = 1,
+			coverIndex = 0,
 			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
-			flipbookEl=$('.flipbook_wrapper .flipbook'),
+			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			coverlistEl = $('.sem_mainlistul_wrapper li'),
 			coverOffset = coverlistEl.offset(),
-			animateTime = 1;
+			animateTime = 1,
+			animateFlag = true;
 
-		// $('.flipbook_wrapper').css({
-		// 	transform: 'scale(0.415,0.415)'
-		// })
 		coverlistEl.click(function() {
-			var index = $(this).index();
-			bookpreviewWrapperEl.css({
-				visibility:'visible'
-			})
-			$(this).find('img').css({
-				bottom: 15,
-			});
-			console.log(index)
-			$('.flipbook_wrapper').transform('translate(0,0)scale(0.415,0.415)')
-			$('.flipbook_wrapper').transform('translate(' + Number((475 * (index)-(flipbookEl.width()/2)) * 0.415) + 'px, -25px) scale(0.415,0.415)')
-
-			setTimeout(function(){
-				$('.flipbook_wrapper').transform('translate(0,0)scale(1,1)').css({
-					transition: 'all 1s',
-					'margin-left': function(){
-						console.log($(this).width())
-						return ($(window).width()-$(this).width())/2
-					},
-					visibility:'visible'
+			coverIndex = $(this).index();
+			if (animateFlag) {
+				animateFlag = false;
+				bookpreviewWrapperEl.css({
+					visibility: 'visible'
 				})
-			}, 500)
-			
-			
+				$(this).find('img').css({
+					bottom: 15,
+				});
+				console.log(coverIndex);
+				console.log(Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415))
+
+				$('.flipbook_wrapper').transform('translate(' + Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415) + 'px, -25px) scale(0.415,0.415)').css({
+					visibility: 'visible'
+				})
+				flipbookEl.turn('page', 2)
+				setTimeout(function() {
+					$('.flipbook_wrapper').transform('translate(0,0)scale(1,1)').css({
+						transition: 'all 1s',
+						'margin-left': function() {
+							return ($(window).width() - $(this).width()) / 2
+						},
+						'margin-top': 45,
+						visibility: 'visible'
+					});
+					bookpreviewWrapperEl.addClass('active');
+				}, 100)
+
+			};
 
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
-			coverlistEl.removeClass('active');
+			flipbookEl.turn('page', 1)
+			$('.flipbook_wrapper').transform('translate(' + Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415) + 'px, -25px) scale(0.415,0.415)')
 			$('.flipbook_wrapper').css({
-				transform: function(index) {
-					console.log(index)
-					return 'translate(' + Number((475 * (index)-(flipbookEl.width()/2)) * 0.415) + 'px, -25px)scale(0.415,0.415)'
-				},
-				visibility: 'hidden'
+				'margin-left': 0
+
 			});
 			setTimeout(function() {
+				$('.flipbook_wrapper').transform('').css({
+					visibility: 'hidden',
+					transition: 'none'
+				})
 				bookpreviewWrapperEl.css({
 					visibility: 'hidden'
 				});
-			}, 1000 * animateTime);
+				animateFlag = true;
+			}, 1000);
 		});
 		loadApp();
 

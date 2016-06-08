@@ -612,6 +612,7 @@
 			],
 			bookIdx = 1,
 			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
+			flipbookEl=$('.flipbook_wrapper .flipbook'),
 			coverlistEl = $('.sem_mainlistul_wrapper li'),
 			coverOffset = coverlistEl.offset(),
 			animateTime = 1;
@@ -627,19 +628,32 @@
 			$(this).find('img').css({
 				bottom: 15,
 			});
-			console.log(coverOffset.left * index - bookpreviewWrapperEl.width() * 0.415)
-			$('.flipbook_wrapper').transform('translate(' + Number(coverOffset.left * index - bookpreviewWrapperEl.width() * 0.415) + 'px, 0) scale(0.415,0.415)').css({
-					transition: 'all 1s'
+			console.log(index)
+			$('.flipbook_wrapper').transform('translate(0,0)scale(0.415,0.415)')
+			$('.flipbook_wrapper').transform('translate(' + Number((475 * (index)-(flipbookEl.width()/2)) * 0.415) + 'px, -25px) scale(0.415,0.415)')
+
+			setTimeout(function(){
+				$('.flipbook_wrapper').transform('translate(0,0)scale(1,1)').css({
+					transition: 'all 1s',
+					'margin-left': function(){
+						console.log($(this).width())
+						return ($(window).width()-$(this).width())/2
+					},
+					visibility:'visible'
 				})
-			$('.flipbook_wrapper').transform('translate(0,0)scale(1,1)')
+			}, 500)
+			
+			
 
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
 			coverlistEl.removeClass('active');
 			$('.flipbook_wrapper').css({
 				transform: function(index) {
-					return 'translate(-2px,-54px)scale(0.415,0.415)'
-				}
+					console.log(index)
+					return 'translate(' + Number((475 * (index)-(flipbookEl.width()/2)) * 0.415) + 'px, -25px)scale(0.415,0.415)'
+				},
+				visibility: 'hidden'
 			});
 			setTimeout(function() {
 				bookpreviewWrapperEl.css({

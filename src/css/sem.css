@@ -1907,16 +1907,21 @@
 }
 .sem_bookpreview_wrapper .flipbook_wrapper{
     /*margin: 30px auto 0;*/
-    width: 100%;
+    width: 815px;
     height: 575px;
     opacity: 1;
-   /* transform: scale(0.415,0.415);
-    transition: all 1s;*/
+    visibility: hidden;
+    /*transition: all 1s;*/
+    /*transform: translate(0,0)scale(0.415,0.415);*/
+    
 }
 .sem_bookpreview_wrapper .flipbook_wrapper.active{
     opacity: 1;
     /*transform: scale(1,1);
     transition: all 1s;*/
+}
+.sem_bookpreview_wrapper .flipbook_wrapper .flipbook{
+
 }
 .sem_bookpreview_wrapper .page > div
 {

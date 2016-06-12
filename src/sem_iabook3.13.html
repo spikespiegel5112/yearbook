@@ -618,14 +618,15 @@
 			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			coverlistEl = $('.sem_mainlistul_wrapper li'),
 			flipbookWrapperWidth = flipbookWrapperEl.width(),
-			destinatePosition = ($(window).width() - flipbookWrapperWidth) / 2,
+			destinatePosition,
 			thumbnailPosition;
 
 		coverlistEl.click(function() {
 			var $this = $(this),
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top,
-				thumbnailMarginLeft = 16;
+				thumbnailMarginLeft = 16,
+				destinatePosition = ($(window).width() - flipbookWrapperWidth) / 2;
 
 			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * 0.415));
 

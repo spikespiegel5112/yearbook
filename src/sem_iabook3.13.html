@@ -612,18 +612,29 @@
 			],
 			bookIdx = 1,
 			coverIndex = 0,
+			animateFlag = true,
+			windowWidth = $(window).width(),
 			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
 			flipbookWrapperEl = $('.flipbook_wrapper'),
 			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			coverlistEl = $('.sem_mainlistul_wrapper li'),
-			animateFlag = false;
+			flipbookWrapperWidth = flipbookWrapperEl.width(),
+			destinatePosition,
+			thumbnailPosition;
 
-		coverlistEl.click(function() {
+		coverlistEl.find('a').click(function() {
+			var $this = $(this),
+				thumbnailOffsetLeft = $this.offset().left,
+				thumbnailOffsetTop = $this.offset().top,
+				thumbnailMarginLeft = 16,
+				destinatePosition = (windowWidth - flipbookWrapperWidth) / 2;
+
+			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * 0.415));
+
 			coverIndex = $(this).index();
 			$('body').animate({
 				scrollTop: 732
 			}, function() {
-				animateFlag = true;
 				$(window).scroll(function() {
 					$(this).scrollTop(732);
 				});
@@ -634,64 +645,59 @@
 				if (animateFlag) {
 					animateFlag = false;
 					bookpreviewWrapperEl.css({
-						display: 'block',
+						visibility: 'visible',
 						'background-color': 'rgba(0,0,0,0.5)',
-						transition: 'all 1s'
+						transition: 'background-color 1s'
 					});
-					$(this).find('img').css({
-						bottom: 15,
+					$this.find('img').css({
+						bottom: 15
 					});
-					flipbookWrapperEl.transform('translate(' + Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415) + 'px, -45px) scale(0.415,0.415)').css({
-						visibility: 'visible'
+					flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale3d(0.415,0.415,1)').css({
+						visibility: 'visible',
+						opacity: 1
 					});
 					bookpreviewWrapperEl.css({
 						transition: 'all 1s',
 					});
 					flipbookEl.turn('page', 2);
 					setTimeout(function() {
-						flipbookWrapperEl.transform('translate(0,0)scale(1,1)').css({
-							transition: 'all 1s',
-							'margin-left': function() {
-								return ($(window).width() - $(this).width()) / 2
-							},
-							'margin-top': 45,
-							visibility: 'visible',
+						flipbookWrapperEl.transform('translate(0, 50px) scale3d(1,1,1)').css({
+							'margin-left': destinatePosition,
 							transition: 'all 1s'
 						});
-					}, 50);
+					}, 100);
 					setTimeout(function() {
-						flipbookWrapperEl.find('a').css({
-							transition: '1s all',
-							opacity: 1,
-						})
+						flipbookWrapperEl.children('a').css({
+							transition: 'opacity 1s',
+							opacity: 1
+						});
 					}, 1000);
-				};
-			}
+				}
+			};
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
-			flipbookEl.turn('page', 1)
-			flipbookWrapperEl.transform('translate(' + Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415) + 'px, -70px) scale(0.415,0.415)')
-			flipbookWrapperEl.css({
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -23px) scale3d(0.415,0.415,1)').css({
 				'margin-left': 0
-			});
+			})
+			
 			flipbookWrapperEl.find('a').css({
 				opacity: 0
 			});
 			bookpreviewWrapperEl.css({
 				'background-color': 'rgba(0,0,0,0)'
-			})
+			});
+			flipbookEl.turn('page', 1);
 			setTimeout(function() {
 				flipbookWrapperEl.css({
 					visibility: 'hidden',
 					transition: 'none'
 				});
 				bookpreviewWrapperEl.css({
-					display: 'none'
+					visibility: 'hidden'
 				});
-				$(window).off('scroll')
+				$(window).off('scroll');
 				animateFlag = true;
 			}, 1000);
-
 		});
 		loadApp();
 

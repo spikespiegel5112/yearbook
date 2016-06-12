@@ -635,8 +635,15 @@
 
     width: 23px;
     height: 58px;
+}
 
+.edit_content .book_info .cover .type.team{
     background: url('../img/pc/label_team.png') no-repeat 0 top;
+}
+
+.edit_content .book_info .cover .type.photo
+{
+    background: url('../img/pc/label_photo.png') no-repeat 0 top;
 }
 
 .edit_content .book_info .progress
@@ -2561,7 +2568,7 @@
     width: 100px;
     height: 126px;
 }
-@media only screen and (max-width: 1440px)
+@media only screen and (max-width: 1600px) and (min-width: 1280px)
 {
     .res_tab_con .chaptermake_tpl ul li .photo
     {
@@ -4799,7 +4806,8 @@
 }
 .create_leave_msg .lw_btn
 {
-    margin-top: 20px;
+    margin-top: 20px;
+
     padding: 10px 20px;
 
     border-top: 1px solid #ddd;

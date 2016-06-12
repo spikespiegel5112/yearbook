@@ -632,7 +632,6 @@
 			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * 0.415));
 
 			coverIndex = $(this).index();
-			console.log(animateFlag)
 			$('body').animate({
 				scrollTop: 732
 			}, function() {
@@ -653,18 +652,17 @@
 					$this.find('img').css({
 						bottom: 15
 					});
-					flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -45px) scale3d(0.415,0.415,1)').css({
+					flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale3d(0.415,0.415,1)').css({
 						visibility: 'visible',
-						'margin-left': 0
+						opacity: 1
 					});
 					bookpreviewWrapperEl.css({
 						transition: 'all 1s',
 					});
 					flipbookEl.turn('page', 2);
 					setTimeout(function() {
-						flipbookWrapperEl.transform('translate(0,0) scale3d(1,1,1)').css({
+						flipbookWrapperEl.transform('translate(0, 50px) scale3d(1,1,1)').css({
 							'margin-left': destinatePosition,
-							'margin-top': 45,
 							transition: 'all 1s'
 						});
 					}, 100);
@@ -678,18 +676,17 @@
 			};
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
-			flipbookEl.turn('page', 1);
-			flipbookWrapperEl.transform('translate('+thumbnailPosition+'px,0) scale3d(0.415,0.415,1)').css({
-				'margin-left': 0,
-				'margin-top': 0
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -23px) scale3d(0.415,0.415,1)').css({
+				'margin-left': 0
 			})
-
+			
 			flipbookWrapperEl.find('a').css({
 				opacity: 0
 			});
 			bookpreviewWrapperEl.css({
 				'background-color': 'rgba(0,0,0,0)'
 			});
+			flipbookEl.turn('page', 1);
 			setTimeout(function() {
 				flipbookWrapperEl.css({
 					visibility: 'hidden',
@@ -701,7 +698,6 @@
 				$(window).off('scroll');
 				animateFlag = true;
 			}, 1000);
-
 		});
 		loadApp();
 

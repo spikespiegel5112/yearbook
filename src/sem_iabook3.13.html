@@ -611,7 +611,6 @@
 				'flipbookpages/2'
 			],
 			bookIdx = 1,
-			coverIndex = 0,
 			animateFlag = true,
 			windowWidth = $(window).width(),
 			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
@@ -619,26 +618,29 @@
 			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			coverlistEl = $('.sem_mainlistul_wrapper li'),
 			flipbookWrapperWidth = flipbookWrapperEl.width(),
+			thumbnailScale = 0.415,
+			coverIndex,
 			destinatePosition,
-			thumbnailPosition;
+			thumbnailPosition,
+			preventDefault;
 
 		coverlistEl.find('a').click(function() {
 			var $this = $(this),
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top,
-				thumbnailMarginLeft = 16,
-				destinatePosition = (windowWidth - flipbookWrapperWidth) / 2;
+				thumbnailMarginLeft = 20;
 
-			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * 0.415));
-
+			destinatePosition = (windowWidth - flipbookWrapperWidth) / 2;
+			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * thumbnailScale));
 			coverIndex = $(this).index();
+
 			$('body').animate({
 				scrollTop: 732
 			}, function() {
-				$(window).scroll(function() {
-					$(this).scrollTop(732);
-				});
 				expandBook();
+			})
+			preventDefault=$(window).bind('mousewheel', function(e){
+				e.preventDefault();
 			});
 
 			function expandBook() {
@@ -652,7 +654,7 @@
 					$this.find('img').css({
 						bottom: 15
 					});
-					flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale3d(0.415,0.415,1)').css({
+					flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale3d(' + thumbnailScale + ',' + thumbnailScale + ',1)').css({
 						visibility: 'visible',
 						opacity: 1
 					});
@@ -675,7 +677,7 @@
 			};
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
-			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale3d(0.415,0.415,1)');
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale3d(' + thumbnailScale + ',' + thumbnailScale + ',1)');
 
 			flipbookWrapperEl.find('a').css({
 				opacity: 0
@@ -692,7 +694,7 @@
 				bookpreviewWrapperEl.css({
 					visibility: 'hidden'
 				});
-				$(window).off('scroll');
+				preventDefault=$(window).unbind('mousewheel');
 				animateFlag = true;
 			}, 1000);
 		});
@@ -940,7 +942,7 @@
 						left: '-25px'
 					});
 					$('.flipbook_nextpage_btn').show().css({
-						right: '-25px'
+						right: '-40px'
 					});
 				}
 			}

@@ -114,23 +114,10 @@
 
 .ia_index_main .con div:hover
 {
-    -webkit-animation: fadein_title .3s;
-            animation: fadein_title .3s;
+    animation: fadein_title .3s;
 }
 
 @keyframes fadein_title
-{
-    0%
-    {
-        background-size: 100% 100%;
-    }
-    100%
-    {
-        background-size: 120% 120%;
-    }
-}
-
-@-webkit-keyframes fadein_title
 {
     0%
     {
@@ -4735,9 +4722,8 @@
 
     float: right;
 
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
 
     color: #555;
 }
@@ -8291,9 +8277,8 @@ button::-moz-focus-inner
     margin: 0 10px;
 
     cursor: pointer;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
 }
 
 .bm_header a:hover

@@ -382,16 +382,14 @@ label.error
 
 .flip-horizontal
 {
-    -webkit-transform: scaleX(-1);
-        -ms-transform: scaleX(-1);
-            transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+        transform: scaleX(-1);
 }
 
 .flip-vertical
 {
-    -webkit-transform: scaleY(-1);
-        -ms-transform: scaleY(-1);
-            transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+        transform: scaleY(-1);
 }
 
 textarea:focus, input[type='text']:focus, input[type='password']:focus
@@ -414,61 +412,6 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 .rotate_45deg
 {
     -webkit-animation: rotate_45deg .3s forwards;
-}
-
-@-webkit-keyframes glow_blue
-{
-    0%
-    {
-        border-color: #a9a9a9;
-        box-shadow: 0 0 6px transparent;
-    }
-    100%
-    {
-        border-color: #1185e7;
-        box-shadow: 0 0 6px #1185e7;
-    }
-}
-
-@-webkit-keyframes bg_ccc
-{
-    0%
-    {
-        background: #fff;
-    }
-    100%
-    {
-        background: #ccc;
-        box-shadow: 0 0 6px #666 inset;
-    }
-}
-
-@-webkit-keyframes rotate_45deg
-{
-    0%
-    {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-    }
-    100%
-    {
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-    }
-}
-
-@-webkit-keyframes rotate_45deg_to_0deg
-{
-    0%
-    {
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-    }
-    100%
-    {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-    }
 }
 
 /*~~~~~~~~~~button样式~~~~~~~~~~*/
@@ -1393,16 +1336,13 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
 .open_new_container.fadeIn
 {
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s;
+    animation-duration: .3s;
 }
 
 .open_new_container.fadeOut
 {
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s;
-    -webkit-animation-delay: .1s;
-            animation-delay: .1s;
+    animation-duration: .3s;
+    animation-delay: .1s;
 }
 
 .open_new_container .close_btn
@@ -1441,16 +1381,13 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
 .new_option.slideInUp
 {
-    -webkit-animation-duration: .2s;
-            animation-duration: .2s;
-    -webkit-animation-delay: .1s;
-            animation-delay: .1s;
+    animation-duration: .2s;
+    animation-delay: .1s;
 }
 
 .new_option.slideOutDown
 {
-    -webkit-animation-duration: .2s;
-            animation-duration: .2s;
+    animation-duration: .2s;
 }
 
 .new_option ul
@@ -1629,8 +1566,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     margin-right: 40px;
 
     transition: -webkit-transform .2s;
-    -webkit-transform: rotate(0deg) translateZ(0);
-            transform: rotate(0deg) translateZ(0);
+    transform: rotate(0deg) translateZ(0);
 
     background-image: url(../img/m/icon/pullicon.png);
     background-repeat: no-repeat;
@@ -1666,8 +1602,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     margin-right: 40px;
 
     transition: -webkit-transform .2s;
-    -webkit-transform: rotate(-180deg) translateZ(0);
-            transform: rotate(-180deg) translateZ(0);
+    transform: rotate(-180deg) translateZ(0);
 
     background-image: url(../img/m/icon/pullicon.png);
     background-repeat: no-repeat;
@@ -1677,14 +1612,12 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
 .scroll_pulldown_flip
 {
-    -webkit-transform: rotate(-180deg) translateZ(0);
-            transform: rotate(-180deg) translateZ(0);
+    transform: rotate(-180deg) translateZ(0);
 }
 
 .scroll_pullup_flip
 {
-    -webkit-transform: rotate(0deg) translateZ(0);
-            transform: rotate(-180deg) translateZ(0);
+    transform: rotate(-180deg) translateZ(0);
 }
 
 /** loading.. **/
@@ -2532,9 +2465,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
     padding: 0 0 1em 0;
 
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
 
     color: #ddd;
 }
@@ -2776,55 +2708,71 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 }
 .bp_sendcommentbtn_wrapper .cancel
 {
+    position: relative;
+    z-index: 1;
+
     float: left;
+
     color: #666;
     background-color: #fff;
-    z-index: 1;
-    position: relative;
 }
-.bp_sendcommentbtn_wrapper .and_user{
+.bp_sendcommentbtn_wrapper .and_user
+{
     position: absolute;
     left: 0;
-    padding: 0 60px;
+
     width: 100%;
+    padding: 0 60px;
+
     text-align: center;
 }
-.bp_sendcommentbtn_wrapper .and_user label{
+.bp_sendcommentbtn_wrapper .and_user label
+{
+    line-height: 32px;
+
     position: relative;
+
     display: inline-block;
+
+    box-sizing: border-box;
     width: 180px;
     height: 34px;
-    line-height: 32px;
+
     border: 1px solid #ccc;
-    box-sizing: border-box;
     border-radius: 4px;
 }
-.bp_sendcommentbtn_wrapper .and_user label i{
+.bp_sendcommentbtn_wrapper .and_user label i
+{
+    font-size: 18px;
+
     position: absolute;
+    z-index: 1;
     left: 0;
+
+    box-sizing: border-box;
     width: 45px;
     height: 100%;
-    background-color: #eee;
-    border-right: 1px solid #ccc;
-    box-sizing: border-box;
-    z-index: 1;
+
     color: #999;
-    font-size: 18px;
+    border-right: 1px solid #ccc;
+    background-color: #eee;
 }
-.bp_sendcommentbtn_wrapper .and_user label input{
+.bp_sendcommentbtn_wrapper .and_user label input
+{
+    font-size: 14px;
+    font-weight: normal;
+
     position: absolute;
     left: 0;
-    width: 100%;
-    border: 0;
-    box-sizing: border-box;
-    padding: 0 8px 0 53px;
-    font-size: 14px;
-    color: #333;
-    font-weight: normal;
-}
-.bp_sendcommentbtn_wrapper .and_use input{
 
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 8px 0 53px;
+
+    color: #333;
+    border: 0;
 }
+
 .bp_commentavatar_item
 {
     overflow: hidden;
@@ -2863,14 +2811,18 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     min-height: 120px;
     margin: 0 auto;
     padding: 5px;
+
     resize: none;
 }
-.bp_sendcomment_wrapper .tips{
+.bp_sendcomment_wrapper .tips
+{
     position: absolute;
-    bottom: 5px;
     right: 15px;
-    color: #ccc;
+    bottom: 5px;
+
     margin: 0;
+
+    color: #ccc;
 }
 
 
@@ -2945,8 +2897,7 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 }
 .common_eptoolbar_wrapper .turnright a
 {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 .common_epzomming_wrapper, .common_eptoolbar_wrapper
 {
@@ -3249,48 +3200,14 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 {
     bottom: 0;
 
-    -webkit-animation: transBottom .2s ease-in-out;
-            animation: transBottom .2s ease-in-out;
+    animation: transBottom .2s ease-in-out;
 }
 
 .cm_bottom_menu .options.hide
 {
     bottom: -156px;
 
-    -webkit-animation: transTop .2s ease-in-out;
-            animation: transTop .2s ease-in-out;
-}
-
-@-webkit-keyframes transBottom
-{
-    from
-    {
-        bottom: -156px;
-
-        opacity: 0;
-    }
-    to
-    {
-        bottom: 0;
-
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes transTop
-{
-    from
-    {
-        bottom: 0;
-
-        opacity: 1;
-    }
-    to
-    {
-        bottom: -156px;
-
-        opacity: 0;
-    }
+    animation: transTop .2s ease-in-out;
 }
 
 .cm_bottom_menu .options ul
@@ -3410,6 +3327,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 }
 .common_slider_wrapper .slider
 {
+    font-size: 0;
+
     position: absolute;
 
     display: inline-block;
@@ -3418,32 +3337,39 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     height: 1rem;
 
     cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
 
     border: 1px solid #c6c6c6;
     border-radius: .15rem;
     background:         linear-gradient(top, #efefef, #e9e9e9);
     background: -webkit-linear-gradient(top, #efefef, #e9e9e9);
     box-shadow: 0 -.09rem .07rem rgba(0,0,0,.2) inset;
-    text-align: center;
-    font-size: 0;
-    vertical-align: middle;
 }
-.common_slider_wrapper .slider .handler {
+.common_slider_wrapper .slider .handler
+{
     display: inline-block;
-    margin: 0.2rem 0;
+
+    margin: .2rem 0;
 }
-.common_slider_wrapper .slider .handler i, .common_slider_wrapper .slider .handler strong{
+.common_slider_wrapper .slider .handler i, .common_slider_wrapper .slider .handler strong
+{
     display: inline-block;
-    margin: 0 0.06rem;
+
     width: 4px;
-    background-color: #bbb;
+    margin: 0 .06rem;
+
     vertical-align: middle;
+
+    background-color: #bbb;
 }
-.common_slider_wrapper .slider .handler i{
-    height: 0.35rem;
+.common_slider_wrapper .slider .handler i
+{
+    height: .35rem;
 }
-.common_slider_wrapper .slider .handler strong{
-    height: 0.5rem;
+.common_slider_wrapper .slider .handler strong
+{
+    height: .5rem;
 }
 .common_loadmore_item
 {
@@ -3571,21 +3497,22 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 /*~~~~~~~~~~common_switcher_item~~~~~~~~~~*/
 .common_switcher_item
 {
+    line-height: 1rem;
+
     position: relative;
 
     display: inline-block;
 
+    box-sizing: content-box;
     width: 2.5rem;
     height: 1rem;
     padding: .2rem;
 
     transition: background-color .3s;
+    text-align: center;
 
     border-radius: .2rem;
     background-color: #ddd;
-    box-sizing: content-box;
-    line-height: 1rem;
-    text-align: center;
 }
 
 .common_switcher_item > span
@@ -3618,14 +3545,17 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     border-radius: .2rem;
     background-color: #fff;
 }
-.common_switcher_item.on.disabled{
+.common_switcher_item.on.disabled
+{
     background-color: #b8e4ae;
 }
-.common_switcher_item.on.disabled .check{
+.common_switcher_item.on.disabled .check
+{
     float: none;
 }
 .common_switcher_item.on.disabled .slider,
-.common_switcher_item.on.disabled .cross{
+.common_switcher_item.on.disabled .cross
+{
     display: none;
 }
 .common_switcher_item.off
@@ -3703,6 +3633,8 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 }
 .common_custonoption_item input
 {
+    font-size: .7rem;
+
     z-index: 1;
 
     display: inline-block;
@@ -3715,7 +3647,6 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 
     border: 1px solid #ccc;
     border-radius: .3rem;
-    font-size: .7rem;
 }
 
 .common_custonoption_item input:focus
@@ -3786,7 +3717,6 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
     line-height: 1rem;
 
     height: 1.5rem;
-
     padding: 0 0 0 .5rem;
 
     text-align: left;

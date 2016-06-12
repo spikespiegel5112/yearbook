@@ -766,9 +766,8 @@
     width: 100%;
     height: 60px;
 
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
 
     border-radius: 100%;
     background-color: #70ca5d;
@@ -881,14 +880,18 @@
     background-color: #fff;
     box-shadow: 0 -3px 5px #999;
 }
-@media only screen and (min-height: 667px){
-    .booklist_wrapper .makebook_stepmainbtn_wrapper{
+@media only screen and (min-height: 667px)
+{
+    .booklist_wrapper .makebook_stepmainbtn_wrapper
+    {
         position: fixed;
         bottom: 0;
     }
 }
-@media only screen and (min-height: 736px){
-    .booklist_wrapper .makebook_stepmainbtn_wrapper{
+@media only screen and (min-height: 736px)
+{
+    .booklist_wrapper .makebook_stepmainbtn_wrapper
+    {
         position: fixed;
         bottom: 0;
     }
@@ -910,8 +913,10 @@
 
     color: #999;
 }
-.makebook_bookcomponent_item .description.num{
+.makebook_bookcomponent_item .description.num
+{
     width: 64px;
+
     text-align: center;
 }
 .makebook_bookcomponent_item .common_switcher_item
@@ -940,8 +945,10 @@
 .makebook_bookcomponent_item .setupinvitcard.subtitle
 {
     display: none;
-    border-top: 1px dashed #ddd;
+
     padding: .5rem .3rem 0 0;
+
+    border-top: 1px dashed #ddd;
 }
 .makebook_bookcomponent_item .title h6
 {
@@ -1223,68 +1230,90 @@
 }
 
 /*~~~~~~~~~~makebook_invitcardinfo_wrapper~~~~~~~~~~*/
-.makebook_invitcardinfo_container{
-	display: none;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 2;
+.makebook_invitcardinfo_container
+{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+
+    display: none;
+
+    width: 100%;
     height: 100%;
+
     background: rgba(0,0,0,.6);
 }
-.makebook_invitcardinfo_wrapper{
-	/*margin: 10px auto;*/
-	width: 100%;
+.makebook_invitcardinfo_wrapper
+{
 	/*height: 23rem;*/
 	/*background: url(../img/m/makebook/envelope.png) no-repeat center bottom;
 	background-size: contain;*/
-	font-size: 13px;
-	position: absolute;
+    font-size: 13px;
+
+    position: absolute;
     bottom: 0;
+
+	/*margin: 10px auto;*/
+    width: 100%;
 }
-.makebook_invitcardinfo_container .makebook_invitcardinfo_wrapper{
+.makebook_invitcardinfo_container .makebook_invitcardinfo_wrapper
+{
     position: absolute;
     bottom: -50%;
     left: 0;
+
     margin: 0;
 }
-.makebook_invitcardinfo_container .makebook_invitcardinfo_wrapper.active{
+.makebook_invitcardinfo_container .makebook_invitcardinfo_wrapper.active
+{
     bottom: 0;
+
     transition: bottom .5s ease;
 }
-.makebook_invitcardinfo_wrapper .notepaper{
-    padding: 1.5rem .75rem 6.25rem;
-    width: 90%;
+.makebook_invitcardinfo_wrapper .notepaper
+{
     box-sizing: border-box;
-    margin: 0 auto;
-    background: #f0f6c6 url("../img/m/makebook/wavy_lace.png") no-repeat 0 0;
-    background-size: contain;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem .75rem 6.25rem;
+
     border-radius: 6px 6px 0 0;
+    background: #f0f6c6 url('../img/m/makebook/wavy_lace.png') no-repeat 0 0;
+    background-size: contain;
     box-shadow: 3px 3px 5px -2px rgba(0,0,0,.4);
 }
-.notepaper .content_bg{
+.notepaper .content_bg
+{
     position: relative;
+
     padding: .8rem .6rem 2rem;
+
     border-radius: 12px;
     background: #fff;
 }
-.notepaper .content_bg .content{
+.notepaper .content_bg .content
+{
     position: relative;
+
     border: 1px dashed #bdc969;
-    border-radius: 10px 10px 0 0;
     border-bottom: 0;
+    border-radius: 10px 10px 0 0;
 }
-.notepaper .content_bg .content::before{
-    content: " ";
+.notepaper .content_bg .content::before
+{
     position: absolute;
-    left: 50%;
+    z-index: 1;
     top: -8px;
-    margin-left: -1.05rem;
+    left: 50%;
+
     width: 2.1rem;
     height: 1.65rem;
-    background: url("../img/m/makebook/bowknot.png") no-repeat 0 0;
+    margin-left: -1.05rem;
+
+    content: ' ';
+
+    background: url('../img/m/makebook/bowknot.png') no-repeat 0 0;
     background-size: contain;
-    z-index: 1;
 }
 .makebook_invitcardinfo_wrapper .title
 {
@@ -1300,13 +1329,15 @@
 {
     position: absolute;
     bottom: 0;
+
+    box-sizing: border-box;
     width: 100%;
+    height: 9.25rem;
     margin: 0;
+    padding: 3.5rem .5rem 0;
+
     background: url(../img/m/makebook/envelope.png) no-repeat center bottom;
     background-size: contain;
-    height: 9.25rem;
-    padding: 3.5rem .5rem 0;
-    box-sizing: border-box;
 }
 .makebook_invitcardinfo_wrapper .closebutton_img
 {
@@ -1318,24 +1349,26 @@
     font-size: .71rem;
 
     position: absolute;
+    z-index: 1;
     top: .9rem;
     right: 1.5rem;
 
     color: #008bf7;
-    z-index: 1;
 }
 .makebook_icilist_wrapper
 {
     overflow: auto;
 
+    box-sizing: border-box;
     width: 100%;
     height: 11rem;
     margin: .5rem auto 0;
     padding: 0 .5rem;
-    box-sizing: border-box;
 }
-@media only screen and (max-height: 480px) {
-    .makebook_icilist_wrapper{
+@media only screen and (max-height: 480px)
+{
+    .makebook_icilist_wrapper
+    {
         max-height: 7.5rem;
     }
 }
@@ -1377,7 +1410,8 @@
 
     vertical-align: top;
 }
-.ia_module .makebook_icbasicinfo_wrapper{
+.ia_module .makebook_icbasicinfo_wrapper
+{
     display: block;
 }
 .makebook_icbasicinfo_wrapper li
@@ -1385,9 +1419,11 @@
     display: block;
 
     margin: 0 0 0 .5rem;
+
     color: #333;
 }
-.ia_module .makebook_icbasicinfo_wrapper li{
+.ia_module .makebook_icbasicinfo_wrapper li
+{
     margin: 0;
 }
 .makebook_icbasicinfo_wrapper li a
@@ -1448,14 +1484,13 @@
     height: 5rem;
 
     content: '';
-    -webkit-transform: rotate(-2deg);
-        -ms-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+        transform: rotate(-2deg);
 
-    background: #fff;
-    box-shadow: 0 .2rem 1rem #999;
     border: 1px solid #e8e8e8;
     border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 .2rem 1rem #999;
 }
 .makebook_invitnamecard_item:hover .trash
 {
@@ -1533,9 +1568,8 @@
     margin: .5rem;
 
     cursor: pointer;
-    -webkit-transform: rotate(-2deg);
-        -ms-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+        transform: rotate(-2deg);
     vertical-align: top;
 
     border: .2rem solid #fff;
@@ -1635,9 +1669,11 @@
 {
     font-size: .8rem;
 
-    color: #b8c4d0;
     margin-bottom: 0;
+
     vertical-align: middle;
+
+    color: #b8c4d0;
 }
 .makebook_invitnamecard_item .contact_info
 {
@@ -1746,34 +1782,46 @@
 
     background-color: #eee;
 }
-.makebook_fdinfo_wrapper{
-	overflow: hidden;
+.makebook_fdinfo_wrapper
+{
+    overflow: hidden;
+
     margin: 10px 0;
 }
-.makebook_fdinfo_wrapper>li{
-	width: 100%;
-	padding: 0 0.5rem;
-	font-size: 0.6rem;
-	line-height: 1.25rem;
-	border-bottom: 1px solid #ececec;
+.makebook_fdinfo_wrapper > li
+{
+    font-size: .6rem;
+    line-height: 1.25rem;
+
+    width: 100%;
+    padding: 0 .5rem;
+
+    border-bottom: 1px solid #ececec;
 }
-.makebook_fdinfo_wrapper li label, .makebook_fdinfo_wrapper li .notset{
-	font-weight: lighter;
-	color: #999;
+.makebook_fdinfo_wrapper li label, .makebook_fdinfo_wrapper li .notset
+{
+    font-weight: lighter;
+
+    color: #999;
 }
 .makebook_fdphoto_wrapper
 {
     display: inline-block;
 }
-.makebook_fdphoto_wrapper li{
-	display: inline-block;
-	margin: 0.2rem;
-	width: 2.7rem;
-	height: 2.7rem;
-	overflow: hidden;
-	border: 1px dashed #dddddd;
-	vertical-align: middle;
-	position: relative;
+.makebook_fdphoto_wrapper li
+{
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 2.7rem;
+    height: 2.7rem;
+    margin: .2rem;
+
+    vertical-align: middle;
+
+    border: 1px dashed #ddd;
 }
 .makebook_fdphoto_wrapper li img
 {
@@ -1781,71 +1829,96 @@
 
     width: 100%;
 }
-.makebook_fdtopic_wrapper li{
-	padding: 0.5rem;
-	border-bottom: 1px dashed #dddddd;
-	line-height: 25px;
+.makebook_fdtopic_wrapper li
+{
+    line-height: 25px;
+
+    padding: .5rem;
+
+    border-bottom: 1px dashed #ddd;
 }
 .makebook_fdtopic_wrapper li:last-child
 {
     border: none;
 }
-.makebook_fdtopic_wrapper h6{
-	margin: 0;
+.makebook_fdtopic_wrapper h6
+{
+    margin: 0;
 }
-.makebook_fdtopic_wrapper p{
-	margin: 0;
-	font-size: 13px;
+.makebook_fdtopic_wrapper p
+{
+    font-size: 13px;
+
+    margin: 0;
 }
-.makebook_fdtopic_wrapper p a{
-	color: #4f9fd4;
+.makebook_fdtopic_wrapper p a
+{
+    color: #4f9fd4;
 }
 
-.makebook_friendbtn_item{
-	font-size: 0.9rem;
-	margin: 1rem 0;
-	padding: 0 0.22rem;
+.makebook_friendbtn_item
+{
+    font-size: .9rem;
+
+    margin: 1rem 0;
+    padding: 0 .22rem;
 }
-.makebook_friendbtn_item a{
-	display: inline-block;
-	padding: 0.25rem 2rem;
-	min-width: 3.5rem;
-	text-align: center;
-	border-radius: 4px;
+.makebook_friendbtn_item a
+{
+    display: inline-block;
+
+    min-width: 3.5rem;
+    padding: .25rem 2rem;
+
+    text-align: center;
+
+    border-radius: 4px;
 }
 
-.makebook_friendbtn_item a:hover{
-	background-color: #59b147;
+.makebook_friendbtn_item a:hover
+{
+    background-color: #59b147;
 }
-.makebook_friendbtn_item .leavemessage{
-	border: 1px solid #70ca5d;
-	color: #70ca5d;
+.makebook_friendbtn_item .leavemessage
+{
+    color: #70ca5d;
+    border: 1px solid #70ca5d;
 }
-.makebook_friendbtn_item .participate{
-	background-color: #70ca5d;
-	color: #fff;
+.makebook_friendbtn_item .participate
+{
+    color: #fff;
+    background-color: #70ca5d;
 }
-.makebook_friendbtn_item .faded{
-	color: #999;
-	background-color: #eeeeee;
+.makebook_friendbtn_item .faded
+{
+    color: #999;
+    background-color: #eee;
 }
 
 /*~~~~~~~~~~makebook_step4_3.13.html~~~~~~~~~~*/
-.nominate_tips{
-    text-align: center;
+.nominate_tips
+{
     font-size: .7rem;
-    margin: 0;
     line-height: 1.75rem;
+
+    margin: 0;
+
+    text-align: center;
+
     color: #999;
 }
-.nominate_tips span{
-    color: #ff696a;
+.nominate_tips span
+{
     font-size: .8rem;
+
+    color: #ff696a;
 }
 .makebook_recommend_wrapper
 {
-    overflow: hidden;
     position: relative;
+
+    overflow: hidden;
+
     margin: -10px 0 0;
 }
 
@@ -1853,8 +1926,10 @@
 {
     display: inline-block;
     overflow: hidden;
-    padding: 0.5rem 0 0 0;
+
     width: 100%;
+    padding: .5rem 0 0 0;
+
     text-align: center;
     /*background-image: url(../img/bookshelf_1_00000.png);
     background-repeat: no-repeat;
@@ -1864,10 +1939,11 @@
 .makebook_recommend_wrapper .sem_bookshelf_container
 {
     position: absolute;
+    z-index: -1;
     top: 0;
+
     width: 100%;
     height: 1rem;
-    z-index: -1;
 }
 .sem_bookshelf_container img
 {
@@ -1875,9 +1951,9 @@
 
     display: block;
 
-    margin: 0 auto;
     width: 100%;
     height: 1.5rem;
+    margin: 0 auto;
 }
 .sem_bookshelf_container img:first-child
 {
@@ -1887,21 +1963,28 @@
 {
     top: 15.6rem;
 }
-@media (min-width:375px){
-    .sem_bookshelf_container img:last-child{
+@media (min-width:375px)
+{
+    .sem_bookshelf_container img:last-child
+    {
         top: 15.2rem;
     }
 }
-@media (min-width:414px){
-    .sem_bookshelf_container img:last-child{
+@media (min-width:414px)
+{
+    .sem_bookshelf_container img:last-child
+    {
         top: 15rem;
     }
-    .sem_bookshelf_container img{
+    .sem_bookshelf_container img
+    {
         height: 1.6rem;
     }
 }
-@media (min-width:768px){
-    .sem_bookshelf_container img:last-child{
+@media (min-width:768px)
+{
+    .sem_bookshelf_container img:last-child
+    {
         top: 14.5rem;
     }
 }
@@ -1915,9 +1998,11 @@
 .makebook_recommend_wrapper li
 {
     display: inline-block;
-    margin: 0.5rem 0 0 0;
+
     width: 5rem;
     height: 6rem;
+    margin: .5rem 0 0 0;
+
     cursor: pointer;
     /*cursor: pointer;*/
 }
@@ -1934,11 +2019,13 @@
 {
     margin: 0 0 0 10px;
 }
-.makebook_recommend_wrapper .swiper-pagination{
+.makebook_recommend_wrapper .swiper-pagination
+{
     position: relative;
     bottom: 0;
 }
-.makebook_recommend_wrapper .swiper-pagination span{
+.makebook_recommend_wrapper .swiper-pagination span
+{
     background-color: #8cc04e;
 }
 .makebook_recommend_wrapper > a
@@ -1985,8 +2072,9 @@
 .makebook_recommend_wrapper .title
 {
     display: block;
-    margin: 1rem 0 0 0;
     overflow: hidden;
+
+    margin: 1rem 0 0 0;
 }
 
 .makebook_recommend_wrapper .title i
@@ -1998,10 +2086,12 @@
 
 .makebook_recommend_wrapper .title .bookname
 {
+    font-size: .6rem;
+
     overflow: hidden;
 
     width: 100%;
-    font-size: 0.6rem;
+
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -2032,8 +2122,9 @@
 
     text-align: center;
 }
-.makebook_recommend_wrapper .info p{
-    font-size: 0.6rem;
+.makebook_recommend_wrapper .info p
+{
+    font-size: .6rem;
 }
 .makebook_recommend_wrapper .info .pages
 {
@@ -2042,26 +2133,26 @@
 
 .makebook_recommend_wrapper .active .bookcover
 {
-    border: 2px solid #8cc04e;
     bottom: 0;
 
     transition: all .3s;
 
     opacity: 1;
+    border: 2px solid #8cc04e;
 }
 
 .makebook_recommend_wrapper .bookcover
-{  
-    margin: 0 auto;
-    width: 80%;
-    height: 5.6rem;
+{
     position: relative;
 
     overflow: hidden;
 
+    width: 80%;
+    height: 5.6rem;  
+    margin: 0 auto;
+
     border: 2px solid transparent;
-    
-    border-radius: 0.4rem;
+    border-radius: .4rem;
 }
 
 .makebook_recommend_wrapper .bookcover img

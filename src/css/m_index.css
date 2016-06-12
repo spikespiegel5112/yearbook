@@ -137,9 +137,8 @@
 
     display: block;
 
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
 
     color: #9c9c9c;
 }
@@ -154,34 +153,6 @@
 {
     -webkit-animation: slideRightFrom60Percent .5s forwards alternate;
        -moz-animation: slideRightFrom60Percent .5s forwards alternate;
-}
-
-@-webkit-keyframes slideRightTo60Percent
-{
-    0%
-    {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
-    }
-    100%
-    {
-        -webkit-transform: translateX(60%);
-                transform: translateX(60%);
-    }
-}
-
-@-webkit-keyframes slideRightFrom60Percent
-{
-    0%
-    {
-        -webkit-transform: translateX(60%);
-                transform: translateX(60%);
-    }
-    100%
-    {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
-    }
 }
 
 /*~~~~~~~~~~banner~~~~~~~~~~*/

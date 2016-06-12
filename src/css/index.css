@@ -272,27 +272,10 @@
 
 .bk_category .img_figure:hover .btn_bg a
 {
-    -webkit-animation: btnSlideUp .5s ease;
-            animation: btnSlideUp .5s ease;
+    animation: btnSlideUp .5s ease;
 }
 
 @keyframes btnSlideUp
-{
-    from
-    {
-        margin-top: 350px;
-
-        opacity: 0;
-    }
-    to
-    {
-        margin-top: 140px;
-
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes btnSlideUp
 {
     from
     {
@@ -357,8 +340,7 @@
 .bk_category .detail_step .photo_step.active .arrow,
 .bk_category .detail_step .interact_step.active .arrow
 {
-    -webkit-animation: arrowSlideUp .5s ease;
-            animation: arrowSlideUp .5s ease;
+    animation: arrowSlideUp .5s ease;
 }
 
 .bk_category .detail_step ul
@@ -381,8 +363,7 @@
 .bk_category .photo_step.active ul li,
 .bk_category .interact_step.active ul li
 {
-    -webkit-animation: stepSlideRight .5s ease;
-            animation: stepSlideRight .5s ease;
+    animation: stepSlideRight .5s ease;
 }
 
 .bk_category .detail_step ul .next
@@ -484,39 +465,7 @@
     }
 }
 
-@-webkit-keyframes stepSlideRight
-{
-    from
-    {
-        left: -100px;
-
-        opacity: 0;
-    }
-    to
-    {
-        left: 0;
-
-        opacity: 1;
-    }
-}
-
 @keyframes arrowSlideUp
-{
-    from
-    {
-        top: 20px;
-
-        opacity: 0;
-    }
-    to
-    {
-        top: -20px;
-
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes arrowSlideUp
 {
     from
     {
@@ -689,24 +638,7 @@
 
 .tpl_list .item ul li .book_mask:hover .more .book_info
 {
-    -webkit-animation: desSlideUp 1s;
-            animation: desSlideUp 1s;
-}
-
-@-webkit-keyframes desSlideUp
-{
-    from
-    {
-        margin-top: 100px;
-
-        opacity: 0;
-    }
-    to
-    {
-        margin-top: 0;
-
-        opacity: 1;
-    }
+    animation: desSlideUp 1s;
 }
 
 /*show case*/
@@ -841,27 +773,10 @@
 
 .bask_book_slide .bd li .bask_img:hover .btn_bg a
 {
-    -webkit-animation: goSeeBtnSlideUp .5s ease;
-            animation: goSeeBtnSlideUp .5s ease;
+    animation: goSeeBtnSlideUp .5s ease;
 }
 
 @keyframes goSeeBtnSlideUp
-{
-    from
-    {
-        margin-top: 400px;
-
-        opacity: 0;
-    }
-    to
-    {
-        margin-top: 170px;
-
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes goSeeBtnSlideUp
 {
     from
     {

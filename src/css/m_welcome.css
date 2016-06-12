@@ -45,51 +45,23 @@ body
     opacity: 1;
 }
 
-@-webkit-keyframes start
-{
-    0%, 30%
-    {
-        -webkit-transform: translate(0, 10px);
-                transform: translate(0, 10px);
-
-        opacity: 0;
-    }
-    60%
-    {
-        -webkit-transform: translate(0, 0);
-                transform: translate(0, 0);
-
-        opacity: 1;
-    }
-    100%
-    {
-        -webkit-transform: translate(0, -8px);
-                transform: translate(0, -8px);
-
-        opacity: 0;
-    }
-}
-
 @keyframes start
 {
     0%, 30%
     {
-        -webkit-transform: translate(0, 10px);
-                transform: translate(0, 10px);
+        transform: translate(0, 10px);
 
         opacity: 0;
     }
     60%
     {
-        -webkit-transform: translate(0, 0);
-                transform: translate(0, 0);
+        transform: translate(0, 0);
 
         opacity: 1;
     }
     100%
     {
-        -webkit-transform: translate(0, -8px);
-                transform: translate(0, -8px);
+        transform: translate(0, -8px);
 
         opacity: 0;
     }

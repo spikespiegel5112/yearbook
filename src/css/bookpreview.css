@@ -323,24 +323,20 @@
 
 .bmindex_main_wrapper .flipbook-viewport .page > div, .bp_preview_container .flipbook-viewport .page > div
 {
-    -webkit-transform: scale(.58);
-        -ms-transform: scale(.58);
-            transform: scale(.58);
-    -webkit-transform-origin: top left;
-        -ms-transform-origin: top left;
-            transform-origin: top left;
+    -ms-transform: scale(.58);
+        transform: scale(.58);
+    -ms-transform-origin: top left;
+        transform-origin: top left;
 
     -ms-zoom: .58;
 }
 
 .bmindex_main_wrapper .flipbook-viewport .hard > div, .bp_preview_container .flipbook-viewport .hard > div
 {
-    -webkit-transform: scale(.6);
-        -ms-transform: scale(.6);
-            transform: scale(.6);
-    -webkit-transform-origin: top left;
-        -ms-transform-origin: top left;
-            transform-origin: top left;
+    -ms-transform: scale(.6);
+        transform: scale(.6);
+    -ms-transform-origin: top left;
+        transform-origin: top left;
 
     -ms-zoom: .6;
 }
@@ -349,25 +345,22 @@
 {
     top: 8px;
 
-    -webkit-transform: scale(.58);
-        -ms-transform: scale(.58);
-            transform: scale(.58);
+    -ms-transform: scale(.58);
+        transform: scale(.58);
 
     -ms-zoom: .58;
 }
 
 .bmindex_main_wrapper .flipbook-viewport .secondcover > div, .bp_preview_container .flipbook-viewport .secondcover > div
 {
-    -webkit-transform-origin: top right;
-        -ms-transform-origin: top right;
-            transform-origin: top right;
+    -ms-transform-origin: top right;
+        transform-origin: top right;
 }
 
 .bmindex_main_wrapper .flipbook-viewport .thirdcover > div, .bp_preview_container .flipbook-viewport .thirdcover > div
 {
-    -webkit-transform-origin: top left;
-        -ms-transform-origin: top left;
-            transform-origin: top left;
+    -ms-transform-origin: top left;
+        transform-origin: top left;
 }
 
 .flipbook-viewport .hard > div > div > div
@@ -496,8 +489,9 @@
 {
     overflow: hidden;
 
-    border-bottom: 1px solid #ddd;
     text-align: center;
+
+    border-bottom: 1px solid #ddd;
 }
 
 
@@ -2462,11 +2456,9 @@
     width: 115px;
     height: 85px;
 
-    transition: -webkit-transform .2s;
-    transition:         transform .2s;
-    -webkit-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
-        -ms-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
-            transform: translate3d(0px, 50px, 0px) scale(.1, .1);
+    transition: transform .2s;
+    -ms-transform: translate3d(0px, 50px, 0px) scale(.1, .1);
+        transform: translate3d(0px, 50px, 0px) scale(.1, .1);
 
     border-radius: 5px;
     background: rgba(0, 0, 0, .5);
@@ -2500,9 +2492,8 @@
 {
     display: block;
 
-    -webkit-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
-            transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
 
     opacity: 1;
 }
@@ -2559,42 +2550,6 @@
     -webkit-animation-delay: 2s;
        -moz-animation-delay: 2s;
         -ms-animation-delay: 2s;
-}
-
-@-webkit-keyframes flyR
-{
-    0%
-    {
-        right: -100%;
-    }
-    100%
-    {
-        right: 0;
-    }
-}
-
-@-webkit-keyframes flyL
-{
-    0%
-    {
-        left: -100%;
-    }
-    100%
-    {
-        left: 0;
-    }
-}
-
-@-webkit-keyframes fadeIn
-{
-    0%
-    {
-        opacity: 0;
-    }
-    100%
-    {
-        opacity: 1;
-    }
 }
 
 /* Layout helpers

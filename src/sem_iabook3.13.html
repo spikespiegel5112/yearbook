@@ -612,13 +612,23 @@
 			],
 			bookIdx = 1,
 			coverIndex = 0,
+			animateFlag = false,
 			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
 			flipbookWrapperEl = $('.flipbook_wrapper'),
 			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			coverlistEl = $('.sem_mainlistul_wrapper li'),
-			animateFlag = false;
+			flipbookWrapperWidth = flipbookWrapperEl.width(),
+			destinatePosition = ($(window).width() - flipbookWrapperWidth) / 2,
+			thumbnailPosition;
 
 		coverlistEl.click(function() {
+			var $this = $(this),
+				thumbnailOffsetLeft = $this.offset().left,
+				thumbnailOffsetTop = $this.offset().top,
+				thumbnailMarginLeft = 16;
+
+			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * 0.415));
+
 			coverIndex = $(this).index();
 			$('body').animate({
 				scrollTop: 732
@@ -632,36 +642,33 @@
 
 			function expandBook() {
 				if (animateFlag) {
-					animateFlag = false;
-					bookpreviewWrapperEl.css({
-						display: 'block',
-						'background-color': 'rgba(0,0,0,0.5)',
-						transition: 'all 1s'
-					});
+					animateFlag = false,
+
+						bookpreviewWrapperEl.css({
+							display: 'block',
+							'background-color': 'rgba(0,0,0,0.5)',
+							transition: 'background-color 1s'
+						});
 					$(this).find('img').css({
 						bottom: 15,
 					});
-					flipbookWrapperEl.transform('translate(' + Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415) + 'px, -45px) scale(0.415,0.415)').css({
+					flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -45px) scale(0.415,0.415)').css({
 						visibility: 'visible'
 					});
-					bookpreviewWrapperEl.css({
-						transition: 'all 1s',
-					});
+					// bookpreviewWrapperEl.css({
+					// 	transition: 'all 1s',
+					// });
 					flipbookEl.turn('page', 2);
 					setTimeout(function() {
 						flipbookWrapperEl.transform('translate(0,0)scale(1,1)').css({
 							transition: 'all 1s',
-							'margin-left': function() {
-								return ($(window).width() - $(this).width()) / 2
-							},
-							'margin-top': 45,
-							visibility: 'visible',
-							transition: 'all 1s'
+							'margin-left': destinatePosition,
+							'margin-top': 45
 						});
-					}, 50);
+					}, 0);
 					setTimeout(function() {
-						flipbookWrapperEl.find('a').css({
-							transition: '1s all',
+						flipbookWrapperEl.children('a').css({
+							transition: 'opacity 1s',
 							opacity: 1,
 						})
 					}, 1000);
@@ -670,9 +677,9 @@
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
 			flipbookEl.turn('page', 1)
-			flipbookWrapperEl.transform('translate(' + Number((475 * (coverIndex) - (flipbookEl.width() / 2)) * 0.415) + 'px, -70px) scale(0.415,0.415)')
-			flipbookWrapperEl.css({
-				'margin-left': 0
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -70px) scale(0.415,0.415)').css({
+				'margin-left': 0,
+				'margin-top': 45
 			});
 			flipbookWrapperEl.find('a').css({
 				opacity: 0

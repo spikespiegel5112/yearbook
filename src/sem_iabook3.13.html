@@ -661,14 +661,13 @@
 					});
 					flipbookEl.turn('page', 2);
 					setTimeout(function() {
-						flipbookWrapperEl.transform('translate(0, 50px) scale3d(1,1,1)').css({
-							'margin-left': destinatePosition,
+						flipbookWrapperEl.transform('translate(' + destinatePosition + 'px, 100px) scale3d(1,1,1)').css({
 							transition: 'all 1s'
 						});
 					}, 100);
 					setTimeout(function() {
 						flipbookWrapperEl.children('a').css({
-							transition: 'opacity 1s',
+							transition: 'all 1s',
 							opacity: 1
 						});
 					}, 1000);
@@ -676,10 +675,8 @@
 			};
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
-			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -23px) scale3d(0.415,0.415,1)').css({
-				'margin-left': 0
-			})
-			
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale3d(0.415,0.415,1)');
+
 			flipbookWrapperEl.find('a').css({
 				opacity: 0
 			});

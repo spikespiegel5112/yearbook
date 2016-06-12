@@ -627,6 +627,9 @@
 			thumbnailPosition,
 			preventDefault;
 
+		//判断滚轮事件是否是火狐的
+		var ua = navigator.userAgent.toLowerCase(),
+			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel';
 		coverlistEl.find('a').click(function() {
 			var $this = $(this),
 				thumbnailOffsetLeft = $this.offset().left,
@@ -636,16 +639,19 @@
 			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * thumbnailScale));
 			//目标位置XY
 			destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
-			destinatePositionY = windowHeight - flipbookHeight - 100 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
-
-			$('body').animate({
+			destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
+			$('html, body').animate({
 				scrollTop: 732
 			}, function() {
 				expandBook();
 			});
 			//当打开后组织滚轮默认事件
-			preventDefault = $(window).bind('mousewheel', function(e) {
-				e.preventDefault();
+			preventDefault = $(window).bind(mousewheel, function(e) {
+				if (e.preventDefault) {
+					e.preventDefault();
+				} else {
+					e.returnValue = false;
+				}
 			});
 
 			function expandBook() {
@@ -657,7 +663,7 @@
 				$this.find('img').css({
 					bottom: 15
 				});
-				flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale3d(' + thumbnailScale + ',' + thumbnailScale + ',1)').css({
+				flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale(' + thumbnailScale + ',' + thumbnailScale + ')').css({
 					visibility: 'visible',
 					opacity: 1
 				});
@@ -668,7 +674,7 @@
 				flipbookEl.turn('page', 2);
 				//展开书册
 				setTimeout(function() {
-					flipbookWrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale3d(1,1,1)').css({
+					flipbookWrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
 						transition: 'all 1s'
 					});
 				}, 100);
@@ -683,7 +689,7 @@
 		});
 		bookpreviewWrapperEl.find('.closebtn').click(function() {
 			//将书册缩小并归回原来位置
-			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale3d(' + thumbnailScale + ',' + thumbnailScale + ',1)');
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale(' + thumbnailScale + ',' + thumbnailScale + ')');
 			//隐藏箭头
 			flipbookWrapperEl.find('a').css({
 				opacity: 0
@@ -702,8 +708,8 @@
 				bookpreviewWrapperEl.css({
 					visibility: 'hidden'
 				});
-				//接触阻止默认滚轮事件
-				preventDefault = $(window).unbind('mousewheel');
+				//解除阻止默认滚轮事件
+				preventDefault = $(window).unbind(mousewheel);
 			}, 1000);
 		});
 		loadApp();
@@ -927,17 +933,17 @@
 
 			function disableControls(page) {
 				$('.flipbook_nextpage_btn').css({
-					'background-color': 'rgba(0,0,0,0.4)',
+					'background-color': 'rgba(150,150,150,0.4)',
 					'background-position': '-40px 280px'
 				});
 				$('.flipbook_prevpage_btn').css({
-					'background-color': 'rgba(0,0,0,0.4)',
+					'background-color': 'rgba(150,150,150,0.4)',
 					'background-position': '0 280px'
 				})
 				if (page == 1) {
 					$('.flipbook_prevpage_btn').hide();
 					$('.flipbook_nextpage_btn').show().css({
-						right: 179,
+						right: 160,
 					});
 				} else if (page == $('.flipbook').turn('pages')) {
 					var length = $('.flipbook .page-wrapper').length;

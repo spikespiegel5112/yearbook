@@ -388,23 +388,19 @@
     height: 100%;
 
     transition: all .3s linear;
-    -webkit-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-origin: 0 0;
-        -ms-transform-origin: 0 0;
-            transform-origin: 0 0;
+    -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
 
     border-radius: 5px;
 }
 
 .agbcover_wrapper .bookcover:hover img
 {
-    -webkit-transform: rotateY(-20deg);
-            transform: rotateY(-20deg);
-    -webkit-transform-origin: 0 0;
-        -ms-transform-origin: 0 0;
-            transform-origin: 0 0;
+    transform: rotateY(-20deg);
+    -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
 }
 
 .agbcover_wrapper .bookcover span

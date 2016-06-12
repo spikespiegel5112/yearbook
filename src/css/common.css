@@ -27,7 +27,8 @@ textarea:focus
 }
 @font-face{
     font-family: 'fzltxh';
-    src: url('../fonts/fzltxh.ttf');
+
+    src: url('../fonts/fzltxh.ttf') format('truetype');
 }
 /*~~~~~~~~~~iconfont~~~~~~~~~~*/
 
@@ -81,7 +82,8 @@ textarea:focus
 {
     color: #666;
 }
-.zindex_999{
+.zindex_999
+{
     z-index: 999;
 }
 .cm_fl
@@ -1136,9 +1138,8 @@ textarea:focus
 
 .header_con .yb_menu:hover .menu_hd b
 {
-    -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
 }
 
 .header_con .yb_menu .menu_bd .menu_bd_panel
@@ -1291,8 +1292,7 @@ textarea:focus
 {
     display: block;
 
-    -webkit-animation: transright .2s ease-in-out;
-            animation: transright .2s ease-in-out;
+    animation: transright .2s ease-in-out;
 }
 
 .all_menu .menu_bd .menu_bd_panel
@@ -1490,24 +1490,7 @@ textarea:focus
 {
     display: block;
 
-    -webkit-animation: transTop .3s ease-in-out;
-            animation: transTop .3s ease-in-out;
-}
-
-@-webkit-keyframes transTop
-{
-    from
-    {
-        top: -70px;
-
-        opacity: 0;
-    }
-    to
-    {
-        top: 26px;
-
-        opacity: 1;
-    }
+    animation: transTop .3s ease-in-out;
 }
 
 .quick_menu .yb_menu .menu_bd::before
@@ -2547,10 +2530,12 @@ button.select
 
 .common_loginheader_wrapper div
 {
+    font-size: 0;
+
     width: 100%;
     height: 60px;
     margin: 0 auto;
-    font-size: 0;
+
     text-align: center;
 }
 
@@ -3155,9 +3140,8 @@ button.select
 
     padding: 0 0 1em 0;
 
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
 
     color: #ddd;
 }
@@ -5938,22 +5922,6 @@ nav .pagination li a:active
     left: 0;
 }
 
-@-webkit-keyframes transright
-{
-    from
-    {
-        right: 70px;
-
-        opacity: 0;
-    }
-    to
-    {
-        right: 35px;
-
-        opacity: 1;
-    }
-}
-
 .yb_toolbar_footer .qrcode .wechat
 {
     position: absolute;
@@ -6030,8 +5998,7 @@ nav .pagination li a:active
 
     display: block;
 
-    -webkit-animation: transright .3s ease-in-out;
-            animation: transright .3s ease-in-out;
+    animation: transright .3s ease-in-out;
 
     opacity: 1;
 }
@@ -7185,59 +7152,80 @@ nav .pagination li a:active
     background-size: cover;
 }
 /*~~~~~~~~~~common_macbookscreen_wrapper~~~~~~~~~~*/
-.common_macbookscreen_comtainer{
-    width: 100%;
+.common_macbookscreen_comtainer
+{
     position: absolute;
     bottom: 0;
+
     overflow: hidden;
+
+    width: 100%;
 }
-.common_macbookscreen_wrapper{
-    margin: 0 auto;
-    width: 930px;
-    height: 580px;
+.common_macbookscreen_wrapper
+{
    /* background: url(../img/default/macbookairscreen_00000.png);*/
     overflow: hidden;
-}
-.common_macbookscreen_wrapper .frame{
+
     width: 930px;
     height: 580px;
-    background: url(../img/default/macbookairscreen_00000.png);
-    position: absolute;
-    top: 0;
-    z-index: 1;
+    margin: 0 auto;
 }
-.common_macbookscreen_wrapper .screenbg{
+.common_macbookscreen_wrapper .frame
+{
     position: absolute;
-    width: 820px;
-    height: 514px;
-    /*background: #262629;*/
-    background: url(../img/default/macbookscreengloss_00000.png);
+    z-index: 1;
+    top: 0;
+
+    width: 930px;
+    height: 580px;
+
+    background: url(../img/default/macbookairscreen_00000.png);
+}
+.common_macbookscreen_wrapper .screenbg
+{
+    position: absolute;
+    z-index: 3;
     top: 55px;
     left: 55px;
-    z-index: 3;
-    cursor: pointer;
-}
-.common_macbookscreen_wrapper .screen{
-    margin: 54px auto 0;
+
     width: 820px;
     height: 514px;
+
+    cursor: pointer;
+
+    /*background: #262629;*/
+    background: url(../img/default/macbookscreengloss_00000.png);
+}
+.common_macbookscreen_wrapper .screen
+{
     /*border-radius: 5px;*/
     position: relative;
-    cursor: pointer;
-    overflow: hidden;
     z-index: 2;
+
+    overflow: hidden;
+
+    width: 820px;
+    height: 514px;
+    margin: 54px auto 0;
+
+    cursor: pointer;
 }
-.common_macbookscreen_wrapper .screen video{
+.common_macbookscreen_wrapper .screen video
+{
     display: block;
+
     width: 100%;
-    vertical-align: middle;
 }
-.common_macbookscreen_wrapper .screen span{
+.common_macbookscreen_wrapper .screen span
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+
     display: inline-block;
+
     width: 100%;
     height: 100%;
+
     background: url(../img/default/macbookscreengloss_00000.png);
-    position: absolute;
-    top: 0;
-    z-index: 1;
 }

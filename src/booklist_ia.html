@@ -333,6 +333,7 @@
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src='assets/js/turn.js'></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<script type="text/javascript" src="js/check_os.js"></script>
@@ -349,22 +350,426 @@
 		imgAlignCenter();
 		bookPreview();
 		$('.tpl_sort').chosen({
-			disable_search_threshold: 5 ,
-			width:'110px'
+			disable_search_threshold: 5,
+			width: '110px'
 		});
+		bookPreview({
+			container: '.sem_bookpreview_wrapper',
+			bookwrapper: '.flipbook_wrapper',
+			book: '.flipbook_wrapper .flipbook',
+			trigger: '.agbcover_wrapper ul li .preview_book'
+		})
 	});
 
-	/*左侧风格选中效果*/
-	$('.filter_style .filter_item ul li a').click(function(){
-		$('.filter_style .filter_item ul li a').each(function(){
-			$(this).removeClass('active');
-		});
-		$(this).addClass('active');
-	})
 	/**
-	 * 获取一个书册的HTML，此处后台需要修改
-	 * @returns {string}
+	 * 点击预览效果
 	 */
+	function bookPreview(options) {
+		options=$.extend({
+			container: '',
+			bookwrapper: '',
+			book: '',
+			trigger: ''
+		}, options);
+
+		var flipbooks = [
+				'flipbookpages/1',
+				'flipbookpages/2'
+			],
+			bookIdx = 1,
+			//animateFlag = true,
+			windowWidth = $(window).width(),
+			windowHeight = $(window).height(),
+			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
+			flipbookWrapperEl = $('.flipbook_wrapper'),
+			flipbookEl = $('.flipbook_wrapper .flipbook'),
+			//big尺寸书册的0.6倍大小的高度
+			flipbookHeight = flipbookEl.height() * 0.6,
+			coverlistEl = $('.sem_mainlistul_wrapper li'),
+			flipbookWrapperWidth = flipbookWrapperEl.width(),
+			thumbnailScale = 0.415,
+			destinatePositionX,
+			destinatePositionY,
+			thumbnailPosition,
+			preventDefault;
+
+		//判断滚轮事件是否是火狐的
+		var ua = navigator.userAgent.toLowerCase(),
+			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel';
+		$(options.trigger).click(function() {
+			var $this = $(this),
+				thumbnailOffsetLeft = $this.offset().left,
+				thumbnailOffsetTop = $this.offset().top,
+				thumbnailMarginLeft = 20;
+			//图标所在位置，即起始位置
+			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * thumbnailScale));
+			//目标位置XY
+			destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
+			destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
+			$('html, body').animate({
+				scrollTop: 732
+			}, function() {
+				expandBook();
+			});
+			//当打开后组织滚轮默认事件
+			preventDefault = $(window).bind(mousewheel, function(e) {
+				if (e.preventDefault()) {
+					e.preventDefault();
+				} else {
+					e.returnValue = false;
+				}
+			});
+
+			function expandBook() {
+				bookpreviewWrapperEl.css({
+					visibility: 'visible',
+					'background-color': 'rgba(0,0,0,0.8)',
+					transition: 'background-color 1s'
+				});
+				$this.find('img').css({
+					bottom: 15
+				});
+				flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale(' + thumbnailScale + ',' + thumbnailScale + ')').css({
+					visibility: 'visible',
+					opacity: 1
+				});
+				bookpreviewWrapperEl.css({
+					transition: 'all 1s',
+				});
+				//翻到第一页
+				flipbookEl.turn('page', 2);
+				//展开书册
+				setTimeout(function() {
+					flipbookWrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
+						transition: 'all 1s'
+					});
+				}, 100);
+				//显示左右翻页箭头
+				setTimeout(function() {
+					flipbookWrapperEl.children('a').css({
+						transition: 'all 1s',
+						opacity: 1
+					});
+				}, 1000);
+			};
+		});
+		bookpreviewWrapperEl.find('.closebtn').click(function() {
+			//将书册缩小并归回原来位置
+			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale(' + thumbnailScale + ',' + thumbnailScale + ')');
+			//隐藏箭头
+			flipbookWrapperEl.find('a').css({
+				opacity: 0
+			});
+			//隐藏书册背景
+			bookpreviewWrapperEl.css({
+				'background-color': 'rgba(0,0,0,0)'
+			});
+			flipbookEl.turn('page', 1);
+			//书册收回后进行收尾工作
+			setTimeout(function() {
+				flipbookWrapperEl.css({
+					visibility: 'hidden',
+					transition: 'none'
+				});
+				bookpreviewWrapperEl.css({
+					visibility: 'hidden'
+				});
+				//解除阻止默认滚轮事件
+				preventDefault = $(window).unbind(mousewheel);
+			}, 1000);
+		});
+		
+		loadApp();
+
+		function loadApp() {
+			//这是指定当前读取的是第几本书册的变量，序号是flipbookpages文件夹里的序号
+			var bookIdx = 1;
+			var pageWidth = $('.flipbook-viewport .page').width();
+			var pageHegiht = $('.flipbook-viewport .page').height();
+			var flipbook = $('.flipbook');
+			var pageSection = $('.chapter_info ul li');
+
+			// if (flipbook.width() == 0 || flipbook.height() == 0) {
+			//     setTimeout(loadApp, 10);
+			//     return;
+			// }
+
+			flipbook.bind('first', function() {
+				$('.page-wrapper[page=1]').find('.p1').addClass('hard');
+			})
+
+			//点击章节目录中的章节名称跳转到相应的页面中，章节名称所对应的页面序号在html里用page属性做为标记
+			pageSection.click(function() {
+				var $this = $(this);
+				var pageIndex = $this.attr('page');
+				$this.addClass('active').siblings().removeClass('active');
+				flipbook.turn('page', pageIndex);
+			});
+
+			$(document).keydown(function(e) {
+				var previous = 37,
+					next = 39;
+				switch (e.keyCode) {
+					case previous:
+						flipbook.turn('previous');
+						break;
+					case next:
+						flipbook.turn('next');
+						break;
+				}
+			});
+
+			IEcss()
+
+			flipbook.turn({
+				width: 814,
+				height: 576,
+				elevation: 0,
+				acceleration: !isChrome(),
+				autoCenter: true,
+				gradients: true,
+				duration: 1000,
+				pages: bookLength(),
+				when: {
+					turning: function(e, page, view) {
+						var book = $(this),
+							currentPage = book.turn('page'),
+							pages = book.turn('pages');
+
+						// $('.page-wrapper .page').addClass('hard')
+
+						if (currentPage > 3 && currentPage < pages - 3) {
+							if (page == 1) {
+								book.turn('page', 2).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							} else if (page == pages) {
+								book.turn('page', pages - 1).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							}
+						} else if (page > 3 && page < pages - 3) {
+							if (currentPage == 1) {
+								book.turn('page', 2).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							} else if (currentPage == pages) {
+								book.turn('page', pages - 1).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							}
+						}
+
+						if (page >= 2) {
+							$('.flipbook_wrapper .p2').addClass('fixed');
+						} else {
+							$('.flipbook_wrapper .p2').removeClass('fixed');
+						}
+						if (page < book.turn('pages')) {
+							$('.flipbook_wrapper .p' + (bookLength() - 1)).addClass('fixed');
+						} else {
+							$('.flipbook_wrapper .p' + (bookLength() - 1)).removeClass('fixed');
+						}
+						updateDepth(book, page);
+						disableControls(page);
+					},
+					turned: function(e, page, view) {
+						var book = $(this);
+						updateDepth(book);
+						disableControls(page);
+						book.turn('center');
+					},
+					start: function(e, pageObj) {},
+					end: function(e, pageObj) {
+						var book = $(this);
+						updateDepth(book);
+						IEcss();
+					},
+					missing: function(e, pages) {
+						for (var i = 0; i < pages.length; i++) {
+							addPage(bookIdx, pages[i], $(this));
+						}
+					}
+				}
+			});
+
+			flipbook.addClass('animated');
+
+			if (!$.os.mobile) {
+				$('.flipbook_nextpage_btn').bind($.mouseEvents.down, function() {
+					$(this).addClass('next-button-down');
+				}).bind($.mouseEvents.up, function() {
+					$(this).removeClass('next-button-down');
+				}).click(function() {
+					flipbook.turn('next');
+				});
+				$('.flipbook_prevpage_btn').bind($.mouseEvents.down, function() {
+					$(this).addClass('previous-button-down');
+				}).bind($.mouseEvents.up, function() {
+					$(this).removeClass('previous-button-down');
+				}).click(function() {
+					flipbook.turn('previous');
+				});
+			} else {
+				$('.flipbook_nextpage_btn').on('touchend', function() {
+					flipbook.turn('next');
+				});
+				$('.flipbook_prevpage_btn').on('touchend', function() {
+					flipbook.turn('previous');
+				});
+			}
+
+			function bookLength() {
+				var length = flipbookWrapperEl.attr('pagecount');
+				if (length % 2 != 0) {
+					return parseInt(length) + 1;
+				} else {
+					return length;
+				}
+				return length;
+			}
+
+			function getViewNumber(book, page) {
+				return parseInt((page || book.turn('page')) / 2 + 1, 10);
+			}
+
+			function getViewNumber(book, page) {
+				return parseInt((page || book.turn('page')) / 2 + 1, 10);
+			}
+
+			function isChrome() {
+				return navigator.userAgent.indexOf('Chrome') != -1;
+			}
+
+			function loadPage(bookIdx, page) {
+				$.ajax({
+					url: 'flipbookpages/' + bookIdx + '/page' + page + '.html'
+				}).done(function(pageHtml) {
+					$('.flipbook .p' + page).html(pageHtml.replace('yb3.0/flipbookpages/', ''));
+				});
+			}
+
+			function addPage(bookIdx, page, book) {
+				var pages = book.turn('pages');
+				if (!book.turn('hasPage', page)) {
+					var element = $('<div />', {
+						'class': 'own-size',
+						css: {
+							width: 395,
+							height: 560,
+						}
+					}).html('<div class="loader"></div>');
+					if (book.turn('addPage', element, page)) {
+						loadPage(bookIdx, page);
+					}
+				}
+			}
+
+			function updateDepth(book, newPage) {
+				var page = book.turn('page'),
+					pages = bookLength(),
+					depthWidth = 20 * Math.min(1, (pages - (pages - page)) / pages);
+				newPage = newPage || page;
+
+				if (newPage > 3) {
+					$('.flipbook-viewport .p2 .depth').css({
+						width: depthWidth,
+						left: 12 - depthWidth,
+						'z-index': 1
+					});
+				} else {
+					$('.flipbook-viewport .p2 .depth').css({
+						width: 0,
+						'z-index': 1
+					});
+				}
+				depthWidth = 30 * Math.min(1, (pages - page) / pages);
+				if (newPage < pages - 3) {
+					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+						width: depthWidth,
+						right: 12 - depthWidth,
+						'z-index': 1
+					});
+				} else {
+					$('.flipbook-viewport .p' + (pages - 1) + ' .depth').css({
+						width: 0,
+						'z-index': 1
+					});
+				}
+			}
+
+			function disableControls(page) {
+				$('.flipbook_nextpage_btn').css({
+					'background-color': 'rgba(150,150,150,0.4)',
+					'background-position': '-40px 280px'
+				});
+				$('.flipbook_prevpage_btn').css({
+					'background-color': 'rgba(150,150,150,0.4)',
+					'background-position': '0 280px'
+				})
+				if (page == 1) {
+					$('.flipbook_prevpage_btn').hide();
+					$('.flipbook_nextpage_btn').show().css({
+						right: 160,
+					});
+				} else if (page == $('.flipbook').turn('pages')) {
+					var length = $('.flipbook .page-wrapper').length;
+					$('.flipbook_prevpage_btn').show().css({
+						left: 180
+					});
+					$('.flipbook_nextpage_btn').hide();
+				} else {
+					$('.flipbook_prevpage_btn').show().css({
+						left: '-25px'
+					});
+					$('.flipbook_nextpage_btn').show().css({
+						right: '-40px'
+					});
+				}
+			}
+
+			function IEcss(argu) {
+				if (window.ActiveXObject || 'ActiveXObject' in window) {
+					$('.flipbook-viewport .secondcover>div').css({
+						left: 13
+					});
+				}
+			}
+		}
+
+		// $(".agbcover_wrapper ul").on('click', '.bookcover', function() {
+		// 	$.fancybox.open({
+		// 		href: 'bp_popupwindow.html',
+		// 		type: 'iframe',
+		// 		width: 950,
+		// 		height: 740,
+		// 		padding: 5,
+		// 		scrolling: 'no'
+		// 	});
+		// });
+
+		// $(".agbcover_wrapper ul").on('click', '.preview_book', function() {
+		// 	$.fancybox.open({
+		// 		href: 'bp_popupwindow.html',
+		// 		type: 'iframe',
+		// 		width: 950,
+		// 		height: 740,
+		// 		padding: 5,
+		// 		scrolling: 'no'
+		// 	});
+		// });
+	}
+	/*左侧风格选中效果*/
+	$('.filter_style .filter_item ul li a').click(function() {
+			$('.filter_style .filter_item ul li a').each(function() {
+				$(this).removeClass('active');
+			});
+			$(this).addClass('active');
+		})
+		/**
+		 * 获取一个书册的HTML，此处后台需要修改
+		 * @returns {string}
+		 */
 	function getOneBookHtml() {
 		return ' <li> ' +
 			'<a class="bookcover" href="javascript:;">' +
@@ -378,11 +783,11 @@
 	}
 
 	function init() {
-		$('.agb_bannermenu_wrapper li').click(function(){
-			var $this=$(this);
-			var index=0;
+		$('.agb_bannermenu_wrapper li').click(function() {
+			var $this = $(this);
+			var index = 0;
 			$this.addClass('active').siblings('li').removeClass('active');
-			index=$this.index();
+			index = $this.index();
 			$('.agb_bannermain_wrapper li').eq(index).addClass('active').siblings('li').removeClass('active');
 		})
 
@@ -395,11 +800,11 @@
 			}
 		});
 	}
-	
-	function imgAlignCenter(){
-		$('.agb_bannermain_wrapper img').css('left',-(1920-$(window).width())/2);
-		$(window).resize(function(){
-			$('.agb_bannermain_wrapper img').css('left',-(1920-$(window).width())/2);
+
+	function imgAlignCenter() {
+		$('.agb_bannermain_wrapper img').css('left', -(1920 - $(window).width()) / 2);
+		$(window).resize(function() {
+			$('.agb_bannermain_wrapper img').css('left', -(1920 - $(window).width()) / 2);
 		})
 	}
 
@@ -511,33 +916,6 @@
 			}
 
 		}
-	}
-
-	/**
-	 * 点击预览效果
-	 */
-	function bookPreview() {
-		$(".agbcover_wrapper ul").on('click', '.bookcover', function() {
-			$.fancybox.open({
-				href: 'bp_popupwindow.html',
-				type: 'iframe',
-				width: 950,
-				height: 740,
-				padding: 5,
-				scrolling: 'no'
-			});
-		});
-
-		$(".agbcover_wrapper ul").on('click', '.preview_book', function() {
-			$.fancybox.open({
-				href: 'bp_popupwindow.html',
-				type: 'iframe',
-				width: 950,
-				height: 740,
-				padding: 5,
-				scrolling: 'no'
-			});
-		});
 	}
 	</script>
 </body>

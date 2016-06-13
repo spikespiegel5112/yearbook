@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/booklist.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/bookpreview.css" type="text/css" media="all">
 	<!-- endbuild -->
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" media="screen" />
@@ -330,6 +331,86 @@
 			</div>
 		</div>
 	</div>
+	<!-- 书册预览 -->
+	<div class='common_bppopup_wrapper flipbook-viewport'>
+		<a class='closebtn ybiconfont ybicon-failure' href="javascript:;"></a>
+		<div class='flipbook_wrapper' pagecount='19'>
+			<a class='flipbook_prevpage_btn' href="javascript:;"></a>
+			<div class='flipbook'>
+				<div depth="5" class="hard" style="background-image:url('img/default/1_1.jpg');">
+					<link href="http://yb-test-book.qiniudn.com/pageTpl/IMAGE_TEXT/37/css/small_left.css" rel="stylesheet" type="text/css">
+					<div class="container_activity_37_small_left">
+						<div class="page_header_container">
+							<div slottype="article" class="warp1">
+								<div class="richShow" slottype="articleShow" textheight="40">
+									<div class="main_title" slottype="richText" slotnum="0">
+										雄关为头越
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="photo0_container">
+							<span id="imgMask0" imgwidth="1324" imgheight="907" slotnum="0" slottype="mask" class="photoframe_common_property photoframe0"></span>
+							<img slottype="img" slotnum="0" class="img0" src="">
+						</div>
+						<div class="photo1_container">
+							<span id="imgMask1" imgwidth="498" imgheight="334" slotnum="1" slottype="mask" class="photoframe_common_property photoframe1"></span>
+							<img slottype="img" slotnum="1" class="img1" src="">
+						</div>
+						<div class="photo2_container">
+							<span id="imgMask2" imgwidth="389" imgheight="261" slotnum="2" slottype="mask" class="photoframe_common_property photoframe2"></span>
+							<img slottype="img" slotnum="2" class="img2" src="">
+						</div>
+						<div class="content_container">
+							<strong>
+											<div slottype="article" class="warp2">
+												<div class="richShow" slottype="articleShow" textheight="30">
+													<p></p><p slottype="richText" slotnum="2" style="min-height:30px;" placeholder="活动标题" mode="inline"></p>
+													<p></p>
+												</div>
+											</div>
+										</strong>
+							<div slottype="article" class="warp3">
+								<div class="richShow" slottype="articleShow" textheight="96">
+									<p slottype="richText" slotnum="3" style="display:block;word-wrap:break-word;" placeholder="活动内容"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div depth="5" class="hard front-side secondcover even" style="background-image:url('img/default/1_2.jpg');">
+					<span class="depth"></span>
+					<link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_left.css" rel="stylesheet" type="text/css">
+					<div class="container_panoramic_02_small_left">
+						<div slottype="article" class="warp">
+							<div slottype="articleShow" textheight="62" class="richShow">
+								<p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+								</p>
+							</div>
+						</div>
+						<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+						<img slottype="img" slotnum="1" src="" class="img1">
+					</div>
+				</div>
+				<div class="hard fixed back-side thirdcover p19" style="background-image:url('img/default/tpl_small.jpg')">
+					<span class="depth"></span>
+					<link href="http://yb-test-book.qiniudn.com/pageTpl/PANO/2/css/small_right.css" rel="stylesheet" type="text/css">
+					<div class="container_panoramic_02_small_right">
+						<div slottype="article" class="warp">
+							<div slottype="articleShow" textheight="62" class="richShow">
+								<p placeholder="学校班级.." slottype="richText" slotnum="4" mode="inline" class="graduate-po">
+								</p>
+							</div>
+						</div>
+						<span id="imgMask1" imgwidth="3120" imgheight="1700" slotnum="1" slottype="mask" class="photoframe1" style="text-align:center;vertical-align:middle;display: block;"></span>
+						<img slottype="img" slotnum="1" src="" class="img1">
+					</div>
+				</div>
+				<div class="hard p20" style="background-image:url('img/default/tpl_small.jpg')"></div>
+			</div>
+			<a class='flipbook_nextpage_btn' href="javascript:;"></a>
+		</div>
+	</div>
 	<script type="text/javascript" src='assets/js/jquery.min.js'></script>
 	<script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
@@ -348,49 +429,49 @@
 		//leftFilter();
 		//filterStyle();
 		imgAlignCenter();
-		bookPreview();
+		// bookPreview();
 		$('.tpl_sort').chosen({
 			disable_search_threshold: 5,
 			width: '110px'
 		});
-		bookPreview({
-			container: '.sem_bookpreview_wrapper',
+		bookpreview({
+			container: '.common_bppopup_wrapper',
 			bookwrapper: '.flipbook_wrapper',
 			book: '.flipbook_wrapper .flipbook',
-			trigger: '.agbcover_wrapper ul li .preview_book'
-		})
+			trigger: '.agbcover_wrapper ul li .preview_book',
+			closebtn: '.common_bppopup_wrapper .closebtn',
+			startposoffsetx: -110,
+			startposoffsety: -266,
+			thumbnailScale: 0.3,
+			zindex: 9999
+		});
 	});
 
 	/**
 	 * 点击预览效果
 	 */
-	function bookPreview(options) {
-		options=$.extend({
+	function bookpreview(options) {
+		options = $.extend({
 			container: '',
 			bookwrapper: '',
 			book: '',
-			trigger: ''
+			trigger: '',
+			closebtn: '',
+			startposoffsetx: 0,
+			startposoffsety: 0,
+			thumbnailScale: 0.415,
+			zindex: 0
 		}, options);
 
-		var flipbooks = [
-				'flipbookpages/1',
-				'flipbookpages/2'
-			],
-			bookIdx = 1,
-			//animateFlag = true,
-			windowWidth = $(window).width(),
+		var windowWidth = $(window).width(),
 			windowHeight = $(window).height(),
-			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
-			flipbookWrapperEl = $('.flipbook_wrapper'),
-			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			//big尺寸书册的0.6倍大小的高度
-			flipbookHeight = flipbookEl.height() * 0.6,
-			coverlistEl = $('.sem_mainlistul_wrapper li'),
-			flipbookWrapperWidth = flipbookWrapperEl.width(),
-			thumbnailScale = 0.415,
+			flipbookHeight = $(options.book).height() * 0.6,
+			flipbookWrapperWidth = $(options.bookwrapper).width(),
 			destinatePositionX,
 			destinatePositionY,
-			thumbnailPosition,
+			thumbnailPositionX,
+			thumbnailPositionY,
 			preventDefault;
 
 		//判断滚轮事件是否是火狐的
@@ -398,19 +479,17 @@
 			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel';
 		$(options.trigger).click(function() {
 			var $this = $(this),
+				documentScrollTop = $('body').scrollTop(),
 				thumbnailOffsetLeft = $this.offset().left,
-				thumbnailOffsetTop = $this.offset().top,
-				thumbnailMarginLeft = 20;
+				thumbnailOffsetTop = $this.offset().top;
 			//图标所在位置，即起始位置
-			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * thumbnailScale));
+			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailScale));
+			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailScale + options.startposoffsety);
+
 			//目标位置XY
 			destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
 			destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
-			$('html, body').animate({
-				scrollTop: 732
-			}, function() {
-				expandBook();
-			});
+			expandBook();
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {
 				if (e.preventDefault()) {
@@ -421,64 +500,70 @@
 			});
 
 			function expandBook() {
-				bookpreviewWrapperEl.css({
+				$(options.container).css({
 					visibility: 'visible',
 					'background-color': 'rgba(0,0,0,0.8)',
-					transition: 'background-color 1s'
+					transition: 'background-color 1s',
+					'z-index': options.zindex
 				});
-				$this.find('img').css({
-					bottom: 15
-				});
-				flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale(' + thumbnailScale + ',' + thumbnailScale + ')').css({
+				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')').css({
 					visibility: 'visible',
 					opacity: 1
 				});
-				bookpreviewWrapperEl.css({
+
+				$(options.container).css({
 					transition: 'all 1s',
 				});
 				//翻到第一页
-				flipbookEl.turn('page', 2);
+				$(options.book).turn('page', 2);
 				//展开书册
 				setTimeout(function() {
-					flipbookWrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
+					$(options.bookwrapper).transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
 						transition: 'all 1s'
 					});
 				}, 100);
+
 				//显示左右翻页箭头
 				setTimeout(function() {
-					flipbookWrapperEl.children('a').css({
+					$(options.bookwrapper).children('a').css({
 						transition: 'all 1s',
 						opacity: 1
 					});
 				}, 1000);
+				setTimeout(function() {
+					$(options.container).css({
+						'background-color': 'rgba(0,0,0,0.8)',
+					});
+				}, 1000);
+
 			};
 		});
-		bookpreviewWrapperEl.find('.closebtn').click(function() {
+		$(options.closebtn).click(function() {
 			//将书册缩小并归回原来位置
-			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale(' + thumbnailScale + ',' + thumbnailScale + ')');
+			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')');
 			//隐藏箭头
-			flipbookWrapperEl.find('a').css({
+			$(options.bookwrapper).find('a').css({
 				opacity: 0
 			});
 			//隐藏书册背景
-			bookpreviewWrapperEl.css({
+			$(options.container).css({
 				'background-color': 'rgba(0,0,0,0)'
 			});
-			flipbookEl.turn('page', 1);
+			$(options.book).turn('page', 1);
 			//书册收回后进行收尾工作
 			setTimeout(function() {
-				flipbookWrapperEl.css({
+				$(options.bookwrapper).css({
 					visibility: 'hidden',
 					transition: 'none'
 				});
-				bookpreviewWrapperEl.css({
+				$(options.container).css({
 					visibility: 'hidden'
 				});
 				//解除阻止默认滚轮事件
 				preventDefault = $(window).unbind(mousewheel);
 			}, 1000);
 		});
-		
+
 		loadApp();
 
 		function loadApp() {
@@ -620,7 +705,7 @@
 			}
 
 			function bookLength() {
-				var length = flipbookWrapperEl.attr('pagecount');
+				var length = $(options.bookwrapper).attr('pagecount');
 				if (length % 2 != 0) {
 					return parseInt(length) + 1;
 				} else {

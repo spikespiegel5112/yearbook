@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1464916563_8422954.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -26,9 +27,9 @@
     <div class='makebook_asidefriend_wrapper resource_list'>
         <div class="res_tab">
             <ul>
-                <li>加入小伙伴（<span>10</span>）</li>
-                <li>Excel导入好友资料</li>
-                <li class="on">邀请小伙伴</li>
+                <li data-type="join">加入小伙伴（<span>10</span>）</li>
+                <li data-type="excel">Excel导入好友资料</li>
+                <li data-type="invite" class="on">邀请小伙伴</li>
             </ul>
         </div>
         <!--<div class='makebook_asidefriendtab_wrapper'>
@@ -47,7 +48,7 @@
         </div>-->
 
         <div class='makebook_asidefriendmain_wrapper'>
-            <div class='makebook_joinedfriend_wrapper'>
+            <div data-type="join" class='makebook_joinedfriend_wrapper'>
                 <div class='makebook_friendhint_wrapper'>
                     <p>提示：加入多少个小伙伴就必须有同等数量的个人页</p>
                     <ul>
@@ -457,7 +458,7 @@
                     </div>
                 </div>
             </div>
-            <div class='makebook_importexcal_wrapper'>
+            <div data-type="excel" class='makebook_importexcal_wrapper'>
                 <div class='makebook_friendhint_wrapper'>
                     <p>您只需按照excel中的格式填入团队成员的相关资料并上传就可自动完成个人页制作了：</p>
                 </div>
@@ -476,7 +477,7 @@
                     </div>
                 </div>
             </div>
-            <div class='makebook_friendintro_wrapper'>
+            <div data-type="invite" class='makebook_friendintro_wrapper'>
                 <div class='makebook_friendhint_wrapper'>
                     <p>目前忆尔支持三种途径邀请小伙伴加入：</p>
                 </div>
@@ -537,32 +538,55 @@
 </div>
 
 	<!-- html end-->
-	<!--<script type="text/javascript" src="assets/js/jquery.min.js"></script>-->
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb313"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(function() {
-		$('.makebook_asidefriendmain_wrapper>div').eq(2).show().siblings().hide();
-		$('.makebook_asidefriend_wrapper .res_tab li').click(function() {
-			var $this = $(this),
-				index = $(this).index(),
-				friendmainEl = $('.makebook_asidefriendmain_wrapper');
-			$this.addClass('on').siblings().removeClass('on');
-			friendmainEl.children().eq(index).addClass('active').siblings().removeClass('active')
-			friendmainEl.find('.active').show().siblings().hide();
-		});
+        init();
+        customScrollBar();
+	})
+    function init(){
+        $('.makebook_asidefriendmain_wrapper div[data-type="invite"]').show().siblings().hide();
+        /*$('.makebook_asidefriend_wrapper .res_tab li').click(function() {
+         var $this = $(this),
+         index = $(this).index(),
+         friendmainEl = $('.makebook_asidefriendmain_wrapper');
+         $this.addClass('on').siblings().removeClass('on');
+         friendmainEl.children().eq(index).addClass('active').siblings().removeClass('active')
+         friendmainEl.find('.active').show().siblings().hide();
+         });*/
+        $('.makebook_asidefriend_wrapper .res_tab li').click(function(){
+            var type = $(this).attr('data-type');
+            $('.makebook_asidefriend_wrapper .res_tab li').removeClass('on');
+            $(this).addClass('on');
+            $('.makebook_asidefriendmain_wrapper div[data-type='+type+']').addClass('active').show().siblings().hide().removeClass('acitve');
+        })
 
-		//点击名片弹出详情
-		$('.makebook_invitnamecard_item').click(function() {
+        //点击名片弹出详情
+        $('.makebook_invitnamecard_item').click(function() {
             art.dialog({
                 title: "小伙伴详情",
                 lock: true,
                 content: document.querySelector('.friend_detail_wrapper')
             })
-		});
-	})
+        });
+    }
+    //自定义滚动条
+    function customScrollBar(){
+        $(document).ready(function(){
+            $(".makebook_asidefriendmain_wrapper").mCustomScrollbar({
+                theme:"minimal-dark",
+                scrollbarPosition: "inside",
+                autoDraggerLength: true,
+                autoExpandScrollbar: true
+            });
+
+        });
+    }
 	</script>
 </body>
 

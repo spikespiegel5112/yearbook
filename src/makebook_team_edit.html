@@ -332,6 +332,9 @@
 									<span class="arrow"></span>
 								</div>
 							</li>
+							<li>
+								<a class="calculator_btn" href="javascript:;"><i></i><span>价格计算器</span></a>
+							</li>
 						</ul>
 					</div>
 					<div class="grid print">
@@ -2605,6 +2608,86 @@
 				<input type="radio" name="postion" value="chapterend">章节尾部</label>
 		</div>
 	</div>
+	<!--价格计算器-->
+	<div class="compute_price_container hidden">
+		<div class="product_info">
+			<div class="page_num">
+				<dl>
+					<dt>页&nbsp;&nbsp;&nbsp;数：</dt>
+					<dd class="cm_border_none"><span>10</span>页</dd>
+				</dl>
+			</div>
+			<div class="cover">
+				<dl>
+					<dt>封&nbsp;&nbsp;&nbsp;面：</dt>
+					<dd class="selected" data='书册采用包装为胶装覆膜'>
+						<div>
+							<span>平装（软面）</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+					<dd>
+						<div>
+							<span>精装（硬壳）</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+					<dd>
+						<div>
+							<span>蝴蝶装（硬壳）</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="size">
+				<dl>
+					<dt>尺&nbsp;&nbsp;&nbsp;寸：</dt>
+					<dd class="selected" data='书册尺寸宽14.5cm，长21.0cm'>
+						<div class="" >
+							<span>别致小装(145mm×210mm)</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+						<div class="print_size"><img src="img/booklist/min_size.png" alt="别致小装"></div>
+					</dd>
+					<dd data='书册尺寸宽17.5cm，长24.8cm'>
+						<div>
+							<span>气派大装(175mm×248mm)</span>
+							<div class="icon"><i class="icon-ok"></i></div>
+						</div>
+						<div class="print_size"><img src="img/booklist/max_size.png" alt="气派大装"></div>
+					</dd>
+				</dl>
+				<div class="ybcommon_queryicon_item">
+					<span class='ybiconfont ybicon-querysolid'></span>
+					<div>
+						<p>书册尺寸宽14.5cm，长21.0cm</p>
+						<a class="ybcommon_qimoredetail_btn" href="static_hc_bind_size.html" target='_blank'>查看详情</a>
+					</div>
+				</div>
+			</div>
+			<div class="num">
+				<dl>
+					<dt>数&nbsp;&nbsp;&nbsp;量：</dt>
+					<dd>
+						<ul class='ybcommon_counter_item'>
+							<a href="javascript:;">-</a>
+							<input type='text' value='0'>
+							<a href="javascript:;">+</a>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div class="price">
+				<dl>
+					<dt>价&nbsp;&nbsp;&nbsp;格：</dt>
+					<dd>
+						<span>￥508.00</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
 	<!--gallery must have class:pswp element 因全屏显示转移至主页面内-->
 	<div id="gallery" class="pswp hidden" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="pswp__bg"></div>
@@ -3786,7 +3869,7 @@
 		});
 	}
 
-	//添加章节、页面、更换模板、分配协作者、修改章节配置
+	//添加章节、页面、更换模板、分配协作者、修改章节配置、价格计算器
 	function editBookToolbarEvents() {
 		//返回章节列表
 		$('.back_list_mode').click(function() {
@@ -3983,6 +4066,39 @@
 				}
 			})
 		});
+
+		//价格计算器
+		$('.calculator_btn').click(function(){
+			art.dialog({
+				title: '价格计算器',
+				lock: true,
+				content: document.querySelector('.compute_price_container'),
+				okVal:'知道了',
+				ok: function() {}
+			});
+			$('.product_info .cover dd').click(function() {
+				var $this=$(this),
+						thisEl=$('.product_info .cover dd');
+				thisEl.removeClass('selected');
+				$this.addClass('selected');
+			});
+			$('.product_info .size dd').click(function() {
+				var $this = $(this),
+						thisEl = $('.product_info .size dd'),
+						thisData = $this.attr('data'),
+						hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
+				thisEl.removeClass('selected');
+				$this.addClass('selected');
+				hintEl.text(thisData);
+			});
+
+			//?hover
+			$('.ybcommon_queryicon_item').hover(function() {
+				$(this).find('div').show();
+			}, function() {
+				$(this).find('div').hide();
+			});
+		})
 	}
 
 	//分布定制相关事件

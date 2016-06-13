@@ -638,12 +638,14 @@
 			thumbnailPositionY,
 			preventDefault;
 
-		//判断滚轮事件是否是火狐的
 		var ua = navigator.userAgent.toLowerCase(),
-			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel';
+			//判断滚轮事件是否是火狐的
+			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel',
+			bodyEl=(ua.indexOf("firefox") > 0) ? $('html') : $('body');
+
 		$(options.trigger).click(function() {
 			var $this = $(this),
-				documentScrollTop = $('body').scrollTop(),
+				documentScrollTop = bodyEl.scrollTop(),
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top;
 			//图标所在位置，即起始位置

@@ -681,7 +681,6 @@
 				containerWidth = 0,
 				containerHeight = 0,
 				timer,
-				offsetY = 0,
 				ignoreX = 0,
 				ignoreY = 0,
 				ignoreArr = [],
@@ -739,7 +738,7 @@
 					//缺省情况
 				} else {
 					//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
-					//container设置判断
+					//当设置了container时，以container尺寸大小居中
 					if (options.container != '') {
 						that.each(function(index) {
 							var $this = $(this);
@@ -752,6 +751,7 @@
 								checkPosition($this);
 							}
 						});
+					//当没有设置container时，以窗口尺寸大小居中
 					} else {
 						containerWidth = $(window).width();
 						containerHeight = $(window).height();
@@ -783,21 +783,20 @@
 				switch (options.position) {
 					case 'both':
 						var marginY = (containerHeight - thisHeight) / 2;
-						// console.log(marginY)
 						if (thisWidth <= $(window).width()) {
 							if (options.offsetx != 0) {
 								_this.css({
-									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWidth - thisWidth) / 2 +offsetX - ignoreX + 'px'
+									'margin': marginY + options.offsety - ignoreY + 'px ' + (containerWidth - thisWidth) / 2 +offsetX - ignoreX + 'px'
 								});
-								console.log(thisWidth)
 							} else {
 								_this.css({
-									'margin': marginY + offsetY - ignoreY + 'px auto'
+									'margin': marginY + options.offsety - ignoreY + 'px auto'
 								});
 							}
 						} else {
+							var marginX = (containerWidth - thisWidth) / 2;
 							_this.css({
-								'margin': marginY + offsetY - ignoreY + 'px ' + ((containerWidth - thisWidth) / 2 + options.offsetx )+ 'px'
+								'margin': marginY + options.offsety - ignoreY + 'px ' + (marginX + options.offsetx )+ 'px'
 							});
 						}
 						break;
@@ -822,7 +821,7 @@
 					case 'bottom':
 						aligning(function(thisWidth, thisHeight) {
 							_this.css({
-								'margin': (windowHeight - thisHeight + offsetY - ignoreY) + 'px auto 0'
+								'margin': (windowHeight - thisHeight + options.offsety - ignoreY) + 'px auto 0'
 							});
 						});
 						break;
@@ -944,7 +943,6 @@
 				});
 				container.on(touchMove, function(e) {
 					if (isMousedown) {
-
 						if (isMobile()) {
 							var touch = e.originalEvent.touches[0];
 						} else {

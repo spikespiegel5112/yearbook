@@ -630,7 +630,7 @@
 		//判断滚轮事件是否是火狐的
 		var ua = navigator.userAgent.toLowerCase(),
 			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel';
-		coverlistEl.find('a').click(function() {
+		coverlistEl.children('a').click(function() {
 			var $this = $(this),
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top,
@@ -647,7 +647,7 @@
 			});
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {
-				if (e.preventDefault) {
+				if (e.preventDefault()) {
 					e.preventDefault();
 				} else {
 					e.returnValue = false;

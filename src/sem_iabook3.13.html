@@ -512,7 +512,7 @@
 		</div>
 	</div>
 	<!-- 书册预览 -->
-	<div class='sem_bookpreview_wrapper flipbook-viewport'>
+	<div class='common_bppopup_wrapper flipbook-viewport'>
 		<a class='closebtn ybiconfont ybicon-failure' href="javascript:;"></a>
 		<div class='flipbook_wrapper' pagecount='19'>
 			<a class='flipbook_prevpage_btn' href="javascript:;"></a>
@@ -602,49 +602,60 @@
 	$(function() {
 		iabook313();
 		video();
-		bookpreview();
+		bookpreview({
+			container: '.common_bppopup_wrapper',
+			bookwrapper: '.flipbook_wrapper',
+			book: '.flipbook_wrapper .flipbook',
+			trigger: '.sem_mainlistul_wrapper li>a',
+			closebtn: '.common_bppopup_wrapper>.closebtn',
+			startposoffsetx: 20,
+			startposoffsety: 87,
+			zindex: 9999
+		})
 	});
 
-	function bookpreview() {
-		var flipbooks = [
-				'flipbookpages/1',
-				'flipbookpages/2'
-			],
-			bookIdx = 1,
-			//animateFlag = true,
-			windowWidth = $(window).width(),
+	function bookpreview(options) {
+		options = $.extend({
+			container: '',
+			bookwrapper: '',
+			book: '',
+			trigger: '',
+			closebtn: '',
+			startposoffsetx: 0,
+			startposoffsety: 0,
+			thumbnailScale: 0.415,
+			zindex: 0
+		}, options);
+
+		var windowWidth = $(window).width(),
 			windowHeight = $(window).height(),
-			bookpreviewWrapperEl = $('.sem_bookpreview_wrapper'),
-			flipbookWrapperEl = $('.flipbook_wrapper'),
-			flipbookEl = $('.flipbook_wrapper .flipbook'),
 			//big尺寸书册的0.6倍大小的高度
-			flipbookHeight = flipbookEl.height() * 0.6,
-			coverlistEl = $('.sem_mainlistul_wrapper li'),
-			flipbookWrapperWidth = flipbookWrapperEl.width(),
-			thumbnailScale = 0.415,
+			flipbookHeight = $(options.book).height() * 0.6,
+			flipbookWrapperWidth = $(options.bookwrapper).width(),
 			destinatePositionX,
 			destinatePositionY,
-			thumbnailPosition,
+			thumbnailPositionX,
+			thumbnailPositionY,
 			preventDefault;
 
 		//判断滚轮事件是否是火狐的
 		var ua = navigator.userAgent.toLowerCase(),
 			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel';
-		coverlistEl.children('a').click(function() {
+		$(options.trigger).click(function() {
 			var $this = $(this),
+				documentScrollTop = $('body').scrollTop(),
 				thumbnailOffsetLeft = $this.offset().left,
-				thumbnailOffsetTop = $this.offset().top,
-				thumbnailMarginLeft = 20;
+				thumbnailOffsetTop = $this.offset().top;
 			//图标所在位置，即起始位置
-			thumbnailPosition = Number((thumbnailOffsetLeft + thumbnailMarginLeft - flipbookEl.width() * thumbnailScale));
+			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailScale));
+			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailScale + options.startposoffsety);
+			console.log(thumbnailPositionY)
+
+
 			//目标位置XY
 			destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
 			destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
-			$('html, body').animate({
-				scrollTop: 732
-			}, function() {
-				expandBook();
-			});
+			expandBook();
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {
 				if (e.preventDefault()) {
@@ -655,57 +666,63 @@
 			});
 
 			function expandBook() {
-				bookpreviewWrapperEl.css({
+				$(options.container).css({
 					visibility: 'visible',
 					'background-color': 'rgba(0,0,0,0.8)',
-					transition: 'background-color 1s'
+					transition: 'background-color 1s',
+					'z-index': options.zindex
 				});
-				$this.find('img').css({
-					bottom: 15
-				});
-				flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -40px) scale(' + thumbnailScale + ',' + thumbnailScale + ')').css({
+				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')').css({
 					visibility: 'visible',
 					opacity: 1
 				});
-				bookpreviewWrapperEl.css({
+
+				$(options.container).css({
 					transition: 'all 1s',
 				});
 				//翻到第一页
-				flipbookEl.turn('page', 2);
+				$(options.book).turn('page', 2);
 				//展开书册
 				setTimeout(function() {
-					flipbookWrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
+					$(options.bookwrapper).transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
 						transition: 'all 1s'
 					});
 				}, 100);
+
 				//显示左右翻页箭头
 				setTimeout(function() {
-					flipbookWrapperEl.children('a').css({
+					$(options.bookwrapper).children('a').css({
 						transition: 'all 1s',
 						opacity: 1
 					});
 				}, 1000);
+				setTimeout(function() {
+					$(options.container).css({
+						'background-color': 'rgba(0,0,0,0.8)',
+					});
+				}, 1000);
+
 			};
 		});
-		bookpreviewWrapperEl.find('.closebtn').click(function() {
+		$(options.closebtn).click(function() {
 			//将书册缩小并归回原来位置
-			flipbookWrapperEl.transform('translate(' + thumbnailPosition + 'px, -25px) scale(' + thumbnailScale + ',' + thumbnailScale + ')');
+			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')');
 			//隐藏箭头
-			flipbookWrapperEl.find('a').css({
+			$(options.bookwrapper).find('a').css({
 				opacity: 0
 			});
 			//隐藏书册背景
-			bookpreviewWrapperEl.css({
+			$(options.container).css({
 				'background-color': 'rgba(0,0,0,0)'
 			});
-			flipbookEl.turn('page', 1);
+			$(options.book).turn('page', 1);
 			//书册收回后进行收尾工作
 			setTimeout(function() {
-				flipbookWrapperEl.css({
+				$(options.bookwrapper).css({
 					visibility: 'hidden',
 					transition: 'none'
 				});
-				bookpreviewWrapperEl.css({
+				$(options.container).css({
 					visibility: 'hidden'
 				});
 				//解除阻止默认滚轮事件
@@ -853,7 +870,7 @@
 			}
 
 			function bookLength() {
-				var length = flipbookWrapperEl.attr('pagecount');
+				var length = $(options.bookwrapper).attr('pagecount');
 				if (length % 2 != 0) {
 					return parseInt(length) + 1;
 				} else {

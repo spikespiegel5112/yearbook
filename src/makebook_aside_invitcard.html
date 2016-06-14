@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/simeditor/simditor.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -28,8 +29,8 @@
     <div class='makebook_asidefriend_wrapper resource_list'>
         <div class="res_tab">
             <ul>
-                <li class="on">设置邀请卡（<span>10</span>）</li>
-                <li>通过邀请卡收集的资料</li>
+                <li data-type="inviteCard" class="on">设置邀请卡（<span>10</span>）</li>
+                <li data-type="inviteRes">通过邀请卡收集的资料</li>
             </ul>
         </div>
         <!--<div class='makebook_asidefriendtab_wrapper'>
@@ -47,7 +48,7 @@
             </span>
         </div>-->
         <div class='makebook_asidefriendmain_wrapper'>
-            <div class='makebook_asidesetupinvit_wrapper'>
+            <div data-type="inviteCard" class='makebook_asidesetupinvit_wrapper'>
                 <div class='makebook_asidesetupinvitcard_container'>
                     <div class='makebook_friendhint_wrapper'>
                         <p>邀请卡可以很方便的帮助您收集到小伙伴们的近况信息，分享给小伙伴填写完成后，小伙伴就自动加入书册可以一起制作并互动了。</p>
@@ -524,7 +525,7 @@
                     </div>
                 </div>
             </div>
-            <div class='makebook_importexcal_wrapper'>
+            <div data-type="inviteRes" class='makebook_importexcal_wrapper'>
                 <div class='makebook_friendhint_wrapper'>
                     <p>邀请卡加入的好友将自动拥有一张个人页，收集的个人信息将自动保存在页面内，其他互动内容可以在个人页、投票页内使用。</p>
                 </div>
@@ -926,6 +927,7 @@
 	<script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/icheck.js"></script>
     <script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb313"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
@@ -934,18 +936,40 @@
 		init();
 		setup();
 		checktag();
+        customScrollBar();
 	});
+
+    //自定义滚动条
+    function customScrollBar(){
+        $(document).ready(function(){
+            $(".makebook_asidefriendmain_wrapper").mCustomScrollbar({
+                theme:"minimal-dark",
+                scrollbarPosition: "inside",
+                autoDraggerLength: true,
+                autoExpandScrollbar: true
+            });
+
+        });
+    }
 	//init
 	function init() {
 		$('.makebook_asidefriendmain_wrapper>div').eq(0).show().siblings().hide();
-		$('.makebook_asidefriend_wrapper .res_tab li').click(function() {
+		/*$('.makebook_asidefriend_wrapper .res_tab li').click(function() {
 			var $this = $(this),
 				index = $(this).index(),
 				friendmainEl = $('.makebook_asidefriendmain_wrapper');
 			$this.addClass('on').siblings().removeClass('on');
 			friendmainEl.children().eq(index).addClass('active').siblings().removeClass('active')
 			friendmainEl.children('.active').show().siblings().hide();
-		});
+		});*/
+
+        $('.makebook_asidefriend_wrapper .res_tab li').click(function(){
+            var type = $(this).attr('data-type');
+            $('.makebook_asidefriend_wrapper .res_tab li').removeClass('on');
+            $(this).addClass('on');
+            $('.makebook_asidefriendmain_wrapper div[data-type='+type+']').addClass('active').show().siblings().hide().removeClass('acitve');
+        })
+
 
 		//点击名片弹出详情
 		$('.makebook_invitnamecard_item').click(function() {

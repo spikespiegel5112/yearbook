@@ -32,23 +32,9 @@
                 <li data-type="invite" class="on">邀请小伙伴</li>
             </ul>
         </div>
-        <!--<div class='makebook_asidefriendtab_wrapper'>
-            <ul>
-                <li>
-                    <a href="javascript:;">加入小伙伴（<span>10</span>）</a>
-                </li>
-                <li>
-                    <a href="javascript:;">Excal导入好友资料</a>
-                </li>
-            </ul>
-            <a class='plus' href="javascript:;"><span class='ybiconfont ybicon-add'></span></a>
-			<span class='invitfriend'>
-				<a href="javascript:;">邀请小伙伴</a>
-			</span>
-        </div>-->
 
         <div class='makebook_asidefriendmain_wrapper'>
-            <div data-type="join" class='makebook_joinedfriend_wrapper'>
+            <div data-type="join"  class='makebook_joinedfriend_wrapper'>
                 <div class='makebook_friendhint_wrapper'>
                     <p>提示：加入多少个小伙伴就必须有同等数量的个人页</p>
                     <ul>
@@ -550,24 +536,20 @@
         customScrollBar();
 	})
     function init(){
-        $('.makebook_asidefriendmain_wrapper div[data-type="invite"]').show().siblings().hide();
-        /*$('.makebook_asidefriend_wrapper .res_tab li').click(function() {
-         var $this = $(this),
-         index = $(this).index(),
-         friendmainEl = $('.makebook_asidefriendmain_wrapper');
-         $this.addClass('on').siblings().removeClass('on');
-         friendmainEl.children().eq(index).addClass('active').siblings().removeClass('active')
-         friendmainEl.find('.active').show().siblings().hide();
-         });*/
-        $('.makebook_asidefriend_wrapper .res_tab li').click(function(){
+        //$('.makebook_asidefriendmain_wrapper div[data-type="invite"]').show().siblings().hide();
+
+        $('.makebook_asidefriend_wrapper .res_tab li').click(function () {
             var type = $(this).attr('data-type');
             $('.makebook_asidefriend_wrapper .res_tab li').removeClass('on');
             $(this).addClass('on');
-            $('.makebook_asidefriendmain_wrapper div[data-type='+type+']').addClass('active').show().siblings().hide().removeClass('acitve');
-        })
+            //$('.makebook_asidefriendmain_wrapper > div').hide().removeClass('active');
+            $('.makebook_asidefriendmain_wrapper div[data-type="' + type + '"]').addClass('active').show().siblings().hide().removeClass('active');
+        });
 
-        //点击名片弹出详情
-        $('.makebook_invitnamecard_item').click(function() {
+        $('.makebook_asidefriend_wrapper .res_tab li.on').trigger('click');
+
+		//点击名片弹出详情
+		$('.makebook_invitnamecard_item').click(function() {
             art.dialog({
                 title: "小伙伴详情",
                 lock: true,

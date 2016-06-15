@@ -1848,6 +1848,7 @@
     margin: 0 auto;
     width: 600px;
     height: 383px;
+    position: relative;
 }
 .sem_iabookbanner313_wrapper li {
     width: 585px;
@@ -1855,7 +1856,24 @@
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
 }
+/*.sem_iabookbanner313_wrapper .banner_one{
+    margin: 0 auto;
+}
+.sem_iabookbanner313_wrapper .banner_two{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.sem_iabookbanner313_wrapper .banner_one{
+    position: absolute;
+    right: 0;
+    top: 0;
+}*/
 .sem_iabookbanner313_wrapper li a {
     display: block;
     width: 100%;

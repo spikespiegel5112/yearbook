@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1464916563_8422954.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/green.css" type="text/css" media="all">
 	<link rel="stylesheet" href="assets/css/chosen.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -523,20 +524,27 @@
 </div>
 
 	<!-- html end-->
-	<!--<script type="text/javascript" src="assets/js/jquery.min.js"></script>-->
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.artDialog.js?skin=yb313"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(function() {
-		$('.makebook_asidefriend_wrapper .res_tab li').click(function() {
+        init();
+        customScrollBar();
+	})
+    function init(){
+        //$('.makebook_asidefriendmain_wrapper div[data-type="invite"]').show().siblings().hide();
+
+        $('.makebook_asidefriend_wrapper .res_tab li').click(function () {
             var type = $(this).attr('data-type');
             $('.makebook_asidefriend_wrapper .res_tab li').removeClass('on');
             $(this).addClass('on');
-            $('.makebook_asidefriendmain_wrapper > div').hide().removeClass('active');
-            $('.makebook_asidefriendmain_wrapper > div[data-type="' + type + '"]').addClass('active').show();
-		});
+            //$('.makebook_asidefriendmain_wrapper > div').hide().removeClass('active');
+            $('.makebook_asidefriendmain_wrapper div[data-type="' + type + '"]').addClass('active').show().siblings().hide().removeClass('active');
+        });
 
         $('.makebook_asidefriend_wrapper .res_tab li.on').trigger('click');
 
@@ -547,8 +555,20 @@
                 lock: true,
                 content: document.querySelector('.friend_detail_wrapper')
             })
-		});
-	})
+        });
+    }
+    //自定义滚动条
+    function customScrollBar(){
+        $(document).ready(function(){
+            $(".makebook_asidefriendmain_wrapper").mCustomScrollbar({
+                theme:"minimal-dark",
+                scrollbarPosition: "inside",
+                autoDraggerLength: true,
+                autoExpandScrollbar: true
+            });
+
+        });
+    }
 	</script>
 </body>
 

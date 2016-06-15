@@ -479,8 +479,8 @@
 					</div>
 				</div>
 				<div class="single_mode">
-					<a class="chapter_shrink ybiconfont ybicon-tableft" href="javascript:;"></a>
-					<div class="chapter_list">
+					<a class="chapter_shrink ybiconfont ybicon-tableft hidden" href="javascript:;"></a>
+					<div class="chapter_list hidden">
 						<a class="back_list_mode" href="javascript:;"><i class="ybiconfont ybicon-reply2"></i>返回章节列表</a>
 						<ul>
 							<li>
@@ -1318,6 +1318,140 @@
 									</div>
 								</li>
 							</ul>
+						</div>
+					</div>
+					<div class="chapter_list new">
+						<a class="chapter_shrink ybiconfont ybicon-down1" href="javascript:;"></a>
+						<p>共<span>32</span>页 ,当前：<span>P15-16</span></p>
+						<div class="swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<a class="thumb single" href="javascript:;">
+										<img src="img/default/inner_page_cover.jpg">
+										<span class="page_num">封面</span>
+										<div class="loadThumb hidden">
+											生成缩略图
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages01.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages02.jpg">
+										</div>
+										<span class="page_num">P1~2</span>
+										<div class="loadThumb hidden">
+											生成缩略图
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb single" href="javascript:;">
+										<img src="img/default/1_2.jpg">
+										<span class="page_num">P3</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double select" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages05.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages06.jpg">
+										</div>
+										<span class="page_num">P6~7</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages05.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages06.jpg">
+										</div>
+										<span class="page_num">P8~9</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb single" href="javascript:;">
+										<img src="img/default/inner_page_backcover.jpg">
+										<span class="page_num">封底</span>
+									</a>
+								</li>
+							</ul>
+							<a class="nav_btn prev" href="javascript:;"><i class="ybiconfont ybicon-circlearrowup"></i></a>
+							<a class="nav_btn next" href="javascript:;"><i class="ybiconfont ybicon-circlearrowup"></i></a>
+							<div class="swiper-scrollbar"></div>
 						</div>
 					</div>
 				</div>
@@ -3618,7 +3752,7 @@
 	//自定义滚动条
 	function customScrollBar() {
 		$(document).ready(function() {
-			$(".edit_content > .list_mode, .chapter_list, .single_mode .edit_area, .tool_bar .page_list ul").mCustomScrollbar({
+			$(".edit_content > .list_mode, .single_mode .edit_area, .tool_bar .page_list ul").mCustomScrollbar({
 				theme: "minimal-dark",
 				scrollbarPosition: "inside",
 				autoDraggerLength: true,
@@ -3957,6 +4091,15 @@
 		$('.back_list_mode').click(function() {
 			$('.team_edit_container .edit_content').removeClass('single').addClass('list');
 		});
+		var chaperSwiper = new Swiper('.chapter_list.new .swiper-container', {
+			slidesPerView: 'auto',
+			nextButton: '.chapter_list .next',
+			prevButton: '.chapter_list .prev',
+			scrollbar:'.swiper-scrollbar',
+			scrollbarDraggable : true,
+			scrollbarSnapOnRelease : true
+		});
+
 		//双击章节列表图片跳转到单页模式
 		$('.page_list .figure').dblclick(function() {
 			$('.team_edit_container .edit_content').removeClass('list').addClass('single');

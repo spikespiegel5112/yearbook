@@ -548,7 +548,7 @@
 				modifyBtn.off('click');
 				modifyBtn.on('click', function(e) {
 					var counter = counterEl.val();
-					switch ($this.index()) {
+					switch ($(this).index()) {
 						case 0:
 							counter--;
 							if (counter < 0) {

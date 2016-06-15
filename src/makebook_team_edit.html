@@ -2645,7 +2645,7 @@
 				<dl>
 					<dt>尺&nbsp;&nbsp;&nbsp;寸：</dt>
 					<dd class="selected" data='书册尺寸宽14.5cm，长21.0cm'>
-						<div class="" >
+						<div class="">
 							<span>别致小装(145mm×210mm)</span>
 							<div class="icon"><i class="icon-ok"></i></div>
 						</div>
@@ -4150,25 +4150,25 @@
 		});
 
 		//价格计算器
-		$('.calculator_btn').click(function(){
+		$('.calculator_btn').click(function() {
 			art.dialog({
 				title: '价格计算器',
 				lock: true,
 				content: document.querySelector('.compute_price_container'),
-				okVal:'知道了',
+				okVal: '知道了',
 				ok: function() {}
 			});
 			$('.product_info .cover dd').click(function() {
-				var $this=$(this),
-						thisEl=$('.product_info .cover dd');
+				var $this = $(this),
+					thisEl = $('.product_info .cover dd');
 				thisEl.removeClass('selected');
 				$this.addClass('selected');
 			});
 			$('.product_info .size dd').click(function() {
 				var $this = $(this),
-						thisEl = $('.product_info .size dd'),
-						thisData = $this.attr('data'),
-						hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
+					thisEl = $('.product_info .size dd'),
+					thisData = $this.attr('data'),
+					hintEl = $(this).closest('div').find('.ybcommon_queryicon_item p');
 				thisEl.removeClass('selected');
 				$this.addClass('selected');
 				hintEl.text(thisData);
@@ -4386,7 +4386,7 @@
 		var ua = navigator.userAgent.toLowerCase(),
 			//判断滚轮事件是否是火狐的
 			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel',
-			bodyEl=(ua.indexOf("firefox") > 0) ? $('html') : $('body');
+			bodyEl = (ua.indexOf("firefox") > 0) ? $('html') : $('body');
 
 		$(options.trigger).click(function() {
 			var $this = $(this),
@@ -4400,12 +4400,12 @@
 			//目标位置XY
 			if (options.aligncenter) {
 				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
-				destinatePositionY=(windowHeight-flipbookHeight)/2;
-			}else{
+				destinatePositionY = (windowHeight - flipbookHeight) / 2;
+			} else {
 				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
 				destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
 			}
-			
+
 			expandBook();
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {

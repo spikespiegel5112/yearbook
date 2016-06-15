@@ -459,6 +459,7 @@
 			closebtn: '',
 			startposoffsetx: 0,
 			startposoffsety: 0,
+			aligncenter: true,
 			thumbnailScale: 0.415,
 			zindex: 0
 		}, options);
@@ -489,8 +490,14 @@
 			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailScale + options.startposoffsety);
 
 			//目标位置XY
-			destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
-			destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
+			if (options.aligncenter) {
+				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
+				destinatePositionY=(windowHeight-flipbookHeight)/2;
+			}else{
+				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
+				destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
+			}
+			
 			expandBook();
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {
@@ -823,28 +830,6 @@
 				}
 			}
 		}
-
-		// $(".agbcover_wrapper ul").on('click', '.bookcover', function() {
-		// 	$.fancybox.open({
-		// 		href: 'bp_popupwindow.html',
-		// 		type: 'iframe',
-		// 		width: 950,
-		// 		height: 740,
-		// 		padding: 5,
-		// 		scrolling: 'no'
-		// 	});
-		// });
-
-		// $(".agbcover_wrapper ul").on('click', '.preview_book', function() {
-		// 	$.fancybox.open({
-		// 		href: 'bp_popupwindow.html',
-		// 		type: 'iframe',
-		// 		width: 950,
-		// 		height: 740,
-		// 		padding: 5,
-		// 		scrolling: 'no'
-		// 	});
-		// });
 	}
 	/*左侧风格选中效果*/
 	$('.filter_style .filter_item ul li a').click(function() {

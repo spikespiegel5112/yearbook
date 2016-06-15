@@ -614,6 +614,9 @@
 		})
 	});
 
+	/**
+	 * 点击预览效果
+	 */
 	function bookpreview(options) {
 		options = $.extend({
 			container: '',
@@ -623,6 +626,7 @@
 			closebtn: '',
 			startposoffsetx: 0,
 			startposoffsety: 0,
+			aligncenter: true,
 			thumbnailScale: 0.415,
 			zindex: 0
 		}, options);
@@ -651,12 +655,16 @@
 			//图标所在位置，即起始位置
 			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailScale));
 			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailScale + options.startposoffsety);
-			console.log(thumbnailPositionY)
-
 
 			//目标位置XY
-			destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
-			destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
+			if (options.aligncenter) {
+				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
+				destinatePositionY=(windowHeight-flipbookHeight)/2;
+			}else{
+				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
+				destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
+			}
+			
 			expandBook();
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {
@@ -731,6 +739,7 @@
 				preventDefault = $(window).unbind(mousewheel);
 			}, 1000);
 		});
+
 		loadApp();
 
 		function loadApp() {

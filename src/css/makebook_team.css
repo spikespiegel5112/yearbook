@@ -4879,8 +4879,8 @@
     padding-left: 70px;
     box-sizing: border-box;
     z-index: 3;
-    border-top: 1px solid #ddd;
-    background-color: #fff;
+    /*border-top: 1px solid #ddd;
+    background-color: #fff;*/
     overflow: visible;
     transition: all .3s ease-in-out;
 }
@@ -4888,6 +4888,7 @@
     font-size: 12px;
     line-height: 30px;
     padding: 0 15px;
+    color: #fff;
 }
 .chapter_list .swiper-container{
     padding: 4px 0;
@@ -4946,12 +4947,12 @@
 .single_mode .chapter_list.new .chapter_shrink{
     left: 50%;
     top: 0;
-    margin: 0;
+    margin: 0 0 0 11px;
     width: 48px;
     height: 16px;
     line-height: 16px;
     color: #999;
-    background-color: #e6e6e6;
+    background-color: #fff;
     border-radius: 0 0 4px 4px;
     border: 1px solid #ddd;
     transition: all .3s ease-in-out;
@@ -4960,6 +4961,9 @@
     top: -16px;
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
+    color: #fff;
+    background-color: #223241;
+    border: 0;
 }
 .single_mode .chapter_list.new.shrink {
     bottom: -135px;

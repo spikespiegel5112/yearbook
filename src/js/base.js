@@ -562,6 +562,7 @@
 				})
 				counterEl.on('keydown keyup', function(e) {
 					var $this = $(this),
+						counterVal='',
 						counter = 0,
 						keycode = e.charCode ? e.charCode : e.keyCode;
 					switch (e.type) {
@@ -573,12 +574,18 @@
 							}
 							break;
 						case 'keyup':
-							counter = Number(counterEl.val());
+							counterEl.val(counterEl.val().replace(/\D/g,''))
 							config.onchange();
 							fireonchange(counterEl);
 							break;
 					}
 				});
+				counterEl.blur(function(){
+					var $this=$(this);
+					if ($this.val()=='') {
+						$this.val(0)
+					};
+				})
 			});
 
 			function destroy() {
@@ -651,6 +658,7 @@
 							}
 							break;
 						case 'keyup':
+
 							counter = Number(counterEl.val());
 							setter(index, counter);
 							config.onchange();

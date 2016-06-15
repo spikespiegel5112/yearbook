@@ -51,7 +51,7 @@
 							options.onchange();
 							break;
 					}
-					fireOnchange(counterEl);
+					fireonchange(counterEl);
 				});
 
 				counterEl.bind('keydown keyup', function(e) {
@@ -70,7 +70,7 @@
 							getter();
 							setter();
 							options.onchange();
-							fireOnchange(counterEl);
+							fireonchange(counterEl);
 							break;
 					}
 				})
@@ -86,7 +86,7 @@
 				$(options.subtotal).html(parseFloat(result).toFixed(2));
 			}
 
-			function fireOnchange(_this) {
+			function fireonchange(_this) {
 				_this.trigger('onchange');
 			}
 		},

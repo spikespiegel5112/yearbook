@@ -3590,6 +3590,7 @@
 	<script type="text/javascript" src='assets/js/turn.js'></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/check_os.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(document).ready(function() {
@@ -4351,7 +4352,7 @@
 		closebtn: '.common_bppopup_wrapper .closebtn',
 		startposoffsetx: 0,
 		startposoffsety: 0,
-		thumbnailScale: 0.3,
+		thumbnailscale: 0.3,
 		zindex: 9999,
 		aligncenter: true
 	});
@@ -4368,7 +4369,7 @@
 			startposoffsetx: 0,
 			startposoffsety: 0,
 			aligncenter: true,
-			thumbnailScale: 0.415,
+			thumbnailscale: 0.415,
 			zindex: 0
 		}, options);
 
@@ -4394,8 +4395,8 @@
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top;
 			//图标所在位置，即起始位置
-			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailScale));
-			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailScale + options.startposoffsety);
+			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailscale));
+			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailscale + options.startposoffsety);
 
 			//目标位置XY
 			if (options.aligncenter) {
@@ -4423,7 +4424,7 @@
 					transition: 'background-color 1s',
 					'z-index': options.zindex
 				});
-				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')').css({
+				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')').css({
 					visibility: 'visible',
 					opacity: 1
 				});
@@ -4457,7 +4458,7 @@
 		});
 		$(options.closebtn).click(function() {
 			//将书册缩小并归回原来位置
-			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')');
+			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')');
 			//隐藏箭头
 			$(options.bookwrapper).find('a').css({
 				opacity: 0

@@ -519,7 +519,7 @@
 			};
 		},
 		priceCalculator: function(options) {
-			var $this = $(this),
+			var that = $(this),
 				totalPriceArr = [],
 				config = {
 					unitprice: '',
@@ -527,20 +527,28 @@
 					totalprice: '',
 					onchange: function() {}
 				};
-			if (options) {
+			if (typeof options == 'Object') {
 				$.extend(config, options);
-			};
-			init($this);
-			$.each($this, function(index) {
-				var $this = $(this);
+			} else if (typeof options == 'String') {
+				switch (options) {
+					case 'destroy':
+						destroy();
+						break;
+				}
+			}
+			init(that);
+			$.each(that, function(index) {
+				var $this = $(this),
+					modifyBtn = $this.find('a');
 				if ($this.is('input')) {
 					var counterEl = $this;
 				} else {
 					var counterEl = $this.find('input');
 				}
-				$this.find('a').on('click', function(e) {
+				modifyBtn.off('click');
+				modifyBtn.on('click', function(e) {
 					var counter = counterEl.val();
-					switch ($(this).index()) {
+					switch ($this.index()) {
 						case 0:
 							counter--;
 							if (counter < 0) {
@@ -555,7 +563,7 @@
 					counterEl.val(counter);
 					setter(index, counter);
 					config.onchange();
-					fireOnchange(counterEl);
+					fireonchange(counterEl);
 				})
 				counterEl.on('keydown keyup', function(e) {
 					var $this = $(this),
@@ -573,11 +581,17 @@
 							counter = Number(counterEl.val());
 							setter(index, counter);
 							config.onchange();
-							fireOnchange(counterEl);
+							fireonchange(counterEl);
 							break;
 					}
 				})
 			});
+
+			function destroy() {
+				$.each(that, function(index) {
+					$(this).find('a').unbind('click');
+				});
+			}
 
 			function getUnitprice(index) {
 				if (typeof config.unitprice == 'number') {
@@ -615,7 +629,7 @@
 				});
 			}
 
-			function fireOnchange(_this) {
+			function fireonchange(_this) {
 				_this.trigger('onchange');
 			}
 		},
@@ -751,7 +765,7 @@
 								checkPosition($this);
 							}
 						});
-					//当没有设置container时，以窗口尺寸大小居中
+						//当没有设置container时，以窗口尺寸大小居中
 					} else {
 						containerWidth = $(window).width();
 						containerHeight = $(window).height();
@@ -786,7 +800,7 @@
 						if (thisWidth <= $(window).width()) {
 							if (options.offsetx != 0) {
 								_this.css({
-									'margin': marginY + options.offsety - ignoreY + 'px ' + (containerWidth - thisWidth) / 2 +offsetX - ignoreX + 'px'
+									'margin': marginY + options.offsety - ignoreY + 'px ' + (containerWidth - thisWidth) / 2 + offsetX - ignoreX + 'px'
 								});
 							} else {
 								_this.css({
@@ -796,7 +810,7 @@
 						} else {
 							var marginX = (containerWidth - thisWidth) / 2;
 							_this.css({
-								'margin': marginY + options.offsety - ignoreY + 'px ' + (marginX + options.offsetx )+ 'px'
+								'margin': marginY + options.offsety - ignoreY + 'px ' + (marginX + options.offsetx) + 'px'
 							});
 						}
 						break;

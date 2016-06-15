@@ -479,8 +479,8 @@
 					</div>
 				</div>
 				<div class="single_mode">
-					<a class="chapter_shrink ybiconfont ybicon-tableft" href="javascript:;"></a>
-					<div class="chapter_list">
+					<a class="chapter_shrink ybiconfont ybicon-tableft hidden" href="javascript:;"></a>
+					<div class="chapter_list hidden">
 						<a class="back_list_mode" href="javascript:;"><i class="ybiconfont ybicon-reply2"></i>返回章节列表</a>
 						<ul>
 							<li>
@@ -1318,6 +1318,141 @@
 									</div>
 								</li>
 							</ul>
+						</div>
+					</div>
+					<div class="chapter_list new">
+						<a class="chapter_shrink ybiconfont ybicon-down1" href="javascript:;"></a>
+						<a class="back_list_mode" href="javascript:;"><i class="ybiconfont ybicon-reply2"></i>返回章节列表</a>
+						<p>共<span>32</span>页 ,当前：<span>P15-16</span></p>
+						<div class="swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<a class="thumb single" href="javascript:;">
+										<img src="img/default/inner_page_cover.jpg">
+										<span class="page_num">封面</span>
+										<div class="loadThumb hidden">
+											生成缩略图
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages01.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages02.jpg">
+										</div>
+										<span class="page_num">P1~2</span>
+										<div class="loadThumb hidden">
+											生成缩略图
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb single" href="javascript:;">
+										<img src="img/default/1_2.jpg">
+										<span class="page_num">P3</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double select" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages03.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages04.jpg">
+										</div>
+										<span class="page_num">P4~5</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages05.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages06.jpg">
+										</div>
+										<span class="page_num">P6~7</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb double" href="javascript:;">
+										<div class="left">
+											<img src="img/default/pages05.jpg">
+										</div>
+										<div class="right">
+											<img src="img/default/pages06.jpg">
+										</div>
+										<span class="page_num">P8~9</span>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a class="thumb single" href="javascript:;">
+										<img src="img/default/inner_page_backcover.jpg">
+										<span class="page_num">封底</span>
+									</a>
+								</li>
+							</ul>
+							<a class="nav_btn prev" href="javascript:;"><i class="ybiconfont ybicon-circlearrowup"></i></a>
+							<a class="nav_btn next" href="javascript:;"><i class="ybiconfont ybicon-circlearrowup"></i></a>
+							<div class="swiper-scrollbar"></div>
 						</div>
 					</div>
 				</div>
@@ -3590,7 +3725,6 @@
 	<script type="text/javascript" src='assets/js/turn.js'></script>
 	<!-- build:js js/all.js -->
 	<script type="text/javascript" src="js/base.js"></script>
-	<script type="text/javascript" src="js/check_os.js"></script>
 	<!-- endbuild -->
 	<script>
 	$(document).ready(function() {
@@ -3619,7 +3753,7 @@
 	//自定义滚动条
 	function customScrollBar() {
 		$(document).ready(function() {
-			$(".edit_content > .list_mode, .chapter_list, .single_mode .edit_area, .tool_bar .page_list ul").mCustomScrollbar({
+			$(".edit_content > .list_mode, .single_mode .edit_area, .tool_bar .page_list ul").mCustomScrollbar({
 				theme: "minimal-dark",
 				scrollbarPosition: "inside",
 				autoDraggerLength: true,
@@ -3699,7 +3833,16 @@
 		var winWidth = $(window).width(),
 			winHeight = $(window).height(),
 			editAreaWidth = winWidth - 220 - winWidth * 0.2;
-		//$('.edit_area .page_display ').width(editAreaWidth);
+		$('.edit_area').css({
+			'padding': '0 20% 0 75px'
+		});
+		$('.edit_area .tpldouble').css({
+			'margin':'0 auto'
+		});
+		setTimeout(function() {
+			$('.chapter_shrink').addClass('active');
+			$('.chapter_list').addClass('shrink');
+		}, 3000)
 		if (winWidth <= 1280) {
 			winWidth = 1280;
 			//1280下缩减工具栏
@@ -3710,7 +3853,7 @@
 				$('.chapter_list').addClass('shrink');
 				$('.resource_list').addClass('shrink');
 				$('.edit_area').css({
-					'padding': '0 0.3% 0 60px'
+					'padding': '0 0.3% 0 0'
 				});
 			}, 3000)
 		}
@@ -3743,12 +3886,12 @@
 					if ($('.resource_shrink').hasClass('active')) {
 						$('.edit_area').css({
 							'padding-right': '0.3%',
-							'padding-left': '220px'
+							'padding-left': '75px'
 						});
 					} else {
 						$('.edit_area').css({
 							'padding-right': '20%',
-							'padding-left': '220px'
+							'padding-left': '75px'
 						});
 					}
 				} else {
@@ -3760,7 +3903,7 @@
 					} else {
 						$('.edit_area').css({
 							'padding-right': '20%',
-							'padding-left': '220px'
+							'padding-left': '75px'
 						});
 					}
 				}
@@ -3788,7 +3931,7 @@
 					} else {
 						$('.edit_area').css({
 							'padding-right': '0.3%',
-							'padding-left': '220px'
+							'padding-left': '75px'
 						});
 					}
 				}
@@ -3958,11 +4101,25 @@
 		$('.back_list_mode').click(function() {
 			$('.team_edit_container .edit_content').removeClass('single').addClass('list');
 		});
+		var chaperSwiper = new Swiper('.chapter_list.new .swiper-container', {
+			slidesPerView: 'auto',
+			nextButton: '.chapter_list .next',
+			prevButton: '.chapter_list .prev',
+			scrollbar:'.swiper-scrollbar',
+			scrollbarDraggable : true,
+			scrollbarSnapOnRelease : true
+		});
 
 		//双击章节列表图片跳转到单页模式
 		$('.page_list .figure').dblclick(function() {
 			$('.team_edit_container .edit_content').removeClass('list').addClass('single');
-		})
+			var curLi = $(this).parent('li'),
+					curPageIndex = curLi.closest('.list_mode').find('.item li').index(curLi),
+					curSilde = $('.chapter_list.new li').eq(curPageIndex);
+			chaperSwiper.slideTo(curPageIndex,1000,false);
+			curSilde.find('a').addClass('select');
+			curSilde.siblings().find('a').removeClass('select');
+		});
 
 		//编辑书册名称
 		$('.book_info .edit_book').click(function() {
@@ -4345,7 +4502,7 @@
 		});
 	}
 
-	bookpreview({
+	/*bookpreview({
 		container: '.common_bppopup_wrapper',
 		bookwrapper: '.flipbook_wrapper',
 		book: '.flipbook_wrapper .flipbook',
@@ -4353,10 +4510,10 @@
 		closebtn: '.common_bppopup_wrapper .closebtn',
 		startposoffsetx: 0,
 		startposoffsety: 0,
-		thumbnailscale: 0.3,
+		thumbnailScale: 0.3,
 		zindex: 9999,
 		aligncenter: true
-	});
+	});*/
 	/**
 	 * 点击预览效果
 	 */
@@ -4370,7 +4527,7 @@
 			startposoffsetx: 0,
 			startposoffsety: 0,
 			aligncenter: true,
-			thumbnailscale: 0.415,
+			thumbnailScale: 0.415,
 			zindex: 0
 		}, options);
 
@@ -4396,8 +4553,8 @@
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top;
 			//图标所在位置，即起始位置
-			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailscale));
-			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailscale + options.startposoffsety);
+			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailScale));
+			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailScale + options.startposoffsety);
 
 			//目标位置XY
 			if (options.aligncenter) {
@@ -4425,7 +4582,7 @@
 					transition: 'background-color 1s',
 					'z-index': options.zindex
 				});
-				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')').css({
+				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')').css({
 					visibility: 'visible',
 					opacity: 1
 				});
@@ -4459,7 +4616,7 @@
 		});
 		$(options.closebtn).click(function() {
 			//将书册缩小并归回原来位置
-			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')');
+			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailScale + ',' + options.thumbnailScale + ')');
 			//隐藏箭头
 			$(options.bookwrapper).find('a').css({
 				opacity: 0

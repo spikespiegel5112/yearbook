@@ -621,9 +621,10 @@
 						<div class="res_tab">
 							<ul>
 								<li class="on">照片</li>
-								<li>互动</li>
+								<!--<li>互动</li>-->
 								<li>模板</li>
 								<li>评论</li>
+								<li>小伙伴</li>
 							</ul>
 						</div>
 						<div class="res_tab_con">
@@ -729,8 +730,8 @@
 											<br>点击<a class="uploadIL" href="javascript:;">这里</a>上传照片</label>
 									</div>
 								</li>
-								<li>
-									<!-- 5.30 delete topic -->
+								<!--<li>
+									&lt;!&ndash; 5.30 delete topic &ndash;&gt;
 									<div class="topic hidden">
 										<div class="actbar">
 											<label>参与的话题（<span>10</span>）</label>
@@ -846,7 +847,7 @@
 										<label>还没有参与的话题
 											<br>点击<a class="uploadIL" href="javascript:;">这里</a>去参与</label>
 									</div>
-									<!--add vote-->
+									&lt;!&ndash;add vote&ndash;&gt;
 									<div class="vote">
 										<div class="actbar">
 											<label>参与的投票（<span>10</span>）</label>
@@ -1081,7 +1082,7 @@
 										<label>还没有赠言，
 											<br>点击<a class="uploadIL" href="javascript:;">这里</a>去留言</label>
 									</div>
-									<!--drag vote or leave msg-->
+									&lt;!&ndash;drag vote or leave msg&ndash;&gt;
 									<div class="drag_con vote hidden">
 										<span class="type">投票</span>
 										<h5 class="caption">对于忆尔的成长，你最...</h5>
@@ -1092,7 +1093,7 @@
 										<h5 class="caption">王大丫说：</h5>
 										<p class="desc">团队很给力，大家很用心！加油！团队很给力大家很用心！加油！</p>
 									</div>
-								</li>
+								</li>-->
 								<li>
 									<div class="tpl">
 										<div class="actbar topic">
@@ -1315,6 +1316,82 @@
 									<div class="pc_empty_item hidden">
 										<span class='avatar_1'></span>
 										<label>还没有人进行过<a class="" href="javascript:;">评论</a>，快来抢沙发</label>
+									</div>
+								</li>
+								<li>
+									<div class="pc_empty_item hidden">
+										<span class='avatar_1'></span>
+										<label>还没有小伙伴，快去<a class="" href="javascript:;">邀请</a>吧！</label>
+									</div>
+									<div class="partners">
+										<div class="actbar topic">
+											<label>加入的小伙伴（<span>5</span>）</label>
+										</div>
+										<div class="partner_list">
+											<div class="makebook_invitnamecard_item hidden">
+												<img src="img/default/ablum_photo02.png" class="friend_head mCS_img_loaded">
+												<div class="friend_info">
+													<div class="info1">
+														李冰
+														<div class="pop friend_create">创</div>
+													</div>
+													<ul>
+														<li>生日:1990-07-09</li>
+														<li>电话:13910033300</li>
+													</ul>
+												</div>
+												<div class="socialinfo">
+													<div class="email">
+														<label>E-mail：</label>
+														<span>xianyou.li@soulinfo.com</span>
+													</div>
+													<ul>
+														<li>
+															<label class="ybiconfont ybicon-photo" title="照片"></label>
+															<span>2</span>
+														</li>
+														<li>
+															<label class="ybiconfont ybicon-message2" title="话题"></label>
+															<span>2</span>
+														</li>
+														<li>
+															<label class="ybiconfont ybicon-vote" title="投票"></label>
+															<span>2</span>
+														</li>
+													</ul>
+												</div>
+												<div class="bg"></div>
+												<div class="backplane"></div>
+											</div>
+											<ul>
+												<li class="select">
+													<img class="header" src="img/default/user_header01.jpg">
+													<i class="ybiconfont ybicon-chuang"></i>
+													<h5 class="name">李书福</h5>
+													<span class="ybiconfont ybicon-ok"></span>
+												</li>
+												<li>
+													<img class="header" src="img/default/user_header01.jpg">
+													<h5 class="name">李书福</h5>
+													<span class="ybiconfont ybicon-ok"></span>
+												</li>
+												<li>
+													<img class="header" src="img/default/user_header01.jpg">
+													<h5 class="name">李书福</h5>
+													<span class="ybiconfont ybicon-ok"></span>
+												</li>
+												<li>
+													<img class="header" src="img/default/user_header01.jpg">
+													<h5 class="name">李书福</h5>
+													<span class="ybiconfont ybicon-ok"></span>
+												</li>
+												<li>
+													<img class="header" src="img/default/user_header01.jpg">
+													<h5 class="name">李书福</h5>
+													<span class="ybiconfont ybicon-ok"></span>
+												</li>
+											</ul>
+										</div>
 									</div>
 								</li>
 							</ul>
@@ -2689,6 +2766,79 @@
 			</div>
 		</div>
 	</div>
+	<!--弹出小伙伴详情-->
+	<div class="friend_detail_wrapper">
+		<div class="makebook_frienddetail_wrapper">
+			<div class="makebook_fdblock_wrapper">
+				<h6 class="subtitle">基本资料</h6>
+				<ul class="makebook_fdinfo_wrapper">
+					<li>
+						<label>姓名：</label>
+						<span>张三</span>
+					</li>
+					<li>
+						<label>邮箱：</label>
+						<span>1221@123.com</span>
+					</li>
+					<li>
+						<label>爱好：</label>
+						<span>打球</span>
+					</li>
+					<li>
+						<label>生日：</label>
+						<span>1900-03-20</span>
+					</li>
+					<li>
+						<label>手机：</label>
+						<span>1221123123</span>
+					</li>
+				</ul>
+			</div>
+			<div class="makebook_fdblock_wrapper">
+				<h6 class="subtitle">上传的照片</h6>
+				<ul class="makebook_fdphoto_wrapper">
+					<li><img src="img/default/ablum_photo03.jpg"></li>
+					<li><img src="img/default/ablum_photo03.jpg"></li>
+					<li><img src="img/default/ablum_photo03.jpg"></li>
+					<li><img src="img/default/ablum_photo03.jpg"></li>
+				</ul>
+			</div>
+			<div class="makebook_fdblock_wrapper">
+				<h6 class="subtitle">参与的话题</h6>
+				<ul class="makebook_fdtopic_wrapper">
+					<li>
+						<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+						<p>
+							<label><a href="javascirpt:;">普京</a>回复：</label>
+							加油喔。
+						</p>
+					</li>
+					<li>
+						<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+						<p>
+							未参与话题
+						</p>
+					</li>
+					<li>
+						<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+						<p>
+							<label><a href="javascirpt:;">普京</a>回复：</label>
+							加油喔。
+						</p>
+					</li>
+					<li>
+						<h6>话题：对于忆尔的团队你有怎样的评价？</h6>
+						<p>
+							未参与话题
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="makebook_friendbtn_item">
+				<a href="javascript:;">关闭</a>
+			</div>
+		</div>
+	</div>
 	<!--gallery must have class:pswp element 因全屏显示转移至主页面内-->
 	<div id="gallery" class="pswp hidden" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="pswp__bg"></div>
@@ -3882,6 +4032,23 @@
 			no_results_text: '没有找到此章节：',
 			width: '120px'
 		});
+
+		$('.res_tab_con .partner_list li').hover(function() {
+			$('<div class="makebook_invitnamecard_item"><img src="img/default/ablum_photo02.png" class="friend_head mCS_img_loaded"><div class="friend_info"><div class="info1">李冰<div class="pop friend_create">创</div> </div><ul> <li>生日:1990-07-09</li> <li>电话:13910033300</li></ul> </div> <div class="socialinfo"><div class="email"><label>E-mail：</label> <span>xianyou.li@soulinfo.com</span></div><ul><li><label class="ybiconfont ybicon-photo" title="照片"></label> <span>2</span></li><li><label class="ybiconfont ybicon-message2" title="话题"></label> <span>2</span></li><li><label class="ybiconfont ybicon-vote" title="投票"></label> <span>2</span></li></ul></div> <div class="bg"></div> <div class="backplane"></div></div>').appendTo($(this).parent());
+			$(' .makebook_invitnamecard_item').fadeIn('slow');
+		}, function() {
+			$(' .makebook_invitnamecard_item').fadeOut('slow').remove();
+		});
+		//点击名片弹出详情
+		$('.partners .partner_list li').click(function() {
+			art.dialog({
+				title: "小伙伴详情",
+				lock: true,
+				content: document.querySelector('.friend_detail_wrapper')
+			})
+		});
+
+
 	}
 
 	/*照片资源放大镜*/

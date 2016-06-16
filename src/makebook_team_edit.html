@@ -1502,6 +1502,44 @@
 	<div class="change_tpl_con">
 		<!-- <a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
 	<h4 class="title">更换选中的页面模板</h4>-->
+		<div class="filter_wrap lock"><!--收缩class:lock-->
+			<div class="filter_options">
+				<form>
+					<div class="option">
+						<span>风格筛选：</span>
+						<div class="labels">
+							<a class="label" href="javascript:;">萌萌哒</a>
+							<a class="label" href="javascript:;">团结喜庆</a>
+							<a class="label" href="javascript:;">简约</a>
+							<a class="label" href="javascript:;">时尚</a>
+							<a class="label" href="javascript:;">黑</a>
+							<a class="label" href="javascript:;">自然</a>
+							<a class="label" href="javascript:;">简约</a>
+							<a class="label" href="javascript:;">时尚</a>
+							<a class="label" href="javascript:;">黑</a>
+							<a class="label" href="javascript:;">自然</a>
+							<a class="label" href="javascript:;">几米漫画</a>
+						</div>
+					</div>
+					<div class="option">
+						<span>展示方式：</span>
+						<label>
+							<input type="radio" value="null" name="needTwo" checked="checked">全部</label>
+						<label>
+							<input type="radio" value="false" name="needTwo">单页</label>
+						<label>
+							<input type="radio" value="true" name="needTwo">双页</label>
+					</div>
+					<div class="option">
+						<span>图片数量：</span>
+						<input type="number" name="imageNum" placeholder="" value="">
+						<span>文本数量：</span>
+						<input type="number" name="textNum" placeholder="" value="">
+					</div>
+				</form>
+			</div>
+			<a class="locker" href="javascript:;" title=""><i class="ybiconfont ybicon-down1"></i>筛选</a>
+		</div>
 		<p class="tips">亲，小忆为您推荐了一下模板，请挑选一个您喜欢的吧！</p>
 		<div class="tpl_slide_wrap">
 			<div class="hd">
@@ -1774,6 +1812,44 @@
 	<div class="add_page_con">
 		<!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
 	<h4 class="title">添加页面至具体章节</h4>-->
+		<div class="filter_wrap lock"><!--收缩class:lock-->
+			<div class="filter_options">
+				<form>
+					<div class="option">
+						<span>风格筛选：</span>
+						<div class="labels">
+							<a class="label" href="javascript:;">萌萌哒</a>
+							<a class="label" href="javascript:;">团结喜庆</a>
+							<a class="label" href="javascript:;">简约</a>
+							<a class="label" href="javascript:;">时尚</a>
+							<a class="label" href="javascript:;">黑</a>
+							<a class="label" href="javascript:;">自然</a>
+							<a class="label" href="javascript:;">简约</a>
+							<a class="label" href="javascript:;">时尚</a>
+							<a class="label" href="javascript:;">黑</a>
+							<a class="label" href="javascript:;">自然</a>
+							<a class="label" href="javascript:;">几米漫画</a>
+						</div>
+					</div>
+					<div class="option">
+						<span>展示方式：</span>
+						<label>
+							<input type="radio" value="null" name="needTwo" checked="checked">全部</label>
+						<label>
+							<input type="radio" value="false" name="needTwo">单页</label>
+						<label>
+							<input type="radio" value="true" name="needTwo">双页</label>
+					</div>
+					<div class="option">
+						<span>图片数量：</span>
+						<input type="number" name="imageNum" placeholder="" value="">
+						<span>文本数量：</span>
+						<input type="number" name="textNum" placeholder="" value="">
+					</div>
+				</form>
+			</div>
+			<a class="locker" href="javascript:;" title=""><i class="ybiconfont ybicon-down1"></i>筛选</a>
+		</div>
 		<div class="target_chapter">
 			<label>选择添加页面的章节：</label>
 			<select class="choose_chapter">
@@ -4034,7 +4110,7 @@
 		});
 
 		$('.res_tab_con .partner_list li').hover(function() {
-			$('<div class="makebook_invitnamecard_item"><img src="img/default/ablum_photo02.png" class="friend_head mCS_img_loaded"><div class="friend_info"><div class="info1">李冰<div class="pop friend_create">创</div> </div><ul> <li>生日:1990-07-09</li> <li>电话:13910033300</li></ul> </div> <div class="socialinfo"><div class="email"><label>E-mail：</label> <span>xianyou.li@soulinfo.com</span></div><ul><li><label class="ybiconfont ybicon-photo" title="照片"></label> <span>2</span></li><li><label class="ybiconfont ybicon-message2" title="话题"></label> <span>2</span></li><li><label class="ybiconfont ybicon-vote" title="投票"></label> <span>2</span></li></ul></div> <div class="bg"></div> <div class="backplane"></div></div>').appendTo($(this).parent());
+			$('<div class="makebook_invitnamecard_item"><img src="img/default/ablum_photo02.png" class="friend_head mCS_img_loaded"><div class="friend_info"><div class="info1">李冰<div class="pop friend_create">创</div> </div><ul> <li>生日:1990-07-09</li> <li>电话:13910033300</li></ul> </div> <div class="socialinfo"><div class="email"><label>E-mail：</label> <span>xianyou.li@soulinfo.com</span></div><ul><li><label class="ybiconfont ybicon-photo" title="照片"></label> <span>2</span></li><li><label class="ybiconfont ybicon-message2" title="话题"></label> <span>2</span></li><li><label class="ybiconfont ybicon-vote" title="投票"></label> <span>2</span></li></ul></div> <div class="bg"></div> <div class="backplane"></div></div>').appendTo($(this).parent().parent());
 			$(' .makebook_invitnamecard_item').fadeIn('slow');
 		}, function() {
 			$(' .makebook_invitnamecard_item').fadeOut('slow').remove();
@@ -4206,9 +4282,37 @@
 						});
 						$(this).addClass('select');
 					});
+
+
+
+
 				}
 			});
 		});
+		//筛选伸缩
+		$('.filter_wrap .locker').click(function(){
+			var filteWrap = $(this).parent();
+			if(filteWrap.hasClass('lock')){
+				filteWrap.removeClass('lock');
+				var filterH = filteWrap.find('.filter_options').height();
+				filteWrap.height(filterH);
+				filteWrap.parent().find('.tips').hide();
+				filteWrap.find('.locker').html('<i class="ybiconfont ybicon-down1"></i>');
+				//选择风格标签
+				filteWrap.find('.label').click(function(){
+					if($(this).hasClass('select')){
+						$(this).removeClass('select');
+					}else{
+						$(this).addClass('select');
+					}
+				})
+			}else{
+				filteWrap.height(0);
+				filteWrap.addClass('lock');
+				filteWrap.parent().find('.tips').show('slow');
+				filteWrap.find('.locker').html('<i class="ybiconfont ybicon-down1"></i>筛选');
+			}
+		})
 
 		//添加页面
 		$('.add_page_btn').click(function() {

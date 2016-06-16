@@ -2654,7 +2654,6 @@
     display: block;
 
     box-sizing: border-box;
-    height: 48px;
 
     border-bottom: 1px solid #ddd;
 }
@@ -2667,7 +2666,7 @@
     line-height: 20px;
 
     box-sizing: border-box;
-    width: 120px;
+    width: 115px;
     height: 22px;
     margin: 0 0 0 4px;
     padding: 0 0 0 6px;
@@ -2890,13 +2889,99 @@
 
     background-color: #fff;
 }
+.change_tpl_con .filter_wrap,
+.add_page_con .filter_wrap{
+    position: relative;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 0 65px;
+    z-index: 1;
+    visibility: visible;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: all .35s ease-in-out;
+}
+.change_tpl_con .filter_wrap{
+    margin: -23px -25px 30px;
+}
+.add_page_con .filter_wrap{
+    margin: -3px -25px 30px;
+}
+.filter_wrap .filter_options{
+    opacity: 1;
+    transition: all .35s ease-in-out;
+}
+
+.filter_wrap.lock .filter_options{
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.filter_wrap .filter_options .option{
+    border-bottom: 0;
+}
+.filter_wrap .locker{
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    margin-left: -24px;
+    width: 48px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #999;
+    background-color: #e6e6e6;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+}
+.filter_wrap.lock .locker{
+    height: 20px;
+    line-height: 20px;
+    bottom: -20px;
+}
+.filter_wrap .locker i{
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    transform: rotate(180deg);
+}
+.filter_wrap.lock .locker i{
+    transform: rotate(0deg);
+    vertical-align: middle;
+}
+.option .labels{
+    display: inline-block;
+    max-width: 660px;
+    vertical-align: top;
+}
+.labels .label{
+    position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 12px;
+    min-width: 50px;
+    height: 23px;
+    line-height: 21px;
+    background-color: #fff;
+    border: 1px solid #c7c7c7;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.labels .label:hover,
+.labels .label.select{
+    color: #81b430;
+    border: 1px solid #81b430;
+}
 .change_tpl_con .tips
 {
     font-size: 12px;
 
     position: relative;
 
-    margin-bottom: 10px;
+    margin: 20px 0 10px;
     padding: 0 15px 0 40px;
 
     color: #666;
@@ -4903,21 +4988,13 @@
 .partner_list .makebook_invitnamecard_item{
     display: none;
     position: absolute;
-    left: -327px;
+    left: -312px;
     top: -47px;
     margin: 0;
     transition: all .35s ease-in-out;
 }
-.partner_list .makebook_invitnamecard_item::after{
-    content: " ";
-    position: absolute;
-    right: -8px;
-    top: 82px;
-    width: 17px;
-    height: 17px;
-    background: url("../img/makebook/partner_bg_arrow.png") no-repeat 0 0;
-}
-.partner_list .makebook_invitnamecard_item .backplane{
+.partner_list .makebook_invitnamecard_item .backplane,
+.drag_con .makebook_invitnamecard_item .backplane{
     display: none;
 }
 .sortable-bg
@@ -5108,7 +5185,6 @@
     right: 0;
     left: auto;
 }
-.list_mode .page_list li .loadThumb,
 .single_mode .chapter_list.new ul li .loadThumb {
     font-size: 12px;
     /* line-height: 26px; */

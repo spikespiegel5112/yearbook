@@ -608,8 +608,8 @@
 			book: '.flipbook_wrapper .flipbook',
 			trigger: '.sem_mainlistul_wrapper li>a',
 			closebtn: '.common_bppopup_wrapper>.closebtn',
-			startposoffsetx: 20,
-			startposoffsety: 87,
+			startposoffsetx: 255,
+			startposoffsety: 255,
 			zindex: 9999
 		})
 	});
@@ -635,6 +635,7 @@
 			bookwrapperEl = $(options.bookwrapper),
 			bookEl = $(options.book),
 			closeBtn = $(options.closebtn),
+			trigger=$(options.trigger),
 			windowWidth = $(window).width(),
 			windowHeight = $(window).height(),
 			//big尺寸书册的0.6倍大小的高度
@@ -655,24 +656,29 @@
 				} else {
 					return false;
 				}
-			})(),
-			bodyEl = (ua.indexOf("firefox") > 0 || isIE) ? $('html') : $('body'),
+			})();
+
+		var bodyEl = (ua.indexOf("firefox") > 0 || isIE) ? $('html') : $('body'),
 			cssSetting = function(settings) {
 				var settings = $.extend({
 						positionX: 0,
 						positionY: 0,
 						scale: 1,
-						zoom: 1
+						zoom: 1,
+						transition: ''
 					}, settings),
 					returnVal = !isIE ? {
-						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')'
+						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')',
+						transition: options.transition,
+						'transform-origin': 'top left'
 					} : {
 						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px)',
-						zoom: settings.scale
+						zoom: settings.scale,
+						transition: options.transition
 					}
 				return returnVal;
 			}
-		$(options.trigger).click(function() {
+		trigger.click(function() {
 			var $this = $(this),
 				documentScrollTop = bodyEl.scrollTop(),
 				thumbnailOffsetLeft = $this.offset().left,
@@ -728,6 +734,12 @@
 					bookwrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
 						transition: 'all 1s'
 					});
+					bookwrapperEl.css(cssSetting({
+						positionX: destinatePositionX,
+						positionY: destinatePositionY,
+						scale: 1,
+						transition: 'all 1s'
+					}));
 				}, 100);
 
 				//显示左右翻页箭头

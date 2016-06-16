@@ -2347,13 +2347,51 @@
 		<!--<a class="ybiconfont ybicon-closebtn close" href="javascript:;"></a>
 	<h4 class="title">修改章节配置-<span>青春章节</span></h4>-->
 		<div class="chapter_config">
-			<div>
-				<label>名称：</label>
-				<input type="text" value="扉页" placeholder="">
+			<div class="common chapter hidden">
+				<div class="option">
+					<label>名称：</label>
+					<input type="text" value="扉页" placeholder="">
+				</div>
+				<div class="option">
+					<label><input type="checkbox" name="">是否在目录中显示</label>
+				</div>
 			</div>
-			<div>
-				<label>
-					<input type="checkbox" name="">是否在目录中显示</label>
+			<div class="catalog chapter">
+				<div class="list_wrap">
+					<label>目录中要显示的章节：</label>
+					<ul>
+						<li>
+							<label><input type="checkbox" name="catalog">卷首寄语</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="catalog">时光不再</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="catalog">校园风光</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="catalog">个人风采</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="catalog">师恩难忘</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="catalog">毕业合影</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="catalog">通讯索引</label>
+						</li>
+					</ul>
+				</div>
+				<div class="example_wrap">
+					<label>目录示例：</label>
+					<div class="example">
+						<img src="img/default/catalog.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="personal chapter hidden">
+
 			</div>
 		</div>
 		<div class="action_bar">

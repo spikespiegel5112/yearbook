@@ -3349,14 +3349,15 @@ textarea:focus, input[type='text']:focus, input[type='password']:focus
 .common_slider_wrapper .slider .handler
 {
     display: inline-block;
-
-    margin: .2rem 0;
+    height: 1rem;
+    line-height: 1rem;
+    /*margin: .2rem 0;*/
 }
 .common_slider_wrapper .slider .handler i, .common_slider_wrapper .slider .handler strong
 {
     display: inline-block;
 
-    width: 4px;
+    width: 0.05rem;
     margin: 0 .06rem;
 
     vertical-align: middle;

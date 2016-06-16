@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<title>忆尔3.13-选择团队册群体</title>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1464916563_8422954.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" media="all">
+	<!-- build:css css/all.min.css -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/makebook.css" type="text/css" media="all">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="css/mediaquery.css" type="text/css" media="all">
+</head>
+
+<body>
+	<div class='makebook_steppopup_container blur_bg'>
+		<div class='makebook_steppopup_wrapper'>
+			<div class='makebook_steppopuplist_wrapper'>
+				<div class='makebook_sppbentrance_wrapper'>
+					<a class='makebook_spclosebtn_item ybiconfont ybicon-closebtn'></a>
+					<div class='makebook_spmain_wrapper'>
+						<div class='makebook_steptitle_wrapper'>
+							<h6 class='makebook_steptitle_item'>照片书制作《妈妈我爱你》</h6>
+						</div>
+						<ul class='makebook_splist_wrapper'>
+							<li>
+								<a class='title' href='javascript:;'>
+									<div class='makebook_compicon_item'>
+										<i class='frame ybiconfont ybicon-upload'></i>
+									</div>
+									<label>上传照片自动排版</label>
+									<span class='makebook_mark_item ybiconfont ybicon-ok'></span>
+								</a>
+								<div class='tips'>
+									<p>上传完成后，点击“自动排版”照片会自动填入书册</p>
+								</div>
+							</li>
+							<li>
+								<a class='title' href='javascript:;'>
+									<div class='makebook_compicon_item'>
+										<i class='frame ybiconfont ybicon-book'></i>
+									</div>
+									<label>进入空间自己编辑</label>
+									<span class='makebook_mark_item ybiconfont ybicon-ok'></span>
+								</a>
+								<div class='tips'>
+									<p>进入书册空间，慢慢DIY专属您的书册</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class='makebook_spnav_wapper'>
+						<!--<a class="makebook_stepbacklink_item" href="javascript:;"><span class="ybiconfont ybicon-reply"></span>返回上一步</a>-->
+						<a class='makebook_spnextlink_btn' href="javascript:;">下一步</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+		<script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
+		<script type="text/javascript" src='assets/js/jquery.fancybox.pack.js'></script>
+		<!-- build:js js/all.js -->
+		<script type="text/javascript" src="js/base.js"></script>
+		<!-- endbuild -->
+		<script type="text/javascript">
+		$(function() {
+			resize();
+			stepPopup();
+		});
+
+		//
+		function resize() {
+			$.remResizing({
+				fontsize: 20,
+				threshold: 930,
+				basedonnarrow: true,
+				inward: true
+			});
+		}
+
+		//弹窗相关事件操作
+		function stepPopup() {
+			var popupwindowEl = $('.makebook_steppopuplist_wrapper>div'),
+				popupWrapperEl = $('.makebook_steppopup_wrapper'),
+				progressbarLiEl = $('.makebook_spprogress_wrapper li'),
+				swiperFlag = true;
+			popupwindowEl.eq(0).show().addClass('active').siblings().hide();
+			popupWrapperEl.align();
+			//点选方块
+			$('.makebook_splist_wrapper>li a').click(function() {
+				var $this = $(this),
+					thisParent = $(this).parent();
+				if (!thisParent.hasClass('actived')) {
+					thisParent.addClass('active').siblings().removeClass('active')
+				}
+
+			});
+
+			//点击下一步
+			$('.makebook_spnextlink_btn').click(function() {
+				$('.makebook_steppopup_wrapper').detach();
+			});
+
+			//点击关闭
+			$('.makebook_spclosebtn_item').click(function() {
+				$('.makebook_steppopup_wrapper').detach();
+			})
+		}
+		</script>
+</body>
+
+</html>

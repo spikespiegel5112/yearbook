@@ -665,16 +665,16 @@
 						positionY: 0,
 						scale: 1,
 						zoom: 1,
-						transition: ''
+						transition: 'none'
 					}, settings),
 					returnVal = !isIE ? {
 						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')',
-						transition: options.transition,
-						'transform-origin': 'top left'
+						'transform-origin': 'top left',
+						transition: settings.transition,
 					} : {
 						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px)',
 						zoom: settings.scale,
-						transition: options.transition
+						transition: settings.transition
 					}
 				return returnVal;
 			}
@@ -724,16 +724,13 @@
 					opacity: 1
 				});
 
-				containerEl.css({
-					transition: 'all 1s',
-				});
+				// containerEl.css({
+				// 	transition: 'all 1s',
+				// });
 				//翻到第一页
 				bookEl.turn('page', 2);
 				//展开书册
 				setTimeout(function() {
-					bookwrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
-						transition: 'all 1s'
-					});
 					bookwrapperEl.css(cssSetting({
 						positionX: destinatePositionX,
 						positionY: destinatePositionY,
@@ -762,7 +759,8 @@
 			bookwrapperEl.css(cssSetting({
 				positionX: thumbnailPositionX,
 				positionY: thumbnailPositionY,
-				scale: options.thumbnailscale
+				scale: options.thumbnailscale,
+				transition: 'all 1s'
 			}));
 			//隐藏箭头
 			bookwrapperEl.find('a').css({

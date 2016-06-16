@@ -634,11 +634,12 @@
 		var containerEl = $(options.container),
 			bookwrapperEl = $(options.bookwrapper),
 			bookEl = $(options.book),
+			closeBtn = $(options.closebtn),
 			windowWidth = $(window).width(),
 			windowHeight = $(window).height(),
 			//big尺寸书册的0.6倍大小的高度
 			flipbookHeight = bookEl.height() * 0.6,
-			flipbookWrapperWidth = $(options.bookwrapper).width(),
+			flipbookWrapperWidth = bookwrapperEl.width(),
 			destinatePositionX,
 			destinatePositionY,
 			thumbnailPositionX,
@@ -648,7 +649,13 @@
 		var ua = navigator.userAgent.toLowerCase(),
 			//判断滚轮事件是否是火狐的
 			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel',
-			isIE = ("ActiveXObject" in window) ? true : false,
+			isIE = (function() {
+				if ("ActiveXObject" in window) {
+					return true;
+				} else {
+					return false;
+				}
+			})(),
 			bodyEl = (ua.indexOf("firefox") > 0 || isIE) ? $('html') : $('body'),
 			cssSetting = function(settings) {
 				var settings = $.extend({
@@ -657,14 +664,14 @@
 						scale: 1,
 						zoom: 1
 					}, settings),
-					returnVal;
-				returnVal = {
-					transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')',
-					zoom: settings.zoom
-				}
+					returnVal = !isIE ? {
+						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')'
+					} : {
+						transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px)',
+						zoom: settings.scale
+					}
 				return returnVal;
 			}
-
 		$(options.trigger).click(function() {
 			var $this = $(this),
 				documentScrollTop = bodyEl.scrollTop(),
@@ -694,73 +701,73 @@
 			});
 
 			function expandBook() {
-				$(options.container).css({
+				containerEl.css({
 					visibility: 'visible',
 					'background-color': 'rgba(0,0,0,0.8)',
 					transition: 'background-color 1s',
 					'z-index': options.zindex
 				});
 
-				$(options.bookwrapper).css(cssSetting({
+				bookwrapperEl.css(cssSetting({
 					positionX: thumbnailPositionX,
 					positionY: thumbnailPositionY,
 					scale: options.thumbnailscale
-				}))
-				$(options.bookwrapper).css({
+				}));
+				bookwrapperEl.css({
 					visibility: 'visible',
 					opacity: 1
 				});
 
-				$(options.container).css({
+				containerEl.css({
 					transition: 'all 1s',
 				});
 				//翻到第一页
 				bookEl.turn('page', 2);
 				//展开书册
 				setTimeout(function() {
-					$(options.bookwrapper).transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
+					bookwrapperEl.transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
 						transition: 'all 1s'
 					});
 				}, 100);
 
 				//显示左右翻页箭头
 				setTimeout(function() {
-					$(options.bookwrapper).children('a').css({
+					bookwrapperEl.children('a').css({
 						transition: 'all 1s',
 						opacity: 1
 					});
 				}, 1000);
 				setTimeout(function() {
-					$(options.container).css({
+					containerEl.css({
 						'background-color': 'rgba(0,0,0,0.8)',
 					});
 				}, 1000);
 
 			};
 		});
-		$(options.closebtn).click(function() {
+		closeBtn.on('click', function() {
 			//将书册缩小并归回原来位置
-			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')');
-			//IE
-			// $(options.bookwrapper).css({
-			// 	zoom: options.thumbnailscale
-			// })
+			bookwrapperEl.css(cssSetting({
+				positionX: thumbnailPositionX,
+				positionY: thumbnailPositionY,
+				scale: options.thumbnailscale
+			}));
 			//隐藏箭头
-			$(options.bookwrapper).find('a').css({
+			bookwrapperEl.find('a').css({
 				opacity: 0
 			});
 			//隐藏书册背景
-			$(options.container).css({
+			containerEl.css({
 				'background-color': 'rgba(0,0,0,0)'
 			});
 			bookEl.turn('page', 1);
 			//书册收回后进行收尾工作
 			setTimeout(function() {
-				$(options.bookwrapper).css({
+				bookwrapperEl.css({
 					visibility: 'hidden',
 					transition: 'none'
 				});
-				$(options.container).css({
+				containerEl.css({
 					visibility: 'hidden'
 				});
 				//解除阻止默认滚轮事件
@@ -909,7 +916,7 @@
 			}
 
 			function bookLength() {
-				var length = $(options.bookwrapper).attr('pagecount');
+				var length = bookwrapperEl.attr('pagecount');
 				if (length % 2 != 0) {
 					return parseInt(length) + 1;
 				} else {

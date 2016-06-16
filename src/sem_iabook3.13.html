@@ -631,10 +631,13 @@
 			zindex: 0
 		}, options);
 
-		var windowWidth = $(window).width(),
+		var containerEl = $(options.container),
+			bookwrapperEl = $(options.bookwrapper),
+			bookEl = $(options.book),
+			windowWidth = $(window).width(),
 			windowHeight = $(window).height(),
 			//big尺寸书册的0.6倍大小的高度
-			flipbookHeight = $(options.book).height() * 0.6,
+			flipbookHeight = bookEl.height() * 0.6,
 			flipbookWrapperWidth = $(options.bookwrapper).width(),
 			destinatePositionX,
 			destinatePositionY,
@@ -645,7 +648,22 @@
 		var ua = navigator.userAgent.toLowerCase(),
 			//判断滚轮事件是否是火狐的
 			mousewheel = (ua.indexOf("firefox") > 0) ? 'DOMMouseScroll' : 'mousewheel',
-			bodyEl=(ua.indexOf("firefox") > 0) ? $('html') : $('body');
+			isIE = ("ActiveXObject" in window) ? true : false,
+			bodyEl = (ua.indexOf("firefox") > 0 || isIE) ? $('html') : $('body'),
+			cssSetting = function(settings) {
+				var settings = $.extend({
+						positionX: 0,
+						positionY: 0,
+						scale: 1,
+						zoom: 1
+					}, settings),
+					returnVal;
+				returnVal = {
+					transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')',
+					zoom: settings.zoom
+				}
+				return returnVal;
+			}
 
 		$(options.trigger).click(function() {
 			var $this = $(this),
@@ -653,18 +671,18 @@
 				thumbnailOffsetLeft = $this.offset().left,
 				thumbnailOffsetTop = $this.offset().top;
 			//图标所在位置，即起始位置
-			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - $(options.book).width() * options.thumbnailscale));
+			thumbnailPositionX = Number((thumbnailOffsetLeft + options.startposoffsetx - bookEl.width() * options.thumbnailscale));
 			thumbnailPositionY = Number(thumbnailOffsetTop - documentScrollTop - flipbookHeight * options.thumbnailscale + options.startposoffsety);
 
 			//目标位置XY
 			if (options.aligncenter) {
 				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
-				destinatePositionY=(windowHeight-flipbookHeight)/2;
-			}else{
+				destinatePositionY = (windowHeight - flipbookHeight) / 2;
+			} else {
 				destinatePositionX = (windowWidth - flipbookWrapperWidth) / 2;
 				destinatePositionY = windowHeight - flipbookHeight - 120 > 0 ? (windowHeight - flipbookHeight) / 2 - 50 : 50;
 			}
-			
+
 			expandBook();
 			//当打开后组织滚轮默认事件
 			preventDefault = $(window).bind(mousewheel, function(e) {
@@ -682,7 +700,13 @@
 					transition: 'background-color 1s',
 					'z-index': options.zindex
 				});
-				$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')').css({
+
+				$(options.bookwrapper).css(cssSetting({
+					positionX: thumbnailPositionX,
+					positionY: thumbnailPositionY,
+					scale: options.thumbnailscale
+				}))
+				$(options.bookwrapper).css({
 					visibility: 'visible',
 					opacity: 1
 				});
@@ -691,7 +715,7 @@
 					transition: 'all 1s',
 				});
 				//翻到第一页
-				$(options.book).turn('page', 2);
+				bookEl.turn('page', 2);
 				//展开书册
 				setTimeout(function() {
 					$(options.bookwrapper).transform('translate(' + destinatePositionX + 'px, ' + (destinatePositionY) + 'px) scale(1,1)').css({
@@ -717,6 +741,10 @@
 		$(options.closebtn).click(function() {
 			//将书册缩小并归回原来位置
 			$(options.bookwrapper).transform('translate(' + thumbnailPositionX + 'px, ' + thumbnailPositionY + 'px) scale(' + options.thumbnailscale + ',' + options.thumbnailscale + ')');
+			//IE
+			// $(options.bookwrapper).css({
+			// 	zoom: options.thumbnailscale
+			// })
 			//隐藏箭头
 			$(options.bookwrapper).find('a').css({
 				opacity: 0
@@ -725,7 +753,7 @@
 			$(options.container).css({
 				'background-color': 'rgba(0,0,0,0)'
 			});
-			$(options.book).turn('page', 1);
+			bookEl.turn('page', 1);
 			//书册收回后进行收尾工作
 			setTimeout(function() {
 				$(options.bookwrapper).css({
@@ -780,7 +808,7 @@
 				}
 			});
 
-			IEcss()
+			// IEcss()
 
 			flipbook.turn({
 				width: 814,
@@ -844,7 +872,7 @@
 					end: function(e, pageObj) {
 						var book = $(this);
 						updateDepth(book);
-						IEcss();
+						//IEcss();
 					},
 					missing: function(e, pages) {
 						for (var i = 0; i < pages.length; i++) {

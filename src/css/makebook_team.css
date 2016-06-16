@@ -1423,7 +1423,7 @@
     left: -145px;
 }
 
-.chapter_list .back_list_mode
+.single_mode .back_list_mode
 {
     font-size: 12px;
     line-height: 40px;
@@ -1438,7 +1438,15 @@
     border-bottom: 1px solid #394754;
 }
 
-.chapter_list .back_list_mode i
+.single_mode .back_list_mode.new{
+    border-bottom: 0;
+    position: absolute;
+    left: 80px;
+    z-index: 1;
+    font-size: 14px;
+}
+
+.single_mode .back_list_mode i
 {
     font-size: 14px;
 
@@ -1447,7 +1455,7 @@
     opacity: .5;
 }
 
-.chapter_list .back_list_mode:hover
+.single_mode .back_list_mode:hover
 {
     color: #31b8d3;
 }
@@ -4876,40 +4884,28 @@
     height: 140px;
     left: 0;
     bottom: 0;
-    padding-left: 70px;
+    padding: 0 20% 0 70px;
     box-sizing: border-box;
-    z-index: 3;
-    /*border-top: 1px solid #ddd;
-    background-color: #fff;*/
+    z-index: 1;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
     overflow: visible;
     transition: all .3s ease-in-out;
 }
-.chapter_list.new .back_list_mode{
-    display: inline-block;
-    border-bottom: 0;
-    margin-left: 15px;
+.chapter_list.new .lisrt_wrap{
+    position: relative;
+    width: 100%;
 }
+
 .chapter_list.new p{
     display: inline-block;
     font-size: 12px;
     line-height: 30px;
     padding: 0 15px;
-    color: #fff;
+    color: #333;
 }
 .chapter_list .swiper-container{
     padding: 4px 0;
-}
-.single_mode .chapter_list.new li{
-    float: left;
-    width: 128px;
-    margin: 0 5px;
-}
-.chapter_list.new li .thumb{
-    border: 1px solid #ddd;
-}
-.chapter_list.new li .thumb.select {
-    border: 2px solid #4991bc;
-    border-radius: 2px;
 }
 .chapter_list.new .nav_btn{
     position: absolute;
@@ -4953,12 +4949,12 @@
 .single_mode .chapter_list.new .chapter_shrink{
     left: 50%;
     top: 0;
-    margin: 0 0 0 11px;
+    margin: 0 0 0 -24px;
     width: 48px;
     height: 16px;
     line-height: 16px;
     color: #999;
-    background-color: #fff;
+    background-color: #e6e6e6;
     border-radius: 0 0 4px 4px;
     border: 1px solid #ddd;
     transition: all .3s ease-in-out;
@@ -4967,11 +4963,80 @@
     top: -16px;
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    color: #fff;
-    background-color: #223241;
-    border: 0;
 }
 .single_mode .chapter_list.new.shrink {
     bottom: -135px;
     left: 0;
+}
+.single_mode .chapter_list.new li{
+    float: left;
+    margin: 0 10px;
+}
+.chapter_list.new .single{
+    width: 64px;
+}
+.chapter_list.new .double{
+    width: 128px;
+}
+.chapter_list.new .single .thumb{
+    border: 1px solid #ddd;
+}
+.chapter_list.new .single.select .thumb{
+    border: 2px solid #f40;
+}
+.chapter_list.new li.select .thumb {
+    border: 1px solid #f40;
+    border-radius: 2px;
+}
+.chapter_list.new .double .left,
+.chapter_list.new .double .right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.chapter_list.new .select.double .left,
+.chapter_list.new .select.double .right{
+    border: 1px solid #f40;
+}
+.chapter_list.new .thumb .page_num{
+    font-size: 12px;
+    line-height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 16px;
+    padding: 0 5px 0 8px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0,0,0,.6);
+}
+.chapter_list.new .thumb .page_num::before,
+.chapter_list.new .thumb .page_num::after{
+    display: none;
+}
+.chapter_list.new .thumb .right .page_num{
+    right: 0;
+    left: auto;
+}
+.list_mode .page_list li .loadThumb,
+.single_mode .chapter_list.new ul li .loadThumb {
+    font-size: 12px;
+    /* line-height: 26px; */
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    z-index: 1;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    padding-top: 16px;
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
+    background: -o-linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
+    background: -moz-linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
+    background: linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
 }

@@ -1222,7 +1222,17 @@
 
     transition: all .3s ease;
 }
-
+.edit_content .single_mode .edit_area.new{
+    padding: 10px 0.3% 0 70px;
+}
+.edit_content .single_mode .edit_area.new.min{
+    padding-right: 20%;
+}
+@media only screen and (max-width: 1280px) {
+    .edit_content .single_mode .edit_area.new.min{
+        padding-right: 28%;
+    }
+}
 .single_mode .edit_area .page_display
 {
     position: relative;
@@ -5271,13 +5281,26 @@
     height: 140px;
     left: 0;
     bottom: 0;
-    padding: 0 20% 0 70px;
+    padding: 0 35px 0 70px;
     box-sizing: border-box;
     z-index: 1;
     border-top: 1px solid #ddd;
     background-color: #fff;
     overflow: visible;
     transition: all .3s ease-in-out;
+    min-width: 1280px;
+}
+
+.chapter_list.new.min{
+    padding-right: 20%;
+}
+@media only screen and (max-width: 1280px){
+    .chapter_list.new{
+        position: absolute;
+    }
+    .chapter_list.new.min{
+        padding-right: 28%;
+    }
 }
 .chapter_list.new .lisrt_wrap{
     position: relative;

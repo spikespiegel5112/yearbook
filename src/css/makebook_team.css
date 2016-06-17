@@ -3587,7 +3587,7 @@
     padding-left: 46px;
 }
 .catalog .list_wrap,
-.catalog .example_wrap{
+.catalog .tpl_wrap{
     position: relative;
     width: 50%;
     float: left;
@@ -5295,8 +5295,8 @@
     padding-right: 20%;
 }
 @media only screen and (max-width: 1280px){
-    .chapter_list.new{
-        position: absolute;
+    .chapter_list.new .lisrt_wrap{
+        width: 852px;
     }
     .chapter_list.new.min{
         padding-right: 28%;

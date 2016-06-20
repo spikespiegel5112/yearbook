@@ -1212,7 +1212,7 @@
     position: absolute;
     z-index: 0;
     left: 0;
-
+    overflow: hidden;
     overflow-y: auto;
 
     box-sizing: border-box;
@@ -1341,7 +1341,7 @@
     box-sizing: border-box;
     width: 860px;
     height: 600px;
-    margin: 40px auto;
+    margin: 20px auto 60px;
     padding: 10px 20px;
 
     border: 0;
@@ -5448,4 +5448,47 @@
     background: -o-linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
     background: -moz-linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
     background: linear-gradient(transparent 0, rgba(185, 185, 185, .4) 50%, rgba(20, 20, 20, .7) 100%);
+}
+
+.zoombar{
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    bottom: 12px;
+    left: 50%;
+    margin-left: -100px;
+}
+.zoombar .zoom_adjust{
+    position: absolute;
+    top: 0;
+    left: -30px;
+    font-size: 18px;
+    color: #ddd;
+    display: inline-block;
+    cursor: pointer;
+}
+.zoom_percent{
+    position: absolute;
+    top: 0;
+    right: -50px;
+    color: #666;
+    font-size: 14px;
+}
+.zoombar .ui-slider{
+    top: 6px;
+    background: #ddd;
+    border: 0;
+    height: 8px;
+}
+.zoombar .ui-slider .ui-slider-handle{
+    left: 0%;
+    margin-left: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    border: 0;
+    top: -4px;
+    background: #666;
+    cursor: pointer;
 }

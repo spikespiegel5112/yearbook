@@ -586,7 +586,7 @@
 							<label>第<span>1~2</span>页</label>
 							<i class="icon-angle-right icon-4x cm_cp next"></i>
 						</div>
-						<div class="page_display">
+						<div class="page_display single "><!--单页模板single 双页double-->
 							<!--单页 封面-->
 							<div class="tpl cover hidden">
 								<div class="inner_page">
@@ -594,13 +594,13 @@
 								</div>
 							</div>
 							<!--单页 封底-->
-							<div class="tpl back_cover hidden">
+							<div class="tpl back_cover ">
 								<div class="inner_page">
 									<img src="img/default/tpl_small.jpg">
 								</div>
 							</div>
 							<!--内页 双页-->
-							<div class="tpldouble double ">
+							<div class="tpldouble double hidden">
 								<!--跨页提示spread-->
 								<div class="split_tips">
 									<p>提示：请尽量避免在中间分隔线处上传头像!</p>
@@ -619,7 +619,7 @@
 						</div>
 						<!--2016.6.20 add zoombar-->
 						<div class="zoombar">
-							<span class="zoom_adjust ybiconfont ybicon-search"></span>
+							<span class="zoombtn ybiconfont ybicon-search"></span>
 							<div id="zoomSlide"></div>
 							<span class="zoom_percent">0%</span>
 						</div>
@@ -3760,7 +3760,8 @@
 		//添加章节、页面、自动排版等
 		editBookToolbarEvents();
 		determineWindowSize();
-		zoomTpl();
+		//zoomTpl();
+		zoomBoomInit();
 
 		$("#sortable").sortable({
 			placeholder: "sortable-bg",
@@ -3773,81 +3774,206 @@
 	});
 
 
-	function zoomTpl(){
+	/*function zoomTpl(){
 		$('#zoomSlide').slider({
 			max: '200',
 			create: function(){
 
-				var editH = $('.edit_area').height(),
-						editW = $('.edit_area').width(),
+				var editH = $('.edit_area').height()-64,
+						editW = $('.edit_area').width()*0.8-70,
 						bookH = $('.page_display').height(),
 						bookW = $('.page_display').width(),
 						value = 0;
 
 				value = Math.min(parseInt((editW/bookW)*100), parseInt((editH/bookH)*100));
-
-				console.log(editW)
 				var scale = value/100,
-						bookH = $('.page_display').height(),
-						bookW = $('.page_display').width(),
-						top = (editH-bookH)/2,
-						left =(editW-bookW)/2;
-
+						top = (editH-bookH*scale)/2,
+						left =(editW-bookW*scale)/2;
 				$( "#zoomSlide" ).slider( "option", "value", value);
 				$('.page_display').css({
-					'transform': 'translate('+left+'px,'+0+'px)rotate(0deg)'+'scale('+scale+')'
+					'transform': 'translate('+left+'px,'+top+'px)rotate(0deg)'+'scale('+scale+')'
 				});
-				$('.zoom_adjust').click(function(){
-					$( "#zoomSlide" ).slider( "option", "value", value);
-					$('.page_display').css({
-						'transform': 'translate('+left+'px,'+top+'px)rotate(0deg)'+'scale('+scale+')'
-					});
-				})
 			},
 			change: function( event, ui ) {
 				var value = $( "#zoomSlide" ).slider( "option", "value" );
 				$('.zoombar').find('.zoom_percent').text(value+'%');
 				var scale = value/100,
-						editH = $('.edit_area').height(),
-						editW = $('.edit_area').width(),
+						editH = $('.edit_area').height()-64,
+						editW = $('.edit_area').width()*0.8-70,
 						bookH = $('.page_display').height(),
 						bookW = $('.page_display').width(),
-						top = (editH-bookH)/ 2,
-						left =(editW-bookW)/2;
+						top = (editH-bookH*scale)/2,
+						left =(editW-bookW*scale)/2;
 
-				$('.page_display').css({
-					'transform': 'translate('+left+'px,'+0+'px)rotate(0deg)'+'scale('+scale+')'
-				});
+				zoomBookTo(scale);
 
 			}
 
 		});
 
 		$(window).resize(function(){
-			zoomTpl();
+			zoomBookTo();
 		})
-	}
+	}*/
 
 
-	function getBookTransformCss(options) {
+		var editArea = $('.edit_area'),
+				bookEdit = $('.page_display'),
+				zoomBar = $('#zoomSlide'),
+				zoomPercent = $('.zoom_percent');
 
-		var settings = $.extend({
-			positionX: 0,
-			positionY: 0,
-			scale: 1,
-			zoom: 1,
-			transition: 'none'
-		}, options);
-		return !isIE() ? {
-			transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px) scale(' + settings.scale + ',' + settings.scale + ')',
-			'transform-origin': 'top left',
-			transition: settings.transition
-		} : {
-			transform: 'translate(' + settings.positionX + 'px, ' + settings.positionY + 'px)',
-			zoom: settings.scale,
-			transition: settings.transition
-		};
-	}
+		function zoomBoomInit(){
+			bookEdit.draggable();
+			zoomBar.slider({
+				max: 200,
+				min: 20,
+				create:function(){
+					resetBookScaleAndPosition();
+				},
+				change:function(event,ui){
+					var currentTransform = getCurrent(bookEdit);
+					var scale = zoomBar.slider("value")/100;
+					zoomBookTo(scale);
+					var deltaWidth = bookEdit.width() * (scale - currentTransform.scale),
+							deltaHeight = bookEdit.height() * (scale - currentTransform.scale);
+
+					var editOffset = editArea.offset(),
+							bookWidth = bookEdit.outerWidth(),
+							bookHeight = bookEdit.outerHeight();
+
+					var x = currentTransform.translationX - deltaWidth * ($(window).width() / 2 - editOffset.left - currentTransform.translationX) / bookWidth / currentTransform.scale,
+							y = currentTransform.translationY - deltaHeight * ($(window).height() / 2 - editOffset.top - currentTransform.translationY) / bookHeight / currentTransform.scale;
+
+					//var finalXY = judgeBookXY(x, y);
+
+					translate(bookEdit, x, y);
+				}
+			});
+		}
+
+
+		$(window).on('resize', function (e) {
+			resetBookScaleAndPosition();
+		});
+
+		function resetBookScaleAndPosition(render) {
+			var bookWidth = parseFloat(bookEdit.css('width'));
+			var bookHeight = parseFloat(bookEdit.css('height'));
+			var editWidth = editArea.width();
+			var editHeight = editArea.height();
+
+			var scale = Math.min((editWidth*0.8 - 70) / bookWidth, (editHeight - 64) / bookHeight);
+			scaleBook(bookEdit,scale);
+
+			zoomBar.slider("value",parseInt(scale*100));
+			zoomPercent.text(parseInt(scale*100)+'%');
+
+			translate(bookEdit, (editWidth*0.8-140 - bookWidth * scale) / 2, (editHeight-128 - bookHeight * scale) / 2);
+
+			bookEdit.attr('data-locked', true);
+		}
+
+		function getBookCurrentScale() {
+			return parseFloat(bookEdit.attr('data-scale'));
+		}
+
+		function scaleBook(htmlElement, scaleValue) {
+			htmlElement = $(htmlElement);
+
+			var current = getCurrent(htmlElement);
+
+			set(htmlElement, {
+				scale: scaleValue,
+				rotation: current.rotation,
+				translationX: current.translationX,
+				translationY: current.translationY
+			});
+		}
+		function getCurrent(htmlElement) {
+			htmlElement = $(htmlElement);
+			return {
+				scale: (parseFloat(htmlElement.attr('data-scale')) || 1),
+				rotation: (parseInt(htmlElement.attr('data-rotation')) || 0),
+				translationX: (parseFloat(htmlElement.attr('data-translation-x')) || 0),
+				translationY: (parseFloat(htmlElement.attr('data-translation-y')) || 0)
+			};
+		}
+
+		function clear(htmlElement) {
+			htmlElement = $(htmlElement);
+			htmlElement.css({
+				transform: ''
+			}).removeAttr('data-scale,data-rotation,data-translation-x,data-translation-y');
+		}
+		function translate(htmlElement, x, y) {
+			htmlElement = $(htmlElement);
+			var current = getCurrent(htmlElement);
+			set(htmlElement, {
+				scale: current.scale,
+				rotation: current.rotation,
+				translationX: x,
+				translationY: y
+			});
+		}
+		function set(htmlElement, settings) {
+			htmlElement = $(htmlElement);
+			var scale = parseFloat(settings.scale).toFixed(6),
+					rotation = parseFloat(settings.rotation).toFixed(6),
+					translationX = parseFloat(settings.translationX).toFixed(6),
+					translationY = parseFloat(settings.translationY).toFixed(6);
+			htmlElement.css({
+				transform: ('translate(' + translationX + 'px,' + translationY + 'px) rotate(' + rotation + 'deg) scale(' + scale + ')')
+			});
+
+			htmlElement.attr({
+				'data-scale': scale,
+				'data-rotation': rotation,
+				'data-translation-x': translationX,
+				'data-translation-y': translationY
+			});
+		}
+		function zoomBookTo(scale) {
+			var currentTransform = getCurrent(bookEdit);
+
+			scaleBook(bookEdit, scale);
+			zoomPercent.text(parseInt(scale*100)+'%');
+
+			var deltaWidth = bookEdit.width() * (scale - currentTransform.scale),
+					deltaHeight = bookEdit.height() * (scale - currentTransform.scale);
+
+			var x = currentTransform.translationX - deltaWidth / 2,
+					y = currentTransform.translationY - deltaHeight / 2;
+
+			//var finalXY = judgeBookXY(x, y);
+
+			translate(bookEdit, x, y);
+
+			bookEdit.attr('data-locked', false);
+		}
+		function judgeBookXY(destX, destY) {
+			var min = 70;
+			var bookWidth = parseFloat(bookEdit.css('width'));
+			var bookHeight = parseFloat(bookEdit.css('height'));
+			var editWidth = editArea.width()*0.8-70;
+			var editHeight = editArea.height()-64;
+
+			if (destX > editWidth - min) {
+				destX = editWidth - min;
+			} else if (destX + bookWidth * getBookCurrentScale() < min) {
+				destX = min - bookWidth * getBookCurrentScale();
+			}
+			if (destY > editHeight - min) {
+				destY = editHeight - min;
+			} else if (destY + bookHeight * getBookCurrentScale() < min) {
+				destY = min - bookHeight * getBookCurrentScale();
+			}
+			return {
+				x: destX,
+				y: destY
+			};
+		}
+
+
 
 	//自定义滚动条
 	function customScrollBar() {
@@ -3950,7 +4076,7 @@
 			}, 3000)
 		}
 
-		if (winHeight < 855) {
+		/*if (winHeight < 855) {
 			$('.team_edit_container .edit_content').css({
 				'position': 'relative',
 				'height': '855'
@@ -3961,7 +4087,7 @@
 			} else {
 				$('.edit_content > .single_mode, .edit_content > .list_mode').height('733');
 			}
-		}
+		}*/
 
 	}
 

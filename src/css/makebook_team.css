@@ -1213,7 +1213,7 @@
     z-index: 0;
     left: 0;
     overflow: hidden;
-    overflow-y: auto;
+    /*overflow-y: auto;*/
 
     box-sizing: border-box;
     width: 100%;
@@ -1223,7 +1223,7 @@
     transition: all .3s ease;
 }
 .edit_content .single_mode .edit_area.new{
-    padding: 10px 0.3% 0 70px;
+    padding: 0 0.3% 0 70px;
 }
 .edit_content .single_mode .edit_area.new.min{
     padding-right: 20%;
@@ -1238,11 +1238,18 @@
     position: relative;
 
     display: block;
+    width: 860px;
 
-    min-width: 860px;
-    margin: 0 auto;
+    margin: 10px auto;
+    transform-origin: 0 0;
+    cursor: pointer;
 }
-
+.edit_area .page_display.single{
+    height: 964px;
+}
+.edit_area .page_display.double{
+    height: 600px;
+}
 .single_mode .edit_area .cur_page
 {
     font-size: 24px;
@@ -1341,7 +1348,7 @@
     box-sizing: border-box;
     width: 860px;
     height: 600px;
-    margin: 20px auto 60px;
+    margin: 10px auto;
     padding: 10px 20px;
 
     border: 0;
@@ -5459,7 +5466,7 @@
     left: 50%;
     margin-left: -100px;
 }
-.zoombar .zoom_adjust{
+.zoombar .zoombtn{
     position: absolute;
     top: 0;
     left: -30px;

@@ -579,22 +579,25 @@
 							</li>
 						</ul>
 					</div>
-					<a class="back_list_mode new" href="javascript:;"><i class="ybiconfont ybicon-reply2"></i>返回章节列表</a>
+					<a class="back_list_mode new" href="javascript:;"><i class="ybiconfont ybicon-reply2"></i>返回列表</a>
 					<div class="edit_area new"><!--6.17 用于区别章节列表水平与垂直居中-->
-						<div class="cur_page">
-							<i class="icon-angle-left icon-4x cm_cp prev"></i>
-							<label>第<span>1~2</span>页</label>
-							<i class="icon-angle-right icon-4x cm_cp next"></i>
+						<!--2016.6.20 add zoombar-->
+						<div class="zoombar_wrap">
+							<div class="zoombar">
+								<span class="zoombtn ybiconfont ybicon-search"></span>
+								<div id="zoomSlide"></div>
+								<span class="zoom_percent">0%</span>
+							</div>
 						</div>
-						<div class="page_display single "><!--单页模板single 双页double-->
+						<div class="page_display "><!--单页模板single 双页double-->
 							<!--单页 封面-->
-							<div class="tpl cover hidden">
+							<div class="tpl cover ">
 								<div class="inner_page">
 									<img src="img/default/tpl_small.jpg">
 								</div>
 							</div>
 							<!--单页 封底-->
-							<div class="tpl back_cover ">
+							<div class="tpl back_cover hidden">
 								<div class="inner_page">
 									<img src="img/default/tpl_small.jpg">
 								</div>
@@ -617,11 +620,12 @@
 								</div>
 							</div>
 						</div>
-						<!--2016.6.20 add zoombar-->
-						<div class="zoombar">
-							<span class="zoombtn ybiconfont ybicon-search"></span>
-							<div id="zoomSlide"></div>
-							<span class="zoom_percent">0%</span>
+						<a class="prev" href="javascript:;">
+							<i class="icon-angle-left icon-4x"></i>
+						</a>
+						<a class="next" href="javascript:;"><i class="icon-angle-right icon-4x"></i></a>
+						<div class="cur_page">
+							<label>第<span>1~2</span>页</label>
 						</div>
 					</div>
 					<a class="resource_shrink ybiconfont ybicon-tabright" href="javascript:;"></a>
@@ -3831,22 +3835,8 @@
 					resetBookScaleAndPosition();
 				},
 				change:function(event,ui){
-					var currentTransform = getCurrent(bookEdit);
 					var scale = zoomBar.slider("value")/100;
 					zoomBookTo(scale);
-					var deltaWidth = bookEdit.width() * (scale - currentTransform.scale),
-							deltaHeight = bookEdit.height() * (scale - currentTransform.scale);
-
-					var editOffset = editArea.offset(),
-							bookWidth = bookEdit.outerWidth(),
-							bookHeight = bookEdit.outerHeight();
-
-					var x = currentTransform.translationX - deltaWidth * ($(window).width() / 2 - editOffset.left - currentTransform.translationX) / bookWidth / currentTransform.scale,
-							y = currentTransform.translationY - deltaHeight * ($(window).height() / 2 - editOffset.top - currentTransform.translationY) / bookHeight / currentTransform.scale;
-
-					//var finalXY = judgeBookXY(x, y);
-
-					translate(bookEdit, x, y);
 				}
 			});
 		}
@@ -3862,13 +3852,13 @@
 			var editWidth = editArea.width();
 			var editHeight = editArea.height();
 
-			var scale = Math.min((editWidth*0.8 - 70) / bookWidth, (editHeight - 64) / bookHeight);
+			var scale = Math.min((editWidth - 70) / bookWidth, (editHeight - 120) / bookHeight);
 			scaleBook(bookEdit,scale);
 
 			zoomBar.slider("value",parseInt(scale*100));
 			zoomPercent.text(parseInt(scale*100)+'%');
 
-			translate(bookEdit, (editWidth*0.8-140 - bookWidth * scale) / 2, (editHeight-128 - bookHeight * scale) / 2);
+			translate(bookEdit, (editWidth-70 - bookWidth * scale) / 4, (editHeight - bookHeight * scale) / 2);
 
 			bookEdit.attr('data-locked', true);
 		}
@@ -3922,7 +3912,9 @@
 					translationX = parseFloat(settings.translationX).toFixed(6),
 					translationY = parseFloat(settings.translationY).toFixed(6);
 			htmlElement.css({
-				transform: ('translate(' + translationX + 'px,' + translationY + 'px) rotate(' + rotation + 'deg) scale(' + scale + ')')
+				transform: ('translate(' + translationX + 'px,' + translationY + 'px) rotate(' + rotation + 'deg) scale(' + scale + ')'),
+				left:'0',
+				top:'0'
 			});
 
 			htmlElement.attr({
@@ -3944,33 +3936,10 @@
 			var x = currentTransform.translationX - deltaWidth / 2,
 					y = currentTransform.translationY - deltaHeight / 2;
 
-			//var finalXY = judgeBookXY(x, y);
 
 			translate(bookEdit, x, y);
 
 			bookEdit.attr('data-locked', false);
-		}
-		function judgeBookXY(destX, destY) {
-			var min = 70;
-			var bookWidth = parseFloat(bookEdit.css('width'));
-			var bookHeight = parseFloat(bookEdit.css('height'));
-			var editWidth = editArea.width()*0.8-70;
-			var editHeight = editArea.height()-64;
-
-			if (destX > editWidth - min) {
-				destX = editWidth - min;
-			} else if (destX + bookWidth * getBookCurrentScale() < min) {
-				destX = min - bookWidth * getBookCurrentScale();
-			}
-			if (destY > editHeight - min) {
-				destY = editHeight - min;
-			} else if (destY + bookHeight * getBookCurrentScale() < min) {
-				destY = min - bookHeight * getBookCurrentScale();
-			}
-			return {
-				x: destX,
-				y: destY
-			};
 		}
 
 

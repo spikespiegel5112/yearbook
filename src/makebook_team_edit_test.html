@@ -27,12 +27,12 @@
 	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" type="text/css" media="all">
 </head>
 
-<body style="min-width: 1280px">
+<body ><!--去掉style="min-width: 1280px"-->
 	<div id="main_container" class="main_container">
 		<div class="team_edit_container ">
 			<!--1280下class:min_screen-->
 			<!--yb3.11 nav-->
-			<div class="yb_cm_header book_space cm_min_width">
+			<div class="yb_cm_header book_space">
 				<!--用于书册空间class:book_space-->
 				<div class="shortcut_container">
 					<div class="shortcut">
@@ -166,7 +166,7 @@
 			</aside>
 			<div id="menu" class="edit_content single">
 				<!--list 章节列表模式 single 单页编辑模式 -->
-				<div class="tool_bar cm_min_width">
+				<div class="tool_bar">
 					<div class="grid book_info">
 						<div class="cover">
 							<img src="img/default/bookshelf_book01.jpg">
@@ -589,9 +589,9 @@
 								<span class="zoom_percent">0%</span>
 							</div>
 						</div>
-						<div class="page_display "><!--单页模板single 双页double-->
+						<div class="page_display ">
 							<!--单页 封面-->
-							<div class="tpl cover ">
+							<div class="tpl cover hidden">
 								<div class="inner_page">
 									<img src="img/default/tpl_small.jpg">
 								</div>
@@ -603,7 +603,7 @@
 								</div>
 							</div>
 							<!--内页 双页-->
-							<div class="tpldouble double hidden">
+							<div class="tpldouble double ">
 								<!--跨页提示spread-->
 								<div class="split_tips">
 									<p>提示：请尽量避免在中间分隔线处上传头像!</p>
@@ -3764,7 +3764,7 @@
 		//添加章节、页面、自动排版等
 		editBookToolbarEvents();
 		determineWindowSize();
-		//zoomTpl();
+
 		zoomBoomInit();
 
 		$("#sortable").sortable({
@@ -3778,50 +3778,7 @@
 	});
 
 
-	/*function zoomTpl(){
-		$('#zoomSlide').slider({
-			max: '200',
-			create: function(){
-
-				var editH = $('.edit_area').height()-64,
-						editW = $('.edit_area').width()*0.8-70,
-						bookH = $('.page_display').height(),
-						bookW = $('.page_display').width(),
-						value = 0;
-
-				value = Math.min(parseInt((editW/bookW)*100), parseInt((editH/bookH)*100));
-				var scale = value/100,
-						top = (editH-bookH*scale)/2,
-						left =(editW-bookW*scale)/2;
-				$( "#zoomSlide" ).slider( "option", "value", value);
-				$('.page_display').css({
-					'transform': 'translate('+left+'px,'+top+'px)rotate(0deg)'+'scale('+scale+')'
-				});
-			},
-			change: function( event, ui ) {
-				var value = $( "#zoomSlide" ).slider( "option", "value" );
-				$('.zoombar').find('.zoom_percent').text(value+'%');
-				var scale = value/100,
-						editH = $('.edit_area').height()-64,
-						editW = $('.edit_area').width()*0.8-70,
-						bookH = $('.page_display').height(),
-						bookW = $('.page_display').width(),
-						top = (editH-bookH*scale)/2,
-						left =(editW-bookW*scale)/2;
-
-				zoomBookTo(scale);
-
-			}
-
-		});
-
-		$(window).resize(function(){
-			zoomBookTo();
-		})
-	}*/
-
-
-		var editArea = $('.edit_area'),
+		var editArea = $('.edit_area.new'),
 				bookEdit = $('.page_display'),
 				zoomBar = $('#zoomSlide'),
 				zoomPercent = $('.zoom_percent');
@@ -3852,13 +3809,19 @@
 			var editWidth = editArea.width();
 			var editHeight = editArea.height();
 
-			var scale = Math.min((editWidth - 70) / bookWidth, (editHeight - 120) / bookHeight);
+			/*修正editWidth*/
+			if(editArea.hasClass('min')){
+				editWidth = $(window).width()*0.8;
+			}else{
+				editWidth = $(window).width()*0.993;
+			}
+			var scale = Math.min((editWidth-70) / bookWidth, (editHeight - 120) / bookHeight);
 			scaleBook(bookEdit,scale);
 
 			zoomBar.slider("value",parseInt(scale*100));
 			zoomPercent.text(parseInt(scale*100)+'%');
 
-			translate(bookEdit, (editWidth-70 - bookWidth * scale) / 4, (editHeight - bookHeight * scale) / 2);
+			translate(bookEdit, (editWidth-70 - bookWidth * scale) / 2, (editHeight - bookHeight * scale) / 2);
 
 			bookEdit.attr('data-locked', true);
 		}
@@ -4024,9 +3987,7 @@
 
 	//判断窗口大小，小于等于1280折叠侧栏
 	function determineWindowSize(size) {
-		var winWidth = $(window).width(),
-			winHeight = $(window).height(),
-			editAreaWidth = winWidth - 220 - winWidth * 0.2;
+		var winWidth = $(window).width();
 		$('.edit_area').addClass('min');
 		setTimeout(function() {
 			$('.chapter_shrink').addClass('active');

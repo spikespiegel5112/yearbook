@@ -3766,6 +3766,8 @@
 		determineWindowSize();
 
 		zoomBoomInit();
+		asideConShrink('chapter_shrink', 'chapter_list');
+		asideConShrink('resource_shrink', 'resource_list',resetBookScaleAndPosition);
 
 		$("#sortable").sortable({
 			placeholder: "sortable-bg",
@@ -4003,6 +4005,7 @@
 				$('.chapter_list').addClass('shrink').removeClass('min');
 				$('.resource_list').addClass('shrink');
 				$('.edit_area').removeClass('min');
+				resetBookScaleAndPosition();
 			}, 3000)
 		}
 
@@ -4021,10 +4024,9 @@
 
 	}
 
-	asideConShrink('chapter_shrink', 'chapter_list');
-	asideConShrink('resource_shrink', 'resource_list');
+
 	//章节、资源列表伸缩
-	function asideConShrink(btn, shrinkBox) {
+	function asideConShrink(btn, shrinkBox,fun) {
 		var winWidth = $(window).width();
 		$('.' + btn).click(function() {
 			if ($(this).hasClass('active')) {
@@ -4059,7 +4061,9 @@
 				}
 			}
 
-
+			if(fun && (typeof fun == "function")){
+				fun();
+			}
 		});
 	}
 

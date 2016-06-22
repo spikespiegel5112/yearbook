@@ -3806,16 +3806,21 @@
 		});
 
 		function resetBookScaleAndPosition(render) {
-			var bookWidth = parseFloat(bookEdit.css('width'));
-			var bookHeight = parseFloat(bookEdit.css('height'));
-			var editWidth = editArea.width();
-			var editHeight = editArea.height();
+			var bookWidth = parseFloat(bookEdit.css('width')),
+					bookHeight = parseFloat(bookEdit.css('height')),
+					editWidth = editArea.width(),
+					editHeight = editArea.height(),
+					windowWidth = $(window).width();
 
-			/*修正editWidth*/
+			/*修正editWidth width直接取到的不正确*/
 			if(editArea.hasClass('min')){
-				editWidth = $(window).width()*0.8;
+				if(windowWidth <=1280){
+					editWidth = windowWidth*0.73;/*小屏幕下右侧收缩*/
+				}else{
+					editWidth = windowWidth*0.8;/*右侧收缩*/
+				}
 			}else{
-				editWidth = $(window).width()*0.993;
+				editWidth = windowWidth*0.993;/*右侧展开*/
 			}
 			var scale = Math.min((editWidth-70) / bookWidth, (editHeight - 130) / bookHeight);
 			scaleBook(bookEdit,scale);

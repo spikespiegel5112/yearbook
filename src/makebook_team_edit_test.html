@@ -624,9 +624,9 @@
 							<i class="icon-angle-left icon-4x"></i>
 						</a>
 						<a class="next" href="javascript:;"><i class="icon-angle-right icon-4x"></i></a>
-						<div class="cur_page">
+						<!--<div class="cur_page">
 							<label>第<span>1~2</span>页</label>
-						</div>
+						</div>-->
 					</div>
 					<a class="resource_shrink ybiconfont ybicon-tabright" href="javascript:;"></a>
 					<div class="resource_list">
@@ -1334,7 +1334,7 @@
 					</div>
 					<div class="chapter_list new min">
 						<div class="list_wrap">
-							<a class="chapter_shrink ybiconfont ybicon-down1" href="javascript:;"></a>
+							<a class="chapter_shrink" href="javascript:;"><i class="ybiconfont ybicon-down1"></i><span>P1~P2</span></a>
 							<p>共<span>32</span>页 ,当前：<span>P15-16</span></p>
 							<div class="swiper-container">
 								<ul class="swiper-wrapper">
@@ -3822,7 +3822,7 @@
 			}else{
 				editWidth = windowWidth*0.993;/*右侧展开*/
 			}
-			var scale = Math.min((editWidth-70) / bookWidth, (editHeight - 130) / bookHeight);
+			var scale = Math.min((editWidth-70) / bookWidth, (editHeight - 140) / bookHeight);
 			scaleBook(bookEdit,scale);
 
 			zoomBar.slider("value",parseInt(scale*100));

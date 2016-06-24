@@ -5424,18 +5424,32 @@
 .single_mode .chapter_list.new .chapter_shrink{
     left: 50%;
     top: 0;
-    margin: 0 0 0 -24px;
-    width: 48px;
+    margin: 0 0 0 -39px;
+    width: 78px;
     height: 16px;
     line-height: 16px;
+    font-size: 14px;
     color: #999;
     background-color: #e6e6e6;
     border-radius: 0 0 4px 4px;
     border: 1px solid #ddd;
     transition: all .3s ease-in-out;
 }
+.chapter_list.new .chapter_shrink span{
+    display: none;
+}
 .single_mode .chapter_list.new .chapter_shrink.active {
     top: -16px;
+    border-radius: 4px 4px 0 0;
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.chapter_list.new .chapter_shrink.active span{
+    display: inline-block;
+}
+.single_mode .chapter_list.new .chapter_shrink.active i{
+    position: relative;
+    display: inline-block;
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
 }

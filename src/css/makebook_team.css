@@ -5427,7 +5427,7 @@
     margin: 0 0 0 -39px;
     width: 78px;
     height: 16px;
-    line-height: 16px;
+    line-height: 14px;
     font-size: 14px;
     color: #999;
     background-color: #e6e6e6;
@@ -5452,6 +5452,31 @@
     display: inline-block;
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+.chapter_shrink.active .sapling{
+    display: none;
+    position: absolute;
+    top: -50px;
+    left: 12px;
+    width: 58px;
+    height: 54px;
+    background: url("../img/icon/yb_sapling.png") no-repeat;
+    animation: sapling_rotate 3s ease-in-out infinite;
+    transform: rotate(-6deg);
+    transform-origin: 29px 54px;
+}
+.chapter_shrink.active .sapling{
+    display: block;
+}
+@-webkit-keyframes sapling_rotate {
+    50% {
+        -webkit-transform: rotate(6deg);
+        transform: rotate(6deg)
+    }
+    100% {
+        -webkit-transform: rotate(-6deg);
+        transform: rotate(-6deg)
+    }
 }
 .single_mode .chapter_list.new.shrink {
     bottom: -135px;

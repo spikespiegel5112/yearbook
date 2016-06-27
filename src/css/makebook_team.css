@@ -5462,6 +5462,8 @@
     height: 54px;
     background: url("../img/icon/yb_sapling.png") no-repeat;
     animation: sapling_rotate 3s ease-in-out infinite;
+    -webkit-animation: sapling_rotate 3s ease-in-out infinite;
+    -moz-animation: sapling_rotate 3s ease-in-out infinite;
     transform: rotate(-6deg);
     transform-origin: 29px 54px;
 }
@@ -5469,6 +5471,26 @@
     display: block;
 }
 @-webkit-keyframes sapling_rotate {
+    50% {
+        -webkit-transform: rotate(6deg);
+        transform: rotate(6deg)
+    }
+    100% {
+        -webkit-transform: rotate(-6deg);
+        transform: rotate(-6deg)
+    }
+}
+@-moz-keyframes sapling_rotate {
+    50% {
+        -webkit-transform: rotate(6deg);
+        transform: rotate(6deg)
+    }
+    100% {
+        -webkit-transform: rotate(-6deg);
+        transform: rotate(-6deg)
+    }
+}
+@keyframes sapling_rotate {
     50% {
         -webkit-transform: rotate(6deg);
         transform: rotate(6deg)

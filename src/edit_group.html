@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/edit_group.css" type="text/css" media="all">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1467015866_72714.css" type="text/css" media="all">
+</head>
+<body>
+<!--edit_group 行内style用于测试效果，实际跟随模板编辑区域-->
+<div class="edit_group" style="width: 400px;height: 320px;left: 200px;top: 50px;">
+    <div class="range">
+        <span class="cl top"></span>
+        <span class="cl right"></span>
+        <span class="cl bottom"></span>
+        <span class="cl left"></span>
+    </div>
+    <div class="tools">
+        <span class="arrow"></span>
+        <ul>
+            <li>
+                <div class="ybiconfont ybicon-upload1" title="更新图片"></div>
+                <p>上传照片</p>
+            </li>
+            <li>
+                <div class="ybiconfont ybicon-cut" title="裁剪图片"></div>
+                <p>裁剪照片</p>
+            </li>
+            <li>
+                <div class="ybiconfont ybicon-brush" title="美图秀秀"></div>
+                <p>美化照片</p>
+            </li>
+            <li>
+                <div class="ybiconfont ybicon-trashsolid" title="删除图片"></div>
+                <p>删除照片</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="edit_group" style="width: 120px;height: 30px;top: 200px;right: 350px;">
+    <div class="range">
+        <span class="cl top"></span>
+        <span class="cl right"></span>
+        <span class="cl bottom"></span>
+        <span class="cl left"></span>
+    </div>
+    <div class="tools">
+        <span class="arrow"></span>
+        <ul>
+            <li>
+                <div class="ybiconfont ybicon-pencilsolid" title="修改文字"></div>
+                <p>修改文字</p>
+            </li>
+            <li>
+                <div class="ybiconfont ybicon-waterdrop" title="修改颜色"></div>
+                <p>修改颜色</p>
+            </li>
+            <li>
+                <div class="ybiconfont ybicon-trashsolid" title="删除图片"></div>
+                <p>清空内容</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script>
+    //tools position
+    var editLength = $('.edit_group').length;
+    for(var i = 0;i< editLength;i++){
+        var editWidth = $('.edit_group').eq(i).width(),
+                toolsWidth = $('.tools').eq(i).width()+22,
+                toolsLeft = (editWidth-toolsWidth)/ 2,
+                toolArrowMl = -18;
+        if(toolsLeft < -10){
+            toolArrowMl = -8 + toolsLeft;
+            toolsLeft = -10;
+        }
+        $('.tools').eq(i).css({'left':toolsLeft}).find('.arrow').css({'marginLeft':toolArrowMl});
+    }
+
+</script>
+</body>
+</html>

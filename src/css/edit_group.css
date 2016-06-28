@@ -44,10 +44,18 @@
     margin: 0;
     text-align: center;
     cursor: pointer;
+    transition: all .35s ease-in-out;
 }
 .edit_group .tools li .ybiconfont{
     font-size: 24px;
     text-align: center;
+}
+.edit_group .tools li:hover{
+    color: #405972;
+}
+.edit_group .tools li.active,
+.edit_group .tools li:active{
+    color: #80b6eb;
 }
 .edit_group .range{
     position: absolute;

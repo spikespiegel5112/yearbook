@@ -41,7 +41,7 @@
         </ul>
     </div>
 </div>
-<div class="edit_group" style="width: 200px;height: 40px;top: 200px;right: 350px;">
+<div class="edit_group" style="width: 120px;height: 30px;top: 200px;right: 350px;">
     <div class="range">
         <span class="cl top"></span>
         <span class="cl right"></span>
@@ -73,8 +73,13 @@
     for(var i = 0;i< editLength;i++){
         var editWidth = $('.edit_group').eq(i).width(),
                 toolsWidth = $('.tools').eq(i).width()+22,
-                toolsLeft = (editWidth-toolsWidth)/2;
-        $('.tools').eq(i).css('left',toolsLeft);
+                toolsLeft = (editWidth-toolsWidth)/ 2,
+                toolArrowMl = -18;
+        if(toolsLeft < -10){
+            toolArrowMl = -8 + toolsLeft;
+            toolsLeft = -10;
+        }
+        $('.tools').eq(i).css({'left':toolsLeft}).find('.arrow').css({'marginLeft':toolArrowMl});
     }
 
 </script>

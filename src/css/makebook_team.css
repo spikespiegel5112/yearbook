@@ -5453,22 +5453,24 @@
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-.chapter_shrink.active .sapling{
-    display: none;
+.chapter_shrink .sapling{
     position: absolute;
     top: -50px;
     left: 12px;
     width: 58px;
-    height: 54px;
+    height: 0;
     background: url("../img/icon/yb_sapling.png") no-repeat;
     animation: sapling_rotate 3s ease-in-out infinite;
     -webkit-animation: sapling_rotate 3s ease-in-out infinite;
     -moz-animation: sapling_rotate 3s ease-in-out infinite;
     transform: rotate(-6deg);
     transform-origin: 29px 54px;
+    opacity: 0;
+    transition: all .35s ease-in-out;
 }
 .chapter_shrink.active .sapling{
-    display: block;
+    height: 54px;
+    opacity: 1;
 }
 @-webkit-keyframes sapling_rotate {
     50% {

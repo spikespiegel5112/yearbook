@@ -624,7 +624,7 @@
                                 </div>
                                 <div class="double_con">
                                     <div class="tplleft">
-                                        <div class='makebook_dragslot_item' style='width:200px;height:100px;left:100px;top:200px;'>
+                                        <div class='makebook_dragslot_item' style='width:200px;height:auto;left:100px;top:200px;'>
                                             <div class='slot_1'>
                                                 <img src="img/default/left_big.jpg">
                                             </div>
@@ -632,7 +632,7 @@
                                         <img src="img/default/pages03.jpg" width="680" height="964">
                                     </div>
                                     <div class="tplright">
-                                        <div class='makebook_dragslot_item' style='width:200px;height:100px;right:100px;top:200px;'>
+                                        <div class='makebook_dragslot_item' style='width:200px;height:auto;right:100px;top:200px;'>
                                             <div class='slot_2'>
                                                 <img src="img/default/left_big.jpg">
                                             </div>
@@ -3834,17 +3834,17 @@
                 stop: function(event, ui) {}
             });
             bookEdit.draggable();
-            zoomBar.slider({
-                max: 200,
-                min: 20,
-                create: function() {
-                    resetBookScaleAndPosition();
-                },
-                change: function(event, ui) {
-                    var scale = zoomBar.slider("value") / 100;
-                    zoomBookTo(scale);
-                }
-            });
+            // zoomBar.slider({
+            //     max: 200,
+            //     min: 20,
+            //     create: function() {
+            //         resetBookScaleAndPosition();
+            //     },
+            //     change: function(event, ui) {
+            //         var scale = zoomBar.slider("value") / 100;
+            //         zoomBookTo(scale);
+            //     }
+            // });
         }
 
 
@@ -4709,7 +4709,7 @@
             });
         
             dropItem.droppable({
-                greedy: true,
+                // greedy: true,
                 tolerance : "intersect",
                 hoverClass: "cm_drag_cover",
                 // accept : '.dragImg',

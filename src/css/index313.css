@@ -1,31 +1,39 @@
 @charset 'utf-8';
-.index_banner_wrapper {
+.index_banner_container{
 	width: 100%;
+}
+.index_banner_wrapper {
+	margin: 0 auto;
+	width: 1200px;
+	height: 100%;
 	position: relative;
 }
-.index_banner_wrapper .photobook {
-	width: 100%;
+.index_banner_container .photobook {
 	height: 860px;
 	background-image: url(../img/index/313/index_banner_photobook_bg_00000.jpg);
 	background-position: center;
 }
-.index_banner_wrapper .iabook {
+.index_banner_container .iabook {
 	width: 100%;
 	height: 860px;
 	background-image: url(../img/index/313/index_banner_iabook_bg_00000.jpg);
 	background-position: center;
 }
-.index_banner_wrapper .photobook .showcase {
+.index_banner_container .photobook .showcase {
 	width: 730px;
 	height: 520px;
+	background: url(../img/index/313/index_photobook_sample_1_00000.png);
+	
 }
-.index_banner_wrapper .iabook .showcase {
+.index_banner_container .iabook .showcase {
 	width: 1000px;
 	height: 750px;
+	background: url(../img/index/313/index_iabook_sample_1_00000.png);
 	position: absolute;
+	left: 0;
 	bottom: 0;
 }
-.index_banner_wrapper .photobook .showcase {
+.index_banner_container .photobook .showcase {
 	float: right;
 	margin: 110px 0 0 0;
 }
@@ -43,12 +51,13 @@
 	font-size: 0;
 	position: absolute;
 	top: 715px;
+
 }
-.index_banner_wrapper .photobook .index_productbtn_wrapper .product_btn{
+.index_banner_container .photobook .index_productbtn_wrapper .product_btn{
 	left: 480px;
 }
-.index_banner_wrapper .iabook .index_productbtn_wrapper .product_btn{
-	left: 760px;
+.index_banner_container .iabook .index_productbtn_wrapper .product_btn{
+	right: 180px;
 }
 .index_productbtn_wrapper .product_btn:hover{
 	background-color: #2D94CD;
@@ -361,13 +370,19 @@
 }
 .index_activity_wrapper .activtylist>ul>li{
 	display: inline-block;
-	margin: 8px;
+	margin: 7px;
 	width: 280px;
+	height: 400px;
 	text-align: left;
 	vertical-align: top;
+	border: 1px solid transparent;
+	transition: border 0.3s;
+}
+.index_activity_wrapper .activtylist>ul>li:hover{
+	border: 1px solid #8cc04e;
 }
 .index_activity_wrapper .activtylist .status{
-	margin: 20px 0;
+	margin: 20px 5px;
 }
 .index_activity_wrapper .activtylist .status li{
 	display: inline-block;
@@ -382,10 +397,12 @@
 	vertical-align: middle;
 }
 .index_activity_wrapper .activtylist h6{
-	margin: 10px 0;
+	margin: 10px 5px;
 	font-size: 20px;
 }
 .index_activity_wrapper .activtylist p{
+	margin: 0 auto;
+	width: 270px;
 	font-size: 14px;
 	color: #666;
 }

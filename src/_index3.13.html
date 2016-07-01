@@ -81,25 +81,29 @@
 	</div>
 	<!--主要内容-->
 	<div class='main_container'>
-		<div class='index_banner_wrapper'>
+		<div class='index_banner_container'>
 			<div class='photobook'>
-				<div class='showcase'></div>
-				<div class='index_productbtn_wrapper'>
-					<a class='product_btn transition_btn' href="javascript:;">
-						<label>立即制作</label>
-						<span>￥38<i>起</i></span>
-					</a>
+				<div class='index_banner_wrapper'>
+					<div class='showcase'></div>
+					<div class='index_productbtn_wrapper'>
+						<a class='product_btn transition_btn' href="javascript:;">
+							<label>立即制作</label>
+							<span>￥38<i>起</i></span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class='index_banner_wrapper'>
+		<div class='index_banner_container'>
 			<div class='iabook'>
-				<div class='showcase'></div>
-				<div class='index_productbtn_wrapper'>
-					<a class='product_btn transition_btn' href="javascript:;">
-						<label>立即制作</label>
-						<span>￥38<i>起</i></span>
-					</a>
+				<div class='index_banner_wrapper'>
+					<div class='showcase'></div>
+					<div class='index_productbtn_wrapper'>
+						<a class='product_btn transition_btn' href="javascript:;">
+							<label>立即制作</label>
+							<span>￥38<i>起</i></span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1130,9 +1134,9 @@
 		//CloseYbNotice();
 	});
 
-	function imageTransition(){
+	function imageTransition() {
 		$.imageTransition({
-			container: '.index_banner_wrapper .photobook .showcase',
+			container: '.index_banner_container .photobook .showcase',
 			mintime: 5,
 			maxtime: 15,
 			transittime: 5,
@@ -1143,7 +1147,7 @@
 			]
 		});
 		$.imageTransition({
-			container: '.index_banner_wrapper .iabook .showcase',
+			container: '.index_banner_container .iabook .showcase',
 			mintime: 5,
 			maxtime: 15,
 			transittime: 5,

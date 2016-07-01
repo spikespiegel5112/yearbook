@@ -1123,11 +1123,37 @@
 		icheck();
 		templateexpo();
 		storycase();
+		imageTransition();
 		ybGlobalToolBar();
 		$.globalhint(); //全局提示框，用来提示更换浏览器，提示切换移动端oc端
 		qqServer();
 		//CloseYbNotice();
 	});
+
+	function imageTransition(){
+		$.imageTransition({
+			container: '.index_banner_wrapper .photobook .showcase',
+			mintime: 5,
+			maxtime: 15,
+			transittime: 5,
+			imagesrc: [
+				'img/index/313/index_photobook_sample_1_00000.png',
+				'img/index/313/index_photobook_sample_2_00000.png',
+				'img/index/313/index_photobook_sample_3_00000.png'
+			]
+		});
+		$.imageTransition({
+			container: '.index_banner_wrapper .iabook .showcase',
+			mintime: 5,
+			maxtime: 15,
+			transittime: 5,
+			imagesrc: [
+				'img/index/313/index_iabook_sample_1_00000.png',
+				'img/index/313/index_iabook_sample_2_00000.png',
+				'img/index/313/index_iabook_sample_3_00000.png'
+			]
+		});
+	}
 
 	function templateexpo() {
 		var childrenSwiper = new Swiper('.children .swiper-container', {

@@ -15,11 +15,20 @@
 	background-image: url(../img/index/313/index_banner_iabook_bg_00000.jpg);
 	background-position: center;
 }
-.index_banner_wrapper div .showcase {
+.index_banner_wrapper .photobook .showcase {
 	width: 730px;
 	height: 520px;
 }
-.index_banner_wrapper .photobook .showcase {}
+.index_banner_wrapper .iabook .showcase {
+	width: 1000px;
+	height: 750px;
+	position: absolute;
+	bottom: 0;
+}
+.index_banner_wrapper .photobook .showcase {
+	float: right;
+	margin: 110px 0 0 0;
+}
 .index_banner_wrapper .index_productbtn_wrapper{
 	margin: 0 auto;
 	width: 1200px;
@@ -381,6 +390,7 @@
 	color: #666;
 }
 .index_express_wrapper{
+	padding: 40px 0;
 	text-align: center;
 	box-shadow: 0 -3px 5px #eee;
 }

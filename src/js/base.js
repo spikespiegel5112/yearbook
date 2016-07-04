@@ -562,7 +562,7 @@
 				})
 				counterEl.on('keydown keyup', function(e) {
 					var $this = $(this),
-						counterVal='',
+						counterVal = '',
 						counter = 0,
 						keycode = e.charCode ? e.charCode : e.keyCode;
 					switch (e.type) {
@@ -574,15 +574,15 @@
 							}
 							break;
 						case 'keyup':
-							counterEl.val(counterEl.val().replace(/\D/g,''))
+							counterEl.val(counterEl.val().replace(/\D/g, ''))
 							config.onchange();
 							fireonchange(counterEl);
 							break;
 					}
 				});
-				counterEl.blur(function(){
-					var $this=$(this);
-					if ($this.val()=='') {
+				counterEl.blur(function() {
+					var $this = $(this);
+					if ($this.val() == '') {
 						$this.val(0)
 					};
 				})
@@ -1220,7 +1220,7 @@
 				docEle = doc.documentElement,
 				docBody = doc.body,
 				docHeightContext = doc.body ? doc.body : docEle,
-				
+
 				clientHeight = 0,
 				windowHeight = doc.all ? docEle.offsetHeight : window.innerHeight;
 
@@ -1667,8 +1667,11 @@
 				maxtime: 2,
 				transittime: 1,
 				container: '',
-				imagesrc: []
+				imagesrc: [],
+				callback: function() {}
 			}, options);
+			this.container = $(config.container);
+
 			var bgLength = config.imagesrc.length,
 				index = 0,
 				imgReady = false,
@@ -1676,73 +1679,116 @@
 				randomPeriod = 1000,
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
-				container = $(config.container),
-				ffimgcontainerClass = 'ffimgcontainer',
-				ffimgcontainerEl = $('<div></div>').addClass(ffimgcontainerClass).css({
-					width: '100%',
-					height: '100%',
-					position: 'absolute',
-					left: 0,
-					top: 0
-				})
+				container = this.container,
+				ffimgcontainerClass = 'ffimgcontainer';
+
+			var tools = {
+				initImage: function(index, imgSrc) {
+					if (imgSrc instanceof Array) {
+						for (var i = 0; i < imgSrc.length; i++) {
+							imgSrc = imgSrc[i];
+						}
+					}
+					var imgObj = new Image(),
+						bgImgWidth = imgObj.outerWidth,
+						bgImgHeight = imgObj.outerHeight;
+
+					var imgEl = [];
+					for (var i = 0; i < bgLength; i++) {
+						imgEl.push('<img class="transition_bg" src=' + config.imagesrc[i] + ' />');
+					}
+					imgEl = imgEl.join('');
+					var ffimgcontainerEl = $('<div class="' + ffimgcontainerClass + '">' + imgEl + '</div>');
+
+					var thisImgEl = ffimgcontainerEl.find('img');
+					console.log(thisImgEl)
+					ffimgcontainerEl.css({
+						width: '100%',
+						height: '100%',
+						position: 'absolute',
+						left: 0,
+						top: 0
+					})
+					
+
+
+
+					//加载所有图片
+					container.append(ffimgcontainerEl);
+					this.transitImage(0, config.imagesrc);
+					if (this.getVendorPrefix() == 'webkit') {
+						ffimgcontainerEl.hide();
+					}else{
+						thisImgEl.css({
+							position:'absolute',
+							top: 0,
+							left: 0,
+							display: 'none'
+						}).hide();
+						thisImgEl.eq(0).show();
+					}
+				},
+				transitImage: function(index, imgSrc) {
+					if (tools.getVendorPrefix() == 'webkit') {
+						container.css({
+							'background-image': 'url(' + imgSrc[index] + ')',
+							'-webkit-transition': 'background-image ' + config.transittime + 's'
+						});
+					} else {
+						var thisImgEl = container.find('.ffimgcontainer img');
+						if (thisImgEl.length != 1) {
+							
+							alert(currVisibleIndex)
+							thisImgEl.eq(index-1).fadeOut(config.transittime * 1000);
+						};
+						thisImgEl.eq(index).fadeIn(config.transittime * 1000);
+						// thisImgEl.eq(index).css({
+						// 	top: (windowHeight - bgImgHeight) / 2,
+						// 	left: (windowWidth - bgImgWidth) / 2
+						// });
+						console.log(thisImgEl.src);
+					}
+				},
+				getVendorPrefix: function() {
+					var body, vendor;
+					return function() {
+						var body = document.body || document.documentElement,
+							vendorArr = ['webkit', 'khtml', 'moz', 'ms', 'o'];
+						for (var i = 0; i < vendorArr.length; i++) {
+							if (typeof body.style[vendorArr[i] + 'Transition'] === 'string') {
+								vendor = vendorArr[i]
+							}
+						}
+						return vendor
+					}
+				}()
+			}
+
 
 			config.mintime = (config.mintime < config.transittime * 2) ? config.transittime * 2 : config.mintime;
 			config.maxtime = (config.maxtime < config.mintime) ? config.mintime : config.maxtime;
-			//加载所有图片
-			for (var i = 0; i < bgLength; i++) {
-				var imgEl = $('<img/>').attr('src', config.imagesrc[i]).css('position', 'absolute').addClass('transition_bg').hide();
-				container.append(imgEl);
-			}
-			container.append(ffimgcontainerEl);
-			var bgImg = $('.transition_bg');
-			ffimgcontainerEl.append(bgImg);
+
+			tools.initImage(0, config.imagesrc[0]);
+
+
 			//检查每个图片是否加载完成
-			bgImg.each(function(index) {
+			container.find('.transition_bg').each(function(index) {
 				$(this).load(function() {
 					imgCounter++;
 					console.log(imgCounter)
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
-						var bgImgWidth = bgImg.width(),
-							bgImgHeight = bgImg.height();
-						console.log(bgImgWidth);
 						var timer = setInterval(function() {
 							randomPeriod = config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
-							console.log(randomPeriod);
 							if (index == bgLength) {
 								index = 0;
 							};
-							if (getVendorPrefix() == 'webkit') {
-								container.css({
-									'background-image': 'url(' + config.imagesrc[index] + ')',
-									'-webkit-transition': 'background-image ' + config.transittime + 's'
-								});
-							} else {
-								bgImg.eq(index - 1).fadeOut(config.transittime * 1000);
-								bgImg.eq(index).fadeIn(config.transittime * 1000);
-								bgImg.eq(index).css({
-									top: (windowHeight - bgImgHeight) / 2,
-									left: (windowWidth - bgImgWidth) / 2
-								});
-								console.log(bgImgHeight);
-							}
+							tools.transitImage(index, config.imagesrc);
 							index++;
 						}, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));
 					};
 				});
 			});
-
-			function getVendorPrefix() {
-				var body = document.body || document.documentElement,
-					style = body.style,
-					vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'];
-
-				for (var i = 0; i < vendor.length; i++) {
-					if (typeof style[vendor[i] + 'Transition'] === 'string') {
-						return vendor[i];
-					}
-				}
-			}
 		}
 	});
 	$('.bannerslider_wrapper').toolsSlide({

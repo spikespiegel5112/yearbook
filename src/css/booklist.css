@@ -1458,7 +1458,7 @@
     margin: 20px 0 40px;
 }
 
-.book_details_box .product_detail div h2
+.product_detail div h2
 {
     font-size: 24px;
 
@@ -1531,7 +1531,7 @@
     width: 44%;
     height: 35px;
     margin: 0 2%;
-
+    font-size: 18px;
     text-align: left;
 
     border-bottom: 1px dotted #c9c9c9;
@@ -1539,7 +1539,12 @@
 
 .standard .standard_info ul li label
 {
-    color: #8f8f8f;
+    color: #666;
+}
+
+.standard .standard_info ul li span
+{
+    color: #333;
 }
 
 .standard .standard_info ul li label::before
@@ -1677,7 +1682,8 @@
 
 /*cover details*/
 
-.cover .cover_info
+.cover .cover_info,
+.cover .cover_dis
 {
     clear: both;
     overflow: visible;
@@ -1691,6 +1697,7 @@
 
     width: 49%;
     margin: 0;
+    vertical-align: bottom;
 }
 
 .cover .cover_info .item:last-child,
@@ -1699,11 +1706,12 @@
     margin-left: -15px;
 }
 
-.cover .cover_info .item h2
+.cover .cover_info .item h2,
+.cover .cover_dis .item h2
 {
     margin: 25px 0;
 
-    color: #666;
+    color: #333;
 }
 
 .cover .cover_info .item img,
@@ -1724,12 +1732,22 @@
     text-align: left;
 }
 
-.cover .cover_info .item p
+.cover .cover_info .item p,
+.cover .cover_dis .item p
 {
     font-size: 14px;
     line-height: 2em;
+    color: #333;
+}
+/*3.14 cover display*/
+.cover .cover_dis .item{
+    display: inline-block;
+    width: 30%;
 }
 
+.cover .cover_dis .item img{
+    margin-bottom: 15px;
+}
 
 /*print details*/
 
@@ -1781,13 +1799,14 @@
 {
     margin: 25px 0 15px;
 
-    color: #595959;
+    color: #333;
 }
 
 .print .print_info p
 {
     font-size: 14px;
     line-height: 2em;
+    color: #333;
 }
 
 
@@ -1836,6 +1855,83 @@
     background-color: #fdfdfd;
 }
 
+.inner_binding_show{
+    position: relative;
+    width: 808px;
+    margin: 30px auto;
+}
+
+.inner_binding_show p{
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.binding .binding_info .three_bind h2{
+    margin: 0 0 10px;
+}
+
+.binding .binding_info .three_bind p{
+    color: #333;
+    line-height: 50px;
+}
+
+.binding_info .binding_thumb{
+    display: inline-block;
+}
+
+.binding_thumb .item{
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+.binding_thumb .item p{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.product_advantage .imgs_dis li img{
+    display: block;
+    margin: 0 auto;
+}
+.pro_really_dis{
+    position: relative;
+    padding-top: 10px;
+}
+.pro_really_dis li{
+    margin-top: 8px;
+}
+.pro_really_dis li:last-child{
+    margin-top: 0;
+}
+.pro_really_dis li img{
+    display: block;
+    margin: 0 auto;
+}
+
+.sizing_explain .size_dis .item{
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: bottom;
+}
+
+.sizing_explain .size_dis .item p{
+    position: relative;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+    width: 188px;
+    text-align: center;
+}
+
+.sizing_explain .size_dis .item:nth-child(2) p,
+.sizing_explain .size_dis .item:nth-child(4) p{
+    width: 170px;
+}
 
 /*更多模板轮播图*/
 

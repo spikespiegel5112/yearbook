@@ -2533,29 +2533,27 @@ button.select
     font-size: 0;
 
     width: 100%;
-    height: 60px;
+    height: 40px;
+    padding: 20px 0 10px;
     margin: 0 auto;
 
     text-align: center;
 }
 
-.common_loginheader_wrapper div img
-{
-    display: inline-block;
-
-    width: 55px;
-
-    vertical-align: middle;
-}
 .common_loginheader_wrapper div span
 {
-    font-size: 60px;
+    margin: 0 10px 0 0;
+    width: 60px;
+
 
     display: inline-block;
+    -ms-float:left;
 
     vertical-align: middle;
 
     color: #aab93e;
+    /*background: url(../img/main/yblogo_simple.png) no-repeat;*/
+    vertical-align: middle;
 }
 
 .common_loginheader_wrapper div label
@@ -2563,6 +2561,7 @@ button.select
     font-size: 18px;
 
     display: inline-block;
+    -ms-float;left;
 
     vertical-align: middle;
 }
@@ -3282,14 +3281,15 @@ button.select
     font-size: 70px!important;
     line-height: 40px;
 
-    display: inline-block;
-
-    height: 40px;
-    margin: 20px auto 10px;
-
+    display: block;
+    width: 70px;
     text-align: center;
 
     color: #a9ba38;
+}
+.common_yblogoshort_item img{
+    display: block;
+    width: 100%;
 }
 
 .ybnav_nav_wrapper

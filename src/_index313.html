@@ -124,7 +124,7 @@
 						<div class='title'><span>&quot;</span>
 							<h6>儿童类</h6></div>
 						<p>
-							记录孩子长大的过程，他的每一个进步，都感动得你稀里哗啦，在按下快门的瞬间，成为永恒。
+							记录孩子长大的过程，他的每一个进步，都感动得你稀里哗啦，在按下快门的瞬间，成为永恒。
 						</p>
 						<div class='samplelist swiper-container'>
 							<a class='arrow_left' href="javascript:;">&lt;</a>
@@ -180,7 +180,7 @@
 						<div class='title'><span>&quot;</span>
 							<h6>家庭类</h6></div>
 						<p>
-							家是我们最温暖的港湾，美好的回忆，用照片封存，做成书册送给父母，送给最爱的他（她），满满的都是爱…
+							家是我们最温暖的港湾，美好的回忆，用照片封存，做成书册送给父母，送给最爱的他（她），满满的都是爱…
 						</p>
 						<div class='samplelist swiper-container'>
 							<a class='arrow_left' href="javascript:;">&lt;</a>
@@ -236,7 +236,7 @@
 						<div class='title'><span>&quot;</span>
 							<h6>其它</h6></div>
 						<p>
-							毕业了，恋爱了，结婚了，聚会了，旅游了，生活中的点点滴滴，等我们老了，拿出像册，你会为此感动，曾经用心保存的记忆…
+							毕业了，恋爱了，结婚了，聚会了，旅游了，生活中的点点滴滴，等我们老了，拿出像册，你会为此感动，曾经用心保存的记忆…
 						</p>
 						<div class='samplelist swiper-container'>
 							<a class='arrow_left' href="javascript:;">&lt;</a>
@@ -395,7 +395,7 @@
 							</div>
 							<div class='desc'>
 								<p>
-									高中三年，有笑有泪，承载了太多回忆和青春，无论如何得记录下来。忆尔这个平台非常棒，有别于传统毕业册、同学录，既可以...
+									高中三年，有笑有泪，承载了太多回忆和青春，无论如何得记录下来。忆尔这个平台非常棒，有别于传统毕业册、同学录，既可以...
 								</p>
 								<label>
 									使用模板：<a href="javascript:;">《致青春》</a>
@@ -1125,7 +1125,7 @@
 	<script>
 	$(document).ready(function() {
 		icheck();
-		templateexpo();
+		// templateexpo();
 		storycase();
 		imageTransition();
 		ybGlobalToolBar();
@@ -1160,46 +1160,29 @@
 	}
 
 	function templateexpo() {
-		var childrenSwiper = Swiper('.children .swiper-container', {
-			loop: true,
-			pagination: '.children .swiper-pagination',
-			nextButton: '.children .arrow_right',
-			prevButton: '.children .arrow_left',
-			paginationClickable: true
-		});
-		var familySwiper = Swiper('.family .swiper-container', {
-			loop: true,
-			pagination: '.family .swiper-pagination',
-			nextButton: '.family .arrow_right',
-			prevButton: '.family .arrow_left',
-			paginationClickable: true
-		});
-		var etcSwiper = new Swiper('.etc .swiper-container', {
-			loop: true,
-			pagination: '.etc .swiper-pagination',
-			nextButton: '.etc .arrow_left',
-			prevButton: '.etc .arrow_right',
-			paginationClickable: true
-		});
-		alignToCenter();
-
-		function alignToCenter() {
-			var windowWidth = $(window).width();
-			if (windowWidth <= 1150) {
-				windowWidth = 1150;
-			}
-			$('.swiper-container').css({
-				'height': '450px'
+		try {
+			var childrenSwiper = new Swiper('.children .swiper-container', {
+				loop: true,
+				pagination: '.children .swiper-pagination',
+				nextButton: '.children .arrow_right',
+				prevButton: '.children .arrow_left',
+				paginationClickable: true
 			});
-			$('.swiper-slide').css({
-				'overflow': 'hidden'
-			})
-			$('.swiper-slide>div').css({
-				'position': 'absolute',
-				'top': '0',
-				'right': (1920 - windowWidth) / 2
+			var familySwiper = new Swiper('.family .swiper-container', {
+				loop: true,
+				pagination: '.family .swiper-pagination',
+				nextButton: '.family .arrow_right',
+				prevButton: '.family .arrow_left',
+				paginationClickable: true
 			});
-		}
+			var etcSwiper = new Swiper('.etc .swiper-container', {
+				loop: true,
+				pagination: '.etc .swiper-pagination',
+				nextButton: '.etc .arrow_left',
+				prevButton: '.etc .arrow_right',
+				paginationClickable: true
+			});
+		}catch(err){};
 	}
 
 	function storycase() {

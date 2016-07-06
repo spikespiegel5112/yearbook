@@ -1712,33 +1712,29 @@
 					}
 					imgEl = imgEl.join('');
 					var ffimgcontainerEl = $('<div class="' + ffimgcontainerClass + '">' + imgEl + '</div>');
-
-					var thisImgEl = ffimgcontainerEl.find('img');
-					console.log(thisImgEl)
 					ffimgcontainerEl.css({
-							width: '100%',
-							height: '100%',
-							position: 'absolute',
-							left: 0,
-							top: 0
-						})
-						//加载所有图片
+						width: '100%',
+						height: '100%',
+						position: 'absolute',
+						left: 0,
+						top: 0
+					});
+					//加载所有图片
 					container.append(ffimgcontainerEl);
 					this.transitImage(0, config.imagesrc);
 					if (this.getVendorPrefix() == 'webkit') {
 						ffimgcontainerEl.hide();
 					} else {
+						var thisImgEl = ffimgcontainerEl.find('img');
 						thisImgEl.css({
 							position: 'absolute',
 							top: 0,
-							left: 0,
-							display: 'none'
+							left: 0
 						}).hide();
 						thisImgEl.eq(0).show();
 					}
 				},
 				transitImage: function(index, imgSrc) {
-					// alert(index)
 					if (tools.getVendorPrefix() == 'webkit') {
 						container.css({
 							'background-image': 'url(' + imgSrc[index] + ')',
@@ -1747,8 +1743,6 @@
 					} else {
 						var thisImgEl = container.find('.ffimgcontainer img');
 						if (thisImgEl.length != 1) {
-
-							// alert(currVisibleIndex)
 							thisImgEl.eq(index - 1).fadeOut(config.transittime * 1000);
 						} else if (index == 0) {
 
@@ -1777,18 +1771,16 @@
 					console.log(imgCounter)
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
-						var initImgIndex = (function() {
-							var initImgIndex = 0;
-							$('.ffimgcontainer img').each(function() {
-									var $this = $(this);
-									if ($this.is(':visible')) {
-										initImgIndex = Number($this.index()) + 1;
-										return initImgIndex;
-									};
-								});
-								console.log(initImgIndex)
-						}());
 						
+						var initImgIndex = 0;
+						$('.ffimgcontainer img').each(function() {
+							var $this = $(this);
+							if ($this.is(':visible')) {
+								initImgIndex = Number($this.index()) + 1;
+								return initImgIndex;
+							};
+						});
+						console.log(initImgIndex)
 						var timer = setInterval(function() {
 							randomPeriod = config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							if (index == bgLength) {

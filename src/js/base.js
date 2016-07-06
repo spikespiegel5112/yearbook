@@ -1683,7 +1683,7 @@
 				ffimgcontainerClass = 'ffimgcontainer';
 
 			var tools = {
-				getVendorPrefix: function() {
+				getVendorPrefix: (function() {
 					var body, vendor;
 					return function() {
 						var body = document.body || document.documentElement,
@@ -1695,7 +1695,7 @@
 						}
 						return vendor
 					}
-				}(),
+				})(),
 				initImage: function(index, imgSrc) {
 					if (imgSrc instanceof Array) {
 						for (var i = 0; i < imgSrc.length; i++) {

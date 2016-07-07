@@ -1680,7 +1680,7 @@
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height(),
 				container = this.container,
-				ffimgcontainerClass = 'ffimgcontainer';
+				imageContainerClass = 'imagetransition_container';
 
 			var tools = {
 				getVendorPrefix: (function() {
@@ -1697,10 +1697,8 @@
 					}
 				})(),
 				initImage: function(index, imgSrc) {
-					if (imgSrc instanceof Array) {
-						for (var i = 0; i < imgSrc.length; i++) {
-							imgSrc = imgSrc[i];
-						}
+					for (var i = 0; i < imgSrc.length; i++) {
+						imgSrc = imgSrc[i];
 					}
 					var imgObj = new Image(),
 						bgImgWidth = imgObj.outerWidth,
@@ -1711,8 +1709,8 @@
 						imgEl.push('<img class="transition_bg" src=' + config.imagesrc[i] + ' />');
 					}
 					imgEl = imgEl.join('');
-					var ffimgcontainerEl = $('<div class="' + ffimgcontainerClass + '">' + imgEl + '</div>');
-					ffimgcontainerEl.css({
+					var imageContainerEl = $('<div class="' + imageContainerClass + '">' + imgEl + '</div>');
+					imageContainerEl.css({
 						width: '100%',
 						height: '100%',
 						position: 'absolute',
@@ -1720,12 +1718,12 @@
 						top: 0
 					});
 					//加载所有图片
-					container.append(ffimgcontainerEl);
+					container.append(imageContainerEl);
 					this.transitImage(0, config.imagesrc);
 					if (this.getVendorPrefix() == 'webkit') {
-						ffimgcontainerEl.hide();
+						imageContainerEl.hide();
 					} else {
-						var thisImgEl = ffimgcontainerEl.find('img');
+						var thisImgEl = imageContainerEl.find('img');
 						thisImgEl.css({
 							position: 'absolute',
 							top: 0,
@@ -1741,7 +1739,7 @@
 							'-webkit-transition': 'background-image ' + config.transittime + 's'
 						});
 					} else {
-						var thisImgEl = container.find('.ffimgcontainer img');
+						var thisImgEl = container.find('.' + imageContainerClass + ' img');
 						if (thisImgEl.length != 1) {
 							thisImgEl.eq(index - 1).fadeOut(config.transittime * 1000);
 						} else if (index == 0) {
@@ -1771,22 +1769,21 @@
 					console.log(imgCounter)
 					if (imgCounter == bgLength) {
 						console.log('imgReady');
-						
+
 						var initImgIndex = 0;
-						$('.ffimgcontainer img').each(function() {
+						$('.imageContainer img').each(function() {
 							var $this = $(this);
 							if ($this.is(':visible')) {
 								initImgIndex = Number($this.index()) + 1;
 								return initImgIndex;
 							};
 						});
-						console.log(initImgIndex)
+						console.log('initIndex: '+initImgIndex)
 						var timer = setInterval(function() {
 							randomPeriod = config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							if (index == bgLength) {
 								index = 0;
 							};
-
 							tools.transitImage(index, config.imagesrc);
 							index++;
 						}, config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000));

@@ -152,6 +152,7 @@
 	border: 1px solid #dddddd;
 	position: relative;
 	bottom: 0;
+	overflow: hidden;
 	transition: all 0.3s;
 }
 .index_templateexpo_wrapper>ul>li p{
@@ -199,7 +200,9 @@
 
 .index_templateexpo_wrapper .samplelist{
 	margin: 10px 0;
+	width: 340px;
 }
+
 .index_templateexpo_wrapper .samplelist li{
 	display: inline-block;
 	margin: 5px;
@@ -235,8 +238,10 @@
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 }
+
 .index_templateexpo_wrapper .samplelist .swiper-pagination{
 	position: relative;
+	margin: 20px 0 0 0;
 }
 .index_templateexpo_wrapper .samplelist .swiper-pagination span{
 	background-color: #c2dd9b;

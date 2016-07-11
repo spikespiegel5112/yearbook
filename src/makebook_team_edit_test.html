@@ -4709,10 +4709,10 @@
             });
         
             dropItem.droppable({
-                // greedy: true,
+                greedy: true,
                 tolerance : "intersect",
                 hoverClass: "cm_drag_cover",
-                // accept : '.dragImg',
+                accept : '.dragImg',
                 drop: function( event, ui ) {
                     var img = ui.draggable;
                     if (img.is('div')) img = this.find('img');

@@ -173,9 +173,9 @@
 				</div>
 				<ul>
 					<li>
-						<a class='bookcover' href="booklist_detail.html">
-							<span class='agbcover_bg_item'></span>
+						<a class='booklist_bookcover_item' href="booklist_detail.html">
 							<img src="img/default/albumcover_205_295_1_00000.jpg">
+							<span class='skin'></span>
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆</b>
 						<div class='sold'>已售出:<span>1093</span></div>
@@ -468,7 +468,7 @@
 			bookwrapperEl = $(options.bookwrapper),
 			bookEl = $(options.book),
 			closeBtn = $(options.closebtn),
-			trigger=$(options.trigger),
+			trigger = $(options.trigger),
 			windowWidth = $(window).width(),
 			windowHeight = $(window).height(),
 			//big尺寸书册的0.6倍大小的高度

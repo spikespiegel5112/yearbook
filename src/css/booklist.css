@@ -875,7 +875,28 @@
 {
     color: #ff5757;
 }
-
+.agbcover_wrapper ul li .praise{
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0 0 0 35px;
+    width: 0;
+    height: 35px;
+    background-image: url(../img/booklist/booklist_praise.png);
+    background-position: -1px -13.5px;
+    background-repeat: no-repeat;
+}
+.agbcover_wrapper ul li .praise.active{
+    /*background-position: 2px 2px;*/
+    /*animation: praise linear 1s;*/
+}
+/*@-webkit-keyframes praise{
+    form  {
+        background-position: 2px 2px;
+    }
+    to {
+        background-position: -722px 2px;
+    }
+}*/
 .agbcover_wrapper ul li .preview_book
 {
     font-size: 12px;

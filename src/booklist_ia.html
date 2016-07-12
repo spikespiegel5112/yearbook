@@ -178,7 +178,8 @@
 							<span class='skin'></span>
 						</a>
 						<b class='agbcover_title hide_title' max-length="10">青春记忆</b>
-						<div class='sold'>已售出:<span>1093</span></div>
+						<div class='sold'>
+							<a class='praise' href="javascript:;"></a>已售出:<span>1093</span></div>
 						<!--<a class='beginproduce' href='booklist_detail.html'>我要制作</a>-->
 						<a class='preview_book' href='javascript:;'>模版预览</a>
 					</li>
@@ -428,7 +429,10 @@
 		//scrollFixed();
 		//leftFilter();
 		//filterStyle();
-		imgAlignCenter();
+		// imgAlignCenter();
+		$('.agb_bannermain_wrapper img').align({
+			container: '.agb_banner_wrapper'
+		});
 		// bookPreview();
 		$('.tpl_sort').chosen({
 			disable_search_threshold: 5,
@@ -445,7 +449,34 @@
 			thumbnailscale: 0.3,
 			zindex: 9999
 		});
+		praise();
 	});
+
+	function praise() {
+		var praiseBtn = $('.agbcover_wrapper ul li .praise');
+		praiseBtn.click(function() {
+			var $this = $(this),
+				start = 0;
+			$this.toggleClass('active');
+			if ($this.hasClass('active')) {
+				setInterval(function() {
+					start -= 102;
+					if (start < -722) {
+						return;
+					};
+					$this.css({
+						'background-position': start + 'px -13.5px'
+					});
+				}, 200);
+			}else{
+				$this.css({
+						'background-position':'0px -13.5px'
+					});
+			}
+
+		});
+
+	}
 
 	/**
 	 * 点击预览效果

@@ -5,9 +5,23 @@
 
 	'use strict'
 
-	//默认隐藏标题，自动处理成 XXX...
-	//全文自动设置为 title属性
+	
 	$.fn.extend({
+		toggleActive:function(callback){
+			$(this).click(function(e){
+				var $this=$(this);
+				if (!$this.hasClass('active')) {
+					$this.siblings().removeClass('active').end().addClass('active');
+					return;
+				}else{
+					$this.siblings().removeClass('active').end().addClass('active');
+					callback&&callback.call(this);
+				}
+				
+			});
+		},
+		//默认隐藏标题，自动处理成 XXX...
+		//全文自动设置为 title属性
 		init_title: function() {
 			$(this).each(function() {
 				var sv = "";

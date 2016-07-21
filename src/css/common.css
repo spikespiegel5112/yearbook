@@ -522,6 +522,91 @@ textarea:focus
 {
     background-color: #f0f0f0;
 }
+/*~~~~~~~~~~common_nav313_wrapper~~~~~~~~~~*/
+.common_nav313_wrapper{
+    margin: 0 auto;
+    width: 1200px;
+}
+.common_nav313_wrapper .mainlis{
+    font-size: 0;
+}
+.common_nav313_wrapper .mainlist>li{
+    display: inline-block;
+    min-width: 30px;
+    font-size: 18px;
+}
+.common_nav313_wrapper .mainlist>.active>a{
+    background-color: #91c153;
+    color: #fff;
+}
+.common_nav313_wrapper .mainlist>li>a{
+    display: inline-block;
+    padding: 15px 52px;
+    transition: all 0.3s;
+    color: #333;
+}
+
+.common_nav313_wrapper .mainlist>li>a:hover{
+    color: #8fc063;
+}
+.common_nav313_wrapper .mainlist>.active>a:hover{
+    color: #fff;
+}
+.common_nav313_wrapper .mainlist>li>a label{
+    cursor: pointer;
+}
+.common_nav313_wrapper .active .common_nav313menu_wrapper{
+    display: block;
+    opacity: 1;
+
+}
+.common_nav313menu_wrapper{
+    display: none;
+    padding: 0 20px;
+    position: absolute;
+    z-index: 9999;
+    background-color: #fff;
+    font-size: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.common_nav313menu_wrapper:before{
+    content: '';
+    display: block;
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    background-color: #fff;
+    z-index: 0;
+    box-shadow: 0 2px 10px #999 inset;
+}
+.common_nav313menu_wrapper li{
+    display: inline-block;
+    margin: 15px;
+    position: relative;
+}
+.common_nav313menu_wrapper li:hover .desc label{
+    color: #8fc063;
+}
+.common_nav313menu_wrapper li a{
+    display: block;
+    padding: 4px;
+    border: 1px solid #e5e5e5;
+}
+.common_nav313menu_wrapper li .desc{
+    text-align: center;
+}
+.common_nav313menu_wrapper li label{
+    display: block;
+    font-size: 15px;
+    line-height: 30px;
+    color: #666;
+}
+
+
+
 
 
 /*页面头部*/
@@ -923,6 +1008,7 @@ textarea:focus
     margin: 0 auto;
 
     background-color: #fff;
+    box-shadow: 0px 2px 10px #999;
 }
 
 .yb_cm_header .shortcut_container
@@ -1058,6 +1144,7 @@ textarea:focus
     height: 80px;
     margin: 0 auto;
     padding: 0;
+    text-align: center;
 }
 
 .yb_cm_header.index .main_nav .header_con
@@ -1067,9 +1154,8 @@ textarea:focus
 
 .main_nav .header_con .logo
 {
-    position: absolute;
-    top: 10px;
-    left: 15px;
+    display: inline-block;
+    margin: 20px 0;
 }
 
 .index .main_nav .header_con .logo
@@ -1093,21 +1179,21 @@ textarea:focus
 {
     position: absolute;
     z-index: 10;
-    top: 21px;
-    right: 15px;
+    top: 30px;
+    right: 30px;
 
     width: 140px;
 
     text-align: center;
 
-    border: 1px solid #8fc131;
+    border: 1px solid #dedddd;
     border-radius: 2px;
     background-color: #fff;
 }
 
-.yb_cm_header.index .main_nav .header_con .yb_menu
+.main_nav .header_con .yb_menu:hover
 {
-    border: 1px solid #dedddd;
+    border: 1px solid #8fc131;
 }
 
 .header_con .yb_menu .menu_hd

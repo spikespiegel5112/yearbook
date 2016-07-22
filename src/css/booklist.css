@@ -743,6 +743,111 @@
     box-shadow: 2px 2px 6px #eee inset;
 }
 
+/*~~~~~~~~~~booklist_banner_wrapper~~~~~~~~~~*/
+.booklist_banner_wrapper{
+    width: 100%;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+}
+.booklist_banner_wrapper ul{
+    width: 100%;
+    height: 460px;
+}
+.booklist_banner_wrapper>ul>li{
+    width: 100%;
+    height: 460px;
+    position: relative;
+    background-position: center 0;
+/*    position: absolute;
+    top: 0;
+    left: 0;*/
+}
+.booklist_banner_wrapper .introduce{
+    width: 415px;
+    height: 100%;
+}
+.booklist_banner_wrapper .introduce h6{
+    color: #882b30;
+    text-align: center;
+    font-size: 40px;
+    line-height: 80px;
+    font-weight: bold;
+}
+.booklist_banner_wrapper .introduce h5{
+    color: #882b30;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.booklist_banner_wrapper .introduce h4{
+    color: #882b30;
+    text-align: center;
+    font-size: 25px;
+    line-height: 70px;
+}
+.booklist_banner_wrapper .introduce p{
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 320px;
+    line-height: 40px;
+    border-top: 1px solid #bf8d89;
+    border-bottom: 1px solid #bf8d89;
+    text-align: center;
+    font-size: 17px;
+    color: #666;
+}
+.booklist_banner_wrapper .introduce a{
+    display: block;
+    margin: 25px auto 0;
+    width: 185px;
+    height: 45px;
+    background-color: #e98034;
+    box-sizing:border-box;
+    overflow: hidden;
+}
+.booklist_banner_wrapper .introduce a div{
+    margin: 1% auto;
+    border: 1px solid #fff;
+    width: 96%;
+    height: 85%;
+    
+}
+.booklist_banner_wrapper .introduce a div label{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    line-height: 37px;
+    text-indent: 
+}
+.booklist_banner_wrapper .baby .introduce{
+    position: absolute;
+    left: 100px;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+}
+.booklist_banner_wrapper .love .introduce{
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+}
+.booklist_banner_wrapper .travel .introduce{
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+}
+.booklist_banner_wrapper .summary .introduce{
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+}
+
+
 .left_content_wrapper .filter_style
 {
     background: #f5f5f5;

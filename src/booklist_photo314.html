@@ -224,32 +224,38 @@
 		</div>
 	</div>
 	<div class='booklist_banner_wrapper'>
-		<ul>
-			<li class='baby'>
+		<ul class='swiper-wrapper'>
+			<li class='swiper-slide baby' style='background-image:url(img/banner/booklist_banner_baby_00000.jpg)'>
 				<div class='introduce'>
-					
+					<h6>宝宝照片书</h6>
+					<h5>全场包邮中</h5>
+					<h4>记录宝贝成长每一步！</h4>
+					<p>
+						简单三步完成制作<br>
+						送给宝贝最好的礼物
+					</p>
+					<a href="javascript:;">
+						<div>
+							<label>查看模板</label>
+							<span></span>
+						</div>
+					</a>
 				</div>
-				<div class='bg' style='background-image:url(img/banner/booklist_banner_baby_00000.jpg)'></div>
 			</li>
-			<li class='love'>
+			<li class='swiper-slide love' style='background-image:url(img/banner/booklist_banner_love_00000.jpg)'>
 				<div class='introduce'>
-					
 				</div>
-				<div class='bg' style='background-image:url(img/banner/booklist_banner_love_00000.jpg)'></div>
 			</li>
-			<li class='travel'>
+			<li class='swiper-slide travel' style='background-image:url(img/banner/booklist_banner_travel_00000.jpg)'>
 				<div class='introduce'>
-					
 				</div>
-				<div class='bg' style='background-image:url(img/banner/booklist_banner_travel_00000.jpg)'></div>
 			</li>
-			<li class='summary'>
+			<li class='swiper-slide summary' style='background-image:url(img/banner/booklist_banner_summary_00000.jpg)'>
 				<div class='introduce'>
-					
 				</div>
-				<div class='bg' style='background-image:url(img/banner/booklist_banner_summary_00000.jpg)'></div>
 			</li>
 		</ul>
+		<div class='swiper-pagination'></div>
 	</div>
 	<div class='main_container'>
 		<div class='left_content_wrapper'>
@@ -542,6 +548,13 @@
 				cancelVal: '取消',
 				cancel: function() {} //为true等价于function(){}
 			});
+		});
+		var childrenSwiper = new Swiper('.booklist_banner_wrapper', {
+			loop: true,
+			pagination: '.children .swiper-pagination',
+			nextButton: '.children .arrow_right',
+			prevButton: '.children .arrow_left',
+			paginationClickable: true
 		});
 
 	});

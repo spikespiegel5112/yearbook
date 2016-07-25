@@ -261,7 +261,10 @@
 .booklist_listtitle_wrapper .dash{
     margin: 10px 0 0 0;
 }
-.booklist_listtitle_wrapper h5
+.booklist_listtitle_wrapper .title{
+    display: inline-block;
+}
+.booklist_listtitle_wrapper .title h5
 {
     display: inline-block;
 	font-size: 18px;
@@ -271,7 +274,7 @@
 	color: #787878;
 }
 
-.booklist_listtitle_wrapper span
+.booklist_listtitle_wrapper .title span
 {
     display: inline-block;
 

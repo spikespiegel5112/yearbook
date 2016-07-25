@@ -400,8 +400,10 @@
 		<div class='right_content_wrapper'>
 			<div class='agbcover_wrapper'>
 				<div class='booklist_listtitle_wrapper'>
-					<span class='ybiconfont ybicon-bookopened'></span>
-					<h5>全部照片书</h5>
+					<div class='title'>
+						<span class='ybiconfont ybicon-bookopened'></span>
+						<h5>全部照片书</h5>
+					</div>
 					<div class="tpl_sort_box">
 						<select name="" class="tpl_sort">
 							<option>按销量排序</option>
@@ -661,8 +663,9 @@
 	$(document).ready(function() {
 		//主导航下拉菜单
 		$('.common_nav313_wrapper li').toggleActive(function(e) {
-			var $this = $(this);
-			if ($this.attr('class') === 'active' && $(e.target).closest('img').length > 0) {
+			var $this = $(this),
+				eventTarget = $(e.target);
+			if (eventTarget.closest('img').length > 0 || eventTarget.closest($this.find('a')).length > 0) {
 				$this.removeClass('active');
 			};
 		});

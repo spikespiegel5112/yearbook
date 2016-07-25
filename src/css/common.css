@@ -527,7 +527,7 @@ textarea:focus
     margin: 0 auto;
     width: 1200px;
 }
-.common_nav313_wrapper .mainlis{
+.common_nav313_wrapper .mainlist{
     font-size: 0;
 }
 .common_nav313_wrapper .mainlist>li{
@@ -541,7 +541,7 @@ textarea:focus
 }
 .common_nav313_wrapper .mainlist>li>a{
     display: inline-block;
-    padding: 15px 52px;
+    padding: 15px 51px;
     transition: all 0.3s;
     color: #333;
 }
@@ -554,6 +554,9 @@ textarea:focus
 }
 .common_nav313_wrapper .mainlist>li>a label{
     cursor: pointer;
+}
+.common_nav313_wrapper .mainlist>li>a span{
+    font-size: 12px;
 }
 .common_nav313_wrapper .active .common_nav313menu_wrapper{
     display: block;
@@ -1035,7 +1038,7 @@ textarea:focus
     position: relative;
 
     box-sizing: border-box;
-    width: 100%;
+    width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -1141,11 +1144,10 @@ textarea:focus
     position: relative;
 
     box-sizing: border-box;
-    width: 100%;
+    width: 1200px;
     height: 80px;
     margin: 0 auto;
     padding: 0;
-    text-align: center;
 }
 
 .yb_cm_header.index .main_nav .header_con
@@ -1156,7 +1158,7 @@ textarea:focus
 .main_nav .header_con .logo
 {
     display: inline-block;
-    margin: 20px 0;
+    margin: 20px 15px;
 }
 
 .index .main_nav .header_con .logo
@@ -1178,10 +1180,9 @@ textarea:focus
 
 .main_nav .header_con .yb_menu
 {
-    position: absolute;
+    float: right;
+    margin: 25px 20px 0 0;
     z-index: 10;
-    top: 30px;
-    right: 30px;
 
     width: 140px;
 
@@ -1196,7 +1197,9 @@ textarea:focus
 {
     border: 1px solid #8fc131;
 }
-
+.main_nav .header_con .yb_menu:hover a b{
+    color: #8fc131;
+}
 .header_con .yb_menu .menu_hd
 {
     font-size: 16px;
@@ -1214,14 +1217,9 @@ textarea:focus
     position: absolute;
     top: 10px;
     right: 13px;
-
-    color: #8fc131;
-}
-
-.yb_cm_header.index .header_con .yb_menu .menu_hd b
-{
     color: #333;
 }
+
 
 .header_con .yb_menu:hover .menu_hd b
 {

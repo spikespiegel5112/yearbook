@@ -7,17 +7,18 @@
 
 	
 	$.fn.extend({
-		toggleActive:function(callback){
-			$(this).click(function(e){
-				var $this=$(this);
+		//点击切换active class方法
+		toggleActive: function(callback) {
+			$(this).click(function(e) {
+				var $this = $(this);
 				if (!$this.hasClass('active')) {
 					$this.siblings().removeClass('active').end().addClass('active');
 					return;
-				}else{
+				} else {
 					$this.siblings().removeClass('active').end().addClass('active');
-					callback&&callback.call(this);
+					callback && callback.call(this, e);
 				}
-				
+
 			});
 		},
 		//默认隐藏标题，自动处理成 XXX...

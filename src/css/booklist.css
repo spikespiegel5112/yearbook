@@ -1,4 +1,8 @@
 @charset 'utf-8';
+.booklist_main_container{
+    margin: 0 auto;
+    width: 1200px;
+}
 .left_content_wrapper
 {
 	float: left;
@@ -254,40 +258,43 @@
 
 	content: '';
 }
-
-.module_title_item h5
+.booklist_listtitle_wrapper .dash{
+    margin: 10px 0 0 0;
+}
+.booklist_listtitle_wrapper h5
 {
+    display: inline-block;
 	font-size: 18px;
 	font-weight: bolder;
 	font-weight: lighter;
-
-	margin: 0 0 10px 0;
-	padding: 5px 0 0 10px;
-
+    vertical-align: middle;
 	color: #787878;
 }
 
-.module_title_item span
+.booklist_listtitle_wrapper span
 {
-	float: left;
+    display: inline-block;
 
 	width: 30px;
-	height: 30px;
-
-	background: url('../img/sprite/imgsprite_yb3_wbl_00000.png');
+	height: 20px;
+    line-height: 23px;
+    font-size: 25px;
+    text-align: center;
+    color: #999999;
+    vertical-align: middle;
 }
 
-.module_title_item .filterbyclass_icon
+.booklist_listtitle_wrapper .filterbyclass_icon
 {
 	background-position: 3px -43px;
 }
 
-.module_title_item .filterbystyle_icon
+.booklist_listtitle_wrapper .filterbystyle_icon
 {
 	background-position: -30px -45px;
 }
 
-.module_title_item .agbmain_icon
+.booklist_listtitle_wrapper .agbmain_icon
 {
 	background-position: -63px -46px;
 }
@@ -398,7 +405,7 @@
 	display: inline-block;
 
 	width: 170px;
-	margin: 20px 34px;
+	margin: 20px 28px;
 }
 .agbcover_wrapper ul li .sold
 {
@@ -552,13 +559,12 @@
 }
 .booklist_bookdetailpopup_wrapper{
 	width: 660px;
-	height: 640px;
 	background-color: #fff;
 	border-radius: 5px;
 	position: relative;
 }
 .booklist_bookdetailpopup_wrapper .title_wrapper{
-	padding: 20px 40px;
+	padding: 20px 35px;
 	width: 100%;
 	height: 95px;
 	border-bottom: 2px solid #d2dbdf;
@@ -567,7 +573,7 @@
 }
 .booklist_bookdetailpopup_wrapper .title_item{
 	display: inline-block;
-	width: 420px;
+	width: 453px;
 	vertical-align: middle;
 	color: #828f91;
 	font-size: 19px;
@@ -583,6 +589,9 @@
 	background-color: #8fc063;
 	color: #fff;
 	vertical-align: middle;
+}
+.booklist_bookdetailpopup_wrapper .begintomake:hover{
+    background-color: #709a54;
 }
 .booklist_bookdetailpopup_wrapper .settings{
 	padding: 25px 30px;
@@ -677,19 +686,24 @@
 }
 .booklist_bookdetailpopup_wrapper .closebtn{
 	display: inline-block;
-	width: 20px;
-	height: 20px;
+    padding: 3px;
+	width: 25px;
+	height: 25px;
     position: absolute;
     top: 0;
     right: -35px;
-    padding: 5px;
+    
     color: #ccc;
-    font-size: 20px;
+    font-size: 24px;
     border-radius: 5px;
-    background-color: #666;
+    background-color: #70767a;
 }
 .booklist_bookdetailpopup_wrapper .closebtn:hover{
-	background-color: #777;
+	background-color: #666;
+}
+.booklist_bookdetailpopup_wrapper .demonstration{
+    width: 100%;
+    height: 280px;
 }
 .booklist_bookdetailpopup_wrapper .booklist_bookpage_item{
 	display: none;
@@ -722,7 +736,18 @@
 	border-radius: 5px;
 	text-align: center;
 	color: #fff;
-	font-size: 60px;
+	font-size: 85px;
+}
+.booklist_bookdetailpopup_wrapper .arrow_left:before{
+    position: absolute;
+    right: -12px;
+}
+.booklist_bookdetailpopup_wrapper .arrow_right:before{
+    position: absolute;
+    right: -18px;
+}
+.booklist_bookdetailpopup_wrapper .arrow_left:hover, .booklist_bookdetailpopup_wrapper .arrow_right:hover{
+    background-color: #666;
 }
 .booklist_bookdetailpopup_wrapper .arrow_left{
 	left: -70px;
@@ -918,6 +943,12 @@
 	top: 0;
 	left: 0;*/
 }
+.booklist_banner_wrapper .introduce_wrapper{
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+    position: relative;
+}
 .booklist_banner_wrapper .introduce{
 	width: 450px;
 	height: 100%;
@@ -991,24 +1022,24 @@
 
 .booklist_banner_wrapper .baby .introduce{
 	position: absolute;
-	left: 370px;
+	left: 10px;
 	bottom: 0;
 }
 .booklist_banner_wrapper .love .introduce{
 	position: absolute;
-	left: 360px;
+	left: 10px;
 	bottom: 0;
 	
 }
 .booklist_banner_wrapper .travel .introduce{
 	position: absolute;
-	right: 370px;
+	right: 10px;
 	bottom: 0;
 	
 }
 .booklist_banner_wrapper .summary .introduce{
 	position: absolute;
-	right: 370px;
+	right: 10px;
 	bottom: 0;
 	
 }
@@ -1267,9 +1298,7 @@
 
 .tpl_sort_box
 {
-	position: absolute;
-	top: 25px;
-	right: 25px;
+    float: right;
 }
 
 

@@ -601,11 +601,21 @@ textarea:focus
 .common_nav313menu_wrapper li .desc{
     text-align: center;
 }
-.common_nav313menu_wrapper li label{
+.common_nav313menu_wrapper li label, .common_nav313menu_wrapper li span{
     display: block;
     font-size: 15px;
     line-height: 30px;
     color: #666;
+}
+.common_nav313menu_wrapper li span:after{
+    content: '';
+    display: inline-block;
+    margin: 0 10px 2px 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3px 0 3px 6px;
+    border-color: transparent transparent transparent #666;
 }
 
 

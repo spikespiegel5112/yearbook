@@ -933,7 +933,7 @@
 								return;
 							} else {
 								_this.css({
-									'margin': (containerWidth - thisWidth) / 2 + ' auto'
+									'margin': 0 +(containerWidth - thisWidth) / 2 + offsetX - ignoreX + 'px'
 								});
 							}
 						});

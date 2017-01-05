@@ -5,7 +5,7 @@
 
 	'use strict'
 
-	
+
 	$.fn.extend({
 		//点击切换active class方法
 		toggleActive: function(callback) {
@@ -471,75 +471,16 @@
 				});
 			});
 		},
-		popup: function(options) {
-			options = $.extend({
-				closebtn: '',
-				maskopacity: 0,
-				noborder: false,
-				noalign: false
-			}, options);
-			var $this = $(this),
-				thisParent = $this.parent(),
-				popupWrapperEl = $('<div></div>').addClass('commonPopupWrapper'),
-				popupContainerEl = $('<div></div>').addClass('commonPopupContainer'),
-				contentWidth = $this.width();
-			$('body').append(popupContainerEl.append(popupWrapperEl));
-			popupWrapperEl.css({
-				width: contentWidth,
-				border: '10px solid rgba(153,153,153,0.5)',
-				'border-radius': 10
-			});
-			popupContainerEl.css({
-				display: 'block',
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				'z-index': 99999,
-				width: $(window).width(),
-				height: $(window).height(),
-				background: 'rgba(0,0,0,' + options.maskopacity + ')'
-			});
-			popupContainerEl.resize(function() {
-				popupContainerEl.css({
-					width: $(window).width(),
-					height: $(window).height(),
-				});
-			});
-			popupWrapperEl.append($this);
-			$this.css({
-				display: 'block'
-			});
-			popupWrapperEl.css({
-				display: 'block',
-				opacity: 1
-			});
-			if (popupWrapperEl.height() > $(window).height() - 20) {
-				popupWrapperEl.css({
-					width: ($this.outerWidth() + 15),
-					height: ($(window).height() - 100),
-					overflow: 'auto'
-				});
 
-			};
-			if (!options.noalign) {
-				popupWrapperEl.align();
-			}
-			if (options.closebtn != '') {
-				$(options.closebtn).each(function() {
-					$(this).one('click', function() {
-						popupContainerEl.detach();
-						thisParent.append($this.hide());
-					});
-				});
-			};
-		},
 		priceCalculator: function(options) {
-			var that = $(this),
+			var $that = $(this),
 				totalPriceArr = [],
+				counterEl,
+				counter,
 				config = {
-					onchange: function() {}
+					onchange: function(value) {}
 				};
-			if (typeof options == 'Object') {
+			if (typeof options == 'object') {
 				$.extend(config, options);
 			} else if (typeof options == 'String') {
 				switch (options) {
@@ -548,17 +489,17 @@
 						break;
 				}
 			}
-			$.each(that, function(index) {
+			$.each($that, function(index) {
 				var $this = $(this),
 					modifyBtn = $this.find('a');
 				if ($this.is('input')) {
-					var counterEl = $this;
+					counterEl = $this;
 				} else {
-					var counterEl = $this.find('input');
+					counterEl = $this.find('input');
 				}
 				modifyBtn.off('click');
 				modifyBtn.on('click', function(e) {
-					var counter = counterEl.val();
+					counter = counterEl.val();
 					switch ($(this).index()) {
 						case 0:
 							counter--;
@@ -572,7 +513,7 @@
 					}
 					e.stopPropagation();
 					counterEl.val(counter);
-					config.onchange();
+					config.onchange(counter);
 					fireonchange(counterEl);
 				})
 				counterEl.on('keydown keyup', function(e) {
@@ -596,15 +537,17 @@
 					}
 				});
 				counterEl.blur(function() {
-					var $this = $(this);
+					var $this = $(this),
+						counter = counterEl.val();
 					if ($this.val() == '') {
 						$this.val(0)
 					};
+					config.onchange(counter);
 				})
 			});
 
 			function destroy() {
-				$.each(that, function(index) {
+				$.each($that, function(index) {
 					$(this).find('a').unbind('click');
 				});
 			}
@@ -791,6 +734,7 @@
 				containerWidth = 0,
 				containerHeight = 0,
 				timer,
+				imageObj = new Image(),
 				offsetX = Number(options.offsetx),
 				offsetY = Number(options.offsety),
 				ignoreX = 0,
@@ -799,11 +743,11 @@
 				ignoredElY = '',
 				windowWidth = $(window).width(),
 				windowHeight = $(window).height();
+
 			//_this.attr('src', imgSrc + '?' + Date.parse(new Date()))
 			var tools = {
 				calculateIgnore: function() {
 					if (typeof options.ignorey === 'string' || typeof options.ignorex === 'string') {
-						alert('aaqa')
 						var ignoreArrX = options.ignorex.split(','),
 							ignoreArrY = options.ignorey.split(',');
 						for (var i = 0; i < ignoreArrX.length; i++) {
@@ -827,43 +771,30 @@
 			});
 
 			function initAligning() {
-
 				//当居中元素是img标签时，特殊处理！
 				if (that.is('img')) {
 					//递归判断需要居中的图片是否加载完成，如果没有就重载
 					var checkImageLoaded = function() {
 						that.each(function(index) {
+
 							var $this = $(this);
-							if ($this.height() == 0) {
-								console.log('load failed ' + $(this).width())
-								reload = true;
-								return false;
+							var imageSrc = $this.attr('src');
+							containerWidth = container.eq(index).width();
+							containerHeight = container.eq(index).height();
+							if ($this.height() <= 0) {
+								imageObj.src = imageSrc;
+
+								// console.log($this.outerWidth())
+								checkPosition($this, imageObj.width, imageObj.height)
 							} else {
-								containerWidth = container.eq(index).width();
-								containerHeight = container.eq(index).height();
 								checkPosition($this)
-								console.log('第' + index + '张图片的高度:' + containerHeight);
 							}
 						});
-						if (reload) {
-							reload = false;
-							checkBrowser({
-								ie: function() {
-									timer = window.setTimeout(function() {
-										checkImageLoaded();
-									}, 100);
-								},
-								other: function() {
-									timer = setTimeout(function() {
-										checkImageLoaded();
-									}, 100);
-								}
-							})
-						}
 					}
 					checkImageLoaded();
 					//缺省情况
 				} else {
+
 					//需要遍历每个居中对象，判断其每个container尺寸不同时，需分别处理
 					//当设置了container时，以container尺寸大小居中
 					if (options.container != '') {
@@ -871,7 +802,7 @@
 							var $this = $(this);
 							containerHeight = container.eq(index).height();
 							containerWidth = container.eq(index).width();
-							//console.log(containerHeight)
+							console.log(containerHeight)
 							if ($this.is(':hidden')) {
 								return true
 							} else {
@@ -894,7 +825,7 @@
 				}
 			}
 
-			function checkPosition(_this) {
+			function checkPosition(_this, imageWidth, imageHeight) {
 				checkBrowser({
 					ie: function() {
 						window.clearTimeout(timer);
@@ -904,13 +835,21 @@
 					}
 				})
 
-				var thisWidth = _this.outerWidth(),
-					thisHeight = _this.outerHeight();
+				if (arguments[1] != null && arguments[2] != null) {
+					var thisWidth = imageWidth,
+						thisHeight = imageHeight;
+
+				} else {
+					var thisWidth = _this.outerWidth(),
+						thisHeight = _this.outerHeight();
+				}
+
 
 				switch (options.position) {
 					case 'both':
+						// console.log(thisHeight)
 						var marginY = (containerHeight - thisHeight) / 2;
-						if (thisWidth <= $(window).width()) {
+						if (thisWidth <= containerWidth) {
 							if (options.offsetx != 0) {
 								_this.css({
 									'margin': marginY + offsetY - ignoreY + 'px ' + (containerWidth - thisWidth) / 2 + offsetX - ignoreX + 'px'
@@ -920,8 +859,10 @@
 									'margin': marginY + offsetY - ignoreY + 'px auto'
 								});
 							}
+
 						} else {
 							var marginX = (containerWidth - thisWidth) / 2;
+
 							_this.css({
 								'margin': marginY + offsetY - ignoreY + 'px ' + (marginX + options.offsetx) + 'px'
 							});
@@ -929,13 +870,9 @@
 						break;
 					case 'top':
 						aligning(function(thisWidth, thisHeight) {
-							if ($(document).height() > $(window).height()) {
-								return;
-							} else {
-								_this.css({
-									'margin': 0 +(containerWidth - thisWidth) / 2 + offsetX - ignoreX + 'px'
-								});
-							}
+							_this.css({
+								'margin': '0 ' + ((containerWidth - thisWidth) / 2 + offsetX - ignoreX) + 'px'
+							});
 						});
 						break;
 					case 'right':
@@ -1223,6 +1160,147 @@
 				box.remove();
 				options.callback();
 			});
+		},
+		pagination: function(options) {
+			options = $.extend({
+				container: '',
+				total: 0,
+				unit: 0,
+				index: 0,
+				listcontainer: '',
+				prev: '.prev',
+				next: '.next',
+				onflip: function() {}
+			}, options);
+			var containerEl = $(options.container),
+				paginationBtn = '',
+				totalpages = Math.ceil(options.total / options.unit),
+				liEl = function(index, active) {
+					return "<li class='" + active + "'>" +
+						"<a href='javascript:;'>" + index + "</a>" +
+						"</li>";
+				}
+			for (var i = options.index; i < totalpages; i++) {
+				if (i == options.index) {
+					paginationBtn += liEl(i + 1, 'active');
+				} else {
+					paginationBtn += liEl(i + 1, '');
+				}
+			};
+			containerEl.find('ul').html('').append(paginationBtn);
+			containerEl.find('ul').off('click').on('click', 'li', function() {
+				var $this = $(this),
+					pagenumber = Number($this.find('a').text());
+				options.index = pagenumber - 1;
+				// alert(options.index)
+				$this.addClass('active').siblings().removeClass('active');
+				$(options.listcontainer).html('');
+				options.onflip(pagenumber - 1);
+			});
+			$(options.prev).off('click').click(function() {
+				options.index = options.index - 1;
+				if (options.index < 0) {
+					options.index = 0;
+					return;
+				} else {
+					$(options.listcontainer).html('');
+					options.onflip(options.index);
+				}
+				containerEl.find('ul li').eq(options.index).addClass('active').siblings().removeClass('active');
+			});
+			$(options.next).off('click').click(function() {
+				var totalpages = Math.ceil(options.total / options.unit);
+				options.index = options.index + 1;
+
+				if (options.index > totalpages - 1) {
+					options.index = totalpages - 1;
+					return;
+				} else {
+					$(options.listcontainer).html('');
+					options.onflip(options.index);
+				}
+				containerEl.find('ul li').eq(options.index).addClass('active').siblings().removeClass('active');
+			});
+		},
+		popup: function(options) {
+			options = $.extend({
+				container: '',
+				closebtn: '',
+				maskopacity: 0,
+				noborder: false,
+				noalign: false,
+				callback: function() {}
+			}, options);
+			var containerEl = $(options.container),
+				thisParent = containerEl.parent(),
+				contentWidth = 0;
+			var tools = {
+				getContainerWidth: function() {
+					popupContainerEl.show();
+					if (contentWidth == 0) {
+						contentWidth = containerEl.width();
+						this.getContainerWidth();
+					} else {
+						popupContainerEl.hide();
+					}
+				}
+			}
+			if ($('.commonPopupContainer').length == 0) {
+				popupWrapperEl = $('<div></div>').addClass('commonPopupWrapper').append(containerEl),
+					popupContainerEl = $('<div></div>').addClass('commonPopupContainer'),
+					$('body').append(popupContainerEl.append(popupWrapperEl));
+				tools.getContainerWidth();
+				popupWrapperEl.css({
+					width: contentWidth,
+					border: '10px solid rgba(153,153,153,0.5)',
+					'border-radius': 10
+				});
+				popupContainerEl.css({
+					display: 'block',
+					position: 'fixed',
+					top: 0,
+					left: 0,
+					'z-index': 99999,
+					width: $(window).width(),
+					height: $(window).height(),
+					background: 'rgba(0,0,0,' + options.maskopacity + ')'
+				});
+				popupContainerEl.resize(function() {
+					popupContainerEl.css({
+						width: $(window).width(),
+						height: $(window).height(),
+					});
+				});
+				containerEl.css({
+					display: 'block'
+				});
+				popupWrapperEl.css({
+					display: 'block',
+					opacity: 1
+				});
+				if (popupWrapperEl.height() > $(window).height() - 20) {
+					popupWrapperEl.css({
+						width: (containerEl.outerWidth() + 15),
+						height: ($(window).height() - 100),
+						overflow: 'auto'
+					});
+				};
+				if (!options.noalign) {
+					popupWrapperEl.align();
+				}
+			} else {
+				$('.commonPopupContainer').show();
+			}
+			if (options.closebtn != '') {
+				$(options.closebtn).each(function() {
+					$(this).one('click', function() {
+						popupContainerEl.hide();
+						// thisParent.append(containerEl.hide());
+					});
+				});
+			};
+
+			options.callback();
 		},
 		collideLoading: function(options) {
 			options = $.extend({
@@ -1793,7 +1871,7 @@
 								return initImgIndex;
 							};
 						});
-						console.log('initIndex: '+initImgIndex)
+						console.log('initIndex: ' + initImgIndex)
 						var timer = setInterval(function() {
 							randomPeriod = config.mintime * 1000 + (Math.random() * (config.maxtime - config.mintime) * 1000);
 							if (index == bgLength) {

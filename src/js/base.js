@@ -536,10 +536,12 @@
 		priceCalculator: function(options) {
 			var that = $(this),
 				totalPriceArr = [],
+				counterEl,
+				counter,
 				config = {
-					onchange: function() {}
+					onchange: function(value) {}
 				};
-			if (typeof options == 'Object') {
+			if (typeof options == 'object') {
 				$.extend(config, options);
 			} else if (typeof options == 'String') {
 				switch (options) {
@@ -552,13 +554,13 @@
 				var $this = $(this),
 					modifyBtn = $this.find('a');
 				if ($this.is('input')) {
-					var counterEl = $this;
+					counterEl = $this;
 				} else {
-					var counterEl = $this.find('input');
+					counterEl = $this.find('input');
 				}
 				modifyBtn.off('click');
 				modifyBtn.on('click', function(e) {
-					var counter = counterEl.val();
+					counter = counterEl.val();
 					switch ($(this).index()) {
 						case 0:
 							counter--;
@@ -572,7 +574,7 @@
 					}
 					e.stopPropagation();
 					counterEl.val(counter);
-					config.onchange();
+					config.onchange(counter);
 					fireonchange(counterEl);
 				})
 				counterEl.on('keydown keyup', function(e) {
